@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física I · Tema 2 Movimiento rectilíneo</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Índice de temas</a>
+  <span><button id="btn-sol" type="button">Mostrar soluciones</button> <button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+
+<div class="layout">
+<nav class="side-toc" aria-label="Índice del tema"><b>En esta página</b></nav>
+<main>
+
+<header class="hero">
+  <div class="kick">Bloque Mecánica · Tema 2</div>
+  <h1>Movimiento rectilíneo</h1>
+  <p>El movimiento en una sola dimensión: cómo describir con precisión dónde está algo, qué tan rápido se mueve y cómo cambia esa rapidez — la base de toda la cinemática que viene después.</p>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 2 (pp. 34-66)</span><span>Ejercicios de examen real: 4</span><span>Ejercicios del solucionario: 6</span><span>⏱ ~4 h de estudio</span></div>
+  <div class="legend">
+    <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
+    <span class="src" data-l="A" data-ref="Academia_Tec — resumen complementario (solo algunos temas)">A</span> Academia_Tec
+    <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
+    <span class="src" data-l="X" data-ref="Ejercicio de examen real, ver fuentes_txt/examenes_por_tema.md">X</span> examen real
+    <span class="src" data-l="P" data-ref="Explicación o ejemplo propio, sin página en los libros">P</span> propio
+    — pasa el ratón (o toca) por cada etiqueta para ver la fuente exacta; en pantallas anchas aparecen en el margen derecho.
+  </div>
+</header>
+
+<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U cap. 2 Introducción, p. 34">U p.34</span></h2>
+<p><b>Prerrequisitos:</b> álgebra básica (despejar, resolver una ecuación de segundo grado), nociones de derivada e integral (pendiente de una curva, área bajo una curva) — no hace falta dominarlas, se explican aquí con lo mínimo necesario — y del tema 1: trabajar con signos y unidades con cuidado.</p>
+<p><b>Mapa del tema:</b> primero un solo eje (el eje $x$), sin vectores todavía: la posición es un número con signo. Definimos velocidad media e instantánea (secciones 2.1-2.2), luego aceleración media e instantánea (2.3) — el mismo patrón "media = cuerda, instantánea = tangente" se repite dos veces. La sección 2.4 da las cuatro ecuaciones "de toda la vida" para aceleración <i>constante</i>, que es con diferencia el caso que más cae en examen (persecuciones, frenados, caída libre). La sección 2.5 aplica esas mismas ecuaciones a la caída libre. La sección 2.6 rompe la suposición de aceleración constante: cuando $a$ depende del tiempo hay que integrar — y es justo el tipo de problema (cohete con $g$ variable) que ha caído en examen real.</p>
+<div class="box tip"><span class="h">Este tema en examen</span><p>De los 16 exámenes revisados, <b>4 preguntas</b> pertenecen a este tema: dos problemas de frenado con deceleración constante (satélite, bala), un problema de cohete con aceleración variable por tramos (hay que integrar) y una pregunta de teoría sobre velocidad instantánea. No es de los temas más preguntados del bloque (los temas 8 y 10 salen bastantes más veces), pero sus técnicas — sobre todo elegir la ecuación correcta de aceleración constante — son la base de casi todos los problemas de Mecánica que vienen después.</p></div>
+
+<h2 id="s1"><span class="n">1</span>Desplazamiento, tiempo y velocidad media</h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Imagina un coche que se mueve solo por una carretera recta (un eje $x$). Su <b>posición</b> $x$ es un número con signo: positivo a un lado del origen, negativo al otro. Si en un viaje avanza y luego retrocede, lo que importa para el <b>desplazamiento</b> es solo dónde empezó y dónde acabó, no el camino recorrido — como la diferencia entre "cuánto te has alejado de casa" y "cuántos pasos has dado en total".</p></div>
+<div class="box def"><span class="h">Desplazamiento y velocidad media</span>
+  <p>El <b>desplazamiento</b> en el intervalo de $t_1$ a $t_2$ es el cambio de posición:</p>
+  $$\Delta x = x_2-x_1 \qquad\text{(ec. 2.1)}$$
+  <p>La <b>velocidad media</b> es ese desplazamiento dividido entre el tiempo transcurrido:</p>
+  $$v_{\text{med-}x} = \frac{x_2-x_1}{t_2-t_1} = \frac{\Delta x}{\Delta t} \qquad\text{(ec. 2.2)}$$
+  <p>Tiene <b>signo</b>: positivo si $x$ aumenta (movimiento hacia $+x$), negativo si disminuye. No hay que confundirla con la <b>rapidez media</b>, que es la <i>distancia total recorrida</i> (siempre positiva, sin importar la dirección) dividida entre el tiempo — no es lo mismo que $|v_{\text{med-}x}|$ salvo que el movimiento sea todo en la misma dirección.</p>
+  <span class="src" data-l="U" data-ref="U §2.1 ec. (2.1)-(2.2), p. 35-36">U p.35</span>
+</div>
+<div class="box warn"><span class="h">Error típico</span><p>Confundir velocidad media con rapidez media. Si caminas 60 m al este y luego 40 m de vuelta al oeste, tu desplazamiento neto es de solo 20 m (velocidad media pequeña), pero recorriste 100 m en total (rapidez media mucho mayor). Es justo el Problema 2.5 resuelto más abajo, en «Ejercicios resueltos».</p>
+  <span class="src" data-l="U" data-ref="U §2.2 CUIDADO, p. 38">U p.38</span></div>
+
+<h2 id="s2"><span class="n">2</span>Velocidad instantánea</h2>
+<div class="box intu"><span class="h">Idea intuitiva: el velocímetro</span><p>La velocidad media te dice cómo de rápido fue todo el trayecto de tu casa al trabajo, pero no cuán rápido ibas <i>en un instante concreto</i> — para eso está el velocímetro del coche, que marca la velocidad "ahora mismo". Matemáticamente, esa velocidad "ahora mismo" es el límite de la velocidad media cuando el intervalo de tiempo se hace tan pequeño que prácticamente es un instante.</p></div>
+<div class="box def"><span class="h">Velocidad instantánea</span>
+  <p>La <b>velocidad instantánea</b> en un instante es el límite de la velocidad media cuando $\Delta t\to0$, es decir, la <b>derivada</b> de la posición respecto al tiempo:</p>
+  $$v_x = \lim_{\Delta t\to0}\frac{\Delta x}{\Delta t} = \frac{dx}{dt} \qquad\text{(ec. 2.3)}$$
+  <p>Es un número con signo (positivo = se mueve hacia $+x$, negativo = hacia $-x$); su valor absoluto $|v_x|$ es la <b>rapidez instantánea</b>, siempre $\ge0$.</p>
+  <span class="src" data-l="U" data-ref="U §2.2 ec. (2.3), p. 37">U p.37</span>
+</div>
+<div class="box thm"><span class="h">Interpretación gráfica: pendiente</span><p>En una gráfica $x$ contra $t$: la <b>velocidad media</b> entre dos instantes es la pendiente de la <b>cuerda</b> (recta secante) que une los dos puntos $(t_1,x_1)$ y $(t_2,x_2)$. La <b>velocidad instantánea</b> en un instante es la pendiente de la <b>recta tangente</b> a la curva en ese punto — el límite de la cuerda cuando los dos puntos se acercan hasta casi coincidir. Si la tangente sube hacia la derecha, $v_x>0$; si baja, $v_x<0$; si es horizontal, $v_x=0$.</p>
+  <span class="src" data-l="U" data-ref="U §2.2 fig. 2.7, p. 39">U p.39</span>
+</div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_2_pendiente_tangente.png" alt="Figura 2.7 de U: tres gráficas x-t del mismo movimiento con intervalos Δt cada vez más cortos (2.0 s, 1.0 s) hasta llegar a la tangente en el panel c, cuya pendiente es la velocidad instantánea." loading="lazy">
+<figcaption>Fig. 2.7 de U: a medida que el intervalo $\Delta t$ se acorta (paneles a→b), la cuerda se acerca a la tangente; en el límite (panel c) la pendiente de la tangente en $p_1$ es la velocidad instantánea. <span class="src" data-l="U" data-ref="U fig. 2.7, p. 39">U p.39</span></figcaption>
+</figure>
+<div class="box ex"><span class="h">Ejemplo del libro 2.1 — un guepardo acechando</span>
+  <p>Un guepardo tiene posición $x=20\ \text{m}+(5.0\ \text{m/s}^2)t^2$. Halla su velocidad en $t=1.0$ s.</p>
+  <ol class="steps">
+    <li>Derivamos: $v_x = dx/dt = (10\ \text{m/s}^2)\,t$.</li>
+    <li>En $t=1.0$ s: $v_x = 10\times1.0 = 10\ \text{m/s}$.</li>
+    <li>Interpretación: en ese instante la posición crece a razón de 10 m por cada segundo — es la pendiente de la tangente a la parábola $x(t)$ en $t=1.0$ s, no la pendiente de ninguna cuerda.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 2.1, p. 38-39">U p.38</span>
+</div>
+
+<h2 id="s3"><span class="n">3</span>Aceleración media e instantánea</h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Igual que la velocidad mide cómo cambia la posición, la <b>aceleración</b> mide cómo cambia la <i>velocidad</i>. Es el mismo patrón otra vez: aceleración media = "cuerda" en una gráfica $v_x$-$t$; aceleración instantánea = "tangente" en esa misma gráfica.</p></div>
+<div class="box def"><span class="h">Aceleración media e instantánea</span>
+  $$a_{\text{med-}x} = \frac{v_{2x}-v_{1x}}{t_2-t_1} = \frac{\Delta v_x}{\Delta t} \qquad\text{(ec. 2.4)}$$
+  $$a_x = \lim_{\Delta t\to0}\frac{\Delta v_x}{\Delta t} = \frac{dv_x}{dt} = \frac{d^2x}{dt^2} \qquad\text{(ec. 2.5)}$$
+  <p>La aceleración instantánea es la derivada de la velocidad respecto al tiempo — y, por tanto, la <b>segunda</b> derivada de la posición.</p>
+  <span class="src" data-l="U" data-ref="U §2.3 ec. (2.4)-(2.6), p. 40-43">U p.40</span>
+</div>
+<div class="box thm"><span class="h">Regla de signos: ¿acelera o frena?</span><p>Lo que decide si un objeto va "cada vez más rápido" o "frenando" no es el signo de $a_x$ por sí solo, sino la relación entre los signos de $v_x$ y $a_x$:</p>
+  <ul>
+    <li>Si $v_x$ y $a_x$ tienen el <b>mismo signo</b> (los dos $+$ o los dos $-$): la rapidez <i>aumenta</i> (acelera, en el sentido cotidiano).</li>
+    <li>Si $v_x$ y $a_x$ tienen <b>signos opuestos</b>: la rapidez <i>disminuye</i> (frena) — aunque $a_x$ sea positiva, si $v_x$ es negativa el objeto está frenando.</li>
+  </ul>
+  <span class="src" data-l="U" data-ref="U §2.3 Tabla 2.3, p. 43-44">U p.43</span>
+</div>
+<div class="box warn"><span class="h">Error típico: velocidad nula no implica aceleración nula</span><p>En el punto más alto de un tiro vertical hacia arriba, la velocidad es $v_y=0$ durante un instante — pero la aceleración sigue siendo $a_y=-g\ne0$ en todo momento (la gravedad no deja de actuar). "Está parado" no significa "no está acelerando": significa que, justo en ese instante, está cambiando de sentido.</p>
+  <span class="src" data-l="U" data-ref="U §2.5, p. 52">U p.52</span>
+</div>
+
+<h2 id="s4"><span class="n">4</span>Movimiento con aceleración constante</h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Cuando la aceleración no cambia con el tiempo (el caso más común en los problemas de examen: caída libre, frenados, arranques), la velocidad crece (o decrece) de forma uniforme y la posición sigue una parábola en el tiempo. De ahí salen cuatro ecuaciones que relacionan las mismas cinco magnitudes de formas distintas — y la clave para resolver rápido es elegir la que no involucra el dato que no tienes ni el que no te piden.</p></div>
+<div class="box thm"><span class="h">Las cuatro ecuaciones (Tabla 2.4)</span>
+  <p>Con $x_0,v_{0x}$ la posición y velocidad en $t=0$, y $a_x$ constante, las cinco magnitudes en juego son $x-x_0,\ t,\ v_{0x},\ v_x,\ a_x$. Cada ecuación relaciona cuatro de ellas y omite una:</p>
+  <table>
+  <tr><th>Ecuación</th><th>Fórmula</th><th>No aparece</th></tr>
+  <tr><td>2.8</td><td>$v_x = v_{0x}+a_xt$</td><td>$x-x_0$</td></tr>
+  <tr><td>2.12</td><td>$x = x_0+v_{0x}t+\tfrac12a_xt^2$</td><td>$v_x$</td></tr>
+  <tr><td>2.13</td><td>$v_x^2 = v_{0x}^2+2a_x(x-x_0)$</td><td>$t$</td></tr>
+  <tr><td>2.14</td><td>$x-x_0 = \tfrac12(v_{0x}+v_x)t$</td><td>$a_x$</td></tr>
+  </table>
+  <p>La Tabla 2.4 de U organiza justo esto: mira qué dato te falta y qué te piden, y elige la ecuación que no incluye la magnitud que ni tienes ni te interesa. Aparte, y solo válida si $a_x$ es constante, conviene recordar la ec. 2.10: $v_{\text{med-}x}=\tfrac12(v_{0x}+v_x)$ — la velocidad media es el promedio simple de la inicial y la final, útil para comprobar resultados.</p>
+  <span class="src" data-l="U" data-ref="U §2.4 ec. (2.8),(2.10),(2.12)-(2.14) y Tabla 2.4, p. 45-49">U p.45</span>
+</div>
+<p>Con $a_x$ constante, la gráfica $x$-$t$ es una <b>parábola</b> (por la ec. 2.12) y la gráfica $v_x$-$t$ es una <b>recta</b> de pendiente $a_x$ (por la ec. 2.8). En la gráfica $v_x$-$t$, el <b>área bajo la recta</b> entre dos instantes es exactamente el desplazamiento $x-x_0$ en ese intervalo — es la misma idea de "área bajo la curva" que se generaliza en la sección 2.6 para cuando $a_x$ ya no es constante.
+  <span class="src" data-l="U" data-ref="U §2.4 ec. (2.15)-(2.16), p. 45-46">U p.45</span></p>
+<div class="box ex"><span class="h">Ejemplo del libro 2.5 — persecución con moto de policía</span>
+  <p>Un coche que rebasa el límite de velocidad pasa a $v=15\ \text{m/s}$ constantes frente a un policía de tráfico parado en su motocicleta. Justo en ese instante ($t=0$, mismo punto de partida) el policía arranca la moto con aceleración constante $a=3.0\ \text{m/s}^2$ para darle alcance. ¿Cuánto tarda en alcanzarlo, a qué distancia y a qué velocidad va la moto en ese momento?</p>
+  <ol class="steps">
+    <li>Mismo origen y mismo reloj para los dos: coche, $x_c(t)=15t$ (ec. 2.12 con $a=0$); moto, $x_m(t)=\tfrac12(3.0)t^2$ (ec. 2.12 con $v_0=0$).</li>
+    <li>Se encuentran cuando $x_c=x_m$: $15t=1.5t^2 \Rightarrow t(1.5t-15)=0$. Descartando $t=0$: $t=10\ \text{s}$.</li>
+    <li>Distancia: $x=15\times10=150\ \text{m}$. Velocidad de la moto en ese instante (ec. 2.8): $v_m=3.0\times10=30\ \text{m/s}$ — el doble que el coche.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 2.5, p. 49-50">U p.49</span>
+</div>
+<div class="box tip"><span class="h">Truco de examen</span><p>Antes de tocar ninguna fórmula, escribe en una lista las cinco magnitudes $x-x_0,\ t,\ v_{0x},\ v_x,\ a_x$ y marca cuáles conoces, cuál te piden y cuál no interviene. Eso te dice directamente qué ecuación usar sin tanteos.</p></div>
+
+<h2 id="s5"><span class="n">5</span>Cuerpos en caída libre</h2>
+<div class="box def"><span class="h">Caída libre</span><p>La <b>caída libre</b> es el caso particular de aceleración constante en el que la única fuerza es la gravedad (se desprecia la resistencia del aire). Cerca de la superficie terrestre, la aceleración de caída libre tiene magnitud $g=9.80\ \text{m/s}^2$ y apunta siempre hacia abajo. Si eliges el eje $+y$ hacia arriba, entonces $a_y=-g=-9.80\ \text{m/s}^2$ — con ese signo se usan directamente las cinco ecuaciones de la sección anterior, cambiando $x$ por $y$.</p>
+  <span class="src" data-l="U" data-ref="U §2.5, p. 50-51">U p.50</span>
+</div>
+<div class="box warn"><span class="h">Error típico: el signo de g</span><p>El signo de $g$ en las ecuaciones depende de cómo hayas orientado tú el eje, no es un signo universal. Si $+y$ apunta hacia arriba, $a_y=-9.80\ \text{m/s}^2$ (siempre negativa, tanto subiendo como bajando). Si en cambio eliges $+y$ hacia abajo, entonces $a_y=+9.80\ \text{m/s}^2$. Fija el criterio de signos <i>antes</i> de sustituir números y no lo cambies a mitad de problema. Y recuerda de la sección 2.3: en el punto más alto del tiro, $v_y=0$ pero $a_y=-g$ sigue actuando — no "se apaga" la gravedad porque el objeto esté momentáneamente parado.</p>
+  <span class="src" data-l="U" data-ref="U §2.5, p. 51-53">U p.51</span>
+</div>
+<div class="box ex"><span class="h">Ejemplo del libro 2.8 — ¿dos soluciones o una?</span>
+  <p>Se lanza una pelota hacia arriba desde una azotea con $v_{0y}=15.0$ m/s. ¿En qué instante está a 5.00 m por encima del punto de lanzamiento?</p>
+  <ol class="steps">
+    <li>Con la ec. 2.12 ($a_y=-g$): $5.00=15.0t-\tfrac12(9.80)t^2$, una ecuación de <b>segundo grado</b> en $t$.</li>
+    <li>Resolviendo, salen <b>dos</b> raíces positivas: $t_1=0.38$ s y $t_2=2.68$ s.</li>
+    <li>Las dos son físicamente válidas: la pelota pasa por esa altura <b>dos veces</b> — una subiendo ($t_1$, más pronto y con $v_y>0$) y otra bajando ($t_2$, más tarde y con $v_y<0$).</li>
+  </ol>
+  <p>Contraste con el ejercicio 2.38 de más abajo: allí el techo detiene la masilla en la primera vez que llega a esa altura, así que solo la raíz "subiendo" tiene sentido físico. La lección es que <b>una ecuación de segundo grado puede dar dos soluciones matemáticamente correctas, y hay que decidir con física (no con matemáticas) cuál o cuáles corresponden al problema real.</b></p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 2.8, p. 52-53">U p.52</span>
+</div>
+
+<h2 id="s6"><span class="n">6</span>Velocidad y posición por integración</h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Las cuatro ecuaciones de la sección 2.4 solo valen si $a_x$ es constante. Si la aceleración cambia con el tiempo (por ejemplo, un cohete cuyo empuje o cuya gravedad efectiva varían), esas ecuaciones dejan de ser válidas y hay que volver a la definición: la velocidad es el área acumulada bajo la curva $a_x$-$t$, y la posición es el área acumulada bajo la curva $v_x$-$t$.</p></div>
+<div class="box thm"><span class="h">Fórmulas de integración</span>
+  $$v_x(t) = v_{0x} + \int_0^t a_x\,dt' \qquad\text{(ec. 2.17)}$$
+  $$x(t) = x_0 + \int_0^t v_x\,dt' \qquad\text{(ec. 2.18)}$$
+  <p>Geométricamente: el desplazamiento entre dos instantes es el <b>área bajo la curva</b> $v_x$ frente a $t$ en ese intervalo (con signo: el área "por debajo del eje" cuenta como negativa). Cuando $a_x$ no es constante, hay que integrar dos veces (primero $a_x\to v_x$, luego $v_x\to x$) y, si la aceleración cambia de expresión en distintos tramos de tiempo, integrar tramo a tramo usando el valor final de un tramo como condición inicial del siguiente.</p>
+  <span class="src" data-l="U" data-ref="U §2.6 ec. (2.17)-(2.18), p. 53-55">U p.53</span>
+</div>
+<p>U ilustra esto con un coche cuya aceleración decrece con el tiempo, $a_x(t)=2.00\ \text{m/s}^2-(0.100\ \text{m/s}^3)t$: integrando una vez se obtiene $v_x(t)$ y se puede hallar en qué instante la velocidad es máxima ($a_x=0$); integrando otra vez, $x(t)$. Es el mismo procedimiento, tramo único, que se aplica dos veces seguidas (con continuidad entre tramos) en el problema del cohete más abajo.
+  <span class="src" data-l="U" data-ref="U Ejemplo 2.9, p. 55">U p.55</span></p>
+<div class="box tip"><span class="h">Truco de examen</span><p>Si el enunciado da $a$ (o $g$, o una fuerza) como función de $t$ en vez de un número fijo, es la señal de que hay que integrar (sección 2.6), no usar las cuatro ecuaciones de la sección 2.4. Es exactamente el caso del ejercicio del cohete más abajo, en «Ejercicios resueltos».</p></div>
+
+<h2 id="ejercicios"><span class="n">7</span>Ejercicios resueltos</h2>
+<p>Empezamos por los cuatro ejercicios de examen real (X1-X4) del tema, y seguimos con seis del solucionario oficial (E1-E6), de más sencillo a más elaborado.</p>
+
+<details class="sol"><summary>X1 — Teoría: Velocidad instantánea <span class="src" data-l="X" data-ref="Examen Febrero 2024 (1ª semana) P-3 Opción A">X</span></summary>
+  <p class="enun">Desarrolla el tema "Velocidad instantánea" y responde: (a) ¿Puede un cuerpo tener velocidad media nula en un intervalo pero aceleración media no nula? ¿Y velocidad instantánea nula pero aceleración instantánea no nula? (b) ¿En qué condiciones la velocidad media en un intervalo coincide con alguna velocidad instantánea dentro de ese intervalo?</p>
+  <ol class="steps">
+    <li><b>Motivación.</b> La velocidad media (ec. 2.2) resume todo un intervalo de tiempo en un solo número, pero no dice nada sobre lo que pasó "en un instante" dentro de ese intervalo: un coche puede tener velocidad media 0 en una hora si sale y vuelve al mismo sitio, aunque haya ido a 120 km/h por el camino.</li>
+    <li><b>Definición.</b> La velocidad instantánea se define como el límite de la velocidad media cuando el intervalo de tiempo tiende a cero: $v_x=\lim_{\Delta t\to0}\Delta x/\Delta t = dx/dt$ (ec. 2.3). Es la derivada de la posición respecto al tiempo.</li>
+    <li><b>Signo y rapidez.</b> $v_x$ es un número con signo: positivo si el movimiento es hacia $+x$, negativo hacia $-x$. Su valor absoluto $|v_x|$ es la rapidez instantánea (lo que marca un velocímetro), siempre $\ge0$.</li>
+    <li><b>Interpretación gráfica.</b> En una gráfica $x$-$t$, la velocidad media entre $t_1$ y $t_2$ es la pendiente de la cuerda que une esos dos puntos; la velocidad instantánea en un instante $t_1$ es la pendiente de la recta tangente a la curva en ese punto — el límite de la cuerda cuando el segundo punto se acerca al primero.</li>
+    <li><b>Ejemplo.</b> Con $x=20\ \text{m}+(5.0\ \text{m/s}^2)t^2$ (movimiento tipo guepardo), $v_x=dx/dt=(10\ \text{m/s}^2)t$; en $t=1.0$ s, $v_x=10$ m/s: la pendiente de la tangente en ese instante, no la de ninguna cuerda.</li>
+    <li><b>Relación con la aceleración y con la integral.</b> Derivando otra vez se obtiene la aceleración instantánea, $a_x=dv_x/dt$ (ec. 2.5); en sentido inverso, integrando $a_x(t)$ se recupera $v_x(t)$ (ec. 2.17), y integrando $v_x(t)$ se recupera $x(t)$ (ec. 2.18) — la velocidad instantánea es el eslabón entre posición y aceleración.</li>
+    <li><b>(a) Velocidad media nula con aceleración media no nula.</b> Sí: en un tiro vertical que sube y vuelve exactamente al punto de partida en un tiempo $T$, el desplazamiento es $\Delta y=0$ (velocidad media nula), pero la velocidad cambia de $v_0$ a $-v_0$, así que $a_{\text{med}}=\Delta v_y/T=-2v_0/T\ne0$.</li>
+    <li><b>¿Y velocidad instantánea nula con aceleración instantánea no nula?</b> También sí: en el punto más alto de ese mismo tiro, $v_y=0$ durante un instante, pero $a_y=-g\ne0$ sigue actuando en todo momento (la gravedad no "se apaga" porque el objeto esté momentáneamente parado).</li>
+    <li><b>(b) ¿Cuándo coinciden v media e instantánea?</b> Si la velocidad es constante en todo el intervalo, coinciden trivialmente en cualquier instante. En general (por el teorema del valor medio del cálculo) existe siempre <i>al menos un</i> instante dentro del intervalo donde la velocidad instantánea iguala a la media. Si además la aceleración es constante, ese instante es exactamente el punto medio del intervalo (consecuencia directa de $v_{\text{med-}x}=\tfrac12(v_{0x}+v_x)$, ec. 2.10, junto con $v_x=v_{0x}+a_xt$).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> en una pregunta de teoría, sigue siempre el guion motivación → definición formal (límite) → signo/interpretación → gráfica (tangente vs. cuerda) → ejemplo numérico → relación con conceptos vecinos (aceleración, integral); y responde las cuestiones cortas apoyándote en un caso concreto (aquí, el tiro vertical) en vez de solo en abstracto.</div>
+</details>
+
+<details class="sol"><summary>X2 — Satélite que se estrella <span class="src" data-l="X" data-ref="Examen Febrero 2023 (1ª semana) P-1">X</span></summary>
+  <p class="enun">Un satélite artificial se estrella contra la Tierra. Su masa es de 210 kg y la velocidad de impacto contra la superficie es de 311 km/h. Los restos del satélite penetraron hasta una profundidad de 81 cm. Suponiendo que era constante: a) ¿Cuál fue su aceleración durante el choque? b) ¿Qué fuerza ejerció el suelo sobre el satélite durante el choque? c) ¿Durante cuánto tiempo se ejerció la mencionada fuerza? (Considere $g=9.81$ m/s².)</p>
+  <ol class="steps">
+    <li>Convertimos a SI: $v_0=311/3.6=86.39\ \text{m/s}$, $d=0.81$ m. Tomo $+y$ hacia abajo (sentido de la caída), y supongo impacto vertical (el dato de $g$ y "profundidad" lo sugieren).</li>
+    <li>a) Como no conocemos el tiempo, usamos la ecuación 2.13 con $v=0$ al final: $0=v_0^2+2a\,d \Rightarrow |a|=\dfrac{v_0^2}{2d}=\dfrac{86.39^2}{2(0.81)}=4.61\times10^3\ \text{m/s}^2$ (unas 470 veces $g$), dirigida hacia arriba (frenando la caída).</li>
+    <li>b) La pregunta es por la fuerza <b>del suelo</b> $N$, no por la fuerza neta. Sobre el satélite actúan su peso $mg$ (hacia abajo, $+y$) y $N$ (hacia arriba, $-y$). 2ª ley: $mg-N=m(-|a|) \Rightarrow N=m(|a|+g)=210\times(4607+9.81)=9.69\times10^5\ \text{N}$, hacia arriba. (La fuerza <i>neta</i> que produce la deceleración es solo $m|a|=9.67\times10^5$ N; $N$ es mayor porque además tiene que contrarrestar el peso.)</li>
+    <li>c) Con la ecuación 2.14 (no involucra $a$): $d=\tfrac12(v_0+0)t \Rightarrow t=\dfrac{2d}{v_0}=\dfrac{2(0.81)}{86.39}=1.88\times10^{-2}\ \text{s}$ (≈19 ms).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> frenado hasta detenerse en una distancia $d$ conocida: primero $|a|=v_0^2/(2d)$ con ec. 2.13; luego el tiempo con $t=2d/v_0$ (ec. 2.14) o con $t=v_0/|a|$ (ec. 2.8). Para la fuerza de contacto en un choque vertical, plantea la 2ª ley completa (incluyendo el peso) para obtener $N$, no confundas $N$ con la fuerza neta $m|a|$. Convierte siempre a SI antes de sustituir.</div>
+  <div class="recipe"><b>Error típico:</b> operar con $v_0$ todavía en km/h, o llamar "fuerza que actúa" a $N=m(|a|+g)$ sin aclarar que es la fuerza del suelo y no la fuerza neta.</div>
+</details>
+
+<details class="sol"><summary>X3 — Bala que penetra un material <span class="src" data-l="X" data-ref="Examen Febrero 2024 (1ª semana) P-1">X</span></summary>
+  <p class="enun">Para probar una protección antibalas, se dispara una bala de 10 g de masa contra una pieza de un nuevo material que se encuentra en el suelo, de forma que la trayectoria de la bala es perpendicular sobre el material (es decir, vertical hacia abajo). La bala queda incrustada en el material penetrando 2 m de profundidad. Si se disparó a 100 m/s y se supone que la aceleración al incrustarse es constante: a) el valor de la deceleración; b) ¿qué fuerza ejerció el material sobre la bala para frenarla? c) ¿qué tiempo tardó la bala hasta pararse? (Considere $g=9.81$ m/s².)</p>
+  <ol class="steps">
+    <li>Tomo $+x$ en el sentido de avance de la bala (hacia abajo). $v_0=100$ m/s, $v=0$, $d=2$ m, $m=0.010$ kg.</li>
+    <li>a) Con la ecuación 2.13 ($v=0$ al final): $|a|=\dfrac{v_0^2}{2d}=\dfrac{100^2}{2(2)}=2500\ \text{m/s}^2$ (unas 255 veces $g$).</li>
+    <li>b) La bala cae verticalmente, así que el peso ayuda a frenarla desde el punto de vista de las fuerzas: sobre ella actúan su peso $mg$ (a favor del avance, $+x$) y la fuerza del material $F$ (en contra, $-x$). 2ª ley: $mg-F=m(-|a|) \Rightarrow F=m(g+|a|)=0.010\times(2500+9.81)=25.1\ \text{N}$, hacia arriba (frenando a la bala). Si se despreciara el peso saldría 25.0 N — solo un 0.4% menos, pero como el enunciado da $g$, lo correcto es incluirlo.</li>
+    <li>c) Con la ecuación 2.14: $t=\dfrac{2d}{v_0}=\dfrac{2(2)}{100}=0.040\ \text{s}$ (se comprueba también con ec. 2.8: $t=v_0/|a|=100/2500=0.040$ s, coincide).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> idéntica a la del satélite (X2): frenado hasta parar en $d$ conocida → $|a|=v_0^2/(2d)$, $t=2d/v_0$; para la fuerza de contacto en un impacto vertical, plantea la 2ª ley completa con el peso.</div>
+  <div class="recipe"><b>Error típico:</b> olvidar que el enunciado especifica impacto vertical (perpendicular, sobre una pieza en el suelo) — si fuera horizontal, no habría que sumar el peso en absoluto.</div>
+</details>
+
+<details class="sol"><summary>X4 — Cohete con aceleración variable por tramos <span class="src" data-l="X" data-ref="Examen Febrero 2019 (2ª semana) P-1">X</span></summary>
+  <p class="enun">Un cohete se lanza verticalmente. La aceleración de la gravedad efectiva decrece con el tiempo, $g(t)=g_0-k_3t$ con $g_0=10\ \text{m/s}^2$ y $k_3=0.1\ \text{m/s}^3$. Durante los primeros 10 s el motor ejerce una fuerza $F_1=k_1M$ (con $k_1=20\ \text{m/s}^2$); de $t=10$ s a $t=60$ s, una fuerza menor $F_2=k_2M$ (con $k_2=15\ \text{m/s}^2$). Calcula la altura alcanzada tras 60 s de ascenso.</p>
+  <ol class="steps">
+    <li>Por la 2ª ley de Newton, $F-Mg(t)=Ma(t)$; como $F=kM$, la masa se cancela y queda $a(t)=k-g(t)=k-g_0+k_3t$: la aceleración no es constante, hay que integrar (ec. 2.17-2.18), no usar las ecuaciones de la sección 2.4.</li>
+    <li><b>Tramo 1 (0-10 s):</b> $a_1(t)=k_1-g_0+k_3t = 10+0.1t\ \text{m/s}^2$. Integrando desde $v(0)=0,\ y(0)=0$: $v_1(t)=10t+0.05t^2$; $y_1(t)=5t^2+t^3/60$.</li>
+    <li>En $t=10$ s: $v_1(10)=100+5=105\ \text{m/s}$; $y_1(10)=500+1000/60=516.7\ \text{m}$.</li>
+    <li><b>Tramo 2 (10-60 s):</b> $a_2(t)=k_2-g_0+k_3t = 5+0.1t\ \text{m/s}^2$, con condiciones iniciales <b>heredadas del final del tramo 1</b> por continuidad: $v(10)=105$, $y(10)=516.7$. Integrando: $v_2(t)=105+\int_{10}^t(5+0.1t')dt' = 50+5t+0.05t^2$ (constante ajustada para que $v_2(10)=105$); $y_2(t)=t^3/60+2.5t^2+50t-250$ (constante ajustada para que $y_2(10)=516.7$).</li>
+    <li>En $t=60$ s: $v_2(60)=50+300+180=530\ \text{m/s}$; $y_2(60)=216000/60+9000+3000-250=3600+9000+3000-250=15\,350\ \text{m}\approx15.4$ km.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> si $a$ depende de $t$, intégrala dos veces (primero para $v(t)$, luego para $x(t)$); si cambia de expresión por tramos, resuelve tramo a tramo usando el valor final de un tramo como condición inicial del siguiente (por continuidad de $v$ y $x$).</div>
+  <div class="recipe"><b>Error típico:</b> usar $y=\tfrac12at^2$ con una "aceleración media" inventada, o reiniciar $v=0,\ y=0$ en $t=10$ s en vez de arrastrar los valores finales del tramo anterior. Nota: la masa $M$ del cohete varía al consumir combustible, pero como $F=kM$ también es proporcional a $M$, la masa se cancela en $a=F/M-g$ — es el propio diseño del enunciado el que permite ignorar la variación de masa.</div>
+</details>
+
+<details class="sol"><summary>E1 — Problema 2.5: velocidad media vs. rapidez media <span class="src" data-l="E" data-ref="Solucionario 2-2, Prob. 2.5">E</span></summary>
+  <p class="enun">Caminas 60.0 m hacia el este en 28.0 s y luego 40.0 m hacia el oeste en 36.0 s, en línea recta. Calcula a) la velocidad media y b) la rapidez media de todo el recorrido.</p>
+  <ol class="steps">
+    <li>Tomando el este como $+x$: desplazamiento neto $\Delta x = +60.0-40.0 = +20.0$ m; tiempo total $\Delta t = 28.0+36.0=64.0$ s.</li>
+    <li>a) $v_{\text{med-}x} = 20.0/64.0 = +0.312\ \text{m/s}$ (hacia el este).</li>
+    <li>b) Distancia total recorrida (sin cancelar ida y vuelta) $=60.0+40.0=100\ \text{m}$; rapidez media $=100/64.0=1.56\ \text{m/s}$.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> velocidad media = (posición final − posición inicial)/tiempo, con signo; rapidez media = distancia total recorrida/tiempo, siempre positiva. No son lo mismo salvo que el movimiento sea todo en una sola dirección.</div>
+</details>
+
+<details class="sol"><summary>E2 — Problema 2.7: velocidad media e instantánea de x(t) <span class="src" data-l="E" data-ref="Solucionario 2-2, Prob. 2.7">E</span></summary>
+  <p class="enun">Un automóvil está detenido ante un semáforo. Después viaja en línea recta y su distancia al semáforo es $x(t)=bt^2-ct^3$, con $b=2.40\ \text{m/s}^2$ y $c=0.120\ \text{m/s}^3$. a) Calcula la velocidad media entre $t=0$ y $t=10.0$ s. b) Calcula la velocidad instantánea en $t=0$, $t=5.0$ s y $t=10.0$ s. c) ¿Cuánto tiempo después de arrancar vuelve a estar detenido?</p>
+  <ol class="steps">
+    <li>a) $x(0)=0$; $x(10)=2.40(100)-0.120(1000)=240-120=120\ \text{m}$. $v_{\text{med}}=(120-0)/10=12.0\ \text{m/s}$.</li>
+    <li>b) Derivando: $v_x(t)=2bt-3ct^2$. $v_x(0)=0$; $v_x(5)=2(2.40)(5)-3(0.120)(25)=24.0-9.0=15.0\ \text{m/s}$; $v_x(10)=2(2.40)(10)-3(0.120)(100)=48.0-36.0=12.0\ \text{m/s}$.</li>
+    <li>c) "En reposo" significa $v_x=0$: $2bt-3ct^2=0 \Rightarrow t(2b-3ct)=0$. Descartando $t=0$: $t=\dfrac{2b}{3c}=\dfrac{2(2.40)}{3(0.120)}=13.3\ \text{s}$.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> velocidad media con dos posiciones y ec. 2.2; velocidad instantánea derivando $x(t)$; "se detiene" siempre significa resolver $v_x(t)=0$, no evaluar $x(t)/t$.</div>
+</details>
+
+<details class="sol"><summary>E3 — Problema 2.13: aceleración media entre tramos <span class="src" data-l="E" data-ref="Solucionario 2-4, Prob. 2.13">E</span></summary>
+  <p class="enun">Los datos de prueba de un Bugatti Veyron Super Sport dan su rapidez en cuatro instantes: $t=0$ (arranque, $v=0$), $t=2.1$ s ($v=60$ mph), $t=20.0$ s ($v=200$ mph) y $t=53$ s ($v=253$ mph). Calcula la aceleración media en cada uno de los tres tramos que separan esos cuatro instantes.</p>
+  <ol class="steps">
+    <li>Convertimos todas las velocidades a m/s ($\times0.44704$): $60\to26.82$, $200\to89.41$, $253\to113.10\ \text{m/s}$.</li>
+    <li>Tramo 1 (0 a 2.1 s): $a_{\text{med}}=(26.82-0)/2.1=12.8\ \text{m/s}^2$.</li>
+    <li>Tramo 2 (2.1 a 20.0 s): $a_{\text{med}}=(89.41-26.82)/(20.0-2.1)=62.59/17.9=3.50\ \text{m/s}^2$.</li>
+    <li>Tramo 3 (20.0 a 53 s): $a_{\text{med}}=(113.10-89.41)/(53-20.0)=23.69/33=0.718\ \text{m/s}^2$.</li>
+    <li>La aceleración media va decreciendo tramo a tramo: en una gráfica $v_x$-$t$, la curva se va "aplanando" — la aceleración no es constante en todo el ensayo.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> la aceleración media entre dos instantes es la pendiente de la cuerda en la gráfica $v_x$-$t$: $\Delta v_x/\Delta t$ en cada tramo por separado, nunca $v/t$ desde el origen si hay tramos intermedios.</div>
+</details>
+
+<details class="sol"><summary>E4 — Problema 2.19: hallar v₀ y a sin conocerlas <span class="src" data-l="E" data-ref="Solucionario 2-6/2-7, Prob. 2.19">E</span></summary>
+  <p class="enun">Un antílope con aceleración constante recorre 70.0 m en 6.00 s, y su velocidad al final de ese intervalo es 15.0 m/s. Calcula su velocidad inicial y su aceleración.</p>
+  <ol class="steps">
+    <li>Datos conocidos: $x-x_0=70.0$ m, $t=6.00$ s, $v_x=15.0$ m/s; incógnitas: $v_{0x}$ y $a_x$.</li>
+    <li>Como no interviene $a_x$, usamos la ecuación 2.14: $x-x_0=\tfrac12(v_{0x}+v_x)t \Rightarrow v_{0x}=\dfrac{2(x-x_0)}{t}-v_x=\dfrac{2(70.0)}{6.00}-15.0=23.33-15.0=8.33\ \text{m/s}$.</li>
+    <li>Ahora con la ecuación 2.8: $a_x=\dfrac{v_x-v_{0x}}{t}=\dfrac{15.0-8.33}{6.00}=1.11\ \text{m/s}^2$.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> lista las cinco magnitudes de la Tabla 2.4, identifica cuál no interviene, y usa esa ecuación primero para despejar el dato que falta; con él, aplica una segunda ecuación para la incógnita restante.</div>
+  <div class="recipe"><b>Error típico:</b> confundir $70.0/6.00=11.7\ \text{m/s}$ (que es $v_{\text{med}}$) con $v_{0x}$ o con $v_x$: son tres cosas distintas.</div>
+</details>
+
+<details class="sol"><summary>E5 — Problema 2.34: persecución de dos móviles <span class="src" data-l="E" data-ref="Solucionario 2-11, Prob. 2.34">E</span></summary>
+  <p class="enun">En un semáforo, un coche arranca desde el reposo con aceleración constante $a=2.80\ \text{m/s}^2$ justo cuando un camión lo adelanta a velocidad constante $v=20.0\ \text{m/s}$. a) ¿A qué distancia del semáforo el coche alcanza al camión? b) ¿A qué velocidad va el coche en ese instante?</p>
+  <ol class="steps">
+    <li>Mismo origen y mismo reloj para ambos: $x_{\text{coche}}(t)=\tfrac12(2.80)t^2$; $x_{\text{camión}}(t)=20.0t$.</li>
+    <li>Se encuentran cuando $x_{\text{coche}}=x_{\text{camión}}$: $1.40t^2=20.0t \Rightarrow t(1.40t-20.0)=0$. Descartando la raíz trivial $t=0$ (el instante de partida, no de encuentro): $t=20.0/1.40=14.29\ \text{s}$.</li>
+    <li>a) Distancia: $x=20.0\times14.29=286\ \text{m}$ (comprobación con la fórmula del coche: $\tfrac12(2.80)(14.29)^2=286$ m, coincide).</li>
+    <li>b) Velocidad del coche en ese instante: $v=2.80\times14.29=40.0\ \text{m/s}$ — el doble de la del camión.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> escribe $x(t)$ de cada móvil con el mismo origen y reloj, iguálalas y resuelve para $t$, descartando la raíz $t=0$.</div>
+  <div class="recipe"><b>Error típico:</b> creer que "se alcanzan" cuando tienen la misma velocidad. Eso ocurre en $t=v/a=7.14$ s, que es el instante de <i>máxima separación</i> (mientras el camión va más rápido, se aleja; en cuanto el coche lo supera en velocidad, empieza a acercarse) — no el instante de encuentro.</div>
+</details>
+
+<details class="sol"><summary>E6 — Problema 2.38: caída libre hacia un techo <span class="src" data-l="E" data-ref="Solucionario 2-12/2-13, Prob. 2.38">E</span></summary>
+  <p class="enun">Se lanza una bola de masilla verticalmente hacia arriba con $v_0=9.50\ \text{m/s}$, hacia un techo situado 3.60 m por encima del punto de lanzamiento. a) Calcula la velocidad de la bola justo al llegar al techo. b) Calcula cuánto tiempo tarda en llegar.</p>
+  <ol class="steps">
+    <li>Tomamos $+y$ hacia arriba, así que $a_y=-g=-9.80\ \text{m/s}^2$. Primero comprobamos que la bola llega: la altura máxima posible es $v_0^2/(2g)=9.50^2/(2\times9.80)=4.60\ \text{m}>3.60\ \text{m}$, así que sí alcanza el techo, todavía subiendo.</li>
+    <li>a) Como no tenemos el tiempo, usamos la ecuación 2.13: $v_y^2=v_{0y}^2+2a_y\Delta y = 9.50^2+2(-9.80)(3.60)=90.25-70.56=19.69 \Rightarrow |v_y|=4.44\ \text{m/s}$. Como todavía está subiendo (no ha llegado a la altura máxima), se toma $v_y=+4.44\ \text{m/s}$.</li>
+    <li>b) Con la ecuación 2.8: $t=\dfrac{v_y-v_{0y}}{a_y}=\dfrac{4.44-9.50}{-9.80}=0.517\ \text{s}$.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> caída libre = aceleración constante con $a_y=-g$ si $+y$ es hacia arriba (revisa siempre el signo según tu propio criterio de ejes). Sin dato de tiempo, usa la ecuación 2.13 y elige el signo de la raíz cuadrada por sentido físico (¿sigue subiendo o ya ha empezado a bajar?).</div>
+  <div class="recipe"><b>Error típico:</b> usar $a=+9.8\ \text{m/s}^2$ cuando el eje $+y$ apunta hacia arriba, o no comprobar que la altura máxima alcanzable supera la distancia pedida.</div>
+</details>
+
+<h2 id="chuleta"><span class="n">8</span>Chuleta y lista de comprobación</h2>
+<table>
+<tr><th>Concepto</th><th>Fórmula</th></tr>
+<tr><td>Velocidad media</td><td>$v_{\text{med-}x}=\Delta x/\Delta t$ — rapidez media $=$ distancia total/tiempo</td></tr>
+<tr><td>Velocidad instantánea</td><td>$v_x=dx/dt$ (pendiente de la tangente en $x$-$t$)</td></tr>
+<tr><td>Aceleración media/instantánea</td><td>$a_{\text{med-}x}=\Delta v_x/\Delta t$; $a_x=dv_x/dt=d^2x/dt^2$</td></tr>
+<tr><td>Regla de signos</td><td>$v_x$ y $a_x$ mismo signo → acelera; signos opuestos → frena</td></tr>
+<tr><td>Aceleración constante (ec. 2.8, 2.12-2.14)</td><td>$v_x=v_{0x}+a_xt$; $x=x_0+v_{0x}t+\tfrac12a_xt^2$; $v_x^2=v_{0x}^2+2a_x(x-x_0)$; $x-x_0=\tfrac12(v_{0x}+v_x)t$</td></tr>
+<tr><td>Caída libre</td><td>caso particular con $a_y=-g$ si $+y$ es hacia arriba</td></tr>
+<tr><td>Aceleración no constante</td><td>$v_x(t)=v_{0x}+\int_0^t a_x\,dt'$; $x(t)=x_0+\int_0^t v_x\,dt'$ (ec. 2.17-2.18)</td></tr>
+</table>
+<ul class="checklist">
+  <li>Sé distinguir velocidad/rapidez media de velocidad/rapidez instantánea.</li>
+  <li>Sé leer pendientes en gráficas $x$-$t$ (cuerda = v media, tangente = v instantánea) y $v$-$t$ (cuerda = a media, área = desplazamiento).</li>
+  <li>Sé elegir, con la Tabla 2.4, la ecuación de aceleración constante que evita la magnitud que no tengo ni me piden.</li>
+  <li>Sé resolver un problema de caída libre eligiendo el signo correcto de $g$ según el eje.</li>
+  <li>Sé plantear y resolver un problema de persecución de dos móviles igualando $x(t)$.</li>
+  <li>Sé reconocer cuándo la aceleración no es constante e integrar tramo a tramo con continuidad.</li>
+</ul>
+
+<h2 id="fuentes"><span class="n">★</span>Fuentes de este tema</h2>
+<details class="fuentes-toggle">
+<summary>Mostrar lista de fuentes</summary>
+<div id="panel-fuentes"></div>
+</details>
+
+<footer>Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.</footer>
+</main>
+</div>
+</body>
+</html>
