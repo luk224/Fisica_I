@@ -24,7 +24,7 @@
   <div class="kick">Bloque Mecánica · Tema 1</div>
   <h1>Unidades, cantidades físicas y vectores</h1>
   <p>El "kit de herramientas" antes de hacer física: cómo medir, cómo redondear con honestidad y cómo sumar magnitudes que tienen dirección (vectores).</p>
-  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 1 (pp. 2-30)</span><span>Ejercicios resueltos: 8 (solucionario)</span><span>Ejercicios de examen real: 0</span><span>⏱ ~3 h de estudio</span></div>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 1 (pp. 1-33)</span><span>Ejercicios resueltos: 9 (solucionario)</span><span>Ejercicios de examen real: 0</span><span>⏱ ~3 h de estudio</span></div>
   <div class="legend">
     <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
     <span class="src" data-l="A" data-ref="Academia_Tec — resumen complementario (solo algunos temas)">A</span> Academia_Tec
@@ -35,13 +35,14 @@
   </div>
 </header>
 
-<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U cap. 1 Introducción, p. 2">U p.2</span></h2>
+<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U §1.1, p. 1-2">U p.1</span></h2>
 <p><b>Prerrequisitos:</b> trigonometría básica (seno, coseno, tangente, Pitágoras), notación científica y potencias de diez, y despejar ecuaciones sencillas. No hace falta cálculo todavía: este tema es "aritmética con cuidado" más geometría de vectores.</p>
 <p><b>Mapa del tema:</b> primero fijamos qué es medir (unidades SI) y cómo convertir entre unidades sin errores; luego aprendemos a no mentir sobre la precisión de un resultado (cifras significativas) ni sobre el esfuerzo de un cálculo (estimaciones); y por último introducimos los vectores — el lenguaje que usa TODO el resto de la asignatura (posición, velocidad, fuerza, campo…) — con sus dos "productos" (escalar y vectorial), que reaparecerán en trabajo (tema 6), momento angular (tema 10) y magnetismo.</p>
 <div class="box tip"><span class="h">Aviso sobre exámenes</span><p>Revisando los 16 exámenes de convocatorias pasadas disponibles, <b>no hay ningún ejercicio dedicado a este tema</b>: se trata casi siempre de forma transversal (un dato con las unidades "raras" que hay que convertir, o un ángulo que hay que descomponer en $x,y$ dentro de un problema de otro tema). Por eso los ejercicios resueltos de esta página son del solucionario oficial (E), no de examen — pero las técnicas (conversión de unidades, cifras significativas, componentes, producto escalar y vectorial) las usarás en casi todos los demás temas.</p></div>
 
 <h2 id="s1"><span class="n">1</span>La física y cómo resolver problemas</h2>
-<div class="box intu"><span class="h">Idea intuitiva</span><p>La física es una ciencia <i>experimental</i>: no se inventan leyes por elegancia, se proponen a partir de observaciones y se ponen a prueba con más experimentos. Ninguna ley es "para siempre y en todo caso": tiene un <b>intervalo de validez</b>. Por ejemplo, las leyes de Newton describen perfectamente una pelota o un coche, pero fallan a velocidades cercanas a la de la luz (ahí manda la relatividad) o a escala atómica (ahí manda la mecánica cuántica). Saber los límites de una ley es tan importante como saber la ley.</p></div>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>La física es una ciencia <i>experimental</i>: no se inventan leyes por elegancia, se proponen a partir de observaciones y se ponen a prueba con más experimentos. Ninguna ley es "para siempre y en todo caso": tiene un <b>intervalo de validez</b>. Por ejemplo, las leyes de Newton describen perfectamente una pelota o un coche, pero fallan a velocidades cercanas a la de la luz (ahí manda la relatividad) o a escala atómica (ahí manda la mecánica cuántica). Saber los límites de una ley es tan importante como saber la ley.</p>
+  <span class="src" data-l="U" data-ref="U §1.1, p. 2">U p.2</span></div>
 <div class="box thm"><span class="h">Estrategia IPEE</span><p>Para resolver cualquier problema de física, en vez de lanzarte a las fórmulas:</p>
   <ol class="steps">
     <li><b>Identificar</b>: ¿qué conceptos y variables intervienen? ¿qué te piden exactamente?</li>
@@ -49,34 +50,35 @@
     <li><b>Ejecutar</b>: haz el álgebra y los números, arrastrando las unidades.</li>
     <li><b>Evaluar</b>: ¿el resultado tiene sentido? ¿las unidades son las correctas? ¿el orden de magnitud es razonable?</li>
   </ol>
-  <span class="src" data-l="U" data-ref="U cap. 1, Estrategia para resolver problemas, p. 2-3">U p.2</span>
+  <span class="src" data-l="U" data-ref="U §1.2, Estrategia 1.1, p. 3">U p.3</span>
 </div>
-<p>Un <b>modelo idealizado</b> es una simplificación deliberada: tratar la Tierra como una esfera perfecta, un cable como si no tuviera masa, un gas como "ideal". No es hacer trampa: es quedarte con lo que importa para el problema y descartar lo que complica sin cambiar la respuesta de forma relevante.</p>
+<p>Un <b>modelo idealizado</b> es una simplificación deliberada: tratar la Tierra como una esfera perfecta, un cable como si no tuviera masa, un gas como "ideal". No es hacer trampa: es quedarte con lo que importa para el problema y descartar lo que complica sin cambiar la respuesta de forma relevante.
+  <span class="src" data-l="U" data-ref="U §1.2, p. 3-4">U p.3</span></p>
 
 <h2 id="s2"><span class="n">2</span>Estándares y unidades</h2>
 <div class="box def"><span class="h">Cantidad física</span><p>Una <b>cantidad física</b> es un <i>número</i> junto con una <i>unidad</i>. Decir "la mesa mide 1.5" no significa nada: hace falta decir "1.5 metros". El número por sí solo no es una medida.</p>
-  <span class="src" data-l="U" data-ref="U §1.2, p. 4">U p.4</span>
+  <span class="src" data-l="U" data-ref="U §1.3, p. 4">U p.4</span>
 </div>
-<p>El sistema que usamos es el <b>SI</b> (Sistema Internacional), con tres unidades básicas para la mecánica:</p>
+<div class="box def"><span class="h">El sistema SI</span><p>El sistema que usamos es el <b>SI</b> (Sistema Internacional), con tres unidades básicas para la mecánica:</p>
 <table>
-<tr><th>Magnitud</th><th>Unidad</th><th>Definición actual (resumida)</th></tr>
+<tr><th>Magnitud</th><th>Unidad</th><th>Definición (la que usa U, 14ª ed.)</th></tr>
 <tr><td>Tiempo</td><td>segundo (s)</td><td>Duración de 9 192 631 770 ciclos de la radiación del cesio-133</td></tr>
 <tr><td>Longitud</td><td>metro (m)</td><td>Distancia que recorre la luz en el vacío en 1/299 792 458 s</td></tr>
-<tr><td>Masa</td><td>kilogramo (kg)</td><td>Definido a partir de un cilindro patrón (históricamente en París; hoy fijado por constantes físicas)</td></tr>
+<tr><td>Masa</td><td>kilogramo (kg)</td><td>Cilindro patrón de platino-iridio en Sèvres (así lo define todavía esta edición del libro; desde 2019 el kilogramo se redefinió mediante constantes físicas, pero U no usa aún esa definición)</td></tr>
 </table>
-<span class="src" data-l="U" data-ref="U §1.3, p. 4-6">U p.4</span>
+<span class="src" data-l="U" data-ref="U §1.3, p. 4-6">U p.4</span></div>
 <p>Para no escribir números larguísimos o diminutos, se usan <b>prefijos</b>: kilo- (k, ×10³), mili- (m, ×10⁻³), micro- (µ, ×10⁻⁶), nano- (n, ×10⁻⁹). Un kilómetro son 1000 metros; un milisegundo, una milésima de segundo.</p>
 
 <h2 id="s3"><span class="n">3</span>Uso y conversión de unidades</h2>
 <div class="box intu"><span class="h">Idea intuitiva: "unos disfrazados"</span><p>Un factor de conversión como $\dfrac{1\ \text{km}}{1000\ \text{m}}$ vale exactamente <b>1</b> (numerador y denominador son la misma distancia, solo escrita distinto). Multiplicar por él no cambia la cantidad física, solo cambia su "disfraz" (las unidades en que la escribes). La clave es elegir el factor <b>orientado</b> para que la unidad que quieres eliminar se cancele arriba con abajo.</p></div>
 <div class="box thm"><span class="h">Consistencia dimensional y factores unitarios</span><p>Toda ecuación física debe ser dimensionalmente consistente: no puedes sumar metros con segundos. Para convertir unidades, multiplica por una cadena de fracciones que valgan 1, orientadas para cancelar lo que sobra:</p>
   $$763.0\ \tfrac{\text{mi}}{\text{h}}\times\frac{1.609\ \text{km}}{1\ \text{mi}}\times\frac{1000\ \text{m}}{1\ \text{km}}\times\frac{1\ \text{h}}{3600\ \text{s}} = 341.0\ \tfrac{\text{m}}{\text{s}}$$
-  <span class="src" data-l="U" data-ref="U §1.3, p. 6-7">U p.6</span>
+  <span class="src" data-l="U" data-ref="U §1.4, p. 6-7">U p.6</span>
 </div>
 <div class="box ex"><span class="h">Ejemplo del libro 1.1 — mi/h a m/s</span>
   <p>El récord de velocidad terrestre es 763.0 mi/h. Convierte a m/s.</p>
   <ol class="steps">
-    <li>Identifica los factores exactos que conoces: 1 mi = 1.609 km, 1 km = 1000 m, 1 h = 3600 s.</li>
+    <li>Identifica los factores de conversión que necesitas (apéndice E de U): 1 mi = 1.609 km (no exacto, redondeado a 4 cifras), y los exactos 1 km = 1000 m, 1 h = 3600 s.</li>
     <li>Encadena los factores unitarios de manera que se cancelen mi, luego km, luego h, dejando m y s.</li>
     <li>Multiplica los números: $763.0 \times 1.609 \times 1000 / 3600 = 341.0$.</li>
     <li>Resultado: $341.0\ \text{m/s}$ (4 cifras significativas, coherente con el dato de partida).</li>
@@ -84,23 +86,26 @@
   <span class="src" data-l="U" data-ref="U Ejemplo 1.1, p. 7">U p.7</span>
 </div>
 <div class="box warn"><span class="h">Error típico</span><p>Cuando la unidad está elevada al cuadrado o al cubo (área, volumen), el factor de conversión también hay que elevarlo a esa potencia: $1\ \text{cm}^3 = (10^{-2}\ \text{m})^3 = 10^{-6}\ \text{m}^3$, <b>no</b> $10^{-2}\ \text{m}^3$.</p></div>
+<div class="box tip"><span class="h">Truco de examen</span><p>Antes de dar por bueno cualquier resultado numérico, comprueba las <b>unidades</b> (análisis dimensional): si te piden una velocidad y te sale en kg, algo se rompió por el camino. Es la revisión más barata y más eficaz de la estrategia IPEE (paso "Evaluar").</p></div>
 
 <h2 id="s4"><span class="n">4</span>Incertidumbre y cifras significativas</h2>
-<div class="box def"><span class="h">Cifras significativas</span><p>Ninguna medida es infinitamente precisa. Las <b>cifras significativas</b> de un número son los dígitos que se conocen con confianza más uno estimado; comunican cuánto te puedes fiar del dato. Escribir "12.0 mm" en vez de "12 mm" no es adorno: dice que conoces la décima de milímetro.</p>
-  <span class="src" data-l="U" data-ref="U §1.4, p. 8-9">U p.8</span>
+<div class="box def"><span class="h">Cifras significativas, incertidumbre, precisión y exactitud</span><p>Ninguna medida es infinitamente precisa: toda medida lleva una <b>incertidumbre</b> ($\pm$ algo), que depende del instrumento. Las <b>cifras significativas</b> de un número son los dígitos que se conocen con confianza más uno estimado; comunican cuánto te puedes fiar del dato. Escribir "12.0 mm" en vez de "12 mm" no es adorno: dice que conoces la décima de milímetro. <b>Precisión</b> no es lo mismo que <b>exactitud</b>: un instrumento puede dar medidas muy repetibles (precisas) pero desviadas de calibración (poco exactas), o al revés.</p>
+  <span class="src" data-l="U" data-ref="U §1.5, p. 8-9">U p.8</span>
 </div>
 <div class="box thm"><span class="h">Reglas para combinar cifras significativas (Tabla 1.2)</span>
   <ul>
     <li><b>Multiplicación / división</b>: el resultado tiene tantas cifras significativas como el dato de partida con <i>menos</i> cifras.</li>
     <li><b>Suma / resta</b>: el resultado se redondea a la posición decimal <i>menos precisa</i> de los datos (no a un número de cifras).</li>
+    <li>Redondea (no trunques) y hazlo <b>solo al final</b> de la cadena de cálculos: el redondeo intermedio acumula error.</li>
+    <li>La notación científica deja las cifras significativas sin ambigüedad: $3\times10^8$ tiene 1 cifra; $3.00\times10^8$ tiene 3.</li>
   </ul>
-  <span class="src" data-l="U" data-ref="U §1.4 Tabla 1.2, p. 8-9">U p.8</span>
+  <span class="src" data-l="U" data-ref="U §1.5 Tabla 1.2, p. 8">U p.8</span>
 </div>
-<div class="box warn"><span class="h">Error típico</span><p>Aplicar la regla de "menos cifras" a una resta o suma. $12 - 5.98$ no se redondea contando cifras (daría "1 cifra por el 12"): se redondea al decimal menos preciso, que aquí es "sin decimales" porque 12 no tiene decimales → $6.02 \to 6$. Además, redondea <b>solo al final</b> de la cadena de cálculos, no en pasos intermedios (el redondeo intermedio acumula error).</p></div>
+<div class="box warn"><span class="h">Error típico</span><p>Aplicar la regla de "menos cifras" (la de × y ÷) a una resta o suma. En $12 - 5.98$, contando cifras significativas saldría $6.0$ (2 cifras, por el "12"), pero eso es la regla equivocada: en una resta manda el <b>decimal</b> menos preciso, y "12" no tiene decimales, así que $6.02 \to 6$ (sin decimales).</p></div>
 
 <h2 id="s5"><span class="n">5</span>Estimaciones y órdenes de magnitud</h2>
 <div class="box intu"><span class="h">Idea intuitiva</span><p>A veces no necesitas un número exacto, sino saber si algo es "del orden de 10, de 1000 o de un millón". Un <b>cálculo de orden de magnitud</b> usa números redondos y factores de aproximación (entre 2 y 10) para llegar a una respuesta con sentido, sin pretender más precisión de la que tienen los datos.</p>
-  <span class="src" data-l="U" data-ref="U §1.5, p. 10">U p.10</span>
+  <span class="src" data-l="U" data-ref="U §1.6, p. 10">U p.10</span>
 </div>
 <div class="box tip"><span class="h">Truco de examen</span><p>En una estimación solo tiene sentido dar 1 cifra significativa (o directamente la potencia de diez): escribir "3×10⁸ gal/día" es correcto; escribir "3.14×10⁸ gal/día" sugiere una precisión que no tienes.</p></div>
 
@@ -109,6 +114,9 @@
 <div class="box def"><span class="h">Escalar y vector</span><p>Escalar: magnitud descrita por un solo número (con signo y unidad). Vector: magnitud descrita por una magnitud (siempre positiva) y una dirección; se representa con una flecha, cuya longitud es proporcional a la magnitud. Dos vectores son <b>iguales</b> si tienen la misma magnitud y la misma dirección, aunque estén dibujados en sitios distintos. El <b>negativo</b> de un vector $\vec A$ es $-\vec A$: misma magnitud, dirección opuesta.</p>
   <span class="src" data-l="U" data-ref="U §1.7, p. 11-12">U p.11</span>
 </div>
+<div class="box warn"><span class="h">Error típico</span><p>$|\vec A+\vec B| \ne A+B$ en general: las magnitudes NO se suman directamente, solo cuando $\vec A$ y $\vec B$ son paralelos. Si son perpendiculares, por ejemplo, la magnitud de la suma se calcula con Pitágoras, no sumando. La <b>resta</b> se define como sumar el negativo: $\vec A-\vec B = \vec A+(-\vec B)$ — se dibuja como $\vec A$ más el vector $\vec B$ invertido. Multiplicar un vector por un escalar $c$ da $c\vec A$: si $c>0$ mantiene la dirección (y cambia la magnitud), si $c<0$ la invierte (vector <b>antiparalelo</b>).</p>
+  <span class="src" data-l="U" data-ref="U §1.7 ec. (1.3)-(1.4), p. 12">U p.12</span>
+</div>
 <figure class="fig">
 <svg class="fig" viewBox="0 0 320 160" width="100%" role="img" aria-label="Suma de vectores cola-punta">
   <line class="ax" x1="20" y1="140" x2="300" y2="140"/>
@@ -116,16 +124,16 @@
   <line class="b" x1="130" y1="60" x2="230" y2="90" marker-end="url(#arB1)"/>
   <line class="a" x1="30" y1="130" x2="230" y2="90" stroke-dasharray="5 4" marker-end="url(#arC1)"/>
   <defs>
-    <marker id="arA1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--acc)"/></marker>
-    <marker id="arB1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--A)"/></marker>
-    <marker id="arC1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--fg)"/></marker>
+    <marker id="arA1" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--acc)"/></marker>
+    <marker id="arB1" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--A)"/></marker>
+    <marker id="arC1" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--acc)"/></marker>
   </defs>
   <text x="70" y="80" class="sm">A</text><text x="175" y="65" class="sm">B</text><text x="120" y="120" class="sm">A + B</text>
 </svg>
 <figcaption>Suma cola-punta: se coloca la cola de $\vec B$ en la punta de $\vec A$; el vector suma $\vec A+\vec B$ va de la cola de $\vec A$ a la punta de $\vec B$. La suma de vectores es conmutativa: $\vec A+\vec B=\vec B+\vec A$. <span class="src" data-l="P" data-ref="Diagrama propio del método cola-punta">P</span></figcaption>
 </figure>
 <div class="box thm"><span class="h">Suma gráfica</span><p>Método <b>cola-punta</b>: coloca la cola del segundo vector en la punta del primero; la suma va del origen del primero al final del segundo. Método del <b>paralelogramo</b>: con ambos vectores desde el mismo origen, la suma es la diagonal del paralelogramo que forman. Ambos dan el mismo resultado, y la suma es conmutativa y asociativa.</p>
-  <span class="src" data-l="U" data-ref="U §1.7, p. 12-13">U p.12</span>
+  <span class="src" data-l="U" data-ref="U §1.7, fig. 1.11, p. 12-13">U p.12</span>
 </div>
 
 <h2 id="s7"><span class="n">7</span>Componentes de vectores</h2>
@@ -134,61 +142,64 @@
   $$A_x = A\cos\theta \qquad A_y = A\sin\theta$$
   <p>y a la inversa, conocidas las componentes:</p>
   $$A = \sqrt{A_x^2+A_y^2} \qquad \tan\theta = \frac{A_y}{A_x}$$
-  <span class="src" data-l="U" data-ref="U §1.8 ec. (1.5)-(1.7), p. 14-15">U p.14</span>
+  <span class="src" data-l="U" data-ref="U §1.8 ec. (1.5)-(1.7), p. 14-16">U p.14</span>
 </div>
-<div class="box warn"><span class="h">Error típico</span><p>La calculadora da $\theta=\arctan(A_y/A_x)$ siempre en el rango $(-90°,90°)$, es decir, solo "acierta" si $\vec A$ está en el 1er o 4º cuadrante. Si $A_x<0$ (2º o 3º cuadrante), hay que <b>sumar 180°</b> al resultado de la calculadora. Dibujar siempre un croquis rápido para saber en qué cuadrante cae el vector evita este error.</p></div>
+<div class="box warn"><span class="h">Error típico</span><p>Las fórmulas $A_x=A\cos\theta$, $A_y=A\sin\theta$ solo valen si $\theta$ se mide desde el eje $+x$ en sentido antihorario (U Ejemplo 1.6, p. 15). Si el ángulo del enunciado se mide desde el eje $+y$, o hacia $-y$, o en sentido horario, <b>hay que convertirlo primero</b> a la convención estándar (o cambiar seno por coseno con cuidado) — es justo la dificultad del problema 1.31 más abajo. Además, la calculadora da $\theta=\arctan(A_y/A_x)$ siempre en el rango $(-90°,90°)$, es decir, solo "acierta" si $\vec A$ está en el 1er o 4º cuadrante. Si $A_x<0$ (2º o 3º cuadrante), hay que <b>sumar 180°</b> al resultado de la calculadora. Dibujar siempre un croquis rápido para saber en qué cuadrante cae el vector evita ambos errores.</p></div>
 <div class="box thm"><span class="h">Suma por componentes</span><p>Si $\vec R = \vec A+\vec B$, entonces cada componente se suma por separado:</p>
   $$R_x = A_x+B_x \qquad R_y = A_y+B_y$$
   <p>y luego se recupera magnitud y ángulo de $\vec R$ con las fórmulas anteriores. Este método se generaliza a cualquier número de vectores y a tres dimensiones (añadiendo $R_z=A_z+B_z$).</p>
-  <span class="src" data-l="U" data-ref="U §1.8 ec. (1.8)-(1.9), p. 16-17">U p.16</span>
+  <span class="src" data-l="U" data-ref="U §1.8 ec. (1.9)-(1.11), p. 16-17">U p.16</span>
 </div>
 
 <h2 id="s8"><span class="n">8</span>Vectores unitarios</h2>
 <div class="box def"><span class="h">Vectores unitarios î, ĵ, k̂</span><p>Un <b>vector unitario</b> tiene magnitud 1 y solo indica dirección. Los vectores $\hat\imath$, $\hat\jmath$, $\hat k$ apuntan a lo largo de $+x$, $+y$, $+z$ respectivamente. Cualquier vector se escribe como combinación de ellos:</p>
   $$\vec A = A_x\hat\imath + A_y\hat\jmath + A_z\hat k$$
   <p>Esta notación hace que sumar, restar o multiplicar por un escalar sea "componente a componente", sin dibujar nada.</p>
-  <span class="src" data-l="U" data-ref="U §1.9 ec. (1.13), p. 18-19">U p.18</span>
+  <span class="src" data-l="U" data-ref="U §1.9 ec. (1.14), p. 18-19">U p.18</span>
 </div>
 <div class="box ex"><span class="h">Ejemplo del libro 1.8 — combinación de vectores unitarios</span>
-  <p>Con $\vec D = 6\hat\imath+3\hat\jmath+1\hat k$ y $\vec E=-4\hat\imath+5\hat\jmath-8\hat k$, halla $|2\vec D-\vec E|$.</p>
+  <p>Con $\vec D = (6.00\hat\imath+3.00\hat\jmath-1.00\hat k)$ m y $\vec E=(4.00\hat\imath-5.00\hat\jmath+8.00\hat k)$ m, halla $|2\vec D-\vec E|$.</p>
   <ol class="steps">
-    <li>$2\vec D = 12\hat\imath+6\hat\jmath+2\hat k$.</li>
-    <li>$2\vec D-\vec E = (12-(-4))\hat\imath+(6-5)\hat\jmath+(2-(-8))\hat k = 16\hat\imath+1\hat\jmath+10\hat k$.</li>
-    <li>Magnitud: $\sqrt{16^2+1^2+10^2}=\sqrt{256+1+100}=\sqrt{357}=16.9$.</li>
+    <li>$2\vec D = (12.00\hat\imath+6.00\hat\jmath-2.00\hat k)$ m.</li>
+    <li>$2\vec D-\vec E = [(12.00-4.00)\hat\imath+(6.00-(-5.00))\hat\jmath+(-2.00-8.00)\hat k]$ m $= (8.00\hat\imath+11.00\hat\jmath-10.00\hat k)$ m.</li>
+    <li>Magnitud: $\sqrt{8.00^2+11.00^2+10.00^2}=\sqrt{285}=16.9$ m.</li>
   </ol>
   <span class="src" data-l="U" data-ref="U Ejemplo 1.8, p. 19">U p.19</span>
 </div>
 
 <h2 id="s9"><span class="n">9</span>Producto escalar</h2>
-<div class="box intu"><span class="h">Idea intuitiva</span><p>El producto escalar mide "cuánto apunta un vector en la dirección del otro". Si son paralelos, el producto es máximo positivo; si son perpendiculares, es cero; si apuntan en direcciones opuestas, es negativo. Reaparecerá en el tema 6 como la definición de <i>trabajo</i>: $W=\vec F\cdot\vec d$.</p></div>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>El producto escalar mide "cuánto apunta un vector en la dirección del otro": geométricamente, $\vec A\cdot\vec B = A\,(B\cos\phi)$ es $A$ multiplicado por la <b>proyección</b> de $\vec B$ sobre la dirección de $\vec A$. Si son paralelos, el producto es máximo positivo; si son perpendiculares, es cero; si apuntan en direcciones opuestas, es negativo. Reaparecerá en el tema 6 como la definición de <i>trabajo</i>: $W=\vec F\cdot\vec s$.</p></div>
 <div class="box def"><span class="h">Producto escalar (producto punto)</span>
   $$\vec A\cdot\vec B = AB\cos\phi = A_xB_x+A_yB_y+A_zB_z$$
-  <p>donde $\phi$ es el ángulo entre los dos vectores. El resultado es un <b>escalar</b> (un número, no un vector), y el orden no importa: $\vec A\cdot\vec B=\vec B\cdot\vec A$.</p>
-  <span class="src" data-l="U" data-ref="U §1.10 ec. (1.16),(1.19), p. 20-21">U p.20</span>
+  <p>donde $\phi$ es el ángulo entre los dos vectores. El resultado es un <b>escalar</b> (un número, no un vector), y el orden no importa: $\vec A\cdot\vec B=\vec B\cdot\vec A$. Para los vectores unitarios: $\hat\imath\cdot\hat\imath=\hat\jmath\cdot\hat\jmath=\hat k\cdot\hat k=1$ y $\hat\imath\cdot\hat\jmath=\hat\jmath\cdot\hat k=\hat k\cdot\hat\imath=0$ (por eso al desarrollar $\vec A\cdot\vec B$ solo sobreviven los términos $A_xB_x$, $A_yB_y$, $A_zB_z$).</p>
+  <span class="src" data-l="U" data-ref="U §1.10 ec. (1.16),(1.17),(1.19), p. 20-21">U p.20</span>
 </div>
-<div class="box ex"><span class="h">Ejemplo del libro — signo del producto escalar</span>
+<div class="box ex"><span class="h">Ejemplo del libro 1.9 — signo del producto escalar</span>
   <p>Con $A=4$, $B=5$ y $\phi=77°$: $\vec A\cdot\vec B = 4\times5\times\cos77° = 4.50$.</p>
   <p>Como $\phi<90°$, el producto sale positivo (coherente: los vectores apuntan "más o menos" en la misma dirección). Si $\phi$ fuera mayor de 90°, el coseno sería negativo y también lo sería el producto.</p>
-  <span class="src" data-l="U" data-ref="U §1.10, p. 20-21">U p.20</span>
+  <span class="src" data-l="U" data-ref="U Ejemplo 1.9, p. 21">U p.21</span>
 </div>
 
 <h2 id="s10"><span class="n">10</span>Producto vectorial</h2>
-<div class="box intu"><span class="h">Idea intuitiva</span><p>El producto vectorial mide "cuánto giran" dos vectores entre sí: es máximo cuando son perpendiculares y cero cuando son paralelos (justo lo contrario que el producto escalar). El resultado no es un número sino <b>otro vector</b>, perpendicular a los dos de partida. Reaparecerá en el torque (tema 10) y el momento angular.</p></div>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>El producto vectorial de $\vec A$ y $\vec B$ es, en módulo, $A$ multiplicado por la componente de $\vec B$ <b>perpendicular</b> a $\vec A$ — geométricamente, el área del paralelogramo que forman los dos vectores. Es máximo cuando son perpendiculares y cero cuando son paralelos (justo lo contrario que el producto escalar). El resultado no es un número sino <b>otro vector</b>, perpendicular a los dos de partida. Reaparecerá en la torca (tema 10) y el momento angular.</p></div>
 <div class="box def"><span class="h">Producto vectorial (producto cruz)</span>
-  <p>Magnitud: $|\vec A\times\vec B| = AB\sin\phi$. Dirección: perpendicular al plano de $\vec A$ y $\vec B$, dada por la <b>regla de la mano derecha</b> (dedos de $\vec A$ hacia $\vec B$ por el camino más corto; el pulgar señala $\vec A\times\vec B$).</p>
+  <p>Magnitud: $|\vec A\times\vec B| = AB\sin\phi$ (con $\phi$ el ángulo menor entre ambos). Dirección: perpendicular al plano de $\vec A$ y $\vec B$, dada por la <b>regla de la mano derecha</b> (dedos de $\vec A$ hacia $\vec B$ por el camino más corto; el pulgar señala $\vec A\times\vec B$) — el sistema $\hat\imath,\hat\jmath,\hat k$ de U es siempre <b>dextrógiro</b> (mano derecha), nunca levógiro.</p>
   <p>El producto vectorial es <b>anticonmutativo</b>: $\vec A\times\vec B = -(\vec B\times\vec A)$. Para los vectores unitarios: $\hat\imath\times\hat\jmath=\hat k$, $\hat\jmath\times\hat k=\hat\imath$, $\hat k\times\hat\imath=\hat\jmath$ (y al revés cambia el signo). En componentes:</p>
   $$C_x = A_yB_z-A_zB_y \qquad C_y = A_zB_x-A_xB_z \qquad C_z = A_xB_y-A_yB_x$$
   <span class="src" data-l="U" data-ref="U §1.10 ec. (1.20)-(1.25), p. 22-23">U p.22</span>
 </div>
-<div class="box ex"><span class="h">Ejemplo del libro — magnitud y dirección</span>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_1_manoderecha.png" alt="Figura 1.30 de U: regla de la mano derecha para obtener la dirección de A×B, con los cuatro pasos numerados." loading="lazy">
+<figcaption>Fig. 1.30 de U: los cuatro pasos de la regla de la mano derecha para $\vec A\times\vec B$. <span class="src" data-l="U" data-ref="U fig. 1.30, p. 22">U p.22</span></figcaption>
+</figure>
+<div class="box ex"><span class="h">Ejemplo del libro 1.11 — magnitud y dirección</span>
   <p>$\vec A$ de magnitud 6, sobre el eje $+x$; $\vec B$ de magnitud 4, a 30° de $\vec A$. $|\vec A\times\vec B| = 6\times4\times\sin30° = 12$, dirección $+z$ (sale del papel, por la mano derecha).</p>
-  <span class="src" data-l="U" data-ref="U §1.10, p. 23">U p.23</span>
+  <span class="src" data-l="U" data-ref="U Ejemplo 1.11, p. 24">U p.24</span>
 </div>
 <div class="box warn"><span class="h">Error típico</span><p>Olvidar que el orden importa: $\hat\jmath\times\hat\imath=-\hat k$, no $+\hat k$. Si te equivocas de orden en un producto cruz, el resultado sale con el signo (y la dirección) invertidos.</p></div>
-<div class="box tip"><span class="h">Truco de examen</span><p>Antes de dar por bueno cualquier resultado numérico, comprueba las <b>unidades</b> (análisis dimensional): si te piden una velocidad y te sale en kg, algo se rompió por el camino. Es la revisión más barata y más eficaz de la estrategia IPEE.</p></div>
 
 <h2 id="ejercicios"><span class="n">11</span>Ejercicios resueltos</h2>
-<p>Como se indica en «Antes de empezar», este tema no tiene ningún ejercicio de examen real dedicado en los 16 exámenes revisados; los ocho ejercicios siguientes son del solucionario oficial (E), ordenados de más sencillo a más elaborado.</p>
+<p>Como se indica en «Antes de empezar», este tema no tiene ningún ejercicio de examen real dedicado en los 16 exámenes revisados; los nueve ejercicios siguientes son del solucionario oficial (E), ordenados de más sencillo a más elaborado.</p>
 
 <details class="sol"><summary>Problema 1.10 — conversión de unidades <span class="src" data-l="E" data-ref="Solucionario 1-2, Prob. 1.10">E</span></summary>
   <p class="enun">a) Un coche va a 60 mi/h. ¿A cuántos ft/s equivale? b) La aceleración de la gravedad es 32 ft/s². ¿Cuánto es en m/s²? c) La densidad del agua es 1.0 g/cm³. ¿Cuánto es en kg/m³?</p>
@@ -213,8 +224,9 @@
 </details>
 
 <details class="sol"><summary>Problema 1.18 — estimación de orden de magnitud <span class="src" data-l="E" data-ref="Solucionario 1-4, Prob. 1.18">E</span></summary>
-  <p class="enun">Estima cuántos galones de gasolina se consumen al día en EE. UU., suponiendo 2 coches por cada 3 personas (población ≈3×10⁸), cada coche recorre 10 000 mi/año y rinde 20 mi/gal.</p>
+  <p class="enun">Estima cuántos galones de gasolina se consumen al día en EE. UU., suponiendo 2 coches por cada 3 personas, que cada coche recorre 10 000 mi/año y rinde 20 mi/gal.</p>
   <ol class="steps">
+    <li>El enunciado no da la población: hay que estimarla, que es justo la habilidad que se practica en este apartado (U §1.6). Tomamos $\approx3\times10^8$ habitantes (EE. UU., orden de magnitud).</li>
     <li>Número de coches: $3\times10^8 \times \tfrac{2}{3} = 2\times10^8$ coches.</li>
     <li>Recorrido diario por coche: $10\,000\ \text{mi/año} / 365\ \text{día/año} \approx 27\ \text{mi/día}$.</li>
     <li>Consumo por coche: $27\ \text{mi/día} / 20\ \text{mi/gal} \approx 1.4\ \text{gal/día}$.</li>
@@ -228,7 +240,7 @@
   <ol class="steps">
     <li>Componentes: $A_x=0,\ A_y=-8.00$; $B_x=15.0\sin30.0°=7.50$, $B_y=15.0\cos30.0°=12.99$.</li>
     <li>a) $\vec C=\vec A+\vec B$: $C_x=7.50$, $C_y=4.99$ → $C=\sqrt{7.50^2+4.99^2}=9.01\ \text{m}$; $\theta=\arctan(4.99/7.50)=33.6°$ (1er cuadrante, ambas componentes positivas, sin corrección).</li>
-    <li>b) $\vec B+\vec A=\vec A+\vec B$ por conmutatividad: mismo resultado, 9.01 m a 33.6°.</li>
+    <li>b) $\vec B+\vec A=\vec A+\vec B$ por conmutatividad: mismo resultado, 9.01 m a 33.6° (el solucionario da 33.7° por redondear $B_y$ a 13.0 m antes de dividir; sin ese redondeo intermedio sale 33.6°).</li>
     <li>c) $\vec D=\vec A-\vec B$: $D_x=-7.50$, $D_y=-20.99$ → $D=\sqrt{7.50^2+20.99^2}=22.3\ \text{m}$; $\arctan(-20.99/-7.50)=70.3°$, pero como <b>ambas</b> componentes son negativas (3er cuadrante) hay que sumar 180°: $\theta=250.3°$.</li>
     <li>d) $\vec B-\vec A=-\vec D$: misma magnitud 22.3 m, dirección opuesta a c): $\theta=70.3°$.</li>
   </ol>
@@ -237,16 +249,16 @@
     <line class="ax" x1="20" y1="20" x2="20" y2="200"/>
     <line class="ax" x1="20" y1="110" x2="280" y2="110"/>
     <line class="a" x1="20" y1="110" x2="20" y2="190" marker-end="url(#arA2)"/>
-    <line class="b" x1="20" y1="190" x2="120" y2="140" marker-end="url(#arB2)"/>
-    <line class="a" x1="20" y1="110" x2="120" y2="140" stroke-dasharray="5 4" marker-end="url(#arC2)"/>
+    <line class="b" x1="20" y1="190" x2="95" y2="60" marker-end="url(#arB2)"/>
+    <line class="a" x1="20" y1="110" x2="95" y2="60" stroke-dasharray="5 4" marker-end="url(#arC2)"/>
     <defs>
-      <marker id="arA2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--acc)"/></marker>
-      <marker id="arB2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--A)"/></marker>
-      <marker id="arC2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--fg)"/></marker>
+      <marker id="arA2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--acc)"/></marker>
+      <marker id="arB2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--A)"/></marker>
+      <marker id="arC2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--acc)"/></marker>
     </defs>
-    <text x="26" y="155" class="sm">A</text><text x="65" y="175" class="sm">B</text><text x="55" y="130" class="sm">A+B</text>
+    <text x="26" y="155" class="sm">A</text><text x="55" y="105" class="sm">B</text><text x="45" y="80" class="sm bd">A+B</text>
   </svg>
-  <figcaption>$\vec A$ apunta hacia $-y$; $\vec B$ está a 30.0° del eje $+y$. La suma cola-punta cae en el 1er cuadrante. <span class="src" data-l="P" data-ref="Diagrama propio para el problema 1.31">P</span></figcaption>
+  <figcaption>$\vec A$ apunta hacia $-y$; $\vec B$ está a 30.0° del eje $+y$ (60.0° del eje $+x$), dibujado a escala (10 px/m). La suma cola-punta $\vec A+\vec B$ cae en el 1er cuadrante, como corresponde a $C_x=7.50$, $C_y=4.99$ (ambas positivas). <span class="src" data-l="P" data-ref="Diagrama propio para el problema 1.31, a escala 10 px/m">P</span></figcaption>
   </figure>
   <div class="recipe"><b>Receta:</b> pasa cada vector a componentes con signo, suma/resta componente a componente, recupera magnitud con Pitágoras y ángulo con arctan corrigiendo el cuadrante según los signos de las componentes.</div>
 </details>
@@ -277,6 +289,7 @@
     <li>$\vec A\times\vec B = (4\hat\imath+7\hat\jmath)\times(5\hat\imath-2\hat\jmath) = 4(-2)(\hat\imath\times\hat\jmath) + 7(5)(\hat\jmath\times\hat\imath)$ (los términos $\hat\imath\times\hat\imath$ y $\hat\jmath\times\hat\jmath$ son nulos).</li>
     <li>Con $\hat\imath\times\hat\jmath=\hat k$ y $\hat\jmath\times\hat\imath=-\hat k$: $=-8\hat k - 35\hat k = -43.0\hat k$.</li>
     <li>Comprobación con la fórmula de componentes: $C_z=A_xB_y-A_yB_x = 4(-2)-7(5) = -8-35=-43$. Coincide.</li>
+    <li>Magnitud del producto vectorial: como el resultado es puramente $-\hat k$, su magnitud es directamente el coeficiente, $|\vec A\times\vec B| = 43.0$.</li>
   </ol>
   <div class="recipe"><b>Receta:</b> desarrolla el producto término a término usando $\hat\imath\times\hat\jmath=\hat k$, $\hat\jmath\times\hat\imath=-\hat k$; verifica siempre con $C_z=A_xB_y-A_yB_x$.</div>
 </details>
@@ -299,7 +312,7 @@
     <li>Densidad en unidades SI: $\rho = 1.76\ \text{g/cm}^3 = 1760\ \text{kg/m}^3$ (factor de longitud al cubo, como en el problema 1.10c).</li>
     <li>Volumen: $V = m/\rho = 1.87\times10^{22}\ \text{m}^3$.</li>
     <li>Radio (esfera): $V=\tfrac{4}{3}\pi r^3 \Rightarrow r = \left(\dfrac{3V}{4\pi}\right)^{1/3} = 1.65\times10^4\ \text{km}$.</li>
-    <li>Razón con la Tierra: $r/r_T = 2.58$. Como el dato "5.5" solo tiene 2 cifras significativas: $r\approx1.6\times10^4\ \text{km}\approx2.6\,r_T$.</li>
+    <li>Razón con la Tierra: $r/r_T = 2.58$. Como el dato "5.5" solo tiene 2 cifras significativas: $r\approx1.6\times10^4\ \text{km}\approx2.6\,r_T$ (el solucionario da $1.64\times10^4$ km y $2.57\,r_T$ por un redondeo intermedio del volumen; sin ese redondeo el valor exacto es $1.645\times10^4$ km, $2.58\,r_T$).</li>
   </ol>
   <div class="recipe"><b>Receta:</b> de masa y densidad se obtiene el volumen ($V=m/\rho$), y de un volumen esférico el radio con $r=(3V/4\pi)^{1/3}$; para comparar planetas basta la razón $r\propto(m/\rho)^{1/3}$, sin recalcular todo.</div>
 </details>

@@ -30,7 +30,7 @@
     if (panel) {
       var seen = {}, ul = d.createElement('ul');
       d.querySelectorAll('main .src').forEach(function (s) {
-        if (panel.contains(s)) return;
+        if (panel.contains(s) || s.closest('.legend')) return;
         var k = s.dataset.l + '|' + s.dataset.ref; if (seen[k]) return; seen[k] = 1;
         var li = d.createElement('li'), c = s.cloneNode(true);
         li.appendChild(c); li.appendChild(d.createTextNode(' ' + s.dataset.ref)); ul.appendChild(li);
