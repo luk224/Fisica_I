@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física I · Tema 4 Leyes del movimiento de Newton</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Índice de temas</a>
+  <span><button id="btn-sol" type="button">Mostrar soluciones</button> <button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+
+<div class="layout">
+<nav class="side-toc" aria-label="Índice del tema"><b>En esta página</b></nav>
+<main>
+
+<header class="hero">
+  <div class="kick">Bloque Mecánica · Tema 4</div>
+  <h1>Leyes del movimiento de Newton</h1>
+  <p>Las tres reglas que gobiernan cómo las fuerzas cambian (o no cambian) el movimiento: por qué nada se mueve sin motivo, por qué empujar más fuerte acelera más, y por qué toda fuerza tiene una "réplica" en el cuerpo que la ejerce.</p>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 4 (pp. 101-121)</span><span>Ejercicios de examen real: 0 propios (3 compartidos con Tema 2)</span><span>Ejercicios del solucionario: 9</span><span>⏱ ~4 h de estudio</span></div>
+  <div class="legend">
+    <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
+    <span class="src" data-l="A" data-ref="Academia_Tec — resumen complementario (solo algunos temas)">A</span> Academia_Tec
+    <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
+    <span class="src" data-l="X" data-ref="Ejercicio de examen real, ver fuentes_txt/examenes_por_tema.md">X</span> examen real
+    <span class="src" data-l="P" data-ref="Explicación o ejemplo propio, sin página en los libros">P</span> propio
+    — pasa el ratón (o toca) por cada etiqueta para ver la fuente exacta; en pantallas anchas aparecen en el margen derecho.
+  </div>
+</header>
+
+<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U cap. 4 Introducción, p. 101">U p.101</span></h2>
+<p><b>Prerrequisitos:</b> vectores y componentes (tema 1: suma por componentes, magnitud y ángulo corrigiendo cuadrante) y cinemática 1D/2D completa (temas 2-3: las cuatro ecuaciones de aceleración constante, $a=\Delta v/\Delta t$, $v^2=v_0^2+2a\Delta x$). Este tema no añade matemáticas nuevas: añade la <b>causa</b> del movimiento — hasta ahora describíamos cómo se mueve algo, ahora explicamos <i>por qué</i>.</p>
+<p><b>Mapa del tema:</b> la sección 4.1 define qué es una fuerza y cómo se suman varias (repaso de vectores aplicado a un contexto nuevo). La 4.2 (primera ley) dice qué pasa cuando la suma es cero: nada cambia. La 4.3 (segunda ley) es el núcleo del tema: cuantifica qué pasa cuando la suma no es cero, $\sum\vec F=m\vec a$, y por primera vez conectamos "fuerza" (esta parte) con "aceleración" (temas 2-3). La 4.4 aclara la diferencia, muy examinada, entre masa y peso. La 4.5 (tercera ley) introduce que las fuerzas siempre vienen en parejas entre dos cuerpos distintos. La 4.6 cierra con la técnica que usarás en <b>todos</b> los problemas de dinámica a partir de aquí (tema 5 en adelante): el diagrama de cuerpo libre.</p>
+<div class="box tip"><span class="h">Aviso sobre exámenes</span><p>Revisando los exámenes de convocatorias pasadas, <b>no se ha encontrado ningún ejercicio cuyo tema principal sea específicamente las leyes de Newton "puras"</b> (sin fricción, planos inclinados o poleas): ese tipo de problema aparece ya combinado con la segunda ley en el <b>tema 5</b> (aplicación de las leyes de Newton), que es donde caen los problemas de examen reales de dinámica más elaborados. El Tema 4 sí aparece como ingrediente <i>secundario</i> en tres problemas de examen que son, en el fondo, «cinemática (tema 2) + segunda ley»: el cohete con fuerza variable, el satélite que se estrella y la bala que penetra un material — los tres ya resueltos como X2, X3 y X4 en el <a href="../temas/tema_02_movimiento_rectilineo.html">Tema 2</a>. Por eso los nueve ejercicios resueltos de esta página son del solucionario oficial (E), elegidos y ordenados para dejarte muy afianzadas las tres leyes antes de complicarlas con fricción en el tema 5.</p></div>
+
+<h2 id="s1"><span class="n">1</span>Fuerza e interacciones</h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>En el lenguaje cotidiano, "fuerza" es un empujón o un jalón. Físicamente, una fuerza es siempre el resultado de una <b>interacción</b> entre dos cuerpos: no existe una fuerza "suelta", flotando sin un cuerpo que la ejerza y otro que la reciba. Algunas fuerzas necesitan contacto físico (empujar una caja, la tensión de una cuerda, la fricción); otras actúan a distancia sin tocarse (la gravedad, el magnetismo) — se llaman fuerzas de <b>largo alcance</b>.</p>
+  <span class="src" data-l="U" data-ref="U §4.1, p. 102-103">U p.102</span></div>
+<div class="box def"><span class="h">Fuerza</span><p>Una <b>fuerza</b> es una cantidad <i>vectorial</i>: tiene magnitud (¿cuánto empuja o jala?) y dirección (¿hacia dónde?). Se dibuja como una flecha cuya longitud es proporcional a su magnitud. Su unidad en el SI es el <b>newton</b> (N), que se define formalmente en la sección 4.3.</p>
+  <span class="src" data-l="U" data-ref="U §4.1 fig. 4.3, p. 103">U p.103</span></div>
+<div class="box def"><span class="h">Las fuerzas más comunes en los problemas</span>
+  <ul>
+    <li><b>Normal</b> $\vec n$: fuerza de contacto que una superficie ejerce perpendicular a sí misma sobre el cuerpo que la toca (U usa $n$ en cursiva para no confundirla con el newton, N).</li>
+    <li><b>Fricción</b> $\vec f$: fuerza de contacto paralela a la superficie, que se opone al deslizamiento (o tendencia a deslizar) entre el cuerpo y la superficie.</li>
+    <li><b>Tensión</b> $\vec T$: fuerza que una cuerda, cable o cadena tirante ejerce sobre lo que sujeta en sus extremos.</li>
+    <li><b>Peso</b> $\vec w$: fuerza de largo alcance que la gravedad ejerce sobre el cuerpo (se desarrolla en la sección 4.4). A diferencia de las otras tres, no necesita contacto y actúa <b>siempre</b>, esté el cuerpo en reposo, moviéndose o en el aire.</li>
+  </ul>
+  <span class="src" data-l="U" data-ref="U §4.1 fig. 4.2, p. 102">U p.102</span>
+</div>
+<div class="box thm"><span class="h">Superposición de fuerzas</span><p>Los experimentos muestran que cuando varias fuerzas actúan a la vez sobre un cuerpo en el mismo punto, su efecto combinado es igual al de una sola fuerza igual a la <b>suma vectorial</b> de todas ellas (la <b>fuerza neta</b> o <b>resultante</b>):</p>
+  $$\vec R=\sum\vec F=\vec F_1+\vec F_2+\cdots \qquad\text{(ec. 4.1)}$$
+  <p>Por componentes (exactamente el método del tema 1):</p>
+  $$R_x=\sum F_x \qquad R_y=\sum F_y \qquad\text{(ec. 4.2)}$$
+  <p>Cada componente puede ser positiva, negativa o cero — cuidado con los signos al sumar. En 3D se añade $R_z=\sum F_z$, y la magnitud de la fuerza neta es $R=\sqrt{R_x^2+R_y^2(+R_z^2)}$.</p>
+  <span class="src" data-l="U" data-ref="U §4.1 ec. (4.1)-(4.2), p. 103-104">U p.103</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 4.1 — superposición de fuerzas (los tres luchadores)</span>
+  <p>Tres luchadores tiran del mismo cinturón de campeonato con tres fuerzas horizontales: $F_1=250$ N a $127°$, $F_2=50$ N a $0°$, $F_3=120$ N a $270°$ (medidos desde el eje $+x$). Halla la fuerza neta.</p>
+  <ol class="steps">
+    <li>Componentes de cada fuerza con $F_x=F\cos\theta$, $F_y=F\sin\theta$ (tema 1): $F_{1x}=-150$ N, $F_{1y}=200$ N; $F_{2x}=50$ N, $F_{2y}=0$; $F_{3x}=0$, $F_{3y}=-120$ N.</li>
+    <li>Suma por componentes (ec. 4.2): $R_x=-150+50+0=-100$ N; $R_y=200+0-120=80$ N.</li>
+    <li>Magnitud: $R=\sqrt{(-100)^2+80^2}=128$ N.</li>
+    <li>Ángulo: $\arctan(80/{-100})=-39°$, pero $R_x<0$, $R_y>0$ sitúan a $\vec R$ en el 2º cuadrante → suma 180°: $\theta=141°$.</li>
+  </ol>
+  <p>El luchador 1, que ejerce la mayor fuerza individual (250 N), es quien "gana" el forcejeo — coherente con que $\vec R$ apunta bastante cerca de su dirección.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 4.1, p. 104">U p.104</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_4_7_luchadores.png" alt="Figura 4.7 de U: panel a) las tres fuerzas F1, F2, F3 que los luchadores aplican al cinturón, con sus componentes x e y; panel b) la fuerza neta R = suma de F, con componentes Rx, Ry negativa y positiva respectivamente, y ángulo 141 grados." loading="lazy">
+<figcaption>Fig. 4.7 de U: a) las tres fuerzas del Ejemplo 4.1 con sus componentes; b) la fuerza neta $\vec R=\sum\vec F$, en el 2º cuadrante ($\theta=141°$). <span class="src" data-l="U" data-ref="U fig. 4.7, p. 104">U p.104</span></figcaption>
+</figure>
+
+<h2 id="s2"><span class="n">2</span>Primera ley de Newton</h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Aristóteles pensaba que hacía falta una fuerza para <i>mantener</i> algo en movimiento. Newton corrige esa intuición: lo natural es que un objeto siga haciendo lo que ya estaba haciendo (parado o moviéndose en línea recta a velocidad constante) <i>a menos que</i> algo se lo impida. Un disco de hockey desliza sobre hielo casi sin fricción y apenas frena: no necesita ningún empujón continuo para seguir moviéndose, solo lo necesitaría para <i>cambiar</i> su movimiento.</p></div>
+<div class="box thm"><span class="h">Primera ley de Newton</span><p>"Un cuerpo sobre el que no actúa una fuerza neta se mueve con velocidad constante (que puede ser cero) y aceleración cero."</p>
+  <span class="src" data-l="U" data-ref="U §4.2, p. 105">U p.105</span></div>
+<div class="box def"><span class="h">Inercia y equilibrio</span><p>La tendencia de un cuerpo a mantener su estado de movimiento (a "resistirse" a cambiar de velocidad) se llama <b>inercia</b>. Cuando la fuerza neta sobre un cuerpo es cero, se dice que está en <b>equilibrio</b>:</p>
+  $$\sum\vec F=0 \qquad\text{(ec. 4.3)}$$
+  <p>Equilibrio no significa "sin fuerzas": significa que las fuerzas que hay se cancelan entre sí.</p>
+  <span class="src" data-l="U" data-ref="U §4.2 ec. (4.3), p. 105-106">U p.105</span></div>
+<div class="box thm"><span class="h">Sistemas de referencia inerciales</span><p>La primera ley solo es válida vista desde un <b>sistema de referencia inercial</b>: uno que no acelera. La superficie de la Tierra es, en la mayoría de los problemas de esta asignatura, una aproximación suficientemente buena de sistema inercial (aunque gira y orbita, esos efectos son pequeños a la escala de los problemas del curso). Desde un sistema de referencia que sí acelera (un coche frenando, por ejemplo), la primera ley <i>parece</i> fallar: los pasajeros "salen despedidos" hacia delante sin que ninguna fuerza real los empuje — en realidad es su inercia, que los hace seguir en su estado de movimiento mientras el coche cambia el suyo. Por eso a la primera ley también se le llama <b>ley de la inercia</b>: define qué es un sistema inercial (aquel en el que se cumple). Cualquier sistema que se mueva con velocidad <i>constante</i> respecto a uno inercial es también inercial — solo los sistemas que aceleran dejan de serlo.</p>
+  <span class="src" data-l="U" data-ref="U §4.2 p. 107-108">U p.107</span></div>
+<div class="box ex"><span class="h">Ejemplo conceptual del libro 4.3 — velocidad constante significa fuerza neta cero</span><p>Un coche muy potente circula a 250 km/h constantes; otro, mucho menos potente, a 75 km/h constantes. ¿Sobre cuál es mayor la fuerza neta? En ninguno: ambos van a velocidad constante, así que en los dos $\sum\vec F=0$. Es la <b>pista</b> (no el motor directamente) la que ejerce, gracias al motor, una fuerza hacia delante mayor sobre el coche rápido que sobre el lento, pero esa fuerza solo sirve para <b>compensar exactamente</b> la resistencia del aire y la fricción — no "sobra" fuerza para acelerar, porque si sobrara, el coche no iría a velocidad constante.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo conceptual 4.3, p. 107">U p.107</span></div>
+<div class="box warn"><span class="h">Error típico</span><p>"Si algo se mueve, tiene que haber una fuerza neta empujándolo en la dirección del movimiento" es <b>falso</b> en general. Hace falta una fuerza neta para <i>acelerar</i> (cambiar la velocidad), no para <i>tener</i> velocidad. Un objeto puede moverse a velocidad constante para siempre con fuerza neta exactamente cero — es literalmente lo que dice la primera ley.</p></div>
+
+<h2 id="s3"><span class="n">3</span>Segunda ley de Newton</h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Si la fuerza neta no es cero, el cuerpo sí acelera — y cuanto más empujas, más rápido cambia la velocidad; cuanto más "pesada" (con más masa) es la cosa que empujas, menos cambia su velocidad para la misma fuerza. Empujar un carrito de la compra vacío lo acelera mucho más que empujarlo lleno con la misma fuerza: la <b>masa</b> mide esa resistencia a acelerar.</p></div>
+<div class="box thm"><span class="h">Segunda ley de Newton</span><p>"Si una fuerza externa neta actúa sobre un cuerpo, éste se acelera. La dirección de la aceleración es la misma que la de la fuerza neta. El vector de fuerza neta es igual a la masa del cuerpo multiplicada por su aceleración."</p>
+  <span class="src" data-l="U" data-ref="U §4.3, p. 111">U p.111</span></div>
+<div class="box thm"><span class="h">La ecuación $\sum\vec F=m\vec a$</span>
+  $$\sum\vec F=m\vec a \qquad\text{(ec. 4.6)}$$
+  <p>Por componentes, cada eje se trata por separado (exactamente como en cinemática, temas 2-3):</p>
+  $$\sum F_x=ma_x \qquad \sum F_y=ma_y \qquad \sum F_z=ma_z \qquad\text{(ec. 4.7)}$$
+  <p>La razón $|\sum\vec F|/a$ es constante para un cuerpo dado, sin importar la magnitud de la fuerza: a eso se le llama <b>masa inercial</b> (o simplemente masa) del cuerpo — es una medida de cuánto se resiste a cambiar de velocidad, <b>no</b> es lo mismo que el peso (sección 4.4). La ecuación 4.6 solo es válida si la masa $m$ es constante (no vale, por ejemplo, para un cohete que va quemando combustible) y, como la primera ley, solo en sistemas de referencia inerciales.</p>
+  <span class="src" data-l="U" data-ref="U §4.3 ec. (4.4) p.110, ec. (4.6)-(4.7) p.111, masa constante p.112">U p.110</span></div>
+<div class="box warn"><span class="h">Error típico: $m\vec a$ no es una fuerza</span><p>$\sum\vec F=m\vec a$ es una <b>igualdad</b>, no una receta para inventar una fuerza nueva llamada "fuerza de aceleración" o "fuerza $ma$". El lado izquierdo es la <i>suma</i> de las fuerzas reales (peso, normal, tensión, fricción…) que otros cuerpos ejercen sobre el que estudias; el lado derecho, $m\vec a$, es solo su efecto. Además, en esa suma solo entran fuerzas <b>externas</b> (ejercidas por otros cuerpos): no puedes acelerarte tirando de tu propio cinturón, por mucho que "sumes" esa fuerza — es interna, actúa y se cancela dentro del mismo sistema.</p>
+  <span class="src" data-l="U" data-ref="U §4.3 CUIDADO, p. 111-112">U p.111</span></div>
+<div class="box def"><span class="h">El newton (N)</span><p>Se define $1\ \text{N} = 1\ \text{kg}\cdot\text{m/s}^2$: la fuerza que le da a una masa de 1 kg una aceleración de 1 m/s².</p>
+  <span class="src" data-l="U" data-ref="U §4.3, p. 110">U p.110</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 4.4 — empujando una caja sin fricción</span><p>Un trabajador aplica una fuerza horizontal de 20 N a una caja de 40 kg de masa sobre un piso sin fricción. Como no hay fricción, la única fuerza horizontal es la aplicada (el peso y la normal se cancelan verticalmente, $a_y=0$):</p>
+  $$a_x=\frac{\sum F_x}{m}=\frac{20\ \text{N}}{40\ \text{kg}}=0.50\ \text{m/s}^2$$
+  <span class="src" data-l="U" data-ref="U Ejemplo 4.4, p. 112">U p.112</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 4.5 — la botella de cátsup (cinemática + dinámica juntas)</span><p>Una botella de 0.45 kg desliza sobre un mostrador liso, se suelta a 2.8 m/s y se frena por la fricción hasta pararse tras recorrer 1.0 m. Aquí se combina el tema 2 con este tema: primero, cinemática (ec. $v^2=v_0^2+2a\Delta x$) da la aceleración, $a_x=(0^2-2.8^2)/(2\times1.0)=-3.9\ \text{m/s}^2$; después, la segunda ley traduce esa aceleración en la fuerza de fricción que la produjo: $f_x=ma_x=0.45\times(-3.9)=-1.8$ N (1.8 N, opuesta al movimiento).</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 4.5, p. 113">U p.113</span></div>
+<div class="box tip"><span class="h">Truco de examen</span><p>Cuando un problema da datos de posición/velocidad/tiempo sin mencionar fuerzas directamente, casi siempre hay que pasar primero por la <b>cinemática</b> (temas 2-3) para obtener $a$, y solo entonces aplicar $\sum F=ma$ (o al revés: fuerza conocida → $a=\sum F/m$ → cinemática para tiempo/distancia). Identificar qué falta (¿aceleración o fuerza?) es el primer paso de cualquier problema de dinámica.</p></div>
+
+<h2 id="s4"><span class="n">4</span>Masa y peso</h2>
+<div class="box warn"><span class="h">Error típico (el más común del tema)</span><p>En el lenguaje cotidiano se usan "masa" y "peso" como sinónimos, pero en física son cosas distintas. Es indispensable no confundirlas antes de seguir.</p>
+  <span class="src" data-l="U" data-ref="U §4.4, p. 114">U p.114</span></div>
+<div class="box def"><span class="h">Peso</span><p>El <b>peso</b> de un cuerpo es la fuerza gravitacional que la Tierra (u otro astro) ejerce sobre él. Al ser una fuerza, se mide en newtons y depende de <i>dónde</i> está el cuerpo:</p>
+  $$w=mg \qquad\text{(ec. 4.8-4.9)}$$
+  <p>donde $g$ es la aceleración de caída libre en ese lugar. En la Luna, $g=1.62\ \text{m/s}^2$ (frente a $9.80\ \text{m/s}^2$ en la Tierra): un cuerpo pesa allí aproximadamente $1/6$ de lo que pesa en la Tierra, con exactamente la <b>misma masa</b> en ambos sitios.</p>
+  <span class="src" data-l="U" data-ref="U §4.4 ec. (4.8)-(4.9), p. 114-115">U p.114</span></div>
+<div class="box thm"><span class="h">Masa vs. peso</span>
+  <table>
+  <tr><th></th><th>Masa</th><th>Peso</th></tr>
+  <tr><td>Qué es</td><td>Propiedad del cuerpo (resistencia a acelerar)</td><td>Una fuerza (la gravedad tirando de él)</td></tr>
+  <tr><td>Unidad SI</td><td>kg</td><td>N</td></tr>
+  <tr><td>¿Cambia con el lugar?</td><td>No</td><td>Sí, proporcional a $g$ local</td></tr>
+  </table>
+  <p>$w=mg$ sale de aplicar $\sum F=ma$ a un cuerpo en caída libre ($a=g$), pero eso no significa que el peso solo "exista" mientras el cuerpo cae: el peso actúa <b>en todo momento</b>, esté el cuerpo cayendo, en reposo sobre una mesa o subiendo en un ascensor — solo que, salvo en caída libre, hay otras fuerzas (normal, tensión…) que se combinan con él. El valor de $g$ varía ligeramente según el lugar (entre 9.78 y 9.82 m/s² en la superficie terrestre); en este curso se usa $g=9.80\ \text{m/s}^2$ salvo que el problema dé otro valor.</p>
+  <span class="src" data-l="U" data-ref="U §4.4 CUIDADO, p. 114-115">U p.114</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 4.7 — de peso a masa antes de aplicar F=ma</span><p>Un Rolls-Royce Phantom de peso $w=2.49\times10^4$ N sufre una fuerza neta de frenado $\sum F=-1.83\times10^4$ N. Antes de poder usar $\sum F=ma$ hace falta la <b>masa</b>, no el peso: $m=w/g=2.49\times10^4/9.80=2540$ kg. Entonces $a=\sum F/m=-1.83\times10^4/2540=-7.20\ \text{m/s}^2$.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 4.7, p. 115">U p.115</span></div>
+<div class="box tip"><span class="h">Truco de examen</span><p>Si un dato viene en newtons (o "pesa tantos N") y necesitas aplicar $\sum F=ma$, <b>primero</b> divide entre $g$ para obtener la masa en kg. Multiplicar directamente el número en N por una aceleración es un error de unidades (mezclas N con kg), aunque a veces "cuadre" numéricamente por casualidad.</p></div>
+
+<h2 id="s5"><span class="n">5</span>Tercera ley de Newton</h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Cuando empujas la pared, la pared te empuja a ti con la misma fuerza en sentido contrario — por eso te duele la mano. Toda fuerza es una interacción <i>entre dos cuerpos</i>, así que siempre viene acompañada de otra fuerza igual y opuesta que el segundo cuerpo ejerce sobre el primero.</p></div>
+<div class="box thm"><span class="h">Tercera ley de Newton</span><p>"Si el cuerpo A ejerce una fuerza sobre el cuerpo B (una 'acción'), entonces, el cuerpo B ejerce una fuerza sobre el cuerpo A (una 'reacción'). Estas dos fuerzas tienen la misma magnitud pero dirección opuesta, y actúan sobre cuerpos diferentes."</p>
+  $$\vec F_{A\ \text{sobre}\ B}=-\vec F_{B\ \text{sobre}\ A} \qquad\text{(ec. 4.10)}$$
+  <span class="src" data-l="U" data-ref="U §4.5 ec. (4.10), p. 116-117">U p.116</span></div>
+<div class="box thm"><span class="h">El punto crucial: cuerpos distintos</span><p>Los dos miembros de un par acción-reacción actúan <b>siempre sobre cuerpos diferentes</b> — por definición, nunca sobre el mismo cuerpo. La tercera ley vale tanto para fuerzas de contacto (al empujar un coche averiado, tu fuerza sobre el coche es igual en magnitud a la que el coche ejerce sobre ti; lo que realmente cuesta es vencer la masa del coche y la fricción de sus ruedas, no la reacción en sí) como para fuerzas de largo alcance (una manzana sobre una mesa: la Tierra atrae a la manzana con su peso, y la manzana atrae a la Tierra con exactamente la misma fuerza, aunque en sentido contrario).</p>
+  <span class="src" data-l="U" data-ref="U §4.5, p. 116-118">U p.116</span></div>
+<div class="box ex"><span class="h">Ejemplo conceptual del libro 4.10 — un cantero tira de un bloque con una cuerda</span><p>Un cantero tira de un bloque de piedra con una cuerda. Si la cuerda es ideal (sin masa) o está en equilibrio, la <b>tensión</b> que transmite es la misma en sus dos extremos: si el cantero tira con 50 N, el bloque recibe 50 N — no 100 N ni 25 N. La cuerda no "gasta" ni "duplica" la fuerza, simplemente la transmite de un extremo a otro.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo conceptual 4.10, p. 118-119">U p.118</span></div>
+<div class="box ex"><span class="h">Ejemplo conceptual del libro 4.11 — ¿por qué se mueve el bloque y no el hombre?</span><p>Si la fuerza con que el hombre jala de la cuerda es igual y opuesta a la fuerza con que la cuerda jala de él (tercera ley), ¿por qué entonces el bloque se mueve mientras el hombre permanece en el mismo lugar? La resolución: la 3ª ley solo dice que esas dos fuerzas son iguales <i>entre sí</i>; para saber si algo acelera hay que aplicar la 2ª ley a <b>cada cuerpo por separado</b>, con <b>su propia masa</b> y contando <i>todas</i> las fuerzas sobre él, no solo la del par. La diferencia clave aquí es la <b>fricción del suelo</b>: las suelas del hombre están diseñadas para no resbalar (mucha fricción estática con el suelo), mientras que la base del bloque desliza con facilidad (poca fricción) — así que la misma tensión de la cuerda es suficiente para acelerar al bloque, pero no al hombre, que la fricción del suelo mantiene prácticamente clavado en su sitio.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo conceptual 4.11, p. 119">U p.119</span></div>
+<div class="box warn"><span class="h">Error típico</span><p>Emparejar como "acción-reacción" el peso de un cuerpo con la normal que lo sostiene (por ejemplo, una manzana sobre una mesa). <b>No lo son</b>: ambas actúan sobre el <i>mismo</i> cuerpo (la manzana) y son de naturaleza distinta (una es gravitacional, la otra de contacto). El verdadero par del peso es (Tierra tira de la manzana) ↔ (manzana tira de la Tierra); el verdadero par de la normal es (mesa empuja a la manzana) ↔ (manzana empuja a la mesa) — cuatro fuerzas en total, no dos, y cada par vive en cuerpos distintos.</p>
+  <span class="src" data-l="U" data-ref="U §4.5 fig. 4.24-4.25, p. 117-118">U p.117</span></div>
+
+<h2 id="s6"><span class="n">6</span>Diagramas de cuerpo libre</h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Con tres leyes tan sencillas, ¿por qué cuesta tanto resolver problemas de dinámica? Porque hay que identificar correctamente <i>qué</i> fuerzas actúan <i>sobre quién</i>, y es fácil colar una fuerza que no toca, olvidar una que sí, o mezclar las fuerzas de dos cuerpos distintos. La solución es un método casi mecánico: aislar un único cuerpo y dibujar solo lo que le pasa a él.</p></div>
+<div class="box thm"><span class="h">Cómo se construye un diagrama de cuerpo libre (DCL)</span>
+  <ol class="steps">
+    <li>Elige <b>un solo</b> cuerpo (el "sistema") y dibújalo aislado, sin lo que lo rodea.</li>
+    <li>Dibuja <b>solo</b> las fuerzas <i>externas</i> que actúan <i>sobre</i> ese cuerpo (peso, normales, tensiones, fricción, empujones aplicados) — nunca las fuerzas que él ejerce sobre otros cuerpos.</li>
+    <li><b>Nunca</b> dibujes las dos fuerzas de un mismo par acción-reacción en el mismo diagrama: por definición actúan sobre cuerpos distintos, así que cada una vive en el DCL de un cuerpo diferente.</li>
+    <li>Coloca un sistema de ejes coherente (a menudo conviene alinear un eje con la dirección del movimiento o de una fuerza conocida) y descompón las fuerzas que no estén ya sobre los ejes.</li>
+    <li>Aplica $\sum F_x=ma_x$, $\sum F_y=ma_y$ (ec. 4.7) componente a componente.</li>
+  </ol>
+  <p>Esta técnica se usará constantemente a partir del tema 5 (aplicación de las leyes de Newton) en adelante: es, con diferencia, la herramienta más rentable de toda la asignatura de mecánica.</p>
+  <span class="src" data-l="U" data-ref="U §4.6, p. 120-121">U p.120</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_4_29_dcl.png" alt="Figura 4.29 de U (paneles a y b): a) una velocista en los tacos de salida, con el diagrama de cuerpo libre que muestra Fx, Fy (componentes de la fuerza del bloque sobre la corredora) y w (su peso); b) un jugador de baloncesto que se impulsa contra el suelo, con diagrama de cuerpo libre mostrando la normal n y el peso w, junto a otro jugador ya en el aire (caída libre) con solo el peso w actuando." loading="lazy">
+<figcaption>Fig. 4.29 de U (paneles a, b): en cada caso, el diagrama de cuerpo libre aísla al deportista y solo muestra las fuerzas externas <i>sobre él</i> — nunca las que él ejerce sobre el suelo o el bloque de salida. <span class="src" data-l="U" data-ref="U fig. 4.29, p. 121">U p.121</span></figcaption>
+</figure>
+<div class="box warn"><span class="h">Error típico</span><p>Dibujar en el DCL de un cuerpo una fuerza que en realidad actúa sobre <i>otro</i> cuerpo (por ejemplo, meter la fuerza que la caja ejerce sobre la mesa en el diagrama de la caja) o dibujar un par acción-reacción completo en un único diagrama. Un DCL correcto siempre tiene todas sus flechas aplicadas sobre el mismo punto/cuerpo, y cada una representa una fuerza que <b>otro</b> cuerpo ejerce sobre <b>él</b>.</p></div>
+
+<h2 id="ejercicios"><span class="n">7</span>Ejercicios resueltos</h2>
+<p>Como se indica en «Antes de empezar», este tema no tiene ningún ejercicio de examen real dedicado en solitario: aparece mezclado con fricción/planos/poleas en el tema 5, y como ingrediente secundario en tres problemas ya resueltos en el Tema 2 (X2, X3, X4). Los nueve ejercicios siguientes son del solucionario oficial (E), ordenados de más sencillo a más elaborado, para dejar bien afianzadas las tres leyes.</p>
+
+<details class="sol"><summary>E1 — Problema 4.9: masa a partir de fuerza y aceleración <span class="src" data-l="E" data-ref="Solucionario 4-4, Prob. 4.9">E</span></summary>
+  <p class="enun">Una caja descansa sobre un estanque helado sin fricción, que actúa como una superficie horizontal sin rozamiento. Si un pescador aplica una fuerza horizontal de 48.0 N a la caja y produce una aceleración de 2.20 m/s², ¿cuál es la masa de la caja?</p>
+  <ol class="steps">
+    <li>Como no hay fricción, la única fuerza horizontal es la aplicada (el peso y la normal se cancelan en el eje vertical, $a_y=0$): $\sum F_x=F=48.0$ N.</li>
+    <li>Despejando de la segunda ley (ec. 4.6): $m=\dfrac{\sum F_x}{a_x}=\dfrac{48.0\ \text{N}}{2.20\ \text{m/s}^2}=21.8$ kg.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> $m=\sum F/a$, pero solo cuenta la fuerza neta en la dirección de la aceleración — no metas el peso en una suma horizontal, ni la fuerza horizontal en una suma vertical.</div>
+</details>
+
+<details class="sol"><summary>E2 — Problema 4.17: cuidado, un peso no es una masa <span class="src" data-l="E" data-ref="Solucionario 4-6, Prob. 4.17">E</span></summary>
+  <p class="enun">Supermán lanza un peñasco de 2400 N a un adversario. ¿Qué fuerza horizontal debe aplicar al peñasco para darle una aceleración horizontal de 12.0 m/s²?</p>
+  <ol class="steps">
+    <li><b>2400 N es un peso, no una masa.</b> Antes de aplicar $\sum F=ma$ hace falta convertir con $w=mg$ (sección 4.4): $m=w/g=2400/9.80=244.9$ kg.</li>
+    <li>Fuerza necesaria: $F=ma=244.9\times12.0=2940$ N.</li>
+    <li>Comprobación de sentido: $F/w=2940/2400=1.22>1$, coherente con pedir una aceleración (12.0 m/s²) mayor que $g$ (9.80 m/s²) — hace falta más fuerza que el propio peso.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> si el dato viene en N y hay que usar $F=ma$, primero divide por $g$ para obtener la masa en kg.</div>
+  <div class="recipe"><b>Error típico:</b> hacer directamente $F=2400\times12.0$ (mezclar N con kg: error de unidades, aunque el número "salga" de algún modo).</div>
+</details>
+
+<details class="sol"><summary>E3 — Problema 4.24: la estudiante y la Tierra, tercera ley aplicada <span class="src" data-l="E" data-ref="Solucionario 4-7, Prob. 4.24">E</span></summary>
+  <p class="enun">Una estudiante de 45 kg salta desde un trampolín, adquiriendo una aceleración hacia abajo (hacia la Tierra) de 9.8 m/s². La masa de la Tierra es $6.0\times10^{24}$ kg. ¿Cuál es la aceleración de la Tierra correspondiente hacia ella?</p>
+  <ol class="steps">
+    <li>La fuerza sobre la estudiante es su peso: $w=mg=45\times9.8=441$ N (esto ya es, en sí mismo, la 2ª ley aplicada a ella).</li>
+    <li>Por la 3ª ley, la estudiante ejerce sobre la Tierra una fuerza de <b>la misma magnitud</b>, 441 N, en sentido contrario — pero sobre un cuerpo <i>distinto</i> (la Tierra, no ella).</li>
+    <li>Aplicando la 2ª ley a la Tierra con <b>su propia masa</b>: $a_{\text{Tierra}}=F/m_{\text{Tierra}}=441/(6.0\times10^{24})=7.4\times10^{-23}\ \text{m/s}^2$.</li>
+    <li>Interpretación: las fuerzas son exactamente iguales, pero como $a=F/m$, las aceleraciones están en razón <b>inversa</b> a las masas — por eso, aunque la Tierra "sube" hacia la estudiante, ese movimiento es completamente imperceptible.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> usa la 3ª ley solo para obtener la magnitud de la fuerza de reacción; después aplica $a=F/m$ con la masa del cuerpo sobre el que actúa <i>esa</i> fuerza, nunca con la masa del otro cuerpo.</div>
+  <div class="recipe"><b>Error típico:</b> pensar que la Tierra "ejerce más fuerza" por ser más grande (ejerce la misma, por la 3ª ley), o usar la masa de la estudiante para calcular la aceleración de la Tierra.</div>
+</details>
+
+<details class="sol"><summary>E4 — Problema 4.7: un patinador frenando, cinemática + segunda ley <span class="src" data-l="E" data-ref="Solucionario 4-3, Prob. 4.7">E</span></summary>
+  <p class="enun">Un patinador sobre hielo de 68.5 kg que se mueve a 2.40 m/s se detiene uniformemente en 3.52 s por la fricción del hielo contra los patines. ¿Qué fuerza de fricción (magnitud y dirección) actúa sobre el patinador?</p>
+  <ol class="steps">
+    <li>Cinemática primero (tema 2, $a=\Delta v/\Delta t$): $a_x=\dfrac{0-2.40}{3.52}=-0.682\ \text{m/s}^2$.</li>
+    <li>Segunda ley: $f_x=ma_x=68.5\times(-0.682)=-46.7$ N, es decir, 46.7 N opuesta al sentido del movimiento.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> cinemática (tema 2-3) para obtener $a$, luego $\sum F=ma$ para la fuerza; el signo de $a$ (respecto al sentido positivo elegido) te da directamente el sentido de la fuerza.</div>
+  <div class="recipe"><b>Error típico:</b> pensar que hace falta una fuerza hacia delante para "mantener" el movimiento del patinador — la primera ley dice justo lo contrario: sin fricción, seguiría deslizando para siempre a velocidad constante.</div>
+</details>
+
+<details class="sol"><summary>E5 — Problema 4.37: el lanzamiento de béisbol, sin tiempo dado <span class="src" data-l="E" data-ref="Solucionario 4-12, Prob. 4.37">E</span></summary>
+  <p class="enun">El lanzamiento de béisbol más rápido medido es de 46 m/s. Una pelota de béisbol suele tener una masa de 145 g. Si el lanzador ejerció su fuerza (suponiéndola horizontal y constante) a lo largo de 1.0 m: a) ¿qué fuerza produjo sobre la pelota durante este lanzamiento récord? b) Dibuja los diagramas de cuerpo libre de la pelota durante el lanzamiento y justo después de salir de la mano.</p>
+  <ol class="steps">
+    <li>a) No hay tiempo, así que se usa la ecuación de cinemática sin $t$ (tema 2): $v^2=v_0^2+2a\Delta x \Rightarrow a=\dfrac{v^2}{2\Delta x}=\dfrac{46^2}{2\times1.0}=1058\ \text{m/s}^2$.</li>
+    <li>Segunda ley: $F=ma=0.145\times1058=153$ N (tratando el movimiento como horizontal, despreciando el peso).</li>
+    <li>Comparación: el peso de la pelota es $w=0.145\times9.8=1.42$ N; $F/w\approx108$ — durante el lanzamiento, la fuerza del brazo es unas 108 veces mayor que el propio peso de la pelota, lo que justifica despreciar el peso frente a esa fuerza.</li>
+    <li>b) <b>Durante el lanzamiento:</b> actúan la fuerza de la mano (horizontal, 153 N) y el peso (1.42 N, hacia abajo, pequeño frente a la anterior). <b>Justo después de soltarla:</b> la mano deja de tocar la pelota, así que desaparece esa fuerza; solo queda el peso, hacia abajo. No hay ninguna "fuerza del lanzamiento" que siga acompañando a la pelota en el aire.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> si dan distancia y velocidades pero no el tiempo, usa $a=v^2/(2\Delta x)$ y después $F=ma$.</div>
+  <div class="recipe"><b>Error típico:</b> dibujar una fuerza hacia delante sobre la pelota <i>después</i> de soltarla (idea aristotélica). Una vez fuera de la mano, la única fuerza es el peso: la velocidad horizontal se mantiene sola por la 1ª ley, sin que nada "siga empujando".</div>
+</details>
+
+<details class="sol"><summary>E6 — Problema 4.36: "se detiene en una moneda" — comprobar un anuncio absurdo <span class="src" data-l="E" data-ref="Solucionario 4-11/4-12, Prob. 4.36">E</span></summary>
+  <p class="enun">Un anuncio afirma que cierto coche de 850 kg puede "detenerse en una moneda de diez centavos" (diámetro 1.8 cm) al frenar desde 45.0 km/h. ¿Qué fuerza media de frenado se necesitaría?</p>
+  <ol class="steps">
+    <li>Convertir a SI: $v_0=45.0\ \text{km/h}=12.5\ \text{m/s}$; $d=1.8\ \text{cm}=0.018\ \text{m}$.</li>
+    <li>Deceleración con $v^2=v_0^2+2a d$ (llega a $v=0$): $a=-\dfrac{v_0^2}{2d}=-\dfrac{12.5^2}{2\times0.018}=-4340\ \text{m/s}^2$ (unas 443 veces $g$).</li>
+    <li>Fuerza: $F=m|a|=850\times4340=3.7\times10^6$ N — unas 440 veces el propio peso del coche ($w=850\times9.8=8330$ N).</li>
+    <li>Conclusión: es físicamente absurdo; ningún sistema de frenos real puede ejercer semejante fuerza. El "anuncio" es imposible según la propia segunda ley de Newton.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> igual que E5 pero en sentido inverso, $F=mv_0^2/(2d)$; sirve para detectar afirmaciones numéricamente absurdas comparando con el peso del objeto.</div>
+  <div class="recipe"><b>Error típico:</b> no convertir km/h a m/s, o usar 1.8 en vez de 0.018 m (factor de conversión al cuadrado que se acumula en el resultado).</div>
+</details>
+
+<details class="sol"><summary>E7 — Problema 4.8: peso aparente en un ascensor <span class="src" data-l="E" data-ref="Solucionario 4-3/4-4, Prob. 4.8">E</span></summary>
+  <p class="enun">Una persona de peso 625 N está de pie sobre una báscula dentro de un ascensor que acelera hacia arriba a 2.50 m/s². a) ¿Qué marca la báscula? b) Si además lleva un paquete de 3.85 kg colgado de una cuerda vertical, ¿qué tensión hay en la cuerda?</p>
+  <ol class="steps">
+    <li>Masa de la persona: $m=w/g=625/9.80=63.8$ kg.</li>
+    <li>a) La báscula marca la fuerza <b>normal</b> $n$ que ejerce sobre la persona, no directamente su peso. Con $+y$ hacia arriba (la aceleración del ascensor): $n-w=ma \Rightarrow n=w+ma=625+63.8\times2.50=784$ N. Es mayor que el peso real (625 N) porque la fuerza neta debe apuntar hacia arriba para producir esa aceleración.</li>
+    <li>b) Para el paquete, colgado en equilibrio respecto al ascensor pero acelerando con él: $T-mg=ma \Rightarrow T=m(g+a)=3.85\times(9.80+2.50)=3.85\times12.30=47.4$ N (frente a $T=mg=37.7$ N si el ascensor estuviera en reposo o a velocidad constante).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> en un ascensor que acelera hacia arriba, la normal (o la tensión de algo colgado) vale $m(g+a)$, con $a>0$ hacia arriba; siempre plantea $\sum F=ma$ con un diagrama de cuerpo libre por cada cuerpo (persona y paquete son sistemas distintos).</div>
+  <div class="recipe"><b>Error típico:</b> poner $n=w$ (solo es cierto si $a=0$), o invertir el signo ($m(g-a)$ cuando el ascensor acelera hacia arriba en vez de hacia abajo).</div>
+</details>
+
+<details class="sol"><summary>E8 — Problemas 4.25 y 4.23: dos cajas en contacto, identificar el único par acción-reacción <span class="src" data-l="E" data-ref="Solucionario 4-7, Prob. 4.25 y Solucionario 4-6/4-7, Prob. 4.23">E</span></summary>
+  <p class="enun">Dos cajas, A y B, están en contacto sobre una superficie horizontal <b>sin fricción</b>, con masas $m_A$ y $m_B$. Se aplica una fuerza horizontal $F$ a la caja A, y ambas se mueven juntas hacia la derecha. a) Dibuja el diagrama de cuerpo libre de A y de B por separado, e identifica los pares acción-reacción. b) Si $F$ es menor que el peso total de las dos cajas, ¿se mueven de todos modos? Complemento numérico: con $m_A=20.0$ kg, $m_B=5.0$ kg y $F=250$ N, halla la fuerza de contacto entre las cajas.</p>
+  <ol class="steps">
+    <li><b>DCL de A:</b> la fuerza aplicada $F$, su peso, la normal del suelo, y la fuerza que B ejerce sobre A (hacia la izquierda, "empujando de vuelta" porque A empuja a B hacia delante). <b>DCL de B:</b> su peso, su normal, y la fuerza que A ejerce sobre B (hacia la derecha, la que la empuja).</li>
+    <li>El <b>único</b> par acción-reacción de este problema es $\vec F_{A\text{ sobre }B}=-\vec F_{B\text{ sobre }A}$, entre las dos cajas. El peso y la normal de <i>una misma</i> caja no son un par acción-reacción entre sí (actúan sobre el mismo cuerpo y son de naturaleza distinta) — sus verdaderos pares son con la Tierra y con el suelo respectivamente, que no aparecen dibujados aquí.</li>
+    <li>b) <b>Sí</b>, se mueven para cualquier $F>0$: no hay fricción que se oponga horizontalmente, y el peso (vertical) no compite con $F$ (horizontal) — son ejes independientes, como siempre en dinámica.</li>
+    <li><b>Complemento numérico.</b> Primero el <b>sistema completo</b> (A+B como un solo bloque de masa total): $a=\dfrac{F}{m_A+m_B}=\dfrac{250}{25.0}=10.0\ \text{m/s}^2$.</li>
+    <li>Después se aísla el cuerpo más simple, B, para hallar la fuerza interna: $F_{A\text{ sobre }B}=m_Ba=5.0\times10.0=50$ N.</li>
+    <li>Comprobación aislando A: $F-F_{B\text{ sobre }A}=m_Aa \Rightarrow 250-F_{B\text{ sobre }A}=20.0\times10.0 \Rightarrow F_{B\text{ sobre }A}=50$ N — igual en magnitud a $F_{A\text{ sobre }B}$, exactamente como exige la 3ª ley.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> en un sistema de varios cuerpos que se mueven juntos, halla primero la aceleración común tratando el conjunto como un solo cuerpo (masa total); después aísla el cuerpo más simple para hallar la fuerza de contacto interna.</div>
+  <div class="recipe"><b>Error típico:</b> creer que la fuerza se "transmite entera" a B ($F_{A\text{ sobre }B}=250$ N en vez de 50 N — parte de la fuerza se usa en acelerar a A), o emparejar el peso de una caja con su propia normal como si fueran acción-reacción.</div>
+</details>
+
+<details class="sol"><summary>E9 — Problema 4.30: la caja que resbala en la plataforma de una camioneta <span class="src" data-l="E" data-ref="Solucionario 4-9, Prob. 4.30">E</span></summary>
+  <p class="enun">Una caja grande con su computadora nueva descansa en la plataforma de su camioneta, detenida en un semáforo. El semáforo cambia a verde, usted pisa el acelerador y la camioneta acelera. Horrorizado, ve cómo la caja empieza a deslizarse hacia la parte trasera de la plataforma (la plataforma de la camioneta <b>no tiene fricción</b>). Dibuje diagramas de cuerpo libre claramente especificados para la camioneta y para la caja, e indique los pares acción-reacción según la tercera ley.</p>
+  <ol class="steps">
+    <li><b>DCL de la caja (versión de U, sin fricción):</b> solo actúan su peso $\vec w$ (hacia abajo) y la normal $\vec n$ de la plataforma (hacia arriba); no hay ninguna fuerza horizontal, porque la plataforma no tiene fricción.</li>
+    <li><b>Por qué se desliza, sin ninguna fuerza horizontal sobre ella.</b> Por la primera ley, sin fuerza neta horizontal la caja mantiene su velocidad: sigue en reposo respecto al <i>suelo</i> mientras la camioneta acelera por debajo de ella. Vista desde el suelo, la caja no "se desliza hacia atrás" en absoluto: es la camioneta la que avanza y dejas atrás a la caja. Solo <i>respecto a la plataforma</i> (que sí acelera) parece que la caja retrocede.</li>
+    <li><b>DCL de la camioneta:</b> su peso, las normales del suelo sobre las ruedas, la fuerza de tracción que el suelo ejerce sobre las ruedas motrices (hacia adelante), y la normal que la caja ejerce sobre la plataforma (hacia abajo, reacción a $\vec n$).</li>
+    <li><b>Pares acción-reacción:</b> el único par entre caja y camioneta es (normal plataforma→caja, hacia arriba) ↔ (normal caja→plataforma, hacia abajo). El peso de la caja no forma par con nada de este diagrama: su pareja es la atracción que la caja ejerce sobre la Tierra.</li>
+  </ol>
+  <div class="box warn"><span class="h">Variante con fricción (la que usa el solucionario en inglés)</span><p>El <i>Instructor's Solutions Manual</i> resuelve este mismo problema suponiendo que la plataforma <b>sí</b> tiene fricción (posiblemente por una errata de traducción del original, "is not frictionless" → "no tiene fricción" en vez de "no está libre de fricción" en el otro sentido; no hay forma de confirmarlo desde aquí). Con fricción, el razonamiento cambia: la fricción <b>cinética</b> (la que aparece mientras dos superficies deslizan entre sí; el Tema 5 la trata en detalle) de la plataforma sobre la caja actúa hacia <b>adelante</b> (se opone al deslizamiento relativo de la caja hacia atrás), con su reacción sobre la plataforma hacia atrás — un segundo par acción-reacción, (fricción plataforma→caja) ↔ (fricción caja→plataforma). La caja desliza porque esa fricción, con su valor máximo, no basta para darle la misma aceleración que a la camioneta.</p></div>
+  <div class="recipe"><b>Receta:</b> para cada cuerpo, lista todas sus fuerzas de contacto con cada otro cuerpo que lo toque, más su peso; cada par acción-reacción es la misma interacción física vista "desde los dos lados", con signos opuestos. Sin fricción, "resbalar" respecto a la plataforma no significa que la caja acelere: significa que la plataforma se mueve bajo ella.</div>
+  <div class="recipe"><b>Error típico:</b> dibujar sobre la caja una fuerza horizontal que la "empuja" hacia atrás (no existe tal fuerza en la versión sin fricción: es la camioneta la que avanza más rápido que ella).</div>
+</details>
+
+<h2 id="chuleta"><span class="n">8</span>Chuleta y lista de comprobación</h2>
+<table>
+<tr><th>Ley</th><th>Enunciado corto</th><th>Ecuación</th></tr>
+<tr><td>1ª (inercia)</td><td>Sin fuerza neta, velocidad constante (o reposo)</td><td>$\sum\vec F=0$</td></tr>
+<tr><td>2ª (dinámica)</td><td>La fuerza neta produce aceleración, en su misma dirección</td><td>$\sum\vec F=m\vec a$</td></tr>
+<tr><td>3ª (acción-reacción)</td><td>Toda fuerza de A sobre B tiene su pareja de B sobre A, cuerpos distintos</td><td>$\vec F_{A\text{ sobre }B}=-\vec F_{B\text{ sobre }A}$</td></tr>
+</table>
+<table>
+<tr><th>Concepto</th><th>Fórmula</th></tr>
+<tr><td>Superposición de fuerzas</td><td>$R_x=\sum F_x,\ R_y=\sum F_y$</td></tr>
+<tr><td>Peso</td><td>$w=mg$ (fuerza, en N; depende del lugar, a diferencia de la masa)</td></tr>
+<tr><td>Newton (unidad)</td><td>$1\ \text{N}=1\ \text{kg}\cdot\text{m/s}^2$</td></tr>
+</table>
+<ul class="checklist">
+  <li>Sé enunciar las tres leyes de Newton con su ecuación correspondiente.</li>
+  <li>Sé distinguir masa de peso y convertir entre ellas con $w=mg$.</li>
+  <li>Sé identificar correctamente un par acción-reacción: siempre dos cuerpos distintos, nunca el mismo cuerpo dos veces (y nunca peso con normal del mismo objeto).</li>
+  <li>Sé dibujar un diagrama de cuerpo libre aislando un único objeto, con solo las fuerzas externas sobre él.</li>
+  <li>Sé combinar cinemática (temas 2-3) con la segunda ley para hallar una fuerza a partir de un movimiento, o una aceleración a partir de una fuerza.</li>
+</ul>
+
+<h2 id="fuentes"><span class="n">★</span>Fuentes de este tema</h2>
+<details class="fuentes-toggle">
+<summary>Mostrar lista de fuentes</summary>
+<div id="panel-fuentes"></div>
+</details>
+
+<footer>Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.</footer>
+</main>
+</div>
+</body>
+</html>
