@@ -22,7 +22,7 @@ COL = {'a': '--acc', 'b': '--A', 'm': '--mut', 'g': '--X', 'p': '--E', 'f': '--f
 
 def defs(k):
     return '<defs>' + ''.join(
-        f'<marker id="m{c}{k}" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" refX="11" refY="5.5" orient="auto"><path d="M0,0 L11,5.5 L0,11 Z" fill="var({v})"/></marker>'
+        f'<marker id="m{c}{k}" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var({v})"/></marker>'
         for c, v in COL.items()) + '</defs>'
 
 
