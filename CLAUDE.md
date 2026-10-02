@@ -39,7 +39,7 @@ La guía docente (`fuentes_txt/guia.txt`) da una lista plana de **20 temas**, si
 | | 2 | Movimiento rectilíneo | p. 36 |
 | | 3 | Movimiento en dos o en tres dimensiones | p. 68 |
 | | 4 | Leyes del movimiento de Newton *(en U: «Leyes de Newton del movimiento»)* | p. 102 |
-| | 5 | Aplicación de las leyes de Newton | p. 132 |
+| | 5 | Aplicación de las leyes de Newton | p. 130 |
 | | 6 | Trabajo y energía cinética | p. 174 |
 | | 7 | Energía potencial y conservación de la energía mecánica | p. 204 |
 | | 8 | Cantidad de movimiento, impulso y colisiones | p. 238 |

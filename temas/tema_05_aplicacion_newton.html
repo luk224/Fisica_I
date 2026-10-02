@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física I · Tema 5 Aplicación de las leyes de Newton</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Índice de temas</a>
+  <span><button id="btn-sol" type="button">Mostrar soluciones</button> <button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+
+<div class="layout">
+<nav class="side-toc" aria-label="Índice del tema"><b>En esta página</b></nav>
+<main>
+
+<header class="hero">
+  <div class="kick">Bloque Mecánica · Tema 5</div>
+  <h1>Aplicación de las leyes de Newton</h1>
+  <p>Cómo convertir las tres leyes de Newton en un método fijo para resolver problemas: diagramas de cuerpo libre, planos inclinados, cuerdas y poleas, fricción y movimiento circular. Es el tema donde se resuelven la mayoría de los problemas de dinámica del examen.</p>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 5 (pp. 130-156)</span><span>Ejercicios de examen real: 5</span><span>Ejercicios del solucionario: 9</span><span>⏱ ~7 h de estudio</span></div>
+  <div class="legend">
+    <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
+    <span class="src" data-l="A" data-ref="Academia_Tec — resumen complementario (solo algunos temas)">A</span> Academia_Tec
+    <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
+    <span class="src" data-l="X" data-ref="Ejercicio de examen real, ver fuentes_txt/examenes_por_tema.md">X</span> examen real
+    <span class="src" data-l="P" data-ref="Explicación o ejemplo propio, sin página en los libros">P</span> propio
+    — pasa el ratón (o toca) por cada etiqueta para ver la fuente exacta; en pantallas anchas aparecen en el margen derecho.
+  </div>
+</header>
+
+<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U cap. 5 Introducción, p. 130">U p.130</span></h2>
+<p><b>Prerrequisitos:</b> descomponer vectores en componentes (tema 1), las ecuaciones de aceleración constante (tema 2, sobre todo $v_x^2=v_{0x}^2+2a_x(x-x_0)$), la aceleración centrípeta del movimiento circular uniforme $a_{rad}=v^2/R$ (tema 3, §3.4) y las tres leyes de Newton con el diagrama de cuerpo libre (tema 4). Este tema <b>no trae leyes nuevas</b>: enseña a <i>usar</i> $\sum\vec F=m\vec a$ con orden. El único concepto físico nuevo es la <b>fuerza de fricción</b> (sección 5.3; en español también se dice «rozamiento»: es lo mismo, y aquí se usa «fricción» como en U).</p>
+<p><b>Mapa del tema:</b> 5.1 aplica la primera ley (equilibrio, $\sum\vec F=0$): cuerdas, tensión, planos inclinados. 5.2 aplica la segunda ley con aceleración: elevadores (también llamados ascensores), dos cuerpos unidos, planos inclinados. 5.3 añade la fricción (estático, cinético, de rodamiento y resistencia de un fluido). 5.4 estudia el movimiento circular: péndulo cónico, curvas planas y peraltadas, círculo vertical. 5.5 solo nombra las cuatro fuerzas fundamentales de la naturaleza.</p>
+<div class="box tip"><span class="h">Qué ha caído en examen</span>
+  <p>Este tema tiene <b>5 problemas de examen real</b> (los cinco son problemas, ninguna pregunta de teoría): dos bloques unidos sobre planos inclinados de 25° y 60° sin fricción (Feb 2022, 2ª sem.); dos paquetes unidos por un cable en una rampa con fricción (Feb 2025, 2ª sem.); un bloque empujado contra una pared con fuerza oblicua y fricción, que además pide el trabajo (Feb 2023, 2ª sem.; es casi literal el problema 5.75 de U); un plano inclinado con fricción y <b>polea móvil</b> (Feb 2020, 1ª sem.); y un cuerpo sobre un cono giratorio (Feb 2018, 2ª sem., movimiento circular). Están resueltos paso a paso en «Ejercicios resueltos». No existe resumen de Academia_Tec para este tema: las explicaciones se basan en U y en los problemas.</p>
+  <span class="src" data-l="X" data-ref="Examen Febrero 2022 (2ª semana) P-2; Febrero 2025 (2ª semana) P-1; Febrero 2023 (2ª semana) P-1; Febrero 2020 (1ª semana) P-1; Febrero 2018 (2ª semana) P-2">X ×5</span></div>
+<div class="box tip"><span class="h">La receta maestra (sirve para todos los problemas de este tema)</span>
+  <ol class="steps">
+    <li><b>Dibuja</b> la situación y <b>elige el cuerpo</b> (uno por vez; si hay varios, repite para cada uno).</li>
+    <li><b>Diagrama de cuerpo libre</b>: solo fuerzas que <i>otros cuerpos</i> ejercen <i>sobre él</i> (peso, normal, tensión, fricción, empujes). Para cada flecha pregúntate «¿qué otro cuerpo la causa?». Nunca dibujes «$m\vec a$» ni «fuerza centrífuga».</li>
+    <li><b>Ejes</b>: uno en la dirección de la aceleración (o del movimiento probable); en un plano inclinado, paralelo y perpendicular a él.</li>
+    <li><b>Descompón</b> cada fuerza en componentes y escribe $\sum F_x=ma_x$, $\sum F_y=ma_y$ (con $a=0$ si hay equilibrio). Nunca mezcles componentes $x$ e $y$ en la misma ecuación.</li>
+    <li>Añade las <b>relaciones extra</b>: $f_k=\mu_kn$, ligaduras entre aceleraciones (cuerda inextensible), $a_{rad}=v^2/R$, cinemática.</li>
+    <li><b>Resuelve</b> (tantas ecuaciones como incógnitas) y <b>evalúa</b>: unidades, signo y casos límite.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Estrategias para resolver problemas 5.1 y 5.2, pp. 131 y 136">U p.131-136</span></div>
+<div class="box tip"><span class="h">Convenio sobre g</span><p>En U y en el solucionario se usa $g=9{,}80\ \text{m/s}^2$. Los enunciados de examen de 2023 y 2025 dan $g=9{,}81$; los de 2018, 2020 y 2022 no lo indican (aquí se usa 9,80 y se dice cuándo el cambio altera el resultado).</p>  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
+
+<h2 id="s1"><span class="n">1</span>Equilibrio de una partícula: primera ley <span class="src" data-l="U" data-ref="U §5.1, pp. 130-135">U p.131</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Un cuerpo está en <b>equilibrio</b> si no acelera: está parado o se mueve en línea recta con velocidad constante. Una lámpara colgando, una mesa o un avión que vuela recto y nivelado son ejemplos. Como no hay aceleración, las fuerzas «se reparten» de modo que se anulan entre sí, <i>cada eje por separado</i>. Es el problema de dinámica más fácil: sin aceleraciones, solo hay que anular sumas.</p></div>
+<div class="box thm"><span class="h">Primera ley: condición de equilibrio</span>
+  $$\sum\vec F=0\qquad\Longleftrightarrow\qquad \sum F_x=0,\quad \sum F_y=0\qquad\text{(ec. 5.1)}$$
+  <p>La suma de las componentes $x$ de todas las fuerzas es cero <i>y</i>, en una ecuación aparte, la de las componentes $y$. «Velocidad constante» también es equilibrio: un coche que sube una cuesta con rapidez constante cumple $\sum\vec F=0$.</p>
+  <span class="src" data-l="U" data-ref="U §5.1 ec. (5.1), p. 131">U p.131</span></div>
+<div class="box def"><span class="h">Tensión y cuerda ideal</span>
+  <p>La <b>tensión</b> en un punto de una cuerda es la magnitud de la fuerza que actúa en ese punto. Una cuerda solo puede <b>tirar</b> de lo que sujeta (nunca empujar), siempre a lo largo de la cuerda. En una <b>cuerda ideal</b> (masa despreciable) la tensión vale lo mismo en todos sus puntos; una polea ideal (sin masa ni fricción) solo cambia la dirección de la cuerda, no su tensión.</p>
+  <p>Si la cuerda <i>sí</i> tiene peso, la tensión crece hacia arriba: en el ejemplo del libro una gimnasta de 50,0 kg ($w=490$ N) cuelga de una cuerda ideal y la tensión es 490 N en todo su largo; si la cuerda pesa 120 N, vale 490 N abajo y 610 N arriba (el techo sostiene gimnasta más cuerda).</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.1 y 5.2, pp. 131-132" >U p.131-132</span></div>
+<div class="box thm"><span class="h">Estrategia para equilibrio (resumen del libro)</span>
+  <ol class="steps">
+    <li><b>Dibujo</b> sencillo con medidas y ángulos.</li>
+    <li><b>DCL</b> de cada cuerpo en equilibrio, representado como un punto; el peso $w=mg$ (salvo masa despreciable), la normal perpendicular a la superficie, la fricción paralela a ella, las cuerdas solo tiran.</li>
+    <li><b>Ejes</b> (si el cuerpo está en una superficie, paralelo y perpendicular a ella, aunque esté inclinada) y descompón en componentes cada fuerza que no esté sobre un eje.</li>
+    <li>$\sum F_x=0$ y $\sum F_y=0$ (nunca sumes componentes $x$ con componentes $y$). Si hay <b>dos o más cuerpos</b>, repite para cada uno; si interactúan, la 3ª ley relaciona sus fuerzas.</li>
+    <li>Mismo número de ecuaciones independientes que de incógnitas; resuelve y <b>evalúa</b> (casos especiales, extremos).</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 5.1, p. 131">U p.131</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 5.3 — tres cadenas y un motor</span>
+  <p>Un motor de peso $w$ cuelga de una cadena vertical unida en un anillo $O$ a otras dos cadenas: una horizontal (pared) y una inclinada 60° (techo). Con solo el motor tenemos una ecuación y una incógnita ($T_1=w$), pero faltan $T_2$ y $T_3$. Truco: tomar también el <b>anillo</b> como cuerpo en equilibrio.</p>
+  <ol class="steps">
+    <li>Motor: $\sum F_y=T_1-w=0\Rightarrow T_1=w$.</li>
+    <li>Anillo, vertical: $T_3\sin60^\circ-T_1=0\Rightarrow T_3=\dfrac{w}{\sin60^\circ}=1{,}2\,w$.</li>
+    <li>Anillo, horizontal: $T_3\cos60^\circ-T_2=0\Rightarrow T_2=1{,}2\,w\cos60^\circ=0{,}58\,w$.</li>
+  </ol>
+  <p>La cadena inclinada es la más tensa ($1{,}2w>w$): es la que más probablemente se rompe. Un cuerpo en equilibrio solo da dos ecuaciones; para más incógnitas hay que añadir otro cuerpo.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 5.3, p. 133">U p.133</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_5_3_motor.png" alt="Figura 5.3 de U: a) un motor colgado de una cadena vertical unida en un anillo O a otras dos cadenas, una horizontal sujeta a la pared (T2) y otra inclinada 60 grados sujeta al techo (T3); b) diagrama de cuerpo libre del motor con T1 hacia arriba y w hacia abajo; c) diagrama del anillo O con T3 descompuesta en T3 cos 60 y T3 sen 60, T2 y T1." loading="lazy">
+<figcaption>Fig. 5.3 de U: el motor (b) solo da $T_1=w$; hay que añadir el anillo $O$ (c) para hallar $T_2$ y $T_3$. <span class="src" data-l="U" data-ref="U Ej. 5.3, fig. 5.3, p. 133">U p.133</span></figcaption>
+</figure>
+
+<h3>Plano inclinado en equilibrio</h3>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Sobre una rampa conviene girar los ejes: $x$ a lo largo de la rampa y $y$ perpendicular a ella. Así la normal está sobre un eje, la fricción y el movimiento también, y <b>solo el peso hay que descomponerlo</b>. El peso (vertical) forma con la perpendicular a la rampa el mismo ángulo $\alpha$ que la rampa con la horizontal: una componente $w\sin\alpha$ tira del cuerpo <i>a lo largo</i> de la rampa (cuesta abajo) y otra $w\cos\alpha$ lo aprieta <i>contra</i> la rampa.</p></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_5_4_plano.png" alt="Figura 5.4 de U: a) un automóvil sobre una rampa sujeto por un cable, con las fuerzas n, T y w; b) diagrama de cuerpo libre con ejes x paralelo a la rampa e y perpendicular, y el peso sustituido por sus componentes w sen alfa y w cos alfa." loading="lazy">
+<figcaption>Fig. 5.4 de U: un cable sostiene un automóvil en reposo sobre una rampa; el DCL (b) sustituye el peso por sus componentes. <span class="src" data-l="U" data-ref="U Ej. 5.4, fig. 5.4, p. 134">U p.134</span></figcaption>
+</figure>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 320 200" width="100%" role="img" aria-label="Peso descompuesto en un plano inclinado">
+  <defs><marker id="mainccomp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbinccomp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mminccomp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mginccomp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpinccomp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfinccomp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 30.0 172.0 L 290.0 172.0 L 290.0 21.9 Z" fill="var(--mut)" fill-opacity="0.12" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="30" y1="172" x2="290" y2="172" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 131.3 113.5 L 171.2 90.5 L 156.2 64.5 L 116.3 87.5 Z" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+    <line x1="143.7" y1="89.0" x2="143.7" y2="169.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbinccomp)"/>
+  <line x1="143.7" y1="89.0" x2="109.1" y2="109.0" stroke="var(--A)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mbinccomp)"/>
+  <line x1="143.7" y1="89.0" x2="178.4" y2="149.0" stroke="var(--A)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mbinccomp)"/>
+  <line x1="143.7" y1="89.0" x2="112.7" y2="35.3" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mainccomp)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="91.7" y="103.0" class="sm bd" text-anchor="end" style="fill:var(--A)">w sen α</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="186.4" y="153.0" class="sm bd" style="fill:var(--A)">w cos α</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="137.7" y="183.0" class="sm bd" text-anchor="end" style="fill:var(--A)">w = mg</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="106.7" y="33.3" class="sm bd" text-anchor="end" style="fill:var(--acc)">n</text>
+  <path d="M 64.0 172.0 A 34 34 0 0 0 59.4 155.0" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="70" y="166" class="sm bd">α</text>
+  <line x1="45" y1="80" x2="79.6" y2="60" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mfinccomp)"/>
+  <line x1="45" y1="80" x2="25" y2="45.4" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mfinccomp)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="84" y="58" class="sm bd">x</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="22" y="44" class="sm bd" text-anchor="end">y</text>
+</svg>
+<figcaption>Plano inclinado un ángulo α: ejes x paralelo y y perpendicular a la rampa. El peso se descompone en w sen α (paralela, cuesta abajo) y w cos α (perpendicular, que la normal n equilibra si no hay otra fuerza). El ángulo α de la rampa reaparece entre w y la perpendicular. <span class="src" data-l="P" data-ref="Diagrama propio (ver U Ej. 5.4, fig. 5.4)">P</span></figcaption>
+</figure>
+<div class="box thm"><span class="h">Ejemplo 5.4: coche sostenido en una rampa</span>
+  <p>Con $x$ cuesta arriba, $y$ perpendicular: $w_x=-w\sin\alpha$, $w_y=-w\cos\alpha$. Equilibrio:</p>
+  $$\sum F_x=T-w\sin\alpha=0,\qquad \sum F_y=n-w\cos\alpha=0$$
+  $$\Rightarrow\quad T=w\sin\alpha,\qquad n=w\cos\alpha$$
+  <p>Casos límite (comprobación): rampa horizontal ($\alpha=0$) ⇒ $T=0$, $n=w$; rampa vertical ($\alpha=90^\circ$) ⇒ $T=w$, $n=0$. Truco para no confundir seno y coseno: dibuja $\alpha$ claramente menor que 45°; entonces la componente paralela es la <i>corta</i> ($\sin\alpha$) y la perpendicular la <i>larga</i> ($\cos\alpha$).</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.4, p. 134">U p.134</span></div>
+<div class="box warn"><span class="h">Error típico: la normal no siempre es igual al peso</span><p>Aquí $n=w\cos\alpha&lt;w$. La normal es lo que haga falta para que el cuerpo <i>no se hunda</i> en la superficie: se obtiene de la ecuación perpendicular a la superficie, y cambia si hay otra fuerza con componente perpendicular (una cuerda que levanta, una mano que empuja contra la pared). Trata $n$ siempre como una incógnita.</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.4, CUIDADO, p. 134">U p.134</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 5.5 — cubeta, polea y carro</span><p>Un carro con un bloque de granito (peso $w_1$) sube por una rampa de 15° unido por un cable que pasa por una polea con una cubeta (peso $w_2$) que cuelga. Con velocidad constante todo está en equilibrio: cubeta $T=w_2$; carro $T=w_1\sin15^\circ$. Igualando: $w_2=w_1\sin15^\circ=0{,}26\,w_1$. Cada cuerpo tiene sus propios ejes (vertical para la cubeta, rampa para el carro).</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.5, pp. 134-135">U p.134</span></div>
+
+<h2 id="s2"><span class="n">2</span>Dinámica de partículas: segunda ley <span class="src" data-l="U" data-ref="U §5.2, pp. 135-142">U p.135</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Es el mismo trabajo que en equilibrio, con una diferencia: ahora la suma de fuerzas <b>no</b> es cero, es $m\vec a$. La aceleración tiene la dirección de la fuerza neta, así que lo más cómodo es poner un eje <b>en la dirección en que sabes que acelera</b> (hacia abajo por una rampa, hacia el centro de un círculo…); en el otro eje la aceleración vale cero.</p></div>
+<div class="box thm"><span class="h">Segunda ley por componentes</span>
+  $$\sum F_x=ma_x,\qquad \sum F_y=ma_y\qquad\text{(ec. 5.2)}$$
+  <p>Solo cuentan las fuerzas que <b>actúan sobre el cuerpo</b> (no las que él ejerce sobre otros). Estrategia 5.2: (1) dibujo y DCL de <i>cada</i> cuerpo; (2) símbolos para cada fuerza; (3) ejes, uno en la dirección de $\vec a$ si se conoce; (4) relaciones adicionales: cinemática de aceleración constante, y si hay dos cuerpos ligados, la relación entre sus aceleraciones; luego una ecuación por componente de cada cuerpo, resolver y evaluar (¿unidades?, ¿signo?, ¿casos límite?).</p>
+  <span class="src" data-l="U" data-ref="U §5.2 ec. (5.2), p. 135; Estrategia 5.2, p. 136">U p.135</span></div>
+<div class="box warn"><span class="h">Error típico: «ma» no es una fuerza</span><p>El vector $m\vec a$ es el <i>resultado</i> de las fuerzas, no una fuerza más. Nunca lo dibujes en el DCL (la aceleración puede dibujarse aparte, junto al diagrama y sin tocar el cuerpo). Tampoco metas la «fuerza centrífuga» (ver 5.4).</p>
+  <span class="src" data-l="U" data-ref="U CUIDADO y fig. 5.6, p. 136">U p.136</span></div>
+<div class="box ex"><span class="h">Ejemplos del libro 5.6 y 5.7 — velero de hielo sin y con fricción</span>
+  <p>Un velero de 200 kg (con tripulante) parte del reposo y alcanza 6,0 m/s en 4,0 s: $a_x=\Delta v/\Delta t=1{,}5\ \text{m/s}^2$. Sin fricción, la única fuerza horizontal es la del viento: $F_W=ma_x=(200)(1{,}5)=300$ N (la normal es $n=mg$, pues no hay aceleración vertical). Si hay una fricción constante de 100 N que se opone al movimiento, para la misma aceleración: $F_W-f=ma_x\Rightarrow F_W=300+100=400$ N.</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.6 y 5.7, pp. 137-138">U p.137</span></div>
+
+<h3>Elevadores y peso aparente</h3>
+<div class="box ex"><span class="h">Ejemplo del libro 5.8 — tensión del cable</span>
+  <p>Elevador de 800 kg que baja a 10,0 m/s y frena uniformemente en 25,0 m. Con $+y$ hacia arriba: $v_y^2=v_{0y}^2+2a_y(y-y_0)\Rightarrow a_y=\dfrac{0-(-10{,}0)^2}{2(-25{,}0)}=+2{,}00\ \text{m/s}^2$ (hacia arriba, como corresponde a frenar mientras baja). Segunda ley: $T-w=ma_y\Rightarrow T=m(g+a_y)=800(9{,}80+2{,}00)=9440$ N, mayor que el peso (7840 N). Lo mismo ocurriría si subiera acelerando a $2{,}00\ \text{m/s}^2$ hacia arriba: solo cuenta el signo de $a_y$, no si sube o baja.</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.8, p. 138">U p.138</span></div>
+<div class="box thm"><span class="h">Peso aparente</span>
+  <p>Una báscula mide la <b>normal</b> $n$ que el suelo hace sobre ti, no tu peso. Con $+y$ hacia arriba y un elevador con aceleración $a_y$:</p>
+  $$n=m(g+a_y)$$
+  <p>Si acelera hacia arriba ($a_y>0$) marcas <i>más</i> que tu peso; si acelera hacia abajo ($a_y&lt;0$), <i>menos</i>. En caída libre ($a_y=-g$) $n=0$: sensación de ingravidez (también la de un astronauta en órbita: cae con su nave con la misma aceleración, no «sale de la gravedad»). En el ejemplo 5.9, una mujer de 50,0 kg ($w=490$ N) en el elevador anterior ($a_y=+2{,}00$) marca $n=590$ N; si $a_y=-2{,}00$, marca 390 N.</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.9 y «Peso e ingravidez aparentes», pp. 138-139">U p.138-139</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 205" width="100%" role="img" aria-label="Peso aparente en un elevador">
+  <defs><marker id="maascensor" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbascensor" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmascensor" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgascensor" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpascensor" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfascensor" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="37" y="38" width="96" height="132" rx="2" fill="var(--mut)" fill-opacity="0.1" stroke="var(--mut)" stroke-width="1.5"/>
+  <rect x="73" y="92" width="24" height="56" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="85" y="18" class="sm bd" text-anchor="middle">a<tspan dy="3" font-size="9">y</tspan><tspan dy="-3"> = +2,00 m/s²</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="85" y="32" class="sm" text-anchor="middle">acelera hacia arriba</text>
+  <line x1="77" y1="120" x2="77.0" y2="66.9" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#maascensor)"/>
+  <line x1="93" y1="120" x2="93.0" y2="164.1" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbascensor)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="71" y="70.9" class="sm bd" text-anchor="end" style="fill:var(--acc)">n = 590 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="99" y="166.1" class="sm bd" style="fill:var(--A)">w = 490 N</text>
+  <line x1="147" y1="120" x2="147.0" y2="86.0" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfascensor)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="155" y="104" class="sm bd" text-anchor="start">a</text>
+  <rect x="207" y="38" width="96" height="132" rx="2" fill="var(--mut)" fill-opacity="0.1" stroke="var(--mut)" stroke-width="1.5"/>
+  <rect x="243" y="92" width="24" height="56" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="255" y="18" class="sm bd" text-anchor="middle">a<tspan dy="3" font-size="9">y</tspan><tspan dy="-3"> = −2,00 m/s²</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="255" y="32" class="sm" text-anchor="middle">acelera hacia abajo</text>
+  <line x1="247" y1="120" x2="247.0" y2="84.9" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#maascensor)"/>
+  <line x1="263" y1="120" x2="263.0" y2="164.1" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbascensor)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="241" y="88.9" class="sm bd" text-anchor="end" style="fill:var(--acc)">n = 390 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="269" y="166.1" class="sm bd" style="fill:var(--A)">w = 490 N</text>
+  <line x1="193" y1="100" x2="193.0" y2="134.0" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfascensor)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="185" y="104" class="sm bd" text-anchor="end">a</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="170" y="196" class="sm" text-anchor="middle">mujer de 50,0 kg sobre una báscula</text>
+</svg>
+<figcaption>DCL de la mujer del Ej. 5.9: el peso es siempre 490 N, pero la normal n (la lectura de la báscula) vale m(g + a<sub>y</sub>): 590 N si el elevador acelera hacia arriba y 390 N si lo hace hacia abajo. <span class="src" data-l="P" data-ref="Diagrama propio (datos de U Ej. 5.9)">P</span></figcaption>
+</figure>
+<div class="box warn"><span class="h">Error típico</span><p>Igualar la lectura de la báscula con el peso real, o creer que «el elevador sube, luego marca más». Lo que importa es el <b>sentido de la aceleración</b>, no el de la velocidad: un elevador que sube y frena (aceleración hacia abajo) marca menos que tu peso.</p>  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
+
+<h3>Plano inclinado con aceleración</h3>
+<div class="box ex"><span class="h">Ejemplo del libro 5.10 — trineo cuesta abajo sin fricción</span>
+  <p>Con $x$ <b>cuesta abajo</b> (la dirección de la aceleración): $\sum F_x=w\sin\alpha=ma_x$ y $\sum F_y=n-w\cos\alpha=0$. Como $w=mg$:</p>
+  $$a_x=g\sin\alpha,\qquad n=mg\cos\alpha$$
+  <p>La masa se cancela: cualquier trineo baja con la misma aceleración. Casos límite: $\alpha=0\Rightarrow a_x=0$; $\alpha=90^\circ\Rightarrow a_x=g$ (caída libre). Atención al convenio de signos: aquí $x$ apunta cuesta abajo, así que $w_x=+w\sin\alpha$; en el ejemplo 5.4 apuntaba cuesta arriba y era $w_x=-w\sin\alpha$. Elige el sentido y mantén la coherencia.</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.10, pp. 139-140">U p.139</span></div>
+
+<h3>Dos cuerpos unidos</h3>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Si dos cuerpos están unidos por una cuerda tensa e inextensible, <b>avanzan lo mismo</b> en el mismo tiempo: sus aceleraciones tienen la misma magnitud (aunque tengan direcciones distintas). Esa es la relación extra que cierra el sistema de ecuaciones. Con cuerda y polea ideales, la tensión es la misma en ambos lados. Se plantea una segunda ley por cada cuerpo, cada uno con su propio eje <b>positivo en el sentido de su aceleración</b>, y se resuelve el sistema.</p></div>
+<div class="box ex"><span class="h">Ejemplo del libro 5.11 — bandeja y envase de leche (misma aceleración)</span>
+  <p>Una fuerza de 9,0 N empuja una bandeja de 1,00 kg que empuja un envase de 0,50 kg, sin fricción. Dos formas de resolver:</p>
+  <ol class="steps">
+    <li><b>Por separado:</b> bandeja $F-F_{T\to C}=m_Ta$; envase $F_{T\to C}=m_Ca$. Sumando, $F=(m_T+m_C)a\Rightarrow a=\dfrac{9{,}0}{1{,}50}=6{,}0\ \text{m/s}^2$ y $F_{T\to C}=m_Ca=3{,}0$ N.</li>
+    <li><b>Como cuerpo compuesto:</b> si ambos tienen la <i>misma</i> aceleración, se pueden tratar como un solo cuerpo de 1,50 kg, porque las fuerzas internas (bandeja–envase) se cancelan: $a=F/m=6{,}0\ \text{m/s}^2$. Pero para la fuerza entre ellos hay que volver al envase solo.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ej. 5.11, pp. 140-141">U p.140</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 5.12 — deslizador y pesa (misma magnitud de aceleración)</span>
+  <p>Deslizador de masa $m_1$ en un riel horizontal sin fricción, unido por una cuerda ideal que pasa por una polea a una pesa $m_2$ que cuelga. Deslizador: $T=m_1a$ (horizontal; $n=m_1g$). Pesa, con $+y$ hacia abajo: $m_2g-T=m_2a$. Sumando:</p>
+  $$a=\frac{m_2}{m_1+m_2}\,g,\qquad T=\frac{m_1m_2}{m_1+m_2}\,g$$
+  <p>Comprobación con casos límite: $m_1=0$ ⇒ la pesa cae libremente ($a=g$, $T=0$); $m_2=0$ ⇒ $a=0$, $T=0$. Siempre $a&lt;g$ y $T&lt;m_2g$.</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.12, pp. 141-142">U p.141</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 330 205" width="100%" role="img" aria-label="Deslizador y pesa unidos por una cuerda">
+  <defs><marker id="madeslizador" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbdeslizador" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmdeslizador" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgdeslizador" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpdeslizador" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfdeslizador" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 15.0 70.0 L 232.0 70.0 L 232.0 84.0 L 15.0 84.0 Z" fill="var(--mut)" fill-opacity="0.2" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="78" y="36" width="54" height="34" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="105" y="57" class="sm bd" text-anchor="middle">m<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"></tspan></text>
+  <circle cx="240" cy="70" r="10" fill="var(--fg)" fill-opacity="0.1" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="132" y1="60" x2="240" y2="60" stroke="var(--fg)" stroke-width="1.5"/>
+  <path d="M 240 60 A 10 10 0 0 1 250 70" fill="none" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="250" y1="70" x2="250" y2="118" stroke="var(--fg)" stroke-width="1.5"/>
+  <rect x="232" y="118" width="36" height="34" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="250" y="139" class="sm bd" text-anchor="middle">m<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"></tspan></text>
+  <line x1="132" y1="60" x2="172" y2="60" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgdeslizador)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="172" y="54" class="sm bd" style="fill:var(--X)">T</text>
+  <line x1="95" y1="36" x2="95.0" y2="10.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#madeslizador)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="89" y="22" class="sm bd" text-anchor="end" style="fill:var(--acc)">n</text>
+  <line x1="115" y1="70" x2="115.0" y2="96.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbdeslizador)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="121" y="100" class="sm bd" style="fill:var(--A)">m<tspan dy="3" font-size="9">1</tspan><tspan dy="-3">g</tspan></text>
+  <line x1="258" y1="118" x2="258.0" y2="84.0" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgdeslizador)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="264" y="100" class="sm bd" style="fill:var(--X)">T</text>
+  <line x1="242" y1="152" x2="242.0" y2="188.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbdeslizador)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="236" y="196" class="sm bd" text-anchor="end" style="fill:var(--A)">m<tspan dy="3" font-size="9">2</tspan><tspan dy="-3">g</tspan></text>
+  <line x1="40" y1="110" x2="80.0" y2="110.0" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfdeslizador)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="60" y="126" class="sm bd" text-anchor="middle">a</text>
+  <line x1="300" y1="118" x2="300.0" y2="158.0" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfdeslizador)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="308" y="142" class="sm bd">a</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="18" y="176" class="sm bd">a = m<tspan dy="3" font-size="9">2</tspan><tspan dy="-3">g / (m</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3">+m</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3">)</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="18" y="194" class="sm bd">T = m<tspan dy="3" font-size="9">1</tspan><tspan dy="-3">m</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3">g / (m</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3">+m</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3">)</tspan></text>
+</svg>
+<figcaption>Ej. 5.12: el deslizador (m<sub>1</sub>) sobre el riel sin fricción y la pesa (m<sub>2</sub>) colgante están unidos por una cuerda ligera que pasa por una polea ideal. Misma T en toda la cuerda y misma magnitud de aceleración a en ambos cuerpos; la dirección de a es distinta (horizontal / vertical). <span class="src" data-l="P" data-ref="Diagrama propio (ver U Ej. 5.12, fig. 5.15)">P</span></figcaption>
+</figure>
+<div class="box warn"><span class="h">Error típico: tensión igual a peso</span><p>«Si un cuerpo cuelga de una cuerda, la tensión es su peso» solo es cierto si no acelera (como en el ejemplo 5.5). Aquí $T=\frac{m_1}{m_1+m_2}m_2g&lt;m_2g$ (si $T$ fuera $m_2g$, la pesa estaría en equilibrio y no caería). Trata siempre $T$ como una variable.</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.12, CUIDADO, p. 142">U p.142</span></div>
+
+<h2 id="s3"><span class="n">3</span>Fuerzas de fricción <span class="src" data-l="U" data-ref="U §5.3, pp. 142-150">U p.142</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Empuja una caja muy cargada: al principio no se mueve por más que empujes un poco; hay un momento en que «cede» y arranca; y una vez en marcha cuesta algo menos mantenerla. La superficie ejerce sobre la caja <b>una sola fuerza de contacto</b> cuyas dos componentes son la <b>normal</b> $n$ (perpendicular) y el <b>fricción</b> $f$ (paralela, siempre <i>opuesta al movimiento relativo</i> de las dos superficies, o a la tendencia a moverse). A nivel microscópico ambas vienen de las fuerzas eléctricas entre las moléculas de las dos superficies rugosas donde se tocan.</p>
+  <span class="src" data-l="U" data-ref="U §5.3, fig. 5.17-5.18, p. 143">U p.143</span></div>
+<div class="box def"><span class="h">Fricción cinética (el cuerpo desliza)</span>
+  $$f_k=\mu_k\,n\qquad\text{(ec. 5.3)}$$
+  <p>$\mu_k$ es el <b>coeficiente de fricción cinética</b>, un número sin unidades que depende del par de superficies (menor cuanto más resbaladizas). La relación es entre <i>magnitudes</i> (no es una ecuación vectorial: $\vec f_k$ y $\vec n$ son perpendiculares). Es una aproximación: se supone que $f_k$ no depende de la rapidez ni del área de contacto.</p>
+  <span class="src" data-l="U" data-ref="U §5.3 ec. (5.3), p. 143">U p.143</span></div>
+<div class="box def"><span class="h">Fricción estática (el cuerpo no desliza)</span>
+  $$f_s\le(f_s)_{\text{máx}}=\mu_s\,n\qquad\text{(ec. 5.4)}$$
+  <p>La fricción estática vale <b>lo que haga falta</b> para impedir el deslizamiento, desde 0 hasta un máximo $\mu_s n$. Solo en el instante en que el cuerpo está a punto de deslizar se cumple la igualdad. Si el cuerpo está parado y aún no está en el límite, $f_s$ se calcula con el <b>equilibrio</b> ($\sum\vec F=0$), no con $\mu_sn$. Lo habitual es $\mu_k&lt;\mu_s$.</p>
+  <span class="src" data-l="U" data-ref="U §5.3 ec. (5.4), p. 144">U p.144</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_5_19_friccion.png" alt="Figura 5.19 de U: cuatro diagramas de una caja con la cuerda y las fuerzas n, w, T y fricción (sin fuerza aplicada, fuerza débil, a punto de deslizar y deslizando), y debajo la gráfica de la fuerza de fricción f contra la fuerza aplicada T: una recta creciente hasta (fs)máx, un salto hacia abajo y un valor casi constante fk." loading="lazy">
+<figcaption>Fig. 5.19 de U: mientras la caja no se mueve, $f_s$ crece con $T$ (la gráfica e es una recta de pendiente 1) hasta $(f_s)_{\text{máx}}=\mu_sn$; al deslizar, la fricción cae al valor, casi constante, $f_k=\mu_kn$. <span class="src" data-l="U" data-ref="U fig. 5.19, p. 144">U p.144</span></figcaption>
+</figure>
+<div class="box thm"><span class="h">Coeficientes de fricción típicos (U, tabla 5.1)</span>
+  <table>
+  <tr><th>Materiales</th><th>$\mu_s$</th><th>$\mu_k$</th></tr>
+  <tr><td>Acero sobre acero</td><td>0,74</td><td>0,57</td></tr>
+  <tr><td>Teflón sobre teflón</td><td>0,04</td><td>0,04</td></tr>
+  <tr><td>Hule sobre concreto (seco)</td><td>1,0</td><td>0,8</td></tr>
+  <tr><td>Hule sobre concreto (húmedo)</td><td>0,30</td><td>0,25</td></tr>
+  </table>
+  <p>Son valores aproximados; en un problema siempre los da el enunciado.</p>
+  <span class="src" data-l="U" data-ref="U Tabla 5.1, p. 143">U p.143</span></div>
+<div class="box ex"><span class="h">Ejemplos del libro 5.13 y 5.14 — hallar los coeficientes; fricción estática menor que el máximo</span>
+  <p>Una caja de 500 N sobre un suelo horizontal: se necesita una fuerza de 230 N para arrancarla y 200 N para mantenerla a velocidad constante. Horizontal, justo antes de moverse: $(f_s)_{\text{máx}}=T=230$ N y $n=w=500$ N, luego $\mu_s=230/500=0{,}46$. Ya en movimiento, velocidad constante ⇒ $f_k=T=200$ N, $\mu_k=200/500=0{,}40$ (como se esperaba $\mu_k&lt;\mu_s$). Si con la caja parada solo se tira con 50 N, el equilibrio da $f_s=50$ N, <b>no</b> $\mu_sn=230$ N.</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.13 y 5.14, p. 145">U p.145</span></div>
+<div class="box warn"><span class="h">Error típico (el más común del tema)</span><p>Usar siempre $f_s=\mu_s n$. Esa es solo la fricción estática <i>máxima</i>; el valor real, con el cuerpo en reposo, se obtiene aplicando $\sum\vec F=0$ y puede ser cualquiera entre 0 y ese máximo. El libro señala que más del 36 % de los estudiantes falla este tipo de pregunta. Y no olvides que, en cuanto el cuerpo desliza, la fricción pasa a ser $\mu_kn$ (menor).</p>
+  <span class="src" data-l="U" data-ref="U «Los datos hablan: fricción estática», p. 147">U p.147</span></div>
+
+<h3>La normal cambia: tirón oblicuo</h3>
+<div class="box ex"><span class="h">Ejemplo del libro 5.15 — reducir la fricción cinética</span>
+  <p>La misma caja de 500 N ($\mu_k=0{,}40$), pero ahora se tira de una cuerda que forma 30° con la horizontal, con velocidad constante. La componente vertical de la tensión levanta parcialmente la caja y <b>reduce la normal</b>:</p>
+  $$\sum F_y=T\sin30^\circ+n-w=0\ \Rightarrow\ n=w-T\sin30^\circ$$
+  $$\sum F_x=T\cos30^\circ-\mu_kn=0\ \Rightarrow\ T=\frac{\mu_kw}{\cos30^\circ+\mu_k\sin30^\circ}=188\ \text{N}$$
+  <p>Es menos que los 200 N necesarios al tirar en horizontal, y la normal vale $n=406$ N, menor que $w=500$ N.</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.15, p. 146">U p.146</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 330 229" width="100%" role="img" aria-label="Caja arrastrada con una cuerda oblicua">
+  <defs><marker id="matiron15" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbtiron15" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmtiron15" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgtiron15" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mptiron15" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mftiron15" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="30" y1="125.2" x2="300" y2="125.2" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="130" y="81.2" width="60" height="44" rx="2" fill="var(--mut)" fill-opacity="0.25" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="160" y1="103.2" x2="192.6" y2="103.2" stroke="var(--X)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mgtiron15)"/>
+  <line x1="192.6" y1="103.2" x2="192.6" y2="84.4" stroke="var(--X)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mgtiron15)"/>
+  <line x1="160" y1="103.2" x2="192.6" y2="84.4" stroke="var(--X)" stroke-width="3.5" fill="none" marker-end="url(#mgtiron15)"/>
+  <path d="M 194.0 103.2 A 34 34 0 0 0 189.4 86.2" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="160" y1="103.2" x2="160.0" y2="22.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#matiron15)"/>
+  <line x1="160" y1="103.2" x2="160.0" y2="203.2" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbtiron15)"/>
+  <line x1="160" y1="103.2" x2="127.4" y2="103.2" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mptiron15)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="198.6" y="82.4" class="sm bd" style="fill:var(--X)">T = 188 N, a 30°</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="154" y="32.0" class="sm bd" text-anchor="end" style="fill:var(--acc)">n = 406 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="154" y="201.2" class="sm bd" text-anchor="end" style="fill:var(--A)">w = 500 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="121.4" y="95.2" class="sm bd" text-anchor="end" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 163 N</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="168" y="141.2" class="sm" style="fill:var(--X)">T cos 30° = 163 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="200.6" y="115.8" class="sm" style="fill:var(--X)">T sen 30° = 94 N</text>
+</svg>
+<figcaption>Ej. 5.15: al tirar de la cuerda con 30° sobre la horizontal, T sen 30° levanta parcialmente la caja y reduce la normal (n = w − T sen 30° = 406 N, menor que w = 500 N), de modo que la fricción f<sub>k</sub> = μ<sub>k</sub>n es menor que al tirar en horizontal. Longitudes proporcionales entre sí. <span class="src" data-l="P" data-ref="Diagrama propio (datos de U Ej. 5.15)">P</span></figcaption>
+</figure>
+<div class="box tip"><span class="h">Truco de examen</span><p>Siempre que haya una fuerza oblicua sobre una superficie, <b>primero</b> la ecuación perpendicular a la superficie (da $n$), <b>después</b> $f=\mu n$ y la ecuación paralela. Hacerlo en otro orden es la fuente de la mayoría de los errores con fricción.</p>  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
+
+<h3>Trineo en una pendiente con fricción</h3>
+<div class="box ex"><span class="h">Ejemplos del libro 5.16 y 5.17</span>
+  <p>Con $n=mg\cos\alpha$ y $f_k=\mu_kmg\cos\alpha$ (cuesta arriba, porque el trineo baja):</p>
+  <ul>
+    <li><b>Velocidad constante</b> (equilibrio): $mg\sin\alpha=\mu_kmg\cos\alpha\Rightarrow\tan\alpha=\mu_k$, es decir $\alpha=\arctan\mu_k$ (no depende del peso).</li>
+    <li><b>Con aceleración</b> (pendiente mayor): $mg\sin\alpha-\mu_kmg\cos\alpha=ma_x\Rightarrow a_x=g(\sin\alpha-\mu_k\cos\alpha)$. Incluye como casos especiales $\mu_k=0$ (ej. 5.10) y $a_x=0$ ($\tan\alpha=\mu_k$). Si el trineo <i>sube</i>, la fricción cambia de sentido y el signo menos pasa a más.</li>
+  </ul>
+  <span class="src" data-l="U" data-ref="U Ej. 5.16 y 5.17, pp. 146-147">U p.146-147</span></div>
+
+<h3>Fricción de rodamiento y resistencia de fluidos</h3>
+<div class="box def"><span class="h">Fricción de rodamiento</span><p>Mover algo sobre ruedas es mucho más fácil que deslizarlo. Se define un coeficiente de rodamiento $\mu_r$ = fuerza horizontal necesaria para velocidad constante dividida entre la normal. Valores típicos: 0,002-0,003 (ruedas de acero sobre rieles de acero) y 0,01-0,02 (caucho sobre concreto); por eso el combustible rinde más en los ferrocarriles que en los camiones.</p>
+  <span class="src" data-l="U" data-ref="U «Fricción de rodamiento», p. 147">U p.147</span></div>
+<div class="box def"><span class="h">Resistencia de un fluido y rapidez terminal</span>
+  <p>Un cuerpo que se mueve dentro de un fluido (aire, aceite…) sufre una fuerza <b>opuesta a su velocidad</b> relativa al fluido y que, a diferencia de la fricción entre sólidos, <b>crece con la rapidez</b>:</p>
+  $$f=kv\qquad\text{(baja rapidez, objetos pequeños; ec. 5.5)}$$
+  $$f=Dv^2\qquad\text{(alta rapidez, «arrastre»; ec. 5.6)}$$
+  <p>Al caer, el peso es constante pero la resistencia crece con $v$ hasta igualarlo: entonces $a=0$ y la rapidez deja de aumentar. Esa rapidez final es la <b>rapidez terminal</b>:</p>
+  $$mg-kv_t=0\ \Rightarrow\ v_t=\frac{mg}{k}\qquad\text{(5.8)}$$
+  $$mg=Dv_t^2\ \Rightarrow\ v_t=\sqrt{\frac{mg}{D}}\qquad\text{(5.12)}$$
+  <p>Por eso los objetos pesados caen más rápido en el aire que los ligeros del mismo tamaño ($D$ igual, $m$ mayor). En el ejemplo 5.18, un paracaidista de 50 kg con $D=0{,}25\ \text{kg/m}$: $v_t=\sqrt{(50)(9{,}8)/0{,}25}=44$ m/s (≈ 160 km/h). Con $f=kv$ el libro integra la segunda ley y obtiene $v_y=v_t\,[1-e^{-(k/m)t}]$ (ec. 5.9): la rapidez terminal solo se alcanza en el límite $t\to\infty$.</p>
+  <span class="src" data-l="U" data-ref="U ec. (5.5)-(5.8), p. 148; ec. (5.9), (5.12), p. 149; Ej. 5.18, p. 150">U p.148-150</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 330 200" width="100%" role="img" aria-label="Caída con resistencia del fluido">
+  <defs><marker id="mafluido" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbfluido" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmfluido" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgfluido" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpfluido" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mffluido" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="60" cy="100" r="14" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="60" y1="114" x2="60.0" y2="162.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbfluido)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="60" y="14" class="sm bd" text-anchor="middle">v = 0</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="60" y="190" class="sm bd" text-anchor="middle">a = g</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="68" y="80" class="sm bd" text-anchor="start" style="fill:var(--acc)">f = 0</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="68" y="162" class="sm bd" style="fill:var(--A)">mg</text>
+  <circle cx="165" cy="100" r="14" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="165" y1="114" x2="165.0" y2="162.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbfluido)"/>
+  <line x1="165" y1="86" x2="165.0" y2="64.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mafluido)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="165" y="14" class="sm bd" text-anchor="middle">v crece</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="165" y="190" class="sm bd" text-anchor="middle">a &lt; g</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="173" y="62" class="sm bd" text-anchor="start" style="fill:var(--acc)">f = kv &lt; mg</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="173" y="162" class="sm bd" style="fill:var(--A)">mg</text>
+  <circle cx="270" cy="100" r="14" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="270" y1="114" x2="270.0" y2="162.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbfluido)"/>
+  <line x1="270" y1="86" x2="270.0" y2="38.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mafluido)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="270" y="14" class="sm bd" text-anchor="middle">v = v<tspan dy="3" font-size="9">t</tspan><tspan dy="-3"></tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="270" y="190" class="sm bd" text-anchor="middle">a = 0</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="262" y="36" class="sm bd" text-anchor="end" style="fill:var(--acc)">f = kv = mg</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="278" y="162" class="sm bd" style="fill:var(--A)">mg</text>
+</svg>
+<figcaption>Cuerpo que cae en un fluido con f = kv: al ganar rapidez crece la resistencia hasta igualar al peso; entonces la aceleración es cero y la rapidez deja de aumentar (rapidez terminal v<sub>t</sub> = mg/k). <span class="src" data-l="P" data-ref="Diagrama propio (ver U fig. 5.24 y ec. 5.8)">P</span></figcaption>
+</figure>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_5_25_terminal.png" alt="Figura 5.25 de U: tres gráficas contra el tiempo de aceleración, velocidad y posición de un cuerpo que cae, con y sin resistencia del fluido proporcional a la rapidez; con resistencia la aceleración decrece hasta cero y la velocidad tiende a una rapidez terminal vt." loading="lazy">
+<figcaption>Fig. 5.25 de U: sin resistencia del fluido, $a_y=g$ constante y $v_y$ crece sin límite; con resistencia, $a_y\to0$ y $v_y\to v_t$. <span class="src" data-l="U" data-ref="U fig. 5.25, p. 148">U p.148</span></figcaption>
+</figure>
+
+<h2 id="s4"><span class="n">4</span>Dinámica del movimiento circular <span class="src" data-l="U" data-ref="U §5.4, pp. 150-155">U p.150</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span><p>Un cuerpo que describe un círculo cambia continuamente la <i>dirección</i> de su velocidad, así que está acelerado aunque su rapidez sea constante, y la segunda ley exige que haya una fuerza neta. Esa fuerza apunta siempre <b>hacia el centro del círculo</b>. No es una fuerza nueva con nombre propio («centrípeta»): es simplemente la <b>resultante</b> de las fuerzas reales (tensión, normal, fricción, peso…) en la dirección radial. Si la fuerza deja de actuar, el cuerpo sale despedido en línea recta por la tangente (primera ley), no hacia fuera.</p></div>
+<div class="box thm"><span class="h">Aceleración y fuerza en el movimiento circular uniforme</span>
+  $$a_{rad}=\frac{v^2}{R}\quad(5.13),\qquad T_{per}=\frac{2\pi R}{v}\quad(5.14)$$
+  $$a_{rad}=\frac{4\pi^2R}{T_{per}^2}\quad(5.15)$$
+  $$\boxed{\ \sum F_{rad}=ma_{rad}=m\frac{v^2}{R}\ }\qquad\text{(ec. 5.16)}$$
+  <p>$R$ es el radio del círculo <b>descrito</b> (distancia al eje de giro), $v$ la rapidez y $T_{per}$ el periodo (en el libro se escribe $T$; aquí $T_{per}$ para no confundirlo con la tensión). En este tema «ejes» = un eje radial hacia el centro (ahí $\sum F=mv^2/R$) y otro perpendicular al plano del círculo (ahí $\sum F=0$ si el movimiento es horizontal). La ecuación 5.16 sirve para cualquier arco de circunferencia. Si el enunciado da la velocidad angular $\omega$ (el ángulo que gira el cuerpo por unidad de tiempo, $\omega=2\pi/T_{per}$, en rad/s; se estudia a fondo en el tema 9): $v=\omega R$, $a_{rad}=\omega^2R$; recuerda pasar rpm a rad/s (×$2\pi/60$).</p>
+  <span class="src" data-l="U" data-ref="U §5.4 ec. (5.13)-(5.15), p. 150; ec. (5.16), p. 151">U p.150-151</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 205" width="100%" role="img" aria-label="Movimiento circular uniforme">
+  <defs><marker id="macircunif" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcircunif" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcircunif" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcircunif" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcircunif" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcircunif" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="105" cy="100" r="68" fill="none" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <circle cx="105" cy="100" r="2.5" fill="var(--fg)"/>
+  <line x1="105" y1="100" x2="41.1" y2="123.3" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="73.1" y="105.6" class="sm bd" text-anchor="middle">R</text>
+  <circle cx="160.7" cy="61.0" r="7" fill="var(--A)" fill-opacity="0.35" stroke="var(--A)" stroke-width="1.5"/>
+  <line x1="160.7" y1="61.0" x2="132.0" y2="20.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#macircunif)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="128.0" y="16.0" class="sm bd" text-anchor="end" style="fill:var(--acc)">v</text>
+  <line x1="160.7" y1="61.0" x2="124.7" y2="86.2" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mpcircunif)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="120.7" y="78.2" class="sm bd" text-anchor="end" style="fill:var(--E)">ΣF y a</text>
+    <line x1="160.7" y1="61.0" x2="200.9" y2="118.3" stroke="var(--X)" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="206.9" y="120.3" class="sm">si ΣF = 0:</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="206.9" y="134.3" class="sm">recta tangente</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="105" y="196" class="sm bd" text-anchor="middle">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"> = v²/R,   ΣF = m v²/R</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="105" y="182" class="sm" text-anchor="middle">ΣF y a: hacia el centro</text>
+</svg>
+<figcaption>En un movimiento circular uniforme la velocidad es tangente a la trayectoria, mientras que la aceleración y la fuerza neta apuntan siempre al centro. Si la fuerza neta desapareciera, el cuerpo saldría por la tangente en línea recta (primera ley). <span class="src" data-l="P" data-ref="Diagrama propio (ver U §5.4, figs. 5.28-5.29)">P</span></figcaption>
+</figure>
+<div class="box warn"><span class="h">Error típico: «fuerza centrífuga»</span><p>No dibujes una fuerza $mv^2/R$ hacia fuera en el DCL. El libro da tres razones: el cuerpo no «se va hacia fuera» sino que sigue un círculo (está acelerado, no en equilibrio); si hubiera una fuerza hacia fuera que equilibrase la de dentro, no habría fuerza neta y el cuerpo iría en línea recta; y $mv^2/R$ no es una fuerza, es el término $m\vec a$ de la ecuación. En un sistema inercial no existe tal fuerza. (El pasajero que «se va hacia fuera» en una curva en realidad sigue recto, y es la puerta la que lo empuja.)</p>
+  <span class="src" data-l="U" data-ref="U CUIDADO «Evite usar fuerza centrífuga», fig. 5.30, p. 151">U p.151</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 5.19 — trineo atado a un poste</span>
+  <p>Trineo de 25,0 kg atado con una cuerda de 5,00 m, da 5 vueltas por minuto sobre hielo sin fricción. Periodo $T_{per}=60{,}0/5=12{,}0$ s; $a_{rad}=\dfrac{4\pi^2R}{T_{per}^2}=\dfrac{4\pi^2(5{,}00)}{12{,}0^2}=1{,}37\ \text{m/s}^2$. La única fuerza horizontal es la tensión: $F=ma_{rad}=(25{,}0)(1{,}37)=34{,}3$ N. Si $v$ se duplica con $R$ igual, $F$ se hace 4 veces mayor.</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.19, p. 151">U p.151</span></div>
+
+<h3>Péndulo cónico</h3>
+<div class="box ex"><span class="h">Ejemplo del libro 5.20 — lenteja en un alambre de longitud L</span>
+  <p>La lenteja describe un círculo horizontal con el alambre formando un ángulo $\beta$ con la vertical. El centro del círculo está en el plano horizontal de la lenteja, <b>no</b> en el punto de suspensión, y el radio es $R=L\sin\beta$. Dos fuerzas: peso y tensión $F$. Con $x$ horizontal hacia el centro:</p>
+  $$\sum F_x=F\sin\beta=ma_{rad},\qquad \sum F_y=F\cos\beta-mg=0$$
+  $$\Rightarrow\quad F=\frac{mg}{\cos\beta},\qquad a_{rad}=g\tan\beta$$
+  $$T_{per}=2\pi\sqrt{\frac{R}{g\tan\beta}}=2\pi\sqrt{\frac{L\cos\beta}{g}}$$
+  <p>Al crecer $\beta$ el periodo disminuye y la tensión aumenta; $\beta=90^\circ$ es imposible (haría falta $F=\infty$). Fíjate en que la masa se cancela: $\tan\beta=v^2/(gR)$ no depende de $m$.</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.20, p. 152">U p.152</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_5_32_conico.png" alt="Figura 5.32 de U: a) péndulo cónico, una lenteja que gira en un círculo horizontal de radio R colgada de un alambre de longitud L que forma un ángulo beta con la vertical; b) su diagrama de cuerpo libre con la tensión F descompuesta en F cos beta (vertical) y F sen beta (hacia el centro, dirección +x), y el peso mg." loading="lazy">
+<figcaption>Fig. 5.32 de U: el péndulo cónico y su DCL; la componente horizontal $F\sin\beta$ de la tensión es la que produce la aceleración radial. <span class="src" data-l="U" data-ref="U fig. 5.32, p. 152">U p.152</span></figcaption>
+</figure>
+
+<h3>Curva plana y curva peraltada</h3>
+<div class="box ex"><span class="h">Ejemplo del libro 5.21 — curva plana: la fricción hace de fuerza centrípeta</span>
+  <p>En una curva sin peralte, la única fuerza horizontal sobre el coche es la fricción <b>estático</b> con la carretera (el neumático no desliza), dirigido al centro: $f=mv^2/R$ y $n=mg$. Como $f\le\mu_sn=\mu_smg$, la rapidez máxima sin derrapar es</p>
+  $$v_{\text{máx}}=\sqrt{\mu_s\,g\,R}$$
+  <p>Con $\mu_s=0{,}96$ y $R=230$ m, $v_{\text{máx}}=47$ m/s (≈ 170 km/h). Con la carretera mojada o con hielo $\mu_s$ baja y $v_{\text{máx}}$ también.</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.21, pp. 152-153">U p.152</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 330 205" width="100%" role="img" aria-label="Coche en una curva plana">
+  <defs><marker id="macurvaplana" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcurvaplana" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcurvaplana" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcurvaplana" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcurvaplana" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcurvaplana" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="30" y1="140" x2="300" y2="140" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="120" y="96" width="80" height="44" rx="2" fill="var(--mut)" fill-opacity="0.25" stroke="var(--mut)" stroke-width="1.5"/>
+  <circle cx="140" cy="140" r="8" fill="var(--bg)" stroke="var(--fg)" stroke-width="1.5"/><circle cx="140" cy="140" r="2" fill="var(--fg)"/>
+  <circle cx="180" cy="140" r="8" fill="var(--bg)" stroke="var(--fg)" stroke-width="1.5"/><circle cx="180" cy="140" r="2" fill="var(--fg)"/>
+  <line x1="160" y1="114" x2="160.0" y2="68.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#macurvaplana)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="166" y="74" class="sm bd" style="fill:var(--acc)">n</text>
+  <line x1="160" y1="114" x2="160.0" y2="160.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbcurvaplana)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="168" y="170" class="sm bd" style="fill:var(--A)">w = mg</text>
+  <line x1="160" y1="114" x2="90.0" y2="114.0" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mpcurvaplana)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="88" y="108" class="sm bd" text-anchor="end" style="fill:var(--E)">f<tspan dy="3" font-size="9">s</tspan><tspan dy="-3"></tspan></text>
+  <line x1="215" y1="190" x2="175.0" y2="190.0" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfcurvaplana)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="220" y="194" class="sm bd">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"></tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="20" y="22" class="sm bd">← hacia el centro de la curva</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="20" y="40" class="sm bd">f<tspan dy="3" font-size="9">s</tspan><tspan dy="-3"> = m v²/R ≤ μ</tspan><tspan dy="3" font-size="9">s</tspan><tspan dy="-3"> m g,   n = mg</tspan></text>
+</svg>
+<figcaption>Curva sin peralte, vista por detrás del coche: la única fuerza horizontal es la fricción estática f<sub>s</sub>, que debe apuntar al centro de la curva y proporcionar m v²/R. Como f<sub>s</sub> no puede superar μ<sub>s</sub>n = μ<sub>s</sub>mg, la rapidez máxima es v<sub>máx</sub> = √(μ<sub>s</sub>gR). <span class="src" data-l="P" data-ref="Diagrama propio (ver U Ej. 5.21, fig. 5.33)">P</span></figcaption>
+</figure>
+<div class="box ex"><span class="h">Ejemplo del libro 5.22 — curva peraltada sin fricción</span>
+  <p>Si la calzada está inclinada un ángulo $\beta$ hacia el interior, la <b>normal</b> (perpendicular a la calzada) tiene una componente horizontal $n\sin\beta$ hacia el centro que sustituye a la fricción. Ejes: $x$ horizontal hacia el centro, $y$ vertical (¡no paralelos a la calzada!):</p>
+  $$n\sin\beta=m\frac{v^2}{R},\quad n\cos\beta=mg\ \Rightarrow\ \tan\beta=\frac{v^2}{gR},\quad n=\frac{mg}{\cos\beta}$$
+  <p>Para $R=230$ m y $v=25$ m/s: $\beta=\arctan\frac{25^2}{(9{,}8)(230)}=15^\circ$. El ángulo depende de la rapidez y del radio, no de la masa. El mismo resultado vale para un avión que vira inclinado un ángulo $\beta$ (la sustentación $L$ hace el papel de $n$) y explica por qué un piloto en un viraje cerrado soporta un «peso aparente» $n=mg/\cos\beta$ (≈ 5,8 mg para $\beta=80^\circ$).</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.22, p. 153; «Curvas peraltadas y el vuelo de aviones», p. 154">U p.153-154</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_5_34_peralte.png" alt="Figura 5.34 de U: a) un automóvil toma una curva peraltada, con el ángulo beta de la calzada con la horizontal igual al de la normal con la vertical; b) diagrama de cuerpo libre con la normal n inclinada beta respecto a la vertical, sus componentes n cos beta y n sen beta, el peso mg y la aceleración radial." loading="lazy">
+<figcaption>Fig. 5.34 de U: curva peraltada; la normal forma con la vertical el mismo ángulo $\beta$ que la calzada con la horizontal. <span class="src" data-l="U" data-ref="U fig. 5.34, p. 153">U p.153</span></figcaption>
+</figure>
+
+<h3>Círculo vertical</h3>
+<div class="box ex"><span class="h">Ejemplo del libro 5.23 — rueda de la fortuna</span>
+  <p>Pasajero de masa $m$ en un círculo vertical de radio $R$ con rapidez constante $v$. Solo hay fuerzas verticales (normal $n$ del asiento y peso). En ambas posiciones la aceleración apunta al centro: hacia abajo arriba, hacia arriba abajo. Con $+y$ hacia arriba:</p>
+  $$\text{arriba: } n_T-mg=-m\frac{v^2}{R}\ \Rightarrow\ n_T=mg\Bigl(1-\frac{v^2}{gR}\Bigr)$$
+  $$\text{abajo: } n_B-mg=+m\frac{v^2}{R}\ \Rightarrow\ n_B=mg\Bigl(1+\frac{v^2}{gR}\Bigr)$$
+  <p>Arriba el asiento empuja <i>menos</i> que el peso (peso aparente menor); si $v^2=gR$ el asiento no ejerce fuerza y el pasajero está a punto de salir despedido; con más rapidez haría falta un cinturón. Abajo siempre empuja <i>más</i> que el peso. Si el cuerpo no mantiene la rapidez (una pelota atada a una cuerda en un círculo vertical), el movimiento es circular <i>no uniforme</i>, la fuerza neta tiene también componente tangencial y las rapideces en distintos puntos se relacionan con energía (cap. 7).</p>
+  <span class="src" data-l="U" data-ref="U Ej. 5.23 y fig. 5.37, pp. 154-155">U p.154-155</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_5_36_vertical.png" alt="Figura 5.36 de U: a) un pasajero de masa m en las posiciones superior e inferior de un círculo vertical de radio R, con la velocidad v tangente y la aceleración v²/R hacia el centro; b) y c) los diagramas de cuerpo libre arriba (nT y mg) y abajo (nB y mg)." loading="lazy">
+<figcaption>Fig. 5.36 de U: la aceleración apunta siempre al centro (hacia abajo arriba, hacia arriba abajo); se toma $+y$ hacia arriba en los dos DCL. <span class="src" data-l="U" data-ref="U fig. 5.36, p. 154">U p.154</span></figcaption>
+</figure>
+
+<h2 id="s5"><span class="n">5</span>Fuerzas fundamentales de la naturaleza <span class="src" data-l="U" data-ref="U §5.5, pp. 155-156">U p.155</span></h2>
+<div class="box def"><span class="h">Cuatro interacciones</span>
+  <p>Todas las fuerzas que aparecen en los problemas son manifestaciones de solo <b>cuatro interacciones fundamentales</b>: la <b>gravitatoria</b> (incluye el peso y mantiene unidos planetas y estrellas), la <b>electromagnética</b> (fuerzas eléctricas y magnéticas; de ella provienen todas las fuerzas de contacto: normal, fricción, resistencia de fluidos, tensión…), la <b>fuerte</b> (mantiene unidos protones y neutrones en el núcleo) y la <b>débil</b> (relacionada con ciertas desintegraciones radiactivas). A escala atómica la gravedad no cuenta: la repulsión eléctrica entre dos protones es unas $10^{35}$ veces mayor que su atracción gravitatoria. Esta sección es solo descriptiva; no hay ecuaciones que memorizar.</p>
+  <span class="src" data-l="U" data-ref="U §5.5, fig. 5.38, pp. 155-156">U p.155-156</span></div>
+
+<h2 id="ejercicios"><span class="n">6</span>Ejercicios resueltos</h2>
+<p>Primero los <b>cinco problemas de examen real</b> de este tema, ordenados de más sencillo a más difícil; después nueve problemas del solucionario (E), también de sencillo a elaborado. Cada uno termina con una <b>receta</b> reutilizable y, si procede, el error típico. Intenta resolver tú antes de abrir la solución.</p>
+
+<details class="sol"><summary>X1 — Dos bloques en planos de 25° y 60° (sin fricción) <span class="src" data-l="X" data-ref="Examen Febrero 2022 (2ª semana) P-2">X</span></summary>
+  <p class="enun">Dos bloques de masas $m_1=80$ kg y $m_2=20$ kg, unidos por una cuerda que pasa por una polea sin fricción, descansan en los dos planos inclinados de una cuña (25° con la horizontal el de $m_1$, 60° el de $m_2$). a) Indicar hacia dónde se moverá el sistema. b) Calcular la aceleración del sistema. c) Calcular la tensión de la cuerda. No hay fricción entre los bloques y las superficies. (3 puntos.)</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 205" width="100%" role="img" aria-label="Dos bloques en una cuña de dos planos inclinados">
+  <defs><marker id="max4cuna" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbx4cuna" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmx4cuna" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgx4cuna" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpx4cuna" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfx4cuna" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 39.0 192.0 L 232.0 102.0 L 284.0 192.0 Z" fill="var(--mut)" fill-opacity="0.12" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="32.99437715413973" y1="192" x2="289.9615242270663" y2="192" stroke="var(--fg)" stroke-width="2"/>
+  <circle cx="232" cy="86" r="7" fill="var(--fg)" fill-opacity="0.1" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="232" y1="86" x2="141.4" y2="128.3" stroke="var(--fg)" stroke-width="1.3"/>
+  <line x1="232" y1="86" x2="258.0" y2="131.0" stroke="var(--fg)" stroke-width="1.3"/>
+  <path d="M 129.2 149.4 L 165.4 132.5 L 153.6 107.1 L 117.3 124.0 Z" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M 245.1 124.6 L 257.1 145.4 L 270.9 137.4 L 258.9 116.6 Z" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="141.4" y1="128.3" x2="141.4" y2="188.3" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbx4cuna)"/>
+  <line x1="141.4" y1="128.3" x2="161.3" y2="119.0" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgx4cuna)"/>
+  <line x1="141.4" y1="128.3" x2="121.9" y2="86.6" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#max4cuna)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="147.4" y="194.3" class="sm bd" style="fill:var(--A)">m<tspan dy="3" font-size="9">1</tspan><tspan dy="-3">g</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="117.9" y="84.6" class="sm bd" text-anchor="end" style="fill:var(--acc)">n<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"></tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="165.3" y="106.0" class="sm bd" style="fill:var(--X)">T</text>
+  <line x1="258.0" y1="131.0" x2="258.0" y2="155.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbx4cuna)"/>
+  <line x1="258.0" y1="131.0" x2="247.0" y2="112.0" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgx4cuna)"/>
+  <line x1="258.0" y1="131.0" x2="271.9" y2="123.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#max4cuna)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="266.0" y="167.0" class="sm bd" style="fill:var(--A)">m<tspan dy="3" font-size="9">2</tspan><tspan dy="-3">g</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="280.0" y="117.0" class="sm bd" style="fill:var(--acc)">n<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"></tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="252.0" y="105.0" class="sm bd" style="fill:var(--X)">T</text>
+  <line x1="159.5" y1="86.7" x2="132.3" y2="99.4" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfx4cuna)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="126.3" y="103.4" class="sm bd" text-anchor="end">a</text>
+  <line x1="303.1" y1="165.1" x2="290.1" y2="142.5" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfx4cuna)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="296.1" y="140.5" class="sm bd">a</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="73.0" y="187" class="sm bd" text-anchor="start">25°</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="260.0" y="187" class="sm bd" text-anchor="end">60°</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="16" class="sm">m<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> = 80 kg:  m</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3">g = 784 N,  n</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> = 711 N</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="31" class="sm">m<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"> = 20 kg:  m</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3">g = 196 N,  n</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3"> = 98 N</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="46" class="sm">T = 202 N,   a = 1,62 m/s²   (m₁ baja)</text>
+</svg>
+<figcaption>Examen Feb. 2022: m<sub>1</sub> = 80 kg (plano de 25°) y m<sub>2</sub> = 20 kg (plano de 60°) unidos por una cuerda sobre la polea del vértice. m<sub>1</sub>g sen 25° = 331 N frente a m<sub>2</sub>g sen 60° = 170 N: m<sub>1</sub> baja, m<sub>2</sub> sube, con a = 1,62 m/s² y T = 202 N. (Flechas de fuerza a escala 0,1 px/N, salvo T, orientativa.) <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2022, 2ª sem., P-2)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li><b>¿Hacia dónde?</b> Sin fricción, a lo largo de cada plano compiten solo las componentes del peso (la tensión es igual en los dos lados y las normales son perpendiculares a los planos). Comparamos: $m_1g\sin25^\circ=80(9{,}80)(0{,}4226)=331{,}3$ N frente a $m_2g\sin60^\circ=20(9{,}80)(0{,}8660)=169{,}7$ N. Gana $m_1$: <b>$m_1$ baja por su plano y $m_2$ sube por el suyo</b> (aunque el plano de $m_2$ sea más empinado, su masa es cuatro veces menor).</li>
+    <li><b>Ejes y signos coherentes.</b> Como la cuerda es inextensible, los dos bloques tienen aceleraciones de la misma magnitud $a$ (ver ejemplo 5.12). Para cada bloque tomamos $x$ paralelo a su plano y positivo en el sentido de su movimiento: bloque 1, cuesta abajo; bloque 2, cuesta arriba.</li>
+    <li><b>Segunda ley a lo largo de cada plano:</b> $m_1g\sin25^\circ-T=m_1a$ y $T-m_2g\sin60^\circ=m_2a$. (Perpendicularmente $n_i=m_ig\cos\alpha_i$: no hace falta, no hay fricción.)</li>
+    <li><b>(b) Sumando</b> las dos ecuaciones se cancela $T$: $$a=\frac{m_1\sin25^\circ-m_2\sin60^\circ}{m_1+m_2}\,g=\frac{331{,}3-169{,}7}{100}=\mathbf{1{,}62\ m/s^2}.$$</li>
+    <li><b>(c) Tensión</b> (de la ecuación del bloque 2): $T=m_2(a+g\sin60^\circ)=20(1{,}616+8{,}487)=\mathbf{202\ N}$. Comprobación con el bloque 1: $m_1(g\sin25^\circ-a)=80(4{,}142-1{,}616)=202$ N ✓.</li>
+  </ol>
+  <p><b>Resultado:</b> $m_1$ desciende; $a=1{,}62\ \text{m/s}^2$; $T=202$ N (con $g=9{,}81$: $1{,}618\ \text{m/s}^2$ y $202{,}3$ N).</p>
+  <div class="recipe"><b>Receta:</b> compara primero las fuerzas «motoras» a lo largo de la cuerda para decidir el sentido; luego pon $+x$ en el sentido del movimiento de cada cuerpo, escribe $\sum F=ma$ para cada uno y suma las ecuaciones: la tensión se cancela. La tensión sale de sustituir $a$ en cualquiera de las dos.</div>
+  <div class="recipe"><b>Error típico:</b> suponer que el sistema va hacia el plano más empinado sin mirar las masas, o usar $\cos$ en lugar de $\sin$ para la componente paralela del peso.</div>
+</details>
+
+<details class="sol"><summary>X2 — Dos paquetes unidos por un cable en una rampa con fricción <span class="src" data-l="X" data-ref="Examen Febrero 2025 (2ª semana) P-1">X</span></summary>
+  <p class="enun">Dos paquetes unidos por un cable sometido a tensión se deslizan por una rampa de $\alpha=16^\circ$ debido a la gravedad. El paquete que va en primer lugar tiene una masa $m_1=5{,}5$ kg y un coeficiente de fricción cinética $\mu_1=0{,}2$. El que va en segundo lugar tiene $m_2=8{,}5$ kg y $\mu_2=0{,}25$. (a) Calcule la aceleración de cada paquete. (b) Determine la tensión en el cable. (c) ¿Qué sucedería si se invierten las posiciones de los paquetes de manera que el de 8,5 kg desciende en primer lugar? Considere $g=9{,}81\ \text{m/s}^2$. (3 puntos.)</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 190" width="100%" role="img" aria-label="Dos paquetes unidos por un cable en una rampa">
+  <defs><marker id="max1rampa" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbx1rampa" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmx1rampa" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgx1rampa" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpx1rampa" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfx1rampa" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 14.0 70.0 L 346.0 165.2 L 14.0 165.2 Z" fill="var(--mut)" fill-opacity="0.12" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="14" y1="165.19946807192423" x2="350" y2="165.19946807192423" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 77.4 88.2 L 119.7 100.3 L 126.9 75.3 L 84.6 63.2 Z" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M 222.6 129.8 L 257.2 139.7 L 263.3 118.6 L 228.7 108.7 Z" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="123.3" y1="87.8" x2="225.6" y2="119.2" stroke="var(--fg)" stroke-width="1.6"/>
+  <line x1="104.4" y1="74.1" x2="170.7" y2="93.1" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbx1rampa)"/>
+  <line x1="100.0" y1="89.4" x2="42.3" y2="72.9" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mpx1rampa)"/>
+  <line x1="245.1" y1="116.5" x2="288.4" y2="128.9" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbx1rampa)"/>
+  <line x1="240.7" y1="131.9" x2="210.9" y2="123.3" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mpx1rampa)"/>
+  <line x1="123.3" y1="87.8" x2="144.5" y2="93.9" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgx1rampa)"/>
+  <line x1="260.2" y1="129.2" x2="239.1" y2="123.1" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgx1rampa)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="38.3" y="68.9" class="sm bd" text-anchor="end" style="fill:var(--E)">f<tspan dy="3" font-size="9">k2</tspan><tspan dy="-3"></tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="206.9" y="119.3" class="sm bd" text-anchor="end" style="fill:var(--E)">f<tspan dy="3" font-size="9">k1</tspan><tspan dy="-3"></tspan></text>
+  
+  
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="340" y="159.2" class="sm bd" text-anchor="end">16°</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="92.0" y="117.3" class="sm bd" text-anchor="middle">8,5 kg, μ = 0,25</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="233.3" y="157.8" class="sm bd" text-anchor="middle">5,5 kg, μ = 0,20</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="14" class="sm">m<tspan dy="3" font-size="9">1</tspan><tspan dy="-3">g sen α = 14,9 N;  m</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3">g sen α = 23,0 N</tspan></text>  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="27" class="sm">f<tspan dy="3" font-size="9">k1</tspan><tspan dy="-3"> = 10,4 N;  f</tspan><tspan dy="3" font-size="9">k2</tspan><tspan dy="-3"> = 20,0 N;  T = 1,57 N (no a escala)</tspan></text>  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="40" class="sm">a = 0,532 m/s² para ambos</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="174" y="90" class="sm bd" style="fill:var(--A)">m<tspan dy="3" font-size="9">2</tspan><tspan dy="-3">g sen α</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="292" y="127" class="sm bd" style="fill:var(--A)">m<tspan dy="3" font-size="9">1</tspan><tspan dy="-3">g sen α</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="141" y="83" class="sm bd" style="fill:var(--X)">T</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="238" y="118" class="sm bd" style="fill:var(--X)">T</text>
+</svg>
+<figcaption>Examen Feb. 2025: dos paquetes unidos por un cable bajan por una rampa de 16°. A lo largo de la rampa actúan m g sen α (cuesta abajo), la fricción cinética f<sub>k</sub> = μ m g cos α (cuesta arriba) y la tensión T, que tira hacia atrás del paquete delantero y hacia delante del trasero. Escala de fuerzas 3 px/N; T = 1,57 N no está a escala. <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2025, 2ª sem., P-1)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li><b>¿Está tenso el cable?</b> Un cable solo tira. Calculamos cuánto aceleraría cada paquete <i>suelto</i> (ejemplo 5.17): $a=g(\sin\alpha-\mu_k\cos\alpha)$. Paquete 1: $9{,}81(0{,}2756-0{,}2\cdot0{,}9613)=0{,}818\ \text{m/s}^2$. Paquete 2: $9{,}81(0{,}2756-0{,}25\cdot0{,}9613)=0{,}347\ \text{m/s}^2$. El de delante acelera <i>más</i> que el de atrás: se separaría, luego el cable <b>se tensa</b> y los dos se mueven juntos con la misma $a$.</li>
+    <li><b>Ejes</b> ($x$ rampa abajo, $y$ perpendicular) y <b>normales:</b> $n_i=m_ig\cos\alpha$ (no hay aceleración perpendicular), de modo que $f_{k1}=\mu_1n_1=10{,}37$ N y $f_{k2}=\mu_2n_2=20{,}04$ N, ambas rampa arriba.</li>
+    <li><b>Segunda ley a lo largo de la rampa</b> (misma $a$; $T$ tira hacia atrás del paquete 1 y hacia delante del 2): $m_1g\sin\alpha-f_{k1}-T=m_1a$ y $m_2g\sin\alpha-f_{k2}+T=m_2a$.</li>
+    <li><b>(a)</b> Sumando se cancela $T$: $$a=g\sin\alpha-\frac{(\mu_1m_1+\mu_2m_2)\,g\cos\alpha}{m_1+m_2}=\mathbf{0{,}532\ m/s^2}$$ para <b>los dos</b>, rampa abajo.</li>
+    <li><b>(b)</b> Del paquete 1: $T=m_1[g(\sin\alpha-\mu_1\cos\alpha)-a]=5{,}5(0{,}818-0{,}532)=\mathbf{1{,}57\ N}$. Forma compacta: $T=\dfrac{m_1m_2\,g\cos\alpha\,(\mu_2-\mu_1)}{m_1+m_2}$, positiva porque $\mu_2>\mu_1$.</li>
+    <li><b>(c) Posiciones invertidas</b> (el de 8,5 kg, con $\mu=0{,}25$, delante). Las mismas ecuaciones darían $T=-1{,}57$ N: imposible para un cable. Físicamente, sueltos, el de delante (8,5 kg) acelera $0{,}347\ \text{m/s}^2$ y el de detrás (5,5 kg) $0{,}818\ \text{m/s}^2$: el de detrás se acerca. El <b>cable queda flojo ($T=0$)</b> y cada paquete baja con su propia aceleración <i>hasta que el de 5,5 kg alcanza y choca con el de 8,5 kg</i>; a partir de ahí, si siguen en contacto, el de detrás empuja al de delante (fuerza de contacto de 1,57 N) y bajan juntos con $0{,}532\ \text{m/s}^2$. (Deslizan en todos los casos, porque $\tan16^\circ=0{,}287>0{,}25$.)</li>
+  </ol>
+  <p><b>Resultado:</b> (a) $0{,}532\ \text{m/s}^2$ ambos; (b) $T=1{,}57$ N; (c) cable flojo, $0{,}347$ y $0{,}818\ \text{m/s}^2$ hasta el choque, luego juntos con $0{,}532\ \text{m/s}^2$.</p>
+  <div class="recipe"><b>Receta:</b> en cuerpos encadenados calcula la aceleración que tendría cada uno suelto; si el de delante iría más deprisa, el cable tira ($T>0$) y se resuelve como sistema con la misma $a$; si no, el cable se afloja y cada uno va por su cuenta. Un $T$ negativo no es una respuesta: hay que interpretarlo.</div>
+  <div class="recipe"><b>Error típico:</b> aceptar un $T$ negativo sin interpretarlo; poner la fricción a favor del movimiento; usar un único $\mu$ para todo el conjunto.</div>
+</details>
+
+<details class="sol"><summary>X3 — Bloque empujado contra una pared (fuerza oblicua, fricción y trabajo) <span class="src" data-l="X" data-ref="Examen Febrero 2023 (2ª semana) P-1">X</span></summary>
+  <p class="enun">Se coloca un bloque de 5 kg contra una pared vertical. Se aplica una fuerza constante $F$ al bloque, con $F=96{,}0$ N y un ángulo de 60,0° con la horizontal. El coeficiente de fricción cinética entre el bloque y la pared es 0,300. Si el bloque está inicialmente en reposo: (a) ¿Cuál será el módulo de su velocidad después de recorrer 0,400 m sobre la pared? (b) ¿Cuál será el trabajo realizado en el desplazamiento? Considere $g=9{,}81\ \text{m/s}^2$. (3 puntos.)</p>
+  <div class="box tip"><span class="h">Relación con el libro</span>
+    <p>Este examen es casi literal el problema 5.75 de U; el examen usa $g=9{,}81$ (el solucionario, que usa 9,80, da $a=3{,}948\ \text{m/s}^2$ y $v=1{,}78$ m/s).</p>
+    <span class="src" data-l="U" data-ref="U prob. 5.75, fig. P5.75, p. 166">U p.166</span> <span class="src" data-l="E" data-ref="Solucionario 5-37/5-38, Prob. 5.75">E</span></div>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 350 230" width="100%" role="img" aria-label="Bloque empujado contra una pared vertical">
+  <defs><marker id="max5pared" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbx5pared" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmx5pared" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgx5pared" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpx5pared" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfx5pared" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="24" y1="30" x2="24" y2="215" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="24" y1="34" x2="17" y2="42" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="46" x2="17" y2="54" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="58" x2="17" y2="66" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="70" x2="17" y2="78" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="82" x2="17" y2="90" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="94" x2="17" y2="102" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="106" x2="17" y2="114" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="118" x2="17" y2="126" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="130" x2="17" y2="138" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="142" x2="17" y2="150" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="154" x2="17" y2="162" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="166" x2="17" y2="174" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="178" x2="17" y2="186" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="190" x2="17" y2="198" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="202" x2="17" y2="210" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="24" y1="214" x2="17" y2="222" stroke="var(--mut)" stroke-width="1.2"/>
+  <rect x="24" y="110" width="42" height="42" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="45" y="135" class="sm bd" text-anchor="middle">5 kg</text>
+  <line x1="97.0" y1="205.7" x2="66" y2="152" stroke="var(--X)" stroke-width="3.5" fill="none" marker-end="url(#mgx5pared)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="101.0" y="209.7" class="sm bd" style="fill:var(--X)">F = 96,0 N</text>
+  <line x1="97" y1="205.7" x2="48" y2="205.7" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <path d="M 85.0 184.9 A 24 24 0 0 0 73.0 205.7" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="67.0" y="197.7" class="sm bd" text-anchor="end">60°</text>
+  <line x1="86" y1="100" x2="86" y2="62" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mfx5pared)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="92" y="84" class="sm bd">d = 0,400 m</text>
+  <circle cx="232" cy="130" r="3.5" fill="var(--fg)"/>
+  <line x1="232" y1="130" x2="193.6" y2="130" stroke="var(--X)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mgx5pared)"/>
+  <line x1="193.6" y1="130" x2="193.6" y2="63.5" stroke="var(--X)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mgx5pared)"/>
+  <line x1="232" y1="130" x2="193.6" y2="63.5" stroke="var(--X)" stroke-width="3.5" fill="none" marker-end="url(#mgx5pared)"/>
+  <line x1="232" y1="130" x2="270.4" y2="130.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#max5pared)"/>
+  <line x1="232" y1="130" x2="232.0" y2="169.2" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbx5pared)"/>
+  
+  
+  <line x1="242" y1="130" x2="242" y2="141.5" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mpx5pared)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="189.6" y="144" class="sm" text-anchor="end" style="fill:var(--X)">F cos 60° = 48,0 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="187.6" y="96.7" class="sm" text-anchor="end" style="fill:var(--X)">F sen 60°</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="187.6" y="109.7" class="sm" text-anchor="end" style="fill:var(--X)">= 83,1 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="276.4" y="134" class="sm bd" style="fill:var(--acc)">n = 48,0 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="226" y="183.2" class="sm bd" text-anchor="end" style="fill:var(--A)">mg = 49,1 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="250" y="158" class="sm bd" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 14,4 N</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="262" y="22" class="sm bd" text-anchor="middle">DCL: el bloque sube (a ↑)</text>
+</svg>
+<figcaption>Examen Feb. 2023: a la izquierda, el croquis; a la derecha, el DCL del bloque. La normal la pone solo la componente horizontal de F (n = F cos 60° = 48,0 N); en vertical F sen 60° = 83,1 N vence al peso (49,1 N) y a la fricción cinética (14,4 N, hacia abajo porque el bloque sube). <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2023, 2ª sem., P-1; = U prob. 5.75)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li><b>Eje horizontal</b> ($+x$ alejándose de la pared; no hay movimiento horizontal, $a_x=0$): $n-F\cos60^\circ=0\Rightarrow n=48{,}0$ N. La normal aquí <b>no</b> es $mg$: la pone la componente horizontal de $F$. En una pared vertical el peso es paralelo a la superficie y no la aprieta.</li>
+    <li><b>¿Hacia dónde se mueve?</b> (hace falta para orientar $f_k$). $F\sin60^\circ=83{,}1$ N es mayor que $mg=49{,}05$ N y que $mg+f_k=63{,}5$ N, luego el bloque <b>sube</b> y la fricción cinética apunta <b>hacia abajo</b>.</li>
+    <li><b>Fricción:</b> $f_k=\mu_kn=0{,}300(48{,}0)=14{,}4$ N.</li>
+    <li><b>Eje vertical</b> ($+y$ hacia arriba): $F\sin60^\circ-mg-f_k=ma\Rightarrow a=\dfrac{83{,}14-49{,}05-14{,}40}{5}=\mathbf{3{,}94\ m/s^2}$ hacia arriba.</li>
+    <li><b>(a) Cinemática</b> con $a$ constante desde el reposo: $v^2=2ad\Rightarrow v=\sqrt{2(3{,}938)(0{,}400)}=\mathbf{1{,}77\ m/s}$.</li>
+    <li><b>(b) Trabajo</b> (adelanto del tema 6: $W=Fs\cos\phi$, U ec. 6.2 p. 174). El enunciado no dice «de qué fuerza»; conviene dar las dos cosas. Solo trabaja la parte de cada fuerza paralela al desplazamiento (vertical): <br>• $W_F=F\sin60^\circ\,d=83{,}14(0{,}400)=\mathbf{33{,}3\ J}$ (la componente horizontal es perpendicular al desplazamiento: trabajo 0). <br>• $W_{peso}=-mgd=-19{,}6$ J; $W_{f}=-f_kd=-5{,}76$ J; $W_n=0$. <br>• Trabajo total $=33{,}26-19{,}62-5{,}76=\mathbf{7{,}88\ J}=\tfrac12mv^2$ ✓ (comprueba el apartado (a) por energía).</li>
+  </ol>
+  <p><b>Resultado:</b> $a=3{,}94\ \text{m/s}^2$ (hacia arriba); $v=1{,}77$ m/s; $W_F=33{,}3$ J; trabajo total $7{,}88$ J.</p>
+  <div class="recipe"><b>Receta:</b> cuando una fuerza oblicua aprieta un cuerpo contra una superficie, la normal sale del eje perpendicular a la superficie (aquí el horizontal) y solo después se calcula $f=\mu n$ y la ecuación a lo largo de la superficie.</div>
+  <div class="recipe"><b>Error típico:</b> escribir $n=mg$ o $f_k=\mu_kmg$ (en una pared el peso es paralelo a la superficie); poner $f_k$ hacia arriba sin comprobar hacia dónde se mueve.</div>
+</details>
+
+<details class="sol"><summary>X4 — Plano inclinado con fricción y polea móvil <span class="src" data-l="X" data-ref="Examen Febrero 2020 (1ª semana) P-1">X</span></summary>
+  <p class="enun">Sea el sistema de poleas de la figura, en el que tanto las poleas como las cuerdas se pueden considerar de masa despreciable. Sabiendo que el coeficiente de fricción dinámico y estático entre la masa A y la superficie inclinada es el mismo y vale 0,1, determinar: a) la aceleración de las masas A, de 1,5 kg, y B, de 1 kg; b) la tensión en las cuerdas; c) la velocidad de A después de haber recorrido un metro sobre el plano inclinado, suponiendo que el sistema parte del reposo. (3 puntos.)</p>
+  <p>La figura del examen (plano inclinado de 30°): A sobre el plano; la cuerda sube paralela al plano hasta una polea <b>fija</b> en el vértice, baja vertical, rodea por debajo una polea <b>móvil</b> de la que cuelga B, y sube hasta un soporte fijo en el techo. g no está indicada: se usa 9,80.</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 235" width="100%" role="img" aria-label="Plano inclinado con polea fija y polea móvil">
+  <defs><marker id="max3poleas" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbx3poleas" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmx3poleas" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgx3poleas" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpx3poleas" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfx3poleas" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 14.0 200.0 L 194.0 96.1 L 194.0 200.0 Z" fill="var(--mut)" fill-opacity="0.12" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="14" y1="200" x2="194" y2="200" stroke="var(--fg)" stroke-width="2"/>
+  <circle cx="201" cy="86.07695154586737" r="8" fill="var(--fg)" fill-opacity="0.1" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="194" y1="96.1" x2="201" y2="94.1" stroke="var(--fg)" stroke-width="1.2"/>
+  <path d="M 81.5 161.0 L 119.7 139.0 L 106.7 116.5 L 68.5 138.5 Z" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M 94.1 138.7 L 197.0 79.3 A 8 8 0 0 1 209 86.07695154586737 L 209 150" fill="none" stroke="var(--fg)" stroke-width="1.5"/>
+  <circle cx="219" cy="150" r="10" fill="var(--fg)" fill-opacity="0.1" stroke="var(--fg)" stroke-width="1.5"/>
+  <path d="M 209 150 A 10 10 0 0 0 229 150 L 229 36" fill="none" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="205" y1="36" x2="247" y2="36" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="205" y1="36" x2="211" y2="29" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="215" y1="36" x2="221" y2="29" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="225" y1="36" x2="231" y2="29" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="235" y1="36" x2="241" y2="29" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="245" y1="36" x2="251" y2="29" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="219" y1="150" x2="219" y2="176" stroke="var(--fg)" stroke-width="1.5"/>
+  <rect x="204" y="176" width="30" height="28" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="219" y="194" class="sm bd" text-anchor="middle">B</text>
+    <line x1="94.1" y1="138.7" x2="56.0" y2="160.7" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbx3poleas)"/>
+  <line x1="114.9" y1="126.7" x2="137.4" y2="113.7" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgx3poleas)"/>
+  
+  <line x1="121.6" y1="134.4" x2="133.7" y2="127.4" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mpx3poleas)"/>
+  <line x1="94.1" y1="138.7" x2="75.1" y2="105.8" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#max3poleas)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="71.1" y="103.8" class="sm bd" text-anchor="end" style="fill:var(--acc)">n</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="135.4" y="105.7" class="sm bd" text-anchor="end" style="fill:var(--X)">T</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="137.6" y="150.4" class="sm bd" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"></tspan></text>
+  <line x1="227" y1="176" x2="227" y2="150" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgx3poleas)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="233" y="164" class="sm bd" style="fill:var(--X)">2T</text>
+  <line x1="211" y1="204" x2="211" y2="226" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbx3poleas)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="205" y="226" class="sm bd" text-anchor="end" style="fill:var(--A)">m<tspan dy="3" font-size="9">B</tspan><tspan dy="-3">g</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="214" y="108" class="sm bd" style="fill:var(--X)">T</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="233" y="100" class="sm bd" style="fill:var(--X)">T</text>
+  <line x1="53.1" y1="127.8" x2="21.9" y2="145.8" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfx3poleas)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="17.9" y="149.8" class="sm bd" text-anchor="end">a<tspan dy="3" font-size="9">A</tspan><tspan dy="-3"></tspan></text>
+  <line x1="263" y1="200" x2="263" y2="170" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfx3poleas)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="269" y="188" class="sm bd">a<tspan dy="3" font-size="9">B</tspan><tspan dy="-3"></tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="52" y="195" class="sm bd">30°</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="14" class="sm">m<tspan dy="3" font-size="9">A</tspan><tspan dy="-3">g sen 30° = 7,35 N;  f</tspan><tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 1,27 N</tspan></text>  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="28" class="sm">T = 5,07 N;  2T = 10,1 N</text>  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="42" class="sm">a<tspan dy="3" font-size="9">A</tspan><tspan dy="-3"> = 0,673;  a</tspan><tspan dy="3" font-size="9">B</tspan><tspan dy="-3"> = 0,336 m/s²</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="76" y="182" class="sm bd" style="fill:var(--A)">m<tspan dy="3" font-size="9">A</tspan><tspan dy="-3">g sen 30°</tspan></text>
+</svg>
+<figcaption>Examen Feb. 2020: A (1,5 kg) sobre el plano de 30°; la cuerda pasa por la polea fija del vértice, rodea la polea móvil de la que cuelga B (1 kg) y termina atada al techo. Dos tramos sostienen la polea móvil (fuerza 2T) y, por la ligadura de la cuerda, a<sub>B</sub> = a<sub>A</sub>/2. Resultados: a<sub>A</sub> = 0,673 m/s² (A baja), a<sub>B</sub> = 0,336 m/s² (B sube), T = 5,07 N. (Longitudes de flecha no proporcionales.) <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2020, 1ª sem., P-1)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li><b>Ligadura de la polea móvil.</b> La longitud de cuerda es constante. Si A recorre una distancia $s$ por el plano, esa longitud se reparte entre los <i>dos</i> tramos que sostienen la polea móvil, de modo que ésta (y B) se mueve $s/2$: $s_B=s_A/2\Rightarrow a_B=a_A/2$. Además cada tramo tira de la polea con $T$, así que sobre la polea y B actúa <b>$2T$</b>. (Explicación propia de la ligadura; la idea de cuerda inextensible es la de U Ej. 5.12 p. 141.)</li>
+    <li><b>¿Hacia dónde se mueve?</b> (hay que saberlo antes de orientar la fricción). Para sostener B en reposo bastaría $T=m_Bg/2=4{,}90$ N. La componente del peso de A a lo largo del plano es $m_Ag\sin30^\circ=7{,}35$ N y la fricción estática máxima es $\mu_sm_Ag\cos30^\circ=1{,}27$ N (ec. 5.4). Como $7{,}35>4{,}90+1{,}27=6{,}17$ N, <b>A baja por el plano y B sube</b>. ¡Contraintuitivo!: la polea móvil «multiplica por dos» la fuerza del lado de A.</li>
+    <li><b>Segunda ley.</b> A ($x$ plano abajo; la fricción cinética apunta plano arriba): $m_Ag\sin30^\circ-\mu\,m_Ag\cos30^\circ-T=m_Aa_A$. Polea móvil y B ($+y$ hacia arriba): $2T-m_Bg=m_Ba_B=m_B\,a_A/2$.</li>
+    <li><b>(a) Resolver</b> (de la segunda, $T=\tfrac12m_B(g+a_A/2)$, y se sustituye en la primera): $$a_A=\frac{g\,[\,2m_A(\sin30^\circ-\mu\cos30^\circ)-m_B\,]}{2m_A+m_B/2}=\frac{9{,}80\,(1{,}2402-1)}{3{,}5}$$ es decir $a_A=\mathbf{0{,}673\ m/s^2}$ (plano abajo), y $a_B=a_A/2=\mathbf{0{,}336\ m/s^2}$ (hacia arriba).</li>
+    <li><b>(b) Tensiones:</b> en la cuerda principal (A–polea fija–polea móvil–techo), $T=m_A[g(\sin30^\circ-\mu\cos30^\circ)-a_A]=1{,}5(4{,}051-0{,}673)=\mathbf{5{,}07\ N}$; el tirante entre la polea móvil y B soporta $2T=\mathbf{10{,}1\ N}$ (la polea no tiene masa).</li>
+    <li><b>(c)</b> Con $a_A$ constante desde el reposo: $v_A=\sqrt{2a_A(1\ \text{m})}=\mathbf{1{,}16\ m/s}$.</li>
+  </ol>
+  <p><b>Resultado:</b> $a_A=0{,}673\ \text{m/s}^2$ (baja), $a_B=0{,}336\ \text{m/s}^2$ (sube); $T=5{,}07$ N y $10{,}1$ N en el tirante de B; $v_A=1{,}16$ m/s. (Con $g=9{,}81$: $0{,}673$; $0{,}337$; $5{,}07$ N; $1{,}16$ m/s.)</p>
+  <div class="recipe"><b>Receta:</b> con una polea móvil escribe primero la ligadura geométrica ($a_B=a_A/2$ y fuerza $2T$ sobre la polea); después decide el sentido comparando fuerzas en la situación de equilibrio estático y solo entonces orienta la fricción.</div>
+  <div class="recipe"><b>Error típico:</b> suponer que B baja «porque cuelga» y orientar la fricción al revés (sale una aceleración negativa o incoherente); usar $a_A=a_B$ o una sola $T$ sobre B. <b>Aviso de interpretación:</b> si se leyera la figura como una polea simple (B colgando directamente de la cuerda), el resultado cambiaría; la figura del examen muestra una polea móvil con un extremo fijo al techo.</div>
+</details>
+
+<details class="sol"><summary>X5 — Cuerpo sobre un cono giratorio (movimiento circular) <span class="src" data-l="X" data-ref="Examen Febrero 2018 (2ª semana) P-2">X</span></summary>
+  <p class="enun">Sobre la superficie exterior lisa y sin fricción de un cono de revolución, que gira alrededor de su propio eje con una velocidad angular de 15 r.p.m., está situado un cuerpo A de 2 kg sujeto al vértice del cono por un hilo inextensible y sin masa de 4 m de longitud. Calcular: a) velocidad lineal del cuerpo A respecto a la Tierra; b) reacción de la superficie del cono sobre A; c) tensión del hilo; d) velocidad angular a que debe girar el cono para anular su fuerza de reacción sobre A. (3 puntos.)</p>
+  <p>La figura del examen: cono de eje vertical y vértice arriba; el ángulo de 30° está entre el eje y la generatriz (semiángulo del cono). g no indicada: 9,80.</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 250" width="100%" role="img" aria-label="Cuerpo sobre un cono giratorio">
+  <defs><marker id="max2cono" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbx2cono" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmx2cono" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgx2cono" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpx2cono" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfx2cono" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 105.0 22.0 L 192.5 173.6 L 17.5 173.6 Z" fill="var(--mut)" fill-opacity="0.12" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="11.500000000000043" y1="173.55444566227675" x2="198.5" y2="173.55444566227675" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="105" y1="22" x2="105" y2="179.55444566227675" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <line x1="105" y1="22" x2="170.0" y2="134.6" stroke="var(--X)" stroke-width="2.5"/>
+  <circle cx="176.1" cy="131.1" r="7" fill="var(--A)" fill-opacity="0.4" stroke="var(--A)" stroke-width="1.5"/>
+  <line x1="176.1" y1="131.1" x2="176.1" y2="174.1" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbx2cono)"/>
+  <line x1="176.1" y1="131.1" x2="134.5" y2="107.1" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgx2cono)"/>
+  <line x1="176.1" y1="131.1" x2="188.2" y2="124.1" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#max2cono)"/>
+  <line x1="176.1" y1="131.1" x2="144.1" y2="131.1" stroke="var(--fg)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mfx2cono)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="179.1" y="189.1" class="sm bd" style="fill:var(--A)">mg</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="130.5" y="103.1" class="sm bd" text-anchor="end" style="fill:var(--X)">T</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="193.2" y="122.1" class="sm bd" style="fill:var(--acc)">n</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="142.1" y="147.1" class="sm bd" text-anchor="middle">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"></tspan></text>
+  <line x1="105" y1="179.6" x2="105" y2="207.6" stroke="var(--mut)" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="176.1" y1="131.1" x2="176.1" y2="207.6" stroke="var(--mut)" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="107" y1="203.6" x2="174.1" y2="203.6" stroke="var(--fg)" stroke-width="1.5" fill="none" marker-end="url(#mfx2cono)"/>
+  <line x1="174.1" y1="203.6" x2="107" y2="203.6" stroke="var(--fg)" stroke-width="1.5" fill="none" marker-end="url(#mfx2cono)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="140.5" y="219.6" class="sm bd" text-anchor="middle">r = L sen 30° = 2,00 m</text>
+  <path d="M 105.0 60.0 A 38 38 0 0 0 124.0 54.9" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="118" y="80" class="sm bd">30°</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="145.0" y="68.0" class="sm bd" style="fill:var(--X)">L = 4 m</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="117" y="16" class="sm bd">ω = 15 rpm</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="222" y="52" class="sm">mg = 19,6 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="222" y="67" class="sm">T = 21,9 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="222" y="82" class="sm">n = 1,25 N (pequeña)</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="222" y="97" class="sm">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"> = ω²r = 4,93 m/s²</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="222" y="112" class="sm">v = ωr = 3,14 m/s</text>
+</svg>
+<figcaption>Examen Feb. 2018: sección del cono (semiángulo 30°) que gira con ω = 15 rpm. El cuerpo A describe un círculo horizontal de radio r = L sen 30° = 2,00 m: la aceleración (a<sub>rad</sub>) es horizontal, hacia el eje; sobre A actúan mg, la tensión T (a lo largo del hilo) y la normal n (perpendicular a la superficie, hacia fuera). Longitudes a escala 2,2 px/N salvo n (1,25 N), exagerada. <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2018, 2ª sem., P-2)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li><b>Radio de giro</b> (geometría): A describe un círculo horizontal, así que su radio es la proyección horizontal del hilo: $r=L\sin30^\circ=4(0{,}5)=2{,}00$ m. No es $L$. Además $\omega=15\ \text{rpm}=15\cdot\frac{2\pi}{60}=\frac{\pi}{2}=1{,}571$ rad/s.</li>
+    <li><b>(a)</b> Periodo $T_{per}=60/15=4{,}00$ s, luego $v=\dfrac{2\pi r}{T_{per}}=\dfrac{2\pi(2{,}00)}{4{,}00}=\mathbf{3{,}14\ m/s}$ (ec. 5.14) y $a_{rad}=\dfrac{4\pi^2r}{T_{per}^2}=4{,}93\ \text{m/s}^2$ (ec. 5.15). (Es lo mismo que $v=\omega r$ y $a_{rad}=\omega^2r$; la relación con $\omega$ se verá en el tema 9.)</li>
+    <li><b>DCL y ejes.</b> Peso $mg$ (abajo); tensión $T$ a lo largo del hilo hacia el vértice (componentes $T\sin30^\circ$ hacia el eje y $T\cos30^\circ$ hacia arriba); normal $n$ perpendicular a la generatriz, hacia fuera (componentes $n\cos30^\circ$ alejándose del eje y $n\sin30^\circ$ hacia arriba). Ejes: $x$ horizontal hacia el eje (la aceleración centrípeta va ahí) e $y$ vertical.</li>
+    <li><b>Segunda ley</b> (ec. 5.16 en $x$, equilibrio en $y$): $T\sin30^\circ-n\cos30^\circ=m\omega^2r$ y $T\cos30^\circ+n\sin30^\circ-mg=0$.</li>
+    <li><b>Resolver</b> (multiplica la primera por $\sin30^\circ$ y la segunda por $\cos30^\circ$ y suma; después al revés y resta): $T=mg\cos30^\circ+m\omega^2r\sin30^\circ$, $\ n=mg\sin30^\circ-m\omega^2r\cos30^\circ$. <br>• <b>(b)</b> $n=9{,}80-9{,}87(0{,}866)=\mathbf{1{,}25\ N}$, perpendicular a la superficie y hacia fuera. Es positiva ⇒ el cuerpo sigue apoyado (comprobación obligada). <br>• <b>(c)</b> $T=16{,}97+4{,}93=\mathbf{21{,}9\ N}$.</li>
+    <li><b>(d) $n=0$:</b> A deja de apretar el cono y es un péndulo cónico (ejemplo 5.20): $T\sin\beta=m\omega^2r$ y $T\cos\beta=mg$, con $\beta=30^\circ$ (ángulo del hilo con la vertical). Dividiendo, $\omega^2=\dfrac{g\tan\beta}{r}=\dfrac{g}{L\cos\beta}\Rightarrow\omega_0=\mathbf{1{,}68\ rad/s}\approx\mathbf{16{,}1\ rpm}$. Para giros mayores A se separa de la superficie y el ángulo del hilo crece.</li>
+  </ol>
+  <p><b>Resultado:</b> $v=3{,}14$ m/s; $n=1{,}25$ N (con $g=9{,}81$: $1{,}26$ N); $T=21{,}9$ N; $\omega_0=1{,}68$ rad/s ≈ 16,1 rpm.</p>
+  <div class="recipe"><b>Receta:</b> en movimiento circular, un eje apunta al centro (ahí $\sum F=mv^2/r$) y otro es perpendicular al plano del giro (ahí $\sum F=0$); descompón cada fuerza en <i>esos</i> ejes, no en los de la superficie.</div>
+  <div class="recipe"><b>Error típico:</b> poner los ejes a lo largo de la superficie del cono (la aceleración centrípeta tendría entonces dos componentes); tomar $r=L$ en lugar de $L\sin\beta$; no pasar rpm a rad/s; dar una $n$ negativa sin interpretar que el cuerpo ya se ha separado.</div>
+</details>
+
+<h3>Problemas del solucionario (E)</h3>
+
+<details class="sol"><summary>E1 — Problema 5.6: bola de demolición con dos cables (equilibrio) <span class="src" data-l="E" data-ref="Solucionario 5-2, Prob. 5.6">E</span></summary>
+  <p class="enun">Una bola de demolición de 3620 kg está sujeta por dos cables ligeros de acero. El cable B forma 40° con la vertical y el cable A es horizontal. Calcule a) la tensión $T_B$ y b) la tensión $T_A$.</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 330 220" width="100%" role="img" aria-label="Bola de demolición en equilibrio">
+  <defs><marker id="mae1bola" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe1bola" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme1bola" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge1bola" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe1bola" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe1bola" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="170" cy="115" r="12" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="170" y1="115" x2="170" y2="186" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe1bola)"/>
+  <line x1="170" y1="115" x2="170" y2="44.5" stroke="var(--X)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mge1bola)"/>
+  
+  
+  <line x1="170" y1="115" x2="170" y2="15" stroke="var(--mut)" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="170" y1="115" x2="229.1" y2="44.5" stroke="var(--X)" stroke-width="3.5" fill="none" marker-end="url(#mge1bola)"/>
+  <path d="M 195.7 84.4 A 40 40 0 0 0 170.0 75.0" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="182" y="69" class="sm bd">40°</text>
+  <line x1="170" y1="115" x2="110.0" y2="115.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mae1bola)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="104" y="109" class="sm bd" text-anchor="end" style="fill:var(--acc)">T<tspan dy="3" font-size="9">A</tspan><tspan dy="-3"> = 29,8 kN</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="234.1" y="46.5" class="sm bd" style="fill:var(--X)">T<tspan dy="3" font-size="9">B</tspan><tspan dy="-3"> = 46,3 kN</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="178" y="199" class="sm bd" style="fill:var(--A)">mg = 35,5 kN</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="164" y="71" class="sm" text-anchor="end" style="fill:var(--X)">T<tspan dy="3" font-size="9">B</tspan><tspan dy="-3"> cos 40°</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="164" y="85" class="sm" text-anchor="end" style="fill:var(--X)">= 35,5 kN</text>
+  
+</svg>
+<figcaption>Bola de 3620 kg en equilibrio: el cable A es horizontal y el cable B forma 40° con la vertical. Vertical: T<sub>B</sub> cos 40° = mg; horizontal: T<sub>A</sub> = T<sub>B</sub> sen 40°. (Escala 2 px por kN; la componente vertical de T<sub>B</sub>, discontinua, iguala al peso.) <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.6, p. 160 / Solucionario 5-2)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li>La bola no acelera: equilibrio (ec. 5.1). Eje vertical primero, porque solo $T_B$ tiene componente vertical (una incógnita): $T_B\cos40^\circ=mg\Rightarrow T_B=\dfrac{3620(9{,}80)}{\cos40^\circ}=\mathbf{4{,}63\times10^4\ N}$.</li>
+    <li>Eje horizontal: $T_A=T_B\sin40^\circ=mg\tan40^\circ=\mathbf{2{,}98\times10^4\ N}$.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> en equilibrio con varias cuerdas, empieza por el eje que tenga <b>una sola incógnita</b>.</div>
+  <div class="recipe"><b>Error típico:</b> confundir seno y coseno cuando el ángulo se mide desde la vertical (la componente <i>vertical</i> es $T\cos40^\circ$).</div>
+</details>
+
+<details class="sol"><summary>E2 — Problema 5.8: coche sostenido por un cable en una rampa lisa <span class="src" data-l="E" data-ref="Solucionario 5-3, Prob. 5.8">E</span></summary>
+  <p class="enun">En una rampa sin fricción que sube 25,0° sobre la horizontal, un coche de 1130 kg se mantiene en reposo con un cable ligero que forma 31,0° por encima de la superficie de la rampa. a) Dibuje el DCL. b) ¿Qué tensión tiene el cable? c) ¿Con qué fuerza empuja la rampa al coche?</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 232" width="100%" role="img" aria-label="Coche sostenido por un cable en una rampa lisa">
+  <defs><marker id="mae2coche" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe2coche" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme2coche" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge2coche" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe2coche" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe2coche" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 12.0 200.0 L 330.0 51.7 L 330.0 200.0 Z" fill="var(--mut)" fill-opacity="0.12" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="12" y1="200" x2="330" y2="200" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 141.6 139.6 L 190.5 116.7 L 179.6 93.2 L 130.6 116.0 Z" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  
+  <line x1="160.6" y1="116.4" x2="226.6" y2="18.5" stroke="var(--fg)" stroke-width="1.5"/>
+  <circle cx="226.6" cy="18.5" r="4" fill="var(--fg)" fill-opacity="0.5" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="160.6" y1="116.4" x2="160.6" y2="177.3" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe2coche)"/>
+  <line x1="160.6" y1="116.4" x2="137.2" y2="127.3" stroke="var(--A)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mbe2coche)"/>
+  <line x1="160.6" y1="116.4" x2="183.9" y2="166.4" stroke="var(--A)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mbe2coche)"/>
+  <line x1="160.6" y1="116.4" x2="143.8" y2="80.4" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mae2coche)"/>
+  <line x1="160.6" y1="116.4" x2="177.4" y2="91.5" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mge2coche)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="181.4" y="85.5" class="sm bd" style="fill:var(--X)">T = 5460 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="139.8" y="76.4" class="sm bd" text-anchor="end" style="fill:var(--acc)">n = 7220 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="168.6" y="214" class="sm bd" style="fill:var(--A)">w = 11 074 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="131.2" y="141.3" class="sm" text-anchor="end" style="fill:var(--A)">w sen 25° = 4680 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="189.9" y="172.4" class="sm" style="fill:var(--A)">w cos 25°</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="189.9" y="185.4" class="sm" style="fill:var(--A)">= 10 036 N</text>
+  <path d="M 58.0 200.0 A 46 46 0 0 0 53.7 180.6" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="62" y="193" class="sm bd">25°</text>
+  <path d="M 187.8 103.7 A 30 30 0 0 0 177.4 91.5" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="193" y="106" class="sm bd">31°</text>
+  
+  <line x1="44" y1="112" x2="85.7" y2="92.6" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mfe2coche)"/>
+  <line x1="44" y1="112" x2="24.6" y2="70.3" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mfe2coche)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="92.9" y="89.2" class="sm bd">x</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="21.2" y="63.1" class="sm bd" text-anchor="end">y</text>
+</svg>
+<figcaption>Coche de 1130 kg en una rampa de 25,0° sin fricción, sostenido por un cable que forma 31,0° con la superficie. Ejes paralelo (x) y perpendicular (y) a la rampa: x: T cos 31° = w sen 25°; y: n + T sen 31° = w cos 25°. Escala 0,0055 px/N. <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.8, p. 160 / Solucionario 5-3)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li>Ejes inclinados ($x$ rampa arriba, $y$ perpendicular): así la normal solo está en $y$ y el peso es la única fuerza que hay que descomponer ($-w\sin25^\circ$ en $x$, $-w\cos25^\circ$ en $y$); el cable tiene $T\cos31^\circ$ en $x$ y $T\sin31^\circ$ en $y$.</li>
+    <li>$x$: $T\cos31^\circ-w\sin25^\circ=0\Rightarrow T=\dfrac{1130(9{,}80)\sin25^\circ}{\cos31^\circ}=\mathbf{5460\ N}$.</li>
+    <li>$y$: $n+T\sin31^\circ-w\cos25^\circ=0\Rightarrow n=10\,036-2812=\mathbf{7220\ N}$, menor que $w\cos25^\circ$ porque el cable «levanta» parte del coche.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> en planos inclinados, ejes paralelo y perpendicular al plano; el peso da $w\sin\alpha$ (paralela) y $w\cos\alpha$ (perpendicular).</div>
+  <div class="recipe"><b>Error típico:</b> suponer $n=w\cos\alpha$ cuando otra fuerza (aquí el cable) tiene componente perpendicular al plano.</div>
+</details>
+
+<details class="sol"><summary>E3 — Problema 5.15: máquina de Atwood <span class="src" data-l="E" data-ref="Solucionario 5-8, Prob. 5.15">E</span></summary>
+  <p class="enun">Una carga de ladrillos de 15,0 kg cuelga de un extremo de una cuerda que pasa por una polea pequeña sin fricción; en el otro extremo hay un contrapeso de 28,0 kg. Se suelta desde el reposo. a) DCL de cada cuerpo. b) Aceleración (hacia arriba) de los ladrillos. c) Tensión de la cuerda; compárela con el peso de ladrillos y contrapeso.</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 340 235" width="100%" role="img" aria-label="Máquina de Atwood">
+  <defs><marker id="mae3atwood" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe3atwood" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme3atwood" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge3atwood" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe3atwood" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe3atwood" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="170" cy="62" r="22" fill="var(--fg)" fill-opacity="0.1" stroke="var(--fg)" stroke-width="1.5"/>
+  <circle cx="170" cy="62" r="2.5" fill="var(--fg)"/>
+  <line x1="110" y1="34" x2="230" y2="34" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="170" y1="34" x2="170" y2="40" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="148" y1="62" x2="148" y2="120" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="192" y1="62" x2="192" y2="135" stroke="var(--fg)" stroke-width="1.5"/>
+  <rect x="124" y="120" width="46" height="28" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="147" y="138" class="sm" text-anchor="middle">15,0 kg</text>
+  <rect x="170" y="135" width="44" height="34" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="192" y="156" class="sm" text-anchor="middle">28,0 kg</text>
+  <line x1="139" y1="120" x2="139.0" y2="72.0" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mge3atwood)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="133" y="100" class="sm bd" text-anchor="end" style="fill:var(--X)">T</text>
+  <line x1="140" y1="148" x2="140.0" y2="185.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe3atwood)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="134" y="196" class="sm bd" text-anchor="end" style="fill:var(--A)">w<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> = 147 N</tspan></text>
+  <line x1="201" y1="135" x2="201.0" y2="87.0" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mge3atwood)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="207" y="112" class="sm bd" style="fill:var(--X)">T</text>
+  <line x1="196" y1="169" x2="196.0" y2="237.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe3atwood)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="208" y="222" class="sm bd" style="fill:var(--A)">w<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"> = 274 N</tspan></text>
+  <line x1="80" y1="150" x2="80.0" y2="114.0" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfe3atwood)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="86" y="132" class="sm bd">a</text>
+  <line x1="262" y1="140" x2="262.0" y2="176.0" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfe3atwood)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="268" y="168" class="sm bd">a</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="170" y="14" class="sm bd" text-anchor="middle">T = 191 N en toda la cuerda;  a = 2,96 m/s²</text>
+</svg>
+<figcaption>Máquina de Atwood con 15,0 kg y 28,0 kg: misma tensión T = 191 N en toda la cuerda (polea ideal) y misma magnitud de aceleración a = 2,96 m/s²; la masa pequeña sube y la grande baja. T queda entre los dos pesos. <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.15, p. 161 / Solucionario 5-8)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li>Cuerda y polea ideales: misma $T$ en los dos extremos; cuerda inextensible: misma magnitud de aceleración $a$ (ejemplo 5.12). Para cada cuerpo, $+y$ en el sentido de su aceleración (ladrillos arriba, contrapeso abajo).</li>
+    <li>Ladrillos: $T-m_1g=m_1a$. Contrapeso: $m_2g-T=m_2a$.</li>
+    <li>Sumando: $a=\dfrac{m_2-m_1}{m_1+m_2}\,g=\dfrac{13{,}0}{43{,}0}(9{,}80)=\mathbf{2{,}96\ m/s^2}$.</li>
+    <li>$T=m_1(g+a)=15{,}0(12{,}76)=\mathbf{191\ N}$; comprobación con el otro: $m_2(g-a)=28{,}0(6{,}84)=191$ N ✓. Comparación: $T=1{,}30\,w_1$ (mayor que el peso de los ladrillos, que suben) y $T=0{,}698\,w_2$ (menor que el del contrapeso, que baja).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> Atwood: $a=\dfrac{m_2-m_1}{m_1+m_2}g$ y $T$ siempre entre los dos pesos. Comprueba casos límite: $m_1=m_2\Rightarrow a=0$; $m_1=0\Rightarrow a=g$.</div>
+  <div class="recipe"><b>Error típico:</b> creer que $T=m_2g$ (solo vale si todo está en reposo).</div>
+</details>
+
+<details class="sol"><summary>E4 — Problema 5.20: peso aparente en un elevador <span class="src" data-l="E" data-ref="Solucionario 5-11, Prob. 5.20">E</span></summary>
+  <p class="enun">Un estudiante de 550 N está de pie sobre una báscula de baño dentro de un elevador de 850 kg (incluido el estudiante) sostenido por un cable. Al arrancar, la báscula marca 450 N. a) Halle la aceleración del elevador (módulo y sentido). b) ¿Y si la báscula marca 670 N? c) Si marca 0, ¿debería preocuparse? d) ¿Qué tensión hay en el cable en los casos a) y c)?</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 340 255" width="100%" role="img" aria-label="Estudiante en una báscula dentro de un elevador">
+  <defs><marker id="mae4ascensor" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe4ascensor" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme4ascensor" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge4ascensor" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe4ascensor" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe4ascensor" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="38" y="66" width="84" height="84" rx="2" fill="var(--mut)" fill-opacity="0.1" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="80" y1="14" x2="80" y2="66" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="90" y1="66" x2="90.0" y2="11.0" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mge4ascensor)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="96" y="28" class="sm bd" style="fill:var(--X)">T = 6820 N</text>
+  <line x1="90" y1="150" x2="90.0" y2="217.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe4ascensor)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="96" y="224" class="sm bd" style="fill:var(--A)">W = 8330 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="80" y="108" class="sm bd" text-anchor="middle">elevador</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="80" y="122" class="sm" text-anchor="middle">850 kg</text>
+  <rect x="237" y="78" width="26" height="54" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="228" y1="132" x2="228.0" y2="87.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mae4ascensor)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="228" y="76" class="sm bd" text-anchor="middle" style="fill:var(--acc)">n = 450 N</text>
+  <line x1="254" y1="132" x2="254.0" y2="187.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe4ascensor)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="260" y="196" class="sm bd" style="fill:var(--A)">w = 550 N</text>
+  <rect x="220" y="132" width="60" height="8" rx="2" fill="var(--mut)" fill-opacity="0.4" stroke="var(--mut)" stroke-width="1.5"/>
+  
+  <line x1="165" y1="80" x2="165.0" y2="120.0" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfe4ascensor)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="172" y="106" class="sm bd">a</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="80" y="246" class="sm bd" text-anchor="middle">Sistema completo</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="250" y="246" class="sm bd" text-anchor="middle">Estudiante (56,1 kg)</text>
+</svg>
+<figcaption>Al arrancar, la báscula marca n = 450 N &lt; 550 N: la aceleración es hacia abajo (a = −1,78 m/s²). Izquierda, DCL del sistema completo (850 kg): T − W = m a. Derecha, DCL del estudiante: n − w = m a. Escalas distintas en cada DCL. <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.20, p. 161 / Solucionario 5-11)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li>La báscula mide la normal $n$, no el peso (ejemplo 5.9). Masa del estudiante: $m=550/9{,}80=56{,}1$ kg.</li>
+    <li><b>a)</b> $n-mg=ma\Rightarrow a=\dfrac{450-550}{56{,}1}=\mathbf{-1{,}78\ m/s^2}$: hacia abajo (baja acelerando o sube frenando).</li>
+    <li><b>b)</b> $a=\dfrac{670-550}{56{,}1}=\mathbf{+2{,}14\ m/s^2}$ (hacia arriba).</li>
+    <li><b>c)</b> $n=0\Rightarrow a=-g$: caída libre. Sí, hay motivo para preocuparse (el cable se ha roto o está suelto).</li>
+    <li><b>d)</b> Sistema completo (850 kg): $T-m_{tot}g=m_{tot}a\Rightarrow T=m_{tot}(g+a)$. En a): $850(9{,}80-1{,}78)=\mathbf{6{,}82\times10^3\ N}$. En c): $\mathbf{T=0}$. (En b) sería $1{,}01\times10^4$ N; el peso total es 8330 N.)</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> peso aparente = normal = $m(g+a_y)$; elige el cuerpo cuya ecuación contenga la incógnita (el estudiante para $a$, el sistema completo para $T$).</div>
+  <div class="recipe"><b>Error típico:</b> igualar la lectura de la báscula con el peso; olvidar el signo de $a$.</div>
+</details>
+
+<details class="sol"><summary>E5 — Problema 5.31: caja empujada en una rampa con fricción <span class="src" data-l="E" data-ref="Solucionario 5-17, Prob. 5.31">E</span></summary>
+  <p class="enun">Una caja de 10,0 kg se mueve sobre una rampa inclinada 55,0° con $\mu_k=0{,}300$. Calcule su aceleración si se la empuja con una fuerza constante $F=120{,}0$ N paralela a la rampa: a) hacia abajo (la caja baja); b) hacia arriba (la caja sube).</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 215" width="100%" role="img" aria-label="Caja empujada por una rampa de 55°">
+  <defs><marker id="mae5caja" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe5caja" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme5caja" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge5caja" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe5caja" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe5caja" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 10.0 206.0 L 102.0 46.6 L 102.0 206.0 Z" fill="var(--mut)" fill-opacity="0.12" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="10" y1="206" x2="102" y2="206" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 61.6 132.3 L 77.7 109.3 L 62.9 99.0 L 46.9 122.0 Z" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="62.3" y1="115.6" x2="27.9" y2="164.8" stroke="var(--X)" stroke-width="3.5" fill="none" marker-end="url(#mge5caja)"/>
+  <line x1="62.3" y1="115.6" x2="69.5" y2="105.3" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mpe5caja)"/>
+  <line x1="62.3" y1="115.6" x2="39.3" y2="99.5" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mae5caja)"/>
+  <line x1="62.3" y1="115.6" x2="62.3" y2="164.6" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe5caja)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="23.9" y="168.8" class="sm bd" text-anchor="end" style="fill:var(--X)">F</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="74.5" y="103.3" class="sm bd" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"></tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="35.3" y="97.5" class="sm bd" text-anchor="end" style="fill:var(--acc)">n</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="66.3" y="176.6" class="sm bd" style="fill:var(--A)">mg</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="106" y="150" class="sm bd">a) caja baja</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="106" y="166" class="sm bd">a = 18,3</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="106" y="182" class="sm bd">m/s²</text>
+  <path d="M 195.0 206.0 L 287.0 46.6 L 287.0 206.0 Z" fill="var(--mut)" fill-opacity="0.12" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="195" y1="206" x2="287" y2="206" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 246.6 132.3 L 262.7 109.3 L 247.9 99.0 L 231.9 122.0 Z" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="247.3" y1="115.6" x2="281.7" y2="66.5" stroke="var(--X)" stroke-width="3.5" fill="none" marker-end="url(#mge5caja)"/>
+  <line x1="247.3" y1="115.6" x2="240.0" y2="126.0" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mpe5caja)"/>
+  <line x1="247.3" y1="115.6" x2="224.3" y2="99.5" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mae5caja)"/>
+  <line x1="247.3" y1="115.6" x2="247.3" y2="164.6" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe5caja)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="287.7" y="68.5" class="sm bd" style="fill:var(--X)">F</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="246.0" y="132.0" class="sm bd" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"></tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="220.3" y="97.5" class="sm bd" text-anchor="end" style="fill:var(--acc)">n</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="251.3" y="176.6" class="sm bd" style="fill:var(--A)">mg</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="291" y="150" class="sm bd">b) caja sube</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="291" y="166" class="sm bd">a = 2,29</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="291" y="182" class="sm bd">m/s²</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="16" class="sm">F = 120 N;  f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 16,9 N (ampliada);  n = 56,2 N;  mg = 98 N</tspan></text>
+</svg>
+<figcaption>Caja de 10,0 kg en una rampa de 55,0° con μ<sub>k</sub> = 0,300 y F = 120 N paralela a la rampa. n = mg cos 55° = 56,2 N y f<sub>k</sub> = 16,9 N en ambos casos, pero la fricción cambia de sentido con el movimiento. a) F hacia abajo: a = 18,3 m/s²; b) F hacia arriba: a = 2,29 m/s². (f<sub>k</sub> dibujada ampliada.) <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.31, p. 162 / Solucionario 5-17)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li>Perpendicular a la rampa (no hay aceleración): $n=mg\cos55^\circ=56{,}2$ N, luego $f_k=\mu_kn=\mathbf{16{,}9\ N}$, igual en los dos casos (ec. 5.3). Componente del peso a lo largo de la rampa: $mg\sin55^\circ=80{,}3$ N.</li>
+    <li><b>a)</b> $+x$ rampa abajo (la fricción apunta rampa arriba): $F+mg\sin55^\circ-f_k=ma\Rightarrow a=\dfrac{120+80{,}3-16{,}9}{10{,}0}=\mathbf{18{,}3\ m/s^2}$.</li>
+    <li><b>b)</b> $+x$ rampa arriba (la fricción apunta rampa abajo): $F-mg\sin55^\circ-f_k=ma\Rightarrow a=\dfrac{120-80{,}3-16{,}9}{10{,}0}=\mathbf{2{,}29\ m/s^2}$.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> la fricción cinética se opone a la velocidad relativa: cambia de sentido al invertir el movimiento, pero su módulo $\mu_kn$ no.</div>
+  <div class="recipe"><b>Error típico:</b> dejar $f_k$ en el mismo sentido en los dos apartados.</div>
+</details>
+
+<details class="sol"><summary>E6 — Problema 5.36: ángulo de deslizamiento (umbral de la fricción estática) <span class="src" data-l="E" data-ref="Solucionario 5-20, Prob. 5.36">E</span></summary>
+  <p class="enun">Una caja de 25,0 kg con libros descansa sobre una rampa que forma un ángulo $\alpha$ con la horizontal; $\mu_k=0{,}25$ y $\mu_s=0{,}35$. a) Al aumentar $\alpha$, ¿con qué ángulo mínimo empieza la caja a resbalar? b) Con ese ángulo, ¿qué aceleración tiene una vez en movimiento? c) ¿Con qué rapidez se mueve tras deslizar 5,0 m?</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 330 190" width="100%" role="img" aria-label="Caja a punto de resbalar en una rampa">
+  <defs><marker id="mae6angulo" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe6angulo" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme6angulo" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge6angulo" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe6angulo" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe6angulo" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 12.0 170.0 L 282.0 75.4 L 282.0 170.0 Z" fill="var(--mut)" fill-opacity="0.12" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="12" y1="170" x2="282" y2="170" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 100.7 138.9 L 149.8 121.7 L 139.9 93.4 L 90.8 110.6 Z" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="120.3" y1="116.2" x2="120.3" y2="177.4" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe6angulo)"/>
+  <line x1="120.3" y1="116.2" x2="101.2" y2="61.6" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mae6angulo)"/>
+  <line x1="120.3" y1="116.2" x2="139.4" y2="109.5" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mpe6angulo)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="125.3" y="190.4" class="sm bd" style="fill:var(--A)">w = 245 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="96.2" y="59.6" class="sm bd" text-anchor="end" style="fill:var(--acc)">n = 231 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="145.4" y="105.5" class="sm bd" style="fill:var(--E)">f<tspan dy="3" font-size="9">s</tspan><tspan dy="-3"></tspan></text>
+  <path d="M 64.0 170.0 A 52 52 0 0 0 61.1 152.8" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="70" y="164" class="sm bd">α</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="14" class="sm">umbral: f<tspan dy="3" font-size="9">s</tspan><tspan dy="-3"> = mg sen α = 80,9 N = μ</tspan><tspan dy="3" font-size="9">s</tspan><tspan dy="-3">n  →  tan α = μ</tspan><tspan dy="3" font-size="9">s</tspan><tspan dy="-3"></tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="28" class="sm">α = 19,3°;  después: f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 57,8 N, a = 0,925 m/s²</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="42" class="sm">tras 5,0 m deslizando:  v = 3,0 m/s</text>
+</svg>
+<figcaption>Caja de 25,0 kg (μ<sub>s</sub> = 0,35, μ<sub>k</sub> = 0,25) en una rampa de ángulo α creciente. A punto de resbalar f<sub>s</sub> = mg sen α = μ<sub>s</sub>mg cos α, de donde tan α = μ<sub>s</sub>. Una vez en movimiento la fricción cinética (57,8 N) es menor que la estática máxima (80,9 N). <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.36, p. 163 / Solucionario 5-20)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li>Antes de deslizar, equilibrio: $f_s=mg\sin\alpha$ y $n=mg\cos\alpha$; aguanta mientras $f_s\le\mu_sn$ (ec. 5.4).</li>
+    <li><b>a)</b> Umbral: $mg\sin\alpha=\mu_smg\cos\alpha\Rightarrow\tan\alpha=\mu_s\Rightarrow\alpha=\arctan0{,}35=\mathbf{19{,}3^\circ}$ (no depende de la masa).</li>
+    <li><b>b)</b> Una vez deslizando la fricción es cinética (menor): $a=g(\sin\alpha-\mu_k\cos\alpha)=9{,}80(0{,}3304-0{,}2360)=\mathbf{0{,}925\ m/s^2}$ (el solucionario redondea 0,92).</li>
+    <li><b>c)</b> $v^2=2ad\Rightarrow v=\sqrt{2(0{,}925)(5{,}0)}=\mathbf{3{,}0\ m/s}$ (3,04).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> «a punto de deslizar» ⇔ $f_s=\mu_sn$; en un plano sin otras fuerzas, $\tan\alpha_c=\mu_s$. Una vez en marcha, se pasa a $\mu_k$.</div>
+  <div class="recipe"><b>Error típico:</b> usar $f_s=\mu_sn$ cuando el cuerpo no está en el umbral; seguir usando $\mu_s$ cuando ya desliza.</div>
+</details>
+
+<details class="sol"><summary>E7 — Problema 5.38: tirón oblicuo con fricción (la normal cambia) <span class="src" data-l="E" data-ref="Solucionario 5-21, Prob. 5.38">E</span></summary>
+  <p class="enun">Una caja de masa $m$ se arrastra por un suelo horizontal (coeficiente de fricción cinética $\mu_k$) mediante una cuerda de la que se tira con una fuerza $F$ a un ángulo $\theta$ sobre la horizontal. a) Obtenga una expresión de $F$ para mover la caja con rapidez constante, en función de $m$, $\mu_k$, $\theta$ y $g$. b) Aplíquela a un paciente de 90 kg arrastrado con $\theta=25^\circ$ y $\mu_k=0{,}35$.</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 330 261" width="100%" role="img" aria-label="Caja arrastrada con una cuerda oblicua">
+  <defs><marker id="mae7tiron" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe7tiron" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme7tiron" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge7tiron" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe7tiron" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe7tiron" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="30" y1="142.54000000000002" x2="300" y2="142.54000000000002" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="130" y="98.54" width="60" height="44" rx="2" fill="var(--mut)" fill-opacity="0.25" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="160" y1="120.5" x2="194.5" y2="120.5" stroke="var(--X)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mge7tiron)"/>
+  <line x1="194.5" y1="120.5" x2="194.5" y2="104.4" stroke="var(--X)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mge7tiron)"/>
+  <line x1="160" y1="120.5" x2="194.5" y2="104.4" stroke="var(--X)" stroke-width="3.5" fill="none" marker-end="url(#mge7tiron)"/>
+  <path d="M 194.0 120.5 A 34 34 0 0 0 190.8 106.2" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="160" y1="120.5" x2="160.0" y2="22.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mae7tiron)"/>
+  <line x1="160" y1="120.5" x2="160.0" y2="235.2" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe7tiron)"/>
+  <line x1="160" y1="120.5" x2="125.5" y2="120.5" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mpe7tiron)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="200.5" y="102.4" class="sm bd" style="fill:var(--X)">F = 293 N, a 25°</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="154" y="32.0" class="sm bd" text-anchor="end" style="fill:var(--acc)">n = 758 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="154" y="233.2" class="sm bd" text-anchor="end" style="fill:var(--A)">w = 882 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="119.5" y="112.5" class="sm bd" text-anchor="end" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 265 N</tspan></text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="168" y="158.5" class="sm" style="fill:var(--X)">F cos 25° = 265 N</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="202.5" y="134.5" class="sm" style="fill:var(--X)">F sen 25° = 124 N</text>
+</svg>
+<figcaption>Paciente de 90 kg arrastrado con velocidad constante (μ<sub>k</sub> = 0,35) tirando de una cuerda a 25° sobre la horizontal: ΣF<sub>y</sub>: n = mg − F sen θ = 758 N; ΣF<sub>x</sub>: F cos θ = μ<sub>k</sub>n, de donde F = μ<sub>k</sub>mg/(cos θ + μ<sub>k</sub> sen θ) = 293 N. Longitudes proporcionales entre sí. <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.38, p. 163 / Solucionario 5-21)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li>Rapidez constante ⇒ $a=0$ (equilibrio, ec. 5.1).</li>
+    <li>Vertical: $n+F\sin\theta-mg=0\Rightarrow n=mg-F\sin\theta$ (la cuerda «aligera» la caja, ejemplo 5.15).</li>
+    <li>Horizontal: $F\cos\theta-\mu_k(mg-F\sin\theta)=0\Rightarrow F=\dfrac{\mu_kmg}{\cos\theta+\mu_k\sin\theta}$.</li>
+    <li><b>b)</b> $F=\dfrac{0{,}35(90)(9{,}80)}{\cos25^\circ+0{,}35\sin25^\circ}=\mathbf{293\ N}$ (el solucionario da 290 N a dos cifras). Tirando en horizontal haría falta $\mu_kmg=309$ N: inclinar la cuerda ahorra fuerza.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> con una fuerza oblicua, la normal <b>siempre</b> se obtiene de la ecuación perpendicular a la superficie antes de calcular la fricción.</div>
+  <div class="recipe"><b>Error típico:</b> escribir $f_k=\mu_kmg$.</div>
+</details>
+
+<details class="sol"><summary>E8 — Problema 5.49: curva peraltada sin fricción <span class="src" data-l="E" data-ref="Solucionario 5-26, Prob. 5.49">E</span></summary>
+  <p class="enun">Un coche de 1125 kg y un camión de 2250 kg se acercan a una curva de 225 m de radio. a) ¿Con qué ángulo debe peraltarse la curva para que ambos la tomen a 65,0 mi/h sin depender de la fricción? ¿Debe el camión ir más despacio? b) Calcule la fuerza normal sobre cada vehículo a esa velocidad.</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 230" width="100%" role="img" aria-label="Coche en una curva peraltada sin fricción">
+  <defs><marker id="mae9peralte" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe9peralte" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme9peralte" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge9peralte" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe9peralte" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe9peralte" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 10.0 160.0 L 340.0 33.3 L 340.0 190.0 L 10.0 190.0 Z" fill="var(--mut)" fill-opacity="0.12" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="10" y1="160" x2="340.0" y2="33.3" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 170.6 98.4 L 222.9 78.3 L 213.5 54.0 L 161.3 74.1 Z" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="192.1" y1="76.2" x2="192.1" y2="131.3" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe9peralte)"/>
+  <line x1="192.1" y1="76.2" x2="170.9" y2="21.1" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mae9peralte)"/>
+  <line x1="192.1" y1="76.2" x2="192.1" y2="21.1" stroke="var(--acc)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mae9peralte)"/>
+  <line x1="192.1" y1="76.2" x2="170.9" y2="76.2" stroke="var(--acc)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mae9peralte)"/>
+  <line x1="192.1" y1="76.2" x2="192.1" y2="0.2" stroke="var(--mut)" stroke-width="1" stroke-dasharray="4 3"/>
+  <path d="M 181.3 48.2 A 30 30 0 0 0 192.1 46.2" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="172.1" y="36.2" class="sm bd" text-anchor="end">β</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="166.9" y="17.1" class="sm bd" text-anchor="end" style="fill:var(--acc)">n</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="198.1" y="52.2" class="sm" style="fill:var(--acc)">n cos β</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="166.9" y="90.2" class="sm" text-anchor="end" style="fill:var(--acc)">n sen β</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="198.1" y="145.3" class="sm bd" style="fill:var(--A)">mg</text>
+  <line x1="262.1" y1="122.2" x2="222.1" y2="122.2" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfe9peralte)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="266.1" y="126.2" class="sm bd">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"></tspan></text>
+  <line x1="10" y1="160" x2="110" y2="160" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <path d="M 80.0 160.0 A 70 70 0 0 0 75.4 134.9" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="88" y="154" class="sm bd">β</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="206" class="sm bd">← hacia el centro de la curva (R = 225 m)</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="8" y="222" class="sm bd">tan β = v²/(gR);  β = 21,0°;  n = mg/cos β</text>
+</svg>
+<figcaption>Curva peraltada sin fricción vista de frente: la normal es perpendicular a la calzada y su componente horizontal n sen β es la que produce la aceleración centrípeta a<sub>rad</sub> = v²/R hacia el centro; n cos β = mg. Para v = 29,06 m/s y R = 225 m: β = 21,0° (el mismo para coche y camión). <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.49, p. 163 / Solucionario 5-26)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li>65,0 mi/h = 29,06 m/s.</li>
+    <li>Vertical: $n\cos\beta=mg$; horizontal (hacia el centro): $n\sin\beta=mv^2/R$. Dividiendo: $\tan\beta=\dfrac{v^2}{gR}=\dfrac{29{,}06^2}{(9{,}80)(225)}\Rightarrow\beta=\mathbf{21{,}0^\circ}$. No depende de la masa: ambos a la misma velocidad.</li>
+    <li><b>b)</b> $n=mg/\cos\beta$: coche $\mathbf{1{,}18\times10^4\ N}$; camión $\mathbf{2{,}36\times10^4\ N}$.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> peralte ideal: $\tan\beta=v^2/(gR)$; ejes horizontal/vertical, no paralelos a la calzada.</div>
+  <div class="recipe"><b>Error típico:</b> escribir $n=mg\cos\beta$ (eso es en un plano inclinado sin aceleración horizontal; aquí $n=mg/\cos\beta$).</div>
+</details>
+
+<details class="sol"><summary>E9 — Problema 5.50: «columpio gigante» (péndulo cónico) <span class="src" data-l="E" data-ref="Solucionario 5-26, Prob. 5.50">E</span></summary>
+  <p class="enun">El «columpio gigante» de una feria tiene un eje vertical central con brazos horizontales en lo alto. Cada brazo sostiene un asiento colgado de un cable de 5,00 m sujeto al brazo a 3,00 m del eje. a) Calcule el tiempo de una revolución si el cable forma 30,0° con la vertical. b) ¿Depende el ángulo del peso del pasajero para una velocidad de giro dada?</p>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 330 225" width="100%" role="img" aria-label="Columpio gigante como péndulo cónico">
+  <defs><marker id="mae8columpio" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe8columpio" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme8columpio" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge8columpio" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe8columpio" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe8columpio" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="30" y1="14" x2="30" y2="200" stroke="var(--mut)" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="30" y1="30" x2="102" y2="30" stroke="var(--fg)" stroke-width="3"/>
+  <line x1="102" y1="30" x2="102" y2="120" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="102" y1="30" x2="162.0" y2="133.9" stroke="var(--fg)" stroke-width="1.8"/>
+  <circle cx="162.0" cy="133.9" r="8" fill="var(--mut)" fill-opacity="0.4" stroke="var(--mut)" stroke-width="1.5"/>
+  <path d="M 102.0 70.0 A 40 40 0 0 0 122.0 64.6" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="110" y="86" class="sm bd">30°</text>
+  <line x1="162.0" y1="133.9" x2="162.0" y2="93.9" stroke="var(--X)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mge8columpio)"/>
+  <line x1="162.0" y1="133.9" x2="139.0" y2="133.9" stroke="var(--X)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mge8columpio)"/>
+  <line x1="162.0" y1="133.9" x2="138.9" y2="93.9" stroke="var(--X)" stroke-width="3.5" fill="none" marker-end="url(#mge8columpio)"/>
+  <line x1="162.0" y1="133.9" x2="162.0" y2="173.9" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe8columpio)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="172.0" y="173.9" class="sm bd" style="fill:var(--A)">mg</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="170.0" y="85.9" class="sm bd" style="fill:var(--X)">F = 1,155 mg</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="170.0" y="101.9" class="sm" style="fill:var(--X)">F cos 30° = mg</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="136.0" y="149.9" class="sm" text-anchor="end" style="fill:var(--X)">F sen 30°</text>
+  <line x1="202.0" y1="199.9" x2="168.0" y2="199.9" stroke="var(--fg)" stroke-width="2.5" fill="none" marker-end="url(#mfe8columpio)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="206.0" y="203.9" class="sm bd">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"></tspan></text>
+  <line x1="30" y1="190" x2="30" y2="206" stroke="var(--mut)" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="162.0" y1="147.9" x2="162.0" y2="206" stroke="var(--mut)" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="32" y1="200" x2="160.0" y2="200" stroke="var(--fg)" stroke-width="1.5" fill="none" marker-end="url(#mfe8columpio)"/>
+  <line x1="160.0" y1="200" x2="32" y2="200" stroke="var(--fg)" stroke-width="1.5" fill="none" marker-end="url(#mfe8columpio)"/>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="96.0" y="216" class="sm bd" text-anchor="middle">R = 3,00 + 5,00 sen 30° = 5,50 m</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="66.0" y="24" class="sm" text-anchor="middle">3,00 m</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="126" y="60" class="sm bd">L = 5,00 m</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="320" y="70" class="sm bd" text-anchor="end">v = 5,58 m/s</text>
+  <text stroke="var(--bg)" stroke-width="3" paint-order="stroke" x="320" y="86" class="sm bd" text-anchor="end">T<tspan dy="3" font-size="9">per</tspan><tspan dy="-3"> = 6,19 s</tspan></text>
+</svg>
+<figcaption>Asiento de 5,00 m colgado a 3,00 m del eje: gira en un círculo horizontal de radio R = 5,50 m (no 5,00 ni 2,50 m). F cos 30° = mg (vertical) y F sen 30° = mv²/R (horizontal, hacia el eje), de donde v = √(gR tan 30°) = 5,58 m/s y T<sub>per</sub> = 2πR/v = 6,19 s. La flecha de a<sub>rad</sub> apunta al eje. <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.50, p. 164 / Solucionario 5-26)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li><b>Radio del giro:</b> el asiento está a $R=3{,}00+5{,}00\sin30^\circ=\mathbf{5{,}50\ m}$ del eje (no 5,00 ni 2,50 m).</li>
+    <li>Vertical (sin aceleración): $F\cos30^\circ=mg$. Horizontal (ec. 5.16): $F\sin30^\circ=mv^2/R$.</li>
+    <li>Dividiendo: $\tan30^\circ=\dfrac{v^2}{gR}\Rightarrow v=\sqrt{gR\tan30^\circ}=\sqrt{(9{,}80)(5{,}50)(0{,}5774)}=\mathbf{5{,}58\ m/s}$.</li>
+    <li><b>a)</b> Periodo: $T_{per}=\dfrac{2\pi R}{v}=\dfrac{2\pi(5{,}50)}{5{,}58}=\mathbf{6{,}19\ s}$.</li>
+    <li><b>b)</b> La masa se cancela al dividir: el ángulo no depende del peso del pasajero.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> péndulo cónico: vertical $F\cos\beta=mg$, horizontal $F\sin\beta=mv^2/R$ ⇒ $\tan\beta=v^2/(gR)$; cuidado con el <b>radio real</b> de giro.</div>
+  <div class="recipe"><b>Error típico:</b> tomar $R$ igual a la longitud del cable; dibujar una «fuerza centrípeta» adicional en el DCL (la centrípeta es la resultante, no una fuerza más).</div>
+</details>
+
+<div class="box tip"><span class="h">Si te toca una pregunta de teoría: «Fuerzas de fricción» o «Dinámica del movimiento circular»</span>
+  <p>Guion propio para desarrollar el tema (no es un enunciado de examen real; en este tema no ha caído teoría en los exámenes catalogados). Define, enuncia la ley, razona con un ejemplo y cierra con el error típico:</p>
+  <ul>
+    <li><b>Fricción:</b> (1) fuerza de contacto <i>paralela</i> a la superficie, opuesta al movimiento relativo (o a su tendencia), de origen eléctrico microscópico; la normal es la componente perpendicular. (2) Cinética: $f_k=\mu_kn$ (5.3), independiente de la rapidez y del área. (3) Estática: $f_s\le\mu_sn$ (5.4), vale lo que haga falta y alcanza su máximo en el umbral; $\mu_k<\mu_s$; comenta la gráfica $f$–$T$ de la fig. 5.19. (4) Rodamiento ($\mu_r$ pequeño) y resistencia de fluidos ($f=kv$, $f=Dv^2$) con la rapidez terminal. (5) Un ejemplo: bloque en una rampa, $\tan\alpha=\mu_s$ en el umbral. (6) Error típico: usar $\mu_sn$ sin estar en el umbral.</li>
+    <li><b>Movimiento circular:</b> (1) la velocidad cambia de dirección, luego hay aceleración $a_{rad}=v^2/R$ hacia el centro. (2) Segunda ley: $\sum F_{rad}=mv^2/R$; la «fuerza centrípeta» es la resultante de fuerzas reales, no una fuerza nueva. (3) Método: un eje radial y otro perpendicular al plano del giro. (4) Ejemplos: péndulo cónico ($\tan\beta=v^2/gR$), curva plana ($v_{\text{máx}}=\sqrt{\mu_sgR}$), peraltada, círculo vertical ($n_T$ y $n_B$). (5) Cuestión corta típica: por qué no existe la «fuerza centrífuga» en un sistema inercial.</li>
+  </ul>
+  <span class="src" data-l="P" data-ref="Guion propio de estudio, basado en U §5.3 y §5.4; no es un examen real">P</span></div>
+
+<h2 id="chuleta"><span class="n">7</span>Chuleta, errores frecuentes y lista de comprobación</h2>
+<table>
+<tr><th>Situación</th><th>Ecuaciones clave</th></tr>
+<tr><td>Equilibrio (ec. 5.1)</td><td>$\sum F_x=0,\ \sum F_y=0$</td></tr>
+<tr><td>Dinámica (ec. 5.2)</td><td>$\sum F_x=ma_x,\ \sum F_y=ma_y$</td></tr>
+<tr><td>Plano inclinado (ejes paralelo/perpendicular)</td><td>$w_\parallel=w\sin\alpha,\ w_\perp=w\cos\alpha$; sin fricción $a=g\sin\alpha$, $n=mg\cos\alpha$</td></tr>
+<tr><td>Fricción cinética / estática</td><td>$f_k=\mu_kn$ (5.3); $f_s\le\mu_sn$ (5.4)</td></tr>
+<tr><td>Con fricción cuesta abajo / umbral</td><td>$a=g(\sin\alpha-\mu_k\cos\alpha)$; deslizar ⇔ $\tan\alpha=\mu_s$</td></tr>
+<tr><td>Peso aparente</td><td>$n=m(g+a_y)$</td></tr>
+<tr><td>Dos cuerpos con cuerda ideal</td><td>misma $T$; misma $\lvert a\rvert$; Atwood $a=\dfrac{m_2-m_1}{m_1+m_2}g$</td></tr>
+<tr><td>Resistencia de un fluido</td><td>$f=kv\ \to\ v_t=mg/k$; $f=Dv^2\ \to\ v_t=\sqrt{mg/D}$</td></tr>
+<tr><td>Movimiento circular</td><td>$a_{rad}=v^2/R=\omega^2R$; $\sum F_{rad}=mv^2/R$; $T_{per}=2\pi R/v$</td></tr>
+<tr><td>Péndulo cónico / curva peraltada</td><td>$\tan\beta=v^2/(gR)$; $R=L\sin\beta$ en el péndulo</td></tr>
+<tr><td>Curva plana</td><td>$v_{\text{máx}}=\sqrt{\mu_sgR}$</td></tr>
+<tr><td>Círculo vertical (rapidez constante)</td><td>$n_T=mg(1-v^2/gR)$ arriba; $n_B=mg(1+v^2/gR)$ abajo</td></tr>
+</table>
+<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+  <ul>
+    <li>Suponer $n=mg$ siempre (falla en rampas, elevadores, fuerzas oblicuas, curvas peraltadas, paredes).</li>
+    <li>Dibujar «$m\vec a$» o una «fuerza centrífuga» como si fueran fuerzas.</li>
+    <li>Usar $f_s=\mu_sn$ sin estar en el umbral, o seguir usando $\mu_s$ cuando ya hay deslizamiento.</li>
+    <li>Orientar la fricción a favor del movimiento (siempre se opone al movimiento relativo) o sin saber hacia dónde se mueve el sistema.</li>
+    <li>Igualar la tensión al peso de lo que cuelga cuando hay aceleración.</li>
+    <li>Mezclar componentes $x$ e $y$ en una ecuación; confundir $\sin$ y $\cos$ en el peso (dibuja $\alpha$ distinto de 45°).</li>
+    <li>Con poleas móviles: olvidar la ligadura ($a_B=a_A/2$) y el factor $2T$.</li>
+    <li>En un giro, tomar como radio la longitud de la cuerda en vez de la distancia al eje, y no convertir rpm a rad/s.</li>
+    <li>Aceptar una tensión negativa o una normal negativa sin interpretar (cable flojo, cuerpo despegado).</li>
+  </ul>  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
+<ul class="checklist">
+  <li>Sé construir un DCL correcto (solo fuerzas externas sobre el cuerpo, sin $m\vec a$ ni fuerza centrífuga) y elegir ejes adecuados.</li>
+  <li>Sé resolver equilibrios con cuerdas y planos inclinados descomponiendo el peso en $w\sin\alpha$ y $w\cos\alpha$.</li>
+  <li>Sé plantear $\sum F=ma$ para dos o más cuerpos unidos (Atwood, plano + colgante, polea móvil) y resolver el sistema.</li>
+  <li>Sé calcular el peso aparente en un elevador y explicar la ingravidez aparente.</li>
+  <li>Sé distinguir fricción estática y cinética, calcular la normal antes de $f=\mu n$ y orientar la fricción.</li>
+  <li>Sé hallar el ángulo de deslizamiento ($\tan\alpha=\mu_s$) y la aceleración cuesta abajo con fricción.</li>
+  <li>Sé hallar la rapidez terminal con $f=kv$ y con $f=Dv^2$.</li>
+  <li>Sé resolver problemas de movimiento circular horizontal (péndulo cónico, cono giratorio, curva plana y peraltada) y vertical (rueda de la fortuna).</li>
+  <li>Sé nombrar las cuatro interacciones fundamentales.</li>
+</ul>
+
+<h2 id="fuentes"><span class="n">★</span>Fuentes de este tema</h2>
+<details class="fuentes-toggle">
+<summary>Mostrar lista de fuentes</summary>
+<div id="panel-fuentes"></div>
+</details>
+
+<footer>Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.</footer>
+</main>
+</div>
+</body>
+</html>
