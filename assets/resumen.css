@@ -65,7 +65,7 @@ ul,ol{padding-left:1.4em}li{margin:.25em 0}
 code{font:.88em ui-monospace,Consolas,monospace;background:color-mix(in srgb,var(--fg) 8%,transparent);padding:1px 5px;border-radius:4px}
 figure{margin:1.2em 0;text-align:center}figcaption{font:13.5px var(--sans);color:var(--mut)}
 svg.fig{max-width:min(100%,360px);height:auto;display:block;margin:0 auto}
-svg.fig text{fill:var(--fg);font:13px var(--sans)}
+svg.fig text{fill:var(--fg);font:13px var(--sans);paint-order:stroke;stroke:var(--bg);stroke-width:3;stroke-linejoin:round}
 svg.fig .ax{stroke:var(--fg);stroke-width:1.5;fill:none}
 svg.fig .a{stroke:var(--acc);stroke-width:3;fill:none}
 svg.fig .b{stroke:var(--A);stroke-width:3;fill:none}
@@ -109,3 +109,5 @@ svg.fig .bd{font-weight:700}
 
 /* Figuras recortadas de los libros (herramientas/extraer_figura.py): fondo claro también en modo oscuro */
 figure.bookfig img{max-width:100%;height:auto;background:#fff;border-radius:8px;padding:8px;border:1px solid var(--bd)}
+
+.box td a{color:var(--acc);font-weight:600}

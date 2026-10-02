@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física I · Tema 6 Trabajo y energía cinética</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Índice de temas</a>
+  <span><button id="btn-sol" type="button">Mostrar soluciones</button> <button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+
+<div class="layout">
+<nav class="side-toc" aria-label="Índice del tema"><b>En esta página</b></nav>
+<main>
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><defs><marker id="mk-a" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mk-b" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mk-m" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mk-g" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mk-p" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mk-f" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs></svg>
+
+<header class="hero">
+  <div class="kick">Bloque Mecánica · Tema 6</div>
+  <h1>Trabajo y energía cinética</h1>
+  <p>Un método nuevo para resolver problemas de movimiento sin pasar por el tiempo ni por la aceleración: calcular el <i>trabajo</i> de cada fuerza y compararlo con el cambio de la <i>energía cinética</i>. Sirve cuando la fuerza varía (resortes), cuando la trayectoria es curva y, en general, cuando el enunciado habla de distancias y rapideces, no de tiempos.</p>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 6 (pp. 172-192)</span><span>Preguntas de examen real: 11</span><span>Ejercicios del solucionario: 10</span><span>⏱ ~6 h de estudio</span></div>
+  <div class="legend">
+    <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
+    <span class="src" data-l="A" data-ref="Academia_Tec — resumen complementario (solo algunos temas)">A</span> Academia_Tec
+    <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
+    <span class="src" data-l="X" data-ref="Ejercicio de examen real, ver fuentes_txt/examenes_por_tema.md">X</span> examen real
+    <span class="src" data-l="P" data-ref="Explicación o ejemplo propio, sin página en los libros">P</span> propio
+    — pasa el ratón (o toca) por cada etiqueta para ver la fuente exacta; en pantallas anchas aparecen en el margen derecho.
+  </div>
+</header>
+
+<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U cap. 6 Introducción, pp. 172-173">U p.172</span></h2>
+<p><b>Prerrequisitos:</b> el producto escalar de dos vectores (tema 1, §1.10: $\vec A\cdot\vec B=AB\cos\phi=A_xB_x+A_yB_y+A_zB_z$); las ecuaciones de aceleración constante, sobre todo $v_x^2=v_{0x}^2+2a_x(x-x_0)$ (tema 2); la segunda ley $\sum\vec F=m\vec a$ y el diagrama de cuerpo libre (temas 4 y 5), incluida la fricción cinética $f_k=\mu_kn$ y la normal en un plano inclinado.</p>
+<p><b>Mapa del tema:</b> 6.1 define el <b>trabajo</b> de una fuerza constante ($W=Fs\cos\phi$) y cuándo es positivo, negativo o cero. 6.2 define la <b>energía cinética</b> $K=\tfrac12mv^2$ y demuestra el <b>teorema trabajo-energía</b> $W_{tot}=K_2-K_1$, que es la herramienta central. 6.3 lo extiende a fuerzas que varían con la posición (el trabajo es un área o una integral; el <b>resorte</b> y la ley de Hooke) y a trayectorias curvas. 6.4 introduce la <b>potencia</b>, la rapidez con que se hace trabajo.</p>
+<div class="box tip"><span class="h">Qué ha caído en examen</span>
+  <p>El índice de exámenes asigna a este tema solo dos preguntas (la primera y la séptima de la tabla); las demás están catalogadas en otros temas, pero se resuelven <i>mejor</i> con trabajo y energía y por eso están aquí. Las convocatorias de Septiembre 2022 y 2023 no están en el índice principal (se detectaron en los recopilatorios escaneados). Todas están resueltas abajo:</p>
+<table>
+<tr><th>Pregunta de examen real</th><th>Ejercicio de esta página</th></tr>
+<tr><td>Feb 2023 (1ª sem.) P-3 Opción A — teoría «Energía cinética y el teorema trabajo-energía» + 2 cuestiones</td><td><a href="#x1">X1</a></td></tr>
+<tr><td>Sep 2022 P-3 (a) — por qué no cambia la rapidez en un MCU</td><td><a href="#x2">X2</a></td></tr>
+<tr><td>Feb 2023 (2ª sem.) P-4 Opción B (a)(b) — trabajo de la gravedad en una órbita circular y elíptica</td><td><a href="#x3">X3</a></td></tr>
+<tr><td>Sep 2022 P-4 Opción B (b) — trabajo entre dos playas</td><td><a href="#x4">X4</a></td></tr>
+<tr><td>Feb 2024 (1ª sem.) P-1 — bala que penetra 2 m</td><td><a href="#x5">X5</a></td></tr>
+<tr><td>Feb 2023 (1ª sem.) P-1 — satélite que se estrella</td><td><a href="#x6">X6</a></td></tr>
+<tr><td>Feb 2023 (2ª sem.) P-1 — bloque contra la pared (= U 5.75); pide velocidad y trabajo</td><td><a href="#x7">X7</a></td></tr>
+<tr><td>Feb 2020 (1ª sem.) P-1 (c) — polea móvil, velocidad de A tras 1 m</td><td><a href="#x8">X8</a></td></tr>
+<tr><td>Sep 2022 P-2 (e) — masa de agua bombeada por ciclo (trabajo <i>mgh</i>)</td><td><a href="#x9">X9</a></td></tr>
+<tr><td>Feb 2025 (1ª sem.) P-4 Opción B (a) — constante de cada mitad de un resorte</td><td><a href="#x10">X10</a></td></tr>
+<tr><td>Sep 2023 P-2 — cuarto de círculo con fricción: μ<sub>k</sub> y trabajo de la fricción</td><td><a href="#x11">X11</a></td></tr>
+</table>
+  <p><b>Lo que viene:</b> los problemas de «resorte + rampa + fricción» (Feb 2020 2ª sem. P-1; Feb 2022 2ª sem. P-1, que es el 7.73 de U; Sep 2024 P-1) usan exactamente las herramientas de este tema más la energía potencial: están en el <b>tema 7</b>. Las preguntas de trabajo y potencia en rotación (Feb 2025 2ª sem. P-3 Opción A) son del tema 10, y las de potencia de una máquina térmica del tema 20. No existe resumen de Academia_Tec para este tema: las explicaciones se basan en U y en los problemas.</p>
+  <span class="src" data-l="X" data-ref="Examen Febrero 2023 (1ª semana) P-3 Opción A; Febrero 2023 (2ª semana) P-1; Septiembre 2022 P-3 (a); Septiembre 2022 P-4 (b); Septiembre 2022 P-2 (e); Febrero 2023 (2ª semana) P-4; Febrero 2024 (1ª semana) P-1; Febrero 2023 (1ª semana) P-1; Febrero 2020 (1ª semana) P-1; Febrero 2025 (1ª semana) P-4 Opción B; Septiembre 2023 P-2">X ×11</span></div>
+<div class="box tip"><span class="h">La receta maestra: método trabajo-energía en 5 pasos</span>
+  <ol class="steps">
+    <li><b>Elige dos puntos</b>: la posición inicial (1) y la final (2), y dibuja el diagrama de cuerpo libre con todas las fuerzas que actúan sobre el cuerpo entre ambos.</li>
+    <li>Escribe <b>$K_1=\tfrac12mv_1^2$ y $K_2=\tfrac12mv_2^2$</b> (la masa, no el peso).</li>
+    <li>Calcula el <b>trabajo de cada fuerza</b> con su signo ($W=Fs\cos\phi$ si es constante y el camino recto; el ángulo $\phi$ es el que forman la fuerza y el desplazamiento) y súmalos: $W_{tot}$.</li>
+    <li>Aplica $W_{tot}=K_2-K_1$ (final menos inicial, nunca al revés) y despeja la incógnita.</li>
+    <li><b>Evalúa</b>: ¿tiene el signo de $W_{tot}$ el sentido correcto (más rápido o más lento)? ¿Sale $K_2\ge0$? Si puedes, comprueba con la segunda ley y la cinemática.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 6.1, p. 179">U p.179</span></div>
+<div class="box tip"><span class="h">Convenio sobre g</span><p>En U y en el solucionario se usa $g=9{,}80\ \text{m/s}^2$. Los enunciados de examen de 2023-2025 y el de Sep 2022 dan $g=9{,}81$ (salvo Sep 2023 P-2, que no la indica: se usa 9,81); los de Feb 2020 y Feb 2022 no la indican (aquí se usa 9,80). Cuando el cambio de $g$ altera el resultado, se da el valor con la otra $g$.</p>  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
+
+<h2 id="s1"><span class="n">1</span>Trabajo de una fuerza <span class="src" data-l="U" data-ref="U §6.1, pp. 173-177">U p.173</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>En la vida diaria «trabajar» es cualquier esfuerzo, físico o mental. En física es algo mucho más estricto: una fuerza hace trabajo sobre un cuerpo <b>solo si el cuerpo se desplaza y la fuerza tiene componente a lo largo de ese desplazamiento</b>. Empujar un coche averiado 18 m es trabajo; sostener una pesa quieta en el aire durante cinco minutos, no (aunque te canses: el cansancio viene de tus músculos, no de un desplazamiento de la pesa).</p>
+  <p>Una buena imagen: la energía es una <b>moneda</b> y el trabajo es una <b>transferencia</b> de monedas. Una fuerza que empuja en el sentido del movimiento <i>ingresa</i> energía al cuerpo (trabajo positivo); una que se opone <i>retira</i> energía (trabajo negativo); una que va de lado ni ingresa ni retira nada (trabajo cero).</p>
+  <span class="src" data-l="U" data-ref="U §6.1, pp. 173 y 175">U p.173-175</span></div>
+<div class="box def"><span class="h">Trabajo de una fuerza constante</span>
+  <p>Si una fuerza constante $\vec F$ actúa sobre una partícula que se desplaza en línea recta una distancia $s$, el trabajo de esa fuerza es
+  $$W=Fs\cos\phi=\vec F\cdot\vec s\qquad\text{(ecs. 6.2 y 6.3)}$$
+  donde $\phi$ es el ángulo entre $\vec F$ y $\vec s$. Si $\vec F$ va en la dirección del desplazamiento ($\phi=0$) se reduce a $W=Fs$ (ec. 6.1). Es un <b>escalar</b>: no tiene dirección, aunque se calcule con dos vectores. Solo cuenta la componente $F_\parallel=F\cos\phi$ paralela al desplazamiento; la componente perpendicular $F_\perp$ no trabaja.</p>
+  <p>Unidad SI: el <b>joule</b>, $1\ \text{J}=1\ \text{N}\cdot\text{m}$. Levantar una manzana (1 N) un metro a velocidad constante cuesta 1 J.</p>
+  <span class="src" data-l="U" data-ref="U §6.1 ecs. (6.1)-(6.3), pp. 173-174">U p.173-174</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_6_4_signo.png" alt="Figura 6.4 de U: tres casos de una fuerza constante F sobre un bloque que se desplaza s. a) F con una componente en la dirección del desplazamiento: W = F cos phi por s, trabajo positivo. b) F con una componente opuesta al desplazamiento, phi entre 90 y 180 grados: trabajo negativo. c) F perpendicular al desplazamiento, phi = 90 grados: no realiza trabajo." loading="lazy">
+<figcaption>Fig. 6.4 de U: el signo del trabajo depende del ángulo $\phi$ entre la fuerza y el desplazamiento. <span class="src" data-l="U" data-ref="U Fig. 6.4, p. 175">U p.175</span></figcaption>
+</figure>
+<table>
+<tr><th>Ángulo $\phi$ (fuerza–desplazamiento)</th><th>$\cos\phi$</th><th>Trabajo</th><th>Ejemplo</th></tr>
+<tr><td>$0\le\phi<90^\circ$</td><td>$>0$</td><td>$W>0$ (ingresa energía)</td><td>tu empujón sobre el coche; el peso al bajar</td></tr>
+<tr><td>$\phi=90^\circ$</td><td>$0$</td><td>$W=0$</td><td>la normal sobre un cuerpo que desliza; la tensión en un MCU; el peso en un camino horizontal</td></tr>
+<tr><td>$90^\circ<\phi\le180^\circ$</td><td>$<0$</td><td>$W<0$ (retira energía)</td><td>la fricción cinética; el peso al subir</td></tr>
+</table>
+<div class="box thm"><span class="h">Trabajo negativo y tercera ley</span>
+  <p>Cuando un cuerpo hace trabajo negativo sobre otro, éste hace sobre el primero una cantidad igual de trabajo positivo, <b>siempre que ambos cuerpos tengan el mismo desplazamiento</b> (como las manos y la barra). Un levantador de pesas que baja una barra: la barra hace trabajo positivo sobre sus manos (empuja en el sentido en que se mueven) y sus manos hacen trabajo negativo sobre la barra (frenan su caída). Por eso hay que decir siempre <b>qué fuerza</b> hace el trabajo y <b>sobre qué cuerpo</b>.</p>
+  <p><i>Contraejemplo:</i> si los cuerpos no se desplazan igual, la regla falla. Un bloque que desliza sobre un suelo fijo recibe del suelo una fricción que hace $W<0$ sobre el bloque; la fricción que el bloque ejerce sobre el suelo, en cambio, hace $W=0$ (el suelo no se mueve).</p>
+  <span class="src" data-l="U" data-ref="U §6.1 «Cuidado: tenga presente quién efectúa el trabajo», p. 176 (contraejemplo de la fricción: explicación propia)">U p.176</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 182" width="100%" role="img" aria-label="Fuerzas perpendiculares al desplazamiento: normal y peso sobre un bloque que desliza, fuerza centrípeta en un movimiento circular">
+  <line x1="20" y1="125" x2="175" y2="125" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="70" y="80" width="50" height="45" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="95" y1="102" x2="95" y2="56" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mk-a)"/>
+  <text x="101" y="62" class="sm bd" style="fill:var(--acc)">n</text>
+  <line x1="95" y1="102" x2="95" y2="146" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mk-b)"/>
+  <text x="102" y="142" class="sm bd" style="fill:var(--A)">mg</text>
+  <line x1="45" y1="28" x2="145" y2="28" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mk-f)"/>
+  <text x="95" y="20" class="sm bd" text-anchor="middle">s</text>
+  <text x="95" y="172" class="sm" text-anchor="middle" style="fill:var(--fg)">n y mg ⟂ s: W = 0</text>
+  <circle cx="268" cy="90" r="50" fill="none" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="268" cy="40" r="5" fill="var(--acc)"/>
+  <line x1="268" y1="40" x2="320" y2="40" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mk-f)"/>
+  <text x="318" y="33" class="sm bd" text-anchor="end">v</text>
+  <line x1="268" y1="40" x2="268" y2="78" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="275" y="74" class="sm bd" style="fill:var(--X)">F<tspan dy="3" font-size="9">c</tspan><tspan dy="-3"></tspan></text>
+  <circle cx="268" cy="90" r="2.5" fill="var(--mut)"/>
+  <text x="268" y="172" class="sm" text-anchor="middle" style="fill:var(--fg)">F<tspan dy="3" font-size="9">c</tspan><tspan dy="-3"> ⟂ v: W = 0</tspan></text>
+</svg>
+<figcaption>Izquierda: sobre un bloque que se desliza por el suelo, la normal n y el peso mg son perpendiculares al desplazamiento s, así que no hacen trabajo. Derecha: en un movimiento circular la fuerza centrípeta F<sub>c</sub> es perpendicular a la velocidad v en todo instante: W = 0 y la rapidez no cambia. <span class="src" data-l="P" data-ref="Diagrama propio (U §6.1 p.175 y §6.3 p.188)">P</span></figcaption>
+</figure>
+
+<div class="box warn"><span class="h">Error típico</span>
+  <p>«Hay una fuerza, luego hay trabajo». Falso: sin desplazamiento (pesa quieta) o con la fuerza perpendicular al desplazamiento (normal, tensión en un movimiento circular, peso en un suelo horizontal) el trabajo es cero. Tampoco confundas la <b>W</b> mayúscula (trabajo) con la <b>w</b> minúscula (peso).</p>
+  <span class="src" data-l="U" data-ref="U p.173 (Cuidado W/w; pesa quieta, fig. 6.5 p.175)">U p.173-175</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 6.1 — empujar coches averiados</span>
+  <ol class="steps">
+    <li>Steve empuja con $F=210$ N un coche 18 m, con la fuerza a $30^\circ$ del desplazamiento: $W=Fs\cos\phi=(210)(18)\cos30^\circ=3{,}3\times10^3$ J.</li>
+    <li>Otro coche: $\vec F=(160\ \text{N})\hat\imath-(40\ \text{N})\hat\jmath$ y $\vec s=(14\ \text{m})\hat\imath+(11\ \text{m})\hat\jmath$. Con componentes, $W=F_xs_x+F_ys_y=(160)(14)+(-40)(11)=1{,}8\times10^3$ J.</li>
+  </ol>
+  <p>Cuando te dan los vectores en componentes, el producto escalar por componentes es más cómodo que buscar el ángulo.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 6.1, p. 174">U p.174</span></div>
+
+<h3>Varias fuerzas: trabajo total</h3>
+<div class="box def"><span class="h">Trabajo total</span>
+  <p>Como el trabajo es un escalar, el trabajo total sobre un cuerpo es la <b>suma algebraica</b> de los trabajos de cada fuerza: $W_{tot}=W_1+W_2+\dots$ Equivale a calcular el trabajo de la <b>fuerza neta</b>: $W_{tot}=(\sum\vec F)\cdot\vec s$. Se puede hacer de las dos formas, y conviene comprobar una con la otra.</p>
+  <span class="src" data-l="U" data-ref="U §6.1 «Trabajo total», p. 176">U p.176</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 6.2 — remolque de leña</span>
+  <p>Un tractor arrastra 20 m un remolque (peso 14 700 N) con una fuerza de 5000 N a $36{,}9^\circ$ sobre la horizontal; la fricción es de 3500 N.</p>
+  <ol class="steps">
+    <li>Peso y normal son perpendiculares al desplazamiento: $W_w=W_n=0$.</li>
+    <li>Tractor: $W_T=F_Ts\cos36{,}9^\circ=(5000)(20)(0{,}800)=80$ kJ.</li>
+    <li>Fricción ($\phi=180^\circ$): $W_f=-fs=-(3500)(20)=-70$ kJ.</li>
+    <li>Total: $W_{tot}=0+0+80-70=10$ kJ. Por fuerza neta: $\sum F_x=5000\cos36{,}9^\circ-3500=500$ N, y $W_{tot}=(500)(20)=10$ kJ ✓.</li>
+  </ol>
+  <p>$W_{tot}>0$: el remolque va cada vez más rápido (en la sección siguiente se calcula cuánto).</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 6.2, pp. 176-177">U p.176-177</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 282" width="100%" role="img" aria-label="Trabajo de cada fuerza sobre un remolque arrastrado por un tractor y trabajo total">
+  <line x1="30" y1="100" x2="330" y2="100" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="140" y="62" width="70" height="38" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="210" y1="72" x2="258" y2="36" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="262" y="40" class="sm bd" text-anchor="start" style="fill:var(--X)">F<tspan dy="3" font-size="9">T</tspan><tspan dy="-3"> = 5000 N</tspan></text>
+  <path d="M 234.0 72.0 A 24 24 0 0 0 229.2 57.6" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="238" y="70" class="sm" text-anchor="start">36,9°</text>
+  <line x1="140" y1="88" x2="98" y2="88" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mk-p)"/>
+  <text x="60" y="80" class="sm bd" text-anchor="start" style="fill:var(--E)">f = 3500 N</text>
+  <line x1="175" y1="81" x2="175" y2="49" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mk-a)"/>
+  <text x="180" y="47" class="sm bd" style="fill:var(--acc)">n</text>
+  <line x1="175" y1="81" x2="175" y2="101" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mk-b)"/>
+  <text x="180" y="111" class="sm bd" style="fill:var(--A)">w</text>
+  <line x1="140" y1="118" x2="250" y2="118" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mk-f)"/>
+  <text x="195" y="133" class="sm bd" text-anchor="middle">s = 20 m</text>
+  <line x1="190.0" y1="160" x2="190.0" y2="272" stroke="var(--fg)" stroke-width="1.5"/>
+  <text x="8" y="157" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">w</tspan><tspan dy="-3"> = W</tspan><tspan dy="3" font-size="9">n</tspan><tspan dy="-3"> (⟂ s)</tspan></text>
+  <text x="195.0" y="173" class="sm bd" text-anchor="start" style="fill:var(--fg)">0</text>
+  <text x="8" y="189" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">T</tspan><tspan dy="-3"> = F</tspan><tspan dy="3" font-size="9">T</tspan><tspan dy="-3"> s cos 36,9°</tspan></text>
+  <rect x="190.0" y="195" width="80.0" height="10" rx="1.5" fill="var(--X)" fill-opacity="0.55" stroke="var(--X)" stroke-width="1.3"/>
+  <text x="275.0" y="205" class="sm bd" text-anchor="start" style="fill:var(--fg)">+80 kJ</text>
+  <text x="8" y="221" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">f</tspan><tspan dy="-3"> = f s cos 180°</tspan></text>
+  <rect x="120.0" y="227" width="70.0" height="10" rx="1.5" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.3"/>
+  <text x="115.0" y="237" class="sm bd" text-anchor="end" style="fill:var(--fg)">−70 kJ</text>
+  <text x="8" y="253" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">tot</tspan><tspan dy="-3"> = suma algebraica</tspan></text>
+  <rect x="190.0" y="259" width="10.0" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/>
+  <text x="205.0" y="269" class="sm bd" text-anchor="start" style="fill:var(--fg)">+10 kJ</text>
+</svg>
+<figcaption>Ejemplo 6.2 de U: el tractor aporta +80 kJ, la fricción quita −70 kJ y el peso y la normal no trabajan: el trabajo total es +10 kJ. (Flechas no a escala exacta.) <span class="src" data-l="P" data-ref="Diagrama propio (U Ej. 6.2, pp. 176-177)">P</span></figcaption>
+</figure>
+
+
+<h2 id="s2"><span class="n">2</span>Energía cinética y teorema trabajo-energía <span class="src" data-l="U" data-ref="U §6.2, pp. 177-182">U p.177</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Observa tres bloques que se deslizan sin fricción. Si empujas a favor del movimiento, la fuerza neta va a favor del desplazamiento, el trabajo total es positivo y el bloque <b>acelera</b>. Si empujas en contra, el trabajo total es negativo y <b>frena</b>. Si empujas de lado (hacia abajo), la fuerza neta es cero, no hay trabajo y la rapidez no cambia. Trabajo total y cambio de rapidez van siempre de la mano: la «moneda» que el trabajo transfiere se guarda en el cuerpo como <b>energía cinética</b>, la energía del movimiento.</p>
+  <span class="src" data-l="U" data-ref="U §6.2, fig. 6.8, pp. 177-178">U p.177-178</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_6_8_acelera_frena.png" alt="Figura 6.8 de U: bloque que se desliza hacia la derecha sobre una superficie sin fricción. a) Si se empuja a la derecha, el trabajo total es positivo y el bloque aumenta de rapidez. b) Si se empuja a la izquierda, el trabajo total es negativo y el bloque se frena. c) Si se empuja hacia abajo, la fuerza neta es cero, el trabajo total es cero y la rapidez permanece igual." loading="lazy">
+<figcaption>Fig. 6.8 de U: el signo del trabajo total decide si el cuerpo acelera, frena o conserva la rapidez. <span class="src" data-l="U" data-ref="U Fig. 6.8, p. 177">U p.177</span></figcaption>
+</figure>
+<div class="box def"><span class="h">Energía cinética</span>
+  $$K=\tfrac12mv^2\qquad\text{(ec. 6.5)}$$
+  <p>Es un <b>escalar</b>, depende solo de la masa y de la <i>rapidez</i> (no de la dirección del movimiento), <b>nunca es negativa</b> y vale cero solo en reposo. Se mide en joules: $1\ \text{J}=1\ \text{kg}\cdot\text{m}^2/\text{s}^2$. Duplicar la masa duplica $K$; duplicar la rapidez la <b>cuadruplica</b>.</p>
+  <span class="src" data-l="U" data-ref="U §6.2 ec. (6.5), p. 178">U p.178</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 108" width="100%" role="img" aria-label="Energía cinética según la masa y la rapidez">
+  <line x1="20.0" y1="20" x2="20.0" y2="100" stroke="var(--fg)" stroke-width="1.5"/>
+  <text x="26" y="17" class="sm" style="fill:var(--fg)">m , v</text>
+  <rect x="20.0" y="23" width="64.3" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/>
+  <text x="89.3" y="33" class="sm bd" text-anchor="start" style="fill:var(--fg)">K₀</text>
+  <text x="26" y="49" class="sm" style="fill:var(--fg)">2m , v  (doble masa)</text>
+  <rect x="20.0" y="55" width="128.6" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/>
+  <text x="153.6" y="65" class="sm bd" text-anchor="start" style="fill:var(--fg)">2K₀</text>
+  <text x="26" y="81" class="sm" style="fill:var(--fg)">m , 2v  (doble rapidez)</text>
+  <rect x="20.0" y="87" width="257.1" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/>
+  <text x="282.1" y="97" class="sm bd" text-anchor="start" style="fill:var(--fg)">4K₀</text>
+</svg>
+<figcaption>K = ½mv²: duplicar la masa duplica K, pero duplicar la rapidez la cuadruplica. Por eso a 100 km/h el frenado cuesta cuatro veces más trabajo que a 50 km/h. <span class="src" data-l="P" data-ref="Diagrama propio (U fig. 6.10, p.178)">P</span></figcaption>
+</figure>
+
+<div class="box thm"><span class="h">Teorema trabajo-energía</span>
+  <p>El trabajo total realizado por todas las fuerzas sobre una partícula es igual al cambio de su energía cinética:
+  $$\boxed{W_{tot}=K_2-K_1=\Delta K}\qquad\text{(ec. 6.6)}$$
+  $W_{tot}>0$: aumenta la rapidez. $W_{tot}<0$: disminuye. $W_{tot}=0$: se mantiene. Solo da cambios de <i>rapidez</i>, no de velocidad (dirección).</p>
+  <p><b>Deducción</b> (fuerza neta constante en línea recta): por la segunda ley $F=ma_x$ y por la cinemática $v_2^2=v_1^2+2a_xs$ (ec. 2.13). Multiplicando por $m/2$: $Fs=\tfrac12mv_2^2-\tfrac12mv_1^2$ (ec. 6.4), y como $Fs$ es el trabajo de la fuerza neta, es $W_{tot}$.</p>
+  <span class="src" data-l="U" data-ref="U §6.2 ecs. (6.4)-(6.6), p. 178">U p.178</span></div>
+<div class="box intu"><span class="h">¿Por qué es tan rentable?</span>
+  <p>El teorema <b>no contiene el tiempo ni la aceleración</b>: relaciona directamente lo que pasa en el punto 1 con lo que pasa en el punto 2 (rapideces, distancias, fuerzas). Cuando una fuerza varía durante el recorrido o la trayectoria es curva, la cinemática de aceleración constante no sirve, pero el teorema sí. A cambio, no te dice <i>cuánto tarda</i>: si te piden un tiempo, usa cinemática.</p>
+  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 6.1, p. 179">U p.179</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 6.3 — la rapidez del remolque</span>
+  <p>El remolque del ejemplo 6.2 ($m=14\,700/9{,}8=1500$ kg) parte con $v_1=2{,}0$ m/s. Tras los 20 m: $K_1=\tfrac12(1500)(2{,}0)^2=3000$ J; $K_2=K_1+W_{tot}=3000+10\,000=13\,000$ J; $\tfrac12(1500)v_2^2=13\,000\Rightarrow v_2=4{,}2$ m/s. Por dinámica: $a=500/1500=0{,}333$ m/s² y $v_2^2=v_1^2+2as=17{,}3$ m²/s², $v_2=4{,}2$ m/s: el mismo resultado, sin necesidad de la aceleración. Usar los dos métodos es una buena comprobación.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 6.3, pp. 179-180">U p.179-180</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 6.4 — martinete (fuerza media por trabajo-energía)</span>
+  <p>Un martillo de 200 kg se deja caer 3,00 m sobre una viga; los rieles ejercen una fricción de 60 N. Penetra 7,4 cm en el suelo hasta pararse.</p>
+  <ol class="steps">
+    <li><b>De 1 a 2 (caída):</b> $W_{tot}=(w-f)s_{12}=(1960-60)(3{,}00)=5700$ J $=K_2-0\Rightarrow v_2=\sqrt{2(5700)/200}=7{,}55$ m/s.</li>
+    <li><b>De 2 a 3 (clavado):</b> $W_{tot}=(w-f-n)s_{23}=K_3-K_2=0-5700$ J, con $s_{23}=0{,}074$ m. De ahí $n=w-f+K_2/s_{23}=1960-60+5700/0{,}074=79\,000$ N (unas 9 toneladas, más de 40 veces el peso).</li>
+  </ol>
+  <p>Una fuerza modesta actuando sobre una distancia larga da energía; una fuerza enorme sobre una distancia corta la quita. Es el mismo esquema de los problemas de «frenado en una distancia $d$».</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 6.4, pp. 180-181">U p.180-181</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_6_12_martillo.png" alt="Figura 6.12 de U: a) martinete con el martillo a 3,00 m sobre la viga en forma de I; puntos 1 (reposo), 2 (contacto con la viga) y 3 (parada, 7,4 cm más abajo). b) Diagrama de cuerpo libre del martillo que cae: peso w = mg hacia abajo y fricción f = 60 N hacia arriba. c) Diagrama al clavar la viga: además, la normal n hacia arriba." loading="lazy">
+<figcaption>Fig. 6.12 de U: dos tramos, dos diagramas de cuerpo libre, dos aplicaciones del teorema. <span class="src" data-l="U" data-ref="U Fig. 6.12, p. 180">U p.180</span></figcaption>
+</figure>
+<div class="box thm"><span class="h">Qué significa realmente $K$</span>
+  <p>$K$ es el trabajo total necesario para llevar la partícula desde el reposo hasta su rapidez actual ($W_{tot}=K-0$), y también el trabajo total que la partícula <i>puede hacer</i> mientras se detiene. Por eso recoges la mano hacia atrás al atrapar una pelota: aumentas la distancia sobre la que actúa la fuerza y, para el mismo trabajo, la fuerza es menor.</p>
+  <span class="src" data-l="U" data-ref="U §6.2, p. 181">U p.181</span></div>
+<div class="box ex"><span class="h">Ejemplo conceptual del libro 6.5 — dos veleros</span>
+  <p>Dos veleros de hielo de masas $m$ y $2m$, con velas idénticas (misma fuerza $F$), parten del reposo y recorren la misma distancia $s$. ¿Cuál llega con más energía cinética? Ambos: $W_{tot}=Fs$ para los dos, y como parten del reposo, $K=Fs$ en la meta. Llegan con la misma $K$ (el ligero con más rapidez, el pesado con más masa). No hizo falta saber el tiempo.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo conceptual 6.5, p. 182">U p.182</span></div>
+<div class="box warn"><span class="h">Cuándo NO usar el teorema tal cual</span>
+  <p>Se dedujo con las leyes de Newton, así que vale solo en un <b>marco inercial</b> (y en otro marco inercial $W$ y $\Delta K$ pueden ser distintos, pero se siguen igualando). Y es para cuerpos que se pueden tratar como <b>partículas</b>: un patinador que se empuja contra una pared gana energía cinética aunque la fuerza de la pared no haga trabajo (no se mueve su punto de aplicación); el trabajo lo hacen fuerzas internas entre sus partes (cap. 8).</p>
+  <span class="src" data-l="U" data-ref="U §6.2, pp. 179 y 182">U p.179, 182</span></div>
+<div class="box warn"><span class="h">Errores típicos</span>
+  <ul>
+    <li>Escribir $W=K_1-K_2$ (al revés): el teorema es «final menos inicial».</li>
+    <li>Olvidar el ½ de $K$, o usar el peso $w$ en lugar de la masa $m$.</li>
+    <li>Obtener una $K$ negativa: indica que se han invertido $K_1$ y $K_2$ o hay un error de signo en algún trabajo.</li>
+    <li>Confundir el trabajo de <i>una</i> fuerza con el trabajo <i>total</i>: el teorema usa el total.</li>
+    <li>Querer sacar de él un tiempo: no lo contiene.</li>
+  </ul>
+  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 6.1, p. 179">U p.179</span></div>
+
+<h2 id="s3"><span class="n">3</span>Trabajo y energía con fuerza variable <span class="src" data-l="U" data-ref="U §6.3, pp. 183-189">U p.183</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Cuando estiras un resorte, cuanto más lo estiras más fuerza hace falta: la fuerza no es constante. Pero si divides el recorrido en tramos muy cortos, en cada tramo la fuerza es casi constante y su trabajo es «fuerza × tramo». Sumar todos esos trozos da una <b>integral</b>, que gráficamente es el <b>área bajo la curva fuerza–posición</b>. Eso lo cambia todo: el trabajo de una fuerza variable es un área.</p>
+  <span class="src" data-l="U" data-ref="U §6.3, p. 183">U p.183</span></div>
+<div class="box def"><span class="h">Trabajo de una fuerza variable en línea recta</span>
+  $$W=\int_{x_1}^{x_2}F_x\,dx\qquad\text{(ec. 6.7)}$$
+  <p>Es el área bajo la gráfica $F_x$–$x$ entre $x_1$ y $x_2$ (con signo: el área bajo el eje cuenta negativa si $x$ crece), o la fuerza media por el desplazamiento. Si $F_x$ es constante sale $W=F_x(x_2-x_1)=Fs$, el rectángulo del caso anterior.</p>
+  <span class="src" data-l="U" data-ref="U §6.3 ec. (6.7) y figs. 6.16-6.17, p. 183">U p.183</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_6_16_area.png" alt="Figura 6.16 de U: a) una partícula se mueve de x1 a x2 bajo una fuerza variable; b) gráfica de la fuerza Fx en función de la posición, con el área bajo la curva entre x1 y x2 sombreada; c) el mismo desplazamiento dividido en franjas pequeñas cuya altura es la fuerza media en cada intervalo." style="max-width:min(100%,300px)" loading="lazy">
+<figcaption>Fig. 6.16 de U: el trabajo de una fuerza variable se obtiene sumando franjas $F\,\Delta x$; en el límite, el área bajo la curva. <span class="src" data-l="U" data-ref="U Fig. 6.16, p. 183">U p.183</span></figcaption>
+</figure>
+
+<h3>El resorte: ley de Hooke y trabajo</h3>
+<div class="box def"><span class="h">Ley de Hooke</span>
+  <p>Para estirar un resorte ideal una distancia $x$ respecto de su longitud sin estirar hay que aplicarle una fuerza proporcional a $x$:
+  $$F_x=kx\qquad\text{(ec. 6.8)}$$
+  $k$ es la <b>constante de fuerza</b> (N/m): un resorte blando de juguete, $\sim1$ N/m; la suspensión de un coche, $\sim10^5$ N/m. No es una ley fundamental, sino un modelo que funciona mientras la deformación es pequeña (se analiza en el cap. 11).</p>
+  <span class="src" data-l="U" data-ref="U §6.3 ec. (6.8), p. 184">U p.184</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_6_18_resorte.png" alt="Figura 6.18 de U: un resorte unido a una pared, relajado (arriba) y estirado una distancia x (abajo), con la fuerza aplicada Fx = kx hacia la derecha y la fuerza opuesta -Fx en el otro extremo." style="max-width:min(100%,300px)" loading="lazy">
+<figcaption>Fig. 6.18 de U: la fuerza necesaria para estirar un resorte ideal es proporcional al alargamiento. <span class="src" data-l="U" data-ref="U Fig. 6.18, p. 184">U p.184</span></figcaption>
+</figure>
+<div class="box thm"><span class="h">Trabajo para deformar un resorte</span>
+  $$W=\int_0^X kx\,dx=\tfrac12kX^2\ \text{(6.9)}\qquad W=\tfrac12kx_2^2-\tfrac12kx_1^2\ \text{(6.10)}$$
+  <p>Es el área del triángulo de la fig. 6.19 (base $X$, altura $kX$) o del trapecio de la 6.20. <b>Es proporcional al cuadrado de la deformación</b>: estirar 2 cm cuesta cuatro veces más trabajo que estirar 1 cm. Vale igual si el resorte se comprime ($x<0$): fuerza y desplazamiento llevan el mismo sentido, el trabajo es positivo y la fórmula no cambia.</p>
+  <span class="src" data-l="U" data-ref="U §6.3 ecs. (6.9)-(6.10), pp. 184-185">U p.184-185</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_6_19_hooke.png" alt="Figura 6.19 de U: gráfica de Fx = kx frente a x; el área del triángulo bajo la recta entre 0 y X, de base X y altura kX, es el trabajo W = (1/2) k X al cuadrado realizado para estirar el resorte." style="max-width:min(100%,300px)" loading="lazy">
+<figcaption>Fig. 6.19 de U: el área del triángulo es el trabajo para estirar el resorte de 0 a $X$: $W=\tfrac12X\cdot kX$. <span class="src" data-l="U" data-ref="U Fig. 6.19, p. 184">U p.184</span></figcaption>
+</figure>
+<div class="box warn"><span class="h">Cuidado: trabajo SOBRE el resorte o trabajo DEL resorte</span>
+  <p>La ec. (6.10) es el trabajo que <i>tú</i> haces sobre el resorte para cambiar su longitud. El trabajo que el <b>resorte</b> hace sobre el cuerpo unido a él es el <b>negativo</b>: $-\tfrac12kx_2^2+\tfrac12kx_1^2$. En el teorema trabajo-energía de ese cuerpo se usa este último. (Si el resorte parte relajado y se estira o comprime una cantidad $x$, el resorte frena al cuerpo: $W_{resorte}=-\tfrac12kx^2$; si el resorte se <i>relaja</i> empujando al cuerpo, $W_{resorte}=+\tfrac12kx^2$.)</p>
+  <span class="src" data-l="U" data-ref="U §6.3 «Cuidado: trabajo efectuado sobre un resorte contra trabajo efectuado por un resorte», p. 185">U p.185</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 176" width="100%" role="img" aria-label="Resorte estirado: la mano hace trabajo positivo y el resorte negativo">
+  <line x1="22" y1="20" x2="22" y2="100" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="22" y1="26" x2="13" y2="34" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="35" x2="13" y2="43" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="44" x2="13" y2="52" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="53" x2="13" y2="61" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="62" x2="13" y2="70" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="71" x2="13" y2="79" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="80" x2="13" y2="88" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="89" x2="13" y2="97" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="98" x2="13" y2="106" stroke="var(--mut)" stroke-width="1"/>
+  <path d="M 22 60 L 37.6 68 L 52.8 52 L 68.1 68 L 83.3 52 L 98.5 68 L 113.7 52 L 128.9 68 L 144.2 52 L 159.4 68 L 175 60" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <rect x="175" y="40" width="36" height="40" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="150" y1="28" x2="150" y2="100" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="150" y="20" class="sm" text-anchor="middle">x = 0</text>
+  <line x1="150" y1="112" x2="175" y2="112" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="162" y="126" class="sm bd" text-anchor="middle">x</text>
+  <line x1="211" y1="52" x2="290" y2="52" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="290" y="44" class="sm bd" text-anchor="end" style="fill:var(--X)">F<tspan dy="3" font-size="9">mano</tspan><tspan dy="-3"> = +kx</tspan></text>
+  <line x1="211" y1="72" x2="150" y2="72" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mk-b)"/>
+  <text x="205" y="94" class="sm bd" text-anchor="end" style="fill:var(--A)">F<tspan dy="3" font-size="9">res</tspan><tspan dy="-3"> = −kx</tspan></text>
+  <text x="8" y="150" class="sm" text-anchor="start" style="fill:var(--X)">Trabajo SOBRE el resorte (de la mano): +½kX²</text>
+  <text x="8" y="166" class="sm" text-anchor="start" style="fill:var(--A)">Trabajo DEL resorte sobre la mano: −½kX²</text>
+</svg>
+<figcaption>Al estirar un resorte, la fuerza de la mano y el desplazamiento van en el mismo sentido (W > 0); la fuerza que el resorte ejerce sobre la mano apunta al contrario (W < 0). En el teorema trabajo-energía de un cuerpo unido al resorte se usa el trabajo DEL resorte. <span class="src" data-l="P" data-ref="Diagrama propio (U §6.3 «Cuidado», p.185)">P</span></figcaption>
+</figure>
+
+<div class="box ex"><span class="h">Ejemplo del libro 6.6 — báscula de baño</span>
+  <p>Una mujer de 600 N hace comprimir 1,0 cm el resorte de una báscula. $k=F/x=600/0{,}010=6{,}0\times10^4$ N/m y el trabajo de la mujer sobre el resorte es $W=\tfrac12kx^2=\tfrac12(6{,}0\times10^4)(0{,}010)^2=3{,}0$ J (positivo, como se espera). No importa qué sentido llames positivo: salen los mismos $k$ y $W$.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 6.6, p. 185">U p.185</span></div>
+
+<h3>El teorema sigue valiendo</h3>
+<div class="box thm"><span class="h">Teorema trabajo-energía con fuerza variable</span>
+  <p>Con $a_x=\dfrac{dv_x}{dt}=v_x\dfrac{dv_x}{dx}$ (ec. 6.11) y $W_{tot}=\int F_x\,dx=\int mv_x\,dv_x$ (6.12) se obtiene $W_{tot}=\tfrac12mv_2^2-\tfrac12mv_1^2$ (6.13): el mismo teorema, aunque la fuerza no sea constante. Para una trayectoria curva, el trabajo se calcula con la integral de línea $W=\int\vec F\cdot d\vec l$ (6.14), y el teorema vale igualmente. Solo la componente de la fuerza <b>paralela a la trayectoria</b> cambia la rapidez; la componente perpendicular solo cambia la dirección.</p>
+  <span class="src" data-l="U" data-ref="U §6.3 ecs. (6.11)-(6.14), pp. 186-188">U p.186-188</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 6.7 — deslizador con resorte, con y sin fricción</span>
+  <p>Un deslizador de 0,100 kg unido a un resorte de $k=20{,}0$ N/m se mueve a $v_1=1{,}50$ m/s con el resorte relajado. ¿Hasta dónde llega, $d$?</p>
+  <ol class="steps">
+    <li><b>Sin fricción.</b> Solo trabaja el resorte, y frena: $W_{res}=-\tfrac12kd^2$. Con $K_2=0$: $-\tfrac12kd^2=0-\tfrac12mv_1^2\Rightarrow d=v_1\sqrt{m/k}=0{,}106$ m $=10{,}6$ cm.</li>
+    <li><b>Con fricción</b> ($\mu_k=0{,}47$): $W_f=-\mu_kmg\,d$. Teorema: $-\mu_kmgd-\tfrac12kd^2=-\tfrac12mv_1^2$, una ecuación de segundo grado para $d$ cuya raíz positiva es $d=0{,}086$ m $=8{,}6$ cm.</li>
+  </ol>
+  <p>Con $\mu_k=0$ la solución con fricción se reduce a la primera: buena comprobación. Con fricción llega menos lejos, como era de esperar.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 6.7, pp. 186-187">U p.186-187</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 150" width="100%" role="img" aria-label="Deslizador con resorte: reparto de la energía inicial con y sin fricción">
+  <line x1="182.5" y1="20" x2="182.5" y2="142" stroke="var(--fg)" stroke-width="1.5"/>
+  <text x="8" y="17" class="sm" style="fill:var(--fg)">K₁ = ½mv₁²  (energía inicial)</text>
+  <rect x="182.5" y="23" width="86.4" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/>
+  <text x="273.9" y="33" class="sm bd" text-anchor="start" style="fill:var(--fg)">0,1125 J</text>
+  <text x="8" y="49" class="sm" style="fill:var(--fg)">Sin fricción: W<tspan dy="3" font-size="9">res</tspan><tspan dy="-3"> = −½kd²</tspan></text>
+  <rect x="96.1" y="55" width="86.4" height="10" rx="1.5" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.3"/>
+  <text x="91.1" y="65" class="sm bd" text-anchor="end" style="fill:var(--fg)">−0,1125 J</text>
+  <line x1="8" y1="76" x2="352" y2="76" stroke="var(--mut)" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="8" y="91" class="sm" style="fill:var(--fg)">Con fricción: W<tspan dy="3" font-size="9">res</tspan><tspan dy="-3"> = −½kd²</tspan></text>
+  <rect x="126.4" y="97" width="56.1" height="10" rx="1.5" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.3"/>
+  <text x="121.4" y="107" class="sm bd" text-anchor="end" style="fill:var(--fg)">−0,0731 J</text>
+  <text x="8" y="123" class="sm" style="fill:var(--fg)">Con fricción: W<tspan dy="3" font-size="9">f</tspan><tspan dy="-3"> = −μ</tspan><tspan dy="3" font-size="9">k</tspan><tspan dy="-3">mgd</tspan></text>
+  <rect x="152.3" y="129" width="30.2" height="10" rx="1.5" fill="var(--E)" fill-opacity="0.55" stroke="var(--E)" stroke-width="1.3"/>
+  <text x="147.3" y="139" class="sm bd" text-anchor="end" style="fill:var(--fg)">−0,0394 J</text>
+</svg>
+<figcaption>Ejemplo 6.7: toda la energía inicial 0,1125 J acaba en el resorte si no hay fricción (d = 10,6 cm); con fricción se reparte entre el resorte y el calor de la fricción, y el deslizador llega menos lejos (d = 8,6 cm). <span class="src" data-l="P" data-ref="Diagrama propio (U Ej. 6.7, pp. 186-187)">P</span></figcaption>
+</figure>
+
+<div class="box ex"><span class="h">Ejemplo del libro 6.8 — columpio (trayectoria curva)</span>
+  <p>Empujas a Throcky (peso $w$) en un columpio con una fuerza horizontal variable $F$, lentamente, hasta que las cadenas (longitud $R$) forman un ángulo $\theta_0$ con la vertical. Como casi no cambia su rapidez, $W_{tot}=0$. La tensión es perpendicular a la trayectoria en todo punto: $W_T=0$. Para $F$: casi equilibrio ⇒ $F=w\tan\theta$ y, con $dl=R\,d\theta$,
+  $$W_F=\int_0^{\theta_0}(w\tan\theta)\cos\theta\,(R\,d\theta)=wR(1-\cos\theta_0)=mgh.$$
+  El peso hace entonces $-mgh$, donde $h=R(1-\cos\theta_0)$ es la altura ganada: <b>el trabajo del peso en una trayectoria curva es $-mgh$</b>, igual que si se subiera en vertical. Es un adelanto de la sección 7.1.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 6.8, pp. 188-189">U p.188-189</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 190" width="100%" role="img" aria-label="Columpio: trabajo del peso, la tensión y la fuerza horizontal en una trayectoria curva">
+  <line x1="140" y1="14" x2="220" y2="14" stroke="var(--fg)" stroke-width="3"/>
+  <line x1="180" y1="14" x2="180" y2="160" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <path d="M 180.0 144.0 L 186.8 143.8 L 193.6 143.3 L 200.3 142.4 L 207.0 141.2 L 213.6 139.6 L 220.2 137.6 L 226.6 135.4 L 232.9 132.8 L 239.0 129.8 L 245.0 126.6 L 250.8 123.0 L 256.4 119.2 L 261.8 115.0 L 263.6 113.6" fill="none" stroke="var(--mut)" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="180" y1="14" x2="263.6" y2="113.6" stroke="var(--fg)" stroke-width="1.5"/>
+  <path d="M 180.0 48.0 A 34 34 0 0 0 201.9 40.0" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="188" y="64" class="sm bd">θ</text>
+  <circle cx="263.6" cy="113.6" r="9" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="180" y1="144" x2="340" y2="144" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="263.6" y1="113.6" x2="340" y2="113.6" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="330" y1="144" x2="330" y2="114.6" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="336" y="132.8" class="sm bd">h</text>
+  <line x1="263.6" y1="113.6" x2="231.4" y2="75.3" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="225.4" y="73.3" class="sm bd" text-anchor="end" style="fill:var(--X)">T</text>
+  <line x1="263.6" y1="113.6" x2="263.6" y2="169.6" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mk-b)"/>
+  <text x="269.6" y="177.6" class="sm bd" style="fill:var(--A)">w</text>
+  <line x1="263.6" y1="113.6" x2="315.6" y2="113.6" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mk-p)"/>
+  <text x="293.6" y="106.6" class="sm bd" style="fill:var(--E)">F</text>
+  <line x1="268.9" y1="109.1" x2="303.4" y2="80.2" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="307.4" y="78.2" class="sm bd">dl</text>
+  <text x="8" y="44" class="sm" text-anchor="start" style="fill:var(--X)">W<tspan dy="3" font-size="9">T</tspan><tspan dy="-3"> = 0  (T ⟂ dl)</tspan></text>
+  <text x="8" y="60" class="sm" text-anchor="start" style="fill:var(--A)">W<tspan dy="3" font-size="9">w</tspan><tspan dy="-3"> = −mgh</tspan></text>
+  <text x="8" y="76" class="sm" text-anchor="start" style="fill:var(--E)">W<tspan dy="3" font-size="9">F</tspan><tspan dy="-3"> = +mgh</tspan></text>
+  <text x="8" y="92" class="sm" text-anchor="start" style="fill:var(--fg)">W<tspan dy="3" font-size="9">tot</tspan><tspan dy="-3"> = 0</tspan></text>
+</svg>
+<figcaption>Ejemplo 6.8 de U (columpio empujado lentamente hasta el ángulo θ): la tensión T es perpendicular al desplazamiento dl y no trabaja; el peso w hace −mgh (h = R(1 − cos θ) es lo que sube); la fuerza horizontal F hace +mgh, y el trabajo total es cero porque la rapidez casi no cambia. <span class="src" data-l="P" data-ref="Diagrama propio (U Ej. 6.8, pp. 188-189)">P</span></figcaption>
+</figure>
+
+
+<h2 id="s4"><span class="n">4</span>Potencia <span class="src" data-l="U" data-ref="U §6.4, pp. 189-191">U p.189</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>El trabajo no menciona el tiempo: subir una barra de 100 N un metro cuesta 100 J tardes 1 s o 1 año. Pero a ti y a un motor sí os importa <i>cuánto tardáis</i>. La <b>potencia</b> mide la rapidez con que se hace trabajo, como la velocidad mide la rapidez con que cambia la posición. La misma caja subida en 1 s en lugar de en 5 s exige cinco veces más potencia (fig. 6.25).</p>
+  <span class="src" data-l="U" data-ref="U §6.4, fig. 6.25, p. 189">U p.189</span></div>
+<div class="box def"><span class="h">Potencia media e instantánea</span>
+  $$P_{med}=\frac{\Delta W}{\Delta t}\ \text{(6.15)}\qquad P=\lim_{\Delta t\to0}\frac{\Delta W}{\Delta t}=\frac{dW}{dt}\ \text{(6.16)}$$
+  <p>Es un escalar. Unidad SI: el <b>watt</b>, $1\ \text{W}=1\ \text{J/s}$ (también kW y MW). Otras: el caballo de potencia, $1\ \text{hp}=746\ \text{W}$, y el <b>kilowatt-hora</b>, $1\ \text{kW}\cdot\text{h}=3{,}6\times10^6\ \text{J}$, que es una unidad de <i>energía</i>, no de potencia.</p>
+  <span class="src" data-l="U" data-ref="U §6.4 ecs. (6.15)-(6.16), pp. 189-190">U p.189-190</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_6_25_potencia.png" alt="Figura 6.25 de U: la misma caja se levanta una misma distancia haciendo 100 J de trabajo; si se tarda 5 s la potencia de salida es 100 J / 5 s = 20 W, y si se tarda 1 s es 100 J / 1 s = 100 W." style="max-width:min(100%,300px)" loading="lazy">
+<figcaption>Fig. 6.25 de U: mismo trabajo, distinta potencia. <span class="src" data-l="U" data-ref="U Fig. 6.25, p. 189">U p.189</span></figcaption>
+</figure>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 330 200" width="100%" role="img" aria-label="Trabajo acumulado frente al tiempo: la potencia es la pendiente">
+  <line class="ax" x1="45" y1="164" x2="317" y2="164"/>
+  <line class="ax" x1="45" y1="164" x2="45" y2="10"/>
+  <text x="312" y="192" class="sm" text-anchor="end">t (s)</text>
+  <text x="51" y="17" class="sm">W (J)</text>
+  <line x1="94.4" y1="164" x2="94.4" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="94.4" y="180" class="sm" text-anchor="middle">1</text>
+  <line x1="143.9" y1="164" x2="143.9" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="143.9" y="180" class="sm" text-anchor="middle">2</text>
+  <line x1="193.3" y1="164" x2="193.3" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="193.3" y="180" class="sm" text-anchor="middle">3</text>
+  <line x1="242.8" y1="164" x2="242.8" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="242.8" y="180" class="sm" text-anchor="middle">4</text>
+  <line x1="292.2" y1="164" x2="292.2" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="292.2" y="180" class="sm" text-anchor="middle">5</text>
+  <line x1="41" y1="137.4" x2="45" y2="137.4" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="38" y="141.4" class="sm" text-anchor="end">20</text>
+  <line x1="41" y1="84.2" x2="45" y2="84.2" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="38" y="88.2" class="sm" text-anchor="end">60</text>
+  <line x1="41" y1="31.0" x2="45" y2="31.0" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="38" y="35.0" class="sm" text-anchor="end">100</text>
+  <path d="M 45.0 164.0 L 292.2 31.0" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <path d="M 45.0 164.0 L 94.4 31.0" fill="none" stroke="var(--A)" stroke-width="2.5"/>
+  <path d="M 94.4 31.0 L 292.2 31.0" fill="none" stroke="var(--A)" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="173.6" y="102.2" class="sm bd" text-anchor="start" style="fill:var(--acc)">pendiente = 20 W</text>
+  <text x="101.9" y="23.0" class="sm bd" text-anchor="start" style="fill:var(--A)">pendiente = 100 W</text>
+</svg>
+<figcaption>La misma caja de 100 N subida 1,0 m (W = 100 J): en 5 s la potencia media es 20 W; en 1 s, 100 W. La potencia es la pendiente de la gráfica W–t. <span class="src" data-l="P" data-ref="Diagrama propio (U fig. 6.25, p.189)">P</span></figcaption>
+</figure>
+
+<div class="box thm"><span class="h">Potencia mecánica: $P=\vec F\cdot\vec v$</span>
+  <p>Si una fuerza $\vec F$ actúa sobre un cuerpo que se mueve con velocidad $\vec v$, con $\Delta W=F_\parallel\Delta s$:
+  $$P_{med}=F_\parallel v_{med}\ \text{(6.17)}\qquad P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
+  Es la forma práctica: <b>potencia = fuerza × rapidez</b> (la componente de la fuerza a lo largo de la velocidad). Si la fuerza es perpendicular a la velocidad, $P=0$ (la fuerza centrípeta no cambia la rapidez).</p>
+  <span class="src" data-l="U" data-ref="U §6.4 ecs. (6.17)-(6.19), p. 190">U p.190</span></div>
+<div class="box ex"><span class="h">Ejemplos del libro 6.9 y 6.10</span>
+  <ol class="steps">
+    <li><b>6.9 (Airbus A380).</b> Cada motor da un empuje de $3{,}22\times10^5$ N a 250 m/s: $P=Fv=8{,}05\times10^7$ W $=108\,000$ hp. Con el avión parado en tierra, $v=0$ y $P=0$: ¡fuerza y potencia no son lo mismo!</li>
+    <li><b>6.10 (ascenso potente).</b> Una corredora de 50,0 kg sube 443 m en 15,0 min a rapidez constante. Trabajo $=mgh=(50{,}0)(9{,}80)(443)=2{,}17\times10^5$ J; $P_{med}=2{,}17\times10^5/900=241$ W $=0{,}241$ kW $=0{,}323$ hp. Por la otra vía: $v=443/900=0{,}492$ m/s y $P=mgv=241$ W ✓.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplos 6.9 y 6.10, pp. 190-191">U p.190-191</span></div>
+<div class="box warn"><span class="h">Error típico</span>
+  <p>Confundir <b>energía</b> con <b>potencia</b>: el kW·h (lo que cobra la compañía eléctrica) es energía; el kW es potencia. Y la potencia necesaria para subir a velocidad constante es $mgv$, no depende de cuánto se hizo antes.</p>
+  <span class="src" data-l="U" data-ref="U §6.4, pp. 190-191">U p.190</span></div>
+
+<h2 id="ejercicios"><span class="n">5</span>Ejercicios resueltos</h2>
+<p>Primero las <b>preguntas de examen real</b> (teoría, cuestiones cortas y problemas), de más conceptuales a más numéricas; después diez ejercicios del solucionario (E), de sencillos a elaborados. Cada uno termina con una <b>receta</b> y, si procede, el error típico. Intenta resolver tú antes de abrir la solución. (Los problemas de resorte + rampa + energía potencial de examen están en el tema 7; aquí solo el resorte «puro».)</p>
+
+<details class="sol" id="x1"><summary>X1 — Teoría: «Energía cinética y el teorema trabajo-energía» (+ dos cuestiones) <span class="src" data-l="X" data-ref="Examen Febrero 2023 (1ª semana) P-3 Opción A">X</span></summary>
+  <p class="enun">Desarrolle el tema: <i>Energía cinética y el teorema trabajo-energía</i>. Además, responda a las siguientes cuestiones: (a) ¿Podría ser negativo el trabajo total efectuado sobre un objeto durante un desplazamiento? Razone la respuesta. (b) Si el trabajo total es negativo, su valor absoluto podría ser mayor que el valor de la energía cinética inicial del objeto. Razone la respuesta. (4 puntos.) <span class="src" data-l="U" data-ref="Las cuestiones (a) y (b) son literalmente la Pregunta para análisis P6.12 de U, p. 194">= U P6.12</span></p>
+  <p><b>Guion para «desarrollar el tema»</b> (en este orden gana puntos; casi todo está en las secciones 1-3 de arriba):</p>
+  <ol class="steps">
+    <li><b>Por qué hace falta.</b> Con leyes de Newton y fuerzas constantes basta la cinemática; si la fuerza varía con la posición o la trayectoria es curva no. Trabajo y energía relacionan rapideces en dos posiciones sin pasar por el tiempo (U p.172-173).</li>
+    <li><b>Trabajo de una fuerza constante:</b> $W=Fs\cos\phi=\vec F\cdot\vec s$ (6.2-6.3), escalar, en J. Signos: $W>0$ si $\phi<90^\circ$, $W=0$ si $\phi=90^\circ$, $W<0$ si $\phi>90^\circ$. Trabajo total = suma algebraica = trabajo de la fuerza neta (U p.174-176).</li>
+    <li><b>Energía cinética:</b> $K=\tfrac12mv^2$ (6.5): escalar, $K\ge0$, depende de la rapidez y no de la dirección; unidades J (U p.178).</li>
+    <li><b>Deducción</b> con fuerza neta constante: $F=ma_x$ y $v_2^2=v_1^2+2a_xs$ dan $Fs=\tfrac12mv_2^2-\tfrac12mv_1^2$ (6.4).</li>
+    <li><b>Teorema:</b> $W_{tot}=K_2-K_1=\Delta K$ (6.6). $W_{tot}>0$ ⇒ acelera; $<0$ ⇒ frena; $=0$ ⇒ rapidez constante.</li>
+    <li><b>Generalización:</b> fuerza variable, $W=\int F_x\,dx$ (área bajo $F$–$x$, 6.7) y el teorema sigue valiendo (6.11-6.13); trayectoria curva, $W=\int\vec F\cdot d\vec l$ (6.14) (U p.183-188).</li>
+    <li><b>Significado de $K$:</b> trabajo para acelerar desde el reposo, o trabajo que puede hacer al detenerse (martinete, Ej. 6.4) (U p.181).</li>
+    <li><b>Límites:</b> marco inercial y cuerpo tratable como partícula (U p.179, 182).</li>
+    <li><b>Ejemplo numérico:</b> remolque del Ej. 6.2-6.3: $W_{tot}=10$ kJ, $v_1=2{,}0\to v_2=4{,}2$ m/s.</li>
+  </ol>
+  <p><b>(a)</b> <b>Sí.</b> $W_{tot}$ es el trabajo de la fuerza neta; es negativo cuando la fuerza neta tiene componente opuesta al desplazamiento ($\phi>90^\circ$). Por el teorema, $W_{tot}<0\iff K_2&lt;K_1$: el cuerpo se frena. Ejemplo: un bloque de 2 kg desliza a 3 m/s sobre un suelo con fricción cinética de 4 N; en 1 m, $W_f=-4$ J (el peso y la normal no trabajan), $K_1=9$ J, $K_2=5$ J y $v_2=\sqrt{2(5)/2}=2{,}24$ m/s.</p>
+  <p><b>(b)</b> <b>No.</b> Del teorema, $K_2=K_1+W_{tot}=K_1-|W_{tot}|$, y la energía cinética nunca es negativa ($K_2\ge0$), luego $|W_{tot}|\le K_1$. El caso límite $|W_{tot}|=K_1$ es cuando el cuerpo se <b>detiene</b>. En el ejemplo, la fricción para el bloque tras $s=K_1/f=9/4=2{,}25$ m con $W_f=-9$ J; un trabajo de $-12$ J daría $K_2=-3$ J, imposible. (Matiz para nota: lo que se compara es el trabajo <i>total</i>; una fuerza individual sí puede hacer un trabajo negativo mayor que $K_1$ si otra aporta trabajo positivo.)</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 304" width="100%" role="img" aria-label="Bloque que frena por fricción: balance de energía">
+  <line x1="20" y1="76" x2="340" y2="76" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="100" y="40" width="50" height="36" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="125" y="63" class="sm bd" text-anchor="middle">2 kg</text>
+  <line x1="150" y1="52" x2="205" y2="52" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mk-f)"/>
+  <text x="178" y="34" class="sm bd" text-anchor="middle">v₁ = 3 m/s</text>
+  <line x1="100" y1="66" x2="66" y2="66" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mk-p)"/>
+  <text x="80" y="92" class="sm bd" text-anchor="middle" style="fill:var(--E)">f = 4 N</text>
+  <rect x="250" y="40" width="50" height="36" rx="2" fill="var(--mut)" fill-opacity="0.08" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="275" y="63" class="sm" text-anchor="middle">2,24 m/s</text>
+  <line x1="125" y1="100" x2="275" y2="100" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="200" y="116" class="sm bd" text-anchor="middle">s = 1 m</text>
+  <line x1="175.0" y1="144" x2="175.0" y2="298" stroke="var(--fg)" stroke-width="1.5"/>
+  <text x="8" y="141" class="sm" style="fill:var(--fg)">K₁ = ½·2·3²</text>
+  <rect x="175.0" y="147" width="71.2" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/>
+  <text x="251.2" y="157" class="sm bd" text-anchor="start" style="fill:var(--fg)">9 J</text>
+  <text x="8" y="173" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">f</tspan><tspan dy="-3"> = −4 N · 1 m</tspan></text>
+  <rect x="143.3" y="179" width="31.7" height="10" rx="1.5" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.3"/>
+  <text x="138.3" y="189" class="sm bd" text-anchor="end" style="fill:var(--fg)">−4 J</text>
+  <text x="8" y="205" class="sm" style="fill:var(--fg)">K₂ = K₁ + W<tspan dy="3" font-size="9">f</tspan><tspan dy="-3"></tspan></text>
+  <rect x="175.0" y="211" width="39.6" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/>
+  <text x="219.6" y="221" class="sm bd" text-anchor="start" style="fill:var(--fg)">5 J</text>
+  <line x1="8" y1="232" x2="352" y2="232" stroke="var(--mut)" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="8" y="247" class="sm" style="fill:var(--fg)">Si sigue hasta pararse (s = 2,25 m): W<tspan dy="3" font-size="9">f</tspan><tspan dy="-3"> = −K₁</tspan></text>
+  <rect x="103.8" y="253" width="71.2" height="10" rx="1.5" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.3"/>
+  <text x="98.8" y="263" class="sm bd" text-anchor="end" style="fill:var(--fg)">−9 J</text>
+  <text x="8" y="279" class="sm" style="fill:var(--fg)">K₂</text>
+  <text x="180.0" y="295" class="sm bd" text-anchor="start" style="fill:var(--fg)">0</text>
+</svg>
+<figcaption>Cuestión (a)-(b): el trabajo total negativo (−4 J) reduce la energía cinética de 9 J a 5 J. El caso límite es parar: entonces |W| = K₁ y K₂ = 0; un trabajo de −12 J daría K₂ < 0, imposible. <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2023, 1ª sem., P-3 Opción A)">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> cualquier pregunta conceptual sobre el signo del trabajo o la variación de la rapidez se responde con $W_{tot}=K_2-K_1$ y $K\ge0$.</div>
+  <div class="recipe"><b>Error típico:</b> confundir «trabajo de una fuerza» con «trabajo total»; escribir $W=K_1-K_2$.</div>
+</details>
+
+<details class="sol" id="x2"><summary>X2 — Cuestión: ¿por qué no cambia la rapidez en un movimiento circular uniforme? <span class="src" data-l="X" data-ref="Examen Septiembre 2022 P-3 (a)">X</span></summary>
+  <p class="enun">Una partícula en movimiento circular uniforme sufre siempre la acción de una fuerza neta, ¿por qué no cambia el módulo de la velocidad de la partícula? Justifique su respuesta. (Convocatoria de Septiembre 2022, no recogida en el índice de exámenes principal: ver la nota final del índice.)</p>
+  <ol class="steps">
+    <li>La fuerza neta en un MCU es la centrípeta, dirigida al centro ($\sum F=mv^2/R$, U ec. 5.16, p.151); la velocidad es tangente a la trayectoria. Forman $\phi=90^\circ$ en todo instante.</li>
+    <li>Potencia de la fuerza neta: $P=\vec F\cdot\vec v=Fv\cos90^\circ=0$ (ec. 6.19); o, por tramo, $dW=\vec F\cdot d\vec l=0$ (6.14).</li>
+    <li>Por el teorema, $\Delta K=W_{tot}=0$: $\tfrac12mv^2$ es constante y, con ella, el módulo de $\vec v$. La fuerza solo cambia la <b>dirección</b> de la velocidad (U p.188: la componente perpendicular a la trayectoria no cambia la rapidez).</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 204" width="100%" role="img" aria-label="Fuerza y velocidad en un movimiento circular y en una órbita elíptica">
+  <circle cx="80" cy="78" r="48" fill="none" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="119.3" cy="50.5" r="5" fill="var(--acc)"/>
+  <line x1="119.3" y1="50.5" x2="96.4" y2="17.7" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mk-f)"/>
+  <text x="98.4" y="11.7" class="sm bd">v</text>
+  <line x1="119.3" y1="50.5" x2="89.8" y2="71.1" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="108" y="76" class="sm bd" text-anchor="start" style="fill:var(--X)">F</text>
+  <circle cx="80" cy="78" r="2.5" fill="var(--mut)"/>
+  <text x="80" y="150" class="sm" text-anchor="middle" style="fill:var(--fg)">MCU: F ⟂ v, φ = 90°</text>
+  <text x="80" y="165" class="sm" text-anchor="middle" style="fill:var(--fg)">W = 0 en cada tramo</text>
+  <ellipse cx="272" cy="78" rx="78" ry="48" fill="none" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <circle cx="210.5" cy="78" r="6" fill="var(--A)"/>
+  <text x="204.5" y="66" class="sm" text-anchor="middle">estrella</text>
+  <circle cx="311.0" cy="36.4" r="5" fill="var(--acc)"/>
+  <line x1="311.0" y1="36.4" x2="278.1" y2="17.4" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mk-f)"/>
+  <text x="270.1" y="11.4" class="sm bd" text-anchor="end">v</text>
+  <line x1="311.0" y1="36.4" x2="279.6" y2="49.4" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="271.6" y="61.4" class="sm bd" text-anchor="end" style="fill:var(--X)">F</text>
+  <text x="319.0" y="32.4" class="sm bd" text-anchor="start" style="fill:var(--fg)">1</text>
+  <circle cx="233.0" cy="119.6" r="5" fill="var(--acc)"/>
+  <line x1="233.0" y1="119.6" x2="265.9" y2="138.6" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mk-f)"/>
+  <text x="271.9" y="142.6" class="sm bd">v</text>
+  <line x1="233.0" y1="119.6" x2="216.8" y2="89.7" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="221" y="110" class="sm bd" text-anchor="end" style="fill:var(--X)">F</text>
+  <text x="223.0" y="135.6" class="sm bd" text-anchor="end" style="fill:var(--fg)">2</text>
+  <text x="200" y="166" class="sm" text-anchor="start" style="fill:var(--fg)">1: φ < 90°, W > 0 (acelera)</text>
+  <text x="200" y="181" class="sm" text-anchor="start" style="fill:var(--fg)">2: φ > 90°, W < 0 (frena)</text>
+  <text x="200" y="196" class="sm bd" text-anchor="start" style="fill:var(--fg)">Vuelta completa: W = 0</text>
+</svg>
+<figcaption>Izquierda: en un movimiento circular uniforme la fuerza neta es perpendicular a la velocidad en todo instante, W = 0 y la rapidez es constante. Derecha: en una órbita elíptica la fuerza forma ángulos distintos de 90° con la velocidad (positivo al acercarse a la estrella, negativo al alejarse); solo en la vuelta completa el trabajo es nulo. <span class="src" data-l="P" data-ref="Diagrama propio (examen Sep. 2022 P-3 (a) y Feb. 2023 2ª sem. P-4)">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> fuerza siempre perpendicular a la velocidad ⇒ $P=0$, $W=0$, rapidez constante.</div>
+</details>
+
+<details class="sol" id="x3"><summary>X3 — Cuestión: trabajo de la gravedad sobre un planeta en órbita circular y elíptica <span class="src" data-l="X" data-ref="Examen Febrero 2023 (2ª semana) P-4 Opción B (a)(b)">X</span></summary>
+  <p class="enun">(a) Un planeta se mueve con velocidad constante en una órbita circular alrededor de su estrella. ¿Cuál es el trabajo neto que ejerce su estrella sobre el planeta al describir una órbita completa? Razone la respuesta. (b) En el caso anterior si la órbita fuera elíptica en lugar de circular, la velocidad no podría ser constante en cada momento. ¿Cuál es el trabajo neto que ejerce su estrella sobre el planeta al describir una órbita completa? ¿Qué diferencia habría en relación con el caso de la órbita circular? Razone la respuesta. (Tema principal: gravitación, tema 13.)</p>
+  <ol class="steps">
+    <li><b>(a)</b> La fuerza gravitatoria apunta al centro y la velocidad es tangente: $\vec F\cdot d\vec l=0$ en cada punto, así que $W=0$ en la órbita completa <b>y en cualquier trozo de ella</b> (como en X2; cf. «Evalúe su comprensión 6.3», U p.189).</li>
+    <li><b>(b)</b> En una elipse la fuerza (hacia la estrella) <b>no</b> es perpendicular a la velocidad, salvo en el perihelio y el afelio. Al acercarse, $\phi<90^\circ$: trabajo positivo y el planeta acelera; al alejarse, $\phi>90^\circ$: trabajo negativo y frena (figura de X2, panel derecho).</li>
+    <li>Tras una vuelta completa el planeta vuelve al mismo punto con la misma rapidez: $K_2=K_1$, y por el teorema (6.6) <b>$W_{tot}=0$</b> también (la gravedad de la estrella es la única fuerza).</li>
+    <li><b>Diferencia:</b> en la circular el trabajo es cero en <i>cada tramo</i>; en la elíptica es cero solo en el <i>ciclo completo</i> (los tramos positivos compensan a los negativos).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> «trabajo en un ciclo completo con una sola fuerza»: $W=\Delta K=0$ si se vuelve a la misma rapidez.</div>
+  <div class="recipe"><b>Error típico:</b> decir «W = 0 porque la fuerza es perpendicular» también en la elipse.</div>
+</details>
+
+<details class="sol" id="x4"><summary>X4 — Cuestión: trabajo para ir de la playa de la Malvarrosa a la Barceloneta <span class="src" data-l="X" data-ref="Examen Septiembre 2022 P-4 Opción B (b)">X</span></summary>
+  <p class="enun">Explique cuál sería el trabajo resultante para ir desde la playa de la Malvarrosa en Valencia a la Barceloneta en Barcelona. No considere la acción de fuerzas no conservativas. (Convocatoria de Septiembre 2022; tema principal: gravitación, tema 13.)</p>
+  <ol class="steps">
+    <li>Sin fuerzas no conservativas, la única fuerza que trabaja es el peso (la normal del suelo es perpendicular al desplazamiento, $W=0$).</li>
+    <li>El trabajo del peso solo depende de la diferencia de altura entre los extremos, $W_{peso}=-mg(y_2-y_1)$, sea cual sea el camino (lo vimos para un arco en el Ej. 6.8, U p.189; se demuestra en general en U §7.1, p.204).</li>
+    <li>Ambas playas están al nivel del mar: $y_2=y_1$ y el trabajo resultante es <b>cero</b>. Coherente con el teorema: si sales y llegas con la misma rapidez, $\Delta K=0$.</li>
+  </ol>
+  <div class="box warn"><span class="h">Nota sobre el enunciado</span><p>El apartado (a) de esa misma pregunta escribe la energía potencial gravitatoria como $U=GMm/r$ sin el signo menos; en U la ec. (13.9), p.405, es $U=-GMm/r$. Es una errata del examen que se discute en el tema 13.</p>
+    <span class="src" data-l="U" data-ref="U ec. (13.9), p. 405">U p.405</span> <span class="src" data-l="X" data-ref="Examen Septiembre 2022 P-4 Opción B (a)">X</span></div>
+  <div class="recipe"><b>Receta:</b> con solo fuerzas conservativas, el trabajo entre dos puntos depende solo de los puntos extremos, no del camino.</div>
+</details>
+
+<details class="sol" id="x5"><summary>X5 — Bala que penetra un material (por trabajo-energía) <span class="src" data-l="X" data-ref="Examen Febrero 2024 (1ª semana) P-1">X</span></summary>
+  <p class="enun">Para probar una protección antibalas, se dispara una bala de 10 g de masa contra una pieza de un nuevo material que se encuentra en el suelo, de forma que la trayectoria de la bala es perpendicular sobre el material. La bala queda incrustada en el material penetrando 2 m de profundidad. Si la bala se disparó a 100 m/s y se supone que la aceleración de la bala al incrustarse es constante, calcular: (a) el valor de la deceleración de la bala; (b) ¿qué fuerza ejerció el material sobre la bala para frenarla?; (c) ¿qué tiempo tardó la bala hasta pararse desde que entró en contacto con el material? Considere $g=9{,}81$ m/s². (3 puntos.) <span class="src" data-l="P" data-ref="Este mismo problema ya se resolvió por cinemática en el tema 2">→ tema 2</span></p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 336" width="100%" role="img" aria-label="Bala que penetra 2 m en un material: balance de trabajos">
+  <rect x="80" y="70" width="200" height="120" rx="2" fill="var(--mut)" fill-opacity="0.15" stroke="none"/>
+  <line x1="80" y1="70" x2="280" y2="70" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="176" y="24" width="8" height="16" rx="2" fill="var(--acc)" fill-opacity="0.5" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="180" y1="44" x2="180" y2="68" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mk-f)"/>
+  <text x="190" y="50" class="sm bd">v₁ = 100 m/s</text>
+  <rect x="176" y="150" width="8" height="16" rx="2" fill="var(--acc)" fill-opacity="0.5" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="180" y1="70" x2="180" y2="150" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="224" y1="71" x2="224" y2="168" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="231" y="126" class="sm bd">d = 2 m</text>
+  <line x1="180" y1="150" x2="180" y2="100" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="100" y="112" class="sm bd" text-anchor="start" style="fill:var(--X)">F = 25,1 N</text>
+  <line x1="192" y1="150" x2="192" y2="160" stroke="var(--A)" stroke-width="2" fill="none" marker-end="url(#mk-b)"/>
+  <text x="198" y="178" class="sm" text-anchor="start" style="fill:var(--A)">mg = 0,098 N</text>
+  <line x1="176.0" y1="218" x2="176.0" y2="330" stroke="var(--fg)" stroke-width="1.5"/>
+  <text x="8" y="215" class="sm" style="fill:var(--fg)">K₁ = ½·0,010·100²</text>
+  <rect x="176.0" y="221" width="95.0" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/>
+  <text x="276.0" y="231" class="sm bd" text-anchor="start" style="fill:var(--fg)">50,0 J</text>
+  <text x="8" y="247" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">peso</tspan><tspan dy="-3"> = +mgd</tspan></text>
+  <rect x="176.0" y="253" width="0.4" height="10" rx="1.5" fill="var(--X)" fill-opacity="0.55" stroke="var(--X)" stroke-width="1.3"/>
+  <text x="181.4" y="263" class="sm bd" text-anchor="start" style="fill:var(--fg)">+0,2 J</text>
+  <text x="8" y="279" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">F</tspan><tspan dy="-3"> = −Fd</tspan></text>
+  <rect x="80.6" y="285" width="95.4" height="10" rx="1.5" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.3"/>
+  <text x="75.6" y="295" class="sm bd" text-anchor="end" style="fill:var(--fg)">−50,2 J</text>
+  <text x="8" y="311" class="sm" style="fill:var(--fg)">K₂</text>
+  <text x="181.0" y="327" class="sm bd" text-anchor="start" style="fill:var(--fg)">0</text>
+</svg>
+<figcaption>Mismo problema que en el tema 2, por trabajo-energía: el trabajo del material (−Fd) borra la energía cinética de la bala (más el pequeñísimo trabajo del peso). El peso es solo el 0,4 % de la fuerza (flecha mg no a escala). <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2024, 1ª sem., P-1)">P</span></figcaption>
+</figure>
+
+  <p>Este problema ya está resuelto por cinemática en el <a href="tema_02_movimiento_rectilineo.html">tema 2</a>. Aquí, <b>el mismo por trabajo-energía</b>: nos dan distancia y rapideces, no tiempos (Estrategia 6.1).</p>
+  <ol class="steps">
+    <li><b>Energías.</b> $m=0{,}010$ kg, $v_1=100$ m/s, $v_2=0$: $K_1=\tfrac12(0{,}010)(100)^2=50{,}0$ J; $K_2=0$.</li>
+    <li><b>Trabajos</b> (la bala cae en vertical sobre el material): el peso va a favor del desplazamiento, $W_{peso}=+mgd=(0{,}010)(9{,}81)(2)=+0{,}196$ J; la fuerza del material $F$ va en contra, $W_F=-Fd$.</li>
+    <li><b>Teorema.</b> $mgd-Fd=0-K_1$, luego $F=\dfrac{K_1}{d}+mg=25{,}0+0{,}098=\mathbf{25{,}1\ N}$. (Si se desprecia el peso, $F=K_1/d=25{,}0$ N; el peso es solo el 0,4 %.) <b>(b)</b></li>
+    <li><b>(a) Deceleración.</b> Por la segunda ley, $a=(F-mg)/m=K_1/(md)=v_1^2/(2d)=\mathbf{2{,}50\times10^3\ m/s^2}$ (hacia arriba; igual que con la ec. 2.13, U p.47).</li>
+    <li><b>(c) Tiempo.</b> El teorema no da tiempos; con aceleración constante la velocidad media es $(v_1+0)/2$, luego $t=2d/v_1=\mathbf{0{,}040\ s}$.</li>
+  </ol>
+  <p><b>Resultado:</b> $a=2{,}50\times10^3$ m/s²; $F=25{,}1$ N (25,0 N sin el peso); $t=0{,}040$ s.</p>
+  <div class="recipe"><b>Receta:</b> «fuerza media que frena un cuerpo en una distancia $d$»: $F\,d=K_1$ (más el trabajo del peso si el movimiento es vertical), como en el martinete del Ej. 6.4.</div>
+  <div class="recipe"><b>Error típico:</b> intentar sacar el tiempo del teorema; olvidar que el peso también trabaja si el movimiento es vertical.</div>
+</details>
+
+<details class="sol" id="x6"><summary>X6 — Satélite que se estrella (por trabajo-energía) <span class="src" data-l="X" data-ref="Examen Febrero 2023 (1ª semana) P-1">X</span></summary>
+  <p class="enun">Un satélite artificial se estrella contra la Tierra. Su masa es de 210 kg y la velocidad de impacto contra la superficie es de 311 km/h. Los restos del satélite penetraron hasta una profundidad de 81 cm. (a) Suponiendo que era constante, ¿cuál fue su aceleración durante el choque? (b) ¿Qué fuerza ejerció el suelo sobre el satélite durante el choque? (c) ¿Durante cuánto tiempo se ejerció la mencionada fuerza? Considere $g=9{,}81$ m/s². (3 puntos.)</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 336" width="100%" role="img" aria-label="Satélite que se estrella y penetra 81 cm: balance de trabajos">
+  <rect x="60" y="80" width="240" height="110" rx="2" fill="var(--mut)" fill-opacity="0.15" stroke="none"/>
+  <line x1="60" y1="80" x2="300" y2="80" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="172" y="24" width="16" height="16" rx="2" fill="var(--acc)" fill-opacity="0.5" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="180" y1="44" x2="180" y2="78" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mk-f)"/>
+  <text x="190" y="55" class="sm bd">v₁ = 86,4 m/s</text>
+  <rect x="172" y="150" width="16" height="16" rx="2" fill="var(--acc)" fill-opacity="0.5" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="180" y1="80" x2="180" y2="150" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="232" y1="81" x2="232" y2="167" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="239" y="128" class="sm bd">d = 0,81 m</text>
+  <line x1="172" y1="150" x2="172" y2="100" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="166" y="100" class="sm bd" text-anchor="end" style="fill:var(--X)">F = 9,69·10⁵ N</text>
+  <line x1="190" y1="150" x2="190" y2="162" stroke="var(--A)" stroke-width="2" fill="none" marker-end="url(#mk-b)"/>
+  <text x="198" y="180" class="sm" text-anchor="start" style="fill:var(--A)">mg = 2,06·10³ N</text>
+  <line x1="176.0" y1="218" x2="176.0" y2="330" stroke="var(--fg)" stroke-width="1.5"/>
+  <text x="8" y="215" class="sm" style="fill:var(--fg)">K₁ = ½·210·(86,4)²</text>
+  <rect x="176.0" y="221" width="99.3" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/>
+  <text x="280.3" y="231" class="sm bd" text-anchor="start" style="fill:var(--fg)">783,6 kJ</text>
+  <text x="8" y="247" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">peso</tspan><tspan dy="-3"> = +mgd</tspan></text>
+  <rect x="176.0" y="253" width="0.2" height="10" rx="1.5" fill="var(--X)" fill-opacity="0.55" stroke="var(--X)" stroke-width="1.3"/>
+  <text x="181.2" y="263" class="sm bd" text-anchor="start" style="fill:var(--fg)">+1,7 kJ</text>
+  <text x="8" y="279" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">F</tspan><tspan dy="-3"> = −Fd</tspan></text>
+  <rect x="76.5" y="285" width="99.5" height="10" rx="1.5" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.3"/>
+  <text x="71.5" y="295" class="sm bd" text-anchor="end" style="fill:var(--fg)">−785,3 kJ</text>
+  <text x="8" y="311" class="sm" style="fill:var(--fg)">K₂</text>
+  <text x="181.0" y="327" class="sm bd" text-anchor="start" style="fill:var(--fg)">0</text>
+</svg>
+<figcaption>Satélite del tema 2 resuelto por trabajo-energía. La fuerza del suelo hace −785 kJ y el peso +1,7 kJ; F = mg + K₁/d ≈ 470 veces el peso. (Flechas no a escala.) <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2023, 1ª sem., P-1)">P</span></figcaption>
+</figure>
+
+  <p>Resuelto por cinemática en el <a href="tema_02_movimiento_rectilineo.html">tema 2</a>; ahora por trabajo-energía, suponiendo la penetración vertical (lo que da sentido a $g$).</p>
+  <ol class="steps">
+    <li><b>Datos.</b> $v_1=311/3{,}6=86{,}4$ m/s; $d=0{,}81$ m; $v_2=0$. $K_1=\tfrac12(210)(86{,}39)^2=7{,}84\times10^5$ J; $K_2=0$.</li>
+    <li><b>Trabajos.</b> El peso ($mg=2060$ N) va a favor del desplazamiento: $W_{peso}=+mgd=+1669$ J. La fuerza del suelo $F$, hacia arriba, va en contra: $W_F=-Fd$.</li>
+    <li><b>(b) Teorema.</b> $mgd-Fd=-K_1\Rightarrow F=mg+K_1/d=2060+9{,}67\times10^5=\mathbf{9{,}69\times10^5\ N}$ (unas 470 veces el peso).</li>
+    <li><b>(a)</b> $a=(F-mg)/m=v_1^2/(2d)=\mathbf{4{,}61\times10^3\ m/s^2}$ hacia arriba (unas 470 g).</li>
+    <li><b>(c)</b> $t=2d/v_1=\mathbf{0{,}0188\ s}$.</li>
+  </ol>
+  <p><b>Resultado:</b> $a=4{,}61\times10^3$ m/s²; $F=9{,}69\times10^5$ N; $t=0{,}0188$ s.</p>
+  <div class="recipe"><b>Receta:</b> igual que X5: $(F-mg)\,d=K_1$ para un impacto vertical.</div>
+  <div class="recipe"><b>Error típico:</b> dar $F=ma=9{,}67\times10^5$ N olvidando que el suelo también sostiene el peso: $F=m(a+g)$.</div>
+</details>
+
+<details class="sol" id="x7"><summary>X7 — Bloque empujado contra una pared: velocidad y trabajo <span class="src" data-l="X" data-ref="Examen Febrero 2023 (2ª semana) P-1">X</span></summary>
+  <p class="enun">Se coloca un bloque de 5 kg contra una pared vertical. Se aplica una fuerza constante $\vec F$ al bloque, donde $F=96{,}0$ N y la fuerza está en un ángulo de $60{,}0^\circ$ con la horizontal. El coeficiente de fricción cinética entre el bloque y la pared es 0,300. Si el bloque está inicialmente en reposo: (a) ¿cuál será el módulo de su velocidad después de que haya recorrido 0,400 m sobre la pared? (b) ¿Cuál será el trabajo realizado en el desplazamiento? Considere $g=9{,}81$ m/s². (3 puntos.) <span class="src" data-l="U" data-ref="Es el problema 5.75 de U, p. 166">= U 5.75</span></p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 352" width="100%" role="img" aria-label="Bloque contra una pared: fuerzas, desplazamiento y trabajo de cada una">
+  <line x1="60" y1="14" x2="60" y2="190" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="60" y1="20" x2="51" y2="28" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="29" x2="51" y2="37" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="38" x2="51" y2="46" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="47" x2="51" y2="55" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="56" x2="51" y2="64" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="65" x2="51" y2="73" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="74" x2="51" y2="82" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="83" x2="51" y2="91" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="92" x2="51" y2="100" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="101" x2="51" y2="109" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="110" x2="51" y2="118" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="119" x2="51" y2="127" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="128" x2="51" y2="136" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="137" x2="51" y2="145" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="146" x2="51" y2="154" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="155" x2="51" y2="163" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="164" x2="51" y2="172" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="173" x2="51" y2="181" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="60" y1="182" x2="51" y2="190" stroke="var(--mut)" stroke-width="1"/>
+  <rect x="60" y="85" width="50" height="50" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="85" y="115" class="sm bd" text-anchor="middle">5 kg</text>
+  <line x1="85" y1="100" x2="140" y2="100" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mk-a)"/>
+  <text x="142" y="94" class="sm bd" style="fill:var(--acc)">n</text>
+  <line x1="75" y1="135" x2="75" y2="172" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mk-b)"/>
+  <text x="80" y="184" class="sm bd" style="fill:var(--A)">mg</text>
+  <line x1="98" y1="135" x2="98" y2="149" stroke="var(--E)" stroke-width="2" fill="none" marker-end="url(#mk-p)"/>
+  <text x="104" y="158" class="sm bd" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"></tspan></text>
+  <line x1="152.0" y1="198.7" x2="111" y2="127" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="160.0" y="196.7" class="sm bd" style="fill:var(--X)">F</text>
+  <line x1="110" y1="126" x2="156" y2="126" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <path d="M 127.0 155.4 A 34 34 0 0 0 144.0 126.0" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="146" y="146" class="sm">60°</text>
+  <line x1="30" y1="150" x2="30" y2="90" stroke="var(--fg)" stroke-width="2.2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="12" y="124" class="sm bd">s</text>
+  <text x="205" y="30" class="sm" text-anchor="start" style="fill:var(--X)">F = 96,0 N</text>
+  <text x="205" y="46" class="sm" text-anchor="start" style="fill:var(--acc)">n = 48,0 N</text>
+  <text x="205" y="62" class="sm" text-anchor="start" style="fill:var(--A)">mg = 49,1 N</text>
+  <text x="205" y="78" class="sm" text-anchor="start" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 14,4 N</tspan></text>
+  <text x="205" y="94" class="sm" text-anchor="start" style="fill:var(--fg)">s = 0,400 m</text>
+  <text x="205" y="110" class="sm bd" text-anchor="start" style="fill:var(--fg)">v₂ = 1,77 m/s</text>
+  <line x1="164.0" y1="212" x2="164.0" y2="346" stroke="var(--fg)" stroke-width="1.5"/>
+  <text x="8" y="209" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">F</tspan><tspan dy="-3"> = F s cos 30°</tspan></text>
+  <rect x="164.0" y="215" width="93.1" height="10" rx="1.5" fill="var(--X)" fill-opacity="0.55" stroke="var(--X)" stroke-width="1.3"/>
+  <text x="262.1" y="225" class="sm bd" text-anchor="start" style="fill:var(--fg)">+33,3 J</text>
+  <text x="8" y="239" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">peso</tspan><tspan dy="-3"> = −mgs</tspan></text>
+  <rect x="109.1" y="245" width="54.9" height="10" rx="1.5" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.3"/>
+  <text x="104.1" y="255" class="sm bd" text-anchor="end" style="fill:var(--fg)">−19,6 J</text>
+  <text x="8" y="269" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">f</tspan><tspan dy="-3"> = −f</tspan><tspan dy="3" font-size="9">k</tspan><tspan dy="-3">s</tspan></text>
+  <rect x="147.9" y="275" width="16.1" height="10" rx="1.5" fill="var(--E)" fill-opacity="0.55" stroke="var(--E)" stroke-width="1.3"/>
+  <text x="142.9" y="285" class="sm bd" text-anchor="end" style="fill:var(--fg)">−5,76 J</text>
+  <text x="8" y="299" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">n</tspan><tspan dy="-3"></tspan></text>
+  <text x="169.0" y="315" class="sm bd" text-anchor="start" style="fill:var(--fg)">0</text>
+  <text x="8" y="329" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">tot</tspan><tspan dy="-3"> = ΔK</tspan></text>
+  <rect x="164.0" y="335" width="22.1" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/>
+  <text x="191.1" y="345" class="sm bd" text-anchor="start" style="fill:var(--fg)">+7,88 J</text>
+</svg>
+<figcaption>Bloque de 5 kg contra una pared vertical, empujado hacia arriba por F (60° con la horizontal) mientras sube 0,400 m. El ángulo entre F y el desplazamiento es 30°, no 60°. La suma de trabajos (+7,88 J) es la energía cinética final. <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2023, 2ª sem., P-1)">P</span></figcaption>
+</figure>
+
+  <p>La dinámica (normal, fricción, aceleración) se resolvió en el <a href="tema_05_aplicacion_newton.html">tema 5</a>; aquí el enfoque de energía. $F$ apunta hacia la pared y hacia arriba; el bloque sube.</p>
+  <ol class="steps">
+    <li><b>Normal y fricción</b> (necesarias para el trabajo de la fricción): horizontalmente $a_x=0$, luego $n=F\cos60^\circ=48{,}0$ N y $f_k=\mu_kn=14{,}4$ N.</li>
+    <li><b>Trabajo de cada fuerza</b> (desplazamiento 0,400 m hacia arriba):
+      <ul>
+        <li>$W_F=Fs\cos30^\circ=(96{,}0)(0{,}400)(0{,}866)=+33{,}3$ J. El ángulo entre $\vec F$ y $\vec s$ es $30^\circ$ (la fuerza está a $60^\circ$ de la horizontal, pero el desplazamiento es vertical); la componente horizontal no trabaja.</li>
+        <li>$W_{peso}=-mgs=-(5)(9{,}81)(0{,}400)=-19{,}6$ J ($\phi=180^\circ$).</li>
+        <li>$W_f=-f_ks=-(14{,}4)(0{,}400)=-5{,}76$ J.</li>
+        <li>$W_n=0$ ($\phi=90^\circ$).</li>
+      </ul></li>
+    <li><b>Trabajo total:</b> $W_{tot}=33{,}26-19{,}62-5{,}76=+7{,}88$ J (positivo: el bloque acelera).</li>
+    <li><b>(a) Teorema:</b> $\tfrac12mv_2^2-0=W_{tot}\Rightarrow v_2=\sqrt{2(7{,}875)/5}=\mathbf{1{,}77\ m/s}$. Coincide con la vía dinámica ($a=3{,}94$ m/s², $v=\sqrt{2as}$), la comprobación que recomienda U (Ej. 6.3).</li>
+    <li><b>(b) «El trabajo realizado»:</b> el enunciado no precisa la fuerza; lo natural es el trabajo de $\vec F$, <b>33,3 J</b>; conviene dar también el trabajo total, 7,88 J $=\Delta K$, con el desglose.</li>
+  </ol>
+  <p><b>Resultado:</b> $v=1{,}77$ m/s; $W_F=33{,}3$ J; $W_{peso}=-19{,}6$ J; $W_f=-5{,}76$ J; $W_n=0$; $W_{tot}=7{,}88$ J. (Con $g=9{,}80$: $v=1{,}78$ m/s, como el solucionario 5-38.)</p>
+  <div class="recipe"><b>Receta:</b> «parte del reposo, recorre $d$, ¿$v$?» con fuerzas constantes: lista de fuerzas, $W_i=F_is\cos\phi_i$, suma, $v=\sqrt{2W_{tot}/m}$.</div>
+  <div class="recipe"><b>Error típico:</b> $W_F=Fd\cos60^\circ$ (el ángulo es con el <i>desplazamiento</i>: 30°); olvidar el trabajo negativo del peso; dar en (b) un número sin decir de qué fuerza es.</div>
+</details>
+
+<details class="sol" id="x8"><summary>X8 — Polea móvil: velocidad de A tras 1 m (apartado c) <span class="src" data-l="X" data-ref="Examen Febrero 2020 (1ª semana) P-1 (c)">X</span></summary>
+  <p class="enun">Sistema de poleas de masa despreciable: $m_A=1{,}5$ kg sobre un plano inclinado $30^\circ$ con $\mu=0{,}1$; $m_B=1$ kg cuelga de una polea móvil. (c) Calcular la velocidad de A después de haber recorrido un metro sobre el plano inclinado, suponiendo que el sistema parte del reposo. (3 puntos en total; la figura y los apartados (a)-(b) están en el <a href="tema_05_aplicacion_newton.html">tema 5</a>.) $g=9{,}80$ (no indicada).</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 230" width="100%" role="img" aria-label="Balance de trabajos en el sistema A + B con polea móvil">
+  <text x="8" y="14" class="sm" text-anchor="start" style="fill:var(--fg)">A baja 1,00 m por el plano; B sube 0,50 m</text>
+  <line x1="160.0" y1="38" x2="160.0" y2="224" stroke="var(--fg)" stroke-width="1.5"/>
+  <text x="8" y="35" class="sm" style="fill:var(--fg)">W del peso de A</text>
+  <rect x="160.0" y="41" width="82.7" height="10" rx="1.5" fill="var(--X)" fill-opacity="0.55" stroke="var(--X)" stroke-width="1.3"/>
+  <text x="247.7" y="51" class="sm bd" text-anchor="start" style="fill:var(--fg)">+7,35 J</text>
+  <text x="8" y="67" class="sm" style="fill:var(--fg)">W de la fricción</text>
+  <rect x="145.7" y="73" width="14.3" height="10" rx="1.5" fill="var(--E)" fill-opacity="0.55" stroke="var(--E)" stroke-width="1.3"/>
+  <text x="140.7" y="83" class="sm bd" text-anchor="end" style="fill:var(--fg)">−1,27 J</text>
+  <text x="8" y="99" class="sm" style="fill:var(--fg)">W de T sobre A</text>
+  <rect x="103.0" y="105" width="57.0" height="10" rx="1.5" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.3"/>
+  <text x="98.0" y="115" class="sm bd" text-anchor="end" style="fill:var(--fg)">−5,07 J</text>
+  <text x="8" y="131" class="sm" style="fill:var(--fg)">W de 2T sobre B</text>
+  <rect x="160.0" y="137" width="57.0" height="10" rx="1.5" fill="var(--X)" fill-opacity="0.55" stroke="var(--X)" stroke-width="1.3"/>
+  <text x="222.0" y="147" class="sm bd" text-anchor="start" style="fill:var(--fg)">+5,07 J (se cancela)</text>
+  <text x="8" y="163" class="sm" style="fill:var(--fg)">W del peso de B</text>
+  <rect x="104.9" y="169" width="55.1" height="10" rx="1.5" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.3"/>
+  <text x="99.9" y="179" class="sm bd" text-anchor="end" style="fill:var(--fg)">−4,90 J</text>
+  <line x1="8" y1="190" x2="352" y2="190" stroke="var(--mut)" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="8" y="205" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">tot</tspan><tspan dy="-3"> = K</tspan><tspan dy="3" font-size="9">A</tspan><tspan dy="-3"> + K</tspan><tspan dy="3" font-size="9">B</tspan><tspan dy="-3"></tspan></text>
+  <rect x="160.0" y="211" width="13.2" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/>
+  <text x="178.2" y="221" class="sm bd" text-anchor="start" style="fill:var(--fg)">+1,18 J</text>
+</svg>
+<figcaption>Sumando el teorema de A y el de B, los trabajos de la tensión (−5,07 J sobre A y +5,07 J sobre B) se cancelan; solo quedan los pesos y la fricción. El total, +1,18 J, es K<sub>A</sub> + K<sub>B</sub>. <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2020, 1ª sem., P-1 (c))">P</span></figcaption>
+</figure>
+
+  <p>Recordatorio del tema 5: A baja por el plano y B sube; por la ligadura de la polea móvil $s_B=s_A/2$ y $v_B=v_A/2$.</p>
+  <ol class="steps">
+    <li><b>Teorema en cada cuerpo</b> (cada uno es una partícula) y suma. Sobre A (1 m plano abajo): $W_{peso,A}=m_Ag\sin30^\circ(1)=+7{,}35$ J; $W_f=-\mu m_Ag\cos30^\circ(1)=-1{,}27$ J; $W_{T,A}=-T(1)$.</li>
+    <li>Sobre B (0,50 m hacia arriba): $W_{peso,B}=-m_Bg(0{,}50)=-4{,}90$ J; la polea móvil tira de B con $2T$: $W_{2T}=+2T(0{,}50)=+T(1)$.</li>
+    <li><b>Al sumar, los trabajos de la tensión se cancelan</b> ($-T+T=0$): con cuerda ideal y poleas sin masa ni fricción la cuerda solo transmite energía de un cuerpo al otro. (Con $T=5{,}07$ N: $-5{,}07$ J y $+5{,}07$ J.) Por eso no hace falta calcular $T$.</li>
+    <li>$W_{tot}=7{,}35-1{,}27-4{,}90=1{,}18$ J $=\tfrac12m_Av_A^2+\tfrac12m_B(v_A/2)^2=\tfrac12(1{,}5+0{,}25)v_A^2$.</li>
+    <li>$v_A=\sqrt{2(1{,}177)/1{,}75}=\mathbf{1{,}16\ m/s}$ ($v_B=0{,}580$ m/s), igual que por dinámica en el tema 5.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> en sistemas unidos por cuerdas ideales, suma el teorema de todos los cuerpos: las tensiones no aparecen y basta la ligadura entre velocidades.</div>
+  <div class="recipe"><b>Error típico:</b> poner $K=\tfrac12(m_A+m_B)v_A^2$ (B va a la mitad de velocidad); contar el trabajo de la tensión solo sobre uno de los cuerpos.</div>
+</details>
+
+<details class="sol" id="x9"><summary>X9 — Cuestión: masa de agua que bombea una máquina por ciclo (trabajo <i>mgh</i>) <span class="src" data-l="X" data-ref="Examen Septiembre 2022 P-2 (e)">X</span></summary>
+  <p class="enun">¿Qué masa de agua puede bombear esta máquina desde un pozo de 20 m de profundidad por cada ciclo? Considere $g=9{,}81$ m/s². (Apartado (e) de un problema de una máquina de Carnot que absorbe 400 J por ciclo con eficiencia térmica del 23 %; convocatoria de Septiembre 2022; tema principal 20.)</p>
+  <ol class="steps">
+    <li>Trabajo útil por ciclo: es la definición de eficiencia térmica, $e=W/Q_H$ (U §20.2, ec. 20.4, p.650; tema 20): $W=eQ_H=0{,}23\times400=92$ J.</li>
+    <li>Subir agua a rapidez constante exige hacer un trabajo $W=mgh$ contra la gravedad (como la corredora del Ej. 6.10, U p.191): el teorema da $W_{motor}+W_{peso}=\Delta K=0$ con $W_{peso}=-mgh$.</li>
+    <li>$m=\dfrac{W}{gh}=\dfrac{92}{(9{,}81)(20)}=\mathbf{0{,}469\ kg}$ por ciclo.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> «levantar a velocidad constante»: trabajo del agente $=mgh$ (y, si dan el tiempo, potencia $=mgv$).</div>
+</details>
+
+<details class="sol" id="x10"><summary>X10 — Cuestión: constante de fuerza de cada mitad de un resorte <span class="src" data-l="X" data-ref="Examen Febrero 2025 (1ª semana) P-4 Opción B (a)">X</span></summary>
+  <p class="enun">Si un resorte uniforme se corta a la mitad, ¿qué constante de fuerza tendrá cada mitad? (Primera parte de una cuestión de la Opción B; es literalmente el ejercicio 6.46(a) de U, p.197.)</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 160" width="100%" role="img" aria-label="Resorte cortado por la mitad">
+  <line x1="22" y1="12" x2="22" y2="130" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="22" y1="18" x2="13" y2="26" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="27" x2="13" y2="35" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="36" x2="13" y2="44" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="45" x2="13" y2="53" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="54" x2="13" y2="62" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="63" x2="13" y2="71" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="72" x2="13" y2="80" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="81" x2="13" y2="89" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="90" x2="13" y2="98" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="99" x2="13" y2="107" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="108" x2="13" y2="116" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="117" x2="13" y2="125" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="22" y1="126" x2="13" y2="134" stroke="var(--mut)" stroke-width="1"/>
+  <path d="M 22 36 L 35.1 43 L 45.3 29 L 55.5 43 L 65.7 29 L 75.9 43 L 86.1 29 L 96.3 43 L 106.5 29 L 116.7 43 L 126.9 29 L 140 36" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <path d="M 140 36 L 150.8 43 L 160.2 29 L 169.8 43 L 179.2 29 L 190 36" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <line x1="190" y1="36" x2="290" y2="36" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="290" y="28" class="sm bd" text-anchor="end" style="fill:var(--X)">F</text>
+  <line x1="190" y1="50" x2="190" y2="62" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="30" y="12" class="sm" text-anchor="start" style="fill:var(--fg)">Resorte entero: k, estirado x</text>
+  <path d="M 22 100 L 36.2 107 L 48.6 93 L 61.0 107 L 73.4 93 L 85.8 107 L 100 100" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <path d="M 100 100 L 107.8 107 L 117.2 93 L 125 100" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <line x1="125" y1="100" x2="225" y2="100" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="225" y="92" class="sm bd" text-anchor="end" style="fill:var(--X)">F</text>
+  <text x="30" y="76" class="sm" text-anchor="start" style="fill:var(--fg)">Media longitud: misma F, estira x/2  →  k′ = 2k</text>
+  <text x="30" y="148" class="sm bd" text-anchor="start" style="fill:var(--fg)">k′ = F / (x/2) = 2F / x = 2k</text>
+</svg>
+<figcaption>Un resorte cortado a la mitad se estira la mitad con la misma fuerza: cada mitad tiene el doble de constante de fuerza (más rígida). <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2025, 1ª sem., P-4 Opción B (a))">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>Cada mitad soporta la misma fuerza $F$ que el resorte entero (la tensión se transmite a lo largo del resorte), pero se estira solo la mitad, $x/2$ (el alargamiento se reparte de forma uniforme entre las espiras).</li>
+    <li>Ley de Hooke (6.8): $k'=\dfrac{F}{x/2}=\dfrac{2F}{x}=\mathbf{2k}$. Cada mitad es el doble de rígida.</li>
+  </ol>
+  <p>Consecuencia: para el mismo trabajo, $\tfrac12kx^2$, la mitad de resorte se deforma menos; y en el tema 14 se verá que la frecuencia de oscilación se multiplica por $\sqrt2$.</p>
+  <div class="recipe"><b>Receta:</b> ante una cuestión de resortes, aplica $F=kx$ a cada parte con la <i>misma fuerza</i> y la deformación que le toque.</div>
+</details>
+
+<details class="sol" id="x11"><summary>X11 — Cuarto de círculo con fricción: μ<sub>k</sub> y trabajo de la fricción en el arco <span class="src" data-l="X" data-ref="Examen Septiembre 2023 P-2">X</span></summary>
+  <p class="enun">Una partícula de masa 0,5 kg que se encuentra en reposo se suelta desde una posición A, que forma un cuarto de círculo de radio $R=2{,}1$ m según se muestra en la figura, deslizándose hasta llegar al punto B con una velocidad de 5,2 m/s. A partir de este punto, la partícula se desplaza sobre una superficie horizontal hasta el punto C situado a 5 m, donde se detiene. Calcular (a) el coeficiente de fricción cinética de la superficie horizontal y (b) el trabajo de la fuerza de rozamiento sobre la partícula al deslizarse desde el punto A al B. (3 puntos.) (Convocatoria de Septiembre 2023, no recogida en el índice principal de exámenes; el enunciado no da $g$: se usa 9,81. Es una variante del problema 7.57 de U, p. 233.)</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 344" width="100%" role="img" aria-label="Cuarto de círculo de radio 2,1 m con tramo horizontal de 5 m: trabajo del peso y de la fricción en cada tramo">
+  <path d="M 20 36 A 80 80 0 0 0 100 116" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="100" y1="116" x2="310" y2="116" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="20" y1="36" x2="100" y2="36" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="100" y1="36" x2="100" y2="116" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="100" cy="36" r="2.5" fill="var(--mut)"/>
+  <circle cx="20" cy="36" r="6" fill="var(--acc)" fill-opacity="0.5" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="100" cy="110" r="6" fill="var(--acc)" fill-opacity="0.5" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="290" cy="116" r="3" fill="var(--fg)"/>
+  <text x="14" y="18" class="sm bd">A  (v = 0)</text>
+  <text x="60" y="52" class="sm" text-anchor="middle">R = 2,1 m</text>
+  <text x="94" y="78" class="sm" text-anchor="end">R</text>
+  <text x="88" y="131" class="sm bd" text-anchor="end">B</text>
+  <text x="290" y="131" class="sm bd" text-anchor="middle">C  (v = 0)</text>
+  <line x1="108" y1="90" x2="158" y2="90" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mk-f)"/>
+  <text x="108" y="80" class="sm bd" text-anchor="start">v<tspan dy="3" font-size="9">B</tspan><tspan dy="-3"> = 5,2 m/s</tspan></text>
+  <line x1="255" y1="108" x2="225" y2="108" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mk-p)"/>
+  <text x="222" y="98" class="sm bd" text-anchor="start" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 1,35 N</tspan></text>
+  <line x1="100" y1="146" x2="290" y2="146" stroke="var(--fg)" stroke-width="2.2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="195.0" y="162" class="sm bd" text-anchor="middle">s = 5 m</text>
+  <g transform="translate(0,172)"><line x1="163.5" y1="22" x2="163.5" y2="166" stroke="var(--fg)" stroke-width="1.5"/><text x="8" y="19" class="sm" style="fill:var(--fg)">Tramo AB: W<tspan dy="3" font-size="9">peso</tspan><tspan dy="-3"> = +mgR</tspan></text><rect x="163.5" y="25" width="120.3" height="10" rx="1.5" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.3"/><text x="288.8" y="35" class="sm bd" text-anchor="start" style="fill:var(--fg)">+10,30 J</text><text x="8" y="51" class="sm" style="fill:var(--fg)">AB: W<tspan dy="3" font-size="9">f</tspan><tspan dy="-3"> (por diferencia)</tspan></text><rect x="122.1" y="57" width="41.4" height="10" rx="1.5" fill="var(--E)" fill-opacity="0.55" stroke="var(--E)" stroke-width="1.3"/><text x="117.1" y="67" class="sm bd" text-anchor="end" style="fill:var(--fg)">−3,54 J</text><text x="8" y="83" class="sm" style="fill:var(--fg)">En B: K<tspan dy="3" font-size="9">B</tspan><tspan dy="-3"> = ½ m v</tspan><tspan dy="3" font-size="9">B</tspan><tspan dy="-3">²</tspan></text><rect x="163.5" y="89" width="79.0" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/><text x="247.5" y="99" class="sm bd" text-anchor="start" style="fill:var(--fg)">+6,76 J</text><text x="8" y="115" class="sm" style="fill:var(--fg)">Tramo BC: W<tspan dy="3" font-size="9">f</tspan><tspan dy="-3"> = −μ</tspan><tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> m g s</tspan></text><rect x="84.5" y="121" width="79.0" height="10" rx="1.5" fill="var(--E)" fill-opacity="0.55" stroke="var(--E)" stroke-width="1.3"/><text x="79.5" y="131" class="sm bd" text-anchor="end" style="fill:var(--fg)">−6,76 J</text><text x="8" y="147" class="sm" style="fill:var(--fg)">En C: K<tspan dy="3" font-size="9">C</tspan><tspan dy="-3"></tspan></text><text x="168.5" y="163" class="sm bd" text-anchor="start" style="fill:var(--fg)">0</text></g>
+</svg>
+<figcaption>Examen Sep. 2023, P-2: la partícula baja de A (reposo) a B (5,2 m/s) por el arco y se detiene en C tras 5 m. En AB el peso aporta +mgR = +10,30 J y la fricción (desconocida punto a punto) resulta −3,54 J por diferencia; en BC la fricción quita los 6,76 J de K<sub>B</sub>. (Flechas no a escala.) <span class="src" data-l="P" data-ref="Diagrama propio (examen Sep. 2023, P-2)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li><b>(a) Tramo BC</b> (fuerzas constantes, camino recto). Peso y normal son perpendiculares al desplazamiento ($W=0$); $n=mg$ y la fricción cinética $f_k=\mu_kmg$ va en contra: $W_f=-\mu_kmg\,s$.</li>
+    <li>Teorema entre B y C ($K_B=\tfrac12mv_B^2$, $K_C=0$): $-\mu_kmg\,s=0-\tfrac12mv_B^2\Rightarrow\mu_k=\dfrac{v_B^2}{2gs}=\dfrac{(5{,}2)^2}{2(9{,}81)(5)}=\mathbf{0{,}276}$. La masa se cancela; con $g=9{,}80$ sale también 0,276.</li>
+    <li><b>(b) Tramo AB</b> (curvo). Aquí la fricción es desconocida y varía de un punto a otro (la normal ya no es $mg$ y cambia en cada punto), pero <b>no hace falta conocerla</b>: el teorema vale en trayectorias curvas (U p.187-188) y permite obtener $W_f$ <i>por diferencia</i>.</li>
+    <li><b>Trabajo del peso en el arco.</b> Solo depende del descenso vertical, que es $R$ (como en el Ej. 6.8, donde subir una altura $h$ daba $-mgh$): $W_{peso}=+mgR=(0{,}5)(9{,}81)(2{,}1)=+10{,}30$ J. No es $mg$ por la longitud del arco. La normal es perpendicular a la trayectoria en cada punto: $W_n=0$.</li>
+    <li><b>Teorema entre A y B</b> ($K_A=0$): $W_{peso}+W_f=K_B$, luego $W_f=\tfrac12(0{,}5)(5{,}2)^2-10{,}30=6{,}76-10{,}30=\mathbf{-3{,}54\ J}$ (con $g=9{,}80$: $-3{,}53$ J).</li>
+    <li><b>Comprobación.</b> Sin fricción llegaría a B con $v=\sqrt{2gR}=6{,}42$ m/s, mayor que 5,2 m/s: la fricción tiene que quitar energía ($W_f<0$). Y en BC la fricción retira los 6,76 J que tenía la partícula en B.</li>
+  </ol>
+  <p><b>Resultado:</b> $\mu_k=0{,}276$; $W_f(A\to B)=-3{,}54$ J.</p>
+  <div class="recipe"><b>Receta:</b> cuando una fuerza no se puede calcular directamente (fricción en una curva), su trabajo se obtiene por diferencia: $W_{desconocida}=\Delta K-\sum W_{conocidas}$.</div>
+  <div class="recipe"><b>Error típico:</b> calcular la fricción del arco con $\mu_kmg\cdot(\pi R/2)$ (ni la normal es $mg$ ahí, ni $\mu_k$ tiene por qué ser el del tramo horizontal); poner $W_{peso}=mg\,(\pi R/2)$ en vez de $mgR$.</div>
+</details>
+
+<h3>Problemas del solucionario (E)</h3>
+
+<details class="sol" id="e1"><summary>E1 — Problema 6.2: cable que arrastra un coche (trabajo con ángulo) <span class="src" data-l="E" data-ref="Solucionario 6-1, Prob. 6.2">E</span></summary>
+  <p class="enun">Un camión de remolque jala de un automóvil 5,00 km por una carretera horizontal usando un cable cuya tensión es de 1350 N. (a) ¿Cuánto trabajo realiza el cable sobre el automóvil si jala de él horizontalmente? ¿Y si se jala a 35,0° sobre la horizontal? (b) ¿Cuánto trabajo realiza el cable sobre el camión en ambos casos? (c) ¿Cuánto trabajo efectúa la gravedad sobre el automóvil?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 150" width="100%" role="img" aria-label="Cable que tira de un coche con un ángulo de 35°">
+  <line x1="30" y1="100" x2="330" y2="100" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="100" y="62" width="70" height="38" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="135" y="85" class="sm" text-anchor="middle">coche</text>
+  <line x1="170" y1="72" x2="245.4" y2="19.2" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <line x1="170" y1="72" x2="245.4" y2="72" stroke="var(--X)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="245.4" y1="72" x2="245.4" y2="19.2" stroke="var(--E)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M 204.0 72.0 A 34 34 0 0 0 197.9 52.5" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="208" y="66" class="sm">35°</text>
+  <text x="206" y="88" class="sm" text-anchor="start" style="fill:var(--X)">T cos 35° = 1106 N (trabaja)</text>
+  <text x="251.4" y="50" class="sm" text-anchor="start" style="fill:var(--E)">T sen 35°</text>
+  <text x="251.4" y="64" class="sm" text-anchor="start" style="fill:var(--E)">= 774 N (no trabaja)</text>
+  <text x="239.4" y="13.2" class="sm bd" text-anchor="end" style="fill:var(--X)">T = 1350 N</text>
+  <line x1="100" y1="122" x2="270" y2="122" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="185" y="138" class="sm bd" text-anchor="middle">s = 5,00 km</text>
+</svg>
+<figcaption>Solo la componente paralela al desplazamiento, T cos 35° = 1106 N, hace trabajo: W = (1106 N)(5000 m) = 5,53·10⁶ J. La componente vertical T sen 35° no trabaja. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-1, Prob. 6.2)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>Fuerza constante, camino recto: $W=Ts\cos\phi$ (6.2), con $s=5{,}00\times10^3$ m.</li>
+    <li><b>(a)</b> $\phi=0^\circ$: $W=(1350)(5000)=\mathbf{6{,}75\times10^6\ J}$. $\phi=35^\circ$: $W=6{,}75\times10^6\cos35^\circ=\mathbf{5{,}53\times10^6\ J}$ (solo trabaja $T\cos35^\circ=1106$ N).</li>
+    <li><b>(b)</b> Por la tercera ley el cable tira del camión hacia atrás con la misma tensión: $\phi=180^\circ$ y $W=\mathbf{-6{,}75\times10^6\ J}$ en el primer caso; en el segundo, con el cable a $35^\circ$ sobre el camión, la fuerza sobre el camión apunta hacia atrás y hacia abajo y el ángulo con el desplazamiento es $\phi=145^\circ$: $W=6{,}75\times10^6\cos145^\circ=\mathbf{-5{,}53\times10^6\ J}$ (Solucionario 6-1). El motor del camión aporta la energía; el cable solo la transmite.</li>
+    <li><b>(c)</b> El peso es vertical y el desplazamiento horizontal: $\phi=90^\circ$, $W=\mathbf{0}$.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> identifica el ángulo <i>entre la fuerza y el desplazamiento</i> (no con la horizontal ni con el plano) y aplica $Fs\cos\phi$.</div>
+  <div class="recipe"><b>Error típico:</b> usar seno en vez de coseno; creer que la tensión hace el mismo trabajo, con el mismo signo, sobre los dos cuerpos.</div>
+</details>
+
+<details class="sol" id="e2"><summary>E2 — Problema 6.63: maleta en una rampa, trabajo de cada fuerza <span class="src" data-l="E" data-ref="Solucionario 6-18/6-19, Prob. 6.63">E</span></summary>
+  <p class="enun">Un transportador de equipaje jala una maleta de 20,0 kg para subirla por una rampa inclinada 32,0° con una fuerza $\vec F$ de 160 N paralela a la rampa. El coeficiente de fricción cinética es $\mu_k=0{,}300$. Si la maleta viaja 3,80 m en la rampa, calcule el trabajo sobre ella (a) por $\vec F$; (b) por la gravedad; (c) por la normal; (d) por la fricción; (e) el trabajo total; (f) si la rapidez es cero en la base, ¿qué rapidez tiene tras subir 3,80 m?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 362" width="100%" role="img" aria-label="Maleta subida por una rampa de 32°: fuerzas y trabajo de cada una">
+  <path d="M 28 176 L 240.0 176 L 240.0 43.5 Z" fill="var(--mut)" fill-opacity="0.12" stroke="none"/>
+  <path d="M 28 176 L 240.0 176 L 240.0 43.5 L 28 176 Z" fill="none" stroke="var(--mut)" stroke-width="1.5"/>
+  <path d="M 64.0 176.0 A 36 36 0 0 0 58.5 156.9" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="44" y="194" class="sm">32°</text>
+  <path d="M 108.6 125.7 L 151.0 99.2 L 135.1 73.7 L 92.7 100.2 Z" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5" stroke-linejoin="round"/>
+  <line x1="121.8" y1="99.7" x2="176.1" y2="65.8" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="148" y="50" class="sm bd" text-anchor="start" style="fill:var(--X)">F = 160 N</text>
+  <line x1="121.8" y1="99.7" x2="86.6" y2="43.3" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mk-a)"/>
+  <text x="80.6" y="39.3" class="sm bd" text-anchor="end" style="fill:var(--acc)">n = 166,2 N</text>
+  <line x1="121.8" y1="99.7" x2="104.9" y2="110.3" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mk-p)"/>
+  <text x="96.9" y="128.3" class="sm bd" text-anchor="end" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 49,9 N</tspan></text>
+  <line x1="121.8" y1="99.7" x2="121.8" y2="178.1" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mk-b)"/>
+  <text x="128" y="192" class="sm bd" text-anchor="start" style="fill:var(--A)">mg = 196 N</text>
+  <line x1="117.0" y1="148.7" x2="210.3" y2="90.4" stroke="var(--fg)" stroke-width="2.2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="177.7" y="135.5" class="sm bd" text-anchor="start">s = 3,80 m</text>
+  <line x1="156.4" y1="222" x2="156.4" y2="356" stroke="var(--fg)" stroke-width="1.5"/>
+  <text x="8" y="219" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">F</tspan><tspan dy="-3"> = Fs cos 0°</tspan></text>
+  <rect x="156.4" y="225" width="125.0" height="10" rx="1.5" fill="var(--X)" fill-opacity="0.55" stroke="var(--X)" stroke-width="1.3"/>
+  <text x="286.4" y="235" class="sm bd" text-anchor="start" style="fill:var(--fg)">+608 J</text>
+  <text x="8" y="249" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">peso</tspan><tspan dy="-3"> (122° con s)</tspan></text>
+  <rect x="75.2" y="255" width="81.2" height="10" rx="1.5" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.3"/>
+  <text x="70.2" y="265" class="sm bd" text-anchor="end" style="fill:var(--fg)">−395 J</text>
+  <text x="8" y="279" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">n</tspan><tspan dy="-3"> (90°)</tspan></text>
+  <text x="161.4" y="295" class="sm bd" text-anchor="start" style="fill:var(--fg)">0</text>
+  <text x="8" y="309" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">f</tspan><tspan dy="-3"> = −f</tspan><tspan dy="3" font-size="9">k</tspan><tspan dy="-3">s</tspan></text>
+  <rect x="117.4" y="315" width="39.0" height="10" rx="1.5" fill="var(--E)" fill-opacity="0.55" stroke="var(--E)" stroke-width="1.3"/>
+  <text x="112.4" y="325" class="sm bd" text-anchor="end" style="fill:var(--fg)">−189 J</text>
+  <text x="8" y="339" class="sm" style="fill:var(--fg)">W<tspan dy="3" font-size="9">tot</tspan><tspan dy="-3"> = ΔK</tspan></text>
+  <rect x="156.4" y="345" width="4.9" height="10" rx="1.5" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.3"/>
+  <text x="166.2" y="355" class="sm bd" text-anchor="start" style="fill:var(--fg)">+23,8 J</text>
+</svg>
+<figcaption>Maleta de 20,0 kg subiendo 3,80 m por una rampa de 32° con F = 160 N paralela a la rampa y μ<sub>k</sub> = 0,300. La suma de los cinco trabajos (+23,8 J) es la energía cinética final; de ahí v = 1,54 m/s. (Flechas a escala 0,4 px/N.) <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-18/6-19, Prob. 6.63)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li><b>(a)</b> $\vec F$ es paralela a $\vec s$ ($\phi=0^\circ$): $W_F=(160)(3{,}80)=\mathbf{608\ J}$.</li>
+    <li><b>(b)</b> El ángulo entre $\vec w$ (vertical, abajo) y $\vec s$ (32° sobre la horizontal) es $122^\circ$: $W_w=(196)(3{,}80)\cos122^\circ=\mathbf{-395\ J}$. Equivale a que solo trabaja $w\sin32^\circ=103{,}9$ N, opuesta: $-(103{,}9)(3{,}80)=-mgh$ con $h=3{,}80\sin32^\circ=2{,}01$ m.</li>
+    <li><b>(c)</b> La normal es perpendicular a $\vec s$: $W_n=\mathbf{0}$.</li>
+    <li><b>(d)</b> Eje perpendicular, $a_y=0$: $n=w\cos32^\circ=166{,}2$ N; $f_k=0{,}300\,n=49{,}9$ N; $W_f=-(49{,}87)(3{,}80)=\mathbf{-189\ J}$.</li>
+    <li><b>(e)</b> $W_{tot}=608-394{,}7+0-189{,}5=\mathbf{23{,}8\ J}$ (el solucionario redondea a 24 J).</li>
+    <li><b>(f)</b> $\tfrac12(20{,}0)v_2^2=23{,}8\Rightarrow v_2=\mathbf{1{,}54\ m/s}$ (solucionario: 1,5 m/s).</li>
+  </ol>
+  <div class="box warn"><span class="h">Erratas del solucionario (6-19)</span><p>(i) Para $W_F$ el solucionario escribe «$\phi=90^\circ$», pero $\vec F$ y $\vec s$ son paralelas: debe ser $\phi=0^\circ$ (el valor 608 J sí es correcto). (ii) En la comprobación alternativa dice «$W_w=W_{w\sin25^\circ}=-315$ J, which agrees with the above», lo cual es falso: con 32° sale $-(196)(\sin32^\circ)(3{,}80)=-395$ J (−315 J corresponde a 25°, resto de otra edición). Los resultados finales (608; −395; 0; −189; 24 J; 1,5 m/s) son correctos.</p>
+  <span class="src" data-l="E" data-ref="Solucionario 6-19, Prob. 6.63">E</span></div>
+  <div class="recipe"><b>Receta:</b> en un plano inclinado, subiendo: $W_{peso}=-mg\,s\sin\theta$, $W_n=0$, $W_f=-\mu_kmg\cos\theta\,s$; súmalos con el de la fuerza aplicada.</div>
+  <div class="recipe"><b>Error típico:</b> $f_k=\mu_kmg$ (en el plano $n=mg\cos\theta$); signo positivo para el peso al subir.</div>
+</details>
+
+<details class="sol" id="e3"><summary>E3 — Ejercicio 6.31: distancia de frenado <span class="src" data-l="E" data-ref="Solucionario 6-10, Ejercicio 6.31">E</span></summary>
+  <p class="enun">Un automóvil viaja por un camino horizontal con rapidez $v_0$ cuando los frenos se bloquean y las llantas se deslizan. (a) Use el teorema trabajo-energía para calcular la distancia mínima en que puede detenerse en términos de $v_0$, $g$ y $\mu_k$. (b) ¿En qué factor cambiaría la distancia mínima si i. se duplicara $\mu_k$, ii. se duplicara $v_0$, iii. se duplicaran ambas?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 330 210" width="100%" role="img" aria-label="Distancia de frenado frente a la rapidez inicial">
+  <line class="ax" x1="48" y1="174" x2="317" y2="174"/>
+  <line class="ax" x1="48" y1="174" x2="48" y2="13"/>
+  <text x="312" y="202" class="sm" text-anchor="end">v₀ (m/s)</text>
+  <text x="54" y="20" class="sm">s (m)</text>
+  <line x1="96.0" y1="174" x2="96.0" y2="178" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="96.0" y="190" class="sm" text-anchor="middle">10</text>
+  <line x1="144.0" y1="174" x2="144.0" y2="178" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="144.0" y="190" class="sm" text-anchor="middle">20</text>
+  <line x1="192.0" y1="174" x2="192.0" y2="178" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="192.0" y="190" class="sm" text-anchor="middle">30</text>
+  <line x1="240.0" y1="174" x2="240.0" y2="178" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="240.0" y="190" class="sm" text-anchor="middle">40</text>
+  <line x1="288.0" y1="174" x2="288.0" y2="178" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="288.0" y="190" class="sm" text-anchor="middle">50</text>
+  <line x1="44" y1="138.3" x2="48" y2="138.3" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="142.3" class="sm" text-anchor="end">40</text>
+  <line x1="44" y1="102.7" x2="48" y2="102.7" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="106.7" class="sm" text-anchor="end">80</text>
+  <line x1="44" y1="67.0" x2="48" y2="67.0" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="71.0" class="sm" text-anchor="end">120</text>
+  <line x1="44" y1="31.4" x2="48" y2="31.4" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="35.4" class="sm" text-anchor="end">160</text>
+  <path d="M 48.0 174.0 L 57.4 173.8 L 66.7 173.1 L 76.1 172.1 L 85.4 170.5 L 94.8 168.6 L 104.2 166.2 L 113.5 163.4 L 122.9 160.2 L 132.2 156.5 L 141.6 152.4 L 151.0 147.8 L 160.3 142.9 L 169.7 137.5 L 179.0 131.6 L 188.4 125.4 L 197.8 118.7 L 207.1 111.5 L 216.5 104.0 L 225.8 96.0 L 235.2 87.5 L 244.6 78.7 L 253.9 69.4 L 263.3 59.6 L 272.6 49.5 L 282.0 38.9 L 291.4 27.9 L 297.6 20.3" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <line x1="168.0" y1="174.0" x2="168.0" y2="138.5" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="48.0" y1="138.5" x2="168.0" y2="138.5" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="168.0" cy="138.5" r="4.5" fill="var(--A)"/>
+  <line x1="288.0" y1="174.0" x2="288.0" y2="31.9" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="48.0" y1="31.9" x2="288.0" y2="31.9" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="288.0" cy="31.9" r="4.5" fill="var(--A)"/>
+  <text x="160.0" y="130.4" class="sm bd" text-anchor="end" style="fill:var(--fg)">25 m/s → 39,9 m</text>
+  <text x="282" y="26" class="sm bd" text-anchor="end" style="fill:var(--fg)">50 m/s → 159 m</text>
+  <text x="57.6" y="62.6" class="sm bd" text-anchor="start" style="fill:var(--acc)">s = v₀² / (2 μ<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> g)</tspan></text>
+  <text x="57.6" y="74.2" class="sm" text-anchor="start">(μ<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 0,8)</tspan></text>
+</svg>
+<figcaption>La distancia mínima de frenado crece con el cuadrado de la rapidez: al doblar v₀ de 25 a 50 m/s, s se multiplica por 4 (39,9 m → 159 m con μ<sub>k</sub> = 0,8). <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-10, Ejercicio 6.31)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>Solo trabaja la fricción (peso y normal son perpendiculares): $W_{tot}=-\mu_kmg\,s$.</li>
+    <li>$K_1=\tfrac12mv_0^2$, $K_2=0$: $-\mu_kmgs=-\tfrac12mv_0^2\Rightarrow\boxed{s=\dfrac{v_0^2}{2\mu_kg}}$. La masa se cancela: un camión y un coche con las mismas ruedas frenan en la misma distancia.</li>
+    <li><b>(b)</b> $s\propto v_0^2/\mu_k$: i. $\mu_k\times2\Rightarrow s/2$; ii. $v_0\times2\Rightarrow4s$; iii. ambos $\Rightarrow4/2=\mathbf{2s}$.</li>
+    <li>Ejemplo (propio): $v_0=25$ m/s (90 km/h), $\mu_k=0{,}8$: $s=39{,}9$ m; a 50 m/s, 159 m.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> problemas de «hasta que se detiene»: $K_1=\sum|W_{resistentes}|$.</div>
+  <div class="recipe"><b>Error típico:</b> pensar que duplicar la velocidad duplica la distancia (va con el cuadrado).</div>
+</details>
+
+<details class="sol" id="e4"><summary>E4 — Ejercicio 6.34: ley de Hooke y trabajo para deformar un resorte <span class="src" data-l="E" data-ref="Solucionario 6-10/6-11, Ejercicio 6.34">E</span></summary>
+  <p class="enun">Se requiere un trabajo de 12,0 J para estirar un resorte 3,00 cm con respecto a su longitud no estirada. (a) ¿Cuál es la constante de fuerza? (b) ¿Qué fuerza se necesita para estirarlo 3,00 cm? (c) ¿Cuánto trabajo debe efectuarse para comprimirlo 4,00 cm con respecto a su longitud no estirada, y qué fuerza se necesita?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 240" width="100%" role="img" aria-label="Fuerza de un resorte frente a la elongación: áreas de trabajo al estirar y al comprimir">
+  <line class="ax" x1="14" y1="108.2" x2="331" y2="108.2"/>
+  <line class="ax" x1="185.9" y1="210" x2="185.9" y2="21"/>
+  <text x="326" y="236" class="sm" text-anchor="end">x (cm)</text>
+  <text x="191.9" y="28" class="sm">F (N)</text>
+  <line x1="58.6" y1="105.2" x2="58.6" y2="111.2" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="58.6" y1="206" x2="58.6" y2="210" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="58.6" y="222" class="sm" text-anchor="middle">−4</text>
+  <line x1="122.2" y1="105.2" x2="122.2" y2="111.2" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="122.2" y1="206" x2="122.2" y2="210" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="122.2" y="222" class="sm" text-anchor="middle">−2</text>
+  <line x1="249.6" y1="105.2" x2="249.6" y2="111.2" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="249.6" y1="206" x2="249.6" y2="210" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="249.6" y="222" class="sm" text-anchor="middle">2</text>
+  <line x1="281.4" y1="105.2" x2="281.4" y2="111.2" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="281.4" y1="206" x2="281.4" y2="210" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="281.4" y="222" class="sm" text-anchor="middle">3</text>
+  <path d="M 185.9 108.2 L 281.4 108.2 L 281.4 45.6 Z" fill="var(--X)" fill-opacity="0.3" stroke="none"/>
+  <path d="M 185.9 108.2 L 58.6 108.2 L 58.6 191.7 Z" fill="var(--X)" fill-opacity="0.3" stroke="none"/>
+  <path d="M 39.5 204.2 L 300.5 33.0" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <line x1="281.4" y1="108.2" x2="281.4" y2="45.6" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="58.6" y1="108.2" x2="58.6" y2="191.7" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="286.4" y="49.6" class="sm bd" text-anchor="start" style="fill:var(--fg)">800 N</text>
+  <text x="63.6" y="195.7" class="sm bd" text-anchor="start" style="fill:var(--fg)">−1067 N</text>
+  <text x="259.1" y="88.6" class="sm bd" text-anchor="middle" style="fill:var(--X)">12,0 J</text>
+  <text x="93.6" y="159.0" class="sm bd" text-anchor="middle" style="fill:var(--X)">21,3 J</text>
+  <text x="20.4" y="29.9" class="sm bd" text-anchor="start" style="fill:var(--acc)">F = k x</text>
+</svg>
+<figcaption>El trabajo para deformar el resorte es el área del triángulo: ½·(3 cm)·(800 N) = 12,0 J al estirar 3 cm, y ½·(4 cm)·(1067 N) = 21,3 J al comprimir 4 cm. En ambos casos el trabajo es positivo (fuerza y desplazamiento tienen el mismo signo). <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-10/6-11, Ejercicio 6.34)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li><b>(a)</b> Trabajo sobre el resorte desde $x=0$ hasta $X$ (6.9): $W=\tfrac12kX^2\Rightarrow k=2W/X^2=2(12{,}0)/(0{,}0300)^2=\mathbf{2{,}67\times10^4\ N/m}$.</li>
+    <li><b>(b)</b> Hooke (6.8): $F=kX=(2{,}667\times10^4)(0{,}0300)=\mathbf{800\ N}$. (Comprobación: fuerza media $F/2=400$ N por 0,03 m son 12 J.)</li>
+    <li><b>(c)</b> Al comprimir, $x=-0{,}0400$ m, pero la fórmula vale igual (U p.185): $W=\tfrac12k(0{,}0400)^2=\mathbf{21{,}3\ J}$ y $|F|=k(0{,}0400)=\mathbf{1{,}07\times10^3\ N}$.</li>
+  </ol>
+  <p><i>Nota:</i> el solucionario da 801 N y 21,4 J por usar $k$ redondeado; los exactos son 800 N y 21,3 J.</p>
+  <div class="recipe"><b>Receta:</b> fuerza proporcional a $x$, trabajo proporcional a $x^2$: deformar el doble cuesta el cuádruple.</div>
+  <div class="recipe"><b>Error típico:</b> $W=kX^2$ (falta el ½, que viene del área del triángulo); $W=FX$ con la fuerza final.</div>
+</details>
+
+<details class="sol" id="e5"><summary>E5 — Problema 6.79: compresión máxima de un resorte <span class="src" data-l="E" data-ref="Solucionario 6-24, Prob. 6.79">E</span></summary>
+  <p class="enun">Un bloque de 5,00 kg se mueve con $v_0=6{,}00$ m/s en una superficie horizontal sin fricción hacia un resorte de constante $k=500$ N/m unido a una pared. El resorte tiene masa despreciable. (a) Calcule la distancia máxima que se comprimirá el resorte. (b) Si dicha distancia no debe ser mayor que 0,150 m, ¿qué valor máximo debería tener $v_0$?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 350" width="100%" role="img" aria-label="Bloque contra un resorte: compresión máxima y trabajo como área">
+  <line x1="330" y1="20" x2="330" y2="112" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="330" y1="26" x2="339" y2="34" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="330" y1="35" x2="339" y2="43" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="330" y1="44" x2="339" y2="52" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="330" y1="53" x2="339" y2="61" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="330" y1="62" x2="339" y2="70" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="330" y1="71" x2="339" y2="79" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="330" y1="80" x2="339" y2="88" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="330" y1="89" x2="339" y2="97" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="330" y1="98" x2="339" y2="106" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="330" y1="107" x2="339" y2="115" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="112" x2="330" y2="112" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 290 82 L 298.6 90 L 306.2 74 L 313.8 90 L 321.4 74 L 330 82" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <rect x="240" y="62" width="50" height="50" rx="2" fill="var(--acc)" fill-opacity="0.25" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="265" y="92" class="sm" text-anchor="middle">v = 0</text>
+  <line x1="230" y1="36" x2="230" y2="112" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="230" y="30" class="sm" text-anchor="middle">resorte relajado</text>
+  <line x1="230" y1="128" x2="290" y2="128" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="260" y="144" class="sm bd" text-anchor="middle">X = 0,600 m</text>
+  <rect x="40" y="72" width="50" height="40" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="65" y="97" class="sm bd" text-anchor="middle">5 kg</text>
+  <line x1="90" y1="86" x2="140" y2="86" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mk-f)"/>
+  <text x="115" y="60" class="sm bd" text-anchor="middle">v₀ = 6,00 m/s</text>
+  <g transform="translate(0,160)"><line class="ax" x1="50" y1="156" x2="327" y2="156"/><line class="ax" x1="50" y1="156" x2="50" y2="5"/><text x="322" y="184" class="sm" text-anchor="end">X (m)</text><text x="56" y="12" class="sm">F (N)</text><line x1="127.7" y1="156" x2="127.7" y2="160" stroke="var(--fg)" stroke-width="1.2"/><text x="127.7" y="172" class="sm" text-anchor="middle">0,2</text><line x1="205.4" y1="156" x2="205.4" y2="160" stroke="var(--fg)" stroke-width="1.2"/><text x="205.4" y="172" class="sm" text-anchor="middle">0,4</text><line x1="283.1" y1="156" x2="283.1" y2="160" stroke="var(--fg)" stroke-width="1.2"/><text x="283.1" y="172" class="sm" text-anchor="middle">0,6</text><line x1="46" y1="113.1" x2="50" y2="113.1" stroke="var(--fg)" stroke-width="1.2"/><text x="43" y="117.1" class="sm" text-anchor="end">100</text><line x1="46" y1="70.1" x2="50" y2="70.1" stroke="var(--fg)" stroke-width="1.2"/><text x="43" y="74.1" class="sm" text-anchor="end">200</text><line x1="46" y1="27.2" x2="50" y2="27.2" stroke="var(--fg)" stroke-width="1.2"/><text x="43" y="31.2" class="sm" text-anchor="end">300</text><path d="M 50.0 156.0 L 283.1 156.0 L 283.1 27.2 Z" fill="var(--X)" fill-opacity="0.3" stroke="none"/><path d="M 50.0 156.0 L 306.5 14.3" fill="none" stroke="var(--acc)" stroke-width="2.5"/><line x1="283.1" y1="156.0" x2="283.1" y2="27.2" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/><text x="277.1" y="21.2" class="sm bd" text-anchor="end" style="fill:var(--fg)">300 N</text><text x="205.4" y="104.5" class="sm bd" text-anchor="middle" style="fill:var(--X)">área = ½kX² = 90 J = K₁</text></g>
+</svg>
+<figcaption>Arriba: el bloque comprime el resorte hasta pararse (X = 0,600 m). Abajo: la fuerza del resorte crece como kX hasta 300 N; el área del triángulo (90 J) es el trabajo que frena al bloque y coincide con su energía cinética inicial ½·5,00·6,00² = 90 J. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-24, Prob. 6.79)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>Mientras comprime, la única fuerza que trabaja es la del resorte, que se opone al movimiento: $W_{res}=-\tfrac12kX^2$ (el negativo de 6.10; «Cuidado» p.185).</li>
+    <li>En la compresión máxima el bloque se detiene, $K_2=0$: $-\tfrac12kX^2=0-\tfrac12mv_0^2\Rightarrow X=v_0\sqrt{m/k}=6{,}00\sqrt{5/500}=\mathbf{0{,}600\ m}$.</li>
+    <li><b>(b)</b> $v_0=X\sqrt{k/m}=0{,}150\sqrt{100}=\mathbf{1{,}50\ m/s}$.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> sin fricción, «compresión máxima»: $\tfrac12kX^2=\tfrac12mv_0^2$.</div>
+  <div class="recipe"><b>Error típico:</b> usar cinemática de aceleración constante (la fuerza del resorte varía con $x$).</div>
+</details>
+
+<details class="sol" id="e6"><summary>E6 — Ejercicios 6.43 y 6.44: fuerza variable dada por una gráfica <span class="src" data-l="E" data-ref="Solucionario 6-13/6-14; Ejercicios 6.43 y 6.44">E</span></summary>
+  <p class="enun">6.43. A un automóvil a escala de 2,0 kg, controlado por radio, se le aplica una fuerza $\vec F$ paralela al eje $x$ que varía con $x$ (figura E6.43). Calcule el trabajo de $\vec F$ cuando el auto se mueve de (a) $x=0$ a 3,0 m; (b) 3,0 a 4,0 m; (c) 4,0 a 7,0 m; (d) 0 a 7,0 m; (e) 7,0 a 2,0 m. 6.44. Si el auto está inicialmente en reposo en $x=0$ y $\vec F$ es la fuerza neta, use el teorema para hallar su rapidez en (a) $x=3{,}0$; (b) 4,0; (c) 7,0 m.</p>
+  <p>La gráfica (U p.197): $F_x$ crece linealmente de 0 en $x=0$ a 2 N en $x=2$ m; vale 2 N hasta $x=3$; cae a 0 y vale 0 entre 3 y 4 m; baja linealmente de 0 en $x=4$ a $-1$ N en $x=6$; vuelve a 0 y sigue en 0 hasta 7 m.</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 220" width="100%" role="img" aria-label="Fuerza variable F_x(x) con áreas con signo">
+  <line class="ax" x1="50" y1="125.7" x2="327" y2="125.7"/>
+  <line class="ax" x1="50.0" y1="190" x2="50.0" y2="25"/>
+  <text x="322" y="216" class="sm" text-anchor="end">x (m)</text>
+  <text x="56.0" y="32" class="sm">F<tspan dy="3" font-size="9">x</tspan><tspan dy="-3"> (N)</tspan></text>
+  <line x1="86.8" y1="122.7" x2="86.8" y2="128.7" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="86.8" y1="186" x2="86.8" y2="190" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="86.8" y="202" class="sm" text-anchor="middle">1</text>
+  <line x1="123.5" y1="122.7" x2="123.5" y2="128.7" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="123.5" y1="186" x2="123.5" y2="190" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="123.5" y="202" class="sm" text-anchor="middle">2</text>
+  <line x1="160.3" y1="122.7" x2="160.3" y2="128.7" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="160.3" y1="186" x2="160.3" y2="190" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="160.3" y="202" class="sm" text-anchor="middle">3</text>
+  <line x1="197.0" y1="122.7" x2="197.0" y2="128.7" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="197.0" y1="186" x2="197.0" y2="190" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="197.0" y="202" class="sm" text-anchor="middle">4</text>
+  <line x1="233.8" y1="122.7" x2="233.8" y2="128.7" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="233.8" y1="186" x2="233.8" y2="190" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="233.8" y="202" class="sm" text-anchor="middle">5</text>
+  <line x1="270.5" y1="122.7" x2="270.5" y2="128.7" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="270.5" y1="186" x2="270.5" y2="190" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="270.5" y="202" class="sm" text-anchor="middle">6</text>
+  <line x1="307.3" y1="122.7" x2="307.3" y2="128.7" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="307.3" y1="186" x2="307.3" y2="190" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="307.3" y="202" class="sm" text-anchor="middle">7</text>
+  <line x1="47.0" y1="161.2" x2="53.0" y2="161.2" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="44.0" y="165.2" class="sm" text-anchor="end">−1</text>
+  <line x1="47.0" y1="90.3" x2="53.0" y2="90.3" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="44.0" y="94.3" class="sm" text-anchor="end">1</text>
+  <line x1="47.0" y1="54.8" x2="53.0" y2="54.8" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="44.0" y="58.8" class="sm" text-anchor="end">2</text>
+  <path d="M 50.0 125.7 L 123.5 54.8 L 160.3 54.8 L 160.3 125.7 Z" fill="var(--X)" fill-opacity="0.3" stroke="none"/>
+  <path d="M 197.0 125.7 L 270.5 161.2 L 270.5 125.7 Z" fill="var(--A)" fill-opacity="0.3" stroke="none"/>
+  <path d="M 50.0 125.7 L 123.5 54.8 L 160.3 54.8 L 160.3 125.7 L 197.0 125.7 L 270.5 161.2 L 270.5 125.7 L 307.3 125.7" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <text x="107.0" y="106.2" class="sm bd" text-anchor="middle" style="fill:var(--X)">+4,0 J</text>
+  <text x="215.4" y="171.8" class="sm bd" text-anchor="middle" style="fill:var(--A)">−1,0 J</text>
+  <text x="8" y="12" class="sm bd" text-anchor="start" style="fill:var(--fg)">v(3 m) = 2,00 · v(4 m) = 2,00 · v(7 m) = 1,73 m/s</text>
+</svg>
+<figcaption>Gráfica del ejercicio 6.43: el área sobre el eje (0-3 m) vale +4,0 J y el área bajo el eje (4-6 m) vale −1,0 J. El trabajo es el área con signo, y con el teorema trabajo-energía (coche de 2,0 kg desde el reposo) salen las rapideces 2,00; 2,00 y 1,73 m/s. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-13/6-14; Ejercicios 6.43 y 6.44)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>$W=\int F_x\,dx$ es el <b>área con signo</b> bajo la curva (6.7): por encima del eje cuenta positiva si $x$ aumenta; si $x$ disminuye, el signo se invierte.</li>
+    <li><b>6.43.</b> (a) triángulo $\tfrac12(2)(2)$ + rectángulo $(1)(2)$ = <b>+4,0 J</b>. (b) $F_x=0$: <b>0</b>. (c) triángulo bajo el eje $\tfrac12(2)(-1)=$ <b>−1,0 J</b> (fuerza opuesta al movimiento). (d) suma: <b>+3,0 J</b>. (e) de 7 a 3 m: fuerza hacia $-x$ y desplazamiento hacia $-x$, $+1{,}0$ J; de 3 a 2 m: fuerza $+2$ N y desplazamiento $-1$ m, $-2{,}0$ J; total <b>−1,0 J</b>.</li>
+    <li><b>6.44.</b> $v=\sqrt{2W/m}$ con $K_1=0$: (a) $\sqrt{2(4)/2}=\mathbf{2{,}00\ m/s}$; (b) igual, <b>2,00 m/s</b> (de 3 a 4 m no hay fuerza); (c) $\sqrt{2(3)/2}=\mathbf{1{,}73\ m/s}$ (de 4 a 6 m la fuerza frena).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> gráfica $F$–$x$: trabajo = área con signo; después $v=\sqrt{v_1^2+2W/m}$.</div>
+  <div class="recipe"><b>Error típico:</b> sumar las áreas en valor absoluto; olvidar que al recorrer el eje hacia atrás cambia el signo.</div>
+</details>
+
+<details class="sol" id="e7"><summary>E7 — Ejercicio 6.49: fuerza que depende de la posición (integral) <span class="src" data-l="E" data-ref="Solucionario 6-16, Ejercicio 6.49">E</span></summary>
+  <p class="enun">Se aplica una fuerza $F(x)=18{,}0\ \text{N}-(0{,}530\ \text{N/m})x$ en la dirección $+x$ a una caja de 6,00 kg que descansa sobre la superficie horizontal sin fricción de un lago congelado. $F(x)$ es la única fuerza horizontal. Si la caja está inicialmente en reposo en $x=0$, ¿cuál es su rapidez después de viajar 14,0 m?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 330 210" width="100%" role="img" aria-label="Fuerza lineal decreciente y trabajo como área de un trapecio">
+  <line class="ax" x1="48" y1="174" x2="317" y2="174"/>
+  <line class="ax" x1="48" y1="174" x2="48" y2="13"/>
+  <text x="312" y="202" class="sm" text-anchor="end">x (m)</text>
+  <text x="54" y="20" class="sm">F (N)</text>
+  <line x1="82.1" y1="174" x2="82.1" y2="178" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="82.1" y="190" class="sm" text-anchor="middle">2</text>
+  <line x1="116.1" y1="174" x2="116.1" y2="178" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="116.1" y="190" class="sm" text-anchor="middle">4</text>
+  <line x1="150.2" y1="174" x2="150.2" y2="178" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="150.2" y="190" class="sm" text-anchor="middle">6</text>
+  <line x1="184.3" y1="174" x2="184.3" y2="178" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="184.3" y="190" class="sm" text-anchor="middle">8</text>
+  <line x1="218.3" y1="174" x2="218.3" y2="178" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="218.3" y="190" class="sm" text-anchor="middle">10</text>
+  <line x1="252.4" y1="174" x2="252.4" y2="178" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="252.4" y="190" class="sm" text-anchor="middle">12</text>
+  <line x1="286.5" y1="174" x2="286.5" y2="178" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="286.5" y="190" class="sm" text-anchor="middle">14</text>
+  <line x1="44" y1="136.0" x2="48" y2="136.0" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="140.0" class="sm" text-anchor="end">5</text>
+  <line x1="44" y1="97.9" x2="48" y2="97.9" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="101.9" class="sm" text-anchor="end">10</text>
+  <line x1="44" y1="59.9" x2="48" y2="59.9" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="63.9" class="sm" text-anchor="end">15</text>
+  <path d="M 48.0 174.0 L 286.5 174.0 L 286.5 93.5 L 48.0 37.0 Z" fill="var(--X)" fill-opacity="0.3" stroke="none"/>
+  <path d="M 48.0 37.0 L 286.5 93.5" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <line x1="286.5" y1="174.0" x2="286.5" y2="93.5" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="62.0" y="71.0" class="sm bd" text-anchor="start" style="fill:var(--fg)">F(0) = 18,0 N</text>
+  <text x="280.5" y="111.5" class="sm bd" text-anchor="end" style="fill:var(--fg)">F(14) = 10,6 N</text>
+  <text x="167.2" y="128.3" class="sm bd" text-anchor="middle" style="fill:var(--X)">W = área = 200 J</text>
+  <text x="167.2" y="149.6" class="sm bd" text-anchor="middle" style="fill:var(--fg)">v = 8,17 m/s</text>
+</svg>
+<figcaption>F(x) = 18,0 N − (0,530 N/m)x: el trabajo en los 14,0 m es el área del trapecio, igual a la fuerza media (14,3 N) por la distancia: 200 J. Con K₁ = 0, v = √(2W/m) = 8,17 m/s. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-16, Ejercicio 6.49)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>La fuerza depende de $x$: no hay aceleración constante, así que ni la ec. 2.13 ni $W=Fs$; hay que integrar (6.7).</li>
+    <li>$W=\int_0^{14}(18{,}0-0{,}530x)\,dx=18{,}0(14)-\tfrac{0{,}530}{2}(14)^2=252{,}0-51{,}9=\mathbf{200\ J}$. (Comprobación: $F$ es lineal, luego $W$ = fuerza media por distancia = $\tfrac12(18{,}0+10{,}58)(14)=200{,}1$ J.)</li>
+    <li>Peso y normal no trabajan; $K_1=0$: $v=\sqrt{2W/m}=\sqrt{2(200{,}1)/6{,}00}=\mathbf{8{,}17\ m/s}$.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> si $F=F(x)$: $W=\int F\,dx$ y luego el teorema.</div>
+  <div class="recipe"><b>Error típico:</b> usar $W=F(14)\cdot14$ o $F(0)\cdot14$.</div>
+</details>
+
+<details class="sol" id="e8"><summary>E8 — Problema 6.58: potencia de un ascensor (y 6.55, bicicleta) <span class="src" data-l="E" data-ref="Solucionario 6-17/6-18, Prob. 6.58 y 6.55">E</span></summary>
+  <p class="enun">6.58. Un elevador sin pasajeros tiene masa de 600 kg y está diseñado para subir con rapidez constante una distancia vertical de 20,0 m (5 pisos) en 16,0 s; es impulsado por un motor capaz de suministrar 40 hp al elevador. ¿Cuántos pasajeros como máximo pueden subir? Suponga una masa de 65,0 kg por pasajero.</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 214" width="100%" role="img" aria-label="Ascensor que sube con rapidez constante: la potencia es F·v">
+  <line x1="130" y1="8" x2="130" y2="200" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="230" y1="8" x2="230" y2="200" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="110" y1="200" x2="250" y2="200" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="140" y="150" width="80" height="46" rx="2" fill="var(--mut)" fill-opacity="0.08" stroke="var(--mut)" stroke-width="1.5"/>
+  <rect x="140" y="24" width="80" height="46" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="8" y="58" class="sm bd" text-anchor="start">M = 2436 kg</text>
+  <line x1="180" y1="47" x2="180" y2="17" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="185" y="13" class="sm bd" style="fill:var(--X)">F</text>
+  <line x1="180" y1="47" x2="180" y2="77" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mk-b)"/>
+  <text x="185" y="89" class="sm bd" style="fill:var(--A)">Mg</text>
+  <line x1="248" y1="170" x2="248" y2="48" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="256" y="112" class="sm bd" text-anchor="start">h = 20,0 m</text>
+  <text x="256" y="128" class="sm" text-anchor="start">en 16,0 s</text>
+  <text x="8" y="24" class="sm bd" text-anchor="start">v = 1,25 m/s</text>
+  <text x="8" y="40" class="sm" text-anchor="start">(constante)</text>
+  <text x="8" y="74" class="sm bd" text-anchor="start" style="fill:var(--X)">F = Mg = 2,39·10⁴ N</text>
+  <text x="8" y="160" class="sm bd" text-anchor="start" style="fill:var(--fg)">P = Fv = Mgv</text>
+  <text x="8" y="176" class="sm bd" text-anchor="start" style="fill:var(--fg)">= 2,98·10⁴ W</text>
+  <text x="8" y="192" class="sm bd" text-anchor="start" style="fill:var(--fg)">= 40 hp</text>
+</svg>
+<figcaption>A rapidez constante la tensión del cable iguala el peso total de la cabina cargada, F = Mg; la potencia que debe dar el motor es P = Fv = Mgv. Con P = 40 hp = 29,8 kW sale M = 2436 kg, es decir, 28 pasajeros de 65,0 kg además de la cabina de 600 kg. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-17/6-18, Prob. 6.58)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>Potencia disponible: $P=40\times746=2{,}984\times10^4$ W (1 hp = 746 W, U p.190).</li>
+    <li><b>Vía 1</b> (potencia media, 6.15): a rapidez constante el trabajo del motor en 16,0 s es $P\,\Delta t=Mgh$ (como en el Ej. 6.10): $M=\dfrac{P\Delta t}{gh}=\dfrac{(2{,}984\times10^4)(16{,}0)}{(9{,}80)(20{,}0)}=2436$ kg.</li>
+    <li><b>Vía 2</b> (6.18): $v=20{,}0/16{,}0=1{,}25$ m/s y $P=Fv=Mgv$ da la misma $M$.</li>
+    <li>Pasajeros: $(2436-600)/65{,}0=28{,}2$, luego <b>28 pasajeros</b>; se redondea hacia abajo (29 superarían la potencia).</li>
+  </ol>
+  <p><b>Complemento 6.55.</b> Un equipo de dos personas en una bicicleta tándem debe superar una fuerza de 165 N a 9,00 m/s: $P=Fv=(165)(9{,}00)=1485$ W en total; <b>742,5 W ≈ 1,00 hp por ciclista</b> (el solucionario pone 745 W por redondeo).</p>
+  <div class="recipe"><b>Receta:</b> a rapidez constante, potencia necesaria = (fuerza a vencer) × (rapidez); si piden «cuántos», divide lo disponible entre lo que cuesta cada unidad.</div>
+  <div class="recipe"><b>Error típico:</b> olvidar la masa de la cabina; redondear 28,2 a 29; mezclar hp y W.</div>
+</details>
+
+<details class="sol" id="e9"><summary>E9 — Problema 6.75: libro lanzado por un resorte con fricción <span class="src" data-l="E" data-ref="Solucionario 6-23, Prob. 6.75">E</span></summary>
+  <p class="enun">Un libro de 2,50 kg se empuja contra un resorte horizontal de masa despreciable y constante 250 N/m, comprimiéndolo 0,250 m. Al soltarse, el libro se desliza sobre una mesa horizontal con $\mu_k=0{,}30$. Use el teorema trabajo-energía para hallar qué distancia recorre desde su posición inicial hasta detenerse.</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 350" width="100%" role="img" aria-label="Libro lanzado por un resorte con fricción: áreas de trabajo">
+  <line x1="20" y1="14" x2="20" y2="112" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="20" y1="20" x2="11" y2="28" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="29" x2="11" y2="37" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="38" x2="11" y2="46" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="47" x2="11" y2="55" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="56" x2="11" y2="64" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="65" x2="11" y2="73" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="74" x2="11" y2="82" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="83" x2="11" y2="91" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="92" x2="11" y2="100" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="101" x2="11" y2="109" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="110" x2="11" y2="118" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="112" x2="340" y2="112" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 20 88 L 29.0 96 L 37.0 80 L 45.0 96 L 53.0 80 L 62 88" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <rect x="62" y="62" width="50" height="50" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="87" y="92" class="sm bd" text-anchor="middle">2,50 kg</text>
+  <line x1="62" y1="40" x2="62" y2="62" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="90" y1="40" x2="90" y2="62" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="62" y1="36" x2="90" y2="36" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="76" y="28" class="sm" text-anchor="middle">0,25 m</text>
+  <rect x="182" y="62" width="50" height="50" rx="2" fill="var(--mut)" fill-opacity="0.08" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="182" y1="94" x2="154" y2="94" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mk-p)"/>
+  <text x="182" y="54" class="sm bd" text-anchor="start" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 7,35 N</tspan></text>
+  <line x1="87" y1="128" x2="207" y2="128" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="147" y="144" class="sm bd" text-anchor="middle">d = 1,06 m</text>
+  <g transform="translate(0,156)"><line class="ax" x1="50" y1="116.5" x2="327" y2="116.5"/><line class="ax" x1="50.0" y1="160" x2="50.0" y2="5"/><text x="322" y="186" class="sm" text-anchor="end">x (m)</text><text x="56.0" y="12" class="sm">F (N)</text><line x1="106.7" y1="113.5" x2="106.7" y2="119.5" stroke="var(--fg)" stroke-width="1.2"/><line x1="106.7" y1="156" x2="106.7" y2="160" stroke="var(--fg)" stroke-width="1.2"/><text x="106.7" y="172" class="sm" text-anchor="middle">0,25</text><line x1="163.3" y1="113.5" x2="163.3" y2="119.5" stroke="var(--fg)" stroke-width="1.2"/><line x1="163.3" y1="156" x2="163.3" y2="160" stroke="var(--fg)" stroke-width="1.2"/><text x="163.3" y="172" class="sm" text-anchor="middle">0,5</text><line x1="220.0" y1="113.5" x2="220.0" y2="119.5" stroke="var(--fg)" stroke-width="1.2"/><line x1="220.0" y1="156" x2="220.0" y2="160" stroke="var(--fg)" stroke-width="1.2"/><text x="220.0" y="172" class="sm" text-anchor="middle">0,75</text><line x1="276.7" y1="113.5" x2="276.7" y2="119.5" stroke="var(--fg)" stroke-width="1.2"/><line x1="276.7" y1="156" x2="276.7" y2="160" stroke="var(--fg)" stroke-width="1.2"/><text x="276.7" y="172" class="sm" text-anchor="middle">1,0</text><line x1="47.0" y1="127.6" x2="53.0" y2="127.6" stroke="var(--fg)" stroke-width="1.2"/><text x="44.0" y="131.6" class="sm" text-anchor="end">−7,35</text><line x1="47.0" y1="70.8" x2="53.0" y2="70.8" stroke="var(--fg)" stroke-width="1.2"/><text x="44.0" y="74.8" class="sm" text-anchor="end">30</text><line x1="47.0" y1="21.4" x2="53.0" y2="21.4" stroke="var(--fg)" stroke-width="1.2"/><text x="44.0" y="25.4" class="sm" text-anchor="end">62,5</text><path d="M 50.0 116.5 L 50.0 21.4 L 106.7 116.5 Z" fill="var(--X)" fill-opacity="0.3" stroke="none"/><path d="M 50.0 116.5 L 290.9 116.5 L 290.9 127.6 L 50.0 127.6 Z" fill="var(--A)" fill-opacity="0.3" stroke="none"/><path d="M 50.0 21.4 L 106.7 116.5" fill="none" stroke="var(--acc)" stroke-width="2.5"/><path d="M 50.0 127.6 L 290.9 127.6" fill="none" stroke="var(--E)" stroke-width="2.5"/><text x="136.1" y="55.6" class="sm bd" text-anchor="start" style="fill:var(--X)">resorte: +7,81 J</text><text x="163.3" y="142.3" class="sm bd" text-anchor="start" style="fill:var(--A)">fricción: −7,81 J</text></g>
+</svg>
+<figcaption>Arriba: el libro, soltado con el resorte comprimido 0,25 m, recorre d = 1,06 m hasta pararse. Abajo: el área positiva del resorte (+7,81 J) y el área negativa de la fricción (−7,81 J) se anulan, porque K₁ = K₂ = 0. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-23, Prob. 6.75)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>Puntos: 1 = suelta (reposo), 2 = se detiene (reposo): $W_{tot}=0$.</li>
+    <li>Trabajo del resorte sobre el libro al pasar de 0,250 m comprimido a relajado (empuja a favor del movimiento): $W_{res}=+\tfrac12kx_1^2=+7{,}81$ J. Después el libro se separa del resorte (de masa despreciable) y este ya no trabaja. Hay que comprobar que llega a separarse: sí, porque $d$ resulta mayor que 0,250 m.</li>
+    <li>La fricción actúa en <b>todo</b> el recorrido $d$: $W_f=-\mu_kmg\,d$ con $\mu_kmg=7{,}35$ N.</li>
+    <li>$\tfrac12kx_1^2-\mu_kmg\,d=0\Rightarrow d=\dfrac{kx_1^2}{2\mu_kmg}=\dfrac{(250)(0{,}250)^2}{2(0{,}30)(2{,}50)(9{,}80)}=\mathbf{1{,}06\ m}$ desde la posición inicial.</li>
+    <li>(Extra, propio) La rapidez máxima se alcanza cuando la fuerza neta es cero: $kx=\mu_kmg\Rightarrow x=0{,}0294$ m (tras recorrer 0,221 m), con $v_{máx}=2{,}21$ m/s.</li>
+  </ol>
+  <div class="box warn"><span class="h">Errata del solucionario (6-23)</span><p>Dice «work is done by the spring <i>and by gravity</i>»; debe decir «y por la <b>fricción</b>» (la gravedad no trabaja sobre una mesa horizontal). La ecuación que escribe es la correcta ($d\approx1{,}1$ m).</p>
+  <span class="src" data-l="E" data-ref="Solucionario 6-23, Prob. 6.75">E</span></div>
+  <div class="recipe"><b>Receta:</b> resorte + fricción, de reposo a reposo: $\tfrac12kx^2=\mu_kmg\,d$ (si el cuerpo se separa del resorte).</div>
+  <div class="recipe"><b>Error típico:</b> aplicar la fricción solo después de dejar el resorte (actúa desde el principio); medir $d$ desde donde el resorte queda relajado.</div>
+</details>
+
+<details class="sol" id="e10"><summary>E10 — Problema 6.77: fuerza constante + resorte + fricción (con dinámica) <span class="src" data-l="E" data-ref="Solucionario 6-24, Prob. 6.77">E</span></summary>
+  <p class="enun">Un extremo de un resorte horizontal ($k=130{,}0$ N/m) se une a una pared vertical. Un bloque de 4,00 kg sobre el suelo se coloca contra el resorte; $\mu_k=0{,}400$. Se aplica una fuerza constante $\vec F$ de magnitud 82,0 N hacia la pared. En el momento en que el resorte se comprime 80,0 cm, ¿cuáles son (a) la velocidad del bloque y (b) la magnitud y dirección de su aceleración?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 264" width="100%" role="img" aria-label="Bloque empujado contra un resorte con fricción: fuerzas en el eje horizontal">
+  <line x1="20" y1="14" x2="20" y2="106" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="20" y1="20" x2="11" y2="28" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="29" x2="11" y2="37" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="38" x2="11" y2="46" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="47" x2="11" y2="55" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="56" x2="11" y2="64" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="65" x2="11" y2="73" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="74" x2="11" y2="82" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="83" x2="11" y2="91" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="92" x2="11" y2="100" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="101" x2="11" y2="109" stroke="var(--mut)" stroke-width="1"/>
+  <line x1="20" y1="106" x2="340" y2="106" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 20 82 L 33.9 90 L 45.7 74 L 57.5 90 L 69.3 74 L 81.1 90 L 95 82" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <rect x="95" y="56" width="50" height="50" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="120" y="86" class="sm bd" text-anchor="middle">4,00 kg</text>
+  <line x1="175" y1="30" x2="175" y2="106" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="175" y="24" class="sm" text-anchor="middle">resorte relajado</text>
+  <line x1="95" y1="124" x2="175" y2="124" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mk-f)"/>
+  <text x="135" y="140" class="sm bd" text-anchor="middle">x = 0,800 m</text>
+  <line x1="215" y1="150" x2="215" y2="220" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="215" y1="160" x2="178.1" y2="160" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mk-g)"/>
+  <text x="8" y="164" class="sm bd" text-anchor="start" style="fill:var(--X)">F = 82,0 N (hacia la pared)</text>
+  <line x1="215" y1="184" x2="261.8" y2="184" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mk-a)"/>
+  <text x="8" y="188" class="sm bd" text-anchor="start" style="fill:var(--acc)">kx = 104 N (hacia fuera)</text>
+  <line x1="215" y1="208" x2="222.1" y2="208" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mk-p)"/>
+  <text x="8" y="212" class="sm bd" text-anchor="start" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 15,7 N (hacia fuera)</tspan></text>
+  <text x="8" y="238" class="sm" text-anchor="start" style="fill:var(--fg)">ΣF = 82,0 − 104 − 15,7 = −37,7 N</text>
+  <text x="8" y="254" class="sm bd" text-anchor="start" style="fill:var(--fg)">a = 9,42 m/s² hacia fuera;  v = 2,39 m/s hacia la pared</text>
+</svg>
+<figcaption>Cuando el resorte está comprimido 0,800 m el bloque aún se mueve hacia la pared (v = 2,39 m/s) pero la fuerza neta apunta hacia fuera: se está frenando (a = 9,42 m/s² alejándose de la pared). Flechas a escala 0,45 px/N. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-24, Prob. 6.77)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li><b>(a)</b> Trabajos en los 0,800 m hacia la pared (el bloque parte del reposo con el resorte relajado): $W_F=+(82{,}0)(0{,}800)=+65{,}6$ J; $W_{res}=-\tfrac12(130)(0{,}800)^2=-41{,}6$ J; $W_f=-(0{,}400)(4{,}00)(9{,}80)(0{,}800)=-12{,}5$ J. $W_{tot}=11{,}5$ J.</li>
+    <li>$v=\sqrt{2(11{,}46)/4{,}00}=\mathbf{2{,}39\ m/s}$ hacia la pared.</li>
+    <li><b>(b)</b> Segunda ley en ese instante (+ hacia la pared): $82{,}0-15{,}7-104{,}0=4{,}00\,a\Rightarrow a=\mathbf{-9{,}42\ m/s^2}$: 9,42 m/s² <b>alejándose de la pared</b> (el bloque se está frenando).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> el teorema da la rapidez en un punto; la aceleración en ese instante sale de la segunda ley con la fuerza del resorte $kx$ en ese $x$.</div>
+  <div class="recipe"><b>Error típico:</b> creer que la aceleración apunta hacia la pared porque $\vec F$ apunta hacia ella.</div>
+</details>
+
+<h2 id="chuleta"><span class="n">6</span>Chuleta, errores frecuentes y lista de comprobación</h2>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Trabajo de fuerza constante</td><td>$W=Fs\cos\phi=\vec F\cdot\vec s$ (6.2-6.3); $1\ \text{J}=1\ \text{N}\cdot\text{m}$</td></tr>
+<tr><td>Signo</td><td>$\phi<90^\circ$: $W>0$; $\phi=90^\circ$: $W=0$; $\phi>90^\circ$: $W<0$</td></tr>
+<tr><td>Trabajo total</td><td>$W_{tot}=\sum W_i=(\sum\vec F)\cdot\vec s$</td></tr>
+<tr><td>Energía cinética</td><td>$K=\tfrac12mv^2\ge0$ (6.5)</td></tr>
+<tr><td>Teorema trabajo-energía</td><td>$W_{tot}=K_2-K_1=\Delta K$ (6.6), válido también para $F$ variable y trayectoria curva</td></tr>
+<tr><td>Fuerza variable</td><td>$W=\int_{x_1}^{x_2}F_x\,dx$ = área bajo $F_x(x)$ (6.7); curva: $W=\int\vec F\cdot d\vec l$ (6.14)</td></tr>
+<tr><td>Resorte (Hooke)</td><td>$F_x=kx$ (6.8); trabajo sobre el resorte $\tfrac12kX^2$ (6.9), $\tfrac12kx_2^2-\tfrac12kx_1^2$ (6.10); el resorte hace el <b>negativo</b></td></tr>
+<tr><td>Peso en un camino cualquiera</td><td>$W_{peso}=-mg(y_2-y_1)$ (Ej. 6.8)</td></tr>
+<tr><td>Fricción cinética sobre recorrido $d$</td><td>$W_f=-f_kd=-\mu_kn\,d$</td></tr>
+<tr><td>Frenado hasta parar</td><td>$F_{media}\,d=K_1$; sin fuerzas motrices $s=v_0^2/(2\mu_kg)$</td></tr>
+<tr><td>Potencia</td><td>$P_{med}=\Delta W/\Delta t$ (6.15); $P=dW/dt$ (6.16); $P=\vec F\cdot\vec v=F_\parallel v$ (6.18-6.19)</td></tr>
+<tr><td>Unidades</td><td>$1\ \text{W}=1\ \text{J/s}$; $1\ \text{hp}=746\ \text{W}$; $1\ \text{kW}\cdot\text{h}=3{,}6\times10^6\ \text{J}$</td></tr>
+</table>
+<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+  <ul>
+    <li>Confundir el trabajo de <i>una</i> fuerza con el trabajo <i>total</i>; olvidar alguna fuerza (el peso, la fricción) en la suma.</li>
+    <li>Medir mal el ángulo $\phi$: es el ángulo entre la fuerza y el <i>desplazamiento</i> (no con la horizontal): en una rampa el peso forma $90^\circ+\theta$ con el desplazamiento al subir.</li>
+    <li>Usar $W=K_1-K_2$; olvidar el ½ en $K$; poner el peso en lugar de la masa.</li>
+    <li>Creer que $K$ puede ser negativa o que depende de la dirección de $\vec v$.</li>
+    <li>Usar $f_k=\mu_kmg$ en planos inclinados o con fuerzas oblicuas ($n\ne mg$).</li>
+    <li>Con resortes: poner $+\tfrac12kx^2$ cuando el resorte frena al cuerpo; olvidar que $W\propto x^2$ (y no $\propto x$); confundir «trabajo sobre» y «trabajo del» resorte.</li>
+    <li>Pedir al teorema un <i>tiempo</i>, o usar aceleración constante cuando la fuerza varía con $x$.</li>
+    <li>Confundir energía (kW·h) con potencia (kW); mezclar hp y W.</li>
+  </ul>  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
+<ul class="checklist">
+  <li>Sé calcular el trabajo de una fuerza constante con $Fs\cos\phi$ o con el producto escalar y decir su signo.</li>
+  <li>Sé explicar por qué la normal, la tensión en un movimiento circular y el peso en un suelo horizontal no hacen trabajo.</li>
+  <li>Sé enunciar $K=\tfrac12mv^2$ y el teorema $W_{tot}=\Delta K$, deducirlo para fuerza constante y generalizarlo a fuerzas variables y trayectorias curvas.</li>
+  <li>Sé aplicar el método trabajo-energía en 5 pasos a problemas de frenado, planos inclinados, cuerdas y poleas.</li>
+  <li>Sé hallar el trabajo como área bajo una gráfica $F$–$x$ o por integral.</li>
+  <li>Sé usar la ley de Hooke y los trabajos $\tfrac12kx^2$, distinguiendo el trabajo sobre el resorte y el del resorte.</li>
+  <li>Sé calcular potencia media e instantánea, $P=Fv$, y convertir W, kW, hp y kW·h.</li>
+  <li>Sé responder a las cuestiones tipo examen (signo del trabajo total, rapidez en un MCU, trabajo en una órbita).</li>
+</ul>
+
+<h2 id="fuentes"><span class="n">★</span>Fuentes de este tema</h2>
+<details class="fuentes-toggle">
+<summary>Mostrar lista de fuentes</summary>
+<div id="panel-fuentes"></div>
+</details>
+
+<footer>Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.</footer>
+</main>
+</div>
+</body>
+</html>

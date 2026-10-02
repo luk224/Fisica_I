@@ -82,7 +82,7 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 - **[Febrero 2020, 1ª semana]** (archivo: E689010160-20F1.pdf) — P-3 Teoría Opción 3.1: "Energía del movimiento armónico simple."
 - **[Febrero 2020, 2ª semana]** (archivo: E689010160-20F2.pdf) — P-3 Teoría Opción 3.2: "Movimiento armónico simple."
 - **[Febrero 2022, 1ª semana]** (archivo: E689010160-22F1.pdf) — P-1 (secundario): tras el choque inelástico masa-bandeja, el sistema oscila en MAS vertical; hallar amplitud y periodo. (principal Tema 8)
-- **[Febrero 2025, 1ª semana]** (archivo: E689010160-25F1.pdf) — P-3 Teoría Opción B: "Energía en el movimiento armónico simple (MAS)" + cuestiones sobre resorte cortado a la mitad y péndulo en altitud.
+- **[Febrero 2025, 1ª semana]** (archivo: E689010160-25F1.pdf) — P-4 Teoría Opción B: "Energía en el movimiento armónico simple (MAS)" + cuestiones sobre resorte cortado a la mitad y péndulo en altitud.
 
 ## Tema 15 — Ondas mecánicas
 - **[Febrero 2019, 1ª semana]** (archivo: E689010160-19F1.pdf) — P-3 Teoría Opción 3.1: "Ondas estacionarias en una cuerda."
