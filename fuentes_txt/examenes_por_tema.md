@@ -130,3 +130,15 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 - Los exámenes de 2018-2020 tienen formato "3 problemas": P1 y P2 son problemas numéricos (3 puntos cada uno) y P3 es una pregunta de teoría a elegir entre dos opciones (4 puntos), cada opción con 1-2 sub-cuestiones cualitativas cortas incluidas en el mismo epígrafe (no siempre presentes en los exámenes más antiguos, p.ej. 18F1/18F2/19F1/19F2/20F1/20F2 no siempre listan cuestiones (a)/(b) bajo cada opción de teoría; sólo dan el título del tema a desarrollar).
 - Desde 2022 en adelante el formato pasa a "4 preguntas": P-1 y P-2 son problemas numéricos, y P-3/P-4 son las dos opciones de teoría (excluyentes entre sí, se elige una), cada una con un tema a desarrollar más dos cuestiones cualitativas (a) y (b) explícitas.
 - No se ha encontrado ningún ejercicio de examen para los Temas 1, 9, 11, 12, 16 y 18 en los 16 exámenes examinados (14 individuales + Septiembre 2024 de los recopilatorios). Esto es información real, no una omisión de búsqueda: estos temas simplemente no han sido objeto de pregunta directa en las convocatorias disponibles, o su contenido aparece diluido dentro de otros problemas (p.ej. cálculos de calor específico dentro de ciclos termodinámicos, clasificados bajo el Tema 19 por ser su hilo conductor).
+
+## Corrección (detectada al preparar el Tema 6): convocatorias de Septiembre no indexadas
+Las notas anteriores sobre los dos recopilatorios se basaron **solo en su capa de texto**. Sus páginas escaneadas (sin texto), leídas por visión, contienen además estas convocatorias, **todavía no catalogadas por tema** (hay que repasarlas al preparar cada tema; las que afectan a temas ya redactados deberían revisarse):
+
+| Convocatoria | `FISICA_EXAMENS_ULTIMOS AÑOS _25-18.pdf` | `EXAMENES FISICA 1.pdf` |
+|---|---|---|
+| Septiembre 2019 «Original» | pág. 26 | — |
+| Septiembre 2019 «Reserva» | pág. 27 | — |
+| Septiembre 2022 «Nacional-UE» | págs. 20-21 | págs. 4-5 |
+| Septiembre 2023 «Nacional-UE Original» | págs. 15-16 | págs. 10-11 |
+
+Resto de páginas escaneadas de los recopilatorios: repiten exámenes de febrero 2018-2024 ya indexados. Referencias ya usadas en el Tema 6: «Examen Septiembre 2022 P-3 (a)», «Examen Septiembre 2023 P-2». Con estas convocatorias, la afirmación «no hay ningún examen de septiembre salvo Septiembre 2024» deja de ser cierta.
