@@ -24,7 +24,7 @@ Lee primero `CLAUDE.md` (fuentes, offsets de página, temario por bloques, regla
   - X: `data-ref="Examen <convocatoria> P-N"` (exactamente como en `fuentes_txt/examenes_por_tema.md`).
   - P: `data-ref="Explicación o ejemplo propio"`.
 - Encabezados `h2` con `id` único (alimentan el índice lateral). Fórmulas: `$…$` y `$$…$$`.
-- Figuras: `<figure class="bookfig"><img src="../assets/img/…png" …><figcaption>…<span class="src" …></span></figcaption></figure>` para recortes del libro; `<figure><svg class="fig" viewBox=…>…</svg><figcaption>…</figcaption></figure>` con clases `.ax .a .b .pt .op` solo para figuras propias.
+- Figuras: `<figure class="bookfig"><img src="../assets/img/…png" …><figcaption>…<span class="src" …></span></figcaption></figure>` para recortes del libro; `<figure><svg class="fig" viewBox=…>…</svg><figcaption>…</figcaption></figure>` para las figuras propias, que son **obligatorias** en teoría y ejercicios (CLAUDE.md §3 regla 12). Se generan con `herramientas/figuras_svg.py` (colores con variables CSS, subíndices `v_{x}`) y se comprueban visualmente.
 
 ## Calidad
 - Nada de página, enunciado o convocatoria inventados: verificar siempre en `fuentes_txt/`.

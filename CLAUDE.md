@@ -83,7 +83,8 @@ E:\UNED\FISICA I\Claude\
   plantilla_tema.html             esqueleto que se copia para cada tema
   temas/tema_NN_slug.html          …
   fuentes_txt/                    texto de los PDF + índice de exámenes
-  herramientas/extraer_figura.py
+  herramientas/extraer_figura.py   recorta figuras del libro U
+  herramientas/figuras_svg.py      librería para generar las figuras SVG propias
   .claude/agents/, .claude/skills/
 ```
 
@@ -93,12 +94,18 @@ Reglas de contenido (para alguien que estudia por primera vez):
 3. Cajas: `def` (definición), `thm` (teorema/ley/propiedad), `ex` (ejemplo resuelto), `tip` (truco de examen), `warn` (error típico), `intu` (intuición).
 4. **Ejercicios resueltos**: prioridad a los de **X** (examen real) del tema — ver `fuentes_txt/examenes_por_tema.md» —, resueltos paso a paso con el «por qué» de cada paso; completar con ejercicios de **E** (traducidos y ampliados, no copiados) y ejemplos propios sencillos → difíciles. Cada ejercicio enseña un **método reutilizable** (recuadro «Receta»). Si un tema no tiene ningún ejercicio de examen real disponible, decirlo y usar E/propios, sin fingir que viene de un examen.
 5. Al final: **chuleta** (fórmulas/leyes clave), **lista de comprobación** («sé hacer…») y errores frecuentes.
-6. Matemáticas con **KaTeX** local (`$…$`, `$$…$$`). Figuras en **SVG inline** cuando aclaren (diagramas de cuerpo libre, ciclos pV, ondas). Todo debe verse bien en claro/oscuro y en móvil, e imprimirse.
+6. Matemáticas con **KaTeX** local (`$…$`, `$$…$$`). Figuras en **SVG inline** (obligatorias, ver regla 12). Todo debe verse bien en claro/oscuro y en móvil, e imprimirse.
 7. **Fuentes visibles**: cada definición, ley, ejemplo y ejercicio lleva `<span class="src" data-l data-ref>` con la clave (U/E/A/X/P) y la referencia exacta (ej. `U §11.2 p.342`, `Solucionario 1-5 Prob. 1.45`, `Examen Feb 2025 (1ª sem.) P-1`). Si es explicación propia sin fuente, `data-l="P"`.
 8. Prioridad de fuentes: **U** define lo que cae en examen (notación, leyes, alcance); **A** se usa solo cuando exista y explique mejor (temas 17-18 principalmente); **X** para ejemplos de examen reales; **E** para ejercicios adicionales del libro. Si A contradice a U en notación o alcance, gana U.
 9. **Rigor**: no inventar páginas, enunciados ni convocatorias de examen. Toda cita se verifica en `fuentes_txt/`. Todo cálculo numérico se comprueba (con Python/sympy) antes de publicarlo.
 10. Estilo de las cajas y componentes: ver `assets/resumen.css` y `plantilla_tema.html` (no reinventar).
-11. **Figuras: preferir recortes del libro U a SVG.** Si U ya tiene la figura, recórtala con `python herramientas/extraer_figura.py` (ver cabecera del script; página PDF de U = impresa + 28) y guarda en `assets/img/`. En el HTML: `<figure class="bookfig"><img src="../assets/img/nombre.png" alt="descripción" loading="lazy"><figcaption>… <span class="src" …></span></figcaption></figure>`. SVG inline solo para figuras propias (diagramas de cuerpo libre, gráficas de ciclos) que no existan ya en el libro. Las imágenes son solo para uso personal de estudio: no se comparten fuera de este proyecto ni se suben con las páginas indexables (ver §4b).
+11. **Figuras: preferir recortes del libro U a SVG.** Si U ya tiene la figura, recórtala con `python herramientas/extraer_figura.py` (ver cabecera del script; página PDF de U = impresa + 28) y guarda en `assets/img/`. En el HTML: `<figure class="bookfig"><img src="../assets/img/nombre.png" alt="descripción" loading="lazy"><figcaption>… <span class="src" …></span></figcaption></figure>`. SVG inline para las figuras propias que no existan ya en el libro (ver regla 12). Las imágenes son solo para uso personal de estudio: no se comparten fuera de este proyecto ni se suben con las páginas indexables (ver §4b).
+12. **Figuras SVG explicativas (obligatorias en todo tema nuevo).** Además de los recortes del libro, cada tema lleva figuras SVG propias que *expliquen* el concepto o el método, en dos sitios: (a) **en la teoría**, una por cada operación, ley o concepto que se entienda mejor dibujado (p. ej. suma/resta de vectores, componentes, gráficas x-t / v-t con cuerda y tangente, trayectorias con sus vectores, diagramas de cuerpo libre, pares acción-reacción, ciclos pV, ondas); (b) **en los ejercicios** (X y E) donde el dibujo ayude a plantear o interpretar el resultado (gráficas con los puntos y valores clave, esquemas del enunciado, DCL, triángulos de vectores). Se coloca la figura justo después del cuadro o de los pasos (`</ol>`) a los que ilustra. Reglas de calidad:
+    - Formato: `<figure class="fig"><svg class="fig" viewBox=… role="img" aria-label=…>…</svg><figcaption>… <span class="src" data-l="P" data-ref="Diagrama propio de …">P</span></figcaption></figure>`. Son figuras propias → fuente `P`. Si el dibujo reproduce un caso del libro/examen, decirlo en `data-ref` (p. ej. «Diagrama propio del ejemplo 2.5»).
+    - Generarlas con `herramientas/figuras_svg.py` (flechas con punta de tamaño fijo, ejes de datos, subíndices reales con `v_{x}`, colores solo con variables CSS `var(--acc)`, `--A`, `--X`, `--E`, `--mut`, `--fg`) para que se vean en claro y oscuro. Nada de colores fijos ni de `_` suelto en el texto SVG.
+    - **Coherencia numérica:** los valores dibujados (alturas, tiempos, fuerzas, ángulos) son los del cálculo ya verificado con sympy; si una escala no es real (p. ej. peso frente a una fuerza de impacto), decirlo en el dibujo («no a escala»).
+    - Etiquetas dentro del `viewBox` (sin texto recortado), sin solapes con flechas o curvas, legibles a ~330 px de ancho (móvil). **Comprobar cada figura visualmente** (navegador, claro y oscuro) antes de darla por buena.
+    - No duplicar la figura del libro: si U ya trae el dibujo (recorte `bookfig`), la SVG solo se añade si aporta algo distinto (valores del ejercicio, gráfica asociada, comparación).
 
 ## 4. Flujo de trabajo por tema (subagentes en `.claude/agents/`)
 
