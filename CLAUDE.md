@@ -136,3 +136,6 @@ Un commit por tema o cambio coherente; no acumular varios temas sin subir. No us
 - Ejercicios de examen ya catalogados por tema: `fuentes_txt/examenes_por_tema.md`.
 - Verificar cálculos: `python -c "import sympy…"` (instalar `sympy` si falta).
 - Previsualizar: abrir el HTML en el navegador (o con Claude in Chrome y captura).
+
+## 6. Impresión y PDF
+La hoja de impresión está en `assets/resumen.css` (`@media print`: A4, blanco y negro, sin fuentes `.src` ni `details.fuera`, soluciones abiertas, saltos de página controlados). El botón «Imprimir / PDF» de la barra superior lo inyecta `assets/resumen.js`. Para generar PDF: `python herramientas/exportar_pdf.py [filtro…] [--unir todo.pdf]` (salida en `pdf/`, ignorado por git). Al crear componentes nuevos, añadirles `break-inside: avoid` en el bloque de impresión si no deben partirse.

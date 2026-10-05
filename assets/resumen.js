@@ -54,6 +54,13 @@
       panel.appendChild(ul);
     }
     d.querySelectorAll('.src').forEach(function (s) { s.tabIndex = 0; s.setAttribute('aria-label', s.dataset.ref); });
+    var bt = d.getElementById('btn-tema');
+    if (bt && !d.getElementById('btn-imprimir')) {
+      var bi = d.createElement('button'); bi.id = 'btn-imprimir'; bi.type = 'button'; bi.textContent = 'Imprimir / PDF';
+      bi.title = 'Abre el diálogo de impresión (A4, blanco y negro, sin fuentes ni «fuera de examen»)';
+      bi.addEventListener('click', function () { window.print(); });
+      bt.parentNode.insertBefore(bi, bt); bt.parentNode.insertBefore(d.createTextNode(' '), bt);
+    }
     var btn = d.getElementById('btn-tema');
     if (btn) btn.addEventListener('click', function () {
       var r = d.documentElement, cur = r.getAttribute('data-theme');
