@@ -26,6 +26,21 @@
       }, { rootMargin: '-20% 0px -70% 0px' });
       hs.forEach(function (h) { io.observe(h); });
     }
+    var tocLinks = toc ? [].slice.call(toc.querySelectorAll('a')) : [];
+    if (tocLinks.length) {
+      var mn = d.createElement('div'); mn.className = 'mnav';
+      mn.innerHTML = '<button type="button" class="mnav-btn" aria-expanded="false" aria-controls="mnav-list">☰ Apartados</button><nav id="mnav-list" class="mnav-list" aria-label="Apartados del tema" hidden></nav>';
+      var list = mn.querySelector('nav'), mb = mn.querySelector('button');
+      tocLinks.forEach(function (a) { var c = d.createElement('a'); c.href = a.getAttribute('href'); c.textContent = a.textContent; list.appendChild(c); });
+      function setOpen(o) { list.hidden = !o; mb.setAttribute('aria-expanded', o ? 'true' : 'false');
+        if (o) { var cur = null; hs.forEach(function (h) { if (h.getBoundingClientRect().top < 120) cur = h.id; });
+          [].forEach.call(list.children, function (x) { var on = x.getAttribute('href') === '#' + cur; x.classList.toggle('on', on); if (on) x.scrollIntoView({ block: 'center' }); }); } }
+      mb.addEventListener('click', function (e) { e.stopPropagation(); setOpen(list.hidden); });
+      list.addEventListener('click', function (e) { if (e.target.tagName === 'A') setOpen(false); });
+      d.addEventListener('click', function (e) { if (!mn.contains(e.target)) setOpen(false); });
+      d.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+      d.body.appendChild(mn);
+    }
     var panel = d.getElementById('panel-fuentes');
     if (panel) {
       var seen = {}, ul = d.createElement('ul');
