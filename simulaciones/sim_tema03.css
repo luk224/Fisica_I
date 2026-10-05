@@ -1,0 +1,171 @@
+/* Simulación Tema 3 — estilos propios. Solo variables de resumen.css (sin colores fijos). */
+[hidden]{display:none!important}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+main.sim{max-width:1340px;margin:0 auto;padding:0 20px 60px;font-family:var(--sans)}
+.topbar .in{max-width:1340px}
+.sim-hero{padding:22px 0 12px}
+.sim-hero .kick{font:600 12.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.sim-hero h1{font:700 clamp(1.6rem,4vw,2.3rem)/1.15 var(--serif);margin:.2em 0}
+.sim-hero p{margin:.3em 0;color:var(--mut);font:16px/1.5 var(--serif)}
+
+/* ---------- pestañas ---------- */
+.sim-tabs{display:flex;gap:6px;overflow-x:auto;overflow-y:hidden;flex-wrap:nowrap;border-bottom:2px solid var(--bd);margin:8px 0 16px;scrollbar-width:thin}
+.sim-tabs [role=tab]{flex:0 0 auto;min-height:42px;padding:0 16px;font:600 14.5px var(--sans);color:var(--mut);background:none;border:1px solid transparent;border-bottom:0;border-radius:10px 10px 0 0;cursor:pointer;white-space:nowrap;margin-bottom:-2px}
+.sim-tabs [role=tab]:hover{color:var(--fg);background:color-mix(in srgb,var(--acc) 6%,transparent)}
+.sim-tabs [role=tab][aria-selected=true]{color:var(--acc);background:var(--card);border-color:var(--bd);border-bottom:2px solid var(--card)}
+
+/* ---------- rejilla ---------- */
+.sim-panel{display:block}
+.sim-panel:focus-visible{outline:2px solid var(--acc);outline-offset:4px;border-radius:6px}
+.sim-stage{min-width:0}
+.lienzo-caja{position:relative;width:100%;overflow:hidden;border:1px solid var(--bd);border-radius:10px;background:var(--card)}
+#lienzo{display:block;width:100%;touch-action:manipulation}
+.lienzo-print{display:none}
+@media (min-width:1000px){
+  .sim-panel{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:20px;align-items:start}
+  .sim-side{position:sticky;top:64px;max-height:calc(100vh - 80px);overflow:auto;padding-right:2px}
+}
+@media (min-width:1400px){
+  .sim-panel{grid-template-columns:300px minmax(0,1fr) 400px}
+  .sim-side{display:contents}
+  .sim-stage{grid-column:2;grid-row:1}
+  .sim-ctrl{grid-column:1;grid-row:1}
+  .sim-fx{grid-column:3;grid-row:1}
+  .sim-ctrl,.sim-fx{position:sticky;top:64px;max-height:calc(100vh - 80px);overflow:auto}
+}
+
+/* ---------- barra de reproducción ---------- */
+.sim-barra{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;font:14px var(--sans)}
+.sim-barra button,.sim-ctrl button,.reto button,.pregunta button{min-height:40px;padding:0 12px;font:600 14px var(--sans);color:var(--fg);background:var(--card);border:1px solid var(--bd);border-radius:10px;cursor:pointer}
+.sim-barra button:hover,.sim-ctrl button:hover{border-color:var(--acc)}
+.sim-barra .b-prim,.sim-ctrl .b-prim{background:var(--acc);color:var(--card);border-color:var(--acc);min-width:118px}
+.sim-barra .b-prim[aria-pressed=true]{background:var(--card);color:var(--acc)}
+.sim-barra button:disabled,.sim-ctrl button:disabled{opacity:.45;cursor:not-allowed}
+.barra-t{display:flex;align-items:center;gap:8px;flex:1 1 220px;min-width:180px}
+.barra-t input{flex:1;min-width:0}
+.barra-t output{font-variant-numeric:tabular-nums;min-width:5.5em;text-align:right}
+.barra-vel{display:flex;align-items:center;gap:6px}
+.barra-vel select,.ctl select{min-height:40px;font:14px var(--sans);color:var(--fg);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:0 8px}
+@media (max-width:999px){
+  .lienzo-caja{margin-bottom:14px}
+  .sim-barra{position:sticky;bottom:0;z-index:15;background:var(--bg);border-top:1px solid var(--bd);margin:0 -12px;padding:8px 12px}
+}
+@media (max-width:520px){.b-txt{display:none}.barra-vel label{font-size:0}.barra-vel label::before{content:"Vel.";font-size:13px}}
+
+/* ---------- avisos y lectura ---------- */
+.sim-aviso{margin:6px 0;padding:8px 12px;border-left:4px solid var(--warn-b);background:var(--warn);border-radius:8px;font:14px/1.45 var(--sans)}
+.sim-aviso.nota{border-left-color:var(--intu-b);background:var(--intu)}
+.sim-lectura{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:4px 14px;margin:8px 0 0;padding:10px 12px;background:var(--card);border:1px solid var(--bd);border-radius:10px;font:14px/1.35 var(--sans);font-variant-numeric:tabular-nums}
+.sim-lectura>div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--bd);padding:2px 0;min-width:0}
+.sim-lectura dt{color:var(--mut)}
+.sim-lectura dd{margin:0;font-weight:600;text-align:right}
+.sim-lectura .fija dt{color:var(--thm-b)}
+
+/* ---------- controles ---------- */
+.sim-ctrl,.sim-fx{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:0 14px;margin:12px 0}
+@media (min-width:1000px){.sim-ctrl,.sim-fx{margin:0 0 14px}}
+.sim-ctrl>summary,.sim-fx>summary{cursor:pointer;font:700 15px var(--serif);padding:11px 0;color:var(--fg);min-height:40px}
+.sim-ctrl[open]>summary,.sim-fx[open]>summary{border-bottom:1px solid var(--bd);margin-bottom:8px}
+.ctrl-body{font:14px var(--sans);padding-bottom:12px}
+.ctrl-body fieldset{border:1px solid var(--bd);border-radius:10px;padding:6px 12px 10px;margin:10px 0}
+.ctrl-body legend{font:600 13px var(--sans);color:var(--mut);padding:0 4px;letter-spacing:.03em}
+.ctl{margin:8px 0}
+.ctl>label,.ctl-lab{display:flex;justify-content:space-between;gap:8px;font-weight:600}
+.ctl .u{color:var(--mut);font-weight:400}
+.ctl-fila{display:flex;align-items:center;gap:8px}
+.ctl-fila input[type=range]{flex:1;min-width:0;width:100%}
+.ctl-fila input[type=number]{width:5.6em;min-height:36px;font:14px var(--sans);font-variant-numeric:tabular-nums;color:var(--fg);background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:0 6px}
+.ctl output{font-variant-numeric:tabular-nums;color:var(--acc);font-weight:600}
+.ctl.bloq,fieldset.bloq{opacity:.6}
+.ctl .fijado{display:block;font:italic 12.5px var(--sans);color:var(--warn-b)}
+input[type=range]{accent-color:var(--acc);min-height:32px}
+.checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:2px 10px}
+.chk,.rad{display:flex;align-items:center;gap:8px;min-height:40px;cursor:pointer}
+.chk input,.rad input{width:18px;height:18px;accent-color:var(--acc);margin:0}
+.radios{display:flex;flex-wrap:wrap;gap:4px 16px}
+.botones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.ctl-nota{font-size:12.5px;color:var(--mut);margin:4px 0}
+
+/* ---------- reto y pregunta ---------- */
+.reto,.pregunta{border:2px dashed var(--tip-b);border-radius:10px;padding:8px 12px;margin:10px 0;background:color-mix(in srgb,var(--tip) 50%,transparent)}
+.reto h3,.pregunta h3{font:700 14px var(--sans);margin:4px 0;color:var(--tip-b)}
+.reto p,.pregunta p{margin:6px 0;line-height:1.45}
+.reto input[type=text],.pregunta input[type=text]{width:7em;min-height:40px;font:15px var(--sans);color:var(--fg);background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:0 8px}
+.marcador{font-weight:600;color:var(--mut)}
+.feedback .box{margin:8px 0;font:14px/1.45 var(--sans);padding:9px 12px}
+.feedback .box>.h{font-size:11px}
+
+/* ---------- panel de fórmulas ---------- */
+.fx-lista{padding-bottom:6px}
+.fx{position:relative;border-left:5px solid transparent;border-radius:8px;padding:6px 10px 6px 10px;margin:6px 0;background:var(--card)}
+.fx-titulo{font:600 13px var(--sans);color:var(--mut);padding-right:36px}
+.fx-gen,.fx-sus{font-size:14px}
+.fx .katex-display{scrollbar-width:thin}
+/* las sustituciones largas se parten tras = , + o − (como KaTeX en línea) en lugar de desbordar la columna */
+.fx .katex-display>.katex,.fx .katex-display>.katex>.katex-html{white-space:normal}
+.fx .katex-display>.katex>.katex-html>.base{margin:2px 0}
+.fx-gen .katex-display,.fx-sus .katex-display{margin:.35em 0;text-align:left}
+.fx-gen .katex-display>.katex,.fx-sus .katex-display>.katex{text-align:left}
+.fx-sus{color:var(--acc)}
+.fx-nota{font:13px/1.4 var(--sans);margin:2px 0 4px;color:var(--fg)}
+.fx>.src{position:absolute;top:6px;right:8px;margin:0}
+.fx>.src::after{left:auto;right:0;transform:none}
+.fx[data-estado=resaltada]{background:var(--thm);border-left-color:var(--thm-b)}
+.fx[data-estado=resaltada] .fx-titulo{color:var(--fg)}
+.fx[data-estado=inactiva]{opacity:.55}
+.fx[data-estado=noAplica]{opacity:.55}
+.fx[data-estado=noAplica] .fx-gen,.fx[data-estado=noAplica] .fx-sus{text-decoration:line-through}
+.fx[data-estado=noAplica] .fx-nota{color:var(--warn-b);opacity:1}
+.fx-pie{font:12.5px/1.4 var(--sans);color:var(--mut);margin:8px 0 12px}
+.fx-errores h3{font:700 14px var(--sans);margin:14px 0 4px}
+.fx-errores .box{font:14px/1.45 var(--sans);padding:9px 12px;margin:8px 0}
+.fx-errores .box>.src{margin-left:4px}
+
+/* ---------- atajos ---------- */
+.sim-atajos{margin:20px 0;font:14px var(--sans);color:var(--mut)}
+.sim-atajos summary{cursor:pointer;min-height:40px;display:flex;align-items:center}
+kbd{font:600 12px ui-monospace,Consolas,monospace;border:1px solid var(--bd);border-bottom-width:2px;border-radius:5px;padding:1px 6px;background:var(--card);color:var(--fg)}
+
+/* ---------- foco y táctil ---------- */
+.sim :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* ---------- móvil ---------- */
+@media (max-width:520px){
+  main.sim{padding:0 12px 40px}
+  .topbar .in{padding:6px 12px;flex-wrap:wrap;gap:4px 6px}
+  .topbar button{padding:2px 8px;font-size:12.5px}
+  .sim-tabs [role=tab]{padding:0 12px;font-size:14px}
+  .sim-ctrl,.sim-fx{padding:0 10px}
+  .ctl-fila input[type=number]{width:4.8em}
+  .sim-lectura{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+}
+
+/* ---------- impresión (una página A4 con la pestaña activa) ---------- */
+@media print{
+  .topbar,.sim-tabs,.sim-ctrl,.sim-barra,details>summary,.sim-atajos,#anuncios,noscript{display:none!important}
+  main.sim{max-width:none;padding:0}
+  .sim-hero{padding:0 0 4pt}
+  .sim-hero h1{font-size:16pt}
+  .sim-hero p{display:none}
+  .sim-panel{display:block!important}
+  .sim-panel[hidden]{display:none!important}
+  .sim-side{position:static;max-height:none;overflow:visible;display:block}
+  .sim-fx{position:static;max-height:none;overflow:visible;border:0;padding:0;margin:6pt 0}
+  .lienzo-caja{border:.6pt solid var(--fg);border-radius:0;break-inside:avoid}
+  #lienzo{display:none!important}
+  .lienzo-print{display:block;width:100%;height:auto;max-height:90mm;object-fit:contain}
+  .sim-aviso{break-inside:avoid;font-size:9pt}
+  .sim-lectura{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:.6pt solid var(--fg);border-radius:0;padding:0;font-size:8.5pt;break-inside:avoid}
+  .sim-lectura>div{border:.4pt solid var(--bd);padding:2pt 4pt}
+  .fx-lista{columns:3;column-gap:10pt}
+  .fx{break-inside:avoid;opacity:1!important;padding:2pt 5pt;margin:2pt 0;font-size:8.5pt}
+  .fx-titulo{font-size:7.5pt}
+  .fx-gen,.fx-sus{font-size:8.5pt}
+  .fx .katex-display{margin:.15em 0!important}
+  .fx-nota{font-size:7.5pt;margin:0}
+  .fx[data-estado=resaltada]{border-left:3pt solid var(--fg)}
+  .fx-pie{font-size:8pt}
+  .fx-errores{display:none}
+}

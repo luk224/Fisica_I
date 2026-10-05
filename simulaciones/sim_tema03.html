@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física I · Simulación Tema 3</title>
+<meta name="description" content="Simulación interactiva del tema 3 de Física I (UNED): vectores posición, velocidad y aceleración, tiro parabólico, movimiento circular y velocidad relativa.">
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<link rel="stylesheet" href="sim_tema03.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+<script defer src="sim_tema03_fisica.js"></script>
+<script defer src="sim_tema03_formulas.js"></script>
+<script defer src="sim_tema03_render.js"></script>
+<script defer src="sim_tema03.js"></script>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Volver al índice</a>
+  <span><button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+
+<main class="sim" id="contenido">
+  <header class="sim-hero">
+    <div class="kick">Bloque Mecánica · Tema 3 · Simulación</div>
+    <h1>Movimiento en dos o tres dimensiones</h1>
+    <p>Mueve los controles y mira cómo cambian los vectores y las fórmulas del libro, con tus números sustituidos.</p>
+  </header>
+
+  <div class="sim-tabs" role="tablist" aria-label="Partes de la simulación">
+    <button role="tab" type="button" id="tab-p1" aria-controls="p1" aria-selected="true" tabindex="0">1 · Vectores r, v, a</button>
+    <button role="tab" type="button" id="tab-p2" aria-controls="p2" aria-selected="false" tabindex="-1">2 · Tiro parabólico</button>
+    <button role="tab" type="button" id="tab-p3" aria-controls="p3" aria-selected="false" tabindex="-1">3 · Movimiento circular</button>
+    <button role="tab" type="button" id="tab-p4" aria-controls="p4" aria-selected="false" tabindex="-1">4 · Velocidad relativa</button>
+  </div>
+
+  <!-- Escenario compartido: un único lienzo y una única barra que se mueven a la pestaña activa -->
+  <div id="escenario" class="sim-escenario">
+    <div class="lienzo-caja">
+      <canvas id="lienzo" role="img" aria-label="Simulación"></canvas>
+      <img id="lienzo-print" class="lienzo-print" alt="">
+    </div>
+    <div id="barra" class="sim-barra" role="group" aria-label="Reproducción">
+      <button type="button" id="b-play" class="b-prim" aria-pressed="false">▶ Reproducir</button>
+      <button type="button" id="b-reset" title="Reiniciar (R)">⟲ <span class="b-txt">Reiniciar</span></button>
+      <button type="button" id="b-atras" title="Paso atrás 0.05 s (,)" aria-label="Paso atrás 0.05 s">◀︎</button>
+      <button type="button" id="b-adelante" title="Paso adelante 0.05 s (.)" aria-label="Paso adelante 0.05 s">▶︎</button>
+      <span class="barra-t">
+        <label for="b-t" id="b-t-lab"><i>t</i></label>
+        <input type="range" id="b-t" min="0" max="1" step="0.01" value="0">
+        <output id="b-t-out" for="b-t">0.00 s</output>
+      </span>
+      <span class="barra-vel">
+        <label for="b-vel">Velocidad</label>
+        <select id="b-vel">
+          <option value="0.1">×0.1</option><option value="0.25">×0.25</option>
+          <option value="0.5">×0.5</option><option value="1">×1</option>
+        </select>
+      </span>
+    </div>
+  </div>
+
+  <section class="sim-panel" role="tabpanel" id="p1" aria-labelledby="tab-p1" tabindex="0">
+    <div class="sim-stage"><div class="slot"></div><p class="sim-aviso" hidden></p><dl class="sim-lectura" aria-label="Lectura en vivo, pestaña 1"></dl></div>
+    <div class="sim-side">
+      <details class="sim-ctrl" open><summary>Controles</summary><div class="ctrl-body" id="ctrl-p1"></div></details>
+      <details class="sim-fx" open><summary>Fórmulas en uso</summary><div class="fx-lista" id="fx-p1"></div></details>
+    </div>
+  </section>
+
+  <section class="sim-panel" role="tabpanel" id="p2" aria-labelledby="tab-p2" tabindex="0" hidden>
+    <div class="sim-stage"><div class="slot"></div><p class="sim-aviso" hidden></p><dl class="sim-lectura" aria-label="Lectura en vivo, pestaña 2"></dl></div>
+    <div class="sim-side">
+      <details class="sim-ctrl" open><summary>Controles</summary><div class="ctrl-body" id="ctrl-p2"></div></details>
+      <details class="sim-fx" open><summary>Fórmulas en uso</summary><div class="fx-lista" id="fx-p2"></div>
+        <div class="fx-errores">
+          <h3>Errores típicos</h3>
+          <div class="box warn"><span class="h">Cuidado</span>Las fórmulas <i>R</i> = <i>v</i><sub>0</sub><sup>2</sup> sen 2<i>α</i><sub>0</sub>/<i>g</i> y <i>h</i> = <i>v</i><sub>0</sub><sup>2</sup> sen<sup>2</sup><i>α</i><sub>0</sub>/2<i>g</i> solo valen si el proyectil sale y llega a la misma altura. Si no, resuelve <i>y</i>(<i>t</i>) = 0. <span class="src" data-l="U" data-ref="U Ejemplo 3.8 y CUIDADO, p. 80">U</span></div>
+          <div class="box warn"><span class="h">Cuidado</span>En el vértice se anula <i>v<sub>y</sub></i>, no <i>v</i>: la componente <i>v<sub>x</sub></i> sigue valiendo <i>v</i><sub>0</sub> cos <i>α</i><sub>0</sub>, y la aceleración sigue siendo −<i>g</i>. <span class="src" data-l="U" data-ref="U §3.3 ec. (3.13) y (3.21)-(3.22), p. 75-76">U</span></div>
+          <div class="box warn"><span class="h">Cuidado</span>Pon la calculadora en <b>DEG</b> si los ángulos vienen en grados; en RAD, sen 35 = −0.428 y todo sale mal. <span class="src" data-l="P" data-ref="Desarrollo propio (error frecuente de calculadora)">P</span></div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="sim-panel" role="tabpanel" id="p3" aria-labelledby="tab-p3" tabindex="0" hidden>
+    <div class="sim-stage"><div class="slot"></div><p class="sim-aviso" hidden></p><dl class="sim-lectura" aria-label="Lectura en vivo, pestaña 3"></dl></div>
+    <div class="sim-side">
+      <details class="sim-ctrl" open><summary>Controles</summary><div class="ctrl-body" id="ctrl-p3"></div></details>
+      <details class="sim-fx" open><summary>Fórmulas en uso</summary><div class="fx-lista" id="fx-p3"></div></details>
+    </div>
+  </section>
+
+  <section class="sim-panel" role="tabpanel" id="p4" aria-labelledby="tab-p4" tabindex="0" hidden>
+    <div class="sim-stage"><div class="slot"></div><p class="sim-aviso" hidden></p><dl class="sim-lectura" aria-label="Lectura en vivo, pestaña 4"></dl></div>
+    <div class="sim-side">
+      <details class="sim-ctrl" open><summary>Controles</summary><div class="ctrl-body" id="ctrl-p4"></div></details>
+      <details class="sim-fx" open><summary>Fórmulas en uso</summary><div class="fx-lista" id="fx-p4"></div></details>
+    </div>
+  </section>
+
+  <details class="sim-atajos">
+    <summary>Atajos de teclado</summary>
+    <ul>
+      <li><kbd>Espacio</kbd>: reproducir / pausar</li>
+      <li><kbd>R</kbd>: reiniciar</li>
+      <li><kbd>,</kbd> / <kbd>.</kbd>: paso atrás / adelante (0.05 s, en pausa)</li>
+      <li><kbd>←</kbd> / <kbd>→</kbd>, <kbd>Inicio</kbd> / <kbd>Fin</kbd> sobre las pestañas: cambiar de parte</li>
+    </ul>
+    <p>Los atajos no actúan mientras el foco está en un campo o un deslizador.</p>
+  </details>
+
+  <div id="anuncios" class="sr-only" aria-live="polite"></div>
+  <noscript><p class="box warn">La simulación necesita JavaScript. Actívalo para usarla.</p></noscript>
+</main>
+</body>
+</html>

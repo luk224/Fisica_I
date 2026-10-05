@@ -85,6 +85,7 @@ E:\UNED\FISICA I\Claude\
   fuentes_txt/                    texto de los PDF + índice de exámenes
   herramientas/extraer_figura.py   recorta figuras del libro U
   herramientas/figuras_svg.py      librería para generar las figuras SVG propias
+  simulaciones/                   simulaciones interactivas (sim_tema03.html…); acceso solo desde el botón de la tarjeta en index.html
   .claude/agents/, .claude/skills/
 ```
 
