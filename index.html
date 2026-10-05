@@ -15,9 +15,6 @@ a.card:hover{border-color:var(--acc)}
 .card.off{opacity:.55}
 .badge{float:right;font:600 11px var(--sans);border-radius:99px;padding:2px 8px;border:1px solid currentColor;color:var(--ex-b)}
 .card.off .badge{color:var(--mut)}
-.pdfnota{font:14px/1.5 var(--sans);color:var(--mut)}
-.pdflista{columns:2 260px;font:15px/1.7 var(--sans);padding-left:1.2em}.pdflista a{color:var(--acc)}
-@media print{#pdfs{display:none}}
 </style>
 </head>
 <body>
@@ -57,24 +54,6 @@ a.card:hover{border-color:var(--acc)}
 <div class="card off"><span class="badge">pendiente</span><b>19. Primera ley de la termodinámica</b><small>Trabajo, calor, energía interna</small></div>
 <div class="card off"><span class="badge">pendiente</span><b>20. Segunda ley de la termodinámica</b><small>Máquinas térmicas, entropía, Carnot</small></div>
 </div>
-<section id="pdfs">
-<div class="mod">PDF para imprimir (A4, blanco y negro)</div>
-<p class="pdfnota">Los PDF se generan en tu equipo (no están en la web). Para crearlos o actualizarlos: doble clic en <code>generar_pdfs.bat</code> (genera blanco y negro y color) o <code>python herramientas/exportar_pdf.py --unir temario_completo.pdf</code> (añade <code>--color</code> para la versión a color).</p>
-<div class="grid"><a class="card" href="pdf/temario_completo.pdf"><span class="badge">B/N</span><b>Temario completo</b><small>Todos los temas listos en un solo PDF, con marcadores por tema</small></a><a class="card" href="pdf/color/temario_completo.pdf"><span class="badge">color</span><b>Temario completo (color)</b><small>Igual, conservando los colores de las cajas y figuras</small></a></div>
-<ul id="pdf-lista" class="pdflista"></ul>
-</section>
-<script>
-(function () {
-  var ul = document.getElementById('pdf-lista');
-  document.querySelectorAll('a.card[href^="temas/"]').forEach(function (a) {
-    var f = a.getAttribute('href').replace(/^temas\//, '').replace(/\.html$/, '.pdf');
-    var li = document.createElement('li'), l = document.createElement('a');
-    l.href = 'pdf/' + f; l.textContent = a.querySelector('b').textContent; li.appendChild(l);
-    var c = document.createElement('a'); c.href = 'pdf/color/' + f; c.textContent = 'color'; c.className = 'pdfcolor';
-    li.appendChild(document.createTextNode(' · ')); li.appendChild(c); ul.appendChild(li);
-  });
-})();
-</script>
 </div>
 </body>
 </html>
