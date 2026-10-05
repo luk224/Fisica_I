@@ -179,13 +179,13 @@
     if (op.vmed) {
       const vmd = pre.vmed || {};
       const dr = vmd.dr || { x: 0, y: 0 }, vmv = vmd.vmed || { x: 0, y: 0 };
-      const dt = p.dt;
+      const dt = vmd.dtEf !== undefined ? vmd.dtEf : p.dt;
       const resalta = ctx.evento === 'dtCero' || reciente(ctx, ['dt']);
       lista.push(F('F1.2', 'Velocidad media',
         '\\vec v_{\\text{med}} = \\dfrac{\\Delta\\vec r}{\\Delta t} = \\dfrac{\\vec r_2-\\vec r_1}{t_2-t_1}',
         '\\vec v_{\\text{med}} = \\dfrac{' + par(fmtR(dr.x)) + '\\hat\\imath + ' + par(fmtR(dr.y)) + '\\hat\\jmath}{' + fmtR(dt) +
         '} = ' + par(fmtR(vmv.x)) + '\\hat\\imath + ' + par(fmtR(vmv.y)) + '\\hat\\jmath\\ \\text{m/s}',
-        resalta ? 'resaltada' : 'activa', vmd.haciaAtras ? 'Δt hacia atrás: se usa el intervalo [t − Δt, t].' : null, REF.U2));
+        resalta ? 'resaltada' : 'activa', vmd.haciaAtras ? 'Δt hacia atrás: se usa el intervalo [t − Δt, t]' + (vmd.recortado ? ', recortado a t ≥ 0 (antes del lanzamiento no hay movimiento).' : '.') : (vmd.recortado ? 'Δt mayor que la duración: se usa todo el intervalo [0, t_v].' : null), REF.U2));
     }
 
     {

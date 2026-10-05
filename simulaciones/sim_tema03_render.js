@@ -475,7 +475,7 @@
       const c2 = cam.aPantalla(vm.r2), c1 = cam.aPantalla(vm.r1);
       const dxp = c2.x - c1.x, dyp = c2.y - c1.y, ll = Math.hypot(dxp, dyp);
       if (ll > 40) rotulo(ctx, [{ b: 'Δr' }], { x: (c1.x + c2.x) / 2 + dyp / ll * 14, y: (c1.y + c2.y) / 2 - dxp / ll * 14 + 4 }, p.thmB, { vec: true, align: 'center' });
-      if (vm.haciaAtras) rotulo(ctx, ['Δt hacia atrás'], { x: DIM.w - 6, y: 18 }, p.thmB, { align: 'right', size: FS - 1 });
+      if (vm.haciaAtras) rotulo(ctx, ['Δt = ' + fmt3d(vm.dtEf !== undefined ? vm.dtEf : vm.t2 - vm.t1) + ' s, hacia atrás' + (vm.recortado ? ' (recortado)' : '')], { x: DIM.w - 8, y: 2 * FS + 12 }, p.thmB, { align: 'right', size: FS - 1 });
     }
     // aceleración y componentes
     if (o.comp && !st.vNula) {

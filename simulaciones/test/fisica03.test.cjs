@@ -216,6 +216,18 @@ test('10.4 velocidad media (robot)', () => {
   assert.equal(F.velocidadMedia('robot', 0, 1).haciaAtras, false);
 });
 
+test('velocidad media: nunca se evalúa la trayectoria fuera de [0, tMax]', () => {
+  const P = F.trayectorias.parabola;
+  for (const t of [0, 0.3, 0.85, 1.5, P.tMax]) for (const dt of [0.01, 1, 2, 5]) {
+    const m = F.velocidadMedia('parabola', t, dt);
+    assert.ok(m.t1 >= 0 && m.t2 <= P.tMax + 1e-9, `t=${t} dt=${dt}`);
+    assert.ok(m.r1.y >= -1e-9 && m.r2.y >= -1e-9, 'sin extrapolar bajo el suelo');
+    assert.ok(m.dtEf > 0);
+  }
+  const m = F.velocidadMedia('parabola', 0.85, 1);
+  assert.equal(m.t1, 0); assert.ok(m.recortado); cerca(m.dtEf, 0.85);
+});
+
 test('10.4 parábola, círculo, Lissajous, espiral', () => {
   const P = F.trayectorias.parabola;
   let r = P.r(0.5), v = P.v(0.5), a = P.a(0.5), d = F.descomponerAceleracion(v, a);

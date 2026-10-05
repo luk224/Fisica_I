@@ -93,11 +93,18 @@
 
   function velocidadMedia(tray, t, dt) {
     const T = typeof tray === 'string' ? trayectorias[tray] : tray;
-    let haciaAtras = false, t1 = t, t2 = t + dt;
-    if (t + dt > T.tMax + 1e-12) { haciaAtras = true; t1 = t - dt; t2 = t; }
+    let haciaAtras = false, recortado = false, t1 = t, t2 = t + dt;
+    if (t + dt > T.tMax + 1e-12) {
+      /* Δt hacia delante se saldría de la trayectoria: se usa [t − Δt, t], recortado a t ≥ 0
+         (antes del lanzamiento no hay movimiento: no se extrapola la curva). */
+      haciaAtras = true; t1 = t - dt; t2 = t;
+      if (t1 < 0) { t1 = 0; recortado = true; }
+      if (t2 - t1 < 1e-9) { haciaAtras = false; t1 = 0; t2 = Math.min(dt, T.tMax); recortado = true; }
+    }
+    const dtEf = t2 - t1;
     const r1 = T.r(t1), r2 = T.r(t2);
     const dr = resta(r2, r1);
-    return { r1, r2, dr, vmed: escala(dr, 1 / dt), t1, t2, haciaAtras };
+    return { r1, r2, dr, vmed: escala(dr, 1 / dtEf), t1, t2, dtEf, haciaAtras, recortado };
   }
 
   /* ---------- 3.4 Pestaña 2: proyectil ---------- */

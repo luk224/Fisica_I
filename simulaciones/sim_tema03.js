@@ -395,7 +395,7 @@
         ['v<sub>x</sub>', u(e.v.x, 'm/s')], ['v<sub>y</sub>', u(e.v.y, 'm/s')], ['|v|', u(vmod, 'm/s')],
         ['α (de v)', u(FIS.anguloDeg(e.v), '°')], ['a<sub>x</sub>', u(e.a.x, 'm/s²')], ['a<sub>y</sub>', u(e.a.y, 'm/s²')],
         ['a<sub>∥</sub>', e.vNula ? '—' : u(e.aPar, 'm/s²')], ['a<sub>⊥</sub>', u(e.aPerp, 'm/s²')],
-        ['Δt', u(p.dt, 's') + (vm.haciaAtras ? ' (atrás)' : '')],
+        ['Δt', u(vm.dtEf, 's') + (vm.haciaAtras ? ' (atrás)' : '') + (vm.recortado ? ' (recortado)' : '')],
         ['v<sub>med</sub>', '(' + fmt(vm.vmed.x) + ', ' + fmt(vm.vmed.y) + ') m/s']];
     }
     if (n === 2) {
