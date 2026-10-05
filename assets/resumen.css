@@ -108,7 +108,6 @@ details.fuentes-toggle>summary+*{margin-top:0}
 .checklist li::before{content:"☐";position:absolute;left:0;color:var(--acc)}
 footer{margin-top:4em;padding-top:1em;border-top:1px solid var(--bd);font:13px var(--sans);color:var(--mut)}
 @media (max-width:1000px){.layout{grid-template-columns:minmax(0,1fr)}main{grid-column:1}.side-toc{display:none}body{font-size:16.5px}}
-@media print{.topbar,.side-toc{display:none}.layout{display:block}body{background:#fff;color:#000}.src::after{display:none}}
 svg.fig .th{stroke:var(--mut);stroke-width:1.3;fill:none}
 svg.fig .sm{font-size:12px;fill:var(--mut)}
 svg.fig .pb{fill:var(--A)}
@@ -130,4 +129,62 @@ figure.bookfig img{max-width:100%;height:auto;background:#fff;border-radius:8px;
   .mnav-list a{display:block;padding:9px 12px;border-radius:8px;color:var(--fg);text-decoration:none;line-height:1.35}
   .mnav-list a.on{background:color-mix(in srgb,var(--acc) 14%,transparent);color:var(--acc);font-weight:600}
 }
-@media print{.mnav{display:none!important}}
+
+/* ================= IMPRESIÓN (A4, blanco y negro, sin fuentes ni «fuera de examen») ================= */
+@page{size:A4;margin:14mm 15mm 16mm;@bottom-center{content:counter(page);font:9pt system-ui,sans-serif;color:#444}}
+@media print{
+  /* paleta en escala de grises (también si el navegador está en modo oscuro) */
+  :root,:root[data-theme="dark"],:root[data-theme="light"]{
+    --bg:#fff!important;--fg:#000!important;--mut:#333!important;--card:#fff!important;--bd:#999!important;--acc:#000!important;
+    --def:#f2f2f2!important;--def-b:#000!important;--thm:#e6e6e6!important;--thm-b:#000!important;--ex:#fff!important;--ex-b:#000!important;
+    --warn:#fff!important;--warn-b:#000!important;--tip:#fff!important;--tip-b:#000!important;--intu:#f8f8f8!important;--intu-b:#000!important;
+    --U:#000!important;--S:#333!important;--L:#333!important;--E:#333!important;--P:#333!important;--A:#333!important;--X:#333!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-shadow:none!important;text-shadow:none!important}
+  html,body{overflow:visible!important;background:#fff;color:#000}
+  html{scroll-padding-top:0}
+  body{font-size:10.5pt;line-height:1.42}
+  /* fuera lo interactivo y las fuentes */
+  .topbar,.side-toc,.mnav,.src,.legend,details.fuera,details.fuentes-toggle,#panel-fuentes,#btn-sol,#btn-tema{display:none!important}
+  .layout{display:block;max-width:none;padding:0;margin:0}
+  main{width:auto}
+  a{color:#000;text-decoration:none}
+  /* títulos */
+  header.hero{padding:0 0 8pt;border-bottom:1.5pt solid #000}
+  .hero h1{font-size:20pt;margin:.15em 0}
+  .hero .kick{font-size:8.5pt;color:#000}
+  .chips{font-size:8.5pt;gap:5pt;margin-top:6pt}.chips span{background:none;border:.6pt solid #666;padding:1pt 6pt}
+  h2{font-size:14pt;margin:1.3em 0 .35em;padding-top:.35em;border-top:.8pt solid #000;break-after:avoid;break-inside:avoid}
+  h3{font-size:11.5pt;margin:1.1em 0 .25em;break-after:avoid;break-inside:avoid}
+  h4,summary{break-after:avoid}
+  p,li{orphans:3;widows:3}
+  p{margin:.5em 0}
+  /* cajas: borde y trama en vez de color */
+  .box{padding:7pt 11pt 6pt;margin:.8em 0;border:.7pt solid #666;border-left:3.5pt solid #000;border-radius:3pt;break-inside:avoid}
+  .box>.h{font-size:8pt;margin-bottom:3pt;color:#000}
+  .warn{border-left:3.5pt double #000}
+  .tip{border-style:dashed;border-left-style:solid}
+  .intu{border-left-width:1.5pt}
+  .recipe{border:1pt dashed #000;padding:6pt 11pt;margin:.7em 0;font-size:9.5pt;break-inside:avoid}
+  .recipe>b{color:#000}
+  /* ejercicios resueltos: siempre abiertos; la solución puede continuar en la página siguiente, pero no sus piezas */
+  details.sol{border:.7pt solid #666;padding:0 11pt;margin:.8em 0;break-inside:auto}
+  details.sol>summary{list-style:none;color:#000;padding:7pt 0;font-size:10pt;break-after:avoid}
+  details.sol>summary::-webkit-details-marker{display:none}
+  details.sol[open]>summary{margin-bottom:5pt}
+  details.sol .box,details.sol .recipe,ol.steps>li,figure,tr,blockquote,pre,.katex-display{break-inside:avoid}
+  thead{display:table-header-group}
+  ol.steps>li{margin:.4em 0}
+  ol.steps>li::before{background:#000;color:#fff}
+  /* tablas */
+  table{display:table!important;overflow:visible!important;font-size:9.5pt;border:.7pt solid #000;border-radius:0;break-inside:auto}
+  th,td{padding:4pt 8pt;border-bottom:.5pt solid #999}
+  thead th,tr:first-child>th{background:#e6e6e6;color:#000}
+  tbody tr:nth-child(odd)>td{background:none}
+  /* fórmulas y figuras */
+  .katex{font-size:1.04em}
+  .katex-display{overflow:visible;margin:.55em 0}
+  figure{margin:.8em 0}
+  figure.bookfig img,svg.fig{max-width:100%;max-height:120mm;width:auto;height:auto;border:0;padding:0}
+  figcaption{font-size:8.5pt;color:#000}
+  footer{font-size:8pt;margin-top:2em}
+}

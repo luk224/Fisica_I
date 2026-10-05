@@ -8,7 +8,8 @@
       if (window.renderMathInElement) renderMathInElement(d.body, {
         delimiters: [{ left: '$$', right: '$$', display: true }, { left: '\\[', right: '\\]', display: true },
                      { left: '$', right: '$', display: false }, { left: '\\(', right: '\\)', display: false }],
-        throwOnError: false, ignoredTags: ['script', 'style', 'textarea', 'code']
+        throwOnError: false, ignoredTags: ['script', 'style', 'textarea', 'code'],
+        macros: { '\\lim': '\\mathop{\\operatorname{lim}}\\limits' } /* subíndice siempre debajo de «lim», también en línea */
       });
     } catch (e) {}
     var toc = d.querySelector('.side-toc');
@@ -64,6 +65,8 @@
     if (all) { var open = false; all.addEventListener('click', function () {
       open = !open; d.querySelectorAll('details.sol').forEach(function (x) { x.open = open; });
       all.textContent = open ? 'Ocultar soluciones' : 'Mostrar soluciones'; }); }
+    function abrirSoluciones() { d.querySelectorAll('details.sol').forEach(function (x) { x.open = true; }); }
+    if (matchMedia('print').matches) abrirSoluciones();
     window.addEventListener('beforeprint', function () { d.querySelectorAll('details.sol').forEach(function (x) { x.open = true; }); });
   });
 })();
