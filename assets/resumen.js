@@ -60,6 +60,11 @@
       bi.title = 'Abre el diálogo de impresión (A4, blanco y negro, sin fuentes ni «fuera de examen»)';
       bi.addEventListener('click', function () { window.print(); });
       bt.parentNode.insertBefore(bi, bt); bt.parentNode.insertBefore(d.createTextNode(' '), bt);
+      var bc = d.createElement('button'); bc.id = 'btn-imprimir-color'; bc.type = 'button'; bc.textContent = 'Imprimir en color';
+      bc.title = 'Igual, pero conservando los colores (activa «Gráficos de fondo» en el diálogo)';
+      bc.addEventListener('click', function () { d.documentElement.classList.add('print-color'); window.print(); });
+      window.addEventListener('afterprint', function () { d.documentElement.classList.remove('print-color'); });
+      bt.parentNode.insertBefore(bc, bt); bt.parentNode.insertBefore(d.createTextNode(' '), bt);
     }
     var btn = d.getElementById('btn-tema');
     if (btn) btn.addEventListener('click', function () {

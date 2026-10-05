@@ -134,7 +134,7 @@ figure.bookfig img{max-width:100%;height:auto;background:#fff;border-radius:8px;
 @page{size:A4;margin:14mm 15mm 16mm;@bottom-center{content:counter(page);font:9pt system-ui,sans-serif;color:#444}}
 @media print{
   /* paleta en escala de grises (también si el navegador está en modo oscuro) */
-  :root,:root[data-theme="dark"],:root[data-theme="light"]{
+  :root:not(.print-color),:root[data-theme="dark"]:not(.print-color),:root[data-theme="light"]:not(.print-color){
     --bg:#fff!important;--fg:#000!important;--mut:#333!important;--card:#fff!important;--bd:#999!important;--acc:#000!important;
     --def:#f2f2f2!important;--def-b:#000!important;--thm:#e6e6e6!important;--thm-b:#000!important;--ex:#fff!important;--ex-b:#000!important;
     --warn:#fff!important;--warn-b:#000!important;--tip:#fff!important;--tip-b:#000!important;--intu:#f8f8f8!important;--intu-b:#000!important;
@@ -187,4 +187,33 @@ figure.bookfig img{max-width:100%;height:auto;background:#fff;border-radius:8px;
   figure.bookfig img,svg.fig{max-width:100%;max-height:120mm;width:auto;height:auto;border:0;padding:0}
   figcaption{font-size:8.5pt;color:#000}
   footer{font-size:8pt;margin-top:2em}
+}
+
+/* ---- Impresión a COLOR: se activa con la clase print-color en <html> (botón «Imprimir en color» o exportar_pdf.py --color) ---- */
+@media print{
+  html.print-color,html.print-color[data-theme="dark"],html.print-color[data-theme="light"]{
+    --bg:#fbfaf6!important;--fg:#1c2230!important;--mut:#5d6675!important;--card:#fff!important;--bd:#dfe1e8!important;--acc:#2a56d3!important;--def:#e9effe!important;--def-b:#2a56d3!important;--thm:#fff4d9!important;--thm-b:#d59a00!important;--ex:#e8f6ec!important;--ex-b:#2c9a55!important;--warn:#fdeceb!important;--warn-b:#d24a3b!important;--tip:#f1ecfb!important;--tip-b:#7a4fd0!important;--intu:#e6f6f8!important;--intu-b:#1a8fa3!important;--U:#2a56d3!important;--A:#c9670a!important;--X:#1f8a4c!important;--E:#8a3fbf!important;--P:#6b7280!important;
+  }
+  html.print-color a{color:var(--acc)}
+  html.print-color header.hero{border-bottom-color:var(--bd)}
+  html.print-color .hero .kick{color:var(--acc)}
+  html.print-color .chips span{border-color:var(--bd);background:var(--card)}
+  html.print-color h2{border-top-color:var(--bd)}
+  html.print-color h2 .n{color:var(--acc)}
+  html.print-color .box{border-color:var(--bd);background:var(--card)}
+  html.print-color .box>.h{color:var(--mut)}
+  html.print-color .def{background:var(--def);border-color:var(--def-b)}html.print-color .def>.h{color:var(--def-b)}
+  html.print-color .thm{background:var(--thm);border-color:var(--thm-b)}html.print-color .thm>.h{color:var(--thm-b)}
+  html.print-color .ex{background:var(--ex);border-color:var(--ex-b)}html.print-color .ex>.h{color:var(--ex-b)}
+  html.print-color .warn{background:var(--warn);border-color:var(--warn-b);border-left-style:solid}html.print-color .warn>.h{color:var(--warn-b)}
+  html.print-color .tip{background:var(--tip);border-color:var(--tip-b);border-style:solid}html.print-color .tip>.h{color:var(--tip-b)}
+  html.print-color .intu{background:var(--intu);border-color:var(--intu-b)}html.print-color .intu>.h{color:var(--intu-b)}
+  html.print-color .recipe{border-color:var(--ex-b)}html.print-color .recipe>b{color:var(--ex-b)}
+  html.print-color details.sol{border-color:var(--bd);background:var(--card)}
+  html.print-color details.sol>summary{color:var(--acc)}
+  html.print-color ol.steps>li::before{background:var(--acc);color:var(--bg)}
+  html.print-color table{border-color:color-mix(in srgb,var(--fg) 30%,transparent)}
+  html.print-color th,html.print-color td{border-bottom-color:color-mix(in srgb,var(--fg) 15%,transparent)}
+  html.print-color thead th,html.print-color tr:first-child>th{background:color-mix(in srgb,var(--fg) 8%,transparent);color:var(--mut)}
+  html.print-color figcaption{color:var(--mut)}
 }

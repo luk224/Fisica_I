@@ -7,6 +7,7 @@ Uso (desde la carpeta del proyecto o desde cualquier sitio):
   python herramientas/exportar_pdf.py                  # todos los temas
   python herramientas/exportar_pdf.py 1_2 2_1          # solo los temas cuyo nombre contenga esos textos
   python herramientas/exportar_pdf.py --unir todo.pdf  # además, un PDF único con marcadores por tema
+  python herramientas/exportar_pdf.py --color          # versión a color (va a pdf/color/)
 
 Requisitos: `pip install playwright pymupdf` y un Chromium de Playwright (`playwright install chromium`).
 """
@@ -28,7 +29,7 @@ def titulo(ruta: pathlib.Path) -> str:
     return html.unescape(m.group(1).strip()) if m else ruta.stem
 
 
-def exportar(paginas, destinos):
+def exportar(paginas, destinos, color=False):
     with sync_playwright() as p:
         b = p.chromium.launch()
         pg = b.new_page()
@@ -37,6 +38,8 @@ def exportar(paginas, destinos):
             pg.wait_for_function("document.querySelector('.katex') !== null", timeout=30000)
             pg.evaluate("document.fonts.ready")
             pg.emulate_media(media="print")
+            if color:
+                pg.evaluate("document.documentElement.classList.add('print-color')")
             pg.evaluate("document.querySelectorAll('details.sol').forEach(x => x.open = true)")
             pg.wait_for_timeout(400)
             cab = ('<div style="font:8px system-ui,sans-serif;color:#555;width:100%;padding:0 15mm;text-align:right">'
@@ -63,6 +66,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("filtro", nargs="*", help="textos que debe contener el nombre del tema")
     ap.add_argument("--unir", metavar="ARCHIVO.pdf", help="crear también un PDF único con todos los temas exportados")
+    ap.add_argument("--color", action="store_true", help="versión a color (salida en pdf/color/)")
     a = ap.parse_args()
 
     paginas = sorted(TEMAS.glob("*.html"))
@@ -70,11 +74,12 @@ def main():
         paginas = [x for x in paginas if any(f in x.name for f in a.filtro)]
     if not paginas:
         sys.exit("No hay temas que coincidan.")
-    SALIDA.mkdir(exist_ok=True)
-    destinos = [SALIDA / (x.stem + ".pdf") for x in paginas]
-    exportar(paginas, destinos)
+    carpeta = SALIDA / "color" if a.color else SALIDA
+    carpeta.mkdir(parents=True, exist_ok=True)
+    destinos = [carpeta / (x.stem + ".pdf") for x in paginas]
+    exportar(paginas, destinos, a.color)
     if a.unir:
-        unir(destinos, [titulo(x) for x in paginas], SALIDA / a.unir)
+        unir(destinos, [titulo(x) for x in paginas], carpeta / a.unir)
 
 
 if __name__ == "__main__":

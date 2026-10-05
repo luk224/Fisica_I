@@ -59,8 +59,8 @@ a.card:hover{border-color:var(--acc)}
 </div>
 <section id="pdfs">
 <div class="mod">PDF para imprimir (A4, blanco y negro)</div>
-<p class="pdfnota">Los PDF se generan en tu equipo (no están en la web). Para crearlos o actualizarlos: doble clic en <code>generar_pdfs.bat</code> o <code>python herramientas/exportar_pdf.py --unir temario_completo.pdf</code>.</p>
-<div class="grid"><a class="card" href="pdf/temario_completo.pdf"><span class="badge">PDF</span><b>Temario completo</b><small>Todos los temas listos en un solo PDF, con marcadores por tema</small></a></div>
+<p class="pdfnota">Los PDF se generan en tu equipo (no están en la web). Para crearlos o actualizarlos: doble clic en <code>generar_pdfs.bat</code> (genera blanco y negro y color) o <code>python herramientas/exportar_pdf.py --unir temario_completo.pdf</code> (añade <code>--color</code> para la versión a color).</p>
+<div class="grid"><a class="card" href="pdf/temario_completo.pdf"><span class="badge">B/N</span><b>Temario completo</b><small>Todos los temas listos en un solo PDF, con marcadores por tema</small></a><a class="card" href="pdf/color/temario_completo.pdf"><span class="badge">color</span><b>Temario completo (color)</b><small>Igual, conservando los colores de las cajas y figuras</small></a></div>
 <ul id="pdf-lista" class="pdflista"></ul>
 </section>
 <script>
@@ -69,7 +69,9 @@ a.card:hover{border-color:var(--acc)}
   document.querySelectorAll('a.card[href^="temas/"]').forEach(function (a) {
     var f = a.getAttribute('href').replace(/^temas\//, '').replace(/\.html$/, '.pdf');
     var li = document.createElement('li'), l = document.createElement('a');
-    l.href = 'pdf/' + f; l.textContent = a.querySelector('b').textContent; li.appendChild(l); ul.appendChild(li);
+    l.href = 'pdf/' + f; l.textContent = a.querySelector('b').textContent; li.appendChild(l);
+    var c = document.createElement('a'); c.href = 'pdf/color/' + f; c.textContent = 'color'; c.className = 'pdfcolor';
+    li.appendChild(document.createTextNode(' · ')); li.appendChild(c); ul.appendChild(li);
   });
 })();
 </script>
