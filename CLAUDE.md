@@ -58,6 +58,16 @@ La guía docente (`fuentes_txt/guia.txt`) da una lista plana de **20 temas**, si
 
 Las páginas de inicio son un ancla aproximada (primer párrafo detectado del capítulo, puede estar 1-2 páginas dentro de la portadilla del capítulo): al redactar, confirmar el rango exacto de páginas de cada tema en `fuentes_txt/sears.txt` antes de citarlo.
 
+### Módulos y fechas de PEC (publicadas en AGORA; `index.html` agrupa por estos 4 módulos)
+| Módulo | Temas | PEC (cuestionario) | Abre | Cierra |
+|---|---|---|---|---|
+| 1 | 1-5 | PEC 1 | vie 30-oct-2026 00:00 | lun 2-nov-2026 23:59 |
+| 2 | 6-11 | PEC 2 | vie 27-nov-2026 00:00 | lun 30-nov-2026 23:59 |
+| 3 | 12-16 | PEC 3 | vie 11-dic-2026 00:00 | lun 14-dic-2026 23:59 |
+| 4 | 17-20 | PEC 4 | vie 15-ene-2027 00:00 | lun 18-ene-2027 23:59 |
+
+(Estas fechas, dadas por el usuario, sustituyen a las de la guía PDF; la agrupación en 3 partes del libro U de arriba es solo la del libro.)
+
 ### Sistema de evaluación (guía docente, íntegro)
 - **Examen presencial** (80% de la nota): 2 problemas (3 puntos cada uno) + 1 pregunta de teoría a elegir entre 2 opciones (4 puntos, incluye 2 cuestiones cortas relacionadas). Duración 120 min. Solo calculadora no programable. Nota mínima 5 para aprobar sin PEC (máximo 9,5 sin PEC); nota mínima 4 para que sumen las PEC.
 - **PEC** (15%, voluntarias): 4 pruebas de evaluación continua a través de AGORA. Renunciar a ellas no penaliza (la nota final sería solo examen+prácticas).
