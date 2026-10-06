@@ -69,7 +69,7 @@
     var btn = d.getElementById('btn-tema');
     if (btn) btn.addEventListener('click', function () {
       var r = d.documentElement, cur = r.getAttribute('data-theme');
-      var dark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      var dark = cur === 'dark';
       r.setAttribute('data-theme', dark ? 'light' : 'dark');
       try { localStorage.setItem('tema', dark ? 'light' : 'dark'); } catch (e) {}
     });

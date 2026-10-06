@@ -150,3 +150,6 @@ Un commit por tema o cambio coherente; no acumular varios temas sin subir. No us
 
 ## 6. Impresión y PDF
 La hoja de impresión está en `assets/resumen.css` (`@media print`: A4, blanco y negro, sin fuentes `.src` ni `details.fuera`, soluciones abiertas, saltos de página controlados). El botón «Imprimir / PDF» de la barra superior lo inyecta `assets/resumen.js`. Para generar PDF: `python herramientas/exportar_pdf.py [filtro…] [--unir todo.pdf] [--color]` (B/N en `pdf/`, color en `pdf/color/`, ignorado por git; botones «Imprimir / PDF» e «Imprimir en color»; `generar_pdfs.bat` hace ambos). Al crear componentes nuevos, añadirles `break-inside: avoid` en el bloque de impresión si no deben partirse.
+
+## 7. Tema claro/oscuro
+Por defecto **siempre claro** (el CSS ya no sigue `prefers-color-scheme`); solo es oscuro si el usuario lo eligió con el botón «Claro / oscuro» (se guarda en `localStorage` con la clave `tema`). Para evitar el parpadeo al abrir, **todo HTML lleva en el `<head>`, justo tras `<meta charset>`, el script mínimo** que lee `localStorage` y pone `data-theme` antes del primer pintado (ya está en `plantilla_tema.html` y en `index.html`; no quitarlo). Reglas CSS propias de un tema para el modo oscuro: usar `:root[data-theme="dark"] …`, no `@media (prefers-color-scheme:dark)`.
