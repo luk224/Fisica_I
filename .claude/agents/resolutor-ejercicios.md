@@ -14,3 +14,5 @@ Para cada ejercicio solicitado (de examen X o de solucionario E):
 4. Si el tema no tiene ningún ejercicio de examen real disponible (revisa `examenes_por_tema.md`), dilo explícitamente y complétalo con 2-3 **ejemplos propios** de dificultad creciente (con solución verificada), marcados como «propio» — nunca los presentes como si fueran de examen.
 
 Ordena los ejercicios de fácil a difícil si eso ayuda a aprender, pero conserva su numeración/procedencia. Sé riguroso: no des un paso «porque sí», no inventes una convocatoria o un número de examen. No modifiques archivos del proyecto salvo el que se te indique explícitamente: escríbelo con Write/Bash. Si no puedes escribirlo, devuelve todo su contenido como respuesta.
+
+- **Sin erratas ni comparativas entre fuentes** (CLAUDE.md regla 8 bis): no escribas erratas de libros/solucionarios/exámenes, ni diferencias o incoherencias entre fuentes (U vs Lay/Stewart/Larson…), ni cajas «Aviso sobre el libro»/«Cómo lo cuenta Lay»/«Tabla Lay ↔ U». Si una fuente falla, escribe lo correcto sin mencionarlo.

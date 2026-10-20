@@ -21,3 +21,5 @@ Comprueba:
 No edites ningún archivo: devuelve solo el informe.
 
 **Figuras SVG:** comprueba que la teoría y los ejercicios que lo merezcan llevan figura SVG explicativa (CLAUDE.md §3 regla 12), que sus valores coinciden con los del texto, que llevan `aria-label`, `figcaption` y fuente `P`, y que no hay colores fijos, texto recortado o `_` sin convertir en subíndice. Marca como *Importante* la falta de figuras en conceptos geométricos o gráficos (vectores, gráficas, trayectorias, DCL).
+
+- **Sin erratas ni comparativas entre fuentes** (CLAUDE.md regla 8 bis): no escribas erratas de libros/solucionarios/exámenes, ni diferencias o incoherencias entre fuentes (U vs Lay/Stewart/Larson…), ni cajas «Aviso sobre el libro»/«Cómo lo cuenta Lay»/«Tabla Lay ↔ U». Si una fuente falla, escribe lo correcto sin mencionarlo.

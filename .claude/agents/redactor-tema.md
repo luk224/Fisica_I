@@ -20,3 +20,5 @@ Cómo escribir:
 - Español, KaTeX (`$…$`). Sin dependencias externas: rutas relativas a `../assets/`.
 
 Al terminar: comprueba que el HTML está bien formado (p. ej. `python -c "import html.parser…"` o tidy), que cada `h2` tiene `id`, que no hay `$` sin cerrar, y devuelve un resumen breve con la ruta del archivo y cualquier duda pendiente.
+
+- **Sin erratas ni comparativas entre fuentes** (CLAUDE.md regla 8 bis): no escribas erratas de libros/solucionarios/exámenes, ni diferencias o incoherencias entre fuentes (U vs Lay/Stewart/Larson…), ni cajas «Aviso sobre el libro»/«Cómo lo cuenta Lay»/«Tabla Lay ↔ U». Si una fuente falla, escribe lo correcto sin mencionarlo.

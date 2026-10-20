@@ -1,6 +1,6 @@
 """Exporta los resúmenes HTML de `temas/` a PDF (A4, blanco y negro, listo para imprimir).
 
-Usa la hoja de impresión de assets/resumen.css (@media print): sin fuentes, sin «fuera de examen»,
+Usa la hoja de impresión de assets/resumen.css (@media print): sin fuentes (ni su título), sin erratas ni discrepancias entre libros, sin «fuera de examen»,
 soluciones desplegadas y saltos de página ordenados. Los PDF van a `pdf/` (ignorado por git: *.pdf).
 
 Uso (desde la carpeta del proyecto o desde cualquier sitio):
@@ -41,6 +41,7 @@ def exportar(paginas, destinos, color=False):
             if color:
                 pg.evaluate("document.documentElement.classList.add('print-color')")
             pg.evaluate("document.querySelectorAll('details.sol').forEach(x => x.open = true)")
+            pg.evaluate("window.ocultarNotasDeFuentes && window.ocultarNotasDeFuentes()")
             pg.wait_for_timeout(400)
             cab = ('<div style="font:8px system-ui,sans-serif;color:#555;width:100%;padding:0 15mm;text-align:right">'
                    + html.escape(titulo(ruta)) + '</div>')

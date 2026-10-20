@@ -79,6 +79,33 @@
       all.textContent = open ? 'Ocultar soluciones' : 'Mostrar soluciones'; }); }
     function abrirSoluciones() { d.querySelectorAll('details.sol').forEach(function (x) { x.open = true; }); }
     if (matchMedia('print').matches) abrirSoluciones();
-    window.addEventListener('beforeprint', function () { d.querySelectorAll('details.sol').forEach(function (x) { x.open = true; }); });
+    function ocultarNotasDeFuentes() {
+      var RE = /errata|omisi[oó]n|omisiones|avisos? sobre (el libro|la fuente|las fuentes|los libros)|nota sobre (el libro|las erratas)|error del libro|soluci[oó]n (del libro|impresa|oficial)|solucionario|c[oó]mo (lo cuenta|se lee en|leer las fuentes)|seg[uú]n Lay|^Lay\b|Lay lo|si lees Lay|otro libro|cada libro|frente a (Stewart|Larson)|cuidado con el nombre|relaci[oó]n con el libro|aviso de notaci[oó]n|NO es notaci[oó]n de U|misma idea, con las cifras de Lay|cu[oó]mo lo cuenta Lay|temario no est[aá] en el libro|convenios y errores de los libros|variante de Larson|aviso sobre la fuente|no coinciden|error en E(?![a-zñ])|fallo de la soluci[oó]n|errores? de la soluci[oó]n|comentario sobre la soluci[oó]n/i;
+      d.querySelectorAll('.box').forEach(function (b) {
+        if (b.classList.contains('ex')) return;
+        var h = b.querySelector(':scope > .h, :scope > .box-h, :scope > b:first-child');
+        if (h && (RE.test(h.textContent.trim()) || (/^nota/i.test(h.textContent.trim()) && /errata/i.test(b.textContent)))) b.classList.add('no-print');
+      });
+      /* secciones enteras que solo comparan libros («Tabla Lay ↔ U…») */
+      d.querySelectorAll('h2').forEach(function (h2) {
+        if (!/Lay\s*↔\s*U|Lay ↔ U|correspondencia Lay/.test(h2.textContent)) return;
+        for (var e = h2; e && !(e !== h2 && e.tagName === 'H2'); e = e.nextElementSibling) e.classList.add('no-print');
+      });
+      /* párrafos/items que empiezan por «Errata(s)…» */
+      d.querySelectorAll('p, li').forEach(function (x) {
+        if (x.closest('.no-print')) return;
+        var f = x.firstElementChild, tx = x.textContent.trim();
+        if (/^\(?(errata|erratas)/i.test(tx) || (f && /^(b|strong)$/i.test(f.tagName) && /^\(?errata/i.test(f.textContent.trim()) && tx.indexOf(f.textContent.trim()) === 0)) x.classList.add('no-print');
+      });
+      /* fuentes citadas en la cabecera (se conserva solo el tiempo de estudio) y fila del índice que comenta Lay */
+      d.querySelectorAll('.chips span').forEach(function (c) { if (c.textContent.indexOf('⏱') < 0) c.classList.add('no-print'); });
+      d.querySelectorAll('tr').forEach(function (r) { if (/Lay\s*↔\s*U|correspondencia Lay/.test(r.textContent)) r.classList.add('no-print'); });
+      d.querySelectorAll('details.sol > summary').forEach(function (s) {
+        var w = d.createTreeWalker(s, NodeFilter.SHOW_TEXT), n;
+        while ((n = w.nextNode())) n.nodeValue = n.nodeValue.replace(/\s*\([^()]*errata[^()]*\)/gi, '');
+      });
+    }
+    window.ocultarNotasDeFuentes = ocultarNotasDeFuentes;
+    window.addEventListener('beforeprint', function () { d.querySelectorAll('details.sol').forEach(function (x) { x.open = true; }); ocultarNotasDeFuentes(); });
   });
 })();
