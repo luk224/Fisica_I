@@ -141,6 +141,8 @@ Repositorio: `git@github.com:luk224/Fisica_I.git` (rama `main`, **público**). W
 5. Confirmar con `git log -1` y `git status` que quedó sincronizado, e indicar al usuario el enlace de la web.
 Un commit por tema o cambio coherente; no acumular varios temas sin subir. No usar `--force`. Si el push falla (red, credenciales), avisar al usuario en lugar de dejarlo sin subir en silencio.
 
+**Dos equipos (este PC y `wyse`, ver `~/UNED/` en wyse):** el trabajo se hace desde ambos y GitHub es la fuente de verdad. Al **empezar** una sesión: `git pull --rebase --autostash origin main`. Al **terminar cada tema** (y cada cambio coherente): commit y `git push origin main` sin esperar a que lo pida el usuario. No trabajar en el mismo repo desde los dos equipos a la vez. Lo que `.gitignore` deja fuera (PDF y textos completos de `fuentes_txt/`) existe en cada equipo por separado: si falta en uno, copiarlo del otro (`tar` sobre SSH) o regenerarlo con `pdftotext`.
+
 ## 5. Comandos útiles
 - Buscar en el libro oficial: `Grep pattern=… path=fuentes_txt/sears.txt` (usar `-C` para contexto).
 - Leer una página de U: `python -c "print(open('fuentes_txt/sears.txt',encoding='utf8').read().split('\f')[PDF-1])"` (PDF = impresa + 28).
