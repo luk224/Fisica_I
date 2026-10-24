@@ -10,12 +10,12 @@ Interactivos.registrar('trabajo-resorte', function (c) {
     [ejes, curva, sombra, p1, p2].forEach(function (o) { if (o) c.scene.remove(o); });
     kx = 1.7 * 2 * Y / 1.0; c.escalaX(kx); var v = [-0.5 * kx, 0.5 * kx, -Y, Y]; w = 0.0055 * 2 * Y; c.vista(v[0], v[1], v[2], v[3]);
     var vw = [-2 * kx, 2 * kx, -4 * Y, 4 * Y]; ejes = H.ejes2D(T, vw, w, P.fg, P.bd, 0.1 * kx, H.paso(2 * Y, 8)); c.scene.add(ejes);
-    curva = H.cinta(T, [[[-2 * kx, 2 * k], [2 * kx, -2 * k]]], P.acc, w * 1.5); curva.position.z = 0.1; c.scene.add(curva);
+    curva = H.cinta(T, [], P.acc, w * 1.5); curva.position.z = 0.1; c.scene.add(curva);
     sombra = H.cinta(T, [], P.L, w * 0.9); sombra.position.z = 0.05; c.scene.add(sombra);
     p1 = H.punto(T, 0, 0, w * 2.8, P.fg); p2 = H.punto(T, 0, 0, w * 2.8, P.W); p1.position.z = 0.6; p2.position.z = 0.61; c.scene.add(p1, p2);
   }
   function calc() {
-    nuevo(); var W = 0.5 * k * (x1 * x1 - x2 * x2), hs = [], i, s, n = 60;
+    nuevo(); curva.set([[[-2 * kx, 2 * k], [2 * kx, -2 * k]]]); var W = 0.5 * k * (x1 * x1 - x2 * x2), hs = [], i, s, n = 60;
     for (i = 0; i <= n; i++) { s = x1 + (x2 - x1) * i / n; hs.push([[s * kx, 0], [s * kx, -k * s]]); }
     sombra.set(hs); sombra.material.color.set(W >= 0 ? P.L : P.W); p1.mover(x1 * kx, -k * x1); p2.mover(x2 * kx, -k * x2);
     var v2c = v1 * v1 + 2 * W / m;
