@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem('tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física I · Tema 7 Energía potencial y conservación de la energía</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+<link rel="stylesheet" href="../assets/interactivos.css">
+<script defer src="../assets/interactivos.js"></script>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Índice de temas</a>
+  <span><button id="btn-sol" type="button">Mostrar soluciones</button> <button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+
+<div class="layout">
+<nav class="side-toc" aria-label="Índice del tema"><b>En esta página</b></nav>
+<main>
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><defs><marker id="mk-a" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mk-b" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mk-m" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mk-g" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mk-p" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mk-f" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs></svg>
+
+<header class="hero">
+  <div class="kick">Bloque Mecánica · Tema 7</div>
+  <h1>Energía potencial y conservación de la energía</h1>
+  <p>En el tema 6 el trabajo se calculaba fuerza a fuerza (con una integral si la fuerza varía). Aquí aparece un atajo: si una fuerza es <i>conservativa</i> (el peso, el resorte), su trabajo se puede «guardar» como <i>energía potencial</i> y recuperar después. Con ella, la energía mecánica $K+U$ se conserva y los problemas de caídas, rampas, resortes y curvas se resuelven comparando solo el estado inicial y el final. Cuando hay fricción, lo perdido se contabiliza como trabajo de las «otras» fuerzas.</p>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 7 (pp. 204-226)</span><span>Preguntas de examen real: 8</span><span>Ejercicios del solucionario: 8</span><span>2 ejemplos interactivos</span><span>⏱ ~7 h de estudio</span></div>
+  <div class="legend">
+    <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
+    <span class="src" data-l="A" data-ref="Academia_Tec — resumen complementario (solo algunos temas)">A</span> Academia_Tec
+    <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
+    <span class="src" data-l="X" data-ref="Ejercicio de examen real, ver fuentes_txt/examenes_por_tema.md">X</span> examen real
+    <span class="src" data-l="P" data-ref="Explicación o ejemplo propio, sin página en los libros">P</span> propio
+    — pasa el ratón (o toca) por cada etiqueta para ver la fuente exacta; en pantallas anchas aparecen en el margen derecho.
+  </div>
+</header>
+
+<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U cap. 7 Introducción, p. 204">U p.204</span></h2>
+<p><b>Prerrequisitos:</b> el teorema trabajo-energía $W_{tot}=K_2-K_1$ y el trabajo de una fuerza (tema 6, §6.1-6.3), incluido el trabajo del resorte y la ley de Hooke ($F_x=kx$ es la fuerza que haces tú sobre el resorte; la que el resorte ejerce sobre el cuerpo es $F_x=-kx$); las leyes de Newton y la fricción cinética $f_k=\mu_kn$ con la normal en un plano inclinado (temas 4 y 5); y, solo en la sección 4, la idea de <i>derivada</i> como pendiente de una curva (tema 2).</p>
+<p><b>Mapa del tema:</b> 7.1 define la <b>energía potencial gravitatoria</b> $U_{grav}=mgy$ y enuncia la <b>conservación de la energía mecánica</b> $K_1+U_1=K_2+U_2$, con su extensión a «otras fuerzas» ($W_{otras}$). 7.2 hace lo mismo con el <b>resorte</b>, $U_{el}=\tfrac12kx^2$. 7.3 separa las fuerzas <b>conservativas</b> de las <b>no conservativas</b> (fricción) y da la ley general $\Delta K+\Delta U+\Delta U_{int}=0$. 7.4 invierte el camino: de $U(x)$ se obtiene la fuerza, $F_x=-dU/dx$. 7.5 usa las gráficas de $U(x)$ (<b>diagramas de energía</b>) para ver dónde se mueve una partícula y dónde está en equilibrio.</p>
+<div class="box tip"><span class="h">Qué ha caído en examen</span>
+  <p>El índice de exámenes asigna a este tema siete preguntas: cuatro problemas de energía con rampas, resortes y fricción (Feb 2020 2ª, Feb 2022 2ª, Sept 2024 y Sept 2023) y tres de teoría con cuestiones (Feb 2022 1ª, Feb 2024 2ª y Sept 2022). Una de ellas, y otra pregunta catalogada en el tema 13, tratan la energía potencial <i>gravitatoria</i>: se resuelven aquí con las mismas ideas y se marcan como relacionadas con la gravitación. Todas están resueltas abajo:</p>
+<table>
+<tr><th>Pregunta de examen real</th><th>Ejercicio de esta página</th></tr>
+<tr><td>Feb 2020 (2ª sem.) P-1 — carril con tramo rugoso y resorte final: μ del tramo</td><td><a href="#x1">X1</a></td></tr>
+<tr><td>Feb 2022 (2ª sem.) P-1 — bloque lanzado por un resorte en un plano de 30° con fricción (= problema 7.73 de U)</td><td><a href="#x2">X2</a></td></tr>
+<tr><td>Sep 2024 P-1 — igual planteamiento, rampa de 25°</td><td><a href="#x3">X3</a></td></tr>
+<tr><td>Sep 2023 P-2 — cuarto de círculo con fricción y tramo horizontal: μ<sub>k</sub> y trabajo de la fricción</td><td><a href="#x4">X4</a></td></tr>
+<tr><td>Feb 2022 (1ª sem.) P-3 Opción 3.1 — teoría «Fuerzas conservativas y no conservativas» + central hidroeléctrica y caja en rampa</td><td><a href="#x5">X5</a></td></tr>
+<tr><td>Feb 2024 (2ª sem.) P-3 Opción A — teoría «Fuerzas conservativas y no conservativas» + cero de U del resorte y signo de U entre partículas</td><td><a href="#x6">X6</a></td></tr>
+<tr><td>Feb 2022 (1ª sem.) P-3 Opción 3.2 — energía potencial gravitatoria: astronauta y proyectil (<i>relacionada con la gravitación; catalogada en el tema 13</i>)</td><td><a href="#x7">X7</a></td></tr>
+<tr><td>Sep 2022 P-4 Opción B — «Energía potencial gravitacional»: $mgh$ frente a $-GMm/r$ y trabajo entre dos playas (<i>relacionada con la gravitación</i>)</td><td><a href="#x8">X8</a></td></tr>
+</table>
+  <p><b>Lo que viene:</b> la energía potencial gravitatoria general $U=-GMm/r$ y la velocidad de escape se desarrollan en el tema 13; la energía de un oscilador y de las ondas, en los temas 14 y 15.</p>
+  <span class="src" data-l="X" data-ref="Examen Febrero 2020 (2ª semana) P-1; Examen Febrero 2022 (2ª semana) P-1; Examen Septiembre 2024 P-1; Examen Septiembre 2023 P-2; Examen Febrero 2022 (1ª semana) P-3 Opción 3.1; Examen Febrero 2024 (2ª semana) P-3 Opción A; Examen Febrero 2022 (1ª semana) P-3 Opción 3.2; Examen Septiembre 2022 P-4 Opción B">X ×8</span></div>
+<div class="box tip"><span class="h">La receta maestra: método de energía en 5 pasos</span>
+  <ol class="steps">
+    <li><b>Elige dos estados</b>: el 1 (donde lo conoces casi todo) y el 2 (donde está la incógnita), y dibuja las fuerzas que actúan entre ambos.</li>
+    <li><b>Fija el origen de alturas</b> ($y=0$ donde te convenga) con $+y$ <b>hacia arriba</b>, y que la longitud natural del resorte sea $x=0$.</li>
+    <li>Escribe $K_1,\ U_1=U_{grav,1}+U_{el,1}$ y $K_2,\ U_2$. El peso y el resorte <b>ya están dentro de $U$</b>: no los cuentes otra vez.</li>
+    <li>Calcula $W_{otras}$: el trabajo de todo lo que no sea peso ni resorte (fricción, empujes, tensiones que trabajan). La fricción da $W_f=-f_k\,s=-\mu_kn\,s$; la normal no trabaja si es perpendicular al desplazamiento.</li>
+    <li>Plantea $K_1+U_1+W_{otras}=K_2+U_2$ (ec. 7.14) y despeja. <b>Evalúa</b>: ¿es $K_2\ge0$? ¿Tiene $W_{otras}$ el signo correcto (negativo si es fricción)?</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 7.1 p. 207 y 7.2 p. 215">U p.207, 215</span></div>
+<div class="box tip"><span class="h">Convenio sobre g</span><p>En U y en el solucionario se usa $g=9{,}80\ \text{m/s}^2$. Los enunciados de examen que no la indican (Feb 2020, Feb 2022 2ª sem., Sep 2023 P-2) se resuelven aquí con 9,80; el de Sep 2024 da $g=9{,}81$. Cuando el cambio de $g$ altera el resultado, se da el valor con la otra $g$.</p>  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
+
+<h2 id="s1"><span class="n">1</span>Energía potencial gravitatoria <span class="src" data-l="U" data-ref="U §7.1, pp. 204-211">U p.204</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Cuando subes un libro a una estantería, tú haces trabajo contra el peso y el libro no gana rapidez: ¿a dónde ha ido esa energía? Se ha «guardado» en la <b>posición</b>: el libro, en lo alto, tiene la <i>posibilidad</i> de volver a hacer trabajo (si cae, el peso lo acelerará). A esa energía asociada con la posición se le llama <b>energía potencial</b>. Piensa en una <b>cuenta bancaria</b>: al subir el libro «ingresas» energía en la cuenta gravitatoria; al dejarlo caer «retiras» ese dinero y lo gastas en rapidez.</p>
+  <p>Así hay <i>dos formas</i> de describir una caída: (1) el peso hace trabajo positivo y por eso $K$ aumenta (tema 6); (2) la energía potencial disminuye y se convierte en energía cinética. Ambas son equivalentes; la segunda es más cómoda porque no hace falta calcular el trabajo del peso.</p>
+  <span class="src" data-l="U" data-ref="U §7.1, p. 204 y Fig. 7.1">U p.204</span></div>
+<div class="box def"><span class="h">Energía potencial gravitatoria y trabajo del peso</span>
+  <p>Para un cuerpo de masa $m$ a una altura $y$ (medida hacia arriba desde el origen que elijas), cerca de la superficie terrestre:
+  $$U_{grav}=mgy\qquad\text{(ec. 7.2)}$$
+  El trabajo que hace el peso al ir de $y_1$ a $y_2$ es
+  $$W_{grav}=mgy_1-mgy_2=U_{grav,1}-U_{grav,2}=-\Delta U_{grav}\qquad\text{(ecs. 7.1 y 7.3)}$$
+  El signo menos es fundamental: si el cuerpo <b>sube</b> ($y$ aumenta), $\Delta U_{grav}>0$ y el peso hace trabajo <b>negativo</b>; si <b>baja</b>, $\Delta U_{grav}<0$ y el peso hace trabajo <b>positivo</b>. Unidad: el joule.</p>
+  <span class="src" data-l="U" data-ref="U §7.1 ecs. (7.1)-(7.3), p. 204">U p.204</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_7_2_grav.png" alt="Figura 7.2 de U: a) un cuerpo que se mueve hacia abajo, de la altura y1 a la y2 menor: el peso hace trabajo positivo y la energía potencial gravitacional disminuye. b) un cuerpo que se mueve hacia arriba, de y1 a y2 mayor: el peso hace trabajo negativo y la energía potencial aumenta. Se dibujan el peso w = mg, una fuerza F otras, el desplazamiento s y las alturas medidas desde el origen O." style="max-width:min(100%,300px)" loading="lazy">
+<figcaption>Fig. 7.2 de U: al bajar, el peso trabaja a favor y $U_{grav}$ disminuye; al subir, trabaja en contra y $U_{grav}$ aumenta. <span class="src" data-l="U" data-ref="U Fig. 7.2, p. 204">U p.204</span></figcaption>
+</figure>
+<div class="box warn"><span class="h">Dos cuidados con $U_{grav}$</span>
+  <ul>
+    <li><b>Elige la «altura cero» donde quieras.</b> Si desplazas el origen cambian $y_1$, $y_2$, $U_1$ y $U_2$, pero <i>no</i> la diferencia $U_2-U_1=mg(y_2-y_1)$. Lo que tiene sentido físico no es el valor de $U$ en un punto, sino su <b>diferencia</b> entre dos puntos. Con $U=mgy$, $+y$ debe apuntar hacia arriba (si no, $U=-mgy$).</li>
+    <li><b>¿A quién pertenece $U_{grav}$?</b> Es energía compartida del sistema cuerpo-Tierra (depende de la interacción entre ambos), no «la energía del cuerpo». Es una forma cómoda de hablar, pero no digas «el libro tiene $mgy$ julios de energía propia».</li>
+  </ul>
+  <span class="src" data-l="U" data-ref="U §7.1 «Cuidado» pp. 205-206">U p.205-206</span></div>
+
+<h3>Conservación de la energía mecánica</h3>
+<div class="box thm"><span class="h">Si solo la gravedad hace trabajo, $E=K+U$ se conserva</span>
+  <p>Si la gravedad es la <b>única</b> fuerza que hace trabajo, el teorema trabajo-energía $W_{grav}=K_2-K_1$ y la ec. (7.3) dan
+  $$K_1+U_{grav,1}=K_2+U_{grav,2}\qquad\text{(ec. 7.4)}$$
+  es decir, la <b>energía mecánica total</b> $E=K+U_{grav}$ es constante: lo que baja una forma, sube la otra. Al lanzar una pelota hacia arriba, $\Delta K<0$ y $\Delta U>0$; al bajar, al revés, pero la suma es la misma en todos los puntos. Vale también si actúan otras fuerzas que <i>no hacen trabajo</i> (como una normal perpendicular al movimiento).</p>
+  <span class="src" data-l="U" data-ref="U §7.1 ec. (7.4), pp. 205-206">U p.205-206</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 205" width="100%" role="img" aria-label="Barras de energía cinética y potencial en tres alturas de un lanzamiento vertical">
+  <defs><marker id="mac1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbc1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmc1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgc1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpc1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfc1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="20" y1="180" x2="350" y2="180"/>
+  <line x1="20" y1="60.0" x2="350" y2="60.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="190" y="54.0" class="sm bd" text-anchor="middle">E = K + U = 200 J/kg</text>
+  <rect x="49" y="60.0" width="22" height="120.0" rx="2" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="60" y="56.0" class="sm" text-anchor="middle">200</text>
+  <text x="90" y="176" class="sm" text-anchor="middle">0</text>
+  <text x="75" y="197" class="sm bd" text-anchor="middle">y = 0</text>
+  <rect x="164" y="120.0" width="22" height="60.0" rx="2" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="175" y="116.0" class="sm" text-anchor="middle">100</text>
+  <rect x="194" y="120.0" width="22" height="60.0" rx="2" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="205" y="116.0" class="sm" text-anchor="middle">100</text>
+  <text x="190" y="197" class="sm bd" text-anchor="middle">y = 10,2 m</text>
+  <text x="290" y="176" class="sm" text-anchor="middle">0</text>
+  <rect x="309" y="60.0" width="22" height="120.0" rx="2" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="320" y="56.0" class="sm" text-anchor="middle">200</text>
+  <text x="305" y="197" class="sm bd" text-anchor="middle">y = 20,4 m</text>
+  <rect x="22" y="10" width="12" height="10" rx="2" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="38" y="19" class="sm">K</text>
+  <rect x="62" y="10" width="12" height="10" rx="2" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="78" y="19" class="sm">U<tspan dy="3" font-size="9">grav</tspan><tspan dy="-3"> = mgy</tspan></text>
+</svg>
+<figcaption>Lanzamiento vertical con v<sub>1</sub> = 20,0 m/s (ej. 7.1 de U), valores por cada kg de masa y g = 9,80 m/s². Al subir, K baja y U sube; la suma E es siempre 200 J/kg. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 7.1 (U p. 206)">P</span></figcaption>
+</figure>
+
+<div class="box ex"><span class="h">Ejemplo del libro 7.1 — altura de una pelota con conservación de la energía</span>
+  <p>Una pelota de béisbol de 0,145 kg sale hacia arriba a $v_1=20{,}0$ m/s. ¿Hasta qué altura sube? (Sin resistencia del aire.)</p>
+  <ol class="steps">
+    <li>Solo trabaja el peso, luego vale (7.4). Estado 1: la mano ($y_1=0$, $U_1=0$). Estado 2: el punto más alto ($v_2=0$, $K_2=0$).</li>
+    <li>$K_1+0=0+U_{grav,2}\Rightarrow\tfrac12mv_1^2=mgy_2$. La masa se cancela: $y_2=\dfrac{v_1^2}{2g}=\dfrac{(20{,}0)^2}{2(9{,}80)}=20{,}4$ m.</li>
+    <li>Comprobación de energías: $K_1=\tfrac12(0{,}145)(20{,}0)^2=29{,}0$ J y $U_{grav,2}=mgy_2=29{,}0$ J.</li>
+  </ol>
+  <p>Si pones el origen 5,0 m más abajo, $y_1$ y $y_2$ cambian, pero la altura que sube sigue siendo 20,4 m: solo cuentan las diferencias. Es el mismo resultado de la cinemática ($v_y^2=v_{1y}^2-2g\,\Delta y$), obtenido sin ecuaciones de movimiento.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 7.1, pp. 206-207">U p.206-207</span></div>
+<div class="box ex"><span class="h">Ejemplo conceptual del libro 7.3 — proyectiles lanzados con distintos ángulos</span>
+  <p>Dos pelotas salen de la misma altura con la misma rapidez, pero con ángulos distintos. A cualquier altura $h$ <b>llevan la misma rapidez</b>: tienen la misma $E$ (misma $K$ y $U$ iniciales) y la misma $U=mgh$ a esa altura, luego la misma $K$. La dirección no importa porque la energía es un escalar.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo conceptual 7.3, p. 209">U p.209</span></div>
+
+<h3>Cuando otras fuerzas hacen trabajo</h3>
+<div class="box def"><span class="h">Energía mecánica con «otras fuerzas»</span>
+  <p>Si, además del peso, actúan otras fuerzas (la mano, un motor, la fricción, la resistencia del aire…), llamamos $W_{otras}$ al trabajo de su resultante. El trabajo total es $W_{grav}+W_{otras}=K_2-K_1$ (ec. 7.5), y con $W_{grav}=U_1-U_2$:
+  $$K_1+U_{grav,1}+W_{otras}=K_2+U_{grav,2}\qquad\text{(ecs. 7.6 y 7.7)}$$
+  El trabajo de todas las fuerzas distintas de la gravedad es igual al <b>cambio de la energía mecánica total</b> $E=K+U_{grav}$: si $W_{otras}>0$, $E$ aumenta; si $W_{otras}<0$ (fricción), $E$ disminuye. <b>Ojo:</b> el trabajo gravitatorio ya está dentro de $\Delta U_{grav}$, así que no lo incluyas también en $W_{otras}$.</p>
+  <span class="src" data-l="U" data-ref="U §7.1 ecs. (7.5)-(7.7), p. 207">U p.207</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 7.2 — trabajo de la mano al lanzar la pelota</span>
+  <p>La mano de la pelota anterior sube 0,50 m mientras la lanza (sale a 20,0 m/s). Origen en el punto de salida: $y_1=-0{,}50$ m (mano al inicio), $y_2=0$.</p>
+  <ol class="steps">
+    <li>$K_1=0$, $U_1=mgy_1=(0{,}145)(9{,}80)(-0{,}50)=-0{,}71$ J; $K_2=29{,}0$ J, $U_2=0$. (Que $U_1$ salga negativa no importa: cuentan las diferencias.)</li>
+    <li>Por (7.6): $W_{otras}=(K_2-K_1)+(U_2-U_1)=29{,}0+0{,}71=29{,}7$ J. Como la fuerza de la mano $F$ es constante: $F=W_{otras}/(y_2-y_1)=29{,}7/0{,}50\approx59$ N (unas 40 veces el peso de la pelota).</li>
+    <li>A 15,0 m sobre la salida solo trabaja el peso: $K_3=K_2+U_2-U_3=29{,}0-21{,}3=7{,}7$ J, luego $v_3=\sqrt{2K_3/m}=10$ m/s, ya suba o baje (la energía no distingue el sentido).</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 7.2, p. 208">U p.208</span></div>
+
+<h3>Trayectorias curvas</h3>
+<div class="box thm"><span class="h">El trabajo del peso solo depende del desnivel</span>
+  <p>Si el cuerpo sigue una trayectoria curva, descomponemos el recorrido en tramos $\Delta\vec s=\Delta x\,\hat\imath+\Delta y\,\hat\jmath$. En cada tramo, $\vec w\cdot\Delta\vec s=(-mg\,\hat\jmath)\cdot\Delta\vec s=-mg\,\Delta y$: el movimiento horizontal no cuenta. Sumando, $W_{grav}=-mg(y_2-y_1)=U_{grav,1}-U_{grav,2}$, igual que en una caída vertical. Por eso (7.4) y (7.6) valen en rampas, columpios y montañas rusas, con solo mirar la <b>diferencia de alturas</b>, no la forma del camino.</p>
+  <span class="src" data-l="U" data-ref="U §7.1 «Trayectorias curvas», p. 209 y Fig. 7.7">U p.209</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 200" width="100%" role="img" aria-label="Tres trayectorias distintas entre los mismos puntos inicial y final; el trabajo del peso es el mismo">
+  <defs><marker id="mac2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbc2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmc2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgc2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpc2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfc2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="14" y1="40" x2="340" y2="40" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="14" y1="150" x2="340" y2="150" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="8" y="35" class="sm bd" text-anchor="start">y<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"></tspan></text>
+  <text x="8" y="145" class="sm bd" text-anchor="start">y<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"></tspan></text>
+  <path d="M 50 40 L 300 150" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <path d="M 50.0 40.0 L 56.2 38.0 L 62.5 36.1 L 68.8 34.2 L 75.0 32.5 L 81.2 30.8 L 87.5 29.3 L 93.8 27.9 L 100.0 26.7 L 106.2 25.8 L 112.5 25.1 L 118.8 24.6 L 125.0 24.5 L 131.2 24.6 L 137.5 25.0 L 143.8 25.8 L 150.0 26.9 L 156.2 28.4 L 162.5 30.2 L 168.8 32.4 L 175.0 35.0 L 181.2 37.9 L 187.5 41.2 L 193.8 44.9 L 200.0 48.9 L 206.2 53.3 L 212.5 58.0 L 218.8 63.1 L 225.0 68.5 L 231.2 74.1 L 237.5 80.1 L 243.8 86.3 L 250.0 92.7 L 256.2 99.4 L 262.5 106.3 L 268.8 113.3 L 275.0 120.5 L 281.2 127.7 L 287.5 135.1 L 293.8 142.5 L 300.0 150.0" fill="none" stroke="var(--A)" stroke-width="2.5"/>
+  <path d="M 50 40 L 50 150 L 300 150" fill="none" stroke="var(--X)" stroke-width="2.5"/>
+  <circle cx="50" cy="40" r="4.5" fill="var(--fg)"/>
+  <circle cx="300" cy="150" r="4.5" fill="var(--fg)"/>
+  <line x1="330" y1="43" x2="330" y2="147" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mfc2)"/>
+  <text x="326" y="100" class="sm bd" text-anchor="end">Δy < 0</text>
+  <text x="58" y="32" class="sm" text-anchor="start">inicio</text>
+  <text x="296" y="168" class="sm" text-anchor="end">final</text>
+  <text x="180" y="185" class="sm bd" text-anchor="middle">W<tspan dy="3" font-size="9">grav</tspan><tspan dy="-3"> = mg(y</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> − y</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3">) = −mgΔy en las tres</tspan></text>
+</svg>
+<figcaption>El peso hace el mismo trabajo en el camino recto, en el curvo y en el que baja y luego avanza: solo cuenta el desnivel (aquí Δy = y<sub>2</sub> − y<sub>1</sub> < 0, así que W<sub>grav</sub> = −mgΔy > 0). <span class="src" data-l="P" data-ref="Diagrama propio (U Fig. 7.7 p. 209 y Fig. 7.18 p. 217)">P</span></figcaption>
+</figure>
+
+<div class="box ex"><span class="h">Ejemplo del libro 7.4 — rapidez al pie de un círculo vertical (sin fricción)</span>
+  <p>Throcky (con su patineta, 25,0 kg) baja desde el reposo por un cuarto de círculo sin fricción de radio $R=3{,}00$ m. ¿Rapidez en la base y fuerza normal allí?</p>
+  <ol class="steps">
+    <li>La normal es siempre perpendicular al desplazamiento: no trabaja, así que $W_{otras}=0$ y vale (7.4). Origen en la base: $y_1=R$, $y_2=0$.</li>
+    <li>$mgR=\tfrac12mv_2^2\Rightarrow v_2=\sqrt{2gR}=\sqrt{2(9{,}80)(3{,}00)}=7{,}67$ m/s, igual que en cualquier rampa de altura $R$, sea circular o no.</li>
+    <li>Para la normal la energía no sirve: se usa Newton en el fondo, con aceleración centrípeta hacia arriba: $n-mg=m\dfrac{v_2^2}{R}=2mg\Rightarrow n=3mg=735$ N (el triple de su peso).</li>
+  </ol>
+  <p>Lección: <b>energía</b> para la rapidez en un punto; <b>segunda ley de Newton</b> para las fuerzas en ese punto.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 7.4, pp. 209-210">U p.209-210</span></div>
+<div class="box ex"><span class="h">Ejemplos del libro 7.5 y 7.6 — la fricción se cuenta en $W_{otras}$</span>
+  <ol class="steps">
+    <li><b>7.5 (círculo vertical con fricción).</b> Si Throcky llega abajo con solo 6,00 m/s: $K_2=\tfrac12(25{,}0)(6{,}00)^2=450$ J, $U_1=mgR=735$ J. Por (7.6): $W_f=W_{otras}=K_2+U_2-K_1-U_1=450-735=-285$ J. La energía mecánica disminuyó 285 J. Aplicar Newton aquí sería difícil (la normal, la fricción y la aceleración cambian en cada punto); la energía solo mira los extremos.</li>
+    <li><b>7.6 (plano inclinado con fricción).</b> Una caja de 12 kg sube por una rampa de 30° con $v_1=5{,}0$ m/s en la base y se detiene tras 1,6 m. $K_1=150$ J; $U_2=mgy_2=(12)(9{,}8)(0{,}80)=94$ J (con $y_2=1{,}6\sin30^\circ$). Entonces $-f s=(K_2+U_2)-(K_1+U_1)=94-150=-56$ J y $f=56/1{,}6=35$ N. Al volver a la base la fricción vuelve a quitar 56 J: $W_{otras}=-112$ J y $K_3=150-112=38$ J, es decir, $v_3\approx2{,}5$ m/s (la caja regresa con solo 38 de los 150 J iniciales).</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplos 7.5 y 7.6, pp. 210-211">U p.210-211</span></div>
+<div class="box tip"><span class="h">¿Energía o Newton?</span>
+  <p>Usa energía cuando te dan o piden <b>rapideces y posiciones</b> (alturas, distancias recorridas, compresiones) y no te importa el tiempo, sobre todo si la trayectoria es curva o la fuerza varía. Usa la segunda ley (o la cinemática) si te piden un <b>tiempo</b> o una <b>aceleración</b>. En los problemas mixtos se combinan: energía para $v$, Newton para fuerzas como la normal.</p>
+  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 7.1, p. 207">U p.207</span></div>
+
+<h2 id="s2"><span class="n">2</span>Energía potencial elástica <span class="src" data-l="U" data-ref="U §7.2, pp. 212-216">U p.212</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Un resorte comprimido o estirado es como un <b>arco tensado</b>: has hecho trabajo para deformarlo y esa energía queda guardada, lista para devolverse como movimiento. Comprimirlo 2 cm y estirarlo 2 cm guarda lo mismo, porque la deformación aparece al cuadrado; y duplicar la deformación guarda <b>cuatro</b> veces más energía.</p>
+  <span class="src" data-l="U" data-ref="U §7.2, pp. 212-213">U p.212-213</span></div>
+<div class="box def"><span class="h">Energía potencial elástica</span>
+  <p>Para un resorte ideal (masa despreciable, fuerza $F_x=-kx$ sobre el cuerpo), con $x$ medida desde su <b>longitud natural</b> ($x>0$ estirado, $x<0$ comprimido):
+  $$U_{el}=\tfrac12kx^2\qquad\text{(ec. 7.10)}$$
+  Nunca es negativa y vale cero con el resorte relajado. El trabajo que el resorte hace sobre el cuerpo es
+  $$W_{el}=\tfrac12kx_1^2-\tfrac12kx_2^2=U_{el,1}-U_{el,2}=-\Delta U_{el}\qquad\text{(ec. 7.11)}$$
+  Si el resorte se estira más ($U_{el}$ aumenta), hace trabajo negativo; si se relaja ($U_{el}$ disminuye), hace trabajo positivo, sea cual sea el signo de $x$.</p>
+  <span class="src" data-l="U" data-ref="U §7.2 ecs. (7.10)-(7.11), pp. 212-213">U p.212-213</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_7_14_parabola.png" alt="Figura 7.14 de U: gráfica de la energía potencial elástica de un resorte ideal, una parábola U_el = (1/2) k x al cuadrado con mínimo en x = 0; a la izquierda el resorte se comprime (x < 0) y a la derecha se estira (x > 0); U_el nunca es negativa." style="max-width:min(100%,300px)" loading="lazy">
+<figcaption>Fig. 7.14 de U: $U_{el}=\tfrac12kx^2$ es una parábola con el mínimo en el resorte relajado. <span class="src" data-l="U" data-ref="U Fig. 7.14, p. 213">U p.213</span></figcaption>
+</figure>
+<div class="box warn"><span class="h">A diferencia de $U_{grav}$, el cero de $U_{el}$ no se elige</span>
+  <p>Con la gravedad podías poner $y=0$ donde quisieras. En (7.10), $x=0$ <b>debe</b> ser la longitud natural del resorte: ahí la fuerza y la energía elástica son nulas. Y no confundas $\tfrac12kx_1^2-\tfrac12kx_2^2$ con $\tfrac12k(x_1-x_2)^2$: la energía no es lineal en $x$.</p>
+  <span class="src" data-l="U" data-ref="U §7.2 «Cuidado: energía potencial gravitacional contra energía potencial elástica», p. 213">U p.213</span></div>
+<div class="box thm"><span class="h">Conservación con resorte y caso general</span>
+  <p>Si el resorte es la única fuerza que hace trabajo: $K_1+U_{el,1}=K_2+U_{el,2}$ (ec. 7.12), es decir, $E=K+U_{el}$ es constante. En el caso más general (gravedad, resorte y otras fuerzas):
+  $$K_1+U_{grav,1}+U_{el,1}+W_{otras}=K_2+U_{grav,2}+U_{el,2}\ \ \text{(7.13)}\qquad\Longleftrightarrow\qquad K_1+U_1+W_{otras}=K_2+U_2\ \ \text{(7.14)}$$
+  con $U=U_{grav}+U_{el}$. Esta es <b>la ecuación que más se usa en examen</b>. Se supone un resorte sin masa (si la tiene, su energía cinética es despreciable cuando su masa es mucho menor que la del cuerpo).</p>
+  <span class="src" data-l="U" data-ref="U §7.2 ecs. (7.12)-(7.14), pp. 213-214">U p.213-214</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 215" width="100%" role="img" aria-label="Parábola de energía potencial elástica con la energía total constante y tres posiciones del bloque">
+  <defs><marker id="mac3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbc3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmc3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgc3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpc3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfc3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="40" y1="175" x2="330" y2="175"/>
+  <line class="ax" x1="40" y1="175" x2="40" y2="13"/>
+  <text x="325" y="203" class="sm" text-anchor="end">x (m)</text>
+  <text x="46" y="20" class="sm">U (J)</text>
+  <line x1="68.5" y1="175" x2="68.5" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="68.5" y="191" class="sm" text-anchor="middle">−0,2</text>
+  <line x1="125.5" y1="175" x2="125.5" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="125.5" y="191" class="sm" text-anchor="middle">−0,1</text>
+  <line x1="182.5" y1="175" x2="182.5" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="182.5" y="191" class="sm" text-anchor="middle">0</text>
+  <line x1="239.5" y1="175" x2="239.5" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="239.5" y="191" class="sm" text-anchor="middle">0,1</text>
+  <line x1="296.5" y1="175" x2="296.5" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="296.5" y="191" class="sm" text-anchor="middle">0,2</text>
+  <line x1="36" y1="143.6" x2="40" y2="143.6" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="33" y="147.6" class="sm" text-anchor="end">1</text>
+  <line x1="36" y1="49.4" x2="40" y2="49.4" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="33" y="53.4" class="sm" text-anchor="end">4</text>
+  <path d="M 40.0 -21.2 L 43.6 -11.6 L 47.1 -2.1 L 50.7 7.1 L 54.2 16.0 L 57.8 24.7 L 61.4 33.2 L 64.9 41.4 L 68.5 49.4 L 72.1 57.1 L 75.6 64.6 L 79.2 71.8 L 82.8 78.8 L 86.3 85.6 L 89.9 92.1 L 93.4 98.3 L 97.0 104.3 L 100.6 110.1 L 104.1 115.6 L 107.7 120.9 L 111.2 125.9 L 114.8 130.7 L 118.4 135.3 L 121.9 139.6 L 125.5 143.6 L 129.1 147.4 L 132.6 151.0 L 136.2 154.3 L 139.8 157.3 L 143.3 160.2 L 146.9 162.7 L 150.4 165.1 L 154.0 167.2 L 157.6 169.0 L 161.1 170.6 L 164.7 171.9 L 168.2 173.0 L 171.8 173.9 L 175.4 174.5 L 178.9 174.9 L 182.5 175.0 L 186.1 174.9 L 189.6 174.5 L 193.2 173.9 L 196.8 173.0 L 200.3 171.9 L 203.9 170.6 L 207.4 169.0 L 211.0 167.2 L 214.6 165.1 L 218.1 162.7 L 221.7 160.2 L 225.2 157.3 L 228.8 154.3 L 232.4 151.0 L 235.9 147.4 L 239.5 143.6 L 243.1 139.6 L 246.6 135.3 L 250.2 130.7 L 253.8 125.9 L 257.3 120.9 L 260.9 115.6 L 264.4 110.1 L 268.0 104.3 L 271.6 98.3 L 275.1 92.1 L 278.7 85.6 L 282.2 78.8 L 285.8 71.8 L 289.4 64.6 L 292.9 57.1 L 296.5 49.4 L 300.1 41.4 L 303.6 33.2 L 307.2 24.7 L 310.8 16.0 L 314.3 7.1 L 317.9 -2.1 L 321.4 -11.6 L 325.0 -21.2" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <path d="M 40.0 49.4 L 325.0 49.4" fill="none" stroke="var(--mut)" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="322.1" y="44.4" class="sm bd" text-anchor="end">E = 4 J</text>
+  <circle cx="68.5" cy="49.4" r="4.5" fill="var(--A)"/>
+  <line x1="68.5" y1="49.4" x2="68.5" y2="175.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="125.5" cy="143.6" r="4.5" fill="var(--A)"/>
+  <line x1="125.5" y1="143.6" x2="125.5" y2="175.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="182.5" cy="175.0" r="4.5" fill="var(--A)"/>
+  <line x1="182.5" y1="175.0" x2="182.5" y2="175.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="74.2" y="44.4" class="sm" text-anchor="start">K = 0, U = 4 J</text>
+  <text x="128.3" y="137.6" class="sm" text-anchor="start">K = 3 J</text>
+  <text x="182.5" y="153.0" class="sm" text-anchor="middle">K = 4 J</text>
+  <text x="182.5" y="80.8" class="sm bd" text-anchor="middle">U = ½kx²</text>
+</svg>
+<figcaption>Resorte con k = 200 N/m y E = 4 J (amplitud 0,2 m): en los extremos toda la energía es elástica (K = 0); al pasar por x = 0 toda es cinética. K + U = 4 J en todas partes. <span class="src" data-l="P" data-ref="Diagrama propio (U §7.2, Fig. 7.14 p. 213)">P</span></figcaption>
+</figure>
+
+<div class="box ex"><span class="h">Ejemplos del libro 7.7 y 7.8 — deslizador con resorte</span>
+  <p>Deslizador de 0,200 kg sobre un riel de aire sin fricción, unido a un resorte de $k=5{,}00$ N/m.</p>
+  <ol class="steps">
+    <li><b>7.7.</b> Se estira 0,100 m y se suelta. En $x=0{,}080$ m: $K_2=U_1-U_2=\tfrac12(5{,}00)(0{,}100)^2-\tfrac12(5{,}00)(0{,}080)^2=0{,}0250-0{,}0160=0{,}0090$ J y $|v|=\sqrt{2K_2/m}=0{,}30$ m/s (el signo lo da el sentido: hacia $-x$ al volver, $v_x=-0{,}30$ m/s).</li>
+    <li><b>7.8.</b> Parte del reposo en $x=0$ y se le aplica una fuerza constante $F=0{,}610$ N hasta $x=0{,}100$ m: $W_{otras}=F\Delta x=0{,}0610$ J. Entonces $K_2=0+0+0{,}0610-U_2=0{,}0610-0{,}0250=0{,}0360$ J y $v=0{,}60$ m/s. Sin resorte llegaría a $\sqrt{2(0{,}0610)/0{,}200}=0{,}78$ m/s: el resorte, al estirarse, hace trabajo negativo.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplos 7.7 y 7.8, pp. 215-216">U p.215-216</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 7.9 — ascensor frenado por un resorte y una fricción</span>
+  <p>Un ascensor de 2000 kg (peso 19 600 N) llega con $v_1=4{,}00$ m/s a un resorte amortiguador; el freno de seguridad aplica una fricción constante de 17 000 N y el resorte lo detiene tras comprimirse 2,00 m. ¿Qué $k$ hace falta?</p>
+  <ol class="steps">
+    <li>Origen en el contacto ($y_1=0$) con $+y$ hacia arriba; $y_2=-2{,}00$ m. $K_1=\tfrac12(2000)(4{,}00)^2=16\,000$ J, $K_2=0$, $U_1=0$.</li>
+    <li>$U_2=mgy_2+\tfrac12ky_2^2=-39\,200+\tfrac12k(2{,}00)^2$. La fricción trabaja en contra: $W_{otras}=-(17\,000)(2{,}00)=-34\,000$ J.</li>
+    <li>(7.14): $16\,000-34\,000=-39\,200+2k\Rightarrow k=1{,}06\times10^4$ N/m.</li>
+  </ol>
+  <p><b>Parece una paradoja:</b> $\tfrac12ky_2^2=21\,200$ J es mayor que la energía mecánica inicial (16 000 J), pero el punto 2 está <i>por debajo</i> del origen, donde $U_{grav}$ es negativa ($-39\,200$ J): la energía mecánica en 2 vale $E_2=21\,200-39\,200=-18\,000$ J, que es 16 000 − 34 000. Más adelante (ejercicio E 7.22 de abajo) se calcula su rapidez y aceleración a 1,00 m.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 7.9, pp. 216-217 y Fig. 7.17">U p.216-217</span></div>
+
+<h2 id="s3"><span class="n">3</span>Fuerzas conservativas y no conservativas <span class="src" data-l="U" data-ref="U §7.3, pp. 217-220">U p.217</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Con el peso y el resorte, la energía cinética que «prestas» a la energía potencial se recupera íntegra: la pelota lanzada hacia arriba vuelve a su altura con la misma rapidez; el deslizador rebota en el resorte con la rapidez con que llegó. Es una conversión <b>bidireccional</b>, como un depósito del que puedes retirar todo lo ingresado. La <b>fricción</b>, en cambio, es una «comisión» que no se devuelve: al frenar con el coche bloqueado, la energía cinética perdida calienta neumáticos y asfalto y no puedes recuperarla dando marcha atrás.</p>
+  <span class="src" data-l="U" data-ref="U §7.3, pp. 217-218">U p.217-218</span></div>
+<div class="box def"><span class="h">Fuerza conservativa</span>
+  <p>Es una fuerza para la cual la relación trabajo-energía cinética es totalmente <b>reversible</b>. El trabajo de una fuerza conservativa tiene cuatro propiedades:</p>
+  <ol>
+    <li>puede expresarse como diferencia entre los valores inicial y final de una <b>función de energía potencial</b>: $W=U_1-U_2=-\Delta U$;</li>
+    <li>es <b>reversible</b>;</li>
+    <li>es <b>independiente de la trayectoria</b>: solo depende de los puntos inicial y final;</li>
+    <li>si el punto final coincide con el inicial (trayectoria cerrada), el trabajo total es <b>cero</b>.</li>
+  </ol>
+  <p>Ejemplos: el peso ($U=mgy$), la fuerza elástica ideal ($U=\tfrac12kx^2$) y, más adelante, la fuerza eléctrica. Si solo trabajan fuerzas conservativas, $E=K+U$ es constante.</p>
+  <span class="src" data-l="U" data-ref="U §7.3 «Fuerzas conservativas», pp. 217-218 y resumen p. 226">U p.217-218</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_7_18_conservativa.png" alt="Figura 7.18 de U: una excursionista va de una posición inicial a una posición final siguiendo tres trayectorias distintas, sobre una montaña, en línea recta o por un valle; el trabajo de la fuerza gravitacional es el mismo en las tres, porque es una fuerza conservativa." style="max-width:min(100%,300px)" loading="lazy">
+<figcaption>Fig. 7.18 de U: el trabajo de una fuerza conservativa es el mismo por cualquiera de las trayectorias entre los mismos puntos. <span class="src" data-l="U" data-ref="U Fig. 7.18, p. 217">U p.217</span></figcaption>
+</figure>
+<div class="box def"><span class="h">Fuerza no conservativa y fuerza disipativa</span>
+  <p>No todas las fuerzas son conservativas. La <b>fricción</b> cinética no lo es: al invertir el movimiento también se invierte la fuerza, así que trabaja negativo <i>en ambos sentidos</i>, y en un viaje de ida y vuelta su trabajo no se anula. La resistencia de un fluido tampoco. El trabajo de una fuerza no conservativa <b>no puede representarse con una función de energía potencial</b> y depende del camino. Si hace que la energía mecánica se pierda (fricción, resistencia del aire) se llama <b>fuerza disipativa</b>; también hay fuerzas no conservativas que <i>aumentan</i> la energía mecánica (la explosión de un petardo).</p>
+  <span class="src" data-l="U" data-ref="U §7.3 «Fuerzas no conservativas», p. 218">U p.218</span></div>
+<div class="box ex"><span class="h">Ejemplo del libro 7.10 — el trabajo de la fricción depende del camino</span>
+  <p>Mueves 2,50 m un sillón de 40,0 kg sobre un suelo horizontal con $\mu_k=0{,}200$. El camino recto está bloqueado, así que usas uno de dos tramos de 2,00 m y 1,50 m. ¿Cuánto trabajo extra?</p>
+  <ol class="steps">
+    <li>El sillón parte y termina en reposo y no cambia de altura: $K_1=K_2$, $U_1=U_2$, así que $W_{otras}=0$: lo que tú aportas compensa lo que quita la fricción, $W_{usted}=-W_{fric}=\mu_kmg\,s$.</li>
+    <li>Camino recto ($s=2{,}50$ m): $W_{usted}=(0{,}200)(40{,}0)(9{,}80)(2{,}50)=196$ J.</li>
+    <li>Camino de dos tramos ($s=2{,}00+1{,}50=3{,}50$ m): $W_{usted}=274$ J. Trabajo extra: $274-196=78$ J.</li>
+  </ol>
+  <p>Mismos puntos inicial y final, distinto trabajo de fricción ($-196$ J frente a $-274$ J): <b>es no conservativa</b>.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 7.10, pp. 218-219">U p.218-219</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 202" width="100%" role="img" aria-label="Sillón arrastrado por una habitación: dos caminos entre los puntos 1 y 2 con trabajos de fricción distintos">
+  <defs><marker id="mac4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbc4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmc4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgc4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpc4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfc4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="14" y1="135" x2="346" y2="135" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 70 135 L 290 135" fill="none" stroke="var(--acc)" stroke-width="3"/>
+  <path d="M 70 135 L 210.8 29.4 L 290 135" fill="none" stroke="var(--A)" stroke-width="3"/>
+  <circle cx="70" cy="135" r="5" fill="var(--fg)"/>
+  <circle cx="290" cy="135" r="5" fill="var(--fg)"/>
+  <text x="70" y="153" class="sm bd" text-anchor="middle">1</text>
+  <text x="290" y="153" class="sm bd" text-anchor="middle">2</text>
+  <text x="180" y="172" class="sm bd" text-anchor="middle" style="fill:var(--acc)">recto: s = 2,50 m  →  W<tspan dy="3" font-size="9">f</tspan><tspan dy="-3"> = −196 J</tspan></text>
+  <text x="224" y="20" class="sm bd" text-anchor="start" style="fill:var(--A)">acodado: 2,00 + 1,50 m</text>
+  <text x="224" y="36" class="sm bd" text-anchor="start" style="fill:var(--A)">W<tspan dy="3" font-size="9">f</tspan><tspan dy="-3"> = −274 J</tspan></text>
+  <text x="180" y="192" class="sm" text-anchor="middle">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = μ</tspan><tspan dy="3" font-size="9">k</tspan><tspan dy="-3">mg = 78,4 N; trabajo extra: 274 − 196 = 78 J</tspan></text>
+</svg>
+<figcaption>Ejemplo 7.10 de U (sillón de 40,0 kg, μ<sub>k</sub> = 0,200): la fricción hace −196 J por el camino recto y −274 J por el de dos tramos. Mismos puntos inicial y final, distinto trabajo: la fricción no es conservativa (esquema no a escala). <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 7.10 (U p. 218-219)">P</span></figcaption>
+</figure>
+
+<div class="box ex"><span class="h">Ejemplo del libro 7.11 — ¿conservativa o no? (el truco de la espira)</span>
+  <p>Una fuerza $\vec F=Cx\,\hat\jmath$ ($C>0$) actúa sobre un electrón que da una vuelta a una espira cuadrada de lado $L$ (el eje $x$ horizontal). Solo trabaja en el tramo vertical de $x=L$: $W=\int_0^L CL\,dy=CL^2\neq0$. Como el trabajo en una trayectoria <b>cerrada</b> no es cero, la fuerza <b>no es conservativa</b> y no se puede escribir con una $U$. Esa es la prueba rápida: ¿sale cero al volver al punto de partida?</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 7.11, p. 219">U p.219</span></div>
+<div class="box thm"><span class="h">Ley de conservación de la energía (con energía interna)</span>
+  <p>Los efectos de las fuerzas no conservativas se describen con otra forma de energía, la <b>energía interna</b> (el calentamiento del bloque y de la superficie). Experimentalmente, su aumento es exactamente el valor absoluto del trabajo de la fricción: $\Delta U_{int}=-W_{otras}$. Sustituyendo en (7.14):
+  $$\Delta K+\Delta U+\Delta U_{int}=0\qquad\text{(ec. 7.15)}$$
+  La suma de todos los cambios de energía es cero: una forma disminuye y otra aumenta, <b>la energía nunca se crea ni se destruye, solo cambia de forma</b>. La energía <i>mecánica</i> sí puede perderse; la energía <i>total</i> no.</p>
+  <span class="src" data-l="U" data-ref="U §7.3 «La ley de conservación de la energía» ec. (7.15), p. 220">U p.220</span></div>
+<div class="box ex"><span class="h">Ejemplo conceptual del libro 7.12 — trabajo de la fricción y energía interna</span>
+  <p>Vuelve al ejemplo 7.5 (Throcky baja la rampa con fricción). Su energía cinética pasa de 0 a 450 J ($\Delta K=+450$ J) y la potencial de 735 J a 0 ($\Delta U=-735$ J). El trabajo de la fricción es $W_{otras}=W_{fric}=-285$ J, así que el cambio de energía interna es $\Delta U_{int}=-W_{otras}=+285$ J: se calientan un poco las ruedas, los cojinetes de la patineta y la rampa. Según (7.15):
+  $$\Delta K+\Delta U+\Delta U_{int}=+450\ \text{J}+(-735\ \text{J})+285\ \text{J}=0$$
+  La energía total del sistema se conserva (incluidas las formas de energía interna).</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo conceptual 7.12, p. 220">U p.220</span></div>
+<figure class="interactivo" data-escena="energia-rampa" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: bloque lanzado por un resorte en una rampa con fricción y reparto de la energía">
+  <img class="int-static" src="../assets/img/int_energia-rampa.png" alt="Interactivo: bloque lanzado por un resorte en una rampa con fricción y reparto de la energía">
+  <figcaption><b>Pruébalo tú:</b> mueve el bloque con el deslizador «recorrido s» y mira cómo la barra apilada se reparte entre $U_{el}$, $K$, $U_{grav}$ y la energía interna $\Delta U_{int}$ ganada por la fricción, <i>siempre sumando</i> la energía inicial del resorte. Con $m=1{,}5$ kg, $\theta=30^\circ$, $\mu_k=0{,}50$, $U_{el,0}=119$ J y $s=6$ m obtienes $K\approx36{,}7$ J ($v\approx7$ m/s), $U_{grav}=44{,}1$ J y $\Delta U_{int}=38{,}2$ J (examen Feb. 2022 2ª sem. y problema 7.73); con $m=1{,}5$ kg, $\theta=25^\circ$, $\mu_k=0{,}4$, $g=9{,}81$, $U_{el,0}=84{,}8$ J y $s=5$ m: $K=27{,}0$ J ($v=6$ m/s), $U_{grav}=31{,}1$ J y $\Delta U_{int}=26{,}7$ J (examen Sep. 2024). Con el resorte de $k=2000$ N/m el bloque se separa de él tras recorrer $x_0=\sqrt{2U_{el,0}/k}$ (unos 0,3 m). <span class="src" data-l="P" data-ref="Interactivo propio de la conservación de la energía con resorte, rampa y fricción (U §7.2-7.3, pp. 212-220; Examen Febrero 2022 (2ª semana) P-1; Examen Septiembre 2024 P-1)">P</span></figcaption>
+</figure>
+<div class="box warn"><span class="h">Errores típicos</span>
+  <ul>
+    <li>Decir «la energía no se conserva» cuando hay fricción: se conserva la energía <i>total</i>; lo que baja es la energía <i>mecánica</i> $K+U$, que se convierte en energía interna.</li>
+    <li>Querer escribir una energía potencial de la fricción: no existe, porque su trabajo depende del camino. Se cuenta como $W_{otras}=-f_ks$ (con $s$ la longitud <b>recorrida</b>, no el desplazamiento neto).</li>
+    <li>Aplicar $K_1+U_1=K_2+U_2$ (sin $W_{otras}$) cuando hay fricción o una fuerza que trabaja.</li>
+    <li>Contar dos veces el trabajo del peso o del resorte: una vez en $U$ y otra en $W_{otras}$.</li>
+  </ul>
+  <span class="src" data-l="U" data-ref="U §7.3, pp. 217-220 y «Los datos hablan» p. 217">U p.217-220</span></div>
+
+<h2 id="s4"><span class="n">4</span>Fuerza y energía potencial <span class="src" data-l="U" data-ref="U §7.4, pp. 221-224">U p.221</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Imagina $U(x)$ como el <b>perfil de una montaña</b>. Una canica suelta sobre ella rueda <b>cuesta abajo</b>, hacia donde $U$ disminuye, y empuja con más fuerza donde la pendiente es mayor. En el fondo de un valle, en la cima y en un tramo plano, la pendiente es cero y no hay fuerza. Eso es todo el resultado de esta sección: <b>la fuerza es la pendiente de $U$ con signo cambiado</b>.</p>
+  <span class="src" data-l="U" data-ref="U §7.4, p. 221">U p.221</span></div>
+<div class="box def"><span class="h">Fuerza a partir de la energía potencial (1D)</span>
+  <p>Para una fuerza conservativa se cumple $W=-\Delta U$. En un desplazamiento pequeño $\Delta x$, $F_x\Delta x\approx-\Delta U$, y al tomar el límite $\Delta x\to0$:
+  $$F_x(x)=-\frac{dU(x)}{dx}\qquad\text{(ec. 7.16)}$$
+  La componente de la fuerza es el <b>negativo de la derivada</b> de $U$. Donde $U$ cambia rápido, $F$ es grande; si $F_x>0$, $U$ disminuye al aumentar $x$.</p>
+  <span class="src" data-l="U" data-ref="U §7.4 ec. (7.16), p. 221">U p.221</span></div>
+<div class="box ex"><span class="h">Comprobación con lo que ya sabes</span>
+  <ul>
+    <li>Gravedad: $U=mgy\Rightarrow F_y=-\dfrac{d(mgy)}{dy}=-mg$: la fuerza apunta hacia $y$ decreciente.</li>
+    <li>Resorte: $U=\tfrac12kx^2\Rightarrow F_x=-kx$: para $x>0$ la pendiente es positiva y $F_x<0$ (hacia $x=0$); para $x<0$, la pendiente es negativa y $F_x>0$ (otra vez hacia $x=0$). Es una fuerza <b>restauradora</b>.</li>
+  </ul>
+  <span class="src" data-l="U" data-ref="U §7.4 y Fig. 7.22, pp. 221-222">U p.221-222</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 230" width="100%" role="img" aria-label="Curva de energía potencial con tangentes y flechas de la fuerza en tres puntos">
+  <defs><marker id="mac5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbc5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmc5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgc5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpc5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfc5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="42" y1="194" x2="333" y2="194"/>
+  <line class="ax" x1="42" y1="194" x2="42" y2="9"/>
+  <text x="328" y="222" class="sm" text-anchor="end">x (m)</text>
+  <text x="48" y="16" class="sm">U (J)</text>
+  <line x1="116.6" y1="194" x2="116.6" y2="198" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="116.6" y="210" class="sm" text-anchor="middle">0,6</text>
+  <line x1="191.2" y1="194" x2="191.2" y2="198" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="191.2" y="210" class="sm" text-anchor="middle">1,2</text>
+  <line x1="265.8" y1="194" x2="265.8" y2="198" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="265.8" y="210" class="sm" text-anchor="middle">1,8</text>
+  <line x1="38" y1="184.0" x2="42" y2="184.0" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="35" y="188.0" class="sm" text-anchor="end">−10</text>
+  <line x1="38" y1="134.0" x2="42" y2="134.0" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="35" y="138.0" class="sm" text-anchor="end">0</text>
+  <line x1="38" y1="34.0" x2="42" y2="34.0" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="35" y="38.0" class="sm" text-anchor="end">20</text>
+  <path d="M 48.2 134.2 L 51.7 134.4 L 55.2 134.8 L 58.7 135.2 L 62.2 135.8 L 65.7 136.5 L 69.2 137.3 L 72.7 138.1 L 76.2 139.1 L 79.7 140.2 L 83.2 141.3 L 86.7 142.6 L 90.2 143.9 L 93.7 145.3 L 97.2 146.7 L 100.7 148.3 L 104.2 149.9 L 107.7 151.5 L 111.2 153.2 L 114.7 154.9 L 118.2 156.7 L 121.7 158.4 L 125.2 160.2 L 128.7 162.0 L 132.2 163.8 L 135.6 165.6 L 139.1 167.4 L 142.6 169.1 L 146.1 170.8 L 149.6 172.5 L 153.1 174.1 L 156.6 175.6 L 160.1 177.0 L 163.6 178.4 L 167.1 179.6 L 170.6 180.7 L 174.1 181.7 L 177.6 182.5 L 181.1 183.1 L 184.6 183.6 L 188.1 183.9 L 191.6 184.0 L 195.1 183.9 L 198.6 183.5 L 202.1 182.9 L 205.6 182.0 L 209.1 180.8 L 212.6 179.3 L 216.1 177.5 L 219.6 175.3 L 223.1 172.8 L 226.6 169.9 L 230.1 166.7 L 233.6 163.0 L 237.1 158.9 L 240.6 154.3 L 244.1 149.2 L 247.6 143.7 L 251.1 137.6 L 254.6 131.0 L 258.1 123.9 L 261.6 116.2 L 265.0 107.8 L 268.5 98.8 L 272.0 89.2 L 275.5 78.9 L 279.0 68.0 L 282.5 56.2 L 286.0 43.8 L 289.5 30.6 L 293.0 16.5 L 296.5 1.7 L 300.0 -14.0 L 303.5 -30.6 L 307.0 -48.1 L 310.5 -66.5 L 314.0 -85.8 L 317.5 -106.2 L 321.0 -127.5 L 324.5 -149.9 L 328.0 -173.4" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <path d="M 101.7 148.4 L 131.5 163.4" fill="none" stroke="var(--mut)" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <circle cx="116.6" cy="155.9" r="4.5" fill="var(--A)"/>
+  <line x1="116.6" y1="155.9" x2="139.1" y2="155.9" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgc5)"/>
+  <path d="M 176.3 184.0 L 206.1 184.0" fill="none" stroke="var(--mut)" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <circle cx="191.2" cy="184.0" r="4.5" fill="var(--A)"/>
+  <path d="M 250.9 143.4 L 280.7 68.4" fill="none" stroke="var(--mut)" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <circle cx="265.8" cy="105.9" r="4.5" fill="var(--A)"/>
+  <line x1="265.8" y1="105.9" x2="203.8" y2="105.9" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgc5)"/>
+  <text x="122.6" y="146.9" class="sm bd" text-anchor="start" style="fill:var(--X)">F = +12,5 N</text>
+  <text x="191.2" y="172.0" class="sm bd" text-anchor="middle" style="fill:var(--X)">F = 0</text>
+  <text x="259.8" y="96.9" class="sm bd" text-anchor="end" style="fill:var(--X)">F = −62,5 N</text>
+</svg>
+<figcaption>F<sub>x</sub> = −dU/dx: donde la curva baja hacia la derecha (pendiente −12,5 J/m en x = 0,6 m) la fuerza apunta a la derecha; en el fondo del pozo (x = 1,2 m) la pendiente es 0 y F = 0; donde sube (+62,5 J/m en x = 1,8 m) apunta a la izquierda. Curva U = 10[(x/1,2)⁴ − 2(x/1,2)²] J (flechas no a escala). <span class="src" data-l="P" data-ref="Diagrama propio (U §7.4, ec. 7.16 p. 221; Fig. 7.24 p. 225)">P</span></figcaption>
+</figure>
+
+<div class="box thm"><span class="h">En tres dimensiones: el gradiente</span>
+  <p>Con $U(x,y,z)$, cada componente es el negativo de la derivada <i>parcial</i> (se deriva respecto a esa coordenada y las otras se tratan como constantes):
+  $$F_x=-\frac{\partial U}{\partial x},\quad F_y=-\frac{\partial U}{\partial y},\quad F_z=-\frac{\partial U}{\partial z}\qquad\text{(7.17)}$$
+  $$\vec F=-\left(\frac{\partial U}{\partial x}\hat\imath+\frac{\partial U}{\partial y}\hat\jmath+\frac{\partial U}{\partial z}\hat k\right)=-\vec\nabla U\qquad\text{(7.18)}$$
+  Es el <b>gradiente</b> de $U$. Con $U=mgy$ da $\vec F=-mg\,\hat\jmath$. Una montaña muy empinada (gradiente grande) empuja con fuerza intensa; la superficie plana de un lago ($U$ constante) no ejerce fuerza.</p>
+  <span class="src" data-l="U" data-ref="U §7.4 ecs. (7.17)-(7.18), p. 223">U p.223</span></div>
+<div class="box ex"><span class="h">Ejemplos del libro 7.13 y 7.14</span>
+  <ol class="steps">
+    <li><b>7.13 (fuerza eléctrica).</b> Una carga fija en $x=0$ repele a otra igual que se mueve por $+x$; $U(x)=C/x$ con $C>0$. Entonces $F_x=-\dfrac{d}{dx}\dfrac Cx=\dfrac{C}{x^2}>0$: repulsión, grande cuando están muy juntas y cada vez menor al alejarse.</li>
+    <li><b>7.14 (disco en dos dimensiones).</b> $U(x,y)=\tfrac12k(x^2+y^2)$. Las derivadas parciales dan $\vec F=-k(x\,\hat\imath+y\,\hat\jmath)=-k\vec r$, de módulo $F=k\sqrt{x^2+y^2}=kr$ y dirigida hacia el origen: justo la fuerza de un resorte ideal de longitud natural despreciable fijo en $r=0$.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplos 7.13 y 7.14, pp. 222-223">U p.222-223</span></div>
+<div class="box warn"><span class="h">El signo de $U$ no decide el sentido de la fuerza</span>
+  <p>La dirección de la fuerza la determina el signo de $F_x=-dU/dx$, <b>no</b> el signo de $U$. Lo físicamente significativo es la diferencia de $U$ entre dos puntos, que es lo que mide la derivada. Por eso puedes sumar cualquier constante a $U$ sin cambiar la física, y por eso desplazar la <i>variable</i> (usar $\tfrac12k(x-x_1)^2$ en vez de sumar una constante) <b>sí</b> la cambia (ver X6).</p>
+  <span class="src" data-l="U" data-ref="U §7.5 «Cuidado: energía potencial y la dirección de una fuerza conservativa», p. 225">U p.225</span></div>
+
+<h2 id="s5"><span class="n">5</span>Diagramas de energía <span class="src" data-l="U" data-ref="U §7.5, pp. 224-225">U p.224</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Dibuja $U(x)$ y, encima, una línea horizontal a la altura de la energía total $E$, como el <b>nivel del agua</b> en un paisaje. La partícula solo puede estar donde la curva queda por debajo del agua: la distancia vertical entre la línea $E$ y la curva es la energía cinética $K=E-U$. Donde la curva toca la línea, $K=0$: la partícula se para y da media vuelta. Una canica en un cuenco no puede subir por encima del nivel de donde se soltó.</p>
+  <span class="src" data-l="U" data-ref="U §7.5, pp. 224-225">U p.224-225</span></div>
+<div class="box def"><span class="h">Diagrama de energía, pozo de potencial y puntos de retorno</span>
+  <p>Una gráfica que muestra a la vez $U(x)$ y la energía total $E$ es un <b>diagrama de energía</b>. Como $K=E-U\ge0$, la partícula solo puede estar donde $U(x)\le E$ y $U$ nunca supera a $E$. Los puntos donde $U=E$ (y por tanto $K=0$) son los <b>puntos de retorno</b>: ahí la partícula se detiene e invierte su movimiento. Una región entre dos puntos de retorno es un <b>pozo de potencial</b>. Ejemplo del libro: el deslizador con resorte oscila entre $x=-A$ y $x=+A$, con $K$ máxima en $x=0$ y nula en los extremos.</p>
+  <span class="src" data-l="U" data-ref="U §7.5, pp. 224-225 y Fig. 7.23 p. 224">U p.224-225</span></div>
+<div class="box thm"><span class="h">Equilibrio estable e inestable</span>
+  <p>Un <b>punto de equilibrio</b> es donde $F_x=-dU/dx=0$ (pendiente nula). <b>Los mínimos de $U(x)$ son equilibrios estables</b> (si te apartas, la fuerza te devuelve: fuerza restauradora); <b>los máximos son equilibrios inestables</b> (si te apartas, la fuerza te aleja). Si $E$ es solo un poco mayor que el mínimo, la partícula queda atrapada cerca del fondo; si $E$ supera el valor máximo de $U$ en un lado, puede «escapar» hacia $x$ muy grande.</p>
+  <span class="src" data-l="U" data-ref="U §7.5, p. 225 y Fig. 7.24">U p.225</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_7_24_pozo.png" alt="Figura 7.24 de U: a) función de energía potencial U(x) hipotética con varios mínimos y máximos y las energías totales E0, E1, E2 y E3; los mínimos son equilibrios estables y los máximos inestables; con E1 la partícula queda atrapada entre xa y xb, con E2 entre xc y xd y con E3 puede escapar. b) la fuerza correspondiente Fx = −dU/dx, positiva donde U baja hacia la derecha y negativa donde sube, con flechas rojas." loading="lazy">
+<figcaption>Fig. 7.24 de U: arriba, una $U(x)$ hipotética con varias energías totales; abajo, la fuerza $F_x=-dU/dx$ correspondiente (cero en los puntos de equilibrio $x_1$ a $x_4$). <span class="src" data-l="U" data-ref="U Fig. 7.24, p. 225">U p.225</span></figcaption>
+</figure>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 240" width="100%" role="img" aria-label="Pozo doble de potencial con la energía total E = −5 J, puntos de retorno y equilibrios">
+  <defs><marker id="mac6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbc6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmc6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgc6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpc6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfc6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="40" y1="202" x2="333" y2="202"/>
+  <line class="ax" x1="40" y1="202" x2="40" y2="9"/>
+  <text x="328" y="230" class="sm" text-anchor="end">x (m)</text>
+  <text x="46" y="16" class="sm">U (J)</text>
+  <line x1="76.3" y1="202" x2="76.3" y2="206" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="76.3" y="218" class="sm" text-anchor="middle">−x<tspan dy="3" font-size="9">b</tspan><tspan dy="-3"></tspan></text>
+  <line x1="139.4" y1="202" x2="139.4" y2="206" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="139.4" y="218" class="sm" text-anchor="middle">−x<tspan dy="3" font-size="9">a</tspan><tspan dy="-3"></tspan></text>
+  <line x1="228.6" y1="202" x2="228.6" y2="206" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="228.6" y="218" class="sm" text-anchor="middle">x<tspan dy="3" font-size="9">a</tspan><tspan dy="-3"></tspan></text>
+  <line x1="291.7" y1="202" x2="291.7" y2="206" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="291.7" y="218" class="sm" text-anchor="middle">x<tspan dy="3" font-size="9">b</tspan><tspan dy="-3"></tspan></text>
+  <line x1="36" y1="159.5" x2="40" y2="159.5" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="33" y="163.5" class="sm" text-anchor="end">−10</text>
+  <line x1="36" y1="129.2" x2="40" y2="129.2" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="33" y="133.2" class="sm" text-anchor="end">−5</text>
+  <line x1="36" y1="98.9" x2="40" y2="98.9" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="33" y="102.9" class="sm" text-anchor="end">0</text>
+  <path d="M 40.0 -98.4 L 43.6 -62.0 L 47.2 -29.1 L 50.8 0.3 L 54.4 26.6 L 58.0 49.9 L 61.6 70.4 L 65.2 88.2 L 68.8 103.7 L 72.4 116.8 L 76.0 127.9 L 79.6 137.0 L 83.2 144.3 L 86.8 150.1 L 90.4 154.3 L 94.0 157.2 L 97.6 158.9 L 101.2 159.5 L 104.8 159.2 L 108.4 158.1 L 112.0 156.2 L 115.6 153.8 L 119.2 150.8 L 122.8 147.4 L 126.4 143.8 L 130.0 139.9 L 133.6 135.9 L 137.2 131.8 L 140.8 127.7 L 144.4 123.7 L 148.0 119.9 L 151.6 116.3 L 155.2 112.9 L 158.8 109.7 L 162.4 107.0 L 166.0 104.6 L 169.6 102.6 L 173.2 101.0 L 176.8 99.8 L 180.4 99.1 L 184.0 98.9 L 187.6 99.1 L 191.2 99.8 L 194.8 101.0 L 198.4 102.6 L 202.0 104.6 L 205.6 107.0 L 209.2 109.7 L 212.8 112.9 L 216.4 116.3 L 220.0 119.9 L 223.6 123.7 L 227.2 127.7 L 230.8 131.8 L 234.4 135.9 L 238.0 139.9 L 241.6 143.8 L 245.2 147.4 L 248.8 150.8 L 252.4 153.8 L 256.0 156.2 L 259.6 158.1 L 263.2 159.2 L 266.8 159.5 L 270.4 158.9 L 274.0 157.2 L 277.6 154.3 L 281.2 150.1 L 284.8 144.3 L 288.4 137.0 L 292.0 127.9 L 295.6 116.8 L 299.2 103.7 L 302.8 88.2 L 306.4 70.4 L 310.0 49.9 L 313.6 26.6 L 317.2 0.3 L 320.8 -29.1 L 324.4 -62.0 L 328.0 -98.4" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <path d="M 40.0 129.2 L 328.0 129.2" fill="none" stroke="var(--mut)" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="184.0" y="144.2" class="sm bd" text-anchor="middle">E = −5 J</text>
+  <path d="M 76.5 129.2 L 139.5 129.2" fill="none" stroke="var(--X)" stroke-width="4"/>
+  <circle cx="76.5" cy="129.2" r="4.5" fill="var(--E)"/>
+  <line x1="76.5" y1="129.2" x2="76.5" y2="202.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="139.5" cy="129.2" r="4.5" fill="var(--E)"/>
+  <line x1="139.5" y1="129.2" x2="139.5" y2="202.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <path d="M 228.5 129.2 L 291.5 129.2" fill="none" stroke="var(--X)" stroke-width="4"/>
+  <circle cx="228.5" cy="129.2" r="4.5" fill="var(--E)"/>
+  <line x1="228.5" y1="129.2" x2="228.5" y2="202.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="291.5" cy="129.2" r="4.5" fill="var(--E)"/>
+  <line x1="291.5" y1="129.2" x2="291.5" y2="202.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="101.7" cy="159.5" r="4.5" fill="var(--fg)"/>
+  <text x="101.7" y="176.5" class="sm" text-anchor="middle">estable</text>
+  <circle cx="266.3" cy="159.5" r="4.5" fill="var(--fg)"/>
+  <text x="266.3" y="176.5" class="sm" text-anchor="middle">estable</text>
+  <circle cx="184.0" cy="98.9" r="4.5" fill="var(--E)"/>
+  <text x="184.0" y="90.9" class="sm" text-anchor="middle">inestable</text>
+  <text x="259.4" y="123.2" class="sm bd" text-anchor="middle" style="fill:var(--X)">K ≥ 0</text>
+  <text x="108.6" y="123.2" class="sm bd" text-anchor="middle" style="fill:var(--X)">K ≥ 0</text>
+</svg>
+<figcaption>Pozo doble U = 10[(x/1,2)⁴ − 2(x/1,2)²] J. Con E = −5 J la partícula queda atrapada en uno de los pozos: oscila entre los puntos de retorno x<sub>a</sub> = 0,65 m y x<sub>b</sub> = 1,57 m (o sus simétricos) y no puede cruzar la barrera central (U = 0 > E). Mínimos = equilibrio estable; máximo = equilibrio inestable. <span class="src" data-l="P" data-ref="Diagrama propio (U §7.5, Fig. 7.24 p. 225)">P</span></figcaption>
+</figure>
+
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 138" width="100%" role="img" aria-label="Tres tipos de equilibrio: estable en un mínimo de U, inestable en un máximo y neutro en un tramo plano">
+  <defs><marker id="mac7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbc7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmc7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgc7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpc7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfc7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 17.0 40.0 L 19.2 44.3 L 21.5 48.4 L 23.8 52.2 L 26.0 55.8 L 28.2 59.2 L 30.5 62.4 L 32.8 65.4 L 35.0 68.2 L 37.2 70.7 L 39.5 73.0 L 41.8 75.1 L 44.0 77.0 L 46.2 78.6 L 48.5 80.0 L 50.8 81.2 L 53.0 82.2 L 55.2 83.0 L 57.5 83.6 L 59.8 83.9 L 62.0 84.0 L 64.2 83.9 L 66.5 83.6 L 68.8 83.0 L 71.0 82.2 L 73.2 81.2 L 75.5 80.0 L 77.8 78.6 L 80.0 77.0 L 82.2 75.1 L 84.5 73.0 L 86.8 70.7 L 89.0 68.2 L 91.2 65.4 L 93.5 62.4 L 95.8 59.2 L 98.0 55.8 L 100.2 52.2 L 102.5 48.4 L 104.8 44.3 L 107.0 40.0" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <circle cx="62" cy="76" r="7" fill="var(--A)" fill-opacity="0.6" stroke="var(--A)" stroke-width="1.5"/>
+  <line x1="22" y1="58" x2="40" y2="70" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mgc7)"/>
+  <line x1="102" y1="58" x2="84" y2="70" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mgc7)"/>
+  <text x="62" y="110" class="sm bd" text-anchor="middle">estable</text>
+  <text x="62" y="125" class="sm" text-anchor="middle">mínimo de U</text>
+  <path d="M 135.0 84.0 L 137.2 79.7 L 139.5 75.6 L 141.8 71.8 L 144.0 68.2 L 146.2 64.8 L 148.5 61.6 L 150.8 58.6 L 153.0 55.8 L 155.2 53.3 L 157.5 51.0 L 159.8 48.9 L 162.0 47.0 L 164.2 45.4 L 166.5 44.0 L 168.8 42.8 L 171.0 41.8 L 173.2 41.0 L 175.5 40.4 L 177.8 40.1 L 180.0 40.0 L 182.2 40.1 L 184.5 40.4 L 186.8 41.0 L 189.0 41.8 L 191.2 42.8 L 193.5 44.0 L 195.8 45.4 L 198.0 47.0 L 200.2 48.9 L 202.5 51.0 L 204.8 53.3 L 207.0 55.8 L 209.2 58.6 L 211.5 61.6 L 213.8 64.8 L 216.0 68.2 L 218.2 71.8 L 220.5 75.6 L 222.8 79.7 L 225.0 84.0" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <circle cx="180" cy="32" r="7" fill="var(--A)" fill-opacity="0.6" stroke="var(--A)" stroke-width="1.5"/>
+  <line x1="166" y1="40" x2="146" y2="56" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mgc7)"/>
+  <line x1="194" y1="40" x2="214" y2="56" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mgc7)"/>
+  <text x="180" y="110" class="sm bd" text-anchor="middle">inestable</text>
+  <text x="180" y="125" class="sm" text-anchor="middle">máximo de U</text>
+  <path d="M 253.0 84 L 255.2 84 L 257.5 84 L 259.8 84 L 262.0 84 L 264.2 84 L 266.5 84 L 268.8 84 L 271.0 84 L 273.2 84 L 275.5 84 L 277.8 84 L 280.0 84 L 282.2 84 L 284.5 84 L 286.8 84 L 289.0 84 L 291.2 84 L 293.5 84 L 295.8 84 L 298.0 84 L 300.2 84 L 302.5 84 L 304.8 84 L 307.0 84 L 309.2 84 L 311.5 84 L 313.8 84 L 316.0 84 L 318.2 84 L 320.5 84 L 322.8 84 L 325.0 84 L 327.2 84 L 329.5 84 L 331.8 84 L 334.0 84 L 336.2 84 L 338.5 84 L 340.8 84 L 343.0 84" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <circle cx="298" cy="76" r="7" fill="var(--A)" fill-opacity="0.6" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="298" y="110" class="sm bd" text-anchor="middle">neutro</text>
+  <text x="298" y="125" class="sm" text-anchor="middle">U constante</text>
+  <text x="180" y="12" class="sm" text-anchor="middle">flechas: fuerza al apartar la bolita</text>
+</svg>
+<figcaption>Una bolita sobre un perfil que representa U(x): en el fondo del valle (mínimo) la fuerza la devuelve; en la cima (máximo) la aleja; en el llano no hay fuerza. En el punto de equilibrio F<sub>x</sub> = −dU/dx = 0. <span class="src" data-l="P" data-ref="Diagrama propio (U §7.5, p. 225)">P</span></figcaption>
+</figure>
+
+<figure class="interactivo" data-escena="pozo-potencial" data-params='{"dim":2}' aria-label="Interactivo: pozo de potencial con energía total, puntos de retorno, equilibrios y fuerza">
+  <img class="int-static" src="../assets/img/int_pozo-potencial.png" alt="Interactivo: pozo de potencial con energía total, puntos de retorno, equilibrios y fuerza">
+  <figcaption><b>Pruébalo tú:</b> elige la curva $U(x)$ (resorte, pozo doble o Lennard-Jones simplificado), sube o baja la energía total $E$ y mueve la partícula. El tramo entre la curva y la línea $E$ (región permitida) mide $K=E-U$; los puntos de retorno, los mínimos (equilibrio estable) y los máximos (inestable) se distinguen en la leyenda; la flecha sobre la partícula es $F=-dU/dx$. Con el pozo doble y $E=-5$ J, la partícula en $x=1{,}1$ m tiene $U=-9{,}75$ J, $K=4{,}75$ J y $F=+4{,}88$ N, y oscila entre $x=0{,}65$ y $1{,}57$ m sin poder cruzar la barrera central: súbela por encima de $E=0$ y cruzará. Con $E<0$ en Lennard-Jones queda ligada; con $E\ge0$ escapa. <span class="src" data-l="P" data-ref="Interactivo propio de diagramas de energía (U §7.4-7.5, pp. 221-225)">P</span></figcaption>
+</figure>
+<div class="box tip"><span class="h">Cómo leer un diagrama de energía en un examen</span>
+  <ol class="steps">
+    <li>Traza (o localiza) la línea horizontal $E$ y marca dónde corta a $U(x)$: son los puntos de retorno; la partícula vive en los tramos donde $U\lt E$.</li>
+    <li>Si la línea $E$ pasa por <b>encima</b> de un máximo y la curva vuelve a bajar fuera, la partícula puede escapar por ese lado; si no, está atrapada.</li>
+    <li>$K$ es la distancia vertical entre $E$ y $U$: máxima en el fondo del pozo, cero en los puntos de retorno.</li>
+    <li>El sentido de la fuerza en cada punto es el de la bajada de $U$; es cero en mínimos y máximos.</li>
+  </ol>
+  <span class="src" data-l="P" data-ref="Explicación propia a partir de U §7.5, pp. 224-225">P</span></div>
+
+<h2 id="ejercicios"><span class="n">6</span>Ejercicios resueltos</h2>
+<p>Primero las <b>preguntas de examen real</b>: los cuatro problemas (de más sencillos a más elaborados), después la teoría y las cuestiones; luego ocho ejercicios del solucionario (E), de sencillos a elaborados. Cada uno termina con una <b>receta</b> y, si procede, el error típico. Intenta resolver tú antes de abrir la solución. Todos usan la receta maestra de la sección 0.</p>
+
+<details class="sol" id="x1"><summary>X1 — Carril con tramo rugoso y resorte final: coeficiente de rozamiento <span class="src" data-l="X" data-ref="Examen Febrero 2020 (2ª semana) P-1">X</span></summary>
+  <p class="enun">Sea un bloque de 5 kg de masa que se deja deslizar, partiendo del reposo, desde el punto A de un carril a una altura $h=4$ m según la figura. El carril consta de tres tramos de los cuales sólo existe rozamiento en el tramo BC de 5 m de longitud. Al final del trayecto, en el tramo CD se encuentra un resorte cuya constante elástica es $k=400$ N/m. Cuando el bloque alcance el punto D, el resorte se ha comprimido 25 cm. Suponiendo que el choque entre la masa y el resorte es perfectamente elástico, calcular el coeficiente de rozamiento dinámico en el tramo BC. (3 puntos.)</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 228" width="100%" role="img" aria-label="Carril con tramo rugoso BC y resorte al final; reparto de la energía inicial mgh">
+  <defs><marker id="mae1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="14" y1="120" x2="346" y2="120" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 30.0 32.0 L 30.1 36.6 L 30.4 41.2 L 31.0 45.8 L 31.7 50.3 L 32.7 54.8 L 33.9 59.2 L 35.3 63.5 L 36.9 67.8 L 38.7 72.0 L 40.7 76.0 L 42.9 79.9 L 45.3 83.7 L 47.8 87.4 L 50.5 90.9 L 53.4 94.2 L 56.5 97.4 L 59.7 100.4 L 63.0 103.2 L 66.4 105.8 L 70.0 108.2 L 73.7 110.4 L 77.5 112.4 L 81.3 114.2 L 85.3 115.7 L 89.3 117.0 L 93.4 118.1 L 97.5 118.9 L 101.6 119.5 L 105.8 119.9 L 110.0 120.0" fill="none" stroke="var(--fg)" stroke-width="2.5"/>
+  <line x1="114" y1="120" x2="108" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="122" y1="120" x2="116" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="130" y1="120" x2="124" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="138" y1="120" x2="132" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="146" y1="120" x2="140" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="154" y1="120" x2="148" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="162" y1="120" x2="156" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="170" y1="120" x2="164" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="178" y1="120" x2="172" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="186" y1="120" x2="180" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="194" y1="120" x2="188" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="202" y1="120" x2="196" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="210" y1="120" x2="204" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="218" y1="120" x2="212" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="226" y1="120" x2="220" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="234" y1="120" x2="228" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="242" y1="120" x2="236" y2="127" stroke="var(--mut)" stroke-width="1.2"/>
+  <text x="180" y="142" class="sm bd" text-anchor="middle">BC: μ, 5 m</text>
+  <text x="110" y="112" class="sm bd" text-anchor="middle">B</text>
+  <text x="250" y="112" class="sm bd" text-anchor="middle">C</text>
+  <text x="44" y="22" class="sm bd" text-anchor="start">A (v = 0)</text>
+  <rect x="26" y="18" width="12" height="12" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <path d="M 345 104 L 340.0 99.0 L 335.0 109.0 L 330.0 99.0 L 325.0 109.0 L 320.0 99.0 L 315.0 109.0 L 310.0 99.0 L 305 104" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <path d="M 346 86 L 346 120" fill="none" stroke="var(--fg)" stroke-width="3"/>
+  <rect x="289" y="104" width="16" height="16" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="344" y="74" class="sm bd" text-anchor="end">D: x = 25 cm, v = 0</text>
+  <text x="344" y="88" class="sm" text-anchor="end">k = 400 N/m</text>
+  <line x1="18" y1="32" x2="18" y2="120" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="14" y1="32" x2="30" y2="32" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="62" y="68" class="sm bd" text-anchor="start">h = 4 m</text>
+  <text x="30" y="165" class="sm bd" text-anchor="start">mgh = 196 J se reparte en…</text>
+  <rect x="30" y="172" width="280.9" height="16" rx="2" fill="var(--E)" fill-opacity="0.55" stroke="var(--E)" stroke-width="1.5"/>
+  <text x="170.4" y="202" class="sm" text-anchor="middle">fricción en BC</text>
+  <text x="170.4" y="215" class="sm" text-anchor="middle">183,5 J</text>
+  <rect x="310.9" y="172" width="19.1" height="16" rx="2" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="330.0" y="202" class="sm" text-anchor="end">resorte</text>
+  <text x="330.0" y="215" class="sm" text-anchor="end">12,5 J</text>
+</svg>
+<figcaption>Examen Feb. 2020 (2ª sem.) P-1: el bloque parte de A (h = 4 m) y comprime 25 cm el resorte. De los 196 J iniciales, 12,5 J quedan en el resorte y 183,5 J se disipan en BC. <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2020 (2ª semana) P-1">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li><b>Cómo leer el enunciado.</b> «El resorte se ha comprimido 25 cm cuando el bloque alcanza D» significa que D es el punto de <b>compresión máxima</b>: allí el bloque se detiene un instante, $v_D=0$. «Choque perfectamente elástico» quiere decir que al tocar el resorte no se pierde energía mecánica: toda la cinética se almacena como $\tfrac12kx^2$. No se da $g$: se usa 9,8 m/s².</li>
+    <li><b>Estados y origen.</b> Estado 1 = A (reposo, $y_A=h=4$ m); estado 2 = D (reposo, $y_D=0$, resorte comprimido $x=0{,}25$ m). Origen de alturas en el tramo horizontal.</li>
+    <li><b>Energías.</b> $K_1=0$, $U_1=mgh$; $K_2=0$, $U_2=\tfrac12kx^2$ ($U_{grav,2}=0$).</li>
+    <li><b>Otras fuerzas.</b> Solo hay fricción en BC (la normal no trabaja en ningún tramo). En el tramo horizontal $n=mg$, así que $f_k=\mu mg$ y $W_{otras}=-\mu mg\,L$ con $L=5$ m. En AB y CD no hay fricción.</li>
+    <li><b>Balance</b> (7.14): $mgh-\mu mgL=\tfrac12kx^2\ \Rightarrow\ \mu=\dfrac{mgh-\tfrac12kx^2}{mgL}=\dfrac hL-\dfrac{kx^2}{2mgL}$.</li>
+    <li>Números: $mgh=5\cdot9{,}8\cdot4=196$ J; $\tfrac12kx^2=\tfrac12\cdot400\cdot0{,}25^2=12{,}5$ J; $mgL=5\cdot9{,}8\cdot5=245$ J. $\mu=\dfrac{196-12{,}5}{245}=\dfrac{183{,}5}{245}=0{,}749$.</li>
+    <li><b>Comprobación.</b> Con $g=9{,}81$ sale lo mismo ($0{,}749$) porque el término dominante $h/L=0{,}8$ no depende de $g$. El valor es alto pero posible: casi toda la energía (183,5 de 196 J) se disipa en BC.</li>
+  </ol>
+  <p><b>Resultado:</b> $\mu\approx0{,}75$.</p>
+  <div class="recipe"><b>Receta:</b> toma como estado final el de compresión máxima ($v=0$): la energía inicial se reparte en «energía disipada por la fricción» más «energía elástica», $mgh=\mu mgL+\tfrac12kx^2$.</div>
+  <div class="recipe"><b>Error típico:</b> olvidar convertir 25 cm a 0,25 m (saldría $\tfrac12kx^2=125\,000$ J, absurdo) o aplicar la fricción a todo el recorrido cuando solo actúa en BC.</div>
+</details>
+
+<details class="sol" id="x2"><summary>X2 — Bloque lanzado por un resorte en un plano inclinado de 30° con fricción <span class="src" data-l="X" data-ref="Examen Febrero 2022 (2ª semana) P-1">X</span></summary>
+  <p class="enun">Un bloque sólido de 1,50 kg de masa se coloca contra un resorte comprimido en la base de un plano inclinado de pendiente 30° (punto A). Al soltarse el resorte, el bloque sube por el plano. En el punto B, a 6,0 m pendiente arriba de A, el bloque tiene una velocidad de 7 m/s dirigida pendiente arriba y ya no está en contacto con el resorte. El coeficiente de fricción cinética entre el bloque y la superficie del plano es $\mu_k=0{,}50$. La masa del resorte es despreciable. Calcule la energía potencial almacenada inicialmente en el resorte. (3 puntos.) <span class="src" data-l="E" data-ref="Solucionario 7-28 Prob. 7.73">= E 7.73</span></p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 262" width="100%" role="img" aria-label="Bloque lanzado por un resorte por un plano inclinado con fricción y reparto de la energía inicial del resorte">
+  <defs><marker id="mar1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbr1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmr1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgr1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpr1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfr1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 40 160 L 247.8 40.0 L 247.8 160 L 40 160 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 40 160 L 247.8 40.0 L 247.8 160 Z" fill="var(--mut)" fill-opacity="0.1" stroke="none"/>
+  <path d="M 40.0 160.0 L 23.0 130.6" fill="none" stroke="var(--fg)" stroke-width="3"/>
+  <path d="M 35.0 151.3 L 40.5 153.4 L 39.2 143.7 L 46.9 149.7 L 45.6 140.0 L 53.3 146.0 L 52.0 136.3 L 57.5 138.3" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <path d="M 64.2 146.0 L 79.0 137.5 L 70.5 122.8 L 55.7 131.3 Z" fill="var(--mut)" fill-opacity="0.35" stroke="none"/>
+  <path d="M 64.2 146.0 L 79.0 137.5 L 70.5 122.8 L 55.7 131.3 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 189.6 73.6 L 204.4 65.1 L 195.9 50.4 L 181.1 58.9 Z" fill="var(--mut)" fill-opacity="0.35" stroke="none"/>
+  <path d="M 189.6 73.6 L 204.4 65.1 L 195.9 50.4 L 181.1 58.9 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <text x="70.2" y="176" class="sm bd" text-anchor="start">A (v = 0)</text>
+  <text x="178.1" y="40.9" class="sm bd" text-anchor="end">B (v = 7 m/s)</text>
+  <line x1="203.0" y1="56.7" x2="230.7" y2="40.7" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mgr1)"/>
+  <line x1="265.8" y1="160" x2="265.8" y2="73.6" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="189.6" y1="73.6" x2="265.8" y2="73.6" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="270.8" y="120.8" class="sm bd" text-anchor="start">h = 3,0 m</text>
+  <path d="M 86.0 160.0 A 46 46 0 0 0 79.8 137.0" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="92" y="152" class="sm" text-anchor="start">30°</text>
+  <line x1="70.2" y1="156.4" x2="195.6" y2="84.0" stroke="var(--mut)" stroke-width="1.6" fill="none" marker-end="url(#mmr1)"/>
+  <text x="146.9" y="144.2" class="sm bd" text-anchor="start">s = 6,0 m</text>
+  <text x="30" y="198" class="sm bd" text-anchor="start">U<tspan dy="3" font-size="9">el,A</tspan><tspan dy="-3"> = 119 J se reparte en…</tspan></text>
+  <rect x="30" y="205" width="92.6" height="16" rx="2" fill="var(--X)" fill-opacity="0.55" stroke="var(--X)" stroke-width="1.5"/>
+  <text x="76.3" y="235" class="sm" text-anchor="middle">K<tspan dy="3" font-size="9">B</tspan><tspan dy="-3"></tspan></text>
+  <text x="76.3" y="248" class="sm" text-anchor="middle">36,75 J</text>
+  <rect x="122.6" y="205" width="111.1" height="16" rx="2" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="178.2" y="235" class="sm" text-anchor="middle">U<tspan dy="3" font-size="9">grav,B</tspan><tspan dy="-3"></tspan></text>
+  <text x="178.2" y="248" class="sm" text-anchor="middle">44,10 J</text>
+  <rect x="233.8" y="205" width="96.2" height="16" rx="2" fill="var(--E)" fill-opacity="0.55" stroke="var(--E)" stroke-width="1.5"/>
+  <text x="281.9" y="235" class="sm" text-anchor="middle">ΔU<tspan dy="3" font-size="9">int</tspan><tspan dy="-3"></tspan></text>
+  <text x="281.9" y="248" class="sm" text-anchor="middle">38,19 J</text>
+</svg>
+<figcaption>Examen Feb. 2022 (2ª sem.) P-1 = E 7.73: la energía del resorte (119 J) se reparte en cinética en B (36,75 J), potencial gravitatoria (44,10 J) y energía interna ganada por la fricción (38,19 J). <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2022 (2ª semana) P-1 y del problema 7.73">P</span></figcaption>
+</figure>
+
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 205" width="100%" role="img" aria-label="Diagrama de cuerpo libre del bloque que sube por el plano inclinado de 30 grados con fricción">
+  <defs><marker id="mad1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbd1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmd1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgd1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpd1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfd1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 30 165 L 289.8 15.0 L 289.8 165 L 30 165 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 30 165 L 289.8 15.0 L 289.8 165 Z" fill="var(--mut)" fill-opacity="0.1" stroke="none"/>
+  <path d="M 125.3 110.0 L 159.9 90.0 L 139.9 55.4 L 105.3 75.4 Z" fill="var(--mut)" fill-opacity="0.35" stroke="none"/>
+  <path d="M 125.3 110.0 L 159.9 90.0 L 139.9 55.4 L 105.3 75.4 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="132.6" y1="82.7" x2="113.5" y2="49.6" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mad1)"/>
+  <line x1="132.6" y1="82.7" x2="132.6" y2="126.8" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbd1)"/>
+  <line x1="132.6" y1="82.7" x2="151.7" y2="115.8" stroke="var(--mut)" stroke-width="1.6" fill="none" stroke-dasharray="5 4" marker-end="url(#mmd1)"/>
+  <line x1="132.6" y1="82.7" x2="113.5" y2="93.7" stroke="var(--mut)" stroke-width="1.6" fill="none" stroke-dasharray="5 4" marker-end="url(#mmd1)"/>
+  <line x1="142.6" y1="100.0" x2="126.0" y2="109.6" stroke="var(--E)" stroke-width="3" fill="none" marker-end="url(#mpd1)"/>
+  <line x1="146.4" y1="74.7" x2="175.9" y2="57.7" stroke="var(--X)" stroke-width="2" fill="none" marker-end="url(#mgd1)"/>
+  <text x="107.5" y="45.6" class="sm bd" text-anchor="end" style="fill:var(--acc)">n = 12,73 N</text>
+  <text x="128.6" y="142.8" class="sm bd" text-anchor="middle" style="fill:var(--A)">mg = 14,7 N</text>
+  <text x="161.7" y="111.8" class="sm" text-anchor="start">mg cos θ = 12,73 N</text>
+  <text x="4" y="85.7" class="sm" text-anchor="start">mg sen θ = 7,35 N</text>
+  <text x="120.0" y="123.6" class="sm bd" text-anchor="end" style="fill:var(--E)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 6,37 N</tspan></text>
+  <text x="177.2" y="57.6" class="sm" text-anchor="start" style="fill:var(--X)">movimiento</text>
+  <path d="M 76.0 165.0 A 46 46 0 0 0 69.8 142.0" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="82" y="157" class="sm" text-anchor="start">30°</text>
+</svg>
+<figcaption>Bloque de 1,50 kg subiendo por el plano de 30° (X2, g = 9,8 m/s²): perpendicular al plano n = mg cos θ = 12,73 N; a lo largo del plano, la componente del peso mg sen θ = 7,35 N y la fricción f<sub>k</sub> = μ<sub>k</sub>n = 6,37 N frenan el movimiento (flechas no a escala exacta). La fricción usa n = mg cos θ, no mg. <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2022 (2ª semana) P-1">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li><b>Estados.</b> 1 = A (reposo contra el resorte comprimido): $K_A=0$, $U_A=U_{el,A}$ (la incógnita), $y_A=0$. 2 = B: $v_B=7$ m/s, resorte ya relajado y sin contacto, $y_B=s\sin30^\circ=6{,}0\cdot0{,}5=3{,}0$ m.</li>
+    <li><b>¿Por qué no hace falta saber cuánto se comprimió ni su $k$?</b> Porque la fuerza del resorte es conservativa: todo su trabajo está contenido en $U_{el,A}$ (§7.2). Solo importa la energía total almacenada.</li>
+    <li><b>Fricción.</b> Perpendicular al plano no hay aceleración: $n=mg\cos30^\circ$ y $f_k=\mu_kmg\cos30^\circ$ (no $\mu_kmg$). Actúa durante los 6,0 m completos (también mientras el resorte empuja): $W_{otras}=-\mu_kmg\cos30^\circ\,s$.</li>
+    <li><b>Balance</b> (7.14): $U_{el,A}+W_{otras}=K_B+U_{grav,B}\ \Rightarrow\ U_{el,A}=\tfrac12mv_B^2+mgs\sin\theta+\mu_kmg\cos\theta\,s$.</li>
+    <li>Números ($g=9{,}8$): $K_B=\tfrac12(1{,}50)(7)^2=36{,}75$ J; $U_{grav,B}=(1{,}50)(9{,}8)(3{,}0)=44{,}10$ J; $|W_f|=(0{,}50)(1{,}50)(9{,}8)(0{,}866)(6{,}0)=38{,}19$ J. Suma: $U_{el,A}=36{,}75+44{,}10+38{,}19=119{,}04$ J.</li>
+    <li><b>Lectura física.</b> La energía del resorte se reparte en tres «cuentas»: cinética en B (31 %), potencial gravitatoria (37 %) y energía interna por fricción (32 %).</li>
+  </ol>
+  <p><b>Resultado:</b> $U_{el,A}\approx119$ J (con $g=9{,}81$: 119,1 J).</p>
+  <div class="recipe"><b>Receta:</b> «energía del resorte = lo que hay al final + lo que se ha perdido»: $U_{el}=K_2+mg\,s\sin\theta+\mu_kmg\cos\theta\,s$.</div>
+  <div class="recipe"><b>Error típico:</b> usar $n=mg$ en vez de $mg\cos\theta$ en el plano inclinado, o escribir $mgs$ en lugar de $mgs\sin\theta$ (la altura ganada es $s\sin\theta$, no la distancia recorrida).</div>
+</details>
+
+<details class="sol" id="x3"><summary>X3 — Mismo planteamiento con rampa de 25° (g = 9,81) <span class="src" data-l="X" data-ref="Examen Septiembre 2024 P-1">X</span></summary>
+  <p class="enun">Un bloque de 1,5 kg de masa se coloca contra un muelle que se encuentra comprimido en la base de una rampa de 25°. Al liberar el muelle, el bloque sube por la pendiente por la acción de éste de forma que cuando lleva recorridos 5 m el módulo de su velocidad es de 6 m/s. En ese momento el bloque ya no está en contacto con el muelle. El coeficiente de fricción cinética entre el bloque y la pendiente es de $\mu_k=0{,}4$. Considere además que la masa del muelle es despreciable. Obtenga el valor de la energía potencial almacenada inicialmente en el muelle. Considere: $g=9{,}81\ \text{m/s}^2$. (3 puntos.)</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 262" width="100%" role="img" aria-label="Bloque lanzado por un resorte por un plano inclinado con fricción y reparto de la energía inicial del resorte">
+  <defs><marker id="mar2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbr2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmr2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgr2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpr2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfr2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 40 160 L 257.5 58.6 L 257.5 160 L 40 160 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 40 160 L 257.5 58.6 L 257.5 160 Z" fill="var(--mut)" fill-opacity="0.1" stroke="none"/>
+  <path d="M 40.0 160.0 L 25.6 129.2" fill="none" stroke="var(--fg)" stroke-width="3"/>
+  <path d="M 35.8 150.9 L 41.0 153.4 L 40.6 143.7 L 47.8 150.3 L 47.3 140.6 L 54.5 147.2 L 54.1 137.4 L 59.3 139.9" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <path d="M 65.4 148.2 L 80.8 141.0 L 73.6 125.6 L 58.2 132.8 Z" fill="var(--mut)" fill-opacity="0.35" stroke="none"/>
+  <path d="M 65.4 148.2 L 80.8 141.0 L 73.6 125.6 L 58.2 132.8 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 196.6 87.0 L 212.0 79.8 L 204.8 64.4 L 189.4 71.6 Z" fill="var(--mut)" fill-opacity="0.35" stroke="none"/>
+  <path d="M 196.6 87.0 L 212.0 79.8 L 204.8 64.4 L 189.4 71.6 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <text x="71.4" y="176" class="sm bd" text-anchor="start">A (v = 0)</text>
+  <text x="186.7" y="54.2" class="sm bd" text-anchor="end">v = 6 m/s</text>
+  <line x1="211.4" y1="71.3" x2="240.4" y2="57.7" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mgr2)"/>
+  <line x1="275.5" y1="160" x2="275.5" y2="87.0" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="196.6" y1="87.0" x2="275.5" y2="87.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="280.5" y="127.5" class="sm bd" text-anchor="start">h = 2,11 m</text>
+  <path d="M 86.0 160.0 A 46 46 0 0 0 81.7 140.6" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="92" y="152" class="sm" text-anchor="start">25°</text>
+  <line x1="70.4" y1="159.0" x2="201.7" y2="97.8" stroke="var(--mut)" stroke-width="1.6" fill="none" marker-end="url(#mmr2)"/>
+  <text x="150.1" y="152.4" class="sm bd" text-anchor="start">s = 5 m</text>
+  <text x="30" y="198" class="sm bd" text-anchor="start">U<tspan dy="3" font-size="9">el</tspan><tspan dy="-3"> = 84,8 J se reparte en…</tspan></text>
+  <rect x="30" y="205" width="95.6" height="16" rx="2" fill="var(--X)" fill-opacity="0.55" stroke="var(--X)" stroke-width="1.5"/>
+  <text x="77.8" y="235" class="sm" text-anchor="middle">K</text>
+  <text x="77.8" y="248" class="sm" text-anchor="middle">27,0 J</text>
+  <rect x="125.6" y="205" width="110.0" height="16" rx="2" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="180.6" y="235" class="sm" text-anchor="middle">U<tspan dy="3" font-size="9">grav</tspan><tspan dy="-3"></tspan></text>
+  <text x="180.6" y="248" class="sm" text-anchor="middle">31,09 J</text>
+  <rect x="235.6" y="205" width="94.4" height="16" rx="2" fill="var(--E)" fill-opacity="0.55" stroke="var(--E)" stroke-width="1.5"/>
+  <text x="282.8" y="235" class="sm" text-anchor="middle">ΔU<tspan dy="3" font-size="9">int</tspan><tspan dy="-3"></tspan></text>
+  <text x="282.8" y="248" class="sm" text-anchor="middle">26,67 J</text>
+</svg>
+<figcaption>Examen Sep. 2024 P-1 (g = 9,81 m/s²): 84,8 J en el resorte se convierten en 27,0 J cinéticos, 31,09 J de energía potencial gravitatoria y 26,67 J de energía interna (fricción). <span class="src" data-l="P" data-ref="Diagrama propio del examen Septiembre 2024 P-1">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li><b>Estados.</b> 1 = base de la rampa (reposo, muelle comprimido, $y_1=0$). 2 = tras recorrer $s=5$ m: $v_2=6$ m/s, $y_2=s\sin25^\circ$.</li>
+    <li><b>Fuerzas.</b> Peso y muelle van en $U$; la normal ($n=mg\cos25^\circ$) no trabaja; la fricción $f_k=\mu_kmg\cos25^\circ$ es la única «otra» fuerza y actúa a lo largo de los 5 m desde la posición inicial.</li>
+    <li><b>Balance</b> (7.14): $U_{el,1}-\mu_kmg\cos\theta\,s=\tfrac12mv_2^2+mgs\sin\theta$.</li>
+    <li>Números: $\tfrac12mv_2^2=\tfrac12(1{,}5)(36)=27{,}00$ J; $mgs\sin25^\circ=(1{,}5)(9{,}81)(5)(0{,}4226)=31{,}09$ J; $\mu_kmg\cos25^\circ\,s=(0{,}4)(1{,}5)(9{,}81)(0{,}9063)(5)=26{,}67$ J.</li>
+    <li>$U_{el,1}=27{,}00+31{,}09+26{,}67=84{,}77$ J.</li>
+  </ol>
+  <p><b>Resultado:</b> $U_{el}\approx84{,}8$ J.</p>
+  <div class="recipe"><b>Receta:</b> idéntica a X2 (es el mismo problema con otros números): energía cinética final + potencial gravitatoria ganada + energía disipada por la fricción.</div>
+  <div class="recipe"><b>Error típico:</b> calcular la fricción solo desde donde el bloque deja el muelle: actúa en todo el recorrido medido desde la posición inicial.</div>
+</details>
+
+<details class="sol" id="x4"><summary>X4 — Cuarto de círculo con fricción y tramo horizontal: μ<sub>k</sub> y trabajo de la fricción <span class="src" data-l="X" data-ref="Examen Septiembre 2023 P-2">X</span></summary>
+  <p class="enun">Una partícula de masa 0,5 kg que se encuentra en reposo se suelta desde una posición A, que forma un cuarto de círculo de radio $R=2{,}1$ m según se muestra en la figura, deslizándose hasta llegar al punto B con una velocidad de 5,2 m/s. A partir de este punto, la partícula se desplaza sobre una superficie horizontal hasta el punto C situado a 5 m, donde se detiene. Calcular (a) el coeficiente de fricción cinética de la superficie horizontal y (b) el trabajo de la fuerza de rozamiento sobre la partícula al deslizarse desde el punto A al B. (3 puntos.)</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 322" width="100%" role="img" aria-label="Cuarto de círculo AB y tramo horizontal BC con fricción: reparto de energía en cada tramo">
+  <defs><marker id="mae2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 40.0 28.0 L 40.1 31.8 L 40.4 35.5 L 40.9 39.3 L 41.6 43.0 L 42.5 46.6 L 43.5 50.2 L 44.8 53.8 L 46.2 57.3 L 47.8 60.7 L 49.6 64.0 L 51.6 67.2 L 53.8 70.3 L 56.0 73.3 L 58.5 76.2 L 61.1 78.9 L 63.8 81.5 L 66.7 84.0 L 69.7 86.2 L 72.8 88.4 L 76.0 90.4 L 79.3 92.2 L 82.7 93.8 L 86.2 95.2 L 89.8 96.5 L 93.4 97.5 L 97.0 98.4 L 100.7 99.1 L 104.5 99.6 L 108.2 99.9 L 112.0 100.0" fill="none" stroke="var(--fg)" stroke-width="2.5"/>
+  <line x1="112" y1="100" x2="340" y2="100" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="40" y1="28" x2="112" y2="28" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="112" y1="28" x2="112" y2="100" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="46" y="20" class="sm bd" text-anchor="start">A (v = 0)</text>
+  <text x="108" y="116" class="sm bd" text-anchor="end">B</text>
+  <text x="310" y="116" class="sm bd" text-anchor="end">C (v = 0)</text>
+  <text x="106" y="68.0" class="sm" text-anchor="end">R = 2,1 m</text>
+  <circle cx="43" cy="30" r="5" fill="var(--acc)"/>
+  <circle cx="115" cy="94" r="5" fill="var(--acc)"/>
+  <circle cx="310" cy="95" r="5" fill="var(--acc)"/>
+  <line x1="122" y1="78" x2="162" y2="78" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mge2)"/>
+  <text x="128" y="72" class="sm bd" text-anchor="start">v<tspan dy="3" font-size="9">B</tspan><tspan dy="-3"> = 5,2 m/s</tspan></text>
+  <line x1="118" y1="128" x2="310" y2="128" stroke="var(--mut)" stroke-width="1.6" fill="none" marker-end="url(#mme2)"/>
+  <text x="210" y="142" class="sm bd" text-anchor="middle">s = 5 m</text>
+  <text x="24" y="189" class="sm bd" text-anchor="start">Tramo AB: mgR = 10,29 J →</text>
+  <rect x="24" y="196" width="197.1" height="16" rx="2" fill="var(--X)" fill-opacity="0.55" stroke="var(--X)" stroke-width="1.5"/>
+  <text x="122.5" y="226" class="sm" text-anchor="middle">K<tspan dy="3" font-size="9">B</tspan><tspan dy="-3"></tspan></text>
+  <text x="122.5" y="239" class="sm" text-anchor="middle">6,76 J</text>
+  <rect x="221.1" y="196" width="102.9" height="16" rx="2" fill="var(--E)" fill-opacity="0.55" stroke="var(--E)" stroke-width="1.5"/>
+  <text x="272.5" y="226" class="sm" text-anchor="middle">ΔU<tspan dy="3" font-size="9">int,AB</tspan><tspan dy="-3"></tspan></text>
+  <text x="272.5" y="239" class="sm" text-anchor="middle">3,53 J</text>
+  <text x="24" y="259" class="sm bd" text-anchor="start">Tramo BC: K<tspan dy="3" font-size="9">B</tspan><tspan dy="-3"> = 6,76 J →</tspan></text>
+  <rect x="24" y="266" width="197.1" height="16" rx="2" fill="var(--E)" fill-opacity="0.55" stroke="var(--E)" stroke-width="1.5"/>
+  <text x="122.5" y="296" class="sm" text-anchor="middle">ΔU<tspan dy="3" font-size="9">int,BC</tspan><tspan dy="-3"></tspan></text>
+  <text x="122.5" y="309" class="sm" text-anchor="middle">6,76 J</text>
+</svg>
+<figcaption>Examen Sep. 2023 P-2 (g = 9,80 m/s²): en AB la energía mgR = 10,29 J se reparte entre K<sub>B</sub> = 6,76 J y energía interna 3,53 J (trabajo de la fricción = −3,53 J); en BC los 6,76 J de K<sub>B</sub> se disipan por completo. <span class="src" data-l="P" data-ref="Diagrama propio del examen Septiembre 2023 P-2">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li><b>Método.</b> En el tramo curvo la normal y la fricción cambian punto a punto: Newton sería muy difícil. Con energía solo necesitamos los extremos de cada tramo (Estrategia 7.1). Se usa B como «bisagra» entre los dos tramos. No se da $g$: se usa 9,80 (con 9,81 los resultados apenas cambian).</li>
+    <li><b>(a) Tramo BC.</b> Estado 1 = B ($v_B=5{,}2$ m/s), estado 2 = C ($v_C=0$), mismo nivel ($U_1=U_2$). Sobre la superficie horizontal $n=mg$, luego $f_k=\mu_kmg$ y $W_{otras}=-\mu_kmg\,s$.</li>
+    <li>Balance $K_B+W_{otras}=K_C$: $\tfrac12mv_B^2-\mu_kmgs=0\Rightarrow\mu_k=\dfrac{v_B^2}{2gs}=\dfrac{(5{,}2)^2}{2(9{,}8)(5)}=\dfrac{27{,}04}{98}=0{,}276$. La masa se cancela.</li>
+    <li><b>(b) Tramo AB.</b> Origen en B: $y_A=R=2{,}1$ m, $y_B=0$; $K_A=0$. La normal no trabaja (es perpendicular a la trayectoria en cada punto); la única «otra» fuerza es la fricción: $W_{otras}=W_f^{AB}$.</li>
+    <li>(7.14): $0+mgR+W_f^{AB}=\tfrac12mv_B^2+0\Rightarrow W_f^{AB}=\tfrac12mv_B^2-mgR=6{,}76-10{,}29=-3{,}53$ J (con $g=9{,}81$: $-3{,}54$ J). $\tfrac12mv_B^2=\tfrac12(0{,}5)(27{,}04)=6{,}76$ J y $mgR=(0{,}5)(9{,}8)(2{,}1)=10{,}29$ J.</li>
+    <li><b>Comprobación de sentido.</b> Sin fricción llegaría a B con $\sqrt{2gR}=6{,}42$ m/s $>5{,}2$ m/s: coherente con que la fricción haya quitado energía. Y en BC la fricción retira los 6,76 J que tenía en B.</li>
+  </ol>
+  <p><b>Resultado:</b> (a) $\mu_k\approx0{,}28$; (b) $W_f^{AB}\approx-3{,}5$ J.</p>
+  <div class="recipe"><b>Receta:</b> si un tramo tiene fricción conocida en forma ($\mu_kmgs$, horizontal) y otro la tiene desconocida (curvo), aplica $K_1+U_1+W_{otras}=K_2+U_2$ por separado en cada tramo, usando el punto común como bisagra; el trabajo desconocido sale por diferencia.</div>
+  <div class="recipe"><b>Error típico:</b> escribir $W_f^{AB}=-\mu_kmg\cdot(\pi R/2)$ con el $\mu_k$ del apartado (a): en la curva la normal no vale $mg$ ni la superficie es la misma. El trabajo de fricción en AB solo sale del balance de energía.</div>
+</details>
+
+<details class="sol" id="x5"><summary>X5 — Teoría: «Fuerzas conservativas y no conservativas» (+ hidroeléctrica y caja en rampa) <span class="src" data-l="X" data-ref="Examen Febrero 2022 (1ª semana) P-3 Opción 3.1">X</span></summary>
+  <p class="enun">Desarrolle el tema 3.1: <i>Fuerzas conservativas y no conservativas</i>. Además responda: 3.1a) En una planta hidroeléctrica, el agua que cae impulsa las turbinas, las cuales, a la vez, impulsan los generadores eléctricos. En comparación con la cantidad de energía potencial gravitacional liberada por el agua que cae, ¿cuánta energía eléctrica se produce?, ¿la misma?, ¿más?, ¿menos? Justifique su respuesta. 3.1b) Una caja se desliza hacia abajo por una rampa, y las fuerzas de gravedad y de fricción realizan trabajo sobre ella. ¿El trabajo realizado por cada una de estas fuerzas puede expresarse en términos del cambio en una función de energía potencial? Para cada fuerza, explique por qué. (4 puntos.) <span class="src" data-l="U" data-ref="3.1a es la Pregunta de repaso «Evalúe su comprensión de la sección 7.3», U p. 221; 3.1b es la pregunta para análisis P7.14, U p. 228">= U p.221 y P7.14</span></p>
+  <p><b>Guion para «desarrollar el tema»</b> (casi todo está en la sección 3 y en la 4):</p>
+  <ol class="steps">
+    <li><b>Idea.</b> Con el peso y el resorte, la conversión entre energía cinética y potencial es reversible (bidireccional): la energía «guardada» se recupera íntegra.</li>
+    <li><b>Fuerza conservativa:</b> su trabajo (i) se puede escribir como $W=U_1-U_2=-\Delta U$; (ii) es reversible; (iii) no depende de la trayectoria, solo de los extremos; (iv) es nulo en una trayectoria cerrada. Ejemplos: peso ($U=mgy$), fuerza elástica ideal ($U=\tfrac12kx^2$), gravitación, fuerza eléctrica. Si solo trabajan ellas, $K+U=\text{cte}$ (U p.217-218).</li>
+    <li><b>Relación con la fuerza:</b> $F_x=-dU/dx$ (7.16), y en 3D $\vec F=-\vec\nabla U$ (7.18); la fuerza apunta hacia donde $U$ disminuye (U p.221-223).</li>
+    <li><b>Fuerza no conservativa:</b> no cumple lo anterior (fricción cinética, resistencia de fluidos). Su trabajo depende del camino (ej. 7.10: $-196$ J frente a $-274$ J) y es <b>disipativo</b> si hace perder energía mecánica. No hay función $U$ asociada (U p.218-219).</li>
+    <li><b>Energía interna:</b> $\Delta U_{int}=-W_{otras}$ y, en general, $\Delta K+\Delta U+\Delta U_{int}=0$ (7.15): la energía total siempre se conserva, aunque la mecánica no (U p.220). Para problemas: $K_1+U_1+W_{otras}=K_2+U_2$ (7.14).</li>
+  </ol>
+  <p><b>3.1a) Hidroeléctrica: se produce <u>menos</u> energía eléctrica</b> que la energía potencial gravitatoria liberada. Parte de la energía sigue siendo cinética del agua que sale de las turbinas; otra parte se disipa por fuerzas no conservativas (fricción del agua con conductos y álabes, rozamiento en ejes, pérdidas por efecto Joule en los generadores), que la convierten en energía interna. La energía total se conserva ($\Delta K+\Delta U+\Delta U_{int}=0$), pero solo una fracción acaba como energía eléctrica útil. Nunca puede ser <i>más</i>: eso violaría la conservación de la energía.</p>
+  <p><b>3.1b) Caja que baja por la rampa.</b> El trabajo del <b>peso sí</b> se expresa como cambio de una energía potencial, $W_{grav}=-\Delta U_{grav}=mg(y_1-y_2)$: es conservativo y solo depende del desnivel. El de la <b>fricción no</b>: $W_f=-f_ks$ depende de la longitud recorrida (no solo de los extremos) y es siempre negativo, tanto al bajar como al subir, por lo que en una ida y vuelta no se anula. No existe ninguna función $U$ cuyo cambio lo reproduzca.</p>
+  <div class="recipe"><b>Receta:</b> para «conservativa o no», aplica el test de la trayectoria cerrada (¿el trabajo total al volver al punto de partida es cero?) y el de la reversibilidad (¿se recupera la energía invirtiendo el movimiento?).</div>
+</details>
+
+<details class="sol" id="x6"><summary>X6 — Teoría: «Fuerzas conservativas y no conservativas» + cero de U del resorte y signo de U entre partículas <span class="src" data-l="X" data-ref="Examen Febrero 2024 (2ª semana) P-3 Opción A">X</span></summary>
+  <p class="enun">P-3: Teoría Opción A. Desarrolle el tema: <i>Fuerzas conservativas y no conservativas</i>. Además, responda: (a) Un estudiante considera que sólo los cambios en la energía potencial son importantes en cualquier problema, por lo que decide tomar la energía potencial elástica de un resorte como cero cuando el resorte está estirado una distancia $x_1$. Entonces, el estudiante decide que $U=\tfrac12k(x-x_1)^2$. ¿Esto es correcto? Explique su respuesta. (b) En un sistema de dos partículas, solemos considerar que la energía potencial de la fuerza entre las partículas se acerca a cero cuando la separación entre ellas se acerca al infinito. En tal caso, explique por qué la energía potencial con una separación no infinita es positiva si las partículas se repelen, y negativa si se atraen. (4 puntos.) <span class="src" data-l="U" data-ref="La cuestión (b) es la pregunta para análisis P7.19 de U, p. 228">(b) = U P7.19</span></p>
+  <p><b>Desarrollo del tema:</b> el mismo guion de X5 (propiedades de la fuerza conservativa, $F=-dU/dx$, fricción como ejemplo de no conservativa, $\Delta K+\Delta U+\Delta U_{int}=0$).</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 225" width="100%" role="img" aria-label="Parábola del resorte real, parábola desplazada del estudiante y parábola correcta con U cero en x1">
+  <defs><marker id="max4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbx4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmx4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgx4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpx4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfx4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="40" y1="185" x2="330" y2="185"/>
+  <line class="ax" x1="40" y1="185" x2="40" y2="10"/>
+  <text x="325" y="213" class="sm" text-anchor="end">x</text>
+  <text x="46" y="17" class="sm">U</text>
+  <line x1="125.5" y1="185" x2="125.5" y2="189" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="125.5" y="201" class="sm" text-anchor="middle">0</text>
+  <line x1="196.8" y1="185" x2="196.8" y2="189" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="196.8" y="201" class="sm" text-anchor="middle">x<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"></tspan></text>
+  <line x1="36" y1="152.8" x2="40" y2="152.8" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="33" y="156.8" class="sm" text-anchor="end">0</text>
+  <path d="M 40.0 119.8 L 43.3 122.2 L 46.5 124.6 L 49.8 126.9 L 53.0 129.1 L 56.3 131.1 L 59.5 133.1 L 62.8 135.0 L 66.0 136.8 L 69.3 138.5 L 72.5 140.1 L 75.8 141.6 L 79.0 143.1 L 82.3 144.4 L 85.5 145.6 L 88.8 146.7 L 92.0 147.8 L 95.3 148.7 L 98.5 149.5 L 101.8 150.3 L 105.0 150.9 L 108.3 151.5 L 111.5 152.0 L 114.8 152.3 L 118.0 152.6 L 121.3 152.8 L 124.5 152.8 L 127.8 152.8 L 131.0 152.7 L 134.3 152.5 L 137.5 152.2 L 140.8 151.8 L 144.0 151.3 L 147.3 150.7 L 150.5 150.0 L 153.8 149.2 L 157.0 148.3 L 160.3 147.4 L 163.5 146.3 L 166.8 145.1 L 170.0 143.9 L 173.3 142.5 L 176.5 141.1 L 179.8 139.5 L 183.0 137.9 L 186.3 136.1 L 189.5 134.3 L 192.8 132.3 L 196.0 130.3 L 199.3 128.2 L 202.5 126.0 L 205.8 123.7 L 209.0 121.3 L 212.3 118.7 L 215.5 116.1 L 218.8 113.5 L 222.0 110.7 L 225.3 107.8 L 228.5 104.8 L 231.8 101.7 L 235.0 98.5 L 238.3 95.3 L 241.5 91.9 L 244.8 88.4 L 248.1 84.9 L 251.3 81.2 L 254.6 77.5 L 257.8 73.6 L 261.1 69.7 L 264.3 65.7 L 267.6 61.5 L 270.8 57.3 L 274.1 53.0 L 277.3 48.6 L 280.6 44.0 L 283.8 39.4 L 287.1 34.7 L 290.3 29.9 L 293.6 25.0 L 296.8 20.0 L 300.1 14.9" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <path d="M 68.5 78.4 L 71.7 82.1 L 74.9 85.7 L 78.1 89.2 L 81.3 92.5 L 84.5 95.9 L 87.7 99.1 L 90.9 102.2 L 94.1 105.2 L 97.4 108.1 L 100.6 111.0 L 103.8 113.7 L 107.0 116.4 L 110.2 118.9 L 113.4 121.4 L 116.6 123.8 L 119.8 126.0 L 123.0 128.2 L 126.2 130.3 L 129.4 132.3 L 132.6 134.2 L 135.8 136.0 L 139.0 137.8 L 142.2 139.4 L 145.4 140.9 L 148.7 142.4 L 151.9 143.7 L 155.1 145.0 L 158.3 146.1 L 161.5 147.2 L 164.7 148.2 L 167.9 149.1 L 171.1 149.9 L 174.3 150.6 L 177.5 151.2 L 180.7 151.7 L 183.9 152.1 L 187.1 152.4 L 190.3 152.7 L 193.5 152.8 L 196.8 152.8 L 200.0 152.8 L 203.2 152.7 L 206.4 152.4 L 209.6 152.1 L 212.8 151.7 L 216.0 151.2 L 219.2 150.6 L 222.4 149.9 L 225.6 149.1 L 228.8 148.2 L 232.0 147.2 L 235.2 146.1 L 238.4 145.0 L 241.6 143.7 L 244.8 142.4 L 248.0 140.9 L 251.3 139.4 L 254.5 137.8 L 257.7 136.0 L 260.9 134.2 L 264.1 132.3 L 267.3 130.3 L 270.5 128.2 L 273.7 126.0 L 276.9 123.8 L 280.1 121.4 L 283.3 118.9 L 286.5 116.4 L 289.7 113.7 L 292.9 111.0 L 296.1 108.1 L 299.3 105.2 L 302.6 102.2 L 305.8 99.1 L 309.0 95.9 L 312.2 92.5 L 315.4 89.2 L 318.6 85.7 L 321.8 82.1 L 325.0 78.4" fill="none" stroke="var(--A)" stroke-width="2.5"/>
+  <path d="M 40.0 142.7 L 43.3 145.2 L 46.5 147.6 L 49.8 149.8 L 53.0 152.0 L 56.3 154.1 L 59.5 156.1 L 62.8 158.0 L 66.0 159.8 L 69.3 161.5 L 72.5 163.1 L 75.8 164.6 L 79.0 166.0 L 82.3 167.3 L 85.5 168.6 L 88.8 169.7 L 92.0 170.7 L 95.3 171.7 L 98.5 172.5 L 101.8 173.3 L 105.0 173.9 L 108.3 174.5 L 111.5 174.9 L 114.8 175.3 L 118.0 175.6 L 121.3 175.7 L 124.5 175.8 L 127.8 175.8 L 131.0 175.7 L 134.3 175.5 L 137.5 175.2 L 140.8 174.8 L 144.0 174.3 L 147.3 173.7 L 150.5 173.0 L 153.8 172.2 L 157.0 171.3 L 160.3 170.3 L 163.5 169.3 L 166.8 168.1 L 170.0 166.8 L 173.3 165.5 L 176.5 164.0 L 179.8 162.5 L 183.0 160.8 L 186.3 159.1 L 189.5 157.3 L 192.8 155.3 L 196.0 153.3 L 199.3 151.2 L 202.5 149.0 L 205.8 146.6 L 209.0 144.2 L 212.3 141.7 L 215.5 139.1 L 218.8 136.4 L 222.0 133.6 L 225.3 130.7 L 228.5 127.8 L 231.8 124.7 L 235.0 121.5 L 238.3 118.2 L 241.5 114.9 L 244.8 111.4 L 248.1 107.8 L 251.3 104.2 L 254.6 100.4 L 257.8 96.6 L 261.1 92.7 L 264.3 88.6 L 267.6 84.5 L 270.8 80.3 L 274.1 75.9 L 277.3 71.5 L 280.6 67.0 L 283.8 62.4 L 287.1 57.7 L 290.3 52.9 L 293.6 48.0 L 296.8 43.0 L 300.1 37.9" fill="none" stroke="var(--X)" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <text x="43.6" y="83.9" class="sm bd" text-anchor="start" style="fill:var(--acc)">½kx² (real)</text>
+  <text x="132.6" y="38.0" class="sm bd" text-anchor="start" style="fill:var(--A)">½k(x − x<tspan dy="3" font-size="9">1</tspan><tspan dy="-3">)² (estudiante)</tspan></text>
+  <text x="321.4" y="174.7" class="sm bd" text-anchor="end" style="fill:var(--X)">½kx² − ½kx<tspan dy="3" font-size="9">1</tspan><tspan dy="-3">² (correcta)</tspan></text>
+</svg>
+<figcaption>Cambiar el cero de U es sumar una constante (curva discontinua: misma forma y mismo mínimo en x = 0, y U = 0 en x<sub>1</sub>). Desplazar la variable (la desplazada) mueve el mínimo a x<sub>1</sub> y describe otro resorte. Valores ilustrativos con k = 2 y x<sub>1</sub> = 1. <span class="src" data-l="P" data-ref="Diagrama propio (Examen Febrero 2024 (2ª semana) P-3 Opción A (a))">P</span></figcaption>
+</figure>
+
+  <p><b>(a) No es correcto.</b> Es cierto que el cero de $U$ es arbitrario, pero cambiarlo significa <b>sumar una constante</b>, no desplazar la variable. La forma correcta de tomar $U=0$ en $x=x_1$ es $U=\tfrac12kx^2-\tfrac12kx_1^2$ (curva discontinua). La expresión del estudiante describe <i>otro</i> resorte, con su mínimo en $x=x_1$: su fuerza sería $F_x=-dU/dx=-k(x-x_1)$, distinta de la real $F_x=-kx$ (ec. 7.16). Como la fuerza cambia, saldrían mal las velocidades y los puntos de retorno.</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 215" width="100%" role="img" aria-label="Energía potencial entre dos partículas con U(∞)=0: positiva si se repelen, negativa si se atraen">
+  <defs><marker id="max3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbx3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmx3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgx3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpx3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfx3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="40" y1="175" x2="330" y2="175"/>
+  <line class="ax" x1="40" y1="175" x2="40" y2="10"/>
+  <text x="325" y="203" class="sm" text-anchor="end">r (separación)</text>
+  <text x="46" y="17" class="sm">U</text>
+  <line x1="87.5" y1="175" x2="87.5" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="87.5" y="191" class="sm" text-anchor="middle">r<tspan dy="3" font-size="9">0</tspan><tspan dy="-3"></tspan></text>
+  <line x1="166.7" y1="175" x2="166.7" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="166.7" y="191" class="sm" text-anchor="middle">2r<tspan dy="3" font-size="9">0</tspan><tspan dy="-3"></tspan></text>
+  <line x1="245.8" y1="175" x2="245.8" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="245.8" y="191" class="sm" text-anchor="middle">3r<tspan dy="3" font-size="9">0</tspan><tspan dy="-3"></tspan></text>
+  <path d="M 40.0 95.0 L 325.0 95.0" fill="none" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <path d="M 63.8 18.8 L 67.0 23.0 L 70.3 26.8 L 73.5 30.3 L 76.8 33.3 L 80.1 36.1 L 83.3 38.7 L 86.6 41.1 L 89.9 43.2 L 93.1 45.2 L 96.4 47.1 L 99.7 48.8 L 102.9 50.4 L 106.2 51.9 L 109.5 53.3 L 112.7 54.6 L 116.0 55.8 L 119.3 56.9 L 122.5 58.0 L 125.8 59.1 L 129.1 60.0 L 132.3 60.9 L 135.6 61.8 L 138.9 62.7 L 142.1 63.4 L 145.4 64.2 L 148.7 64.9 L 151.9 65.6 L 155.2 66.2 L 158.5 66.9 L 161.7 67.5 L 165.0 68.0 L 168.2 68.6 L 171.5 69.1 L 174.8 69.6 L 178.0 70.1 L 181.3 70.6 L 184.6 71.0 L 187.8 71.5 L 191.1 71.9 L 194.4 72.3 L 197.6 72.7 L 200.9 73.1 L 204.2 73.4 L 207.4 73.8 L 210.7 74.1 L 214.0 74.5 L 217.2 74.8 L 220.5 75.1 L 223.8 75.4 L 227.0 75.7 L 230.3 76.0 L 233.6 76.3 L 236.8 76.5 L 240.1 76.8 L 243.4 77.0 L 246.6 77.3 L 249.9 77.5 L 253.2 77.8 L 256.4 78.0 L 259.7 78.2 L 263.0 78.4 L 266.2 78.6 L 269.5 78.8 L 272.8 79.0 L 276.0 79.2 L 279.3 79.4 L 282.5 79.6 L 285.8 79.8 L 289.1 80.0 L 292.3 80.1 L 295.6 80.3 L 298.9 80.5 L 302.1 80.6 L 305.4 80.8 L 308.7 80.9 L 311.9 81.1 L 315.2 81.2 L 318.5 81.4 L 321.7 81.5 L 325.0 81.7" fill="none" stroke="var(--A)" stroke-width="2.5"/>
+  <path d="M 63.8 171.2 L 67.0 167.0 L 70.3 163.2 L 73.5 159.7 L 76.8 156.7 L 80.1 153.9 L 83.3 151.3 L 86.6 148.9 L 89.9 146.8 L 93.1 144.8 L 96.4 142.9 L 99.7 141.2 L 102.9 139.6 L 106.2 138.1 L 109.5 136.7 L 112.7 135.4 L 116.0 134.2 L 119.3 133.1 L 122.5 132.0 L 125.8 130.9 L 129.1 130.0 L 132.3 129.1 L 135.6 128.2 L 138.9 127.3 L 142.1 126.6 L 145.4 125.8 L 148.7 125.1 L 151.9 124.4 L 155.2 123.8 L 158.5 123.1 L 161.7 122.5 L 165.0 122.0 L 168.2 121.4 L 171.5 120.9 L 174.8 120.4 L 178.0 119.9 L 181.3 119.4 L 184.6 119.0 L 187.8 118.5 L 191.1 118.1 L 194.4 117.7 L 197.6 117.3 L 200.9 116.9 L 204.2 116.6 L 207.4 116.2 L 210.7 115.9 L 214.0 115.5 L 217.2 115.2 L 220.5 114.9 L 223.8 114.6 L 227.0 114.3 L 230.3 114.0 L 233.6 113.7 L 236.8 113.5 L 240.1 113.2 L 243.4 113.0 L 246.6 112.7 L 249.9 112.5 L 253.2 112.2 L 256.4 112.0 L 259.7 111.8 L 263.0 111.6 L 266.2 111.4 L 269.5 111.2 L 272.8 111.0 L 276.0 110.8 L 279.3 110.6 L 282.5 110.4 L 285.8 110.2 L 289.1 110.0 L 292.3 109.9 L 295.6 109.7 L 298.9 109.5 L 302.1 109.4 L 305.4 109.2 L 308.7 109.1 L 311.9 108.9 L 315.2 108.8 L 318.5 108.6 L 321.7 108.5 L 325.0 108.3" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <text x="95.4" y="28.3" class="sm bd" text-anchor="start" style="fill:var(--A)">repulsión: U > 0</text>
+  <text x="95.4" y="161.7" class="sm bd" text-anchor="start" style="fill:var(--acc)">atracción: U < 0</text>
+  <text x="44.0" y="90.0" class="sm" text-anchor="start">U = 0</text>
+</svg>
+<figcaption>Con U(∞) = 0, acercar dos partículas que se repelen cuesta trabajo (U crece y es positiva); dejar que se acerquen dos que se atraen libera energía (U baja de 0 y es negativa). <span class="src" data-l="P" data-ref="Diagrama propio (Examen Febrero 2024 (2ª semana) P-3 Opción A (b))">P</span></figcaption>
+</figure>
+
+  <p><b>(b) Signo de $U$ con $U(\infty)=0$.</b> Partimos de $W=-\Delta U$ (fuerza conservativa). Al llevar las partículas desde el infinito hasta una separación $r$: $U(r)=U(\infty)-W_{\infty\to r}=-W_{\infty\to r}$.</p>
+  <ul>
+    <li>Si <b>se repelen</b>, al acercarlas la fuerza se opone al desplazamiento: $W_{\infty\to r}<0\Rightarrow U(r)>0$. Además $U$ disminuye al separarlas y $F_r=-dU/dr>0$ (hacia fuera), coherente con la repulsión.</li>
+    <li>Si <b>se atraen</b>, la fuerza va a favor del acercamiento: $W_{\infty\to r}>0\Rightarrow U(r)<0$. Habría que aportar energía para separarlas hasta el infinito (sistema ligado). Ejemplo: gravitación, $U=-Gm_1m_2/r$ (tema 13).</li>
+  </ul>
+  <div class="recipe"><b>Receta:</b> el cero de $U$ se cambia <i>sumando una constante</i> (la fuerza no cambia); el signo de $U$ con $U(\infty)=0$ sale de $U(r)=-W_{\infty\to r}$: trabajo negativo al acercar (repulsión) ⇒ $U>0$; positivo (atracción) ⇒ $U<0$.</div>
+</details>
+
+<details class="sol" id="x7"><summary>X7 — Energía potencial gravitatoria: astronauta y proyectil (relacionada con la gravitación; catalogada en el tema 13) <span class="src" data-l="X" data-ref="Examen Febrero 2022 (1ª semana) P-3 Opción 3.2">X</span></summary>
+  <p class="enun">3.2- Energía potencial gravitatoria. 3.2a) ¿Es cierto que un astronauta en órbita está fuera del alcance de la gravedad terrestre? ¿A qué distancia tendría que viajar una nave para estar fuera del alcance de la gravedad terrestre? Explique ambas respuestas. 3.2b) Si se lanza un proyectil verticalmente hacia arriba desde la superficie terrestre, ¿qué pasa si la energía mecánica total es menor o mayor que cero? Desprecie la resistencia del aire y los efectos gravitacionales del Sol, la Luna y resto de planetas. (4 puntos.)</p>
+  <p><b>Idea previa.</b> Lejos de la superficie, la energía potencial gravitatoria ya no es $mgy$ sino $U=-\dfrac{GM_Tm}{r}$ (cero en el infinito, tema 13); el método de energía y el diagrama $E$-$U$ son los de esta página.</p>
+  <p><b>3.2a)</b> No: el astronauta en órbita sigue sometido a la gravedad terrestre (a 400 km de altura $g$ vale todavía casi el 89 % de su valor en superficie). Parece «ingrávido» porque él y la nave están en <i>caída libre</i> continua alrededor de la Tierra, con la misma aceleración. La fuerza $F=GM_Tm/r^2$ solo se anula en $r\to\infty$: no hay una distancia finita a la que se «salga» de la gravedad, aunque a grandes distancias sea despreciable frente a la de otros cuerpos.</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 215" width="100%" role="img" aria-label="Energía potencial gravitatoria con tres valores de la energía total: ligado, límite y de escape">
+  <defs><marker id="max2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbx2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmx2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgx2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpx2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfx2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="40" y1="175" x2="330" y2="175"/>
+  <line class="ax" x1="40" y1="175" x2="40" y2="10"/>
+  <text x="325" y="203" class="sm" text-anchor="end">r (en R<tspan dy="3" font-size="9">T</tspan><tspan dy="-3">)</tspan></text>
+  <text x="46" y="17" class="sm">U (en GMm/R<tspan dy="3" font-size="9">T</tspan><tspan dy="-3">)</tspan></text>
+  <line x1="40.0" y1="175" x2="40.0" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="40.0" y="191" class="sm" text-anchor="middle">1</text>
+  <line x1="97.0" y1="175" x2="97.0" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="97.0" y="191" class="sm" text-anchor="middle">2</text>
+  <line x1="211.0" y1="175" x2="211.0" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="211.0" y="191" class="sm" text-anchor="middle">4</text>
+  <line x1="325.0" y1="175" x2="325.0" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="325.0" y="191" class="sm" text-anchor="middle">6</text>
+  <line x1="36" y1="150.8" x2="40" y2="150.8" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="33" y="154.8" class="sm" text-anchor="end">−1</text>
+  <line x1="36" y1="53.8" x2="40" y2="53.8" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="33" y="57.8" class="sm" text-anchor="end">0</text>
+  <path d="M 40.0 150.8 L 43.6 145.1 L 47.1 140.0 L 50.7 135.4 L 54.2 131.4 L 57.8 127.7 L 61.4 124.3 L 64.9 121.2 L 68.5 118.4 L 72.1 115.8 L 75.6 113.5 L 79.2 111.3 L 82.8 109.2 L 86.3 107.3 L 89.9 105.5 L 93.4 103.8 L 97.0 102.3 L 100.6 100.8 L 104.1 99.4 L 107.7 98.1 L 111.2 96.9 L 114.8 95.7 L 118.4 94.6 L 121.9 93.6 L 125.5 92.6 L 129.1 91.6 L 132.6 90.7 L 136.2 89.9 L 139.8 89.0 L 143.3 88.3 L 146.9 87.5 L 150.4 86.8 L 154.0 86.1 L 157.6 85.5 L 161.1 84.8 L 164.7 84.2 L 168.2 83.6 L 171.8 83.1 L 175.4 82.5 L 178.9 82.0 L 182.5 81.5 L 186.1 81.0 L 189.6 80.5 L 193.2 80.1 L 196.8 79.6 L 200.3 79.2 L 203.9 78.8 L 207.4 78.4 L 211.0 78.0 L 214.6 77.7 L 218.1 77.3 L 221.7 76.9 L 225.2 76.6 L 228.8 76.3 L 232.4 76.0 L 235.9 75.6 L 239.5 75.3 L 243.1 75.0 L 246.6 74.8 L 250.2 74.5 L 253.8 74.2 L 257.3 73.9 L 260.9 73.7 L 264.4 73.4 L 268.0 73.2 L 271.6 72.9 L 275.1 72.7 L 278.7 72.5 L 282.2 72.3 L 285.8 72.0 L 289.4 71.8 L 292.9 71.6 L 296.5 71.4 L 300.1 71.2 L 303.6 71.0 L 307.2 70.8 L 310.8 70.7 L 314.3 70.5 L 317.9 70.3 L 321.4 70.1 L 325.0 69.9" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <path d="M 40.0 78.0 L 325.0 78.0" fill="none" stroke="var(--X)" stroke-width="1.8" stroke-dasharray="5 4"/>
+  <text x="323.0" y="92.0" class="sm bd" text-anchor="end" style="fill:var(--X)">E < 0</text>
+  <circle cx="211.0" cy="78.0" r="4.5" fill="var(--E)"/>
+  <text x="211.0" y="70.0" class="sm" text-anchor="middle">r<tspan dy="3" font-size="9">max</tspan><tspan dy="-3"></tspan></text>
+  <path d="M 40.0 34.4 L 325.0 34.4" fill="none" stroke="var(--A)" stroke-width="1.8" stroke-dasharray="5 4"/>
+  <text x="323.0" y="28.4" class="sm bd" text-anchor="end" style="fill:var(--A)">E > 0: escapa</text>
+  <path d="M 40.0 53.8 L 325.0 53.8" fill="none" stroke="var(--mut)" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="45.7" y="48.8" class="sm" text-anchor="start">E = 0</text>
+</svg>
+<figcaption>Con E < 0 la partícula llega a un r<sub>max</sub> finito (K = 0) y vuelve a caer; con E ≥ 0, K = E − U es positiva para todo r y el proyectil escapa. <span class="src" data-l="P" data-ref="Diagrama propio (Examen Febrero 2022 (1ª semana) P-3 Opción 3.2b; U §13.3 p. 406)">P</span></figcaption>
+</figure>
+
+  <p><b>3.2b)</b> Con $U=-GM_Tm/r$, la energía $E=K+U$ se conserva. Si $E<0$, existe un $r_{max}$ finito con $K=0$ ($E=U(r_{max})$): el proyectil sube, se para y vuelve a caer (sistema ligado). Si $E\ge0$, $K=E-U>0$ para todo $r$: escapa hasta el infinito (con $E=0$ llega con rapidez que tiende a cero; es el caso de la velocidad de escape).</p>
+  <div class="recipe"><b>Receta:</b> para «¿escapa o vuelve?» dibuja $U(r)$ y la línea $E$: si $E<0$ la línea corta a la curva (punto de retorno, vuelve); si $E\ge0$ no la corta (escapa).</div>
+</details>
+
+<details class="sol" id="x8"><summary>X8 — Teoría: «Energía potencial gravitacional» (relacionada con la gravitación) <span class="src" data-l="X" data-ref="Examen Septiembre 2022 P-4 Opción B">X</span></summary>
+  <p class="enun">P-4: Teoría Opción B. Desarrolle el tema: <i>Energía potencial gravitacional</i>. Además, responda: (a) Explique la relación que hay entre las siguientes expresiones de la energía potencial ($U$), aplicadas al planeta Tierra (masa $M$) y a un objeto (masa $m$), y el motivo por el que en la primera expresión $U$ crece con la altura ($h$) mientras que en la segunda disminuye con la distancia del objeto al centro de la Tierra ($r$): $U=mgh$ (1); $U=G\dfrac{Mm}{r}$ (2). Siendo $G$ la constante de gravitación universal. (b) Explique cuál sería el trabajo resultante para ir desde la playa de la Malvarrosa en Valencia a la Barceloneta en Barcelona. No considere la acción de fuerzas no conservativas. (4 puntos.)</p>
+  <p><b>Desarrollo del tema:</b> definición $U_{grav}=mgy$ y $W_{grav}=-\Delta U_{grav}$ (sección 1); la gravedad es conservativa; la expresión general $U=-GMm/r$ con cero en el infinito (tema 13).</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 215" width="100%" role="img" aria-label="Energía potencial gravitatoria −GMm/r y su aproximación lineal mgh cerca de la superficie">
+  <defs><marker id="max1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbx1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmx1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgx1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpx1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfx1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="40" y1="175" x2="330" y2="175"/>
+  <line class="ax" x1="40" y1="175" x2="40" y2="10"/>
+  <text x="325" y="203" class="sm" text-anchor="end">r (en radios terrestres R<tspan dy="3" font-size="9">T</tspan><tspan dy="-3">)</tspan></text>
+  <text x="46" y="17" class="sm">U (en GMm/R<tspan dy="3" font-size="9">T</tspan><tspan dy="-3">)</tspan></text>
+  <line x1="40.0" y1="175" x2="40.0" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="40.0" y="191" class="sm" text-anchor="middle">1</text>
+  <line x1="135.0" y1="175" x2="135.0" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="135.0" y="191" class="sm" text-anchor="middle">2</text>
+  <line x1="230.0" y1="175" x2="230.0" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="230.0" y="191" class="sm" text-anchor="middle">3</text>
+  <line x1="325.0" y1="175" x2="325.0" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="325.0" y="191" class="sm" text-anchor="middle">4</text>
+  <line x1="36" y1="152.1" x2="40" y2="152.1" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="33" y="156.1" class="sm" text-anchor="end">−1</text>
+  <line x1="36" y1="60.7" x2="40" y2="60.7" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="33" y="64.7" class="sm" text-anchor="end">0</text>
+  <path d="M 40.0 152.1 L 43.6 148.8 L 47.1 145.8 L 50.7 142.9 L 54.2 140.2 L 57.8 137.7 L 61.4 135.3 L 64.9 133.1 L 68.5 131.0 L 72.1 129.1 L 75.6 127.2 L 79.2 125.4 L 82.8 123.8 L 86.3 122.2 L 89.9 120.7 L 93.4 119.2 L 97.0 117.9 L 100.6 116.5 L 104.1 115.3 L 107.7 114.1 L 111.2 113.0 L 114.8 111.9 L 118.4 110.8 L 121.9 109.8 L 125.5 108.8 L 129.1 107.9 L 132.6 107.0 L 136.2 106.1 L 139.7 105.3 L 143.3 104.5 L 146.9 103.7 L 150.4 103.0 L 154.0 102.3 L 157.6 101.6 L 161.1 100.9 L 164.7 100.3 L 168.2 99.6 L 171.8 99.0 L 175.4 98.4 L 178.9 97.8 L 182.5 97.3 L 186.1 96.7 L 189.6 96.2 L 193.2 95.7 L 196.7 95.2 L 200.3 94.7 L 203.9 94.3 L 207.4 93.8 L 211.0 93.4 L 214.6 92.9 L 218.1 92.5 L 221.7 92.1 L 225.2 91.7 L 228.8 91.3 L 232.4 90.9 L 235.9 90.6 L 239.5 90.2 L 243.1 89.9 L 246.6 89.5 L 250.2 89.2 L 253.8 88.8 L 257.3 88.5 L 260.9 88.2 L 264.4 87.9 L 268.0 87.6 L 271.6 87.3 L 275.1 87.0 L 278.7 86.7 L 282.2 86.5 L 285.8 86.2 L 289.4 85.9 L 292.9 85.7 L 296.5 85.4 L 300.1 85.2 L 303.6 84.9 L 307.2 84.7 L 310.8 84.5 L 314.3 84.2 L 317.9 84.0 L 321.4 83.8 L 325.0 83.6" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <path d="M 40.0 152.1 L 163.5 33.3" fill="none" stroke="var(--A)" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <circle cx="40.0" cy="152.1" r="4.5" fill="var(--fg)"/>
+  <text x="51.4" y="170.1" class="sm" text-anchor="start">superficie</text>
+  <text x="315.5" y="75.6" class="sm bd" text-anchor="end" style="fill:var(--acc)">U = −GMm/r</text>
+  <text x="163.5" y="47.3" class="sm bd" text-anchor="start" style="fill:var(--A)">U ≈ U₀ + mgh</text>
+</svg>
+<figcaption>Cerca de r = R<sub>T</sub> la curva −GMm/r se confunde con su tangente, cuya pendiente es mg: ahí U crece linealmente con la altura, U = mgh (con otro cero). Lejos de la superficie la recta deja de valer (esquema no a escala). <span class="src" data-l="P" data-ref="Diagrama propio (Examen Septiembre 2022 P-4; U §13.3 ec. 13.9 p. 405)">P</span></figcaption>
+</figure>
+
+  <p><b>(a)</b> La expresión (2) es la energía potencial gravitatoria general; con el cero en el infinito se escribe $U=-\dfrac{GMm}{r}$. Es negativa y su <i>módulo</i> $GMm/r$ disminuye con $r$, pero $U$ misma <b>aumenta</b> (se hace menos negativa) al alejarse, igual que $mgh$ aumenta con la altura: las dos dicen que subir cuesta trabajo. $U=mgh$ es la <b>aproximación</b> cerca de la superficie: con $r=R_T+h$ y $h\ll R_T$, $\Delta U=GMm\left(\dfrac1{R_T}-\dfrac1{R_T+h}\right)=\dfrac{GMm\,h}{R_T(R_T+h)}\approx\dfrac{GM}{R_T^2}\,mh=mgh$, usando $g=GM/R_T^2$. La diferencia está solo en dónde se toma el cero ($U=0$ en la superficie frente a $U=0$ en el infinito), que no cambia la física: solo importan las diferencias.</p>
+  <p><b>(b)</b> Ambas playas están al nivel del mar (misma distancia al centro de la Tierra). Como la gravedad es conservativa, su trabajo solo depende de los extremos: $W_{grav}=-\Delta U=0$, sea cual sea el camino (autopista, avión…). Sin fuerzas no conservativas, por el teorema trabajo-energía el trabajo total es el cambio de energía cinética: si se sale y se llega en reposo, $W_{tot}=0$.</p>
+  <div class="recipe"><b>Receta:</b> «trabajo entre dos puntos con fuerzas conservativas» = $-\Delta U$: depende solo de los puntos extremos. Mismo nivel ⇒ trabajo nulo del peso.</div>
+</details>
+
+<h3>Problemas del solucionario (E)</h3>
+
+<details class="sol" id="e1"><summary>E1 — Problema 7.6: caja que baja por una rampa sin fricción <span class="src" data-l="E" data-ref="Solucionario 7-2 Prob. 7.6">E</span></summary>
+  <p class="enun">Una caja de masa $M$ parte del reposo en lo alto de una rampa sin fricción inclinada un ángulo $\alpha$ y baja una distancia $d$ medida sobre la rampa. Calcule su rapidez al llegar abajo de dos maneras: (a) con el cero de energía potencial en la base y $+y$ hacia arriba; (b) con el cero en la cima y $+y$ hacia arriba. (c) ¿Por qué no interviene la fuerza normal?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 180" width="100%" role="img" aria-label="Caja que baja una distancia d por una rampa sin fricción inclinada un ángulo alfa">
+  <defs><marker id="map1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 30 150 L 250.7 32.6 L 250.7 150 L 30 150 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 197.8 60.8 L 215.4 51.4 L 206.0 33.8 L 188.4 43.1 Z" fill="var(--mut)" fill-opacity="0.35" stroke="none"/>
+  <path d="M 197.8 60.8 L 215.4 51.4 L 206.0 33.8 L 188.4 43.1 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 42.4 143.4 L 60.0 134.0 L 50.6 116.4 L 33.0 125.8 Z" fill="var(--mut)" fill-opacity="0.35" stroke="none"/>
+  <path d="M 42.4 143.4 L 60.0 134.0 L 50.6 116.4 L 33.0 125.8 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="262.7" y1="32.6" x2="262.7" y2="150" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="250.7" y1="32.6" x2="262.7" y2="32.6" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="267.7" y="95.3" class="sm bd" text-anchor="start">d sen α</text>
+  <line x1="195.5" y1="77.9" x2="48.9" y2="155.8" stroke="var(--mut)" stroke-width="1.6" fill="none" marker-end="url(#mmp1)"/>
+  <text x="152.9" y="125.7" class="sm bd" text-anchor="start">d</text>
+  <path d="M 80.0 150.0 A 50 50 0 0 0 74.1 126.5" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="86" y="144" class="sm bd" text-anchor="start">α</text>
+  <text x="180.4" y="35.1" class="sm bd" text-anchor="end">M (v = 0)</text>
+  <text x="29.1" y="116.2" class="sm bd" text-anchor="start">v₂ = ?</text>
+</svg>
+<figcaption>La caja baja una distancia d medida sobre la rampa, es decir, un desnivel d sen α. La normal es perpendicular al desplazamiento y no trabaja. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-2, Prob. 7.6)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>Fuerzas: peso (conservativo) y normal. La normal es perpendicular al desplazamiento: $W_n=0$ (apartado c). Solo trabaja la gravedad, luego $K_1+U_1=K_2+U_2$ (7.4).</li>
+    <li>Bajar $d$ por la rampa es bajar $d\sin\alpha$ en vertical.</li>
+    <li><b>(a) Cero en la base:</b> $y_1=d\sin\alpha$, $y_2=0$. $0+Mgd\sin\alpha=\tfrac12Mv_2^2+0\Rightarrow v_2=\sqrt{2gd\sin\alpha}$.</li>
+    <li><b>(b) Cero en la cima:</b> $y_1=0$, $y_2=-d\sin\alpha$. $0+0=\tfrac12Mv_2^2-Mgd\sin\alpha\Rightarrow v_2=\sqrt{2gd\sin\alpha}$, el mismo resultado: solo importa $\Delta U$, no el valor absoluto.</li>
+  </ol>
+  <p><b>Resultado:</b> $v=\sqrt{2gd\sin\alpha}$, independiente de $M$ y del origen elegido.</p>
+  <div class="recipe"><b>Receta:</b> sin fricción, la rapidez tras bajar un desnivel $\Delta h$ partiendo del reposo es siempre $v=\sqrt{2g\Delta h}$, sea cual sea la forma del camino.</div>
+  <div class="recipe"><b>Error típico:</b> usar $d$ como altura ($v=\sqrt{2gd}$), o poner $+y$ hacia abajo con $U=mgy$ (cambia el signo).</div>
+</details>
+
+<details class="sol" id="e2"><summary>E2 — Problema 7.40: bloque lanzado por un resorte sobre un plano horizontal y una rampa <span class="src" data-l="E" data-ref="Solucionario 7-14 Prob. 7.40">E</span></summary>
+  <p class="enun">Un bloque de 2,00 kg se empuja contra un resorte de masa despreciable y $k=400$ N/m, comprimiéndolo 0,220 m. Al soltarlo, el bloque se mueve por una superficie sin fricción, primero horizontal y luego por una rampa de 37,0°. (a) ¿Qué rapidez tiene en el tramo horizontal tras separarse del resorte? (b) ¿Hasta dónde sube por la rampa antes de detenerse y volver?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 168" width="100%" role="img" aria-label="Bloque lanzado por un resorte sobre una superficie horizontal y luego por una rampa de 37 grados sin fricción">
+  <defs><marker id="map2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbp2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmp2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgp2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpp2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfp2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 14 140 L 215 140 L 318.8 61.8 L 318.8 140 L 14 140 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 24 100 L 24 140" fill="none" stroke="var(--fg)" stroke-width="3"/>
+  <path d="M 24 130 L 29.8 135.0 L 35.5 125.0 L 41.2 135.0 L 47.0 125.0 L 52.8 135.0 L 58.5 125.0 L 64.2 135.0 L 70 130" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <rect x="70" y="118" width="22" height="22" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="24" y="158" class="sm" text-anchor="start">x = 0,220 m</text>
+  <line x1="100" y1="108" x2="170" y2="108" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mgp2)"/>
+  <text x="100" y="100" class="sm bd" text-anchor="start">v = 3,11 m/s</text>
+  <path d="M 290.9 82.8 L 306.8 70.8 L 294.8 54.8 L 278.8 66.9 Z" fill="var(--mut)" fill-opacity="0.35" stroke="none"/>
+  <path d="M 290.9 82.8 L 306.8 70.8 L 294.8 54.8 L 278.8 66.9 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="266.9" y1="82.8" x2="266.9" y2="140" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="266.9" y1="82.8" x2="290.9" y2="82.8" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="262.9" y="115.4" class="sm bd" text-anchor="end">h = 0,494 m</text>
+  <text x="286.9" y="52.8" class="sm bd" text-anchor="end">v = 0 (punto más alto)</text>
+  <path d="M 255.0 140.0 A 40 40 0 0 0 246.9 115.9" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="259" y="134" class="sm" text-anchor="start">37,0°</text>
+  <text x="344" y="162" class="sm bd" text-anchor="end">L = 0,821 m sobre la rampa</text>
+</svg>
+<figcaption>Sin fricción: ½kx² = ½mv² = mgh. El resorte (k = 400 N/m, comprimido 0,220 m) da 3,11 m/s en el tramo horizontal; el bloque sube 0,494 m de altura, es decir, L = 0,821 m sobre la rampa (esquema no a escala). <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-14, Prob. 7.40)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>Sin fricción: solo trabajan fuerzas conservativas (resorte y peso), $K_1+U_1=K_2+U_2$ (7.12).</li>
+    <li><b>(a)</b> Estado 1: reposo, $U_{el}=\tfrac12kx^2=\tfrac12(400)(0{,}220)^2=9{,}68$ J. Estado 2: resorte relajado, tramo horizontal: $\tfrac12kx^2=\tfrac12mv^2\Rightarrow v=x\sqrt{k/m}=0{,}220\sqrt{200}=3{,}11$ m/s.</li>
+    <li><b>(b)</b> Estado 3: el punto más alto, $v=0$. Toda la energía es gravitatoria: $\tfrac12kx^2=mgh\Rightarrow h=\dfrac{9{,}68}{(2{,}00)(9{,}80)}=0{,}494$ m de altura.</li>
+    <li>Distancia a lo largo de la rampa: $L=h/\sin37{,}0^\circ=\dfrac{9{,}68}{(2{,}00)(9{,}80)(0{,}6018)}=0{,}821$ m.</li>
+  </ol>
+  <p><b>Resultado:</b> (a) 3,11 m/s; (b) sube 0,821 m por la rampa (0,494 m de altura).</p>
+  <div class="recipe"><b>Receta:</b> sin fricción, encadena las conversiones: elástica → cinética → gravitatoria, $\tfrac12kx^2=\tfrac12mv^2=mgh$.</div>
+  <div class="recipe"><b>Error típico:</b> confundir la altura alcanzada $h$ con la distancia sobre la rampa $L=h/\sin\theta$.</div>
+</details>
+
+<details class="sol" id="e3"><summary>E3 — Problema 7.24: bloque con resorte y fricción en un suelo horizontal <span class="src" data-l="E" data-ref="Solucionario 7-9 Prob. 7.24">E</span></summary>
+  <p class="enun">Un bloque de 2,50 kg sobre un suelo horizontal está unido a un resorte horizontal inicialmente comprimido 0,0300 m, con $k=840$ N/m. El coeficiente de fricción cinética es $\mu_k=0{,}40$. Se sueltan desde el reposo. ¿Qué rapidez tiene el bloque tras recorrer 0,0200 m (el resorte queda comprimido 0,0100 m)?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 172" width="100%" role="img" aria-label="Bloque unido a un resorte sobre un suelo con fricción: reparto de la energía elástica inicial">
+  <defs><marker id="map3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbp3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmp3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgp3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpp3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfp3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="14" y1="62" x2="346" y2="62" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 24 22 L 24 62" fill="none" stroke="var(--fg)" stroke-width="3"/>
+  <path d="M 24 50 L 31.7 55.0 L 39.3 45.0 L 47.0 55.0 L 54.7 45.0 L 62.3 55.0 L 70.0 45.0 L 77.7 55.0 L 85.3 45.0 L 93.0 55.0 L 100.7 45.0 L 108.3 55.0 L 116 50" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <rect x="80" y="38" width="24" height="24" rx="2" fill="var(--mut)" fill-opacity="0.15" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="80" y1="34" x2="80" y2="70" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <rect x="116" y="38" width="24" height="24" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="84" y1="28" x2="116" y2="28" stroke="var(--mut)" stroke-width="1.6" fill="none" marker-end="url(#mmp3)"/>
+  <text x="60" y="22" class="sm bd" text-anchor="start">s = 0,0200 m</text>
+  <text x="150" y="54" class="sm" text-anchor="start">m = 2,50 kg, μ<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 0,40</tspan></text>
+  <text x="30" y="111" class="sm bd" text-anchor="start">U<tspan dy="3" font-size="9">el,1</tspan><tspan dy="-3"> = 0,378 J se reparte en…</tspan></text>
+  <rect x="30" y="118" width="33.3" height="16" rx="2" fill="var(--acc)" fill-opacity="0.55" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="30" y="148" class="sm" text-anchor="start">U<tspan dy="3" font-size="9">el,2</tspan><tspan dy="-3"></tspan></text>
+  <text x="30" y="161" class="sm" text-anchor="start">0,042 J</text>
+  <rect x="63.3" y="118" width="155.6" height="16" rx="2" fill="var(--E)" fill-opacity="0.55" stroke="var(--E)" stroke-width="1.5"/>
+  <text x="141.1" y="148" class="sm" text-anchor="middle">ΔU<tspan dy="3" font-size="9">int</tspan><tspan dy="-3"></tspan></text>
+  <text x="141.1" y="161" class="sm" text-anchor="middle">0,196 J</text>
+  <rect x="218.9" y="118" width="111.1" height="16" rx="2" fill="var(--X)" fill-opacity="0.55" stroke="var(--X)" stroke-width="1.5"/>
+  <text x="274.4" y="148" class="sm" text-anchor="middle">K<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"></tspan></text>
+  <text x="274.4" y="161" class="sm" text-anchor="middle">0,140 J</text>
+</svg>
+<figcaption>Tras recorrer 0,0200 m (el resorte pasa de 0,0300 m a 0,0100 m de compresión) la energía elástica inicial se reparte en la que aún guarda el resorte, la energía interna ganada por la fricción y la energía cinética. (Esquema no a escala.) <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-9, Prob. 7.24)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>Fuerzas: el resorte (conservativo, en $U_{el}$); peso y normal (no trabajan en un movimiento horizontal); la fricción (no conservativa, va en $W_{otras}$).</li>
+    <li>$U_1=\tfrac12(840)(0{,}0300)^2=0{,}378$ J; $U_2=\tfrac12(840)(0{,}0100)^2=0{,}0420$ J. Como el bloque está unido, en el estado 2 el resorte aún guarda energía.</li>
+    <li>$n=mg$ y $W_f=-\mu_kmg\,s=-(0{,}40)(2{,}50)(9{,}8)(0{,}0200)=-0{,}196$ J.</li>
+    <li>(7.14): $K_2=U_1+W_f-U_2=0{,}378-0{,}196-0{,}042=0{,}140$ J, y $v_2=\sqrt{2K_2/m}=\sqrt{2(0{,}140)/2{,}50}=0{,}335$ m/s. (Sin fricción serían 0,519 m/s.)</li>
+  </ol>
+  <p><b>Resultado:</b> $v=0{,}335$ m/s.</p>
+  <div class="recipe"><b>Receta:</b> resorte y fricción en horizontal: $\tfrac12mv_2^2=\tfrac12kx_1^2-\tfrac12kx_2^2-\mu_kmg\,s$, con $s=|x_1-x_2|$.</div>
+  <div class="recipe"><b>Error típico:</b> escribir $\tfrac12k(x_1-x_2)^2$ en vez de $\tfrac12kx_1^2-\tfrac12kx_2^2$ (la energía elástica no es lineal en $x$).</div>
+</details>
+
+<details class="sol" id="e4"><summary>E4 — Problema 7.67: pez colgado de un resorte vertical (rapidez máxima) <span class="src" data-l="E" data-ref="Solucionario 7-25/7-26 Prob. 7.67">E</span></summary>
+  <p class="enun">Un pez de 3,00 kg cuelga del extremo inferior de un resorte vertical de masa despreciable y $k=900$ N/m. Inicialmente el resorte no está estirado ni comprimido y el pez se suelta desde el reposo. (a) ¿Qué rapidez tiene tras descender 0,0500 m? (b) ¿Cuál es su rapidez máxima durante la bajada?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 215" width="100%" role="img" aria-label="Energía cinética del pez en función de lo que ha descendido: máximo donde la fuerza neta es cero">
+  <defs><marker id="map4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbp4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmp4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgp4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpp4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfp4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="46" y1="175" x2="333" y2="175"/>
+  <line class="ax" x1="46" y1="175" x2="46" y2="10"/>
+  <text x="328" y="203" class="sm" text-anchor="end">y (m)</text>
+  <text x="52" y="17" class="sm">K (J)</text>
+  <line x1="161.3" y1="175" x2="161.3" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="161.3" y="191" class="sm" text-anchor="middle">0,033</text>
+  <line x1="222.2" y1="175" x2="222.2" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="222.2" y="191" class="sm" text-anchor="middle">0,050</text>
+  <line x1="276.2" y1="175" x2="276.2" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="276.2" y="191" class="sm" text-anchor="middle">0,065</text>
+  <line x1="42" y1="79.8" x2="46" y2="79.8" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="39" y="83.8" class="sm" text-anchor="end">0,345</text>
+  <line x1="42" y1="42.6" x2="46" y2="42.6" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="39" y="46.6" class="sm" text-anchor="end">0,48</text>
+  <path d="M 46.0 175.0 L 48.9 168.5 L 51.8 162.1 L 54.6 155.9 L 57.5 149.8 L 60.4 144.0 L 63.3 138.3 L 66.1 132.7 L 69.0 127.3 L 71.9 122.1 L 74.8 117.1 L 77.7 112.2 L 80.5 107.5 L 83.4 102.9 L 86.3 98.5 L 89.2 94.3 L 92.0 90.3 L 94.9 86.4 L 97.8 82.6 L 100.7 79.1 L 103.5 75.7 L 106.4 72.5 L 109.3 69.4 L 112.2 66.5 L 115.1 63.8 L 117.9 61.2 L 120.8 58.8 L 123.7 56.6 L 126.6 54.5 L 129.4 52.6 L 132.3 50.8 L 135.2 49.3 L 138.1 47.9 L 141.0 46.6 L 143.8 45.5 L 146.7 44.6 L 149.6 43.9 L 152.5 43.3 L 155.3 42.9 L 158.2 42.6 L 161.1 42.5 L 164.0 42.6 L 166.8 42.9 L 169.7 43.3 L 172.6 43.8 L 175.5 44.6 L 178.4 45.5 L 181.2 46.6 L 184.1 47.8 L 187.0 49.2 L 189.9 50.8 L 192.7 52.5 L 195.6 54.4 L 198.5 56.5 L 201.4 58.7 L 204.3 61.1 L 207.1 63.7 L 210.0 66.4 L 212.9 69.3 L 215.8 72.3 L 218.6 75.5 L 221.5 78.9 L 224.4 82.5 L 227.3 86.2 L 230.1 90.1 L 233.0 94.1 L 235.9 98.4 L 238.8 102.7 L 241.7 107.3 L 244.5 112.0 L 247.4 116.9 L 250.3 121.9 L 253.2 127.1 L 256.0 132.5 L 258.9 138.0 L 261.8 143.7 L 264.7 149.6 L 267.6 155.6 L 270.4 161.8 L 273.3 168.2 L 276.2 174.7" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <circle cx="222.2" cy="79.8" r="4.5" fill="var(--A)"/>
+  <line x1="222.2" y1="79.8" x2="222.2" y2="175.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="161.2" cy="42.5" r="5" fill="var(--X)"/>
+  <line x1="161.2" y1="42.5" x2="161.2" y2="175.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="230.2" y="73.8" class="sm bd" text-anchor="start" style="fill:var(--A)">(a) 0,345 J</text>
+  <text x="167.3" y="26.0" class="sm bd" text-anchor="start" style="fill:var(--X)">(b) máx. 0,480 J</text>
+</svg>
+<figcaption>K(y) = mgy − ½ky² con m = 3,00 kg y k = 900 N/m. En y = 0,050 m vale 0,345 J (v = 0,480 m/s); el máximo, 0,480 J (v = 0,566 m/s), está en y = mg/k = 0,0327 m, y el pez se detiene en y = 2mg/k = 0,0653 m. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-25/7-26, Prob. 7.67)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>Solo trabajan el peso y el resorte (conservativos): $K+U_{grav}+U_{el}=\text{cte}$.</li>
+    <li>Sea $y$ la distancia descendida (positiva hacia abajo): $U_{grav}$ baja $mgy$ y el resorte se estira $y$, luego $K(y)=mgy-\tfrac12ky^2$.</li>
+    <li><b>(a)</b> $K(0{,}0500)=(3{,}00)(9{,}8)(0{,}0500)-\tfrac12(900)(0{,}0500)^2=1{,}470-1{,}125=0{,}345$ J $\Rightarrow v=\sqrt{2(0{,}345)/3{,}00}=0{,}480$ m/s.</li>
+    <li><b>(b)</b> $K$ es máxima donde $dK/dy=0$: $mg-ky=0\Rightarrow y^*=mg/k=0{,}0327$ m. Es el punto de equilibrio, donde la fuerza neta es nula y el pez deja de acelerar (equivale a $F=-dU/dy=0$, el mínimo de $U$ total; §7.4-7.5).</li>
+    <li>$K_{max}=mgy^*-\tfrac12ky^{*2}=\dfrac{(mg)^2}{2k}=0{,}480$ J $\Rightarrow v_{max}=0{,}566$ m/s.</li>
+    <li><b>Comprobación:</b> $v_{max}>0{,}480$ m/s del apartado (a), como debe ser; el pez se detiene en $y=2y^*=0{,}0653$ m.</li>
+  </ol>
+  <p><b>Resultado:</b> (a) 0,480 m/s; (b) 0,566 m/s en $y=0{,}0327$ m.</p>
+  <div class="recipe"><b>Receta:</b> para la rapidez máxima, escribe $K$ en función de la posición y deriva: el máximo está donde la fuerza neta es cero (mínimo de $U$ total).</div>
+  <div class="recipe"><b>Error típico:</b> creer que la rapidez máxima está en el punto más bajo (allí $v=0$).</div>
+</details>
+
+<details class="sol" id="e5"><summary>E5 — Problema 7.65: caja contra un resorte con fricción (rapidez máxima) <span class="src" data-l="E" data-ref="Solucionario 7-25 Prob. 7.65">E</span></summary>
+  <p class="enun">En un sistema de manejo de paquetes, una caja de 1,60 kg se coloca contra un resorte ligero comprimido 0,280 m, con $k=45{,}0$ N/m. Se suelta desde el reposo y se mueve sobre una superficie horizontal con $\mu_k=0{,}300$. Tras recorrer 0,280 m el resorte alcanza su longitud natural y la caja se separa. (a) ¿Qué rapidez tiene al separarse? (b) ¿Cuál es su rapidez máxima durante el movimiento?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 215" width="100%" role="img" aria-label="Energía cinética de la caja frente a la distancia recorrida: el máximo no está en la longitud natural del resorte">
+  <defs><marker id="map5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbp5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmp5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgp5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpp5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfp5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="42" y1="175" x2="333" y2="175"/>
+  <line class="ax" x1="42" y1="175" x2="42" y2="10"/>
+  <text x="328" y="203" class="sm" text-anchor="end">distancia recorrida d (m)</text>
+  <text x="48" y="17" class="sm">K (J)</text>
+  <line x1="208.8" y1="175" x2="208.8" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="208.8" y="191" class="sm" text-anchor="middle">0,175</text>
+  <line x1="308.9" y1="175" x2="308.9" y2="179" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="308.9" y="191" class="sm" text-anchor="middle">0,28</text>
+  <line x1="38" y1="85.6" x2="42" y2="85.6" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="35" y="89.6" class="sm" text-anchor="end">0,447</text>
+  <line x1="38" y1="36.4" x2="42" y2="36.4" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="35" y="40.4" class="sm" text-anchor="end">0,693</text>
+  <path d="M 42.0 175.0 L 45.3 169.5 L 48.7 164.2 L 52.0 158.9 L 55.3 153.8 L 58.7 148.7 L 62.0 143.8 L 65.4 139.0 L 68.7 134.3 L 72.0 129.7 L 75.4 125.2 L 78.7 120.9 L 82.0 116.6 L 85.4 112.5 L 88.7 108.4 L 92.1 104.5 L 95.4 100.7 L 98.7 97.0 L 102.1 93.4 L 105.4 89.9 L 108.7 86.5 L 112.1 83.2 L 115.4 80.1 L 118.7 77.0 L 122.1 74.1 L 125.4 71.3 L 128.8 68.6 L 132.1 66.0 L 135.4 63.5 L 138.8 61.1 L 142.1 58.8 L 145.4 56.6 L 148.8 54.6 L 152.1 52.6 L 155.4 50.8 L 158.8 49.1 L 162.1 47.5 L 165.5 46.0 L 168.8 44.6 L 172.1 43.3 L 175.5 42.1 L 178.8 41.0 L 182.1 40.1 L 185.5 39.3 L 188.8 38.5 L 192.2 37.9 L 195.5 37.4 L 198.8 37.0 L 202.2 36.7 L 205.5 36.5 L 208.8 36.5 L 212.2 36.5 L 215.5 36.6 L 218.8 36.9 L 222.2 37.3 L 225.5 37.8 L 228.9 38.3 L 232.2 39.1 L 235.5 39.9 L 238.9 40.8 L 242.2 41.8 L 245.5 43.0 L 248.9 44.2 L 252.2 45.6 L 255.5 47.1 L 258.9 48.6 L 262.2 50.3 L 265.6 52.1 L 268.9 54.0 L 272.2 56.1 L 275.6 58.2 L 278.9 60.5 L 282.2 62.8 L 285.6 65.3 L 288.9 67.9 L 292.3 70.5 L 295.6 73.3 L 298.9 76.2 L 302.3 79.3 L 305.6 82.4 L 308.9 85.6" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <circle cx="308.9" cy="85.6" r="4.5" fill="var(--A)"/>
+  <line x1="308.9" y1="85.6" x2="308.9" y2="175.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="208.8" cy="36.5" r="5" fill="var(--X)"/>
+  <line x1="208.8" y1="36.5" x2="208.8" y2="175.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="302.9" y="105.6" class="sm bd" text-anchor="end" style="fill:var(--A)">(a) se separa: 0,447 J</text>
+  <text x="200.8" y="28.5" class="sm bd" text-anchor="end" style="fill:var(--X)">(b) máx. 0,693 J</text>
+</svg>
+<figcaption>K(d) con k = 45,0 N/m, μ<sub>k</sub> = 0,300 y m = 1,60 kg. El máximo (0,693 J, v = 0,931 m/s) ocurre con el resorte aún comprimido 0,105 m, donde kx = f<sub>k</sub>; al separarse (d = 0,280 m) la caja ya ha perdido algo de velocidad (0,447 J, v = 0,747 m/s). <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-25, Prob. 7.65)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li>Igual que E3: $\tfrac12mv^2=U_{el,1}-U_{el,2}-\mu_kmg\,d$, con $d$ la distancia recorrida.</li>
+    <li><b>(a)</b> $d=0{,}280$ m, $U_{el,2}=0$: $U_{el,1}=\tfrac12(45{,}0)(0{,}280)^2=1{,}764$ J; $W_f=-(0{,}300)(1{,}60)(9{,}8)(0{,}280)=-1{,}317$ J; $K=0{,}447$ J $\Rightarrow v=0{,}747$ m/s.</li>
+    <li><b>(b)</b> En función de $d$: $v^2(d)=\dfrac2m\left[\tfrac12kx_0^2-\tfrac12k(x_0-d)^2-\mu_kmg\,d\right]$. Máximo: $\dfrac{d(v^2)}{dd}=0\Rightarrow k(x_0-d)=\mu_kmg$: la rapidez es máxima cuando la fuerza del resorte iguala a la de fricción (aceleración nula).</li>
+    <li>Compresión en ese punto: $x_0-d=\mu_kmg/k=(0{,}300)(1{,}60)(9{,}8)/45{,}0=0{,}105$ m ($d=0{,}175$ m). Sustituyendo: $v_{max}=0{,}931$ m/s. Después la fricción supera al resorte y la caja frena, por eso se separa a 0,747 m/s.</li>
+  </ol>
+  <p><b>Resultado:</b> (a) 0,747 m/s; (b) 0,931 m/s con el resorte comprimido 0,105 m.</p>
+  <div class="recipe"><b>Receta:</b> con fricción, la rapidez máxima no está en la longitud natural del resorte sino donde $kx=f_k$.</div>
+  <div class="recipe"><b>Error típico:</b> suponer que la rapidez máxima es la de separación del resorte, como en el caso sin fricción.</div>
+</details>
+
+<details class="sol" id="e6"><summary>E6 — Problema 7.9: piedra en un cuenco con fricción (energía + Newton) <span class="src" data-l="E" data-ref="Solucionario 7-3 Prob. 7.9">E</span></summary>
+  <p class="enun">Una piedra pequeña de 0,20 kg se suelta desde el reposo en el punto A, en el borde de un cuenco hemisférico de radio $R=0{,}50$ m. Desliza (no rueda) y la fricción realiza un trabajo de 0,22 J en módulo al ir de A al fondo B. (a) Entre A y B, ¿qué trabajo realizan (i) la normal y (ii) la gravedad? (b) ¿Qué rapidez tiene en B? (c) ¿Cuáles de las tres fuerzas son constantes? (d) ¿Cuánto vale la normal en B?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 138" width="100%" role="img" aria-label="Piedra que baja por un cuenco con fricción: trabajos y fuerzas en el punto B">
+  <defs><marker id="map6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbp6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmp6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgp6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpp6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfp6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 40.0 24.0 L 40.1 28.2 L 40.4 32.4 L 41.0 36.5 L 41.7 40.6 L 42.7 44.7 L 43.9 48.7 L 45.3 52.7 L 46.9 56.5 L 48.7 60.3 L 50.7 64.0 L 52.9 67.6 L 55.3 71.0 L 57.8 74.3 L 60.5 77.5 L 63.4 80.6 L 66.5 83.5 L 69.7 86.2 L 73.0 88.7 L 76.4 91.1 L 80.0 93.3 L 83.7 95.3 L 87.5 97.1 L 91.3 98.7 L 95.3 100.1 L 99.3 101.3 L 103.4 102.3 L 107.5 103.0 L 111.6 103.6 L 115.8 103.9 L 120.0 104.0" fill="none" stroke="var(--fg)" stroke-width="2.5"/>
+  <line x1="40" y1="24" x2="120" y2="24" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="120" y1="24" x2="120" y2="104" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="30" y1="104" x2="330" y2="104" stroke="var(--fg)" stroke-width="1.5"/>
+  <text x="46" y="17" class="sm bd" text-anchor="start">A (v = 0)</text>
+  <text x="112" y="120" class="sm bd" text-anchor="end">B</text>
+  <text x="114" y="68.0" class="sm" text-anchor="end">R = 0,50 m</text>
+  <circle cx="43" cy="27" r="5" fill="var(--acc)"/>
+  <circle cx="120" cy="98" r="5" fill="var(--acc)"/>
+  <line x1="120" y1="96" x2="120" y2="52" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#map6)"/>
+  <text x="128" y="60" class="sm bd" text-anchor="start" style="fill:var(--acc)">n = 5,0 N</text>
+  <line x1="160" y1="68" x2="160" y2="96" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbp6)"/>
+  <text x="166" y="90" class="sm bd" text-anchor="start" style="fill:var(--A)">mg = 1,96 N</text>
+  <text x="222" y="22" class="sm" text-anchor="start">W<tspan dy="3" font-size="9">n</tspan><tspan dy="-3"> = 0</tspan></text>
+  <text x="222" y="38" class="sm" text-anchor="start">W<tspan dy="3" font-size="9">grav</tspan><tspan dy="-3"> = +0,98 J</tspan></text>
+  <text x="222" y="54" class="sm" text-anchor="start">W<tspan dy="3" font-size="9">f</tspan><tspan dy="-3"> = −0,22 J</tspan></text>
+  <text x="222" y="70" class="sm bd" text-anchor="start">W<tspan dy="3" font-size="9">tot</tspan><tspan dy="-3"> = 0,76 J = K</tspan><tspan dy="3" font-size="9">B</tspan><tspan dy="-3"></tspan></text>
+</svg>
+<figcaption>De A a B: la normal no trabaja, el peso hace +0,98 J y la fricción −0,22 J, así que K<sub>B</sub> = 0,76 J (v<sub>B</sub> = 2,76 m/s). En B la normal (5,0 N) supera al peso (1,96 N) porque hay aceleración centrípeta hacia arriba. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-3, Prob. 7.9)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li><b>(a)(i)</b> La normal es radial y la velocidad tangente: $W_n=0$.</li>
+    <li><b>(a)(ii)</b> Origen en B: $W_{grav}=U_A-U_B=mgR=(0{,}20)(9{,}8)(0{,}50)=0{,}98$ J (vale para trayectoria curva).</li>
+    <li><b>(b)</b> $W_{tot}=0+0{,}98-0{,}22=0{,}76$ J $=\tfrac12mv_B^2\Rightarrow v_B=\sqrt{2(0{,}76)/0{,}20}=2{,}76$ m/s (sin fricción: $\sqrt{2gR}=3{,}13$ m/s).</li>
+    <li><b>(c)</b> Solo el peso es constante. La normal cambia en módulo y dirección (vale 0 en A, donde la pared es vertical y $v=0$, y es máxima en B); la fricción $f_k=\mu_kn$ cambia con ella y también de dirección.</li>
+    <li><b>(d)</b> En B el movimiento es circular y la aceleración centrípeta apunta hacia arriba, $a_{rad}=v_B^2/R$: $\sum F_y=n-mg=mv_B^2/R\Rightarrow n=m\left(g+\dfrac{v_B^2}{R}\right)=0{,}20\left(9{,}8+\dfrac{7{,}6}{0{,}50}\right)=5{,}0$ N (2,6 veces el peso, 1,96 N).</li>
+  </ol>
+  <p><b>Resultado:</b> (a) 0 J y 0,98 J; (b) 2,76 m/s; (c) solo el peso; (d) $n=5{,}0$ N.</p>
+  <div class="recipe"><b>Receta:</b> energía para la rapidez, y luego la segunda ley de Newton en dirección radial para la normal: $n-mg=mv^2/R$ en el fondo.</div>
+  <div class="recipe"><b>Error típico:</b> poner $n=mg$ en el fondo (olvidar la aceleración centrípeta), o redondear $v_B$ antes de elevarla al cuadrado: usa $v_B^2=2W_{tot}/m=7{,}6\ \text{m}^2/\text{s}^2$ exacto.</div>
+</details>
+
+<details class="sol" id="e7"><summary>E7 — Problema 7.22: ascensor con freno y resorte (rapidez y aceleración a 1,00 m) <span class="src" data-l="E" data-ref="Solucionario 7-8/7-9 Prob. 7.22">E</span></summary>
+  <p class="enun">(a) ¿Qué rapidez tiene el ascensor del ejemplo 7.9 de U (2000 kg, llega a 4,00 m/s a un resorte amortiguador con $k=1{,}06\times10^4$ N/m y un freno de fricción constante de 17 000 N) después de haber bajado 1,00 m desde el contacto con el resorte? (b) ¿Qué aceleración tiene en ese momento?</p>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 178" width="100%" role="img" aria-label="Ascensor que ha bajado 1,00 m dentro del resorte amortiguador: fuerzas y aceleración">
+  <defs><marker id="map7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbp7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmp7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgp7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpp7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfp7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="14" y1="24" x2="340" y2="24" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="16" y="19" class="sm" text-anchor="start">y = 0 (contacto)</text>
+  <line x1="14" y1="62" x2="340" y2="62" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="16" y="57" class="sm" text-anchor="start">y = −1,00 m</text>
+  <line x1="14" y1="104" x2="340" y2="104" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="16" y="99" class="sm" text-anchor="start">y = −2,00 m (parada)</text>
+  <line x1="120" y1="152" x2="180" y2="152" stroke="var(--fg)" stroke-width="3"/>
+  <path d="M 150 62 L 141.0 71.0 L 159.0 80.0 L 141.0 89.0 L 159.0 98.0 L 141.0 107.0 L 159.0 116.0 L 141.0 125.0 L 159.0 134.0 L 141.0 143.0 L 150 152" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <rect x="126" y="38" width="48" height="24" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="138" y1="50" x2="138" y2="22" stroke="var(--E)" stroke-width="3.2" fill="none" marker-end="url(#mpp7)"/>
+  <line x1="156" y1="50" x2="156" y2="32" stroke="var(--acc)" stroke-width="3.2" fill="none" marker-end="url(#map7)"/>
+  <line x1="184" y1="22" x2="184" y2="58" stroke="var(--A)" stroke-width="3.2" fill="none" marker-end="url(#mbp7)"/>
+  <text x="214" y="44" class="sm bd" text-anchor="start">v = 3,65 m/s ↓</text>
+  <text x="212" y="128" class="sm bd" text-anchor="start" style="fill:var(--E)">fricción +17 000 N</text>
+  <text x="212" y="144" class="sm bd" text-anchor="start" style="fill:var(--acc)">resorte +10 600 N</text>
+  <text x="212" y="160" class="sm bd" text-anchor="start" style="fill:var(--A)">peso −19 600 N</text>
+  <text x="16" y="140" class="sm bd" text-anchor="start">ΣF = +8 000 N</text>
+  <text x="16" y="157" class="sm bd" text-anchor="start">a = 4,00 m/s² ↑</text>
+</svg>
+<figcaption>A 1,00 m del punto de contacto, el elevador baja a 3,65 m/s pero su aceleración (4,00 m/s²) apunta hacia arriba: está frenando. Positivo hacia arriba; las fuerzas ascendentes (fricción y resorte) superan al peso. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-8/7-9, Prob. 7.22; ejemplo 7.9 de U p. 216)">P</span></figcaption>
+</figure>
+
+  <ol class="steps">
+    <li><b>Estados.</b> 1: contacto con el resorte, $y_1=0$, $v_1=4{,}00$ m/s, resorte sin comprimir. 2: $y_2=-1{,}00$ m.</li>
+    <li>$K_1=\tfrac12(2000)(4{,}00)^2=16\,000$ J; $U_1=0$. $W_{otras}=-f|y_2|=-17\,000$ J (la fricción se opone al movimiento hacia abajo). $U_2=mgy_2+\tfrac12ky_2^2=-19\,600+5300=-14\,300$ J.</li>
+    <li>(7.14): $16\,000-17\,000=K_2-14\,300\Rightarrow K_2=13\,300$ J $\Rightarrow v_2=\sqrt{2(13\,300)/2000}=3{,}65$ m/s.</li>
+    <li><b>(b)</b> La energía no da la aceleración: hay que usar Newton en ese instante (positivo hacia arriba): fricción $+17\,000$ N (el ascensor baja, la fricción sube), resorte $+ky=+10\,600$ N, peso $-19\,600$ N. $\sum F=8000$ N $\Rightarrow a=8000/2000=4{,}00$ m/s² hacia arriba.</li>
+    <li>Velocidad hacia abajo y aceleración hacia arriba: el ascensor está <b>frenando</b>.</li>
+  </ol>
+  <p><b>Resultado:</b> (a) 3,65 m/s; (b) 4,00 m/s² hacia arriba.</p>
+  <div class="recipe"><b>Receta:</b> energía para la rapidez en una posición intermedia; Newton (suma de fuerzas en ese instante) para la aceleración.</div>
+  <div class="recipe"><b>Error típico:</b> olvidar que $U_{grav}$ es negativa por debajo del origen, o dar a la fricción el mismo sentido que el movimiento.</div>
+</details>
+
+<details class="sol" id="e8"><summary>E8 — Problema 7.73: bloque de madera lanzado por un resorte en una pendiente de 30,0° <span class="src" data-l="E" data-ref="Solucionario 7-28 Prob. 7.73">E</span></summary>
+  <p class="enun">Un bloque de madera de 1,50 kg se coloca contra un resorte comprimido en la base de una pendiente de 30,0° (punto A). Al soltarse, sube; en B, 6,00 m pendiente arriba, lleva 7,00 m/s hacia arriba y ya no toca el resorte. $\mu_k=0{,}50$; resorte de masa despreciable. Calcule la energía potencial almacenada inicialmente en el resorte.</p>
+  <p>Es <b>exactamente el problema X2</b> (Examen Feb. 2022, 2ª semana, P-1), con la figura y el desarrollo de arriba. Con $g=9{,}80$: $K_B=36{,}75$ J, $U_{grav,B}=44{,}10$ J, $|W_f|=38{,}19$ J y $U_{el,A}=119$ J.</p>
+  <p><b>Comprobación de coherencia:</b> $U_{el}$ tiene que ser positiva (lo es); parte de ella se disipa por fricción y el resto pasa a $K$ y a $U_{grav}$. Puedes recrear este caso en el ejemplo interactivo de la sección 3: con $m=1{,}5$ kg, $\theta=30^\circ$, $\mu_k=0{,}5$, $U_{el,0}=119$ J y $s=6$ m obtienes $K\approx36{,}7$ J, es decir, $v\approx7$ m/s.</p>
+  <p><b>Resultado:</b> $U_{el,A}=119$ J.</p>
+  <div class="recipe"><b>Receta y error típico:</b> los de X2.</div>
+</details>
+
+<h2 id="chuleta"><span class="n">7</span>Chuleta, errores frecuentes y lista de comprobación</h2>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Energía potencial gravitatoria</td><td>$U_{grav}=mgy$ (7.2); $W_{grav}=U_1-U_2=-\Delta U_{grav}$ (7.1, 7.3); $+y$ hacia arriba, origen a elegir</td></tr>
+<tr><td>Energía potencial elástica</td><td>$U_{el}=\tfrac12kx^2$ (7.10), $x=0$ en la longitud natural; $W_{el}=U_{el,1}-U_{el,2}$ (7.11)</td></tr>
+<tr><td>Conservación de la energía mecánica</td><td>$K_1+U_1=K_2+U_2$ (7.4, 7.12): solo trabajan fuerzas conservativas; $E=K+U$ constante</td></tr>
+<tr><td>Con otras fuerzas (fricción, mano…)</td><td>$K_1+U_1+W_{otras}=K_2+U_2$ (7.6, 7.13, <b>7.14</b>), con $U=U_{grav}+U_{el}$</td></tr>
+<tr><td>Trabajo de la fricción cinética</td><td>$W_f=-f_ks=-\mu_kn\,s$ ($s$ = longitud recorrida; en un plano inclinado $n=mg\cos\theta$)</td></tr>
+<tr><td>Fuerza conservativa</td><td>trabajo = $-\Delta U$, reversible, independiente de la trayectoria, nulo en trayectoria cerrada (p. 218)</td></tr>
+<tr><td>Ley de conservación de la energía</td><td>$\Delta K+\Delta U+\Delta U_{int}=0$ (7.15); $\Delta U_{int}=-W_{otras}$</td></tr>
+<tr><td>Fuerza a partir de $U$</td><td>$F_x=-dU/dx$ (7.16); $\vec F=-\vec\nabla U$ (7.17, 7.18)</td></tr>
+<tr><td>Diagramas de energía</td><td>$K=E-U\ge0$; puntos de retorno donde $U=E$; mínimos de $U$ = equilibrio estable, máximos = inestable</td></tr>
+<tr><td>Rapidez máxima</td><td>donde $K(x)$ es máxima: $dK/dx=0$, es decir, fuerza neta cero ($kx=f_k$ si hay fricción; sin fricción, mínimo de $U$ total)</td></tr>
+<tr><td>Rampa sin fricción desde el reposo</td><td>$v=\sqrt{2g\Delta h}$, independiente de la forma del camino</td></tr>
+<tr><td>Resorte lanzando bloque por rampa con fricción</td><td>$U_{el}=K_2+mgs\sin\theta+\mu_kmg\cos\theta\,s$</td></tr>
+</table>
+<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+  <ul>
+    <li>Contar el trabajo del peso o del resorte dos veces (en $U$ y en $W_{otras}$), o aplicar $K_1+U_1=K_2+U_2$ cuando hay fricción.</li>
+    <li>Poner $+y$ hacia abajo con $U=mgy$, o usar $d$ (distancia sobre la rampa) en lugar de $d\sin\theta$ como altura.</li>
+    <li>Usar $n=mg$ en un plano inclinado: la fricción vale $\mu_kmg\cos\theta$.</li>
+    <li>Escribir $\tfrac12k(x_1-x_2)^2$ en lugar de $\tfrac12kx_1^2-\tfrac12kx_2^2$; olvidar pasar cm a m; tomar $x$ desde un punto que no es la longitud natural.</li>
+    <li>Creer que la energía no se conserva con fricción (se conserva la total, no la mecánica); intentar definir $U$ para la fricción.</li>
+    <li>Suponer que la rapidez máxima está donde el resorte alcanza su longitud natural: con fricción (o con peso) está donde la fuerza neta es cero.</li>
+    <li>Dar la normal o la aceleración con la energía: para fuerzas en un punto hace falta la segunda ley de Newton.</li>
+    <li>Cambiar el cero de $U$ desplazando la variable ($\tfrac12k(x-x_1)^2$) en vez de sumar una constante.</li>
+  </ul>  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
+<ul class="checklist">
+  <li>Sé definir $U_{grav}=mgy$ y $U_{el}=\tfrac12kx^2$, elegir el origen y relacionar $W=-\Delta U$.</li>
+  <li>Sé aplicar $K_1+U_1+W_{otras}=K_2+U_2$ a caídas, rampas, resortes y trayectorias curvas, con fricción o sin ella.</li>
+  <li>Sé explicar qué es una fuerza conservativa (cuatro propiedades) y por qué la fricción no lo es, y enunciar $\Delta K+\Delta U+\Delta U_{int}=0$.</li>
+  <li>Sé obtener la fuerza a partir de $U(x)$ ($F_x=-dU/dx$) y, en 2D o 3D, con derivadas parciales.</li>
+  <li>Sé leer un diagrama de energía: región permitida, puntos de retorno, equilibrios estable e inestable, escape.</li>
+  <li>Sé hallar la rapidez máxima derivando $K(x)$ o igualando la fuerza del resorte a la fricción.</li>
+  <li>Sé resolver los problemas de examen resorte + rampa + fricción (energía inicial del resorte, coeficiente de rozamiento).</li>
+  <li>Sé responder las cuestiones de teoría: hidroeléctrica, caja en rampa, cero de $U$, signo de $U$ entre partículas, $mgh$ frente a $-GMm/r$.</li>
+</ul>
+
+<h2 id="fuentes"><span class="n">★</span>Fuentes de este tema</h2>
+<details class="fuentes-toggle">
+<summary>Mostrar lista de fuentes</summary>
+<div id="panel-fuentes"></div>
+</details>
+
+<footer>Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.</footer>
+</main>
+</div>
+</body>
+</html>

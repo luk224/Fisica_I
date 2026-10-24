@@ -36,10 +36,12 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 
 ## Tema 7 — Energía potencial y conservación de la energía
 - **[Febrero 2020, 2ª semana]** (archivo: E689010160-20F2.pdf) — P-1: bloque que desliza por un carril con fricción en un tramo y comprime un resorte al final; hallar el coeficiente de rozamiento dinámico.
-- **[Febrero 2022, 1ª semana]** (archivo: E689010160-22F1.pdf) — P-3 Teoría Opción A: "Fuerzas conservativas y no conservativas" + cuestiones sobre energía en central hidroeléctrica y trabajo de gravedad/fricción en rampa.
+- **[Febrero 2022, 1ª semana]** (archivo: E689010160-22F1.pdf) — P-3 Teoría Opción 3.1: "Fuerzas conservativas y no conservativas" + cuestiones sobre energía en central hidroeléctrica y trabajo de gravedad/fricción en rampa.
 - **[Febrero 2022, 2ª semana]** (archivo: E689010160-22F2.pdf) — P-1: bloque contra resorte comprimido en la base de una rampa con fricción; hallar la energía potencial almacenada inicialmente en el resorte.
-- **[Febrero 2024, 2ª semana]** (archivo: E689010160-24F2.pdf) — P-3 Teoría Opción A: "Fuerzas conservativas y no conservativas" + cuestiones sobre energía potencial elástica de referencia y energía potencial entre partículas.
+- **[Febrero 2024, 2ª semana]** (archivo: E689010160-24F2.pdf) — P-3 Teoría Opción 3.1: "Fuerzas conservativas y no conservativas" + cuestiones sobre energía potencial elástica de referencia y energía potencial entre partículas.
 - **[Septiembre 2024]** (sólo en recopilatorios EXAMENESFISICA1.pdf / FISICA_EXAMENS...25-18.pdf) — P-1: bloque contra resorte comprimido en la base de una rampa de 25° con fricción; hallar energía potencial inicial del resorte. (idéntico en planteamiento al de Febrero 2022 2ª semana, con otros valores)
+- **[Septiembre 2022]** (sólo en recopilatorios) — P-4 Teoría Opción B: «Energía potencial gravitacional» (relación entre mgh y la energía potencial gravitatoria; trabajo entre dos puntos al nivel del mar).
+- **[Septiembre 2023]** (sólo en recopilatorios) — P-2: partícula que desliza por un cuarto de círculo de R = 2,1 m y recorre un tramo horizontal de 5 m con fricción; hallar μk y el trabajo de la fricción.
 
 ## Tema 8 — Cantidad de movimiento, impulso y colisiones
 - **[Febrero 2018, 2ª semana]** (archivo: E689010160-18F2.pdf) — P-1: choque entre átomo de helio y molécula de oxígeno inicialmente en reposo; hallar velocidad de la molécula y fracción de energía cinética perdida.
