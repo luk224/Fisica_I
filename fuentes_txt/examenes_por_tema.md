@@ -60,7 +60,6 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 
 ## Tema 10 — Dinámica del movimiento de rotación
 - **[Febrero 2018, 1ª semana]** (archivo: E689010160-18F1.pdf) — P-1: cuerpo tipo yoyó (dos discos + cilindro) que se desenrolla desde una cuerda fija; hallar aceleración angular, aceleración lineal del CM y velocidad final del CM.
-- **[Febrero 2018, 1ª semana]** (archivo: E689010160-18F1.pdf) — P-3 Teoría Opción 3.2: "Momento angular. Conservación."
 - **[Febrero 2019, 1ª semana]** (archivo: E689010160-19F1.pdf) — P-2: cilindro sobre plano horizontal con fricción, fuerza F(t)=t²/2 aplicada en el centro; hallar instante en que desliza, aceleración cuando empieza a deslizar y valores a los 4 s.
 - **[Febrero 2019, 1ª semana]** (archivo: E689010160-19F1.pdf) — P-3 Teoría Opción 3.2: "Momento angular. Conservación."
 - **[Febrero 2020, 2ª semana]** (archivo: E689010160-20F2.pdf) — P-3 Teoría Opción 3.1: "Momento angular. Conservación."

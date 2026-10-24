@@ -9,7 +9,7 @@
         delimiters: [{ left: '$$', right: '$$', display: true }, { left: '\\[', right: '\\]', display: true },
                      { left: '$', right: '$', display: false }, { left: '\\(', right: '\\)', display: false }],
         throwOnError: false, ignoredTags: ['script', 'style', 'textarea', 'code'],
-        macros: { '\\lim': '\\mathop{\\operatorname{lim}}\\limits' } /* subíndice siempre debajo de «lim», también en línea */
+        macros: { '\\sin': '\\operatorname{sen}', '\\lim': '\\mathop{\\operatorname{lim}}\\limits' } /* subíndice siempre debajo de «lim», también en línea */
       });
     } catch (e) {}
     var toc = d.querySelector('.side-toc');
