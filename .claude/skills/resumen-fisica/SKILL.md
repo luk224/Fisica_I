@@ -8,7 +8,7 @@ description: Crea o revisa el resumen HTML de un tema del temario de Física I (
 Lee primero `CLAUDE.md` (fuentes, offsets de página, temario por bloques, reglas de contenido). Este skill solo fija el **procedimiento**.
 
 ## Procedimiento
-1. **Identificar el tema** (ej. Tema 11 Equilibrio y elasticidad, Bloque Mecánica) y su rango de páginas en U (`CLAUDE.md` §2), si existe Academia_Tec (A) para ese tema (solo 17 y 18), y los ejercicios de examen (X) del tema en `fuentes_txt/examenes_por_tema.md`.
+1. **Identificar el tema** (ej. Tema 11 Equilibrio y elasticidad, Bloque Mecánica) y su rango de páginas en U (`CLAUDE.md` §2), y los ejercicios de examen (X) del tema en `fuentes_txt/examenes_por_tema.md`.
 2. **Dossier de fuentes**: lanzar `fuentes-fisica` (haiku) con el tema. Debe devolver extractos con página impresa de U, lo que haya de A, problemas relevantes de E, y la lista de ejercicios de examen reales del tema con su referencia exacta.
 3. **Ejercicios**: lanzar `resolutor-ejercicios` (opus) con la lista de ejercicios de examen (X) y del solucionario (E) del tema; en paralelo con el paso 4 si el dossier ya está. Si el tema no tiene ningún X, debe decirlo y usar E/propios en su lugar.
 4. **Redacción**: `redactor-tema` (sonnet) copia `plantilla_tema.html` a `temas/tema_NN_<slug>.html` y lo rellena siguiendo las reglas de contenido (CLAUDE.md §3), priorizando los ejercicios de examen real. Usa solo `assets/resumen.css|js` y KaTeX local, sin dependencias externas.
@@ -19,7 +19,6 @@ Lee primero `CLAUDE.md` (fuentes, offsets de página, temario por bloques, regla
 - Cajas: `.box.def|thm|ex|warn|tip|intu` con `<span class="h">Título</span>`; receta: `.recipe`; pasos: `ol.steps`; ejercicio: `details.sol > summary + .enun + …`.
 - Fuente: `<span class="src" data-l="U|A|E|X|P" data-ref="referencia exacta">U p.N</span>`. Colocarlo **como hijo directo** del `.box`, `h2`, `h3` o `summary` para que salga en el margen derecho en escritorio.
   - U: `data-ref="U cap.N §N.N, p. NN"` (página impresa).
-  - A: `data-ref="Academia_Tec Tema NN"` (solo temas 17-18).
   - E: `data-ref="Solucionario NN-N, Prob. N.N"`.
   - X: `data-ref="Examen <convocatoria> P-N"` (exactamente como en `fuentes_txt/examenes_por_tema.md`).
   - P: `data-ref="Explicación o ejemplo propio"`.

@@ -76,7 +76,7 @@ svg.fig .pt{fill:var(--acc)}svg.fig .op{fill:var(--bg);stroke:var(--acc);stroke-
 .katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0}
 /* ---- Fuentes (libro + página): pastilla con tooltip; en escritorio, nota marginal ---- */
 .src{display:inline-block;position:relative;font:600 11px/1 var(--sans);letter-spacing:.02em;padding:3px 7px;border-radius:99px;border:1px solid currentColor;vertical-align:middle;margin:0 2px;cursor:help;white-space:nowrap;text-transform:none;font-style:normal}
-.src[data-l="U"]{color:var(--U)}.src[data-l="A"]{color:var(--A)}.src[data-l="X"]{color:var(--X)}.src[data-l="E"]{color:var(--E)}.src[data-l="P"]{color:var(--P)}
+.src[data-l="U"]{color:var(--U)}.src[data-l="X"]{color:var(--X)}.src[data-l="E"]{color:var(--E)}.src[data-l="P"]{color:var(--P)}
 .src::after{content:attr(data-ref);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);width:max-content;max-width:min(260px,calc(100vw - 32px));white-space:normal;background:var(--fg);color:var(--bg);font:500 12.5px/1.35 var(--sans);padding:7px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .12s;z-index:30}
 .src:hover::after,.src:focus::after{opacity:1}
 @media (min-width:1240px){

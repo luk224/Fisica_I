@@ -13,7 +13,6 @@ Comprueba:
    - U: abre la página citada en `fuentes_txt/sears.txt` (PDF = impresa + 28) y confirma que dice lo citado.
    - X: abre `fuentes_txt/examenes_por_tema.md` y el `.txt` del examen correspondiente en `fuentes_txt/examenes/` y confirma que la convocatoria, el número de pregunta y el enunciado citado son reales (no inventados ni de otro tema).
    - E: confirma que el número de problema y la referencia «cap-página» existen en `fuentes_txt/solman.txt`.
-   - A: confirma que el archivo `fuentes_txt/academia_tec/temaNN_academia.txt` citado existe de verdad (recuerda: solo 17 y 18 tienen texto útil; cualquier cita a A en otro tema es sospechosa).
 3. **Cobertura**: todo el tema de U está explicado (nada del capítulo se queda fuera sin motivo); todos los ejercicios de examen real listados en `examenes_por_tema.md` para ese tema están resueltos; si el tema no tenía ninguno, se dice explícitamente en vez de simularlo.
 4. **Didáctica**: ¿lo entendería alguien que lo ve por primera vez? Saltos de razonamiento, jerga sin definir, falta de ejemplo o de error típico.
 5. **HTML/maquetación**: HTML bien formado, `id` únicos, `$` balanceados, rutas `../assets/…` correctas, `src` como hijo directo de caja/h2/h3/summary, sin CSS/JS externo, contraste y responsive razonables por inspección del código.
