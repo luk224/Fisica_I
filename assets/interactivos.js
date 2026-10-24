@@ -217,6 +217,19 @@
         if (dos) scene.traverse(function (o) { if (o.reescalar) o.reescalar(z.s); });
         renderer.render(scene, camera);
         if (dos && params.marcas !== false) marcas();
+        if (dos) posEtiquetas();
+      }
+      /* Etiquetas de texto sobre el lienzo 2D (HTML, en coordenadas del mundo): ctx.etiqueta('texto', x, y, 'l'|'r'|'c') devuelve {poner, mover, ver, ancla, quitar}; solo 2D. */
+      var capaE = null, etiq = [];
+      function posEtiquetas() {
+        if (!capaE) return;
+        var W = stage.clientWidth, Hh = stage.clientHeight, L = camera.left, R = camera.right, T2 = camera.top, B = camera.bottom;
+        if (!W || !Hh || !(R > L) || !(T2 > B)) return;
+        etiq.forEach(function (e) {
+          var px = (e.x - L) / (R - L) * W, py = (T2 - e.y) / (T2 - B) * Hh;
+          e.el.style.display = e.vis && px > -80 && px < W + 80 && py > -20 && py < Hh + 20 ? '' : 'none';
+          e.el.style.left = px + 'px'; e.el.style.top = py + 'px';
+        });
       }
       /* Números en los ejes (solo 2D): etiquetas HTML sobre el lienzo, con paso 1·2·5·10ᵏ según la zona visible. */
       var capaM = null, usadas = [];
@@ -304,6 +317,20 @@
             m.className = 'int-sw ' + (it[2] || 'linea'); m.style.setProperty('--c', it[0]); e.appendChild(m); e.appendChild(document.createTextNode(it[1])); d.appendChild(e);
           });
           (ro || ctl || stage).after(d); return d;
+        },
+        /* Solo 2D (en 3D no hace nada y devuelve un objeto inerte). ctx.etiqueta('texto', x, y, 'l'|'r'|'c') → {poner(texto), mover(x,y), ver(bool), ancla('l'|'r'|'c'), quitar()}. */
+        etiqueta: function (txt, x, y, anc) {
+          var nulo = { poner: function () {}, mover: function () {}, ver: function () {}, ancla: function () {}, quitar: function () {} };
+          if (!dos) return nulo;
+          if (!capaE) { capaE = document.createElement('div'); capaE.className = 'int-labs'; capaE.setAttribute('aria-hidden', 'true'); stage.appendChild(capaE); }
+          var el = document.createElement('span'); el.className = 'int-lab ' + (anc || 'c'); el.textContent = txt; capaE.appendChild(el);
+          var o = { el: el, x: x, y: y, vis: true,
+            poner: function (t) { if (el.textContent !== t) el.textContent = t; },
+            mover: function (a, b) { o.x = a; o.y = b; },
+            ver: function (v) { o.vis = !!v; },
+            ancla: function (a) { var n = 'int-lab ' + a; if (el.className !== n) el.className = n; },
+            quitar: function () { var i = etiq.indexOf(o); if (i >= 0) etiq.splice(i, 1); if (el.parentNode) el.parentNode.removeChild(el); } };
+          etiq.push(o); return o;
         },
         alCambiarTema: function (cb) { temaCbs.push(cb); cb(paleta()); }
       };

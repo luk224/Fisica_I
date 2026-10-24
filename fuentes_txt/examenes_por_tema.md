@@ -50,6 +50,9 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 - **[Febrero 2020, 1ª semana]** (archivo: E689010160-20F1.pdf) — P-2: explosión de un cohete de fuegos artificiales en dos fragmentos en su altura máxima; hallar velocidades tras la explosión. (secundario: Tema 3, para la distancia de caída de los fragmentos)
 - **[Febrero 2022, 1ª semana]** (archivo: E689010160-22F1.pdf) — P-1: masa que cae sobre una bandeja colgada de un resorte, choque perfectamente inelástico, sistema resultante en MAS vertical; hallar velocidad tras el impacto, amplitud y periodo. (secundario: Tema 14, por el MAS resultante)
 - **[Febrero 2022, 2ª semana]** (archivo: E689010160-22F2.pdf) — P-3 Teoría Opción 3.1: "Conservación del momento lineal o de la cantidad de movimiento" + cuestiones sobre juguete que se divide en tres piezas y balas que rebotan/se aplastan.
+- **[Febrero 2019, 2ª semana]** (archivo: E689010160-19F2.pdf) — P-1: cohete con masa variable (propulsión).
+- **[Septiembre 2023]** (sólo en recopilatorios) — P-3 Opción A, cuestión (b): ¿se conserva el momento lineal de un patinador?
+- **[Septiembre 2019]** (sólo en recopilatorio FISICA_EXAMENS…25-18.pdf, p. 26) — P-1: bala que se incrusta en una varilla con pivote; cantidad de movimiento antes y después del choque y energía perdida (secundario: Tema 10, momento angular).
 
 ## Tema 9 — Rotación de cuerpos rígidos
 (No se ha encontrado ningún ejercicio cuyo enfoque sea puramente cinemático de rotación sin fuerzas/torques/momento de inercia dinámico; todos los problemas de rotación localizados implican dinámica — ver Tema 10.)
@@ -65,6 +68,7 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 - **[Febrero 2025, 1ª semana]** (archivo: E689010160-25F1.pdf) — P-1: cilindro macizo que sube rodando sin deslizar por una rampa mediante una fuerza aplicada; hallar fuerza máxima y tiempo mínimo de ascenso.
 - **[Febrero 2025, 2ª semana]** (archivo: E689010160-25F2.pdf; también en ambos recopilatorios) — P-3 Teoría Opción A: "Trabajo y potencia en un movimiento de rotación" + cuestiones sobre ruedas de un carro y aceleraciones de un punto en un volante.
 - **[Septiembre 2024]** (sólo en recopilatorios) — P-3 Teoría Opción A: "Conservación del momento angular" + cuestiones sobre huevo crudo/duro girando y rotor de cola de helicóptero.
+- **[Septiembre 2019]** (sólo en recopilatorio, p. 26) — P-1: bala que se incrusta en una varilla con pivote; apartado (a) por momento angular (principal: Tema 8, para (b) y (c)).
 
 ## Tema 11 — Equilibrio y elasticidad
 (Ningún ejercicio de examen encontrado.)
@@ -106,7 +110,7 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 - **[Febrero 2019, 2ª semana]** (archivo: E689010160-19F2.pdf) — P-2: ciclo con compresión adiabática, calentamiento isobárico, expansión adiabática y transformación isócora sobre 1 kg de aire; hallar P, V, T en cada estado y rendimiento. (secundario: Tema 20)
 - **[Febrero 2020, 1ª semana]** (archivo: E689010160-20F1.pdf) — P-3 Teoría Opción 3.2: "Energía interna y primera ley de la termodinámica."
 - **[Febrero 2022, 1ª semana]** (archivo: E689010160-22F1.pdf) — P-2: compresión adiabática de gas monoatómico ideal; hallar presión final, trabajo efectuado y razón de temperaturas.
-- **[Febrero 2023, 1ª semana]** (archivo: E689010160-23F1.pdf) — P-3 Teoría Opción B: "Energía interna y la primera ley de la termodinámica" + cuestiones sobre determinar si un cambio de energía interna se debe a trabajo o calor, y sobre el proceso que sufre el aire en un recipiente con cuerpo caliente.
+- **[Febrero 2023, 1ª semana]** (archivo: E689010160-23F1.pdf) — P-4 Teoría Opción B: "Energía interna y la primera ley de la termodinámica" + cuestiones sobre determinar si un cambio de energía interna se debe a trabajo o calor, y sobre el proceso que sufre el aire en un recipiente con cuerpo caliente.
 - **[Febrero 2023, 2ª semana]** (archivo: E689010160-23F2.pdf) — P-2: máquina térmica con ciclo en diagrama pV (proceso BC isotérmico), gas monoatómico; hallar calor, trabajo y eficiencia, comparándola con la máxima eficiencia posible. (secundario: Tema 20)
 - **[Febrero 2024, 2ª semana]** (archivo: E689010160-24F2.pdf) — P-2: sistema termodinámico que va del estado a al c por dos trayectorias (abc y adc), con energías internas y trabajos dados; calcular el calor en cada uno de los cuatro procesos.
 - **[Febrero 2025, 2ª semana]** (archivo: E689010160-25F2.pdf; también en ambos recopilatorios) — P-2: ciclo termodinámico isóbaro-isócoro-recta, gas ideal monoatómico; calcular calor, trabajo y ΔU en cada proceso y en el ciclo completo, y la eficiencia. (secundario: Tema 20)
