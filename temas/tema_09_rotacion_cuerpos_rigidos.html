@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem('tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física I · Tema 9 Rotación de cuerpos rígidos</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+<link rel="stylesheet" href="../assets/interactivos.css">
+<script defer src="../assets/interactivos.js"></script>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Índice de temas</a>
+  <span><button id="btn-sol" type="button">Mostrar soluciones</button> <button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+
+<div class="layout">
+<nav class="side-toc" aria-label="Índice del tema"><b>En esta página</b></nav>
+<main>
+
+<header class="hero">
+  <div class="kick">Bloque Mecánica · Tema 9</div>
+  <h1>Rotación de cuerpos rígidos</h1>
+  <p>Hasta ahora has tratado los cuerpos como puntos. Aquí un cuerpo <i>gira</i>: aprenderás a describir ese giro con ángulos, velocidad y aceleración angulares (la cinemática es casi un calco del movimiento rectilíneo), a ligarlo con lo que le pasa a cada punto del cuerpo, y a calcular su energía de rotación con una nueva cantidad: el <b>momento de inercia</b>, que hace en la rotación el papel de la masa.</p>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 9 (pp. 274-291)</span><span>Preguntas de examen real: 1 (dos cuestiones)</span><span>Ejercicios: 10 bloques del solucionario (12 problemas) + 1 problema práctico de U</span><span>3 ejemplos interactivos</span><span>⏱ ~6 h de estudio</span></div>
+  <div class="legend">
+    <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
+    <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
+    <span class="src" data-l="X" data-ref="Ejercicio de examen real, ver fuentes_txt/examenes_por_tema.md">X</span> examen real
+    <span class="src" data-l="P" data-ref="Explicación o ejemplo propio, sin página en los libros">P</span> propio
+    — pasa el ratón (o toca) por cada etiqueta para ver la fuente exacta; en pantallas anchas aparecen en el margen derecho.
+  </div>
+</header>
+
+<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U cap. 9 Introducción, p. 274">U p.274</span></h2>
+<p><b>Prerrequisitos:</b> el movimiento rectilíneo con aceleración constante y sus cuatro ecuaciones (tema 2), porque la rotación con $\alpha$ constante es exactamente lo mismo con otras letras; el movimiento circular uniforme y la aceleración centrípeta $a_{rad}=v^2/r$ (tema 3); derivar polinomios sencillos (para $\omega=d\theta/dt$); la energía cinética y la conservación de la energía (temas 6 y 7); y el centro de masa (tema 8).</p>
+<p><b>Mapa del tema:</b> 9.1 define el <b>ángulo en radianes</b>, la <b>velocidad angular</b> $\omega_z$ y la <b>aceleración angular</b> $\alpha_z$. 9.2 da las ecuaciones de la rotación con $\alpha_z$ constante (tabla 9.1: calco del MRUA). 9.3 relaciona lo angular con lo lineal de cada punto: $v=r\omega$, $a_{tan}=r\alpha$, $a_{rad}=r\omega^2$. 9.4 introduce el <b>momento de inercia</b> $I=\sum m_ir_i^2$ y la <b>energía cinética de rotación</b> $K=\tfrac12I\omega^2$, con la tabla 9.2 de cuerpos habituales. 9.5 es el <b>teorema de los ejes paralelos</b> $I_P=I_{cm}+Md^2$ y 9.6 enseña a calcular $I$ por integración.</p>
+<div class="box tip"><span class="h">Qué ha caído en examen</span>
+  <p><b>No hay ningún problema de examen de 3 puntos de este tema</b> en los exámenes revisados: los problemas de rotación que han caído mezclan fuerzas y momentos de fuerza y son del tema 10. Lo que sí apareció son dos <b>cuestiones cortas</b> de cinemática y energía de rotación dentro de la pregunta de teoría de Febrero 2025 (2ª semana), P-3 Opción A, apartados (a) y (b) (ruedas de un carro que baja una pendiente; volante con $\omega$ constante). Esa pregunta, en conjunto, es del <b>tema 10</b> (su tema a desarrollar es «Trabajo y potencia en un movimiento de rotación»); aquí solo se resuelven sus cuestiones (a) y (b). Están resueltas como X1, y con ella se practican las ideas centrales: componentes de la aceleración de un punto y reparto de la energía entre traslación y rotación. El grueso de la práctica son los 10 bloques del solucionario (E) resueltos al final.</p>
+  <table>
+  <tr><th>Cuestión de examen real</th><th>Ejercicio de esta página</th></tr>
+  <tr><td>Feb 2025 (2ª sem.) P-3 Opción A (b) — volante con $\omega$ constante: ¿aceleración tangencial? ¿radial? ¿magnitud y dirección constantes?</td><td><a href="#x1">X1 (b)</a></td></tr>
+  <tr><td>Feb 2025 (2ª sem.) P-3 Opción A (a) — carro de cuatro ruedas cuesta abajo: ruedas grandes y pesadas o pequeñas y ligeras; sólidas o con radios</td><td><a href="#x1">X1 (a)</a></td></tr>
+  </table>
+  <span class="src" data-l="X" data-ref="Examen Febrero 2025 (2ª semana) P-3 Opción A (a)(b)">X</span></div>
+<div class="box tip"><span class="h">La receta maestra: rotación en 5 pasos</span>
+  <ol class="steps">
+    <li><b>Fija el eje y el sentido positivo.</b> Normalmente el antihorario es positivo; $\omega_z$ y $\alpha_z$ llevan signo.</li>
+    <li><b>¿Es $\alpha_z$ constante?</b> Si sí, usa las ecuaciones 9.7, 9.10, 9.11 y 9.12 como en el MRUA (elige la que contenga tu incógnita y no la que no conoces). Si $\theta(t)$ es otra función, deriva: $\omega=d\theta/dt$, $\alpha=d\omega/dt$.</li>
+    <li><b>Si preguntan por un punto concreto</b> a distancia $r$ del eje: $v=r\omega$, $a_{tan}=r\alpha$, $a_{rad}=r\omega^2$, y recuerda que los ángulos van <b>en radianes</b>.</li>
+    <li><b>Si aparece energía,</b> calcula $I$ (suma $m_ir_i^2$, tabla 9.2, ejes paralelos o integral) y usa $K=\tfrac12I\omega^2$ en $K_1+U_1=K_2+U_2$; si hay un cable que no resbala, $v=R\omega$.</li>
+    <li><b>Comprueba</b> unidades (rad/s, kg·m²), el signo y los casos límite.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 9.1, p. 286 y §9.1-9.3, pp. 274-282">U p.274-286</span></div>
+
+<h2 id="s1"><span class="n">1</span>Velocidad y aceleración angulares <span class="src" data-l="U" data-ref="U §9.1, pp. 274-278">U p.274</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Un <b>cuerpo rígido</b> es uno que no se deforma: todas sus partes mantienen sus distancias. Cuando gira alrededor de un eje fijo (la aguja de un velocímetro, la rueda de una bici), basta <i>un solo número</i> para decir dónde está: el ángulo $\theta$ que forma con una referencia, igual que $x$ te dice dónde está un coche en una carretera. La <b>velocidad angular</b> es «cuántos radianes gira por segundo» (como la velocidad es cuántos metros recorre por segundo) y la <b>aceleración angular</b> es cuánto cambia eso por segundo. Lo bonito: <i>todos los puntos del cuerpo comparten el mismo $\theta$, $\omega$ y $\alpha$</i>, aunque cada uno recorra una distancia distinta.</p>
+  <span class="src" data-l="U" data-ref="U §9.1, pp. 274-275 (figs. 9.1 y 9.3)">U p.274-275</span></div>
+<div class="box def"><span class="h">Radianes</span>
+  <p>El ángulo $\theta$ en radianes es la razón entre la longitud del arco $s$ y el radio $r$:
+  $$\theta=\frac sr\qquad\text{o bien}\qquad s=r\theta\qquad\text{(ec. 9.1)}$$
+  Es un número puro (arco entre radio). Una vuelta completa mide $2\pi$ rad, así que $1\ \text{rad}=360^\circ/2\pi=57{,}3^\circ$, y $1\ \text{rev/s}=2\pi$ rad/s, $1\ \text{rpm}=2\pi/60$ rad/s. Un ángulo positivo se mide en sentido antihorario desde el eje de referencia.</p>
+  <span class="src" data-l="U" data-ref="U §9.1, ec. (9.1), p. 274">U p.274</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_9_2_radian.png" alt="Figura 9.2 de U. a) Un radián es el ángulo en el cual el arco s tiene la misma longitud que el radio r. b) Un ángulo theta en radianes es la razón entre la longitud del arco s y el radio r." loading="lazy">
+<figcaption>Fig. 9.2 de U: a) un radián es el ángulo cuyo arco mide lo mismo que el radio; b) $\theta=s/r$ para cualquier ángulo. <span class="src" data-l="U" data-ref="U Fig. 9.2, p. 274">U p.274</span></figcaption>
+</figure>
+<div class="box warn"><span class="h">Error típico: grados en las fórmulas</span>
+  <p>Cuando una ecuación mezcla cantidades lineales y angulares ($s=r\theta$, $v=r\omega$, $a_{tan}=r\alpha$…), los ángulos <b>deben ir en radianes</b>. El libro lo ilustra: $s=(\pi/3)\,r$ es correcto y $s=60\,r$ no. Cada vez que veas «60°» o «rpm», conviértelo antes de operar.</p>
+  <span class="src" data-l="U" data-ref="U §9.3, CUIDADO Utilice ángulos en radianes, p. 281">U p.281</span></div>
+<div class="box def"><span class="h">Velocidad angular y aceleración angular</span>
+  <p>La <b>velocidad angular media</b> es $\omega_{med\text{-}z}=\dfrac{\Delta\theta}{\Delta t}$ (ec. 9.2) y la <b>instantánea</b>
+  $$\omega_z=\frac{d\theta}{dt}\qquad\text{(ec. 9.3)}$$
+  La <b>aceleración angular</b> es $\alpha_z=\dfrac{d\omega_z}{dt}=\dfrac{d^2\theta}{dt^2}$ (ecs. 9.5 y 9.6); su media es $\Delta\omega_z/\Delta t$ (ec. 9.4). Unidades: rad/s y rad/s². Un $\omega_z>0$ significa giro antihorario (si ese es el sentido positivo) y $\omega_z<0$, horario; la <b>rapidez angular</b> $\omega=|\omega_z|$ nunca es negativa.
+  <br>La rotación <b>se acelera</b> si $\omega_z$ y $\alpha_z$ tienen el <i>mismo signo</i> y <b>frena</b> si tienen signos opuestos.</p>
+  <span class="src" data-l="U" data-ref="U §9.1, ecs. (9.2)-(9.6), pp. 275-277">U p.275-277</span></div>
+<div class="box def"><span class="h">Vector velocidad angular</span>
+  <p>Para describir el giro de todo el cuerpo con un solo vector, el libro define la <b>velocidad angular como vector</b> $\vec\omega$: su dirección es la del <b>eje de rotación</b> (perpendicular al plano en que giran las partículas) y su sentido lo da la <b>regla de la mano derecha</b>: si curvas los dedos de la mano derecha en el sentido del giro, el pulgar apunta en el sentido de $\vec\omega$. Con el eje $z$, $\omega_z>0$ cuando $\vec\omega$ apunta hacia $+z$ (giro antihorario visto desde $+z$) y $\omega_z<0$ cuando apunta hacia $-z$ (giro horario).
+  <br>El <b>vector aceleración angular</b> es $\vec\alpha=d\vec\omega/dt$. Con el eje fijo, $\vec\alpha$ y $\vec\omega$ están ambos sobre el eje: $\vec\alpha$ es <b>paralelo a $\vec\omega$ si la rotación se acelera</b> y <b>antiparalelo si se frena</b>, que es la regla de los signos de $\omega_z$ y $\alpha_z$ vista con vectores. En este capítulo el eje no cambia de dirección y basta con las componentes $\omega_z$ y $\alpha_z$.</p>
+  <span class="src" data-l="U" data-ref="U §9.1, «Velocidad angular como vector», p. 276 (fig. 9.5) y «Aceleración angular como un vector», p. 278 (fig. 9.7)">U p.276, 278</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_9_5_vector.png" alt="Figura 9.5 de U. a) Regla de la mano derecha: con los dedos de la mano derecha enrollados en el sentido de la rotación, el pulgar indica la dirección del vector velocidad angular, hacia arriba si el disco gira en un sentido y hacia abajo si gira en el contrario. b) El vector apunta en la dirección z positiva (omega z mayor que cero) o negativa (omega z menor que cero)." loading="lazy">
+<figcaption>Fig. 9.5 de U: a) regla de la mano derecha para la dirección de $\vec\omega$; b) $\vec\omega$ hacia $+z$ significa $\omega_z>0$ y hacia $-z$, $\omega_z<0$. <span class="src" data-l="U" data-ref="U Fig. 9.5, p. 276">U p.276</span></figcaption>
+</figure>
+<div class="box warn"><span class="h">Error típico: la velocidad angular no es un vector «que da vueltas»</span>
+  <p>El vector $\vec\omega$ es perpendicular al plano de giro: no apunta hacia donde se mueve ninguna parte del cuerpo, y no es un «vector curvo» que siga la flecha circular. Es una propiedad de todo el cuerpo, y por eso se coloca sobre el eje, que es común a todas sus partes.</p>
+  <span class="src" data-l="U" data-ref="U §9.1, CUIDADO El vector velocidad angular es perpendicular al plano de rotación, p. 276">U p.276</span></div>
+<div class="box warn"><span class="h">Error típico</span>
+  <p>Decir «$\alpha_z>0$, luego gira cada vez más deprisa». Lo que importa es el signo <i>relativo</i> con $\omega_z$: si la rueda gira en sentido negativo y $\alpha_z>0$, está frenando. Y $\omega_z$ no significa que el cuerpo se desplace a lo largo del eje $z$: solo gira alrededor de él.</p>
+  <span class="src" data-l="U" data-ref="U §9.1, p. 275 (CUIDADO) y p. 277">U p.275-277</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 320 200" width="100%" role="img" aria-label="Gráfica de la velocidad angular frente al tiempo, recta decreciente de 8 a menos 4 radianes por segundo que cruza cero en 4 segundos">
+  <defs><marker id="maot" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbot" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmot" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgot" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpot" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfot" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="48" y1="164" x2="310" y2="164"/>
+  <line class="ax" x1="48" y1="164" x2="48" y2="13"/>
+  <line x1="48" y1="111.9" x2="310" y2="111.9" stroke="var(--mut)" stroke-width="1.1" stroke-dasharray="4 3"/>
+  <line x1="44" y1="111.9" x2="48" y2="111.9" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="115.9" class="sm" text-anchor="end">0</text>
+  <text x="305" y="192" class="sm" text-anchor="end">t (s)</text>
+  <text x="54" y="20" class="sm">ω<tspan dy="3" font-size="9">z</tspan><tspan dy="-3"> (rad/s)</tspan></text>
+  <line x1="48.0" y1="164" x2="48.0" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="48.0" y="180" class="sm" text-anchor="middle">0</text>
+  <line x1="90.8" y1="164" x2="90.8" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="90.8" y="180" class="sm" text-anchor="middle">1</text>
+  <line x1="133.7" y1="164" x2="133.7" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="133.7" y="180" class="sm" text-anchor="middle">2</text>
+  <line x1="176.5" y1="164" x2="176.5" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="176.5" y="180" class="sm" text-anchor="middle">3</text>
+  <line x1="219.3" y1="164" x2="219.3" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="219.3" y="180" class="sm" text-anchor="middle">4</text>
+  <line x1="262.2" y1="164" x2="262.2" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="262.2" y="180" class="sm" text-anchor="middle">5</text>
+  <line x1="305.0" y1="164" x2="305.0" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="305.0" y="180" class="sm" text-anchor="middle">6</text>
+  <line x1="44" y1="28.4" x2="48" y2="28.4" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="32.4" class="sm" text-anchor="end">8</text>
+  <line x1="44" y1="70.1" x2="48" y2="70.1" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="74.1" class="sm" text-anchor="end">4</text>
+  <line x1="44" y1="153.6" x2="48" y2="153.6" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="157.6" class="sm" text-anchor="end">−4</text>
+  <path d="M 48.0 111.9 L 48.0 28.4 L 219.3 111.9 Z" fill="var(--X)" fill-opacity="0.2" stroke="none"/>
+  <path d="M 219.3 111.9 L 305.0 153.6 L 305.0 111.9 Z" fill="var(--A)" fill-opacity="0.2" stroke="none"/>
+  <path d="M 48.0 28.4 L 305.0 153.6" fill="none" stroke="var(--acc)" stroke-width="3"/>
+  <circle cx="219.3" cy="111.9" r="3.5" fill="var(--fg)"/>
+  <text x="58.7" y="88.9" class="sm" style="fill:var(--X)">ω<tspan dy="3" font-size="9">z</tspan><tspan dy="-3"> &gt; 0, α</tspan><tspan dy="3" font-size="9">z</tspan><tspan dy="-3"> &lt; 0</tspan></text>
+  <text x="58.7" y="102.5" class="sm" style="fill:var(--X)">frena (+16 rad)</text>
+  <text x="176.5" y="147.3" class="sm" style="fill:var(--A)">ω<tspan dy="3" font-size="9">z</tspan><tspan dy="-3"> &lt; 0, α</tspan><tspan dy="3" font-size="9">z</tspan><tspan dy="-3"> &lt; 0</tspan></text>
+  <text x="176.5" y="158.8" class="sm" style="fill:var(--A)">acelera (−4 rad)</text>
+  <text x="142.2" y="32.6" class="sm bd">ω<tspan dy="3" font-size="9">z</tspan><tspan dy="-3"> = 8 − 2t</tspan></text>
+  <text x="225.8" y="101.4" class="sm">t = 4 s</text>
+</svg>
+<figcaption>Con $\alpha_z=-2$ rad/s² (pendiente de la recta) la rueda frena mientras $\omega_z>0$ y, tras pararse en $t=4$ s, vuelve a acelerar girando al revés. El área bajo la recta es el ángulo girado (con signo): +16 rad y −4 rad, neto +12 rad. <span class="src" data-l="P" data-ref="Diagrama propio de la explicación de U §9.1 y §9.2, pp. 277-279">P</span></figcaption>
+</figure>
+
+<div class="box ex"><span class="h">Ejemplo resuelto: velocidad y aceleración angulares de un volante</span>
+  <p>Un volante gira con $\theta(t)=(2{,}0\ \text{rad/s}^3)\,t^3$. Calcula $\omega_{med}$ entre $t=2{,}0$ s y $5{,}0$ s y las instantáneas.</p>
+  <ol class="steps">
+    <li><b>Ángulos.</b> $\theta(2)=2(8)=16$ rad y $\theta(5)=2(125)=250$ rad.</li>
+    <li><b>Media.</b> $\omega_{med}=\dfrac{250-16}{5-2}=78$ rad/s (la pendiente de la cuerda de la gráfica).</li>
+    <li><b>Instantáneas.</b> Derivando, $\omega_z=6t^2$ (rad/s con $t$ en s): 24 rad/s en 2 s y 150 rad/s en 5 s. Derivando otra vez, $\alpha_z=d\omega_z/dt=12t$: 24 y 60 rad/s² en $t=2{,}0$ s y $5{,}0$ s. La aceleración media entre 2 s y 5 s es $(150-24)/3=42$ rad/s².</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplos 9.1 y 9.2, pp. 275-277">U p.275-277</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 320 200" width="100%" role="img" aria-label="Gráfica de theta igual a dos t al cubo con la cuerda entre t igual a 2 s y t igual a 5 s, de pendiente 78 radianes por segundo">
+  <defs><marker id="matc" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbtc" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmtc" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgtc" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mptc" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mftc" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="50" y1="164" x2="310" y2="164"/>
+  <line class="ax" x1="50" y1="164" x2="50" y2="23"/>
+  <text x="305" y="192" class="sm" text-anchor="end">t (s)</text>
+  <text x="56" y="30" class="sm">θ (rad)</text>
+  <line x1="50.0" y1="164" x2="50.0" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="50.0" y="180" class="sm" text-anchor="middle">0</text>
+  <line x1="96.4" y1="164" x2="96.4" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="96.4" y="180" class="sm" text-anchor="middle">1</text>
+  <line x1="142.7" y1="164" x2="142.7" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="142.7" y="180" class="sm" text-anchor="middle">2</text>
+  <line x1="189.1" y1="164" x2="189.1" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="189.1" y="180" class="sm" text-anchor="middle">3</text>
+  <line x1="235.5" y1="164" x2="235.5" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="235.5" y="180" class="sm" text-anchor="middle">4</text>
+  <line x1="281.8" y1="164" x2="281.8" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="281.8" y="180" class="sm" text-anchor="middle">5</text>
+  <line x1="46" y1="117.1" x2="50" y2="117.1" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="43" y="121.1" class="sm" text-anchor="end">100</text>
+  <line x1="46" y1="70.2" x2="50" y2="70.2" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="43" y="74.2" class="sm" text-anchor="end">200</text>
+  <path d="M 50.0 164.0 L 52.9 164.0 L 55.8 164.0 L 58.7 164.0 L 61.6 164.0 L 64.5 164.0 L 67.4 164.0 L 70.3 163.9 L 73.2 163.9 L 76.1 163.8 L 79.0 163.8 L 81.9 163.7 L 84.8 163.6 L 87.7 163.5 L 90.6 163.4 L 93.5 163.2 L 96.4 163.1 L 99.3 162.9 L 102.2 162.7 L 105.1 162.4 L 108.0 162.2 L 110.9 161.9 L 113.8 161.6 L 116.6 161.2 L 119.5 160.8 L 122.4 160.4 L 125.3 160.0 L 128.2 159.5 L 131.1 159.0 L 134.0 158.4 L 136.9 157.8 L 139.8 157.2 L 142.7 156.5 L 145.6 155.8 L 148.5 155.0 L 151.4 154.2 L 154.3 153.3 L 157.2 152.4 L 160.1 151.4 L 163.0 150.4 L 165.9 149.3 L 168.8 148.2 L 171.7 147.0 L 174.6 145.8 L 177.5 144.5 L 180.4 143.1 L 183.3 141.7 L 186.2 140.2 L 189.1 138.7 L 192.0 137.1 L 194.9 135.4 L 197.8 133.6 L 200.7 131.8 L 203.6 129.9 L 206.5 127.9 L 209.4 125.9 L 212.3 123.8 L 215.2 121.6 L 218.1 119.3 L 221.0 117.0 L 223.9 114.5 L 226.8 112.0 L 229.7 109.4 L 232.6 106.7 L 235.5 104.0 L 238.4 101.1 L 241.2 98.2 L 244.1 95.1 L 247.0 92.0 L 249.9 88.8 L 252.8 85.5 L 255.7 82.0 L 258.6 78.5 L 261.5 74.9 L 264.4 71.2 L 267.3 67.4 L 270.2 63.5 L 273.1 59.5 L 276.0 55.3 L 278.9 51.1 L 281.8 46.8" fill="none" stroke="var(--acc)" stroke-width="3"/>
+  <path d="M 142.7 156.5 L 281.8 46.8" fill="none" stroke="var(--A)" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <circle cx="142.7" cy="156.5" r="3.5" fill="var(--fg)"/>
+  <circle cx="281.8" cy="46.8" r="3.5" fill="var(--fg)"/>
+  <line x1="142.7" y1="156.5" x2="142.7" y2="164.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="281.8" y1="46.8" x2="281.8" y2="164.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="68.5" y="53.8" class="sm bd">θ = (2,0 rad/s³) t³</text>
+  <text x="68.5" y="67.9" class="sm" style="fill:var(--A)">cuerda: ω<tspan dy="3" font-size="9">med</tspan><tspan dy="-3"> = 78 rad/s</tspan></text>
+  <text x="73.2" y="135.9" class="sm">θ(2 s) = 16 rad</text>
+  <text x="277.2" y="41.1" class="sm" text-anchor="end">θ(5 s) = 250 rad</text>
+</svg>
+<figcaption>Ejemplo 9.1 de U: la velocidad angular media entre 2 s y 5 s es la pendiente de la cuerda, $(250-16)/3=78$ rad/s; la instantánea es la pendiente de la tangente (24 rad/s en 2 s, 150 rad/s en 5 s). <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 9.1 de U, p. 275">P</span></figcaption>
+</figure>
+
+
+<h2 id="s2"><span class="n">2</span>Rotación con aceleración angular constante <span class="src" data-l="U" data-ref="U §9.2, pp. 278-280">U p.278</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Si ya sabes el movimiento rectilíneo uniformemente acelerado, ya sabes esto: cambia $x\to\theta$, $v_x\to\omega_z$, $a_x\to\alpha_z$ y las cuatro ecuaciones valen igual. El libro lo resume en la tabla 9.1. Un disco de Blu-ray que se frena al terminar la película es el ejemplo clásico.</p>
+  <span class="src" data-l="U" data-ref="U §9.2 y tabla 9.1, p. 279">U p.279</span></div>
+<div class="box thm"><span class="h">Ecuaciones con $\alpha_z$ constante (tabla 9.1)</span>
+  <table>
+  <tr><th>Movimiento rectilíneo ($a_x$ cte.)</th><th>Rotación ($\alpha_z$ cte.)</th><th>Lo que NO contiene</th></tr>
+  <tr><td>$v_x=v_{0x}+a_xt$ (2.8)</td><td>$\omega_z=\omega_{0z}+\alpha_zt$ (9.7)</td><td>$\theta$</td></tr>
+  <tr><td>$x-x_0=\tfrac12(v_{0x}+v_x)t$ (2.14)</td><td>$\theta-\theta_0=\tfrac12(\omega_{0z}+\omega_z)t$ (9.10)</td><td>$\alpha_z$</td></tr>
+  <tr><td>$x=x_0+v_{0x}t+\tfrac12a_xt^2$ (2.12)</td><td>$\theta=\theta_0+\omega_{0z}t+\tfrac12\alpha_zt^2$ (9.11)</td><td>$\omega_z$</td></tr>
+  <tr><td>$v_x^2=v_{0x}^2+2a_x(x-x_0)$ (2.13)</td><td>$\omega_z^2=\omega_{0z}^2+2\alpha_z(\theta-\theta_0)$ (9.12)</td><td>$t$</td></tr>
+  </table>
+  <p>Truco: escribe tus datos, marca la incógnita y elige la ecuación que contiene las tres letras que te importan y ninguna de las que no conoces.</p>
+  <span class="src" data-l="U" data-ref="U §9.2, ecs. (9.7), (9.10)-(9.12) y tabla 9.1, pp. 278-279">U p.278-279</span></div>
+<div class="box warn"><span class="h">Error típico</span>
+  <p>Estas ecuaciones valen <b>solo si $\alpha_z$ es constante</b>. Si te dan $\theta(t)$ como una función que no es un polinomio de grado 2, no apliques 9.7-9.12: deriva (sección anterior).</p>
+  <span class="src" data-l="U" data-ref="U §9.2, CUIDADO Aceleración angular constante, p. 279">U p.279</span></div>
+<div class="box ex"><span class="h">Ejemplo resuelto: disco de Blu-ray que se detiene</span>
+  <p>En $t=0$ el disco gira a $\omega_{0z}=27{,}5$ rad/s con $\alpha_z=-10{,}0$ rad/s² constante; una recta PQ del disco está sobre el eje $+x$. a) ¿$\omega_z$ en $t=0{,}300$ s? b) ¿Qué ángulo forma PQ con $+x$ en ese instante?</p>
+  <ol class="steps">
+    <li><b>a)</b> Con 9.7: $\omega_z=27{,}5+(-10{,}0)(0{,}300)=24{,}5$ rad/s. Bajó, como debe ser con $\alpha_z<0$.</li>
+    <li><b>b)</b> Con 9.11 y $\theta_0=0$: $\theta=27{,}5(0{,}300)+\tfrac12(-10{,}0)(0{,}300)^2=7{,}80$ rad $=7{,}80/2\pi=1{,}24$ rev.</li>
+    <li>Es una vuelta completa más $0{,}24$ rev $=0{,}24\cdot360^\circ=87^\circ$: PQ forma <b>87°</b> con $+x$.</li>
+    <li><b>Comprobación</b> con 9.12 (sin $t$): $\theta=\dfrac{24{,}5^2-27{,}5^2}{2(-10{,}0)}=7{,}80$ rad. ✓</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 9.3, pp. 279-280">U p.279-280</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 200" width="100%" role="img" aria-label="Disco que gira una vuelta completa y 87 grados más">
+  <defs><marker id="mabr" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbbr" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmbr" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgbr" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpbr" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfbr" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="100" cy="98" r="62" fill="var(--acc)" fill-opacity="0.08" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="100" y1="98" x2="184" y2="98" stroke="var(--mut)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <circle cx="100" cy="98" r="3" fill="var(--fg)"/>
+  <path d="M 122.0 98.0 L 122.1 96.1 L 122.0 94.1 L 121.8 92.2 L 121.4 90.3 L 120.8 88.4 L 120.1 86.5 L 119.2 84.7 L 118.1 83.0 L 116.9 81.3 L 115.5 79.8 L 114.0 78.4 L 112.3 77.1 L 110.5 75.9 L 108.6 74.9 L 106.7 74.0 L 104.6 73.4 L 102.5 72.9 L 100.3 72.6 L 98.1 72.5 L 95.8 72.5 L 93.6 72.8 L 91.4 73.3 L 89.2 73.9 L 87.0 74.8 L 85.0 75.8 L 83.0 77.1 L 81.1 78.5 L 79.4 80.1 L 77.7 81.8 L 76.2 83.7 L 74.9 85.7 L 73.8 87.9 L 72.8 90.1 L 72.1 92.5 L 71.5 94.9 L 71.1 97.4 L 71.0 99.9 L 71.1 102.4 L 71.4 105.0 L 71.9 107.5 L 72.7 109.9 L 73.6 112.3 L 74.8 114.7 L 76.2 116.9 L 77.8 119.0 L 79.6 121.0 L 81.5 122.9 L 83.7 124.5 L 85.9 126.0 L 88.3 127.3 L 90.9 128.4 L 93.5 129.2 L 96.2 129.9 L 99.0 130.3 L 101.8 130.4 L 104.6 130.4 L 107.4 130.0 L 110.2 129.4 L 113.0 128.6 L 115.7 127.5 L 118.3 126.2 L 120.8 124.7 L 123.1 122.9 L 125.3 121.0 L 127.4 118.8 L 129.2 116.5 L 130.9 114.0 L 132.3 111.3 L 133.6 108.5 L 134.5 105.6 L 135.2 102.6 L 135.7 99.5 L 135.9 96.4 L 135.8 93.3 L 135.5 90.2 L 134.8 87.1 L 133.9 84.0 L 132.8 81.1 L 131.3 78.2 L 129.7 75.5 L 127.7 72.8 L 125.6 70.4 L 123.2 68.1 L 120.6 66.1 L 117.9 64.2 L 115.0 62.6 L 111.9 61.3 L 108.7 60.2" fill="none" stroke="var(--E)" stroke-width="2.2"/>
+  <line x1="108.7" y1="60.2" x2="102.1" y2="58.9" stroke="var(--E)" stroke-width="2.2" fill="none" marker-end="url(#mpbr)"/>
+  <line x1="100" y1="98" x2="103.3" y2="36.1" stroke="var(--fg)" stroke-width="2.2"/>
+  <circle cx="103.3" cy="36.1" r="3" fill="var(--fg)"/>
+  <text x="188" y="102" class="sm" text-anchor="start">PQ en t = 0</text>
+  <text x="113.3" y="30.1" class="sm" text-anchor="start">PQ en t = 0,300 s</text>
+  <text x="8" y="188" class="sm bd">θ = 7,80 rad = 1 vuelta + 87°</text>
+  <text x="250" y="150" class="sm" text-anchor="start">ω₀ = 27,5 rad/s</text>
+  <text x="250" y="166" class="sm" text-anchor="start">α = −10 rad/s²</text>
+</svg>
+<figcaption>Ejemplo 9.3 de U: a $\omega_0=27{,}5$ rad/s y $\alpha_z=-10{,}0$ rad/s², en 0,300 s la recta PQ del disco ha girado 7,80 rad, una vuelta y 87° por encima del eje $+x$. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 9.3 de U, pp. 279-280">P</span></figcaption>
+</figure>
+
+
+<h2 id="s3"><span class="n">3</span>Relación entre cinemática lineal y angular <span class="src" data-l="U" data-ref="U §9.3, pp. 280-283">U p.280</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>En un tiovivo, todos los caballitos dan una vuelta en el mismo tiempo (misma $\omega$), pero el de fuera recorre un círculo más largo y por eso va <i>más rápido</i> y «se siente» más acelerado. Cada punto traza una circunferencia alrededor del eje: su velocidad es tangente y proporcional a la distancia al eje $r$; su aceleración tiene dos partes, una tangencial (cambia la rapidez) y otra radial (cambia la dirección).</p>
+  <span class="src" data-l="U" data-ref="U §9.3, pp. 280-281 (figs. 9.9 y 9.10)">U p.280-281</span></div>
+<div class="box thm"><span class="h">Velocidad y aceleración de un punto a distancia $r$ del eje</span>
+  <p>$$v=r\omega\quad(9.13)\qquad a_{tan}=\frac{dv}{dt}=r\alpha\quad(9.14)\qquad a_{rad}=\frac{v^2}{r}=r\omega^2\quad(9.15)$$
+  $a_{tan}$ es tangente a la trayectoria y mide el cambio de <i>rapidez</i>; $a_{rad}$ es la aceleración centrípeta, dirigida hacia el eje, y mide el cambio de <i>dirección</i>. Son perpendiculares, así que $a=\sqrt{a_{tan}^2+a_{rad}^2}$. Valen para cualquier punto de un cuerpo rígido, y también para una cuerda enrollada que no resbala sobre una polea: la cuerda y el borde tienen la misma rapidez y la misma $a_{tan}$ (pero la $a_{rad}$ de la ec. 9.15 solo es la del borde, no la de la cuerda recta).</p>
+  <span class="src" data-l="U" data-ref="U §9.3, ecs. (9.13)-(9.15), pp. 280-282">U p.280-282</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 200" width="100%" role="img" aria-label="Disco que gira con dos puntos en el mismo radio; el más alejado del eje tiene el doble de rapidez">
+  <defs><marker id="mamo" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbmo" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmmo" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgmo" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpmo" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfmo" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="100" cy="100" r="80" fill="var(--acc)" fill-opacity="0.07" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="100" y1="100" x2="180" y2="100" stroke="var(--mut)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <circle cx="100" cy="100" r="3" fill="var(--fg)"/>
+  <path d="M 121.8 96.7 A 22 22 0 0 0 92.9 79.2" fill="none" stroke="var(--fg)" stroke-width="1.3"/>
+  <line x1="95.0" y1="78.6" x2="90.4" y2="80.2" stroke="var(--fg)" stroke-width="1.5" fill="none" marker-end="url(#mfmo)"/>
+  <circle cx="140" cy="100" r="3.5" fill="var(--fg)"/>
+  <circle cx="180" cy="100" r="3.5" fill="var(--fg)"/>
+  <line x1="140" y1="100" x2="140" y2="66" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mamo)"/>
+  <line x1="180" y1="100" x2="180" y2="32" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mamo)"/>
+  <text x="136" y="116" class="sm bd" text-anchor="end">P<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"></tspan></text>
+  <text x="176" y="116" class="sm bd" text-anchor="end">P<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"></tspan></text>
+  <text x="133" y="82" class="sm bd" text-anchor="end">v<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"></tspan></text>
+  <text x="173" y="64" class="sm bd" text-anchor="end">v<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"></tspan></text>
+  <text x="94" y="94" class="sm" text-anchor="end">ω</text>
+  <text x="196" y="50" class="sm">Todos los puntos tienen</text>
+  <text x="196" y="65" class="sm bd">la misma ω.</text>
+  <text x="196" y="95" class="sm">P<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> a distancia r:</tspan></text>
+  <text x="196" y="110" class="sm bd">v<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> = rω</tspan></text>
+  <text x="196" y="138" class="sm">P<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"> a distancia 2r:</tspan></text>
+  <text x="196" y="153" class="sm bd">v<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"> = 2rω</tspan></text>
+  <text x="196" y="178" class="sm" style="fill:var(--mut)">v ∝ distancia al eje</text>
+</svg>
+<figcaption>Todas las partículas de un cuerpo rígido que gira comparten la misma $\omega$, pero su rapidez $v=r\omega$ crece con la distancia al eje. <span class="src" data-l="P" data-ref="Diagrama propio de U §9.3, p. 281 (ec. 9.13)">P</span></figcaption>
+</figure>
+
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 192" width="100%" role="img" aria-label="Tres discos giratorios con la velocidad y las aceleraciones tangencial y radial de un punto del borde">
+  <defs><marker id="masg" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbsg" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmsg" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgsg" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpsg" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfsg" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="60" cy="82" r="34" fill="var(--acc)" fill-opacity="0.07" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="60" cy="82" r="2.5" fill="var(--fg)"/>
+  <circle cx="60" cy="48" r="3.5" fill="var(--fg)"/>
+  <path d="M 71.5 78.5 A 12 12 0 0 0 64.3 70.8" fill="none" stroke="var(--fg)" stroke-width="1.3"/>
+  <line x1="74" y1="36" x2="40" y2="36" stroke="var(--acc)" stroke-width="2.5" fill="none" marker-end="url(#masg)"/>
+  <line x1="60" y1="48" x2="60" y2="82" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbsg)"/>
+  <text x="60" y="138" class="sm bd" text-anchor="middle">ω constante</text>
+  <text x="60" y="153" class="sm" text-anchor="middle">α = 0</text>
+  <circle cx="180" cy="82" r="34" fill="var(--acc)" fill-opacity="0.07" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="180" cy="82" r="2.5" fill="var(--fg)"/>
+  <circle cx="180" cy="48" r="3.5" fill="var(--fg)"/>
+  <path d="M 191.5 78.5 A 12 12 0 0 0 184.3 70.8" fill="none" stroke="var(--fg)" stroke-width="1.3"/>
+  <line x1="194" y1="36" x2="160" y2="36" stroke="var(--acc)" stroke-width="2.5" fill="none" marker-end="url(#masg)"/>
+  <line x1="180" y1="48" x2="180" y2="82" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbsg)"/>
+  <line x1="180" y1="48" x2="162" y2="48" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgsg)"/>
+  <text x="180" y="138" class="sm bd" text-anchor="middle">se acelera</text>
+  <text x="180" y="153" class="sm" text-anchor="middle">α·ω &gt; 0</text>
+  <circle cx="300" cy="82" r="34" fill="var(--acc)" fill-opacity="0.07" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="300" cy="82" r="2.5" fill="var(--fg)"/>
+  <circle cx="300" cy="48" r="3.5" fill="var(--fg)"/>
+  <path d="M 311.5 78.5 A 12 12 0 0 0 304.3 70.8" fill="none" stroke="var(--fg)" stroke-width="1.3"/>
+  <line x1="314" y1="36" x2="280" y2="36" stroke="var(--acc)" stroke-width="2.5" fill="none" marker-end="url(#masg)"/>
+  <line x1="300" y1="48" x2="300" y2="82" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbsg)"/>
+  <line x1="300" y1="48" x2="318" y2="48" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgsg)"/>
+  <text x="300" y="138" class="sm bd" text-anchor="middle">frena</text>
+  <text x="300" y="153" class="sm" text-anchor="middle">α·ω &lt; 0</text>
+  <text x="36" y="39" class="sm bd" text-anchor="end">v</text>
+  <text x="55" y="72" class="sm bd" text-anchor="end" style="font-size:9.5px">a<tspan dy="3" font-size="9">rad</tspan></text>
+  <text x="156" y="39" class="sm bd" text-anchor="end">v</text>
+  <text x="176" y="72" class="sm bd" text-anchor="end" style="font-size:9.5px">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"></tspan></text>
+  <text x="158" y="51" class="sm bd" text-anchor="end">a<tspan dy="3" font-size="9">tan</tspan><tspan dy="-3"></tspan></text>
+  <text x="276" y="39" class="sm bd" text-anchor="end">v</text>
+  <text x="296" y="72" class="sm bd" text-anchor="end" style="font-size:9.5px">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"></tspan></text>
+  <text x="322" y="51" class="sm bd" text-anchor="start">a<tspan dy="3" font-size="9">tan</tspan><tspan dy="-3"></tspan></text>
+  <text x="8" y="182" class="sm" style="fill:var(--mut)">Rotación antihoraria</text>
+</svg>
+<figcaption>Con $\omega$ constante solo hay $a_{rad}$ (hacia el eje). Si la rotación se acelera, $a_{tan}$ apunta como $v$; si frena, apunta al contrario. $a_{rad}=\omega^2 r$ existe siempre que $\omega\neq 0$. Longitudes no a escala. <span class="src" data-l="P" data-ref="Diagrama propio de U §9.3, pp. 281-282 (ecs. 9.14-9.15)">P</span></figcaption>
+</figure>
+
+<div class="box warn"><span class="h">Error típico</span>
+  <p>Confundir $a_{rad}$ con $a_{tan}$ o creer que son iguales para todos los puntos: ambas dependen de la distancia al eje (en el eje, $r=0$ y no hay ninguna). Y con $\omega$ constante <i>sí</i> hay aceleración: la radial. «Velocidad angular constante» no es «aceleración nula».</p>
+  <span class="src" data-l="U" data-ref="U §9.3, «Los datos hablan», p. 283">U p.283</span></div>
+<div class="box ex"><span class="h">Ejemplo resuelto: lanzamiento de disco</span>
+  <p>El disco gira en un círculo de radio $r=0{,}800$ m; en cierto instante $\omega=10{,}0$ rad/s y $\alpha=50{,}0$ rad/s². Calcula $a_{tan}$, $a_{rad}$ y $a$.</p>
+  <ol class="steps">
+    <li>$a_{tan}=r\alpha=(0{,}800)(50{,}0)=40{,}0$ m/s².</li>
+    <li>$a_{rad}=\omega^2r=(10{,}0)^2(0{,}800)=80{,}0$ m/s².</li>
+    <li>$a=\sqrt{40{,}0^2+80{,}0^2}=89{,}4$ m/s², formando $\arctan(40/80)=26{,}6^\circ$ con la dirección hacia el eje.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 9.4, p. 282">U p.282</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_9_12_disco.png" alt="Figura 9.12 de U. a) Lanzador de disco con el vector aceleración y sus componentes radial y tangencial. b) Diagrama con alfa igual a 50 rad/s², omega igual a 10 rad/s, radio 0,800 m, y las componentes a_rad y a_tan de la aceleración del disco." loading="lazy">
+<figcaption>Fig. 9.12 de U: componentes radial y tangencial de la aceleración del disco del ejemplo 9.4. <span class="src" data-l="U" data-ref="U Fig. 9.12, p. 282">U p.282</span></figcaption>
+</figure>
+<div class="box ex"><span class="h">Ejemplo resuelto: diseño de una hélice</span>
+  <p>Una hélice gira a 2400 rpm. La rapidez de avance es 75,0 m/s y la de la punta no debe pasar de 270 m/s. ¿Radio máximo y $a_{rad}$ de la punta?</p>
+  <ol class="steps">
+    <li>$\omega=2400\cdot2\pi/60=251$ rad/s. La velocidad de la punta es la suma (perpendicular) del avance y de la rotación: $270^2=75{,}0^2+(r\omega)^2$.</li>
+    <li>$r\omega=\sqrt{270^2-75^2}=259$ m/s, luego $r_{max}=259/251=1{,}03$ m.</li>
+    <li>$a_{rad}=\omega^2r=(251)^2(1{,}03)=6{,}5\times10^4$ m/s² (unos $6{,}6\times10^3\,g$).</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 9.5, pp. 282-283">U p.282-283</span></div>
+<figure class="interactivo" data-escena="cinematica-rotacion" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: punto del borde de un disco que gira con aceleración angular constante, con sus vectores velocidad, aceleración tangencial, radial y total">
+  <img class="int-static" src="../assets/img/int_cinematica-rotacion.png" alt="Interactivo: punto del borde de un disco que gira con aceleración angular constante, con sus vectores velocidad, aceleración tangencial, radial y total">
+  <figcaption><b>Pruébalo tú:</b> un punto $P$ del borde de un disco gira con $\theta=\omega_0t+\tfrac12\alpha t^2$. Mueve el instante $t$ (o pulsa «En marcha») y mira cómo $a_{tan}=r\alpha$ <i>no cambia</i> mientras $a_{rad}=r\omega^2$ crece con $\omega^2$: la aceleración total $a$ se va girando hacia el eje y el ángulo que forma con él cumple $\tan=\alpha/\omega^2$. Pon $\alpha=0$ y ves solo la radial (movimiento circular uniforme); con $\omega_0$ y $\alpha$ de signo opuesto, $a_{tan}$ apunta contra $v$ y el punto frena. Los valores iniciales ($r=0{,}30$ m, $\omega_0=0$, $\alpha=0{,}60$ rad/s², $t=1{,}87$ s) reproducen el problema 9.23 b): $60^\circ$ girados, $a_{tan}=0{,}180$, $a_{rad}=0{,}377$ y $a=0{,}418$ m/s²; con $t=2{,}64$ s, el apartado c) ($120^\circ$). La flecha $v$ tiene escala fija; las de aceleración se reescalan en cada instante para que la total mida siempre lo mismo (sus proporciones sí son las reales). <span class="src" data-l="P" data-ref="Interactivo propio de U §9.3, ecs. 9.13-9.15 y problema 9.23">P</span></figcaption>
+</figure>
+
+<h2 id="s4"><span class="n">4</span>Energía en el movimiento de rotación: momento de inercia <span class="src" data-l="U" data-ref="U §9.4, pp. 283-288">U p.283</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Un cuerpo que gira tiene energía cinética aunque su centro no se mueva: cada partícula lleva $\tfrac12m_iv_i^2$. Si sumas todas con $v_i=r_i\omega$, la $\omega^2$ sale como factor común y queda $K=\tfrac12\left(\sum m_ir_i^2\right)\omega^2$. Esa suma es el <b>momento de inercia</b> $I$: la «masa efectiva» para girar. Un patinador o una bailarina lo cambian recogiendo o abriendo los brazos; un volante pesado con la masa en la llanta guarda mucha energía girando porque $r^2$ pesa mucho: <i>no importa solo cuánta masa hay, sino a qué distancia del eje está</i>.</p>
+  <span class="src" data-l="U" data-ref="U §9.4, pp. 283-284 (fig. 9.14)">U p.283-284</span></div>
+<div class="box def"><span class="h">Momento de inercia y energía cinética de rotación</span>
+  <p>Para un conjunto de partículas, con $r_i$ = distancia <i>perpendicular</i> de la partícula $i$ al eje:
+  $$I=m_1r_1^2+m_2r_2^2+\cdots=\sum_im_ir_i^2\qquad\text{(ec. 9.16)}\qquad K=\tfrac12I\omega^2\qquad\text{(ec. 9.17)}$$
+  Unidad de $I$: kg·m². $\omega$ debe estar en rad/s para que $K$ salga en julios. $K=\tfrac12I\omega^2$ no es una forma nueva de energía: es la suma de las energías cinéticas de todas las partículas.</p>
+  <span class="src" data-l="U" data-ref="U §9.4, ecs. (9.16)-(9.17), p. 284">U p.284</span></div>
+<div class="box warn"><span class="h">Error típico: el momento de inercia depende del eje</span>
+  <p>No existe «el» momento de inercia de un cuerpo: hay que decir <b>respecto a qué eje</b>. Y no concentres toda la masa en el centro de masa: una varilla de longitud $L$ que gira por un extremo tiene $I=\tfrac13ML^2$, no $M(L/2)^2=\tfrac14ML^2$.</p>
+  <span class="src" data-l="U" data-ref="U §9.4, CUIDADO pp. 285-286">U p.285-286</span></div>
+<div class="box ex"><span class="h">Ejemplo resuelto: tres masas puntuales y dos ejes</span>
+  <p>Una pieza tiene tres discos (masas puntuales) unidos por puntales sin masa: $m_A=0{,}30$ kg en el eje 1; $m_B=0{,}10$ kg a 0,50 m de A y $m_C=0{,}20$ kg a 0,40 m de A. El eje 1 pasa por A (perpendicular al papel); el eje 2 pasa por B y C. a) $I_1$; b) $I_2$; c) $K$ si gira alrededor del eje 1 a 4,0 rad/s.</p>
+  <ol class="steps">
+    <li><b>a)</b> A está sobre el eje ($r=0$) y no cuenta: $I_1=0{,}10(0{,}50)^2+0{,}20(0{,}40)^2=0{,}057$ kg·m².</li>
+    <li><b>b)</b> B y C están sobre el eje 2 y no cuentan; A está a 0,40 m: $I_2=0{,}30(0{,}40)^2=0{,}048$ kg·m².</li>
+    <li><b>c)</b> $K=\tfrac12I_1\omega^2=\tfrac12(0{,}057)(4{,}0)^2=0{,}46$ J.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 9.6, p. 285">U p.285</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 198" width="100%" role="img" aria-label="Tres masas puntuales con dos ejes de giro distintos, que dan momentos de inercia distintos">
+  <defs><marker id="mae6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="38" cy="130" r="7.5" fill="var(--acc)" fill-opacity="0.4" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="90.0" cy="130" r="6" fill="var(--acc)" fill-opacity="0.4" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="90.0" cy="91.0" r="4.5" fill="var(--acc)" fill-opacity="0.4" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="24" y="134" class="sm bd" text-anchor="end">A</text>
+  <text x="102.0" y="134" class="sm bd">C</text>
+  <text x="100.0" y="95.0" class="sm bd">B</text>
+  <line x1="38" y1="130" x2="90.0" y2="91.0" stroke="var(--A)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="38" y1="130" x2="90.0" y2="130" stroke="var(--A)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <circle cx="38" cy="130" r="7" fill="var(--bg)" stroke="var(--fg)" stroke-width="1.5"/><circle cx="38" cy="130" r="2" fill="var(--fg)"/>
+  <text x="50" y="106" class="sm" style="fill:var(--A)">0,50 m</text>
+  <text x="68" y="146" class="sm" style="fill:var(--A)">0,40 m</text>
+  <text x="18" y="28" class="sm bd">Eje 1: por A (⊥ papel)</text>
+  <text x="18" y="172" class="sm bd">I<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> = 0,057 kg·m²</tspan></text>
+  <circle cx="218" cy="130" r="7.5" fill="var(--acc)" fill-opacity="0.4" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="270.0" cy="130" r="6" fill="var(--acc)" fill-opacity="0.4" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="270.0" cy="91.0" r="4.5" fill="var(--acc)" fill-opacity="0.4" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="204" y="134" class="sm bd" text-anchor="end">A</text>
+  <text x="282.0" y="134" class="sm bd">C</text>
+  <text x="280.0" y="95.0" class="sm bd">B</text>
+  <line x1="270.0" y1="69.0" x2="270.0" y2="152" stroke="var(--A)" stroke-width="2.5"/>
+  <line x1="218" y1="144" x2="270.0" y2="144" stroke="var(--mut)" stroke-width="1.3" fill="none" marker-end="url(#mme6)"/>
+  <text x="244.0" y="160" class="sm" text-anchor="middle">0,40 m</text>
+  <text x="198" y="28" class="sm bd">Eje 2: por B y C</text>
+  <text x="198" y="172" class="sm bd">I<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"> = 0,048 kg·m²</tspan></text>
+  <text x="8" y="192" class="sm">m<tspan dy="3" font-size="9">A</tspan><tspan dy="-3"> = 0,30; m</tspan><tspan dy="3" font-size="9">B</tspan><tspan dy="-3"> = 0,10; m</tspan><tspan dy="3" font-size="9">C</tspan><tspan dy="-3"> = 0,20 kg</tspan></text>
+</svg>
+<figcaption>El mismo cuerpo tiene momentos de inercia distintos según el eje: $I_1=0{,}10(0{,}50)^2+0{,}20(0{,}40)^2=0{,}057$ kg·m² (eje por A, perpendicular al papel) e $I_2=0{,}30(0{,}40)^2=0{,}048$ kg·m² (eje por B y C). Solo cuenta la distancia perpendicular al eje. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 9.6 de U, p. 285">P</span></figcaption>
+</figure>
+
+<div class="box thm"><span class="h">Tabla 9.2: momentos de inercia de cuerpos uniformes</span>
+  <p>Con $M$ la masa total y el eje donde indica el dibujo: varilla delgada por el centro $\tfrac1{12}ML^2$ (a) o por un extremo $\tfrac13ML^2$ (b); placa rectangular por el centro $\tfrac1{12}M(a^2+b^2)$ (c) o a lo largo de un borde $\tfrac13Ma^2$ (d); cilindro hueco de pared gruesa $\tfrac12M(R_1^2+R_2^2)$ (e); cilindro sólido $\tfrac12MR^2$ (f); cilindro hueco de pared delgada $MR^2$ (g); esfera sólida $\tfrac25MR^2$ (h); esfera hueca de pared delgada $\tfrac23MR^2$ (i). Regla práctica: cuanto más lejos del eje está la masa, mayor es el coeficiente ($\tfrac25<\tfrac12<\tfrac23<1$).</p>
+  <span class="src" data-l="U" data-ref="U Tabla 9.2, p. 286">U p.286</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_9_tabla2.png" alt="Tabla 9.2 de U con los momentos de inercia de diversos cuerpos: varilla delgada por el centro y por un extremo, placa rectangular, cilindro hueco de pared gruesa, cilindro sólido, cilindro hueco de pared delgada, esfera sólida y esfera hueca de pared delgada." loading="lazy">
+<figcaption>Tabla 9.2 de U: momentos de inercia de diversos cuerpos con el eje indicado en azul. <span class="src" data-l="U" data-ref="U Tabla 9.2, p. 286">U p.286</span></figcaption>
+</figure>
+<div class="box tip"><span class="h">Estrategia: problemas de energía con rotación</span>
+  <p>Escribe $K_1+U_1+W_{otras}=K_2+U_2$ con $K=\tfrac12Mv_{cm}^2+\tfrac12I_{cm}\omega^2$, donde $I_{cm}$ es el momento de inercia respecto al eje que pasa por el centro de masa y el primer término solo existe si el centro de masa se mueve (si el cuerpo gira en torno a un eje fijo, $K=\tfrac12I\omega^2$ con $I$ respecto a ese eje). Si una cuerda se enrolla en un cilindro sin resbalar, usa $v=R\omega$ y $a_{tan}=R\alpha$. $I$ sale de la tabla 9.2 (y del teorema de los ejes paralelos si el eje no es el de la tabla). Para cuerpos extensos la energía potencial gravitatoria es $U=Mgy_{cm}$ (ec. 9.18): se obtiene sumando $m_igy_i$ sobre todas las partículas, pues $\sum m_iy_i=My_{cm}$. El método de energía no sirve para preguntas con el tiempo.</p>
+  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 9.1 y ec. (9.18), pp. 286 y 288">U p.286-288</span></div>
+<div class="box ex"><span class="h">Ejemplo resuelto: cable que se desenrolla (I)</span>
+  <p>Un cable ligero se enrolla en un cilindro sólido de 50 kg y 0,120 m de diámetro, que gira sin fricción sobre un eje fijo. Se tira del cable con $F=9{,}0$ N una distancia de 2,0 m, y el cilindro parte del reposo. ¿Rapidez angular final y rapidez del cable?</p>
+  <ol class="steps">
+    <li><b>Trabajo.</b> El cable no resbala y no tiene masa, así que $W=Fs=9{,}0(2{,}0)=18$ J pasan a energía de rotación del cilindro.</li>
+    <li><b>Momento de inercia.</b> $R=0{,}060$ m; $I=\tfrac12MR^2=\tfrac12(50)(0{,}060)^2=0{,}090$ kg·m².</li>
+    <li><b>Energía.</b> $\tfrac12I\omega^2=18$ J $\Rightarrow\ \omega=\sqrt{2(18)/0{,}090}=20$ rad/s.</li>
+    <li><b>Cable.</b> $v=R\omega=(0{,}060)(20)=1{,}2$ m/s.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 9.7, pp. 286-287">U p.286-287</span></div>
+<div class="box ex"><span class="h">Ejemplo resuelto: cable que se desenrolla (II), bloque que cae</span>
+  <p>El cable de un cilindro de masa $M$ y radio $R$ sostiene un bloque de masa $m$ que cae una altura $h$ desde el reposo. ¿Con qué rapidez llega?</p>
+  <ol class="steps">
+    <li><b>Energía.</b> El bloque pierde $mgh$; ganan energía el bloque y el cilindro: $mgh=\tfrac12mv^2+\tfrac12I\omega^2$.</li>
+    <li><b>Ligadura.</b> Cable sin resbalar: $\omega=v/R$; con $I=\tfrac12MR^2$ queda $\tfrac12I\omega^2=\tfrac14Mv^2$.</li>
+    <li>$mgh=\tfrac12\left(m+\tfrac12M\right)v^2\ \Rightarrow\ v=\sqrt{\dfrac{2gh}{1+M/2m}}$.</li>
+    <li><b>Casos límite:</b> si $M\gg m$, $v$ es muy pequeña (el cilindro «frena» la caída); si $M\ll m$, $v\approx\sqrt{2gh}$ (caída libre).</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 9.8, pp. 287-288">U p.287-288</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 178" width="100%" role="img" aria-label="Cilindro con un cable enrollado del que cuelga un bloque que desciende una altura h">
+  <defs><marker id="maca" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbca" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmca" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgca" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpca" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfca" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="70" cy="62" r="36" fill="var(--acc)" fill-opacity="0.1" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="70" cy="62" r="3" fill="var(--fg)"/>
+  <text x="70" y="54" class="sm bd" text-anchor="middle">M, R</text>
+  <text x="70" y="76" class="sm" text-anchor="middle">I</text>
+  <line x1="106" y1="62" x2="106" y2="140" stroke="var(--fg)" stroke-width="1.6"/>
+  <rect x="94" y="70" width="24" height="20" rx="2" fill="var(--A)" fill-opacity="0.0" stroke="var(--A)" stroke-width="1.5"/>
+  <line x1="94" y1="70" x2="118" y2="70" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="94" y1="90" x2="118" y2="90" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="94" y1="70" x2="94" y2="90" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="118" y1="70" x2="118" y2="90" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <rect x="94" y="140" width="24" height="20" rx="2" fill="var(--A)" fill-opacity="0.3" stroke="var(--A)" stroke-width="1.5"/>
+  <line x1="130" y1="80" x2="130" y2="150" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbca)"/>
+  <line x1="122" y1="80" x2="134" y2="80" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="122" y1="150" x2="134" y2="150" stroke="var(--mut)" stroke-width="1.2"/>
+  <text x="138" y="122" class="sm bd">h</text>
+  <text x="88" y="154" class="sm bd" text-anchor="end">m</text>
+  <text x="172" y="40" class="sm">Parte del reposo:</text>
+  <text x="172" y="70" class="sm bd">m g h = ½ m v² + ½ I ω²</text>
+  <text x="172" y="90" class="sm">I = ½ M R², ω = v/R</text>
+  <text x="172" y="118" class="sm bd">v = √( 2gh / (1 + M/2m) )</text>
+  <text x="172" y="140" class="sm" style="fill:var(--mut)">M ≫ m: v pequeña</text>
+  <text x="172" y="155" class="sm" style="fill:var(--mut)">M ≪ m: v ≈ √(2gh)</text>
+</svg>
+<figcaption>Ejemplo 9.8 de U: el bloque de masa $m$ cae una altura $h$ y la rueda gira con el cable sin resbalar; la energía potencial perdida se reparte entre la traslación del bloque y la rotación del cilindro. El bloque punteado marca la posición inicial. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 9.8 de U, pp. 287-288">P</span></figcaption>
+</figure>
+
+<figure class="interactivo" data-escena="polea-masa" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: bloque que cuelga de un cable enrollado en una rueda; reparto de la energía entre el bloque y la rueda">
+  <img class="int-static" src="../assets/img/int_polea-masa.png" alt="Interactivo: bloque que cuelga de un cable enrollado en una rueda; reparto de la energía entre el bloque y la rueda">
+  <figcaption><b>Pruébalo tú:</b> el bloque ($m$) cae y hace girar la rueda ($M$, $R$, $I=cMR^2$). Mueve el tiempo (o «En marcha») y observa las barras: la barra apilada (energía cinética del bloque + de la rueda) siempre alcanza la altura de la barra gris (energía potencial perdida $mgs$). Aumenta $M$ o $c$ y la rueda se lleva más energía: el bloque cae más despacio ($a=mg/(m+cM)$); con $M$ muy pequeña, el bloque casi cae libre. Observa que <i>cambiar el radio $R$ no cambia $v$</i> (solo $\omega=v/R$ y $I$). Los valores iniciales ($m=4{,}20$ kg, $M=46{,}5$ kg, $R=0{,}28$ m, $h=3{,}00$ m, $c=\tfrac12$) reproducen el problema 9.45: llega con $v=3{,}00$ m/s en $2{,}00$ s. Con $c=\tfrac12$ la fórmula es la del ejemplo 9.8 de U. <span class="src" data-l="P" data-ref="Interactivo propio de U ejemplo 9.8 y problema 9.45">P</span></figcaption>
+</figure>
+
+<h2 id="s5"><span class="n">5</span>Teorema de los ejes paralelos <span class="src" data-l="U" data-ref="U §9.5, pp. 288-289">U p.288</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Un cuerpo tiene infinitos momentos de inercia, uno por cada eje posible. La tabla 9.2 solo da los ejes «cómodos» (por el centro, por el extremo). El teorema dice cómo pasar del eje que pasa por el centro de masa a cualquier otro <i>paralelo</i> a él: hay que añadir lo que costaría hacer girar toda la masa como si fuera un punto a esa distancia, $Md^2$. Como $Md^2\ge0$, el menor de todos los momentos de inercia (para una dirección dada) es el del eje que pasa por el centro de masa.</p>
+  <span class="src" data-l="U" data-ref="U §9.5, pp. 288-289 (fig. 9.19)">U p.288-289</span></div>
+<div class="box thm"><span class="h">Teorema de los ejes paralelos</span>
+  <p>Si $I_{cm}$ es el momento de inercia de un cuerpo de masa $M$ respecto a un eje que pasa por su centro de masa, el momento de inercia respecto a un eje paralelo a distancia $d$ es
+  $$I_P=I_{cm}+Md^2\qquad\text{(ec. 9.19)}$$
+  Demostración (idea): respecto al eje desplazado, la distancia de cada elemento es $r_i'^2=(x_i-a)^2+(y_i-b)^2$; al desarrollar, el término cruzado contiene $\sum m_ix_i=Mx_{cm}=0$ (el origen está en el cm) y queda $I_{cm}+Md^2$ con $d^2=a^2+b^2$.</p>
+  <span class="src" data-l="U" data-ref="U §9.5, ec. (9.19) y fig. 9.20, pp. 288-289">U p.288-289</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_9_19_ejes.png" alt="Figura 9.19 de U. Teorema de los ejes paralelos con un bate de béisbol: eje 1 por el centro de masa con momento de inercia I_cm y eje 2 por el punto P a distancia d, con I_P = I_cm + M d al cuadrado." loading="lazy">
+<figcaption>Fig. 9.19 de U: teorema de los ejes paralelos, $I_P=I_{cm}+Md^2$. <span class="src" data-l="U" data-ref="U Fig. 9.19, p. 288">U p.288</span></figcaption>
+</figure>
+<div class="box warn"><span class="h">Error típico</span>
+  <p>El teorema solo vale <b>desde el centro de masa</b> y entre ejes <b>paralelos</b>. No puedes trasladar de un eje cualquiera a otro cualquiera sumando $Md^2$: primero resta hasta el cm ($I_{cm}=I_P-Md^2$) y luego suma hasta el nuevo eje. Y $d$ es la distancia entre los ejes, no al extremo del cuerpo.</p>
+  <span class="src" data-l="P" data-ref="Explicación propia sobre U §9.5, p. 288">P</span></div>
+<div class="box ex"><span class="h">Ejemplo resuelto: de $I_P$ a $I_{cm}$</span>
+  <p>Una pieza de 3,6 kg tiene $I_P=0{,}132$ kg·m² respecto a un eje que pasa a 0,15 m de su centro de masa. Calcula $I_{cm}$ para el eje paralelo por el cm.</p>
+  <ol class="steps"><li>Reordena 9.19: $I_{cm}=I_P-Md^2=0{,}132-(3{,}6)(0{,}15)^2=0{,}132-0{,}081=0{,}051$ kg·m². Sale menor que $I_P$, como debe: el eje por el cm da el mínimo.</li></ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 9.9, p. 289">U p.289</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 320 200" width="100%" role="img" aria-label="Parábola del momento de inercia de una varilla en función de la distancia del eje al centro de masa">
+  <defs><marker id="mapp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbpp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmpp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgpp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mppp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfpp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="52" y1="164" x2="310" y2="164"/>
+  <line class="ax" x1="52" y1="164" x2="52" y2="13"/>
+  <text x="305" y="192" class="sm" text-anchor="end">d / L</text>
+  <text x="58" y="20" class="sm">I / (M L²)</text>
+  <line x1="52.0" y1="164" x2="52.0" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="52.0" y="180" class="sm" text-anchor="middle">0</text>
+  <line x1="172.5" y1="164" x2="172.5" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="172.5" y="180" class="sm" text-anchor="middle">1/2</text>
+  <line x1="293.0" y1="164" x2="293.0" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="293.0" y="180" class="sm" text-anchor="middle">1</text>
+  <line x1="48" y1="154.3" x2="52" y2="154.3" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="45" y="158.3" class="sm" text-anchor="end">1/12</text>
+  <line x1="48" y1="125.1" x2="52" y2="125.1" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="45" y="129.1" class="sm" text-anchor="end">1/3</text>
+  <line x1="48" y1="47.2" x2="52" y2="47.2" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="45" y="51.2" class="sm" text-anchor="end">1</text>
+  <path d="M 52.0 154.3 L 55.0 154.2 L 58.0 154.2 L 61.0 154.1 L 64.0 154.0 L 67.1 153.8 L 70.1 153.6 L 73.1 153.4 L 76.1 153.1 L 79.1 152.8 L 82.1 152.4 L 85.1 152.1 L 88.1 151.6 L 91.2 151.2 L 94.2 150.7 L 97.2 150.2 L 100.2 149.6 L 103.2 149.0 L 106.2 148.4 L 109.2 147.7 L 112.2 147.0 L 115.2 146.2 L 118.3 145.4 L 121.3 144.6 L 124.3 143.8 L 127.3 142.9 L 130.3 141.9 L 133.3 141.0 L 136.3 140.0 L 139.3 138.9 L 142.4 137.8 L 145.4 136.7 L 148.4 135.6 L 151.4 134.4 L 154.4 133.2 L 157.4 131.9 L 160.4 130.6 L 163.4 129.3 L 166.5 127.9 L 169.5 126.5 L 172.5 125.1 L 175.5 123.6 L 178.5 122.1 L 181.5 120.5 L 184.5 118.9 L 187.5 117.3 L 190.5 115.6 L 193.6 114.0 L 196.6 112.2 L 199.6 110.4 L 202.6 108.6 L 205.6 106.8 L 208.6 104.9 L 211.6 103.0 L 214.6 101.0 L 217.7 99.1 L 220.7 97.0 L 223.7 95.0 L 226.7 92.9 L 229.7 90.7 L 232.7 88.6 L 235.7 86.4 L 238.7 84.1 L 241.8 81.8 L 244.8 79.5 L 247.8 77.2 L 250.8 74.8 L 253.8 72.3 L 256.8 69.9 L 259.8 67.4 L 262.8 64.8 L 265.8 62.3 L 268.9 59.7 L 271.9 57.0 L 274.9 54.3 L 277.9 51.6 L 280.9 48.9 L 283.9 46.1 L 286.9 43.2 L 289.9 40.4 L 293.0 37.5" fill="none" stroke="var(--acc)" stroke-width="3"/>
+  <line x1="52.0" y1="125.1" x2="172.5" y2="125.1" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="172.5" y1="125.1" x2="172.5" y2="164.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="52.0" cy="154.3" r="3.5" fill="var(--fg)"/>
+  <circle cx="172.5" cy="125.1" r="4" fill="var(--A)"/>
+  <text x="59.2" y="140.6" class="sm" style="fill:var(--fg)">I<tspan dy="3" font-size="9">cm</tspan><tspan dy="-3"> = ML²/12</tspan></text>
+  <text x="61.6" y="103.3" class="sm">extremo (d = L/2):</text>
+  <text x="61.6" y="117.3" class="sm bd" style="fill:var(--A)">I = ML²/3</text>
+  <text x="201.4" y="131.3" class="sm bd">I<tspan dy="3" font-size="9">P</tspan><tspan dy="-3"> = I</tspan><tspan dy="3" font-size="9">cm</tspan><tspan dy="-3"> + M d²</tspan></text>
+</svg>
+<figcaption>Varilla uniforme: $I_P/(ML^2)=\tfrac1{12}+(d/L)^2$. El mínimo está en el centro de masa; en el extremo ($d=L/2$) vale $\tfrac1{12}+\tfrac14=\tfrac13$, el valor de la tabla 9.2b. <span class="src" data-l="P" data-ref="Diagrama propio de U §9.5, p. 288 (ec. 9.19)">P</span></figcaption>
+</figure>
+
+<figure class="interactivo" data-escena="ejes-paralelos" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: momento de inercia de un cuerpo uniforme respecto a un eje paralelo desplazado una distancia d del centro de masa">
+  <img class="int-static" src="../assets/img/int_ejes-paralelos.png" alt="Interactivo: momento de inercia de un cuerpo uniforme respecto a un eje paralelo desplazado una distancia d del centro de masa">
+  <figcaption><b>Pruébalo tú:</b> elige un cuerpo de la tabla 9.2 y desplaza el eje (círculo con punto) una distancia $d$ del centro de masa. A la derecha, $I_P$ dibuja una parábola de mínimo en $d=0$; el tramo rojo es $Md^2$. Cambia la masa o el tamaño y verás que todo escala igual: lo que decide la forma es el coeficiente $c$ de $I_{cm}=cMs^2$. Los valores iniciales (varilla, $M=4$ kg, $L=2$ m, eje a $d=L/2$, es decir, en el extremo) dan $I_P=1{,}333+4=5{,}333=\tfrac13ML^2$: el valor de la tabla 9.2b. <span class="src" data-l="P" data-ref="Interactivo propio de U §9.5, ec. 9.19 y tabla 9.2">P</span></figcaption>
+</figure>
+
+<h2 id="s6"><span class="n">6</span>Cálculos de momento de inercia <span class="src" data-l="U" data-ref="U §9.6, pp. 289-291">U p.289</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Si el cuerpo es continuo (un cilindro, una esfera) no hay masas puntuales que sumar: se parte el cuerpo en trocitos tan pequeños que cada uno está a una sola distancia del eje, y la suma se convierte en integral. La clave es elegir <i>trocitos de forma adecuada</i> para que todos sus puntos estén casi a la misma distancia $r$ del eje (capas cilíndricas, discos, anillos, tiras).</p>
+  <span class="src" data-l="U" data-ref="U §9.6, p. 289">U p.289</span></div>
+<div class="box def"><span class="h">Momento de inercia por integración</span>
+  <p>$$I=\int r^2\,dm\qquad\text{(ec. 9.20)}\qquad\text{y, con densidad uniforme,}\qquad I=\rho\int r^2\,dV\qquad\text{(ec. 9.21)}$$
+  Si la densidad no es uniforme, se escribe $dm$ en función de la coordenada (p. ej. $dm=\lambda(x)\,dx$, con $\lambda(x)$ la densidad lineal de masa en kg/m) y no se saca $\rho$ de la integral. Para poder dar el resultado en función de $M$ hay que calcular también $M=\int dm$.</p>
+  <span class="src" data-l="U" data-ref="U §9.6, ecs. (9.20)-(9.21), p. 290">U p.290</span></div>
+<div class="box ex"><span class="h">Ejemplo resuelto: cilindro hueco o sólido, eje de simetría</span>
+  <p>Cilindro de longitud $L$, radios interior $R_1$ y exterior $R_2$, densidad $\rho$. Calcula $I$ respecto a su eje.</p>
+  <ol class="steps">
+    <li><b>Elemento.</b> Capa cilíndrica de radio $r$ y espesor $dr$: volumen $dV=2\pi rL\,dr$, masa $dm=\rho\,2\pi L\,r\,dr$, todos sus puntos a distancia $r$.</li>
+    <li><b>Integral.</b> $I=\int r^2dm=2\pi\rho L\int_{R_1}^{R_2}r^3dr=\tfrac12\pi\rho L(R_2^4-R_1^4)$.</li>
+    <li><b>Masa.</b> $M=\rho\pi L(R_2^2-R_1^2)$. Como $R_2^4-R_1^4=(R_2^2-R_1^2)(R_2^2+R_1^2)$: $I=\tfrac12M(R_1^2+R_2^2)$. Con $R_1=0$ sale el cilindro sólido $\tfrac12MR^2$; con $R_1\to R_2$, el cilindro de pared delgada $MR^2$.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 9.10, pp. 290-291">U p.290-291</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 200" width="100%" role="img" aria-label="Vista frontal de un cilindro hueco con una capa delgada de radio r">
+  <defs><marker id="maci" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbci" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmci" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgci" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpci" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfci" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="100" cy="98" r="78" fill="var(--acc)" fill-opacity="0.1" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="100" cy="98" r="38" fill="var(--bg)" stroke="var(--fg)" stroke-width="1.5"/>
+  <circle cx="100" cy="98" r="56" fill="none" stroke="var(--A)" stroke-width="9" stroke-opacity="0.55"/>
+  <circle cx="100" cy="98" r="2.5" fill="var(--fg)"/>
+  <line x1="100" y1="98" x2="67.4" y2="78.4" stroke="var(--mut)" stroke-width="1.5" fill="none" marker-end="url(#mmci)"/>
+  <line x1="100" y1="98" x2="43.4" y2="151.6" stroke="var(--mut)" stroke-width="1.5" fill="none" marker-end="url(#mmci)"/>
+  <line x1="100" y1="98" x2="134.8" y2="54.1" stroke="var(--A)" stroke-width="2"/>
+  <text x="76.7" y="92.3" class="sm bd" text-anchor="end">R<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"></tspan></text>
+  <text x="80" y="154" class="sm bd" text-anchor="end">R<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"></tspan></text>
+  <text x="126.3" y="73.5" class="sm bd" style="fill:var(--A)">r</text>
+  <text x="204" y="40" class="sm">Capa de radio r</text>
+  <text x="204" y="55" class="sm">y espesor dr</text>
+  <text x="204" y="85" class="sm bd">dV = 2πr L dr</text>
+  <text x="204" y="103" class="sm bd">dm = ρ 2πL r dr</text>
+  <text x="204" y="130" class="sm">I = ∫ r² dm</text>
+  <text x="204" y="148" class="sm">= 2πρL ∫ r³ dr</text>
+  <text x="204" y="170" class="sm bd">= ½ M (R<tspan dy="3" font-size="9">1</tspan><tspan dy="-3">² + R</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3">²)</tspan></text>
+  <text x="8" y="194" class="sm" style="fill:var(--mut)">L = longitud (⊥ a la hoja)</text>
+</svg>
+<figcaption>Cilindro hueco (ejemplo 9.10 de U): se corta en capas delgadas de radio $r$ y espesor $dr$, todas a la misma distancia del eje, de modo que $r^2$ puede salir de cada capa como factor. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 9.10 de U, pp. 290-291">P</span></figcaption>
+</figure>
+
+<div class="box ex"><span class="h">Ejemplo resuelto: esfera sólida uniforme</span>
+  <p>Esfera de radio $R$ y densidad $\rho$; eje por el centro.</p>
+  <ol class="steps">
+    <li><b>Elemento.</b> Disco delgado perpendicular al eje $x$, a distancia $x$ del centro, de espesor $dx$ y radio $r^2=R^2-x^2$: $dm=\rho\pi(R^2-x^2)\,dx$.</li>
+    <li><b>Momento del disco</b> (cilindro sólido de la tabla): $dI=\tfrac12r^2\,dm=\tfrac12\pi\rho(R^2-x^2)^2dx$.</li>
+    <li><b>Suma.</b> $I=\tfrac12\pi\rho\int_{-R}^{R}(R^2-x^2)^2dx=\tfrac12\pi\rho\cdot\tfrac{16}{15}R^5=\tfrac{8}{15}\pi\rho R^5$.</li>
+    <li>Con $M=\tfrac43\pi\rho R^3$: $I=\tfrac25MR^2$.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 9.11, p. 291">U p.291</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 360 200" width="100%" role="img" aria-label="Esfera cortada en discos delgados perpendiculares al eje x">
+  <defs><marker id="maes" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbes" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmes" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mges" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpes" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfes" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="100" cy="100" r="74" fill="var(--acc)" fill-opacity="0.1" stroke="var(--acc)" stroke-width="1.5"/>
+  <line class="ax" x1="12" y1="100" x2="188" y2="100"/>
+  <text x="186" y="116" class="sm bd" text-anchor="end">x</text>
+  <rect x="128" y="31.50182484182517" width="7" height="136.99635031634966" rx="2" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.5"/>
+  <circle cx="100" cy="100" r="2.5" fill="var(--fg)"/>
+  <line x1="100" y1="114" x2="131" y2="114" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="100" y1="100" x2="50.7" y2="44.8" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="72" y="62" class="sm bd" text-anchor="end">R</text>
+  <line x1="131" y1="31.5" x2="131" y2="100" stroke="var(--A)" stroke-width="1.8"/>
+  <text x="137" y="65.8" class="sm bd" style="fill:var(--A)">r</text>
+  <text x="114.0" y="128" class="sm" text-anchor="middle">x</text>
+  <text x="204" y="40" class="sm">Disco de espesor dx</text>
+  <text x="204" y="55" class="sm">a distancia x</text>
+  <text x="204" y="85" class="sm bd">r² = R² − x²</text>
+  <text x="204" y="103" class="sm bd">dm = ρ π (R² − x²) dx</text>
+  <text x="204" y="130" class="sm">dI = ½ r² dm</text>
+  <text x="204" y="148" class="sm">½ρπ ∫ (R²−x²)² dx</text>
+  <text x="204" y="170" class="sm bd">= (2/5) M R²</text>
+</svg>
+<figcaption>Esfera uniforme (ejemplo 9.11 de U): se corta en discos de espesor $dx$ y radio $r=\sqrt{R^2-x^2}$; cada disco aporta $\tfrac12 r^2\,dm$ y se suma de $x=-R$ a $x=R$. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 9.11 de U, p. 291">P</span></figcaption>
+</figure>
+
+
+<h2 id="ejercicios"><span class="n">7</span>Ejercicios resueltos</h2>
+<p>Primero la <b>cuestión de examen real</b> (X1); después los <b>diez bloques del solucionario</b> (E1–E10, doce problemas del libro) de más sencillo a más elaborado, y al final el problema práctico del capítulo (E11). No hay ningún problema de examen de 3 puntos de este tema (los de rotación que han caído son de dinámica, tema 10). Cada ejercicio termina con una <b>receta</b> y, si procede, el error típico. Intenta resolver tú antes de abrir la solución. Todos siguen la receta maestra de la sección 0.</p>
+
+<details class="sol" id="x1"><summary>X1 — Volante con $\omega$ constante y carro con ruedas que baja una pendiente (cuestiones a y b) <span class="src" data-l="X" data-ref="Examen Febrero 2025 (2ª semana) P-3 Opción A (a)(b)">X</span> <span class="src" data-l="U" data-ref="U §9.3, p. 281 y §9.4, p. 286; Tabla 9.2">U p.281, 286</span></summary>
+  <p class="enun"><b>Cuestión (a).</b> Se pretende fabricar un carro de cuatro ruedas destinado a circular en una carrera con una pendiente cuesta abajo, con el objetivo de que circule lo más rápido posible. Considerando invariable el coeficiente de fricción entre las ruedas y la carretera, y que la masa total del carro no se verá influenciada por el tamaño de las ruedas, desarrolle de forma razonada por qué opción optaría en cada caso: (1) ruedas grandes y pesadas o ruedas pequeñas y ligeras; (2) ruedas sólidas o ruedas con radios.<br><b>Cuestión (b).</b> Un volante gira con velocidad angular constante. Un punto situado en el borde, ¿tiene aceleración tangencial? ¿Y aceleración radial? ¿Tienen estas aceleraciones una magnitud constante? ¿Y una dirección constante? Justifique las respuestas. (Es una de las dos cuestiones que acompañan al desarrollo del tema de teoría de esa pregunta, de 4 puntos en total.)</p>
+  <p><b>Se resuelve primero (b), que es cinemática de rotación pura.</b></p>
+  <ol class="steps">
+    <li><b>Dato clave.</b> «$\omega$ constante» significa $\alpha_z=d\omega_z/dt=0$. Sea $R$ el radio del volante.</li>
+    <li><b>Aceleración tangencial.</b> Mide el cambio de la <i>rapidez</i>: $a_{tan}=R\alpha=0$. <b>No hay</b> aceleración tangencial: la rapidez $v=R\omega$ no cambia.</li>
+    <li><b>Aceleración radial.</b> Mide el cambio de <i>dirección</i> de la velocidad: $a_{rad}=\omega^2R=v^2/R\neq0$. <b>Sí hay</b> aceleración radial (centrípeta); sin ella el punto seguiría en línea recta.</li>
+    <li><b>Magnitudes.</b> $a_{tan}=0$ es constante; $a_{rad}=\omega^2R$ es constante porque $\omega$ y $R$ lo son.</li>
+    <li><b>Direcciones.</b> $\vec a_{rad}$ apunta siempre hacia el eje; al girar el punto, «hacia el eje» cambia de dirección (da una vuelta completa por revolución). <b>La dirección de $\vec a_{rad}$ no es constante</b> (y de la tangencial, al ser nula, no hay dirección que discutir).</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 178" width="100%" role="img" aria-label="Volante con velocidad angular constante y la aceleración radial de cuatro puntos del borde apuntando al centro">
+  <defs><marker id="maxb" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbxb" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmxb" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgxb" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpxb" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfxb" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="100" cy="96" r="58" fill="var(--acc)" fill-opacity="0.08" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="100" cy="96" r="3" fill="var(--fg)"/>
+  <circle cx="158.0" cy="96.0" r="3.5" fill="var(--fg)"/>
+  <line x1="158.0" y1="96.0" x2="130.0" y2="96.0" stroke="var(--A)" stroke-width="2.5" fill="none" marker-end="url(#mbxb)"/>
+  <circle cx="100.0" cy="38.0" r="3.5" fill="var(--fg)"/>
+  <line x1="100.0" y1="38.0" x2="100.0" y2="66.0" stroke="var(--A)" stroke-width="2.5" fill="none" marker-end="url(#mbxb)"/>
+  <circle cx="42.0" cy="96.0" r="3.5" fill="var(--fg)"/>
+  <line x1="42.0" y1="96.0" x2="70.0" y2="96.0" stroke="var(--A)" stroke-width="2.5" fill="none" marker-end="url(#mbxb)"/>
+  <circle cx="100.0" cy="154.0" r="3.5" fill="var(--fg)"/>
+  <line x1="100.0" y1="154.0" x2="100.0" y2="126.0" stroke="var(--A)" stroke-width="2.5" fill="none" marker-end="url(#mbxb)"/>
+  <path d="M 120.3 87.4 A 22 22 0 0 0 87.1 78.2" fill="none" stroke="var(--fg)" stroke-width="1.3"/>
+  <line x1="90.8" y1="76.0" x2="86.2" y2="78.9" stroke="var(--fg)" stroke-width="1.5" fill="none" marker-end="url(#mfxb)"/>
+  <text x="76" y="82" class="sm bd" text-anchor="end">ω</text>
+  <text x="196" y="56" class="sm bd">ω constante:</text>
+  <text x="196" y="76" class="sm">a<tspan dy="3" font-size="9">tan</tspan><tspan dy="-3"> = Rα = 0</tspan></text>
+  <text x="196" y="98" class="sm">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"> = ω² R ≠ 0</tspan></text>
+  <text x="196" y="124" class="sm" style="fill:var(--X)">|a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3">| constante</tspan></text>
+  <text x="196" y="142" class="sm" style="fill:var(--E)">dirección: gira con</text>
+  <text x="196" y="157" class="sm" style="fill:var(--E)">el punto (siempre al eje)</text>
+</svg>
+<figcaption>En un volante con $\omega$ constante cada punto del borde tiene una aceleración de módulo $\omega^2R$ siempre dirigida hacia el eje: su módulo es constante, su dirección no. <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2025 (2ª semana) P-3 Opción A (b)">P</span></figcaption>
+</figure>
+
+  <p><b>Resultado (b):</b> $a_{tan}=0$; $a_{rad}=\omega^2R\neq0$, de módulo constante y dirección variable (siempre hacia el eje). Es un movimiento circular uniforme: velocidad de módulo constante, pero <i>acelerado</i>.</p>
+  <p><b>Ahora (a).</b></p>
+  <ol class="steps">
+    <li><b>Qué decide la rapidez.</b> Si las ruedas ruedan sin deslizar, el punto de contacto está instantáneamente en reposo y el rozamiento estático no realiza trabajo: la energía mecánica se conserva. Al bajar una altura $h$, $Mgh$ se reparte entre la traslación del carro y la rotación de las ruedas (energía de rodadura $K=\tfrac12Mv_{cm}^2+\tfrac12I\omega^2$, que verás en el tema 10).</li>
+    <li><b>Planteamiento.</b> Carro de masa total $M$ (incluidas las ruedas), cuatro ruedas de masa $m_r$ y radio $r$, cada una con $I=c\,m_rr^2$ (tabla 9.2: $c=\tfrac12$ para un disco macizo; $c\approx1$ si la masa está en la llanta). Rodar sin deslizar: $\omega=v/r$.</li>
+    <li><b>Energía cinética.</b> $K=\tfrac12Mv^2+4\cdot\tfrac12(c\,m_rr^2)(v/r)^2=\tfrac12(M+4c\,m_r)v^2$. <b>El radio $r$ se simplifica.</b></li>
+    <li><b>Rapidez.</b> $Mgh=\tfrac12(M+4c\,m_r)v^2\ \Rightarrow\ v=\sqrt{\dfrac{2gh}{1+4c\,m_r/M}}$. Gana el carro con menor $c\,m_r$.</li>
+    <li><b>Caso (1).</b> Con $M$ fija, el tamaño no cuenta (se simplificó $r$) pero sí la masa de las ruedas: <b>ruedas pequeñas y ligeras</b> (lo que importa es «ligeras»).</li>
+    <li><b>Caso (2).</b> Con la misma masa de rueda, la de radios tiene la masa en la llanta ($c\to1$, como un aro) y la maciza tiene $c=\tfrac12$ (disco): <b>ruedas sólidas</b>, porque guardan menos energía en girar. (Si la de radios fuese mucho más ligera, habría que comparar el producto $c\,m_r$.)</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 190" width="100%" role="img" aria-label="Una rueda maciza y una rueda de radios con la misma masa y el mismo radio">
+  <defs><marker id="maxa" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbxa" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmxa" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgxa" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpxa" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfxa" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="62" cy="70" r="44" fill="var(--acc)" fill-opacity="0.2" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="62" cy="70" r="3" fill="var(--fg)"/>
+  <text x="62" y="134" class="sm" text-anchor="middle">maciza: c = ½</text>
+  <text x="62" y="152" class="sm bd" text-anchor="middle">I = ½mr²</text>
+  <circle cx="232" cy="70" r="44" fill="var(--acc)" fill-opacity="0.0" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="232" cy="70" r="39" fill="var(--acc)" fill-opacity="0.0" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="232" cy="70" r="3" fill="var(--fg)"/>
+  <line x1="232" y1="70" x2="271.0" y2="70.0" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="232" y1="70" x2="251.5" y2="36.2" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="232" y1="70" x2="212.5" y2="36.2" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="232" y1="70" x2="193.0" y2="70.0" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="232" y1="70" x2="212.5" y2="103.8" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="232" y1="70" x2="251.5" y2="103.8" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="232" y="134" class="sm" text-anchor="middle">de radios: c ≈ 1</text>
+  <text x="232" y="152" class="sm bd" text-anchor="middle">I ≈ mr²</text>
+  <text x="8" y="176" class="sm" style="fill:var(--mut)">Misma masa m<tspan dy="3" font-size="9">r</tspan><tspan dy="-3"> y mismo radio r en las dos</tspan></text>
+</svg>
+<figcaption>Con la misma masa, la rueda de radios tiene su masa más lejos del eje (mayor $I$) y a igual altura bajada gasta más energía en girar, así que el carro rueda más despacio. El radio $r$ se simplifica en $K=\tfrac12(M+4c\,m_r)v^2$. <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2025 (2ª semana) P-3 Opción A (a)">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> (b) separa la aceleración de un punto en $a_{tan}=r\alpha$ (cambio de rapidez) y $a_{rad}=\omega^2r$ (cambio de dirección); con $\omega$ constante solo queda la radial, que gira con el punto. (a) Para «¿qué rueda o cuerpo baja más rápido?» escribe $K=\tfrac12Mv^2+\tfrac12I\omega^2$ con $\omega=v/r$, pon $I=c\,mr^2$ y mira qué parámetros sobreviven: gana el que tenga menor $c\,m$.</div>
+  <p><b>Error típico.</b> Decir que «con velocidad angular constante no hay aceleración» (se confunde rapidez constante con velocidad constante); en (a), elegir ruedas grandes «porque recorren más por vuelta» (el radio se simplifica) o pensar que el rozamiento frena al carro (en rodadura sin deslizar no hace trabajo).</p>
+</details>
+
+<details class="sol" id="e1"><summary>E1 — Problema 9.11: aspas de una licuadora <span class="src" data-l="E" data-ref="Solucionario 9-4, Prob. 9.11">E</span> <span class="src" data-l="U" data-ref="U §9.2, ecs. 9.7 y 9.11, pp. 278-279; Prob. 9.11, p. 295">U p.278-279</span></summary>
+  <p class="enun">Las aspas de una licuadora giran con aceleración angular constante de 1,50 rad/s². a) ¿Cuánto tardan en alcanzar una velocidad angular de 36,0 rad/s partiendo del reposo? b) ¿Cuántas revoluciones giran en ese tiempo?</p>
+  <ol class="steps">
+    <li><b>Tipo de movimiento.</b> $\alpha_z$ constante: valen las ecuaciones 9.7-9.12. Datos: $\omega_{0z}=0$, $\omega_z=36{,}0$ rad/s, $\alpha_z=1{,}50$ rad/s².</li>
+    <li><b>a) Tiempo.</b> La ecuación con $\omega$, $\alpha$ y $t$ es la 9.7: $t=\dfrac{36{,}0-0}{1{,}50}=24{,}0$ s.</li>
+    <li><b>b) Ángulo.</b> Con 9.11: $\theta-\theta_0=\tfrac12(1{,}50)(24{,}0)^2=432$ rad.</li>
+    <li><b>Revoluciones.</b> $432/2\pi=68{,}8$ rev.</li>
+    <li><b>Comprobación</b> con 9.10: $\tfrac12(0+36{,}0)(24{,}0)=432$ rad. ✓</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 320 200" width="100%" role="img" aria-label="Gráfica de la velocidad angular de las aspas, recta de 0 a 36 radianes por segundo en 24 segundos, con el área triangular de 432 radianes">
+  <defs><marker id="mae1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="48" y1="164" x2="310" y2="164"/>
+  <line class="ax" x1="48" y1="164" x2="48" y2="13"/>
+  <text x="305" y="192" class="sm" text-anchor="end">t (s)</text>
+  <text x="54" y="20" class="sm">ω<tspan dy="3" font-size="9">z</tspan><tspan dy="-3"> (rad/s)</tspan></text>
+  <line x1="48.0" y1="164" x2="48.0" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="48.0" y="180" class="sm" text-anchor="middle">0</text>
+  <line x1="166.6" y1="164" x2="166.6" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="166.6" y="180" class="sm" text-anchor="middle">12</text>
+  <line x1="285.2" y1="164" x2="285.2" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="285.2" y="180" class="sm" text-anchor="middle">24</text>
+  <line x1="44" y1="32.6" x2="48" y2="32.6" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="36.6" class="sm" text-anchor="end">36</text>
+  <path d="M 48.0 164.0 L 285.2 32.6 L 285.2 164.0 Z" fill="var(--X)" fill-opacity="0.2" stroke="none"/>
+  <path d="M 48.0 164.0 L 285.2 32.6" fill="none" stroke="var(--acc)" stroke-width="3"/>
+  <line x1="285.2" y1="32.6" x2="285.2" y2="164.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="48.0" y1="32.6" x2="285.2" y2="32.6" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="285.2" cy="32.6" r="3.5" fill="var(--fg)"/>
+  <text x="57.9" y="46.6" class="sm">36,0 rad/s</text>
+  <text x="186.4" y="127.5" class="sm bd" text-anchor="middle">área = θ − θ₀</text>
+  <text x="186.4" y="142.5" class="sm" text-anchor="middle">= ½ · 24 · 36 = 432 rad</text>
+  <text x="57.9" y="76.4" class="sm" style="fill:var(--acc)">α = 1,50 rad/s²</text>
+</svg>
+<figcaption>Problema 9.11: $\omega_z(t)$ es una recta de pendiente $1{,}50$ rad/s²; llega a 36,0 rad/s en 24,0 s y el área del triángulo es el ángulo girado, 432 rad = 68,8 rev. <span class="src" data-l="P" data-ref="Diagrama propio del problema 9.11 de U">P</span></figcaption>
+</figure>
+
+  <p><b>Resultado:</b> 24,0 s; 68,8 rev.</p>
+  <div class="recipe"><b>Receta:</b> rotación con $\alpha$ constante = MRUA con $x\to\theta$, $v\to\omega$, $a\to\alpha$. Lista datos, elige la ecuación que contiene la incógnita y no contiene lo que no sabes, y comprueba con otra.</div>
+  <p><b>Error típico.</b> Dar 432 como «revoluciones» (son radianes) o dividir entre 360 en vez de entre $2\pi$.</p>
+</details>
+
+<details class="sol" id="e2"><summary>E2 — Problema 9.8: rueda cuya velocidad angular cambia de signo <span class="src" data-l="E" data-ref="Solucionario 9-3, Prob. 9.8">E</span> <span class="src" data-l="U" data-ref="U §9.1, p. 277 y §9.2, pp. 278-279; Prob. 9.8, p. 295">U p.277-279</span></summary>
+  <p class="enun">Una rueda gira alrededor del eje $z$. Su velocidad angular $\omega_z$ es $-6{,}00$ rad/s en $t=0$, aumenta linealmente con el tiempo y vale $+4{,}00$ rad/s en $t=7{,}00$ s (el giro antihorario es positivo). a) ¿La aceleración angular es positiva o negativa? b) ¿Durante qué intervalo aumenta la rapidez de la rueda y durante cuál disminuye? c) ¿Desplazamiento angular en $t=7{,}00$ s?</p>
+  <ol class="steps">
+    <li>«Aumenta linealmente» $\Rightarrow$ $\alpha_z$ constante (es la pendiente de la recta $\omega_z(t)$).</li>
+    <li><b>a)</b> $\alpha_z=\dfrac{4{,}00-(-6{,}00)}{7{,}00}=\dfrac{10}{7}=1{,}43$ rad/s²: <b>positiva</b>.</li>
+    <li><b>Ley.</b> $\omega_z=-6{,}00+1{,}429\,t$. Se anula en $t=6{,}00/1{,}429=4{,}20$ s.</li>
+    <li><b>b)</b> La rapidez es $|\omega_z|$. Si $\omega_z$ y $\alpha_z$ tienen signos opuestos frena; si el mismo, se acelera. De 0 a 4,20 s: $\omega_z<0$, $\alpha_z>0$ $\Rightarrow$ <b>disminuye</b> (de 6 a 0). De 4,20 s a 7,00 s: ambos positivos $\Rightarrow$ <b>aumenta</b> (de 0 a 4).</li>
+    <li><b>c)</b> Con $\alpha$ constante la velocidad media es la semisuma: $\omega_{med}=\tfrac12(-6+4)=-1{,}00$ rad/s y $\Delta\theta=\omega_{med}t=-7{,}00$ rad (ec. 9.10).</li>
+    <li><b>Interpretación.</b> Gira primero en sentido horario hasta $\theta=-12{,}6$ rad (en 4,20 s) y luego vuelve 5,6 rad en sentido antihorario: neto $-7{,}00$ rad. El desplazamiento no es el ángulo total recorrido (18,2 rad).</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 320 200" width="100%" role="img" aria-label="Gráfica de la velocidad angular de la rueda, recta de menos 6 a 4 radianes por segundo que cruza cero en 4,20 segundos">
+  <defs><marker id="mae2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="48" y1="164" x2="310" y2="164"/>
+  <line class="ax" x1="48" y1="164" x2="48" y2="13"/>
+  <line x1="48" y1="78.8" x2="310" y2="78.8" stroke="var(--mut)" stroke-width="1.1" stroke-dasharray="4 3"/>
+  <line x1="44" y1="78.8" x2="48" y2="78.8" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="82.8" class="sm" text-anchor="end">0</text>
+  <text x="305" y="192" class="sm" text-anchor="end">t (s)</text>
+  <text x="54" y="20" class="sm">ω<tspan dy="3" font-size="9">z</tspan><tspan dy="-3"> (rad/s)</tspan></text>
+  <line x1="48.0" y1="164" x2="48.0" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="48.0" y="180" class="sm" text-anchor="middle">0</text>
+  <line x1="117.5" y1="164" x2="117.5" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="117.5" y="180" class="sm" text-anchor="middle">2</text>
+  <line x1="193.9" y1="164" x2="193.9" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="193.9" y="180" class="sm" text-anchor="middle">4,20</text>
+  <line x1="291.1" y1="164" x2="291.1" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="291.1" y="180" class="sm" text-anchor="middle">7</text>
+  <line x1="44" y1="30.2" x2="48" y2="30.2" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="34.2" class="sm" text-anchor="end">4</text>
+  <line x1="44" y1="151.8" x2="48" y2="151.8" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="155.8" class="sm" text-anchor="end">−6</text>
+  <path d="M 48.0 78.8 L 48.0 151.8 L 193.9 78.8 Z" fill="var(--A)" fill-opacity="0.22" stroke="none"/>
+  <path d="M 193.9 78.8 L 291.1 30.2 L 291.1 78.8 Z" fill="var(--X)" fill-opacity="0.22" stroke="none"/>
+  <path d="M 48.0 151.8 L 291.1 30.2" fill="none" stroke="var(--acc)" stroke-width="3"/>
+  <circle cx="193.9" cy="78.8" r="3.5" fill="var(--fg)"/>
+  <text x="80" y="158" class="sm" style="fill:var(--A)">frena: −12,6 rad</text>
+  <text x="207.8" y="103.2" class="sm" style="fill:var(--X)">acelera: +5,6 rad</text>
+  <text x="56.7" y="42.3" class="sm bd">α<tspan dy="3" font-size="9">z</tspan><tspan dy="-3"> = 10/7 = 1,43 rad/s²</tspan></text>
+  <text x="56.7" y="59.4" class="sm">neto: −7,00 rad</text>
+</svg>
+<figcaption>Problema 9.8: la rueda frena durante 4,20 s (área negativa, −12,6 rad) y luego acelera hasta 7,00 s (área positiva, +5,6 rad). El desplazamiento angular neto es la suma con signo, −7,00 rad. <span class="src" data-l="P" data-ref="Diagrama propio del problema 9.8 de U">P</span></figcaption>
+</figure>
+
+  <p><b>Resultado:</b> a) positiva, 1,43 rad/s²; b) frena de 0 a 4,20 s y acelera de 4,20 a 7,00 s; c) $-7{,}00$ rad.</p>
+  <div class="recipe"><b>Receta:</b> para saber si un giro se acelera o frena compara los signos de $\omega_z$ y $\alpha_z$ (no mires solo $\alpha_z$). El instante de parada sale de $\omega_z(t)=0$. El desplazamiento es el área con signo bajo $\omega_z(t)$.</div>
+  <p><b>Error típico.</b> Decir que «como $\alpha>0$ la rueda siempre acelera», o calcular el ángulo con valores absolutos (sumar 6 y 4).</p>
+</details>
+
+<details class="sol" id="e3"><summary>E3 — Problema 9.58: rodillo de una imprenta, $\theta(t)=\gamma t^2-\beta t^3$ <span class="src" data-l="E" data-ref="Solucionario 9-17, Prob. 9.58">E</span> <span class="src" data-l="U" data-ref="U §9.1, ecs. 9.3 y 9.5, pp. 275-277; Prob. 9.58, p. 298">U p.275-277</span></summary>
+  <p class="enun">El rodillo de una imprenta gira un ángulo $\theta(t)=\gamma t^2-\beta t^3$, con $\gamma=3{,}20$ rad/s² y $\beta=0{,}500$ rad/s³. a) Calcule la velocidad angular en función del tiempo. b) Calcule la aceleración angular en función del tiempo. c) ¿Cuál es la máxima velocidad angular positiva y en qué instante ocurre?</p>
+  <ol class="steps">
+    <li><b>Aquí $\alpha$ NO es constante</b> ($\theta$ tiene un término en $t^3$): no valen 9.7-9.12; hay que derivar.</li>
+    <li><b>a)</b> $\omega_z=\dfrac{d\theta}{dt}=2\gamma t-3\beta t^2=(6{,}40\ \text{rad/s}^2)\,t-(1{,}50\ \text{rad/s}^3)\,t^2$.</li>
+    <li><b>b)</b> $\alpha_z=\dfrac{d\omega_z}{dt}=2\gamma-6\beta t=6{,}40\ \text{rad/s}^2-(3{,}00\ \text{rad/s}^3)\,t$.</li>
+    <li><b>c)</b> Un máximo de $\omega_z$ está donde su derivada se anula: $\alpha_z=0\Rightarrow t^*=\dfrac{\gamma}{3\beta}=\dfrac{32}{15}=2{,}13$ s. Es máximo porque $\alpha_z$ pasa de positiva a negativa ($d\alpha_z/dt=-6\beta<0$).</li>
+    <li><b>Valor.</b> $\omega_z(t^*)=6{,}40(2{,}133)-1{,}50(2{,}133)^2=6{,}83$ rad/s.</li>
+    <li><b>Después.</b> $\omega_z$ se anula en $t=64/15=4{,}27$ s y se hace negativa, cada vez mayor en valor absoluto; por eso se pide la máxima velocidad angular <i>positiva</i> y no la máxima rapidez.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 320 200" width="100%" role="img" aria-label="Gráficas de la velocidad angular y de la aceleración angular del rodillo; la velocidad es máxima cuando la aceleración se anula">
+  <defs><marker id="mae3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="48" y1="164" x2="310" y2="164"/>
+  <line class="ax" x1="48" y1="164" x2="48" y2="11"/>
+  <line x1="48" y1="85.6" x2="310" y2="85.6" stroke="var(--mut)" stroke-width="1.1" stroke-dasharray="4 3"/>
+  <line x1="44" y1="85.6" x2="48" y2="85.6" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="89.6" class="sm" text-anchor="end">0</text>
+  <text x="305" y="192" class="sm" text-anchor="end">t (s)</text>
+  <line x1="48.0" y1="164" x2="48.0" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="48.0" y="180" class="sm" text-anchor="middle">0</text>
+  <line x1="99.4" y1="164" x2="99.4" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="99.4" y="180" class="sm" text-anchor="middle">1</text>
+  <line x1="150.8" y1="164" x2="150.8" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="150.8" y="180" class="sm" text-anchor="middle">2</text>
+  <line x1="202.2" y1="164" x2="202.2" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="202.2" y="180" class="sm" text-anchor="middle">3</text>
+  <line x1="253.6" y1="164" x2="253.6" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="253.6" y="180" class="sm" text-anchor="middle">4</text>
+  <line x1="305.0" y1="164" x2="305.0" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="305.0" y="180" class="sm" text-anchor="middle">5</text>
+  <line x1="44" y1="26.2" x2="48" y2="26.2" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="30.2" class="sm" text-anchor="end">6,83</text>
+  <line x1="44" y1="155.3" x2="48" y2="155.3" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="159.3" class="sm" text-anchor="end">−8</text>
+  <path d="M 48.0 85.6 L 51.2 82.2 L 54.4 78.9 L 57.6 75.7 L 60.9 72.5 L 64.1 69.5 L 67.3 66.6 L 70.5 63.8 L 73.7 61.1 L 76.9 58.4 L 80.1 55.9 L 83.3 53.5 L 86.5 51.2 L 89.8 49.0 L 93.0 46.9 L 96.2 44.9 L 99.4 43.0 L 102.6 41.2 L 105.8 39.5 L 109.0 37.9 L 112.2 36.4 L 115.5 35.0 L 118.7 33.7 L 121.9 32.5 L 125.1 31.5 L 128.3 30.5 L 131.5 29.6 L 134.7 28.8 L 137.9 28.1 L 141.2 27.6 L 144.4 27.1 L 147.6 26.7 L 150.8 26.4 L 154.0 26.3 L 157.2 26.2 L 160.4 26.3 L 163.7 26.4 L 166.9 26.6 L 170.1 27.0 L 173.3 27.4 L 176.5 28.0 L 179.7 28.6 L 182.9 29.4 L 186.1 30.2 L 189.4 31.2 L 192.6 32.2 L 195.8 33.4 L 199.0 34.7 L 202.2 36.0 L 205.4 37.5 L 208.6 39.1 L 211.8 40.7 L 215.1 42.5 L 218.3 44.4 L 221.5 46.3 L 224.7 48.4 L 227.9 50.6 L 231.1 52.9 L 234.3 55.3 L 237.5 57.8 L 240.8 60.3 L 244.0 63.0 L 247.2 65.8 L 250.4 68.7 L 253.6 71.7 L 256.8 74.8 L 260.0 78.0 L 263.2 81.3 L 266.4 84.7 L 269.7 88.2 L 272.9 91.8 L 276.1 95.5 L 279.3 99.4 L 282.5 103.3 L 285.7 107.3 L 288.9 111.4 L 292.1 115.6 L 295.4 120.0 L 298.6 124.4 L 301.8 128.9 L 305.0 133.5" fill="none" stroke="var(--acc)" stroke-width="3"/>
+  <path d="M 48.0 29.9 L 305.0 160.5" fill="none" stroke="var(--A)" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <line x1="157.7" y1="26.2" x2="157.7" y2="164.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="157.7" cy="26.2" r="4" fill="var(--fg)"/>
+  <circle cx="157.7" cy="85.6" r="3.5" fill="var(--A)"/>
+  <text x="53.1" y="19.5" class="sm bd" style="fill:var(--acc)">ω<tspan dy="3" font-size="9">z</tspan><tspan dy="-3"> (rad/s)</tspan></text>
+  <text x="262" y="156" class="sm bd" text-anchor="end" style="fill:var(--A)">α<tspan dy="3" font-size="9">z</tspan><tspan dy="-3"> (rad/s²)</tspan></text>
+  <text x="163.7" y="20.4" class="sm">máx. 6,83 rad/s</text>
+  <text x="152" y="118.7" class="sm" text-anchor="end">t = 2,13 s: α = 0</text>
+</svg>
+<figcaption>Problema 9.58: $\omega_z=6{,}40\,t-1{,}50\,t^2$ (continua) y $\alpha_z=6{,}40-3{,}00\,t$ (discontinua). El máximo de $\omega_z$ está donde $\alpha_z=0$: $t=2{,}13$ s, $\omega_z=6{,}83$ rad/s. <span class="src" data-l="P" data-ref="Diagrama propio del problema 9.58 de U">P</span></figcaption>
+</figure>
+
+  <p><b>Resultado:</b> a) $\omega_z=6{,}40t-1{,}50t^2$; b) $\alpha_z=6{,}40-3{,}00t$; c) 6,83 rad/s en $t=2{,}13$ s.</p>
+  <div class="recipe"><b>Receta:</b> si $\theta(t)$ no es un polinomio de grado ≤ 2, deriva: $\omega=\dot\theta$, $\alpha=\ddot\theta$. Extremos de $\omega$ $\Leftrightarrow$ $\alpha=0$.</div>
+  <p><b>Error típico.</b> Aplicar $\omega=\omega_0+\alpha t$ con un $\alpha$ «fijo» cuando $\alpha$ depende de $t$.</p>
+</details>
+
+<details class="sol" id="e4"><summary>E4 — Problema 9.25: centrifugador de «3000 g» <span class="src" data-l="E" data-ref="Solucionario 9-8, Prob. 9.25">E</span> <span class="src" data-l="U" data-ref="U §9.3, ec. 9.15, pp. 281-282; Prob. 9.25, p. 296">U p.281-282</span></summary>
+  <p class="enun">Un anuncio asegura que un centrifugador solo ocupa 0,127 m de espacio en una mesa de trabajo, pero que puede producir una aceleración radial de $3000g$ a 5000 rpm. Calcule el radio que debe tener el centrifugador. ¿Es verosímil el anuncio?</p>
+  <ol class="steps">
+    <li><b>Ley.</b> $a_{rad}=\omega^2r$ (ec. 9.15); la incógnita es $r$.</li>
+    <li><b>$\omega$ en rad/s</b> (obligatorio): $5000\ \tfrac{\text{rev}}{\text{min}}\cdot\tfrac{1\ \text{min}}{60\ \text{s}}\cdot\tfrac{2\pi\ \text{rad}}{1\ \text{rev}}=523{,}6$ rad/s.</li>
+    <li><b>Aceleración.</b> $a_{rad}=3000(9{,}8)=29\,400$ m/s².</li>
+    <li><b>Radio.</b> $r=a_{rad}/\omega^2=29\,400/523{,}6^2=0{,}107$ m.</li>
+    <li><b>Interpretación.</b> El aparato tendría diámetro $0{,}214$ m, mayor que los 0,127 m anunciados: <b>el anuncio no es verosímil</b>. Al revés: con $r=0{,}0635$ m a 5000 rpm se llega a $a_{rad}=(523{,}6)^2(0{,}0635)\approx1{,}74\times10^4$ m/s² $\approx1780\,g$, muy lejos de $3000\,g$.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 200" width="100%" role="img" aria-label="Centrifugador de 0,107 metros de radio comparado con el espacio de 0,127 metros del anuncio">
+  <defs><marker id="mae4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="100" cy="98" r="40.66" fill="var(--acc)" fill-opacity="0.12" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="100" cy="98" r="24.1" fill="none" stroke="var(--A)" stroke-width="2" stroke-dasharray="5 4"/>
+  <circle cx="100" cy="98" r="3" fill="var(--fg)"/>
+  <line x1="140.7" y1="98.0" x2="108" y2="98" stroke="var(--A)" stroke-width="2.5" fill="none" marker-end="url(#mbe4)"/>
+  <line x1="100" y1="98" x2="100" y2="138.7" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="106" y="150" class="sm">r = 0,107 m</text>
+  <text x="104" y="48" class="sm" style="fill:var(--A)">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"> = ω² r</tspan></text>
+  <text x="196" y="50" class="sm bd">Hace falta ⌀ 0,214 m</text>
+  <text x="196" y="68" class="sm bd">(círculo continuo).</text>
+  <text x="196" y="96" class="sm">El anuncio dice</text>
+  <text x="196" y="112" class="sm" style="fill:var(--A)">⌀ 0,127 m (discontinuo):</text>
+  <text x="196" y="132" class="sm bd">no es verosímil</text>
+  <text x="8" y="192" class="sm" style="fill:var(--mut)">5000 rpm = 523,6 rad/s;  3000 g = 29 400 m/s²</text>
+</svg>
+<figcaption>Problema 9.25: para $3000g$ a 5000 rpm hace falta $r=0{,}107$ m (diámetro 0,214 m, círculo continuo), que no cabe en los 0,127 m anunciados (círculo discontinuo). <span class="src" data-l="P" data-ref="Diagrama propio del problema 9.25 de U">P</span></figcaption>
+</figure>
+
+  <p><b>Resultado:</b> $r=0{,}107$ m; el anuncio no es creíble.</p>
+  <div class="recipe"><b>Receta:</b> «aceleración en $g$» con rpm: (1) rpm $\to$ rad/s multiplicando por $2\pi/60$; (2) $a_{rad}=\omega^2r$; (3) compara <i>diámetro</i> (no radio) con el espacio disponible.</div>
+  <p><b>Error típico.</b> Usar $\omega=5000$ (rpm) o en rev/s (83,3) directamente: el radio sale mal por un factor $(60/2\pi)^2$ o $(2\pi)^2$.</p>
+</details>
+
+<details class="sol" id="e5"><summary>E5 — Problema 9.23: aceleraciones de un punto del borde de un volante <span class="src" data-l="E" data-ref="Solucionario 9-7, Prob. 9.23">E</span> <span class="src" data-l="U" data-ref="U §9.2, ec. 9.12, p. 279 y §9.3, ecs. 9.14-9.15, p. 281; Prob. 9.23, p. 296">U p.279-281</span></summary>
+  <p class="enun">Un volante de radio 0,300 m parte del reposo y acelera con aceleración angular constante de 0,600 rad/s². Calcule la magnitud de las aceleraciones tangencial y radial, así como de la aceleración resultante, de un punto de su borde a) al principio; b) después de girar 60,0°; c) después de girar 120,0°.</p>
+  <ol class="steps">
+    <li><b>Componentes.</b> $a_{tan}=r\alpha$ y $a_{rad}=\omega^2r$, perpendiculares: $a=\sqrt{a_{tan}^2+a_{rad}^2}$.</li>
+    <li><b>$a_{tan}$ es la misma en los tres casos</b> ($\alpha$ constante): $(0{,}300)(0{,}600)=0{,}180$ m/s².</li>
+    <li><b>$\omega$ en función del ángulo.</b> Nos dan ángulos, no tiempos: usa 9.12 (sin $t$), con $\Delta\theta$ <b>en radianes</b>: $\omega^2=2\alpha\,\Delta\theta$, luego $a_{rad}=2a_{tan}\Delta\theta$.</li>
+    <li><b>a)</b> $\omega=0$: $a_{rad}=0$, $a=0{,}180$ m/s².</li>
+    <li><b>b)</b> $\Delta\theta=\pi/3=1{,}047$ rad: $\omega=\sqrt{2(0{,}600)(1{,}047)}=1{,}121$ rad/s; $a_{rad}=(0{,}300)(1{,}121)^2=0{,}377$ m/s²; $a=\sqrt{0{,}180^2+0{,}377^2}=0{,}418$ m/s².</li>
+    <li><b>c)</b> $\Delta\theta=2\pi/3=2{,}094$ rad: $\omega=1{,}585$ rad/s; $a_{rad}=0{,}754$ m/s² (el doble que en b, porque $a_{rad}\propto\Delta\theta$); $a=\sqrt{0{,}180^2+0{,}754^2}=0{,}775$ m/s².</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 198" width="100%" role="img" aria-label="Tres posiciones de un punto del borde con sus aceleraciones tangencial, radial y total">
+  <defs><marker id="mae5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="62" cy="98" r="32" fill="var(--acc)" fill-opacity="0.07" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="62" cy="98" r="2.5" fill="var(--fg)"/>
+  <line x1="62" y1="98" x2="94" y2="98" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <circle cx="94.0" cy="98.0" r="3.5" fill="var(--fg)"/>
+  <line x1="94.0" y1="98.0" x2="94.0" y2="82.7" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mge5)"/>
+  <text x="62" y="38" class="sm bd" text-anchor="middle">θ − θ₀ = 0°</text>
+  <text x="62" y="152" class="sm" text-anchor="middle">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"> = 0</tspan></text>
+  <text x="62" y="167" class="sm bd" text-anchor="middle">a = 0,180 m/s²</text>
+  <circle cx="180" cy="98" r="32" fill="var(--acc)" fill-opacity="0.07" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="180" cy="98" r="2.5" fill="var(--fg)"/>
+  <line x1="180" y1="98" x2="212" y2="98" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <circle cx="196.0" cy="70.3" r="3.5" fill="var(--fg)"/>
+  <line x1="196.0" y1="70.3" x2="182.7" y2="62.6" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mge5)"/>
+  <line x1="196.0" y1="70.3" x2="180.0" y2="98.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe5)"/>
+  <line x1="196.0" y1="70.3" x2="166.7" y2="90.4" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mfe5)"/>
+  <text x="180" y="38" class="sm bd" text-anchor="middle">θ − θ₀ = 60°</text>
+  <text x="180" y="152" class="sm" text-anchor="middle">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"> = 0,377</tspan></text>
+  <text x="180" y="167" class="sm bd" text-anchor="middle">a = 0,418 m/s²</text>
+  <circle cx="298" cy="98" r="32" fill="var(--acc)" fill-opacity="0.07" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="298" cy="98" r="2.5" fill="var(--fg)"/>
+  <line x1="298" y1="98" x2="330" y2="98" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <circle cx="282.0" cy="70.3" r="3.5" fill="var(--fg)"/>
+  <line x1="282.0" y1="70.3" x2="268.7" y2="77.9" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mge5)"/>
+  <line x1="282.0" y1="70.3" x2="314.0" y2="125.8" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe5)"/>
+  <line x1="282.0" y1="70.3" x2="300.8" y2="133.4" stroke="var(--fg)" stroke-width="2" fill="none" marker-end="url(#mfe5)"/>
+  <text x="298" y="38" class="sm bd" text-anchor="middle">θ − θ₀ = 120°</text>
+  <text x="298" y="152" class="sm" text-anchor="middle">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"> = 0,754</tspan></text>
+  <text x="298" y="167" class="sm bd" text-anchor="middle">a = 0,775 m/s²</text>
+  <text x="98" y="89" class="sm bd" text-anchor="start">a<tspan dy="3" font-size="9">tan</tspan><tspan dy="-3"></tspan></text>
+  <text x="182" y="58" class="sm bd" text-anchor="end">a<tspan dy="3" font-size="9">tan</tspan><tspan dy="-3"></tspan></text>
+  <text x="186" y="113" class="sm bd" text-anchor="start">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"></tspan></text>
+  <text x="160" y="96" class="sm bd" text-anchor="end">a</text>
+  <text x="266" y="80" class="sm bd" text-anchor="end">a<tspan dy="3" font-size="9">tan</tspan><tspan dy="-3"></tspan></text>
+  <text x="318" y="131" class="sm bd" text-anchor="start">a<tspan dy="3" font-size="9">rad</tspan><tspan dy="-3"></tspan></text>
+  <text x="294" y="139" class="sm bd" text-anchor="end">a</text>
+  <text x="8" y="190" class="sm" style="fill:var(--mut)">Vectores a escala común (m/s²)</text>
+</svg>
+<figcaption>Problema 9.23: $a_{tan}=0{,}180$ m/s² es la misma siempre; $a_{rad}=2\,a_{tan}\,\Delta\theta$ crece con el ángulo girado (0, 0,377 y 0,754 m/s²). Los vectores comparten escala; el disco no. <span class="src" data-l="P" data-ref="Diagrama propio del problema 9.23 de U">P</span></figcaption>
+</figure>
+
+  <p><b>Resultado:</b> $a_{tan}=0{,}180$ m/s² siempre; $a_{rad}=0$; 0,377; 0,754 m/s²; $a=0{,}180$; 0,418; 0,775 m/s². Puedes verlo en el primer interactivo de la sección 3.</p>
+  <div class="recipe"><b>Receta:</b> punto de un cuerpo que gira con $\alpha$ constante: $a_{tan}$ fija, $a_{rad}$ crece con $\omega^2$; si el dato es un ángulo usa $\omega^2=\omega_0^2+2\alpha\Delta\theta$ (en rad). Suma componentes con Pitágoras (son perpendiculares).</div>
+  <p><b>Error típico.</b> Meter $\Delta\theta=60$ (grados) en $\omega^2=2\alpha\Delta\theta$, o sumar $a_{tan}+a_{rad}$ como escalares.</p>
+</details>
+
+<details class="sol" id="e6"><summary>E6 — Problemas 9.30 y 9.31: momento de inercia de masas puntuales y de barra con esferas <span class="src" data-l="E" data-ref="Solucionario 9-10, Prob. 9.30 y 9.31">E</span> <span class="src" data-l="U" data-ref="U §9.4, ec. 9.16 y tabla 9.2, pp. 284-286; §9.5, p. 288; Prob. 9.30 y 9.31, p. 296">U p.284-288</span></summary>
+  <p class="enun"><b>9.30.</b> Bloques pequeños de masa $m$ están sujetos en los extremos y en el centro de una varilla de longitud $L$ y masa despreciable. Calcule el momento de inercia respecto a un eje perpendicular a la varilla que pasa por a) el centro; b) un punto a un cuarto de su longitud desde un extremo.<br><b>9.31.</b> Dos esferas pequeñas de 0,300 kg (masas puntuales) están pegadas a los extremos de una barra uniforme de 2,00 m y 4,00 kg. Calcule $I$ respecto a: a) un eje perpendicular a la barra por su centro; b) un eje perpendicular a la barra que pasa por una de las esferas; c) un eje paralelo a la barra que pasa por ambas esferas; d) un eje paralelo a la barra a 0,500 m de ella.</p>
+  <p><b>9.30.</b></p>
+  <ol class="steps">
+    <li><b>Definición.</b> $I=\sum m_ir_i^2$ con $r_i$ la distancia perpendicular al eje; la varilla no cuenta (masa despreciable).</li>
+    <li><b>a)</b> Distancias $L/2$, 0 y $L/2$: $I=2m(L/2)^2=\tfrac12mL^2$.</li>
+    <li><b>b)</b> Distancias $L/4$ (extremo cercano), $L/4$ (centro) y $3L/4$ (extremo lejano): $I=m\tfrac{L^2}{16}+m\tfrac{L^2}{16}+m\tfrac{9L^2}{16}=\tfrac{11}{16}mL^2$.</li>
+    <li><b>Comprobación con ejes paralelos:</b> masa total $3m$, $d=L/4$ desde el eje de a): $\tfrac12mL^2+3m\tfrac{L^2}{16}=\tfrac{11}{16}mL^2$. ✓</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 190" width="100%" role="img" aria-label="Tres masas iguales sobre una varilla ligera con un eje por el centro y otro a un cuarto de la longitud">
+  <defs><marker id="mae6a" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe6a" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme6a" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge6a" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe6a" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe6a" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="40" y1="100" x2="320" y2="100" stroke="var(--fg)" stroke-width="2.5"/>
+  <circle cx="40" cy="100" r="9" fill="var(--acc)" fill-opacity="0.35" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="180.0" cy="100" r="9" fill="var(--acc)" fill-opacity="0.35" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="320" cy="100" r="9" fill="var(--acc)" fill-opacity="0.35" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="40" y="128" class="sm bd" text-anchor="middle">m</text>
+  <text x="180.0" y="128" class="sm bd" text-anchor="middle">m</text>
+  <text x="320" y="128" class="sm bd" text-anchor="middle">m</text>
+  <line x1="180.0" y1="56" x2="180.0" y2="114" stroke="var(--X)" stroke-width="2.5"/>
+  <text x="180.0" y="50" class="sm bd" text-anchor="middle" style="fill:var(--X)">eje a)</text>
+  <line x1="110.0" y1="56" x2="110.0" y2="114" stroke="var(--A)" stroke-width="2.5"/>
+  <text x="110.0" y="50" class="sm bd" text-anchor="middle" style="fill:var(--A)">eje b)</text>
+  <line x1="180.0" y1="152" x2="40" y2="152" stroke="var(--mut)" stroke-width="1.3" fill="none" marker-end="url(#mme6a)"/>
+  <line x1="180.0" y1="152" x2="320" y2="152" stroke="var(--mut)" stroke-width="1.3" fill="none" marker-end="url(#mme6a)"/>
+  <text x="110.0" y="166" class="sm" text-anchor="middle">L/2</text>
+  <text x="250.0" y="166" class="sm" text-anchor="middle">L/2</text>
+  <text x="8" y="18" class="sm bd">a) ½ m L²    b) 11/16 m L²</text>
+  <text x="106.0" y="140" class="sm" text-anchor="end">L/4</text>
+</svg>
+<figcaption>Problema 9.30: con el eje por el centro ($a$), las masas están a $L/2$, 0 y $L/2$; con el eje a $L/4$ de un extremo ($b$), a $L/4$, $L/4$ y $3L/4$. <span class="src" data-l="P" data-ref="Diagrama propio del problema 9.30 de U">P</span></figcaption>
+</figure>
+
+  <p><b>9.31</b> ($M=4{,}00$ kg, $L=2{,}00$ m, $m=0{,}300$ kg).</p>
+  <ol class="steps">
+    <li><b>Principio.</b> $I$ es aditivo: $I=I_{barra}+I_{esferas}$, ambos respecto al <i>mismo</i> eje.</li>
+    <li><b>a)</b> Barra por el centro $\tfrac1{12}ML^2=1{,}333$; esferas a $L/2$: $2m(L/2)^2=0{,}600$. $I=1{,}93$ kg·m².</li>
+    <li><b>b)</b> Barra por un extremo $\tfrac13ML^2=5{,}333$; la esfera del eje aporta 0 y la otra $mL^2=1{,}200$. $I=6{,}53$ kg·m². (Ejes paralelos: $1{,}933+(4{,}60)(1{,}00)^2=6{,}53$ ✓.)</li>
+    <li><b>c)</b> Eje a lo largo de la barra: todas las masas están sobre el eje ($r_i=0$): $I=0$.</li>
+    <li><b>d)</b> Eje paralelo a 0,500 m: todas las masas a la misma distancia: $I=(M+2m)d^2=(4{,}60)(0{,}500)^2=1{,}15$ kg·m².</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 190" width="100%" role="img" aria-label="Barra uniforme con dos esferas en los extremos y cuatro ejes de giro distintos">
+  <defs><marker id="mae6b" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe6b" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme6b" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge6b" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe6b" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe6b" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="40" y="87" width="280" height="10" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <circle cx="40" cy="92" r="10" fill="var(--acc)" fill-opacity="0.4" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="320" cy="92" r="10" fill="var(--acc)" fill-opacity="0.4" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="54" y="118" class="sm" text-anchor="start">0,300 kg</text>
+  <text x="306" y="118" class="sm" text-anchor="end">0,300 kg</text>
+  <text x="200" y="68" class="sm" text-anchor="middle">barra 4,00 kg, L = 2,00 m</text>
+  <line x1="180" y1="56" x2="180" y2="128" stroke="var(--X)" stroke-width="2.5"/>
+  <text x="186" y="142" class="sm bd" text-anchor="middle" style="fill:var(--X)">a) centro</text>
+  <line x1="40" y1="56" x2="40" y2="128" stroke="var(--A)" stroke-width="2.5"/>
+  <text x="46" y="142" class="sm bd" text-anchor="start" style="fill:var(--A)">b) una esfera</text>
+  <line x1="22" y1="164" x2="338" y2="164" stroke="var(--E)" stroke-width="2.5"/>
+  <text x="338" y="158" class="sm bd" text-anchor="end" style="fill:var(--E)">d) a 0,500 m</text>
+  <line x1="326" y1="164" x2="326" y2="100" stroke="var(--mut)" stroke-width="1.3" fill="none" marker-end="url(#mme6b)"/>
+  <text x="314" y="132" class="sm" text-anchor="end">0,500 m</text>
+  <line x1="22" y1="92" x2="338" y2="92" stroke="var(--fg)" stroke-width="2" stroke-dasharray="9 4"/>
+  <text x="343" y="96" class="sm bd">c)</text>
+  <text x="8" y="18" class="sm">c) eje a lo largo de la barra (discontinuo): I = 0</text>
+  <text x="8" y="178" class="sm bd">a) 1,93   b) 6,53   c) 0   d) 1,15  (kg·m²)</text>
+</svg>
+<figcaption>Problema 9.31: cuatro ejes, cuatro momentos de inercia. En $c$ el eje coincide con la barra y las esferas (todo a distancia 0); en $d$ todas las masas están a 0,500 m. <span class="src" data-l="P" data-ref="Diagrama propio del problema 9.31 de U">P</span></figcaption>
+</figure>
+
+  <p><b>Resultado:</b> 9.30: $\tfrac12mL^2$ y $\tfrac{11}{16}mL^2$. 9.31: 1,93; 6,53; 0; 1,15 kg·m².</p>
+  <div class="recipe"><b>Receta:</b> $I$ de un conjunto = suma de los $I$ de cada pieza respecto al <i>mismo</i> eje: masas puntuales con $mr^2$, cuerpos con la tabla 9.2, trasladados con $I_{cm}+Md^2$ si su eje no pasa por su cm.</div>
+  <p><b>Error típico.</b> Medir $r$ al «punto» del eje en lugar de la distancia perpendicular a la recta del eje; olvidar que $I$ cambia con el eje (el mismo objeto da 1,93; 6,53; 0 y 1,15 kg·m²).</p>
+</details>
+
+<details class="sol" id="e7"><summary>E7 — Problema 9.35: disco compuesto (disco macizo + anillo) <span class="src" data-l="E" data-ref="Solucionario 9-11, Prob. 9.35">E</span> <span class="src" data-l="U" data-ref="U §9.4, ec. 9.16 y tabla 9.2 (e, f), pp. 284-286; Prob. 9.35, p. 296">U p.284-286</span></summary>
+  <p class="enun">Un disco compuesto de 140,0 cm de diámetro exterior está formado por un disco sólido uniforme de 50,0 cm de radio y densidad de área 3,00 g/cm², rodeado por un anillo concéntrico de radio interior 50,0 cm y radio exterior 70,0 cm y densidad de área 2,00 g/cm². Calcule su momento de inercia respecto a un eje perpendicular a su plano que pasa por su centro.</p>
+  <ol class="steps">
+    <li><b>Piezas.</b> $I=I_{disco}+I_{anillo}$. Tabla 9.2: disco macizo $\tfrac12mR^2$ (f); anillo grueso $\tfrac12m(R_1^2+R_2^2)$ (e; la longitud axial no interviene, vale para una lámina).</li>
+    <li><b>Unidades SI.</b> 1 g/cm² $=10$ kg/m²: 3,00 g/cm² $=30{,}0$ kg/m² y 2,00 g/cm² $=20{,}0$ kg/m².</li>
+    <li><b>Masas = densidad × área.</b> $m_d=30{,}0\,\pi(0{,}500)^2=23{,}56$ kg; $m_a=20{,}0\,\pi(0{,}700^2-0{,}500^2)=15{,}08$ kg.</li>
+    <li><b>Momentos.</b> $I_d=\tfrac12(23{,}56)(0{,}500)^2=2{,}945$ kg·m²; $I_a=\tfrac12(15{,}08)(0{,}500^2+0{,}700^2)=5{,}579$ kg·m².</li>
+    <li><b>Total.</b> $I=2{,}945+5{,}579=8{,}52$ kg·m².</li>
+    <li><b>Interpretación.</b> El anillo tiene menos masa que el disco y, sin embargo, más $I$: su masa está más lejos del eje.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 200" width="100%" role="img" aria-label="Disco compuesto por un disco macizo y un anillo concéntrico, con sus masas y momentos de inercia">
+  <defs><marker id="mae7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="100" cy="96" r="70.0" fill="var(--A)" fill-opacity="0.12" stroke="var(--A)" stroke-width="1.5"/>
+  <circle cx="100" cy="96" r="50" fill="var(--bg)" stroke="var(--A)" stroke-width="1.5"/>
+  <circle cx="100" cy="96" r="50.0" fill="var(--acc)" fill-opacity="0.22" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="100" cy="96" r="3" fill="var(--fg)"/>
+  <line x1="100" y1="96" x2="150" y2="96" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="100" y1="96.0" x2="157.8" y2="135.5" stroke="var(--fg)" stroke-width="1.5"/>
+  <text x="118" y="92" class="sm bd">0,50</text>
+  <text x="150" y="132" class="sm bd">0,70</text>
+  <text x="196" y="30" class="sm" style="fill:var(--acc)">Disco (3,00 g/cm²):</text>
+  <text x="196" y="46" class="sm">m = 23,56 kg</text>
+  <text x="196" y="62" class="sm bd">I = ½ m R² = 2,945</text>
+  <text x="196" y="92" class="sm" style="fill:var(--A)">Anillo (2,00 g/cm²):</text>
+  <text x="196" y="108" class="sm">m = 15,08 kg</text>
+  <text x="196" y="124" class="sm">I = ½ m (R₁² + R₂²)</text>
+  <text x="196" y="140" class="sm bd">= 5,579 kg·m²</text>
+  <text x="196" y="172" class="sm bd">I total = 8,52 kg·m²</text>
+  <text x="8" y="194" class="sm" style="fill:var(--mut)">Radios en m; eje ⊥ al papel por el centro</text>
+</svg>
+<figcaption>Problema 9.35: el anillo (más ligero) aporta más momento de inercia que el disco porque su masa está más lejos del eje: 5,579 frente a 2,945 kg·m². <span class="src" data-l="P" data-ref="Diagrama propio del problema 9.35 de U">P</span></figcaption>
+</figure>
+
+  <p><b>Resultado:</b> $I=8{,}52$ kg·m².</p>
+  <div class="recipe"><b>Receta:</b> cuerpos compuestos coaxiales: masa de cada pieza = densidad × área (o volumen), $I$ de cada una con la tabla 9.2 y suma. Un hueco se puede tratar como «disco grande menos disco pequeño».</div>
+  <p><b>Error típico.</b> Escribir el anillo como $\tfrac12m(R_2^2-R_1^2)$ (es suma, no resta) o no convertir g/cm² a kg/m².</p>
+</details>
+
+<details class="sol" id="e8"><summary>E8 — Problema 9.52: varilla doblada en ángulo recto <span class="src" data-l="E" data-ref="Solucionario 9-15, Prob. 9.52">E</span> <span class="src" data-l="U" data-ref="U §9.4, tabla 9.2, p. 286; §9.5, ec. 9.19, pp. 288-289; Prob. 9.52, p. 297">U p.286-289</span></summary>
+  <p class="enun">Una varilla delgada uniforme de masa $M$ y longitud $L$ se dobla por su centro de manera que los dos segmentos quedan perpendiculares. Determine el momento de inercia respecto a un eje perpendicular a su plano que pasa por a) el punto donde se cruzan los dos segmentos; b) el punto medio de la recta que conecta los dos extremos.</p>
+  <p>Cada segmento es una varilla de masa $M/2$ y longitud $L/2$.</p>
+  <ol class="steps">
+    <li><b>a) Eje por el vértice.</b> Cada segmento gira alrededor de <i>su extremo</i>: $I_s=\tfrac13\tfrac M2\left(\tfrac L2\right)^2=\tfrac1{24}ML^2$ (tabla 9.2b). Que el otro segmento esté a 90° da igual: la distancia de cada elemento a un eje perpendicular al plano es su distancia al vértice. $I_a=2I_s=\tfrac1{12}ML^2$.</li>
+    <li><b>b) Eje por el punto medio de la hipotenusa.</b> El centro de masa de cada segmento está a $d=L/4$ de ese punto (por simetría, igual para los dos).</li>
+    <li><b>Ejes paralelos.</b> $I_s=I_{cm}+\tfrac M2d^2=\tfrac1{12}\tfrac M2\left(\tfrac L2\right)^2+\tfrac M2\left(\tfrac L4\right)^2=\tfrac{ML^2}{96}+\tfrac{ML^2}{32}=\tfrac{ML^2}{24}$.</li>
+    <li><b>Total.</b> $I_b=2I_s=\tfrac1{12}ML^2$.</li>
+    <li><b>Interpretación.</b> Coinciden porque, para cada segmento, el vértice y el punto $P$ están a la misma distancia ($L/4$) de su cm: $\tfrac1{24}=\tfrac1{96}+\tfrac1{32}$ es justo $\tfrac13m\ell^2=\tfrac1{12}m\ell^2+m(\ell/2)^2$.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 178" width="100%" role="img" aria-label="Varilla doblada en ángulo recto con un eje por el vértice y otro por el punto medio de la recta que une los extremos">
+  <defs><marker id="mae8" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe8" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme8" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge8" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe8" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe8" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="60" y1="150" x2="160" y2="150" stroke="var(--fg)" stroke-width="4"/>
+  <line x1="60" y1="150" x2="60" y2="50" stroke="var(--fg)" stroke-width="4"/>
+  <line x1="160" y1="150" x2="60" y2="50" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="60" cy="150" r="7" fill="var(--bg)" stroke="var(--fg)" stroke-width="1.5"/><circle cx="60" cy="150" r="2" fill="var(--fg)"/>
+  <circle cx="110.0" cy="100.0" r="7" fill="var(--bg)" stroke="var(--fg)" stroke-width="1.5"/><circle cx="110.0" cy="100.0" r="2" fill="var(--fg)"/>
+  <circle cx="110.0" cy="150" r="3.5" fill="var(--acc)"/>
+  <circle cx="60" cy="100.0" r="3.5" fill="var(--acc)"/>
+  <text x="48" y="166" class="sm bd" text-anchor="end" style="fill:var(--X)">a)</text>
+  <text x="122.0" y="92.0" class="sm bd" style="fill:var(--A)">b)</text>
+  <text x="110.0" y="166" class="sm" text-anchor="middle">L/2</text>
+  <text x="52" y="104.0" class="sm" text-anchor="end">L/2</text>
+  <line x1="110.0" y1="150" x2="110.0" y2="100.0" stroke="var(--A)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="114.0" y="136" class="sm" style="fill:var(--A)">L/4</text>
+  <text x="190" y="40" class="sm">Cada segmento: masa M/2,</text>
+  <text x="190" y="55" class="sm">longitud L/2</text>
+  <text x="190" y="85" class="sm" style="fill:var(--X)">a) por el vértice:</text>
+  <text x="190" y="101" class="sm bd">2·⅓(M/2)(L/2)² = ML²/12</text>
+  <text x="190" y="128" class="sm" style="fill:var(--A)">b) por el punto medio:</text>
+  <text x="190" y="144" class="sm">2·[ML²/96 + ML²/32]</text>
+  <text x="190" y="160" class="sm bd">= ML²/12</text>
+</svg>
+<figcaption>Problema 9.52: el vértice y el punto medio de la hipotenusa están, respecto al centro de masa de cada segmento, a la misma distancia $L/4$, por eso ambos ejes dan $ML^2/12$. Eje perpendicular al papel. <span class="src" data-l="P" data-ref="Diagrama propio del problema 9.52 de U">P</span></figcaption>
+</figure>
+
+  <p><b>Resultado:</b> a) y b): $\tfrac1{12}ML^2$.</p>
+  <div class="recipe"><b>Receta:</b> divide el cuerpo en piezas de la tabla 9.2; para cada pieza localiza su cm, mide $d$ hasta el eje y usa $I_{cm}+md^2$; suma.</div>
+  <p><b>Error típico.</b> Usar la masa o la longitud de la varilla entera para cada segmento, o tomar como $d$ la distancia del eje al extremo del segmento en lugar de a su cm (el teorema solo vale desde el cm).</p>
+</details>
+
+<details class="sol" id="e9"><summary>E9 — Problema 9.55: varilla de densidad variable $dm/dx=\gamma x$ <span class="src" data-l="E" data-ref="Solucionario 9-16, Prob. 9.55">E</span> <span class="src" data-l="U" data-ref="U §9.6, ec. 9.20, p. 290; Prob. 9.55, p. 297">U p.290</span></summary>
+  <p class="enun">La masa por unidad de longitud de una varilla delgada de longitud $L$ varía con la distancia al extremo izquierdo ($x=0$) según $dm/dx=\gamma x$, con $\gamma$ en kg/m². a) Calcule la masa total en función de $\gamma$ y $L$. b) Use la ecuación (9.20) para calcular el momento de inercia respecto a un eje perpendicular por el extremo izquierdo; expréselo en función de $M$ y $L$, compárelo con el de una varilla uniforme y explique la diferencia. c) Repita b) para un eje en el extremo derecho.</p>
+  <ol class="steps">
+    <li><b>Herramienta.</b> La masa no es uniforme: no sirve la tabla 9.2. Se integra $I=\int r^2dm$ con trocitos $dx$, a los que corresponde $dm=\gamma x\,dx$.</li>
+    <li><b>a)</b> $M=\int_0^L\gamma x\,dx=\tfrac12\gamma L^2$.</li>
+    <li><b>b) Eje en $x=0$.</b> $r=x$: $I=\int_0^Lx^2\,\gamma x\,dx=\tfrac14\gamma L^4$. Con $\gamma=2M/L^2$: $I=\tfrac12ML^2$.</li>
+    <li><b>Comparación.</b> Una varilla uniforme por un extremo da $\tfrac13ML^2$. Aquí sale mayor porque la densidad crece hacia el extremo derecho, lejos del eje.</li>
+    <li><b>c) Eje en $x=L$.</b> $r=L-x$: $I=\int_0^L(L-x)^2\gamma x\,dx=\gamma\left[\tfrac{L^2x^2}2-\tfrac{2Lx^3}3+\tfrac{x^4}4\right]_0^L=\tfrac1{12}\gamma L^4=\tfrac16ML^2$.</li>
+    <li><b>Comparación.</b> Ahora la mayor parte de la masa está cerca del eje: $\tfrac16<\tfrac13<\tfrac12$; es un tercio del resultado de b).</li>
+    <li><b>Comprobación con ejes paralelos.</b> $x_{cm}=\tfrac1M\int x\,dm=\tfrac23L$; $I_{cm}=\tfrac12ML^2-M\left(\tfrac{2L}3\right)^2=\tfrac1{18}ML^2$; al extremo derecho ($d=L/3$): $\tfrac1{18}ML^2+\tfrac19ML^2=\tfrac16ML^2$ ✓.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 320 200" width="100%" role="img" aria-label="Densidad lineal de masa de la varilla, que crece linealmente con x, con la posición de su centro de masa">
+  <defs><marker id="mae9" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe9" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme9" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge9" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe9" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe9" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="48" y1="164" x2="310" y2="164"/>
+  <line class="ax" x1="48" y1="164" x2="48" y2="13"/>
+  <text x="305" y="192" class="sm" text-anchor="end">x</text>
+  <text x="54" y="20" class="sm">λ = γ x</text>
+  <line x1="48.0" y1="164" x2="48.0" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="48.0" y="180" class="sm" text-anchor="middle">0</text>
+  <line x1="281.6" y1="164" x2="281.6" y2="168" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="281.6" y="180" class="sm" text-anchor="middle">L</text>
+  <line x1="44" y1="37.0" x2="48" y2="37.0" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="41.0" class="sm" text-anchor="end">γL</text>
+  <path d="M 48.0 164.0 L 281.6 37.0 L 281.6 164.0 Z" fill="var(--acc)" fill-opacity="0.18" stroke="none"/>
+  <path d="M 48.0 164.0 L 281.6 37.0" fill="none" stroke="var(--acc)" stroke-width="3"/>
+  <circle cx="203.8" cy="164.0" r="4.5" fill="var(--A)"/>
+  <line x1="203.8" y1="164.0" x2="203.8" y2="79.4" stroke="var(--A)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="59.7" y="37.0" class="sm bd">M = ½ γ L²</text>
+  <text x="59.7" y="52.3" class="sm" style="fill:var(--A)">CM en x = 2L/3</text>
+  <text x="55.0" y="72.6" class="sm">x = 0: I = ½ML²</text>
+  <text x="55.0" y="87.8" class="sm">x = L: I = ⅙ML²</text>
+</svg>
+<figcaption>Problema 9.55: la masa es el área del triángulo ($\tfrac12\gamma L^2$) y se concentra hacia $x=L$ (CM en $2L/3$). Por eso el eje en $x=0$ da mucho más $I$ ($\tfrac12ML^2$) que el eje en $x=L$ ($\tfrac16ML^2$). <span class="src" data-l="P" data-ref="Diagrama propio del problema 9.55 de U">P</span></figcaption>
+</figure>
+
+  <p><b>Resultado:</b> a) $M=\tfrac12\gamma L^2$; b) $\tfrac12ML^2$; c) $\tfrac16ML^2$.</p>
+  <div class="recipe"><b>Receta:</b> densidad variable: escribe $dm=\lambda(x)\,dx$, calcula $M=\int dm$ para poder expresarlo todo en $M$, y $I=\int r(x)^2dm$ con $r$ medida desde <i>ese</i> eje.</div>
+  <p><b>Error típico.</b> Usar $r=x$ también para el eje derecho, o dejar el resultado en $\gamma$ cuando piden $M$ y $L$.</p>
+</details>
+
+<details class="sol" id="e10"><summary>E10 — Problemas 9.44 y 9.45: polea con cubeta y rueda con objeto colgado <span class="src" data-l="E" data-ref="Solucionario 9-13, Prob. 9.44 y 9.45">E</span> <span class="src" data-l="U" data-ref="U §9.3, ec. 9.13, p. 281; §9.4, ec. 9.17, tabla 9.2 y Ej. 9.8, pp. 284-288; Prob. 9.44 y 9.45, p. 297">U p.281-288</span></summary>
+  <p class="enun"><b>9.44.</b> Una cubeta de masa $m$ se ata a un cable de masa despreciable enrollado en el borde exterior de una polea uniforme sin fricción de radio $R$. En términos de esas variables, ¿cuál debe ser el momento de inercia de la polea para que siempre tenga la mitad de la energía cinética de la cubeta?<br><b>9.45.</b> Un alambre ligero y delgado se enrolla en el borde de una rueda que gira sin fricción alrededor de un eje horizontal fijo por su centro. La rueda es un disco uniforme de radio $R=0{,}280$ m. Del extremo libre cuelga un objeto de masa $m=4{,}20$ kg. El sistema se libera del reposo y el objeto desciende con aceleración constante una distancia de 3,00 m en 2,00 s. ¿Cuál es la masa de la rueda?</p>
+  <p><b>9.44.</b></p>
+  <ol class="steps">
+    <li><b>Ligadura.</b> El cable no resbala: $v=R\omega$.</li>
+    <li><b>Energías.</b> Polea $K_p=\tfrac12I\omega^2$; cubeta $K_c=\tfrac12mv^2=\tfrac12mR^2\omega^2$.</li>
+    <li><b>Condición.</b> $K_p=\tfrac12K_c\Rightarrow\tfrac12I\omega^2=\tfrac14mR^2\omega^2\Rightarrow I=\tfrac12mR^2$.</li>
+    <li><b>Interpretación.</b> No depende de $\omega$: si se cumple en un instante, se cumple siempre. Es el $I$ de un disco macizo con la masa de la cubeta.</li>
+  </ol>
+  <p><b>9.45.</b></p>
+  <ol class="steps">
+    <li><b>Cinemática del objeto</b> (MRUA desde el reposo): $\Delta y=\tfrac12(v_0+v)t\Rightarrow v=2\Delta y/t=2(3{,}00)/2{,}00=3{,}00$ m/s ($a=1{,}50$ m/s², menor que $g$ porque la rueda «frena»).</li>
+    <li><b>Rueda.</b> Alambre sin resbalar: $\omega=v/R=3{,}00/0{,}280=10{,}71$ rad/s.</li>
+    <li><b>Energía.</b> Sin rozamiento: $mg\Delta y=\tfrac12mv^2+\tfrac12I\omega^2$.</li>
+    <li><b>Despejar $I$.</b> $I=\dfrac{2\,(123{,}48-18{,}90)}{114{,}80}=1{,}82$ kg·m².</li>
+    <li><b>Masa.</b> Disco uniforme: $I=\tfrac12MR^2\Rightarrow M=\dfrac{2I}{R^2}=\dfrac{2(1{,}82)}{0{,}0784}=46{,}5$ kg.</li>
+    <li><b>Comprobación</b> con $v=\sqrt{2gh/(1+M/2m)}$ (ejemplo 9.8): con $M=46{,}5$ kg sale $v=3{,}00$ m/s ✓. Atajo: $M=2m\left(\dfrac{2gh}{v^2}-1\right)=8{,}40(6{,}53-1)=46{,}5$ kg.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 188" width="100%" role="img" aria-label="Rueda con un hilo enrollado del que cuelga una masa que desciende">
+  <defs><marker id="mae10" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe10" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme10" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge10" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe10" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe10" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <circle cx="78" cy="62" r="38" fill="var(--acc)" fill-opacity="0.12" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="78" cy="62" r="3" fill="var(--fg)"/>
+  <text x="78" y="54" class="sm bd" text-anchor="middle">M, R</text>
+  <text x="78" y="76" class="sm" text-anchor="middle">I</text>
+  <line x1="116" y1="62" x2="116" y2="134" stroke="var(--fg)" stroke-width="1.6"/>
+  <rect x="103" y="134" width="26" height="22" rx="2" fill="var(--A)" fill-opacity="0.35" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="98" y="150" class="sm bd" text-anchor="end">m</text>
+  <line x1="144" y1="80" x2="144" y2="128" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe10)"/>
+  <text x="152" y="106" class="sm bd">v</text>
+  <text x="172" y="34" class="sm">9.45: m = 4,20 kg; R = 0,28 m</text>
+  <text x="172" y="50" class="sm">baja 3,00 m en 2,00 s</text>
+  <text x="172" y="76" class="sm bd">v = 2Δy/t = 3,00 m/s</text>
+  <text x="172" y="94" class="sm">ω = v/R = 10,71 rad/s</text>
+  <text x="172" y="114" class="sm">mgΔy = ½mv² + ½Iω²</text>
+  <text x="172" y="132" class="sm">I = 1,822 kg·m²</text>
+  <text x="172" y="150" class="sm bd">M = 2I/R² = 46,5 kg</text>
+  <text x="8" y="176" class="sm bd">9.44: ½Iω² = ½·(½mv²)  ⇒  I = ½ m R²</text>
+</svg>
+<figcaption>Problemas 9.44 y 9.45: cable sin resbalar ($v=R\omega$) y conservación de la energía con $K$ del bloque y de la rueda. La velocidad final sale de la cinemática: $v=2\Delta y/t$ si parte del reposo. <span class="src" data-l="P" data-ref="Diagrama propio de los problemas 9.44 y 9.45 de U">P</span></figcaption>
+</figure>
+
+  <p><b>Resultado:</b> 9.44: $I=\tfrac12mR^2$. 9.45: $M=46{,}5$ kg. Compruébalo en el interactivo de la sección 4.</p>
+  <div class="recipe"><b>Receta:</b> «polea + masa colgada» sin rozamiento y sin pedir tiempos: (1) ligadura $v=R\omega$; (2) energía $mgh=\tfrac12mv^2+\tfrac12I(v/R)^2$; (3) despeja la incógnita. Si dan distancia y tiempo, la rapidez final sale del MRUA ($v=2\Delta y/t$ desde el reposo).</div>
+  <p><b>Error típico.</b> Tomar $v=\Delta y/t=1{,}50$ m/s (es la velocidad <i>media</i>, no la final) u olvidar la energía cinética del objeto colgado y poner $mgh=\tfrac12I\omega^2$.</p>
+</details>
+
+<details class="sol" id="e11"><summary>E11 — Problema práctico de U: varilla delgada con el eje a una distancia $h$ del extremo <span class="src" data-l="U" data-ref="U Problema práctico «Varilla delgada uniforme que gira», p. 293 (fig. 9.25)">U p.293</span></summary>
+  <p class="enun">Una varilla uniforme delgada de masa $M$ y longitud $L$ gira alrededor de un eje perpendicular que pasa por O, a una distancia $h$ de uno de sus extremos. a) Calcule por integración su momento de inercia respecto a ese eje. b) Parte del reposo y adquiere una aceleración angular constante $\alpha$: ¿qué trabajo se realiza sobre ella en un tiempo $t$? c) En ese instante, ¿cuál es la aceleración del punto más alejado del eje?</p>
+  <ol class="steps">
+    <li><b>Elemento de masa.</b> Eje $x$ a lo largo de la varilla con origen en O: ocupa de $x=-h$ a $x=L-h$. La masa por unidad de longitud es $M/L$ (uniforme), así que $dm=\tfrac ML\,dx$ y todos los puntos del elemento están a distancia $|x|$ del eje.</li>
+    <li><b>a) Integral.</b> $I=\int x^2dm=\dfrac ML\int_{-h}^{L-h}x^2dx=\dfrac{M}{3L}\left[(L-h)^3+h^3\right]=M\left(\dfrac{L^2}{3}-Lh+h^2\right)$.</li>
+    <li><b>Comprobación.</b> Con $h=0$ sale $\tfrac13ML^2$ y con $h=L/2$ sale $\tfrac1{12}ML^2$ (tabla 9.2); y por ejes paralelos, $I=\tfrac1{12}ML^2+M\left(\tfrac L2-h\right)^2$, que es lo mismo.</li>
+    <li><b>b) Trabajo.</b> Con $\alpha$ constante desde el reposo, $\omega=\alpha t$. El teorema trabajo-energía da $W=\Delta K=\tfrac12I\omega^2=\tfrac12M\left(\tfrac{L^2}{3}-Lh+h^2\right)\alpha^2t^2$.</li>
+    <li><b>c) Aceleración del punto más lejano.</b> Está a $r=\max(h,\,L-h)$ del eje. $a_{tan}=r\alpha$ y $a_{rad}=\omega^2r=r\alpha^2t^2$ son perpendiculares: $a=\sqrt{a_{tan}^2+a_{rad}^2}=r\alpha\sqrt{1+\alpha^2t^4}$. No es constante: $a_{tan}$ sí lo es, pero $a_{rad}$ crece con $t^2$.</li>
+    <li><b>Con números</b> ($M=2{,}0$ kg, $L=1{,}2$ m, $h=0{,}30$ m, $\alpha=2{,}0$ rad/s², $t=1{,}5$ s): $I=2{,}0(0{,}48-0{,}36+0{,}09)=0{,}42$ kg·m²; $\omega=3{,}0$ rad/s y $W=\tfrac12(0{,}42)(3{,}0)^2=1{,}9$ J; $r=0{,}90$ m, $a_{tan}=1{,}8$ m/s², $a_{rad}=8{,}1$ m/s² y $a=8{,}3$ m/s².</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 360 150" width="100%" role="img" aria-label="Varilla uniforme de longitud L con un eje perpendicular al papel por el punto O, a una distancia h de su extremo izquierdo">
+  <rect x="40" y="60" width="280" height="10" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <circle cx="124" cy="65" r="7" fill="var(--bg)" stroke="var(--fg)" stroke-width="1.5"/><circle cx="124" cy="65" r="2" fill="var(--fg)"/>
+  <text x="124" y="46" class="sm bd" text-anchor="middle">O (eje ⊥ papel)</text>
+  <circle cx="320" cy="65" r="3.5" fill="var(--acc)"/>
+  <text x="320" y="46" class="sm" text-anchor="end">punto más lejano</text>
+  <line x1="40" y1="96" x2="124" y2="96" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="40" y1="91" x2="40" y2="101" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="124" y1="91" x2="124" y2="101" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="82" y="112" class="sm bd" text-anchor="middle">h</text>
+  <line x1="124" y1="96" x2="320" y2="96" stroke="var(--A)" stroke-width="1.3"/>
+  <line x1="320" y1="91" x2="320" y2="101" stroke="var(--A)" stroke-width="1.3"/>
+  <text x="222" y="112" class="sm bd" text-anchor="middle" style="fill:var(--A)">L − h</text>
+  <text x="180" y="138" class="sm" text-anchor="middle">I = M(L²/3 − Lh + h²)</text>
+</svg>
+<figcaption>Problema práctico de U (fig. 9.25): el eje pasa por O, a una distancia $h$ del extremo izquierdo; el punto más lejano está a $L-h$ si $h&lt;L/2$. <span class="src" data-l="P" data-ref="Diagrama propio del problema práctico de U, p. 293 (fig. 9.25)">P</span></figcaption>
+</figure>
+
+  <p><b>Resultado:</b> a) $I=M\left(\tfrac{L^2}3-Lh+h^2\right)$; b) $W=\tfrac12I\alpha^2t^2$; c) $a_{tan}=r\alpha$, $a_{rad}=r\alpha^2t^2$, $a=r\alpha\sqrt{1+\alpha^2t^4}$ con $r=\max(h,L-h)$.</p>
+  <div class="recipe"><b>Receta:</b> varilla con un eje fuera del centro: pon el origen en el eje, integra $x^2\,dm$ entre los extremos medidos <i>desde el eje</i> y comprueba con los casos $h=0$ y $h=L/2$ de la tabla 9.2. Luego encadena: $\omega=\alpha t$, $W=\Delta K=\tfrac12I\omega^2$, y las componentes $a_{tan}=r\alpha$ y $a_{rad}=\omega^2r$ del punto elegido.</div>
+  <p><b>Error típico.</b> Integrar de 0 a $L$ (eje en el extremo) cuando el eje está en O, o tomar $r=L/2$ para el punto más lejano.</p>
+</details>
+
+<h2 id="chuleta"><span class="n">8</span>Chuleta, errores frecuentes y lista de comprobación</h2>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Ángulo en radianes</td><td>$\theta=s/r$, $s=r\theta$ (9.1); $2\pi$ rad $=1$ rev $=360^\circ$; 1 rpm $=2\pi/60$ rad/s</td></tr>
+<tr><td>Velocidad angular</td><td>$\omega_z=d\theta/dt$ (9.3); media $\Delta\theta/\Delta t$ (9.2)</td></tr>
+<tr><td>Aceleración angular</td><td>$\alpha_z=d\omega_z/dt=d^2\theta/dt^2$ (9.5-9.6); se acelera si $\omega_z$ y $\alpha_z$ tienen el mismo signo</td></tr>
+<tr><td>$\alpha_z$ constante</td><td>$\omega_z=\omega_{0z}+\alpha_zt$ (9.7); $\theta-\theta_0=\tfrac12(\omega_{0z}+\omega_z)t$ (9.10); $\theta=\theta_0+\omega_{0z}t+\tfrac12\alpha_zt^2$ (9.11); $\omega_z^2=\omega_{0z}^2+2\alpha_z(\theta-\theta_0)$ (9.12)</td></tr>
+<tr><td>Punto a distancia $r$ del eje</td><td>$v=r\omega$ (9.13); $a_{tan}=r\alpha$ (9.14); $a_{rad}=v^2/r=r\omega^2$ (9.15); $a=\sqrt{a_{tan}^2+a_{rad}^2}$</td></tr>
+<tr><td>Momento de inercia</td><td>$I=\sum m_ir_i^2$ (9.16); $I=\int r^2dm$ (9.20); aditivo; depende del eje</td></tr>
+<tr><td>Energía cinética de rotación</td><td>$K=\tfrac12I\omega^2$ (9.17); cable sin resbalar: $v=R\omega$</td></tr>
+<tr><td>Energía potencial de un cuerpo</td><td>$U=Mgy_{cm}$ (9.18)</td></tr>
+<tr><td>Ejes paralelos</td><td>$I_P=I_{cm}+Md^2$ (9.19)</td></tr>
+<tr><td>Tabla 9.2 (eje por el cm salvo b, d)</td><td>varilla $\tfrac1{12}ML^2$ (por un extremo $\tfrac13ML^2$); placa $\tfrac1{12}M(a^2+b^2)$; cilindro hueco grueso $\tfrac12M(R_1^2+R_2^2)$; cilindro sólido $\tfrac12MR^2$; aro $MR^2$; esfera sólida $\tfrac25MR^2$; esfera hueca $\tfrac23MR^2$</td></tr>
+<tr><td>Bloque que cuelga de una rueda</td><td>$v=\sqrt{\dfrac{2mgh}{m+I/R^2}}$; con $I=\tfrac12MR^2$: $v=\sqrt{2gh/(1+M/2m)}$</td></tr>
+</table>
+<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+  <ul>
+    <li>Usar grados o rpm en fórmulas que mezclan lo lineal con lo angular (ec. 9.13-9.15, $K$, energía): pasa siempre a rad y rad/s.</li>
+    <li>Aplicar las ecuaciones 9.7-9.12 cuando $\alpha$ no es constante (en ese caso se deriva $\theta(t)$).</li>
+    <li>Pensar que $\omega$ constante implica aceleración nula (hay aceleración radial $\omega^2r$) o confundir $a_{tan}$ con $a_{rad}$.</li>
+    <li>Decir «el momento de inercia del cuerpo es…» sin especificar el eje; o concentrar la masa en el centro de masa.</li>
+    <li>Usar el teorema de los ejes paralelos entre dos ejes que no incluyen el del centro de masa, o con $d$ mal medida.</li>
+    <li>Olvidar la energía cinética del bloque que cuelga, o su ligadura $v=R\omega$, en problemas de poleas con masa.</li>
+    <li>Confundir el desplazamiento angular con el ángulo total recorrido cuando $\omega_z$ cambia de signo.</li>
+    <li>Dar $I$ de una pieza compuesta sin sumar piezas respecto al mismo eje, o restar donde se debe sumar (anillo grueso: $R_1^2+R_2^2$).</li>
+  </ul>  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
+<ul class="checklist">
+  <li>Sé pasar entre grados, radianes, revoluciones y rpm, y por qué las fórmulas lineal-angular exigen radianes.</li>
+  <li>Sé definir $\omega_z$ y $\alpha_z$, interpretar sus signos (se acelera o frena) y derivarlos de $\theta(t)$ (E3).</li>
+  <li>Sé resolver problemas de rotación con $\alpha$ constante con las ecuaciones de la tabla 9.1 (E1, E2).</li>
+  <li>Sé calcular $v$, $a_{tan}$, $a_{rad}$ y $a$ de un punto del cuerpo, y explicar sus direcciones y cuándo son constantes (E4, E5, X1 b).</li>
+  <li>Sé calcular $I$ de masas puntuales y de cuerpos con la tabla 9.2, y que depende del eje (E6, E7).</li>
+  <li>Sé usar el teorema de los ejes paralelos y por qué el mínimo está en el centro de masa (E6, E8).</li>
+  <li>Sé calcular $I$ por integración, con densidad uniforme o variable (E9, E11, ejemplos 9.10 y 9.11).</li>
+  <li>Sé aplicar la conservación de la energía con $K=\tfrac12I\omega^2$ y la ligadura $v=R\omega$ (E10) y razonar qué cuerpo rueda más rápido (X1 a).</li>
+</ul>
+
+<h2 id="fuentes"><span class="n">★</span>Fuentes de este tema</h2>
+<details class="fuentes-toggle">
+<summary>Mostrar lista de fuentes</summary>
+<div id="panel-fuentes"></div>
+</details>
+
+<footer>Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.</footer>
+</main>
+</div>
+</body>
+</html>

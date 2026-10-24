@@ -56,6 +56,7 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 
 ## Tema 9 — Rotación de cuerpos rígidos
 (No se ha encontrado ningún ejercicio cuyo enfoque sea puramente cinemático de rotación sin fuerzas/torques/momento de inercia dinámico; todos los problemas de rotación localizados implican dinámica — ver Tema 10.)
+- **[Febrero 2025, 2ª semana]** (referencia cruzada; indexado en el Tema 10) — P-3 Teoría Opción A: el tema a desarrollar es «Trabajo y potencia en un movimiento de rotación» (Tema 10), pero sus cuestiones cortas (a) ruedas de un carro que baja una pendiente (b) aceleraciones tangencial y radial de un punto de un volante con ω constante son de cinemática/energía de rotación (Tema 9); resueltas en el Tema 9 como X1.
 
 ## Tema 10 — Dinámica del movimiento de rotación
 - **[Febrero 2018, 1ª semana]** (archivo: E689010160-18F1.pdf) — P-1: cuerpo tipo yoyó (dos discos + cilindro) que se desenrolla desde una cuerda fija; hallar aceleración angular, aceleración lineal del CM y velocidad final del CM.
