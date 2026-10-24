@@ -54,23 +54,13 @@ Interactivos.registrar('explosion-cm', function (c) {
     lT(f2(Tt) + ' s  ;  t = ' + f2(t) + ' s' + (ex ? ' (después de estallar)' : ' (antes de estallar)')); lX(f0(d.xA) + ' ; ' + f0(d.xB) + ' m');
     lR(f0(d.R) + ' m'); lM(f0((d.mA * d.xA + d.mB * d.xB) / M) + ' m  (coincide con R)'); lK(f0(d.dK) + ' J'); lC(f0(cmx) + ' ; ' + f0(Math.max(0, cmy)) + ' m');
   }
-  function arrancar() { if (ya || !rSl) return; ya = true; ult = 0; requestAnimationFrame(bucle); }
-  function bucle(ts) {
-    ya = false; if (!anim || !vis) return;
-    var dt = Math.min(0.06, ult ? (ts - ult) / 1000 : 0.016); ult = ts;
-    if (fs >= 1) { pausa += dt; if (pausa > 0.9) { fs = 0; pausa = 0; } } else fs = Math.min(1, fs + dt / 5);
-    rSl.value = fs; rSl.dispatchEvent(new Event('input', { bubbles: true }));
-    ya = true; requestAnimationFrame(bucle);
-  }
   c.slider('Rapidez inicial del obús, v₀ (m/s)', 10, 160, 0.1, v0, function (v) { v0 = v; calc(); }, function (v) { return f1(v) + ' m/s'; });
   c.slider('Ángulo de disparo α (°)', 10, 90, 1, al, function (v) { al = v; calc(); }, function (v) { return v + '°'; });
   c.slider('Razón de masas mA / mB (A es el fragmento pesado)', 1, 10, 0.1, rm, function (v) { rm = v; calc(); }, f1);
   c.slider('Masa total del obús, M (kg)', 1, 20, 0.01, M, function (v) { M = v; calc(); }, function (v) { return f2(v) + ' kg'; });
   c.slider('Velocidad de A hacia atrás respecto al obús, uA (m/s)', -100, 300, 0.01, uA, function (v) { uA = v; calc(); }, function (v) { return f2(v) + ' m/s'; });
-  rSl = c.slider('Tiempo (fracción del vuelo)', 0, 1, 0.005, fs, function (v) { fs = v; if (v < 1) pausa = 0; calc(); }, function (v) { return Math.round(v * 100) + ' %'; });
-  c.selector('Animación', ['Parada', 'En marcha'], 0, function (i) { anim = i; if (i) { ult = 0; arrancar(); } });
+  c.reproductor({ max: 1, valor: fs, paso: 0.002, vel: 1 / 5, pausaFin: 0.9, etiqueta: 'Instante del vuelo', fmt: function (v) { return Math.round(v * 100) + ' % del vuelo'; }, cb: function (v) { fs = v; calc(); } });
   c.leyenda([['var(--acc)', 'fragmento A (pesado)', 'punto'], ['var(--A)', 'fragmento B (ligero)', 'punto'], ['var(--fg)', 'centro de masa: sigue la parábola del obús entero (trazo discontinuo)', 'punto'], ['var(--warn-b)', 'punto de la explosión (vértice)', 'punto'], ['var(--mut)', 'eje horizontal comprimido respecto al vertical (los números de los ejes son metros reales)', 'linea']]);
-  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; if (vis && anim) { ult = 0; arrancar(); } }).observe(c.el);
   c.alCambiarTema(function (p) {
     P = p; c.renderer.setClearColor(p.bg);
     if (!ejes) return; clave = ''; calc();

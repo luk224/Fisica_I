@@ -66,24 +66,14 @@ Interactivos.registrar('choques', function (c) {
     lC(f2(vcm) + ' m/s'); lR(f2(v2 - v1) + ' → ' + f2(vf2 - vf1) + ' m/s' + (choque ? '  (cociente = −e = ' + f2(-e) + ')' : ''));
     lE(!choque ? 'No hay choque: el cuerpo A no alcanza al cuerpo B (hace falta vA1 > vB1).' : e >= 0.995 ? 'Choque elástico: se conserva K.' : e <= 0.005 ? 'Totalmente inelástico: quedan unidos, misma velocidad final.' : 'Choque inelástico: se pierde parte de K.');
   }
-  function arrancar() { if (ya || !rSl) return; ya = true; ult = 0; requestAnimationFrame(bucle); }
-  var ult = 0, pausa = 0, vis = true;
-  function bucle(ts) {
-    ya = false; if (!anim || !vis) return;
-    var dt = Math.min(0.06, ult ? (ts - ult) / 1000 : 0.016); ult = ts;
-    if (fs >= 1) { pausa += dt; if (pausa > 0.9) { fs = -1; pausa = 0; } } else fs = Math.min(1, fs + dt / 3.2);
-    rSl.value = fs; rSl.dispatchEvent(new Event('input', { bubbles: true }));
-    ya = true; requestAnimationFrame(bucle);
-  }
   c.slider('Masa del cuerpo A, mA (kg)', 0.1, 5, 0.1, m1, function (v) { m1 = v; calc(); }, function (v) { return f2(v) + ' kg'; });
   c.slider('Masa del cuerpo B, mB (kg)', 0.1, 5, 0.1, m2, function (v) { m2 = v; calc(); }, function (v) { return f2(v) + ' kg'; });
   c.slider('Velocidad inicial del cuerpo A, vA1 (m/s)', -6, 6, 0.1, v1, function (v) { v1 = v; calc(); }, function (v) { return f2(v) + ' m/s'; });
   c.slider('Velocidad inicial del cuerpo B, vB1 (m/s)', -6, 6, 0.1, v2, function (v) { v2 = v; calc(); }, function (v) { return f2(v) + ' m/s'; });
   c.slider('Coeficiente de restitución e (0 = inelástico, 1 = elástico)', 0, 1, 0.05, e, function (v) { e = v; calc(); }, f2);
-  rSl = c.slider('Tiempo (de antes a después del choque)', -1, 1, 0.01, fs, function (v) { fs = v; if (v < 1) pausa = 0; calc(); }, function (v) { return v < -0.005 ? 'antes' : v > 0.005 ? 'después' : 'justo en el choque'; });
-  c.selector('Animación', ['Parada', 'En marcha'], 0, function (i) { anim = i; if (i) { ult = 0; arrancar(); } });
+  c.reproductor({ max: 2, valor: fs + 1, paso: 0.01, vel: 2 / 3.2, pausaFin: 0.9, etiqueta: 'Instante del choque',
+    fmt: function (v) { return v < 0.995 ? 'antes del choque' : v > 1.005 ? 'después del choque' : 'justo en el choque'; }, cb: function (v) { fs = v - 1; calc(); } });
   c.leyenda([['var(--acc)', 'cuerpo A', 'area'], ['var(--A)', 'cuerpo B', 'area'], ['var(--fg)', 'suma de los dos (el sistema)', 'area'], ['var(--mut)', 'centro de masa (punto del CM) y línea de referencia de las barras', 'linea']]);
-  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; if (vis && anim) { ult = 0; arrancar(); } }).observe(c.el);
   c.alCambiarTema(function (p) {
     P = p; c.renderer.setClearColor(p.bg);
     if (!b1) return;

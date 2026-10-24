@@ -26,11 +26,7 @@ Interactivos.registrar('pendulo-conico', function (c) {
   nuevo();
   c.slider('Longitud L (m)', 0.5, 3, 0.1, L, function (s) { L = s; if (fR) calc(); });
   c.slider('Ángulo β con la vertical (°)', 5, 70, 1, be, function (s) { be = s; if (fR) calc(); });
-  sl = c.slider('Posición (°)', 0, 360, 1, ph, function (s) { ph = s; if (fR) calc(); });
-  if (!c.reducirMovimiento) c.selector('Animación ', ['Parada', 'En marcha'], 0, function (i) {
-    on = i === 1; if (!on) return; var t0 = performance.now(), id = ++tok;
-    (function tick() { if (!on || id !== tok) return; var t = performance.now(), Tp = 2 * Math.PI * Math.sqrt(L * Math.cos(be * rad) / g); sl.value = ((parseFloat(sl.value) + 360 * (t - t0) / 1000 / Tp * 0.5) % 360).toFixed(2); sl.dispatchEvent(new Event('input')); t0 = t; requestAnimationFrame(tick); })();
-  });
+  c.reproductor({ max: 360, valor: ph, paso: 1, vel: function () { return 180 / (2 * Math.PI * Math.sqrt(L * Math.cos(be * rad) / g)); }, ciclico: true, etiqueta: 'Posición angular', fmt: function (v) { return Math.round(v) + '°'; }, cb: function (v) { ph = v; if (fR) calc(); } });
   c.leyenda([['var(--fg)', 'peso mg', 'linea'], ['var(--U)', 'tensión F', 'linea'], ['var(--warn-b)', 'F sen β = m·a_rad (hacia el eje)', 'linea']]);
   c.alCambiarTema(function (q) {
     P = q; c.renderer.setClearColor(q.bg);

@@ -293,7 +293,7 @@
           sel.addEventListener('change', function () { cb(parseInt(sel.value, 10)); pedir(); }); cb(idx); return sel;
         },
         /* Reproductor profesional bajo el lienzo: ▶/⏸, volver al inicio, barra de tiempo y velocidad 0,5× · 1× · 2×.
-           reproductor({ max, valor, paso, vel (unidades/s a 1×), pausaFin (s antes de repetir; 0 = se detiene), fmt(v) → texto, cb(v) }) → { poner(v), valor(), play(), pause() }. cb se llama al crearlo y en cada cambio. */
+           reproductor({ max, valor, paso, vel (unidades/s a 1×, o función), ciclico (da la vuelta sin parar), pausaFin (s antes de repetir; 0 = se detiene), fmt(v) → texto, cb(v) }) → { poner(v), valor(), play(), pause() }. cb se llama al crearlo y en cada cambio. */
         reproductor: function (o) {
           var NS = 'http://www.w3.org/2000/svg', v = o.valor || 0, vel = 1, on = false, ult = 0, espera = 0, fmt = o.fmt || function (x) { return String(Math.round(x * 100) / 100).replace('.', ','); };
           var bar = document.createElement('div'); bar.className = 'int-play'; bar.setAttribute('role', 'group'); bar.setAttribute('aria-label', 'Control de la animación');
@@ -318,7 +318,7 @@
             if (!on) return;
             var dt = Math.min(0.06, ult ? (ts - ult) / 1000 : 0.016); ult = ts;
             if (espera > 0) { espera -= dt; if (espera <= 0) pon(0); }
-            else { pon(v + dt * (o.vel || o.max / 4) * vel); if (v >= o.max - 1e-9) { if (o.pausaFin) espera = o.pausaFin; else { on = false; pinta(); return; } } }
+            else { var nv = v + dt * (typeof o.vel === 'function' ? o.vel() : o.vel || o.max / 4) * vel; if (o.ciclico) { if (nv >= o.max) nv -= o.max; pon(nv); } else pon(nv); if (!o.ciclico && v >= o.max - 1e-9) { if (o.pausaFin) espera = o.pausaFin; else { on = false; pinta(); return; } } }
             requestAnimationFrame(bucle);
           }
           function play() { if (on) return; if (v >= o.max - 1e-9) pon(0); on = true; ult = 0; espera = 0; pinta(); requestAnimationFrame(bucle); }

@@ -21,11 +21,7 @@ Interactivos.registrar('circulo', function (c) {
   }
   c.slider('Radio R (m)', 1, 5, 0.5, R, function (s) { R = s; if (circ) calc(); });
   c.slider('Periodo T (s)', 1, 10, 0.5, Tp, function (s) { Tp = s; if (circ) calc(); });
-  sl = c.slider('Posición angular (°)', 0, 360, 1, ph, function (s) { ph = s; if (circ) calc(); });
-  if (!c.reducirMovimiento) c.selector('Animación ', ['Parada', 'En marcha'], 0, function (i) {
-    on = i === 1; if (!on) return; var t0 = performance.now(), id = ++tok;
-    (function tick() { if (!on || id !== tok) return; var t = performance.now(); sl.value = ((parseFloat(sl.value) + 360 * (t - t0) / 1000 / Tp * 0.5) % 360).toFixed(2); sl.dispatchEvent(new Event('input')); t0 = t; requestAnimationFrame(tick); })();
-  });
+  c.reproductor({ max: 360, valor: ph, paso: 1, vel: function () { return 180 / Tp; }, ciclico: true, etiqueta: 'Posición angular', fmt: function (v) { return Math.round(v) + '°'; }, cb: function (v) { ph = v; if (circ) calc(); } });
   c.leyenda([['var(--U)', 'v (tangente; longitud fija)', 'linea'], ['var(--warn-b)', 'a_rad (hacia el centro; longitud fija)', 'linea']]);
   c.alCambiarTema(function (p) {
     P = p; c.renderer.setClearColor(p.bg);
