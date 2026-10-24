@@ -25,6 +25,7 @@ Lee primero `CLAUDE.md` (fuentes, offsets de página, temario por bloques, regla
   - P: `data-ref="Explicación o ejemplo propio"`.
 - Encabezados `h2` con `id` único (alimentan el índice lateral). Fórmulas: `$…$` y `$$…$$`.
 - Figuras: `<figure class="bookfig"><img src="../assets/img/…png" …><figcaption>…<span class="src" …></span></figcaption></figure>` para recortes del libro; `<figure><svg class="fig" viewBox=…>…</svg><figcaption>…</figcaption></figure>` para las figuras propias, que son **obligatorias** en teoría y ejercicios (CLAUDE.md §3 regla 12). Se generan con `herramientas/figuras_svg.py` (colores con variables CSS, subíndices `v_{x}`) y se comprueban visualmente.
+- Interactivos (2D/3D, three.js): `<figure class="interactivo" data-escena="nombre" data-params='{"dim":2}'><figcaption>…<span class="src" data-l="P" …></span></figcaption></figure>`; ver CLAUDE.md regla 13 y `assets/escenas/`. Tras crearlo: `python herramientas/capturar_interactivos.py <tema>`.
 
 ## Calidad
 - Nada de página, enunciado o convocatoria inventados: verificar siempre en `fuentes_txt/`.
