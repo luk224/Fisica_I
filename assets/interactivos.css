@@ -21,11 +21,44 @@ figure.interactivo .int-spin{width:34px;height:34px;border:3px solid var(--bd);b
 figure.interactivo .int-fallo .int-spin{display:none}
 @keyframes int-giro{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){figure.interactivo .int-spin{animation-duration:2.4s}}
-figure.interactivo .int-ctl{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 18px;padding:8px 14px}
-figure.interactivo .int-ctl label{display:flex;flex-direction:column;gap:2px}
-figure.interactivo .int-ctl output{font-weight:700;color:var(--acc)}
-figure.interactivo .int-ro{padding:0 14px 8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px 18px}
-figure.interactivo .int-ro b{color:var(--acc)}
+/* Reproductor */
+figure.interactivo .int-play{display:flex;align-items:center;gap:10px;padding:8px 14px;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);background:color-mix(in srgb,var(--card) 92%,var(--acc))}
+figure.interactivo .int-btn{flex:none;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;border:1px solid var(--bd);border-radius:50%;background:var(--card);color:var(--fg);cursor:pointer;transition:background .15s,transform .1s,border-color .15s}
+figure.interactivo .int-btn svg{width:18px;height:18px;fill:currentColor}
+figure.interactivo .int-btn:hover{border-color:var(--acc);color:var(--acc)}
+figure.interactivo .int-btn:active{transform:scale(.93)}
+figure.interactivo .int-pp{width:42px;height:42px;background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 1px 4px color-mix(in srgb,var(--acc) 45%,transparent)}
+figure.interactivo .int-pp:hover{color:#fff;background:color-mix(in srgb,var(--acc) 85%,#000)}
+figure.interactivo .int-pp svg{width:22px;height:22px}
+figure.interactivo .int-btn:focus-visible,figure.interactivo .int-vel button:focus-visible,figure.interactivo input[type=range]:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+figure.interactivo .int-time{flex:none;min-width:5.2em;text-align:right;font:600 .82rem var(--sans);font-variant-numeric:tabular-nums;color:var(--acc)}
+figure.interactivo .int-vel{flex:none;display:inline-flex;border:1px solid var(--bd);border-radius:999px;overflow:hidden;background:var(--card)}
+figure.interactivo .int-vel button{border:0;background:transparent;color:var(--mut);font:600 .75rem var(--sans);padding:5px 9px;cursor:pointer}
+figure.interactivo .int-vel button+button{border-left:1px solid var(--bd)}
+figure.interactivo .int-vel button[aria-pressed=true]{background:var(--acc);color:#fff}
+@media (max-width:520px){figure.interactivo .int-play{flex-wrap:wrap}figure.interactivo .int-scrub{order:5;flex-basis:100%}figure.interactivo .int-time{margin-left:auto}}
+@media (max-width:520px){figure.interactivo .int-hint{display:none}figure.interactivo .int-lab{font-size:.66rem}}
+/* Deslizadores */
+figure.interactivo input[type=range]{-webkit-appearance:none;appearance:none;height:22px;background:transparent;cursor:pointer;margin:0;--p:0%}
+figure.interactivo .int-scrub{flex:1 1 120px;min-width:0}
+figure.interactivo input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(to right,var(--acc) var(--p,0%),var(--bd) var(--p,0%))}
+figure.interactivo input[type=range]::-moz-range-track{height:6px;border-radius:3px;background:var(--bd)}
+figure.interactivo input[type=range]::-moz-range-progress{height:6px;border-radius:3px;background:var(--acc)}
+figure.interactivo input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;margin-top:-6px;border-radius:50%;background:var(--card);border:2px solid var(--acc);box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .1s}
+figure.interactivo input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--card);border:2px solid var(--acc);box-shadow:0 1px 3px rgba(0,0,0,.25)}
+figure.interactivo input[type=range]:hover::-webkit-slider-thumb,figure.interactivo input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
+figure.interactivo .int-ctl{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 22px;padding:12px 14px}
+figure.interactivo .int-ctl label{display:flex;flex-direction:column;gap:3px;font-size:.82rem;color:var(--mut);line-height:1.3}
+figure.interactivo .int-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+figure.interactivo .int-ctl output{display:inline-block;flex:none;padding:0 8px;border-radius:999px;background:color-mix(in srgb,var(--acc) 12%,transparent);font-weight:700;color:var(--acc);font-variant-numeric:tabular-nums}
+figure.interactivo .int-ctl select{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:6px 8px;margin-top:2px}
+figure.interactivo .int-ro{padding:2px 14px 12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;text-align:left}
+figure.interactivo .int-ro>div{display:flex;flex-direction:column;gap:1px;padding:7px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);font-size:.8rem;line-height:1.3}
+figure.interactivo .int-ro .k{color:var(--mut);font-size:.74rem}
+figure.interactivo .int-ro b{color:var(--acc);font-size:.92rem;font-variant-numeric:tabular-nums}
+figure.interactivo .int-ctl,figure.interactivo .int-leg{text-align:left}
+figure.interactivo figcaption{text-align:left}
+figure.interactivo .int-lab{font-weight:600}
 figure.interactivo .int-leg{display:flex;flex-wrap:wrap;gap:4px 16px;padding:2px 14px 10px;font-size:.85rem;color:var(--fg)}
 figure.interactivo .int-leg span{display:inline-flex;align-items:center;gap:6px}
 figure.interactivo .int-sw{display:inline-block;flex:none;background:var(--c)}
@@ -37,6 +70,6 @@ figure.interactivo .int-static{display:none;width:100%;height:auto}
 figure.interactivo.int-sinwebgl .int-static{display:block}
 @media print{
   figure.interactivo{break-inside:avoid;border:1px solid #000}
-  figure.interactivo .int-stage,figure.interactivo .int-ctl,figure.interactivo .int-ro,figure.interactivo .int-leg{display:none}
+  figure.interactivo .int-stage,figure.interactivo .int-play,figure.interactivo .int-ctl,figure.interactivo .int-ro,figure.interactivo .int-leg{display:none}
   figure.interactivo .int-static{display:block}
 }

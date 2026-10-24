@@ -7,8 +7,8 @@ Interactivos.registrar('cinematica-rotacion', function (c) {
   var T = c.THREE, H = c.H, P = c.colores();
   var r = 0.3, w0 = 0, al = 0.6, t = 1.87, TM = 4, RV = 2, on = false, ult = 0, anim = false, sl, w = 0.035, kv = 1, ka = 1, listo = false;
   var fill, aro, rayo, ref, arco, pt, fv, ft, fr, fa, eV, eT, eR, eA;
-  var lth = c.lectura('Ángulo girado θ'), lw = c.lectura('Velocidad angular ω = ω₀ + αt'), lv = c.lectura('Rapidez v = rω'), lt = c.lectura('Aceleración tangencial a tan = rα'),
-      lr = c.lectura('Aceleración radial a rad = rω² (hacia el eje)'), la = c.lectura('Aceleración total a = √(a tan² + a rad²)'), lg = c.lectura('Ángulo de a respecto a la dirección hacia el eje');
+  var lth = c.lectura('Ángulo girado θ'), lw = c.lectura('Velocidad angular ω = ω₀ + αt'), lv = c.lectura('Rapidez v = rω'), lt = c.lectura('Aceleración tangencial aₜ = rα'),
+      lr = c.lectura('Aceleración radial aᵣ = rω² (hacia el eje)'), la = c.lectura('Aceleración total a = √(aₜ² + aᵣ²)'), lg = c.lectura('Ángulo de a respecto a la dirección hacia el eje');
   var f2 = function (x) { var q = Math.round(x * 100) / 100; return String(q === 0 ? 0 : q).replace('-', '−').replace('.', ','); };
   var f1 = function (x) { var q = Math.round(x * 10) / 10; return String(q === 0 ? 0 : q).replace('-', '−').replace('.', ','); };
 
@@ -23,7 +23,8 @@ Interactivos.registrar('cinematica-rotacion', function (c) {
     fv = H.flecha2D(T, P.S, w * 1.7); fa = H.flecha2D(T, P.fg, w * 1.2); ft = H.flecha2D(T, P.L, w * 1.7); fr = H.flecha2D(T, P.A, w * 1.7);
     fv.position.z = 0.3; fa.position.z = 0.28; ft.position.z = 0.31; fr.position.z = 0.32; c.scene.add(fv, fa, ft, fr);
     pt = H.punto(T, RV, 0, w * 3.4, P.fg); pt.position.z = 0.6; c.scene.add(pt);
-    eV = c.etiqueta('v', 0, 0, 'c'); eT = c.etiqueta('a tan', 0, 0, 'c'); eR = c.etiqueta('a rad', 0, 0, 'c'); eA = c.etiqueta('a', 0, 0, 'c');
+    eV = c.etiqueta('v', 0, 0, 'c'); eT = c.etiqueta('aₜ', 0, 0, 'c'); eR = c.etiqueta('aᵣ', 0, 0, 'c'); eA = c.etiqueta('a', 0, 0, 'c');
+    [[eV, 'var(--U)'], [eT, 'var(--X)'], [eR, 'var(--A)']].forEach(function (q) { if (q[0].el) q[0].el.style.color = q[1]; });
     c.etiqueta('eje', 0, -0.35, 'c'); c.etiqueta('θ = 0', RV + 0.55, 0, 'l');
   }
   function escalas() {
@@ -44,27 +45,19 @@ Interactivos.registrar('cinematica-rotacion', function (c) {
     fr.poner([px, py], [px - co * ar * ka, py - si * ar * ka]);
     fa.poner([px, py], [px + tx * at * ka - co * ar * ka, py + ty * at * ka - si * ar * ka]);
     eV.mover(ox + tx * v * kv * 1.0 + 0.3 * (v >= 0 ? tx : -tx), oy + ty * v * kv + 0.3 * (v >= 0 ? ty : -ty)); eV.ver(Math.abs(v * kv) > 0.4);
-    eT.mover(px + tx * at * ka * 0.5 - 0.35 * co * (ar * ka > 0.2 ? 0 : 1), py + ty * at * ka * 0.5 - 0.35 * si * (ar * ka > 0.2 ? 0 : 1)); eT.ver(Math.abs(at * ka) > 0.4);
+    eT.mover(px + tx * at * ka + 0.32 * (at >= 0 ? tx : -tx), py + ty * at * ka + 0.32 * (at >= 0 ? ty : -ty)); eT.ver(Math.abs(at * ka) > 0.4);
     eR.mover(px - co * ar * ka * 0.5 - 0.4 * tx * Math.sign(at || 1), py - si * ar * ka * 0.5 - 0.4 * ty * Math.sign(at || 1)); eR.ver(ar * ka > 0.4);
     eA.mover(px + (tx * at - co * ar) * ka + 0.28 * (tx * at - co * ar >= 0 ? 1 : -1), py + (ty * at - si * ar) * ka + 0.28 * (ty * at - si * ar >= 0 ? 1 : -1)); eA.ver(a * ka > 0.5);
     lth(f2(th) + ' rad = ' + f2(th / (2 * Math.PI)) + ' rev = ' + f1(th * 180 / Math.PI) + '°');
     lw(f2(om) + ' rad/s'); lv(f2(v) + ' m/s'); lt(f2(at) + ' m/s²'); lr(f2(ar) + ' m/s²'); la(f2(a) + ' m/s²');
-    lg(a > 1e-9 ? f1(Math.atan2(Math.abs(at), ar) * 180 / Math.PI) + '°  (tan = a tan / a rad = α / ω²)' : 'sin aceleración');
+    lg(a > 1e-9 ? f1(Math.atan2(Math.abs(at), ar) * 180 / Math.PI) + '°  (tan = aₜ / aᵣ = α / ω²)' : 'sin aceleración');
   }
   function cambia() { if (!listo) return; escalas(); calc(); }
   c.slider('Radio r del punto (m)', 0.1, 1, 0.05, r, function (s) { r = s; cambia(); });
   c.slider('Velocidad angular inicial ω₀ (rad/s)', -2, 2, 0.1, w0, function (s) { w0 = s; cambia(); });
   c.slider('Aceleración angular α (rad/s²)', -1, 1, 0.1, al, function (s) { al = s; cambia(); });
-  sl = c.slider('Instante t (s)', 0, TM, 0.01, t, function (s) { t = s; calc(); });
-  if (!c.reducirMovimiento) c.selector('Animación ', ['Parada', 'En marcha'], 0, function (i) {
-    anim = i === 1; ult = 0; if (anim) requestAnimationFrame(bucle);
-  });
-  function bucle(ts) {
-    if (!anim) return; var dt = Math.min(0.06, ult ? (ts - ult) / 1000 : 0.016); ult = ts;
-    var nv = parseFloat(sl.value) + dt * 0.6; if (nv > TM) nv = 0;
-    sl.value = nv.toFixed(3); sl.dispatchEvent(new Event('input', { bubbles: true })); requestAnimationFrame(bucle);
-  }
-  c.leyenda([['var(--U)', 'v (tangente; escala fija)', 'linea'], ['var(--X)', 'a tan (tangente)', 'linea'], ['var(--A)', 'a rad (hacia el eje)', 'linea'], ['var(--fg)', 'a total (las tres, a escala común que se reajusta en cada instante)', 'linea'],
+  c.reproductor({ max: TM, valor: t, paso: 0.01, vel: 1, etiqueta: 'Instante t', fmt: function (x) { return 't = ' + f2(x) + ' s'; }, cb: function (x) { t = x; calc(); } });
+  c.leyenda([['var(--U)', 'v (tangente; escala fija)', 'linea'], ['var(--X)', 'aₜ (tangente)', 'linea'], ['var(--A)', 'aᵣ (hacia el eje)', 'linea'], ['var(--fg)', 'a total (las tres, a escala común que se reajusta en cada instante)', 'linea'],
              ['var(--mut)', 'ángulo girado θ desde la posición inicial (línea discontinua)', 'linea']]);
   c.alCambiarTema(function (p) {
     P = p; c.renderer.setClearColor(p.bg);

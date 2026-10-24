@@ -56,7 +56,7 @@ def pagina(escena, params, tmp):
 <style>body{{margin:0;background:#fbfaf6;overflow:hidden}}
 figure.interactivo{{margin:0;border:0;border-radius:0;width:{ANCHO}px}}
 figure.interactivo .int-stage{{aspect-ratio:auto;height:{ALTO}px;max-height:none}}
-figure.interactivo .int-ctl,figure.interactivo .int-ro,figure.interactivo .int-leg,figure.interactivo figcaption,.int-hint,.int-reset,.int-static{{display:none!important}}</style>
+figure.interactivo .int-play,figure.interactivo .int-ctl,figure.interactivo .int-ro,figure.interactivo .int-leg,figure.interactivo figcaption,.int-hint,.int-reset,.int-static{{display:none!important}}</style>
 <script src="{js.as_uri()}"></script>
 <figure class="interactivo" data-escena="{escena}" data-params='{params}'><figcaption>x</figcaption></figure>
 <script>setInterval(function(){{document.title=Date.now()}},100)</script>""", encoding="utf8")

@@ -28,7 +28,7 @@ Interactivos.registrar('polea-masa', function (c) {
     base = H.cinta(T, [[[1.2, YB], [5.8, YB]]], P.mut, w); c.scene.add(base);
     function rect(col, op) { var q = new T.Mesh(new T.PlaneGeometry(1, 1), new T.MeshBasicMaterial({ color: col, transparent: true, opacity: op })); q.position.z = 0.2; q.poner = function (x0, y0, x1, y1) { q.position.x = (x0 + x1) / 2; q.position.y = (y0 + y1) / 2; q.scale.set(Math.max(1e-6, x1 - x0), Math.max(1e-6, y1 - y0), 1); }; c.scene.add(q); return q; }
     barra1 = rect(P.fg, 0.55); barra2a = rect(P.A, 0.7); barra2b = rect(P.acc, 0.7);
-    eP = c.etiqueta('Energía perdida m·g·s', 2.2, YB - 0.38, 'c'); eB = c.etiqueta('K bloque + K rueda', 4.8, YB - 0.38, 'c');
+    eP = c.etiqueta('m·g·s', 2.2, YB - 0.38, 'c'); eB = c.etiqueta('K bloque + K rueda', 4.8, YB - 0.38, 'c');
     e1 = c.etiqueta('bloque', 0, 0, 'l'); e2 = c.etiqueta('rueda', WX, WY + WR + 0.28, 'c');
   }
   function calc() {
@@ -56,14 +56,8 @@ Interactivos.registrar('polea-masa', function (c) {
   c.slider('Radio de la rueda R (m)', 0.1, 0.6, 0.01, R, function (v) { R = v; calc(); });
   c.slider('Altura de caída h (m)', 1, 5, 0.5, h, function (v) { h = v; calc(); });
   c.slider('Factor c de I = c·M·R²  (½ disco macizo, 1 aro)', 0.1, 1, 0.05, cc, function (v) { cc = v; calc(); }, f2);
-  rs = c.slider('Tiempo (de 0 a la llegada abajo)', 0, 1, 0.005, fr, function (v) { fr = v; if (v < 1) pausa = 0; calc(); }, function (v) { return v < 0.005 ? 'al soltar' : v > 0.995 ? 'a punto de llegar abajo' : f2(v * 100) + ' % del tiempo'; });
-  c.selector('Animación ', ['Parada', 'En marcha'], 0, function (i) { anim = i === 1; ult = 0; if (anim) requestAnimationFrame(bucle); });
-  function bucle(ts) {
-    if (!anim) return; var dt = Math.min(0.06, ult ? (ts - ult) / 1000 : 0.016); ult = ts;
-    var nf = parseFloat(rs.value);
-    if (nf >= 1) { pausa += dt; if (pausa > 0.9) { nf = 0; pausa = 0; } } else nf = Math.min(1, nf + dt / 3);
-    rs.value = nf; rs.dispatchEvent(new Event('input', { bubbles: true })); requestAnimationFrame(bucle);
-  }
+  c.reproductor({ max: 1, valor: fr, paso: 0.002, vel: 1 / 3, pausaFin: 0.9, etiqueta: 'Instante de la caída',
+    fmt: function (v) { return 't = ' + f2(v * Math.sqrt(2 * h / (m * g / (m + cc * M)))) + ' s'; }, cb: function (v) { fr = v; calc(); } });
   c.leyenda([['var(--A)', 'bloque (m) y su energía cinética', 'area'], ['var(--acc)', 'rueda (M, R) y su energía cinética de rotación', 'area'], ['var(--fg)', 'energía potencial perdida m·g·s', 'area']]);
   c.alCambiarTema(function (p) {
     P = p; c.renderer.setClearColor(p.bg);

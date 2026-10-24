@@ -9,7 +9,7 @@ Interactivos.registrar('ejes-paralelos', function (c) {
   var CX = -3.9, CY = 0.5, RG = 1.6, GX0 = 2.0, GX1 = 7.4, GY0 = -2.7, GY1 = 3.1, FM = 1.5;
   var fondo = [], cuerpoG = null, relleno, borde, borde2, cm1, cm2, linea, eje1, eje2, eje3, curva, icm, hueco, pgr, ejesG;
   var marcasF = [], eCM, eAx, eD, eI, eIcm, eX, eY, lcm, lMd, lP, lR, lQ;
-  lcm = c.lectura('I cm (eje por el centro de masa)'); lMd = c.lectura('M·d²'); lP = c.lectura('I P = I cm + M·d²'); lR = c.lectura('Cociente I P / I cm'); lQ = c.lectura('Observación');
+  lcm = c.lectura('I(cm) (eje por el centro de masa)'); lMd = c.lectura('M·d²'); lP = c.lectura('I(P) = I(cm) + M·d²'); lR = c.lectura('Cociente I(P) / I(cm)'); lQ = c.lectura('Observación');
   var f2 = function (x) { var q = Math.round(x * 100) / 100; return String(q === 0 ? 0 : q).replace('-', '−').replace('.', ','); };
   var f3 = function (x) { var q = Math.round(x * 1000) / 1000; return String(q === 0 ? 0 : q).replace('-', '−').replace('.', ','); };
   var gx = function (u) { return GX0 + u / FM * (GX1 - GX0); };
@@ -53,18 +53,18 @@ Interactivos.registrar('ejes-paralelos', function (c) {
     var yc = GY0 + cc / gmax * (GY1 - GY0 - 0.2), yp = GY0 + (cc + f * f) / gmax * (GY1 - GY0 - 0.2);
     hueco.set(f > 0.02 ? [[[gx(f), yc], [gx(f), yp]]] : []); pgr.mover(gx(f), yp);
     eCM.mover(CX, CY + 0.42); eAx.mover(ax, CY + 0.45); eD.mover((CX + ax) / 2, CY - 0.95); eD.ver(dW > 0.5);
-    eI.mover(GX0 + 0.1, GY1 + 0.25); eIcm.mover(GX1 - 0.1, yc + 0.28); eX.mover(GX1 - 0.3, GY0 - 0.42); eY.mover(gx(f) + 0.15, yp + 0.34);
+    eI.mover(GX0 + 0.1, GY1 + 0.25); eIcm.mover(GX1 - 0.1, yc + 0.28); eX.mover(GX1 + 0.4, GY0 - 0.42); eY.mover(gx(f) - 0.2, yp + 0.4);
     lcm(f3(Icm) + ' kg·m²  (' + (cuerpo === 0 ? '1/12·M·L²' : cuerpo === 1 ? '1/2·M·R²' : cuerpo === 2 ? '2/5·M·R²' : 'M·R²') + ')');
     lMd(f3(Md) + ' kg·m²  (d = ' + f2(f * s) + ' m)'); lP(f3(IP) + ' kg·m²'); lR(f2(IP / Icm));
-    lQ(f < 0.005 ? 'El eje pasa por el centro de masa: I es el mínimo posible.' : (cuerpo === 0 && Math.abs(f - 0.5) < 1e-6) ? 'Eje en el extremo de la varilla: I = ⅓ML² (tabla 9.2b).' : (cuerpo === 0 && f > 0.5) ? 'El eje está fuera de la varilla (unido a ella de forma rígida).' : 'Cualquier otro eje paralelo da un I mayor que I cm.');
+    lQ(f < 0.005 ? 'El eje pasa por el centro de masa: I es el mínimo posible.' : (cuerpo === 0 && Math.abs(f - 0.5) < 1e-6) ? 'Eje en el extremo de la varilla: I = ⅓ML² (tabla 9.2b).' : (cuerpo === 0 && f > 0.5) ? 'El eje está fuera de la varilla (unido a ella de forma rígida).' : 'Cualquier otro eje paralelo da un I mayor que I(cm).');
   }
   eCM = c.etiqueta('CM', CX, CY, 'c'); eAx = c.etiqueta('eje', CX, CY, 'c'); eD = c.etiqueta('d', CX, CY, 'c');
-  eI = c.etiqueta('I', GX0, GY1, 'l'); eIcm = c.etiqueta('I cm', GX1, 0, 'r'); eX = c.etiqueta('d / (L o R)', GX1 - 0.3, GY0 - 0.42, 'r'); eY = c.etiqueta('I P', GX0, 0, 'l');
+  eI = c.etiqueta('I', GX0, GY1, 'l'); eIcm = c.etiqueta('I(cm)', GX1, 0, 'r'); eX = c.etiqueta('d', GX1 + 0.4, GY0 - 0.42, 'c'); eY = c.etiqueta('I(P)', GX0, 0, 'l');
   c.selector('Cuerpo uniforme ', ['Varilla delgada (eje ⊥ a ella): ML²/12', 'Cilindro macizo (eje paralelo al de simetría): MR²/2', 'Esfera maciza (eje paralelo a un diámetro): 2MR²/5', 'Aro o cilindro hueco de pared delgada: MR²'], 0, function (i) { cuerpo = i; if (listo) dibujaCuerpo(); });
   c.slider('Masa M (kg)', 1, 20, 0.5, M, function (v) { M = v; calc(); });
   c.slider('Tamaño: L (varilla) o R (resto) (m)', 0.2, 3, 0.1, s, function (v) { s = v; calc(); });
-  c.slider('Distancia del eje al CM, d en unidades de L o R', 0, FM, 0.05, f, function (v) { f = v; calc(); }, function (v) { return f2(v); });
-  c.leyenda([['var(--acc)', 'I P (curva) frente a d', 'linea'], ['var(--mut)', 'I cm (valor en d = 0)', 'linea'], ['var(--warn-b)', 'M·d² (lo que añade el desplazamiento) y eje de giro', 'linea'], ['var(--fg)', '× centro de masa', 'punto']]);
+  c.reproductor({ max: FM, valor: f, paso: 0.01, vel: 0.25, pausaFin: 0.8, etiqueta: 'Distancia d del eje al CM', fmt: function (v) { return 'd = ' + f2(v) + (cuerpo === 0 ? ' L' : ' R'); }, cb: function (v) { f = v; calc(); } });
+  c.leyenda([['var(--acc)', 'I(P) (curva) frente a d', 'linea'], ['var(--mut)', 'I(cm) (valor en d = 0)', 'linea'], ['var(--warn-b)', 'M·d² (lo que añade el desplazamiento) y eje de giro', 'linea'], ['var(--fg)', '× centro de masa', 'punto']]);
   c.alCambiarTema(function (p) { P = p; c.renderer.setClearColor(p.bg); if (listo) dibujaCuerpo(); });
   c.vista(-6.4, 8, -3.4, 3.7); w = 0.0055 * 7.1;
   listo = true; dibujaCuerpo();

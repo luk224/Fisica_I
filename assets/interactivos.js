@@ -292,21 +292,58 @@
           sel.value = idx; l.appendChild(document.createTextNode(etiqueta)); l.appendChild(sel); ctl.appendChild(l);
           sel.addEventListener('change', function () { cb(parseInt(sel.value, 10)); pedir(); }); cb(idx); return sel;
         },
+        /* Reproductor profesional bajo el lienzo: ▶/⏸, volver al inicio, barra de tiempo y velocidad 0,5× · 1× · 2×.
+           reproductor({ max, valor, paso, vel (unidades/s a 1×), pausaFin (s antes de repetir; 0 = se detiene), fmt(v) → texto, cb(v) }) → { poner(v), valor(), play(), pause() }. cb se llama al crearlo y en cada cambio. */
+        reproductor: function (o) {
+          var NS = 'http://www.w3.org/2000/svg', v = o.valor || 0, vel = 1, on = false, ult = 0, espera = 0, fmt = o.fmt || function (x) { return String(Math.round(x * 100) / 100).replace('.', ','); };
+          var bar = document.createElement('div'); bar.className = 'int-play'; bar.setAttribute('role', 'group'); bar.setAttribute('aria-label', 'Control de la animación');
+          function icono(d) { var s = document.createElementNS(NS, 'svg'), p = document.createElementNS(NS, 'path'); s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('aria-hidden', 'true'); p.setAttribute('d', d); s.appendChild(p); return s; }
+          var ICON = { play: 'M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z', pausa: 'M7 5h3.5v14H7zM13.5 5H17v14h-3.5z', inicio: 'M6 5h2.2v14H6zM19 5.7v12.6a.9.9 0 0 1-1.4.74l-8.4-6.3a.9.9 0 0 1 0-1.48l8.4-6.3A.9.9 0 0 1 19 5.7z', repetir: 'M12 5V2.5L7.5 6.5 12 10.5V8a4.5 4.5 0 1 1-4.5 4.5H5A7 7 0 1 0 12 5z' };
+          var bpp = document.createElement('button'); bpp.type = 'button'; bpp.className = 'int-btn int-pp';
+          var bri = document.createElement('button'); bri.type = 'button'; bri.className = 'int-btn int-rw'; bri.setAttribute('aria-label', 'Volver al inicio'); bri.title = 'Volver al inicio'; bri.appendChild(icono(ICON.inicio));
+          var rg = document.createElement('input'); rg.type = 'range'; rg.className = 'int-scrub'; rg.min = 0; rg.max = o.max; rg.step = o.paso || o.max / 500; rg.value = v; rg.setAttribute('aria-label', o.etiqueta || 'Tiempo');
+          var ou = document.createElement('output'); ou.className = 'int-time';
+          var gv = document.createElement('div'); gv.className = 'int-vel'; gv.setAttribute('role', 'group'); gv.setAttribute('aria-label', 'Velocidad');
+          var bv = [0.5, 1, 2].map(function (k) {
+            var b = document.createElement('button'); b.type = 'button'; b.textContent = String(k).replace('.', ',') + '×'; b.setAttribute('aria-pressed', k === 1 ? 'true' : 'false');
+            b.addEventListener('click', function () { vel = k; bv.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); }); gv.appendChild(b); return b;
+          });
+          bar.appendChild(bpp); bar.appendChild(bri); bar.appendChild(rg); bar.appendChild(ou); bar.appendChild(gv); stage.after(bar);
+          function pinta() {
+            var fin = v >= o.max - 1e-9 && !on; bpp.replaceChildren(icono(on ? ICON.pausa : fin ? ICON.repetir : ICON.play));
+            var t = on ? 'Pausa' : fin ? 'Repetir' : 'Reproducir'; bpp.setAttribute('aria-label', t); bpp.title = t; bpp.classList.toggle('on', on);
+          }
+          function pon(x, desdeBarra) { v = Math.max(0, Math.min(o.max, x)); if (!desdeBarra) rg.value = v; ou.textContent = fmt(v); rg.style.setProperty('--p', (100 * v / o.max).toFixed(2) + '%'); o.cb(v); pedir(); pinta(); }
+          function bucle(ts) {
+            if (!on) return;
+            var dt = Math.min(0.06, ult ? (ts - ult) / 1000 : 0.016); ult = ts;
+            if (espera > 0) { espera -= dt; if (espera <= 0) pon(0); }
+            else { pon(v + dt * (o.vel || o.max / 4) * vel); if (v >= o.max - 1e-9) { if (o.pausaFin) espera = o.pausaFin; else { on = false; pinta(); return; } } }
+            requestAnimationFrame(bucle);
+          }
+          function play() { if (on) return; if (v >= o.max - 1e-9) pon(0); on = true; ult = 0; espera = 0; pinta(); requestAnimationFrame(bucle); }
+          function pause() { on = false; pinta(); }
+          bpp.addEventListener('click', function () { if (on) pause(); else play(); });
+          bri.addEventListener('click', function () { pon(0); });
+          rg.addEventListener('input', function () { pause(); pon(parseFloat(rg.value), true); });
+          if (reducir) gv.style.display = 'none';
+          pon(v); return { poner: function (x) { pon(x); }, valor: function () { return v; }, play: play, pause: pause };
+        },
         /* Slider accesible; cb(valor) se llama al mover y una vez al crearlo. fmt opcional para la lectura. */
         slider: function (etiqueta, min, max, paso, valor, cb, fmt) {
           if (!ctl) { ctl = document.createElement('div'); ctl.className = 'int-ctl'; stage.after(ctl); }
           var l = document.createElement('label'), o = document.createElement('output'), r = document.createElement('input');
           r.type = 'range'; r.min = min; r.max = max; r.step = paso; r.value = valor;
           fmt = fmt || function (v) { return String(Math.round(v * 100) / 100).replace('-', '−'); };
-          l.appendChild(document.createTextNode(etiqueta + ' = ')); l.appendChild(o); l.appendChild(r); ctl.appendChild(l);
-          function act() { var v = parseFloat(r.value); o.textContent = fmt(v); cb(v); pedir(); }
+          var hd = document.createElement('span'); hd.className = 'int-row'; var tx = document.createElement('span'); tx.textContent = etiqueta; hd.appendChild(tx); hd.appendChild(o); l.appendChild(hd); l.appendChild(r); ctl.appendChild(l);
+          function act() { var v = parseFloat(r.value); o.textContent = fmt(v); r.style.setProperty('--p', (100 * (v - r.min) / (r.max - r.min)).toFixed(2) + '%'); cb(v); pedir(); }
           r.addEventListener('input', act); act(); return r;
         },
         /* Lecturas numéricas bajo el lienzo: lectura('clave','Etiqueta') devuelve fn(texto). */
         lectura: function (etiqueta) {
           if (!ro) { ro = document.createElement('div'); ro.className = 'int-ro'; (ctl || stage).after(ro); }
           var d = document.createElement('div'), b = document.createElement('b');
-          if (etiqueta) d.appendChild(document.createTextNode(etiqueta + ': ')); d.appendChild(b); ro.appendChild(d);
+          if (etiqueta) { var k = document.createElement('span'); k.className = 'k'; k.textContent = etiqueta; d.appendChild(k); } d.appendChild(b); ro.appendChild(d);
           return function (t) { b.textContent = t; };
         },
         /* Leyenda bajo el lienzo: leyenda([['var(--L)', 'F(x)', 'linea'|'area'|'punto'], …]); los colores son variables CSS, siguen el tema. */
