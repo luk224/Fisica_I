@@ -10,6 +10,8 @@
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"></script>
 <script defer src="../assets/resumen.js"></script>
+<link rel="stylesheet" href="../assets/interactivos.css">
+<script defer src="../assets/interactivos.js"></script>
 </head>
 <body>
 <div class="topbar"><div class="in">
@@ -250,6 +252,16 @@
 </figure>
 
 <div class="box tip"><span class="h">Truco de examen</span><p>Antes de tocar ninguna fórmula, escribe en una lista las cinco magnitudes $x-x_0,\ t,\ v_{0x},\ v_x,\ a_x$ y marca cuáles conoces, cuál te piden y cuál no interviene. Eso te dice directamente qué ecuación usar sin tanteos.</p></div>
+
+<figure class="interactivo" data-escena="mua" data-params='{"dim":2,"modo":"xt"}' aria-label="Interactivo: posición frente al tiempo con aceleración constante y su tangente">
+  <img class="int-static" src="../assets/img/int_mua_xt.png" alt="Interactivo: posición frente al tiempo con aceleración constante y su tangente">
+  <figcaption><b>Pruébalo tú:</b> cambia $x_0$, $v_0$ y $a$ y desplaza el instante $t$: la pendiente de la tangente a $x(t)$ es la velocidad en ese instante, y la curva es una parábola. <span class="src" data-l="P" data-ref="Interactivo propio: x(t) = x₀ + v₀t + ½at²">P</span></figcaption>
+</figure>
+
+<figure class="interactivo" data-escena="mua" data-params='{"dim":2,"modo":"vt"}' aria-label="Interactivo: velocidad frente al tiempo con aceleración constante y área bajo la curva">
+  <img class="int-static" src="../assets/img/int_mua_vt.png" alt="Interactivo: velocidad frente al tiempo con aceleración constante y área bajo la curva">
+  <figcaption><b>Pruébalo tú:</b> la gráfica $v(t)$ es una recta de pendiente $a$, y el área sombreada entre 0 y $t$ es el desplazamiento $x-x_0$ (cuenta como negativa si $v<0$). <span class="src" data-l="P" data-ref="Interactivo propio: v(t) = v₀ + at">P</span></figcaption>
+</figure>
 
 <h2 id="s5"><span class="n">5</span>Cuerpos en caída libre</h2>
 <div class="box def"><span class="h">Caída libre</span><p>La <b>caída libre</b> es el caso particular de aceleración constante en el que la única fuerza es la gravedad (se desprecia la resistencia del aire). Cerca de la superficie terrestre, la aceleración de caída libre tiene magnitud $g=9.80\ \text{m/s}^2$ y apunta siempre hacia abajo. Si eliges el eje $+y$ hacia arriba, entonces $a_y=-g=-9.80\ \text{m/s}^2$ — con ese signo se usan directamente las cinco ecuaciones de la sección anterior, cambiando $x$ por $y$.</p>

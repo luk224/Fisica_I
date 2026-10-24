@@ -10,6 +10,8 @@
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"></script>
 <script defer src="../assets/resumen.js"></script>
+<link rel="stylesheet" href="../assets/interactivos.css">
+<script defer src="../assets/interactivos.js"></script>
 </head>
 <body>
 <div class="topbar"><div class="in">
@@ -164,6 +166,11 @@
 <div class="box ex"><span class="h">Ejemplo del libro 4.5 — la botella de cátsup (cinemática + dinámica juntas)</span><p>Una botella de 0.45 kg desliza sobre un mostrador liso, se suelta a 2.8 m/s y se frena por la fricción hasta pararse tras recorrer 1.0 m. Aquí se combina el tema 2 con este tema: primero, cinemática (ec. $v^2=v_0^2+2a\Delta x$) da la aceleración, $a_x=(0^2-2.8^2)/(2\times1.0)=-3.9\ \text{m/s}^2$; después, la segunda ley traduce esa aceleración en la fuerza de fricción que la produjo: $f_x=ma_x=0.45\times(-3.9)=-1.8$ N (1.8 N, opuesta al movimiento).</p>
   <span class="src" data-l="U" data-ref="U Ejemplo 4.5, p. 113">U p.113</span></div>
 <div class="box tip"><span class="h">Truco de examen</span><p>Cuando un problema da datos de posición/velocidad/tiempo sin mencionar fuerzas directamente, casi siempre hay que pasar primero por la <b>cinemática</b> (temas 2-3) para obtener $a$, y solo entonces aplicar $\sum F=ma$ (o al revés: fuerza conocida → $a=\sum F/m$ → cinemática para tiempo/distancia). Identificar qué falta (¿aceleración o fuerza?) es el primer paso de cualquier problema de dinámica.</p></div>
+
+<figure class="interactivo" data-escena="fuerzas" data-params='{"dim":2}' aria-label="Interactivo: suma de dos fuerzas y aceleración resultante">
+  <img class="int-static" src="../assets/img/int_fuerzas.png" alt="Interactivo: suma de dos fuerzas y aceleración resultante">
+  <figcaption><b>Pruébalo tú:</b> ajusta módulo y ángulo de $\vec F_1$ y $\vec F_2$. La aceleración tiene la dirección de $\sum\vec F$ y módulo $\sum F/m$; con $\vec F_2=-\vec F_1$ (mismo módulo, ángulos opuestos 180°) la suma es cero y el cuerpo no acelera. <span class="src" data-l="P" data-ref="Interactivo propio de la segunda ley de Newton">P</span></figcaption>
+</figure>
 
 <h2 id="s4"><span class="n">4</span>Masa y peso</h2>
 <div class="box warn"><span class="h">Error típico (el más común del tema)</span><p>En el lenguaje cotidiano se usan "masa" y "peso" como sinónimos, pero en física son cosas distintas. Es indispensable no confundirlas antes de seguir.</p>

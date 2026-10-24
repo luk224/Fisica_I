@@ -10,6 +10,8 @@
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"></script>
 <script defer src="../assets/resumen.js"></script>
+<link rel="stylesheet" href="../assets/interactivos.css">
+<script defer src="../assets/interactivos.js"></script>
 </head>
 <body>
 <div class="topbar"><div class="in">
@@ -243,6 +245,11 @@
 </figure>
 
 
+<figure class="interactivo" data-escena="proyectil" data-params='{"dim":2}' aria-label="Interactivo: trayectoria de un proyectil con su velocidad y sus componentes">
+  <img class="int-static" src="../assets/img/int_proyectil.png" alt="Interactivo: trayectoria de un proyectil con su velocidad y sus componentes">
+  <figcaption><b>Pruébalo tú:</b> cambia $v_0$, el ángulo y la altura inicial. La componente horizontal $v_x$ no cambia nunca; la vertical $v_y$ disminuye a razón de $g$ y es cero en el punto más alto. Comprueba que 45° da el máximo alcance cuando $y_0=0$. <span class="src" data-l="P" data-ref="Interactivo propio: proyectil sin resistencia del aire, g = 9,8 m/s²">P</span></figcaption>
+</figure>
+
 <h2 id="s4"><span class="n">4</span>Movimiento en un círculo</h2>
 <div class="box intu"><span class="h">Idea intuitiva</span><p>Piensa en un coche tomando una curva a velocidad constante: el velocímetro no cambia, pero claramente está acelerando porque cambia de dirección todo el rato. Esa aceleración, en el caso de rapidez constante (movimiento circular uniforme, MCU), apunta siempre <b>hacia el centro</b> del círculo — de ahí el nombre «centrípeta» («que busca el centro»).</p></div>
 <div class="box def"><span class="h">Movimiento circular uniforme (MCU)</span><p>Es el movimiento de una partícula que recorre una trayectoria circular con <b>rapidez constante</b>. Como la rapidez no cambia, la componente paralela de la aceleración (sección 3.2) es nula: toda la aceleración es perpendicular a $\vec v$, es decir, puramente radial.</p>
@@ -317,6 +324,11 @@
 </figure>
 
 <div class="box warn"><span class="h">Error típico</span><p>$a_{\text{tan}}=d|\vec v|/dt$ (cuánto cambia la <i>rapidez</i>, un escalar) <b>no</b> es lo mismo que $|d\vec v/dt|=|\vec a|$ (el módulo de <i>todo</i> el vector aceleración, que incluye también el giro). En el MCU puro, $d|\vec v|/dt=0$ porque la rapidez no cambia, pero $|\vec a|=a_{\text{rad}}\ne0$ porque sí está girando.</p></div>
+
+<figure class="interactivo" data-escena="circulo" data-params='{"dim":2}' aria-label="Interactivo: movimiento circular uniforme con velocidad y aceleración radial">
+  <img class="int-static" src="../assets/img/int_circulo.png" alt="Interactivo: movimiento circular uniforme con velocidad y aceleración radial">
+  <figcaption><b>Pruébalo tú:</b> la velocidad es siempre tangente y la aceleración apunta al centro. Prueba a reducir el periodo: $a_{rad}=v^2/R=4\pi^2R/T^2$ crece mucho más rápido que $v$. <span class="src" data-l="P" data-ref="Interactivo propio de a_rad = v²/R (U §3.4, pp. 82-85)">P</span></figcaption>
+</figure>
 
 <h2 id="s5"><span class="n">5</span>Velocidad relativa</h2>
 <div class="box intu"><span class="h">Idea intuitiva</span><p>Si vas en un tren a 3.0 m/s y caminas por el pasillo a 1.0 m/s en el sentido de la marcha, alguien parado en el andén te ve moverte a 4.0 m/s: tu velocidad depende de <i>quién mira</i>. Esa es la velocidad relativa: no hay una única «velocidad verdadera», solo velocidades relativas a un observador (marco de referencia) concreto.</p></div>

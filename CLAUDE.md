@@ -95,6 +95,8 @@ E:\UNED\FISICA I\Claude\
   fuentes_txt/                    texto de los PDF + índice de exámenes
   herramientas/extraer_figura.py   recorta figuras del libro U
   herramientas/figuras_svg.py      librería para generar las figuras SVG propias
+  assets/three/, interactivos.js|css, escenas/  motor three.js r147 local (2D ortográfico y 3D) y una escena por interactivo
+  herramientas/capturar_interactivos.py  captura PNG estática de cada interactivo (PDF y sin WebGL)
   simulaciones/                   simulaciones interactivas (sim_tema03.html…); acceso solo desde el botón de la tarjeta en index.html
   .claude/agents/, .claude/skills/
 ```
@@ -118,6 +120,8 @@ Reglas de contenido (para alguien que estudia por primera vez):
     - **Coherencia numérica:** los valores dibujados (alturas, tiempos, fuerzas, ángulos) son los del cálculo ya verificado con sympy; si una escala no es real (p. ej. peso frente a una fuerza de impacto), decirlo en el dibujo («no a escala»).
     - Etiquetas dentro del `viewBox` (sin texto recortado), sin solapes con flechas o curvas, legibles a ~330 px de ancho (móvil). **Comprobar cada figura visualmente** (navegador, claro y oscuro) antes de darla por buena.
     - No duplicar la figura del libro: si U ya trae el dibujo (recorte `bookfig`), la SVG solo se añade si aporta algo distinto (valores del ejercicio, gráfica asociada, comparación).
+
+13. **Ejemplos interactivos con three.js (2D y 3D) dentro del tema.** Motor copiado del proyecto de Cálculo (misma API: `Interactivos.registrar(nombre, ctx => …)`, carga perezosa, claro/oscuro, zoom 2D). Se añade un `<figure class="interactivo" data-escena="…" data-params='{"dim":2}'>` tras la explicación del concepto que ilustra (3D: sin `dim`; 2D: `{"dim":2}`; `{"marcas":false}` quita los números de los ejes) cuando **mover un parámetro enseña algo que la figura estática no**: máx. 2-3 por tema, nunca sustituye a los ejercicios resueltos ni a las figuras SVG/del libro, no entra en la chuleta. Fuente `data-l="P"`. La escena va en `assets/escenas/<nombre>.js`; el `<head>` del tema lleva `interactivos.css` y `interactivos.js` (ya en los temas 1-6). Reglas: colores solo con la paleta del motor (`c.colores()`: `S`=--U, `L`=--X, `A`, `E`, `W`=--warn-b, `acc`, `fg`, `mut`, `bd`), `escalaX(k)` si los ejes tienen unidades distintas (gráficas x-t, F-x), helpers `flecha2D`, `flecha` (3D), `cinta`, `punto`, `grafica`, `ejes2D(…, sx, sy)`, `techo`, `paso`; valores mostrados calculados con las mismas fórmulas del tema y **comprobados con Python/sympy**; las flechas que no están a escala se dicen en la leyenda. Tras añadir uno: `python herramientas/capturar_interactivos.py <filtro>` (crea `assets/img/int_*.png` y la etiqueta `<img class="int-static">`). Hechos: T1 `vectores` (3D, A·B y A×B), T2 `mua` (x-t y v-t), T3 `proyectil` y `circulo`, T4 `fuerzas`, T5 `plano-inclinado` y `pendulo-conico` (3D), T6 `trabajo-resorte`. Ideas para los temas siguientes: T7 pozo de potencial y conservación de E, T8 colisiones 1D/2D con momento y K, T9-10 rotación (rodadura, torque 3D), T11 equilibrio/elasticidad, T12 presión y empuje, T13 órbitas (Kepler, 3D), T14-15 MAS y ondas (superposición), T16 batidos/Doppler, T17-20 gases (pV, ciclos).
 
 ## 4. Flujo de trabajo por tema (subagentes en `.claude/agents/`)
 
