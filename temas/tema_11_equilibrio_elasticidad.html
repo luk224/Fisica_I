@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem('tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física I · Tema 11 Equilibrio y elasticidad</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+<link rel="stylesheet" href="../assets/interactivos.css">
+<script defer src="../assets/interactivos.js"></script>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Índice de temas</a>
+  <span><button id="btn-sol" type="button">Mostrar soluciones</button> <button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+
+<div class="layout">
+<nav class="side-toc" aria-label="Índice del tema"><b>En esta página</b></nav>
+<main>
+
+<header class="hero">
+  <div class="kick">Bloque Mecánica · Tema 11</div>
+  <h1>Equilibrio y elasticidad</h1>
+  <p>Un puente, una escalera apoyada en la pared, tu antebrazo sosteniendo una mancuerna: todos están <i>quietos</i> aunque actúen fuerzas sobre ellos. Aquí aprendes cuándo un cuerpo rígido no se traslada ni gira (dos condiciones, $\sum\vec F=0$ y $\sum\vec\tau=0$), cómo se plantea y se resuelve un problema de equilibrio, y qué le pasa a un cuerpo <i>real</i> cuando lo estiras, lo comprimes o lo cortas (esfuerzo, deformación y módulos de elasticidad).</p>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 11 (pp. 339-355)</span><span>Examen real: ninguno en este tema</span><span>Ejercicios: 9 del solucionario (E1-E9) + el problema práctico de U + los ejemplos 11.1-11.7</span><span>2 ejemplos interactivos</span><span>⏱ ~6 h de estudio</span></div>
+  <div class="legend">
+    <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
+    <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
+    <span class="src" data-l="X" data-ref="Ejercicio de examen real, ver fuentes_txt/examenes_por_tema.md">X</span> examen real
+    <span class="src" data-l="P" data-ref="Explicación o ejemplo propio, sin página en los libros">P</span> propio
+    — pasa el ratón (o toca) por cada etiqueta para ver la fuente exacta; en pantallas anchas aparecen en el margen derecho.
+  </div>
+</header>
+
+<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U cap. 11 Introducción, p. 339">U p.339</span></h2>
+<p><b>Prerrequisitos:</b> las leyes de Newton y los diagramas de cuerpo libre (temas 4 y 5), incluidas la fuerza normal y la fricción estática $f_s\le\mu_sn$; el centro de masa (tema 8); y, sobre todo, la <b>torca</b> $\tau=Fl=rF\,\mathrm{sen}\,\varphi$ y el signo de las torcas (tema 10). Aquí <i>no aparece nada nuevo de rotación</i>: es el caso $\alpha=0$ de todo lo anterior. Para la parte de elasticidad solo necesitas la idea de fuerza por unidad de área (presión, 1 Pa = 1 N/m²) y la ley de Hooke del resorte (tema 6).</p>
+<p><b>Mapa del tema:</b> 11.1 enuncia las <b>dos condiciones de equilibrio</b>. 11.2 explica el <b>centro de gravedad</b> (dónde «actúa» el peso). 11.3 es el corazón práctico: cómo <b>resolver problemas de equilibrio</b> (escaleras, vigas con cable y bisagra, el brazo humano). 11.4 y 11.5 cambian de enfoque: ya no hay cuerpos «rígidos», sino que se miden <b>esfuerzo, deformación y módulos</b> ($Y$, $B$, $S$) y se ve qué ocurre al pasar el límite elástico hasta la fractura.</p>
+<div class="box tip"><span class="h">Examen real: no hay ninguno de este tema</span>
+  <p>Se han revisado todas las convocatorias disponibles (2018-2025) y <b>ningún problema ni pregunta de teoría trata equilibrio de cuerpos rígidos, centro de gravedad o elasticidad</b>. Por eso este tema no tiene ejercicios «X»: los ejercicios resueltos son el problema práctico del libro (U) y problemas del solucionario (E), más los ejemplos de U en la teoría. Aun así la técnica es muy útil: es exactamente la misma que la de los problemas de torcas y rodadura del tema 10 y de estática de poleas y planos de los temas 4 y 5. Además, este tema cierra el módulo 2 (temas 6-11) del curso.</p>
+  <span class="src" data-l="P" data-ref="Revisión de fuentes_txt/examenes_por_tema.md y de los PDF de exámenes 2018-2025: sin ejercicios del tema 11">P</span></div>
+<div class="box tip"><span class="h">La receta maestra del tema: equilibrio en 5 pasos</span>
+  <ol class="steps">
+    <li><b>Dibuja el cuerpo solo</b> (diagrama de cuerpo libre) con <i>todas</i> las fuerzas externas y <i>dónde</i> se aplican: pesos en el centro de gravedad, normales, fricción, tensiones <i>a lo largo del cable</i>, y la fuerza de una bisagra como <b>dos componentes desconocidas</b>.</li>
+    <li><b>Cuenta las incógnitas.</b> En el plano hay tres ecuaciones independientes ($\sum F_x=0$, $\sum F_y=0$, $\sum\tau_z=0$): necesitas tres incógnitas como máximo.</li>
+    <li><b>Elige el punto de las torcas</b> donde se cruzan fuerzas desconocidas (la bisagra, el pie de la escalera): no producen torca y desaparecen de la ecuación.</li>
+    <li><b>Calcula cada torca con el brazo de palanca perpendicular</b> $l=r\,\mathrm{sen}\,\varphi$ y el signo (antihorario $+$).</li>
+    <li><b>Comprueba con otro punto de referencia:</b> si $\sum\tau=0$ respecto a un punto y $\sum\vec F=0$, es cero respecto a cualquiera; los resultados deben coincidir.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 11.1, p. 344">U p.344</span></div>
+
+<h2 id="s1"><span class="n">1</span>Condiciones de equilibrio <span class="src" data-l="U" data-ref="U §11.1, p. 340">U p.340</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Un cuerpo «aguanta quieto» si no se mueve <i>ni</i> gira. Para que no se mueva, las fuerzas deben compensarse (como en un tira y afloja empatado). Pero eso no basta: si empujas hacia arriba por un lado de una barra y hacia abajo por el otro con la misma fuerza, la fuerza total es cero... y la barra gira (así se mueve el volante de un coche). Hacen falta <b>dos</b> condiciones: una para la traslación y otra para la rotación.</p>
+  <span class="src" data-l="U" data-ref="U §11.1, fig. 11.1, p. 340">U p.340</span></div>
+<div class="box def"><span class="h">Condiciones de equilibrio de un cuerpo rígido</span>
+  <p><b>Primera condición</b> (el centro de masa no se acelera): la fuerza neta externa es cero.
+  $$\sum\vec F=0\qquad\text{(ec. 11.1)}$$
+  <b>Segunda condición</b> (el cuerpo no tiene aceleración angular): la torca neta externa, calculada respecto a <i>cualquier</i> punto, es cero.
+  $$\sum\vec\tau=0\qquad\text{(ec. 11.2)}$$
+  Un cuerpo rígido <b>solo puede estar en equilibrio si se cumplen las dos</b>. Cuando está además en reposo se llama <b>equilibrio estático</b>. (Un cuerpo que se traslada con velocidad constante y sin girar también está en equilibrio, pero no estático.) En problemas planos, en el plano $xy$, las dos condiciones son tres ecuaciones: $\sum F_x=0$, $\sum F_y=0$, $\sum\tau_z=0$ (ec. 11.6).</p>
+  <span class="src" data-l="U" data-ref="U §11.1, ecs. 11.1-11.2, p. 340; ec. 11.6, p. 343">U p.340, 343</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 150" width="100%" role="img" aria-label="Tres barras: dos fuerzas opuestas en la misma recta (equilibrio), un par de fuerzas (la barra gira aunque la fuerza neta es cero) y una fuerza única (la barra se acelera)">
+  <defs><marker id="maca" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbca" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmca" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgca" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpca" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfca" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <text x="55" y="14" class="bd" text-anchor="middle">Equilibrio</text>
+  <text x="170" y="14" class="bd" text-anchor="middle">Gira</text>
+  <text x="285" y="14" class="bd" text-anchor="middle">Se acelera</text>
+  <rect x="15" y="60" width="80" height="10" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="50" y1="65" x2="8" y2="65" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#maca)"/>
+  <line x1="60" y1="65" x2="102" y2="65" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#maca)"/>
+  <text x="55" y="52" class="bd" text-anchor="middle">F</text>
+  <text x="55" y="98" class="" text-anchor="middle">ΣF = 0</text>
+  <text x="55" y="114" class="" text-anchor="middle">Στ = 0</text>
+  <rect x="130" y="60" width="80" height="10" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="140" y1="100" x2="140" y2="74" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#maca)"/>
+  <line x1="200" y1="30" x2="200" y2="56" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#maca)"/>
+  <path d="M 150.9 54.0 A 22 22 0 0 0 189.1 54.0" fill="none" stroke="var(--A)" stroke-width="1.3"/>
+  <line x1="192" y1="52" x2="197" y2="55" stroke="var(--A)" stroke-width="2" fill="none" marker-end="url(#mbca)"/>
+  <text x="170" y="98" class="" text-anchor="middle">ΣF = 0</text>
+  <text x="170" y="114" class="" text-anchor="middle">Στ ≠ 0</text>
+  <rect x="245" y="60" width="80" height="10" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="285" y1="100" x2="285" y2="74" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#maca)"/>
+  <text x="285" y="52" class="bd" text-anchor="middle">a<tspan dy="3" font-size="9">cm</tspan><tspan dy="-3"></tspan></text>
+  <text x="285" y="125" class="" text-anchor="middle">ΣF ≠ 0</text>
+  <text x="170" y="142" class="sm" text-anchor="middle">Solo hay equilibrio si ΣF = 0 y Στ = 0</text>
+</svg>
+<figcaption>Las dos condiciones son independientes: un par de fuerzas cumple $\sum\vec F=0$ pero hace girar la barra; una sola fuerza en el centro no la hace girar pero la acelera. <span class="src" data-l="P" data-ref="Diagrama propio de la fig. 11.1 de U">P</span></figcaption>
+</figure>
+
+<div class="box warn"><span class="h">Error típico</span>
+  <p>Creer que $\sum\vec F=0$ es suficiente. Un <i>par de fuerzas</i> (dos fuerzas iguales, opuestas y no alineadas) tiene fuerza neta cero pero torca distinta de cero: el cuerpo gira. Y al revés: una fuerza única aplicada en el centro de masa no produce torca respecto a ese punto, pero acelera el cuerpo.</p>
+  <span class="src" data-l="U" data-ref="U §11.1, fig. 11.1, p. 340">U p.340</span></div>
+
+<h2 id="s2"><span class="n">2</span>Centro de gravedad <span class="src" data-l="U" data-ref="U §11.2, pp. 340-343">U p.340-343</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>El peso de un cuerpo no actúa en un solo punto: cada trocito de materia pesa. Pero, a efectos de torca, es <b>como si todo el peso actuara en un único punto</b>: el centro de gravedad. Si apoyas una regla justo en ese punto, se queda horizontal; si apoyas en otro, cae hacia el lado más pesado. Cuanto más lejos del apoyo está una masa, más «palanca» hace, por eso el punto de equilibrio queda más cerca de la masa mayor (una balanza de brazos desiguales).</p>
+  <span class="src" data-l="U" data-ref="U §11.2, pp. 340-342">U p.340-342</span></div>
+<div class="box def"><span class="h">Centro de masa y de gravedad</span>
+  <p>El <b>centro de masa</b> de un conjunto de partículas (o de piezas, cada una concentrada en su propio centro) es
+  $$x_{cm}=\frac{m_1x_1+m_2x_2+\cdots}{m_1+m_2+\cdots}=\frac{\sum m_ix_i}{\sum m_i},\qquad \vec r_{cm}=\frac{\sum m_i\vec r_i}{\sum m_i}\qquad\text{(ecs. 11.3-11.4)}$$
+  La torca gravitacional total respecto a cualquier punto es $\vec\tau=\vec r_{cm}\times M\vec g=\vec r_{cm}\times\vec w$ (ec. 11.5): la misma que si todo el peso actuara en el centro de masa. Si $\vec g$ vale lo mismo en todos los puntos del cuerpo, el <b>centro de gravedad</b> coincide con el centro de masa. En un cuerpo homogéneo y simétrico (esfera, cubo, barra, placa rectangular) está en su centro geométrico.</p>
+  <span class="src" data-l="U" data-ref="U §11.2, ecs. 11.3-11.5, pp. 341-342">U p.341-342</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 160" width="100%" role="img" aria-label="Una barra ligera con una masa 2m a la izquierda y una masa m a la derecha, apoyada en su centro de gravedad, que queda más cerca de la masa mayor">
+  <defs><marker id="macg" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcg" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcg" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcg" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcg" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcg" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="30" y="60" width="288" height="8" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <circle cx="66.0" cy="50" r="11" fill="var(--acc)" fill-opacity="0.25" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="282.0" cy="50" r="7" fill="var(--acc)" fill-opacity="0.25" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="66.0" y="54" class="bd" text-anchor="middle">2m</text>
+  <text x="282.0" y="54" class="bd" text-anchor="middle">m</text>
+  <line x1="66.0" y1="68" x2="66.0" y2="110" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcg)"/>
+  <line x1="282.0" y1="68" x2="282.0" y2="90" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcg)"/>
+  <text x="72.0" y="104" class="">2mg</text>
+  <text x="288.0" y="88" class="">mg</text>
+  <path d="M 129.0 82 L 147.0 82 L 138.0 68 Z" fill="none" stroke="var(--X)" stroke-width="2"/>
+  <path d="M 129.0 82 L 147.0 82 L 138.0 68 Z" fill="var(--X)" fill-opacity="0.3" stroke="none"/>
+  <text x="138.0" y="98" class="bd" text-anchor="middle" style="fill:var(--X)">cg</text>
+  <line x1="66.0" y1="125" x2="138.0" y2="125" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="138.0" y1="125" x2="282.0" y2="125" stroke="var(--A)" stroke-width="1.5"/>
+  <line x1="66.0" y1="120" x2="66.0" y2="130" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="138.0" y1="120" x2="138.0" y2="130" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="282.0" y1="120" x2="282.0" y2="130" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="102.0" y="142" class="bd" text-anchor="middle" style="fill:var(--acc)">d<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"></tspan></text>
+  <text x="210.0" y="142" class="bd" text-anchor="middle" style="fill:var(--A)">d<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"> = 2d</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3"></tspan></text>
+  <text x="170" y="14" class="" text-anchor="middle">Torcas respecto al cg: (2mg)d<tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> = (mg)d</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3"></tspan></text>
+</svg>
+<figcaption>El centro de gravedad está más cerca de la masa mayor: sus torcas se igualan, $(2m)d_1=m\,d_2$. Apoyada ahí, la barra queda en equilibrio; también $x_\mathrm{cm}=\frac{\sum m_ix_i}{\sum m_i}$. <span class="src" data-l="P" data-ref="Diagrama propio de §11.2 de U (centro de gravedad)">P</span></figcaption>
+</figure>
+
+<div class="box warn"><span class="h">¿Y si $g$ cambia con la altura?</span>
+  <p>En rigor el centro de gravedad solo coincide con el centro de masa si $g$ es igual en todo el cuerpo. La variación es ínfima: en las Torres Petronas (452 m de altura, fig. 11.3 de U) $g$ en la base es solo un 0,014 % mayor que en la punta y su centro de gravedad está apenas 2 cm bajo el centro de masa. En todo este capítulo se supone, por tanto, cg = cm.</p>
+  <span class="src" data-l="U" data-ref="U §11.2, fig. 11.3, p. 342">U p.342</span></div>
+<div class="box thm"><span class="h">Estabilidad: el cg debe caer dentro del área de apoyo</span>
+  <p>Un cuerpo apoyado en varios puntos está en equilibrio mientras la vertical que baja desde su centro de gravedad cae <i>dentro</i> del área delimitada por los apoyos. Cuanto más bajo está el cg y mayor es el área de apoyo, más difícil es volcarlo: por eso los camiones (cg alto) vuelcan en pendientes en las que un coche aguanta, y los cuadrúpedos son más estables que los bípedos.</p>
+  <span class="src" data-l="U" data-ref="U §11.2, fig. 11.5, pp. 342-343">U p.342-343</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_11_5_apoyo.png" alt="Figura 11.5 de U. Un automóvil y un camión sobre una pendiente: a) el centro de gravedad cae dentro del área de apoyo y el automóvil está en equilibrio; b) y c) el centro de gravedad queda fuera del área de apoyo y el vehículo vuelca; cuanto más alto el cg, menor la inclinación necesaria." loading="lazy" style="max-width:520px!important">
+<figcaption>Fig. 11.5 de U: el vehículo vuelca cuando la vertical del cg sale del área de apoyo. <span class="src" data-l="U" data-ref="U Fig. 11.5, p. 342">U p.342</span></figcaption>
+</figure>
+<div class="box ex"><span class="h">Ejemplo 11.1: caminando por una tabla</span>
+  <p>Una tabla uniforme de longitud $L=6{,}0$ m y masa $M=90$ kg descansa sobre dos caballetes separados $D=1{,}5$ m y equidistantes del centro de la tabla. Throckmorton quiere ponerse de pie en el extremo derecho. Si la tabla no debe moverse, ¿qué masa máxima puede tener?</p>
+  <ol class="steps">
+    <li><b>Situación límite.</b> Justo antes de volcar, el cg del sistema tabla + Throckmorton está exactamente sobre el caballete derecho. Origen en el centro de la tabla, eje $x$ a la derecha: la tabla está en $x=0$, él en $x=L/2=3{,}0$ m y el caballete derecho en $x_S=D/2$.</li>
+    <li><b>Centro de gravedad (11.3).</b> $x_{cg}=\dfrac{M(0)+m(L/2)}{M+m}=\dfrac{mL}{2(M+m)}$. Igualándolo a $D/2$: $mL=(M+m)D$.</li>
+    <li><b>Despejar:</b> $m=\dfrac{M\,D}{L-D}=\dfrac{(90\ \text{kg})(1{,}5\ \text{m})}{6{,}0\ \text{m}-1{,}5\ \text{m}}=\mathbf{30\ kg}$.</li>
+    <li><b>Comprobación con otro origen</b> (el caballete derecho): $x_{cg}=\dfrac{M(-D/2)+m[(L/2)-(D/2)]}{M+m}=0$ ⇒ $m=\dfrac{MD/2}{(L-D)/2}=30$ kg. El resultado no depende del origen. Un adulto de 60 kg solo podría ponerse a la mitad de la distancia entre el caballete derecho y el extremo.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 11.1, p. 343 y fig. 11.6, p. 343">U p.343</span></div>
+<div class="box ex"><span class="h">Cómo se localiza el cg de un objeto irregular</span>
+  <ol class="steps">
+    <li><b>Cuelga</b> el objeto de un punto cualquiera: en equilibrio, el cg queda en la vertical que pasa por ese punto (si no, el peso haría torca y el objeto giraría).</li>
+    <li><b>Traza esa vertical</b> sobre el objeto (un hilo con plomada).</li>
+    <li><b>Cuelga</b> el objeto de otro punto y traza la nueva vertical.</li>
+    <li>El <b>cg está en el cruce</b> de las dos verticales (fig. 11.4 de U, un tarro de café).</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U §11.2, fig. 11.4, p. 342">U p.342</span></div>
+
+<h2 id="s3"><span class="n">3</span>Resolver problemas de equilibrio de cuerpos rígidos <span class="src" data-l="U" data-ref="U §11.3, pp. 343-347">U p.343-347</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Un problema de equilibrio es un problema de <b>contabilidad de fuerzas y de palancas</b>. Tienes un cuerpo quieto, unas fuerzas que conoces (pesos) y otras que «se ajustan solas» para que todo cuadre (normales, fricción, tensiones, fuerza de una bisagra). Las ecuaciones $\sum F_x=0$, $\sum F_y=0$, $\sum\tau=0$ dicen cuánto vale cada una. El truco que lo hace fácil: al calcular torcas puedes elegir <b>cualquier punto</b>, así que eliges el que «elimina» las fuerzas que no te interesan.</p>
+  <span class="src" data-l="U" data-ref="U §11.3, p. 343">U p.343</span></div>
+<div class="box thm"><span class="h">Estrategia para resolver problemas de equilibrio</span>
+  <ol class="steps">
+    <li><b>Identificar:</b> el cuerpo debe poder tratarse como rígido, sin giro ni aceleración. Decide qué incógnitas hay.</li>
+    <li><b>Plantear:</b> dibuja la situación, y después un <b>diagrama de cuerpo libre</b> con todas las fuerzas externas y su punto de aplicación; elige ejes, el sentido positivo de las torcas y el punto de referencia.</li>
+    <li><b>Ejecutar:</b> escribe $\sum F_x=0$, $\sum F_y=0$, $\sum\tau_z=0$; tantas ecuaciones como incógnitas, tomando torcas respecto a dos o más puntos si hace falta.</li>
+    <li><b>Evaluar:</b> repite con otro punto de referencia; deben salir las mismas respuestas.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 11.1, p. 344">U p.344</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 240" width="100%" role="img" aria-label="Cuatro tipos de apoyo y la fuerza que ejercen: pared lisa (normal), suelo con fricción (normal y fricción), bisagra (dos componentes) y cable (tensión a lo largo del cable)">
+  <defs><marker id="mact" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbct" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmct" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgct" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpct" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfct" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="150" y1="15" x2="150" y2="95" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="150" y1="25" x2="158" y2="17" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="150" y1="35" x2="158" y2="27" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="150" y1="45" x2="158" y2="37" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="150" y1="55" x2="158" y2="47" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="150" y1="65" x2="158" y2="57" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="150" y1="75" x2="158" y2="67" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="150" y1="85" x2="158" y2="77" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="150" y1="95" x2="158" y2="87" stroke="var(--mut)" stroke-width="1.2"/>
+  <rect x="40" y="55" width="100" height="10" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <circle cx="140" cy="60" r="2.5" fill="var(--fg)"/>
+  <line x1="138" y1="60" x2="85" y2="60" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgct)"/>
+  <text x="80" y="48" class="bd" text-anchor="end">n ⟂ pared</text>
+  <text x="8" y="14" class="bd">Pared lisa</text>
+  <text x="8" y="108" class="sm">solo normal, sin fricción</text>
+  <line x1="185" y1="85" x2="330" y2="85" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="195" y1="85" x2="187" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="205" y1="85" x2="197" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="215" y1="85" x2="207" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="225" y1="85" x2="217" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="235" y1="85" x2="227" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="245" y1="85" x2="237" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="255" y1="85" x2="247" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="265" y1="85" x2="257" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="275" y1="85" x2="267" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="285" y1="85" x2="277" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="295" y1="85" x2="287" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="305" y1="85" x2="297" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="315" y1="85" x2="307" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="325" y1="85" x2="317" y2="93" stroke="var(--mut)" stroke-width="1.2"/>
+  <rect x="230" y="55" width="40" height="30" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="250" y1="85" x2="250" y2="40" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgct)"/>
+  <line x1="250" y1="85" x2="300" y2="85" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbct)"/>
+  <text x="246" y="38" class="bd" text-anchor="end">n</text>
+  <text x="302" y="80" class="bd">f<tspan dy="3" font-size="9">s</tspan><tspan dy="-3"></tspan></text>
+  <text x="178" y="14" class="bd">Suelo con fricción</text>
+  <text x="178" y="108" class="sm">normal + fricción (f<tspan dy="3" font-size="9">s</tspan><tspan dy="-3"> ≤ μ</tspan><tspan dy="3" font-size="9">s</tspan><tspan dy="-3">n)</tspan></text>
+  <line x1="20" y1="140" x2="20" y2="215" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="20" y1="150" x2="28" y2="142" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="20" y1="160" x2="28" y2="152" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="20" y1="170" x2="28" y2="162" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="20" y1="180" x2="28" y2="172" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="20" y1="190" x2="28" y2="182" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="20" y1="200" x2="28" y2="192" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="20" y1="210" x2="28" y2="202" stroke="var(--mut)" stroke-width="1.2"/>
+  <rect x="20" y="172" width="90" height="8" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <circle cx="24" cy="176" r="6" fill="var(--fg)" fill-opacity="0.5" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="24" y1="176" x2="24" y2="144" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbct)"/>
+  <line x1="24" y1="176" x2="70" y2="176" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbct)"/>
+  <text x="32" y="152" class="bd">H<tspan dy="3" font-size="9">v</tspan><tspan dy="-3"></tspan></text>
+  <text x="60" y="168" class="bd" text-anchor="middle">H<tspan dy="3" font-size="9">h</tspan><tspan dy="-3"></tspan></text>
+  <text x="8" y="128" class="bd">Bisagra o pivote</text>
+  <text x="8" y="232" class="sm">2 componentes</text>
+  <line x1="185" y1="146" x2="330" y2="146" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="195" y1="146" x2="189" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="205" y1="146" x2="199" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="215" y1="146" x2="209" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="225" y1="146" x2="219" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="235" y1="146" x2="229" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="245" y1="146" x2="239" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="255" y1="146" x2="249" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="265" y1="146" x2="259" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="275" y1="146" x2="269" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="285" y1="146" x2="279" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="295" y1="146" x2="289" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="305" y1="146" x2="299" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="315" y1="146" x2="309" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="325" y1="146" x2="319" y2="140" stroke="var(--mut)" stroke-width="1.2"/>
+  <rect x="190" y="190" width="110" height="8" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <circle cx="296" cy="194" r="4" fill="var(--fg)" fill-opacity="0.5" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="296" y1="194" x2="262" y2="150" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mact)"/>
+  <text x="278" y="166" class="bd">T</text>
+  <text x="178" y="122" class="bd">Cable o cuerda</text>
+  <text x="178" y="232" class="sm">T a lo largo del cable</text>
+</svg>
+<figcaption>Qué fuerza puede hacer cada apoyo sobre el cuerpo. Dibujar bien estas fuerzas y su punto de aplicación es la mitad del problema. <span class="src" data-l="P" data-ref="Diagrama propio (fuerzas de enlace, §11.3 de U)">P</span></figcaption>
+</figure>
+
+<div class="box warn"><span class="h">Error típico</span>
+  <p>La torca depende del punto que elijas, pero <b>una vez elegido, usa el mismo punto para todas las torcas</b> de esa ecuación. Y no supongas que la fuerza de una bisagra va «a lo largo de la viga»: su dirección es desconocida, por eso se pone con dos componentes. La tensión de un cable, en cambio, sí va siempre a lo largo del cable.</p>
+  <span class="src" data-l="U" data-ref="U §11.3, CUIDADO, p. 343 y fig. 11.9, p. 345">U p.343, 345</span></div>
+<div class="box ex"><span class="h">Ejemplo 11.2: localizar el centro de gravedad en una plancha</span>
+  <p>Un atleta de 1,80 m en posición de plancha se apoya solo en los dedos de los pies y en los antebrazos. Dos básculas indican que el 34,0 % de su peso $w$ cae en los dedos y el 66,0 % en los antebrazos; la distancia de los dedos a los antebrazos es 1,53 m. ¿A qué distancia de los dedos está su centro de gravedad?</p>
+  <ol class="steps">
+    <li><b>Modelo.</b> Cuerpo rígido en reposo: valen las condiciones (11.6). Su peso actúa en el cg, que debe estar entre los dos apoyos. Fuerzas verticales: $n_T=0{,}340\,w$ en los dedos (T), $n_F=0{,}660\,w$ en los antebrazos (F) y $w$ a una distancia $L_{cg}$ de T. No hay fuerzas horizontales. $\sum F_y=0{,}340w+0{,}660w-w=0$ se cumple sola (por eso las básculas suman el 100 %).</li>
+    <li><b>Punto de torcas en T:</b> la fuerza $n_T$ no produce torca y la única incógnita es $L_{cg}$. Con antihorario $+$: $\;0{,}340w(0)-w\,L_{cg}+0{,}660w\,(1{,}53\ \text{m})=0$.</li>
+    <li><b>Resultado.</b> $L_{cg}=0{,}660\cdot1{,}53\ \text{m}\approx\mathbf{1{,}01\ m}$ desde los dedos. El peso $w$ se simplifica: no hace falta conocerlo.</li>
+    <li><b>Comprobación con otro punto</b> (respecto a F): $-0{,}340w(1{,}53)+w(1{,}53-L_{cg})=0$ ⇒ $1{,}53-L_{cg}=0{,}52$ m ⇒ $L_{cg}=1{,}01$ m. Coincide.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 11.2, p. 344 y fig. 11.8, p. 344">U p.344</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 195" width="100%" role="img" aria-label="Atleta en posición de plancha apoyado en los dedos de los pies (34 % del peso) y en los antebrazos (66 %); su centro de gravedad está a 1,01 m de los pies">
+  <defs><marker id="macp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="62" y="47" width="235.26" height="14" rx="2" fill="var(--acc)" fill-opacity="0.18" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="62" y1="92" x2="62" y2="61" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgcp)"/>
+  <line x1="262.0" y1="120" x2="262.0" y2="61" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgcp)"/>
+  <line x1="194.0" y1="47" x2="194.0" y2="137" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcp)"/>
+  <circle cx="194.0" cy="54" r="3.5" fill="var(--fg)"/>
+  <text x="68" y="95" class="bd" style="fill:var(--X)">0,340 w</text>
+  <text x="268.0" y="133" class="bd" style="fill:var(--X)">0,660 w</text>
+  <text x="200.0" y="141" class="bd">w</text>
+  <text x="62" y="39" class="sm" text-anchor="middle">dedos</text>
+  <text x="262.0" y="39" class="sm" text-anchor="middle">antebrazos</text>
+  <line x1="62" y1="160" x2="194.0" y2="160" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="194.0" y1="160" x2="262.0" y2="160" stroke="var(--A)" stroke-width="1.5"/>
+  <line x1="62" y1="155" x2="62" y2="165" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="194.0" y1="155" x2="194.0" y2="165" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="262.0" y1="155" x2="262.0" y2="165" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="128.0" y="177" class="bd" text-anchor="middle" style="fill:var(--acc)">1,01 m</text>
+  <text x="228.0" y="177" class="bd" text-anchor="middle" style="fill:var(--A)">0,52 m</text>
+</svg>
+<figcaption>Reparto del peso en los dos apoyos y posición del cg (1,01 m desde los dedos, 0,52 m desde los antebrazos). Las flechas son proporcionales a las fuerzas. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 11.2 de U">P</span></figcaption>
+</figure>
+
+<div class="box tip"><span class="h">Truco de examen</span>
+  <p>El apoyo que soporta más fracción del peso es el <b>más cercano</b> al centro de gravedad (aquí los antebrazos, 66 %, están a 0,52 m del cg; los dedos, 34 %, a 1,01 m). Regla rápida: $n_1\,d_1=n_2\,d_2$.</p>
+  <span class="src" data-l="P" data-ref="Explicación propia a partir del ejemplo 11.2 de U, p. 344">P</span></div>
+<div class="box ex"><span class="h">Ejemplo 11.3: ¿se deslizará la escalera?</span>
+  <p>Sir Lancelot (800 N) sube por una escalera uniforme de 5,0 m y 180 N apoyada en una pared vertical <b>sin fricción</b>; forma 53,1° con la horizontal. Se detiene a un tercio del camino. a) Fuerzas normal y de fricción en la base. b) Coeficiente de fricción estática mínimo para que no resbale. c) Magnitud y dirección de la fuerza de contacto en la base.</p>
+  <ol class="steps">
+    <li><b>Geometría.</b> 53,1° es el triángulo 3-4-5: con 5,0 m de escalera, la base está a 3,0 m de la pared y el apoyo superior a 4,0 m de altura. El peso de la escalera actúa en su centro (a 1,5 m de la pared en horizontal) y Lancelot está a $\tfrac13\cdot3{,}0=1{,}0$ m.</li>
+    <li><b>DCL.</b> Pared lisa: solo $n_1$ horizontal. Suelo: normal $n_2$ vertical y fricción $f_s$ hacia la pared. Pesos 180 N y 800 N. Tres incógnitas: $n_1,n_2,f_s$.</li>
+    <li><b>Fuerzas (11.6).</b> $\sum F_x=f_s-n_1=0$; $\sum F_y=n_2-800-180=0$ ⇒ $n_2=\mathbf{980\ N}$.</li>
+    <li><b>Torcas respecto a la base B</b> (ahí actúan $n_2$ y $f_s$, que desaparecen). Brazo de $n_1$: la altura 4,0 m; brazos de los pesos: sus distancias <i>horizontales</i>. $\sum\tau_B=n_1(4{,}0)-180(1{,}5)-800(1{,}0)=0$ ⇒ $n_1=1070/4{,}0\approx\mathbf{268\ N}$, y $f_s=n_1=\mathbf{268\ N}$.</li>
+    <li><b>b)</b> Para no resbalar: $f_s\le\mu_sn_2$ ⇒ $(\mu_s)_{\text{mín}}=f_s/n_2=268/980=\mathbf{0{,}27}$.</li>
+    <li><b>c)</b> La fuerza de contacto en B es la suma vectorial de normal y fricción: $\vec F_B=(268\ \text{N})\hat\imath+(980\ \text{N})\hat\jmath$, de modo que $F_B=\sqrt{268^2+980^2}\approx1{,}02\times10^3\ \text{N}$ (1016 N) y $\theta=\arctan(980/268)\approx\mathbf{75^\circ}$ sobre la horizontal. <b>No va a lo largo de la escalera</b> (53,1°): si lo hiciera, su torca respecto al extremo superior sería cero y la de los pesos quedaría sin compensar.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 11.3, p. 345 y fig. 11.9, p. 345; fricción estática ec. 5.4, p. 144">U p.345</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_11_9_escalera.png" alt="Figura 11.9 de U. a) Lancelot subiendo una escalera apoyada en una pared sin fricción, a 53,1 grados; b) diagrama de cuerpo libre con n1, n2, fs y los pesos de 180 N y 800 N con sus brazos de 1,5 m, 1,0 m y la altura de 4,0 m; c) la fuerza de contacto en B, de 1020 N a 75 grados." loading="lazy" style="max-width:100%!important">
+<figcaption>Fig. 11.9 de U: situación, DCL de la escalera y fuerza de contacto en la base. <span class="src" data-l="U" data-ref="U Fig. 11.9, p. 345">U p.345</span></figcaption>
+</figure>
+<figure class="interactivo" data-escena="equilibrio-escalera" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: escalera apoyada en una pared sin fricción con un hombre que sube; se pueden variar el ángulo, la posición del hombre, los pesos y el coeficiente de fricción, y se leen n1, n2, la fricción necesaria y el coeficiente mínimo">
+  <img class="int-static" src="../assets/img/int_equilibrio-escalera.png" alt="Interactivo: escalera apoyada en una pared sin fricción con un hombre que sube; se pueden variar el ángulo, la posición del hombre, los pesos y el coeficiente de fricción, y se leen n1, n2, la fricción necesaria y el coeficiente mínimo">
+  <figcaption><b>Pruébalo tú:</b> la escalera del ejemplo 11.3. Con los valores iniciales ($\theta=53{,}1^\circ$, 800 N, 180 N, $s\approx1{,}67$ m) lees $n_2=980$ N, $n_1=f_s\approx268$ N y $\mu_{s,\text{mín}}=0{,}27$. Sube al hombre con el deslizador de posición: $n_2$ <b>no cambia</b>, pero $n_1$ y la fricción necesaria crecen, hasta que $f_s$ supera $\mu_sn_2$ y la escalera resbala. Prueba a <b>enderezar</b> la escalera (ángulo mayor): disminuye la fricción necesaria. Con 160 N de escalera, 740 N de hombre y $\mu_s=0{,}40$ reproduces el ejercicio 11.10 (E4): el hombre llega a 2,7 m. <span class="src" data-l="P" data-ref="Interactivo propio de U Ejemplo 11.3 y Ejercicio 11.10, pp. 345 y 357">P</span></figcaption>
+</figure>
+<div class="box ex"><span class="h">Ejemplo 11.4: el brazo que sostiene una mancuerna</span>
+  <p>El antebrazo horizontal sostiene una mancuerna de peso $w$ a una distancia $L$ del codo. El bíceps tira, mediante un tendón, con una fuerza $\vec T$ que forma un ángulo $\theta$ con el antebrazo y se aplica a una distancia $D$ del codo (se desprecia el peso del antebrazo). El codo ejerce sobre el antebrazo una fuerza $\vec E$ de dirección desconocida. Calcula $T$, $E_x$ y $E_y$ para $w=200$ N, $D=0{,}050$ m, $L=0{,}30$ m y $\theta=80^\circ$.</p>
+  <ol class="steps">
+    <li><b>Incógnitas:</b> $T$, $E_x$, $E_y$ (tres), tres ecuaciones. Sea $h=D\tan\theta$ la altura a la que «apunta» el tendón sobre el codo.</li>
+    <li><b>Torcas respecto al codo</b> (elimina $E_x$ y $E_y$): $\;T\,\mathrm{sen}\,\theta\,D-L\,w=0$ ⇒ $T=\dfrac{Lw}{D\,\mathrm{sen}\,\theta}=\dfrac{(0{,}30)(200)}{(0{,}050)(0{,}98)}\approx\mathbf{1220\ N}$ (¡seis veces el peso!). El tendón se inserta muy cerca del codo, así que su brazo de palanca es pequeño.</li>
+    <li><b>$\sum F_x=0$:</b> las componentes horizontales se cancelan: $E_x=T\cos\theta=\dfrac{Lw}{h}\approx\mathbf{210\ N}$.</li>
+    <li><b>$\sum F_y=0$:</b> $T\,\mathrm{sen}\,\theta+E_y-w=0$ ⇒ $E_y=-\dfrac{(L-D)\,w}{D}=-\mathbf{1000\ N}$. El signo menos indica que, en realidad, $\vec E$ apunta <i>hacia abajo</i>.</li>
+    <li><b>Módulo:</b> $E=\sqrt{E_x^2+E_y^2}\approx1020$ N. El peso del antebrazo (unos 20 N) es despreciable frente a estas fuerzas.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 11.4, pp. 346-347 y fig. 11.10, p. 346">U p.346-347</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_11_10_brazo.png" alt="Figura 11.10 de U. a) El antebrazo con la mancuerna, la fuerza T del tendón del bíceps y la fuerza E del codo; b) diagrama de cuerpo libre del antebrazo con las distancias L y D y los ángulos." loading="lazy" style="max-width:560px!important">
+<figcaption>Fig. 11.10 de U: antebrazo con mancuerna y su DCL (el tendón está dibujado muy lejos del codo «por claridad»). <span class="src" data-l="U" data-ref="U Fig. 11.10, p. 346">U p.346</span></figcaption>
+</figure>
+<div class="box tip"><span class="h">Truco de examen</span>
+  <p>Cuando una fuerza desconocida actúe en un punto (bisagra, codo, pie de escalera), <b>toma las torcas respecto a ese punto</b>: te ahorras dos incógnitas de golpe. Y si el resultado de una componente sale negativo no es un error: significa que apunta al revés de como la dibujaste.</p>
+  <span class="src" data-l="U" data-ref="U §11.3, Ejemplo 11.4 (EVALUAR), pp. 346-347">U p.346-347</span></div>
+
+<h2 id="s4"><span class="n">4</span>Esfuerzo, deformación y módulos de elasticidad <span class="src" data-l="U" data-ref="U §11.4, pp. 347-353">U p.347-353</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>El «cuerpo rígido» es una idealización: en la vida real todo se estira, se comprime o se tuerce un poco cuando lo cargas. Una cuerda de escalada se alarga algo cuando cuelgas de ella; un buzo se «encoge» muy poco a gran profundidad; un listón se deforma al cortarlo con unas tijeras. La regla general (la de un resorte, pero para materiales) es sencilla: <b>cuanto más fuerte tiras por cada centímetro cuadrado, más se deforma fracción por fracción, y en proporción directa</b> (siempre que no te pases). Lo que importa no es la fuerza total, sino la <i>fuerza por unidad de área</i> (esfuerzo) y la <i>fracción</i> que cambia el tamaño (deformación): así un alambre fino y uno grueso del mismo material se comparan con la misma constante.</p>
+  <span class="src" data-l="U" data-ref="U §11.4, fig. 11.12-11.13, p. 347">U p.347</span></div>
+<div class="box def"><span class="h">Ley de Hooke y módulo de elasticidad</span>
+  <p>En las deformaciones elásticas, el <b>esfuerzo</b> (fuerza por unidad de área) es proporcional a la <b>deformación</b> (cambio fraccionario). Su cociente es una constante del material, el <b>módulo de elasticidad</b>:
+  $$\frac{\text{esfuerzo}}{\text{deformación}}=\text{módulo de elasticidad}\qquad\text{(ec. 11.7)}$$
+  Hay tres tipos de esfuerzo y, para cada uno, un módulo.</p>
+  <span class="src" data-l="U" data-ref="U §11.4, ec. 11.7, p. 347">U p.347</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 182" width="100%" role="img" aria-label="Tres tipos de esfuerzo: tensión (una barra se alarga), volumétrico (un cuerpo se comprime por todos lados) y corte (una cara se desliza respecto a la opuesta), con su esfuerzo, su deformación y su módulo">
+  <defs><marker id="mach" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbch" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmch" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgch" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpch" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfch" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <text x="57" y="14" class="bd" text-anchor="middle">Tensión</text>
+  <text x="170" y="14" class="bd" text-anchor="middle">Volumétrico</text>
+  <text x="283" y="14" class="bd" text-anchor="middle">Corte</text>
+  <rect x="18" y="50" width="70" height="14" rx="2" fill="var(--mut)" fill-opacity="0.12" stroke="var(--mut)" stroke-width="1.5"/>
+  <path d="M 18 50 L 96 50 L 96 64 L 18 64 Z" fill="none" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <rect x="18" y="50" width="70" height="14" rx="2" fill="var(--acc)" fill-opacity="0.25" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="90" y1="57" x2="112" y2="57" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbch)"/>
+  <line x1="22" y1="57" x2="4" y2="57" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbch)"/>
+  <text x="57" y="44" class="" text-anchor="middle">l<tspan dy="3" font-size="9">0</tspan><tspan dy="-3"></tspan></text>
+  <text x="97" y="86" class="" text-anchor="middle">Δl</text>
+  <line x1="88" y1="70" x2="96" y2="70" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="57" y="108" class="bd" text-anchor="middle">F⊥/A</text>
+  <text x="57" y="124" class="" text-anchor="middle">Δl/l<tspan dy="3" font-size="9">0</tspan><tspan dy="-3"></tspan></text>
+  <text x="57" y="140" class="bd" text-anchor="middle" style="fill:var(--acc)">Y</text>
+  <path d="M 140 38 L 200 38 L 200 98 L 140 98 Z" fill="none" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <rect x="146" y="44" width="48" height="48" rx="2" fill="var(--acc)" fill-opacity="0.25" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="170" y1="28" x2="170" y2="40" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbch)"/>
+  <line x1="170" y1="108" x2="170" y2="96" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbch)"/>
+  <line x1="130" y1="68" x2="142" y2="68" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbch)"/>
+  <line x1="210" y1="68" x2="198" y2="68" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbch)"/>
+  <text x="170" y="72" class="bd" text-anchor="middle">V</text>
+  <text x="170" y="124" class="bd" text-anchor="middle">Δp</text>
+  <text x="170" y="140" class="" text-anchor="middle">ΔV/V<tspan dy="3" font-size="9">0</tspan><tspan dy="-3"></tspan></text>
+  <text x="170" y="156" class="bd" text-anchor="middle" style="fill:var(--acc)">B</text>
+  <line x1="250" y1="98" x2="316" y2="98" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="258" y1="98" x2="252" y2="104" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="266" y1="98" x2="260" y2="104" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="274" y1="98" x2="268" y2="104" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="282" y1="98" x2="276" y2="104" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="290" y1="98" x2="284" y2="104" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="298" y1="98" x2="292" y2="104" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="306" y1="98" x2="300" y2="104" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="314" y1="98" x2="308" y2="104" stroke="var(--mut)" stroke-width="1.2"/>
+  <path d="M 255 98 L 305 98 L 305 52 L 255 52 Z" fill="var(--mut)" fill-opacity="0.06" stroke="none"/>
+  <path d="M 255 98 L 305 98 L 305 52 L 255 52 Z" fill="none" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <path d="M 255 98 L 305 98 L 317 52 L 267 52 Z" fill="var(--acc)" fill-opacity="0.25" stroke="none"/>
+  <path d="M 255 98 L 305 98 L 317 52 L 267 52 Z" fill="none" stroke="var(--acc)" stroke-width="2"/>
+  <line x1="258" y1="44" x2="296" y2="44" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbch)"/>
+  <text x="311" y="40" class="bd">F<tspan dy="3" font-size="9">∥</tspan><tspan dy="-3"></tspan></text>
+  <text x="268" y="74" class="">h</text>
+  <text x="321" y="66" class="">x</text>
+  <text x="283" y="124" class="bd" text-anchor="middle">F<tspan dy="3" font-size="9">∥</tspan><tspan dy="-3">/A</tspan></text>
+  <text x="283" y="140" class="" text-anchor="middle">x/h</text>
+  <text x="283" y="156" class="bd" text-anchor="middle" style="fill:var(--acc)">S</text>
+  <text x="170" y="174" class="sm" text-anchor="middle">esfuerzo / deformación = módulo (ley de Hooke)</text>
+</svg>
+<figcaption>Los tres módulos son «esfuerzo ÷ deformación». Las deformaciones están dibujadas muy exageradas (en la realidad son del orden de $10^{-3}$ o menos). <span class="src" data-l="P" data-ref="Diagrama propio de la fig. 11.12 de U">P</span></figcaption>
+</figure>
+
+<div class="box def"><span class="h">Tensión y compresión: módulo de Young $Y$</span>
+  <p>Una barra de longitud $l_0$ y área transversal $A$ sometida a fuerzas $F_\perp$ perpendiculares a la sección (que la estiran o la comprimen):
+  $$\text{esfuerzo}=\frac{F_\perp}{A}\ \text{(11.8)},\qquad \text{deformación}=\frac{\Delta l}{l_0}\ \text{(11.9)},\qquad Y=\frac{F_\perp/A}{\Delta l/l_0}=\frac{F_\perp\,l_0}{A\,\Delta l}\ \text{(11.10)}$$
+  El esfuerzo se mide en pascales (1 Pa = 1 N/m²) y la deformación es adimensional, así que $Y$ también va en Pa. El mismo $Y$ vale para estirar y para comprimir. Un material con $Y$ grande (acero) es rígido; con $Y$ pequeño (goma), blando. Despejando: $\Delta l=\dfrac{F_\perp\,l_0}{A\,Y}$.</p>
+  <span class="src" data-l="U" data-ref="U §11.4, ecs. 11.8-11.10, pp. 348-349 (compresión, p. 349)">U p.348-349</span></div>
+<div class="box thm"><span class="h">Compresión, flexión y viga en I</span>
+  <p>Si las fuerzas de los extremos <i>empujan</i> en lugar de jalar, la barra está en <b>compresión</b>: el esfuerzo y la deformación se definen igual (con $\Delta l$ en sentido contrario) y la ley de Hooke y (11.10) valen mientras el esfuerzo no sea muy grande. Muchos materiales tienen el mismo $Y$ en tensión y en compresión, pero no el hormigón (concreto): aguanta compresión y falla con una tensión comparable. Por eso los romanos y otras civilizaciones usaban <b>arcos</b>: el peso de encima comprime las piedras y no las pone en tensión.</p>
+  <p>Con frecuencia un cuerpo sufre ambas a la vez. Una viga horizontal apoyada en sus extremos se pandea por su peso: la parte <b>superior</b> queda en compresión y la <b>inferior</b> en tensión, y en la línea central no hay ni una ni otra. Por eso la sección en <b>I</b> es ancha arriba y abajo (donde están los esfuerzos) y angosta en el centro (ahorra peso).</p>
+  <span class="src" data-l="U" data-ref="U §11.4, figs. 11.15-11.16, p. 349">U p.349</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 200" width="100%" role="img" aria-label="Una viga apoyada en sus extremos se flexiona: la parte superior está en compresión y la inferior en tensión; la sección en I es ancha arriba y abajo y estrecha en el centro">
+  <defs><marker id="macw" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcw" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcw" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcw" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcw" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcw" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <text x="20" y="14" class="bd">Viga apoyada en los extremos</text>
+  <path d="M 30 70 L 130 78 L 230 70" fill="none" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <path d="M 30 70 L 130 78 L 230 70" fill="none" stroke="var(--acc)" stroke-width="3.5"/>
+  <path d="M 30 64 L 130 72 L 230 64" fill="none" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="100" y1="50" x2="100" y2="70" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcw)"/>
+  <line x1="130" y1="50" x2="130" y2="74" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcw)"/>
+  <line x1="160" y1="50" x2="160" y2="74" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcw)"/>
+  <text x="130" y="46" class="sm" text-anchor="middle">carga</text>
+  <text x="246" y="62" class="sm">arriba:</text>
+  <text x="246" y="76" class="bd" style="fill:var(--A)">compresión</text>
+  <text x="246" y="98" class="sm">abajo:</text>
+  <text x="246" y="112" class="bd" style="fill:var(--acc)">tensión</text>
+  <text x="130" y="110" class="sm" text-anchor="middle">línea central: ni una ni otra</text>
+  <rect x="40" y="138" width="60" height="10" rx="2" fill="var(--acc)" fill-opacity="0.35" stroke="var(--acc)" stroke-width="1.5"/>
+  <rect x="65" y="148" width="10" height="30" rx="2" fill="var(--acc)" fill-opacity="0.2" stroke="var(--acc)" stroke-width="1.5"/>
+  <rect x="40" y="178" width="60" height="10" rx="2" fill="var(--acc)" fill-opacity="0.35" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="112" y="146" class="sm">ancho: aguanta compresión</text>
+  <text x="112" y="186" class="sm">ancho: aguanta tensión</text>
+  <text x="112" y="166" class="sm">estrecho: ahorra peso</text>
+</svg>
+<figcaption>La flexión mezcla compresión (arriba) y tensión (abajo); por eso la viga en I concentra el material en las alas. Flexión muy exagerada. <span class="src" data-l="P" data-ref="Diagrama propio de las figs. 11.15-11.16 de U">P</span></figcaption>
+</figure>
+
+<div class="box def"><span class="h">Esfuerzo volumétrico: módulo volumétrico $B$</span>
+  <p>Cuando un fluido (o un sólido) se comprime por todos lados, el esfuerzo es la <b>presión</b> $p=F_\perp/A$ (ec. 11.11; un escalar, no un vector) y la deformación es el cambio fraccionario de volumen $\Delta V/V_0$ (ec. 11.12). El módulo volumétrico es
+  $$B=-\frac{\Delta p}{\Delta V/V_0}\quad\text{(11.13)},\qquad k=\frac1B\ \text{(compresibilidad, 11.14)}$$
+  El signo menos es porque un aumento de presión ($\Delta p>0$) reduce el volumen ($\Delta V&lt;0$): así $B>0$. Una $B$ grande significa que el material es difícil de comprimir. Para el agua, $k=46{,}4\times10^{-6}\ \text{atm}^{-1}$ (tabla 11.2).</p>
+  <span class="src" data-l="U" data-ref="U §11.4, ecs. 11.11-11.14, pp. 350-351; tabla 11.2, p. 351">U p.350-351</span></div>
+<div class="box def"><span class="h">Esfuerzo de corte: módulo de corte $S$</span>
+  <p>Cuando las fuerzas son <b>tangentes</b> a las superficies (como unas tijeras o el cortado de un libro con la mano), el cuerpo se deforma sin cambiar de volumen: una cara se desplaza una distancia $x$ respecto a la opuesta, separada $h$:
+  $$\text{esfuerzo}=\frac{F_\parallel}{A}\ \text{(11.15)},\qquad\text{deformación}=\frac{x}{h}\ \text{(11.16)},\qquad S=\frac{F_\parallel/A}{x/h}=\frac{F_\parallel\,h}{A\,x}\ \text{(11.17)}$$
+  Aquí $A$ es el área de la cara <i>paralela</i> a la fuerza. Para un material dado, $S$ suele ser de un tercio a un medio de $Y$. Solo existe en sólidos (los fluidos no resisten el corte).</p>
+  <span class="src" data-l="U" data-ref="U §11.4, ecs. 11.15-11.17, p. 352">U p.352</span></div>
+<div class="box thm"><span class="h">Módulos de algunos materiales (Pa)</span>
+  <table>
+  <tr><th>Material</th><th>$Y$ (Young)</th><th>$B$ (volumétrico)</th><th>$S$ (corte)</th></tr>
+  <tr><td>Aluminio</td><td>$7{,}0\times10^{10}$</td><td>$7{,}5\times10^{10}$</td><td>$2{,}5\times10^{10}$</td></tr>
+  <tr><td>Latón</td><td>$9{,}0\times10^{10}$</td><td>$6{,}0\times10^{10}$</td><td>$3{,}5\times10^{10}$</td></tr>
+  <tr><td>Cobre</td><td>$11\times10^{10}$</td><td>$14\times10^{10}$</td><td>$4{,}4\times10^{10}$</td></tr>
+  <tr><td>Hierro</td><td>$21\times10^{10}$</td><td>$16\times10^{10}$</td><td>$7{,}7\times10^{10}$</td></tr>
+  <tr><td>Plomo</td><td>$1{,}6\times10^{10}$</td><td>$4{,}1\times10^{10}$</td><td>$0{,}6\times10^{10}$</td></tr>
+  <tr><td>Níquel</td><td>$21\times10^{10}$</td><td>$17\times10^{10}$</td><td>$7{,}8\times10^{10}$</td></tr>
+  <tr><td>Goma de silicona</td><td>$0{,}001\times10^{10}$</td><td>$0{,}2\times10^{10}$</td><td>$0{,}0002\times10^{10}$</td></tr>
+  <tr><td>Acero</td><td>$20\times10^{10}$</td><td>$16\times10^{10}$</td><td>$7{,}5\times10^{10}$</td></tr>
+  <tr><td>Tendón (típico)</td><td>$0{,}12\times10^{10}$</td><td>—</td><td>—</td></tr>
+  </table>
+  <span class="src" data-l="U" data-ref="U Tabla 11.1, p. 349">U p.349</span></div>
+<div class="box warn"><span class="h">Errores típicos con los módulos</span>
+  <ul>
+    <li>Dejar el área en cm² o mm²: pasa siempre a m² ($1\ \text{cm}^2=10^{-4}\ \text{m}^2$, $1\ \text{mm}^2=10^{-6}\ \text{m}^2$) antes de dividir.</li>
+    <li>Usar el <b>diámetro</b> como radio en $A=\pi r^2=\pi d^2/4$.</li>
+    <li>Confundir el módulo: $Y$ para estirar o comprimir, $B$ para presión por todos lados, $S$ para fuerzas tangentes.</li>
+    <li>Mezclar unidades de presión: $k$ en atm$^{-1}$ con $\Delta p$ en Pa (1 atm $=1{,}013\times10^5$ Pa).</li>
+    <li>Olvidar que un esfuerzo volumétrico <i>reduce</i> el volumen ($\Delta V&lt;0$): el signo menos de (11.13).</li>
+  </ul>
+  <span class="src" data-l="P" data-ref="Explicación propia sobre U §11.4, pp. 347-353">P</span></div>
+<div class="box ex"><span class="h">Ejemplo 11.5: esfuerzo y deformación por tensión</span>
+  <p>Una varilla de acero de 2,0 m de longitud y $0{,}30\ \text{cm}^2$ de área transversal se cuelga de un soporte y de su extremo libre se cuelga una fresadora de 550 kg. Determina el esfuerzo, la deformación y el alargamiento.</p>
+  <ol class="steps">
+    <li><b>Esfuerzo (11.8).</b> $F_\perp=mg=550\cdot9{,}8=5390$ N; $A=0{,}30\ \text{cm}^2=3{,}0\times10^{-5}\ \text{m}^2$. $\sigma=F_\perp/A=1{,}80\times10^{8}\ \text{Pa}\approx\mathbf{1{,}8\times10^8\ Pa}$.</li>
+    <li><b>Deformación</b> (de 11.10: $\Delta l/l_0=\sigma/Y$). Acero: $Y=20\times10^{10}$ Pa (tabla 11.1): $1{,}8\times10^8/2{,}0\times10^{11}=\mathbf{9{,}0\times10^{-4}}$.</li>
+    <li><b>Alargamiento.</b> $\Delta l=(\Delta l/l_0)\,l_0=9{,}0\times10^{-4}\cdot2{,}0\ \text{m}=\mathbf{1{,}8\ mm}$ (el peso propio de la varilla se desprecia).</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 11.5, p. 350">U p.350</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 200" width="100%" role="img" aria-label="Varilla de acero de 2,0 m colgada del techo con una fresadora de 550 kg; se alarga 1,8 mm (dibujo exagerado)">
+  <defs><marker id="macq" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcq" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcq" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcq" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcq" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcq" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="80" y1="18" x2="220" y2="18" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="90" y1="18" x2="82" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="100" y1="18" x2="92" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="110" y1="18" x2="102" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="120" y1="18" x2="112" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="130" y1="18" x2="122" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="140" y1="18" x2="132" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="150" y1="18" x2="142" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="160" y1="18" x2="152" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="170" y1="18" x2="162" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="180" y1="18" x2="172" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="190" y1="18" x2="182" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="200" y1="18" x2="192" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="210" y1="18" x2="202" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="220" y1="18" x2="212" y2="10" stroke="var(--mut)" stroke-width="1.2"/>
+  <rect x="144" y="18" width="12" height="92" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <rect x="144" y="110" width="12" height="8" rx="2" fill="var(--acc)" fill-opacity="0.0" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="140" y1="110" x2="160" y2="110" stroke="var(--fg)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="140" y1="118" x2="160" y2="118" stroke="var(--A)" stroke-width="1.5"/>
+  <rect x="120" y="125" width="60" height="32" rx="2" fill="var(--X)" fill-opacity="0.25" stroke="var(--X)" stroke-width="1.5"/>
+  <text x="150" y="146" class="bd" text-anchor="middle">550 kg</text>
+  <line x1="150" y1="157" x2="150" y2="190" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcq)"/>
+  <text x="158" y="186" class="">mg = 5,39 kN</text>
+  <text x="170" y="66" class="">l<tspan dy="3" font-size="9">0</tspan><tspan dy="-3"> = 2,0 m</tspan></text>
+  <text x="114" y="114" class="bd" text-anchor="end" style="fill:var(--A)">Δl = 1,8 mm</text>
+  <text x="114" y="128" class="sm" text-anchor="end">(muy exagerado)</text>
+  <text x="196" y="84" class="sm">σ = 1,8×10⁸ Pa</text>
+</svg>
+<figcaption>La varilla se alarga $\Delta l=1{,}8$ mm sobre 2,0 m (la deformación es solo $9{,}0\times10^{-4}$: el dibujo la exagera). <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 11.5 de U">P</span></figcaption>
+</figure>
+
+<div class="box ex"><span class="h">Ejemplo 11.6: esfuerzo y deformación volumétricos</span>
+  <p>Una prensa hidráulica contiene $0{,}25\ \text{m}^3$ (250 L) de aceite. Calcula la disminución de volumen del aceite cuando se somete a un aumento de presión $\Delta p=1{,}6\times10^7$ Pa (unas 160 atm). El módulo volumétrico del aceite es $B=5{,}0\times10^9$ Pa (aproximadamente $5{,}0\times10^4$ atm) y su compresibilidad es $k=1/B=20\times10^{-6}\ \text{atm}^{-1}$.</p>
+  <ol class="steps">
+    <li><b>Deformación:</b> de (11.13), $\dfrac{\Delta V}{V_0}=-\dfrac{\Delta p}{B}=-\dfrac{1{,}6\times10^7}{5{,}0\times10^9}=-3{,}2\times10^{-3}$ (un $-0{,}32\ \%$).</li>
+    <li><b>Cambio de volumen:</b> $\Delta V=-3{,}2\times10^{-3}\cdot0{,}25\ \text{m}^3=\mathbf{-8{,}0\times10^{-4}\ m^3}$.</li>
+    <li><b>Por la otra vía</b> (con atmósferas, ec. 11.14): $\Delta V=-k\,V_0\,\Delta p=-(20\times10^{-6}\ \text{atm}^{-1})(0{,}25\ \text{m}^3)(160\ \text{atm})=-8{,}0\times10^{-4}\ \text{m}^3$. El signo menos indica que el volumen disminuye; aunque 160 atm es una presión grande, el cambio fraccionario es muy pequeño.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 11.6, p. 351">U p.351</span></div>
+<div class="box ex"><span class="h">Ejemplo 11.7: esfuerzo y deformación por corte</span>
+  <p>La placa de latón de la base de una escultura exterior experimenta fuerzas de corte causadas por un terremoto. La placa cuadrada mide 0,80 m por lado y 0,50 cm de espesor. ¿Qué fuerza se ejerce en cada uno de sus extremos (cantos superior e inferior) si el desplazamiento resultante es $x=0{,}16$ mm? ($S=3{,}5\times10^{10}$ Pa para el latón.)</p>
+  <ol class="steps">
+    <li><b>Planteamiento.</b> Se aplica una fuerza $F_\parallel$ <i>tangente</i> al canto superior y otra igual y opuesta al canto inferior; la dimensión transversal es $h=0{,}80$ m. La incógnita es $F_\parallel$.</li>
+    <li><b>Deformación (11.16):</b> $x/h=0{,}16\times10^{-3}/0{,}80=\mathbf{2{,}0\times10^{-4}}$.</li>
+    <li><b>Esfuerzo</b> (de 11.17): $F_\parallel/A=S\,(x/h)=(3{,}5\times10^{10})(2{,}0\times10^{-4})=\mathbf{7{,}0\times10^{6}\ Pa}$.</li>
+    <li><b>Fuerza en cada canto:</b> el área de cada canto es $A=(0{,}80\ \text{m})(0{,}0050\ \text{m})=4{,}0\times10^{-3}\ \text{m}^2$ ⇒ $F_\parallel=\sigma A=\mathbf{2{,}8\times10^{4}\ N}$.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 11.7, p. 352">U p.352</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 190" width="100%" role="img" aria-label="Placa cuadrada de latón de 0,80 m de lado con una fuerza tangente de 2,8×10⁴ N en el canto superior y otra igual y opuesta en el canto inferior; el canto superior se desplaza x = 0,16 mm respecto al inferior">
+  <defs><marker id="macr" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcr" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcr" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcr" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcr" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcr" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 100 150 L 220 150 L 220 60 L 100 60 Z" fill="var(--mut)" fill-opacity="0.06" stroke="none"/>
+  <path d="M 100 150 L 220 150 L 220 60 L 100 60 Z" fill="none" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <path d="M 100 150 L 220 150 L 236 60 L 116 60 Z" fill="var(--acc)" fill-opacity="0.2" stroke="none"/>
+  <path d="M 100 150 L 220 150 L 236 60 L 116 60 Z" fill="none" stroke="var(--acc)" stroke-width="2.2"/>
+  <line x1="128" y1="50" x2="186" y2="50" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbcr)"/>
+  <line x1="192" y1="160" x2="134" y2="160" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbcr)"/>
+  <text x="157" y="38" class="bd" text-anchor="middle" style="fill:var(--A)">F<tspan dy="3" font-size="9">∥</tspan><tspan dy="-3"> = 2,8×10⁴ N (canto superior)</tspan></text>
+  <text x="163" y="180" class="bd" text-anchor="middle" style="fill:var(--A)">F<tspan dy="3" font-size="9">∥</tspan><tspan dy="-3"> = 2,8×10⁴ N (canto inferior)</tspan></text>
+  <line x1="246" y1="150" x2="246" y2="60" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="242" y1="150" x2="250" y2="150" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="242" y1="60" x2="250" y2="60" stroke="var(--mut)" stroke-width="1.2"/>
+  <text x="254" y="108" class="">h = 0,80 m</text>
+  <line x1="116" y1="56" x2="116" y2="66" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="100" y1="56" x2="100" y2="66" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="108" y="76" class="bd" text-anchor="middle">x</text>
+  <text x="14" y="104" class="sm">e = 0,50 cm</text>
+  <text x="14" y="118" class="sm">(no a escala)</text>
+</svg>
+<figcaption>Esfuerzo de corte: en cada canto actúa una fuerza paralela a él, y son iguales y opuestas. Deformación $x/h=2{,}0\times10^{-4}$; el desplazamiento $x$ de la figura está muy exagerado. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 11.7 de U">P</span></figcaption>
+</figure>
+
+
+<h2 id="s5"><span class="n">5</span>Elasticidad y plasticidad <span class="src" data-l="U" data-ref="U §11.5, pp. 353-354">U p.353-354</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>La ley de Hooke «esfuerzo ∝ deformación» solo vale si no te pasas. Estira un clip: al principio vuelve a su forma; si lo estiras mucho, se queda doblado para siempre; si sigues, se rompe. La gráfica esfuerzo–deformación de un metal cuenta esa historia en una curva: una recta al principio (Hooke), un tramo todavía reversible, un «punto de no retorno», una zona donde el material fluye y queda deformado, y por último la fractura.</p>
+  <span class="src" data-l="U" data-ref="U §11.5, p. 353">U p.353</span></div>
+<div class="box def"><span class="h">Los puntos de la curva esfuerzo–deformación (fig. 11.19)</span>
+  <ul>
+    <li><b>Límite proporcional (a):</b> hasta aquí la curva es una recta y vale la ley de Hooke.</li>
+    <li><b>Límite elástico o punto de rendimiento (b):</b> entre $a$ y $b$ el material sigue siendo <i>elástico</i> (si descargas, recupera su longitud) aunque ya no sea proporcional. El esfuerzo en $b$ es el límite elástico. Suele corresponder a deformaciones menores del 1 %.</li>
+    <li><b>Zona plástica ($b\to d$):</b> si cargas más allá de $b$ (hasta $c$, por ejemplo) y luego descargas, el material <b>no vuelve</b> a $\varepsilon=0$: sigue una recta aproximadamente paralela a la primera y queda una <b>deformación permanente</b>.</li>
+    <li><b>Punto de fractura (d):</b> el material se rompe. El esfuerzo que lo causa es el <b>esfuerzo de ruptura</b> (para tensión, resistencia a la tensión). Un material <b>dúctil</b> se estira mucho en la zona plástica antes de romper (puede pasar del 30 %); uno <b>frágil</b> se rompe poco después del límite elástico.</li>
+  </ul>
+  <span class="src" data-l="U" data-ref="U §11.5, fig. 11.19, p. 353; esfuerzo de ruptura, p. 354">U p.353-354</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_11_19_esfuerzo.png" alt="Figura 11.19 de U. Diagrama de esfuerzo-deformación típico de un metal dúctil sometido a tensión, con el límite proporcional a, el límite elástico o punto de rendimiento b, el punto c, el punto de fractura d, la zona elástica, la zona plástica y la deformación permanente." loading="lazy" style="max-width:380px!important">
+<figcaption>Fig. 11.19 de U: diagrama esfuerzo–deformación de un metal dúctil. <span class="src" data-l="U" data-ref="U Fig. 11.19, p. 353">U p.353</span></figcaption>
+</figure>
+<figure class="interactivo" data-escena="esfuerzo-deformacion" data-params='{"dim":2}' aria-label="Interactivo: curva esfuerzo-deformación de un metal dúctil con límite proporcional, límite elástico y fractura; se puede variar el módulo de Young, el límite elástico, la resistencia, la deformación de fractura y el punto de carga, y se ve la deformación permanente al descargar">
+  <img class="int-static" src="../assets/img/int_esfuerzo-deformacion.png" alt="Interactivo: curva esfuerzo-deformación de un metal dúctil con límite proporcional, límite elástico y fractura; se puede variar el módulo de Young, el límite elástico, la resistencia, la deformación de fractura y el punto de carga, y se ve la deformación permanente al descargar">
+  <figcaption><b>Pruébalo tú:</b> la curva de la fig. 11.19 con tus propios números. Al subir el <b>módulo de Young $Y$</b> la recta se hace más empinada (material más rígido: menos deformación con el mismo esfuerzo). Mueve el <b>punto de carga</b>: mientras estés antes de $b$ y descargues, vuelves a $\varepsilon=0$; pasado $b$, la descarga (recta a trazos de pendiente $Y$) te deja con una <b>deformación permanente</b>. Con «Ampliar la zona elástica» ves la recta y los puntos $a$ y $b$, que a escala real son estrechísimos (menos del 1 %). Con $\varepsilon_f$ pequeña tienes un material frágil. El modelo es didáctico, no una aleación concreta. <span class="src" data-l="P" data-ref="Interactivo propio de U §11.5, fig. 11.19, p. 353">P</span></figcaption>
+</figure>
+<div class="box thm"><span class="h">Esfuerzos de ruptura (Pa)</span>
+  <p>Aluminio $2{,}2\times10^{8}$; latón $4{,}7\times10^{8}$; vidrio $10\times10^{8}$; hierro $3{,}0\times10^{8}$; acero $(5\text{–}20)\times10^{8}$; tendón (típico) $1\times10^{8}$. Dos materiales pueden tener constantes elásticas parecidas y esfuerzos de ruptura muy distintos: el hierro y el acero tienen casi el mismo $Y$ (rigidez comparable), pero el acero es más fuerte, porque tiene mayor esfuerzo de ruptura.</p>
+  <span class="src" data-l="U" data-ref="U Tabla 11.3 y texto, p. 354">U p.354</span></div>
+<div class="box intu"><span class="h">Materiales biológicos y caucho: histéresis elástica</span>
+  <p>El caucho vulcanizado y los tendones no tienen una región plástica clásica. El caucho se estira más de siete veces su longitud sin perder la elasticidad, pero el esfuerzo <i>no</i> es proporcional a la deformación y, al descargar, sigue una curva <b>distinta</b> de la de carga (fig. 11.20 de U): es la <b>histéresis elástica</b>, causada por rozamiento interno. El trabajo hecho al deformarlo es mayor que el que se recupera; la diferencia se disipa en calor, y por eso el caucho se usa en soportes que amortiguan vibraciones.</p>
+  <span class="src" data-l="U" data-ref="U §11.5, fig. 11.20, p. 353">U p.353</span></div>
+<div class="box warn"><span class="h">Error típico</span>
+  <p>Confundir «límite proporcional» con «límite elástico»: el primero es el final de la recta (Hooke); el segundo es el final de la recuperación completa. Y no aplicar $\Delta l=F\,l_0/(AY)$ cuando el esfuerzo supera el límite proporcional: la fórmula solo vale en la zona de Hooke.</p>
+  <span class="src" data-l="U" data-ref="U §11.5, p. 353">U p.353</span></div>
+
+<h2 id="ejercicios"><span class="n">6</span>Ejercicios resueltos</h2>
+<div class="box tip"><span class="h">Sobre estos ejercicios: no hay examen real de este tema</span>
+  <p>Ninguna convocatoria de 2018 a 2025 incluye un problema de equilibrio o elasticidad, así que <b>no hay ejercicios «X»</b>. Los nueve ejercicios E1-E9 son del solucionario (E, problemas de fin de capítulo traducidos y ampliados, de más fácil a más difícil) y, además, se resuelve el problema práctico del libro (U). Léelos con el método de las cinco etapas de la receta maestra. Los ejemplos 11.1 a 11.7 de U están resueltos en la teoría (§2 a §4).</p>
+  <span class="src" data-l="P" data-ref="Sin ejercicios de examen real en el tema 11 (fuentes_txt/examenes_por_tema.md)">P</span></div>
+
+<details class="sol" id="e1"><summary>E1 — Ejercicio 11.1: barra con dos masas, ¿dónde se pone el apoyo? <span class="src" data-l="E" data-ref="Solucionario 11-1, Ej. 11.1">E</span> <span class="src" data-l="U" data-ref="U §11.2, ecs. 11.3-11.4, pp. 341-342; Ejercicio 11.1, p. 357">U p.341-342, 357</span></summary>
+  <p class="enun">Una barra uniforme de 50,0 cm de longitud y 0,120 kg tiene adherida una masa pequeña de 0,055 kg en su extremo izquierdo y otra de 0,110 kg en el derecho. Las masas se consideran puntuales. Se quiere equilibrar el sistema horizontalmente sobre un apoyo colocado justo bajo su centro de gravedad. ¿A qué distancia del extremo izquierdo debe colocarse?</p>
+  <ol class="steps">
+    <li><b>Idea.</b> Un cuerpo apoyado en un solo punto está en equilibrio si ese punto está bajo el cg (la torca del peso respecto al apoyo es entonces cero). Con $g$ uniforme, cg = cm: basta calcular $x_{cm}$.</li>
+    <li><b>Sustituir la barra uniforme por una partícula</b> de 0,120 kg en su centro ($x=0{,}250$ m). Origen en el extremo izquierdo.</li>
+    <li><b>Ecuación (11.3):</b> $x_{cm}=\dfrac{(0{,}120)(0{,}250)+(0{,}055)(0)+(0{,}110)(0{,}500)}{0{,}120+0{,}055+0{,}110}=\dfrac{0{,}085}{0{,}285}=0{,}298$ m.</li>
+    <li><b>Resultado:</b> el apoyo va a <b>29,8 cm</b> del extremo izquierdo: un poco a la derecha del centro, porque la masa de la derecha es mayor.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 340 170" width="100%" role="img" aria-label="Barra de 50 cm con una masa de 0,055 kg en el extremo izquierdo, otra de 0,110 kg en el derecho y el apoyo de equilibrio a 29,8 cm del extremo izquierdo">
+  <defs><marker id="macb" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcb" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcb" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcb" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcb" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcb" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="30" y="51" width="280.0" height="8" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <circle cx="30.0" cy="55" r="5" fill="var(--acc)" fill-opacity="0.4" stroke="var(--acc)" stroke-width="1.5"/>
+  <circle cx="310.0" cy="55" r="8" fill="var(--acc)" fill-opacity="0.4" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="30.0" y1="60" x2="30.0" y2="82" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcb)"/>
+  <line x1="170.0" y1="59" x2="170.0" y2="107" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcb)"/>
+  <line x1="310.0" y1="63" x2="310.0" y2="107" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcb)"/>
+  <text x="36.0" y="83" class="sm">0,055 kg</text>
+  <text x="164.0" y="89" class="sm" text-anchor="end">0,120 kg</text>
+  <text x="304.0" y="117" class="sm" text-anchor="end">0,110 kg</text>
+  <path d="M 186.9 85 L 206.9 85 L 196.9 59 Z" fill="var(--X)" fill-opacity="0.35" stroke="none"/>
+  <path d="M 186.9 85 L 206.9 85 L 196.9 59 Z" fill="none" stroke="var(--X)" stroke-width="2"/>
+  <text x="196.9" y="101" class="bd" text-anchor="middle" style="fill:var(--X)">apoyo</text>
+  <line x1="30.0" y1="135" x2="30.0" y2="145" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="170.0" y1="135" x2="170.0" y2="145" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="196.9" y1="135" x2="196.9" y2="145" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="310.0" y1="135" x2="310.0" y2="145" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="30.0" y1="140" x2="310.0" y2="140" stroke="var(--fg)" stroke-width="1.5"/>
+  <text x="30.0" y="158" class="sm" text-anchor="middle">0</text>
+  <text x="170.0" y="158" class="sm" text-anchor="middle">25</text>
+  <text x="206.9" y="158" class="bd" text-anchor="middle" style="fill:var(--X)">29,8</text>
+  <text x="310.0" y="158" class="sm" text-anchor="middle">50 cm</text>
+  <text x="170.0" y="41" class="sm" text-anchor="middle">barra 0,120 kg (su cg en el centro)</text>
+</svg>
+<figcaption>Barra de 0,120 kg con dos masas en los extremos: el apoyo único debe ir en $x_\mathrm{cm}=29{,}8$ cm. Las flechas de peso son proporcionales a las masas. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 11.1">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> cada pieza uniforme = una partícula en su centro; $x_{cm}=\sum m_ix_i/\sum m_i$; el apoyo único va bajo el cm.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Olvidar en el denominador la masa situada en $x=0$ (no suma en el numerador, pero sí en la masa total).</p></div>
+</details>
+
+<details class="sol" id="e2"><summary>E2 — Ejercicio 11.6: tabla llevada por dos personas <span class="src" data-l="E" data-ref="Solucionario 11-2, Ej. 11.6">E</span> <span class="src" data-l="U" data-ref="U §11.3, ec. 11.6, p. 343; Ejercicio 11.6, p. 357">U p.343, 357</span></summary>
+  <p class="enun">Dos personas llevan una tabla uniforme de madera de 3,00 m de longitud que pesa 160 N. Si una persona aplica una fuerza hacia arriba de 60 N en un extremo, ¿en qué punto sostiene la tabla la otra persona?</p>
+  <ol class="steps">
+    <li><b>DCL.</b> Fuerzas verticales: $F_1=60$ N en el extremo izquierdo ($x=0$), el peso $w=160$ N en el centro ($x=1{,}50$ m) y $F_2$ a una distancia $x$ (ambas desconocidas). Dos incógnitas ⇒ $\sum F_y=0$ y $\sum\tau_z=0$.</li>
+    <li><b>Fuerzas:</b> $F_1+F_2-w=0$ ⇒ $F_2=160-60=\mathbf{100\ N}$.</li>
+    <li><b>Torcas respecto al extremo izquierdo</b> (ahí $F_1$ no da torca), antihorario $+$: $F_2\,x-w(1{,}50)=0$ ⇒ $x=\dfrac{160\cdot1{,}50}{100}=\mathbf{2{,}40\ m}$ del extremo de la primera persona.</li>
+    <li><b>Comprobación respecto al centro:</b> $F_1(1{,}50)-F_2(2{,}40-1{,}50)=90-90=0$ ✓. La persona más cercana al cg hace más fuerza.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 340 180" width="100%" role="img" aria-label="Tabla de 3,00 m y 160 N sostenida por dos personas: 60 N en el extremo izquierdo y 100 N a 2,40 m de ese extremo">
+  <defs><marker id="macc" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcc" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcc" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcc" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcc" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcc" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="30" y="50" width="279.9" height="10" rx="2" fill="var(--acc)" fill-opacity="0.22" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="30" y1="90" x2="30" y2="60" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgcc)"/>
+  <line x1="253.9" y1="110" x2="253.9" y2="60" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgcc)"/>
+  <line x1="169.9" y1="55" x2="169.9" y2="135" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcc)"/>
+  <text x="36" y="91" class="bd" style="fill:var(--X)">60 N</text>
+  <text x="259.9" y="115" class="bd" style="fill:var(--X)">F<tspan dy="3" font-size="9">2</tspan><tspan dy="-3"> = 100 N</tspan></text>
+  <text x="175.9" y="131" class="bd">w = 160 N</text>
+  <line x1="30" y1="150" x2="169.9" y2="150" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="169.9" y1="150" x2="253.9" y2="150" stroke="var(--A)" stroke-width="1.5"/>
+  <line x1="30" y1="145" x2="30" y2="155" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="169.9" y1="145" x2="169.9" y2="155" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="253.9" y1="145" x2="253.9" y2="155" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="100.0" y="167" class="bd" text-anchor="middle" style="fill:var(--acc)">1,50 m</text>
+  <text x="221.9" y="167" class="bd" text-anchor="middle" style="fill:var(--A)">0,90 m</text>
+  <text x="30" y="41" class="sm" text-anchor="middle">x = 0</text>
+  <text x="253.9" y="41" class="bd" text-anchor="middle">x = 2,40 m</text>
+</svg>
+<figcaption>Diagrama de cuerpo libre de la tabla: $F_1=60$ N, $w=160$ N en el centro y $F_2=100$ N a $x=2{,}40$ m. Las torcas respecto al extremo izquierdo dan $x$. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 11.6">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> la fuerza vertical neta cero da la fuerza desconocida; las torcas respecto al punto de la fuerza conocida dan su posición.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Suponer que la segunda persona está en el otro extremo (entonces la tabla giraría, porque $F_2\neq w/2$).</p></div>
+</details>
+
+<details class="sol" id="e3"><summary>E3 — Ejercicio 11.14: viga horizontal con cable y bisagra <span class="src" data-l="E" data-ref="Solucionario 11-7, Ej. 11.14">E</span> <span class="src" data-l="U" data-ref="U §11.3, ec. 11.6, p. 343 y §10.1, ec. 10.2, p. 305; Ejercicio 11.14, p. 358">U p.343, 358</span></summary>
+  <p class="enun">La viga horizontal de la figura E11.14 pesa 190 N y su centro de gravedad está en su centro. Calcula a) la tensión del cable y b) las componentes horizontal y vertical de la fuerza que ejerce la pared sobre la viga. (La viga mide 4,00 m y está unida a la pared por una bisagra; del extremo libre cuelga una carga de 300 N; el cable, de 5,00 m, va del extremo libre a un punto de la pared 3,00 m más arriba que la bisagra.)</p>
+  <ol class="steps">
+    <li><b>Geometría del cable.</b> Triángulo 3-4-5: el ángulo $\theta$ del cable con la viga cumple $\mathrm{sen}\,\theta=3/5=0{,}600$, $\cos\theta=4/5=0{,}800$.</li>
+    <li><b>DCL de la viga.</b> Peso 190 N en el centro (2,00 m de la bisagra); carga 300 N en el extremo (4,00 m); tensión $T$ en el extremo, hacia el punto de la pared: componentes $T\cos\theta$ (hacia la pared) y $T\,\mathrm{sen}\,\theta$ (hacia arriba); bisagra con $H_h$ y $H_v$ (dirección desconocida). Tres incógnitas: $T$, $H_h$, $H_v$.</li>
+    <li><b>a) Torcas respecto a la bisagra</b> ($H_h$ y $H_v$ no dan torca; $T\cos\theta$ tampoco, su recta es la propia viga): $T\,\mathrm{sen}\,\theta\,(4{,}00)-190(2{,}00)-300(4{,}00)=0$ ⇒ $T=\dfrac{380+1200}{4{,}00\cdot0{,}600}=\mathbf{658\ N}$.</li>
+    <li><b>b) Fuerzas:</b> $\sum F_x=H_h-T\cos\theta=0$ ⇒ $H_h=658\cdot0{,}800=\mathbf{527\ N}$ (la pared empuja la viga hacia fuera: el cable tira de ella hacia la pared). $\sum F_y=H_v+T\,\mathrm{sen}\,\theta-190-300=0$ ⇒ $H_v=490-395=\mathbf{95\ N}$ hacia arriba.</li>
+    <li><b>Comprobación con otro punto.</b> Respecto al extremo libre: $-H_v(4{,}00)+190(2{,}00)=0$ ⇒ $H_v=95$ N ✓. Respecto al punto de la pared donde se ata el cable: $H_h(3{,}00)-190(2{,}00)-300(4{,}00)=0$ ⇒ $H_h=527$ N ✓.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 340 205" width="100%" role="img" aria-label="Viga horizontal de 4,00 m con bisagra en la pared, cable de 5,00 m al punto de la pared 3,00 m más arriba, peso de la viga 190 N y carga de 300 N en el extremo; fuerzas T = 658 N, H horizontal 527 N y H vertical 95 N">
+  <defs><marker id="macd" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcd" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcd" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcd" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcd" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcd" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="62" y1="20" x2="62" y2="175" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="62" y1="30" x2="54" y2="22" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="40" x2="54" y2="32" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="50" x2="54" y2="42" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="60" x2="54" y2="52" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="70" x2="54" y2="62" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="80" x2="54" y2="72" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="90" x2="54" y2="82" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="100" x2="54" y2="92" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="110" x2="54" y2="102" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="120" x2="54" y2="112" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="130" x2="54" y2="122" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="140" x2="54" y2="132" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="150" x2="54" y2="142" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="160" x2="54" y2="152" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="62" y1="170" x2="54" y2="162" stroke="var(--mut)" stroke-width="1.2"/>
+  <rect x="62" y="146" width="160" height="8" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="62" y1="30" x2="222" y2="150" stroke="var(--acc)" stroke-width="2.2"/>
+  <circle cx="222" cy="150" r="3" fill="var(--fg)"/>
+  <circle cx="62" cy="150" r="5" fill="var(--fg)" fill-opacity="0.5" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="222" y1="150" x2="153.6" y2="98.7" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#macd)"/>
+  <line x1="142" y1="150" x2="142" y2="174.7" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcd)"/>
+  <line x1="222" y1="150" x2="222" y2="189.0" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcd)"/>
+  <line x1="62" y1="144" x2="130.5" y2="144" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbcd)"/>
+  <line x1="62" y1="144" x2="62" y2="127.7" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbcd)"/>
+  <text x="230" y="94" class="bd" style="fill:var(--acc)">T = 658 N</text>
+  <text x="148" y="178" class="sm">190 N</text>
+  <text x="228" y="190" class="sm">300 N</text>
+  <text x="108" y="174" class="bd" text-anchor="middle" style="fill:var(--A)">H<tspan dy="3" font-size="9">h</tspan><tspan dy="-3"> = 527 N</tspan></text>
+  <text x="70" y="120" class="bd" style="fill:var(--A)">H<tspan dy="3" font-size="9">v</tspan><tspan dy="-3"> = 95 N</tspan></text>
+  <text x="172" y="202" class="sm" text-anchor="middle">4,00 m</text>
+  <text x="68" y="96" class="sm">3,00 m</text>
+  <text x="180" y="142" class="bd">θ</text>
+  <path d="M 201.2 134.4 A 26 26 0 0 0 196.0 150.0" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="162" y="54" class="sm">cable 5,00 m</text>
+</svg>
+<figcaption>DCL de la viga: tres incógnitas ($T$, $H_h$, $H_v$). Torcas respecto a la bisagra → $T=658$ N. Flechas aproximadamente a escala (la de 95 N es muy corta). <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 11.14">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta (viga + cable + bisagra):</b> (1) torcas respecto a la bisagra ⇒ $T$; (2) $\sum F_x$ ⇒ $H_h$; (3) $\sum F_y$ ⇒ $H_v$; (4) comprueba con torcas en el extremo libre.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Suponer que la bisagra solo empuja a lo largo de la viga ($H_v=0$) o poner $T\cos\theta$ en la torca (su brazo de palanca es cero).</p></div>
+</details>
+
+<details class="sol" id="e4"><summary>E4 — Ejercicio 11.10: escalera con fricción en el suelo, ¿hasta dónde puede subir el hombre? <span class="src" data-l="E" data-ref="Solucionario 11-4, Ej. 11.10">E</span> <span class="src" data-l="U" data-ref="U §11.3, Ejemplo 11.3, pp. 343-345; fricción estática ec. 5.4, p. 144; Ejercicio 11.10, p. 357">U p.343-345, 357</span></summary>
+  <p class="enun">Una escalera uniforme de 5,0 m de longitud que pesa 160 N descansa contra una pared vertical sin fricción con su base a 3,0 m de la pared. El coeficiente de fricción estática entre la base y el suelo es 0,40. Un hombre de 740 N sube lentamente. a) ¿Qué fuerza de fricción máxima puede ejercer el suelo en la base? b) ¿Cuál es la fricción cuando el hombre ha subido 1,0 m a lo largo de la escalera? c) ¿Hasta dónde puede subir antes de que la escalera resbale?</p>
+  <ol class="steps">
+    <li><b>Geometría.</b> Escalera 5,0 m, base a 3,0 m ⇒ apoyo en la pared a $\sqrt{5^2-3^2}=4{,}0$ m (triángulo 3-4-5). Un punto a distancia $s$ a lo largo de la escalera está a $\tfrac35s$ en horizontal de la base.</li>
+    <li><b>DCL.</b> Pared lisa: solo $n_1$ horizontal. Suelo: $n_2$ vertical y fricción $f_s$ hacia la pared. Pesos: 160 N en el centro (1,5 m en horizontal) y 740 N del hombre.</li>
+    <li><b>a) Fricción máxima.</b> $\sum F_y=n_2-160-740=0$ ⇒ $n_2=900$ N <b>sea cual sea la posición del hombre</b>. $f_{s,\text{máx}}=\mu_sn_2=0{,}40\cdot900=\mathbf{360\ N}$.</li>
+    <li><b>b) Hombre a 1,0 m.</b> Torcas respecto a la base (elimina $n_2$ y $f_s$): $n_1(4{,}0)=160(1{,}5)+740(\tfrac35\cdot1{,}0)=240+444=684$ N·m ⇒ $n_1=171$ N. $\sum F_x=f_s-n_1=0$ ⇒ $f_s=\mathbf{171\ N}$, menor que 360 N: no resbala.</li>
+    <li><b>c) Hasta dónde.</b> Al subir crece la torca del hombre, luego $n_1$ y la fricción necesaria. En general $f_s=n_1=60+111\,s$ (N). Resbala cuando $f_s=360$ N: $360(4{,}0)=160(1{,}5)+740\cdot\tfrac35\,s$ ⇒ $s=\dfrac{1440-240}{444}=\mathbf{2{,}7\ m}$ a lo largo de la escalera (algo más de la mitad).</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 340 215" width="100%" role="img" aria-label="Gráfica de la fricción necesaria f_s frente a la posición s del hombre en la escalera: recta de 60 N a 615 N que corta el límite de 360 N en s = 2,7 m">
+  <defs><marker id="mace" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbce" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmce" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgce" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpce" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfce" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="48" y1="177" x2="331" y2="177"/>
+  <line class="ax" x1="48" y1="177" x2="48" y2="9"/>
+  <text x="326" y="205" class="sm" text-anchor="end">s (m a lo largo de la escalera)</text>
+  <text x="54" y="16" class="sm">f<tspan dy="3" font-size="9">s</tspan><tspan dy="-3"> (N)</tspan></text>
+  <line x1="48.0" y1="177" x2="48.0" y2="181" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="48.0" y="193" class="sm" text-anchor="middle">0</text>
+  <line x1="103.6" y1="177" x2="103.6" y2="181" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="103.6" y="193" class="sm" text-anchor="middle">1</text>
+  <line x1="159.2" y1="177" x2="159.2" y2="181" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="159.2" y="193" class="sm" text-anchor="middle">2</text>
+  <line x1="214.8" y1="177" x2="214.8" y2="181" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="214.8" y="193" class="sm" text-anchor="middle">3</text>
+  <line x1="270.4" y1="177" x2="270.4" y2="181" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="270.4" y="193" class="sm" text-anchor="middle">4</text>
+  <line x1="326.0" y1="177" x2="326.0" y2="181" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="326.0" y="193" class="sm" text-anchor="middle">5</text>
+  <line x1="44" y1="177.0" x2="48" y2="177.0" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="181.0" class="sm" text-anchor="end">0</text>
+  <line x1="44" y1="134.1" x2="48" y2="134.1" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="138.1" class="sm" text-anchor="end">171</text>
+  <line x1="44" y1="86.7" x2="48" y2="86.7" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="90.7" class="sm" text-anchor="end">360</text>
+  <line x1="44" y1="26.5" x2="48" y2="26.5" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="30.5" class="sm" text-anchor="end">600</text>
+  <path d="M 48.0 162.0 L 326.0 22.8" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <line x1="48.0" y1="86.7" x2="326.0" y2="86.7" stroke="var(--A)" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <text x="56.0" y="80.7" class="bd" style="fill:var(--A)">μ<tspan dy="3" font-size="9">s</tspan><tspan dy="-3">n</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3"> = 360 N</tspan></text>
+  <line x1="198.1" y1="86.7" x2="198.1" y2="177.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <circle cx="198.1" cy="86.7" r="4" fill="var(--A)"/>
+  <circle cx="103.6" cy="134.1" r="4" fill="var(--acc)"/>
+  <line x1="48.0" y1="134.1" x2="103.6" y2="134.1" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <line x1="103.6" y1="134.1" x2="103.6" y2="177.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="203.1" y="171.0" class="bd" style="fill:var(--A)">2,7 m</text>
+  <text x="109.6" y="150.1" class="bd" style="fill:var(--acc)">171 N</text>
+  <text x="225.9" y="36.6" class="bd" text-anchor="middle" style="fill:var(--A)">resbala</text>
+  <text x="220.4" y="114.3" class="sm">f<tspan dy="3" font-size="9">s</tspan><tspan dy="-3"> = 60 + 111 s</tspan></text>
+</svg>
+<figcaption>Fricción necesaria $f_s=n_1=60+111\,s$ (N). Corta al máximo $\mu_sn_2=360$ N en $s=2{,}7$ m: ahí empieza a resbalar. A 1,0 m hace falta 171 N. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 11.10">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> como el ejemplo 11.3 pero con la posición del hombre como incógnita: la normal del suelo no cambia; el deslizamiento empieza cuando la fricción necesaria ($=n_1$) alcanza $\mu_sn_2$. Puedes comprobarlo con el interactivo de §3.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar 1,0 m como brazo de palanca del hombre (es la distancia a lo largo de la escalera; el brazo es la horizontal, 0,6 m); pensar que la normal del suelo crece al subir.</p></div>
+</details>
+
+<details class="sol" id="e5"><summary>E5 — Problema 11.46: viga inclinada sostenida por cable y bisagra <span class="src" data-l="E" data-ref="Solucionario 11-19, Prob. 11.46">E</span> <span class="src" data-l="U" data-ref="U §11.3, ec. 11.6, p. 343 y §10.1, ec. 10.2, p. 305; Problema 11.46, p. 361">U p.343, 361</span></summary>
+  <p class="enun">Una viga uniforme de 8,0 m y 1150 kg está unida por una bisagra a la pared y sostenida por un cable delgado sujeto a 2,0 m del extremo libre (figura P11.46). La viga está a 30,0° sobre la horizontal y el cable forma 40,0° con la viga. a) Dibuja el diagrama de cuerpo libre. b) Calcula la tensión del cable. c) ¿Con qué fuerza empuja la viga contra la pared?</p>
+  <ol class="steps">
+    <li><b>Ángulos.</b> El cable vuelve hacia la pared formando 40,0° con la viga; respecto a la horizontal forma $40{,}0^\circ-30{,}0^\circ=10{,}0^\circ$ subiendo hacia la pared. Así $\vec T$ tiene componente horizontal $T\cos10{,}0^\circ$ (hacia la pared) y vertical $T\,\mathrm{sen}\,10{,}0^\circ$ (hacia arriba).</li>
+    <li><b>a) DCL.</b> Peso $w=1150\cdot9{,}8=1{,}127\times10^4$ N en el centro (4,0 m de la bisagra a lo largo de la viga); $T$ en el punto a $8{,}0-2{,}0=6{,}0$ m de la bisagra; bisagra con $H_h$ y $H_v$.</li>
+    <li><b>b) Torcas respecto a la bisagra</b> (elimina $H_h$ y $H_v$). Brazo de palanca $=r\,\mathrm{sen}\,\varphi$ (10.2): para $T$, $r=6{,}0$ m y el ángulo entre viga y cable es 40,0° ⇒ $6{,}0\,\mathrm{sen}\,40{,}0^\circ=3{,}86$ m. Para el peso (vertical), el brazo es la distancia horizontal $4{,}0\cos30{,}0^\circ=3{,}46$ m. $$T=\frac{w\,(4{,}0)\cos30{,}0^\circ}{(6{,}0)\,\mathrm{sen}\,40{,}0^\circ}=\mathbf{1{,}01\times10^4\ N}.$$</li>
+    <li><b>c) Empuje contra la pared.</b> $\sum F_x=H_h-T\cos10{,}0^\circ=0$ ⇒ $H_h=\mathbf{9{,}97\times10^3\ N}$: la pared empuja la viga hacia fuera con esa fuerza y, por la tercera ley, la viga empuja la pared con $9{,}97\times10^3$ N ($\approx1{,}0\times10^4$ N).</li>
+    <li><b>Ampliación ($H_v$).</b> $\sum F_y=H_v+T\,\mathrm{sen}\,10{,}0^\circ-w=0$ ⇒ $H_v=1{,}127\times10^4-1758=9{,}51\times10^3$ N hacia arriba. La bisagra soporta casi todo el peso porque el cable es casi horizontal.</li>
+    <li><b>Comprobación.</b> $T&lt;w$ porque el brazo de $T$ (3,86 m) es mayor que el de $w$ (3,46 m).</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 340 205" width="100%" role="img" aria-label="Viga de 8,0 m y 1150 kg inclinada 30 grados sobre la horizontal, con bisagra en la pared y un cable atado a 6,0 m de la bisagra que forma 40 grados con la viga; tensión 1,01×10⁴ N y fuerzas de la bisagra">
+  <defs><marker id="macf" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcf" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcf" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcf" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcf" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcf" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="134" y1="40" x2="134" y2="190" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="134" y1="50" x2="126" y2="42" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="60" x2="126" y2="52" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="70" x2="126" y2="62" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="80" x2="126" y2="72" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="90" x2="126" y2="82" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="100" x2="126" y2="92" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="110" x2="126" y2="102" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="120" x2="126" y2="112" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="130" x2="126" y2="122" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="140" x2="126" y2="132" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="150" x2="126" y2="142" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="160" x2="126" y2="152" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="170" x2="126" y2="162" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="180" x2="126" y2="172" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="134" y1="190" x2="126" y2="182" stroke="var(--mut)" stroke-width="1.2"/>
+  <path d="M 134 175 L 328.0 63.0" fill="none" stroke="var(--mut)" stroke-width="7"/>
+  <circle cx="134" cy="175" r="5" fill="var(--fg)" fill-opacity="0.5" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="279.5" y1="91.0" x2="134" y2="65.3" stroke="var(--acc)" stroke-width="2.2"/>
+  <circle cx="279.5" cy="91.0" r="3" fill="var(--fg)"/>
+  <line x1="279.5" y1="91.0" x2="224.8" y2="81.4" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#macf)"/>
+  <line x1="231.0" y1="119.0" x2="231.0" y2="181.0" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcf)"/>
+  <line x1="134" y1="169" x2="188.8" y2="169" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbcf)"/>
+  <line x1="137" y1="167" x2="137" y2="114.7" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbcf)"/>
+  <line x1="279.5" y1="91.0" x2="209.5" y2="91.0" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="235.5" y="105.0" class="sm" text-anchor="middle">10°</text>
+  <path d="M 174.0 175.0 A 40 40 0 0 0 168.6 155.0" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="180" y="169" class="sm">30°</text>
+  <text x="194" y="53.3" class="bd" text-anchor="middle" style="fill:var(--acc)">T = 10,1 kN</text>
+  <text x="239.0" y="153.0" class="bd">w = 11,3 kN</text>
+  <text x="138" y="195" class="bd" style="fill:var(--A)">H<tspan dy="3" font-size="9">h</tspan><tspan dy="-3"> = 9,97 kN</tspan></text>
+  <text x="126" y="145" class="bd" text-anchor="end" style="fill:var(--A)">H<tspan dy="3" font-size="9">v</tspan><tspan dy="-3"> = 9,51 kN</tspan></text>
+  <circle cx="328.0" cy="63.0" r="3" fill="var(--fg)"/>
+  <text x="322.0" y="54.0" class="sm" text-anchor="end">8,0 m</text>
+</svg>
+<figcaption>DCL de la viga de E5: el cable forma $40^\circ$ con la viga, es decir, sube $10^\circ$ sobre la horizontal. Flechas proporcionales a las fuerzas. <span class="src" data-l="P" data-ref="Diagrama propio del problema 11.46">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> en una viga inclinada, para cada fuerza el brazo es $r\,\mathrm{sen}$(ángulo entre la viga y la fuerza); con el peso vertical eso es $r\cos$(inclinación). Después, las componentes con el ángulo del cable <i>respecto a la horizontal</i>.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar 30° o 40° en las componentes horizontal y vertical de $T$ (es 10°); tomar los 8,0 m como brazo de $T$ (el cable se ata a 6,0 m).</p></div>
+</details>
+
+<details class="sol" id="e6"><summary>E6 — Ejercicio 11.26: varillas de acero y de cobre en serie <span class="src" data-l="E" data-ref="Solucionario 11-13, Ej. 11.26">E</span> <span class="src" data-l="U" data-ref="U §11.4, ecs. 11.8-11.10, pp. 348-350; tabla 11.1, p. 349; Ejercicio 11.26, p. 359">U p.348-350, 359</span></summary>
+  <p class="enun">Dos varillas circulares, una de acero y otra de cobre, se unen por los extremos. Cada una mide 0,750 m de longitud y 1,50 cm de diámetro. El conjunto se somete a una fuerza de tensión de 4000 N. Para cada varilla, determina a) la deformación y b) el alargamiento.</p>
+  <ol class="steps">
+    <li><b>Misma fuerza en las dos.</b> Si cortas imaginariamente el conjunto por cualquier sección y aplicas $\sum F=0$ al trozo, la fuerza interna es 4000 N en toda la longitud: ambas soportan $F_\perp=4000$ N (están «en serie»).</li>
+    <li><b>Área y esfuerzo.</b> $A=\pi d^2/4=\pi(0{,}0150)^2/4=1{,}767\times10^{-4}\ \text{m}^2$. Esfuerzo (11.8): $F_\perp/A=2{,}26\times10^{7}$ Pa, igual en las dos.</li>
+    <li><b>a) Deformación</b> $=\text{esfuerzo}/Y$. Tabla 11.1: acero $Y=2{,}0\times10^{11}$ Pa, cobre $1{,}1\times10^{11}$ Pa. Acero: $2{,}26\times10^7/2{,}0\times10^{11}=\mathbf{1{,}1\times10^{-4}}$; cobre: $2{,}26\times10^7/1{,}1\times10^{11}=\mathbf{2{,}1\times10^{-4}}$.</li>
+    <li><b>b) Alargamiento</b> $=\text{deformación}\times l_0$. Acero: $\mathbf{8{,}5\times10^{-5}\ m}$ (0,085 mm); cobre: $\mathbf{1{,}5\times10^{-4}\ m}$ (0,15 mm). Alargamiento total 0,24 mm.</li>
+    <li><b>Interpretación.</b> Mismo esfuerzo, distinto material: se estira más el de menor $Y$ (el cobre).</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 340 215" width="100%" role="img" aria-label="Rectas esfuerzo-deformación del acero y del cobre: con el mismo esfuerzo de 2,26×10⁷ Pa el acero se deforma 1,1×10⁻⁴ y el cobre 2,1×10⁻⁴">
+  <defs><marker id="maci" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbci" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmci" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgci" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpci" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfci" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="48" y1="177" x2="331" y2="177"/>
+  <line class="ax" x1="48" y1="177" x2="48" y2="9"/>
+  <text x="326" y="205" class="sm" text-anchor="end">ε (×10⁻⁴)</text>
+  <text x="54" y="16" class="sm">σ (×10⁷ Pa)</text>
+  <line x1="48.0" y1="177" x2="48.0" y2="181" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="48.0" y="193" class="sm" text-anchor="middle">0</text>
+  <line x1="103.6" y1="177" x2="103.6" y2="181" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="103.6" y="193" class="sm" text-anchor="middle">0,5</text>
+  <line x1="159.2" y1="177" x2="159.2" y2="181" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="159.2" y="193" class="sm" text-anchor="middle">1</text>
+  <line x1="214.8" y1="177" x2="214.8" y2="181" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="214.8" y="193" class="sm" text-anchor="middle">1,5</text>
+  <line x1="270.4" y1="177" x2="270.4" y2="181" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="270.4" y="193" class="sm" text-anchor="middle">2</text>
+  <line x1="326.0" y1="177" x2="326.0" y2="181" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="326.0" y="193" class="sm" text-anchor="middle">2,5</text>
+  <line x1="44" y1="177.0" x2="48" y2="177.0" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="181.0" class="sm" text-anchor="end">0</text>
+  <line x1="44" y1="122.7" x2="48" y2="122.7" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="126.7" class="sm" text-anchor="end">1</text>
+  <line x1="44" y1="68.3" x2="48" y2="68.3" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="72.3" class="sm" text-anchor="end">2</text>
+  <line x1="44" y1="54.2" x2="48" y2="54.2" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="58.2" class="sm" text-anchor="end"></text>
+  <line x1="44" y1="14.0" x2="48" y2="14.0" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="18.0" class="sm" text-anchor="end">3</text>
+  <path d="M 48.0 177.0 L 203.7 24.9" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <path d="M 48.0 177.0 L 326.0 27.6" fill="none" stroke="var(--A)" stroke-width="2.5"/>
+  <text x="207.7" y="26.9" class="bd" style="fill:var(--acc)">acero</text>
+  <text x="324.0" y="43.6" class="bd" text-anchor="end" style="fill:var(--A)">cobre</text>
+  <line x1="48.0" y1="54.2" x2="277.1" y2="54.2" stroke="var(--mut)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="173.7" y1="54.2" x2="173.7" y2="177.0" stroke="var(--acc)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="277.1" y1="54.2" x2="277.1" y2="177.0" stroke="var(--A)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <circle cx="173.7" cy="54.2" r="4" fill="var(--acc)"/>
+  <circle cx="277.1" cy="54.2" r="4" fill="var(--A)"/>
+  <text x="170.7" y="172.0" class="bd" text-anchor="end" style="fill:var(--acc)">1,1</text>
+  <text x="280.1" y="172.0" class="bd" style="fill:var(--A)">2,1</text>
+  <text x="53.0" y="49.2" class="sm">2,26</text>
+</svg>
+<figcaption>La pendiente de cada recta es $Y$ (acero $2{,}0\times10^{11}$ Pa, cobre $1{,}1\times10^{11}$ Pa). Con el mismo esfuerzo, el material de menor $Y$ se deforma más. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 11.26">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> en serie, misma fuerza ⇒ mismo esfuerzo si la sección es igual; deformación = esfuerzo/$Y$ de cada material; los alargamientos se suman.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Repartir la fuerza (2000 N a cada una) como si estuvieran en paralelo; usar el diámetro como radio en $A$.</p></div>
+</details>
+
+<details class="sol" id="e7"><summary>E7 — Ejercicio 11.36: placa de acero sometida a corte <span class="src" data-l="E" data-ref="Solucionario 11-16, Ej. 11.36">E</span> <span class="src" data-l="U" data-ref="U §11.4, ecs. 11.15-11.17, p. 352; tabla 11.1, p. 349; Ejercicio 11.36, p. 360">U p.352, 360</span></summary>
+  <p class="enun">Una placa cuadrada de acero mide 10,0 cm por lado y 0,500 cm de espesor. a) Calcula la deformación por corte que se produce al aplicar a cada uno de los cuatro lados una fuerza de $9{,}0\times10^5$ N paralela a cada lado. b) Determina el desplazamiento $x$ en centímetros.</p>
+  <ol class="steps">
+    <li><b>Por qué es corte.</b> Las fuerzas son <b>paralelas</b> a las caras sobre las que actúan: esfuerzo de corte $F_\parallel/A$ (11.15). Las cuatro fuerzas se equilibran por pares (fuerzas y torcas), así que la placa no se mueve: solo se deforma (el cuadrado pasa a rombo).</li>
+    <li><b>Área.</b> La cara lateral: lado × espesor $=0{,}100\cdot0{,}00500=5{,}00\times10^{-4}\ \text{m}^2$ (no la cara de $10\times10$ cm). La dimensión perpendicular al desplazamiento es $h=0{,}100$ m.</li>
+    <li><b>Esfuerzo.</b> $F_\parallel/A=9{,}0\times10^5/5{,}00\times10^{-4}=1{,}8\times10^{9}$ Pa.</li>
+    <li><b>a) Deformación por corte</b> $=\text{esfuerzo}/S$ (de 11.17), acero $S=7{,}5\times10^{10}$ Pa: $1{,}8\times10^9/7{,}5\times10^{10}=\mathbf{2{,}4\times10^{-2}}$.</li>
+    <li><b>b) Desplazamiento.</b> Deformación $=x/h$ (11.16) ⇒ $x=0{,}024\cdot0{,}100=2{,}4\times10^{-3}$ m $=\mathbf{0{,}24\ cm}$.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 340 195" width="100%" role="img" aria-label="Placa cuadrada de acero de 10,0 cm de lado con una fuerza tangente de 9,0×10⁵ N en cada uno de sus cuatro lados; el cuadrado se deforma en un rombo y el desplazamiento es x = 0,24 cm">
+  <defs><marker id="macx" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcx" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcx" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcx" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcx" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcx" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 120 40 L 220 40 L 220 140 L 120 140 Z" fill="none" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <path d="M 114 140 L 214 140 L 226 40 L 126 40 Z" fill="var(--acc)" fill-opacity="0.2" stroke="none"/>
+  <path d="M 114 140 L 214 140 L 226 40 L 126 40 Z" fill="none" stroke="var(--acc)" stroke-width="2.2"/>
+  <line x1="140" y1="28" x2="196" y2="28" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbcx)"/>
+  <line x1="200" y1="152" x2="144" y2="152" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbcx)"/>
+  <line x1="244" y1="130" x2="244" y2="74" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbcx)"/>
+  <line x1="96" y1="50" x2="96" y2="106" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbcx)"/>
+  <text x="168" y="18" class="bd" text-anchor="middle" style="fill:var(--A)">F<tspan dy="3" font-size="9">∥</tspan><tspan dy="-3"></tspan></text>
+  <text x="172" y="170" class="bd" text-anchor="middle" style="fill:var(--A)">F<tspan dy="3" font-size="9">∥</tspan><tspan dy="-3"></tspan></text>
+  <text x="254" y="108" class="bd" style="fill:var(--A)">F<tspan dy="3" font-size="9">∥</tspan><tspan dy="-3"></tspan></text>
+  <text x="60" y="80" class="bd" style="fill:var(--A)">F<tspan dy="3" font-size="9">∥</tspan><tspan dy="-3"></tspan></text>
+  
+  <text x="170" y="92" class="sm" text-anchor="middle">lado</text>
+  <text x="170" y="108" class="" text-anchor="middle">h = 10,0 cm</text>
+  <text x="128" y="62" class="bd">x</text>
+  <text x="8" y="184" class="sm">x = 0,24 cm (muy exagerado, no a escala)</text>
+</svg>
+<figcaption>Fuerza $F_\parallel=9{,}0\times10^5$ N en cada lado. Las cuatro fuerzas tangentes se equilibran por pares: la placa no se mueve, solo se deforma. Deformación $x/h=2{,}4\times10^{-2}$, $x=0{,}24$ cm; el cambio de forma está muy exagerado. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 11.36">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> en corte, $A$ es el área de la cara <b>paralela</b> a la fuerza; deformación $x/h=F_\parallel/(AS)$; $h$ es la distancia entre las caras que se desplazan.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar el área de la cara grande ($10\times10$ cm) o el módulo de Young en vez del de corte.</p></div>
+</details>
+
+<details class="sol" id="e8"><summary>E8 — Ejercicio 11.34: agua en el abismo Challenger <span class="src" data-l="E" data-ref="Solucionario 11-15, Ej. 11.34">E</span> <span class="src" data-l="U" data-ref="U §11.4, ecs. 11.11-11.14, pp. 350-351; tabla 11.2, p. 351; Ejercicio 11.34, p. 360">U p.350-351, 360</span></summary>
+  <p class="enun">En el abismo Challenger de la Fosa de las Marianas, la profundidad del agua es 10,9 km y la presión es $1{,}16\times10^8$ Pa (cerca de $1{,}15\times10^3$ atm). a) Si se lleva un metro cúbico de agua de la superficie a esa profundidad, ¿cuánto cambiará su volumen? (La presión normal en la superficie es del orden de $1{,}0\times10^5$ Pa. Toma para el agua de mar la compresibilidad $k$ del agua dulce, tabla 11.2.) b) ¿Qué densidad tiene el agua de mar a esta profundidad? (En la superficie, $1{,}03\times10^3$ kg/m³.)</p>
+  <ol class="steps">
+    <li><b>Tipo de esfuerzo.</b> El agua presiona por igual en todas direcciones: esfuerzo <b>volumétrico</b>. El esfuerzo es el <i>aumento</i> de presión: $\Delta p=1{,}16\times10^8-1{,}0\times10^5=1{,}159\times10^8$ Pa.</li>
+    <li><b>Módulo.</b> Tabla 11.2: $k=46{,}4\times10^{-6}\ \text{atm}^{-1}$. En Pa$^{-1}$ (1 atm $=1{,}013\times10^5$ Pa): $k=4{,}58\times10^{-10}\ \text{Pa}^{-1}$, y $B=1/k\approx2{,}2\times10^{9}$ Pa (11.14).</li>
+    <li><b>a) Cambio de volumen</b> (de 11.13): $\Delta V=-k\,\Delta p\,V_0=-(4{,}58\times10^{-10})(1{,}159\times10^8)(1{,}00)\approx\mathbf{-0{,}053\ m^3}$: el volumen disminuye un 5,3 %.</li>
+    <li><b>b) Densidad.</b> La masa no cambia: los $1{,}03\times10^3$ kg que ocupaban 1,00 m³ ocupan ahora $1{,}00-0{,}053=0{,}947$ m³. $\rho=1{,}03\times10^3/0{,}947=\mathbf{1{,}09\times10^3\ kg/m^3}$ (un 5,6 % mayor).</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 340 166" width="100%" role="img" aria-label="Barras de igual masa de agua: 1,000 m³ en la superficie y 0,947 m³ en el fondo del abismo Challenger">
+  <defs><marker id="macs" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcs" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcs" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcs" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcs" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcs" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <text x="10" y="16" class="bd">Superficie (p ≈ 1,0×10⁵ Pa)</text>
+  <rect x="10" y="24" width="220" height="22" rx="2" fill="var(--acc)" fill-opacity="0.25" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="236" y="40" class="sm">V₀ = 1,000 m³</text>
+  <text x="10" y="82" class="bd">Fondo (p = 1,16×10⁸ Pa)</text>
+  <rect x="10" y="90" width="208.3" height="22" rx="2" fill="var(--A)" fill-opacity="0.25" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="224" y="106" class="sm">0,947 m³</text>
+  
+  <text x="10" y="138" class="">ρ: 1,03×10³ → 1,09×10³ kg/m³</text>
+  <text x="10" y="156" class="sm">ΔV = −0,053 m³ (−5,3 %), misma masa</text>
+</svg>
+<figcaption>La misma masa de agua ocupa un 5,3 % menos de volumen a 10,9 km de profundidad; por eso su densidad aumenta un 5,6 %. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 11.34">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> volumétrico: $\Delta V/V_0=-\Delta p/B=-k\,\Delta p$, con $\Delta p$ el <b>aumento</b> de presión y $k$ en Pa$^{-1}$; para la densidad, misma masa y nuevo volumen.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Mezclar $k$ en atm$^{-1}$ con $\Delta p$ en Pa; olvidar el signo (el volumen disminuye); calcular la nueva densidad con el signo cambiado.</p></div>
+</details>
+
+<details class="sol" id="e9"><summary>E9 — Problema 11.83: varilla colgada de dos alambres distintos <span class="src" data-l="E" data-ref="Solucionario 11-38, Prob. 11.83">E</span> <span class="src" data-l="U" data-ref="U §11.3, p. 343 y §11.4, ecs. 11.8-11.10, pp. 348-349; Problema 11.83, p. 366">U p.343-349, 366</span></summary>
+  <p class="enun">Una varilla de 1,05 m de longitud y peso despreciable está sostenida en sus extremos por alambres A y B de igual longitud. El área transversal de A es 2,00 mm² y la de B, 4,00 mm². El módulo de Young de A es $1{,}80\times10^{11}$ Pa; el de B, $1{,}20\times10^{11}$ Pa. ¿En qué punto de la varilla debe colgarse un peso $w$ para producir a) esfuerzos iguales en A y B? b) ¿Y deformaciones iguales?</p>
+  <ol class="steps">
+    <li><b>Plan.</b> Une las dos partes del tema: el equilibrio de la varilla relaciona las tensiones $T_A$ y $T_B$ con la posición $x$ del peso; la elasticidad traduce «igual esfuerzo» o «igual deformación» en una relación entre $T_A$ y $T_B$.</li>
+    <li><b>Equilibrio.</b> Peso $w$ a distancia $x$ de A. Torcas respecto al punto C del peso (así $w$ no aparece): $T_B(1{,}05-x)-T_A\,x=0$ ⇒ $\dfrac{T_B}{T_A}=\dfrac{x}{1{,}05-x}$. (Además $T_A+T_B=w$.)</li>
+    <li><b>a) Esfuerzos iguales</b> (11.8): $T_A/A_A=T_B/A_B$ ⇒ $T_B=\dfrac{4{,}00}{2{,}00}T_A=2T_A$. Entonces $2(1{,}05-x)=x$ ⇒ $x=\mathbf{0{,}70\ m}$ desde A ($T_A=w/3$, $T_B=2w/3$).</li>
+    <li><b>b) Deformaciones iguales.</b> Deformación $=\dfrac{T}{AY}$ (de 11.10): $\dfrac{T_A}{A_AY_A}=\dfrac{T_B}{A_BY_B}$ ⇒ $T_B=\dfrac{A_BY_B}{A_AY_A}T_A=\dfrac{(4{,}00)(1{,}20)}{(2{,}00)(1{,}80)}T_A=\dfrac43T_A$. Entonces $\tfrac43(1{,}05-x)=x$ ⇒ $x=\mathbf{0{,}60\ m}$ desde A ($T_A=3w/7$, $T_B=4w/7$).</li>
+    <li><b>Interpretación.</b> B es más grueso: para el mismo esfuerzo necesita el doble de tensión, así que el peso se acerca a B. Pero B es más «blando» (menor $Y$), lo que compensa en parte su mayor área en la deformación: el punto se acerca al centro (0,525 m). Como los alambres miden lo mismo, igual deformación = igual alargamiento ⇒ la varilla baja sin inclinarse.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 340 200" width="100%" role="img" aria-label="Varilla de 1,05 m sostenida por un alambre A fino a la izquierda y otro B grueso a la derecha; el peso w se cuelga a 0,70 m de A para esfuerzos iguales o a 0,60 m para deformaciones iguales">
+  <defs><marker id="macv" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcv" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcv" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcv" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcv" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcv" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="25" y1="20" x2="315" y2="20" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="35" y1="20" x2="27" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="45" y1="20" x2="37" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="55" y1="20" x2="47" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="65" y1="20" x2="57" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="75" y1="20" x2="67" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="85" y1="20" x2="77" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="95" y1="20" x2="87" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="105" y1="20" x2="97" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="115" y1="20" x2="107" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="125" y1="20" x2="117" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="135" y1="20" x2="127" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="145" y1="20" x2="137" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="155" y1="20" x2="147" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="165" y1="20" x2="157" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="175" y1="20" x2="167" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="185" y1="20" x2="177" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="195" y1="20" x2="187" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="205" y1="20" x2="197" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="215" y1="20" x2="207" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="225" y1="20" x2="217" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="235" y1="20" x2="227" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="245" y1="20" x2="237" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="255" y1="20" x2="247" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="265" y1="20" x2="257" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="275" y1="20" x2="267" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="285" y1="20" x2="277" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="295" y1="20" x2="287" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="305" y1="20" x2="297" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="315" y1="20" x2="307" y2="12" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="40" y1="20" x2="40" y2="100" stroke="var(--acc)" stroke-width="2"/>
+  <line x1="300.0" y1="20" x2="300.0" y2="100" stroke="var(--A)" stroke-width="5"/>
+  <rect x="40" y="100" width="259.98" height="7" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="213.3" y1="107" x2="213.3" y2="150" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcv)"/>
+  <line x1="188.6" y1="107" x2="188.6" y2="134" stroke="var(--fg)" stroke-width="3" fill="none" stroke-dasharray="5 4" marker-end="url(#mfcv)"/>
+  <text x="36" y="58" class="bd" text-anchor="end" style="fill:var(--acc)">A</text>
+  <text x="309.0" y="58" class="bd" style="fill:var(--A)">B</text>
+  <text x="45" y="44" class="sm">fino, Y mayor</text>
+  <text x="295.0" y="44" class="sm" text-anchor="end">grueso, Y menor</text>
+  <text x="219.3" y="148" class="bd">a) σ iguales</text>
+  <text x="182.6" y="132" class="bd" text-anchor="end" style="fill:var(--mut)">b) ε iguales</text>
+  <line x1="40" y1="175" x2="300.0" y2="175" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="40.0" y1="170" x2="40.0" y2="180" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="188.6" y1="170" x2="188.6" y2="180" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="213.3" y1="170" x2="213.3" y2="180" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="300.0" y1="170" x2="300.0" y2="180" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="40" y="192" class="sm" text-anchor="middle">0</text>
+  <text x="184.6" y="192" class="sm" text-anchor="end">0,60</text>
+  <text x="217.3" y="192" class="sm">0,70</text>
+  <text x="300.0" y="192" class="sm" text-anchor="middle">1,05 m</text>
+</svg>
+<figcaption>Dos posiciones para colgar $w$: con esfuerzos iguales $T_B=2T_A$ ($x=0{,}70$ m); con deformaciones iguales $T_B=\tfrac43T_A$ ($x=0{,}60$ m). Distancias medidas desde A. <span class="src" data-l="P" data-ref="Diagrama propio del problema 11.83">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> equilibrio ⇒ $T_B/T_A=x/(L-x)$; condición elástica ⇒ $T_B/T_A$ ($=A_B/A_A$ para igual esfuerzo; $=A_BY_B/(A_AY_A)$ para igual deformación); igualar y despejar $x$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Confundir esfuerzo (no depende de $Y$) con deformación (sí depende); tomar torcas respecto a A y olvidar que entonces aparece $w$ como incógnita adicional (se resuelve igual, con una ecuación más).</p></div>
+</details>
+
+<details class="sol" id="prac"><summary>Problema práctico de U: «En equilibrio y bajo esfuerzo» (varilla de cobre con pivote y cable) <span class="src" data-l="U" data-ref="U Problema práctico del capítulo 11, p. 355 y fig. 11.21">U p.355</span></summary>
+  <p class="enun">Una varilla sólida horizontal y uniforme de cobre, de longitud inicial $l_0$, área transversal $A$, módulo de Young $Y$, módulo volumétrico $B$, módulo de corte $S$ y masa $m$, está sostenida por un pivote sin fricción en su extremo derecho y por un cable a una distancia $l_0/4$ del extremo izquierdo. El pivote y el cable ejercen sus fuerzas de manera uniforme sobre la sección transversal. El cable forma un ángulo $\theta$ con la varilla y la comprime. a) Calcula la tensión del cable. b) Calcula la magnitud y dirección de la fuerza del pivote; compárala con la tensión y compara su ángulo con $\theta$. c) Determina el cambio de longitud de la varilla (pequeño frente a $l_0$). d) ¿En qué factor aumentaría el resultado de c) si la varilla fuera dos veces más larga con la misma sección?</p>
+  <ol class="steps">
+    <li><b>DCL.</b> Eje $x$ a lo largo de la varilla hacia la pared, $y$ hacia arriba, origen en el extremo izquierdo. Fuerzas: peso $mg$ en el centro ($x=l_0/2$); tensión $T$ en $x=l_0/4$, con componentes $(T\cos\theta,\,T\,\mathrm{sen}\,\theta)$; fuerza del pivote $(P_x,P_y)$ en $x=l_0$, de dirección desconocida. Incógnitas $T,P_x,P_y$ ⇒ las tres ecuaciones (11.6).</li>
+    <li><b>a) Torcas respecto al pivote</b> (elimina $P_x$ y $P_y$). $T\cos\theta$ está sobre la recta de la varilla: torca cero. Brazos: $T\,\mathrm{sen}\,\theta$ a $\tfrac34l_0$ del pivote; $mg$ a $\tfrac12l_0$: $T\,\mathrm{sen}\,\theta\cdot\tfrac34l_0=mg\cdot\tfrac12l_0$ ⇒ $$T=\frac{2mg}{3\,\mathrm{sen}\,\theta}.$$</li>
+    <li><b>b) Fuerzas.</b> $\sum F_x=T\cos\theta+P_x=0$ ⇒ $P_x=-\dfrac{2mg}{3\tan\theta}$ (el pivote empuja <i>alejándose de la pared</i>: el cable aprieta la varilla contra él). $\sum F_y=T\,\mathrm{sen}\,\theta+P_y-mg=0$ ⇒ $P_y=\dfrac{mg}{3}$ (hacia arriba).</li>
+    <li><b>Módulo y ángulo.</b> $P=\dfrac{mg}{3}\sqrt{\dfrac{4}{\tan^2\theta}+1}$, y el ángulo $\phi$ sobre la horizontal cumple $\tan\phi=P_y/|P_x|=\tfrac12\tan\theta$.</li>
+    <li><b>Comparación.</b> $T=\dfrac{mg}{3}\sqrt{\dfrac{4}{\tan^2\theta}+4}$: como $1&lt;4$, <b>$P&lt;T$</b> (de hecho $P/T=\sqrt{1-\tfrac34\mathrm{sen}^2\theta}$), y como $\tan\phi=\tfrac12\tan\theta$, <b>$\phi&lt;\theta$</b>. Interpretación: el cable soporta $\tfrac23$ del peso y el pivote $\tfrac13$, lógico porque el cable está más cerca del centro de la varilla ($\tfrac14l_0$ frente a $\tfrac12l_0$).</li>
+    <li><b>c) ¿Qué tramo se comprime?</b> Las fuerzas horizontales son $T\cos\theta$ (en $x=l_0/4$, hacia la pared) y $P_x$ (en $x=l_0$, hacia fuera): comprimen solo el tramo <b>entre el cable y el pivote</b>, de longitud $\tfrac34l_0$; el cuarto izquierdo no soporta fuerza axial (su extremo está libre). La fuerza de compresión es $F_\perp=T\cos\theta=\dfrac{2mg}{3\tan\theta}$.</li>
+    <li><b>Acortamiento</b> (11.10 en compresión): $$|\Delta l|=\frac{F_\perp\,(\tfrac34l_0)}{A\,Y}=\frac{mg\,l_0}{2\,A\,Y\tan\theta}.$$ Solo interviene $Y$: $B$ y $S$ son datos que no hacen falta (el esfuerzo es de compresión lineal, no volumétrico ni de corte).</li>
+    <li><b>d) Varilla del doble de larga, misma sección.</b> La masa también se duplica ($m\to2m$) y $l_0\to2l_0$ (mismo $\theta$). Como $|\Delta l|\propto m\,l_0$, aumenta en un factor <b>4</b>.</li>
+    <li><b>Comprobación numérica</b> (para $m=1$ kg, $\theta=30^\circ$): $T=13{,}1$ N, $P_x=-11{,}3$ N, $P_y=3{,}27$ N, $P=11{,}8$ N $&lt;T$, $\phi=16{,}1^\circ&lt;30^\circ$.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 340 226" width="100%" role="img" aria-label="Varilla horizontal de cobre con un pivote en el extremo derecho junto a la pared y un cable a l0/4 del extremo izquierdo que forma 30 grados con la varilla; fuerzas T, mg y P para 1 kg">
+  <defs><marker id="macl" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbcl" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmcl" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgcl" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpcl" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfcl" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="286" y1="20" x2="286" y2="190" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="286" y1="30" x2="294" y2="22" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="40" x2="294" y2="32" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="50" x2="294" y2="42" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="60" x2="294" y2="52" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="70" x2="294" y2="62" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="80" x2="294" y2="72" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="90" x2="294" y2="82" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="100" x2="294" y2="92" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="110" x2="294" y2="102" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="120" x2="294" y2="112" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="130" x2="294" y2="122" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="140" x2="294" y2="132" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="150" x2="294" y2="142" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="160" x2="294" y2="152" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="170" x2="294" y2="162" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="180" x2="294" y2="172" stroke="var(--mut)" stroke-width="1.2"/>
+  <line x1="286" y1="190" x2="294" y2="182" stroke="var(--mut)" stroke-width="1.2"/>
+  <rect x="30" y="126" width="240" height="8" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="90.0" y1="130" x2="286" y2="16.8" stroke="var(--acc)" stroke-width="2"/>
+  <circle cx="270" cy="130" r="5" fill="var(--fg)" fill-opacity="0.5" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="90.0" y1="130" x2="151.1" y2="94.7" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#macl)"/>
+  <line x1="150.0" y1="130" x2="150.0" y2="182.9" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfcl)"/>
+  <line x1="270" y1="130" x2="208.9" y2="112.3" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbcl)"/>
+  <path d="M 120.0 130.0 A 30 30 0 0 0 116.0 115.0" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="126.0" y="122" class="sm">θ = 30°</text>
+  <text x="96.0" y="78" class="bd" style="fill:var(--acc)">T = 13,1 N</text>
+  <text x="156.0" y="178.9" class="bd">mg = 9,8 N</text>
+  <text x="266" y="160" class="bd" text-anchor="end" style="fill:var(--A)">P = 11,8 N</text>
+  <line x1="30" y1="200" x2="90.0" y2="200" stroke="var(--acc)" stroke-width="1.3"/>
+  <line x1="90.0" y1="200" x2="270" y2="200" stroke="var(--A)" stroke-width="1.3"/>
+  <line x1="30" y1="195" x2="30" y2="205" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="90.0" y1="195" x2="90.0" y2="205" stroke="var(--fg)" stroke-width="1.2"/>
+  <line x1="270" y1="195" x2="270" y2="205" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="60.0" y="218" class="sm" text-anchor="middle">l<tspan dy="3" font-size="9">0</tspan><tspan dy="-3">/4</tspan></text>
+  <text x="180.0" y="218" class="sm" text-anchor="middle">3l<tspan dy="3" font-size="9">0</tspan><tspan dy="-3">/4 (comprimido)</tspan></text>
+</svg>
+<figcaption>DCL de la varilla (valores para $m=1$ kg y $\theta=30^\circ$): $T=\tfrac{2mg}{3\,\mathrm{sen}\,\theta}$, $P_y=\tfrac{mg}{3}$. Solo se comprime el tramo de $3l_0/4$ entre el cable y el pivote. <span class="src" data-l="P" data-ref="Diagrama propio del Problema práctico del cap. 11 (fig. 11.21 de U)">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> torcas respecto al pivote ⇒ $T$; fuerzas ⇒ componentes del pivote; para la deformación, identifica <b>qué tramo</b> soporta la fuerza axial y aplica $\Delta l=F\,l/(AY)$ a ese tramo.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Suponer que la fuerza del pivote va a lo largo de la varilla o del cable; aplicar la compresión a toda la longitud $l_0$; olvidar en d) que al duplicar la longitud también se duplica la masa.</p></div>
+</details>
+
+<h2 id="chuleta"><span class="n">7</span>Chuleta, errores frecuentes y lista de comprobación</h2>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Condiciones de equilibrio</td><td>$\sum\vec F=0$ (11.1); $\sum\vec\tau=0$ respecto a cualquier punto (11.2). En el plano: $\sum F_x=\sum F_y=\sum\tau_z=0$ (11.6)</td></tr>
+<tr><td>Centro de masa / gravedad</td><td>$x_{cm}=\sum m_ix_i/\sum m_i$ (11.3); $\vec\tau_{peso}=\vec r_{cm}\times\vec w$ (11.5); con $g$ uniforme cg = cm</td></tr>
+<tr><td>Torca</td><td>$\tau=Fl=rF\,\mathrm{sen}\,\varphi$; antihoraria $+$ (10.2)</td></tr>
+<tr><td>Estabilidad</td><td>la vertical del cg cae dentro del área de apoyo</td></tr>
+<tr><td>Fricción estática</td><td>$f_s\le\mu_sn$; $\mu_{s,\text{mín}}=f_s/n$</td></tr>
+<tr><td>Ley de Hooke</td><td>esfuerzo / deformación = módulo (11.7)</td></tr>
+<tr><td>Tensión / compresión</td><td>$\sigma=F_\perp/A$; $\varepsilon=\Delta l/l_0$; $Y=\dfrac{F_\perp l_0}{A\,\Delta l}$ (11.8-11.10); $\Delta l=\dfrac{F_\perp l_0}{AY}$</td></tr>
+<tr><td>Volumétrico</td><td>$p=F_\perp/A$; $B=-\dfrac{\Delta p}{\Delta V/V_0}$ (11.13); $k=1/B$ (11.14)</td></tr>
+<tr><td>Corte</td><td>$S=\dfrac{F_\parallel/A}{x/h}=\dfrac{F_\parallel h}{A\,x}$ (11.17)</td></tr>
+<tr><td>Límites</td><td>proporcional $a$ (Hooke) → elástico $b$ (reversible) → plástico (deformación permanente) → fractura $d$ (esfuerzo de ruptura)</td></tr>
+<tr><td>Valores útiles</td><td>acero $Y=20\times10^{10}$ Pa, $B=16\times10^{10}$, $S=7{,}5\times10^{10}$; cobre $Y=11\times10^{10}$; agua $k=46{,}4\times10^{-6}$ atm$^{-1}$; 1 atm $=1{,}013\times10^5$ Pa</td></tr>
+</table>
+<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+  <ul>
+    <li>Pensar que $\sum\vec F=0$ basta: también hace falta $\sum\vec\tau=0$.</li>
+    <li>Calcular torcas respecto a puntos distintos en la misma ecuación, o usar la distancia al punto de aplicación en lugar del brazo de palanca perpendicular.</li>
+    <li>Suponer la dirección de la fuerza de una bisagra o de una base de escalera: se descompone en dos componentes. El cable sí tira a lo largo de sí mismo.</li>
+    <li>Poner fricción en una pared «lisa» o olvidar que $f_s\le\mu_sn$ es una desigualdad (la fricción vale lo que haga falta, hasta el máximo).</li>
+    <li>Olvidar una incógnita: tres ecuaciones, tres incógnitas como máximo en el plano.</li>
+    <li>Dejar áreas en cm² o mm²; usar $d$ como $r$; confundir $Y$, $B$ y $S$; olvidar el signo menos de $B$.</li>
+    <li>Aplicar $\Delta l=Fl_0/(AY)$ fuera de la zona de Hooke, o a todo un cuerpo cuando solo se comprime un tramo.</li>
+  </ul>
+  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
+<ul class="checklist">
+  <li>Sé enunciar las dos condiciones de equilibrio y por qué se necesitan ambas (§1).</li>
+  <li>Sé calcular un centro de masa/gravedad y colocar un apoyo bajo él (E1, §2).</li>
+  <li>Sé dibujar el DCL de una barra, una viga o una escalera con las fuerzas de enlace correctas (§3).</li>
+  <li>Sé elegir el punto de torcas que elimina incógnitas y comprobar con otro punto (E2, E3, ejemplos 11.2-11.4).</li>
+  <li>Sé resolver una escalera con fricción: normales, fricción necesaria, $\mu_{s,\text{mín}}$ y posición límite (ejemplo 11.3, E4).</li>
+  <li>Sé resolver una viga con cable y bisagra, también inclinada (E3, E5).</li>
+  <li>Sé calcular esfuerzo, deformación y alargamiento con $Y$, y pasar las áreas a m² (ejemplo 11.5, E6).</li>
+  <li>Sé aplicar $B$ y $k$ a un cambio de volumen y de densidad (ejemplo 11.6, E8) y $S$ a un corte (ejemplo 11.7, E7).</li>
+  <li>Sé combinar equilibrio y elasticidad en un mismo problema (E9, problema práctico).</li>
+  <li>Sé interpretar la curva esfuerzo–deformación: límite proporcional, límite elástico, deformación permanente, fractura (§5).</li>
+</ul>
+
+<h2 id="fuentes"><span class="n">★</span>Fuentes de este tema</h2>
+<details class="fuentes-toggle">
+<summary>Mostrar lista de fuentes</summary>
+<div id="panel-fuentes"></div>
+</details>
+
+<footer>Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.</footer>
+</main>
+</div>
+</body>
+</html>
