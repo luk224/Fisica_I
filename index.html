@@ -125,5 +125,13 @@ a.card:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 document.getElementById('pb').style.width=Math.round(100*d/t)+'%';
 document.getElementById('pt').textContent=d+' de '+t+' secciones listas'})();
 </script>
+<script>
+/* al volver desde un tema, scroll automático hasta su tarjeta */
+(function(){try{var p=sessionStorage.getItem('volverA');if(!p)return;sessionStorage.removeItem('volverA');
+var c=[].slice.call(document.querySelectorAll('a.card')).filter(function(a){return a.pathname===p})[0];if(!c)return;
+function go(){c.scrollIntoView({block:'center'});c.classList.add('vuelta');setTimeout(function(){c.classList.remove('vuelta')},2200)}
+if(document.readyState==='complete')go();else window.addEventListener('load',go)}catch(e){}})();
+</script>
+<style>a.card.vuelta{outline:3px solid var(--acc);outline-offset:3px;transition:outline-color .6s}</style>
 </body>
 </html>

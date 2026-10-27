@@ -1,6 +1,11 @@
 // Comportamiento compartido: KaTeX, índice lateral, panel de fuentes, tema claro/oscuro, soluciones.
 (function () {
   var d = document;
+  /* «← Índice de temas»: recuerda de qué tema se viene para que el índice haga scroll hasta su tarjeta */
+  d.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href$="index.html"]');
+    if (a) try { sessionStorage.setItem('volverA', location.pathname); } catch (x) {}
+  });
   try { var t0 = localStorage.getItem('tema'); if (t0) d.documentElement.setAttribute('data-theme', t0); } catch (e) {}
   function ready(f) { d.readyState !== 'loading' ? f() : d.addEventListener('DOMContentLoaded', f); }
   ready(function () {

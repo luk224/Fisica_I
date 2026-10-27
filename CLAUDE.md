@@ -155,3 +155,6 @@ La hoja de impresión está en `assets/resumen.css` (`@media print`: A4, blanco 
 
 ## 7. Tema claro/oscuro
 Por defecto **siempre claro** (el CSS ya no sigue `prefers-color-scheme`); solo es oscuro si el usuario lo eligió con el botón «Claro / oscuro» (se guarda en `localStorage` con la clave `tema`). Para evitar el parpadeo al abrir, **todo HTML lleva en el `<head>`, justo tras `<meta charset>`, el script mínimo** que lee `localStorage` y pone `data-theme` antes del primer pintado (ya está en `plantilla_tema.html` y en `index.html`; no quitarlo). Reglas CSS propias de un tema para el modo oscuro: usar `:root[data-theme="dark"] …`, no `@media (prefers-color-scheme:dark)`.
+
+## Volver al índice
+El enlace «← Índice de temas» (`a[href$="index.html"]`) guarda en `sessionStorage` (`volverA`) la ruta del tema (lo hace `assets/resumen.js`) y un script al final de `index.html` hace scroll hasta esa tarjeta y la resalta 2 s. No quitar ninguno de los dos; todo tema nuevo debe usar ese enlace con `href` acabado en `index.html`.
