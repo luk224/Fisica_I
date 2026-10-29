@@ -1,6 +1,18 @@
 // Comportamiento compartido: KaTeX, índice lateral, panel de fuentes, tema claro/oscuro, soluciones.
 (function () {
   var d = document;
+  /* Pantalla dividida / giro del iPad: el navegador a veces conserva un viewport de maquetación más ancho que la ventana
+     y el texto queda cortado por la derecha. Se ajusta la anchura de la página a la ventana visible (sin zoom) en cada cambio. */
+  function ajustarAncho() {
+    try {
+      var vv = window.visualViewport, w = Math.round(vv ? vv.width * vv.scale : window.innerWidth);
+      if (!vv || vv.scale < 1.02) d.documentElement.style.setProperty('--vw', Math.min(w, d.documentElement.clientWidth || w) + 'px');
+    } catch (x) {}
+  }
+  ajustarAncho();
+  window.addEventListener('resize', ajustarAncho);
+  window.addEventListener('orientationchange', function () { setTimeout(ajustarAncho, 250); });
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', ajustarAncho);
   /* «← Índice de temas»: recuerda de qué tema se viene para que el índice haga scroll hasta su tarjeta */
   d.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href$="index.html"]');
