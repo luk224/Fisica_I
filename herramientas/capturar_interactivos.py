@@ -96,7 +96,7 @@ def main():
         captura_cruda(chrome, vacia, tmp / "vacia.png")
         # la página vacía de referencia lleva el mismo fondo; las capturas reales llevan además el lienzo
         blanco = (tmp / "vacia.png").read_bytes()
-        for ruta in sorted(TEMAS.glob("tema_*.html")):
+        for ruta in sorted([*TEMAS.glob("tema_*.html"), *TEMAS.glob("ejercicios_*.html")]):
             txt = ruta.read_text(encoding="utf8")
             nuevo = txt
             for m in FIG.finditer(txt):
