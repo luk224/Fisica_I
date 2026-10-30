@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem('tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física I · Tema 12 Mecánica de fluidos</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+<link rel="stylesheet" href="../assets/interactivos.css">
+<script defer src="../assets/interactivos.js"></script>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Índice de temas</a>
+  <span><button id="btn-sol" type="button">Mostrar soluciones</button> <button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+
+<div class="layout">
+<nav class="side-toc" aria-label="Índice del tema"><b>En esta página</b></nav>
+<main>
+
+<header class="hero">
+  <div class="kick">Bloque Mecánica · Tema 12</div>
+  <h1>Mecánica de fluidos</h1>
+  <p>Un barco de acero que flota, el agua que sale a chorro de un depósito, un avión que se sostiene en el aire, la sangre que empuja contra las paredes de una arteria: todo son <i>fluidos</i> (líquidos y gases). Este tema tiene dos mitades. Con el fluido <b>en reposo</b> aprenderás qué es la densidad, cómo crece la presión con la profundidad, la ley de Pascal y el principio de Arquímedes. Con el fluido <b>en movimiento</b>, la ecuación de continuidad, la ecuación de Bernoulli (que es, en el fondo, conservación de la energía) y una primera idea de la viscosidad.</p>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 12 (pp. 370-388; ejercicios y problemas, pp. 389-396)</span><span>Examen real: ninguno en este tema</span><span>Ejercicios: 12 del solucionario (E1-E12) + el problema práctico de U + los ejemplos 12.1-12.11</span><span>2 ejemplos interactivos</span><span>⏱ ~6 h de estudio</span></div>
+  <div class="legend">
+    <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
+    <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
+    <span class="src" data-l="X" data-ref="Ejercicio de examen real, ver fuentes_txt/examenes_por_tema.md">X</span> examen real
+    <span class="src" data-l="P" data-ref="Explicación o ejemplo propio, sin página en los libros">P</span> propio
+    — pasa el ratón (o toca) por cada etiqueta para ver la fuente exacta; en pantallas anchas aparecen en el margen derecho.
+  </div>
+</header>
+
+<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U cap. 12 Introducción, p. 370">U p.370</span></h2>
+<p><b>Prerrequisitos:</b> las leyes de Newton y los diagramas de cuerpo libre con equilibrio ($\sum F_y=0$, temas 4 y 5); el trabajo y la energía mecánica (temas 6 y 7), porque la ecuación de Bernoulli es la ley de conservación de la energía aplicada a un fluido; el tiro horizontal (tema 3), para saber dónde cae un chorro; y la idea de presión y de módulo volumétrico del tema 11 ($p=F_\perp/A$, 1 Pa = 1 N/m²).</p>
+<p><b>Mapa del tema:</b> 12.1 define la <b>densidad</b>. 12.2 estudia el fluido <i>en reposo</i>: la <b>presión</b>, cómo crece con la profundidad ($p=p_0+\rho gh$), la <b>ley de Pascal</b>, las presiones absoluta y manométrica y los medidores (manómetro y barómetro). 12.3 es la <b>flotación</b> (principio de Arquímedes). Después el fluido se mueve: 12.4 da la <b>ecuación de continuidad</b> ($A_1v_1=A_2v_2$), 12.5 la <b>ecuación de Bernoulli</b> con sus aplicaciones (teorema de Torricelli, medidor Venturi, sustentación) y 12.6 la <b>viscosidad</b> y la turbulencia. Los ejercicios del libro se reparten así: densidad y presión (E1-E4), flotación (E5-E7), continuidad y Bernoulli (E8-E11) y viscosidad (E12).</p>
+<div class="box tip"><span class="h">Examen real: no hay ninguno de este tema</span>
+  <p>Se han revisado todas las convocatorias disponibles (2018-2025) y <b>ningún problema ni pregunta de teoría trata densidad, presión, flotación, continuidad, Bernoulli o viscosidad</b>. Por eso este tema no tiene ejercicios «X»: los ejercicios resueltos son los ejemplos del libro (U), que aparecen en la teoría, y problemas del solucionario (E1-E12) y el problema práctico de U, todos resueltos paso a paso. Aun así el tema forma parte del temario oficial y usa las mismas técnicas que los exámenes de mecánica: diagramas de cuerpo libre (empuje, presión) y balance de energía (Bernoulli).</p>
+  <span class="src" data-l="P" data-ref="Revisión de fuentes_txt/examenes_por_tema.md y de los PDF de exámenes 2018-2025: sin ejercicios del tema 12">P</span></div>
+<div class="box tip"><span class="h">La receta maestra del tema: ¿el fluido está quieto o se mueve?</span>
+  <ol class="steps">
+    <li><b>Quieto</b> (hidrostática): la presión solo depende de la profundidad, $p=p_0+\rho gh$; a la misma altura y en el mismo fluido, la misma presión. Si hay un cuerpo sumergido, haz su diagrama de cuerpo libre con el <b>empuje</b> $B=\rho_{fluido}V_{sum}g$.</li>
+    <li><b>En movimiento</b>: primero <b>continuidad</b> ($A_1v_1=A_2v_2$) para las rapideces, después <b>Bernoulli</b> ($p+\rho gy+\tfrac12\rho v^2=$ cte) para las presiones.</li>
+    <li><b>Escribe todas las presiones del mismo tipo</b>: todas absolutas o todas manométricas (la atmosférica se cancela si aparece en los dos miembros).</li>
+    <li><b>Elige un nivel de referencia</b> ($y=0$) y respeta el signo de $y$ (hacia arriba positivo).</li>
+    <li><b>Unidades del SI:</b> áreas en m² (el área va con el <i>cuadrado</i> del diámetro) y diámetro $\neq$ radio.</li>
+  </ol>
+  <span class="src" data-l="P" data-ref="Explicación propia a partir de §12.5, Estrategia 12.1, U p. 382">P</span></div>
+
+<h2 id="s1"><span class="n">1</span>Densidad <span class="src" data-l="U" data-ref="U §12.1, pp. 370-371">U p.370-371</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>El hierro «pesa más» que el corcho, pero eso depende del tamaño: un clavo de hierro pesa menos que un tronco de corcho. Lo que distingue al <i>material</i> es cuánta masa cabe en cada unidad de volumen: la <b>densidad</b>. Una llave de acero y un clavo de acero tienen masas y volúmenes distintos pero el mismo cociente masa/volumen. Las densidades ordenan quién flota y quién se hunde.</p>
+  <span class="src" data-l="U" data-ref="U §12.1, fig. 12.1, p. 370">U p.370</span></div>
+<div class="box def"><span class="h">Densidad y gravedad específica</span>
+  <p>La <b>densidad</b> de un material homogéneo es su masa por unidad de volumen:
+  $$\rho=\frac{m}{V}\qquad\text{(ec. 12.1)}$$
+  Unidad del SI: kg/m³; $1\ \text{g/cm}^3=1000\ \text{kg/m}^3$. La <b>gravedad específica</b> (o densidad relativa) es la razón entre la densidad del material y la del agua a 4,0 °C (1000 kg/m³): un número puro (aluminio: 2,7). Si la densidad varía de un punto a otro (cuerpo humano, atmósfera, océano), la ec. (12.1) da la densidad <i>media</i>; en general depende de la temperatura y de la presión.</p>
+  <span class="src" data-l="U" data-ref="U §12.1, ec. 12.1, p. 370">U p.370</span></div>
+<table>
+<caption style="caption-side:top;text-align:left;font:600 .9rem var(--sans);padding:6px 4px">Tabla 12.1: densidades de algunas sustancias comunes (kg/m³) <span class="src" data-l="U" data-ref="U Tabla 12.1, p. 370">U p.370</span></caption>
+<tr><th>Material</th><th>ρ (kg/m³)</th><th>Material</th><th>ρ (kg/m³)</th></tr>
+<tr><td>Aire (1 atm, 20 °C)</td><td>1,20</td><td>Hierro, acero</td><td>7,8×10³</td></tr>
+<tr><td>Etanol</td><td>0,81×10³</td><td>Bronce</td><td>8,6×10³</td></tr>
+<tr><td>Benceno</td><td>0,90×10³</td><td>Cobre</td><td>8,9×10³</td></tr>
+<tr><td>Hielo</td><td>0,92×10³</td><td>Plata</td><td>10,5×10³</td></tr>
+<tr><td>Agua</td><td>1,00×10³</td><td>Plomo</td><td>11,3×10³</td></tr>
+<tr><td>Agua de mar</td><td>1,03×10³</td><td>Mercurio</td><td>13,6×10³</td></tr>
+<tr><td>Sangre</td><td>1,06×10³</td><td>Oro</td><td>19,3×10³</td></tr>
+<tr><td>Glicerina</td><td>1,26×10³</td><td>Platino</td><td>21,4×10³</td></tr>
+<tr><td>Cemento</td><td>2×10³</td><td>Estrella enana blanca</td><td>10¹⁰</td></tr>
+<tr><td>Aluminio</td><td>2,7×10³</td><td>Estrella de neutrones</td><td>10¹⁸</td></tr>
+</table>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 160" width="100%" role="img" aria-label="Tres cubos de 1 metro cúbico de aire, agua y hierro con masas de 1,20 kg, 1000 kg y 7800 kg">
+  <defs><marker id="mad1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbd1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmd1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgd1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpd1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfd1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="30" y="45" width="56" height="56" rx="2" fill="var(--mut)" fill-opacity="0.06" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="58" y="36" class="bd" text-anchor="middle">Aire</text>
+  <text x="58" y="70" class="sm" text-anchor="middle">1 m³</text>
+  <text x="58" y="122" class="bd" text-anchor="middle">1,20 kg</text>
+  <rect x="142" y="45" width="56" height="56" rx="2" fill="var(--acc)" fill-opacity="0.22" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="170" y="36" class="bd" text-anchor="middle">Agua</text>
+  <text x="170" y="70" class="sm" text-anchor="middle">1 m³</text>
+  <text x="170" y="122" class="bd" text-anchor="middle">1000 kg</text>
+  <rect x="254" y="45" width="56" height="56" rx="2" fill="var(--A)" fill-opacity="0.55" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="282" y="36" class="bd" text-anchor="middle">Hierro</text>
+  <text x="282" y="70" class="sm" text-anchor="middle">1 m³</text>
+  <text x="282" y="122" class="bd" text-anchor="middle">7800 kg</text>
+  <text x="170" y="150" class="sm" text-anchor="middle">ρ = m / V:  1,20 · 1000 · 7800 kg/m³</text>
+</svg>
+<figcaption>Mismo volumen (1 m³ de cada material), masas muy distintas: la densidad $\rho=m/V$ es la masa por unidad de volumen (valores de la tabla 12.1). Los cubos no están a escala de masa. <span class="src" data-l="P" data-ref="Diagrama propio de §12.1 de U (densidad)">P</span></figcaption>
+</figure>
+
+<div class="box ex"><span class="h">Ejemplo 12.1: peso del aire dentro de una habitación</span>
+  <p>Calcula la masa y el peso del aire de una habitación a 20 °C de $4{,}0\times5{,}0$ m de planta y 3,0 m de altura, y compáralos con los de un volumen igual de agua.</p>
+  <ol class="steps">
+    <li><b>Volumen.</b> $V=(4{,}0)(5{,}0)(3{,}0)=60\ \text{m}^3$. Se supone la misma densidad del aire en todo el cuarto (3 m de altura no cambian nada apreciable).</li>
+    <li><b>Aire</b> (tabla 12.1, 1,20 kg/m³): $m=\rho V=(1{,}20)(60)=72$ kg y $w=mg=(72)(9{,}8)\approx700$ N.</li>
+    <li><b>Agua:</b> $m=(1000)(60)=6{,}0\times10^4$ kg y $w=5{,}9\times10^5$ N.</li>
+    <li><b>Comparación:</b> el aire del cuarto pesa lo que un adulto; el agua, unas mil veces más (el peso del agua hundiría el suelo de una casa).</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 12.1, pp. 370-371">U p.370-371</span></div>
+<div class="box warn"><span class="h">Error típico</span>
+  <p>Mezclar unidades: la densidad del SI es kg/m³ (el agua, 1000), no g/cm³ (el agua, 1). Y confundir «más denso» con «más pesado»: la densidad es una propiedad del material, no del objeto.</p>
+  <span class="src" data-l="P" data-ref="Explicación propia a partir de §12.1 de U">P</span></div>
+
+<h2 id="s2"><span class="n">2</span>Presión en un fluido <span class="src" data-l="U" data-ref="U §12.2, pp. 371-376">U p.371-376</span></h2>
+<h3 id="s2a">2.1 ¿Qué es la presión? <span class="src" data-l="U" data-ref="U §12.2, pp. 371-372">U p.371-372</span></h3>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Un fluido empuja <i>perpendicularmente</i> contra cualquier superficie con la que está en contacto (las paredes del recipiente, tu cuerpo dentro de una piscina). El empuje por unidad de área es la <b>presión</b>. Por eso un tacón de aguja marca el suelo y una zapatilla no: la misma fuerza, repartida en menos área, da más presión. La presión no tiene dirección: empuja <i>hacia todos lados</i> con el mismo valor en un punto.</p>
+  <span class="src" data-l="U" data-ref="U §12.2, p. 371">U p.371</span></div>
+<div class="box def"><span class="h">Presión</span>
+  <p>La fuerza normal $dF_\perp$ que el fluido ejerce sobre una pequeña superficie $dA$ en un punto define la presión en ese punto; si es la misma en toda una superficie plana de área $A$:
+  $$p=\frac{dF_\perp}{dA}\ \ (12.2)\qquad\qquad p=\frac{F_\perp}{A}\ \ (12.3)$$
+  Unidad del SI: el <b>pascal</b>, $1\ \text{Pa}=1\ \text{N/m}^2$. Otras: $1\ \text{bar}=10^5$ Pa, $1\ \text{mbar}=100$ Pa y la <b>atmósfera</b>: $1\ \text{atm}=1{,}013\times10^5\ \text{Pa}=1013\ \text{mbar}=14{,}70\ \text{lb/in}^2$ (valor medio de la presión atmosférica a nivel del mar).</p>
+  <span class="src" data-l="U" data-ref="U §12.2, ecs. 12.2-12.3, p. 371">U p.371</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 160" width="100%" role="img" aria-label="Una misma fuerza de 600 newtons sobre una superficie ancha de 200 centímetros cuadrados y sobre una punta de 1 centímetro cuadrado">
+  <defs><marker id="map1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="80.0" y1="25" x2="80.0" y2="74" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#map1)"/>
+  <rect x="25" y="76" width="110" height="8" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="80.0" y="20" class="bd" text-anchor="middle">Plano</text>
+  <line x1="225.0" y1="25" x2="225.0" y2="74" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#map1)"/>
+  <rect x="220" y="76" width="10" height="8" rx="2" fill="var(--mut)" fill-opacity="0.35" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="225.0" y="20" class="bd" text-anchor="middle">Tacón</text>
+  <text x="100" y="64" class="sm bd" text-anchor="start" style="fill:var(--acc)">F = 600 N</text>
+  <text x="245" y="64" class="sm bd" text-anchor="start" style="fill:var(--acc)">F = 600 N</text>
+  <rect x="15" y="84" width="130" height="30" fill="var(--mut)" fill-opacity="0.12" stroke="none"/>
+  <rect x="205" y="84" width="40" height="30" fill="var(--mut)" fill-opacity="0.12" stroke="none"/>
+  <text x="80" y="108" class="sm bd" text-anchor="middle">A = 200 cm²</text>
+  <text x="80" y="126" class="sm bd" text-anchor="middle" style="fill:var(--A)">p = 3,0×10⁴ Pa</text>
+  <text x="225" y="108" class="sm bd" text-anchor="middle">A = 1 cm²</text>
+  <text x="225" y="126" class="sm bd" text-anchor="middle" style="fill:var(--A)">p = 6,0×10⁶ Pa</text>
+  <text x="170" y="150" class="sm" text-anchor="middle">La misma fuerza, 200 veces más presión</text>
+</svg>
+<figcaption>La presión es fuerza por área, $p=F_\perp/A$: los mismos 600 N repartidos en 200 cm² dan $3{,}0\times10^4$ Pa; concentrados en 1 cm² (un tacón), $6{,}0\times10^6$ Pa. <span class="src" data-l="P" data-ref="Diagrama propio de §12.2 de U (presión = fuerza / área)">P</span></figcaption>
+</figure>
+
+<div class="box warn"><span class="h">No confundas presión con fuerza</span>
+  <p>La presión es un <b>escalar</b>: no tiene dirección propia (siempre actúa perpendicular a la superficie, sea cual sea su orientación). La fuerza es un vector. Una superficie con el doble de área recibe el doble de fuerza, pero la presión es la misma.</p>
+  <span class="src" data-l="U" data-ref="U §12.2, CUIDADO, p. 371 y fig. 12.3">U p.371</span></div>
+<div class="box ex"><span class="h">Ejemplo 12.2: la fuerza del aire</span>
+  <p>En la habitación del ejemplo 12.1, ¿qué fuerza total descendente ejerce el aire sobre el piso, con una presión de 1,00 atm?</p>
+  <ol class="steps">
+    <li>La presión es uniforme y el piso horizontal: $F_\perp=pA$ vertical hacia abajo, con $A=(4{,}0)(5{,}0)=20\ \text{m}^2$.</li>
+    <li>$F_\perp=(1{,}013\times10^5\ \text{N/m}^2)(20\ \text{m}^2)=2{,}0\times10^6$ N (el peso de unas 200 toneladas).</li>
+    <li><b>No hunde el piso</b> porque por debajo el aire empuja igual hacia arriba (si hay sótano): la fuerza neta de la presión del aire es cero.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Ejemplo 12.2, p. 372">U p.372</span></div>
+
+<h3 id="s2b">2.2 Presión y profundidad <span class="src" data-l="U" data-ref="U §12.2, pp. 372-373">U p.372-373</span></h3>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Al sumergirte en una piscina notas la presión en los oídos y crece al bajar. La razón es el peso: a una profundidad $h$ el agua tiene que sostener la <b>columna de fluido que tiene encima</b>. Cuanto más profundo, más fluido encima, más presión. Y como el fluido está en reposo, la presión es la misma en todos los puntos de un mismo nivel: <i>no importa la forma del recipiente</i>, solo la profundidad.</p>
+  <span class="src" data-l="U" data-ref="U §12.2, p. 372">U p.372</span></div>
+<div class="box thm"><span class="h">Variación de la presión con la profundidad</span>
+  <p>Un elemento fino de fluido (espesor $dy$, área $A$) en equilibrio da $pA-(p+dp)A-\rho gA\,dy=0$, es decir
+  $$\frac{dp}{dy}=-\rho g\qquad\text{(ec. 12.4)}\qquad\qquad p_2-p_1=-\rho g\,(y_2-y_1)\qquad\text{(ec. 12.5)}$$
+  (densidad $\rho$ uniforme, $g\gt0$ y $y$ hacia arriba). Si el punto 2 es la superficie (presión $p_0$) y $h$ es la <b>profundidad</b> del punto 1:
+  $$\boxed{\,p=p_0+\rho g h\,}\qquad\text{(ec. 12.6)}$$
+  La presión a una profundidad $h$ supera a la de la superficie en $\rho gh$. Es igual en dos puntos cualesquiera al mismo nivel dentro del fluido, sea cual sea la forma del recipiente.</p>
+  <span class="src" data-l="U" data-ref="U §12.2, ecs. 12.4-12.6, pp. 372-373">U p.372-373</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 215" width="100%" role="img" aria-label="Columna de fluido de altura h y área A en equilibrio: fuerza de la presión superior hacia abajo, su peso hacia abajo y fuerza de la presión inferior hacia arriba">
+  <defs><marker id="mac1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbc1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmc1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgc1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpc1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfc1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="70" y="40" width="100" height="130" fill="var(--acc)" fill-opacity="0.2" stroke="none"/>
+  <path d="M 70 25 L 70 170 L 170 170 L 170 25" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="90" y="40" width="60" height="100" rx="2" fill="var(--acc)" fill-opacity="0.12" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="90" y1="40" x2="150" y2="40" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="90" y1="140" x2="150" y2="140" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="125" y1="6" x2="125" y2="38" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mac1)"/>
+  <line x1="125" y1="50" x2="125" y2="136" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbc1)"/>
+  <line x1="125" y1="205" x2="125" y2="142" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgc1)"/>
+  <text x="119" y="26" class="sm bd" text-anchor="end" style="fill:var(--acc)">p₀A</text>
+  <text x="119" y="95" class="sm bd" text-anchor="end" style="fill:var(--A)">peso</text>
+  <text x="119" y="109" class="sm bd" text-anchor="end" style="fill:var(--A)">ρghA</text>
+  <text x="119" y="190" class="sm bd" text-anchor="end" style="fill:var(--X)">pA</text>
+  <line x1="190" y1="40" x2="190" y2="140" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="186" y1="40" x2="194" y2="40" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="186" y1="140" x2="194" y2="140" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="198" y="94" class="sm bd">h</text>
+  <text x="268" y="80" class="sm" text-anchor="middle">Equilibrio de</text>
+  <text x="268" y="96" class="sm" text-anchor="middle">la columna:</text>
+  <text x="268" y="124" class="sm bd" text-anchor="middle">pA = p₀A + ρghA</text>
+  <text x="268" y="150" class="bd" text-anchor="middle">p = p₀ + ρgh</text>
+</svg>
+<figcaption>Aísla una columna de fluido de área $A$ y altura $h$: está quieta, así que $pA=p_0A+\rho ghA$ (peso de la columna $=\rho\,hA\,g$). Al simplificar $A$ sale $p=p_0+\rho gh$ (ec. 12.6). <span class="src" data-l="P" data-ref="Diagrama propio de §12.2 de U (ecs. 12.4-12.6)">P</span></figcaption>
+</figure>
+
+<div class="box tip"><span class="h">Truco de examen</span>
+  <p>Regla de bolsillo para el agua: <b>cada ≈ 10 m de profundidad suman ≈ 1 atm</b> ($\rho gh=1000\cdot9{,}8\cdot10=9{,}8\times10^4$ Pa $\approx0{,}97$ atm). En los gases la densidad es tan pequeña que se puede despreciar: en una habitación de 3,0 m de alto la diferencia de presión es $\rho gh=(1{,}2)(9{,}8)(3{,}0)=35$ Pa $\approx0{,}00035$ atm; por eso se supone que la presión del aire es la misma en todo el cuarto.</p>
+  <span class="src" data-l="U" data-ref="U §12.2, p. 373">U p.373</span></div>
+
+<h3 id="s2c">2.3 Ley de Pascal y el elevador hidráulico <span class="src" data-l="U" data-ref="U §12.2, p. 373">U p.373</span></h3>
+<div class="box thm"><span class="h">Ley de Pascal</span>
+  <p><b>La presión aplicada a un fluido encerrado se transmite sin disminución a todas las partes del fluido y a las paredes del recipiente.</b> Se ve en la ec. (12.6): si aumentas $p_0$ en la superficie con un pistón, $p$ aumenta lo mismo en todos los puntos. Aplicación: el <b>elevador hidráulico</b>. Una fuerza pequeña $F_1$ sobre un pistón de área pequeña $A_1$ crea una presión $p=F_1/A_1$ que actúa también sobre el pistón grande ($A_2$):
+  $$p=\frac{F_1}{A_1}=\frac{F_2}{A_2}\qquad\Rightarrow\qquad F_2=\frac{A_2}{A_1}F_1\qquad\text{(ec. 12.7)}$$
+  El cociente de áreas multiplica la fuerza. <b>No se gana energía</b>: el pistón pequeño recorre una distancia mayor en la misma proporción que el grande recorre menos, y el trabajo es el mismo.</p>
+  <span class="src" data-l="U" data-ref="U §12.2, ley de Pascal, ec. 12.7, fig. 12.7, p. 373, y explicación propia (conservación del trabajo)">U p.373</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_12_7_elevador.png" alt="Figura 12.7 de U. Elevador hidráulico: una fuerza pequeña F1 sobre un pistón de área A1 produce la misma presión p en el fluido; en el pistón grande de área A2 la fuerza F2 es mayor y sostiene un automóvil." loading="lazy" style="max-width:400px!important">
+<figcaption>Fig. 12.7 de U: el elevador hidráulico es una aplicación de la ley de Pascal (el tamaño del recipiente se ha exagerado). <span class="src" data-l="U" data-ref="U Fig. 12.7, p. 373">U p.373</span></figcaption>
+</figure>
+
+<h3 id="s2d">2.4 Presión absoluta y presión manométrica <span class="src" data-l="U" data-ref="U §12.2, p. 373">U p.373</span></h3>
+<div class="box def"><span class="h">Absoluta y manométrica</span>
+  <p>La <b>presión absoluta</b> es la presión total, medida desde el vacío. La <b>presión manométrica</b> es el exceso sobre la atmosférica:
+  $$p_{man}=p-p_{atm}$$
+  (negativa si la presión es menor que la atmosférica). Un neumático con «32 lb/in²» marca la manométrica (≈ $2{,}2\times10^5$ Pa); la absoluta es $\approx3{,}2\times10^5$ Pa (47 lb/in²). Los manómetros de uso diario (de neumáticos, de depósitos) miden manométrica.</p>
+  <span class="src" data-l="U" data-ref="U §12.2, presión absoluta y manométrica, p. 373">U p.373</span></div>
+<div class="box ex"><span class="h">Ejemplo 12.3: presiones absoluta y manométrica</span>
+  <p>Un tanque de almacenamiento de 12,0 m de profundidad está lleno de agua y abierto al aire por arriba. ¿Qué presión absoluta y qué presión manométrica hay en el fondo?</p>
+  <ol class="steps">
+    <li><b>Modelo.</b> El agua es prácticamente incompresible: densidad uniforme, vale $p=p_0+\rho gh$ (12.6). En la superficie toca el aire: $p_0=p_{atm}\approx1{,}01\times10^5$ Pa.</li>
+    <li><b>Absoluta:</b> $p=1{,}01\times10^5+(1000)(9{,}8)(12{,}0)=1{,}01\times10^5+1{,}18\times10^5=2{,}19\times10^5$ Pa ($\approx2{,}16$ atm).</li>
+    <li><b>Manométrica:</b> es el exceso sobre la atmosférica, $p-p_{atm}=\rho gh=1{,}18\times10^5$ Pa ($\approx1{,}16$ atm). Un manómetro en el fondo marca este valor.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> profundidad $h$ ⇒ manométrica $=\rho gh$; absoluta $=p_{atm}+\rho gh$.</div>
+  <span class="src" data-l="U" data-ref="U Ejemplo 12.3, p. 374">U p.374</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 230" width="100%" role="img" aria-label="Gráfica de la presión absoluta y manométrica del agua en función de la profundidad, con valores a 12 metros">
+  <defs><marker id="mag1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbg1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmg1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgg1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpg1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfg1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="48" y1="192" x2="331" y2="192"/>
+  <line class="ax" x1="48" y1="192" x2="48" y2="9"/>
+  <text x="326" y="220" class="sm" text-anchor="end">profundidad h (m)</text>
+  <text x="54" y="16" class="sm">p (×10⁵ Pa)</text>
+  <line x1="48.0" y1="192" x2="48.0" y2="196" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="48.0" y="208" class="sm" text-anchor="middle">0</text>
+  <line x1="133.5" y1="192" x2="133.5" y2="196" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="133.5" y="208" class="sm" text-anchor="middle">4</text>
+  <line x1="219.1" y1="192" x2="219.1" y2="196" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="219.1" y="208" class="sm" text-anchor="middle">8</text>
+  <line x1="304.6" y1="192" x2="304.6" y2="196" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="304.6" y="208" class="sm" text-anchor="middle">12</text>
+  <line x1="44" y1="192.0" x2="48" y2="192.0" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="196.0" class="sm" text-anchor="end">0</text>
+  <line x1="44" y1="120.8" x2="48" y2="120.8" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="124.8" class="sm" text-anchor="end">1</text>
+  <line x1="44" y1="49.6" x2="48" y2="49.6" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="53.6" class="sm" text-anchor="end">2</text>
+  <path d="M 48.0 120.1 L 54.7 117.9 L 61.4 115.7 L 68.0 113.5 L 74.7 111.4 L 81.4 109.2 L 88.1 107.0 L 94.8 104.8 L 101.5 102.6 L 108.1 100.5 L 114.8 98.3 L 121.5 96.1 L 128.2 93.9 L 134.9 91.7 L 141.6 89.6 L 148.2 87.4 L 154.9 85.2 L 161.6 83.0 L 168.3 80.8 L 175.0 78.7 L 181.7 76.5 L 188.3 74.3 L 195.0 72.1 L 201.7 69.9 L 208.4 67.8 L 215.1 65.6 L 221.8 63.4 L 228.4 61.2 L 235.1 59.0 L 241.8 56.9 L 248.5 54.7 L 255.2 52.5 L 261.8 50.3 L 268.5 48.1 L 275.2 46.0 L 281.9 43.8 L 288.6 41.6 L 295.3 39.4 L 301.9 37.2 L 308.6 35.0 L 315.3 32.9" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <path d="M 48.0 192.0 L 54.7 189.8 L 61.4 187.6 L 68.0 185.5 L 74.7 183.3 L 81.4 181.1 L 88.1 178.9 L 94.8 176.7 L 101.5 174.6 L 108.1 172.4 L 114.8 170.2 L 121.5 168.0 L 128.2 165.8 L 134.9 163.7 L 141.6 161.5 L 148.2 159.3 L 154.9 157.1 L 161.6 154.9 L 168.3 152.8 L 175.0 150.6 L 181.7 148.4 L 188.3 146.2 L 195.0 144.0 L 201.7 141.8 L 208.4 139.7 L 215.1 137.5 L 221.8 135.3 L 228.4 133.1 L 235.1 130.9 L 241.8 128.8 L 248.5 126.6 L 255.2 124.4 L 261.8 122.2 L 268.5 120.0 L 275.2 117.9 L 281.9 115.7 L 288.6 113.5 L 295.3 111.3 L 301.9 109.1 L 308.6 107.0 L 315.3 104.8" fill="none" stroke="var(--A)" stroke-width="2.5"/>
+  <line x1="304.6" y1="36.4" x2="304.6" y2="192.0" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <circle cx="304.6" cy="36.4" r="4" fill="var(--acc)"/>
+  <line x1="304.6" y1="108.3" x2="304.6" y2="192.0" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <circle cx="304.6" cy="108.3" r="4" fill="var(--A)"/>
+  <circle cx="48.0" cy="120.1" r="4" fill="var(--acc)"/>
+  <text x="58.0" y="138.1" class="sm bd" style="fill:var(--acc)">p<tspan dy="3" font-size="9">atm</tspan><tspan dy="-3"> = 1,01×10⁵</tspan></text>
+  <text x="296.6" y="22.1" class="sm bd" text-anchor="end" style="fill:var(--acc)">absoluta 2,19×10⁵</text>
+  <text x="296.6" y="156.4" class="sm bd" text-anchor="end" style="fill:var(--A)">manométrica</text>
+  <text x="296.6" y="170.4" class="sm bd" text-anchor="end" style="fill:var(--A)">1,18×10⁵</text>
+</svg>
+<figcaption>Presión del agua frente a la profundidad (rectas con pendiente $\rho g$): la absoluta parte de $p_{atm}$; la manométrica parte de 0. A 12,0 m valen $2{,}19\times10^5$ Pa y $1{,}18\times10^5$ Pa. Cada ≈ 10 m de agua añaden ≈ 1 atm. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.3 de U">P</span></figcaption>
+</figure>
+
+
+<h3 id="s2e">2.5 Medidores de presión <span class="src" data-l="U" data-ref="U §12.2, pp. 374-375">U p.374-375</span></h3>
+<div class="box thm"><span class="h">Manómetro de tubo abierto y barómetro de mercurio</span>
+  <p><b>Manómetro de tubo abierto:</b> un tubo en U con un líquido de densidad $\rho$ (a menudo mercurio o agua); un extremo se conecta al recipiente cuya presión $p$ se mide y el otro está abierto a la atmósfera. A la altura del nivel inferior ambas columnas deben dar la misma presión: $p+\rho gy_1=p_{atm}+\rho gy_2$, de donde
+  $$p-p_{atm}=\rho g(y_2-y_1)=\rho gh\qquad\text{(ec. 12.8)}$$
+  Es decir, la presión <i>manométrica</i> es proporcional a la diferencia de alturas $h$ de las columnas. <b>Barómetro de mercurio:</b> un tubo largo, cerrado por un extremo, lleno de mercurio e invertido en un plato con mercurio. Arriba solo hay vapor de mercurio ($p_0\approx0$), de modo que
+  $$p_{atm}=\rho g h\qquad\text{(ec. 12.9)}$$
+  La presión se da a menudo como la altura de la columna: $1\ \text{mm Hg}=1\ \text{torr}$. Estas unidades dependen de $\rho$ y de $g$, por eso se prefiere el pascal.</p>
+  <span class="src" data-l="U" data-ref="U §12.2, ecs. 12.8-12.9, fig. 12.8, pp. 374-375">U p.374-375</span></div>
+<div class="box tip"><span class="h">Cuánto es 1 atm en mm Hg</span>
+  <p>Con $\rho_{Hg}=13{,}6\times10^3$ kg/m³ la ec. (12.9) da $h=\dfrac{p_{atm}}{\rho g}=\dfrac{1{,}013\times10^5}{(13{,}6\times10^3)(9{,}8)}=0{,}760$ m: 1 atm $=760$ mm Hg $=760$ torr. Además del tubo en U, existe el <b>manómetro de Bourdon</b>, un tubo flexible y curvado que se endereza un poco al subir la presión interior y desvía una aguja (el de los neumáticos y las bombonas de gas); mide presión manométrica.</p>
+  <span class="src" data-l="P" data-ref="Cálculo propio con la ec. 12.9 de U; manómetro de Bourdon: U fig. 12.9, p. 375">P</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_12_8_manometros.png" alt="Figura 12.8 de U. a) Manómetro de tubo abierto: la presión p se mide con la diferencia de alturas h = y2 − y1 entre los dos brazos. b) Barómetro de mercurio: la altura h de la columna da la presión atmosférica." loading="lazy" style="max-width:560px!important">
+<figcaption>Fig. 12.8 de U: a) manómetro de tubo abierto; b) barómetro de mercurio. <span class="src" data-l="U" data-ref="U Fig. 12.8, p. 374">U p.374</span></figcaption>
+</figure>
+<div class="box ex"><span class="h">Ejemplo 12.4: historia de dos fluidos</span>
+  <p>Un tubo en U se llena parcialmente de agua. Se vierte aceite (que no se mezcla con el agua) en el brazo izquierdo hasta que la interfase aceite-agua se ubica en el punto medio del tubo; ambos brazos están abiertos al aire. Halla la relación entre las alturas $h_{aceite}$ y $h_{agua}$ (medidas desde la interfase).</p>
+  <ol class="steps">
+    <li><b>Por qué no basta una ecuación.</b> $p=p_0+\rho gh$ solo vale en un fluido de densidad uniforme: hay que escribirla para cada columna por separado.</li>
+    <li><b>Nivel de referencia:</b> la altura de la interfase. A esa altura, en el brazo derecho hay agua; en el izquierdo está justo el contacto aceite-agua; los dos puntos están unidos por agua continua en reposo ⇒ <b>misma presión $p$</b>. Arriba, ambas columnas están al aire ($p_0$).</li>
+    <li><b>Cada columna:</b> $p=p_0+\rho_{agua}g\,h_{agua}$ y $p=p_0+\rho_{aceite}g\,h_{aceite}$.</li>
+    <li><b>Igualar:</b> $\rho_{aceite}h_{aceite}=\rho_{agua}h_{agua}\ \Rightarrow\ h_{aceite}=\dfrac{\rho_{agua}}{\rho_{aceite}}\,h_{agua}$.</li>
+    <li><b>Valor:</b> con $\rho_{aceite}\approx850$ kg/m³, $h_{aceite}=1{,}18\,h_{agua}$. El aceite, menos denso, necesita una columna más alta para ejercer la misma presión.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> tubo en U con dos líquidos: iguala las presiones al nivel de la interfase (el punto más bajo en el que a ambos lados hay el mismo fluido) ⇒ $\rho_1h_1=\rho_2h_2$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Igualar presiones a una altura donde a un lado hay aceite y al otro agua (por ejemplo, en la superficie libre del agua del brazo derecho): ahí las presiones <i>no</i> son iguales.</p></div>
+  <span class="src" data-l="U" data-ref="U Ejemplo 12.4, p. 375 y fig. 12.10">U p.375</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 215" width="100%" role="img" aria-label="Tubo en U con aceite en el brazo izquierdo y agua en el derecho; la interfase y el punto del otro brazo a la misma altura tienen la misma presión; la columna de aceite es más alta">
+  <defs><marker id="mau1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbu1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmu1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgu1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpu1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfu1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="90" y="110" width="30" height="90" fill="var(--acc)" fill-opacity="0.25" stroke="none"/>
+  <rect x="90" y="175" width="160" height="25" fill="var(--acc)" fill-opacity="0.25" stroke="none"/>
+  <rect x="220" y="38" width="30" height="162" fill="var(--acc)" fill-opacity="0.25" stroke="none"/>
+  <rect x="90" y="25" width="30" height="85" fill="var(--A)" fill-opacity="0.35" stroke="none"/>
+  <path d="M 90 12 L 90 200 L 250 200 L 250 30" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 120 12 L 120 175 L 220 175 L 220 30" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="55" y1="110" x2="290" y2="110" stroke="var(--fg)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <text x="105" y="72" class="sm bd" text-anchor="middle">aceite</text>
+  <text x="105" y="156" class="sm bd" text-anchor="middle">agua</text>
+  <text x="235" y="156" class="sm bd" text-anchor="middle">agua</text>
+  <line x1="68" y1="25" x2="68" y2="110" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="64" y1="25" x2="72" y2="25" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="64" y1="110" x2="72" y2="110" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="62" y="61" class="sm bd" text-anchor="end" style="fill:var(--A)">h</text>
+  <text x="62" y="74" class="sm bd" text-anchor="end" style="fill:var(--A)">aceite</text>
+  <line x1="270" y1="38" x2="270" y2="110" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="266" y1="38" x2="274" y2="38" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="266" y1="110" x2="274" y2="110" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="276" y="68" class="sm bd" style="fill:var(--acc)">h</text>
+  <text x="276" y="81" class="sm bd" style="fill:var(--acc)">agua</text>
+  <text x="290" y="126" class="sm" text-anchor="end">misma p</text>
+  <text x="105" y="8" class="sm" text-anchor="middle">p₀</text>
+  <text x="235" y="25" class="sm" text-anchor="middle">p₀</text>
+</svg>
+<figcaption>A la altura de la interfase la presión es la misma en los dos brazos: $\rho_{ac}h_{ac}=\rho_{ag}h_{ag}$. Con $\rho_{ac}\approx850$ kg/m³, la columna de aceite es 1,18 veces la de agua (aquí $h_{ag}=8{,}0$ cm y $h_{ac}=9{,}4$ cm). <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.4 de U">P</span></figcaption>
+</figure>
+
+
+<h2 id="s3"><span class="n">3</span>Flotación y principio de Arquímedes <span class="src" data-l="U" data-ref="U §12.3, pp. 376-378">U p.376-378</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Un trozo de madera en el agua sube hacia la superficie y una piedra se hunde, pero la piedra también «pesa menos» dentro del agua: la notas más ligera al levantarla en la piscina. Algo empuja hacia arriba a todo cuerpo sumergido. Truco de pensamiento: imagina que en el seno del agua marcas una bolsa de agua del mismo tamaño que el cuerpo. Esa bolsa de agua <i>no se hunde ni sube</i>: está en equilibrio, así que el resto del agua la empuja hacia arriba justo con la fuerza de su peso. Si ahora cambias la bolsa por el cuerpo (misma forma, mismo tamaño), <b>el agua de alrededor ejerce exactamente la misma fuerza</b>, sin importar de qué esté hecho el cuerpo.</p>
+  <span class="src" data-l="U" data-ref="U §12.3, fig. 12.11, p. 376">U p.376</span></div>
+<div class="box thm"><span class="h">Principio de Arquímedes</span>
+  <p><b>Si un cuerpo está parcial o totalmente sumergido en un fluido, éste ejerce una fuerza hacia arriba sobre el cuerpo igual al peso del fluido que desplaza.</b> Esa fuerza es la <b>fuerza de flotación</b> (o empuje) $B$:
+  $$B=\rho_{fluido}\,V_{sum}\,g$$
+  donde $V_{sum}$ es el volumen de cuerpo que está dentro del fluido. La línea de acción del empuje pasa por el centro de gravedad del fluido desplazado.</p>
+  <span class="src" data-l="U" data-ref="U §12.3, principio de Arquímedes, p. 376">U p.376</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_12_11_arquimedes.png" alt="Figura 12.11 de U. a) Un elemento arbitrario de fluido en equilibrio: las fuerzas de la presión sobre su superficie suman una fuerza de flotación B igual a su peso. b) Si se sustituye por un cuerpo sólido de la misma forma y tamaño, las fuerzas de presión son las mismas y la fuerza de flotación también." loading="lazy" style="max-width:600px!important">
+<figcaption>Fig. 12.11 de U: demostración del principio de Arquímedes. <span class="src" data-l="U" data-ref="U Fig. 12.11, p. 376">U p.376</span></figcaption>
+</figure>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 248" width="100%" role="img" aria-label="Cubo de 10 centímetros de arista sumergido en agua con la fuerza de presión sobre la cara superior hacia abajo y sobre la inferior hacia arriba; los laterales se cancelan">
+  <defs><marker id="maa1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mba1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mma1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mga1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpa1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfa1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="20" y="30" width="300" height="190" fill="var(--acc)" fill-opacity="0.16" stroke="none"/>
+  <line x1="20" y1="30" x2="320" y2="30" stroke="var(--acc)" stroke-width="2"/>
+  <text x="28" y="22" class="sm">superficie (p₀ = p<tspan dy="3" font-size="9">atm</tspan>)</text>
+  <rect x="130" y="110.0" width="40" height="40" rx="2" fill="var(--A)" fill-opacity="0.45" stroke="var(--A)" stroke-width="1.5"/>
+  <line x1="142" y1="71.0" x2="142" y2="109.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#maa1)"/>
+  <line x1="142" y1="209.0" x2="142" y2="151.0" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mga1)"/>
+  <line x1="108" y1="122.0" x2="127" y2="122.0" stroke="var(--mut)" stroke-width="2" fill="none" marker-end="url(#mma1)"/>
+  <line x1="192" y1="122.0" x2="173" y2="122.0" stroke="var(--mut)" stroke-width="2" fill="none" marker-end="url(#mma1)"/>
+  <line x1="108" y1="138.0" x2="127" y2="138.0" stroke="var(--mut)" stroke-width="2" fill="none" marker-end="url(#mma1)"/>
+  <line x1="192" y1="138.0" x2="173" y2="138.0" stroke="var(--mut)" stroke-width="2" fill="none" marker-end="url(#mma1)"/>
+  <text x="150" y="90.0" class="sm bd" style="fill:var(--acc)">ρgh·A = 19,6 N</text>
+  <text x="150" y="190.0" class="sm bd" style="fill:var(--X)">ρgh·A = 29,4 N</text>
+  <line x1="266" y1="30" x2="266" y2="110.0" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="262" y1="30" x2="270" y2="30" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="262" y1="110.0" x2="270" y2="110.0" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="318" y1="30" x2="318" y2="150.0" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="314" y1="30" x2="322" y2="30" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="314" y1="150.0" x2="322" y2="150.0" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="260" y="74" class="sm bd" text-anchor="end">20 cm</text>
+  <text x="312" y="94" class="sm bd" text-anchor="end">30 cm</text>
+  <text x="170" y="238" class="sm bd" text-anchor="middle">B = p<tspan dy="3" font-size="9">b</tspan><tspan dy="-3">A − pₜA = 29,4 − 19,6 = 9,8 N</tspan></text>
+</svg>
+<figcaption>Por qué existe el empuje: la presión crece con la profundidad, así que la fuerza hacia arriba en la cara inferior (a 30 cm) supera a la fuerza hacia abajo en la superior (a 20 cm). Las laterales se anulan. Cubo de 10 cm de arista en agua: $B=(p_b-p_t)A=\rho Vg=9{,}8$ N. Las fuerzas dibujadas son las debidas a la presión manométrica ($\rho gh\,A$, sin $p_{atm}A$, que actúa igual arriba y abajo y se cancela). <span class="src" data-l="P" data-ref="Diagrama propio de §12.3 de U (principio de Arquímedes)">P</span></figcaption>
+</figure>
+
+<div class="box def"><span class="h">¿Flota o se hunde? Comparar densidades</span>
+  <p>Un cuerpo en equilibrio sobre el fluido cumple $B=mg$. Si flota con volumen sumergido $V_{sum}$: $\rho_{fluido}V_{sum}g=\rho_{cuerpo}Vg$, y la <b>fracción sumergida</b> es
+  $$f=\frac{V_{sum}}{V}=\frac{\rho_{cuerpo}}{\rho_{fluido}}$$
+  Si $\rho_{cuerpo}\le\rho_{fluido}$ el cuerpo flota (parcialmente sumergido si $\lt$); si $\rho_{cuerpo}\gt\rho_{fluido}$ se hunde. La densidad que cuenta es la <i>media</i>: un barco de acero flota porque está hueco, y un pez ajusta su densidad con una cavidad de gas. Cuanto más denso es el fluido, menos se sumerge el cuerpo (en agua de mar, de 1030 kg/m³, flotas más que en agua dulce). El <b>hidrómetro</b> (flotador calibrado) mide así la densidad de un líquido.</p>
+  <span class="src" data-l="U" data-ref="U §12.3, pp. 376-377 y fig. 12.12">U p.376-377</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 200" width="100%" role="img" aria-label="Un bloque de hielo flotando en agua dulce con el 92 por ciento sumergido y en agua de mar con el 89 por ciento sumergido">
+  <defs><marker id="mah1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbh1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmh1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgh1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mph1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfh1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="20" y="60" width="135" height="90" fill="var(--acc)" fill-opacity="0.2" stroke="none"/>
+  <line x1="14" y1="60" x2="161" y2="60" stroke="var(--acc)" stroke-width="2"/>
+  <rect x="52" y="56.0" width="70" height="50" rx="2" fill="var(--mut)" fill-opacity="0.45" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="87" y="22" class="bd" text-anchor="middle">agua dulce</text>
+  <text x="87" y="170" class="sm bd" text-anchor="middle">92 % sumergido</text>
+  <text x="87" y="84.0" class="sm" text-anchor="middle">hielo</text>
+  <rect x="185" y="60" width="135" height="90" fill="var(--acc)" fill-opacity="0.2" stroke="none"/>
+  <line x1="179" y1="60" x2="326" y2="60" stroke="var(--acc)" stroke-width="2"/>
+  <rect x="217" y="54.66019417475729" width="70" height="50" rx="2" fill="var(--mut)" fill-opacity="0.45" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="252" y="22" class="bd" text-anchor="middle">agua de mar</text>
+  <text x="252" y="170" class="sm bd" text-anchor="middle">89 % sumergido</text>
+  <text x="252" y="82.7" class="sm" text-anchor="middle">hielo</text>
+  <text x="170" y="190" class="sm" text-anchor="middle">f = ρ<tspan dy="3" font-size="9">cuerpo</tspan><tspan dy="-3"> / ρ</tspan><tspan dy="3" font-size="9">fluido</tspan><tspan dy="-3"></tspan></text>
+</svg>
+<figcaption>Un cuerpo que flota desplaza su propio peso de fluido: la fracción sumergida es $f=\rho_{cuerpo}/\rho_{fluido}$. Hielo ($0{,}92\times10^3$ kg/m³): $f=0{,}92$ en agua dulce y $0{,}92/1{,}03=0{,}89$ en agua de mar (flota algo más alto). <span class="src" data-l="P" data-ref="Diagrama propio de §12.3 de U (flotación)">P</span></figcaption>
+</figure>
+
+<div class="box ex"><span class="h">Ejemplo 12.5: flotación (la estatua de oro)</span>
+  <p>Se levanta una estatua de oro macizo de 15,0 kg de un barco hundido. ¿Qué tensión hay en el cable (de masa despreciable) cuando la estatua está a) en reposo y totalmente sumergida en agua de mar, y b) en reposo fuera del agua?</p>
+  <ol class="steps">
+    <li><b>Modelo.</b> En reposo: $\sum F_y=0$. Tres fuerzas: peso $mg$ (abajo), tensión $T$ (arriba) y empuje $B$ (arriba) = peso del fluido desplazado.</li>
+    <li><b>Volumen:</b> $V=m/\rho_{oro}=15{,}0/(19{,}3\times10^3)=7{,}77\times10^{-4}$ m³ (tabla 12.1).</li>
+    <li><b>Empuje en el mar:</b> $B=\rho_{mar}Vg=(1030)(7{,}77\times10^{-4})(9{,}8)=7{,}84$ N.</li>
+    <li><b>a)</b> $T+B-mg=0\Rightarrow T=mg-B=147-7{,}84=139$ N. Una balanza de resorte en el cable marcaría 7,84 N menos que el peso real.</li>
+    <li><b>b)</b> En el aire, $B_{aire}=(1{,}2)(7{,}77\times10^{-4})(9{,}8)=9{,}1\times10^{-3}$ N: despreciable, así que $T=mg=147$ N.</li>
+    <li><b>Evaluar:</b> el empuje es proporcional a la densidad <i>del fluido</i>, no a la del cuerpo. Con un fluido de la misma densidad que la estatua, $T=0$ (el cable se aflojaría); con uno más denso, $T$ saldría negativa (haría falta empujar hacia abajo).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> cuerpo sumergido colgado de un hilo: $T=mg-\rho_{fluido}Vg$, con $V=m/\rho_{cuerpo}$ si está entero dentro.</div>
+  <span class="src" data-l="U" data-ref="U Ejemplo 12.5, pp. 377-378 y fig. 12.13">U p.377-378</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 235" width="100%" role="img" aria-label="Diagrama de cuerpo libre de la estatua de oro sumergida: tensión 139 N y empuje 7,84 N hacia arriba y peso 147 N hacia abajo">
+  <defs><marker id="mas1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbs1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mms1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgs1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mps1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfs1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="150" y="110" width="40" height="40" rx="2" fill="var(--A)" fill-opacity="0.5" stroke="var(--A)" stroke-width="1.5"/>
+  <line x1="160" y1="110" x2="160" y2="40.5" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mas1)"/>
+  <line x1="180" y1="110" x2="180" y2="90" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgs1)"/>
+  <line x1="170" y1="150" x2="170" y2="223.5" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfs1)"/>
+  <text x="154" y="44.5" class="sm bd" text-anchor="end" style="fill:var(--acc)">T = 139 N</text>
+  <text x="186" y="98" class="sm bd" style="fill:var(--X)">B = 7,84 N</text>
+  <text x="176" y="219.5" class="sm bd">mg = 147 N</text>
+  <text x="15" y="110" class="sm bd">T + B = mg</text>
+  <text x="15" y="128" class="sm">B no está a escala</text>
+  <text x="170" y="16" class="sm" text-anchor="middle">estatua de oro (15,0 kg) en agua de mar</text>
+</svg>
+<figcaption>Diagrama de cuerpo libre de la estatua en reposo bajo el agua de mar. El empuje (7,84 N) está dibujado más grande que a escala; el peso (147 N) y la tensión (139 N) sí guardan su proporción. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.5 de U">P</span></figcaption>
+</figure>
+
+<figure class="interactivo" data-escena="flotacion" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: un cubo en un líquido, libre o colgado de un hilo; se pueden variar el líquido, la densidad del cuerpo y su tamaño, y se ven el peso, el empuje, las fuerzas de presión en las caras, la parte sumergida y la tensión">
+  <img class="int-static" src="../assets/img/int_flotacion.png" alt="Interactivo: un cubo en un líquido, libre o colgado de un hilo; se pueden variar el líquido, la densidad del cuerpo y su tamaño, y se ven el peso, el empuje, las fuerzas de presión en las caras, la parte sumergida y la tensión">
+  <figcaption><b>Pruébalo tú:</b> un cubo en un líquido. Con el cuerpo <b>libre</b>, sube la densidad del cuerpo: mientras $\rho_c\le\rho_f$ flota con la fracción sumergida $f=\rho_c/\rho_f$ (compruébalo: hielo, 920 kg/m³, en agua de mar queda sumergido el 89 %), y cuando $\rho_c\gt\rho_f$ se va al fondo. Observa que el empuje $B$ es siempre la diferencia entre la fuerza de la presión en la cara inferior y en la superior, y que las dos caras están a profundidades distintas (la recta de la derecha, con pendiente $\rho_fg$). Con el cuerpo <b>colgado</b> y totalmente sumergido, $T=mg-B$: con la estatua del ejemplo 12.5 ($\rho_c=19\,300$ kg/m³, $a\approx9{,}2$ cm, agua de mar) lees $B\approx7{,}9$ N y $T\approx139$ N; si $\rho_c\lt\rho_f$ sale $T\lt0$ (el hilo no puede empujar). Cambia a mercurio: casi todo flota. <span class="src" data-l="P" data-ref="Interactivo propio de §12.3 y del ejemplo 12.5 de U, pp. 376-378">P</span></figcaption>
+</figure>
+<div class="box intu"><span class="h">Tensión superficial (solo para situarla)</span>
+  <p>Un clip de acero puede quedarse sobre el agua aunque es mucho más denso que ella, y un insecto «camina» sobre un estanque: es la <b>tensión superficial</b>, la superficie del líquido se comporta como una membrana tensa porque las moléculas de la superficie son atraídas hacia el interior. Es importante para gotas pequeñas (donde la razón superficie/volumen, $3/r$, es grande) y despreciable en volúmenes grandes: en el resto del capítulo se ignora.</p>
+  <span class="src" data-l="U" data-ref="U §12.3, tensión superficial, p. 378">U p.378</span></div>
+
+<h2 id="s4"><span class="n">4</span>Flujo de un fluido y ecuación de continuidad <span class="src" data-l="U" data-ref="U §12.4, pp. 379-381">U p.379-381</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Imagina un río que se estrecha entre dos rocas: el agua que entra por la parte ancha tiene que salir por la estrecha, así que <b>va más rápida</b> en el estrecho (lo mismo que cuando tapas la salida de la manguera con el dedo y el chorro sale más rápido). Si el fluido no se puede comprimir, <i>no desaparece ni se acumula agua</i>: el volumen por segundo que pasa por cualquier sección del tubo es el mismo.</p>
+  <span class="src" data-l="P" data-ref="Explicación propia a partir de §12.4 de U">P</span></div>
+<div class="box def"><span class="h">Fluido ideal, línea de flujo y tipos de flujo</span>
+  <p>Un <b>fluido ideal</b> es <i>incompresible</i> (su densidad no cambia) y no tiene fricción interna (<i>viscosidad</i> nula). Los líquidos son casi incompresibles, y un gas se puede tratar como incompresible si las diferencias de presión son pequeñas. La trayectoria de una partícula del fluido es una <b>línea de flujo</b>; en <b>flujo estable</b> el patrón no cambia con el tiempo y cada elemento que pasa por un punto sigue la misma línea. Una <b>línea de corriente</b> es una curva cuya tangente en cada punto tiene la dirección de la velocidad del fluido en ese punto; en flujo estable coincide con la línea de flujo. Las líneas de flujo que pasan por el borde de una pequeña área forman un <b>tubo de flujo</b>, cuyas paredes el fluido no cruza. En el <b>flujo laminar</b> las capas adyacentes se deslizan suavemente una sobre otra; si la rapidez es grande o hay cambios bruscos, el flujo se vuelve irregular y caótico: <b>flujo turbulento</b>.</p>
+  <span class="src" data-l="U" data-ref="U §12.4, p. 379">U p.379</span></div>
+<div class="box thm"><span class="h">Ecuación de continuidad</span>
+  <p>La masa no se crea ni se destruye. En un tubo de flujo, en un tiempo $dt$ entra por la sección $A_1$ un cilindro de volumen $dV_1=A_1v_1\,dt$ y sale por $A_2$ uno de volumen $dV_2=A_2v_2\,dt$. Si el fluido es <b>incompresible</b> y el flujo estable, esos volúmenes son iguales:
+  $$A_1v_1=A_2v_2\qquad\text{(ec. 12.10)}$$
+  El producto $Av$ es la <b>rapidez de flujo de volumen</b> (caudal): $\dfrac{dV}{dt}=Av$ (ec. 12.11), en m³/s ($1\ \text{L/s}=10^{-3}$ m³/s). Donde el tubo se estrecha, la rapidez aumenta. Si el fluido es compresible: $\rho_1A_1v_1=\rho_2A_2v_2$ (ec. 12.12), flujo de masa constante.</p>
+  <span class="src" data-l="U" data-ref="U §12.4, ecs. 12.10-12.12, pp. 379-380">U p.379-380</span></div>
+<div class="box ex"><span class="h">Ejemplo 12.6: flujo de un fluido incompresible (aceite)</span>
+  <p>Se bombea aceite incompresible (850 kg/m³) por una tubería cilíndrica a razón de 9,5 L/s. a) La primera sección tiene 8,0 cm de diámetro: ¿cuál es la rapidez del aceite y el flujo de masa? b) La segunda sección tiene 4,0 cm de diámetro: ¿cuál es la rapidez y el flujo de masa?</p>
+  <ol class="steps">
+    <li><b>a)</b> $\dfrac{dV}{dt}=9{,}5\times10^{-3}$ m³/s y $A_1=\pi(0{,}040)^2$ m². De (12.11): $v_1=\dfrac{dV/dt}{A_1}=\dfrac{9{,}5\times10^{-3}}{\pi(0{,}040)^2}=1{,}9$ m/s. Flujo de masa: $\rho\,\dfrac{dV}{dt}=(850)(9{,}5\times10^{-3})=8{,}1$ kg/s.</li>
+    <li><b>b)</b> De (12.10): $v_2=v_1\dfrac{A_1}{A_2}=1{,}9\left(\dfrac{8{,}0}{4{,}0}\right)^2=7{,}6$ m/s $=4v_1$. El flujo de volumen y el de masa son los mismos (9,5 L/s y 8,1 kg/s): el aceite no se acumula.</li>
+    <li><b>Evaluar:</b> diámetro la mitad ⇒ área la cuarta parte ⇒ rapidez cuádruple (el área va con el <i>cuadrado</i> del diámetro).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> calcula el caudal $Q=Av$ donde conozcas $A$ y $v$; en cualquier otra sección $v=Q/A$.</div>
+  <span class="src" data-l="U" data-ref="U Ejemplo 12.6, p. 380">U p.380</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 160" width="100%" role="img" aria-label="Tubo que se estrecha de 8 a 4 centímetros de diámetro: la velocidad pasa de 1,9 a 7,6 metros por segundo">
+  <defs><marker id="maf1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbf1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmf1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgf1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpf1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mff1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 15 45 L 130 45 L 165 65 L 320 65 L 320 105 L 165 105 L 130 125 L 15 125 Z" fill="var(--acc)" fill-opacity="0.18" stroke="none"/>
+  <path d="M 15 45 L 130 45 L 165 65 L 320 65 L 320 105 L 165 105 L 130 125 L 15 125 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="30" y1="85" x2="55" y2="85" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgf1)"/>
+  <line x1="180" y1="85" x2="280" y2="85" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgf1)"/>
+  <text x="30" y="37" class="sm bd">A₁ = 8,0 cm de diám.</text>
+  <text x="190" y="57" class="sm bd">A₂ = 4,0 cm de diám.</text>
+  <text x="30" y="107" class="sm bd" style="fill:var(--X)">v₁ = 1,9 m/s</text>
+  <text x="190" y="125" class="sm bd" style="fill:var(--X)">v₂ = 7,6 m/s = 4v₁</text>
+  <text x="170" y="150" class="sm bd" text-anchor="middle">A₁v₁ = A₂v₂ = 9,5 L/s;  A ∝ d²</text>
+</svg>
+<figcaption>Continuidad (aceite incompresible, $\dot V=9{,}5$ L/s): si el diámetro se reduce a la mitad, el área se reduce a la cuarta parte y la rapidez se cuadruplica. Las flechas guardan la proporción 1 : 4. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.6 de U">P</span></figcaption>
+</figure>
+
+
+<h2 id="s5"><span class="n">5</span>Ecuación de Bernoulli <span class="src" data-l="U" data-ref="U §12.5, pp. 381-385">U p.381-385</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Cuando un fluido pasa de un tubo ancho a uno estrecho, <b>acelera</b>: algo tiene que empujarlo. Ese «algo» es la propia presión: el fluido que viene por detrás empuja más fuerte que el que está delante. Resultado: <b>donde el fluido va más rápido, la presión es menor</b> (si no sube ni baja). Y si además el fluido sube, parte de la energía se invierte en altura y la presión baja más. Bernoulli es el balance de energía por unidad de volumen: presión + energía potencial + energía cinética = constante. Es como el teorema del trabajo y la energía, escrito para un fluido.</p>
+  <span class="src" data-l="P" data-ref="Explicación propia a partir de §12.5 de U">P</span></div>
+<div class="box thm"><span class="h">Ecuación de Bernoulli</span>
+  <p>El trabajo de las fuerzas de presión sobre un elemento de volumen $dV$ es igual a su cambio de energía cinética más su cambio de energía potencial:
+  $$(p_1-p_2)\,dV=\tfrac12\rho\,dV\,(v_2^2-v_1^2)+\rho g\,dV\,(y_2-y_1)\qquad\text{(ec. 12.16)}$$
+  Reordenando (puntos 1 y 2 cualesquiera de un tubo de flujo):
+  $$p_1+\rho gy_1+\tfrac12\rho v_1^2=p_2+\rho gy_2+\tfrac12\rho v_2^2\qquad\text{(ec. 12.17)}$$
+  $$p+\rho gy+\tfrac12\rho v^2=\text{constante}\qquad\text{(ec. 12.18)}$$
+  Cada término tiene unidades de presión (energía por unidad de volumen, J/m³ = Pa). <b>Solo es válida para un flujo estable de un fluido incompresible sin fricción interna.</b> Si el fluido no se mueve ($v_1=v_2=0$) se reduce a $p_2-p_1=-\rho g(y_2-y_1)$ (12.5).</p>
+  <span class="src" data-l="U" data-ref="U §12.5, ecs. 12.16-12.18, p. 382">U p.381-382</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 228" width="100%" role="img" aria-label="Tubo de flujo que sube y se estrecha. Un elemento de fluido de volumen dV entra por la sección ancha, de área A1 y longitud ds1, empujado por la fuerza p1A1, y otro igual sale por la sección estrecha, de área A2 y longitud ds2, frenado por la fuerza p2A2. Altura y1 e y2 sobre un nivel de referencia.">
+  <defs><marker id="mabd" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mabe" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker></defs>
+  <path d="M 30 130 L 100 130 C 140 130 140 60 180 60 L 330 60 L 330 80 L 190 80 C 150 80 150 170 110 170 L 30 170 Z" fill="var(--acc)" fill-opacity="0.12" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="45" y="130" width="40" height="40" fill="var(--acc)" fill-opacity="0.35" stroke="var(--acc)" stroke-width="1.5"/>
+  <rect x="240" y="60" width="80" height="20" fill="var(--acc)" fill-opacity="0.35" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="8" y1="150" x2="43" y2="150" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mabe)"/>
+  <line x1="338" y1="70" x2="322" y2="70" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mabe)"/>
+  <line x1="52" y1="150" x2="78" y2="150" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mabd)"/>
+  <line x1="250" y1="70" x2="290" y2="70" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mabd)"/>
+  <text x="8" y="144" class="sm bd" style="fill:var(--acc)">p₁A₁</text>
+  <text x="336" y="100" class="sm bd" text-anchor="end" style="fill:var(--acc)">p₂A₂</text>
+  <text x="65" y="164" class="sm bd" text-anchor="middle" style="fill:var(--X)">v₁</text>
+  <text x="270" y="54" class="sm bd" text-anchor="middle" style="fill:var(--X)">v₂</text>
+  <line x1="45" y1="118" x2="85" y2="118" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="45" y1="114" x2="45" y2="122" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="85" y1="114" x2="85" y2="122" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="65" y="110" class="sm bd" text-anchor="middle">ds₁</text>
+  <line x1="240" y1="42" x2="320" y2="42" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="240" y1="38" x2="240" y2="46" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="320" y1="38" x2="320" y2="46" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="280" y="34" class="sm bd" text-anchor="middle">ds₂</text>
+  <line x1="10" y1="205" x2="330" y2="205" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="330" y="219" class="sm" text-anchor="end">y = 0</text>
+  <line x1="65" y1="172" x2="65" y2="205" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <text x="60" y="193" class="sm bd" text-anchor="end">y₁</text>
+  <line x1="280" y1="82" x2="280" y2="205" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <text x="274" y="150" class="sm bd" text-anchor="end">y₂</text>
+  <text x="10" y="14" class="sm">dV = A₁ds₁ = A₂ds₂ (continuidad)</text>
+  <text x="10" y="30" class="sm">Trabajo de las presiones:</text>
+  <text x="10" y="46" class="sm bd">p₁A₁ds₁ − p₂A₂ds₂</text>
+  <text x="10" y="62" class="sm bd">= (p₁ − p₂) dV</text>
+</svg>
+<figcaption>Deducción de la ec. (12.16): en un tiempo corto, el fluido avanza por el tubo de flujo y todo ocurre como si el elemento de volumen $dV$ de la entrada (longitud $ds_1$, área $A_1$) pasara a la salida (longitud $ds_2$, área $A_2$; más largo porque el tubo es más estrecho). La presión empuja en la entrada ($p_1A_1\,ds_1$, trabajo positivo) y frena en la salida ($-p_2A_2\,ds_2$); la diferencia, $(p_1-p_2)\,dV$, se invierte en energía cinética y potencial de ese elemento. <span class="src" data-l="P" data-ref="Diagrama propio de la deducción de §12.5 de U (fig. 12.23)">P</span></figcaption>
+</figure>
+<div class="box thm"><span class="h">Estrategia para resolver problemas de Bernoulli</span>
+  <ol class="steps">
+    <li><b>Identificar</b> los puntos 1 y 2 a los que se refiere la ecuación; Bernoulli es para flujo estable, incompresible y de fricción despreciable (tubos, depósitos grandes).</li>
+    <li><b>Plantear:</b> define el sistema de coordenadas, en particular $y=0$ (la dirección $+y$ hacia arriba). Elabora una lista de cantidades conocidas y desconocidas.</li>
+    <li><b>Ejecutar:</b> escribe la ecuación de continuidad ($A_1v_1=A_2v_2$) y despeja las incógnitas; después Bernoulli (12.17). A veces hace falta (12.11) para calcular el caudal.</li>
+    <li><b>Evaluar:</b> comprueba que las respuestas son lógicas y que las <b>presiones están todas absolutas o todas manométricas</b>; rapidez en m/s, presión en pascales.</li>
+  </ol>
+  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 12.1, p. 382">U p.382</span></div>
+<div class="box warn"><span class="h">Cuándo NO se puede usar</span>
+  <p>Bernoulli no vale con viscosidad apreciable, con flujo turbulento ni si el fluido es muy compresible. Y no es una «causa»: la presión menor y la rapidez mayor van juntas (una diferencia de presión es lo que acelera al fluido), pero el enunciado «el aire que se desplaza rápido provoca presión baja» es menos exacto que decir que el fluido que acelera lo hace porque la presión es menor delante que detrás.</p>
+  <span class="src" data-l="U" data-ref="U §12.5, CUIDADO, p. 382 y EVALÚE 12.5, p. 385">U p.382, 385</span></div>
+<div class="box ex"><span class="h">Ejemplo 12.7: presión del agua en el hogar</span>
+  <p>El agua entra en una casa por un tubo de 2,0 cm de diámetro, a una presión absoluta de $4{,}0\times10^5$ Pa (unas 4 atm) y con rapidez 1,5 m/s. Un tubo de 1,0 cm de diámetro lleva el agua al baño del segundo piso, 5,0 m más arriba. Calcula la rapidez, la presión y el caudal en el baño.</p>
+  <ol class="steps">
+    <li><b>Modelo.</b> Agua: incompresible, flujo estable, fricción despreciable (tubos anchos). Punto 1 = entrada ($y_1=0$); punto 2 = baño ($y_2=5{,}0$ m).</li>
+    <li><b>Continuidad primero</b> (da la rapidez desconocida): $v_2=v_1\dfrac{A_1}{A_2}=v_1\left(\dfrac{d_1}{d_2}\right)^2=1{,}5\cdot4=6{,}0$ m/s.</li>
+    <li><b>Bernoulli</b> despejando $p_2$: $p_2=p_1-\tfrac12\rho(v_2^2-v_1^2)-\rho g(y_2-y_1)$.</li>
+    <li><b>Números:</b> $\tfrac12(1000)(36-2{,}25)=1{,}69\times10^4$ Pa y $\rho g(5{,}0)=4{,}90\times10^4$ Pa ⇒ $p_2=4{,}0\times10^5-0{,}17\times10^5-0{,}49\times10^5=3{,}3\times10^5$ Pa ($\approx3{,}3$ atm).</li>
+    <li><b>Caudal:</b> $\dfrac{dV}{dt}=A_2v_2=\pi(0{,}50\times10^{-2})^2(6{,}0)=4{,}7\times10^{-4}$ m³/s $=0{,}47$ L/s.</li>
+    <li><b>Evaluar:</b> subir y acelerar «cuestan» presión: las dos correcciones restan. Con el grifo cerrado ($v=0$), solo queda la columna: $p_2=4{,}0\times10^5-0{,}49\times10^5=3{,}5\times10^5$ Pa.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> tubería con dos secciones y dos alturas: continuidad ⇒ velocidad desconocida; Bernoulli ⇒ presión desconocida; caudal $=Av$ en cualquier sección.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar el cociente de diámetros (factor 2) en lugar del de áreas (factor 4); restar presiones absolutas de un lado y manométricas del otro.</p></div>
+  <span class="src" data-l="U" data-ref="U Ejemplo 12.7, p. 383 y fig. 12.24">U p.383</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 232" width="100%" role="img" aria-label="Tubería que sube 5 metros y se estrecha; a la derecha, un diagrama de barras que muestra cómo la presión baja de 4,0 a 3,3 por la energía cinética y por la altura">
+  <defs><marker id="mab1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbb1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmb1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgb1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpb1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfb1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="10" y1="40" x2="150" y2="40" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="10" y1="190" x2="150" y2="190" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <path d="M 20 190 L 105 190 L 105 170" fill="none" stroke="var(--acc)" stroke-opacity="0.45" stroke-width="12"/>
+  <path d="M 105 190 L 105 40" fill="none" stroke="var(--acc)" stroke-opacity="0.45" stroke-width="6"/>
+  <line x1="30" y1="190" x2="62" y2="190" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mgb1)"/>
+  <line x1="105" y1="120" x2="105" y2="80" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mgb1)"/>
+  <text x="20" y="207" class="sm bd">1: d = 2,0 cm,</text>
+  <text x="20" y="222" class="sm bd">v = 1,5 m/s</text>
+  <text x="15" y="14" class="sm bd">2: d = 1,0 cm,</text>
+  <text x="15" y="29" class="sm bd">v = 6,0 m/s</text>
+  <line x1="150" y1="40" x2="150" y2="190" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="146" y1="40" x2="154" y2="40" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="146" y1="190" x2="154" y2="190" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="144" y="120" class="sm bd" text-anchor="end">5,0 m</text>
+  <rect x="190" y="54.0" width="26" height="136.0" fill="var(--acc)" fill-opacity="0.5" stroke="none"/>
+  <rect x="190" y="54.0" width="26" height="136.0" rx="2" fill="var(--acc)" fill-opacity="0.0" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="203" y="49.0" class="sm bd" text-anchor="middle">4,0</text>
+  <rect x="228" y="54.0" width="26" height="5.746000000000009" fill="var(--A)" fill-opacity="0.6" stroke="none"/>
+  <rect x="228" y="54.0" width="26" height="5.746000000000009" rx="2" fill="var(--A)" fill-opacity="0.0" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="241" y="49.0" class="sm bd" text-anchor="middle">−0,17</text>
+  <rect x="266" y="59.74600000000001" width="26" height="16.659999999999982" fill="var(--A)" fill-opacity="0.6" stroke="none"/>
+  <rect x="266" y="59.74600000000001" width="26" height="16.659999999999982" rx="2" fill="var(--A)" fill-opacity="0.0" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="279" y="54.7" class="sm bd" text-anchor="middle">−0,49</text>
+  <rect x="304" y="76.44" width="26" height="113.56" fill="var(--acc)" fill-opacity="0.5" stroke="none"/>
+  <rect x="304" y="76.44" width="26" height="113.56" rx="2" fill="var(--acc)" fill-opacity="0.0" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="317" y="71.4" class="sm bd" text-anchor="middle">3,3</text>
+  <text x="203" y="205" class="sm" text-anchor="middle">p₁</text>
+  <text x="241" y="205" class="sm" text-anchor="middle">−cin.</text>
+  <text x="279" y="205" class="sm" text-anchor="middle">−alt.</text>
+  <text x="317" y="205" class="sm" text-anchor="middle">p₂</text>
+  <text x="250" y="22" class="sm" text-anchor="middle">presión (×10⁵ Pa)</text>
+  <line x1="184" y1="190" x2="336" y2="190" stroke="var(--fg)" stroke-width="1.3"/>
+</svg>
+<figcaption>Ejemplo 12.7: subir (energía potencial) y acelerar (energía cinética) «cuestan» presión: de $4{,}0\times10^5$ Pa quedan $3{,}3\times10^5$ Pa. «cin.» $=\tfrac12\rho(v_2^2-v_1^2)=0{,}17\times10^5$; «alt.» $=\rho g\,\Delta y=0{,}49\times10^5$. Tubos no a escala. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.7 de U">P</span></figcaption>
+</figure>
+
+
+<h3 id="s5b">5.1 Teorema de Torricelli <span class="src" data-l="U" data-ref="U §12.5, Ejemplo 12.8, pp. 383-384">U pp.383-384</span></h3>
+<div class="box ex"><span class="h">Ejemplo 12.8: rapidez de salida</span>
+  <p>Un tanque de almacenamiento de gasolina, de área $A_1$, tiene gasolina hasta una altura $h$. El espacio sobre la gasolina está a una presión $p_0$ y sale gasolina por un tubo corto de área $A_2$ en el fondo. Deduce la rapidez de salida y el caudal.</p>
+  <ol class="steps">
+    <li><b>Puntos.</b> 1 = superficie de la gasolina ($y_1=h$, $p_1=p_0$); 2 = salida ($y_2=0$, $p_2=p_{atm}$, a la presión del aire exterior). Se toma $A_1\gg A_2$.</li>
+    <li><b>Continuidad:</b> $v_1=(A_2/A_1)v_2\approx0$ (el nivel baja muy despacio).</li>
+    <li><b>Bernoulli:</b> $p_0+\rho gh=p_{atm}+\tfrac12\rho v_2^2$ ⇒ $\displaystyle v_2=\sqrt{\frac{2(p_0-p_{atm})}{\rho}+2gh}$.</li>
+    <li><b>Tanque abierto</b> ($p_0=p_{atm}$): $\;v_2=\sqrt{2gh}$, el <b>teorema de Torricelli</b>: la rapidez de salida por una abertura a una distancia $h$ bajo la superficie es la misma que adquiriría un cuerpo que cayera libremente una altura $h$. Vale igual para un orificio en la pared lateral a profundidad $h$.</li>
+    <li><b>Caudal:</b> $\dfrac{dV}{dt}=A_2v_2$.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> depósito con orificio: Bernoulli entre la superficie (rapidez ≈ 0) y el chorro (presión atmosférica); $v=\sqrt{2\,p_{man}/\rho+2gh}$ y $Q=A_{orificio}v$.</div>
+  <span class="src" data-l="U" data-ref="U Ejemplo 12.8, pp. 383-384 y fig. 12.25">U pp.383-384</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 205" width="100%" role="img" aria-label="Tanque abierto con un orificio lateral a profundidad h y un chorro; a la derecha una piedra que cae la misma altura h y adquiere la misma rapidez">
+  <defs><marker id="mat1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbt1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmt1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgt1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpt1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mft1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="60" y="40" width="110" height="125" fill="var(--acc)" fill-opacity="0.2" stroke="none"/>
+  <line x1="50" y1="40" x2="180" y2="40" stroke="var(--acc)" stroke-width="2"/>
+  <path d="M 60 20 L 60 165 L 170 165 L 170 134" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 170 126 L 170 20" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 170.0 130.0 L 173.0 130.0 L 176.0 130.1 L 179.0 130.3 L 182.0 130.6 L 185.0 130.9 L 188.0 131.3 L 191.0 131.7 L 194.0 132.3 L 197.0 132.9 L 200.0 133.6 L 203.0 134.3 L 206.0 135.1 L 209.0 136.0 L 212.0 137.0 L 215.0 138.0 L 218.0 139.1 L 221.0 140.3 L 224.0 141.5 L 227.0 142.9 L 230.0 144.2 L 233.0 145.7 L 236.0 147.2 L 239.0 148.8 L 242.0 150.5 L 245.0 152.3 L 248.0 154.1 L 251.0 156.0 L 254.0 157.9 L 257.0 160.0 L 260.0 162.1 L 263.0 164.2 L 266.0 166.5 L 269.0 168.8 L 272.0 171.2 L 275.0 173.6 L 278.0 176.2 L 281.0 178.8 L 284.0 181.4 L 287.0 184.2 L 290.0 187.0" fill="none" stroke="var(--acc)" stroke-width="3"/>
+  <line x1="40" y1="187" x2="335" y2="187" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="172" y1="130" x2="220" y2="130" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mgt1)"/>
+  <line x1="74" y1="40" x2="74" y2="130" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="70" y1="40" x2="78" y2="40" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="70" y1="130" x2="78" y2="130" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="82" y="89.0" class="sm bd">h</text>
+  <text x="178" y="122" class="sm bd" style="fill:var(--X)">v = √(2gh)</text>
+  <text x="115" y="32" class="sm" text-anchor="middle">p₀ = p<tspan dy="3" font-size="9">atm</tspan></text>
+  <text x="260" y="179" class="sm" text-anchor="middle">p<tspan dy="3" font-size="9">atm</tspan></text>
+  <circle cx="300" cy="40" r="5" fill="var(--E)"/>
+  <line x1="300" y1="48" x2="300" y2="112" stroke="var(--E)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mpt1)"/>
+  <circle cx="300" cy="118" r="5" fill="var(--E)"/>
+  <line x1="285" y1="40" x2="315" y2="40" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="285" y1="118" x2="315" y2="118" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="300" y="30" class="sm" text-anchor="middle">piedra</text>
+  <text x="300" y="136" class="sm" text-anchor="middle">misma v</text>
+  <text x="300" y="150" class="sm" text-anchor="middle">tras caer h</text>
+</svg>
+<figcaption>Teorema de Torricelli: a profundidad $h$ el agua sale con la misma rapidez que un cuerpo que cae libremente una altura $h$: $v=\sqrt{2gh}$ (con el tanque abierto y su nivel casi constante). El chorro sale horizontal y luego cae como un proyectil. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.8 de U">P</span></figcaption>
+</figure>
+
+<figure class="interactivo" data-escena="torricelli" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: tanque con un orificio lateral; se pueden variar la altura del líquido, la profundidad del orificio, la presión del aire sobre el líquido y el diámetro del orificio, y se ven la rapidez de salida, el caudal y el alcance del chorro">
+  <img class="int-static" src="../assets/img/int_torricelli.png" alt="Interactivo: tanque con un orificio lateral; se pueden variar la altura del líquido, la profundidad del orificio, la presión del aire sobre el líquido y el diámetro del orificio, y se ven la rapidez de salida, el caudal y el alcance del chorro">
+  <figcaption><b>Pruébalo tú:</b> un tanque grande con un orificio. Con presión manométrica del aire 0 (tanque abierto) $v=\sqrt{2gh}$: el alcance horizontal $x=2\sqrt{h(H-h)}$ es máximo, $x=H$, con el orificio a media altura ($h=H/2$). Con $H=15$ m, $h=14{,}0$ m y $d=6$ mm reproduces el ejercicio 12.44 (E9): $v=16{,}6$ m/s y $Q=0{,}468$ L/s. Con agua de mar, $H=11$ m, $h=11$ m y 3,00 atm reproduces el 12.41 (E11): $v=28{,}4$ m/s (frente a 14,7 abierto). Al subir la presión del aire, $v$ crece como $\sqrt{2p/\rho+2gh}$ aunque $h$ no cambie. La lectura de Bernoulli de abajo muestra que $p+\rho gh$ en la superficie coincide con $\tfrac12\rho v^2$ en el chorro. <span class="src" data-l="P" data-ref="Interactivo propio del ejemplo 12.8 de U, pp. 383-384 y de los ejercicios 12.41 y 12.44, pp. 392-393">P</span></figcaption>
+</figure>
+<div class="box tip"><span class="h">Truco de examen</span>
+  <p>Sea $H$ la altura de la superficie libre sobre el suelo (con el fondo del tanque apoyado en el suelo), $h$ la profundidad del orificio bajo la superficie y $y_0=H-h$ su altura sobre el suelo. En Torricelli $v=\sqrt{2gh}$ usa la <b>profundidad $h$ bajo la superficie del líquido</b>, no la altura $y_0$ del orificio. Después, el chorro es un <b>tiro horizontal</b> (tema 3): sale con $v_x=v$, $v_y=0$ desde la altura $y_0$ y cae al suelo en $t=\sqrt{2y_0/g}$; alcance $x=v\sqrt{2y_0/g}$. Con el tanque abierto, $x=2\sqrt{h(H-h)}$, máximo ($x=H$) para $h=H/2$.</p>
+  <span class="src" data-l="P" data-ref="Explicación propia a partir del ejemplo 12.8 de U y del tiro horizontal (tema 3)">P</span></div>
+
+<h3 id="s5c">5.2 El medidor Venturi <span class="src" data-l="U" data-ref="U §12.5, Ejemplo 12.9, p. 384">U p.384</span></h3>
+<div class="box ex"><span class="h">Ejemplo 12.9: el medidor Venturi</span>
+  <p>Un medidor Venturi es un tubo con un estrechamiento (garganta) y dos tubos verticales abiertos, uno en la parte ancha (punto 1, área $A_1$) y otro en la garganta (punto 2, área $A_2$). Deduce la rapidez $v_1$ en función de $A_1$, $A_2$ y la diferencia de altura $h$ del líquido en los tubos verticales.</p>
+  <ol class="steps">
+    <li><b>Tres herramientas, una por incógnita:</b> Bernoulli relaciona presiones y velocidades; continuidad relaciona $v_1$ y $v_2$; la hidrostática de los tubos verticales convierte la diferencia de presión en una altura medible.</li>
+    <li><b>Bernoulli con $y_1=y_2$</b> (tubo horizontal): $p_1+\tfrac12\rho v_1^2=p_2+\tfrac12\rho v_2^2$.</li>
+    <li><b>Continuidad:</b> $v_2=(A_1/A_2)v_1$; sustituyendo, $p_1-p_2=\tfrac12\rho v_1^2\left[\left(\dfrac{A_1}{A_2}\right)^2-1\right]$.</li>
+    <li><b>Tubos verticales</b> (12.6): cada columna equilibra la presión de su punto, $p_1-p_2=\rho gh$.</li>
+    <li><b>Igualar y despejar:</b> $\displaystyle v_1=\sqrt{\frac{2gh}{(A_1/A_2)^2-1}}$.</li>
+    <li><b>Evaluar:</b> $A_1\gt A_2$ ⇒ $v_2\gt v_1$ y $p_2\lt p_1$: en la garganta, más rápido y menos presión. Esa diferencia de presión empuja al fluido hacia la garganta (lo acelera) y lo frena a la salida. Error típico: pensar que la presión es mayor donde el tubo es más estrecho («se aprieta»).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> medidor de caudal: Bernoulli a la misma altura + continuidad + $\Delta p=\rho gh$ del manómetro; despejar $v_1$.</div>
+  <span class="src" data-l="U" data-ref="U Ejemplo 12.9, p. 384 y fig. 12.26">U p.384</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_12_26_venturi.png" alt="Figura 12.26 de U. Medidor Venturi: un tubo horizontal con un estrechamiento y dos tubos verticales; el nivel es más bajo en la garganta (punto 2), donde la presión es menor; h es la diferencia de alturas." loading="lazy" style="max-width:400px!important">
+<figcaption>Fig. 12.26 de U: el medidor Venturi (la diferencia de altura $h$ es el resultado de la presión reducida en la garganta). <span class="src" data-l="U" data-ref="U Fig. 12.26, p. 384">U p.384</span></figcaption>
+</figure>
+<div class="box ex"><span class="h">Ejemplo numérico propio: Venturi con $A_1/A_2=2$ y $h=10{,}0$ cm</span>
+  <ol class="steps">
+    <li>$v_1=\sqrt{\dfrac{2(9{,}8)(0{,}100)}{2^2-1}}=0{,}81$ m/s y $v_2=2v_1=1{,}62$ m/s.</li>
+    <li>Para agua ($\rho=1000$ kg/m³), la diferencia de presión es $p_1-p_2=\rho gh=(1000)(9{,}8)(0{,}100)=980$ Pa (comprobación: $\tfrac12\rho v_1^2(4-1)=980$ Pa).</li>
+    <li>El caudal es $Q=A_1v_1$; con $A_1=10$ cm² $=1{,}0\times10^{-3}$ m²: $Q=(1{,}0\times10^{-3})(0{,}808)=8{,}1\times10^{-4}$ m³/s $\approx0{,}81$ L/s.</li>
+  </ol>
+  <span class="src" data-l="P" data-ref="Ejemplo numérico propio basado en el ejemplo 12.9 de U">P</span></div>
+
+<h3 id="s5d">5.3 Sustentación en un ala (ejemplo conceptual) <span class="src" data-l="U" data-ref="U Ejemplo conceptual 12.10, pp. 384-385">U p.384-385</span></h3>
+<div class="box ex"><span class="h">Ejemplo conceptual 12.10: sustentación</span>
+  <p>Las líneas de flujo del aire que pasa sobre el ala de un avión se <b>juntan</b> (el área de flujo se estrecha), así que la rapidez es mayor y, por Bernoulli, la presión sobre el ala es menor que debajo. La diferencia de presión da una fuerza neta hacia arriba: la <b>sustentación</b>. Una explicación equivalente: la forma del ala imparte al aire una cantidad de movimiento hacia abajo, y la reacción sobre el avión es hacia arriba.</p>
+  <div class="box warn"><span class="h">Cuidado: explicación errónea frecuente</span><p>«El aire va más rápido por arriba porque tiene que recorrer más distancia y encontrarse con el de abajo en el borde de salida» es falso: las partículas vecinas que se separan en el borde de ataque <i>no</i> se vuelven a encontrar en el de salida. El flujo sobre el ala es mucho más rápido de lo que sugiere esa idea.</p></div>
+  <span class="src" data-l="U" data-ref="U Ejemplo conceptual 12.10, pp. 384-385 y fig. 12.27">U p.384-385</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 200" width="100%" role="img" aria-label="Ala de avión con las líneas de flujo más juntas por arriba (más rápido, menos presión) y más separadas por abajo; la fuerza neta es hacia arriba">
+  <defs><marker id="maw1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbw1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmw1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgw1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpw1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfw1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 60 105 C 100 56, 230 52, 290 100 C 230 120, 100 124, 60 105 Z" fill="var(--mut)" fill-opacity="0.3" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 10 30 C 80 30, 110 46, 175 46 S 270 30, 330 30" fill="none" stroke="var(--acc)" stroke-width="1.7"/>
+  <path d="M 10 46 C 80 46, 110 52, 175 52 S 270 46, 330 46" fill="none" stroke="var(--acc)" stroke-width="1.7"/>
+  <path d="M 10 62 C 80 62, 110 58, 175 58 S 270 62, 330 62" fill="none" stroke="var(--acc)" stroke-width="1.7"/>
+  <path d="M 10 134 C 80 134, 110 136, 175 136 S 270 134, 330 134" fill="none" stroke="var(--mut)" stroke-width="1.7"/>
+  <path d="M 10 150 C 80 150, 110 152, 175 152 S 270 150, 330 150" fill="none" stroke="var(--mut)" stroke-width="1.7"/>
+  <path d="M 10 166 C 80 166, 110 168, 175 168 S 270 166, 330 166" fill="none" stroke="var(--mut)" stroke-width="1.7"/>
+  <text x="170" y="14" class="sm bd" text-anchor="middle" style="fill:var(--acc)">líneas juntas: v mayor, p menor</text>
+  <text x="170" y="194" class="sm bd" text-anchor="middle">líneas separadas: v menor, p mayor</text>
+  <line x1="150" y1="104" x2="150" y2="76" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mgw1)"/>
+  <text x="158" y="100" class="sm bd" style="fill:var(--X)">sustentación</text>
+</svg>
+<figcaption>Sustentación (ejemplo conceptual 12.10): sobre el ala las líneas de flujo se juntan, el aire va más rápido y la presión es menor; la diferencia de presión empuja el ala hacia arriba. Dibujo esquemático. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo conceptual 12.10 de U">P</span></figcaption>
+</figure>
+
+
+<h2 id="s6"><span class="n">6</span>Viscosidad y turbulencia <span class="src" data-l="U" data-ref="U §12.6, pp. 385-387">U p.385-387</span></h2>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+  <p>Hasta ahora el fluido «se deslizaba sin rozar». Pero la miel, el aceite de motor o la lava no fluyen igual que el agua: tienen mucha <b>viscosidad</b>, que es la <b>fricción interna</b> del fluido. Es lo que hace que cueste remar una canoa en aguas tranquilas (y también lo que hace que funcione el remo). Los fluidos «espesos» (miel) son más viscosos que los que fluyen con facilidad (agua, gasolina). La viscosidad de los líquidos disminuye con la temperatura (la lava caliente fluye mejor); la de los gases, aumenta.</p>
+  <span class="src" data-l="U" data-ref="U §12.6, p. 385">U p.385</span></div>
+<div class="box thm"><span class="h">Fluido viscoso en un tubo</span>
+  <p>El fluido viscoso se adhiere a las paredes: en un tubo cilíndrico la rapidez es <b>cero en la pared</b> y <b>máxima en el centro</b>, con un perfil parabólico (como tubos concéntricos que se deslizan unos respecto a otros). Las fuerzas viscosas se oponen a ese deslizamiento, así que para mantener el flujo hay que aplicar una presión mayor detrás que delante: <b>aunque el tubo sea horizontal y de sección constante, aparece una caída de presión</b> (no se cumple Bernoulli sin fricción). A caudal fijo, la diferencia de presión necesaria para un tubo de longitud $L$ y radio $R$ es
+  $$\Delta p\ \propto\ \frac{L}{R^{4}}$$
+  Reducir $R$ a la mitad exige $2^4=16$ veces más diferencia de presión; reducirlo un 10 % la multiplica por $(1/0{,}90)^4=1{,}52$ (+52 %). Por eso un leve estrechamiento de las arterias (colesterol) eleva mucho la presión arterial y fuerza al corazón.</p>
+  <span class="src" data-l="U" data-ref="U §12.6, viscosidad, pp. 385-386 y fig. 12.29">U p.385-386</span></div>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 160" width="100%" role="img" aria-label="Perfil parabólico de velocidad en un tubo y gráfica de barras: si el radio se reduce a la mitad, la diferencia de presión necesaria se multiplica por 16">
+  <defs><marker id="mav1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbv1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmv1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgv1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpv1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfv1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 15 25 L 190 25" fill="none" stroke="var(--fg)" stroke-width="2.5"/>
+  <path d="M 15 125 L 190 125" fill="none" stroke="var(--fg)" stroke-width="2.5"/>
+  <line x1="25" y1="30" x2="53.5" y2="30" stroke="var(--X)" stroke-width="2" fill="none" marker-end="url(#mgv1)"/>
+  <line x1="25" y1="39" x2="97.2" y2="39" stroke="var(--X)" stroke-width="2" fill="none" marker-end="url(#mgv1)"/>
+  <line x1="25" y1="48" x2="131.3" y2="48" stroke="var(--X)" stroke-width="2" fill="none" marker-end="url(#mgv1)"/>
+  <line x1="25" y1="57" x2="155.6" y2="57" stroke="var(--X)" stroke-width="2" fill="none" marker-end="url(#mgv1)"/>
+  <line x1="25" y1="66" x2="170.1" y2="66" stroke="var(--X)" stroke-width="2" fill="none" marker-end="url(#mgv1)"/>
+  <line x1="25" y1="75" x2="175.0" y2="75" stroke="var(--X)" stroke-width="2" fill="none" marker-end="url(#mgv1)"/>
+  <line x1="25" y1="84" x2="170.1" y2="84" stroke="var(--X)" stroke-width="2" fill="none" marker-end="url(#mgv1)"/>
+  <line x1="25" y1="93" x2="155.6" y2="93" stroke="var(--X)" stroke-width="2" fill="none" marker-end="url(#mgv1)"/>
+  <line x1="25" y1="102" x2="131.3" y2="102" stroke="var(--X)" stroke-width="2" fill="none" marker-end="url(#mgv1)"/>
+  <line x1="25" y1="111" x2="97.2" y2="111" stroke="var(--X)" stroke-width="2" fill="none" marker-end="url(#mgv1)"/>
+  <line x1="25" y1="120" x2="53.5" y2="120" stroke="var(--X)" stroke-width="2" fill="none" marker-end="url(#mgv1)"/>
+  <path d="M 25.0 25 L 53.5 30 L 79.0 35 L 101.5 40 L 121.0 45 L 137.5 50 L 151.0 55 L 161.5 60 L 169.0 65 L 173.5 70 L 175.0 75 L 173.5 80 L 169.0 85 L 161.5 90 L 151.0 95 L 137.5 100 L 121.0 105 L 101.5 110 L 79.0 115 L 53.5 120 L 25.0 125" fill="none" stroke="var(--X)" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="100" y="15" class="sm" text-anchor="middle">v = 0 en la pared</text>
+  <text x="100" y="144" class="sm" text-anchor="middle">v máxima en el eje</text>
+  <text x="278" y="14" class="sm bd" text-anchor="middle">Δp (mismo caudal)</text>
+  <rect x="240" y="119.7" width="26" height="5.3" fill="var(--acc)" fill-opacity="0.5" stroke="none"/>
+  <rect x="285" y="40" width="26" height="85" fill="var(--acc)" fill-opacity="0.5" stroke="none"/>
+  <rect x="240" y="119.7" width="26" height="5.3" rx="2" fill="var(--acc)" fill-opacity="0" stroke="var(--acc)" stroke-width="1.5"/>
+  <rect x="285" y="40" width="26" height="85" rx="2" fill="var(--acc)" fill-opacity="0" stroke="var(--acc)" stroke-width="1.5"/>
+  <text x="253" y="141" class="bd" text-anchor="middle">R</text>
+  <text x="298" y="141" class="bd" text-anchor="middle">R/2</text>
+  <text x="253" y="113" class="sm bd" text-anchor="middle">Δp</text>
+  <text x="298" y="34" class="sm bd" text-anchor="middle">16 Δp</text>
+  <line x1="228" y1="125" x2="325" y2="125" stroke="var(--fg)" stroke-width="1.3"/>
+</svg>
+<figcaption>Fluido viscoso en un tubo: la rapidez es nula en la pared y máxima en el centro. Para mantener el mismo caudal, $\Delta p\propto L/R^4$: con $R/2$ hace falta $2^4=16$ veces más diferencia de presión. <span class="src" data-l="P" data-ref="Diagrama propio de §12.6 de U (viscosidad, fig. 12.29)">P</span></figcaption>
+</figure>
+
+<div class="box def"><span class="h">Turbulencia</span>
+  <p>Si la rapidez excede cierto valor crítico, el flujo deja de ser laminar: el patrón se vuelve irregular y caótico y cambia continuamente con el tiempo. <b>La ecuación de Bernoulli no es aplicable en regiones de turbulencia</b> (el flujo no es estable). Cuanto mayor es la viscosidad, más tendencia hay a flujo laminar. El flujo normal de sangre en la aorta es laminar; una patología cardiaca puede volverlo turbulento y se oye con un estetoscopio. Un ejemplo conceptual (12.11) es el lanzamiento de una <b>bola curva</b>: al girar, la bola arrastra aire y crea una región de mayor presión en un lado y menor en el otro; la fuerza resultante apunta hacia el lado de baja presión (lo mismo con el «top spin» del tenis o las pelotas de golf).</p>
+  <span class="src" data-l="U" data-ref="U §12.6, turbulencia, p. 386 y Ejemplo conceptual 12.11, p. 387">U p.386-387</span></div>
+
+<h2 id="ejercicios"><span class="n">7</span>Ejercicios resueltos</h2>
+<p>No hay ejercicios de examen real de este tema en las convocatorias disponibles (2018-2025), así que no se simula ninguno. Los ejercicios son los problemas del solucionario (E), en el orden del tema, más el problema práctico de U. Todos los números están comprobados. Cada uno termina con una <b>receta</b> reutilizable. Con $g=9{,}8$ m/s² y $\rho_{agua}=1000$ kg/m³, agua de mar 1030 kg/m³ (tabla 12.1). Antes de abrir cada solución, intenta plantearlo tú.</p>
+
+<details class="sol" id="e1"><summary>E1 — Problema 12.2: cubo con un orificio (densidad y peso original) <span class="src" data-l="E" data-ref="Solucionario 12-1, Prob. 12.2">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.2, p. 390 y §12.1, ec. 12.1, tabla 12.1">U p.370, 390</span></summary>
+  <p class="enun">Un cubo de 5,0 cm de lado está hecho de una aleación metálica. Después de perforar de lado a lado un orificio cilíndrico de 2,0 cm de diámetro, perpendicular a una cara, el cubo pesa 6,30 N. a) ¿Cuál es la densidad del metal? b) ¿Cuánto pesaba el cubo antes de taladrarlo?</p>
+  <ol class="steps">
+    <li><b>Qué objeto conocemos.</b> Los 6,30 N son el peso del cubo <i>ya agujereado</i>; su volumen es el del cubo menos el del cilindro hueco (radio 1,0 cm, longitud igual al lado porque atraviesa el cubo).</li>
+    <li><b>Volumen de metal:</b> $V=L^3-\pi r^2L=125-\pi(1{,}0)^2(5{,}0)=125-15{,}7=109\ \text{cm}^3=1{,}09\times10^{-4}$ m³ (1 cm³ $=10^{-6}$ m³).</li>
+    <li><b>Masa:</b> de $w=mg$, $m=6{,}30/9{,}8=0{,}643$ kg.</li>
+    <li><b>a) Densidad (12.1):</b> $\rho=m/V=0{,}643/(1{,}09\times10^{-4})=5{,}9\times10^3$ kg/m³. Razonable: entre el aluminio ($2{,}7\times10^3$) y el hierro ($7{,}8\times10^3$), según la tabla 12.1.</li>
+    <li><b>b) Cubo macizo:</b> mismo metal, misma densidad: $m_0=\rho L^3=(5{,}9\times10^3)(1{,}25\times10^{-4})=0{,}735$ kg ⇒ $w_0=m_0g=7{,}2$ N.</li>
+    <li><b>Atajo:</b> el agujero quita $\pi r^2L/L^3=12{,}6\,\%$ del volumen ⇒ $w_0=6{,}30/(1-0{,}126)=7{,}2$ N.</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 190" width="100%" role="img" aria-label="Cubo de 5 centímetros de lado con un orificio cilíndrico de 2 centímetros de diámetro que lo atraviesa">
+  <defs><marker id="mae1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 50 60 L 80 30 L 160 30 L 130 60 Z" fill="var(--mut)" fill-opacity="0.25" stroke="none"/>
+  <path d="M 130 60 L 160 30 L 160 110 L 130 140 Z" fill="var(--mut)" fill-opacity="0.35" stroke="none"/>
+  <rect x="50" y="60" width="80" height="80" rx="2" fill="var(--mut)" fill-opacity="0.15" stroke="var(--mut)" stroke-width="1.5"/>
+  <path d="M 50 60 L 80 30 L 160 30 L 130 60" fill="none" stroke="var(--fg)" stroke-width="1.5"/>
+  <path d="M 130 60 L 160 30 L 160 110 L 130 140" fill="none" stroke="var(--fg)" stroke-width="1.5"/>
+  <circle cx="90.0" cy="100.0" r="16" fill="var(--bg)" stroke="var(--fg)" stroke-width="1.8"/>
+  <line x1="74.0" y1="100.0" x2="106.0" y2="100.0" stroke="var(--A)" stroke-width="1.5"/>
+  <text x="90.0" y="80.0" class="sm bd" text-anchor="middle" style="fill:var(--A)">d = 2,0 cm</text>
+  <line x1="50" y1="158" x2="130" y2="158" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="50" y1="154" x2="50" y2="162" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="130" y1="154" x2="130" y2="162" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="90.0" y="178" class="sm bd" text-anchor="middle">L = 5,0 cm</text>
+  <text x="195" y="60" class="sm bd">V = L³ − πr²L</text>
+  <text x="195" y="80" class="sm bd">= 125 − 15,7</text>
+  <text x="195" y="100" class="sm bd">= 109 cm³</text>
+  <text x="195" y="126" class="sm bd" style="fill:var(--acc)">m = 0,643 kg</text>
+  <text x="195" y="146" class="sm bd" style="fill:var(--A)">ρ = 5,9×10³ kg/m³</text>
+</svg>
+<figcaption>El volumen de metal es el del cubo menos el del cilindro hueco (que atraviesa los 5,0 cm): 109 cm³. Con 6,30 N ($m=0{,}643$ kg) resulta $\rho=5{,}9\times10^3$ kg/m³. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.2 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> densidad = masa del objeto <i>real</i> / volumen del objeto <i>real</i> (descontando los huecos); luego la densidad es una propiedad del material y sirve para cualquier otra pieza.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Dividir la masa del cubo agujereado entre el volumen del cubo entero; olvidar pasar cm³ a m³.</p></div>
+</details>
+
+<details class="sol" id="e2"><summary>E2 — Problema 12.11: altura mínima de la bolsa de suero <span class="src" data-l="E" data-ref="Solucionario 12-3, Prob. 12.11">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.11, p. 391 y §12.2, ec. 12.6, p. 373">U p.373, 391</span></summary>
+  <p class="enun">En la alimentación intravenosa se inserta una aguja en una vena del brazo del paciente y se conecta un tubo entre la aguja y un depósito de fluido (densidad 1050 kg/m³) que está a una altura $h$ sobre el brazo. El depósito está abierto a la atmósfera por arriba. Si la presión manométrica dentro de la vena es de 5980 Pa, ¿qué valor mínimo de $h$ permite que entre fluido en la vena?</p>
+  <ol class="steps">
+    <li><b>Condición física.</b> El fluido entra si la presión en la punta de la aguja es al menos la de la sangre; en el caso límite el fluido está en reposo y las dos presiones son iguales ⇒ basta la hidrostática.</li>
+    <li><b>Presión en la aguja (12.6).</b> La superficie del depósito está a $p_{atm}$; la aguja está a una profundidad $h$ bajo ella: $p=p_{atm}+\rho gh$, es decir, manométrica $=\rho gh$.</li>
+    <li><b>Igualar manométricas</b> (comparamos lo mismo con lo mismo): $\rho gh=5980$ Pa.</li>
+    <li><b>Despejar:</b> $h=\dfrac{5980}{(1050)(9{,}8)}=0{,}581$ m.</li>
+    <li><b>Sentido:</b> por eso las bolsas cuelgan de un soporte alto, a más de medio metro sobre el brazo.</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 225" width="100%" role="img" aria-label="Bolsa de suero colgada 0,581 metros sobre el brazo de un paciente con un tubo hasta la aguja en la vena">
+  <defs><marker id="mae2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="95" y="18" width="60" height="50" rx="2" fill="var(--acc)" fill-opacity="0.25" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="95" y1="30" x2="155" y2="30" stroke="var(--acc)" stroke-width="2"/>
+  <text x="125" y="12" class="sm" text-anchor="middle">p₀ = p<tspan dy="3" font-size="9">atm</tspan></text>
+  <path d="M 125 68 L 125 185 L 200 185" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <rect x="165" y="170" width="155" height="30" rx="2" fill="var(--mut)" fill-opacity="0.2" stroke="var(--mut)" stroke-width="1.5"/>
+  <path d="M 200 185 L 305 185" fill="none" stroke="var(--A)" stroke-width="5"/>
+  <text x="315" y="164" class="sm" text-anchor="end">brazo</text>
+  <text x="242" y="217" class="sm bd" text-anchor="middle" style="fill:var(--A)">vena: p = 5980 Pa (man.)</text>
+  <line x1="22" y1="30" x2="22" y2="185" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="18" y1="30" x2="26" y2="30" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="18" y1="185" x2="26" y2="185" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="30" y="112" class="sm bd">h = 0,581 m</text>
+  <text x="140" y="82" class="sm">en la aguja:</text>
+  <text x="140" y="100" class="sm bd">ρgh ≥ 5980 Pa</text>
+  <text x="140" y="122" class="sm bd">h = 5980 / (1050·9,8)</text>
+  <text x="140" y="140" class="sm bd">= 0,581 m</text>
+</svg>
+<figcaption>Para que el fluido entre, la presión manométrica en la aguja ($\rho gh$) debe igualar al menos la de la vena (5980 Pa): $h=5980/(1050\cdot9{,}8)=0{,}581$ m sobre el brazo. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.11 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> «¿a qué altura debe estar el depósito para vencer una presión $p$?» ⇒ $h=p_{man}/(\rho g)$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Sumar $p_{atm}$ a un lado y no al otro (mezclar absoluta y manométrica).</p></div>
+</details>
+
+<details class="sol" id="e3"><summary>E3 — Problema 12.24: elevador hidráulico II (presión necesaria) <span class="src" data-l="E" data-ref="Solucionario 12-6, Prob. 12.24">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.24, p. 392 y §12.2, p. 371">U p.371, 392</span></summary>
+  <p class="enun">El pistón del elevador hidráulico para autos tiene 0,30 m de diámetro. ¿Qué presión manométrica, en pascales y en atmósferas, se requiere para levantar un auto de 1200 kg?</p>
+  <ol class="steps">
+    <li><b>DCL del pistón con el auto encima, en equilibrio.</b> Hacia arriba, la fuerza del aceite $pA$ (presión absoluta). Hacia abajo, el peso $mg$ y la fuerza del aire de encima, $p_{atm}A$.</li>
+    <li><b>$\sum F_y=0$:</b> $pA-p_{atm}A-mg=0\ \Rightarrow\ p-p_{atm}=\dfrac{mg}{A}$. <b>La atmósfera se cancela sola</b> y queda exactamente la manométrica.</li>
+    <li><b>Área</b> (radio = mitad del diámetro): $A=\pi(0{,}15)^2=0{,}0707$ m².</li>
+    <li><b>Número:</b> $p_{man}=\dfrac{(1200)(9{,}8)}{0{,}0707}=1{,}66\times10^5$ Pa $\approx1{,}7\times10^5$ Pa.</li>
+    <li><b>En atmósferas:</b> $\dfrac{1{,}66\times10^5}{1{,}013\times10^5}=1{,}64$ atm ($\approx1{,}6$ atm).</li>
+    <li><b>Evaluar:</b> cuanto mayor es el diámetro del pistón, menor es la presión manométrica necesaria.</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 190" width="100%" role="img" aria-label="Pistón del elevador con el automóvil encima y su diagrama de cuerpo libre: fuerza del aceite hacia arriba igual al peso más la fuerza del aire">
+  <defs><marker id="mae3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe3" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="42" y="40" width="100" height="28" rx="2" fill="var(--mut)" fill-opacity="0.25" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="92" y="58" class="sm bd" text-anchor="middle">auto 1200 kg</text>
+  <rect x="30" y="74" width="124" height="8" rx="2" fill="var(--mut)" fill-opacity="0.4" stroke="var(--mut)" stroke-width="1.5"/>
+  <rect x="30" y="82" width="124" height="70" fill="var(--A)" fill-opacity="0.25" stroke="none"/>
+  <path d="M 30 70 L 30 152 L 154 152 L 154 70" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <text x="92" y="125" class="sm bd" text-anchor="middle">aceite a p</text>
+  <text x="92" y="175" class="sm" text-anchor="middle">d = 0,30 m</text>
+  <rect x="220" y="92" width="50" height="14" rx="2" fill="var(--mut)" fill-opacity="0.4" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="233" y1="181.7" x2="233" y2="107" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mge3)"/>
+  <line x1="253" y1="45.0" x2="253" y2="91" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfe3)"/>
+  <line x1="267" y1="63.4" x2="267" y2="91" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mae3)"/>
+  <text x="228" y="150" class="sm bd" text-anchor="end" style="fill:var(--X)">pA</text>
+  <text x="228" y="166" class="sm bd" text-anchor="end" style="fill:var(--X)">18,9 kN</text>
+  <text x="257" y="38" class="sm bd" text-anchor="end">mg = 11,8 kN</text>
+  <text x="273" y="74" class="sm bd" style="fill:var(--acc)">p<tspan dy="3" font-size="9">atm</tspan><tspan dy="-3"> A</tspan></text>
+  <text x="273" y="90" class="sm" style="fill:var(--acc)">7,2 kN</text>
+</svg>
+<figcaption>DCL del pistón con el auto: $pA=mg+p_{atm}A$ ($18{,}9\ \text{kN}=11{,}8+7{,}2$ kN, a escala). La fuerza atmosférica se cancela sola y queda $p_{man}A=mg$, $p_{man}=1{,}66\times10^5$ Pa. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.24 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> pistón en equilibrio con aire por el otro lado: $p_{man}=F/A$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar el diámetro como radio (da una presión 4 veces menor); dar la absoluta (≈ 2,7×10⁵ Pa, unas 2,6 atm) cuando se pide la manométrica.</p></div>
+</details>
+
+<details class="sol" id="e4"><summary>E4 — Problema 12.23: elevador hidráulico I (relación de diámetros) <span class="src" data-l="E" data-ref="Solucionario 12-6, Prob. 12.23">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.23, p. 392 y §12.2, ec. 12.7, p. 373">U p.373, 392</span></summary>
+  <p class="enun">Para el elevador hidráulico de la figura 12.7, ¿cuál debe ser la proporción entre el diámetro del recipiente bajo el auto y el diámetro del recipiente donde se aplica la fuerza $F_1$, de manera que el auto de 1520 kg pueda ser levantado con una fuerza $F_1$ de solo 125 N?</p>
+  <ol class="steps">
+    <li><b>Ley de Pascal.</b> La presión se transmite igual a todo el fluido y los dos pistones están a la misma altura: $p=F_1/A_1=F_2/A_2$ (12.7).</li>
+    <li><b>Fuerza necesaria:</b> $F_2=mg=(1520)(9{,}8)=1{,}49\times10^4$ N.</li>
+    <li><b>Cociente de áreas:</b> $\dfrac{A_2}{A_1}=\dfrac{F_2}{F_1}=\dfrac{1{,}49\times10^4}{125}=119$.</li>
+    <li><b>A diámetros:</b> $A=\pi D^2/4\Rightarrow A_2/A_1=(D_2/D_1)^2$ ⇒ $\dfrac{D_2}{D_1}=\sqrt{119}=10{,}9$.</li>
+    <li><b>Comprobación con energía:</b> el trabajo es el mismo en los dos pistones: para subir el auto 1 cm hay que bajar el pistón pequeño 119 cm. La prensa multiplica la <i>fuerza</i>, no el trabajo.</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 202" width="100%" role="img" aria-label="Elevador hidráulico con un pistón pequeño donde se aplica 125 newtons y un pistón grande de diámetro 10,9 veces mayor que levanta el auto">
+  <defs><marker id="mae4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="20" y="108" width="12" height="42" fill="var(--acc)" fill-opacity="0.25" stroke="none"/>
+  <rect x="20" y="150" width="211" height="22" fill="var(--acc)" fill-opacity="0.25" stroke="none"/>
+  <rect x="100" y="108" width="131" height="42" fill="var(--acc)" fill-opacity="0.25" stroke="none"/>
+  <path d="M 20 70 L 20 172 L 231 172 L 231 70" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 32 70 L 32 150 L 100 150 L 100 70" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <rect x="20" y="100" width="12" height="8" rx="2" fill="var(--mut)" fill-opacity="0.6" stroke="var(--mut)" stroke-width="1.5"/>
+  <rect x="100" y="100" width="131" height="8" rx="2" fill="var(--mut)" fill-opacity="0.6" stroke="var(--mut)" stroke-width="1.5"/>
+  <rect x="130" y="74" width="70" height="26" rx="2" fill="var(--mut)" fill-opacity="0.2" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="165" y="92" class="sm bd" text-anchor="middle">auto</text>
+  <line x1="26" y1="58" x2="26" y2="98" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mae4)"/>
+  <line x1="215" y1="48" x2="215" y2="98" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbe4)"/>
+  <text x="38" y="66" class="sm bd" style="fill:var(--acc)">F₁ = 125 N</text>
+  <text x="209" y="40" class="sm bd" text-anchor="end" style="fill:var(--A)">F₂ = 1,49×10⁴ N</text>
+  <text x="26" y="132" class="sm bd" text-anchor="middle">D₁</text>
+  <text x="165" y="135" class="sm bd" text-anchor="middle">D₂ = 10,9 D₁</text>
+  <text x="170" y="18" class="sm bd" text-anchor="middle">misma p: F₁/A₁ = F₂/A₂</text>
+  <text x="170" y="192" class="sm bd" text-anchor="middle">A₂/A₁ = 119;  recorridos x₁ = 119 x₂</text>
+</svg>
+<figcaption>Pascal: la misma presión en los dos pistones. $D_2/D_1=10{,}9$ da $A_2/A_1=119$ y $F_2=119\,F_1=1{,}49\times10^4$ N. La energía se conserva: el pistón pequeño recorre 119 veces la distancia del grande. Fuerzas no a escala. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.23 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> Pascal: $F_2/F_1=A_2/A_1=(D_2/D_1)^2$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Dar 119 (cociente de áreas) como cociente de diámetros.</p></div>
+</details>
+
+<details class="sol" id="e5"><summary>E5 — Problema 12.26: líquido de densidad mínima en el que flota una roca <span class="src" data-l="E" data-ref="Solucionario 12-6 y 12-7, Prob. 12.26">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.26, p. 392 y §12.3, p. 376">U p.376, 392</span></summary>
+  <p class="enun">Una roca tiene una masa de 1,80 kg. Cuando la roca se suspende del extremo inferior de una cuerda y se sumerge totalmente en agua, la tensión en la cuerda es de 12,8 N. ¿Cuál es la menor densidad de un líquido en el que la roca va a flotar?</p>
+  <ol class="steps">
+    <li><b>Paso 1: volumen de la roca, a partir del agua.</b> Equilibrio sumergida: $T+B=mg\Rightarrow B=mg-T=17{,}64-12{,}8=4{,}84$ N. Con Arquímedes $B=\rho_wVg\Rightarrow V=\dfrac{4{,}84}{(1000)(9{,}8)}=4{,}94\times10^{-4}$ m³.</li>
+    <li><b>Densidad de la roca:</b> $\rho_{roca}=m/V=1{,}80/(4{,}94\times10^{-4})=3{,}64\times10^3$ kg/m³.</li>
+    <li><b>Paso 2: condición de flotar.</b> Sin cuerda, el empuje máximo (cuerpo totalmente sumergido) debe igualar al menos su peso: $\rho_{liq}Vg\ge mg\Rightarrow\rho_{liq}\ge m/V=\rho_{roca}$.</li>
+    <li><b>Resultado:</b> $\rho_{liq,min}=\rho_{roca}=\rho_w\dfrac{mg}{mg-T}=\dfrac{(1000)(17{,}64)}{17{,}64-12{,}8}=3{,}64\times10^3$ kg/m³. Con un líquido más denso (por ejemplo, mercurio, $13{,}6\times10^3$) la roca flotaría con parte fuera.</li>
+    <li><b>Idea clave:</b> un cuerpo flota en un líquido si y solo si su densidad media es menor o igual que la del líquido.</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 262" width="100%" role="img" aria-label="Dos diagramas de cuerpo libre de una roca de 1,80 kilogramos: sumergida en agua con tensión 12,8 newtons y empuje 4,84; y en el líquido de densidad mínima donde flota, con empuje igual al peso">
+  <defs><marker id="mae5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="65" y="112" width="40" height="40" rx="2" fill="var(--mut)" fill-opacity="0.45" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="85" y="137" class="sm" text-anchor="middle">roca</text>
+  <text x="85" y="15" class="bd" text-anchor="middle">En agua</text>
+  <line x1="75" y1="112" x2="75" y2="60.8" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#mae5)"/>
+  <text x="70" y="70.8" class="sm bd" text-anchor="end" style="fill:var(--acc)">T = 12,8 N</text>
+  <line x1="95" y1="112" x2="95" y2="92.6" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mge5)"/>
+  <line x1="85" y1="152" x2="85" y2="222.6" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfe5)"/>
+  <text x="100" y="104.6" class="sm bd" style="fill:var(--X)">B = 4,84 N</text>
+  <text x="85" y="238.6" class="sm bd" text-anchor="middle">mg = 17,6 N</text>
+  <rect x="220" y="112" width="40" height="40" rx="2" fill="var(--mut)" fill-opacity="0.45" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="240" y="137" class="sm" text-anchor="middle">roca</text>
+  <text x="240" y="15" class="bd" text-anchor="middle">En el líquido límite</text>
+  <text x="225" y="106" class="sm bd" text-anchor="end" style="fill:var(--acc)">T = 0</text>
+  <line x1="250" y1="112" x2="250" y2="41.4" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mge5)"/>
+  <line x1="240" y1="152" x2="240" y2="222.6" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfe5)"/>
+  <text x="255" y="53.4" class="sm bd" style="fill:var(--X)">B = 17,64 N</text>
+  <text x="240" y="238.6" class="sm bd" text-anchor="middle">mg = 17,6 N</text>
+  <text x="170" y="252" class="sm" text-anchor="middle">En los dos casos: T + B = mg</text>
+</svg>
+<figcaption>Izquierda: en agua, $T+B=mg$ con $B=17{,}64-12{,}8=4{,}84$ N. Derecha: en el líquido límite el empuje de la roca totalmente sumergida iguala su peso (17,64 N) y $T=0$. Fuerzas a escala. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.26 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> «¿flota?» ⇒ compara densidades. Una pesada en agua con cuerda da el volumen: $V=(mg-T)/(\rho_wg)$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar la tensión (12,8 N) como si fuera el empuje.</p></div>
+</details>
+
+<details class="sol" id="e6"><summary>E6 — Problema 12.35: densidad de un líquido desconocido por pesadas <span class="src" data-l="E" data-ref="Solucionario 12-9 y 12-10, Prob. 12.35">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.35, p. 392 y §12.3, p. 376">U p.376, 392</span></summary>
+  <p class="enun">Una roca cuelga de un hilo ligero. Cuando está en el aire, la tensión en el hilo es de 39,2 N. Cuando está totalmente sumergida en agua, la tensión es de 28,4 N. Cuando está totalmente sumergida en un líquido desconocido, la tensión es de 21,5 N. Determina la densidad del líquido desconocido.</p>
+  <ol class="steps">
+    <li><b>Por qué tres pesadas bastan.</b> La diferencia «aire − sumergido» es el empuje. El volumen de la roca es el mismo en ambos líquidos, así que los empujes están en la proporción de las densidades.</li>
+    <li><b>Empuje en agua:</b> $B_w=39{,}2-28{,}4=10{,}8$ N ⇒ $V=B_w/(\rho_wg)=1{,}10\times10^{-3}$ m³.</li>
+    <li><b>Empuje en el líquido:</b> $B_L=39{,}2-21{,}5=17{,}7$ N $=\rho_LVg$.</li>
+    <li><b>Cociente (sin calcular $V$):</b> $\dfrac{\rho_L}{\rho_w}=\dfrac{B_L}{B_w}=\dfrac{17{,}7}{10{,}8}=1{,}64\Rightarrow\rho_L=1{,}64\times10^3$ kg/m³.</li>
+    <li><b>Extra:</b> densidad de la roca, $\rho_{roca}=\rho_w\dfrac{39{,}2}{10{,}8}=3{,}63\times10^3$ kg/m³.</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 235" width="100%" role="img" aria-label="Tres dinamómetros que sostienen la misma roca en el aire (39,2 newtons), en agua (28,4 newtons) y en un líquido desconocido (21,5 newtons)">
+  <defs><marker id="mae6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe6" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="120" y="90" width="100" height="90" fill="var(--acc)" fill-opacity="0.2" stroke="none"/>
+  <rect x="235" y="90" width="100" height="90" fill="var(--E)" fill-opacity="0.25" stroke="none"/>
+  <line x1="115" y1="90" x2="225" y2="90" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="230" y1="90" x2="336" y2="90" stroke="var(--E)" stroke-width="1.5"/>
+  <rect x="35" y="18" width="40" height="24" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="55" y="36" class="sm bd" text-anchor="middle">39,2 N</text>
+  <line x1="55" y1="42" x2="55" y2="108" stroke="var(--fg)" stroke-width="1.5"/>
+  <rect x="41" y="108" width="28" height="28" rx="2" fill="var(--mut)" fill-opacity="0.55" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="55" y="160" class="sm bd" text-anchor="middle">aire (peso real)</text>
+  <rect x="150" y="18" width="40" height="24" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="170" y="36" class="sm bd" text-anchor="middle">28,4 N</text>
+  <line x1="170" y1="42" x2="170" y2="108" stroke="var(--fg)" stroke-width="1.5"/>
+  <rect x="156" y="108" width="28" height="28" rx="2" fill="var(--mut)" fill-opacity="0.55" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="170" y="170" class="sm bd" text-anchor="middle">agua</text>
+  <text x="170" y="186" class="sm bd" text-anchor="middle" style="fill:var(--X)">B = 10,8 N</text>
+  <rect x="265" y="18" width="40" height="24" rx="2" fill="var(--mut)" fill-opacity="0.3" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="285" y="36" class="sm bd" text-anchor="middle">21,5 N</text>
+  <line x1="285" y1="42" x2="285" y2="108" stroke="var(--fg)" stroke-width="1.5"/>
+  <rect x="271" y="108" width="28" height="28" rx="2" fill="var(--mut)" fill-opacity="0.55" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="285" y="170" class="sm bd" text-anchor="middle">líquido</text>
+  <text x="285" y="186" class="sm bd" text-anchor="middle" style="fill:var(--X)">B = 17,7 N</text>
+  <text x="170" y="208" class="sm bd" text-anchor="middle">B = peso real − lectura</text>
+  <text x="170" y="226" class="sm bd" text-anchor="middle">ρ<tspan dy="3" font-size="9">L</tspan><tspan dy="-3">/ρ</tspan><tspan dy="3" font-size="9">agua</tspan><tspan dy="-3"> = B</tspan><tspan dy="3" font-size="9">L</tspan><tspan dy="-3">/B</tspan><tspan dy="3" font-size="9">agua</tspan><tspan dy="-3"></tspan></text>
+</svg>
+<figcaption>La roca en tres medios: la lectura baja en la medida del empuje. $B_{agua}=39{,}2-28{,}4=10{,}8$ N y $B_L=39{,}2-21{,}5=17{,}7$ N; el cociente es $\rho_L/\rho_{agua}=1{,}64$. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.35 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> $\rho_L=\rho_w\,\dfrac{w-T_L}{w-T_w}$ (método de la balanza hidrostática).</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Dividir las tensiones ($28{,}4/21{,}5$) en lugar de los empujes.</p></div>
+</details>
+
+<details class="sol" id="e7"><summary>E7 — Problema 12.33: bloque en la interfase aceite-agua <span class="src" data-l="E" data-ref="Solucionario 12-8 y 12-9, Prob. 12.33">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.33, p. 392 (figura E12.33), §12.2 p. 373 y §12.3 p. 376">U p.373, 376, 392</span></summary>
+  <p class="enun">Un bloque cúbico de madera de 10,0 cm por lado flota en la interfase entre aceite y agua con su superficie inferior 1,50 cm bajo la interfase. La densidad del aceite es de 790 kg/m³. a) ¿Qué presión manométrica hay en la superficie superior del bloque? b) ¿Y en la cara inferior? c) ¿Qué masa y densidad tiene el bloque? (En la figura, la capa de aceite mide 10,0 cm de espesor y está abierta al aire: el bloque tiene 8,50 cm en el aceite y 1,50 cm en el agua, y su cara superior está 1,50 cm bajo la superficie del aceite.)</p>
+  <ol class="steps">
+    <li><b>Geometría.</b> La interfase está a 10,0 cm bajo la superficie del aceite y la cara inferior a 1,50 cm bajo la interfase ⇒ la cara superior queda a $10{,}0+1{,}50-10{,}0=1{,}50$ cm bajo la superficie del aceite.</li>
+    <li><b>a) Cara superior</b> (solo aceite encima, ec. 12.6): $p_{man}=\rho_{ac}g(0{,}0150)=(790)(9{,}8)(0{,}0150)=116$ Pa.</li>
+    <li><b>b) Cara inferior: «escalera» de capas.</b> Se baja capa a capa sumando el $\rho gh$ de cada fluido, con su propia densidad: $p_{man}=\rho_{ac}g(0{,}100)+\rho_wg(0{,}0150)=774+147=921$ Pa.</li>
+    <li><b>c) Equilibrio del bloque.</b> Las caras laterales se compensan dos a dos. Verticalmente $p_bA-p_tA-mg=0$; la diferencia de absolutas es igual a la de manométricas ($p_{atm}$ se cancela): $\Delta p=921-116=805$ Pa. Con $A=0{,}0100$ m²: $m=\dfrac{805\cdot0{,}0100}{9{,}8}=0{,}821$ kg.</li>
+    <li><b>Densidad:</b> $\rho=\dfrac mV=\dfrac{0{,}821}{(0{,}100)^3}=821$ kg/m³.</li>
+    <li><b>Comprobación con Arquímedes:</b> masa de fluido desplazado $=790(0{,}0100)(0{,}0850)+1000(0{,}0100)(0{,}0150)=0{,}6715+0{,}150=0{,}8215$ kg $=m$. La diferencia de presiones entre caras <i>es</i> el empuje: dos caminos, el mismo resultado.</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 195" width="100%" role="img" aria-label="Bloque de madera de 10 centímetros flotando entre aceite y agua, con 8,5 centímetros en el aceite y 1,5 en el agua, y gráfica de la presión manométrica con la profundidad">
+  <defs><marker id="mae7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe7" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="15" y="30" width="120" height="90.0" fill="var(--A)" fill-opacity="0.2" stroke="none"/>
+  <rect x="15" y="120.0" width="120" height="54.0" fill="var(--acc)" fill-opacity="0.25" stroke="none"/>
+  <path d="M 15 18 L 15 174.0 L 135 174.0 L 135 18" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="10" y1="120.0" x2="140" y2="120.0" stroke="var(--fg)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <rect x="45" y="43.5" width="50" height="90" rx="2" fill="var(--mut)" fill-opacity="0.45" stroke="var(--mut)" stroke-width="1.5"/>
+  <text x="132" y="58" class="sm bd" text-anchor="end">aceite</text>
+  <text x="132" y="154.0" class="sm bd" text-anchor="end">agua</text>
+  <text x="70" y="93.5" class="sm bd" text-anchor="middle">bloque</text>
+  <text x="75" y="12" class="sm" text-anchor="middle">p₀ = p<tspan dy="3" font-size="9">atm</tspan></text>
+  <line x1="172" y1="30" x2="172" y2="174.0" stroke="var(--fg)" stroke-width="1.3"/>
+  <path d="M 172 30 L 189.4 43.5 L 288.1 120.0 L 310.2 133.5" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <line x1="172" y1="43.5" x2="189.4" y2="43.5" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="172" y1="133.5" x2="310.2" y2="133.5" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="172" y1="120.0" x2="288.1" y2="120.0" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <circle cx="189.4" cy="43.5" r="4" fill="var(--A)"/>
+  <circle cx="288.1" cy="120.0" r="4" fill="var(--A)"/>
+  <circle cx="310.2" cy="133.5" r="4" fill="var(--A)"/>
+  <text x="197.4" y="40.5" class="sm bd" style="fill:var(--A)">116 Pa</text>
+  <text x="294.1" y="114.0" class="sm bd">774 Pa</text>
+  <text x="310.2" y="149.5" class="sm bd" text-anchor="end" style="fill:var(--A)">921 Pa</text>
+  <text x="172" y="12" class="sm">p manométrica</text>
+</svg>
+<figcaption>Presión manométrica en el bloque flotante: crece 77,4 Pa/cm en el aceite y 98 Pa/cm en el agua (dos tramos rectos). Cara superior 116 Pa, interfase 774 Pa, cara inferior 921 Pa; $\Delta p=805$ Pa $\Rightarrow m=0{,}821$ kg. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.33 de U (fig. E12.33)">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> varios fluidos apilados: $p=p_0+\sum\rho_igh_i$ capa a capa. Empuje $=(p_{abajo}-p_{arriba})A=$ peso del fluido desplazado (de cada fluido, su parte).</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar una sola densidad para toda la profundidad; olvidar que el aceite también desplaza (empuja) y calcular el empuje solo con el agua.</p></div>
+</details>
+
+<details class="sol" id="e8"><summary>E8 — Problema 12.38: continuidad en un tubo de sección variable <span class="src" data-l="E" data-ref="Solucionario 12-10, Prob. 12.38">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.38, p. 392 y §12.4, ec. 12.10, p. 380">U p.380, 392</span></summary>
+  <p class="enun">Fluye agua por un tubo de sección transversal variable, llenándolo en todos sus puntos. En el punto 1, el área transversal del tubo es de 0,070 m², y la rapidez del fluido es de 3,50 m/s. ¿Qué rapidez tiene el fluido en puntos donde el área transversal es a) 0,105 m²? b) ¿0,047 m²? c) Calcula el volumen de agua descargada del extremo abierto del tubo en una hora.</p>
+  <ol class="steps">
+    <li><b>Por qué continuidad.</b> El agua es incompresible y el tubo está lleno: lo que entra por una sección en un tiempo $dt$ sale por cualquier otra ⇒ $A_1v_1=A_2v_2$ (12.10).</li>
+    <li><b>Caudal:</b> $Q=A_1v_1=(0{,}070)(3{,}50)=0{,}245$ m³/s, el mismo en todo el tubo (12.11).</li>
+    <li><b>a)</b> $v=Q/A=0{,}245/0{,}105=2{,}33$ m/s (sección mayor ⇒ más lento).</li>
+    <li><b>b)</b> $v=0{,}245/0{,}047=5{,}21$ m/s (sección menor ⇒ más rápido).</li>
+    <li><b>c)</b> El caudal es el mismo también en la salida: $V=Qt=(0{,}245)(3600)=882$ m³ $\approx8{,}8\times10^2$ m³.</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 160" width="100%" role="img" aria-label="Tubo con tres secciones de área 0,105, 0,070 y 0,047 metros cuadrados con velocidades 2,33, 3,50 y 5,21 metros por segundo">
+  <defs><marker id="mae8" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe8" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme8" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge8" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe8" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe8" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 15 59 L 120 59 L 120 67.5 L 220 67.5 L 220 73.3 L 325 73.3 L 325 96.7 L 220 96.7 L 220 102.5 L 120 102.5 L 120 111 L 15 111 Z" fill="var(--acc)" fill-opacity="0.18" stroke="none"/>
+  <path d="M 15 59 L 120 59 L 120 67.5 L 220 67.5 L 220 73.3 L 325 73.3 L 325 96.7 L 220 96.7 L 220 102.5 L 120 102.5 L 120 111 L 15 111 Z" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <line x1="23" y1="85" x2="48.6" y2="85" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mge8)"/>
+  <text x="67.5" y="51" class="sm bd" text-anchor="middle">A = 0,105 m²</text>
+  <text x="67.5" y="133" class="sm bd" text-anchor="middle" style="fill:var(--X)">v = 2,33 m/s</text>
+  <line x1="128" y1="85" x2="166.5" y2="85" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mge8)"/>
+  <text x="170.0" y="59" class="sm bd" text-anchor="middle">A = 0,070 m²</text>
+  <text x="170.0" y="133" class="sm bd" text-anchor="middle" style="fill:var(--X)">v = 3,50 m/s</text>
+  <line x1="228" y1="85" x2="285.3" y2="85" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mge8)"/>
+  <text x="272.5" y="65" class="sm bd" text-anchor="middle">A = 0,047 m²</text>
+  <text x="272.5" y="133" class="sm bd" text-anchor="middle" style="fill:var(--X)">v = 5,21 m/s</text>
+  <text x="170" y="150" class="sm bd" text-anchor="middle">Q = A·v = 0,245 m³/s en todas las secciones</text>
+</svg>
+<figcaption>El caudal $Q=0{,}245$ m³/s es el mismo en todo el tubo: donde el área es menor, la rapidez es mayor. Las flechas son proporcionales a $v$; el grosor del tubo es proporcional al área. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.38 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> calcula $Q=Av$ donde conozcas ambos; en cualquier otra sección $v=Q/A$; volumen en un tiempo $t$: $Qt$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Pensar que hace falta el área de salida para el apartado c): no, el caudal es único.</p></div>
+</details>
+
+<details class="sol" id="e9"><summary>E9 — Problema 12.44: Torricelli, orificio en la pared de un tanque <span class="src" data-l="E" data-ref="Solucionario 12-12, Prob. 12.44">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.44, p. 393 y §12.5, Ejemplo 12.8, pp. 383-384">U pp.383-384, 393</span></summary>
+  <p class="enun">Se corta un orificio circular de 6,00 mm de diámetro en el costado de un tanque grande de agua, 14,0 m debajo del nivel del agua en el tanque. El tanque está abierto al aire por arriba. Calcula a) la rapidez de salida del agua y b) el volumen descargado por segundo.</p>
+  <ol class="steps">
+    <li><b>Bernoulli entre la superficie (1) y el chorro justo fuera del orificio (2).</b> Ambos a $p_{atm}$ (superficie abierta; chorro libre en el aire) ⇒ las presiones se cancelan.</li>
+    <li><b>Tanque grande:</b> por continuidad $v_1=(A_2/A_1)v_2\approx0$ (el nivel baja muy despacio).</li>
+    <li><b>Queda</b> $\rho gh=\tfrac12\rho v_2^2\Rightarrow v_2=\sqrt{2gh}$ (teorema de Torricelli): la misma rapidez que en caída libre desde la altura $h$.</li>
+    <li><b>a)</b> $v=\sqrt{2(9{,}8)(14{,}0)}=16{,}6$ m/s.</li>
+    <li><b>b)</b> $A=\pi d^2/4=\pi(6{,}00\times10^{-3})^2/4=2{,}83\times10^{-5}$ m² ⇒ $Q=Av=4{,}68\times10^{-4}$ m³/s $=0{,}468$ L/s.</li>
+    <li><b>Ampliación (alcance del chorro).</b> Si el tanque está lleno hasta $H=15{,}0$ m, el orificio queda a $y_0=15{,}0-14{,}0=1{,}0$ m del suelo; el chorro sale horizontal y cae como un tiro horizontal: $x=v\sqrt{2y_0/g}=16{,}57\sqrt{2(1{,}0)/9{,}8}=7{,}48$ m desde la pared.</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 225" width="100%" role="img" aria-label="Tanque de agua con un orificio de 6 milímetros a 14 metros bajo la superficie y chorro con rapidez de salida 16,6 metros por segundo">
+  <defs><marker id="mae9" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe9" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme9" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge9" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe9" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe9" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="20" y="40" width="110" height="145" fill="var(--acc)" fill-opacity="0.2" stroke="none"/>
+  <line x1="10" y1="40" x2="140" y2="40" stroke="var(--acc)" stroke-width="2"/>
+  <path d="M 20 20 L 20 185 L 130 185 L 130 154" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 130 146 L 130 20" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <path d="M 130.0 150.0 L 133.0 150.0 L 136.0 150.1 L 139.0 150.3 L 142.0 150.6 L 145.0 150.9 L 148.0 151.3 L 151.0 151.7 L 154.0 152.3 L 157.0 152.9 L 160.0 153.6 L 163.0 154.3 L 166.0 155.1 L 169.0 156.0 L 172.0 157.0 L 175.0 158.0 L 178.0 159.1 L 181.0 160.3 L 184.0 161.5 L 187.0 162.9 L 190.0 164.2 L 193.0 165.7 L 196.0 167.2 L 199.0 168.8 L 202.0 170.5 L 205.0 172.3 L 208.0 174.1 L 211.0 176.0 L 214.0 177.9 L 217.0 180.0 L 220.0 182.1 L 223.0 184.2 L 226.0 186.5 L 229.0 188.8 L 232.0 191.2 L 235.0 193.6 L 238.0 196.2 L 241.0 198.8 L 244.0 201.4 L 247.0 204.2 L 250.0 207.0" fill="none" stroke="var(--acc)" stroke-width="3"/>
+  <line x1="0" y1="207" x2="335" y2="207" stroke="var(--mut)" stroke-width="1.5"/>
+  <line x1="132" y1="150" x2="180" y2="150" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mge9)"/>
+  <line x1="34" y1="40" x2="34" y2="150" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="30" y1="40" x2="38" y2="40" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="30" y1="150" x2="38" y2="150" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="42" y="99.0" class="sm bd">h = 14,0 m</text>
+  <text x="138" y="142" class="sm bd" style="fill:var(--X)">v = 16,6 m/s</text>
+  <text x="75" y="32" class="sm" text-anchor="middle">p₀ = p<tspan dy="3" font-size="9">atm</tspan></text>
+  <text x="220" y="199" class="sm" text-anchor="middle">p<tspan dy="3" font-size="9">atm</tspan></text>
+  <text x="200" y="36" class="sm bd">Q = 0,468 L/s</text>
+  <text x="200" y="54" class="sm">(d = 6,00 mm)</text>
+  <text x="200" y="88" class="sm">Una piedra que cae</text>
+  <text x="200" y="104" class="sm">14,0 m llega con</text>
+  <text x="200" y="120" class="sm bd">v = 16,6 m/s</text>
+</svg>
+<figcaption>Orificio a 14,0 m de profundidad: $v=\sqrt{2gh}=16{,}6$ m/s y $Q=A\,v=\pi(3{,}00\ \text{mm})^2\cdot16{,}6=4{,}68\times10^{-4}$ m³/s. Es la rapidez que alcanzaría una piedra tras caer 14,0 m. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.44 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> tanque abierto, orificio a profundidad $h$: $v=\sqrt{2gh}$; caudal $Q=A_{orificio}\sqrt{2gh}$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar como $h$ la altura del orificio sobre el suelo en vez de la profundidad bajo la superficie; usar el diámetro como radio.</p></div>
+</details>
+
+<details class="sol" id="e10"><summary>E10 — Problema 12.46: Bernoulli con cambio de altura y de sección <span class="src" data-l="E" data-ref="Solucionario 12-12, Prob. 12.46">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.46, p. 393 y §12.5, ec. 12.17, p. 382">U p.382, 393</span></summary>
+  <p class="enun">En cierto punto de una tubería, la rapidez del agua es de 3,00 m/s y la presión manométrica es de $5{,}00\times10^4$ Pa. Calcula la presión manométrica en un segundo punto de la tubería, 11,0 m más abajo que el primero, si el diámetro del tubo ahí es el doble que en el primer punto.</p>
+  <ol class="steps">
+    <li><b>Continuidad.</b> Diámetro doble ⇒ área cuádruple ⇒ $v_2=v_1/4=0{,}750$ m/s.</li>
+    <li><b>Bernoulli (12.17)</b> con $y_1-y_2=11{,}0$ m. Se pueden usar presiones manométricas en los dos puntos, porque $p_{atm}$ aparece a ambos lados y se cancela: $p_2=p_1+\tfrac12\rho(v_1^2-v_2^2)+\rho g(y_1-y_2)$.</li>
+    <li><b>Términos.</b> Cinético: $\tfrac12(1000)(9-0{,}5625)=4{,}22\times10^3$ Pa. Altura: $(1000)(9{,}8)(11{,}0)=1{,}078\times10^5$ Pa.</li>
+    <li><b>Resultado:</b> $p_2=5{,}00\times10^4+4{,}22\times10^3+1{,}078\times10^5=1{,}62\times10^5$ Pa (manométrica).</li>
+    <li><b>Sentido:</b> bajar y frenar hacen <i>subir</i> la presión; los dos términos suman. El de altura domina (≈ 25 veces el cinético).</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 205" width="100%" role="img" aria-label="Tubería que desciende 11 metros y duplica su diámetro: la velocidad pasa de 3,00 a 0,750 metros por segundo y la presión manométrica de 5,00×10⁴ a 1,62×10⁵ pascales">
+  <defs><marker id="mae10" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe10" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme10" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge10" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe10" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe10" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line x1="10" y1="40" x2="340" y2="40" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="10" y1="160" x2="340" y2="160" stroke="var(--mut)" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <path d="M 15 40 L 115 40 L 180 160 L 325 160" fill="none" stroke="var(--acc)" stroke-opacity="0.4" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M 195 160 L 325 160" fill="none" stroke="var(--acc)" stroke-opacity="0.35" stroke-width="18"/>
+  <line x1="25" y1="40" x2="70" y2="40" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mge10)"/>
+  <line x1="240" y1="160" x2="262" y2="160" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mge10)"/>
+  <text x="15" y="22" class="sm bd">1: v = 3,00 m/s, p = 5,00×10⁴ Pa</text>
+  <text x="335" y="196" class="sm bd" text-anchor="end">2: v = 0,750 m/s, p = 1,62×10⁵ Pa</text>
+  <line x1="235" y1="40" x2="235" y2="160" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="231" y1="40" x2="239" y2="40" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="231" y1="160" x2="239" y2="160" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="229" y="104" class="sm bd" text-anchor="end">11,0 m</text>
+  <text x="100" y="125" class="sm" text-anchor="middle" style="fill:var(--acc)">d₂ = 2 d₁</text>
+  <text x="100" y="141" class="sm" text-anchor="middle" style="fill:var(--acc)">A₂ = 4 A₁</text>
+</svg>
+<figcaption>Dos efectos suman presión en el punto bajo: bajar 11,0 m ($+1{,}078\times10^5$ Pa) y frenar ($+4{,}2\times10^3$ Pa). Las presiones son manométricas. Flechas de velocidad no a escala. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.46 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> Bernoulli entre dos puntos de una tubería: (i) continuidad ⇒ $v_2$; (ii) $p_2=p_1+\tfrac12\rho(v_1^2-v_2^2)+\rho g(y_1-y_2)$, con todas las presiones del mismo tipo.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Equivocarse con el signo del término de altura (el punto más bajo tiene <i>más</i> presión); poner $v_2=v_1/2$ (cociente de diámetros).</p></div>
+</details>
+
+<details class="sol" id="e11"><summary>E11 — Problema 12.41: tanque sellado con aire a presión <span class="src" data-l="E" data-ref="Solucionario 12-11, Prob. 12.41">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.41, p. 392 y §12.5, Ejemplo 12.8, pp. 383-384">U pp.383-384, 392</span></summary>
+  <p class="enun">Un tanque sellado que contiene agua de mar hasta una altura de 11,0 m contiene también aire sobre el agua a una presión manométrica de 3,00 atm. Sale agua del tanque a través de un orificio pequeño en el fondo. ¿Qué tan rápido se está moviendo el agua?</p>
+  <ol class="steps">
+    <li><b>Puntos.</b> 1 en la superficie del agua ($y_1=11{,}0$ m, $p_1=p_{atm}+3{,}00$ atm); 2 en el chorro a la salida ($y_2=0$, $p_2=p_{atm}$).</li>
+    <li><b>$v_1\approx0$</b> por continuidad (orificio pequeño frente al tanque).</li>
+    <li><b>Bernoulli:</b> $p_1+\rho gy_1=p_2+\tfrac12\rho v_2^2\Rightarrow v_2=\sqrt{\dfrac{2(p_1-p_{atm})}{\rho}+2gy_1}$ (la forma general del ejemplo 12.8).</li>
+    <li><b>Números</b> ($\rho_{mar}=1030$ kg/m³, $3{,}00\ \text{atm}=3{,}04\times10^5$ Pa): $\dfrac{2(3{,}04\times10^5)}{1030}=590$ m²/s² y $2(9{,}8)(11{,}0)=216$ m²/s² ⇒ $v_2=\sqrt{806}=28{,}4$ m/s.</li>
+    <li><b>Comparación:</b> con el tanque abierto ($\Delta p=0$), Torricelli daría $\sqrt{216}=14{,}7$ m/s: la sobrepresión del aire aporta casi tres veces más que la columna de agua. Equivale a una columna extra de agua de altura $p_{man}/(\rho g)=30{,}1$ m.</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 175" width="100%" role="img" aria-label="Tanque sellado con aire a 3 atmósferas manométricas sobre 11 metros de agua de mar: el agua sale por el fondo con 28,4 metros por segundo frente a 14,7 si estuviera abierto">
+  <defs><marker id="mae11" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe11" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme11" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge11" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe11" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe11" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="15" y="12" width="130" height="33" fill="var(--mut)" fill-opacity="0.1" stroke="none"/>
+  <rect x="15" y="45" width="130" height="115" fill="var(--acc)" fill-opacity="0.22" stroke="none"/>
+  <line x1="15" y1="45" x2="145" y2="45" stroke="var(--acc)" stroke-width="2"/>
+  <path d="M 15 6 L 15 160 L 145 160 L 145 6 L 15 6" fill="none" stroke="var(--fg)" stroke-width="2"/>
+  <text x="80" y="28" class="sm bd" text-anchor="middle">aire: 3,00 atm</text>
+  <text x="80" y="80" class="sm bd" text-anchor="middle">agua de mar</text>
+  <text x="80" y="98" class="sm bd" text-anchor="middle">11,0 m</text>
+  <line x1="147" y1="155" x2="200" y2="155" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mge11)"/>
+  <text x="150" y="146" class="sm bd" style="fill:var(--X)">v = 28,4 m/s</text>
+  <line x1="160" y1="26" x2="211.4" y2="26" stroke="var(--mut)" stroke-width="3" fill="none" marker-end="url(#mme11)"/>
+  <text x="160" y="18" class="sm bd">tanque abierto: 14,7 m/s</text>
+  <line x1="160" y1="56" x2="259.4" y2="56" stroke="var(--X)" stroke-width="3" fill="none" marker-end="url(#mge11)"/>
+  <text x="160" y="48" class="sm bd" style="fill:var(--X)">con 3,00 atm: 28,4 m/s</text>
+  <text x="160" y="82" class="sm bd">v = √(2Δp/ρ + 2gh)</text>
+  <text x="160" y="100" class="sm">2Δp/ρ = 590 m²/s²</text>
+  <text x="160" y="116" class="sm">2gh = 216 m²/s²</text>
+</svg>
+<figcaption>El aire comprimido aporta $2\Delta p/\rho=590$ m²/s² frente a $2gh=216$ m²/s² de la columna: la rapidez sube de 14,7 a 28,4 m/s. Las flechas de velocidad son proporcionales. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.41 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> depósito presurizado: $v=\sqrt{2\,p_{man,superficie}/\rho+2gh}$; la sobrepresión equivale a una columna extra $p_{man}/(\rho g)$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Poner $p_1=3{,}00$ atm absoluta y $p_2=p_{atm}$ (mezclar tipos de presión); olvidar la columna de agua.</p></div>
+</details>
+
+<details class="sol" id="e12"><summary>E12 — Problema 12.50: tubería viscosa, efecto de reducir el radio <span class="src" data-l="E" data-ref="Solucionario 12-13, Prob. 12.50">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.50, p. 393 y §12.6, p. 386">U p.386, 393</span></summary>
+  <p class="enun">Se requiere una diferencia de presión de $6{,}00\times10^4$ Pa para mantener una velocidad de flujo de volumen de 0,800 m³/s para un fluido viscoso que fluye a través de una sección de tubo cilíndrico que tiene un radio de 0,210 m. ¿Qué diferencia de presión es necesaria para mantener la misma rapidez de volumen del flujo si el radio de la tubería se reduce a 0,0700 m?</p>
+  <ol class="steps">
+    <li><b>Por qué no Bernoulli.</b> Con viscosidad hay fricción interna: hace falta una diferencia de presión solo para mantener el flujo aunque la velocidad media no cambie. U da la ley de escala: a caudal fijo, $\Delta p\propto L/R^4$.</li>
+    <li><b>Mismo tubo, misma longitud, mismo caudal</b> ⇒ $\Delta p\,R^4=$ cte ⇒ $\Delta p_2=\Delta p_1\left(\dfrac{R_1}{R_2}\right)^4$.</li>
+    <li><b>Números:</b> $R_1/R_2=0{,}210/0{,}0700=3\Rightarrow3^4=81$ ⇒ $\Delta p_2=81\cdot6{,}00\times10^4=4{,}86\times10^6$ Pa ($\approx48$ atm).</li>
+    <li><b>Sentido físico:</b> reducir el radio a un tercio multiplica por 81 la presión necesaria (reducirlo a la mitad: ×16). Por eso un pequeño estrechamiento de una arteria obliga al corazón a trabajar mucho más.</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 205" width="100%" role="img" aria-label="Dos tubos del mismo caudal: uno de radio 0,210 metros que necesita 6,00×10⁴ pascales y otro de radio 0,0700 metros que necesita 4,86×10⁶ pascales">
+  <defs><marker id="mae12" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe12" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme12" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mge12" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpe12" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfe12" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <rect x="15" y="40" width="120" height="63" fill="var(--acc)" fill-opacity="0.2" stroke="none"/>
+  <rect x="15" y="140" width="120" height="21" fill="var(--acc)" fill-opacity="0.2" stroke="none"/>
+  <rect x="15" y="40" width="120" height="63" rx="2" fill="var(--acc)" fill-opacity="0" stroke="var(--acc)" stroke-width="1.5"/>
+  <rect x="15" y="140" width="120" height="21" rx="2" fill="var(--acc)" fill-opacity="0" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="25" y1="71" x2="55" y2="71" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mge12)"/>
+  <line x1="25" y1="150" x2="55" y2="150" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mge12)"/>
+  <text x="75" y="32" class="sm bd" text-anchor="middle">R = 0,210 m</text>
+  <text x="75" y="132" class="sm bd" text-anchor="middle">R = 0,0700 m</text>
+  <text x="75" y="120" class="sm" text-anchor="middle">Q = 0,800 m³/s</text>
+  <rect x="190" y="153" width="40" height="7" fill="var(--acc)" fill-opacity="0.5" stroke="none"/>
+  <rect x="260" y="40" width="40" height="120" fill="var(--acc)" fill-opacity="0.5" stroke="none"/>
+  <rect x="190" y="153" width="40" height="7" rx="2" fill="var(--acc)" fill-opacity="0" stroke="var(--acc)" stroke-width="1.5"/>
+  <rect x="260" y="40" width="40" height="120" rx="2" fill="var(--acc)" fill-opacity="0" stroke="var(--acc)" stroke-width="1.5"/>
+  <line x1="180" y1="160" x2="320" y2="160" stroke="var(--fg)" stroke-width="1.3"/>
+  <text x="210" y="146" class="sm bd" text-anchor="middle">6,00×10⁴ Pa</text>
+  <text x="280" y="33" class="sm bd" text-anchor="middle">4,86×10⁶ Pa</text>
+  <text x="250" y="180" class="sm bd" text-anchor="middle">Δp ∝ 1/R⁴ → ×3⁴ = ×81</text>
+  <text x="250" y="196" class="sm" text-anchor="middle">(altura no a escala)</text>
+</svg>
+<figcaption>Reducir el radio a un tercio multiplica por $3^4=81$ la diferencia de presión necesaria para el mismo caudal (la altura de las barras no está a escala: la segunda es 81 veces mayor). <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.50 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> flujo viscoso en tubo, caudal fijo: $\Delta p\propto L/R^4$ ⇒ razona con cocientes, sin necesidad de conocer la viscosidad.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar $R^2$ (como en la continuidad) en lugar de $R^4$.</p></div>
+</details>
+
+<details class="sol" id="epp"><summary>Problema práctico: ¿cuánto tiempo se tarda en vaciar un tanque? <span class="src" data-l="U" data-ref="U Problema práctico del cap. 12, p. 389 y fig. 12.32">U p.389</span> <span class="src" data-l="P" data-ref="Resolución propia del Problema práctico del cap. 12 de U (con comprobación numérica)">P</span></summary>
+  <p class="enun">Un gran tanque cilíndrico de diámetro $D$ está abierto al aire libre en la parte superior y contiene agua hasta una altura $H$. Se abre en el fondo un pequeño orificio circular de diámetro $d\ll D$ (figura 12.32). Desprecia los efectos de la viscosidad. a) Encuentra $y$, la altura del agua en el tanque un tiempo $t$ después de abrir el orificio, como función de $t$. b) ¿Cuánto tiempo se tarda en vaciar el tanque por completo? c) Si se duplica la altura inicial $H$, ¿en qué factor aumenta el tiempo de vaciado?</p>
+  <ol class="steps">
+    <li><b>Rapidez de salida.</b> Con el nivel a una altura $y$ sobre el orificio, Torricelli: $v=\sqrt{2gy}$ (el nivel baja despacio, $v_1\approx0$).</li>
+    <li><b>Caudal que sale y ritmo de bajada.</b> Sale $Q=\dfrac{\pi d^2}{4}\sqrt{2gy}$; el volumen del tanque baja a razón $-\dfrac{\pi D^2}{4}\dfrac{dy}{dt}$. Igualando (conservación del volumen): $\dfrac{dy}{dt}=-\left(\dfrac dD\right)^2\sqrt{2g\,y}$.</li>
+    <li><b>a) Integrar</b> (variables separables, $y=H$ en $t=0$): $\dfrac{dy}{\sqrt y}=-\left(\dfrac dD\right)^2\sqrt{2g}\,dt$ ⇒ $2\sqrt y=2\sqrt H-\left(\dfrac dD\right)^2\sqrt{2g}\,t$ ⇒ $$y(t)=\left[\sqrt H-\left(\dfrac dD\right)^2\sqrt{\dfrac g2}\;t\right]^2$$</li>
+    <li><b>b) Vaciado:</b> $y=0$ ⇒ $\;t_{vac}=\left(\dfrac Dd\right)^2\sqrt{\dfrac{2H}{g}}$ (en la gráfica de abajo, $\tau=t_{vac}$; es decir, $y=H(1-t/t_{vac})^2$).</li>
+    <li><b>c) Doble altura:</b> $t_{vac}\propto\sqrt H$ ⇒ el tiempo se multiplica por $\sqrt2\approx1{,}41$ (no por 2: al principio sale más rápido).</li>
+    <li><b>Ejemplo numérico:</b> $D=2{,}00$ m, $d=2{,}00$ cm, $H=0{,}800$ m: $t_{vac}=(100)^2\sqrt{2(0{,}800)/9{,}8}=4{,}04\times10^3$ s $=67{,}3$ min.</li>
+    <li><b>Evaluar:</b> $dy/dt\lt0$ siempre y tiende a 0 al vaciarse (el chorro pierde fuerza), de modo que la gráfica $y(t)$ es una parábola que llega tangente al eje.</li>
+  </ol>
+<figure class="fig">
+<svg class="fig" viewBox="0 0 340 220" width="100%" role="img" aria-label="Gráfica de la altura del agua en el tanque en función del tiempo: parábola decreciente que llega a cero en el tiempo de vaciado">
+  <defs><marker id="mapp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbpp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmpp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgpp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mppp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfpp" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <line class="ax" x1="48" y1="182" x2="331" y2="182"/>
+  <line class="ax" x1="48" y1="182" x2="48" y2="9"/>
+  <text x="326" y="210" class="sm" text-anchor="end">t / t<tspan dy="3" font-size="9">vaciado</tspan><tspan dy="-3"></tspan></text>
+  <text x="54" y="16" class="sm">y / H</text>
+  <line x1="48.0" y1="182" x2="48.0" y2="186" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="48.0" y="198" class="sm" text-anchor="middle">0</text>
+  <line x1="174.4" y1="182" x2="174.4" y2="186" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="174.4" y="198" class="sm" text-anchor="middle">0,5</text>
+  <line x1="300.7" y1="182" x2="300.7" y2="186" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="300.7" y="198" class="sm" text-anchor="middle">1</text>
+  <line x1="44" y1="182.0" x2="48" y2="182.0" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="186.0" class="sm" text-anchor="end">0</text>
+  <line x1="44" y1="105.6" x2="48" y2="105.6" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="109.6" class="sm" text-anchor="end">0,5</text>
+  <line x1="44" y1="29.3" x2="48" y2="29.3" stroke="var(--fg)" stroke-width="1.2"/>
+  <text x="41" y="33.3" class="sm" text-anchor="end">1</text>
+  <path d="M 48.0 29.3 L 52.2 34.3 L 56.4 39.3 L 60.6 44.2 L 64.8 49.0 L 69.1 53.7 L 73.3 58.3 L 77.5 62.8 L 81.7 67.3 L 85.9 71.7 L 90.1 75.9 L 94.3 80.1 L 98.5 84.3 L 102.8 88.3 L 107.0 92.2 L 111.2 96.1 L 115.4 99.9 L 119.6 103.6 L 123.8 107.2 L 128.0 110.7 L 132.2 114.1 L 136.5 117.5 L 140.7 120.7 L 144.9 123.9 L 149.1 127.0 L 153.3 130.0 L 157.5 133.0 L 161.7 135.8 L 165.9 138.6 L 170.2 141.2 L 174.4 143.8 L 178.6 146.3 L 182.8 148.7 L 187.0 151.1 L 191.2 153.3 L 195.4 155.5 L 199.6 157.6 L 203.8 159.6 L 208.1 161.5 L 212.3 163.3 L 216.5 165.0 L 220.7 166.7 L 224.9 168.3 L 229.1 169.7 L 233.3 171.1 L 237.5 172.5 L 241.8 173.7 L 246.0 174.8 L 250.2 175.9 L 254.4 176.9 L 258.6 177.8 L 262.8 178.6 L 267.0 179.3 L 271.2 179.9 L 275.5 180.5 L 279.7 180.9 L 283.9 181.3 L 288.1 181.6 L 292.3 181.8 L 296.5 182.0 L 300.7 182.0" fill="none" stroke="var(--acc)" stroke-width="2.5"/>
+  <circle cx="48.0" cy="29.3" r="4" fill="var(--acc)"/>
+  <circle cx="300.7" cy="182.0" r="4" fill="var(--acc)"/>
+  <circle cx="174.4" cy="143.8" r="4" fill="var(--A)"/>
+  <text x="182.4" y="135.8" class="sm bd" style="fill:var(--A)">t/τ = 0,5: y = H/4</text>
+  <text x="78.3" y="33.3" class="sm bd">y = H (1 − t/τ)²</text>
+</svg>
+<figcaption>Altura del agua mientras se vacía por un orificio en el fondo: $y=H(1-t/\tau)^2$ con $\tau=(D/d)^2\sqrt{2H/g}$. Al principio baja deprisa (sale más rápido) y al final muy despacio; la pendiente $dy/dt<0$ siempre. <span class="src" data-l="P" data-ref="Diagrama propio del Problema práctico del cap. 12 (fig. 12.32 de U)">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> vaciado de un depósito: caudal de salida (Torricelli) = ritmo de pérdida de volumen ⇒ ecuación diferencial $dy/dt=-k\sqrt y$ ⇒ $y=(\sqrt H-kt/2)^2$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Suponer una rapidez de salida constante (daría un tiempo $(D/d)^2H/\sqrt{2gH}$, la mitad del real) o integrar mal la raíz.</p></div>
+</details>
+
+
+<h2 id="chuleta"><span class="n">8</span>Chuleta, errores frecuentes y lista de comprobación</h2>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Densidad</td><td>$\rho=m/V$ (12.1); gravedad específica $=\rho/\rho_{agua}$; $1\ \text{g/cm}^3=10^3\ \text{kg/m}^3$</td></tr>
+<tr><td>Presión</td><td>$p=F_\perp/A$ (12.3); 1 Pa = 1 N/m²; 1 atm $=1{,}013\times10^5$ Pa</td></tr>
+<tr><td>Presión con la profundidad</td><td>$p=p_0+\rho gh$ (12.6); $p_2-p_1=-\rho g(y_2-y_1)$ (12.5); ≈ +1 atm cada 10 m de agua</td></tr>
+<tr><td>Absoluta / manométrica</td><td>$p_{man}=p-p_{atm}$</td></tr>
+<tr><td>Pascal (elevador)</td><td>$F_2=\dfrac{A_2}{A_1}F_1$ (12.7); $\dfrac{D_2}{D_1}=\sqrt{\dfrac{F_2}{F_1}}$; el trabajo se conserva</td></tr>
+<tr><td>Manómetro / barómetro</td><td>$p-p_{atm}=\rho gh$ (12.8); $p_{atm}=\rho gh$ (12.9); 1 mm Hg = 1 torr</td></tr>
+<tr><td>Arquímedes</td><td>$B=\rho_{fluido}V_{sum}g$; flota si $\rho_{cuerpo}\le\rho_{fluido}$, con $f=\rho_{cuerpo}/\rho_{fluido}$; colgado: $T=mg-B$</td></tr>
+<tr><td>Continuidad</td><td>$A_1v_1=A_2v_2$ (12.10); $Q=dV/dt=Av$ (12.11); compresible: $\rho_1A_1v_1=\rho_2A_2v_2$ (12.12)</td></tr>
+<tr><td>Bernoulli</td><td>$p_1+\rho gy_1+\tfrac12\rho v_1^2=p_2+\rho gy_2+\tfrac12\rho v_2^2$ (12.17); estable, incompresible, sin viscosidad</td></tr>
+<tr><td>Torricelli</td><td>$v=\sqrt{2gh}$; con presión extra: $v=\sqrt{2(p_0-p_{atm})/\rho+2gh}$; alcance $x=v\sqrt{2y_0/g}$</td></tr>
+<tr><td>Venturi</td><td>$v_1=\sqrt{\dfrac{2gh}{(A_1/A_2)^2-1}}$</td></tr>
+<tr><td>Viscosidad</td><td>a caudal fijo, $\Delta p\propto L/R^4$ (reducir $R$ a la mitad ⇒ ×16)</td></tr>
+<tr><td>Valores útiles</td><td>$\rho_{agua}=1000$, $\rho_{mar}=1030$, $\rho_{aire}=1{,}20$, $\rho_{Hg}=13{,}6\times10^3$ kg/m³; $g=9{,}8$ m/s²</td></tr>
+</table>
+<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+  <ul>
+    <li>Confundir presión con fuerza (la presión es un escalar), o usar el diámetro como radio al calcular $A$.</li>
+    <li>Mezclar presiones absoluta y manométrica en una misma ecuación; dar la absoluta cuando se pide la manométrica.</li>
+    <li>Aplicar $p=p_0+\rho gh$ con dos fluidos distintos con una sola densidad: hay que ir capa a capa.</li>
+    <li>Calcular el empuje con la densidad del <i>cuerpo</i> (es la del <i>fluido</i>), o con el volumen total cuando solo está sumergida una parte.</li>
+    <li>En continuidad, usar el cociente de diámetros en lugar del de áreas (factor al cuadrado).</li>
+    <li>En Torricelli, medir $h$ desde el suelo en lugar de desde la superficie libre; olvidar la presión del aire en un tanque cerrado.</li>
+    <li>Signo del término $\rho gy$ en Bernoulli: el punto más bajo tiene más presión.</li>
+    <li>Aplicar Bernoulli con viscosidad o en flujo turbulento; usar $R^2$ en lugar de $R^4$ para la caída de presión viscosa.</li>
+  </ul>
+  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
+<ul class="checklist">
+  <li>Sé calcular una densidad (incluso con huecos) y pasar de masa a peso y a volumen (§1, E1).</li>
+  <li>Sé aplicar $p=p_0+\rho gh$ y distinguir presión absoluta y manométrica (§2, E2, E3, ejemplo 12.3).</li>
+  <li>Sé aplicar la ley de Pascal a un elevador hidráulico (E3, E4).</li>
+  <li>Sé resolver un tubo en U con dos fluidos y un manómetro igualando presiones a un mismo nivel (ejemplo 12.4, E7).</li>
+  <li>Sé plantear un cuerpo sumergido o flotante con el empuje y el DCL, y decidir si flota (§3, E5, E6, ejemplo 12.5).</li>
+  <li>Sé usar la continuidad $A_1v_1=A_2v_2$ y el caudal $Q=Av$ (§4, E8).</li>
+  <li>Sé aplicar Bernoulli entre dos puntos de una tubería con cambio de altura y de sección (E10, ejemplo 12.7).</li>
+  <li>Sé deducir y usar Torricelli, también con un tanque presurizado, y hallar el alcance del chorro (E9, ampliación; E11).</li>
+  <li>Sé explicar el medidor Venturi y la sustentación de un ala (ejemplos 12.9 y 12.10).</li>
+  <li>Sé la dependencia $\Delta p\propto1/R^4$ de un fluido viscoso y qué implica (E12, §6).</li>
+</ul>
+
+<h2 id="fuentes"><span class="n">★</span>Fuentes de este tema</h2>
+<details class="fuentes-toggle">
+<summary>Mostrar lista de fuentes</summary>
+<div id="panel-fuentes"></div>
+</details>
+
+<footer>Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.</footer>
+</main>
+</div>
+</body>
+</html>
