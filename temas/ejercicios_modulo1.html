@@ -26,8 +26,8 @@
 <header class="hero">
   <div class="kick">Módulo 1 · Ejercicios</div>
   <h1>Ejercicios resueltos del módulo 1</h1>
-  <p>Problemas completos, paso a paso, con el porqué de cada fórmula. Ahora mismo: un paquete atado con dos cuerdas a una varilla que gira (dinámica del movimiento circular, temas 4 y 5).</p>
-  <div class="chips"><span>Libro oficial: Sears-Zemansky, §5.4 (pp. 150-155)</span><span>Ejercicios: 1</span><span>1 interactivo 3D</span><span>⏱ ~30 min</span></div>
+  <p>Problemas completos, paso a paso, con el porqué de cada fórmula. 1) Un paquete atado con dos cuerdas a una varilla que gira (dinámica del movimiento circular, temas 4 y 5). 2) Un bloque que baja por un plano inclinado rugoso y sale volando de una mesa (Newton con fricción + proyectil, temas 2-5).</p>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, §3.3, §5.3 y §5.4 (pp. 76, 143-155)</span><span>Ejercicios: 2</span><span>1 interactivo 3D</span><span>⏱ ~45 min</span></div>
   <div class="legend">
     <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
     <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
@@ -104,7 +104,7 @@
 <figcaption>Geometría del problema (vista lateral, a escala 70 px por metro): el paquete describe una circunferencia horizontal de radio r alrededor de la varilla, a mitad de altura entre A y B. <span class="src" data-l="P" data-ref="Diagrama propio del enunciado">P</span></figcaption>
 </figure>
 
-  <ol class="steps" start="2">
+  <ol class="steps" start="2" style="counter-reset:s 1">
     <li><b>Diagrama de cuerpo libre del paquete.</b> Solo actúan fuerzas de <i>otros cuerpos</i> sobre él: el <b>peso</b> $mg$ (Tierra), la <b>tensión $T_1$</b> de la cuerda superior (tira hacia el punto A: <i>hacia arriba y hacia la varilla</i>) y la <b>tensión $T_2$</b> de la cuerda inferior (tira hacia el punto B: <i>hacia abajo y hacia la varilla</i>). No existe ninguna «fuerza centrífuga»: lo que hace girar al paquete es la parte horizontal de las tensiones.</li>
     <li><b>Ejes.</b> $y$ vertical hacia arriba; $x$ horizontal <b>hacia la varilla</b> (hacia el centro del círculo). Con esta elección la aceleración es $a_y=0$ (el paquete se mueve siempre a la misma altura) y $a_x=a_{rad}=\omega^2r$.</li>
     <li><b>Descompón las tensiones</b> (cada una forma $\varphi$ con la vertical, así que su componente vertical lleva $\cos\varphi$ y la horizontal $\sin\varphi$):
@@ -171,19 +171,161 @@
   Con menos giro, el paquete cae y la cuerda inferior queda floja (el «triángulo» desaparece). Con $\omega$ del problema se recupera $T_1=60$ N ✓.</p>
   <span class="src" data-l="P" data-ref="Desarrollo propio a partir de las ecuaciones (1) y (2)">P</span></div>
 
+<h2 id="ej2"><span class="n">2</span>Bloque en un plano inclinado rugoso que sale volando de una mesa <span class="src" data-l="P" data-ref="Enunciado aportado por el usuario; no figura en el índice de exámenes reales (fuentes_txt/examenes_por_tema.md)">P</span></h2>
+
+<div class="box ex"><span class="h">Enunciado</span>
+  <p class="enun">Un bloque de masa $m=2{,}00$ kg se libera desde el reposo en la parte superior de un plano inclinado rugoso. La parte superior del plano está a una altura vertical $h=0{,}500$ m por encima de la mesa, y el plano forma un ángulo $\theta=30{,}0^\circ$ con la horizontal. El coeficiente de fricción cinética entre el bloque y el plano es $\mu_k=0{,}200$. El plano termina exactamente en el borde de la mesa, que tiene una altura $H=2{,}00$ m sobre el suelo. Al llegar al extremo inferior del plano, el bloque sigue por el aire como un proyectil (sin resistencia del aire) hasta chocar con el suelo. Toma $g=9{,}80\ \text{m/s}^2$.</p>
+  <p class="enun"><b>1)</b> Dibuja el diagrama de cuerpo libre del bloque mientras desciende y calcula su aceleración. &nbsp; <b>2)</b> Rapidez $v$ con la que abandona el plano en el borde de la mesa. &nbsp; <b>3)</b> Distancia horizontal $R$, medida desde la base de la mesa, a la que choca con el suelo. &nbsp; <b>4)</b> Tiempo total desde que se suelta hasta que golpea el suelo.</p>
+  <span class="src" data-l="P" data-ref="Enunciado aportado por el usuario; no figura en el índice de exámenes reales (fuentes_txt/examenes_por_tema.md)">P</span></div>
+
+<h3>Cómo plantearlo antes de empezar</h3>
+<p><b>Prerrequisitos:</b> componentes de un vector con seno y coseno (tema 1), movimiento con aceleración constante (tema 2), movimiento de proyectiles (tema 3) y segunda ley de Newton con fricción (temas 4 y 5).</p>
+
+<div class="box intu"><span class="h">Idea intuitiva: dos movimientos encadenados</span>
+  <p>El problema son <b>dos problemas pequeños pegados</b>, y lo que los une es la velocidad en el borde de la mesa:</p>
+  <ol>
+    <li><b>Fase 1 — el plano (dinámica):</b> el bloque va en línea recta con aceleración <i>constante</i>, porque las fuerzas no cambian mientras desliza. Hay fuerzas, así que hay que usar Newton para hallar $a$. Después, cinemática de aceleración constante para obtener $v$ y el tiempo.</li>
+    <li><b>Fase 2 — el vuelo (cinemática pura):</b> en el aire solo actúa la gravedad. El bloque sale con la velocidad de la fase 1, que apunta <b>a lo largo del plano, o sea 30° por debajo de la horizontal</b> (no horizontal). Se descompone en $v_x$ (constante) y $v_{0y}$ (hacia abajo) y se resuelve como un proyectil.</li>
+  </ol>
+  <p>Orden de ataque: <b>1)</b> DCL y $a$ → <b>2)</b> $v$ en el borde → <b>3)</b> y <b>4)</b> el vuelo. Cada apartado usa el resultado del anterior; el tiempo total del apartado 4 es la suma de los tiempos de las dos fases.</p>
+  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
+
+<h3>Las fórmulas del temario que vamos a usar (y por qué)</h3>
+<div class="box thm"><span class="h">1 · Segunda ley de Newton por componentes</span>
+  <p>$$\sum F_x=m\,a_x,\qquad \sum F_y=m\,a_y$$</p>
+  <p>Aquí conviene girar los ejes: $x$ <b>a lo largo del plano</b> (sentido del movimiento, plano abajo) e $y$ <b>perpendicular al plano</b>. Así la aceleración solo tiene componente $x$ y $a_y=0$ (el bloque no se hunde ni despega del plano). El peso, que es lo único que no está alineado con los ejes, se descompone: $mg\sin\theta$ a lo largo del plano y $mg\cos\theta$ perpendicular a él.</p>
+  <span class="src" data-l="U" data-ref="U §5.3 Ejemplo 5.17 (trineo con fricción en una pendiente), p. 147; ec. (5.1)-(5.2)">U p.147</span></div>
+<div class="box thm"><span class="h">2 · Fricción cinética</span>
+  <p>$$f_k=\mu_k\,n$$</p>
+  <p>$n$ es la <b>fuerza normal</b> (la que ejerce el plano perpendicularmente), no el peso. Como en el eje $y$ no hay aceleración, $n=mg\cos\theta$. La fricción cinética apunta <b>contra el movimiento</b> (plano arriba).</p>
+  <span class="src" data-l="U" data-ref="U §5.3 ec. (5.3), p. 143-144; Ejemplo 5.17, p. 147">U p.143-147</span></div>
+<div class="box thm"><span class="h">3 · Aceleración constante en línea recta</span>
+  <p>$$v=v_0+a\,t,\qquad v^2=v_0^2+2a\,(x-x_0)$$</p>
+  <p>Valen porque $a$ es constante a lo largo del plano. La segunda no contiene el tiempo: útil cuando conoces la distancia recorrida y no el tiempo (fase 1, rapidez). La primera da el tiempo una vez conocida la rapidez.</p>
+  <span class="src" data-l="U" data-ref="U §2.4 ec. (2.8) y (2.13), pp. 45-47">U p.45-47</span></div>
+<div class="box thm"><span class="h">4 · Proyectil (movimiento en dos dimensiones con $a_x=0$, $a_y=g$)</span>
+  <p>$$x=v_{0x}\,t,\qquad y=v_{0y}\,t+\tfrac12 g\,t^2\ \ (y\ \text{positivo hacia abajo})$$$$v_{0x}=v\cos\theta,\qquad v_{0y}=v\sin\theta$$</p>
+  <p>Los dos ejes son <b>independientes</b>: en horizontal no hay fuerza (velocidad constante) y en vertical hay caída libre. El único «puente» entre ambos es el tiempo $t$. Elegimos $y$ positivo hacia abajo porque el bloque sale ya bajando; así $g$ suma con $v_{0y}$ y evitamos errores de signo.</p>
+  <span class="src" data-l="U" data-ref="U §3.3 ec. (3.19)-(3.22), p. 76">U p.76</span></div>
+<div class="box tip"><span class="h">Una forma alternativa de comprobar el apartado 2: energía</span>
+  <p>El trabajo de la fricción es $-f_k\,s$ y el del peso es $mgh$, de modo que $\tfrac12mv^2=mgh-f_k\,s$. Se usa solo como <i>comprobación</i> (tema 7).</p>
+  <span class="src" data-l="U" data-ref="U cap. 7, ec. (7.14) K1 + U1 + W_otras = K2 + U2, p. 214">U p.214</span></div>
+
+<h3>Solución paso a paso</h3>
+<details class="sol" open><summary>Ejercicio 2 — Plano inclinado rugoso y tiro desde la mesa <span class="src" data-l="P" data-ref="Enunciado aportado por el usuario">P</span></summary>
+  <p><b>Apartado 1 · DCL y aceleración</b></p>
+  <ol class="steps">
+    <li><b>Dibuja el cuerpo y las fuerzas reales.</b> Sobre el bloque actúan solo tres fuerzas de <i>otros cuerpos</i>: el <b>peso</b> $mg$ (Tierra, vertical hacia abajo), la <b>normal</b> $n$ (plano, perpendicular a su superficie, hacia fuera) y la <b>fricción cinética</b> $f_k$ (plano, paralela a su superficie y <i>hacia arriba</i>, contra el deslizamiento). No hay «fuerza del movimiento» hacia abajo del plano: lo que empuja plano abajo es la componente del peso.</li>
+    <li><b>Ejes girados y componentes del peso.</b> $x$ plano abajo, $y$ perpendicular al plano. El peso forma un ángulo $\theta$ con la perpendicular al plano, por lo que: $\ w_x=mg\sin\theta,\ \ w_y=-mg\cos\theta$.</li>
+    <li><b>Eje $y$ (sin aceleración).</b> $\sum F_y=n-mg\cos\theta=0\ \Rightarrow\ n=mg\cos\theta=2{,}00\cdot9{,}80\cdot0{,}866=17{,}0$ N.</li>
+    <li><b>Fricción.</b> $f_k=\mu_k n=0{,}200\cdot17{,}0=3{,}39$ N.</li>
+    <li><b>Eje $x$ (con aceleración $a$).</b> $\sum F_x=mg\sin\theta-f_k=m\,a$, con $mg\sin\theta=2{,}00\cdot9{,}80\cdot0{,}500=9{,}80$ N. Despejando y simplificando $m$:
+      $$a=g\,(\sin\theta-\mu_k\cos\theta)=9{,}80\,(0{,}500-0{,}200\cdot0{,}866)=\mathbf{3{,}20\ m/s^2}$$ (plano abajo).
+      <i>Observa</i> que la masa se cancela: $a$ no depende de $m$. Es positiva, así que el bloque efectivamente desliza hacia abajo (si saliera negativa significaría que la fricción gana y no se mueve).</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 380 284" width="100%" role="img" aria-label="Diagrama de cuerpo libre del bloque en el plano inclinado: peso vertical, normal perpendicular al plano, fricción cinética plano arriba y componentes del peso">
+  <defs><marker id="map1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 113.5 90.0 L 330 215 L 113.5 215 Z" fill="var(--mut)" fill-opacity="0.12" stroke="none"/>
+  <path d="M 113.5 90.0 L 330 215 L 93.5 215" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <circle cx="183.4" cy="118.8" r="10" fill="var(--fg)" fill-opacity="0.25" stroke="var(--fg)" stroke-width="1.5"/>
+  <line x1="183.4" y1="118.8" x2="217.4" y2="60.0" stroke="var(--acc)" stroke-width="3" fill="none" marker-end="url(#map1)"/>
+  <line x1="183.4" y1="118.8" x2="171.7" y2="112.0" stroke="var(--A)" stroke-width="3" fill="none" marker-end="url(#mbp1)"/>
+  <line x1="183.4" y1="118.8" x2="183.4" y2="197.2" stroke="var(--fg)" stroke-width="3" fill="none" marker-end="url(#mfp1)"/>
+  <line x1="183.4" y1="118.8" x2="217.4" y2="138.4" stroke="var(--X)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mgp1)"/>
+  <line x1="183.4" y1="118.8" x2="149.5" y2="177.6" stroke="var(--E)" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#mpp1)"/>
+  <path d="M 297.1 196.0 A 38 38 0 0 0 292.0 215.0" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <text x="266" y="209" class="sm bd">θ = 30°</text>
+  <text x="223.4" y="58.0" class="sm bd" style="fill:var(--acc)">N = 17,0 N</text>
+  <text x="165.7" y="104.0" class="sm bd" text-anchor="end" style="fill:var(--A)">f<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = 3,39 N</tspan></text>
+  <text x="191.4" y="185.2" class="sm bd" style="fill:var(--fg)">mg = 19,6 N</text>
+  <text x="223.4" y="142.4" class="sm" style="fill:var(--X)">mg sen θ = 9,80 N</text>
+  <text x="145.5" y="191.6" class="sm" text-anchor="end" style="fill:var(--E)">mg cos θ = 17,0 N</text>
+  <text x="8" y="16" class="sm">Eje x ↘ plano abajo (sentido del movimiento)</text>
+  <text x="8" y="32" class="sm">Eje y ↗ perpendicular al plano</text>
+  <text x="8" y="276" class="sm">4 px/N · trazos: componentes del peso</text>
+</svg>
+<figcaption>Diagrama de cuerpo libre del bloque mientras desciende (a escala). Perpendicular al plano, N equilibra a mg cos θ; a lo largo del plano queda mg sen θ − f<sub>k</sub>, que es lo que acelera al bloque. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 2">P</span></figcaption>
+</figure>
+
+  <p><b>Apartado 2 · Rapidez en el borde de la mesa</b></p>
+  <ol class="steps" start="6" style="counter-reset:s 5">
+    <li><b>Longitud recorrida sobre el plano.</b> La altura vertical es $h$ y el recorrido sigue la hipotenusa: $\sin\theta=h/s\ \Rightarrow\ s=\dfrac{h}{\sin\theta}=\dfrac{0{,}500}{0{,}500}=1{,}00$ m. <i>Error típico: usar $s=h$.</i></li>
+    <li><b>Cinemática de aceleración constante</b> (parte del reposo, $v_0=0$): $v^2=2a\,s=2\cdot3{,}2026\cdot1{,}00=6{,}405\ \text{m}^2/\text{s}^2$, luego
+      $$v=\mathbf{2{,}53\ m/s}\quad(\text{dirigida a lo largo del plano, }30^\circ\text{ por debajo de la horizontal}).$$</li>
+    <li><b>Comprobación con energía</b> ($\tfrac12mv^2=mgh-f_k s$): $\ \tfrac12(2{,}00)v^2=9{,}80-3{,}39\cdot1{,}00=6{,}405$ J $\Rightarrow v^2=6{,}405$ ✓ (mismo resultado por otro camino).</li>
+  </ol>
+  <p><b>Apartado 3 · Alcance horizontal</b></p>
+  <ol class="steps" start="9" style="counter-reset:s 8">
+    <li><b>Componentes de la velocidad inicial del vuelo.</b> Como la velocidad apunta $30^\circ$ bajo la horizontal: $v_{0x}=v\cos30^\circ=2{,}53\cdot0{,}866=2{,}19$ m/s y $v_{0y}=v\sin30^\circ=2{,}53\cdot0{,}500=1{,}27$ m/s (hacia abajo).</li>
+    <li><b>Tiempo de vuelo desde la vertical.</b> El bloque tiene que bajar $H=2{,}00$ m (la altura de la mesa; los 0,5 m del plano ya los ha recorrido):
+      $$H=v_{0y}t_2+\tfrac12 g t_2^2\ \Rightarrow\ 4{,}90\,t_2^2+1{,}265\,t_2-2{,}00=0$$$$t_2=\dfrac{-1{,}265+\sqrt{1{,}265^2+4(4{,}90)(2{,}00)}}{2(4{,}90)}=0{,}5227\ \text{s}.$$
+      Es una ecuación de segundo grado; la raíz negativa no tiene sentido físico (tiempo antes del borde).</li>
+    <li><b>Alcance.</b> En horizontal no hay aceleración: $R=v_{0x}t_2=2{,}192\cdot0{,}5227=\mathbf{1{,}15\ m}$ medidos desde el borde (la base de la mesa está justo debajo del borde).</li>
+  </ol>
+  <p><b>Apartado 4 · Tiempo total</b></p>
+  <ol class="steps" start="12" style="counter-reset:s 11">
+    <li><b>Tiempo en el plano</b> (fase 1, parte del reposo): $v=a\,t_1\Rightarrow t_1=\dfrac{v}{a}=\dfrac{2{,}531}{3{,}2026}=0{,}790$ s. Comprobación: $s=\tfrac12 a t_1^2=\tfrac12(3{,}2026)(0{,}790)^2=1{,}00$ m ✓.</li>
+    <li><b>Suma de fases.</b> $$t=t_1+t_2=0{,}790+0{,}523=\mathbf{1{,}31\ s}.$$</li>
+    <li><b>Comprueba.</b> Unidades: $a$ en m/s², $v$ en m/s, $t$ en s, $R$ en m ✓. Orden de magnitud: caer 2 m en caída libre tardaría $\sqrt{2\cdot2/9{,}8}=0{,}64$ s; aquí tarda menos (0,52 s) porque el bloque sale ya con velocidad hacia abajo ✓. Rapidez de impacto: $v_y=1{,}265+9{,}80\cdot0{,}5227=6{,}39$ m/s, $v_{imp}=\sqrt{2{,}19^2+6{,}39^2}=6{,}75$ m/s; por energía: $v_{imp}^2=v^2+2gH=6{,}405+39{,}2=45{,}6\Rightarrow6{,}75$ m/s ✓.</li>
+  </ol>
+  <figure class="fig">
+<svg class="fig" viewBox="0 0 380 274" width="100%" role="img" aria-label="Trayectoria completa: el bloque baja por el plano inclinado, sale del borde de la mesa a 30 grados bajo la horizontal y cae al suelo a 1,15 metros de la base">
+  <defs><marker id="map2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbp2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmp2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker><marker id="mgp2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--X)"/></marker><marker id="mpp2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--E)"/></marker><marker id="mfp2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--fg)"/></marker></defs>
+  <path d="M 40 80.0 L 170 80.0 L 170 240 L 20 240 Z" fill="var(--mut)" fill-opacity="0.12" stroke="none"/>
+  <path d="M 40 80.0 L 170 80.0 L 170 240" fill="none" stroke="var(--mut)" stroke-width="2"/>
+  <line x1="10" y1="240" x2="370" y2="240" stroke="var(--mut)" stroke-width="2"/>
+  <path d="M 100.7 40.0 L 170 80.0 L 100.7 80.0 Z" fill="var(--A)" fill-opacity="0.2" stroke="none"/>
+  <path d="M 100.7 40.0 L 170 80.0" fill="none" stroke="var(--A)" stroke-width="2.5"/>
+  <circle cx="106.7" cy="35.0" r="5" fill="var(--fg)" fill-opacity="0.3" stroke="var(--fg)" stroke-width="1.5"/>
+  <path d="M 170.0 80.0 L 172.3 81.4 L 174.6 82.9 L 176.9 84.6 L 179.2 86.4 L 181.5 88.3 L 183.7 90.3 L 186.0 92.5 L 188.3 94.9 L 190.6 97.3 L 192.9 99.9 L 195.2 102.6 L 197.5 105.5 L 199.8 108.5 L 202.1 111.6 L 204.4 114.9 L 206.7 118.3 L 208.9 121.8 L 211.2 125.5 L 213.5 129.3 L 215.8 133.2 L 218.1 137.3 L 220.4 141.5 L 222.7 145.8 L 225.0 150.3 L 227.3 154.9 L 229.6 159.6 L 231.9 164.5 L 234.2 169.5 L 236.4 174.6 L 238.7 179.9 L 241.0 185.3 L 243.3 190.9 L 245.6 196.5 L 247.9 202.3 L 250.2 208.3 L 252.5 214.4 L 254.8 220.6 L 257.1 226.9 L 259.4 233.4 L 261.6 240.0" fill="none" stroke="var(--acc)" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <line x1="170" y1="80.0" x2="211.6" y2="104.0" stroke="var(--X)" stroke-width="2.5" fill="none" marker-end="url(#mgp2)"/>
+  <line x1="170" y1="80.0" x2="240" y2="80.0" stroke="var(--mut)" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <path d="M 196.0 95.0 A 30 30 0 0 0 200.0 80.0" fill="none" stroke="var(--mut)" stroke-width="1.3"/>
+  <line x1="248.9" y1="203.5" x2="261.6" y2="240.0" stroke="var(--E)" stroke-width="2.5" fill="none" marker-end="url(#mpp2)"/>
+  <circle cx="261.6" cy="240.0" r="3.5" fill="var(--fg)"/>
+  <line x1="243.8" y1="254" x2="261.6" y2="254" stroke="var(--mut)" stroke-width="1.4" fill="none" marker-end="url(#mmp2)"/>
+  <line x1="187.8" y1="254" x2="170" y2="254" stroke="var(--mut)" stroke-width="1.4" fill="none" marker-end="url(#mmp2)"/>
+  <text x="215.8" y="267" class="sm bd" text-anchor="middle">R = 1,15 m</text>
+  <line x1="52" y1="146.0" x2="52" y2="82.0" stroke="var(--mut)" stroke-width="1.4" fill="none" marker-end="url(#mmp2)"/>
+  <line x1="52" y1="168.0" x2="52" y2="238" stroke="var(--mut)" stroke-width="1.4" fill="none" marker-end="url(#mmp2)"/>
+  <text x="60" y="164.0" class="sm bd">H = 2,00 m</text>
+  <line x1="94.7" y1="40.0" x2="94.7" y2="80.0" stroke="var(--mut)" stroke-width="1.4"/>
+  <text x="88.7" y="64.0" class="sm bd" text-anchor="end">h = 0,50 m</text>
+  <text x="224" y="102.0" class="sm bd" style="fill:var(--X)">v = 2,53 m/s</text>
+  <text x="206" y="76.0" class="sm" style="fill:var(--mut)">30°</text>
+  <text x="269.6" y="194.0" class="sm bd" style="fill:var(--E)">impacto</text>
+  <text x="269.6" y="208.0" class="sm bd" style="fill:var(--E)">6,75 m/s</text>
+  <text x="250" y="26" class="sm bd">Plano: 0,790 s</text>
+  <text x="250" y="42" class="sm bd">Vuelo: 0,523 s</text>
+  <text x="250" y="58" class="sm bd" style="fill:var(--acc)">Total: 1,313 s</text>
+</svg>
+<figcaption>Recorrido completo (a escala 80 px por metro; las flechas de velocidad no): baja por el plano de 1,00 m de largo, sale del borde con v dirigida 30° por debajo de la horizontal y describe una parábola hasta el suelo. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 2">P</span></figcaption>
+</figure>
+
+  <p><b>Resultados:</b> 1) $a=3{,}20\ \text{m/s}^2$ (plano abajo); 2) $v=2{,}53$ m/s; 3) $R=1{,}15$ m; 4) $t=1{,}31$ s.</p>
+  <div class="recipe"><b>Receta:</b> (1) separa el problema en <i>fases</i> y localiza lo que las une (aquí, la velocidad en el borde); (2) en el plano: DCL, ejes girados (uno a lo largo del plano, otro perpendicular), $n=mg\cos\theta$, $f_k=\mu_kn$ y $a=g(\sin\theta-\mu_k\cos\theta)$; (3) $v^2=2as$ con $s=h/\sin\theta$; (4) en el vuelo, descompón $v$ según el ángulo del plano y trata cada eje por separado, usando el tiempo como puente; (5) tiempo total = suma de los tiempos de cada fase; (6) comprueba con energía.</div>
+  <div class="recipe"><b>Errores típicos:</b> suponer que el bloque sale <i>horizontalmente</i> (sale 30° hacia abajo, por eso $v_{0y}\neq0$); usar $n=mg$ en vez de $mg\cos\theta$; tomar $s=h$ en vez de $h/\sin\theta$; olvidar que la fricción apunta plano arriba; en el apartado 4, contar solo el tiempo de vuelo o sumar la altura del plano ($H+h$) a la caída; dar el alcance medido desde el pie del plano en lugar de desde el borde.</div>
+  <span class="src" data-l="P" data-ref="Resolución propia; valores verificados con sympy">P</span>
+</details>
+
 <h2 id="chuleta"><span class="n">★</span>Chuleta y errores frecuentes</h2>
 <div class="box thm"><span class="h">Fórmulas clave</span>
   <ul>
     <li>Geometría: $\cos\varphi=\dfrac{d/2}{L}$, $\ r=L\sin\varphi$.</li>
     <li>Vertical: $(T_1-T_2)\cos\varphi=mg$. Horizontal: $(T_1+T_2)\sin\varphi=m\omega^2r\ \Rightarrow\ T_1+T_2=m\omega^2L$.</li>
     <li>$a_{rad}=\omega^2r=v^2/r$; $\ \text{rpm}=\omega\cdot60/2\pi$.</li>
+    <li>Plano inclinado rugoso: $n=mg\cos\theta$, $\ f_k=\mu_kn$, $\ a=g(\sin\theta-\mu_k\cos\theta)$, $\ v^2=2a\,s$ con $s=h/\sin\theta$.</li>
+    <li>Salida del plano a $\theta$ bajo la horizontal: $v_{0x}=v\cos\theta$, $v_{0y}=v\sin\theta$ (abajo); $\ H=v_{0y}t+\tfrac12gt^2$, $\ R=v_{0x}t$; $\ t_{total}=v/a+t_{vuelo}$.</li>
   </ul>
-  <span class="src" data-l="U" data-ref="U §5.4, pp. 150-151; §3.4, pp. 83-84">U p.150</span></div>
+  <span class="src" data-l="U" data-ref="U §5.4, pp. 150-151; §3.4, pp. 83-84; §5.3 p. 143-147; §3.3 p. 76">U p.150</span></div>
 <ul class="checklist">
   <li>Sé sacar el ángulo y el radio de giro de la geometría de dos cuerdas.</li>
   <li>Sé dibujar el DCL de un cuerpo con dos cuerdas y orientar cada tensión hacia su punto de sujeción.</li>
   <li>Sé escribir $\sum F_y=0$ y $\sum F_x=m\omega^2r$ y resolverlas por orden.</li>
   <li>Sé pasar de rad/s a rpm y comprobar que las tensiones salen positivas.</li>
+  <li>Sé plantear un plano inclinado con fricción: ejes girados, $n=mg\cos\theta$ y $a=g(\sin\theta-\mu_k\cos\theta)$.</li>
+  <li>Sé enlazar dos fases (plano + proyectil) usando la velocidad en el borde, y sumar los tiempos.</li>
 </ul>
 
 <h2 id="fuentes"><span class="n">★</span>Fuentes de esta página</h2>
