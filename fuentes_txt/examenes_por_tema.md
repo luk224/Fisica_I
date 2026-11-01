@@ -38,7 +38,7 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 - **[Febrero 2020, 2ª semana]** (archivo: E689010160-20F2.pdf) — P-1: bloque que desliza por un carril con fricción en un tramo y comprime un resorte al final; hallar el coeficiente de rozamiento dinámico.
 - **[Febrero 2022, 1ª semana]** (archivo: E689010160-22F1.pdf) — P-3 Teoría Opción 3.1: "Fuerzas conservativas y no conservativas" + cuestiones sobre energía en central hidroeléctrica y trabajo de gravedad/fricción en rampa.
 - **[Febrero 2022, 2ª semana]** (archivo: E689010160-22F2.pdf) — P-1: bloque contra resorte comprimido en la base de una rampa con fricción; hallar la energía potencial almacenada inicialmente en el resorte.
-- **[Febrero 2024, 2ª semana]** (archivo: E689010160-24F2.pdf) — P-3 Teoría Opción 3.1: "Fuerzas conservativas y no conservativas" + cuestiones sobre energía potencial elástica de referencia y energía potencial entre partículas.
+- **[Febrero 2024, 2ª semana]** (archivo: E689010160-24F2.pdf) — P-3 Teoría Opción A: "Fuerzas conservativas y no conservativas" + cuestiones sobre energía potencial elástica de referencia y energía potencial entre partículas.
 - **[Septiembre 2024]** (sólo en recopilatorios EXAMENESFISICA1.pdf / FISICA_EXAMENS...25-18.pdf) — P-1: bloque contra resorte comprimido en la base de una rampa de 25° con fricción; hallar energía potencial inicial del resorte. (idéntico en planteamiento al de Febrero 2022 2ª semana, con otros valores)
 - **[Septiembre 2022]** (sólo en recopilatorios) — P-4 Teoría Opción B: «Energía potencial gravitacional» (relación entre mgh y la energía potencial gravitatoria; trabajo entre dos puntos al nivel del mar).
 - **[Septiembre 2023]** (sólo en recopilatorios) — P-2: partícula que desliza por un cuarto de círculo de R = 2,1 m y recorre un tramo horizontal de 5 m con fricción; hallar μk y el trabajo de la fricción.
@@ -78,9 +78,11 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 
 ## Tema 13 — Gravitación
 - **[Febrero 2022, 1ª semana]** (archivo: E689010160-22F1.pdf) — P-3 Teoría Opción 3.2: "Energía potencial gravitatoria" + cuestiones sobre alcance de la gravedad terrestre y energía mecánica de un proyectil lanzado verticalmente.
-- **[Febrero 2023, 2ª semana]** (archivo: E689010160-23F2.pdf) — P-3 Teoría Opción B: "Ley de Newton de la gravitación" + cuestiones sobre trabajo neto en órbita circular/elíptica.
+- **[Febrero 2023, 2ª semana]** (archivo: E689010160-23F2.pdf) — P-4 Teoría Opción B: "Ley de Newton de la gravitación" + cuestiones sobre trabajo neto en órbita circular/elíptica.
 - **[Febrero 2024, 1ª semana]** (archivo: E689010160-24F1.pdf) — P-2: gravedad en polo y ecuador de Titán y de Marte a partir de masa, radio y periodo de rotación; comparar diferencias entre polo y ecuador.
-- **[Febrero 2024, 1ª semana]** (archivo: E689010160-24F1.pdf) — P-3 Teoría Opción B: "Ley de Newton de la gravitación" + cuestiones sobre atracción Tierra-Sol según hora del día y gravedad superficial en función del radio a igual densidad.
+- **[Febrero 2024, 1ª semana]** (archivo: E689010160-24F1.pdf) — P-4 Teoría Opción B: "Ley de Newton de la gravitación" + cuestiones sobre atracción Tierra-Sol según hora del día y gravedad superficial en función del radio a igual densidad.
+- **[Septiembre 2022]** (sólo en recopilatorios: `FISICA_EXAMENS_ULTIMOS AÑOS _25-18.pdf` p. 21, `EXAMENES FISICA 1.pdf` p. 5; referencia cruzada, también indexado en el Tema 7) — P-4 Teoría Opción B: «Energía potencial gravitacional» + cuestiones (a) relación entre $U=mgh$ y la expresión general de la energía potencial gravitatoria, (b) trabajo resultante para ir de la playa de la Malvarrosa (Valencia) a la Barceloneta (Barcelona).
+- **[Septiembre 2023]** (sólo en recopilatorios: `FISICA_EXAMENS_ULTIMOS AÑOS _25-18.pdf` p. 16, `EXAMENES FISICA 1.pdf` p. 11) — P-4 Teoría Opción B: «Las leyes de Kepler y el movimiento de los planetas» + cuestiones (a) ¿qué viaje requiere más combustible, de la Tierra a la Luna o de la Luna a la Tierra?, (b) la Tierra está más cerca del Sol en noviembre que en mayo: ¿en qué mes es mayor su rapidez orbital?
 
 ## Tema 14 — Movimiento periódico
 - **[Febrero 2018, 1ª semana]** (archivo: E689010160-18F1.pdf) — P-3 Teoría Opción 3.2: "Energía del movimiento armónico simple."
@@ -98,8 +100,8 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 
 ## Tema 17 — Temperatura y calor
 - **[Febrero 2022, 2ª semana]** (archivo: E689010160-22F2.pdf) — P-3 Teoría Opción 3.2: "Mecanismos de transferencia de calor" + cuestiones sobre humedad/calor percibido y bloques de metal/madera a igual temperatura.
-- **[Febrero 2024, 2ª semana]** (archivo: E689010160-24F2.pdf) — P-3 Teoría Opción B: "Mecanismos de transferencia de calor" + cuestiones sobre tuberías congeladas/termómetro de mercurio y papel de aluminio en el horno.
-- **[Febrero 2025, 2ª semana]** (archivo: E689010160-25F2.pdf; también en ambos recopilatorios) — P-3 Teoría Opción B: "Mecanismos de transferencia de calor" + cuestiones sobre clavo en patata al horno y mantener temperatura constante en casa.
+- **[Febrero 2024, 2ª semana]** (archivo: E689010160-24F2.pdf) — P-4 Teoría Opción B: "Mecanismos de transferencia de calor" + cuestiones sobre tuberías congeladas/termómetro de mercurio y papel de aluminio en el horno.
+- **[Febrero 2025, 2ª semana]** (archivo: E689010160-25F2.pdf; también en ambos recopilatorios) — P-4 Teoría Opción B: "Mecanismos de transferencia de calor" + cuestiones sobre clavo en patata al horno y mantener temperatura constante en casa.
 
 ## Tema 18 — Propiedades térmicas de la materia
 (Ningún ejercicio de examen encontrado como tema dedicado; los cálculos de calor específico/calorimetría vistos aparecen embebidos en problemas de ciclos, clasificados bajo Tema 19.)
@@ -121,7 +123,7 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 - **[Febrero 2018, 2ª semana]** (archivo: E689010160-18F2.pdf) — P-3 Teoría Opción 3.2: "Procesos reversibles e irreversibles. Ciclo de Carnot."
 - **[Febrero 2020, 2ª semana]** (archivo: E689010160-20F2.pdf) — P-2: sistema de frío con ciclo de Carnot, gas ideal monoatómico; hallar eficiencia, calor por etapa, variación de entropía y presión/volumen tras compresión adiabática.
 - **[Febrero 2025, 1ª semana]** (archivo: E689010160-25F1.pdf) — P-2: ciclo de refrigeración con gas ideal diatómico (isotermo-isócoro-isóbaro); dibujar el ciclo y calcular el coeficiente de rendimiento del refrigerador. (secundario: Tema 19)
-- **[Septiembre 2024]** (sólo en recopilatorios) — P-3 Teoría Opción B: "La segunda ley de la termodinámica" + cuestiones sobre equilibrio térmico Tierra-Sol/entropía por radiación, y sobre si el flujo de calor de frío a caliente viola la primera o la segunda ley.
+- **[Septiembre 2024]** (sólo en recopilatorios) — P-4 Teoría Opción B: "La segunda ley de la termodinámica" + cuestiones sobre equilibrio térmico Tierra-Sol/entropía por radiación, y sobre si el flujo de calor de frío a caliente viola la primera o la segunda ley.
 
 ## Notas sobre las fuentes
 
@@ -148,3 +150,6 @@ Las notas anteriores sobre los dos recopilatorios se basaron **solo en su capa d
 | Septiembre 2023 «Nacional-UE Original» | págs. 15-16 | págs. 10-11 |
 
 Resto de páginas escaneadas de los recopilatorios: repiten exámenes de febrero 2018-2024 ya indexados. Referencias ya usadas en el Tema 6: «Examen Septiembre 2022 P-3 (a)», «Examen Septiembre 2023 P-2». Con estas convocatorias, la afirmación «no hay ningún examen de septiembre salvo Septiembre 2024» deja de ser cierta.
+
+## Corrección (detectada al preparar el Tema 13): numeración de la teoría «Opción B»
+En los exámenes con formato de 4 preguntas (Septiembre 2022, 2023 y 2024; Febrero 2023, 2024 y 2025) la teoría Opción A es **P-3** y la Opción B es **P-4** (comprobado en las imágenes de 23F2, 24F1, 24F2 y en el texto de 25F1, 25F2 y Septiembre 2024). Se han corregido las entradas que llamaban «P-3» a una Opción B (Temas 13, 17 y 20) y la de Febrero 2024 2ª semana que llamaba «Opción 3.1» a la Opción A (Tema 7). Los exámenes de 2018-2020 y Febrero 2022 (formato de 3 preguntas; comprobado en la imagen de 22F1) sí tienen la teoría en la pregunta 3 con opciones 3.1/3.2. Añadidas al Tema 13 las teorías de Septiembre 2022 P-4 (referencia cruzada) y Septiembre 2023 P-4 (Kepler), que no estaban catalogadas.
