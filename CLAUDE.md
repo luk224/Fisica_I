@@ -47,7 +47,7 @@ La guía docente (`fuentes_txt/guia.txt`) da una lista plana de **20 temas**, si
 | | 15 | Ondas mecánicas | p. 470 |
 | | 16 | Sonido y oído | p. 506 |
 | **Termodinámica** | 17 | Temperatura y calor | p. 546 |
-| | 18 | Propiedades térmicas de la materia | p. 586 |
+| | 18 | Propiedades térmicas de la materia | p. 584 |
 | | 19 | Primera ley de la termodinámica | p. 620 |
 | | 20 | Segunda ley de la termodinámica | p. 648 |
 
