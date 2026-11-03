@@ -117,6 +117,8 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 - **[Febrero 2023, 2ª semana]** (archivo: E689010160-23F2.pdf) — P-2: máquina térmica con ciclo en diagrama pV (proceso BC isotérmico), gas monoatómico; hallar calor, trabajo y eficiencia, comparándola con la máxima eficiencia posible. (secundario: Tema 20)
 - **[Febrero 2024, 2ª semana]** (archivo: E689010160-24F2.pdf) — P-2: sistema termodinámico que va del estado a al c por dos trayectorias (abc y adc), con energías internas y trabajos dados; calcular el calor en cada uno de los cuatro procesos.
 - **[Febrero 2025, 2ª semana]** (archivo: E689010160-25F2.pdf; también en ambos recopilatorios) — P-2: ciclo termodinámico isóbaro-isócoro-recta, gas ideal monoatómico; calcular calor, trabajo y ΔU en cada proceso y en el ciclo completo, y la eficiencia. (secundario: Tema 20)
+- **[Septiembre 2019, Reserva]** (sólo en FISICA_EXAMENS_ULTIMOS AÑOS _25-18.pdf, p. 27) — P-2: expansión adiabática reversible de 3 L de gas ideal monoatómico a 1 atm hasta triplicar el volumen; hallar el trabajo.
+- **[Septiembre 2019, Original]** (sólo en FISICA_EXAMENS_ULTIMOS AÑOS _25-18.pdf, p. 26) — P-2: cilindro aislado con pistón conductor y dos gases; hallar presión, temperatura finales y ΔS. (secundario: Tema 20)
 - **[Septiembre 2024]** (sólo en recopilatorios) — P-2: ciclo termodinámico isócoro-isotermo-isóbaro con helio gaseoso; hallar representación pV, calor de entrada/salida, trabajo y comparación de eficiencia con la máquina de Carnot ideal entre esas temperaturas. (secundario: Tema 20)
 
 ## Tema 20 — Segunda ley de la termodinámica

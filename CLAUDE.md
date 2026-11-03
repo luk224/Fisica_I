@@ -48,8 +48,8 @@ La guía docente (`fuentes_txt/guia.txt`) da una lista plana de **20 temas**, si
 | | 16 | Sonido y oído | p. 506 |
 | **Termodinámica** | 17 | Temperatura y calor | p. 546 |
 | | 18 | Propiedades térmicas de la materia | p. 584 |
-| | 19 | Primera ley de la termodinámica | p. 620 |
-| | 20 | Segunda ley de la termodinámica | p. 648 |
+| | 19 | Primera ley de la termodinámica | p. 618 |
+| | 20 | Segunda ley de la termodinámica | p. 647 |
 
 Las páginas de inicio son un ancla aproximada (primer párrafo detectado del capítulo, puede estar 1-2 páginas dentro de la portadilla del capítulo): al redactar, confirmar el rango exacto de páginas de cada tema en `fuentes_txt/sears.txt` antes de citarlo.
 
