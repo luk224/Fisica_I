@@ -127,6 +127,7 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 - **[Febrero 2020, 2ª semana]** (archivo: E689010160-20F2.pdf) — P-2: sistema de frío con ciclo de Carnot, gas ideal monoatómico; hallar eficiencia, calor por etapa, variación de entropía y presión/volumen tras compresión adiabática.
 - **[Febrero 2025, 1ª semana]** (archivo: E689010160-25F1.pdf) — P-2: ciclo de refrigeración con gas ideal diatómico (isotermo-isócoro-isóbaro); dibujar el ciclo y calcular el coeficiente de rendimiento del refrigerador. (secundario: Tema 19)
 - **[Septiembre 2024]** (sólo en recopilatorios) — P-4 Teoría Opción B: "La segunda ley de la termodinámica" + cuestiones sobre equilibrio térmico Tierra-Sol/entropía por radiación, y sobre si el flujo de calor de frío a caliente viola la primera o la segunda ley.
+- **[Septiembre 2019, Original]** (sólo en FISICA_EXAMENS_ULTIMOS AÑOS _25-18.pdf, p. 26) — P-3 Teoría Opción 3.2: "Irreversibilidad de los procesos térmicos. Procesos reversibles e irreversibles."
 
 ## Notas sobre las fuentes
 
