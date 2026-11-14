@@ -1,0 +1,13 @@
+<p class="enun">Los planetas no son uniformes en su interior: normalmente son más densos en el centro y su densidad disminuye hacia la superficie. Modela un planeta esféricamente simétrico, del mismo radio que la Tierra, cuya densidad disminuye linealmente con la distancia al centro, de $15{,}0\times10^3$ kg/m³ en el centro a $2{,}0\times10^3$ kg/m³ en la superficie. Determina la aceleración debida a la gravedad en la superficie de ese planeta.</p>
+  <ol class="steps">
+    <li><b>Idea.</b> Con simetría esférica, en la superficie el planeta atrae como una partícula con toda su masa en el centro (13.2) ⇒ $g=GM/R^2$. El problema se reduce a calcular $M$ cuando la densidad no es constante.</li>
+    <li><b>Densidad:</b> $\rho(r)=\rho_0-br$, con $b=\dfrac{\rho_0-\rho_s}{R}$ (vale $\rho_0$ en $r=0$ y $\rho_s$ en $r=R$).</li>
+    <li><b>Masa por capas.</b> Una capa esférica de radio $r$ y espesor $dr$ tiene volumen $dV=4\pi r^2dr$ y masa $dm=\rho(r)\,4\pi r^2dr$. Integrando: $M=\displaystyle\int_0^R(\rho_0-br)\,4\pi r^2dr=\tfrac43\pi\rho_0R^3-\pi bR^4=\pi R^3\left(\dfrac{\rho_0}{3}+\rho_s\right)$.</li>
+    <li><b>Números:</b> $M=\pi(6{,}37\times10^6)^3(5000+2000)=\mathbf{5{,}68\times10^{24}\ kg}$.</li>
+    <li><b>Gravedad:</b> $g=\dfrac{GM}{R^2}=\pi GR\left(\dfrac{\rho_0}{3}+\rho_s\right)=\mathbf{9{,}34\ m/s^2}$.</li>
+    <li><b>Comprobaciones.</b> Densidad media $M/(\tfrac43\pi R^3)=\tfrac14\rho_0+\tfrac34\rho_s=5250$ kg/m³, parecida a la terrestre (5500): por eso $g$ sale parecida a 9,8. <b>No</b> es la media aritmética $(\rho_0+\rho_s)/2=8500$, porque hay mucho más volumen cerca de la superficie que cerca del centro.</li>
+    <li><b>Extra:</b> dentro del planeta $g(r)=\dfrac{GM(r)}{r^2}=4\pi G\left(\dfrac{\rho_0r}{3}-\dfrac{br^2}{4}\right)$, con un máximo en $r=\dfrac{2\rho_0}{3b}=\dfrac{10}{13}R$ de $g_{máx}=10{,}27$ m/s² (mayor que en la superficie): con un núcleo denso, la gravedad <b>aumenta</b> al bajar un trecho. Compruébalo en el interactivo de §6.</li>
+  </ol>
+  {{fig:densidad-que-decrece-linealmente-con-el-radio-y-}}
+  <div class="recipe"><b>Receta:</b> densidad variable con $r$: $M=\int_0^R\rho(r)\,4\pi r^2dr$ y después $g=GM/R^2$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Tomar la densidad media como $(\rho_0+\rho_s)/2$ (da $g=15{,}1$ m/s²), o integrar $\rho\,dr$ sin el factor $4\pi r^2$.</p></div>

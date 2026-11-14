@@ -1,0 +1,11 @@
+<p class="enun">Para «pesar» a los astronautas en el espacio se une una silla de 42,5 kg a un resorte y se deja oscilar. Vacía, tarda 1,30 s en una vibración completa; con un astronauta sentado (sin tocar el suelo) tarda 2,54 s. ¿Qué masa tiene el astronauta?</p>
+  <ol class="steps">
+    <li><b>Por qué funciona en ingravidez.</b> Una balanza mide peso, que en órbita «desaparece» (ingravidez aparente). El periodo $T=2\pi\sqrt{m/k}$ (14.12) <b>no depende de $g$</b>: depende de la masa (la inercia). Así se mide masa sin gravedad.</li>
+    <li><b>Calibrar el resorte con la silla vacía.</b> $k=\dfrac{4\pi^2m}{T^2}=\dfrac{4\pi^2(42{,}5)}{(1{,}30)^2}=993$ N/m.</li>
+    <li><b>Con el astronauta.</b> $m_{tot}=\dfrac{T^2k}{4\pi^2}=\dfrac{(2{,}54)^2(993)}{4\pi^2}=162$ kg.</li>
+    <li><b>Resta la silla.</b> $m_{astr}=162-42{,}5=$ <b>120 kg</b> (con más decimales, 119,7 kg: el astronauta lleva traje).</li>
+    <li><b>Atajo sin calcular $k$.</b> Para el mismo resorte $m\propto T^2$: $m_{astr}=42{,}5\left[\left(\dfrac{2{,}54}{1{,}30}\right)^2-1\right]=119{,}7$ kg.</li>
+  </ol>
+  {{fig:dos-oscilaciones-del-mismo-resorte-con-periodos-}}
+  <div class="recipe"><b>Receta:</b> mismo resorte, dos masas ⇒ $\dfrac{m_2}{m_1}=\left(\dfrac{T_2}{T_1}\right)^2$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar $T$ en lugar de $T^2$ (proporcionalidad lineal) o olvidar restar la masa de la silla.</p></div>

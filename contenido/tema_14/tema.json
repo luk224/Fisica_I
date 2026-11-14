@@ -1,0 +1,1577 @@
+{
+ "num": 14,
+ "kick": "Bloque Oscilaciones y ondas · Tema 14",
+ "titulo": "Movimiento periódico",
+ "descripcion": "Un columpio, la cuerda de una guitarra, un reloj de péndulo, el átomo de una molécula, la suspensión de tu coche: todos <b>repiten</b> su movimiento una y otra vez. Este tema te enseña a describirlo con tres números ($A$, $T$, $f$), a reconocer cuándo es un <b>movimiento armónico simple</b> (MAS) —el modelo más importante de toda la física— y a calcular su posición, velocidad, aceleración y energía en cualquier instante. Verás después el péndulo, qué pasa cuando hay rozamiento (oscilación amortiguada) y por qué empujar a un ritmo adecuado produce una oscilación enorme (resonancia).",
+ "chips": [
+  "Libro oficial: Sears-Zemansky, cap. 14 (pp. 434-466; resumen pp. 457-458; ejercicios y problemas pp. 459-466)",
+  "Ejercicios de examen real: 7 (1 problema + 6 de teoría)",
+  "Ejercicios: 16 del solucionario + ejemplos de U",
+  "2 ejemplos interactivos",
+  "⏱ ~7 h de estudio"
+ ],
+ "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
+ "titulo_pagina": "Física I · Tema 14 Movimiento periódico",
+ "archivo": "tema_14_movimiento_periodico.html",
+ "examenes_requeridos": [
+  "Examen Febrero 2022 (1ª semana) P-1",
+  "Examen Febrero 2018 (1ª semana) P-3 Teoría Opción 3.2",
+  "Examen Febrero 2019 (2ª semana) P-3 Teoría Opción 3.1",
+  "Examen Febrero 2020 (1ª semana) P-3 Teoría Opción 3.1",
+  "Examen Febrero 2020 (2ª semana) P-3 Teoría Opción 3.2",
+  "Examen Septiembre 2019 (Reserva) P-3 Teoría Opción 3.1",
+  "Examen Febrero 2025 (1ª semana) P-4 Teoría Opción B"
+ ],
+ "figuras": {
+  "grafica-de-la-posicion-x-frente-al-tiempo-para-u": {
+   "w": "340",
+   "h": "205",
+   "label": "Gráfica de la posición x frente al tiempo para un movimiento periódico: un ciclo dura T y la amplitud es A",
+   "pie": "Un movimiento periódico se repite: $T$ es el tiempo de un ciclo completo y $A$ el desplazamiento máximo respecto al equilibrio; la frecuencia es $f=1/T$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §14.1, p. 435",
+    "txt": "P"
+   }
+  },
+  "un-bloque-en-un-resorte-en-tres-posiciones-compr": {
+   "w": "340",
+   "h": "236",
+   "label": "Un bloque en un resorte en tres posiciones: comprimido, en equilibrio y estirado; la fuerza apunta siempre hacia el equilibrio",
+   "pie": "La fuerza de restitución $F_x=-kx$ apunta <b>siempre hacia el equilibrio</b> ($x=0$) y es proporcional al desplazamiento: es la condición del MAS.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §14.2, p. 435",
+    "txt": "P"
+   }
+  },
+  "graficas-de-x-v-x-y-a-x-en-funcion-del-tiempo-pa": {
+   "w": "340",
+   "h": "308",
+   "label": "Gráficas de x, v_x y a_x en función del tiempo para un MAS con fase cero; v_x se adelanta un cuarto de periodo a x y a_x es opuesta a x",
+   "pie": "MAS con $\\phi=0$: cuando $x$ es máxima, $v_x=0$ y $a_x$ es mínima; en $x=0$ la rapidez es máxima. $v_x$ va un cuarto de periodo por delante de $x$, y $a_x=-\\omega^2x$ va siempre opuesta a $x$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §14.2, ec. 14.13, 14.15 y 14.16, pp. 439-441",
+    "txt": "P"
+   }
+  },
+  "tres-cosenos-con-distinto-angulo-de-fase-0-2-y-2": {
+   "w": "340",
+   "h": "215",
+   "label": "Tres cosenos con distinto ángulo de fase: φ=0, φ=π/2 y φ=−π/2",
+   "pie": "El ángulo de fase $\\phi$ fija dónde está el oscilador en $t=0$: con $\\phi=0$ parte de $x=A$; con $\\phi=+\\pi/2$ parte de $x=0$ moviéndose hacia $-x$; con $\\phi=-\\pi/2$, de $x=0$ hacia $+x$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §14.2, fig. 14.12 y ec. 14.14, 14.17, pp. 440-441",
+    "txt": "P"
+   }
+  },
+  "grafica-de-sen-y-de-coinciden-para-angulos-peque": {
+   "w": "340",
+   "h": "205",
+   "label": "Gráfica de sen θ y de θ: coinciden para ángulos pequeños",
+   "pie": "Para $\\theta$ pequeño (zona verde, menos de 10°) $\\sin\\theta\\approx\\theta$: la fuerza de restitución del péndulo, $-mg\\sin\\theta$, se vuelve proporcional al desplazamiento y el movimiento es casi un MAS.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §14.5, fig. 14.22, p. 450",
+    "txt": "P"
+   }
+  },
+  "tres-tipos-de-amortiguamiento-subamortiguado-osc": {
+   "w": "340",
+   "h": "215",
+   "label": "Tres tipos de amortiguamiento: subamortiguado oscila, crítico y sobreamortiguado no oscilan",
+   "pie": "Mismo oscilador soltado desde el reposo en $x_0$, con $b=0{,}15$, $1$ y $2{,}5$ veces $b_{crít}=2\\sqrt{km}$. El crítico vuelve al equilibrio lo más rápido sin pasar de él.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §14.7, ec. 14.42-14.44, pp. 453-454",
+    "txt": "P"
+   }
+  },
+  "cilindros-que-ruedan-sin-resbalar-unidos-a-un-re": {
+   "w": "340",
+   "h": "216",
+   "label": "Cilindros que ruedan sin resbalar unidos a un resorte: fuerza del resorte en el eje y fricción estática en el contacto",
+   "pie": "Fuerzas horizontales (vista lateral, cilindro desplazado a la izquierda): el resorte tira del eje con $k|x|$ y la fricción estática, en el contacto, vale $k|x|/3$ en sentido contrario; solo ella hace girar los cilindros. Flechas no a escala.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema práctico de U, p. 458",
+    "txt": "P"
+   }
+  },
+  "niveles-del-resorte-en-el-ejercicio-x1-nuevo-equ": {
+   "w": "340",
+   "h": "212",
+   "label": "Niveles del resorte en el ejercicio X1: nuevo equilibrio, punto del choque y punto más bajo",
+   "pie": "Posiciones del examen (escala real de $x$: 1 cm = 10 px; el resorte no está a escala). El choque ocurre $x_0=mg/k=1{,}96$ cm <b>por encima</b> del nuevo equilibrio, con $V=2{,}09$ m/s hacia abajo; el punto más bajo está a $A=11{,}6$ cm.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Feb 2022 (1ª semana) P-1",
+    "txt": "P"
+   }
+  },
+  "grafica-de-x-t-tras-el-choque-11-6-cm-de-amplitu": {
+   "w": "340",
+   "h": "225",
+   "label": "Gráfica de x(t) tras el choque: 11,6 cm de amplitud y periodo 0,344 s, partiendo de x=1,96 cm",
+   "pie": "$x(t)=(0{,}116\\ \\text{m})\\cos[(18{,}26\\ \\text{rad/s})\\,t+1{,}40]$: parte de $x_0=+1{,}96$ cm con velocidad hacia abajo, baja hasta $-A$ y repite cada $T=0{,}344$ s.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Feb 2022 (1ª semana) P-1",
+    "txt": "P"
+   }
+  },
+  "un-resorte-entero-y-la-mitad-del-resorte-soporta": {
+   "w": "340",
+   "h": "254",
+   "label": "Un resorte entero y la mitad del resorte soportando el mismo peso: la mitad se estira la mitad y tiene constante doble",
+   "pie": "Mismo peso $F=mg$ colgado de un resorte entero (constante $k$) y de la mitad del resorte: cada trozo soporta la misma fuerza, la mitad se estira $\\Delta l/2$ y por tanto $k'=F/(\\Delta l/2)=2k$. No a escala.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Feb 2025 (1ª semana) P-4",
+    "txt": "P"
+   }
+  },
+  "un-reloj-de-pendulo-en-la-base-y-en-la-cima-de-u": {
+   "w": "340",
+   "h": "268",
+   "label": "Un reloj de péndulo en la base y en la cima de una montaña: arriba g es menor, el periodo mayor y el reloj se atrasa",
+   "pie": "En la cima la distancia al centro de la Tierra es mayor, $g$ es algo menor y $T=2\\pi\\sqrt{L/g}$ crece: el reloj da menos oscilaciones por hora real, se atrasa. Dibujo no a escala.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Feb 2025 (1ª semana) P-4",
+    "txt": "P"
+   }
+  },
+  "dos-oscilaciones-del-mismo-resorte-con-periodos-": {
+   "w": "340",
+   "h": "235",
+   "label": "Dos oscilaciones del mismo resorte con periodos 1,30 s (silla vacía) y 2,54 s (silla con astronauta)",
+   "pie": "Mismo resorte, dos masas: a más masa, periodo mayor ($T\\propto\\sqrt m$). Aquí $T^2$ crece en la proporción $(2{,}54/1{,}30)^2=3{,}82$ y por eso la masa total es $42{,}5\\times3{,}82=162$ kg.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.17 de U, p. 460",
+    "txt": "P"
+   }
+  },
+  "resorte-sin-carga-con-el-pescado-en-equilibrio-e": {
+   "w": "340",
+   "h": "187",
+   "label": "Resorte sin carga, con el pescado en equilibrio (estirado 18,0 cm) y soltado 5,00 cm más abajo",
+   "pie": "La oscilación se centra en la posición de equilibrio (estiramiento estático $\\Delta l=18{,}0$ cm); la amplitud es solo lo que se tira <b>desde el equilibrio</b>, $A=5{,}00$ cm. Estiramientos no a escala.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.38 de U, p. 461",
+    "txt": "P"
+   }
+  },
+  "automovil-modelado-como-un-bloque-sobre-un-resor": {
+   "w": "340",
+   "h": "194",
+   "label": "Automóvil modelado como un bloque sobre un resorte: vacío y con 250 kg de pasajeros, 4,00 cm más abajo",
+   "pie": "Modelo de un solo resorte: los 250 kg de pasajeros hunden el coche 4,00 cm, lo que da $k=6{,}125\\times10^4$ N/m. Con la masa total, $T=1{,}92$ s; vacío, $T=1{,}88$ s. Hundimiento no a escala.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.66 de U, p. 463",
+    "txt": "P"
+   }
+  },
+  "grafica-de-x-t-0-980-sen-12-2-t-parte-del-equili": {
+   "w": "340",
+   "h": "205",
+   "label": "Gráfica de x(t) = −0,980 sen(12,2 t): parte del equilibrio moviéndose hacia −x",
+   "pie": "En $t=0$ el bloque está en $x=0$ con $v_{0x}=-12{,}0$ m/s (pendiente negativa), de modo que $\\phi=+\\pi/2$ y $x=-0{,}980\\sin(12{,}2\\,t)$ m.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.13 de U, p. 460",
+    "txt": "P"
+   }
+  },
+  "grafica-de-x-t-0-383-cos-12-2-t-1-02-parte-de-0-": {
+   "w": "340",
+   "h": "205",
+   "label": "Gráfica de x(t) = 0,383 cos(12,2 t + 1,02): parte de 0,200 m con velocidad negativa",
+   "pie": "Parte de $x_0=+0{,}200$ m con $v_{0x}=-4{,}00$ m/s: la amplitud ($0{,}383$ m) es mayor que $x_0$ porque además de estar desplazado el bloque se mueve; $\\phi=1{,}02$ rad. Flecha de velocidad no a escala.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.14 de U, p. 460",
+    "txt": "P"
+   }
+  },
+  "grafica-de-x-t-5-0-sen-2-t-cm-con-el-punto-t-0-3": {
+   "w": "340",
+   "h": "205",
+   "label": "Gráfica de x(t) = −5,0 sen(2π t) cm con el punto t = 0,35 s señalado",
+   "pie": "Origen de tiempos en el paso por el equilibrio hacia abajo ($+x$ hacia arriba): $x=-A\\sin\\omega t$. A $t=0{,}35$ s el objeto está a $4{,}05$ cm por debajo del equilibrio y ya va hacia arriba.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.80 de U, p. 464",
+    "txt": "P"
+   }
+  },
+  "fuerzas-sobre-el-objeto-3-0-cm-por-debajo-del-eq": {
+   "w": "340",
+   "h": "226",
+   "label": "Fuerzas sobre el objeto 3,0 cm por debajo del equilibrio: el resorte tira hacia arriba con 44,5 N, el peso 39,7 N hacia abajo, resultante 4,8 N hacia arriba",
+   "pie": "El objeto está $0{,}030$ m bajo el equilibrio: la fuerza <b>del resorte</b> es $mg-kx=39{,}7+4{,}8=44{,}5$ N hacia arriba, y la <b>neta</b> es solo $-kx=4{,}8$ N hacia arriba. Flechas a escala (1 N ≈ 1,6 px; la neta, 7,7 px).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.80 de U, p. 464",
+    "txt": "P"
+   }
+  },
+  "diagrama-de-energia-del-deslizador-parabola-u-re": {
+   "w": "340",
+   "h": "215",
+   "label": "Diagrama de energía del deslizador: parábola U, recta E=0,128 J y puntos de retorno en ±4,06 cm",
+   "pie": "En $x=3{,}00$ cm la energía total $E=0{,}128$ J se reparte en $U=0{,}070$ J y $K=0{,}058$ J; los puntos de retorno (donde $K=0$) están en $\\pm A=\\pm4{,}06$ cm.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.37 de U, p. 461",
+    "txt": "P"
+   }
+  },
+  "energias-cinetica-y-potencial-en-funcion-del-tie": {
+   "w": "340",
+   "h": "215",
+   "label": "Energías cinética y potencial en función del tiempo: se cruzan en E/2 cuatro veces por periodo, cada T/4",
+   "pie": "$K=E\\sin^2(\\omega t+\\phi)$ y $U=E\\cos^2(\\omega t+\\phi)$ suman siempre $E$ y se cruzan en $E/2$ ($|x|=A/\\sqrt2$) cuatro veces por periodo; ejemplo con $\\phi=0$ (cruces en $T/8$, $3T/8$, $5T/8$, $7T/8$).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.28 de U, p. 461",
+    "txt": "P"
+   }
+  },
+  "oscilacion-antes-y-despues-de-que-la-masilla-de-": {
+   "w": "340",
+   "h": "205",
+   "label": "Oscilación antes y después de que la masilla de masa 3M caiga sobre el bloque en x=0: amplitud la mitad y periodo doble",
+   "pie": "La masilla ($m=3M$) cae cuando el bloque pasa por el equilibrio: la cantidad de movimiento se conserva y la energía no. Después, la amplitud es $A_1/2$ y el periodo $T_2=2\\pi\\sqrt{4M/k}=2T_1$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.31 de U, p. 461",
+    "txt": "P"
+   }
+  },
+  "niveles-del-resorte-en-la-bascula-de-carnicero-c": {
+   "w": "340",
+   "h": "168",
+   "label": "Niveles del resorte en la báscula de carnicero: choque, nuevo equilibrio y punto más bajo",
+   "pie": "Báscula del carnicero (escala real de $x$: 1 cm = 3,5 px). El choque ocurre $5{,}39$ cm por encima del nuevo equilibrio con $v=2{,}57$ m/s hacia abajo; el punto más bajo está a $A=20{,}6$ cm.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.79 de U, p. 464",
+    "txt": "P"
+   }
+  },
+  "grafica-del-angulo-en-funcion-del-tiempo-de-un-p": {
+   "w": "340",
+   "h": "205",
+   "label": "Gráfica del ángulo θ en función del tiempo de un péndulo: periodo 1,60 s y amplitud 6°",
+   "pie": "Reconstrucción de la gráfica del enunciado: $\\theta(t)=6^\\circ\\cos(3{,}93\\,t)$. El periodo se lee entre dos máximos ($1{,}60$ s) y la amplitud es el valor del máximo.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.50 de U, p. 462",
+    "txt": "P"
+   }
+  },
+  "biela-colgada-de-un-cuchillo-pendulo-fisico-con-": {
+   "w": "340",
+   "h": "190",
+   "label": "Biela colgada de un cuchillo: péndulo físico con el centro de gravedad a 0,200 m del pivote",
+   "pie": "La biela oscila como péndulo físico alrededor del filo del cuchillo (pivote); el centro de gravedad está a $d=0{,}200$ m. De $T=1{,}20$ s sale $I=mgdT^2/4\\pi^2=0{,}129$ kg·m². Silueta esquemática.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.55 de U, p. 462",
+    "txt": "P"
+   }
+  },
+  "la-campana-que-suena-en-silencio-la-campana-pend": {
+   "w": "340",
+   "h": "198",
+   "label": "La campana que suena en silencio: la campana (péndulo físico) y el badajo (péndulo simple) cuelgan del mismo eje y tienen el mismo periodo",
+   "pie": "Campana y badajo oscilan sobre el mismo eje. Con $d=0{,}60$ m y $I=18{,}0$ kg·m² la campana tiene $T=1{,}885$ s; el badajo, péndulo simple, iguala ese periodo con $L=I/(md)=0{,}88$ m. Dibujo esquemático.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 14.86 de U, p. 465",
+    "txt": "P"
+   }
+  },
+  "oscilacion-amortiguada-con-la-amplitud-bajando-d": {
+   "w": "340",
+   "h": "215",
+   "label": "Oscilación amortiguada con la amplitud bajando de 6,0 cm a 3,5 cm en ocho ciclos",
+   "pie": "Envolvente $Ae^{-(b/2m)t}$ (a trazos) de 6,0 cm a 3,5 cm en 8 ciclos: como $E=\\tfrac12kA^2$, la energía baja de $0{,}450$ J a $0{,}153$ J. Ciclos y amortiguamiento a escala.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 14.59 de U, p. 463",
+    "txt": "P"
+   }
+  },
+  "cociente-de-frecuencias-f-f-en-funcion-de-la-con": {
+   "w": "340",
+   "h": "215",
+   "label": "Cociente de frecuencias f/f₀ en función de la constante de fuerza de la superficie: casi una recta de pendiente 1/2k",
+   "pie": "Como $f\\propto\\sqrt{k}$, un aumento relativo pequeño de la constante da un aumento relativo <b>mitad</b> en la frecuencia: $k_\\mathrm{sup}=5$ N/m ($0{,}5\\%$ de $k$) cambia $f$ en un $\\approx0{,}25\\,\\%$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 14.96 de U, p. 466",
+    "txt": "P"
+   }
+  },
+  "masa-efectiva-de-un-oscilador-que-rueda-1-4-m-pa": {
+   "w": "340",
+   "h": "218",
+   "label": "Masa efectiva de un oscilador que rueda: 1,4 M para una esfera maciza, 1,5 M para un cilindro, 2 M para un aro",
+   "pie": "Un oscilador que <b>rueda</b> sin resbalar se comporta como uno que desliza, pero con masa efectiva $M_\\mathrm{ef}=M+I/R^2$: esfera maciza $\\tfrac75M$, cilindro macizo $\\tfrac32M$, aro $2M$. Con dos esferas, $T=2\\pi\\sqrt{14M/5k}=0{,}743$ s.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 14.84 de U, p. 465",
+    "txt": "P"
+   }
+  }
+ },
+ "bloques": [
+  {
+   "t": "h2",
+   "id": "prereq",
+   "n": "0",
+   "titulo": "Antes de empezar",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U cap. 14, portadilla, p. 434",
+    "txt": "U p.434"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte01.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte02.html"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Qué ha caído en examen (7 ejercicios reales)",
+   "html": [
+    "<p>El MAS es <b>el tema de teoría más repetido de toda la asignatura</b>: 6 de los 7 ejercicios son una pregunta de teoría (4 puntos) sobre «el movimiento armónico simple» o «la energía del MAS». El único problema numérico (3 puntos) tiene el MAS como parte final: una masa que cae sobre una bandeja colgada de un resorte, ya resuelto por energía en el <a href=\"tema_08_momento_colisiones.html#x3\">tema 8</a>. Todos están resueltos en la sección 10, con un «desarrollo modelo» de una cara que conviene tener memorizado.</p>",
+    "  <table>",
+    "    <tr><th>Convocatoria y pregunta</th><th>Tema a desarrollar / enunciado</th><th>Dónde en este resumen</th></tr>",
+    "    <tr><td>Feb 2018 (1ª semana) P-3 Teoría 3.2</td><td>Energía del movimiento armónico simple</td><td>§3 y X2</td></tr>",
+    "    <tr><td>Feb 2019 (2ª semana) P-3 Teoría 3.1</td><td>Energía del movimiento armónico simple</td><td>§3 y X3</td></tr>",
+    "    <tr><td>Sept 2019 (Reserva) P-3 Teoría 3.1</td><td>El movimiento armónico simple. Energía del M.A.S.</td><td>§2, §3 y X6</td></tr>",
+    "    <tr><td>Feb 2020 (1ª semana) P-3 Teoría 3.1</td><td>Energía del movimiento armónico simple</td><td>§3 y X4</td></tr>",
+    "    <tr><td>Feb 2020 (2ª semana) P-3 Teoría 3.2</td><td>Movimiento armónico simple</td><td>§2 y X5</td></tr>",
+    "    <tr><td>Feb 2022 (1ª semana) P-1</td><td>Masa que cae sobre una bandeja colgada de un resorte: amplitud y periodo del MAS vertical</td><td>§4 y X1 (y tema 8)</td></tr>",
+    "    <tr><td>Feb 2025 (1ª semana) P-4 Teoría B</td><td>Energía en el MAS; (a) resorte cortado por la mitad; (b) reloj de péndulo en una montaña</td><td>§3, §5 y X7</td></tr>",
+    "  </table>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Resumen propio de fuentes_txt/examenes_por_tema.md (Tema 14)",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "La receta maestra del tema: ¿qué te piden?",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>¿Es un MAS?</b> Lo es si la fuerza (o la torca) de restitución es proporcional al desplazamiento y de signo contrario: $F_x=-kx$. Si no sale así, intenta que salga para oscilaciones pequeñas (péndulo: $\\sin\\theta\\approx\\theta$).</li>",
+    "    <li><b>Un periodo, una frecuencia o $\\omega$</b> ⇒ localiza la «constante de recuperación» y la «inercia»: $\\omega=\\sqrt{k/m}$ (resorte), $\\sqrt{g/L}$ (péndulo simple), $\\sqrt{mgd/I}$ (péndulo físico), $\\sqrt{\\kappa/I}$ (MAS angular). Nunca depende de la amplitud.</li>",
+    "    <li><b>La posición, velocidad o aceleración en un instante $t$</b> ⇒ $x=A\\cos(\\omega t+\\phi)$ y sus derivadas; $A$ y $\\phi$ salen de las <b>condiciones iniciales</b> $x_0$ y $v_{0x}$ (Estrategia 14.1).</li>",
+    "    <li><b>Una velocidad (o posición) en un punto, sin tiempo</b> ⇒ conservación de la energía: $\\tfrac12mv_x^2+\\tfrac12kx^2=\\tfrac12kA^2$.</li>",
+    "    <li><b>Resorte vertical</b> ⇒ la gravedad solo <i>desplaza el equilibrio</i> ($k\\,\\Delta l=mg$); mide $x$ desde ese nuevo equilibrio y todo es igual que en horizontal.</li>",
+    "    <li><b>Un choque dentro del problema</b> (masilla, bala, masa que cae) ⇒ cantidad de movimiento en el choque; después, MAS con la masa total.</li>",
+    "    <li><b>Rozamiento viscoso o empuje periódico</b> ⇒ amortiguado ($b$ frente a $2\\sqrt{km}$) o forzado (resonancia cuando $\\omega_d\\approx\\omega$).</li>",
+    "    <li><b>Unidades del SI</b> y ángulos en <b>radianes</b>: cm a m, g a kg, y $\\omega$ en rad/s, no en Hz.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia a partir de U cap. 14, pp. 434-456",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s1",
+   "n": "1",
+   "titulo": "Descripción de la oscilación",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §14.1, pp. 434-435",
+    "txt": "U p.434-435"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Mira un columpio, un niño en un balancín, la cuerda de una guitarra o tu corazón: hay una <b>posición de equilibrio</b> (el columpio colgando quieto) y, al apartar el cuerpo de ella, algo lo <b>empuja de vuelta</b>; como al volver lleva velocidad, se pasa de largo, vuelve a ser empujado hacia el equilibrio… y así una y otra vez. Esa «fuerza que siempre apunta hacia el equilibrio» se llama <b>fuerza de restitución</b> y es la causa de toda oscilación. <i>Analogía:</i> una canica en el fondo de un cuenco: si la sueltas desde un lado, rueda hacia el fondo, pasa de largo y sube por el otro lado.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §14.1, p. 434",
+    "txt": "U p.434"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Magnitudes de un movimiento periódico",
+   "html": [
+    "<p>Un <b>movimiento periódico</b> (u <b>oscilación</b>) es el que se repite en ciclos iguales. Se describe con cuatro cantidades:</p>",
+    "  <ul>",
+    "    <li>La <b>amplitud</b> $A$: el desplazamiento <i>máximo</i> respecto a la posición de equilibrio. Es siempre positiva.</li>",
+    "    <li>El <b>periodo</b> $T$: el tiempo que dura <i>un ciclo</i> completo (en segundos).</li>",
+    "    <li>La <b>frecuencia</b> $f$: el número de ciclos por segundo; es la inversa del periodo. Se mide en <b>hercios</b>: $1\\ \\text{Hz}=1\\ \\text{ciclo/s}=1\\ \\text{s}^{-1}$.</li>",
+    "    <li>La <b>frecuencia angular</b> $\\omega$: $2\\pi$ veces la frecuencia, en rad/s (cuántos radianes «avanza» el ángulo de fase por segundo).</li>",
+    "  </ul>",
+    "  $$f=\\frac1T\\qquad T=\\frac1f\\qquad(14.1)\\qquad\\qquad \\omega=2\\pi f=\\frac{2\\pi}{T}\\qquad(14.2)$$"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.1, ec. 14.1 y 14.2, p. 435",
+    "txt": "U p.435"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "grafica-de-la-posicion-x-frente-al-tiempo-para-u"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 14.1 — un transductor de ultrasonido",
+   "html": [
+    "<p>Un transductor ultrasónico para diagnóstico médico oscila con frecuencia $f=6{,}7$ MHz. ¿Cuánto tarda cada oscilación y cuál es su frecuencia angular?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Periodo (14.1).</b> $T=\\dfrac1f=\\dfrac1{6{,}7\\times10^6\\ \\text{Hz}}=1{,}5\\times10^{-7}$ s $=0{,}15\\ \\mu$s.</li>",
+    "    <li><b>Frecuencia angular (14.2).</b> $\\omega=2\\pi f=2\\pi(6{,}7\\times10^6)=4{,}2\\times10^7$ rad/s.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 14.1, p. 435",
+    "txt": "U p.435"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico: $f$, $\\omega$ y la «velocidad»",
+   "html": "<p>$f$ (Hz) cuenta <b>ciclos</b> por segundo y $\\omega$ (rad/s) cuenta <b>radianes</b> por segundo: $\\omega$ es $2\\pi\\approx6{,}28$ veces mayor. En las fórmulas del MAS entra siempre $\\omega$ (cuando escribes $\\cos\\omega t$, $\\omega t$ está en radianes). Y $\\omega$ no es la velocidad del cuerpo: es solo un ritmo de repetición.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s2",
+   "n": "2",
+   "titulo": "Movimiento armónico simple",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §14.2, pp. 435-442",
+    "txt": "U p.435-442"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>El oscilador más sencillo que hay: un bloque (o un deslizador en una pista de aire, sin rozamiento) sujeto a un resorte ideal horizontal. Si lo estiras, el resorte tira de él hacia atrás; si lo comprimes, lo empuja hacia fuera; en todo momento <b>la fuerza apunta hacia el equilibrio y es tanto mayor cuanto más lejos estás</b>. Esa proporcionalidad es lo que hace «armónico» y «simple» al movimiento.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §14.2, p. 435",
+    "txt": "U p.435"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Movimiento armónico simple (MAS)",
+   "html": [
+    "<p>Con el eje $x$ a lo largo del resorte y $x=0$ en la posición de equilibrio (resorte sin estirar), un resorte ideal ejerce una fuerza de restitución que obedece la <b>ley de Hooke</b>: $F_x=-kx$ (14.3). Una oscilación cuya fuerza de restitución es directamente proporcional al desplazamiento se llama <b>movimiento armónico simple</b>. Por la segunda ley de Newton ($F_x=ma_x$):</p>",
+    "  $$a_x=\\frac{d^2x}{dt^2}=-\\frac{k}{m}\\,x\\qquad(14.4)$$",
+    "  <p>La aceleración es proporcional al desplazamiento y de <b>signo opuesto</b>: si estás a la derecha del equilibrio, aceleras hacia la izquierda y viceversa.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.2, ec. 14.3 y 14.4, pp. 435-436",
+    "txt": "U p.435-436"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "un-bloque-en-un-resorte-en-tres-posiciones-compr"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico: la aceleración del MAS no es constante",
+   "html": "<p>La aceleración $a_x=-(k/m)x$ <b>cambia</b> con la posición (es máxima en los extremos y cero en el equilibrio). Por eso <b>no valen</b> las fórmulas del movimiento con aceleración constante del tema 2 ($x=x_0+v_0t+\\tfrac12at^2$…). Para el MAS hay que usar las fórmulas de este capítulo.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §14.2, p. 436",
+    "txt": "U p.436"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "s2a.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte04.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte05.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte06.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Frecuencia angular, frecuencia y periodo del MAS (ec. 14.10-14.12)",
+   "html": [
+    "$$\\omega=\\sqrt{\\frac km}\\qquad f=\\frac{\\omega}{2\\pi}=\\frac1{2\\pi}\\sqrt{\\frac km}\\qquad T=\\frac1f=2\\pi\\sqrt{\\frac mk}$$",
+    "  <p><b>El periodo y la frecuencia del MAS no dependen de la amplitud $A$.</b> Más rígido ($k$ mayor) ⇒ oscila más deprisa; más masa ($m$ mayor) ⇒ oscila más despacio. Es lo que hace útil al MAS en relojes: aunque la oscilación se vaya apagando, el ritmo es el mismo.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.2, ec. 14.10-14.12, p. 438",
+    "txt": "U p.438"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 14.2 — frecuencia angular, frecuencia y periodo de un deslizador",
+   "html": [
+    "<p>Un resorte se monta horizontalmente con su extremo izquierdo fijo. Una balanza de resorte que tira del libre hacia la derecha con 6,0 N lo estira 0,030 m. Quitamos la balanza, atamos un deslizador de $0{,}50$ kg a ese extremo, lo tiramos hasta 0,020 m, lo soltamos desde el reposo y se mueve sin fricción. Calcula $k$, $\\omega$, $f$ y $T$.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Constante del resorte (14.3).</b> $k=\\dfrac{F}{x}=\\dfrac{6{,}0\\ \\text{N}}{0{,}030\\ \\text{m}}=200$ N/m.</li>",
+    "    <li><b>Frecuencia angular (14.10).</b> $\\omega=\\sqrt{k/m}=\\sqrt{200/0{,}50}=20$ rad/s.</li>",
+    "    <li><b>Frecuencia y periodo.</b> $f=\\dfrac{\\omega}{2\\pi}=\\dfrac{20}{2\\pi}=3{,}2$ Hz y $T=\\dfrac1f=0{,}31$ s.</li>",
+    "    <li><b>Observa:</b> la amplitud (0,020 m) no ha intervenido; el periodo solo depende de $k$ y $m$.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 14.2, p. 439",
+    "txt": "U p.439"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "s2b.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Las tres ecuaciones del MAS (ec. 14.13, 14.15 y 14.16)",
+   "html": [
+    "$$x=A\\cos(\\omega t+\\phi)\\qquad v_x=\\frac{dx}{dt}=-\\omega A\\sin(\\omega t+\\phi)\\qquad a_x=\\frac{d^2x}{dt^2}=-\\omega^2A\\cos(\\omega t+\\phi)=-\\omega^2x$$",
+    "  <p>$\\phi$ es el <b>ángulo de fase</b> (en radianes); $\\omega t+\\phi$ es la «fase». La rapidez máxima es $v_{máx}=\\omega A$ y ocurre en el equilibrio ($x=0$); la aceleración máxima es $a_{máx}=\\omega^2A$ y ocurre en los extremos ($x=\\pm A$), donde $v_x=0$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.2, ec. 14.13, 14.15 y 14.16, pp. 439-441",
+    "txt": "U p.439-441"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "graficas-de-x-v-x-y-a-x-en-funcion-del-tiempo-pa"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte08.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "s2c.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte10.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Amplitud y fase a partir de $x_0$ y $v_{0x}$ (ec. 14.18 y 14.19)",
+   "html": [
+    "$$\\phi=\\arctan\\!\\left(-\\frac{v_{0x}}{\\omega x_0}\\right)\\qquad A=\\sqrt{x_0^2+\\frac{v_{0x}^2}{\\omega^2}}$$",
+    "  <p>Si $v_{0x}=0$ y $x_0\\gt0$: $A=x_0$ y $\\phi=0$. Si $x_0=0$ y $v_{0x}\\gt0$: $A=v_{0x}/\\omega$ y $\\phi=-\\pi/2$. Con $x_0\\neq0$ <i>y</i> $v_{0x}\\neq0$, $A\\gt|x_0|$: parte de $x_0$ pero además lleva velocidad y llegará más lejos. La arcotangente da el ángulo en el cuadrante equivocado si no tienes cuidado: <b>comprueba siempre</b> que $\\cos\\phi$ tiene el signo de $x_0$ y $\\sin\\phi$ el de $-v_{0x}$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.2, ec. 14.17-14.19, p. 441",
+    "txt": "U p.441"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "tres-cosenos-con-distinto-angulo-de-fase-0-2-y-2"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Estrategia 14.1 (U): MAS I, descripción del movimiento",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Identifica</b> qué te dan: propiedades del sistema ($m$, $k$ y lo derivado: $T$, $f$, $\\omega$) y propiedades del movimiento ($A$, $v_{máx}$, $\\phi$, valores de $x$, $v_x$, $a_x$ en un instante).</li>",
+    "    <li>Calcula $\\omega$ con $m$ y $k$ (14.10); con $x_0$ y $v_{0x}$ calcula $A$ (14.19) y $\\phi$ (14.18).</li>",
+    "    <li>Escribe $x=A\\cos(\\omega t+\\phi)$ y sustituye el $t$ pedido (calculadora en <b>radianes</b>).</li>",
+    "    <li><b>Evalúa:</b> sustituye $t=0$ en tu resultado y comprueba que te sale $x_0$ y $v_{0x}$.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia 14.1, p. 441",
+    "txt": "U p.441"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 14.3 — descripción completa del movimiento",
+   "html": [
+    "<p>El deslizador del ejemplo 14.2 ($k=200$ N/m, $m=0{,}50$ kg, $\\omega=20$ rad/s) se desplaza ahora a $x_0=+0{,}015$ m y se le da una velocidad $v_{0x}=+0{,}40$ m/s. Calcula el periodo, la amplitud, el ángulo de fase y escribe $x(t)$.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Periodo:</b> el mismo de antes, $T=0{,}31$ s (solo depende de $k$ y $m$).</li>",
+    "    <li><b>Amplitud (14.19):</b> $A=\\sqrt{0{,}015^2+\\dfrac{0{,}40^2}{20^2}}=\\sqrt{2{,}25\\times10^{-4}+4{,}0\\times10^{-4}}=0{,}025$ m. Mayor que $x_0$, como era de esperar.</li>",
+    "    <li><b>Fase (14.18):</b> $\\phi=\\arctan\\!\\left(-\\dfrac{0{,}40}{20\\cdot0{,}015}\\right)=\\arctan(-1{,}33)=-0{,}93$ rad $=-53^\\circ$. Comprobación del cuadrante: $x_0\\gt0$ ⇒ $\\cos\\phi\\gt0$ ✓; $v_{0x}\\gt0$ ⇒ $\\sin\\phi\\lt0$ ✓.</li>",
+    "    <li><b>Ecuación:</b> $x=(0{,}025\\ \\text{m})\\cos[(20\\ \\text{rad/s})\\,t-0{,}93\\ \\text{rad}]$. Al evaluar en $t=0$: $0{,}025\\cos(-0{,}93)=0{,}015$ m ✓.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 14.3, p. 442",
+    "txt": "U p.442"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores típicos del MAS",
+   "html": [
+    "<ul>",
+    "    <li>Usar grados en la calculadora al evaluar $\\cos(\\omega t+\\phi)$: $\\omega t$ y $\\phi$ van en <b>radianes</b>.</li>",
+    "    <li>Creer que $T$ crece con la amplitud: en el MAS <b>no</b> depende de $A$ (ni de dónde se suelte).</li>",
+    "    <li>Tomar $A=x_0$ cuando también hay velocidad inicial; o confundir el signo de $\\phi$ (olvidar el signo menos de 14.18).</li>",
+    "    <li>Confundir $\\omega$ (rad/s) con $f$ (Hz) al calcular $v_{máx}=\\omega A$.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s3",
+   "n": "3",
+   "titulo": "Energía en el movimiento armónico simple",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §14.3, pp. 442-445",
+    "txt": "U p.442-445"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>En un resorte sin rozamiento no se pierde nada: la energía solo <b>cambia de forma</b>. En los extremos el cuerpo está parado y el resorte, estirado al máximo: toda la energía es <b>potencial elástica</b>. Al pasar por el equilibrio el resorte está relajado y el cuerpo va a su máxima velocidad: toda la energía es <b>cinética</b>. En medio, un poco de cada. <i>Analogía:</i> un columpio, que cambia altura (energía potencial) por velocidad (cinética) y vuelve a empezar. La energía total es una constante que depende solo de lo grande que sea la oscilación.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §14.3, p. 442",
+    "txt": "U p.442"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Energía del MAS (ec. 14.20 y 14.21)",
+   "html": [
+    "<p>La única fuerza que realiza trabajo es la del resorte, que es <b>conservativa</b>; por tanto la energía mecánica $E=K+U$ se conserva:</p>",
+    "  $$E=\\tfrac12mv_x^2+\\tfrac12kx^2=\\tfrac12kA^2=\\text{constante}\\qquad(14.21)$$",
+    "  <p>(En los extremos $x=\\pm A$ y $v_x=0$, así que $E=\\tfrac12kA^2$.) <b>La energía es proporcional al cuadrado de la amplitud</b> y no depende de la masa: si doblas $A$, $E$ se multiplica por 4. Equivalentemente $E=\\tfrac12m\\omega^2A^2$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.3, ec. 14.20 y 14.21, pp. 442-443",
+    "txt": "U p.442-443"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Velocidad en función de la posición (ec. 14.22 y 14.23)",
+   "html": [
+    "<p>Despejando $v_x$ de (14.21):</p>",
+    "  $$v_x=\\pm\\sqrt{\\frac km}\\,\\sqrt{A^2-x^2}\\qquad(14.22)\\qquad\\qquad v_{máx}=\\sqrt{\\frac km}\\,A=\\omega A\\qquad(14.23)$$",
+    "  <p>El $\\pm$ indica que a cada $x$ se puede pasar en los dos sentidos; el signo lo decides por el sentido del movimiento. En $x=\\pm A$, $v_x=0$ (puntos de retorno). El cuerpo nunca puede salir de $[-A,+A]$: ahí $U$ valdría más que $E$ y $K$ saldría negativa.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.3, ec. 14.22 y 14.23, p. 443",
+    "txt": "U p.443"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte11.html"
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_14_15_energia_x.png",
+   "alt": "Gráfica de energía frente al desplazamiento x: la parábola U = (1/2) k x² corta a la recta horizontal E = constante en x = -A y x = A; en la segunda gráfica se añade la curva de la energía cinética K, que vale E en x = 0 y cero en los extremos",
+   "pie": "Figura 14.15 de U: a) la parábola $U=\\tfrac12kx^2$ y la recta $E$; la distancia entre ambas es $K$. b) Se añade la curva de $K$; se cruzan con $U$ en $x=\\pm A/\\sqrt2$.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 14.15, p. 443",
+    "txt": "U p.443"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte12.html"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Estrategia 14.2 (U): ¿cinemática o energía?",
+   "html": "<p>La ecuación de la energía es la relación útil entre <b>velocidad, desplazamiento y energía total</b>. Si el problema relaciona $x$, $v_x$ y $a_x$ <b>sin hablar del tiempo</b>, usa (14.4) o (14.21); si da o pide un <b>instante</b> concreto, usa $x(t)$. Como en (14.21) entran $x^2$ y $v_x^2$, los <b>signos</b> de $x$ y $v_x$ los tienes que deducir de la situación (hacia dónde se mueve).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia 14.2, p. 444",
+    "txt": "U p.444"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 14.4 — velocidad, aceleración y energía",
+   "html": [
+    "<p>Para el deslizador del ejemplo 14.2 ($k=200$ N/m, $m=0{,}50$ kg, $A=0{,}020$ m): a) velocidades máxima y mínima; b) aceleraciones máxima y mínima; c) $v_x$ y $a_x$ cuando se ha movido la mitad del camino desde $x_0=A$ hasta el equilibrio; d) energías total, potencial y cinética ahí.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>a)</b> $v_{máx}=\\sqrt{k/m}\\,A=20(0{,}020)=0{,}40$ m/s, que ocurre en $x=0$; las velocidades extremas son $\\pm0{,}40$ m/s (derecha o izquierda).</li>",
+    "    <li><b>b)</b> $a_x=-(k/m)x$ (14.4): $a_{máx}=+\\dfrac{200}{0{,}50}(0{,}020)=8{,}0$ m/s² en $x=-A$, y $a_{mín}=-8{,}0$ m/s² en $x=+A$.</li>",
+    "    <li><b>c)</b> Medio camino: $x=A/2=0{,}010$ m. De (14.22), $v_x=-\\sqrt{\\dfrac{200}{0{,}50}}\\sqrt{0{,}020^2-0{,}010^2}=-0{,}35$ m/s (negativa: va de $x=A$ hacia $0$). De (14.4), $a_x=-\\dfrac{200}{0{,}50}(0{,}010)=-4{,}0$ m/s².</li>",
+    "    <li><b>d)</b> $E=\\tfrac12kA^2=\\tfrac12(200)(0{,}020)^2=0{,}040$ J; $U=\\tfrac12kx^2=\\tfrac12(200)(0{,}010)^2=0{,}010$ J; $K=\\tfrac12mv_x^2=\\tfrac12(0{,}50)(0{,}35)^2=0{,}030$ J. Suman $E$ ✓. En $x=A/2$ la energía es <b>una cuarta parte potencial y tres cuartas partes cinética</b>.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 14.4, p. 444",
+    "txt": "U p.444"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 14.5 — energía y cantidad de movimiento: la masilla que cae sobre el bloque",
+   "html": [
+    "<p>Un bloque de masa $M$ en un resorte horizontal oscila con amplitud $A_1$. a) Justo cuando pasa por el equilibrio, cae verticalmente un trozo de masilla de masa $m$ y se pega a él. Calcula la nueva amplitud y el nuevo periodo. b) Lo mismo si la masilla cae cuando el bloque está en un extremo.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Idea.</b> Antes y después del choque la energía mecánica del sistema bloque-resorte se conserva; <b>en el choque</b> (totalmente inelástico) se conserva la cantidad de movimiento horizontal, pero <b>no</b> la energía cinética.</li>",
+    "    <li><b>a) Velocidad antes:</b> en $x=0$ toda la energía es cinética: $\\tfrac12Mv_1^2=\\tfrac12kA_1^2$ ⇒ $v_1=\\sqrt{k/M}\\,A_1$.</li>",
+    "    <li><b>a) Choque:</b> $Mv_1=(M+m)v_2$ ⇒ $v_2=\\dfrac{M}{M+m}v_1$. Justo después sigue en $x=0$: $E_2=\\tfrac12(M+m)v_2^2=\\dfrac{M}{M+m}\\,E_1$.</li>",
+    "    <li><b>a) Amplitud:</b> $E_2=\\tfrac12kA_2^2$ ⇒ $\\boldsymbol{A_2=A_1\\sqrt{\\dfrac{M}{M+m}}}$. <b>Periodo</b> (14.12) con la masa total: $T_2=2\\pi\\sqrt{\\dfrac{M+m}{k}}$.</li>",
+    "    <li><b>b)</b> En un extremo el bloque está parado: no hay choque «efectivo», $v$ vale $0$ antes y después y la energía (toda potencial) <b>no cambia</b>: $A_2=A_1$. El periodo es el mismo $T_2=2\\pi\\sqrt{(M+m)/k}$.</li>",
+    "    <li><b>Evaluación:</b> en a) se pierde energía porque la masilla resbala sobre el bloque durante el choque (se disipa por fricción cinética); en b) no se pierde nada.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 14.5, p. 445",
+    "txt": "U p.445"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores típicos de la energía del MAS",
+   "html": [
+    "<ul>",
+    "    <li>Pensar que $E$ depende de la masa: $E=\\tfrac12kA^2$ solo depende de $k$ y de $A$.</li>",
+    "    <li>Creer que $K=U$ ocurre en $x=A/2$: como $U$ es cuadrática, a mitad de camino solo hay $U=E/4$. Ocurre en $x=\\pm A/\\sqrt2$.</li>",
+    "    <li>Conservar la energía <b>a través de un choque</b> (masilla, bala, masa que cae): el choque conserva $\\vec P$, no $E$; después sí vuelve a conservarse $E$ del conjunto.</li>",
+    "    <li>Olvidar el signo de $v_x$ en (14.22): la raíz da la rapidez; el signo lo da el sentido del movimiento.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión (U §14.3)",
+   "html": "<p>Para duplicar la energía total de un sistema masa-resorte, ¿en qué factor hay que aumentar la amplitud? Como $E\\propto A^2$, en $\\sqrt2=1{,}414$. ¿Cambia la frecuencia? No: no depende de la amplitud.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 14.3», p. 445",
+    "txt": "U p.445"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte13.html"
+  },
+  {
+   "t": "h2",
+   "id": "s4",
+   "n": "4",
+   "titulo": "Aplicaciones del movimiento armónico simple",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §14.4, pp. 446-450",
+    "txt": "U p.446-450"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "s4a.html"
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>¿Cambia algo si el resorte cuelga en vertical con una masa en el extremo? La gravedad tira hacia abajo, pero lo único que hace es <b>estirar el resorte hasta un nuevo equilibrio</b> más abajo; alrededor de ese nuevo equilibrio, el resorte y el peso juntos producen la misma fuerza restauradora de siempre. Es como jugar al columpio en una cuesta: sigue siendo un columpio.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §14.4, p. 446",
+    "txt": "U p.446"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "MAS vertical",
+   "html": "<p>En equilibrio, el resorte estirado $\\Delta l$ equilibra el peso: $k\\,\\Delta l=mg$. Toma $x=0$ en <b>esa</b> posición, con $+x$ hacia arriba. Si el cuerpo está a una distancia $x$ por encima del equilibrio, el estiramiento es $\\Delta l-x$ y la fuerza neta es $F_{neta}=k(\\Delta l-x)+(-mg)=-kx$. Es la misma ley de Hooke ⇒ <b>MAS con la misma $\\omega=\\sqrt{k/m}$</b>. El peso solo cambia <i>dónde</i> está el centro de la oscilación, no el periodo. Un truco: de $k\\,\\Delta l=mg$ se obtiene $T=2\\pi\\sqrt{\\Delta l/g}$, útil si te dan el estiramiento estático.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §14.4, p. 446",
+    "txt": "U p.446"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte15.html"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 14.6 — MAS vertical en un automóvil viejo",
+   "html": [
+    "<p>Los amortiguadores de un auto de 1000 kg están gastados. Una persona de 980 N que se sube lentamente al auto lo hace bajar 2,8 cm. Modela el auto y la persona como un solo cuerpo en un solo resorte: calcula el periodo y la frecuencia de su oscilación al caer en un bache.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Constante del resorte.</b> Los 980 N comprimen el resorte 0,028 m: $k=\\dfrac{980\\ \\text{N}}{0{,}028\\ \\text{m}}=3{,}5\\times10^4$ N/m.</li>",
+    "    <li><b>Masa oscilante.</b> La persona tiene $m=w/g=980/9{,}8=100$ kg; el total es $1000+100=1100$ kg.</li>",
+    "    <li><b>Periodo y frecuencia.</b> $T=2\\pi\\sqrt{\\dfrac{1100}{3{,}5\\times10^4}}=1{,}11$ s y $f=\\dfrac1T=0{,}90$ Hz.</li>",
+    "    <li><b>Evaluación:</b> una oscilación persistente de 1 s es muy molesta; por eso se ponen amortiguadores (§7).</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 14.6, p. 447",
+    "txt": "U p.447"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión (U §14.4)",
+   "html": "<p>Un bloque colgado de un resorte oscila con periodo 10 s en la Tierra. ¿Y en Marte, donde $g$ es el 40 % del terrestre? <b>Los mismos 10 s</b>: $T=2\\pi\\sqrt{m/k}$ no contiene $g$. En Marte el equilibrio queda más arriba (el resorte se estira menos), pero la oscilación va igual de rápida.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 14.4», p. 449",
+    "txt": "U p.449"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "s4b.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte17.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "MAS angular (ec. 14.24)",
+   "html": [
+    "$$\\omega=\\sqrt{\\frac{\\kappa}{I}}\\qquad f=\\frac1{2\\pi}\\sqrt{\\frac{\\kappa}{I}}\\qquad\\theta=\\Theta\\cos(\\omega t+\\phi)$$",
+    "  <p>$\\Theta$ (theta mayúscula) hace de amplitud angular. La regla es siempre la misma: <b>$\\omega=\\sqrt{\\text{constante de recuperación}/\\text{inercia}}$</b>.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.4, ec. 14.24, p. 447",
+    "txt": "U p.447"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "s4c.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte19.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte20.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte21.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte22.html"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 14.7 — vibración molecular",
+   "html": [
+    "<p>Dos átomos de argón forman una molécula Ar$_2$ con $U_0=1{,}68\\times10^{-21}$ J y $R_0=3{,}82\\times10^{-10}$ m. Calcula la frecuencia de las oscilaciones pequeñas (masa del Ar: $6{,}63\\times10^{-26}$ kg).</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Constante de fuerza (14.29).</b> $k=\\dfrac{72U_0}{R_0^2}=\\dfrac{72(1{,}68\\times10^{-21})}{(3{,}82\\times10^{-10})^2}=0{,}829$ N/m (parecida a la de un muelle de juguete tipo Slinky).</li>",
+    "    <li><b>Frecuencia (14.11)</b> con un átomo fijo y el otro oscilando: $f=\\dfrac1{2\\pi}\\sqrt{\\dfrac{0{,}829}{6{,}63\\times10^{-26}}}=5{,}63\\times10^{11}$ Hz.</li>",
+    "    <li><b>Corrección.</b> Como el centro de masa de la molécula no se acelera, los <b>dos</b> átomos oscilan en sentidos opuestos: equivale a sustituir $m$ por $m/2$, y $f$ sube en $\\sqrt2$: $f=7{,}96\\times10^{11}$ Hz. (El resultado cuántico coincide.)</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 14.7, p. 449",
+    "txt": "U p.449"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s5",
+   "n": "5",
+   "titulo": "El péndulo simple",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §14.5, pp. 450-451",
+    "txt": "U p.450-451"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Un péndulo simple es una «lenteja» pequeña y pesada colgada de un hilo que no se estira ni pesa. Al apartarla, la gravedad la tira de vuelta hacia la vertical (el peso hace de «resorte»). Para ángulos pequeños, esa fuerza es proporcional al desplazamiento: <b>es un MAS casi perfecto</b>. Lo sorprendente: <b>ni la masa ni la amplitud</b> entran en el periodo; solo cuentan la longitud $L$ y la gravedad $g$.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §14.5, p. 450",
+    "txt": "U p.450"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Péndulo simple, amplitud pequeña (ec. 14.30-14.34)",
+   "html": [
+    "<p>El hilo, de longitud $L$, hace que la lenteja describa un arco; la tensión no tiene componente a lo largo del arco, así que la fuerza tangencial de restitución es $F_\\theta=-mg\\sin\\theta$ (14.30). Para $\\theta$ pequeño ($\\sin\\theta\\approx\\theta$, con $\\theta$ en radianes) y con $x=L\\theta$: $F_\\theta\\approx-mg\\theta=-\\dfrac{mg}{L}\\,x$ (14.31): ley de Hooke con $k=mg/L$. Entonces</p>",
+    "  $$\\omega=\\sqrt{\\frac gL}\\ (14.32)\\qquad f=\\frac1{2\\pi}\\sqrt{\\frac gL}\\ (14.33)\\qquad T=2\\pi\\sqrt{\\frac Lg}\\ (14.34)$$",
+    "  <p>La masa se cancela porque la fuerza de restitución (el peso) es proporcional a ella: es el mismo motivo por el que todos los cuerpos caen con la misma aceleración. Un péndulo largo oscila más despacio; si $g$ aumenta, aumenta la fuerza restauradora y el periodo disminuye.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.5, ec. 14.30-14.34, p. 450",
+    "txt": "U p.450"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_14_21_pendulo.png",
+   "alt": "Péndulo simple idealizado: una lenteja de masa m cuelga de una cuerda de longitud L con ángulo theta con la vertical; el peso mg se descompone en mg sen theta, tangente a la trayectoria (fuerza de restitución), y mg cos theta a lo largo de la cuerda; actúa también la tensión T",
+   "pie": "Figura 14.21b de U: péndulo simple. La componente $mg\\sin\\theta$ del peso, tangente al arco, es la fuerza de restitución; la otra componente $mg\\cos\\theta$ se equilibra con la tensión (más la parte centrípeta).",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 14.21, p. 450",
+    "txt": "U p.450"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "grafica-de-sen-y-de-coinciden-para-angulos-peque"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte23.html"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 14.8 — un péndulo simple de 1 m",
+   "html": [
+    "<p>Calcula el periodo y la frecuencia de un péndulo simple de longitud 1,000 m en un lugar con $g=9{,}800$ m/s².</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Periodo (14.34).</b> $T=2\\pi\\sqrt{\\dfrac{L}{g}}=2\\pi\\sqrt{\\dfrac{1{,}000}{9{,}800}}=2{,}007$ s.</li>",
+    "    <li><b>Frecuencia.</b> $f=\\dfrac1T=\\dfrac1{2{,}007}=0{,}4983$ Hz.</li>",
+    "    <li><b>Observación:</b> el periodo es casi 2 s: cada «tic» y cada «tac» de un reloj de péndulo de 1 m dura medio periodo, es decir, un segundo.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 14.8, p. 451",
+    "txt": "U p.451"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores típicos del péndulo",
+   "html": [
+    "<ul>",
+    "    <li>Pensar que el periodo depende de la masa de la lenteja (no: se cancela) o de la amplitud (solo si es grande).</li>",
+    "    <li>Usar $L$ medida hasta el techo: es la distancia del <b>pivote al centro de la lenteja</b>.</li>",
+    "    <li>Dejar $\\theta$ en grados dentro de $F_\\theta=-mg\\theta$: $\\sin\\theta\\approx\\theta$ solo vale con $\\theta$ en radianes.</li>",
+    "    <li>Olvidar que en un ascensor acelerado cambia la gravedad efectiva: con aceleración $a$ hacia arriba $g_{ef}=g+a$ y $T$ disminuye; en caída libre no oscila.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión (U §14.5)",
+   "html": "<p>Un cuerpo en un resorte horizontal tiene aceleración cero al pasar por el equilibrio. Cuando la lenteja de un péndulo simple pasa por su posición de equilibrio (cuerda vertical), ¿cuál es su aceleración? <b>Hacia arriba</b> (opción iv): la fuerza tangencial es cero, pero la lenteja describe un arco de círculo y necesita una aceleración centrípeta $v^2/L$ hacia el centro; por eso la tensión es allí mayor que el peso.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 14.5», p. 451",
+    "txt": "U p.451"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s6",
+   "n": "6",
+   "titulo": "El péndulo físico",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §14.6, pp. 451-453",
+    "txt": "U p.451-453"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>El péndulo simple es un caso ideal (toda la masa en un punto). Un péndulo <b>físico</b> es cualquier cuerpo <i>real</i> que cuelga de un eje horizontal y oscila: una pierna al caminar, una puerta que se balancea, una biela, una campana. Ahora la masa no está concentrada: hace falta el <b>momento de inercia</b> $I$ respecto al eje de giro. La idea sigue siendo la de siempre: <b>$\\omega=\\sqrt{\\text{recuperación}/\\text{inercia}}$</b>.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §14.6, p. 451",
+    "txt": "U p.451"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Péndulo físico, amplitud pequeña (ec. 14.36-14.39)",
+   "html": [
+    "<p>El cuerpo cuelga del pivote $O$; su centro de gravedad (cg) está a una distancia $d$ del eje. Al desviarlo un ángulo $\\theta$, el peso $mg$ (aplicado en el cg) produce una torca de restitución $\\tau_z=-(mg)(d\\sin\\theta)$ (14.36). Para $\\theta$ pequeño, $\\tau_z\\approx-(mgd)\\theta$ (14.37). La ecuación de rotación $\\tau_z=I\\,d^2\\theta/dt^2$ da $d^2\\theta/dt^2=-\\dfrac{mgd}{I}\\theta$: otra vez la forma de (14.4), con $mgd/I$ en lugar de $k/m$. Por tanto</p>",
+    "  $$\\omega=\\sqrt{\\frac{mgd}{I}}\\quad(14.38)\\qquad\\qquad T=2\\pi\\sqrt{\\frac{I}{mgd}}\\quad(14.39)$$",
+    "  <p>$d$ es la distancia del <b>eje de giro al centro de gravedad</b> e $I$ el momento de inercia <b>respecto a ese eje</b> (a menudo hay que usar el teorema de los ejes paralelos, tema 9). Para un péndulo simple $I=mL^2$ y $d=L$: se recupera (14.34).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.6, ec. 14.36-14.39, pp. 451-452",
+    "txt": "U p.451-452"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_14_23_fisico.png",
+   "alt": "Péndulo físico: un cuerpo de forma irregular que gira alrededor de un pivote; el centro de gravedad queda a una distancia d del pivote; el peso mg tiene una componente mg sen theta cuya torca respecto al pivote es de restitución",
+   "pie": "Figura 14.23 de U: dinámica de un péndulo físico. La torca de restitución respecto al pivote es $-(mg)(d\\sin\\theta)$, con $d$ la distancia del pivote al centro de gravedad.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 14.23, p. 451",
+    "txt": "U p.451"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Medir un momento de inercia con un péndulo",
+   "html": "<p>La ec. (14.39) permite medir el momento de inercia de un cuerpo de forma complicada: se localiza el cg por balanceo, se cuelga el cuerpo de un eje, se mide el periodo $T$ (mejor cronometrando <i>muchas</i> oscilaciones) y se despeja $I=mgd\\,T^2/4\\pi^2$. Es el método del ejercicio 14.55 (resuelto más abajo) y lo usan los biomecánicos con las extremidades de los animales.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §14.6, p. 452",
+    "txt": "U p.452"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 14.9 — péndulo físico frente a péndulo simple",
+   "html": [
+    "<p>Una varilla uniforme de longitud $L$ y masa $M$ pivota en un extremo. Calcula su periodo y compáralo con el del péndulo simple de longitud $L$.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Datos del péndulo físico.</b> $I=\\tfrac13ML^2$ (varilla uniforme, eje en un extremo, tabla 9.2) y $d=L/2$ (el cg está en el centro).</li>",
+    "    <li><b>Periodo (14.39).</b> $T=2\\pi\\sqrt{\\dfrac{\\tfrac13ML^2}{Mg(L/2)}}=2\\pi\\sqrt{\\dfrac{2L}{3g}}$.</li>",
+    "    <li><b>Número.</b> Con $L=1{,}00$ m y $g=9{,}80$ m/s²: $T=2\\pi\\sqrt{\\dfrac{2(1{,}00)}{3(9{,}80)}}=1{,}64$ s.</li>",
+    "    <li><b>Comparación.</b> Es $\\sqrt{2/3}=0{,}816$ veces el periodo del péndulo simple de igual longitud (2,007 s): oscila más deprisa porque su masa está en promedio más cerca del pivote.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 14.9, p. 452",
+    "txt": "U p.452"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 14.10 — Tyrannosaurus rex y el péndulo físico",
+   "html": [
+    "<p>Modela una pierna como una varilla uniforme con pivote en la cadera y un paso como medio periodo. a) ¿Cómo depende el ritmo natural de la marcha de la longitud $L$ de la pierna? b) Un <i>T. rex</i> tenía $L=3{,}1$ m y una zancada de $S=4{,}0$ m (distancia entre dos huellas del mismo pie): ¿a qué velocidad caminaba?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>a)</b> Del ejemplo 14.9, $T=2\\pi\\sqrt{2L/3g}\\propto\\sqrt L$: el ritmo (pasos por segundo) es el doble de la frecuencia, que es proporcional a $1/\\sqrt L$. A mayor longitud de pierna, <b>menor ritmo</b>: las piernas largas dan pasos más pausados.</li>",
+    "    <li><b>b) Tiempo por zancada:</b> $T=2\\pi\\sqrt{\\dfrac{2(3{,}1)}{3(9{,}8)}}=2{,}9$ s.</li>",
+    "    <li><b>Velocidad:</b> $v=\\dfrac ST=\\dfrac{4{,}0}{2{,}9}=1{,}4$ m/s $=5{,}0$ km/h, más o menos lo que camina una persona.</li>",
+    "    <li><b>Evaluación:</b> una varilla uniforme no es un buen modelo de pierna (hay más masa entre cadera y rodilla); con un cg más cercano a la cadera el periodo sería más corto y la velocidad algo mayor.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 14.10, pp. 452-453",
+    "txt": "U p.452-453"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión (U §14.6)",
+   "html": "<p>Una varilla uniforme de longitud $2L$ pivotada en un extremo tiene su cg a una distancia $L$, igual que un péndulo simple de longitud $L$. ¿Qué periodo tiene? <b>Mayor</b>: con la misma $d=L$, su momento de inercia $I=\\tfrac13m(2L)^2=\\tfrac43mL^2$ es mayor que $mL^2$ y $T\\propto\\sqrt{I}$.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 14.6», p. 453",
+    "txt": "U p.453"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s7",
+   "n": "7",
+   "titulo": "Oscilaciones amortiguadas",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §14.7, pp. 453-455",
+    "txt": "U p.453-455"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Los osciladores reales no oscilan para siempre: un columpio al que dejas de empujar se para, los amortiguadores de un coche matan las oscilaciones del muelle. El culpable es el <b>rozamiento</b> (aire, aceite…), que roba energía mecánica en cada ciclo y la convierte en calor. Esa pérdida progresiva de amplitud se llama <b>amortiguamiento</b>. <i>Analogía:</i> un péndulo dentro de un bote de miel: sube, pero tan despacio que ni oscila.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §14.7, p. 453",
+    "txt": "U p.453"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Fuerza amortiguadora y ecuación del movimiento (ec. 14.40-14.43)",
+   "html": [
+    "<p>El caso más sencillo es una fuerza de rozamiento <b>proporcional a la velocidad</b> (fluidos viscosos, amortiguadores): $F_x=-bv_x$, con $b$ la constante de amortiguamiento (el signo menos la hace opuesta a la velocidad). La fuerza neta sobre el cuerpo es $\\sum F_x=-kx-bv_x$ (14.40) y la segunda ley da</p>",
+    "  $$-kx-b\\frac{dx}{dt}=m\\frac{d^2x}{dt^2}\\qquad(14.41)$$",
+    "  <p>Si el amortiguamiento es débil, la solución es una oscilación con amplitud decreciente exponencialmente:</p>",
+    "  $$x=Ae^{-(b/2m)t}\\cos(\\omega' t+\\phi)\\quad(14.42)\\qquad\\omega'=\\sqrt{\\frac km-\\frac{b^2}{4m^2}}\\quad(14.43)$$",
+    "  <p>La amplitud $Ae^{-(b/2m)t}$ decae más deprisa cuanto mayor es $b$ (curvas punteadas de la figura), y la frecuencia angular $\\omega'$ es algo <b>menor</b> que la del oscilador sin amortiguar, $\\omega=\\sqrt{k/m}$: el periodo aumenta.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.7, ec. 14.40-14.43, pp. 453-454",
+    "txt": "U p.453-454"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_14_26_amortiguada.png",
+   "alt": "Gráfica de la posición frente al tiempo de un oscilador con poco amortiguamiento para dos valores de b: la curva azul con b = 0,1 raíz de km decae lentamente y la rosa con b = 0,4 raíz de km decae más deprisa; las curvas punteadas son las envolventes A e elevado a menos (b/2m) t",
+   "pie": "Figura 14.26 de U: oscilación con poco amortiguamiento para dos valores de $b$ (con $\\phi=0$). Con más amortiguamiento la amplitud disminuye más deprisa (curvas punteadas) y el periodo aumenta ($T_0$ = periodo sin amortiguar).",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 14.26, p. 454",
+    "txt": "U p.454"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Tres regímenes: amortiguamiento crítico (ec. 14.44)",
+   "html": [
+    "<p>Si $b$ crece, $\\omega'$ disminuye y se anula cuando $\\dfrac km-\\dfrac{b^2}{4m^2}=0$, es decir, $b=2\\sqrt{km}$ (14.44). Según $b$ frente a ese valor:</p>",
+    "  <ul>",
+    "    <li><b>Subamortiguado</b> ($b\\lt2\\sqrt{km}$): oscila con amplitud decreciente (14.42). Ej.: amortiguadores gastados; el ala de un avión tras una ráfaga.</li>",
+    "    <li><b>Críticamente amortiguado</b> ($b=2\\sqrt{km}$): $\\omega'=0$, el sistema <b>no oscila</b> y vuelve al equilibrio <b>lo más rápido posible</b>. Es lo que se busca en un amortiguador ideal.</li>",
+    "    <li><b>Sobreamortiguado</b> ($b\\gt2\\sqrt{km}$): tampoco oscila, pero vuelve al equilibrio más <i>lentamente</i> (suspensión demasiado «dura» o «viscosa»: el coche tarda en recuperarse tras un bache).</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.7, ec. 14.44, p. 454",
+    "txt": "U p.454"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "tres-tipos-de-amortiguamiento-subamortiguado-osc"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Energía en las oscilaciones amortiguadas (ec. 14.45)",
+   "html": [
+    "<p>La fuerza amortiguadora <b>no es conservativa</b>: la energía mecánica $E=\\tfrac12mv_x^2+\\tfrac12kx^2$ <b>disminuye</b>. Derivando $E$ y usando (14.41):</p>",
+    "  $$\\frac{dE}{dt}=-bv_x^2\\qquad(14.45)$$",
+    "  <p>La rapidez con que se pierde energía es proporcional a $v_x^2$ y siempre negativa. Esa energía se convierte en energía interna (calor) del fluido y del oscilador. Como $E\\approx\\tfrac12kA^2$ en cada ciclo, si la amplitud baja de $A_1$ a $A_2$ la energía baja en $(A_2/A_1)^2$ (problema 14.59).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.7, ec. 14.45, p. 455",
+    "txt": "U p.455"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión (U §14.7)",
+   "html": "<p>Una ráfaga de viento eleva la punta de un avión que vuela a altitud constante; la punta se balancea verticalmente hasta que el avión recupera su altitud. ¿Son estas oscilaciones no amortiguadas, subamortiguadas, críticamente amortiguadas o sobreamortiguadas? <b>Subamortiguadas</b>: hay oscilaciones (si fueran críticas o sobreamortiguadas la punta volvería suavemente sin pasarse) pero con amplitud decreciente en cada ciclo, como en la figura 14.26.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 14.7», p. 455",
+    "txt": "U p.455"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s8",
+   "n": "8",
+   "titulo": "Oscilaciones forzadas y resonancia",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §14.8, pp. 455-456",
+    "txt": "U p.455-456"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Para que un oscilador amortiguado no se pare hay que <b>darle energía</b> con una fuerza que se repita. Empujar a un niño en un columpio es el ejemplo: si empujas <b>al ritmo natural</b> del columpio, cada empujón suma al anterior y la amplitud se hace enorme; si empujas a otro ritmo, unos empujones frenan lo que otros aceleran y no consigues nada. Ese «ritmo natural» es la <b>frecuencia propia</b> $\\omega=\\sqrt{k/m}$ del columpio, y el fenómeno se llama <b>resonancia</b>. Es la razón por la que un grupo de soldados no debe cruzar un puente al paso, o por la que un altavoz hace zumbar un objeto suelto con una nota concreta.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §14.8, pp. 455-456",
+    "txt": "U p.455-456"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Amplitud de una oscilación forzada (ec. 14.46)",
+   "html": [
+    "<p>Se aplica una fuerza impulsora sinusoidal $F_{máx}\\cos\\omega_dt$ de frecuencia angular $\\omega_d$ a un oscilador amortiguado. Tras un tiempo (el régimen transitorio se apaga) el cuerpo oscila con la frecuencia <b>impulsora</b> $\\omega_d$, no con la propia, y con amplitud</p>",
+    "  $$A=\\frac{F_{máx}}{\\sqrt{(k-m\\omega_d^2)^2+b^2\\omega_d^2}}\\qquad(14.46)$$",
+    "  <p>Cuando $\\omega_d$ se acerca a $\\omega=\\sqrt{k/m}$ el término $k-m\\omega_d^2$ se anula y $A$ toma su valor máximo: <b>resonancia</b>. La altura del pico es $\\propto1/b$: con poco amortiguamiento es muy alto y puntiagudo; más amortiguamiento lo reduce, lo ensancha y lo desplaza hacia frecuencias más bajas. <b>Si $b\\ge\\sqrt{2km}$, el pico desaparece por completo.</b> Con $\\omega_d\\to0$ la amplitud es $F_{máx}/k$ (una fuerza constante estira el resorte esa cantidad).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §14.8, ec. 14.46 y fig. 14.28, p. 456",
+    "txt": "U p.456"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte24.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores típicos",
+   "html": [
+    "<ul>",
+    "    <li>Creer que el oscilador forzado oscila con su frecuencia propia: en régimen estacionario oscila con la <b>impulsora</b>.</li>",
+    "    <li>Confundir $\\omega'$ (oscilación libre amortiguada) con $\\omega$ (sin amortiguar) o con $\\omega_d$ (la del empuje).</li>",
+    "    <li>Pensar que la resonancia exige $b=0$: con amortiguamiento la amplitud en resonancia es grande pero finita ($\\approx F_{máx}/b\\omega$).</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión (U §14.8)",
+   "html": "<p>Cerca de la frecuencia natural, un oscilador con muy poco amortiguamiento responde mucho más que uno con más. Si se impulsan con una frecuencia mucho mayor o mucho menor que la natural, ¿cuál responde más? <b>El de menos amortiguamiento</b> (opción i): en la figura 14.28 la curva de menor $b$ va por encima de las demás a <i>todas</i> las frecuencias, aunque lejos de la resonancia la diferencia es pequeña.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 14.8», p. 457",
+    "txt": "U p.457"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte25.html"
+  },
+  {
+   "t": "h2",
+   "id": "problema-practico",
+   "n": "9",
+   "titulo": "Problema práctico: oscilar y rodar",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U Problema práctico, p. 458 (respuesta en p. 467)",
+    "txt": "U p.458"
+   }
+  },
+  {
+   "t": "ej",
+   "ref": "pp"
+  },
+  {
+   "t": "h2",
+   "id": "ejercicios",
+   "n": "10",
+   "titulo": "Ejercicios resueltos",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte26.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-examenes.html"
+  },
+  {
+   "t": "ej",
+   "ref": "x1"
+  },
+  {
+   "t": "ej",
+   "ref": "dm-mas"
+  },
+  {
+   "t": "ej",
+   "ref": "x2"
+  },
+  {
+   "t": "ej",
+   "ref": "x3"
+  },
+  {
+   "t": "ej",
+   "ref": "x4"
+  },
+  {
+   "t": "ej",
+   "ref": "x5"
+  },
+  {
+   "t": "ej",
+   "ref": "x6"
+  },
+  {
+   "t": "ej",
+   "ref": "x7"
+  },
+  {
+   "t": "ej",
+   "ref": "cuestiones"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-libro.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte29.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte30.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e1417"
+  },
+  {
+   "t": "ej",
+   "ref": "e1438"
+  },
+  {
+   "t": "ej",
+   "ref": "e1466"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte31.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e1413"
+  },
+  {
+   "t": "ej",
+   "ref": "e1414"
+  },
+  {
+   "t": "ej",
+   "ref": "e1480"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte32.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e1437"
+  },
+  {
+   "t": "ej",
+   "ref": "e1428"
+  },
+  {
+   "t": "ej",
+   "ref": "e1431"
+  },
+  {
+   "t": "ej",
+   "ref": "e1479"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte33.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e1450"
+  },
+  {
+   "t": "ej",
+   "ref": "e1455"
+  },
+  {
+   "t": "ej",
+   "ref": "e1486"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte34.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e1459"
+  },
+  {
+   "t": "ej",
+   "ref": "e1496"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte35.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e1484"
+  },
+  {
+   "t": "h2",
+   "id": "chuleta",
+   "n": "11",
+   "titulo": "Chuleta, errores frecuentes y lista de comprobación",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte36.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores frecuentes de este tema",
+   "html": [
+    "<ul>",
+    "    <li>Calculadora en grados en vez de radianes al evaluar $\\cos(\\omega t+\\phi)$.</li>",
+    "    <li>Confundir $\\omega$ (rad/s) con $f$ (Hz) o con la velocidad del cuerpo; olvidar el $2\\pi$.</li>",
+    "    <li>Creer que el periodo depende de la amplitud (solo en el péndulo con ángulo grande) o, en el péndulo, de la masa.</li>",
+    "    <li>Usar las fórmulas de aceleración constante en un MAS: $a_x=-\\omega^2x$ no es constante.</li>",
+    "    <li>$A=x_0$ cuando también hay velocidad inicial; olvidar el signo menos de (14.18) o equivocar el cuadrante de $\\phi$.</li>",
+    "    <li>En un resorte vertical medir $x$ desde la longitud natural: hay que medir desde el equilibrio <b>con la carga</b>; y tomar el estiramiento total como amplitud.</li>",
+    "    <li>Conservar la energía <b>a través</b> de un choque (masilla, masa que cae); o poner $T=2\\pi\\sqrt{m/k}$ con solo una de las dos masas.</li>",
+    "    <li>Pensar que $K=U$ en $x=A/2$ (es en $A/\\sqrt2$); decir $k'=k/2$ para la mitad de un resorte (es $2k$).</li>",
+    "    <li>Péndulo físico: usar $L$ (longitud total) en lugar de $d$ (al centro de gravedad) o un $I$ que no es respecto al pivote.</li>",
+    "    <li>Amortiguado: confundir $\\omega'$ con $\\omega$; olvidar que $b\\ge2\\sqrt{km}$ ya no oscila. Forzado: creer que oscila con su frecuencia propia (lo hace con la impulsora).</li>",
+    "    <li>Oscilador que rueda: usar $M$ en lugar de la masa efectiva $M+I/R^2$.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte37.html"
+  },
+  {
+   "t": "h2",
+   "id": "fuentes",
+   "n": "★",
+   "titulo": "Fuentes de este tema",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "panel-fuentes.html"
+  }
+ ]
+}

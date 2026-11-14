@@ -1,0 +1,13 @@
+<p class="enun">Un bloque cúbico de madera de 10,0 cm por lado flota en la interfase entre aceite y agua con su superficie inferior 1,50 cm bajo la interfase. La densidad del aceite es de 790 kg/m³. a) ¿Qué presión manométrica hay en la superficie superior del bloque? b) ¿Y en la cara inferior? c) ¿Qué masa y densidad tiene el bloque? (En la figura, la capa de aceite mide 10,0 cm de espesor y está abierta al aire: el bloque tiene 8,50 cm en el aceite y 1,50 cm en el agua, y su cara superior está 1,50 cm bajo la superficie del aceite.)</p>
+  <ol class="steps">
+    <li><b>Geometría.</b> La interfase está a 10,0 cm bajo la superficie del aceite y la cara inferior a 1,50 cm bajo la interfase ⇒ la cara superior queda a $10{,}0+1{,}50-10{,}0=1{,}50$ cm bajo la superficie del aceite.</li>
+    <li><b>a) Cara superior</b> (solo aceite encima, ec. 12.6): $p_{man}=\rho_{ac}g(0{,}0150)=(790)(9{,}8)(0{,}0150)=116$ Pa.</li>
+    <li><b>b) Cara inferior: «escalera» de capas.</b> Se baja capa a capa sumando el $\rho gh$ de cada fluido, con su propia densidad: $p_{man}=\rho_{ac}g(0{,}100)+\rho_wg(0{,}0150)=774+147=921$ Pa.</li>
+    <li><b>c) Equilibrio del bloque.</b> Las caras laterales se compensan dos a dos. Verticalmente $p_bA-p_tA-mg=0$; la diferencia de absolutas es igual a la de manométricas ($p_{atm}$ se cancela): $\Delta p=921-116=805$ Pa. Con $A=0{,}0100$ m²: $m=\dfrac{805\cdot0{,}0100}{9{,}8}=0{,}821$ kg.</li>
+    <li><b>Densidad:</b> $\rho=\dfrac mV=\dfrac{0{,}821}{(0{,}100)^3}=821$ kg/m³.</li>
+    <li><b>Comprobación con Arquímedes:</b> masa de fluido desplazado $=790(0{,}0100)(0{,}0850)+1000(0{,}0100)(0{,}0150)=0{,}6715+0{,}150=0{,}8215$ kg $=m$. La diferencia de presiones entre caras <i>es</i> el empuje: dos caminos, el mismo resultado.</li>
+  </ol>
+{{fig:bloque-de-madera-de-10-centimetros-flotando-entr}}
+
+  <div class="recipe"><b>Receta:</b> varios fluidos apilados: $p=p_0+\sum\rho_igh_i$ capa a capa. Empuje $=(p_{abajo}-p_{arriba})A=$ peso del fluido desplazado (de cada fluido, su parte).</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar una sola densidad para toda la profundidad; olvidar que el aceite también desplaza (empuja) y calcular el empuje solo con el agua.</p></div>

@@ -55,9 +55,11 @@ def top_level(s):
     while True:
         m = abre.search(s, pos)
         if not m:
-            assert not s[pos:].strip(), s[pos:pos + 80]
+            if s[pos:].strip():
+                out.append(s[pos:].strip())
             return out
-        assert not s[pos:m.start()].strip(), s[pos:m.start()][:80]
+        if s[pos:m.start()].strip():   # texto suelto entre elementos (p. ej. una fórmula $$…$$)
+            out.append(s[pos:m.start()].strip())
         tag = m.group(1)
         depth, i = 1, m.end()
         tok = re.compile(r'<(/?)' + tag + r'\b[^>]*>')
@@ -68,6 +70,15 @@ def top_level(s):
             i = t.end()
         out.append(s[m.start():i])
         pos = i
+
+
+def referencias_examen(html):
+    """Referencias `Examen … P-N` (una por etiqueta X, sin las listas con «;») en el orden en que aparecen en la página."""
+    out = []
+    for r in re.findall(r'data-l="X" data-ref="(Examen [^"]*)"', html):
+        if ';' not in r and r not in out:
+            out.append(r)
+    return out
 
 
 # ---------------------------------------------------------------- HTML -> datos
@@ -116,7 +127,7 @@ class Migrador:
         self.bloques.append({'t': 'parte', 'archivo': f'{nombre}.html'})
 
     def _ejercicio(self, outer):
-        m = re.match(r'<details class="sol"( id="([\w]+)")?><summary>(.*?)</summary>(.*)</details>$', outer, re.S)
+        m = re.match(r'<details class="sol"( id="([\w-]+)")?><summary>(.*?)</summary>(.*)</details>$', outer, re.S)
         assert m, outer[:100]
         eid, summ, body = m.group(2), m.group(3), m.group(4)
         sm = list(SRC_RE.finditer(summ)); fin = sm[-1]
@@ -192,7 +203,9 @@ class Migrador:
                              'chips': re.findall(r'<span>(.*?)</span>', h.group(4))})
                 cabecera_ok = True
             elif outer.startswith('<h2 '): self._h2(outer)
-            elif outer.startswith('<h3'): self._h3(outer)
+            elif outer.startswith('<h3>'): self._h3(outer)
+            elif outer.startswith('<h3'): self._parte(outer)
+            elif outer.startswith('$$'): self._parte(outer)
             elif outer.startswith('<div class="box '): self._caja(outer)
             elif outer.startswith('<figure class="bookfig">'): self._libro(outer)
             elif outer.startswith('<details class="check">'): self._test(outer)
@@ -208,11 +221,13 @@ class Migrador:
                     or outer.startswith('<table') or outer.startswith('<p') or outer.startswith('<div') or outer.startswith('<ol'):
                 self._parte(outer)
             else:
-                raise ValueError('elemento no reconocido: ' + outer[:80])
+                if not outer.startswith('<h4') and not outer.startswith('<blockquote') and not outer.startswith('<hr'):
+                    raise ValueError('elemento no reconocido: ' + outer[:80])
+                self._parte(outer)
         assert cabecera_ok
         meta['titulo_pagina'] = titulo
         meta['archivo'] = self.archivo
-        meta['examenes_requeridos'] = [m['src']['ref'] for m in self.ej_meta.values() if m.get('src', {}).get('l') == 'X']
+        meta['examenes_requeridos'] = referencias_examen(s)
         meta['figuras'] = self.figs
         meta['bloques'] = self.bloques
         for eid, m in self.ej_meta.items():

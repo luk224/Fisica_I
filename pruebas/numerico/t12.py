@@ -1,0 +1,88 @@
+"""Tema 12: resultados recalculados con sympy a partir de los datos del enunciado."""
+import sympy as sp
+
+pi = sp.pi
+g = sp.Rational(98, 10)
+
+
+def comprobaciones(c):
+    """c(ejercicio, descripcion, valor, decimales) registra una comprobación."""
+    # ---- E1: cubo con orificio
+    L, r = 5.0, 1.0
+    V = L**3 - pi * r**2 * L
+    m = 6.30 / 9.8
+    rho = m / (V * 1e-6)
+    c('e1', 'V cm3', V, 0); c('e1', 'V (1e-4 m3)', V * 1e-6 / 1e-4, 2)
+    c('e1', 'm', m, 3); c('e1', 'rho (1e3)', rho / 1e3, 1)
+    c('e1', 'fraccion hueco %', pi * r**2 * L / L**3 * 100, 1)
+    c('e1', 'w0', rho * (L / 100)**3 * 9.8, 1)
+    c('e1', 'w0 atajo', 6.30 / (1 - pi * r**2 * L / L**3), 1)
+    # ---- E2: gotero IV
+    c('e2', 'h', 5980 / (1050 * 9.8), 3)
+    # ---- E3: elevador
+    A = pi * 0.15**2
+    p = 1200 * 9.8 / A
+    c('e3', 'A', A, 4); c('e3', 'p (1e5)', p / 1e5, 2); c('e3', 'p atm', p / 1.013e5, 2)
+    c('e3', 'p abs (1e5)', (p + 1.013e5) / 1e5, 1); c('e3', 'p abs atm', (p + 1.013e5) / 1.013e5, 1)
+    # ---- E4: Pascal
+    F2 = 1520 * 9.8
+    c('e4', 'F2 (1e4)', F2 / 1e4, 2); c('e4', 'A2/A1', F2 / 125, 0); c('e4', 'D2/D1', sp.sqrt(F2 / 125), 1)
+    # ---- E5: roca
+    B = 1.80 * 9.8 - 12.8
+    V = B / (1000 * 9.8)
+    c('e5', 'mg', 1.80 * 9.8, 2); c('e5', 'B', B, 2); c('e5', 'V (1e-4)', V / 1e-4, 2)
+    c('e5', 'rho (1e3)', 1.80 / V / 1e3, 2)
+    c('e5', 'rho formula (1e3)', 1000 * 17.64 / (17.64 - 12.8) / 1e3, 2)
+    # ---- E6: tres pesadas
+    Bw, BL = 39.2 - 28.4, 39.2 - 21.5
+    c('e6', 'Bw', Bw, 1); c('e6', 'BL', BL, 1); c('e6', 'V (1e-3)', Bw / (1000 * 9.8) / 1e-3, 2)
+    c('e6', 'rho_L/rho_w', BL / Bw, 2); c('e6', 'rho_L (1e3)', BL / Bw, 2)
+    c('e6', 'rho roca (1e3)', 39.2 / Bw, 2)
+    # ---- E7: bloque entre aceite y agua
+    pt = 790 * 9.8 * 0.0150
+    pb = 790 * 9.8 * 0.100 + 1000 * 9.8 * 0.0150
+    dp = pb - pt
+    m = dp * 0.0100 / 9.8
+    c('e7', 'p sup', pt, 0); c('e7', 'p aceite 10 cm', 790 * 9.8 * 0.100, 0)
+    c('e7', 'p agua 1,5', 1000 * 9.8 * 0.0150, 0); c('e7', 'p inf', pb, 0)
+    c('e7', 'dp', dp, 0); c('e7', 'm (4 dec, valor exacto 0,8215)', m, 4); c('e7', 'm aprox', m - 0.0005, 3)
+    c('e7', 'arq', 790 * 0.0100 * 0.0850 + 1000 * 0.0100 * 0.0150, 4)
+    # ---- E8: continuidad
+    Q = 0.070 * 3.50
+    c('e8', 'Q', Q, 3); c('e8', 'a', Q / 0.105, 2); c('e8', 'b', Q / 0.047, 2)
+    c('e8', 'V hora', Q * 3600, 0); c('e8', 'V hora 1e2', Q * 3600 / 100, 1)
+    # ---- E9: Torricelli
+    v = sp.sqrt(2 * 9.8 * 14.0)
+    Aor = pi * (6.00e-3)**2 / 4
+    c('e9', 'v', v, 1); c('e9', 'A (1e-5)', Aor / 1e-5, 2); c('e9', 'Q (1e-4)', Aor * v / 1e-4, 2)
+    c('e9', 'Q L/s', Aor * v * 1000, 3)
+    c('e9', 'x', v * sp.sqrt(2 * 1.0 / 9.8), 2); c('e9', 'v 4 cifras', v, 2)
+    # ---- E10: Bernoulli en tubería
+    v2 = 3.00 / 4
+    cin = 0.5 * 1000 * (3.00**2 - v2**2)
+    alt = 1000 * 9.8 * 11.0
+    c('e10', 'v2', v2, 3); c('e10', 'v2^2', v2**2, 4); c('e10', 'cinetico (1e3)', cin / 1e3, 2)
+    c('e10', 'altura (1e5)', alt / 1e5, 3); c('e10', 'p2 (1e5)', (5.00e4 + cin + alt) / 1e5, 2)
+    c('e10', 'cociente', alt / cin, 0)
+    # ---- E11: tanque presurizado
+    dp = 3.00 * 1.013e5
+    t1 = 2 * dp / 1030; t2 = 2 * 9.8 * 11.0
+    c('e11', 'dp (1e5)', dp / 1e5, 2); c('e11', 't1', t1, 0); c('e11', 't2', t2, 0)
+    c('e11', 'suma', t1 + t2, 0); c('e11', 'v', sp.sqrt(t1 + t2), 1)
+    c('e11', 'Torricelli', sp.sqrt(t2), 1); c('e11', 'columna', dp / (1030 * 9.8), 1)
+    # ---- E12: Poiseuille
+    c('e12', 'cociente R', 0.210 / 0.0700, 0); c('e12', 'R^4', 3**4, 0)
+    c('e12', 'dp2 (1e6)', 81 * 6.00e4 / 1e6, 2); c('e12', 'atm', 81 * 6.00e4 / 1.013e5, 0)
+    # ---- EPP: vaciado de depósito
+    D, d, H = 2.00, 0.0200, 0.800
+    t = (D / d)**2 * sp.sqrt(2 * H / 9.8)
+    c('epp', 'D/d', D / d, 0)
+    c('epp', 't_vac min', t / 60, 1); c('epp', 'raiz2', sp.sqrt(2), 2)
+    c('epp', 't_vac (1e3)', t / 1e3, 2)
+    # simbólico: y(t) cumple la ecuación diferencial y t_vac anula y
+    T, Dd, dd, Hh, gg, y0 = sp.symbols('T D d H g y0', positive=True)
+    y = (sp.sqrt(Hh) - (dd / Dd)**2 * sp.sqrt(gg / 2) * T)**2
+    s_ = sp.sqrt(Hh) - (dd / Dd)**2 * sp.sqrt(gg / 2) * T   # = sqrt(y) mientras queda agua
+    assert sp.simplify(sp.diff(s_**2, T) + (dd / Dd)**2 * sp.sqrt(2 * gg) * s_) == 0
+    tv = (Dd / dd)**2 * sp.sqrt(2 * Hh / gg)
+    assert sp.simplify(y.subs(T, tv)) == 0

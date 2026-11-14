@@ -1,0 +1,12 @@
+<p class="enun">Una campana de 34,0 kg cuelga de una viga y puede oscilar con fricción despreciable. Su centro de masa está 0,60 m por debajo del pivote y su momento de inercia respecto a un eje por el pivote es 18,0 kg·m². El badajo es pequeño, de 1,8 kg, y cuelga del extremo de una varilla delgada de longitud $L$ y masa despreciable cuyo otro extremo está sujeto al interior de la campana, de modo que oscila libremente sobre el mismo eje. ¿Qué longitud $L$ debe tener la varilla para que la campana suene en silencio, es decir, para que el periodo de oscilación de la campana sea igual al del badajo?</p>
+  <ol class="steps">
+    <li><b>Por qué «en silencio».</b> Si campana y badajo oscilan con el mismo periodo y parten juntos, se mueven a la par y el badajo nunca golpea.</li>
+    <li><b>Campana = péndulo físico</b> (14.39): $T=2\pi\sqrt{\dfrac{I}{mgd}}=2\pi\sqrt{\dfrac{18{,}0}{(34{,}0)(9{,}80)(0{,}60)}}=1{,}885$ s.</li>
+    <li><b>Badajo = péndulo simple</b> (masa pequeña al final de una varilla sin masa, 14.34): $T=2\pi\sqrt{L/g}$.</li>
+    <li><b>Iguala.</b> $L=g\left(\dfrac{T}{2\pi}\right)^2=9{,}80\left(\dfrac{1{,}885}{2\pi}\right)^2=$ <b>0,88 m</b>.</li>
+    <li><b>Atajo elegante.</b> Igualando $\sqrt{L/g}=\sqrt{I/mgd}$ ⇒ $L=\dfrac{I}{md}=\dfrac{18{,}0}{(34{,}0)(0{,}60)}=0{,}882$ m: no hace falta $g$ ni la masa del badajo. $I/(md)$ es la «longitud equivalente» del péndulo físico.</li>
+    <li><b>Comprobación.</b> Si el cm estuviera en el centro geométrico, la campana mediría 1,20 m: el badajo (0,88 m) queda dentro ✓.</li>
+  </ol>
+  {{fig:la-campana-que-suena-en-silencio-la-campana-pend}}
+  <div class="recipe"><b>Receta:</b> péndulo físico «equivalente» a uno simple: $L_{eq}=I/(md)$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar la masa del badajo en la fórmula de la campana, o intentar meter el badajo en el $I$ de la campana.</p></div>

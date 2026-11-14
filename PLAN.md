@@ -34,7 +34,7 @@ Orden sugerido (de menos a más figuras): hacer 1 tema de prueba y, si el migrad
 - [x] B2. Temas 2-4 (migrados; `t02-t04.py` creados). Corregida una errata de cálculo en tema 3 X3: x_B = 71,55·4,04 = 289,1 m (decía 288,9; D≈347 m no cambia). El tema 4 no tiene ejercicios de examen real catalogados.
 - [x] B3. Temas 6-8 (migrador ampliado: `<svg>` de marcadores y `style` en recortes del libro; `t06-t08.py` creados). Correcciones de redondeo: T7 e3 0,518 m/s; T8 x9 I_A=0,6731. Pendiente (índice de exámenes): faltan en `examenes_por_tema.md` entradas propias de Sept 2022 P-2(e) y P-3(a), citadas en el tema 6 (la prueba solo exige la convocatoria).
 - [x] B4. Temas 9-11 (migrados; `t09-t11.py` creados, sin correcciones de contenido). Migrador: atributos extra en recortes del libro (`attrs`) y ejercicios sin título (`prac`).
-- [ ] B5. Temas 12-14
+- [x] B5. Temas 12-14 (migrados; `t12-t14.py`). Migrador: texto suelto `$$…$$`, `<h3 id>`, `<h4>`, ids con guion. `examenes_requeridos` ahora se calcula con TODAS las etiquetas X de la página (antes solo las de ejercicios): ya vigila 13 (6 refs), 14 (7), 10 (8), 8 (9), 9 (1). Corrección: T12 e10 «≈26 veces».
 - [ ] B6. Temas 15-17
 - [ ] B7. Temas 18-20 (los de más figuras; tema 18 pesa 370 KB)
 - [ ] B8. `ejercicios_modulo1.html` (decidir si se migra o se deja tal cual) y ejecutar una vez `PRUEBAS_TODAS=1 python pruebas/ejecutar.py` (≈13 min).

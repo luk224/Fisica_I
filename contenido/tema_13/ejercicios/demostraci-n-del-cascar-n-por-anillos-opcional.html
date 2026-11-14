@@ -1,0 +1,8 @@
+<p>Cascarón de masa $M$ y radio $R$; punto $P$ a distancia $r$ del centro. Se corta el cascarón en anillos de ángulo $\phi$ (medido desde el eje que va al punto) y se suman sus energías potenciales.</p>
+  <ol class="steps">
+    <li><b>Un anillo.</b> Todas sus partículas están a la misma distancia $s$ de $m$, así que $dU=-\dfrac{Gm\,dM}{s}$ (13.18).</li>
+    <li><b>Su masa.</b> El anillo tiene radio $R\sin\phi$ y ancho $R\,d\phi$: área $dA=2\pi R^2\sin\phi\,d\phi$. Como la masa es proporcional al área ($4\pi R^2$ en total): $\dfrac{dM}{M}=\tfrac12\sin\phi\,d\phi$ (13.19), luego $dU=-\dfrac{GMm}{2s}\sin\phi\,d\phi$ (13.20).</li>
+    <li><b>Cambio de variable $\phi\to s$.</b> Por Pitágoras, $s^2=r^2-2rR\cos\phi+R^2$ (13.21). Diferenciando: $2s\,ds=2rR\sin\phi\,d\phi$, es decir, $\sin\phi\,d\phi=\dfrac{s\,ds}{rR}$. Entonces $dU=-\dfrac{GMm}{2rR}\,ds$ (13.22).</li>
+    <li><b>Integrar con $\phi$ de 0 a $\pi$.</b> Si $P$ está <b>fuera</b> ($r\gt R$), $s$ va de $r-R$ a $r+R$: $U=-\dfrac{GMm}{2rR}\big[(r+R)-(r-R)\big]=-\dfrac{GMm}{r}$ (13.23-13.24).</li>
+    <li><b>Si $P$ está dentro</b> ($r\lt R$) todo igual, pero $s$ va de $R-r$ a $R+r$: $U=-\dfrac{GMm}{2rR}\big[(R+r)-(R-r)\big]=-\dfrac{GMm}{R}$ (13.25-13.26): <b>no depende de $r$</b> ⇒ la fuerza $-dU/dr$ es cero.</li>
+  </ol>

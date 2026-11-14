@@ -1,0 +1,11 @@
+<p class="enun">Cuatro pasajeros, con una masa combinada de 250 kg, comprimen 4,00 cm los resortes de un automóvil con amortiguadores muy gastados al subirse a él. Modela el auto y a los pasajeros como un solo cuerpo sobre un único resorte ideal. Si el automóvil cargado tiene un periodo de vibración de 1,92 s, ¿qué periodo tiene cuando está vacío?</p>
+  <ol class="steps">
+    <li><b>Constante del resorte con el dato de los pasajeros.</b> Su peso añadido comprime 4,00 cm más: $k=\dfrac{(250)(9{,}80)}{0{,}0400}=6{,}125\times10^4$ N/m (como en el ejemplo 14.6).</li>
+    <li><b>Masa del coche ($M$, incógnita) con el periodo cargado.</b> $T_L=2\pi\sqrt{\dfrac{M+250}{k}}$ ⇒ $M=\left(\dfrac{T_L}{2\pi}\right)^2k-250=\left(\dfrac{1{,}92}{2\pi}\right)^2(6{,}125\times10^4)-250=5{,}47\times10^3$ kg.</li>
+    <li><b>Periodo vacío.</b> $T_E=2\pi\sqrt{\dfrac Mk}=2\pi\sqrt{\dfrac{5469}{61\,250}}=$ <b>1,88 s</b>.</li>
+    <li><b>Atajo.</b> $T_E^2=T_L^2-4\pi^2\dfrac{250}{k}=T_L^2-\dfrac{4\pi^2\,\Delta x}{g}$ ⇒ $T_E=\sqrt{1{,}92^2-4\pi^2(0{,}0400)/9{,}80}=1{,}88$ s.</li>
+    <li><b>Sentido físico.</b> Menos masa ⇒ periodo algo menor. Una masa de 5,5 t es la de un vehículo muy pesado: es la consecuencia del modelo (un solo resorte) con estos datos.</li>
+  </ol>
+  {{fig:automovil-modelado-como-un-bloque-sobre-un-resor}}
+  <div class="recipe"><b>Receta:</b> si te dan cuánto baja el sistema al añadir una masa conocida, eso da $k$; el periodo con carga da la masa total; resta.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Calcular $k$ con la masa total del coche, o suponer $T_E=T_L$.</p></div>

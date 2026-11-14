@@ -1,0 +1,12 @@
+<p class="enun">En cierto punto de una tubería, la rapidez del agua es de 3,00 m/s y la presión manométrica es de $5{,}00\times10^4$ Pa. Calcula la presión manométrica en un segundo punto de la tubería, 11,0 m más abajo que el primero, si el diámetro del tubo ahí es el doble que en el primer punto.</p>
+  <ol class="steps">
+    <li><b>Continuidad.</b> Diámetro doble ⇒ área cuádruple ⇒ $v_2=v_1/4=0{,}750$ m/s.</li>
+    <li><b>Bernoulli (12.17)</b> con $y_1-y_2=11{,}0$ m. Se pueden usar presiones manométricas en los dos puntos, porque $p_{atm}$ aparece a ambos lados y se cancela: $p_2=p_1+\tfrac12\rho(v_1^2-v_2^2)+\rho g(y_1-y_2)$.</li>
+    <li><b>Términos.</b> Cinético: $\tfrac12(1000)(9-0{,}5625)=4{,}22\times10^3$ Pa. Altura: $(1000)(9{,}8)(11{,}0)=1{,}078\times10^5$ Pa.</li>
+    <li><b>Resultado:</b> $p_2=5{,}00\times10^4+4{,}22\times10^3+1{,}078\times10^5=1{,}62\times10^5$ Pa (manométrica).</li>
+    <li><b>Sentido:</b> bajar y frenar hacen <i>subir</i> la presión; los dos términos suman. El de altura domina (≈ 26 veces el cinético).</li>
+  </ol>
+{{fig:tuberia-que-desciende-11-metros-y-duplica-su-dia}}
+
+  <div class="recipe"><b>Receta:</b> Bernoulli entre dos puntos de una tubería: (i) continuidad ⇒ $v_2$; (ii) $p_2=p_1+\tfrac12\rho(v_1^2-v_2^2)+\rho g(y_1-y_2)$, con todas las presiones del mismo tipo.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Equivocarse con el signo del término de altura (el punto más bajo tiene <i>más</i> presión); poner $v_2=v_1/2$ (cociente de diámetros).</p></div>
