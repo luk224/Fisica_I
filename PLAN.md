@@ -10,7 +10,7 @@
 - Español; citas de página impresa de U; sin comparar fuentes ni hablar de erratas (regla 8 bis).
 - Todo número se comprueba con sympy (`pruebas/numerico/tNN.py`).
 
-**Estado a 2026-11-14:** tema 5 migrado y en formato «estudio» (commit `e17a10f`); buscador, pruebas, cambios y figuras perezosas listos para los 20 temas (los otros 19 siguen con su HTML antiguo + solo el script del buscador).
+**Estado a 2026-11-14:** los 20 temas están migrados a `contenido/` (fase B completa, con pruebas numéricas `t01-t20`); solo el tema 5 está en formato «estudio». Siguiente: fase C.
 
 ---
 
@@ -37,7 +37,7 @@ Orden sugerido (de menos a más figuras): hacer 1 tema de prueba y, si el migrad
 - [x] B5. Temas 12-14 (migrados; `t12-t14.py`). Migrador: texto suelto `$$…$$`, `<h3 id>`, `<h4>`, ids con guion. `examenes_requeridos` ahora se calcula con TODAS las etiquetas X de la página (antes solo las de ejercicios): ya vigila 13 (6 refs), 14 (7), 10 (8), 8 (9), 9 (1). Corrección: T12 e10 «≈26 veces».
 - [x] B6. Temas 15-17 (migrados; `t15-t17.py`, sin correcciones de contenido; migrador: recortes del libro con estructura distinta pasan como parte).
 - [x] B7. Temas 18-20 (migrados sin cambios en el migrador; `t18-t20.py`, sin correcciones de contenido). Nota: miles escritos con espacio normal («25 521») no los detecta `test_numerico` (se cubren por totales); unificar con `\,` al redactar.
-- [ ] B8. `ejercicios_modulo1.html` (decidir si se migra o se deja tal cual) y ejecutar una vez `PRUEBAS_TODAS=1 python pruebas/ejecutar.py` (≈13 min).
+- [x] B8. `ejercicios_modulo1.html` se deja tal cual (página aparte con 6 bloques; ya está en el buscador). `PRUEBAS_TODAS=1` ejecutado el 2026-11-14: 16 pruebas OK en 778 s. Fase B completa: los 20 temas viven en `contenido/`. (Original: ejecutar una vez `PRUEBAS_TODAS=1 python pruebas/ejecutar.py` (≈13 min).
 
 ## Fase C — Aplicar el formato «estudio» a cada tema (redacción)
 Receta por tema NN (modelo: `contenido/tema_05/`): resumen de 5 minutos + tabla «¿qué tipo de problema es?» + prioridades + teoría condensada (una caja por idea, un error típico) + mini-tests (3 preguntas por sección) + ejercicios Núcleo/Práctica/Teoría con tabla «método que te llevas». Los X de examen **intactos**. Flujo con agentes: `fuentes-fisica` → `resolutor-ejercicios` → `redactor-tema` → `revisor-tema` (CLAUDE.md §4).
