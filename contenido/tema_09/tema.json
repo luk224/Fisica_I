@@ -5,10 +5,10 @@
  "descripcion": "Hasta ahora has tratado los cuerpos como puntos. Aquí un cuerpo <i>gira</i>: aprenderás a describir ese giro con ángulos, velocidad y aceleración angulares (la cinemática es casi un calco del movimiento rectilíneo), a ligarlo con lo que le pasa a cada punto del cuerpo, y a calcular su energía de rotación con una nueva cantidad: el <b>momento de inercia</b>, que hace en la rotación el papel de la masa.",
  "chips": [
   "Libro oficial: Sears-Zemansky, cap. 9 (pp. 274-291)",
-  "Preguntas de examen real: 1 (dos cuestiones)",
-  "Ejercicios: 10 bloques del solucionario (12 problemas) + 1 problema práctico de U",
+  "Preguntas de examen real: 1 (dos cuestiones, conservada)",
+  "Ejercicios del solucionario: 10 bloques (12 problemas) + 1 problema práctico de U",
   "3 ejemplos interactivos",
-  "⏱ ~6 h de estudio"
+  "⏱ ruta rápida ~3 h · completa ~6 h"
  ],
  "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
  "titulo_pagina": "Física I · Tema 9 Rotación de cuerpos rígidos",
@@ -284,68 +284,19 @@
  },
  "bloques": [
   {
-   "t": "h2",
-   "id": "prereq",
-   "n": "0",
-   "titulo": "Antes de empezar",
-   "prio": null,
-   "src": {
-    "l": "U",
-    "ref": "U cap. 9 Introducción, p. 274",
-    "txt": "U p.274"
-   }
+   "t": "parte",
+   "archivo": "en5.html"
   },
   {
    "t": "parte",
-   "archivo": "parte01.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte02.html"
-  },
-  {
-   "t": "caja",
-   "k": "tip",
-   "h": "Qué ha caído en examen",
-   "html": [
-    "<p><b>No hay ningún problema de examen de 3 puntos de este tema</b> en los exámenes revisados: los problemas de rotación que han caído mezclan fuerzas y momentos de fuerza y son del tema 10. Lo que sí apareció son dos <b>cuestiones cortas</b> de cinemática y energía de rotación dentro de la pregunta de teoría de Febrero 2025 (2ª semana), P-3 Opción A, apartados (a) y (b) (ruedas de un carro que baja una pendiente; volante con $\\omega$ constante). Esa pregunta, en conjunto, es del <b>tema 10</b> (su tema a desarrollar es «Trabajo y potencia en un movimiento de rotación»); aquí solo se resuelven sus cuestiones (a) y (b). Están resueltas como X1, y con ella se practican las ideas centrales: componentes de la aceleración de un punto y reparto de la energía entre traslación y rotación. El grueso de la práctica son los 10 bloques del solucionario (E) resueltos al final.</p>",
-    "  <table>",
-    "  <tr><th>Cuestión de examen real</th><th>Ejercicio de esta página</th></tr>",
-    "  <tr><td>Feb 2025 (2ª sem.) P-3 Opción A (b) — volante con $\\omega$ constante: ¿aceleración tangencial? ¿radial? ¿magnitud y dirección constantes?</td><td><a href=\"#x1\">X1 (b)</a></td></tr>",
-    "  <tr><td>Feb 2025 (2ª sem.) P-3 Opción A (a) — carro de cuatro ruedas cuesta abajo: ruedas grandes y pesadas o pequeñas y ligeras; sólidas o con radios</td><td><a href=\"#x1\">X1 (a)</a></td></tr>",
-    "  </table>"
-   ],
-   "src": {
-    "l": "X",
-    "ref": "Examen Febrero 2025 (2ª semana) P-3 Opción A (a)(b)",
-    "txt": "X"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "tip",
-   "h": "La receta maestra: rotación en 5 pasos",
-   "html": [
-    "<ol class=\"steps\">",
-    "    <li><b>Fija el eje y el sentido positivo.</b> Normalmente el antihorario es positivo; $\\omega_z$ y $\\alpha_z$ llevan signo.</li>",
-    "    <li><b>¿Es $\\alpha_z$ constante?</b> Si sí, usa las ecuaciones 9.7, 9.10, 9.11 y 9.12 como en el MRUA (elige la que contenga tu incógnita y no la que no conoces). Si $\\theta(t)$ es otra función, deriva: $\\omega=d\\theta/dt$, $\\alpha=d\\omega/dt$.</li>",
-    "    <li><b>Si preguntan por un punto concreto</b> a distancia $r$ del eje: $v=r\\omega$, $a_{tan}=r\\alpha$, $a_{rad}=r\\omega^2$, y recuerda que los ángulos van <b>en radianes</b>.</li>",
-    "    <li><b>Si aparece energía,</b> calcula $I$ (suma $m_ir_i^2$, tabla 9.2, ejes paralelos o integral) y usa $K=\\tfrac12I\\omega^2$ en $K_1+U_1=K_2+U_2$; si hay un cable que no resbala, $v=R\\omega$.</li>",
-    "    <li><b>Comprueba</b> unidades (rad/s, kg·m²), el signo y los casos límite.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Estrategia para resolver problemas 9.1, p. 286 y §9.1-9.3, pp. 274-282",
-    "txt": "U p.274-286"
-   }
+   "archivo": "decide.html"
   },
   {
    "t": "h2",
    "id": "s1",
    "n": "1",
-   "titulo": "Velocidad y aceleración angulares",
-   "prio": null,
+   "titulo": "Ángulo, velocidad y aceleración angulares",
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §9.1, pp. 274-278",
@@ -354,28 +305,17 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>Un <b>cuerpo rígido</b> es uno que no se deforma: todas sus partes mantienen sus distancias. Cuando gira alrededor de un eje fijo (la aguja de un velocímetro, la rueda de una bici), basta <i>un solo número</i> para decir dónde está: el ángulo $\\theta$ que forma con una referencia, igual que $x$ te dice dónde está un coche en una carretera. La <b>velocidad angular</b> es «cuántos radianes gira por segundo» (como la velocidad es cuántos metros recorre por segundo) y la <b>aceleración angular</b> es cuánto cambia eso por segundo. Lo bonito: <i>todos los puntos del cuerpo comparten el mismo $\\theta$, $\\omega$ y $\\alpha$</i>, aunque cada uno recorra una distancia distinta.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §9.1, pp. 274-275 (figs. 9.1 y 9.3)",
-    "txt": "U p.274-275"
-   }
-  },
-  {
-   "t": "caja",
    "k": "def",
-   "h": "Radianes",
+   "h": "Cuerpo rígido y ángulo en radianes",
    "html": [
-    "<p>El ángulo $\\theta$ en radianes es la razón entre la longitud del arco $s$ y el radio $r$:",
-    "  $$\\theta=\\frac sr\\qquad\\text{o bien}\\qquad s=r\\theta\\qquad\\text{(ec. 9.1)}$$",
-    "  Es un número puro (arco entre radio). Una vuelta completa mide $2\\pi$ rad, así que $1\\ \\text{rad}=360^\\circ/2\\pi=57{,}3^\\circ$, y $1\\ \\text{rev/s}=2\\pi$ rad/s, $1\\ \\text{rpm}=2\\pi/60$ rad/s. Un ángulo positivo se mide en sentido antihorario desde el eje de referencia.</p>"
+    "<p>Un <b>cuerpo rígido</b> no se deforma: sus partes mantienen las distancias entre sí. Si gira alrededor de un eje fijo (la aguja de un velocímetro, la rueda de una bici), basta <b>un número</b> para decir dónde está: el ángulo $\\theta$ que forma una recta del cuerpo con una referencia. Ese ángulo se mide en <b>radianes</b>, la razón entre el arco $s$ y el radio $r$:</p>",
+    "  $$\\theta=\\frac sr\\qquad\\Longleftrightarrow\\qquad s=r\\theta\\qquad\\text{(ec. 9.1)}$$",
+    "  <p>Es un número puro. Una vuelta son $2\\pi$ rad, así que $1\\ \\text{rad}=57{,}3^\\circ$, $1\\ \\text{rev/s}=2\\pi$ rad/s y $1\\ \\text{rpm}=2\\pi/60$ rad/s. El ángulo positivo se mide en sentido antihorario. <b>Ejemplo mínimo.</b> Un arco de $60^\\circ=\\pi/3$ rad en una rueda de radio $r$ mide $s=(\\pi/3)\\,r\\approx1{,}05\\,r$. <b>Error típico:</b> escribir $s=60\\,r$. En cuanto una fórmula mezcla lo lineal con lo angular ($s=r\\theta$, $v=r\\omega$, $a_{tan}=r\\alpha$, $K=\\tfrac12I\\omega^2$), los ángulos van <b>en radianes</b>: convierte «60°» o «rpm» antes de operar.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §9.1, ec. (9.1), p. 274",
-    "txt": "U p.274"
+    "ref": "U §9.1, ec. (9.1), p. 274 y CUIDADO «Utilice ángulos en radianes», p. 281",
+    "txt": "U p.274, 281"
    }
   },
   {
@@ -391,43 +331,38 @@
   },
   {
    "t": "caja",
-   "k": "warn",
-   "h": "Error típico: grados en las fórmulas",
-   "html": "<p>Cuando una ecuación mezcla cantidades lineales y angulares ($s=r\\theta$, $v=r\\omega$, $a_{tan}=r\\alpha$…), los ángulos <b>deben ir en radianes</b>. Por ejemplo, $s=(\\pi/3)\\,r$ es correcto y $s=60\\,r$ no. Cada vez que veas «60°» o «rpm», conviértelo antes de operar.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §9.3, CUIDADO Utilice ángulos en radianes, p. 281",
-    "txt": "U p.281"
-   }
-  },
-  {
-   "t": "caja",
    "k": "def",
-   "h": "Velocidad angular y aceleración angular",
+   "h": "Velocidad angular $\\omega_z$ y aceleración angular $\\alpha_z$",
    "html": [
-    "<p>La <b>velocidad angular media</b> es $\\omega_{med\\text{-}z}=\\dfrac{\\Delta\\theta}{\\Delta t}$ (ec. 9.2) y la <b>instantánea</b>",
-    "  $$\\omega_z=\\frac{d\\theta}{dt}\\qquad\\text{(ec. 9.3)}$$",
-    "  La <b>aceleración angular</b> es $\\alpha_z=\\dfrac{d\\omega_z}{dt}=\\dfrac{d^2\\theta}{dt^2}$ (ecs. 9.5 y 9.6); su media es $\\Delta\\omega_z/\\Delta t$ (ec. 9.4). Unidades: rad/s y rad/s². Un $\\omega_z>0$ significa giro antihorario (si ese es el sentido positivo) y $\\omega_z<0$, horario; la <b>rapidez angular</b> $\\omega=|\\omega_z|$ nunca es negativa.",
-    "  <br>La rotación <b>se acelera</b> si $\\omega_z$ y $\\alpha_z$ tienen el <i>mismo signo</i> y <b>frena</b> si tienen signos opuestos.</p>"
+    "<p>Igual que la velocidad dice cuántos metros recorre algo por segundo, la <b>velocidad angular</b> dice cuántos radianes gira; la <b>aceleración angular</b>, cuánto cambia esa velocidad angular por segundo. Y lo bonito: <i>todos los puntos del cuerpo comparten $\\theta$, $\\omega_z$ y $\\alpha_z$</i>.</p>",
+    "  $$\\omega_{med\\text{-}z}=\\frac{\\Delta\\theta}{\\Delta t}\\ (9.2)\\qquad\\omega_z=\\frac{d\\theta}{dt}\\ (9.3)\\qquad\\alpha_z=\\frac{d\\omega_z}{dt}=\\frac{d^2\\theta}{dt^2}\\ (9.5,\\ 9.6)$$",
+    "  <p>Unidades: rad/s y rad/s². $\\omega_z\\gt0$ es giro antihorario y $\\omega_z\\lt0$, horario; la <b>rapidez angular</b> $\\omega=|\\omega_z|$ nunca es negativa. <b>Ejemplo mínimo (ejemplos 9.1 y 9.2).</b> Un volante gira con $\\theta=(2{,}0\\ \\text{rad/s}^3)\\,t^3$. Entre 2,0 s y 5,0 s gira de 16 a 250 rad: $\\omega_{med}=(250-16)/3=78$ rad/s (pendiente de la cuerda). Derivando, $\\omega_z=6t^2$ da 24 y 150 rad/s, y $\\alpha_z=12t$ da 24 y 60 rad/s² en esos instantes. <b>Error típico:</b> creer que «$\\alpha_z\\gt0$» significa «gira cada vez más deprisa». La rotación <b>se acelera</b> si $\\omega_z$ y $\\alpha_z$ tienen el <i>mismo signo</i> y <b>frena</b> si tienen signos opuestos.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §9.1, ecs. (9.2)-(9.6), pp. 275-277",
+    "ref": "U §9.1, ecs. (9.2)-(9.6), pp. 275-277 y ejemplos 9.1 y 9.2, pp. 275-277",
     "txt": "U p.275-277"
    }
   },
   {
+   "t": "fig",
+   "ref": "grafica-de-theta-igual-a-dos-t-al-cubo-con-la-cu"
+  },
+  {
+   "t": "fig",
+   "ref": "grafica-de-la-velocidad-angular-frente-al-tiempo"
+  },
+  {
    "t": "caja",
    "k": "def",
-   "h": "Vector velocidad angular",
+   "h": "El vector $\\vec\\omega$ (regla de la mano derecha)",
    "html": [
-    "<p>Para describir el giro de todo el cuerpo con un solo vector, la <b>velocidad angular se define como vector</b> $\\vec\\omega$: su dirección es la del <b>eje de rotación</b> (perpendicular al plano en que giran las partículas) y su sentido lo da la <b>regla de la mano derecha</b>: si curvas los dedos de la mano derecha en el sentido del giro, el pulgar apunta en el sentido de $\\vec\\omega$. Con el eje $z$, $\\omega_z>0$ cuando $\\vec\\omega$ apunta hacia $+z$ (giro antihorario visto desde $+z$) y $\\omega_z<0$ cuando apunta hacia $-z$ (giro horario).",
-    "  <br>El <b>vector aceleración angular</b> es $\\vec\\alpha=d\\vec\\omega/dt$. Con el eje fijo, $\\vec\\alpha$ y $\\vec\\omega$ están ambos sobre el eje: $\\vec\\alpha$ es <b>paralelo a $\\vec\\omega$ si la rotación se acelera</b> y <b>antiparalelo si se frena</b>, que es la regla de los signos de $\\omega_z$ y $\\alpha_z$ vista con vectores. En este capítulo el eje no cambia de dirección y basta con las componentes $\\omega_z$ y $\\alpha_z$.</p>"
+    "<p>Para describir el giro de todo el cuerpo con un vector, $\\vec\\omega$ se pone <b>sobre el eje de rotación</b>: curva los dedos de la mano derecha en el sentido del giro y el pulgar marca el sentido de $\\vec\\omega$. Con el eje $z$, $\\omega_z\\gt0$ si $\\vec\\omega$ apunta a $+z$. La aceleración angular $\\vec\\alpha=d\\vec\\omega/dt$ está también sobre el eje: <b>paralela</b> a $\\vec\\omega$ si el giro se acelera y <b>antiparalela</b> si frena (la regla de los signos, vista con vectores). En este capítulo el eje no cambia y basta con $\\omega_z$ y $\\alpha_z$. <b>Error típico:</b> imaginar $\\vec\\omega$ como una flecha curva que da vueltas o que apunta hacia donde se mueve una parte del cuerpo: es perpendicular al plano de giro. Y $\\omega_z$ no significa que el cuerpo avance por el eje $z$; solo gira alrededor de él.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §9.1, «Velocidad angular como vector», p. 276 (fig. 9.5) y «Aceleración angular como un vector», p. 278 (fig. 9.7)",
-    "txt": "U p.276, 278"
+    "ref": "U §9.1, «Velocidad angular como vector», p. 276 (fig. 9.5 y CUIDADO) y «Aceleración angular como un vector», p. 278",
+    "txt": "U p.276-278"
    }
   },
   {
@@ -442,59 +377,29 @@
    }
   },
   {
-   "t": "caja",
-   "k": "warn",
-   "h": "Error típico: la velocidad angular no es un vector «que da vueltas»",
-   "html": "<p>El vector $\\vec\\omega$ es perpendicular al plano de giro: no apunta hacia donde se mueve ninguna parte del cuerpo, y no es un «vector curvo» que siga la flecha circular. Es una propiedad de todo el cuerpo, y por eso se coloca sobre el eje, que es común a todas sus partes.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §9.1, CUIDADO El vector velocidad angular es perpendicular al plano de rotación, p. 276",
-    "txt": "U p.276"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "warn",
-   "h": "Error típico",
-   "html": "<p>Decir «$\\alpha_z>0$, luego gira cada vez más deprisa». Lo que importa es el signo <i>relativo</i> con $\\omega_z$: si la rueda gira en sentido negativo y $\\alpha_z>0$, está frenando. Y $\\omega_z$ no significa que el cuerpo se desplace a lo largo del eje $z$: solo gira alrededor de él.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §9.1, p. 275 (CUIDADO) y p. 277",
-    "txt": "U p.275-277"
-   }
-  },
-  {
-   "t": "fig",
-   "ref": "grafica-de-la-velocidad-angular-frente-al-tiempo"
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto: velocidad y aceleración angulares de un volante",
-   "html": [
-    "<p>Un volante gira con $\\theta(t)=(2{,}0\\ \\text{rad/s}^3)\\,t^3$. Calcula $\\omega_{med}$ entre $t=2{,}0$ s y $5{,}0$ s y las instantáneas.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Ángulos.</b> $\\theta(2)=2(8)=16$ rad y $\\theta(5)=2(125)=250$ rad.</li>",
-    "    <li><b>Media.</b> $\\omega_{med}=\\dfrac{250-16}{5-2}=78$ rad/s (la pendiente de la cuerda de la gráfica).</li>",
-    "    <li><b>Instantáneas.</b> Derivando, $\\omega_z=6t^2$ (rad/s con $t$ en s): 24 rad/s en 2 s y 150 rad/s en 5 s. Derivando otra vez, $\\alpha_z=d\\omega_z/dt=12t$: 24 y 60 rad/s² en $t=2{,}0$ s y $5{,}0$ s. La aceleración media entre 2 s y 5 s es $(150-24)/3=42$ rad/s².</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplos 9.1 y 9.2, pp. 275-277",
-    "txt": "U p.275-277"
-   }
-  },
-  {
-   "t": "fig",
-   "ref": "grafica-de-theta-igual-a-dos-t-al-cubo-con-la-cu"
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Pasa 45 rpm a rad/s y 150° a radianes.",
+     "a": "$45\\cdot2\\pi/60=4{,}71$ rad/s; $150\\cdot\\pi/180=2{,}62$ rad."
+    },
+    {
+     "q": "Un disco gira con $\\theta=(5{,}0\\ \\text{rad/s})\\,t-(0{,}50\\ \\text{rad/s}^3)\\,t^3$. En $t=1{,}0$ s, ¿se acelera o frena?",
+     "a": "$\\omega_z=5{,}0-1{,}5t^2=3{,}5$ rad/s y $\\alpha_z=-3{,}0t=-3{,}0$ rad/s²: signos opuestos, <b>frena</b>."
+    },
+    {
+     "q": "Una rueda tiene $\\omega_z=-4{,}0$ rad/s y $\\alpha_z=+2{,}0$ rad/s² constante. ¿Se acelera? ¿Cuándo se para?",
+     "a": "Signos opuestos: frena (aunque $\\alpha_z\\gt0$). Se para cuando $\\omega_z=-4{,}0+2{,}0\\,t=0$, en $t=2{,}0$ s; después gira en sentido antihorario cada vez más deprisa (método de <a href=\\\"#e2\\\">E2</a>)."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s2",
    "n": "2",
    "titulo": "Rotación con aceleración angular constante",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §9.2, pp. 278-280",
@@ -503,63 +408,23 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>Si ya sabes el movimiento rectilíneo uniformemente acelerado, ya sabes esto: cambia $x\\to\\theta$, $v_x\\to\\omega_z$, $a_x\\to\\alpha_z$ y las cuatro ecuaciones valen igual. (Tabla 9.1.) Un disco de Blu-ray que se frena al terminar la película es el ejemplo clásico.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §9.2 y tabla 9.1, p. 279",
-    "txt": "U p.279"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "Ecuaciones con $\\alpha_z$ constante (tabla 9.1)",
+   "h": "Con $\\alpha_z$ constante: las ecuaciones del MRUA con otras letras (tabla 9.1)",
    "html": [
-    "<table>",
-    "  <tr><th>Movimiento rectilíneo ($a_x$ cte.)</th><th>Rotación ($\\alpha_z$ cte.)</th><th>Lo que NO contiene</th></tr>",
+    "<p>Si ya sabes el movimiento rectilíneo con aceleración constante, ya sabes esto: cambia $x\\to\\theta$, $v_x\\to\\omega_z$ y $a_x\\to\\alpha_z$.</p>",
+    "  <table>",
+    "  <tr><th>Movimiento rectilíneo ($a_x$ cte.)</th><th>Rotación ($\\alpha_z$ cte.)</th><th>No contiene</th></tr>",
     "  <tr><td>$v_x=v_{0x}+a_xt$ (2.8)</td><td>$\\omega_z=\\omega_{0z}+\\alpha_zt$ (9.7)</td><td>$\\theta$</td></tr>",
     "  <tr><td>$x-x_0=\\tfrac12(v_{0x}+v_x)t$ (2.14)</td><td>$\\theta-\\theta_0=\\tfrac12(\\omega_{0z}+\\omega_z)t$ (9.10)</td><td>$\\alpha_z$</td></tr>",
     "  <tr><td>$x=x_0+v_{0x}t+\\tfrac12a_xt^2$ (2.12)</td><td>$\\theta=\\theta_0+\\omega_{0z}t+\\tfrac12\\alpha_zt^2$ (9.11)</td><td>$\\omega_z$</td></tr>",
     "  <tr><td>$v_x^2=v_{0x}^2+2a_x(x-x_0)$ (2.13)</td><td>$\\omega_z^2=\\omega_{0z}^2+2\\alpha_z(\\theta-\\theta_0)$ (9.12)</td><td>$t$</td></tr>",
     "  </table>",
-    "  <p>Truco: escribe tus datos, marca la incógnita y elige la ecuación que contiene las tres letras que te importan y ninguna de las que no conoces.</p>"
+    "  <p>Elige la ecuación que tiene tu incógnita y no la letra que no conoces. <b>Ejemplo mínimo (ejemplo 9.3).</b> Un disco de Blu-ray gira a $\\omega_{0z}=27{,}5$ rad/s y frena con $\\alpha_z=-10{,}0$ rad/s². En 0,300 s: $\\omega_z=27{,}5-10{,}0(0{,}300)=24{,}5$ rad/s y $\\theta=27{,}5(0{,}300)-\\tfrac12(10{,}0)(0{,}300)^2=7{,}80$ rad $=1{,}24$ rev, es decir, una vuelta y $0{,}24\\cdot360^\\circ\\approx87^\\circ$ más. Comprobación sin $t$ (9.12): $(24{,}5^2-27{,}5^2)/(2\\cdot(-10{,}0))=7{,}80$ rad. <b>Error típico:</b> usar estas ecuaciones cuando $\\alpha_z$ <b>no</b> es constante (si te dan $\\theta(t)$ con un $t^3$, deriva).</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §9.2, ecs. (9.7), (9.10)-(9.12) y tabla 9.1, pp. 278-279",
-    "txt": "U p.278-279"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "warn",
-   "h": "Error típico",
-   "html": "<p>Estas ecuaciones valen <b>solo si $\\alpha_z$ es constante</b>. Si te dan $\\theta(t)$ como una función que no es un polinomio de grado 2, no apliques 9.7-9.12: deriva (sección anterior).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §9.2, CUIDADO Aceleración angular constante, p. 279",
-    "txt": "U p.279"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto: disco de Blu-ray que se detiene",
-   "html": [
-    "<p>En $t=0$ el disco gira a $\\omega_{0z}=27{,}5$ rad/s con $\\alpha_z=-10{,}0$ rad/s² constante; una recta PQ del disco está sobre el eje $+x$. a) ¿$\\omega_z$ en $t=0{,}300$ s? b) ¿Qué ángulo forma PQ con $+x$ en ese instante?</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>a)</b> Con 9.7: $\\omega_z=27{,}5+(-10{,}0)(0{,}300)=24{,}5$ rad/s. Bajó, como debe ser con $\\alpha_z<0$.</li>",
-    "    <li><b>b)</b> Con 9.11 y $\\theta_0=0$: $\\theta=27{,}5(0{,}300)+\\tfrac12(-10{,}0)(0{,}300)^2=7{,}80$ rad $=7{,}80/2\\pi=1{,}24$ rev.</li>",
-    "    <li>Es una vuelta completa más $0{,}24$ rev $=0{,}24\\cdot360^\\circ=87^\\circ$: PQ forma <b>87°</b> con $+x$.</li>",
-    "    <li><b>Comprobación</b> con 9.12 (sin $t$): $\\theta=\\dfrac{24{,}5^2-27{,}5^2}{2(-10{,}0)}=7{,}80$ rad. ✓</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 9.3, pp. 279-280",
-    "txt": "U p.279-280"
+    "ref": "U §9.2, ecs. (9.7), (9.10)-(9.12), tabla 9.1 y CUIDADO, pp. 278-279; ejemplo 9.3, pp. 279-280",
+    "txt": "U p.278-280"
    }
   },
   {
@@ -567,11 +432,29 @@
    "ref": "disco-que-gira-una-vuelta-completa-y-87-grados-m"
   },
   {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Una rueda pasa del reposo a 20 rad/s en 5,0 s con $\\alpha$ constante. ¿$\\alpha$? ¿Cuántas vueltas da?",
+     "a": "$\\alpha=20/5{,}0=4{,}0$ rad/s²; $\\theta=\\tfrac12(0+20)(5{,}0)=50$ rad $=50/2\\pi=7{,}96$ rev."
+    },
+    {
+     "q": "Un ventilador a 30 rad/s se frena uniformemente y se para tras girar 45 rad. ¿$\\alpha_z$? ¿Cuánto tarda?",
+     "a": "Sin $t$ (9.12): $0=30^2+2\\alpha_z(45)\\Rightarrow\\alpha_z=-10$ rad/s². Con 9.7: $t=30/10=3{,}0$ s."
+    },
+    {
+     "q": "Un disco tiene $\\omega_{0z}=10$ rad/s y $\\alpha_z=-2{,}0$ rad/s² constante durante 8,0 s. ¿$\\omega_z$ final y ángulo neto girado?",
+     "a": "$\\omega_z=10-2{,}0(8{,}0)=-6$ rad/s: se paró en 5 s y gira al revés. $\\theta=10(8{,}0)-\\tfrac12(2{,}0)(8{,}0)^2=16$ rad neto (no es el ángulo total recorrido)."
+    }
+   ]
+  },
+  {
    "t": "h2",
    "id": "s3",
    "n": "3",
-   "titulo": "Relación entre cinemática lineal y angular",
-   "prio": null,
+   "titulo": "De lo angular a lo lineal: velocidad y aceleración de un punto",
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §9.3, pp. 280-283",
@@ -580,27 +463,17 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>En un tiovivo, todos los caballitos dan una vuelta en el mismo tiempo (misma $\\omega$), pero el de fuera recorre un círculo más largo y por eso va <i>más rápido</i> y «se siente» más acelerado. Cada punto traza una circunferencia alrededor del eje: su velocidad es tangente y proporcional a la distancia al eje $r$; su aceleración tiene dos partes, una tangencial (cambia la rapidez) y otra radial (cambia la dirección).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §9.3, pp. 280-281 (figs. 9.9 y 9.10)",
-    "txt": "U p.280-281"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "Velocidad y aceleración de un punto a distancia $r$ del eje",
+   "h": "Un punto a distancia $r$ del eje: $v=r\\omega$, $a_{tan}=r\\alpha$, $a_{rad}=\\omega^2r$",
    "html": [
-    "<p>$$v=r\\omega\\quad(9.13)\\qquad a_{tan}=\\frac{dv}{dt}=r\\alpha\\quad(9.14)\\qquad a_{rad}=\\frac{v^2}{r}=r\\omega^2\\quad(9.15)$$",
-    "  $a_{tan}$ es tangente a la trayectoria y mide el cambio de <i>rapidez</i>; $a_{rad}$ es la aceleración centrípeta, dirigida hacia el eje, y mide el cambio de <i>dirección</i>. Son perpendiculares, así que $a=\\sqrt{a_{tan}^2+a_{rad}^2}$. Valen para cualquier punto de un cuerpo rígido, y también para una cuerda enrollada que no resbala sobre una polea: la cuerda y el borde tienen la misma rapidez y la misma $a_{tan}$ (pero la $a_{rad}$ de la ec. 9.15 solo es la del borde, no la de la cuerda recta).</p>"
+    "<p>En un tiovivo todos los caballitos dan la vuelta en el mismo tiempo (misma $\\omega$), pero el de fuera recorre un círculo más largo: va <b>más rápido</b> y nota más aceleración. Cada punto describe una circunferencia de radio $r$; su velocidad es tangente y su aceleración tiene dos partes perpendiculares:</p>",
+    "  $$v=r\\omega\\quad(9.13)\\qquad a_{tan}=\\frac{dv}{dt}=r\\alpha\\quad(9.14)\\qquad a_{rad}=\\frac{v^2}{r}=\\omega^2r\\quad(9.15)\\qquad a=\\sqrt{a_{tan}^2+a_{rad}^2}$$",
+    "  <p>$a_{tan}$ cambia la <b>rapidez</b> (apunta como $\\vec v$ si el giro se acelera, al revés si frena); $a_{rad}$ cambia la <b>dirección</b> y apunta siempre hacia el eje. Valen también para un cable que se enrolla sin resbalar: cable y borde tienen la misma $v$ y la misma $a_{tan}$. <b>Ejemplo mínimo (ejemplo 9.4).</b> Un disco de lanzamiento gira en un círculo de 0,800 m con $\\omega=10{,}0$ rad/s y $\\alpha=50{,}0$ rad/s²: $a_{tan}=40{,}0$ m/s², $a_{rad}=80{,}0$ m/s² y $a=89{,}4$ m/s², a $26{,}6^\\circ$ de la dirección hacia el eje. <b>Error típico:</b> decir que con $\\omega$ constante «no hay aceleración». Sí la hay: la radial $\\omega^2r$, de módulo constante pero dirección cambiante (cuestión <a href=\\\"#x1\\\">X1 (b)</a>). Y ninguna de las dos es igual para todos los puntos: ambas crecen con $r$.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §9.3, ecs. (9.13)-(9.15), pp. 280-282",
-    "txt": "U p.280-282"
+    "ref": "U §9.3, ecs. (9.13)-(9.15), pp. 280-282, «Los datos hablan», p. 283 y ejemplo 9.4, p. 282",
+    "txt": "U p.280-283"
    }
   },
   {
@@ -610,35 +483,6 @@
   {
    "t": "fig",
    "ref": "tres-discos-giratorios-con-la-velocidad-y-las-ac"
-  },
-  {
-   "t": "caja",
-   "k": "warn",
-   "h": "Error típico",
-   "html": "<p>Confundir $a_{rad}$ con $a_{tan}$ o creer que son iguales para todos los puntos: ambas dependen de la distancia al eje (en el eje, $r=0$ y no hay ninguna). Y con $\\omega$ constante <i>sí</i> hay aceleración: la radial. «Velocidad angular constante» no es «aceleración nula».</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §9.3, «Los datos hablan», p. 283",
-    "txt": "U p.283"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto: lanzamiento de disco",
-   "html": [
-    "<p>El disco gira en un círculo de radio $r=0{,}800$ m; en cierto instante $\\omega=10{,}0$ rad/s y $\\alpha=50{,}0$ rad/s². Calcula $a_{tan}$, $a_{rad}$ y $a$.</p>",
-    "  <ol class=\"steps\">",
-    "    <li>$a_{tan}=r\\alpha=(0{,}800)(50{,}0)=40{,}0$ m/s².</li>",
-    "    <li>$a_{rad}=\\omega^2r=(10{,}0)^2(0{,}800)=80{,}0$ m/s².</li>",
-    "    <li>$a=\\sqrt{40{,}0^2+80{,}0^2}=89{,}4$ m/s², formando $\\arctan(40/80)=26{,}6^\\circ$ con la dirección hacia el eje.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 9.4, p. 282",
-    "txt": "U p.282"
-   }
   },
   {
    "t": "libro",
@@ -652,33 +496,33 @@
    }
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto: diseño de una hélice",
-   "html": [
-    "<p>Una hélice gira a 2400 rpm. La rapidez de avance es 75,0 m/s y la de la punta no debe pasar de 270 m/s. ¿Radio máximo y $a_{rad}$ de la punta?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>$\\omega=2400\\cdot2\\pi/60=251$ rad/s. La velocidad de la punta es la suma (perpendicular) del avance y de la rotación: $270^2=75{,}0^2+(r\\omega)^2$.</li>",
-    "    <li>$r\\omega=\\sqrt{270^2-75^2}=259$ m/s, luego $r_{max}=259/251=1{,}03$ m.</li>",
-    "    <li>$a_{rad}=\\omega^2r=(251)^2(1{,}03)=6{,}5\\times10^4$ m/s² (unos $6{,}6\\times10^3\\,g$).</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 9.5, pp. 282-283",
-    "txt": "U p.282-283"
-   }
+   "t": "parte",
+   "archivo": "interactivo-cinematica.html"
   },
   {
-   "t": "parte",
-   "archivo": "parte03.html"
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Un tiovivo gira a 0,50 rad/s. ¿Rapidez y aceleración de un caballito a 4,0 m del eje?",
+     "a": "$v=4{,}0(0{,}50)=2{,}0$ m/s; $a_{rad}=(0{,}50)^2(4{,}0)=1{,}0$ m/s² hacia el eje (no hay $a_{tan}$: $\\omega$ es constante)."
+    },
+    {
+     "q": "Una rueda de bici de radio 0,35 m gira a 300 rpm. ¿Rapidez y aceleración de un punto del borde?",
+     "a": "$\\omega=300\\cdot2\\pi/60=31{,}4$ rad/s; $v=0{,}35(31{,}4)=11{,}0$ m/s; $a_{rad}=\\omega^2r=345$ m/s² (unas 35 $g$)."
+    },
+    {
+     "q": "Un punto a 0,20 m del eje tiene, en cierto instante, $\\omega=4{,}0$ rad/s y $\\alpha=3{,}0$ rad/s². ¿Aceleración total?",
+     "a": "$a_{tan}=0{,}60$ m/s², $a_{rad}=(4{,}0)^2(0{,}20)=3{,}2$ m/s²; $a=\\sqrt{0{,}60^2+3{,}2^2}=3{,}26$ m/s²."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s4",
    "n": "4",
-   "titulo": "Energía en el movimiento de rotación: momento de inercia",
-   "prio": null,
+   "titulo": "Momento de inercia y energía cinética de rotación",
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §9.4, pp. 283-288",
@@ -687,57 +531,17 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>Un cuerpo que gira tiene energía cinética aunque su centro no se mueva: cada partícula lleva $\\tfrac12m_iv_i^2$. Si sumas todas con $v_i=r_i\\omega$, la $\\omega^2$ sale como factor común y queda $K=\\tfrac12\\left(\\sum m_ir_i^2\\right)\\omega^2$. Esa suma es el <b>momento de inercia</b> $I$: la «masa efectiva» para girar. Un patinador o una bailarina lo cambian recogiendo o abriendo los brazos; un volante pesado con la masa en la llanta guarda mucha energía girando porque $r^2$ pesa mucho: <i>no importa solo cuánta masa hay, sino a qué distancia del eje está</i>.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §9.4, pp. 283-284 (fig. 9.14)",
-    "txt": "U p.283-284"
-   }
-  },
-  {
-   "t": "caja",
    "k": "def",
-   "h": "Momento de inercia y energía cinética de rotación",
+   "h": "Momento de inercia $I=\\sum m_ir_i^2$ y $K=\\tfrac12I\\omega^2$",
    "html": [
-    "<p>Para un conjunto de partículas, con $r_i$ = distancia <i>perpendicular</i> de la partícula $i$ al eje:",
-    "  $$I=m_1r_1^2+m_2r_2^2+\\cdots=\\sum_im_ir_i^2\\qquad\\text{(ec. 9.16)}\\qquad K=\\tfrac12I\\omega^2\\qquad\\text{(ec. 9.17)}$$",
-    "  Unidad de $I$: kg·m². $\\omega$ debe estar en rad/s para que $K$ salga en julios. $K=\\tfrac12I\\omega^2$ no es una forma nueva de energía: es la suma de las energías cinéticas de todas las partículas.</p>"
+    "<p>Un cuerpo que gira tiene energía cinética aunque su centro no se mueva: cada partícula lleva $\\tfrac12m_iv_i^2$ con $v_i=r_i\\omega$. Al sumar, $\\omega^2$ sale factor común y queda la suma $\\sum m_ir_i^2$: el <b>momento de inercia</b>, la «masa» de la rotación.</p>",
+    "  $$I=m_1r_1^2+m_2r_2^2+\\cdots=\\sum_im_ir_i^2\\qquad(9.16)\\qquad\\qquad K=\\tfrac12I\\omega^2\\qquad(9.17)$$",
+    "  <p>$r_i$ es la distancia <b>perpendicular</b> al eje; $I$ se mide en kg·m² y $\\omega$ debe ir en rad/s. Como pesa $r^2$, <i>no importa solo cuánta masa hay, sino a qué distancia del eje</i> está (la patinadora gira más deprisa al recoger los brazos). <b>Ejemplo mínimo (ejemplo 9.6).</b> Tres discos pequeños unidos por varillas ligeras: $m_A=0{,}30$ kg, $m_B=0{,}10$ kg a 0,50 m de A y $m_C=0{,}20$ kg a 0,40 m de A. Eje 1 por A, perpendicular al plano: $I_1=0{,}10(0{,}50)^2+0{,}20(0{,}40)^2=0{,}057$ kg·m² (A no cuenta: está en el eje). Eje 2 por B y C: solo cuenta A, a 0,40 m: $I_2=0{,}048$ kg·m². A 4,0 rad/s alrededor del eje 1, $K=\\tfrac12(0{,}057)(4{,}0)^2=0{,}46$ J. <b>Error típico:</b> hablar de «el» momento de inercia sin decir el eje, o concentrar la masa en el centro de masa: una varilla que gira por un extremo tiene $\\tfrac13ML^2$, no $M(L/2)^2=\\tfrac14ML^2$.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §9.4, ecs. (9.16)-(9.17), p. 284",
-    "txt": "U p.284"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "warn",
-   "h": "Error típico: el momento de inercia depende del eje",
-   "html": "<p>No existe «el» momento de inercia de un cuerpo: hay que decir <b>respecto a qué eje</b>. Y no concentres toda la masa en el centro de masa: una varilla de longitud $L$ que gira por un extremo tiene $I=\\tfrac13ML^2$, no $M(L/2)^2=\\tfrac14ML^2$.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §9.4, CUIDADO pp. 285-286",
-    "txt": "U p.285-286"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto: tres masas puntuales y dos ejes",
-   "html": [
-    "<p>Una pieza tiene tres discos (masas puntuales) unidos por puntales sin masa: $m_A=0{,}30$ kg en el eje 1; $m_B=0{,}10$ kg a 0,50 m de A y $m_C=0{,}20$ kg a 0,40 m de A. El eje 1 pasa por A (perpendicular al papel); el eje 2 pasa por B y C. a) $I_1$; b) $I_2$; c) $K$ si gira alrededor del eje 1 a 4,0 rad/s.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>a)</b> A está sobre el eje ($r=0$) y no cuenta: $I_1=0{,}10(0{,}50)^2+0{,}20(0{,}40)^2=0{,}057$ kg·m².</li>",
-    "    <li><b>b)</b> B y C están sobre el eje 2 y no cuentan; A está a 0,40 m: $I_2=0{,}30(0{,}40)^2=0{,}048$ kg·m².</li>",
-    "    <li><b>c)</b> $K=\\tfrac12I_1\\omega^2=\\tfrac12(0{,}057)(4{,}0)^2=0{,}46$ J.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 9.6, p. 285",
-    "txt": "U p.285"
+    "ref": "U §9.4, ecs. (9.16)-(9.17), p. 284, CUIDADO pp. 285-286 y ejemplo 9.6, p. 285",
+    "txt": "U p.284-286"
    }
   },
   {
@@ -748,7 +552,9 @@
    "t": "caja",
    "k": "thm",
    "h": "Tabla 9.2: momentos de inercia de cuerpos uniformes",
-   "html": "<p>Con $M$ la masa total y el eje donde indica el dibujo: varilla delgada por el centro $\\tfrac1{12}ML^2$ (a) o por un extremo $\\tfrac13ML^2$ (b); placa rectangular por el centro $\\tfrac1{12}M(a^2+b^2)$ (c) o a lo largo de un borde $\\tfrac13Ma^2$ (d); cilindro hueco de pared gruesa $\\tfrac12M(R_1^2+R_2^2)$ (e); cilindro sólido $\\tfrac12MR^2$ (f); cilindro hueco de pared delgada $MR^2$ (g); esfera sólida $\\tfrac25MR^2$ (h); esfera hueca de pared delgada $\\tfrac23MR^2$ (i). Regla práctica: cuanto más lejos del eje está la masa, mayor es el coeficiente ($\\tfrac25<\\tfrac12<\\tfrac23<1$).</p>",
+   "html": [
+    "<p>Con $M$ la masa total: varilla delgada por el centro $\\tfrac1{12}ML^2$ (a) o por un extremo $\\tfrac13ML^2$ (b); placa rectangular por el centro $\\tfrac1{12}M(a^2+b^2)$ (c) o por un borde $\\tfrac13Ma^2$ (d); cilindro hueco de pared gruesa $\\tfrac12M(R_1^2+R_2^2)$ (e); cilindro sólido o disco $\\tfrac12MR^2$ (f); cilindro de pared delgada o aro $MR^2$ (g); esfera sólida $\\tfrac25MR^2$ (h); esfera hueca de pared delgada $\\tfrac23MR^2$ (i). <b>Regla práctica:</b> cuanto más lejos del eje está la masa, mayor es el coeficiente ($\\tfrac25\\lt\\tfrac12\\lt\\tfrac23\\lt1$). Por eso, con igual masa y radio, un aro rueda más despacio que un disco y una rueda de radios guarda más energía girando que una maciza (<a href=\\\"#x1\\\">X1 (a)</a>). Para una pieza compuesta, $I$ es <b>aditivo</b>: suma los de cada pieza respecto al mismo eje (<a href=\\\"#e6\\\">E6</a>, <a href=\\\"#e7\\\">E7</a>).</p>"
+   ],
    "src": {
     "l": "U",
     "ref": "U Tabla 9.2, p. 286",
@@ -769,50 +575,16 @@
   {
    "t": "caja",
    "k": "tip",
-   "h": "Estrategia: problemas de energía con rotación",
-   "html": "<p>Escribe $K_1+U_1+W_{otras}=K_2+U_2$ con $K=\\tfrac12Mv_{cm}^2+\\tfrac12I_{cm}\\omega^2$, donde $I_{cm}$ es el momento de inercia respecto al eje que pasa por el centro de masa y el primer término solo existe si el centro de masa se mueve (si el cuerpo gira en torno a un eje fijo, $K=\\tfrac12I\\omega^2$ con $I$ respecto a ese eje). Si una cuerda se enrolla en un cilindro sin resbalar, usa $v=R\\omega$ y $a_{tan}=R\\alpha$. $I$ sale de la tabla 9.2 (y del teorema de los ejes paralelos si el eje no es el de la tabla). Para cuerpos extensos la energía potencial gravitatoria es $U=Mgy_{cm}$ (ec. 9.18): se obtiene sumando $m_igy_i$ sobre todas las partículas, pues $\\sum m_iy_i=My_{cm}$. El método de energía no sirve para preguntas con el tiempo.</p>",
+   "h": "Energía con rotación: bloque que cuelga de una polea",
+   "html": [
+    "<p>Escribe $K_1+U_1+W_{otras}=K_2+U_2$ sumando en $K$ <b>todo lo que se mueve</b>: $\\tfrac12mv^2$ de lo que se traslada y $\\tfrac12I\\omega^2$ de lo que gira. Si un cable no resbala, $v=R\\omega$. La energía potencial de un cuerpo extenso es $U=Mgy_{cm}$ (9.18). <b>Ejemplo mínimo (ejemplo 9.8).</b> Un bloque de masa $m$ cuelga de un cable enrollado en un cilindro sólido ($M$, $R$, $I=\\tfrac12MR^2$) y cae $h$ desde el reposo:</p>",
+    "  $$mgh=\\tfrac12mv^2+\\tfrac12\\left(\\tfrac12MR^2\\right)\\left(\\frac vR\\right)^2\\ \\Rightarrow\\ v=\\sqrt{\\frac{2gh}{1+M/2m}}$$",
+    "  <p>$R$ se simplifica; si $M\\ll m$, $v\\to\\sqrt{2gh}$ (caída libre); si $M\\gg m$, el cilindro casi no deja caer el bloque. Si en lugar de un bloque se tira del cable con una fuerza $F$ a lo largo de $s$, el trabajo $Fs$ va entero a $\\tfrac12I\\omega^2$ (ejemplo 9.7: 18 J en un cilindro de 0,090 kg·m² dan $\\omega=20$ rad/s). <b>Error típico:</b> olvidar la energía cinética del bloque o la de la polea, o usar este método para preguntas de tiempo (para eso, cinemática o dinámica del tema 10).</p>"
+   ],
    "src": {
     "l": "U",
-    "ref": "U Estrategia para resolver problemas 9.1 y ec. (9.18), pp. 286 y 288",
+    "ref": "U Estrategia para resolver problemas 9.1, p. 286; ec. (9.18), p. 288; ejemplos 9.7 y 9.8, pp. 286-288",
     "txt": "U p.286-288"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto: cable que se desenrolla (I)",
-   "html": [
-    "<p>Un cable ligero se enrolla en un cilindro sólido de 50 kg y 0,120 m de diámetro, que gira sin fricción sobre un eje fijo. Se tira del cable con $F=9{,}0$ N una distancia de 2,0 m, y el cilindro parte del reposo. ¿Rapidez angular final y rapidez del cable?</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Trabajo.</b> El cable no resbala y no tiene masa, así que $W=Fs=9{,}0(2{,}0)=18$ J pasan a energía de rotación del cilindro.</li>",
-    "    <li><b>Momento de inercia.</b> $R=0{,}060$ m; $I=\\tfrac12MR^2=\\tfrac12(50)(0{,}060)^2=0{,}090$ kg·m².</li>",
-    "    <li><b>Energía.</b> $\\tfrac12I\\omega^2=18$ J $\\Rightarrow\\ \\omega=\\sqrt{2(18)/0{,}090}=20$ rad/s.</li>",
-    "    <li><b>Cable.</b> $v=R\\omega=(0{,}060)(20)=1{,}2$ m/s.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 9.7, pp. 286-287",
-    "txt": "U p.286-287"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto: cable que se desenrolla (II), bloque que cae",
-   "html": [
-    "<p>El cable de un cilindro de masa $M$ y radio $R$ sostiene un bloque de masa $m$ que cae una altura $h$ desde el reposo. ¿Con qué rapidez llega?</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Energía.</b> El bloque pierde $mgh$; ganan energía el bloque y el cilindro: $mgh=\\tfrac12mv^2+\\tfrac12I\\omega^2$.</li>",
-    "    <li><b>Ligadura.</b> Cable sin resbalar: $\\omega=v/R$; con $I=\\tfrac12MR^2$ queda $\\tfrac12I\\omega^2=\\tfrac14Mv^2$.</li>",
-    "    <li>$mgh=\\tfrac12\\left(m+\\tfrac12M\\right)v^2\\ \\Rightarrow\\ v=\\sqrt{\\dfrac{2gh}{1+M/2m}}$.</li>",
-    "    <li><b>Casos límite:</b> si $M\\gg m$, $v$ es muy pequeña (el cilindro «frena» la caída); si $M\\ll m$, $v\\approx\\sqrt{2gh}$ (caída libre).</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 9.8, pp. 287-288",
-    "txt": "U p.287-288"
    }
   },
   {
@@ -821,14 +593,32 @@
   },
   {
    "t": "parte",
-   "archivo": "parte04.html"
+   "archivo": "interactivo-polea.html"
+  },
+  {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Dos masas de 2,0 kg en los extremos de una varilla ligera de 1,0 m giran a 6,0 rad/s alrededor de su centro. ¿$I$ y $K$?",
+     "a": "$I=2(2{,}0)(0{,}50)^2=1{,}0$ kg·m²; $K=\\tfrac12(1{,}0)(6{,}0)^2=18$ J."
+    },
+    {
+     "q": "Un disco macizo y un aro, ambos de 2,0 kg y 0,10 m de radio, giran a 100 rad/s alrededor de su eje. ¿Energía de cada uno?",
+     "a": "Disco: $I=0{,}010$ kg·m², $K=50$ J. Aro: $I=0{,}020$ kg·m², $K=100$ J. Misma masa, el doble de energía: la masa del aro está toda en el borde."
+    },
+    {
+     "q": "Un bloque de 2,0 kg cuelga de un cable enrollado en una polea-disco de 4,0 kg y cae 1,0 m desde el reposo. ¿Con qué rapidez llega? ($g=9{,}8$)",
+     "a": "$v=\\sqrt{2gh/(1+M/2m)}=\\sqrt{19{,}6/2}=3{,}13$ m/s, menos que en caída libre (4,43 m/s): parte de la energía se la queda la polea."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s5",
    "n": "5",
    "titulo": "Teorema de los ejes paralelos",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §9.5, pp. 288-289",
@@ -837,27 +627,16 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>Un cuerpo tiene infinitos momentos de inercia, uno por cada eje posible. La tabla 9.2 solo da los ejes «cómodos» (por el centro, por el extremo). El teorema dice cómo pasar del eje que pasa por el centro de masa a cualquier otro <i>paralelo</i> a él: hay que añadir lo que costaría hacer girar toda la masa como si fuera un punto a esa distancia, $Md^2$. Como $Md^2\\ge0$, el menor de todos los momentos de inercia (para una dirección dada) es el del eje que pasa por el centro de masa.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §9.5, pp. 288-289 (fig. 9.19)",
-    "txt": "U p.288-289"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "Teorema de los ejes paralelos",
+   "h": "$I_P=I_{cm}+Md^2$",
    "html": [
-    "<p>Si $I_{cm}$ es el momento de inercia de un cuerpo de masa $M$ respecto a un eje que pasa por su centro de masa, el momento de inercia respecto a un eje paralelo a distancia $d$ es",
-    "  $$I_P=I_{cm}+Md^2\\qquad\\text{(ec. 9.19)}$$",
-    "  Demostración (idea): respecto al eje desplazado, la distancia de cada elemento es $r_i'^2=(x_i-a)^2+(y_i-b)^2$; al desarrollar, el término cruzado contiene $\\sum m_ix_i=Mx_{cm}=0$ (el origen está en el cm) y queda $I_{cm}+Md^2$ con $d^2=a^2+b^2$.</p>"
+    "<p>La tabla 9.2 solo da los ejes «cómodos». Para cualquier otro eje <b>paralelo</b> a uno que pasa por el centro de masa, a distancia $d$, se añade lo que costaría hacer girar toda la masa concentrada en el cm:</p>",
+    "  $$I_P=I_{cm}+Md^2\\qquad(9.19)$$",
+    "  <p><b>Por qué:</b> respecto al eje desplazado, $r_i'^2=(x_i-a)^2+(y_i-b)^2$; al desarrollar, el término cruzado lleva $\\sum m_ix_i=Mx_{cm}=0$ (origen en el cm) y queda $I_{cm}+M(a^2+b^2)$. Como $Md^2\\ge0$, <b>el eje por el cm da el menor $I$</b> de todos los paralelos. <b>Ejemplo mínimo.</b> Varilla: $\\tfrac1{12}ML^2+M(L/2)^2=\\tfrac13ML^2$, el valor de la tabla para el extremo. Y al revés (ejemplo 9.9): una pieza de 3,6 kg con $I_P=0{,}132$ kg·m² respecto a un eje a 0,15 m de su cm tiene $I_{cm}=0{,}132-3{,}6(0{,}15)^2=0{,}051$ kg·m². <b>Error típico:</b> sumar $Md^2$ entre dos ejes que no pasan por el cm. Primero baja al cm ($I_{cm}=I_P-Md^2$) y luego sube al nuevo eje; y $d$ es la distancia entre los <i>ejes</i>.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §9.5, ec. (9.19) y fig. 9.20, pp. 288-289",
+    "ref": "U §9.5, ec. (9.19), pp. 288-289 (figs. 9.19 y 9.20) y ejemplo 9.9, p. 289",
     "txt": "U p.288-289"
    }
   },
@@ -873,44 +652,37 @@
    }
   },
   {
-   "t": "caja",
-   "k": "warn",
-   "h": "Error típico",
-   "html": "<p>El teorema solo vale <b>desde el centro de masa</b> y entre ejes <b>paralelos</b>. No puedes trasladar de un eje cualquiera a otro cualquiera sumando $Md^2$: primero resta hasta el cm ($I_{cm}=I_P-Md^2$) y luego suma hasta el nuevo eje. Y $d$ es la distancia entre los ejes, no al extremo del cuerpo.</p>",
-   "src": {
-    "l": "P",
-    "ref": "Explicación propia sobre U §9.5, p. 288",
-    "txt": "P"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto: de $I_P$ a $I_{cm}$",
-   "html": [
-    "<p>Una pieza de 3,6 kg tiene $I_P=0{,}132$ kg·m² respecto a un eje que pasa a 0,15 m de su centro de masa. Calcula $I_{cm}$ para el eje paralelo por el cm.</p>",
-    "  <ol class=\"steps\"><li>Reordena 9.19: $I_{cm}=I_P-Md^2=0{,}132-(3{,}6)(0{,}15)^2=0{,}132-0{,}081=0{,}051$ kg·m². Sale menor que $I_P$, como debe: el eje por el cm da el mínimo.</li></ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 9.9, p. 289",
-    "txt": "U p.289"
-   }
-  },
-  {
    "t": "fig",
    "ref": "parabola-del-momento-de-inercia-de-una-varilla-e"
   },
   {
    "t": "parte",
-   "archivo": "parte05.html"
+   "archivo": "interactivo-ejes-paralelos.html"
+  },
+  {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Varilla de 0,50 kg y 1,2 m. Calcula $I$ por su centro y, con ejes paralelos, por un extremo.",
+     "a": "$I_{cm}=\\tfrac1{12}(0{,}50)(1{,}2)^2=0{,}060$ kg·m²; $I=0{,}060+0{,}50(0{,}60)^2=0{,}24$ kg·m² $=\\tfrac13ML^2$ ✓."
+    },
+    {
+     "q": "Disco macizo de 2,0 kg y 0,20 m de radio. ¿$I$ respecto a un eje perpendicular al disco que pasa por su borde?",
+     "a": "$I=\\tfrac12MR^2+MR^2=\\tfrac32(2{,}0)(0{,}20)^2=0{,}12$ kg·m²."
+    },
+    {
+     "q": "Esfera sólida de 5,0 kg y 0,10 m de radio. ¿$I$ respecto a un eje tangente a su superficie?",
+     "a": "$I=\\tfrac25MR^2+MR^2=0{,}020+0{,}050=0{,}070$ kg·m²."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s6",
    "n": "6",
-   "titulo": "Cálculos de momento de inercia",
-   "prio": null,
+   "titulo": "Cálculo del momento de inercia por integración",
+   "prio": 2,
    "src": {
     "l": "U",
     "ref": "U §9.6, pp. 289-291",
@@ -919,73 +691,60 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>Si el cuerpo es continuo (un cilindro, una esfera) no hay masas puntuales que sumar: se parte el cuerpo en trocitos tan pequeños que cada uno está a una sola distancia del eje, y la suma se convierte en integral. La clave es elegir <i>trocitos de forma adecuada</i> para que todos sus puntos estén casi a la misma distancia $r$ del eje (capas cilíndricas, discos, anillos, tiras).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §9.6, p. 289",
-    "txt": "U p.289"
-   }
-  },
-  {
-   "t": "caja",
    "k": "def",
-   "h": "Momento de inercia por integración",
+   "h": "$I=\\int r^2\\,dm$: corta el cuerpo en trozos a una sola distancia del eje",
    "html": [
-    "<p>$$I=\\int r^2\\,dm\\qquad\\text{(ec. 9.20)}\\qquad\\text{y, con densidad uniforme,}\\qquad I=\\rho\\int r^2\\,dV\\qquad\\text{(ec. 9.21)}$$",
-    "  Si la densidad no es uniforme, se escribe $dm$ en función de la coordenada (p. ej. $dm=\\lambda(x)\\,dx$, con $\\lambda(x)$ la densidad lineal de masa en kg/m) y no se saca $\\rho$ de la integral. Para poder dar el resultado en función de $M$ hay que calcular también $M=\\int dm$.</p>"
+    "<p>Un cuerpo continuo no tiene masas puntuales que sumar: se corta en trozos tan finos que todos sus puntos están a la misma distancia $r$ del eje, y la suma se vuelve integral:</p>",
+    "  $$I=\\int r^2\\,dm\\qquad(9.20)\\qquad\\text{densidad uniforme: }I=\\rho\\int r^2\\,dV\\qquad(9.21)$$",
+    "  <p>La clave es elegir bien el trozo: tiras para una varilla ($dm=\\lambda\\,dx$), capas cilíndricas para un cilindro, discos para una esfera. Si la densidad no es uniforme, escribe $dm=\\lambda(x)\\,dx$ y no la saques de la integral; calcula también $M=\\int dm$ para dar el resultado en función de $M$. <b>Ejemplo mínimo.</b> Varilla uniforme con el eje en un extremo: $I=\\int_0^Lx^2\\tfrac ML\\,dx=\\tfrac13ML^2$. <b>Error típico:</b> integrar entre 0 y $L$ cuando el eje no está en el extremo; los límites se miden <b>desde el eje</b> (<a href=\\\"#e11\\\">E11</a>).</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §9.6, ecs. (9.20)-(9.21), p. 290",
-    "txt": "U p.290"
+    "ref": "U §9.6, ecs. (9.20)-(9.21), pp. 289-290",
+    "txt": "U p.289-290"
    }
   },
   {
    "t": "caja",
    "k": "ex",
-   "h": "Ejemplo resuelto: cilindro hueco o sólido, eje de simetría",
+   "h": "Ejemplos 9.10 y 9.11: capas para el cilindro, discos para la esfera",
    "html": [
-    "<p>Cilindro de longitud $L$, radios interior $R_1$ y exterior $R_2$, densidad $\\rho$. Calcula $I$ respecto a su eje.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Elemento.</b> Capa cilíndrica de radio $r$ y espesor $dr$: volumen $dV=2\\pi rL\\,dr$, masa $dm=\\rho\\,2\\pi L\\,r\\,dr$, todos sus puntos a distancia $r$.</li>",
-    "    <li><b>Integral.</b> $I=\\int r^2dm=2\\pi\\rho L\\int_{R_1}^{R_2}r^3dr=\\tfrac12\\pi\\rho L(R_2^4-R_1^4)$.</li>",
-    "    <li><b>Masa.</b> $M=\\rho\\pi L(R_2^2-R_1^2)$. Como $R_2^4-R_1^4=(R_2^2-R_1^2)(R_2^2+R_1^2)$: $I=\\tfrac12M(R_1^2+R_2^2)$. Con $R_1=0$ sale el cilindro sólido $\\tfrac12MR^2$; con $R_1\\to R_2$, el cilindro de pared delgada $MR^2$.</li>",
-    "  </ol>"
+    "<p><b>Cilindro hueco</b> (radios $R_1$, $R_2$, longitud $L$, eje de simetría). Trozo: capa de radio $r$ y espesor $dr$, $dm=\\rho\\,2\\pi Lr\\,dr$.</p>",
+    "  <ol class=\\\"steps\\\">",
+    "    <li>$I=2\\pi\\rho L\\int_{R_1}^{R_2}r^3dr=\\tfrac12\\pi\\rho L(R_2^4-R_1^4)$, con $M=\\rho\\pi L(R_2^2-R_1^2)$.</li>",
+    "    <li>Como $R_2^4-R_1^4=(R_2^2-R_1^2)(R_2^2+R_1^2)$: $I=\\tfrac12M(R_1^2+R_2^2)$. Con $R_1=0$, cilindro sólido $\\tfrac12MR^2$; con $R_1\\to R_2$, aro $MR^2$.</li>",
+    "  </ol>",
+    "  {{fig:vista-frontal-de-un-cilindro-hueco-con-una-capa-}}",
+    "  <p><b>Esfera sólida</b> (radio $R$, eje por el centro). Trozo: disco a distancia $x$ del centro, de radio $\\sqrt{R^2-x^2}$ y espesor $dx$, que aporta $\\tfrac12r^2\\,dm$ (resultado del cilindro).</p>",
+    "  <ol class=\\\"steps\\\">",
+    "    <li>$I=\\tfrac12\\pi\\rho\\int_{-R}^{R}(R^2-x^2)^2dx=\\tfrac12\\pi\\rho\\cdot\\tfrac{16}{15}R^5=\\tfrac8{15}\\pi\\rho R^5$.</li>",
+    "    <li>Con $M=\\tfrac43\\pi\\rho R^3$: $I=\\tfrac25MR^2$.</li>",
+    "  </ol>",
+    "  {{fig:esfera-cortada-en-discos-delgados-perpendiculare}}"
    ],
    "src": {
     "l": "U",
-    "ref": "U Ejemplo 9.10, pp. 290-291",
+    "ref": "U Ejemplos 9.10 y 9.11, pp. 290-291",
     "txt": "U p.290-291"
    }
   },
   {
-   "t": "fig",
-   "ref": "vista-frontal-de-un-cilindro-hueco-con-una-capa-"
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto: esfera sólida uniforme",
-   "html": [
-    "<p>Esfera de radio $R$ y densidad $\\rho$; eje por el centro.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Elemento.</b> Disco delgado perpendicular al eje $x$, a distancia $x$ del centro, de espesor $dx$ y radio $r^2=R^2-x^2$: $dm=\\rho\\pi(R^2-x^2)\\,dx$.</li>",
-    "    <li><b>Momento del disco</b> (cilindro sólido de la tabla): $dI=\\tfrac12r^2\\,dm=\\tfrac12\\pi\\rho(R^2-x^2)^2dx$.</li>",
-    "    <li><b>Suma.</b> $I=\\tfrac12\\pi\\rho\\int_{-R}^{R}(R^2-x^2)^2dx=\\tfrac12\\pi\\rho\\cdot\\tfrac{16}{15}R^5=\\tfrac{8}{15}\\pi\\rho R^5$.</li>",
-    "    <li>Con $M=\\tfrac43\\pi\\rho R^3$: $I=\\tfrac25MR^2$.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 9.11, p. 291",
-    "txt": "U p.291"
-   }
-  },
-  {
-   "t": "fig",
-   "ref": "esfera-cortada-en-discos-delgados-perpendiculare"
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "¿Qué trozo eliges para calcular el $I$ de un disco plano respecto a su eje perpendicular? Plantea la integral.",
+     "a": "Anillos de radio $r$ y anchura $dr$: $dm=\\sigma\\,2\\pi r\\,dr$ con $\\sigma=M/\\pi R^2$. $I=\\int_0^R r^2\\,\\sigma2\\pi r\\,dr=\\tfrac12\\sigma\\pi R^4=\\tfrac12MR^2$."
+    },
+    {
+     "q": "Una varilla de longitud $L$ tiene densidad $\\lambda=\\gamma x^2$ ($x$ desde un extremo). ¿Masa y momento de inercia respecto a ese extremo, en función de $M$?",
+     "a": "$M=\\int_0^L\\gamma x^2dx=\\gamma L^3/3$; $I=\\int_0^Lx^2\\gamma x^2dx=\\gamma L^5/5=\\tfrac35ML^2$. Mayor que $\\tfrac13ML^2$: la masa se acumula lejos del eje (como en <a href=\\\"#e9\\\">E9</a>)."
+    },
+    {
+     "q": "¿Por qué, al calcular $I$ de un cilindro, no se cortan discos perpendiculares al eje sino capas cilíndricas?",
+     "a": "Porque en un disco perpendicular al eje cada punto está a una distancia distinta del eje; en una capa cilíndrica todos están a la misma distancia $r$, y $r^2$ sale fuera de su $dm$."
+    }
+   ]
   },
   {
    "t": "h2",
@@ -997,7 +756,14 @@
   },
   {
    "t": "parte",
-   "archivo": "parte06.html"
+   "archivo": "ejercicios-intro.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-nucleo.html"
+  },
+  {
+   "t": "metodos"
   },
   {
    "t": "ej",
@@ -1017,15 +783,27 @@
   },
   {
    "t": "ej",
-   "ref": "e4"
-  },
-  {
-   "t": "ej",
    "ref": "e5"
   },
   {
    "t": "ej",
    "ref": "e6"
+  },
+  {
+   "t": "ej",
+   "ref": "e9"
+  },
+  {
+   "t": "ej",
+   "ref": "e10"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-practica.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e4"
   },
   {
    "t": "ej",
@@ -1037,15 +815,28 @@
   },
   {
    "t": "ej",
-   "ref": "e9"
-  },
-  {
-   "t": "ej",
-   "ref": "e10"
-  },
-  {
-   "t": "ej",
    "ref": "e11"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-teoria.html"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Si te toca una pregunta de teoría del tema: «Cinemática de la rotación» o «Momento de inercia y energía de rotación»",
+   "html": [
+    "<p>Guion propio (no es un enunciado de examen real). Define, da la ecuación, deduce lo breve, pon un ejemplo con números y cierra con el error típico:</p>",
+    "  <ul>",
+    "    <li><b>Cinemática de la rotación:</b> (1) cuerpo rígido y eje fijo; $\\theta=s/r$ en radianes (9.1); (2) $\\omega_z=d\\theta/dt$, $\\alpha_z=d\\omega_z/dt$ (9.3, 9.5), signos y vector $\\vec\\omega$ por la mano derecha; (3) con $\\alpha_z$ constante, tabla 9.1 (calco del MRUA); (4) punto a distancia $r$: $v=r\\omega$, $a_{tan}=r\\alpha$, $a_{rad}=\\omega^2r$ (9.13-9.15); (5) ejemplo: volante con $\\omega$ constante, solo $a_{rad}$ (X1 b); error: «$\\omega$ constante ⇒ sin aceleración».</li>",
+    "    <li><b>Momento de inercia y energía de rotación:</b> (1) deducción $K=\\sum\\tfrac12m_ir_i^2\\omega^2=\\tfrac12I\\omega^2$ (9.16, 9.17); (2) depende del eje y de cómo se reparte la masa; tabla 9.2; (3) $I=\\int r^2dm$ (9.20) con un ejemplo (varilla por el extremo, $\\tfrac13ML^2$); (4) ejes paralelos $I_P=I_{cm}+Md^2$ y su consecuencia (mínimo en el cm); (5) aplicación: bloque que cuelga de una polea, $v=\\sqrt{2gh/(1+M/2m)}$; error: olvidar la energía de la polea o medir $r$ al «punto» del eje.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
   },
   {
    "t": "h2",
@@ -1057,7 +848,7 @@
   },
   {
    "t": "parte",
-   "archivo": "parte07.html"
+   "archivo": "chuleta-tabla.html"
   },
   {
    "t": "caja",
@@ -1083,7 +874,7 @@
   },
   {
    "t": "parte",
-   "archivo": "parte08.html"
+   "archivo": "lista-comprobacion.html"
   },
   {
    "t": "h2",

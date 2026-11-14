@@ -44,7 +44,7 @@ Receta por tema NN (modelo: `contenido/tema_05/`): resumen de 5 minutos + tabla 
 - [x] C1. Tema 6 (formato estudio: en5 + decide, 4 mini-tests, 13 núcleo/7 práctica, x1–x11 intactos; 27 comprobaciones nuevas en t06). Pendiente menor: x7 menciona «como el solucionario 5-38»
 - [x] C2. Tema 7 (5 secciones, 5 mini-tests, 7 núcleo/5 práctica/4 teoría; X1–X8 intactos; chip de páginas aún dice pp. 204-226, revisar)
 - [x] C3. Tema 8 (6 secciones, 6 mini-tests, 8 núcleo/5 práctica/4 teoría; X1–X9 intactos; e8 duplicado de X2 eliminado)
-- [ ] C4. Tema 9
+- [x] C4. Tema 9 (6 secciones, 6 mini-tests, 8 núcleo/4 práctica; X1 intacto, único examen del tema)
 - [ ] C5. Tema 10
 - [ ] C6. Tema 11
 - [ ] C7. Tema 12
