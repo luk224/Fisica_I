@@ -31,7 +31,7 @@
   <div class="kick">Bloque Mecánica · Tema 8</div>
   <h1>Cantidad de movimiento, impulso y colisiones</h1>
   <p>Hasta ahora has resuelto el movimiento con fuerzas (tema 5) o con energía (temas 6 y 7). Aquí aparece la tercera herramienta, la más útil cuando dos cuerpos <i>interactúan</i> de golpe: la <b>cantidad de movimiento</b>. Sirve para saber qué ocurre tras un choque o una explosión sin conocer las fuerzas, para entender por qué el centro de masa «ignora» las fuerzas internas y para ver cómo funciona un cohete.</p>
-  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 8 (pp. 238-260)</span><span>Preguntas de examen real: 9</span><span>Ejercicios del solucionario: 9</span><span>3 ejemplos interactivos</span><span>⏱ ~8 h de estudio</span></div>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 8 (pp. 238-260)</span><span>Preguntas de examen real: 9 (todas conservadas)</span><span>Ejercicios del solucionario: 8</span><span>3 ejemplos interactivos</span><span>⏱ ruta rápida ~3 h · completa ~6 h</span></div>
 <div class="legend">
     <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
     <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
@@ -42,291 +42,243 @@
 </header>
 
 
-<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U cap. 8 Introducción, p. 238">U p.238</span></h2>
-<p><b>Prerrequisitos:</b> los vectores y sus componentes (tema 1); la segunda y la tercera leyes de Newton, en especial que las fuerzas de acción y reacción son iguales y opuestas (tema 4); el teorema trabajo-energía y la energía cinética $K=\tfrac12mv^2$ (tema 6); la conservación de la energía con resortes y alturas (tema 7), que aparece en varios problemas después del choque; el movimiento de proyectiles (tema 3), para los fragmentos de una explosión; y, solo en un ejercicio de examen, el periodo del oscilador $T=2\pi\sqrt{m/k}$ (tema 14).</p>
-<p><b>Mapa del tema:</b> 8.1 define la <b>cantidad de movimiento</b> $\vec p=m\vec v$ y el <b>impulso</b> $\vec J=\int\sum\vec F\,dt$, unidos por el teorema $\vec J=\Delta\vec p$. 8.2 enuncia la <b>conservación de la cantidad de movimiento</b> de un sistema aislado. 8.3 clasifica los <b>choques</b> y resuelve los totalmente inelásticos (los cuerpos quedan unidos); 8.4, los <b>elásticos</b>, donde además se conserva la energía cinética. 8.5 introduce el <b>centro de masa</b>, que se mueve como una partícula sometida solo a las fuerzas externas. 8.6 trata el <b>cohete</b>, un sistema cuya masa cambia.</p>
-<div class="box tip"><span class="h">Qué ha caído en examen</span>
-<p>El índice de exámenes asigna a este tema nueve preguntas: cinco problemas (choque helio-oxígeno, explosión de un cohete de fuegos artificiales, masa que cae sobre una bandeja con resorte, cohete con masa variable y varilla con pivote golpeada por una bala) y cuatro de teoría (centro de masa, choques elásticos, conservación del momento lineal con cuestiones, y el momento lineal de un patinador). Todas están resueltas abajo; además hay nueve ejercicios del solucionario de U:</p>
+<section class="en5" id="en5" aria-labelledby="en5-t">
+<h2 id="en5-t" style="display:block">El tema en 5 minutos <span class="src" data-l="P" data-ref="Resumen y guía de decisión propios, basados en U cap. 8 y en los ejercicios de este tema">P</span></h2>
+<p><b>Una sola idea:</b> cuando dos cuerpos interactúan de golpe (un choque, una explosión, un empujón), se hacen fuerzas <b>iguales y opuestas</b> durante el mismo tiempo. Lo que uno gana de <b>cantidad de movimiento</b> $\vec p=m\vec v$ lo pierde el otro, así que la total $\vec P=\sum m\vec v$ <b>no cambia</b>. Con eso resuelves el «antes» y el «después» <i>sin conocer las fuerzas</i>. La energía cinética, en cambio, solo se conserva si el choque es <b>elástico</b>. Es la tercera herramienta del curso: Newton (T4-T5) para fuerzas y aceleraciones, energía (T6-T7) para alturas y rapideces, y cantidad de movimiento para <i>choques y explosiones</i>.</p>
+
+<p><b>Necesitas:</b> vectores y componentes (T1), la tercera ley (T4), $K=\tfrac12mv^2$ y la conservación de la energía con alturas y resortes (T6-T7), y el tiro horizontal (T3) para los fragmentos de una explosión. Dos problemas de examen tocan temas posteriores: el periodo $T=2\pi\sqrt{m/k}$ (T14) en <a href="#x3">X3</a> y el momento angular (T10) en <a href="#x9">X9</a>. Si el enunciado no da $g$, usa $9{,}8\ \text{m/s}^2$.</p>
+
+<h3>El método en 5 pasos (úsalo siempre, en este orden)</h3>
+<div class="dcev">
+  <div><b>1 · Sistema</b>¿Qué cuerpos entran? ¿Las fuerzas externas suman cero o son despreciables <i>durante</i> el choque (peso, fricción, resorte sin comprimir)? Entonces $\vec P$ se conserva.</div>
+  <div><b>2 · Antes y después</b>Dibuja los dos instantes con ejes y sentido positivo. Una velocidad hacia el sentido negativo lleva <b>signo menos</b>.</div>
+  <div><b>3 · Componentes</b>$\sum mv_x$ antes $=\sum mv_x$ después, y lo mismo en $y$. Nunca sumes módulos de vectores no paralelos.</div>
+  <div><b>4 · Tipo de choque</b>Añade la ecuación que falta: unidos ⇒ misma $\vec v$; elástico ⇒ la velocidad relativa se invierte; inelástico ⇒ un dato del enunciado.</div>
+  <div><b>5 · Después</b>Si el problema sigue (resorte, péndulo, proyectil), cambia a energía o cinemática <i>desde</i> justo tras el choque. Comprueba: ¿$K$ final $\le$ inicial (salvo explosión)?</div>
+</div>
+<p style="font-size:.9rem;color:var(--mut)">Es la «Estrategia para resolver problemas 8.1» del libro más la regla de los choques. <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 8.1, p. 244 y regla de los choques, p. 248">U p.244, 248</span></p>
+
+<h3>Las 6 fórmulas que hay que saber</h3>
 <table>
-<tr><th>Pregunta de examen real</th><th>Ejercicio de esta página</th></tr>
-<tr><td>Feb 2018 (2ª sem.) P-1 — choque de un átomo de helio con una molécula de oxígeno en reposo: velocidad de la molécula y fracción de energía cinética perdida</td><td><a href="#x1">X1</a></td></tr>
-<tr><td>Feb 2020 (1ª sem.) P-2 — cohete de fuegos artificiales que estalla en su altura máxima (= problema 8.97 de U): velocidades y distancia entre los puntos de caída</td><td><a href="#x2">X2</a></td></tr>
-<tr><td>Feb 2022 (1ª sem.) P-1 — masa que cae sobre una bandeja colgada de un resorte (choque perfectamente inelástico y movimiento armónico simple posterior)</td><td><a href="#x3">X3</a></td></tr>
-<tr><td>Feb 2019 (2ª sem.) P-1 — cohete con empuje proporcional a su masa y gravedad variable: altura a los 60 s</td><td><a href="#x4">X4</a></td></tr>
-<tr><td>Feb 2018 (2ª sem.) P-3 Opción 3.1 — teoría «Centro de masa de un sistema de partículas. Su movimiento. Conservación del momento lineal»</td><td><a href="#x5">X5</a></td></tr>
-<tr><td>Feb 2019 (2ª sem.) P-3 Opción 3.2 — teoría «Choques elásticos»</td><td><a href="#x6">X6</a></td></tr>
-<tr><td>Feb 2022 (2ª sem.) P-3 Opción 3.1 — teoría «Conservación del momento lineal o de la cantidad de movimiento» + juguete que se divide en tres piezas y balas que rebotan o se aplastan</td><td><a href="#x7">X7</a></td></tr>
-<tr><td>Sep 2019 P-1 — varilla con pivote golpeada por una bala que se incrusta: momento angular (tema 10), cantidad de movimiento antes y después y energía perdida</td><td><a href="#x9">X9</a></td></tr>
-<tr><td>Sep 2023 P-3 Opción A, cuestión (b) — ¿se conserva el momento lineal de un patinador en el aire?</td><td><a href="#x8">X8</a></td></tr>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\vec J=\vec F_{med}\,\Delta t=\Delta\vec p$</td><td>«Fuerza media», «tiempo de contacto», «rebota o se queda pegada».</td></tr>
+<tr><td>$\sum m\vec v$ antes $=\sum m\vec v$ después</td><td>Todo choque, explosión o empujón con fuerzas externas nulas o despreciables. Por componentes.</td></tr>
+<tr><td>$m_A\vec v_{A1}+m_B\vec v_{B1}=(m_A+m_B)\vec v_2$</td><td>«Quedan unidos», «se incrusta», «queda pegada»: choque totalmente inelástico.</td></tr>
+<tr><td>$v_{B2x}-v_{A2x}=-(v_{B1x}-v_{A1x})$</td><td>«Choque elástico» en línea recta, junto con $P$ (sistema lineal).</td></tr>
+<tr><td>$\vec r_{cm}=\dfrac{\sum m_i\vec r_i}{M}$, $\ \sum\vec F_{ext}=M\vec a_{cm}$</td><td>Centro de masa: canoa, explosión en vuelo, teoría «centro de masa y su movimiento».</td></tr>
+<tr><td>$M\dfrac{dv}{dt}=F_{empuje}-Mg$, $\ F=-v_{esc}\dfrac{dm}{dt}$</td><td>Cohete. Sin gravedad y con $v_{esc}$ constante, $v-v_0=v_{esc}\ln\dfrac{m_0}{m}$.</td></tr>
 </table>
-  <p><b>Lo que viene:</b> en el tema 9 y el 10 el cuerpo deja de ser un punto y puede <i>girar</i>; allí aparecerá el momento angular, que se conserva con reglas parecidas (y es la otra cara de la pregunta del patinador).</p>
-  <span class="src" data-l="X" data-ref="Examen Febrero 2018 (2ª semana) P-1; Examen Febrero 2020 (1ª semana) P-2; Examen Febrero 2022 (1ª semana) P-1; Examen Febrero 2019 (2ª semana) P-1; Examen Febrero 2018 (2ª semana) P-3 Opción 3.1; Examen Febrero 2019 (2ª semana) P-3 Opción 3.2; Examen Febrero 2022 (2ª semana) P-3 Opción 3.1; Examen Septiembre 2023 P-3 Opción A (b); Examen Septiembre 2019 P-1">X</span></div>
-<div class="box tip"><span class="h">La receta maestra: método de choques en 6 pasos</span>
-<ol class="steps">
-    <li><b>Define el sistema y mira las fuerzas externas.</b> Si durante el choque (muy breve) las fuerzas externas son despreciables frente a las internas, o su suma es cero, la cantidad de movimiento total se conserva. La fricción con el suelo, el peso o un resorte aún sin comprimir no impiden usarla <i>durante</i> un choque instantáneo.</li>
-    <li><b>Dibuja «antes» y «después»</b>, con ejes, el sentido positivo y los símbolos (subíndices 1 y 2 para antes y después). Una velocidad que va hacia el sentido negativo lleva signo menos.</li>
-    <li><b>Escribe una ecuación por componente:</b> $\sum m\,v_x$ antes $=\sum m\,v_x$ después, y lo mismo en $y$. Nunca sumes módulos de cantidades de movimiento que no sean paralelas.</li>
-    <li><b>Decide el tipo de choque</b> y añade la ecuación que falta: <i>elástico</i> $\Rightarrow$ se conserva $K$ (o $v_{rel}$ cambia de signo); <i>totalmente inelástico</i> $\Rightarrow$ misma velocidad final; <i>inelástico</i> $\Rightarrow$ te dan un dato (una velocidad final, la pérdida de $K$ o $e$).</li>
-    <li><b>Resuelve</b> el sistema. Si el problema sigue después del choque (un resorte, un péndulo, un proyectil), cambia de herramienta: <b>energía</b> o cinemática <i>desde</i> el estado justo tras el choque. Nunca uses la energía <i>a través</i> de un choque inelástico.</li>
-    <li><b>Evalúa:</b> $\vec P$ antes $=\vec P$ después; $K$ después $\le K$ antes (salvo explosiones, donde sube); signos y direcciones razonables.</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 8.1, p. 244 y regla de los choques, p. 248">U p.244, 248</span></div>
-<div class="box tip"><span class="h">Convenio sobre g y datos del enunciado</span>
-<p>En los ejercicios de examen que no dan $g$ se usa $g=9{,}8\ \text{m/s}^2$ (con 9,81 las cifras significativas no cambian). En el examen de la bandeja con resorte se entiende, como dice el enunciado, que la masa deformable <b>queda pegada</b> a la bandeja.</p>
-  <span class="src" data-l="P" data-ref="Convenio de este resumen, sin página en los libros">P</span></div>
-<h2 id="s1"><span class="n">1</span>Cantidad de movimiento e impulso <span class="src" data-l="U" data-ref="U §8.1, pp. 238-242">U p.238</span></h2>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>¿Qué es más difícil de parar con la mano: una pelota de ping-pong a 20 m/s o una bola de bolos a la misma rapidez? Claramente la de bolos: tiene más masa. ¿Y una bola de bolos que rueda despacio frente a otra que va muy deprisa? Cuenta también la rapidez. La <b>cantidad de movimiento</b> (también «momento lineal» o «momentum») es justo eso: una medida de «cuánto movimiento lleva» un cuerpo, que mezcla masa y velocidad, y que además <i>apunta hacia donde va</i>.</p>
-  <p>El otro ingrediente es el <b>impulso</b>: un «empujón» medido como fuerza <i>por el tiempo que actúa</i>. Un empujón largo y suave cambia la cantidad de movimiento lo mismo que uno corto y brutal. Por eso al aterrizar de un salto doblas las rodillas (alargas el tiempo de frenado y la fuerza baja) y por eso existen las bolsas de aire.</p>
-  <span class="src" data-l="U" data-ref="U §8.1, pp. 238-240 (figs. 8.2 y 8.4)">U p.238-240</span></div>
-<div class="box def"><span class="h">Cantidad de movimiento y segunda ley de Newton</span>
-<p>La <b>cantidad de movimiento</b> de una partícula de masa $m$ y velocidad $\vec v$ es el vector
-  $$\vec p=m\vec v\qquad\text{(ec. 8.2)}\qquad\Longleftrightarrow\qquad p_x=mv_x,\ \ p_y=mv_y,\ \ p_z=mv_z\quad\text{(ec. 8.3)}$$
-  Tiene la dirección y el sentido de $\vec v$; su unidad es kg·m/s. La segunda ley de Newton, en la forma en que Newton la escribió, dice que la fuerza neta es la rapidez de cambio de la cantidad de movimiento:
-  $$\sum\vec F=\frac{d\vec p}{dt}\qquad\text{(ec. 8.4)}$$
-  (con masa constante coincide con $\sum\vec F=m\vec a$). Vale solo en sistemas de referencia inerciales.</p>
+
+<h3>Qué cae en examen</h3>
+<p>Hay <b>9 preguntas de examen real</b> de este tema: <b>5 problemas</b> de 3 puntos (choque helio-oxígeno en el plano, X1; cohete de fuegos artificiales que estalla, X2; masa que cae sobre una bandeja con resorte, X3; cohete con empuje y gravedad variable, X4; varilla con pivote golpeada por una bala, X9, compartida con el tema 10) y <b>4 de teoría y cuestiones</b> («Centro de masa… Conservación del momento lineal», X5; «Choques elásticos», X6; «Conservación del momento lineal» con dos cuestiones, X7; ¿se conserva el momento lineal de un patinador en el aire?, X8). Además, la fuerza media $\Delta p/\Delta t$ aparece como apartado en problemas de otros temas. <span class="src" data-l="X" data-ref="Examen Febrero 2018 (2ª semana) P-1; Examen Febrero 2020 (1ª semana) P-2; Examen Febrero 2022 (1ª semana) P-1; Examen Febrero 2019 (2ª semana) P-1; Examen Septiembre 2019 P-1; Examen Febrero 2018 (2ª semana) P-3 Opción 3.1; Examen Febrero 2019 (2ª semana) P-3 Opción 3.2; Examen Febrero 2022 (2ª semana) P-3 Opción 3.1; Examen Septiembre 2023 P-3 Opción A (b)">X ×9</span></p>
+
+<h3>Elige tu ruta</h3>
+<div class="rutas">
+  <div><b>Ruta rápida</b><br>Esta página + lo marcado <span class="prio p1">🔴 imprescindible</span> (secciones 1-5) + ejercicios del bloque «Núcleo».</div>
+  <div><b>Ruta completa</b><br>Todo lo anterior + <span class="prio p2">🟡 conveniente</span> (cohete, choques en el plano) + bloque «Práctica» + las preguntas de teoría.</div>
+  <div><b>Repaso final</b><br>Chuleta, errores frecuentes, lista de comprobación y los 9 de examen sin mirar la solución.</div>
+</div>
+<div class="leyprio"><span><span class="prio p1">🔴 imprescindible</span> cae o hace falta para resolver lo que cae</span><span><span class="prio p2">🟡 conveniente</span> refuerza, aparece en el libro</span><span><span class="prio p3">⚪ extra</span> cultura, no suele pedirse</span></div>
+</section>
+<section id="decide" aria-labelledby="decide-t">
+<h2 id="decide-t" style="margin-top:1.4em"><span class="n">¿?</span>¿Qué tipo de problema es? <span class="prio p1">🔴</span> <span class="src" data-l="P" data-ref="Resumen y guía de decisión propios, basados en U cap. 8 y en los ejercicios de este tema">P</span></h2>
+<p>Lee el enunciado, busca la pista en la primera columna y ve directo al método y al ejercicio modelo.</p>
+<table class="decide">
+<tr><th>Si el enunciado dice…</th><th>Haz esto</th><th>Ejercicio modelo</th></tr>
+<tr><td>Choque en el plano: «sale en la dirección $y$», «a 24° del norte»</td><td>Una ecuación de $P$ por componente; la energía solo para ver cuánta se pierde.</td><td><a href="#x1">X1</a>, <a href="#e4">E4</a></td></tr>
+<tr><td>«quedan unidos», «se incrusta», «queda pegada»</td><td>Una sola velocidad final: $m_A\vec v_{A1}+m_B\vec v_{B1}=(m_A+m_B)\vec v_2$.</td><td><a href="#x3">X3</a>, <a href="#e4">E4</a></td></tr>
+<tr><td>«choque elástico» frontal</td><td>$P$ + velocidad relativa invertida (sistema lineal); con B en reposo, (8.24)-(8.25).</td><td><a href="#e1">E1</a></td></tr>
+<tr><td>«estalla», «explota», «se divide» (en reposo o en el punto más alto)</td><td>$\vec P$ antes $=\vec P$ después; con la energía liberada se cierra el sistema; después, cada fragmento es un proyectil.</td><td><a href="#x2">X2</a>, <a href="#e7">E7</a>, <a href="#e9">E9</a></td></tr>
+<tr><td>Choca y luego «comprime un resorte», «sube», «oscila»</td><td>Dos etapas: $P$ en el choque, energía (o MAS) después. Nunca energía a través del choque.</td><td><a href="#x3">X3</a>, <a href="#e3">E3</a>, <a href="#e2">E2</a></td></tr>
+<tr><td>«camina sobre una canoa», «tiran de una cuerda» desde el reposo</td><td>El centro de masa no se mueve: $\sum m_i\Delta x_i=0$ respecto al agua o al suelo.</td><td><a href="#e6">E6</a></td></tr>
+<tr><td>«fuerza media», «tiempo de contacto», «rebotan o se aplastan»</td><td>$\vec F_{med}=\Delta\vec p/\Delta t$, restando vectores.</td><td><a href="#x7">X7</a></td></tr>
+<tr><td>«cohete», «fuerza impulsora», «combustible», «empuje»</td><td>$M\,dv/dt=F-Mg$ e integrar; sin gravedad, $v-v_0=v_{esc}\ln(m_0/m)$.</td><td><a href="#x4">X4</a>, <a href="#e5">E5</a></td></tr>
+<tr><td>«pivote», «eje fijo», «varilla golpeada», «¿se conserva el momento lineal?»</td><td>El eje (o el peso) es fuerza externa: $P$ no se conserva; sí el momento angular respecto al eje (T10).</td><td><a href="#x9">X9</a>, <a href="#x8">X8</a></td></tr>
+<tr><td>«Desarrolle el tema…»</td><td>Guion: idea → definición y ecuación → demostración breve → condición de conservación → ejemplo con números.</td><td><a href="#x5">X5</a>, <a href="#x6">X6</a>, <a href="#x7">X7</a></td></tr>
+</table>
+</section>
+<h2 id="s1"><span class="n">1</span>Cantidad de movimiento e impulso <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.1, pp. 238-242">U p.238</span></h2>
+<div class="box def"><span class="h">Cantidad de movimiento: $\vec p=m\vec v$</span>
+<p>¿Qué cuesta más parar con la mano: una pelota de ping-pong o una bola de bolos a la misma rapidez? La bola: tiene más masa. ¿Y una bola lenta frente a otra rápida? Cuenta también la rapidez. La <b>cantidad de movimiento</b> (o «momento lineal») mide «cuánto movimiento lleva» un cuerpo, y <b>apunta hacia donde va</b>:</p>
+  $$\vec p=m\vec v\ \ (8.2)\qquad p_x=mv_x,\ \ p_y=mv_y\ \ (8.3)\qquad\sum\vec F=\frac{d\vec p}{dt}\ \ (8.4)$$
+  <p>Unidad: kg·m/s. La segunda ley tal como la escribió Newton: la fuerza neta es lo rápido que cambia $\vec p$ (con masa constante, $\sum\vec F=m\vec a$); solo vale en sistemas inerciales. <b>Ejemplo mínimo.</b> Dos coches de 1000 kg a 20 m/s, uno al norte y otro al este: los dos tienen $p=2{,}0\times10^4$ kg·m/s, pero sus vectores son distintos y la suma mide $2{,}8\times10^4$ kg·m/s, no $4{,}0\times10^4$. <b>Error típico:</b> tratar $p$ como un número; es un vector y cada componente lleva su signo.</p>
   <span class="src" data-l="U" data-ref="U §8.1 ecs. (8.2)-(8.4), p. 238">U p.238</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/dos-vectores-cantidad-de-movimiento-de-igual-mod.svg">
 <div class="figph" role="img" aria-label="Dos vectores cantidad de movimiento de igual módulo, uno hacia el norte y otro hacia el este, y su suma vectorial" style="aspect-ratio:360/192"></div>
 <figcaption>Dos coches de 1000 kg a 20 m/s, uno al norte y otro al este, tienen la misma magnitud p = mv = 2,0·10⁴ kg·m/s pero vectores distintos. La suma vectorial mide 2,8·10⁴ (no 4,0·10⁴). <span class="src" data-l="P" data-ref="Diagrama propio de la explicación de U §8.1, p. 238">P</span></figcaption>
 </figure>
-<div class="box def"><span class="h">Impulso y teorema impulso–cantidad de movimiento</span>
-<p>Si la fuerza neta es constante durante un intervalo $\Delta t=t_2-t_1$, el <b>impulso</b> es $\vec J=\sum\vec F\,\Delta t$ (ec. 8.5). Si varía, $\vec J=\int_{t_1}^{t_2}\sum\vec F\,dt$ (ec. 8.7), y se puede escribir con una fuerza media, $\vec J=\vec F_{med}\,\Delta t$ (ec. 8.8). Unidad: N·s = kg·m/s. El <b>teorema impulso–cantidad de movimiento</b> afirma que
-  $$\vec J=\vec p_2-\vec p_1=\Delta\vec p\qquad\text{(ec. 8.6)}$$
-  Por componentes (ec. 8.9): $J_x=(F_{med})_x\,\Delta t=mv_{2x}-mv_{1x}$, e igual en $y$ y $z$. En una gráfica $\sum F_x$–$t$, el impulso es el <b>área</b> bajo la curva.</p>
-  <span class="src" data-l="U" data-ref="U §8.1 ecs. (8.5)-(8.9), pp. 239-240">U p.239-240</span></div>
+<div class="box thm"><span class="h">Impulso: $\vec J=\vec F_{med}\,\Delta t=\Delta\vec p$</span>
+<p>Un empujón largo y suave cambia el movimiento lo mismo que uno corto y brutal: cuenta la fuerza <b>por el tiempo</b> que actúa. Eso es el <b>impulso</b>, y el teorema impulso-cantidad de movimiento dice que es justo el cambio de $\vec p$:</p>
+  $$\vec J=\int_{t_1}^{t_2}\sum\vec F\,dt=\vec F_{med}\,\Delta t\ \ (8.7,\ 8.8)\qquad\vec J=\vec p_2-\vec p_1=\Delta\vec p\ \ (8.6)$$
+  <p>Unidad: N·s = kg·m/s. Con fuerza constante, $\vec J=\sum\vec F\,\Delta t$ (8.5); en una gráfica $F_x$–$t$, $J_x$ es el <b>área</b> bajo la curva. Por eso doblas las rodillas al aterrizar o existen las bolsas de aire: más $\Delta t$, menos fuerza para el mismo $\Delta p$. <b>Ejemplo mínimo (ejemplo 8.2).</b> Pelota de 0,40 kg que llega a 30 m/s hacia la izquierda y rebota a 20 m/s hacia la derecha; con $+x$ a la derecha, $J_x=(0{,}40)(20)-(0{,}40)(-30)=20$ N·s. Si el contacto dura 0,010 s, $F_{med}=2000$ N, unas 500 veces su peso (3,9 N): durante un choque las demás fuerzas no cuentan. <b>Error típico:</b> olvidar el signo de $p_{1x}=-12$ kg·m/s; saldría $J_x=8-12=-4$ N·s, ¡como si la pared tirase de la pelota!</p>
+  <span class="src" data-l="U" data-ref="U §8.1 ecs. (8.5)-(8.9), pp. 239-240 y ejemplo 8.2, pp. 241-242">U p.239-242</span></div>
 <figure class="bookfig">
 <img src="../assets/img/fig_u_8_3_impulso.png" alt="Figura 8.3 de U. a) Gráfica de la fuerza neta Fx contra el tiempo: el área bajo la curva roja entre t1 y t2 es el impulso Jx y es igual al área del rectángulo verde de altura (Fmed)x. b) Una fuerza grande que actúa un tiempo corto y una fuerza menor que actúa más tiempo pueden tener la misma área, es decir, el mismo impulso." loading="lazy">
 <figcaption>Fig. 8.3 de U: el impulso es el área bajo la gráfica fuerza–tiempo; una fuerza grande y breve y una pequeña y prolongada pueden dar el mismo impulso. <span class="src" data-l="U" data-ref="U Fig. 8.3, p. 239">U p.239</span></figcaption>
 </figure>
-<div class="box intu"><span class="h">Cantidad de movimiento frente a energía cinética</span>
-<p>Las dos dependen de $m$ y $v$, pero responden a preguntas distintas. El teorema $\vec J=\Delta\vec p$ dice que la cantidad de movimiento cambia con el impulso, es decir, con la fuerza <i>por el tiempo</i>. El teorema $W=\Delta K$ (tema 6) dice que la energía cinética cambia con el trabajo, es decir, con la fuerza <i>por la distancia</i>. Dos pelotas, de 0,50 kg a 4,0 m/s y de 0,10 kg a 20 m/s, tienen el mismo $p=2{,}0$ kg·m/s (necesitan el mismo impulso para pararlas), pero $K=4{,}0$ J y $20$ J: detener la rápida exige cinco veces más trabajo, y tu brazo retrocede cinco veces más.</p>
-  <span class="src" data-l="U" data-ref="U §8.1, pp. 239-241 (fig. 8.5)">U p.240</span></div>
-<figure class="fig" data-svg="../assets/figs/t08/dos-pelotas-con-la-misma-cantidad-de-movimiento-.svg">
-<div class="figph" role="img" aria-label="Dos pelotas con la misma cantidad de movimiento y distinta energía cinética" style="aspect-ratio:360/200"></div>
-<figcaption>Dos pelotas con la misma cantidad de movimiento (2,0 kg·m/s) pero energías cinéticas de 4,0 J y 20 J. Las flechas de velocidad no están a escala respecto a las barras. <span class="src" data-l="P" data-ref="Diagrama propio de la comparación de U §8.1, p. 240">P</span></figcaption>
-</figure>
-<div class="box ex"><span class="h">Ejemplo conceptual del libro 8.1 — dos veleros</span>
-<p>Dos veleros de masas $m$ y $2m$, en un lago helado sin fricción, parten del reposo con la misma fuerza horizontal constante $F$ y cruzan la meta a una distancia $s$. El trabajo $Fs$ es el mismo, así que llegan con la <b>misma energía cinética</b>. Pero el de masa $2m$ acelera menos y tarda más: recibe más impulso $F\Delta t$, luego llega con <b>más cantidad de movimiento</b>. Como $p=\sqrt{2mK}$ y $K$ es la misma, el velero de masa $2m$ lleva $\sqrt2$ veces más cantidad de movimiento.</p>
-  <span class="src" data-l="U" data-ref="U Ejemplo conceptual 8.1, p. 241">U p.241</span></div>
-<div class="box ex"><span class="h">Ejemplo del libro 8.2 — una pelota golpea una pared</span>
-<p>Una pelota de 0,40 kg llega horizontalmente a 30 m/s hacia la izquierda y rebota a 20 m/s hacia la derecha. a) ¿Impulso de la fuerza neta? b) Si el contacto dura 0,010 s, ¿fuerza media?</p>
-  <ol class="steps">
-    <li>Elige $+x$ hacia la derecha. Entonces $p_{1x}=(0{,}40)(-30)=-12$ kg·m/s y $p_{2x}=(0{,}40)(+20)=+8{,}0$ kg·m/s.</li>
-    <li>Por (8.9): $J_x=p_{2x}-p_{1x}=8{,}0-(-12)=20$ kg·m/s $=20$ N·s, hacia la derecha: es el «empujón» que da la pared.</li>
-    <li>Por (8.8): $(F_{med})_x=J_x/\Delta t=20/0{,}010=2000$ N, el peso de unos 200 kg. Muy superior al peso de la pelota (3,9 N), por lo que durante el choque se pueden ignorar las otras fuerzas.</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.2, pp. 241-242">U p.241-242</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/pelota-de-0-40-kg-que-llega-a-30-m-s-hacia-la-iz.svg">
 <div class="figph" role="img" aria-label="Pelota de 0,40 kg que llega a 30 m/s hacia la izquierda y rebota a 20 m/s hacia la derecha contra una pared" style="aspect-ratio:360/196"></div>
 <figcaption>Ejemplo 8.2 de U: la pared cambia la cantidad de movimiento de la pelota de −12 a +8 kg·m/s; el impulso es +20 N·s y, con Δt = 0,010 s, Fmed = 2000 N. Flechas no a escala. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.2 (U p. 241)">P</span></figcaption>
 </figure>
-<div class="box warn"><span class="h">La cantidad de movimiento es un vector: respeta los signos</span>
-<p>Si olvidas el signo menos de $p_{1x}=-12$ kg·m/s, obtendrías $J_x=8-12=-4$ kg·m/s, ¡como si la pared hubiera empujado la pelota hacia la izquierda! Define siempre el eje y escribe cada velocidad con su signo.</p>
-  <span class="src" data-l="U" data-ref="U Cuidado «La cantidad de movimiento es un vector», p. 241">U p.241</span></div>
-<div class="box ex"><span class="h">Ejemplo del libro 8.3 — pateo de un balón (dos dimensiones)</span>
-<p>Un balón de 0,40 kg se mueve a 20 m/s hacia la izquierda; tras patearlo sale a 30 m/s a 45° hacia arriba y a la derecha. Si el contacto dura 0,010 s, ¿impulso y fuerza media?</p>
-  <ol class="steps">
-    <li>Componentes: $v_{1x}=-20$, $v_{1y}=0$; $v_{2x}=v_{2y}=30\cos45^\circ=21{,}2$ m/s.</li>
-    <li>$J_x=m(v_{2x}-v_{1x})=0{,}40\,(21{,}2+20)=16{,}5$ N·s y $J_y=m(v_{2y}-v_{1y})=0{,}40\cdot21{,}2=8{,}5$ N·s.</li>
-    <li>$(F_{med})_x=1650$ N y $(F_{med})_y=850$ N, de modo que $F_{med}=\sqrt{1650^2+850^2}=1{,}9\times10^3$ N con ángulo $\arctan(850/1650)=27^\circ$ sobre la horizontal. La fuerza no apunta en la dirección de la velocidad final, porque el balón ya se movía antes.</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.3, p. 242">U p.242</span></div>
+<div class="box warn"><span class="h">En dos dimensiones, resta vectores (no módulos)</span>
+<p>$\Delta\vec p$ se calcula componente a componente. <b>Ejemplo 8.3.</b> Un balón de 0,40 kg va a 20 m/s hacia la izquierda y, tras la patada, sale a 30 m/s a 45° hacia arriba y a la derecha ($v_{2x}=v_{2y}=21{,}2$ m/s). Entonces $J_x=0{,}40\,(21{,}2+20)=16{,}5$ N·s y $J_y=0{,}40\,(21{,}2)=8{,}5$ N·s; con 0,010 s de contacto, $F_{med}=\sqrt{1650^2+850^2}=1{,}9\times10^3$ N a $27^\circ$ sobre la horizontal. La fuerza <b>no</b> apunta como la velocidad final, porque el balón ya se movía antes.</p>
+  <span class="src" data-l="U" data-ref="U Cuidado «La cantidad de movimiento es un vector», p. 241 y ejemplo 8.3, p. 242">U p.241-242</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/triangulo-de-vectores-el-impulso-es-la-diferenci.svg">
 <div class="figph" role="img" aria-label="Triángulo de vectores: el impulso es la diferencia entre la cantidad de movimiento final e inicial del balón" style="aspect-ratio:360/198"></div>
 <figcaption>Ejemplo 8.3 de U: J = p₂ − p₁ se obtiene restando vectores, no módulos. Con Δt = 0,010 s, Fmed ≈ 1,9·10³ N a 27° de la horizontal. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.3 (U p. 242)">P</span></figcaption>
+</figure>
+<div class="box intu"><span class="h">$p$ y $K$ responden a preguntas distintas</span>
+<p>$\vec J=\Delta\vec p$ cuenta fuerza × <b>tiempo</b>; $W=\Delta K$ (tema 6) cuenta fuerza × <b>distancia</b>. Se relacionan por $K=\dfrac{p^2}{2m}$. Dos pelotas, de 0,50 kg a 4,0 m/s y de 0,10 kg a 20 m/s, tienen el mismo $p=2{,}0$ kg·m/s (necesitan el mismo impulso para pararlas), pero $K=4{,}0$ J y 20 J: parar la rápida exige cinco veces más trabajo. <b>Ejemplo conceptual 8.1.</b> Dos veleros de masas $m$ y $2m$, empujados desde el reposo por la misma fuerza a lo largo de la misma distancia, llegan con la misma $K$ (mismo trabajo); pero el pesado tarda más, recibe más impulso y lleva $\sqrt2$ veces más cantidad de movimiento.</p>
+  <span class="src" data-l="U" data-ref="U §8.1, pp. 240-241 (fig. 8.5 y ejemplo conceptual 8.1)">U p.240-241</span></div>
+<figure class="fig" data-svg="../assets/figs/t08/dos-pelotas-con-la-misma-cantidad-de-movimiento-.svg">
+<div class="figph" role="img" aria-label="Dos pelotas con la misma cantidad de movimiento y distinta energía cinética" style="aspect-ratio:360/200"></div>
+<figcaption>Dos pelotas con la misma cantidad de movimiento (2,0 kg·m/s) pero energías cinéticas de 4,0 J y 20 J. Las flechas de velocidad no están a escala respecto a las barras. <span class="src" data-l="P" data-ref="Diagrama propio de la comparación de U §8.1, p. 240">P</span></figcaption>
 </figure>
 <div class="box tip"><span class="h">Truco de examen: fuerza media en un choque</span>
 <p>Casi nunca conoces la fuerza durante un choque, pero sí las velocidades antes y después. Calcula $\Delta\vec p$ (restando <i>vectores</i>) y divide entre $\Delta t$: $\vec F_{med}=\Delta\vec p/\Delta t$. Así se razona, por ejemplo, que una bala que rebota ejerce más fuerza media sobre una placa que una que se aplasta (ejercicio X7). También se usa en los problemas de frenado por penetración: el satélite que se estrella (Feb 2023 1ª sem. P-1, apartado c) y la bala que se incrusta en un material antibalas (Feb 2024 1ª sem. P-1, apartado c) se resuelven con $\Delta p=F_{med}\Delta t$.</p>
   <span class="src" data-l="U" data-ref="U ecs. (8.6) y (8.8), p. 239">U p.239</span>
   <span class="src" data-l="X" data-ref="Examen Febrero 2023 (1ª semana) P-1; Examen Febrero 2024 (1ª semana) P-1">X</span></div>
-<h2 id="s2"><span class="n">2</span>Conservación de la cantidad de movimiento <span class="src" data-l="U" data-ref="U §8.2, pp. 243-247">U p.243</span></h2>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>Dos astronautas flotan en el espacio y uno empuja al otro. Cada uno recibe una fuerza del otro: por la tercera ley son iguales y opuestas, y actúan <i>durante el mismo tiempo</i>. Luego los impulsos son iguales y opuestos y los dos cambian su cantidad de movimiento en cantidades iguales y de signo contrario. Uno gana lo que el otro pierde: la <b>suma</b> no cambia. Lo mismo ocurre con dos patinadores sobre hielo o con una bala y el rifle que la dispara: no hace falta conocer la fuerza del empujón.</p>
-  <span class="src" data-l="U" data-ref="U §8.2, p. 243 (figs. 8.9 y 8.10)">U p.243</span></div>
-<div class="box thm"><span class="h">Conservación de la cantidad de movimiento</span>
-<p>Las fuerzas que unas partes de un sistema ejercen sobre otras son <b>internas</b>; las que provienen de fuera, <b>externas</b>. La cantidad de movimiento total del sistema es $\vec P=\vec p_A+\vec p_B+\dots=m_A\vec v_A+m_B\vec v_B+\dots$ (ecs. 8.12 y 8.14). Sumando la segunda ley para todas las partículas, las fuerzas internas se cancelan por pares:
-  $$\frac{d\vec P}{dt}=\sum\vec F_{ext}\qquad\text{(ec. 8.13)}$$
-  <b>Si la suma vectorial de las fuerzas externas es cero, la cantidad de movimiento total es constante.</b> Las fuerzas internas pueden cambiar la cantidad de movimiento de cada parte, pero no la total. Se conserva <i>cada componente</i> por separado (ec. 8.15): $P_x$, $P_y$ y $P_z$. Es válido aunque las fuerzas internas no sean conservativas (choques inelásticos, explosiones), a diferencia de la energía mecánica.</p>
-  <span class="src" data-l="U" data-ref="U §8.2 ecs. (8.12)-(8.15), pp. 243-244">U p.243-244</span></div>
-<figure class="fig" data-svg="../assets/figs/t08/dos-personas-en-reposo-que-se-empujan-y-salen-co.svg">
-<div class="figph" role="img" aria-label="Dos personas en reposo que se empujan y salen con cantidades de movimiento iguales y opuestas" style="aspect-ratio:360/202"></div>
-<figcaption>Dos patinadores que se empujan: las cantidades de movimiento individuales cambian, pero la total sigue siendo cero. Peso y normal se cancelan y no hay otras fuerzas horizontales externas. <span class="src" data-l="P" data-ref="Diagrama propio de la fig. 8.10 de U (p. 243)">P</span></figcaption>
-</figure>
-<div class="box warn"><span class="h">Conservar la cantidad de movimiento = conservar sus componentes</span>
-<p>$\vec P$ se calcula con una suma <b>vectorial</b>. Dos cantidades de movimiento de 18 y 24 kg·m/s en direcciones perpendiculares suman 30 kg·m/s (no 42). Lo más seguro es trabajar con componentes: $P_x=p_{Ax}+p_{Bx}+\dots$ y $P_y=p_{Ay}+p_{By}+\dots$ Según «Los datos hablan», más del 29 % de los estudiantes falla un problema de conservación de la cantidad de movimiento, sobre todo por olvidar que es un vector o por sumar módulos.</p>
-  <span class="src" data-l="U" data-ref="U Cuidado y «Los datos hablan», pp. 244 y 251">U p.244, 251</span></div>
-<div class="box tip"><span class="h">Estrategia (8.1) en cuatro líneas</span>
-<ol class="steps">
-    <li><b>Identifica:</b> comprueba que la fuerza externa neta (sobre el sistema, en el instante del choque) es cero o despreciable.</li>
-    <li><b>Plantea:</b> dibujos de «antes» y «después» con las velocidades, símbolos para cada magnitud y ejes con su sentido positivo.</li>
-    <li><b>Ejecuta:</b> una ecuación $\sum mv_x$ y otra $\sum mv_y$ (con cuidado en los signos); añade la ecuación de energía si el choque es elástico; resuelve.</li>
-    <li><b>Evalúa:</b> ¿es razonable el resultado y la dirección de la cantidad de movimiento final?</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 8.1, p. 244">U p.244</span></div>
-<div class="box ex"><span class="h">Ejemplo del libro 8.4 — retroceso de un rifle</span>
-<p>Un rifle de 3,00 kg, sostenido holgadamente, dispara una bala de 5,00 g con velocidad horizontal $v_{Bx}=300$ m/s respecto al suelo. ¿Velocidad de retroceso, cantidades de movimiento y energías cinéticas?</p>
-  <ol class="steps">
-    <li>Sin fuerza horizontal externa, se conserva $P_x$; inicialmente es cero: $0=m_Bv_{Bx}+m_Rv_{Rx}$.</li>
-    <li>$v_{Rx}=-\dfrac{m_B}{m_R}v_{Bx}=-\dfrac{0{,}00500}{3{,}00}(300)=-0{,}500$ m/s (el signo menos: retrocede).</li>
-    <li>$p_{Bx}=1{,}50$ kg·m/s y $p_{Rx}=-1{,}50$ kg·m/s: <b>iguales y opuestas</b>. Pero $K_B=\tfrac12(0{,}00500)(300)^2=225$ J y $K_R=\tfrac12(3{,}00)(0{,}500)^2=0{,}375$ J: la razón 600:1 es la inversa de la de masas, porque la bala recorre más distancia durante el empujón y el trabajo es mayor.</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.4, p. 245">U p.245</span></div>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>Una pelota de tenis de 0,060 kg llega a 40 m/s y sale rebotada en sentido contrario a 30 m/s. ¿Impulso que recibe? ¿Fuerza media si el contacto dura 4,0 ms?<details><summary>Ver respuesta</summary>Con $+x$ hacia donde sale: $J_x=0{,}060\,(30)-0{,}060\,(-40)=4{,}2$ N·s y $F_{med}=4{,}2/0{,}0040=1050$ N. Si sumas mal los signos ($0{,}060\cdot(30-40)$) te sale un impulso diez veces menor y del sentido equivocado.</details></li>
+<li>Un coche de 1200 kg a 20 m/s frena hasta pararse en 8,0 s. ¿Fuerza media de frenado?<details><summary>Ver respuesta</summary>$F_{med}=\Delta p/\Delta t=(0-1200\cdot20)/8{,}0=-3000$ N: 3000 N en sentido contrario al movimiento.</details></li>
+<li>Dos cuerpos de 1,0 kg y 4,0 kg tienen la misma energía cinética, 50 J. ¿Cuál lleva más cantidad de movimiento?<details><summary>Ver respuesta</summary>$p=\sqrt{2mK}$: 10 kg·m/s el de 1,0 kg y 20 kg·m/s el de 4,0 kg. Con la misma $K$, el más pesado lleva más $p$ (como los veleros).</details></li>
+</ol>
+</details>
+
+<h2 id="s2"><span class="n">2</span>Conservación de la cantidad de movimiento <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-247">U p.243</span></h2>
+<div class="box thm"><span class="h">Si $\sum\vec F_{ext}=0$, la cantidad de movimiento total se conserva</span>
+<p>Dos patinadores se empujan: por la tercera ley cada uno recibe una fuerza igual y opuesta <b>durante el mismo tiempo</b>, así que sus impulsos son opuestos y lo que gana uno lo pierde el otro. Las fuerzas entre partes del sistema son <b>internas</b>; las que vienen de fuera, <b>externas</b>. Con $\vec P=m_A\vec v_A+m_B\vec v_B+\dots$ (8.14), las internas se anulan por pares:</p>
+  $$\frac{d\vec P}{dt}=\sum\vec F_{ext}\ \ (8.13)\qquad\Longrightarrow\qquad\sum\vec F_{ext}=0\ \Rightarrow\ \vec P=\text{cte, cada componente por separado (8.15)}$$
+  <p>Vale aunque las fuerzas internas no sean conservativas (choques inelásticos, explosiones): por eso llega donde no llega la energía mecánica. <b>Ejemplo mínimo (ejemplo 8.4).</b> Un rifle de 3,00 kg dispara una bala de 5,00 g a 300 m/s: $0=m_Bv_{Bx}+m_Rv_{Rx}\Rightarrow v_{Rx}=-0{,}500$ m/s. Cantidades de movimiento iguales y opuestas ($\pm1{,}50$ kg·m/s), pero $K_B=225$ J frente a $K_R=0{,}375$ J: la bala recorre más distancia durante el empujón. <b>Error típico:</b> creer que hace falta que no haya <i>ninguna</i> fuerza externa; basta que su suma sea nula (peso y normal se anulan) o, durante un choque breve, despreciable.</p>
+  <span class="src" data-l="U" data-ref="U §8.2 ecs. (8.12)-(8.15), pp. 243-244 y ejemplo 8.4, p. 245">U p.243-245</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/rifle-que-retrocede-al-disparar-una-bala-cantida.svg">
 <div class="figph" role="img" aria-label="Rifle que retrocede al disparar una bala: cantidades de movimiento iguales y opuestas" style="aspect-ratio:360/202"></div>
 <figcaption>Ejemplo 8.4 de U: el rifle retrocede a 0,500 m/s y la bala sale a 300 m/s; sus cantidades de movimiento son iguales y opuestas (±1,50 kg·m/s). Flechas no a escala. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.4 (U p. 245)">P</span></figcaption>
 </figure>
-<div class="box ex"><span class="h">Ejemplo del libro 8.5 — choque en una línea recta</span>
-<p>Dos deslizadores sobre un riel de aire sin fricción, $m_A=0{,}50$ kg con $v_{A1x}=+2{,}0$ m/s y $m_B=0{,}30$ kg con $v_{B1x}=-2{,}0$ m/s, chocan. Después, $v_{B2x}=+2{,}0$ m/s. ¿Velocidad final de A?</p>
+<div class="box warn"><span class="h">Conservar la cantidad de movimiento = conservar sus componentes</span>
+<p>$\vec P$ se calcula con una suma <b>vectorial</b>. Dos cantidades de movimiento de 18 y 24 kg·m/s en direcciones perpendiculares suman 30 kg·m/s (no 42). Lo más seguro es trabajar con componentes: $P_x=p_{Ax}+p_{Bx}+\dots$ y $P_y=p_{Ay}+p_{By}+\dots$ Según «Los datos hablan», más del 29 % de los estudiantes falla un problema de conservación de la cantidad de movimiento, sobre todo por olvidar que es un vector o por sumar módulos.</p>
+  <span class="src" data-l="U" data-ref="U Cuidado y «Los datos hablan», pp. 244 y 251">U p.244, 251</span></div>
+<div class="box ex"><span class="h">Ejemplo 8.5: choque en línea recta (el signo es la dirección)</span>
+<p>Dos deslizadores sin fricción: $m_A=0{,}50$ kg a $+2{,}0$ m/s y $m_B=0{,}30$ kg a $-2{,}0$ m/s. Tras el choque, B va a $+2{,}0$ m/s. ¿Y A?</p>
   <ol class="steps">
-    <li>Antes: $P_x=(0{,}50)(2{,}0)+(0{,}30)(-2{,}0)=0{,}40$ kg·m/s (positiva porque A tiene más $|p|$).</li>
-    <li>Después: $0{,}40=0{,}50\,v_{A2x}+(0{,}30)(2{,}0)\Rightarrow v_{A2x}=-0{,}40$ m/s.</li>
-    <li>Cambios de cantidad de movimiento: $\Delta p_A=-1{,}2$ y $\Delta p_B=+1{,}2$ kg·m/s (iguales y opuestos), pero los cambios de velocidad son $-2{,}4$ y $+4{,}0$ m/s: el cuerpo de menos masa cambia más de velocidad.</li>
+    <li>Antes: $P_x=(0{,}50)(2{,}0)+(0{,}30)(-2{,}0)=0{,}40$ kg·m/s.</li>
+    <li>Después: $0{,}40=0{,}50\,v_{A2x}+(0{,}30)(2{,}0)\Rightarrow v_{A2x}=-0{,}40$ m/s: A rebota.</li>
+    <li>$\Delta p_A=-1{,}2$ y $\Delta p_B=+1{,}2$ kg·m/s (iguales y opuestos), pero el ligero cambia más de velocidad ($+4{,}0$ frente a $-2{,}4$ m/s).</li>
   </ol>
   <span class="src" data-l="U" data-ref="U Ejemplo 8.5, pp. 245-246">U p.245-246</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/dos-deslizadores-que-chocan-en-un-riel-de-aire-a.svg">
 <div class="figph" role="img" aria-label="Dos deslizadores que chocan en un riel de aire, antes y después" style="aspect-ratio:360/206"></div>
 <figcaption>Ejemplo 8.5 de U: la cantidad de movimiento total (0,40 kg·m/s) es la misma antes y después; A invierte su sentido (v<sub>Ax</sub> = −0,40 m/s). Las flechas de antes y de después tienen escalas distintas. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.5 (U p. 245)">P</span></figcaption>
 </figure>
-<div class="box ex"><span class="h">Ejemplo del libro 8.6 — choque en un plano horizontal</span>
-<p>El robot A (20 kg) se mueve a 2,0 m/s según $+x$ y choca con el robot B (12 kg) en reposo. Después, A se mueve a 1,0 m/s formando 30° con su dirección inicial. ¿Velocidad final de B?</p>
-  <ol class="steps">
-    <li>$x$: $(20)(2{,}0)=(20)(1{,}0\cos30^\circ)+12\,v_{B2x}\Rightarrow v_{B2x}=1{,}89$ m/s.</li>
-    <li>$y$: $0=(20)(1{,}0\sin30^\circ)+12\,v_{B2y}\Rightarrow v_{B2y}=-0{,}83$ m/s.</li>
-    <li>$v_{B2}=\sqrt{1{,}89^2+0{,}83^2}=2{,}1$ m/s, con ángulo $\arctan(-0{,}83/1{,}89)=-24^\circ$ respecto a $+x$. Comprobación: las componentes $y$ de las cantidades de movimiento finales son $+10$ y $-10$ kg·m/s, y las $x$ suman $17+23=40$ kg·m/s.</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.6, pp. 246-247">U p.246-247</span></div>
-<figure class="fig" data-svg="../assets/figs/t08/triangulo-de-cantidad-de-movimiento-del-choque-d.svg">
-<div class="figph" role="img" aria-label="Triángulo de cantidad de movimiento del choque de dos robots" style="aspect-ratio:360/194"></div>
-<figcaption>Ejemplo 8.6 de U: las componentes y se cancelan (+10 y −10 kg·m/s) y las x suman 40 kg·m/s, igual que antes del choque. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.6 (U pp. 246-247)">P</span></figcaption>
-</figure>
-<h2 id="s3"><span class="n">3</span>Choques y choques totalmente inelásticos <span class="src" data-l="U" data-ref="U §8.3, pp. 247-251">U p.247</span></h2>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>En física, un <b>choque</b> es cualquier interacción intensa y breve entre cuerpos: dos coches, dos bolas de billar, un neutrón contra un núcleo… Durante el choque las fuerzas entre los cuerpos son enormes, mucho mayores que las externas; por eso, aunque haya fricción con el suelo o gravedad, se puede tratar el sistema como aislado <i>durante</i> el choque y la cantidad de movimiento se conserva.</p>
-  <p>Lo que cambia de un choque a otro es qué ocurre con la <b>energía cinética</b>. Dos bolas de billar casi no se deforman y rebotan: casi no pierden energía cinética. Una albóndiga que cae en un plato de espagueti o una bala que se incrusta en un bloque se quedan pegadas y «gastan» casi toda su energía cinética en deformar y calentar.</p>
-  <span class="src" data-l="U" data-ref="U §8.3, pp. 247-248">U p.247-248</span></div>
-<div class="box def"><span class="h">Choque elástico, inelástico y totalmente inelástico</span>
-<p>Si las fuerzas entre los cuerpos son conservativas, la energía cinética total se conserva: <b>choque elástico</b>. Si la energía cinética total final es menor que la inicial: <b>choque inelástico</b>. Si además los cuerpos quedan unidos y se mueven con la misma velocidad final: <b>choque totalmente inelástico</b>. (En una explosión la energía cinética final es <i>mayor</i> que la inicial: la energía interna se libera.)</p>
-  <span class="src" data-l="U" data-ref="U §8.3, pp. 247-248 y fig. 8.21, p. 250">U p.247-250</span></div>
-<figure class="bookfig">
-<img src="../assets/img/fig_u_8_15_elastico.png" alt="Figura 8.15 de U: dos deslizadores con protectores de resorte antes del choque, durante el choque elástico (los resortes se comprimen) y después del choque; el sistema tiene la misma energía cinética después que antes." loading="lazy">
-<figcaption>Fig. 8.15 de U: choque elástico; la energía cinética se almacena temporalmente en los resortes comprimidos y se recupera. <span class="src" data-l="U" data-ref="U Fig. 8.15, p. 247">U p.247</span></figcaption>
-</figure>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>Un patinador de 60 kg y una patinadora de 40 kg, en reposo sobre hielo, se empujan. Ella sale a 3,0 m/s. ¿Y él?<details><summary>Ver respuesta</summary>$0=40(3{,}0)+60\,v\Rightarrow v=-2{,}0$ m/s: 2,0 m/s en sentido contrario.</details></li>
+<li>Un cañón de 800 kg, libre de deslizar, dispara horizontalmente un proyectil de 10 kg a 400 m/s. ¿Rapidez de retroceso?<details><summary>Ver respuesta</summary>$v=10\cdot400/800=5{,}0$ m/s hacia atrás.</details></li>
+<li>Una bola A de 2,0 kg a 3,0 m/s según $+x$ choca con una bola B de 1,0 kg en reposo; después, A se mueve a 1,0 m/s según $+y$. ¿Velocidad de B?<details><summary>Ver respuesta</summary>$x$: $2{,}0\cdot3{,}0=1{,}0\,v_{Bx}\Rightarrow v_{Bx}=6{,}0$ m/s. $y$: $0=2{,}0\cdot1{,}0+1{,}0\,v_{By}\Rightarrow v_{By}=-2{,}0$ m/s. Módulo $\sqrt{40}=6{,}32$ m/s, a $18{,}4^\circ$ por debajo de $+x$ (método de <a href="#x1">X1</a>).</details></li>
+</ol>
+</details>
+
+<h2 id="s3"><span class="n">3</span>Tipos de choque y choque totalmente inelástico <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.3, pp. 247-251">U p.247</span></h2>
+<div class="box def"><span class="h">Choque elástico, inelástico, totalmente inelástico (y explosión)</span>
+<p>En física, un <b>choque</b> es cualquier interacción intensa y breve. Las fuerzas internas son tan grandes que, <i>durante</i> el choque, la fricción, el peso o un resorte aún sin comprimir no cuentan: <b>$\vec P$ se conserva siempre</b>. Lo que distingue un choque de otro es la energía cinética:</p>
+  <table>
+  <tr><th>Tipo</th><th>Energía cinética</th><th>Ejemplo</th></tr>
+  <tr><td>Elástico</td><td>$K_2=K_1$ (fuerzas de interacción conservativas)</td><td>bolas de billar, deslizadores con resorte</td></tr>
+  <tr><td>Inelástico</td><td>$K_2\lt K_1$</td><td>coches que se abollan y rebotan</td></tr>
+  <tr><td>Totalmente inelástico</td><td>$K_2\lt K_1$ y quedan <b>unidos</b> con la misma velocidad</td><td>bala que se incrusta, Velcro</td></tr>
+  <tr><td>Explosión</td><td>$K_2\gt K_1$: se libera energía interna</td><td>fuegos artificiales, obús</td></tr>
+  </table>
+  <p><b>Regla general:</b> en cualquier choque en que se puedan ignorar las fuerzas externas se conserva la cantidad de movimiento; <b>solo</b> en los elásticos se conserva además la energía cinética. <b>Error típico:</b> leer «inelástico» como «quedan pegados»: solo significa que se pierde energía cinética.</p>
+  <span class="src" data-l="U" data-ref="U §8.3, pp. 247-248 (recuadro y Cuidado, p. 248) y fig. 8.21, p. 250">U p.247-250</span></div>
 <figure class="bookfig ancha">
 <img src="../assets/img/fig_u_8_16_inelastico.png" alt="Figura 8.16 de U: dos deslizadores con cintas Velcro antes del choque, durante el choque totalmente inelástico (quedan adheridos) y después del choque, con menos energía cinética que antes." loading="lazy">
 <figcaption>Fig. 8.16 de U: choque totalmente inelástico; los cuerpos quedan unidos y el sistema pierde energía cinética. <span class="src" data-l="U" data-ref="U Fig. 8.16, p. 247">U p.247</span></figcaption>
 </figure>
-<div class="box thm"><span class="h">Regla general de los choques</span>
-<p><b>En cualquier choque en el que se pueden ignorar las fuerzas externas, se conserva la cantidad de movimiento, y la cantidad de movimiento total es la misma antes y después; solo en los choques elásticos, la energía cinética total es igual antes y después.</b></p>
-  <span class="src" data-l="U" data-ref="U §8.3, recuadro, p. 248">U p.248</span></div>
-<div class="box thm"><span class="h">Choque totalmente inelástico</span>
-<p>Como los dos cuerpos quedan con la misma velocidad $\vec v_2$, la conservación de la cantidad de movimiento da
+<div class="box thm"><span class="h">Totalmente inelástico: una sola velocidad final</span>
+<p>Como los dos cuerpos acaban con la misma $\vec v_2$, queda una incógnita por componente:</p>
   $$m_A\vec v_{A1}+m_B\vec v_{B1}=(m_A+m_B)\,\vec v_2\qquad\text{(ec. 8.16)}$$
-  Si $B$ está inicialmente en reposo, $v_{2x}=\dfrac{m_A}{m_A+m_B}v_{A1x}$ (8.17) y $\dfrac{K_2}{K_1}=\dfrac{m_A}{m_A+m_B}$ (8.18), siempre menor que 1: se pierde energía cinética. No conviene memorizar (8.17) y (8.18); sirven solo para demostrar que siempre se pierde energía en este tipo de choque.</p>
-  <span class="src" data-l="U" data-ref="U §8.3 ecs. (8.16)-(8.18), p. 248">U p.248</span></div>
-<div class="box warn"><span class="h">Un choque inelástico no tiene que ser totalmente inelástico</span>
-<p>Dos coches que chocan levemente y rebotan han perdido energía al deformar los parachoques (choque inelástico) pero no quedan unidos. «Inelástico» significa solo que $K$ final $\lt$ $K$ inicial.</p>
-  <span class="src" data-l="U" data-ref="U Cuidado, p. 248 y fig. 8.17">U p.248</span></div>
-<div class="box ex"><span class="h">Ejemplo del libro 8.7 — choque totalmente inelástico</span>
-<p>Los deslizadores del ejemplo 8.5 ($0{,}50$ kg a $+2{,}0$ m/s y $0{,}30$ kg a $-2{,}0$ m/s), ahora con Velcro, quedan unidos. ¿Velocidad final común y energías cinéticas?</p>
-  <ol class="steps">
-    <li>$v_{2x}=\dfrac{(0{,}50)(2{,}0)+(0{,}30)(-2{,}0)}{0{,}50+0{,}30}=0{,}50$ m/s, hacia la derecha.</li>
-    <li>Antes: $K_A=\tfrac12(0{,}50)(2{,}0)^2=1{,}0$ J y $K_B=\tfrac12(0{,}30)(2{,}0)^2=0{,}60$ J, total $1{,}6$ J. Después: $K_2=\tfrac12(0{,}80)(0{,}50)^2=0{,}10$ J.</li>
-    <li>Queda solo $1/16$ de la energía cinética; $15/16$ se convierten en otras formas (se aplasta y calienta la goma de mascar, o se comprime un resorte entre los deslizadores). La energía total se conserva; la cantidad de movimiento siempre.</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.7, pp. 248-249">U p.248-249</span></div>
+  <p>Con B en reposo, $v_{2x}=\dfrac{m_A}{m_A+m_B}v_{A1x}$ y $\dfrac{K_2}{K_1}=\dfrac{m_A}{m_A+m_B}\lt1$ (8.17, 8.18): siempre se pierde energía (no hace falta memorizarlas). <b>Ejemplo mínimo (ejemplo 8.7).</b> Los deslizadores del ejemplo 8.5 con Velcro: $v_{2x}=\dfrac{0{,}40}{0{,}80}=0{,}50$ m/s; $K$ pasa de 1,6 J a 0,10 J: queda 1/16, el resto calienta y deforma. <b>Error típico:</b> imponer $K_1=K_2$ cuando los cuerpos quedan unidos.</p>
+  <span class="src" data-l="U" data-ref="U §8.3 ecs. (8.16)-(8.18), p. 248 y ejemplo 8.7, pp. 248-249">U p.248-249</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/barras-de-energia-cinetica-antes-y-despues-de-un.svg">
 <div class="figph" role="img" aria-label="Barras de energía cinética antes y después de un choque totalmente inelástico" style="aspect-ratio:360/182"></div>
 <figcaption>Ejemplo 8.7 de U: los dos deslizadores pegados conservan la cantidad de movimiento, pero la energía cinética pasa de 1,6 J a 0,10 J. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.7 (U pp. 248-249)">P</span></figcaption>
 </figure>
-<div class="box ex"><span class="h">Ejemplo del libro 8.8 — el péndulo balístico</span>
-<p>Una bala de masa $m_B$ se incrusta en un bloque de madera de masa $m_W$ que cuelga como péndulo; el bloque sube hasta una altura máxima $h$. ¿Rapidez inicial $v_1$ de la bala?</p>
+<div class="box tip"><span class="h">Choque + lo que pasa después: dos etapas, dos leyes (péndulo balístico)</span>
+<p>Si tras el choque el conjunto sube, comprime un resorte u oscila, corta el problema en el instante del choque:</p>
   <ol class="steps">
-    <li><b>Dos etapas, dos leyes.</b> Etapa 1, el impacto: casi instantáneo, así que las cuerdas siguen verticales y la fuerza horizontal externa es despreciable; se conserva $P_x$ (pero no la energía mecánica: hay fricción bala-madera). Etapa 2, la oscilación: solo trabajan el peso (conservativo) y las tensiones (no trabajan); se conserva la energía mecánica (pero no $P$: las cuerdas inclinadas ejercen fuerza horizontal).</li>
-    <li>Etapa 1: $m_Bv_1=(m_B+m_W)v_2$, luego $v_1=\dfrac{m_B+m_W}{m_B}v_2$.</li>
-    <li>Etapa 2: $\tfrac12(m_B+m_W)v_2^2=(m_B+m_W)gh\Rightarrow v_2=\sqrt{2gh}$. Por tanto $v_1=\dfrac{m_B+m_W}{m_B}\sqrt{2gh}$.</li>
-    <li>Con $m_B=5{,}00$ g, $m_W=2{,}00$ kg y $h=3{,}00$ cm: $v_2=0{,}767$ m/s y $v_1=307$ m/s. La bala tenía $236$ J y el conjunto, justo después, solo $0{,}590$ J: casi todo se pierde al astillar la madera y calentar.</li>
+    <li><b>Choque</b> (instantáneo; las cuerdas siguen verticales): se conserva $P_x$, <i>no</i> la energía mecánica (la bala astilla y calienta la madera).</li>
+    <li><b>Después</b>: se conserva la energía mecánica (trabaja el peso; la tensión no trabaja), <i>no</i> $P$ (las cuerdas inclinadas tiran en horizontal).</li>
   </ol>
+  <p><b>Ejemplo 8.8.</b> Una bala de masa $m_B$ se incrusta en un bloque $m_W$ colgado, que sube una altura $h$: $v_2=\sqrt{2gh}$ y $v_1=\dfrac{m_B+m_W}{m_B}\sqrt{2gh}$. Con 5,00 g, 2,00 kg y 3,00 cm: $v_2=0{,}767$ m/s y $v_1=307$ m/s. La bala tenía 236 J y el conjunto, justo después, solo 0,589 J. Mismo método en <a href="#e3">E3</a>, <a href="#e2">E2</a> y <a href="#x3">X3</a>. <b>Error típico:</b> igualar $\tfrac12m_Bv_1^2$ a $(m_B+m_W)gh$, es decir, usar la energía <i>a través</i> del choque.</p>
   <span class="src" data-l="U" data-ref="U Ejemplo 8.8, p. 249">U p.249</span></div>
 <figure class="bookfig">
 <img src="../assets/img/fig_u_8_19_balistico.png" alt="Figura 8.19 de U: péndulo balístico. Arriba, antes del choque, la bala de masa mB con velocidad v1 se acerca al bloque de masa mW. Abajo, inmediatamente después del choque, el bloque con la bala incrustada se mueve con velocidad v2 y asciende hasta la altura máxima de oscilación h." loading="lazy">
 <figcaption>Fig. 8.19 de U: péndulo balístico. La cantidad de movimiento se conserva en el impacto; la energía mecánica, en la subida. <span class="src" data-l="U" data-ref="U Fig. 8.19, p. 249">U p.249</span></figcaption>
 </figure>
-<div class="box ex"><span class="h">Ejemplo del libro 8.9 — choque entre automóviles</span>
-<p>Un auto de 1000 kg viaja al norte a 15 m/s y choca con una vagoneta de 2000 kg que va al este a 10 m/s; quedan unidos. ¿Velocidad justo después?</p>
-  <ol class="steps">
-    <li>$P_x=(2000)(10)=2{,}0\times10^4$ y $P_y=(1000)(15)=1{,}5\times10^4$ kg·m/s; $P=\sqrt{(2{,}0)^2+(1{,}5)^2}\times10^4=2{,}5\times10^4$ kg·m/s a $\theta=\arctan(1{,}5/2{,}0)=37^\circ$ sobre el este.</li>
-    <li>$\vec P=M\vec V$ con $M=3000$ kg: $V=P/M=8{,}3$ m/s, en la misma dirección (37° del este hacia el norte).</li>
-    <li>La energía cinética pasa de $2{,}1\times10^5$ J a $1{,}0\times10^5$ J (choque inelástico). Se justifica despreciar la fricción externa: durante unos 0,20 m de deformación, la fuerza interna del choque es unas 110 veces mayor que la de fricción.</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.9, p. 250">U p.250</span></div>
-<figure class="fig" data-svg="../assets/figs/t08/suma-vectorial-de-las-cantidades-de-movimiento-d.svg">
-<div class="figph" role="img" aria-label="Suma vectorial de las cantidades de movimiento de un automóvil que va al norte y una vagoneta que va al este" style="aspect-ratio:360/198"></div>
-<figcaption>Ejemplo 8.9 de U: auto de 1000 kg al norte a 15 m/s y vagoneta de 2000 kg al este a 10 m/s. Los dos quedan unidos con V = 8,3 m/s a 37° del este hacia el norte. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.9 (U p. 250)">P</span></figcaption>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>Un vagón de 2000 kg a 3,0 m/s alcanza a otro de 1000 kg que va a 1,5 m/s en el mismo sentido, y quedan enganchados. ¿Velocidad final? ¿Energía cinética perdida?<details><summary>Ver respuesta</summary>$V=(2000\cdot3{,}0+1000\cdot1{,}5)/3000=2{,}5$ m/s. $K$: de $10\,125$ J a 9375 J; se pierden 750 J.</details></li>
+<li>Una bala de 10 g a 400 m/s se incrusta en un bloque de 1,99 kg en reposo sobre hielo. ¿Velocidad del conjunto? ¿Qué fracción de la energía cinética queda?<details><summary>Ver respuesta</summary>$V=0{,}010\cdot400/2{,}00=2{,}0$ m/s; $K_2/K_1=m_B/(m_B+m_W)=0{,}005$: queda el 0,5 %.</details></li>
+<li>En un péndulo balístico, una bala de 10 g se incrusta en un bloque de 2,0 kg que sube 5,0 cm. ¿Rapidez de la bala? ($g=9{,}8$)<details><summary>Ver respuesta</summary>Después: $v_2=\sqrt{2gh}=0{,}990$ m/s. Choque: $v_1=\dfrac{2{,}010}{0{,}010}(0{,}990)=199$ m/s.</details></li>
+</ol>
+</details>
+
+<h2 id="s4"><span class="n">4</span>Choques elásticos <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.4, pp. 251-254">U p.251</span></h2>
+<div class="box thm"><span class="h">Elástico en línea recta con B en reposo</span>
+<p>Dos deslizadores con un resorte en el parachoques: el resorte guarda un instante la energía cinética y la devuelve entera. Ahora hay <b>dos</b> leyes ($P$ y $K$), y por eso salen las <b>dos</b> velocidades finales. Con $v_{B1x}=0$:</p>
+  $$m_Av_{A1x}=m_Av_{A2x}+m_Bv_{B2x}\ \ (8.20)\qquad\tfrac12m_Av_{A1x}^2=\tfrac12m_Av_{A2x}^2+\tfrac12m_Bv_{B2x}^2\ \ (8.19)$$
+  <p>Agrupando los términos de A y dividiendo una ecuación entre la otra ($a^2-b^2=(a+b)(a-b)$) sale $v_{B2x}=v_{A1x}+v_{A2x}$ (8.23), y de ahí</p>
+  $$v_{A2x}=\frac{m_A-m_B}{m_A+m_B}\,v_{A1x}\ \ (8.24)\qquad v_{B2x}=\frac{2m_A}{m_A+m_B}\,v_{A1x}\ \ (8.25)$$
+  <p><b>Error típico:</b> usar (8.24)-(8.25) cuando B también se mueve: solo valen con B <b>inicialmente en reposo</b>.</p>
+  <span class="src" data-l="U" data-ref="U §8.4 ecs. (8.19)-(8.25), pp. 251-252 y Cuidado, p. 253">U p.251-253</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_8_15_elastico.png" alt="Figura 8.15 de U: dos deslizadores con protectores de resorte antes del choque, durante el choque elástico (los resortes se comprimen) y después del choque; el sistema tiene la misma energía cinética después que antes." loading="lazy">
+<figcaption>Fig. 8.15 de U: choque elástico; la energía cinética se almacena temporalmente en los resortes comprimidos y se recupera. <span class="src" data-l="U" data-ref="U Fig. 8.15, p. 247">U p.247</span></figcaption>
 </figure>
-<h2 id="s4"><span class="n">4</span>Choques elásticos <span class="src" data-l="U" data-ref="U §8.4, pp. 251-254">U p.251</span></h2>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>Imagina dos deslizadores con un resorte de acero en el parachoques. Al chocar, el resorte se comprime y guarda un instante la energía cinética; luego se estira y la devuelve. Nada se pierde: ese es un <b>choque elástico</b>. Dos bolas de billar o dos canicas se comportan casi así. Ahora hay dos leyes a la vez, la de la cantidad de movimiento y la de la energía cinética, y por eso se pueden calcular las <i>dos</i> velocidades finales.</p>
-  <span class="src" data-l="U" data-ref="U §8.4, p. 251 (figs. 8.15 y 8.22)">U p.251</span></div>
-<div class="box thm"><span class="h">Choque elástico unidimensional con B en reposo</span>
-<p>Con $v_{B1x}=0$, las dos ecuaciones son
-  $$\tfrac12m_Av_{A1x}^2=\tfrac12m_Av_{A2x}^2+\tfrac12m_Bv_{B2x}^2\ \ (8.19),\qquad m_Av_{A1x}=m_Av_{A2x}+m_Bv_{B2x}\ \ (8.20)$$
-  Reorganizándolas, $m_B v_{B2x}^2=m_A(v_{A1x}-v_{A2x})(v_{A1x}+v_{A2x})$ y $m_Bv_{B2x}=m_A(v_{A1x}-v_{A2x})$; al dividir, $v_{B2x}=v_{A1x}+v_{A2x}$ (8.23). Resolviendo:
-  $$v_{A2x}=\frac{m_A-m_B}{m_A+m_B}\,v_{A1x}\ \ (8.24),\qquad v_{B2x}=\frac{2m_A}{m_A+m_B}\,v_{A1x}\ \ (8.25)$$</p>
-  <span class="src" data-l="U" data-ref="U §8.4 ecs. (8.19)-(8.25), pp. 251-252">U p.251-252</span></div>
 <div class="box intu"><span class="h">Casos límite que conviene saber de memoria</span>
 <ul>
     <li><b>$m_A\ll m_B$</b> (pelota de ping-pong contra bola de bolos): $v_{A2x}\approx-v_{A1x}$ y $v_{B2x}\approx0$; la pequeña rebota y la grande casi no se mueve.</li>
     <li><b>$m_A=m_B$</b> (billar): $v_{A2x}=0$ y $v_{B2x}=v_{A1x}$; A se detiene y B sale con toda su cantidad de movimiento y toda su energía (fig. 8.24 de U).</li>
     <li><b>$m_A\gg m_B$</b> (bola de bolos contra ping-pong): A casi no cambia y B sale a casi $2v_{A1x}$.</li>
+    <li><b>Ejemplo 8.11 (reactor):</b> un neutrón (1,0 u) choca de frente con un carbono (12 u) en reposo: sale rebotado con $11/13$ de su rapidez y conserva solo $(11/13)^2\approx0{,}72$ de su energía. Los núcleos ligeros frenan mejor los neutrones.</li>
   </ul>
-  <span class="src" data-l="U" data-ref="U §8.4, p. 252 (figs. 8.23 y 8.24)">U p.252</span></div>
+  <span class="src" data-l="U" data-ref="U §8.4, p. 252 (figs. 8.23 y 8.24) y ejemplo 8.11, p. 253">U p.252-253</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/tres-casos-limite-del-choque-elastico-unidimensi.svg">
 <div class="figph" role="img" aria-label="Tres casos límite del choque elástico unidimensional con el cuerpo B en reposo" style="aspect-ratio:360/272"></div>
 <figcaption>Choque elástico con B en reposo (ecs. 8.24 y 8.25): ligero contra pesado, masas iguales y pesado contra ligero. Las flechas de B (después) se han dibujado a la mitad de escala. <span class="src" data-l="P" data-ref="Diagrama propio de U §8.4, p. 252 (figs. 8.23 y 8.24)">P</span></figcaption>
 </figure>
-<div class="box thm"><span class="h">Choques elásticos y velocidad relativa</span>
-<p>La ecuación (8.23) dice que la velocidad relativa de B respecto a A cambia de signo y conserva su módulo:
+<div class="box thm"><span class="h">Caso general en línea recta: la velocidad relativa se invierte</span>
+<p>La ecuación (8.23) dice que la velocidad de B respecto a A cambia de signo y conserva su módulo, y eso vale en <b>cualquier</b> choque elástico rectilíneo, aunque los dos se muevan:</p>
   $$v_{B2x}-v_{A2x}=-\,(v_{B1x}-v_{A1x})\qquad\text{(ecs. 8.26 y 8.27)}$$
-  Esto vale para <b>cualquier</b> choque elástico rectilíneo, aunque B se mueva antes del choque, y es una definición alternativa y equivalente de choque elástico. Combinada con la conservación de la cantidad de movimiento forma un sistema <b>lineal</b> de dos ecuaciones con dos incógnitas, mucho más cómodo que la ecuación de energía (que es cuadrática).</p>
-  <span class="src" data-l="U" data-ref="U §8.4 ecs. (8.26)-(8.27), p. 252">U p.252</span></div>
-<div class="box warn"><span class="h">Atención a las ecuaciones (8.24) y (8.25)</span>
-<p>Solo valen si el cuerpo B está <b>inicialmente en reposo</b>. Si los dos se mueven, usa la conservación de la cantidad de movimiento más la regla de la velocidad relativa (8.27).</p>
-  <span class="src" data-l="U" data-ref="U Cuidado, p. 253 (ejemplo 8.10)">U p.253</span></div>
-<div class="box ex"><span class="h">Ejemplo del libro 8.10 — choque rectilíneo elástico</span>
-<p>Repite el ejemplo 8.5 con resortes ideales en los parachoques ($m_A=0{,}50$ kg a $+2{,}0$ m/s y $m_B=0{,}30$ kg a $-2{,}0$ m/s). ¿Velocidades finales?</p>
-  <ol class="steps">
-    <li>Velocidad relativa (8.27): $v_{B2x}-v_{A2x}=-(-2{,}0-2{,}0)=4{,}0$ m/s.</li>
-    <li>Cantidad de movimiento: $0{,}50\,v_{A2x}+0{,}30\,v_{B2x}=0{,}40$ m/s (dividiendo entre 1 kg).</li>
-    <li>Resolviendo el sistema: $v_{A2x}=-1{,}0$ m/s y $v_{B2x}=+3{,}0$ m/s. Ambos invierten el sentido.</li>
-    <li>Comprobación: $K$ antes $=1{,}6$ J y después $\tfrac12(0{,}50)(1{,}0)^2+\tfrac12(0{,}30)(3{,}0)^2=1{,}6$ J: se conserva. (No valdrían (8.24)-(8.25) porque B se mueve.)</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.10, p. 253">U p.253</span></div>
+  <p>Junto con la conservación de $P$ forma un sistema <b>lineal</b> de dos ecuaciones. <b>Ejemplo mínimo (ejemplo 8.10).</b> Los deslizadores del ejemplo 8.5 con resortes ideales: $v_{B2x}-v_{A2x}=-(-2{,}0-2{,}0)=4{,}0$ m/s y $0{,}50\,v_{A2x}+0{,}30\,v_{B2x}=0{,}40$ kg·m/s, de donde $v_{A2x}=-1{,}0$ m/s y $v_{B2x}=+3{,}0$ m/s; $K=1{,}6$ J antes y después. <b>Error típico:</b> resolver la ecuación cuadrática de la energía cuando la de la velocidad relativa da lo mismo con menos cuentas.</p>
+  <span class="src" data-l="U" data-ref="U §8.4 ecs. (8.26)-(8.27), p. 252 y ejemplo 8.10, p. 253">U p.252-253</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/posicion-de-las-velocidades-de-los-dos-cuerpos-s.svg">
 <div class="figph" role="img" aria-label="Posición de las velocidades de los dos cuerpos sobre una recta, antes y después de un choque elástico, y velocidad del centro de masa" style="aspect-ratio:360/218"></div>
 <figcaption>Ejemplo 8.10 de U sobre el eje de velocidades: la velocidad relativa invierte su signo y conserva el módulo (4,0 m/s); la velocidad del centro de masa (0,5 m/s) no cambia. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.10 (U p. 253)">P</span></figcaption>
 </figure>
-<div class="box ex"><span class="h">Ejemplo del libro 8.11 — moderación de neutrones en un reactor</span>
-<p>Un neutrón (1,0 u) a $2{,}6\times10^7$ m/s choca elásticamente de frente con un núcleo de carbono (12 u) en reposo. Como el carbono está en reposo valen (8.24)-(8.25), y las masas pueden dejarse en u:</p>
+<figure class="interactivo" data-escena="choques" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: choque en una dimensión con masas, velocidades y coeficiente de restitución ajustables; barras de cantidad de movimiento y energía cinética antes y después">
+  <img class="int-static" src="../assets/img/int_choques.png" alt="Interactivo: choque en una dimensión con masas, velocidades y coeficiente de restitución ajustables; barras de cantidad de movimiento y energía cinética antes y después">
+  <figcaption><b>Pruébalo tú:</b> cambia las masas, las velocidades y el coeficiente de restitución $e$, y mueve el tiempo (o pulsa «En marcha»). Las barras de la izquierda muestran $p_A$, $p_B$ y el total $P$ antes y después: <i>las dos barras totales siempre son iguales</i>. Las de la derecha muestran $K_A$, $K_B$ y el total: solo son iguales con $e=1$. El punto del CM (centro de masa) avanza con velocidad constante. Con $m_A=0{,}50$ kg, $m_B=0{,}30$ kg, $v_{A1}=2{,}0$ m/s y $v_{B1}=-2{,}0$ m/s: $e=1$ da $v_{A2}=-1{,}0$ y $v_{B2}=3{,}0$ m/s (ejemplo 8.10); $e=0$ da $0{,}50$ m/s para los dos (ejemplo 8.7); $e=0{,}6$ da $-0{,}40$ y $2{,}0$ m/s (ejemplo 8.5). Las masas $m_A=0{,}3$ kg y $m_B=0{,}1$ kg (10 veces las masas reales; solo importa su razón) con $v_{A1}=0{,}2$ m/s, $v_{B1}=-0{,}4$ m/s y $e=1$ reproducen el problema 8.48: $-0{,}1$ m/s para la canica de 30 g y $+0{,}5$ m/s para la de 10 g. <span class="src" data-l="P" data-ref="Interactivo propio de choques en una dimensión (U §8.2-8.4, pp. 243-254; Solucionario 8-17 Prob. 8.48)">P</span></figcaption>
+</figure>
+<h3>Choques elásticos en el plano <span class="prio p2">🟡</span></h3>
+<div class="box ex"><span class="h">Ejemplo 8.12: en 2D hace falta un dato más</span>
+<p>En el plano hay cuatro incógnitas (dos componentes por cuerpo) y solo tres ecuaciones ($K$ y dos de $P$): el enunciado tiene que dar un dato extra. Disco A de 0,500 kg a 4,00 m/s según $+x$; disco B de 0,300 kg en reposo; tras el choque elástico, A va a 2,00 m/s.</p>
   <ol class="steps">
-    <li>$v_{n2x}=\dfrac{1-12}{1+12}(2{,}6\times10^7)=-2{,}2\times10^7$ m/s: el neutrón conserva $11/13$ de su rapidez y rebota.</li>
-    <li>$v_{C2x}=\dfrac{2(1)}{13}(2{,}6\times10^7)=0{,}4\times10^7$ m/s.</li>
-    <li>Energía cinética final del neutrón: $(11/13)^2\approx0{,}72$ de la inicial; tras unos doce choques (no todos frontales) queda lo bastante lento para producir fisión. Los núcleos ligeros frenan mejor porque quitan más energía por choque.</li>
+    <li>Energía: $v_{B2}=\sqrt{\dfrac{m_A(v_{A1}^2-v_{A2}^2)}{m_B}}=\sqrt{\dfrac{0{,}500(16-4)}{0{,}300}}=4{,}47$ m/s.</li>
+    <li>$P_x$ y $P_y$ con los ángulos $\alpha$ (A, por encima de $x$) y $\beta$ (B, por debajo); elevando al cuadrado y sumando se elimina $\beta$: $\alpha=36{,}9^\circ$ y $\beta=26{,}6^\circ$. Comprobación: $p_y=\pm0{,}600$ kg·m/s.</li>
   </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.11, p. 253">U p.253</span></div>
-<div class="box ex"><span class="h">Ejemplo del libro 8.12 — choque elástico bidimensional</span>
-<p>Dos discos de hockey, $m_A=0{,}500$ kg con $v_{A1}=4{,}00$ m/s en $+x$ y $m_B=0{,}300$ kg en reposo, chocan elásticamente. Después, A se mueve a $2{,}00$ m/s en una dirección $\alpha$ desconocida. ¿Velocidad de B y ángulos?</p>
-  <ol class="steps">
-    <li>Energía (elástico): $v_{B2}^2=\dfrac{m_A(v_{A1}^2-v_{A2}^2)}{m_B}=\dfrac{0{,}500(16-4)}{0{,}300}\Rightarrow v_{B2}=4{,}47$ m/s.</li>
-    <li>Cantidad de movimiento en $x$: $(0{,}500)(4{,}00)=(0{,}500)(2{,}00)\cos\alpha+(0{,}300)(4{,}47)\cos\beta$; en $y$: $0=(0{,}500)(2{,}00)\sin\alpha-(0{,}300)(4{,}47)\sin\beta$.</li>
-    <li>Elevando al cuadrado y sumando se elimina $\beta$ y se obtiene $\alpha=36{,}9^\circ$ y $\beta=26{,}6^\circ$. Comprobación: $p_y$ final de A $=+0{,}600$ y de B $=-0{,}600$ kg·m/s, suma cero.</li>
-  </ol>
-  <p>Una colisión plana elástica tiene cuatro incógnitas (dos componentes por cuerpo) y solo tres ecuaciones (energía y dos de cantidad de movimiento): hace falta un dato extra, aquí la rapidez final de A.</p>
+  <p><b>Masas iguales y B en reposo:</b> $\vec v_{A1}=\vec v_{A2}+\vec v_{B2}$ y $v_{A1}^2=v_{A2}^2+v_{B2}^2$ solo son compatibles si $\vec v_{A2}\cdot\vec v_{B2}=0$: salen a <b>90°</b> (billar), salvo en un choque frontal, en que A se para. <span class="src" data-l="P" data-ref="Deducción propia a partir de U §8.4, p. 254">P</span></p>
   <span class="src" data-l="U" data-ref="U Ejemplo 8.12, p. 254 y texto de la p. 252">U p.252, 254</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/velocidades-antes-y-despues-de-un-choque-elastic.svg">
 <div class="figph" role="img" aria-label="Velocidades antes y después de un choque elástico en el plano entre dos discos de hockey" style="aspect-ratio:360/202"></div>
 <figcaption>Ejemplo 8.12 de U: disco A (0,500 kg) a 4,00 m/s choca con B (0,300 kg) en reposo; A sale a 2,00 m/s con α = 36,9° y B sale a 4,47 m/s con β = 26,6°. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.12 (U p. 254)">P</span></figcaption>
 </figure>
+<figure class="interactivo" data-escena="choque-2d" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: choque de dos discos lisos en el plano con parámetro de impacto, masas y coeficiente de restitución ajustables, y triángulo de cantidad de movimiento">
+  <img class="int-static" src="../assets/img/int_choque-2d.png" alt="Interactivo: choque de dos discos lisos en el plano con parámetro de impacto, masas y coeficiente de restitución ajustables, y triángulo de cantidad de movimiento">
+  <figcaption><b>Pruébalo tú:</b> un disco incide sobre otro en reposo y la trayectoria pasa a una distancia $b$ (parámetro de impacto) del centro del segundo. Al ser lisos, la fuerza va según la recta de los centros (línea discontinua): con $b=0$ el choque es frontal y con $b$ grande los discos casi se rozan. Cambia $b$, las masas y $e$ y observa el triángulo de la derecha: $\vec p_1'+\vec p_2'=\vec P$ siempre; la energía cinética solo se conserva con $e=1$. Con <b>masas iguales y $e=1$ los dos discos salen formando $90^\circ$</b> (por ejemplo $m_1=m_2$, $v_0=5{,}0$ m/s, $b=0{,}50$ m: $2{,}5$ m/s a $60^\circ$ y $4{,}33$ m/s a $-30^\circ$). Con $m_1=0{,}5$ kg, $m_2=0{,}3$ kg, $v_0=4{,}0$ m/s, $b\approx0{,}45$ m y $e=1$ se reproduce el ejemplo 8.12: $2{,}0$ m/s a $36{,}9^\circ$ y $4{,}47$ m/s a $-26{,}7^\circ$. <span class="src" data-l="P" data-ref="Interactivo propio de choques bidimensionales (U §8.4, pp. 251-254, ejemplo 8.12)">P</span></figcaption>
+</figure>
+<h3>Un solo parámetro para todos los choques <span class="prio p3">⚪</span></h3>
 <div class="box def"><span class="h">Un solo parámetro para todos los choques: el coeficiente de restitución</span>
 <p>Para unificar lo anterior en una línea recta se define $e=-\dfrac{v_{B2x}-v_{A2x}}{v_{B1x}-v_{A1x}}$ (A y B son los cuerpos; 1 y 2, antes y después), la razón entre la velocidad de separación y la de acercamiento. Elástico: $e=1$ (la velocidad relativa solo cambia de signo, ec. 8.27). Totalmente inelástico: $e=0$ (quedan con la misma velocidad). Entre medias, $0\lt e\lt1$. Con la cantidad de movimiento resulta
   $$v_{A2x}=\frac{(m_A-e\,m_B)v_{A1x}+(1+e)m_Bv_{B1x}}{m_A+m_B},\qquad v_{B2x}=\frac{(m_B-e\,m_A)v_{B1x}+(1+e)m_Av_{A1x}}{m_A+m_B}$$
@@ -336,33 +288,20 @@
 <div class="figph" role="img" aria-label="Escala del coeficiente de restitución entre 0 y 1 con el tipo de choque correspondiente" style="aspect-ratio:360/204"></div>
 <figcaption>El coeficiente de restitución e ordena todos los choques unidimensionales: de e = 0 (totalmente inelástico) a e = 1 (elástico). <span class="src" data-l="P" data-ref="Explicación propia que generaliza U §8.3 y §8.4">P</span></figcaption>
 </figure>
-<figure class="interactivo" data-escena="choques" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: choque en una dimensión con masas, velocidades y coeficiente de restitución ajustables; barras de cantidad de movimiento y energía cinética antes y después">
-  <img class="int-static" src="../assets/img/int_choques.png" alt="Interactivo: choque en una dimensión con masas, velocidades y coeficiente de restitución ajustables; barras de cantidad de movimiento y energía cinética antes y después">
-  <figcaption><b>Pruébalo tú:</b> cambia las masas, las velocidades y el coeficiente de restitución $e$, y mueve el tiempo (o pulsa «En marcha»). Las barras de la izquierda muestran $p_A$, $p_B$ y el total $P$ antes y después: <i>las dos barras totales siempre son iguales</i>. Las de la derecha muestran $K_A$, $K_B$ y el total: solo son iguales con $e=1$. El punto del CM (centro de masa) avanza con velocidad constante. Con $m_A=0{,}50$ kg, $m_B=0{,}30$ kg, $v_{A1}=2{,}0$ m/s y $v_{B1}=-2{,}0$ m/s: $e=1$ da $v_{A2}=-1{,}0$ y $v_{B2}=3{,}0$ m/s (ejemplo 8.10); $e=0$ da $0{,}50$ m/s para los dos (ejemplo 8.7); $e=0{,}6$ da $-0{,}40$ y $2{,}0$ m/s (ejemplo 8.5). Las masas $m_A=0{,}3$ kg y $m_B=0{,}1$ kg (10 veces las masas reales; solo importa su razón) con $v_{A1}=0{,}2$ m/s, $v_{B1}=-0{,}4$ m/s y $e=1$ reproducen el problema 8.48: $-0{,}1$ m/s para la canica de 30 g y $+0{,}5$ m/s para la de 10 g. <span class="src" data-l="P" data-ref="Interactivo propio de choques en una dimensión (U §8.2-8.4, pp. 243-254; Solucionario 8-17 Prob. 8.48)">P</span></figcaption>
-</figure>
-<figure class="interactivo" data-escena="choque-2d" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: choque de dos discos lisos en el plano con parámetro de impacto, masas y coeficiente de restitución ajustables, y triángulo de cantidad de movimiento">
-  <img class="int-static" src="../assets/img/int_choque-2d.png" alt="Interactivo: choque de dos discos lisos en el plano con parámetro de impacto, masas y coeficiente de restitución ajustables, y triángulo de cantidad de movimiento">
-  <figcaption><b>Pruébalo tú:</b> un disco incide sobre otro en reposo y la trayectoria pasa a una distancia $b$ (parámetro de impacto) del centro del segundo. Al ser lisos, la fuerza va según la recta de los centros (línea discontinua): con $b=0$ el choque es frontal y con $b$ grande los discos casi se rozan. Cambia $b$, las masas y $e$ y observa el triángulo de la derecha: $\vec p_1'+\vec p_2'=\vec P$ siempre; la energía cinética solo se conserva con $e=1$. Con <b>masas iguales y $e=1$ los dos discos salen formando $90^\circ$</b> (por ejemplo $m_1=m_2$, $v_0=5{,}0$ m/s, $b=0{,}50$ m: $2{,}5$ m/s a $60^\circ$ y $4{,}33$ m/s a $-30^\circ$). Con $m_1=0{,}5$ kg, $m_2=0{,}3$ kg, $v_0=4{,}0$ m/s, $b\approx0{,}45$ m y $e=1$ se reproduce el ejemplo 8.12: $2{,}0$ m/s a $36{,}9^\circ$ y $4{,}47$ m/s a $-26{,}7^\circ$. <span class="src" data-l="P" data-ref="Interactivo propio de choques bidimensionales (U §8.4, pp. 251-254, ejemplo 8.12)">P</span></figcaption>
-</figure>
-<div class="box tip"><span class="h">Elástico en el plano con masas iguales: 90°</span>
-<p>Si $m_A=m_B$, $B$ está en reposo y el choque es elástico, de $\vec v_{A1}=\vec v_{A2}+\vec v_{B2}$ y $v_{A1}^2=v_{A2}^2+v_{B2}^2$ se sigue que $\vec v_{A2}\cdot\vec v_{B2}=0$: salen perpendiculares (si el choque no es frontal; si es frontal, A se para). Es lo que ves en el billar cuando la bola blanca golpea de refilón a otra bola igual.</p>
-  <span class="src" data-l="P" data-ref="Deducción propia a partir de U §8.4, p. 254">P</span></div>
-<h2 id="s5"><span class="n">5</span>Centro de masa <span class="src" data-l="U" data-ref="U §8.5, pp. 254-258">U p.254</span></h2>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>Lanza una llave inglesa girando sobre una mesa lisa: el movimiento de cada punto es complicadísimo, pero hay <i>un</i> punto marcado que avanza en línea recta y a velocidad constante. Es el <b>centro de masa</b>: el «punto de equilibrio» del cuerpo, un promedio de las posiciones ponderado por las masas. Lo bonito es que todo ocurre <i>como si</i> toda la masa estuviera concentrada ahí y solo actuaran las fuerzas externas.</p>
-  <span class="src" data-l="U" data-ref="U §8.5, pp. 254-256 (fig. 8.30)">U p.254-256</span></div>
-<div class="box def"><span class="h">Posición del centro de masa</span>
-<p>Para partículas de masas $m_i$ en posiciones $\vec r_i=(x_i,y_i)$, el centro de masa está en
-  $$x_{cm}=\frac{\sum m_ix_i}{\sum m_i},\quad y_{cm}=\frac{\sum m_iy_i}{\sum m_i}\ \ (8.28),\qquad\vec r_{cm}=\frac{\sum m_i\vec r_i}{\sum m_i}\ \ (8.29)$$
-  Es un promedio ponderado: se acerca a la partícula de más masa. En un cuerpo homogéneo con centro geométrico (esfera, cubo, cilindro), está ahí; si tiene un eje de simetría, está sobre el eje; y no tiene por qué estar dentro del cuerpo (una rosquilla lo tiene en el centro del agujero).</p>
-  <span class="src" data-l="U" data-ref="U §8.5 ecs. (8.28)-(8.29), pp. 254-255 y fig. 8.29">U p.254-255</span></div>
-<div class="box ex"><span class="h">Ejemplo del libro 8.13 — centro de masa de una molécula de agua</span>
-<p>El oxígeno (16,0 u) está en el origen y los dos hidrógenos (1,0 u cada uno) a $d=9{,}57\times10^{-11}$ m, con un ángulo de $105^\circ$ entre los enlaces, simétricos respecto al eje $x$.</p>
-  <ol class="steps">
-    <li>$x_{cm}=\dfrac{(1{,}0)(d\cos52{,}5^\circ)+(1{,}0)(d\cos52{,}5^\circ)+(16{,}0)(0)}{1{,}0+1{,}0+16{,}0}=0{,}068\,d=6{,}5\times10^{-12}$ m.</li>
-    <li>$y_{cm}=\dfrac{(1{,}0)(d\sin52{,}5^\circ)+(1{,}0)(-d\sin52{,}5^\circ)}{18{,}0}=0$: el centro de masa está sobre el eje de simetría y mucho más cerca del oxígeno, que es más pesado.</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.13, p. 255">U p.255</span></div>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>Un cuerpo de 1,0 kg a 6,0 m/s choca elásticamente de frente con otro de 2,0 kg en reposo. ¿Velocidades finales?<details><summary>Ver respuesta</summary>(8.24)-(8.25): $v_{A2}=\dfrac{1-2}{3}(6{,}0)=-2{,}0$ m/s (rebota) y $v_{B2}=\dfrac{2}{3}(6{,}0)=4{,}0$ m/s. Comprobación: $K=18$ J antes y $2+16=18$ J después.</details></li>
+<li>A (2,0 kg) va a $+3{,}0$ m/s y B (1,0 kg) a $-3{,}0$ m/s; chocan elásticamente de frente. ¿Velocidades finales?<details><summary>Ver respuesta</summary>$P$: $2v_{A2}+v_{B2}=3{,}0$; velocidad relativa: $v_{B2}-v_{A2}=6{,}0$. Restando, $3v_{A2}=-3{,}0$: $v_{A2}=-1{,}0$ m/s y $v_{B2}=+5{,}0$ m/s. $K=13{,}5$ J antes y después.</details></li>
+<li>Un neutrón (1 u) choca elásticamente de frente con un deuterón (2 u) en reposo. ¿Qué fracción de su energía cinética pierde?<details><summary>Ver respuesta</summary>$v_{n2}=\dfrac{1-2}{1+2}v_{n1}=-\tfrac13v_{n1}$: conserva $(1/3)^2=1/9$ de su energía y pierde $8/9$, el 88,9 %. Cuanto más parecidas las masas, más energía transfiere.</details></li>
+</ol>
+</details>
+
+<h2 id="s5"><span class="n">5</span>Centro de masa <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.5, pp. 254-258">U p.254</span></h2>
+<div class="box def"><span class="h">Centro de masa: la posición media pesada por la masa</span>
+<p>Lanza una llave inglesa girando sobre una mesa lisa: cada punto hace algo complicado, pero hay <b>un</b> punto que avanza en línea recta a velocidad constante. Es el <b>centro de masa</b>:</p>
+  $$x_{cm}=\frac{\sum m_ix_i}{\sum m_i},\quad y_{cm}=\frac{\sum m_iy_i}{\sum m_i}\ \ (8.28)\qquad\vec r_{cm}=\frac{\sum m_i\vec r_i}{\sum m_i}\ \ (8.29)$$
+  <p>Es un promedio pesado: se acerca a la masa mayor. En un cuerpo homogéneo con centro geométrico está en él; si hay un eje de simetría, está sobre el eje; y puede quedar fuera del material (una rosquilla lo tiene en el agujero). <b>Ejemplo mínimo (ejemplo 8.13).</b> Molécula de agua: O (16,0 u) en el origen y dos H (1,0 u) a $d=9{,}57\times10^{-11}$ m, con 105° entre enlaces y simétricos respecto a $x$: $x_{cm}=\dfrac{2(1{,}0)\,d\cos52{,}5^\circ}{18{,}0}=0{,}068\,d=6{,}5\times10^{-12}$ m e $y_{cm}=0$, muy cerca del oxígeno. <b>Error típico:</b> dividir entre el número de partículas en lugar de entre la masa total.</p>
+  <span class="src" data-l="U" data-ref="U §8.5 ecs. (8.28)-(8.29), pp. 254-255 y ejemplo 8.13, p. 255">U p.254-255</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/molecula-de-agua-con-el-atomo-de-oxigeno-en-el-o.svg">
 <div class="figph" role="img" aria-label="Molécula de agua con el átomo de oxígeno en el origen, los dos hidrógenos y el centro de masa muy cerca del oxígeno" style="aspect-ratio:360/232"></div>
 <figcaption>Ejemplo 8.13 de U: el centro de masa está en el eje de simetría, a 0,068 d del oxígeno (6,5 × 10⁻¹² m). Escala del dibujo aproximada. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.13 (U p. 255)">P</span></figcaption>
@@ -378,69 +317,64 @@
 <img src="../assets/img/fig_u_8_32_obus.png" alt="Figura 8.32 de U: un obús que sigue una trayectoria parabólica estalla en vuelo y se divide en dos fragmentos; los fragmentos siguen trayectorias individuales, pero el centro de masa (cm) sigue la trayectoria parabólica original del obús." loading="lazy">
 <figcaption>Fig. 8.32 de U: tras estallar, los fragmentos siguen trayectorias distintas, pero el centro de masa sigue la parábola del obús entero. <span class="src" data-l="U" data-ref="U Fig. 8.32, p. 257">U p.257</span></figcaption>
 </figure>
-<div class="box ex"><span class="h">Ejemplo del libro 8.14 — estira y afloja en el hielo</span>
-<p>Jaime (90 kg) y Ramón (60 kg) están separados 20,0 m sobre hielo sin fricción; a medio camino hay un tarro. Tiran de los extremos de una cuerda ligera. Cuando Jaime se ha movido 6,0 m hacia el tarro, ¿cuánto se ha movido Ramón?</p>
-  <ol class="steps">
-    <li>Sin fuerzas externas horizontales y partiendo del reposo, $P=0$ y el centro de masa <b>no se mueve</b>. Origen en el tarro, $+x$ hacia Ramón: $x_{cm}=\dfrac{(90)(-10{,}0)+(60)(10{,}0)}{150}=-2{,}0$ m.</li>
-    <li>Después: $\dfrac{(90)(-4{,}0)+(60)\,x_2}{150}=-2{,}0\Rightarrow x_2=+1{,}0$ m.</li>
-    <li>Ramón se ha movido $9{,}0$ m y Jaime $6{,}0$ m: las distancias están en razón inversa a las masas ($6/9=60/90$). Da igual con cuánta fuerza tiren.</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.14, p. 256">U p.256</span></div>
-<figure class="fig" data-svg="../assets/figs/t08/jaime-y-ramon-sobre-el-hielo-antes-y-despues-de-.svg">
-<div class="figph" role="img" aria-label="Jaime y Ramón sobre el hielo antes y después de tirar de la cuerda, con el centro de masa fijo" style="aspect-ratio:360/232"></div>
-<figcaption>Ejemplo 8.14 de U: el centro de masa (punto del CM) no se mueve; Jaime (90 kg) avanza 6,0 m y Ramón (60 kg) avanza 9,0 m, hasta x = +1,0 m. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.14 (U p. 256)">P</span></figcaption>
-</figure>
-<div class="box tip"><span class="h">Atajo: sistema que parte del reposo y no recibe fuerzas horizontales</span>
-<p>El centro de masa no se mueve, así que $\sum m_i\,\Delta x_i=0$ con los desplazamientos medidos respecto a un punto fijo (el suelo, el agua), no respecto a un cuerpo móvil. Sirve para la persona que camina en una canoa (problema 8.92) y para cualquier sistema que se «reorganiza» por dentro.</p>
-  <span class="src" data-l="P" data-ref="Explicación propia a partir de U Ejemplo 8.14, p. 256">P</span></div>
 <figure class="interactivo" data-escena="explosion-cm" data-params='{"dim":2}' aria-label="Interactivo: un obús estalla en el vértice de su trayectoria y los fragmentos caen mientras el centro de masa sigue la parábola original">
   <img class="int-static" src="../assets/img/int_explosion-cm.png" alt="Interactivo: un obús estalla en el vértice de su trayectoria y los fragmentos caen mientras el centro de masa sigue la parábola original">
   <figcaption><b>Pruébalo tú:</b> el obús estalla en el vértice de su parábola en dos fragmentos que salen en horizontal (por eso caen a la vez). Cambia la velocidad y el ángulo de disparo, la razón de masas y la velocidad con que sale el fragmento pesado hacia atrás respecto al obús, y mueve el tiempo: <i>el punto del CM (el centro de masa), recorre siempre la parábola del obús entero</i> y cae en el alcance $R$ sin explosión; los puntos de caída cumplen $m_A x_A+m_Bx_B=MR$. Con $v_0=150$ m/s, $\alpha=55^\circ$, $m_A/m_B=3$, $M=12$ kg y $u_A\approx172$ m/s ($=2v_x$) el fragmento pesado vuelve al punto de lanzamiento, el ligero cae a unos $8{,}63$ km y se liberan $5{,}33\times10^5$ J (problema 8.98). Con $v_0=39{,}6$ m/s (vértice a 80 m), $\alpha=90^\circ$, $m_A/m_B=5$, $M=1{,}68$ kg y $u_A=14{,}31$ m/s sale el examen de Feb. 2020: $-14{,}3$ y $+71{,}5$ m/s, caída a $57{,}8$ m y $289{,}1$ m, y $860$ J. (Si el alcance es mucho mayor que la altura, el eje horizontal se dibuja comprimido; los números de los ejes son metros reales.) <span class="src" data-l="P" data-ref="Interactivo propio del movimiento del centro de masa (U §8.5, pp. 256-258; Solucionario 8-36 Prob. 8.98; Examen Febrero 2020 (1ª semana) P-2)">P</span></figcaption>
 </figure>
+<div class="box tip"><span class="h">Atajo: sistema que parte del reposo sin fuerzas externas horizontales</span>
+<p>El centro de masa no se mueve, así que $\sum m_i\,\Delta x_i=0$, con los desplazamientos medidos respecto a un punto fijo (el suelo, el agua), nunca respecto a un cuerpo que también se mueve. <b>Ejemplo 8.14.</b> Jaime (90 kg) y Ramón (60 kg) tiran de una cuerda sobre hielo sin fricción: cuando Jaime ha avanzado 6,0 m, Ramón ha avanzado $\dfrac{90\cdot6{,}0}{60}=9{,}0$ m. Las distancias van en razón inversa a las masas, tiren con la fuerza que tiren. Mismo método: la canoa de <a href="#e6">E6</a>.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 8.14, p. 256">U p.256</span></div>
 <div class="box warn"><span class="h">¿Sigue el centro de masa la parábola cuando un fragmento toca el suelo?</span>
 <p>No. Mientras ambos fragmentos están en el aire, las únicas fuerzas externas son los pesos y el centro de masa sigue la parábola. En cuanto uno toca el suelo aparece una fuerza externa nueva (la del suelo sobre ese fragmento) y la trayectoria del centro de masa cambia. En los problemas 8.97 y 8.98 los dos caen a la vez, por eso la propiedad vale hasta el final.</p>
   <span class="src" data-l="U" data-ref="U «Evalúe su comprensión de la sección 8.5», p. 258">U p.258</span></div>
-<h2 id="s6"><span class="n">6</span>Propulsión de un cohete <span class="src" data-l="U" data-ref="U §8.6, pp. 258-260">U p.258</span></h2>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>Cuando sueltas un globo inflado sin atar, sale disparado: el aire sale hacia atrás y el globo hacia adelante. Un patinador que lanza ladrillos hacia atrás se desliza hacia adelante. El cohete hace lo mismo: <b>expulsa gases hacia atrás y por reacción es empujado hacia adelante</b>. No necesita «apoyarse» en nada (por eso funciona en el vacío). La dificultad es que su masa va disminuyendo, así que $\sum\vec F=m\vec a$ no se puede aplicar directamente: se razona con la cantidad de movimiento del cohete <i>más</i> el combustible expulsado, un sistema aislado de masa total constante.</p>
-  <span class="src" data-l="U" data-ref="U §8.6, pp. 258-259">U p.258-259</span></div>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>Una masa de 2,0 kg está en $x=0$ y otra de 3,0 kg en $x=5{,}0$ m. ¿Dónde está el centro de masa?<details><summary>Ver respuesta</summary>$x_{cm}=\dfrac{2{,}0\cdot0+3{,}0\cdot5{,}0}{5{,}0}=3{,}0$ m, más cerca de la masa mayor.</details></li>
+<li>Tres partículas: 1,0 kg en (0, 0), 1,0 kg en (4,0; 0) m y 2,0 kg en (0; 2,0) m. ¿Centro de masa?<details><summary>Ver respuesta</summary>$x_{cm}=\dfrac{1{,}0\cdot4{,}0}{4{,}0}=1{,}0$ m e $y_{cm}=\dfrac{2{,}0\cdot2{,}0}{4{,}0}=1{,}0$ m.</details></li>
+<li>Un hombre de 80 kg camina 5,0 m (medidos sobre la balsa) por una balsa de 120 kg que flota en reposo. Sin rozamiento con el agua, ¿cuánto se mueve la balsa?<details><summary>Ver respuesta</summary>Si la balsa retrocede $d$, él avanza $5{,}0-d$ respecto al agua: $80(5{,}0-d)=120\,d\Rightarrow d=2{,}0$ m. Él avanza 3,0 m respecto al agua.</details></li>
+</ol>
+</details>
+
+<h2 id="s6"><span class="n">6</span>Propulsión de un cohete <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.6, pp. 258-260">U p.258</span></h2>
+<div class="box thm"><span class="h">Ecuación del cohete</span>
+<p>Un globo que sueltas sin atar sale disparado: expulsa aire hacia atrás y el aire lo empuja hacia delante. El cohete hace lo mismo y no necesita «apoyarse» en nada (por eso funciona en el vacío). Como su masa cambia, no se usa $\sum\vec F=m\vec a$ directamente, sino la conservación de $P$ del cohete <i>más</i> el gas expulsado. Con $v_{esc}$ la rapidez del gas <b>relativa al cohete</b> y $dm\lt0$:</p>
+  $$m\,dv=-v_{esc}\,dm\ \ (8.37)\qquad F=-v_{esc}\frac{dm}{dt}\ \ (8.38)\qquad a=-\frac{v_{esc}}{m}\frac{dm}{dt}\ \ (8.39)\qquad v-v_0=v_{esc}\ln\frac{m_0}{m}\ \ (8.40)$$
+  <p>(8.40) supone $v_{esc}$ constante y ninguna otra fuerza. Partiendo del reposo, $v$ supera $v_{esc}$ si $m_0/m\gt e=2{,}718$: casi toda la masa inicial tiene que ser combustible. <b>Ejemplos 8.15 y 8.16.</b> Un cohete que en el primer segundo expulsa $1/120$ de su masa a $v_{esc}=2400$ m/s arranca con $a=2400/120=20$ m/s², sea cual sea su masa; si quema 3/4 de su masa, llega a $v=2400\ln4=3327$ m/s.</p>
+  <span class="src" data-l="U" data-ref="U §8.6 ecs. (8.37)-(8.40), pp. 258-260 y ejemplos 8.15-8.16, p. 260">U p.258-260</span></div>
 <figure class="bookfig">
 <img src="../assets/img/fig_u_8_33_cohete.png" alt="Figura 8.33 de U: un cohete en el espacio exterior sin gravedad. a) Al tiempo t, el cohete tiene masa m y velocidad v. b) Al tiempo t más dt, el cohete tiene masa m más dm (dm es negativo) y velocidad v más dv, y el combustible quemado, de masa menos dm, tiene velocidad v menos vesc." loading="lazy">
 <figcaption>Fig. 8.33 de U: el cohete (masa $m\to m+dm$, con $dm\lt0$) y el combustible expulsado ($-dm$, velocidad $v-v_{esc}$), a) en $t$ y b) en $t+dt$. <span class="src" data-l="U" data-ref="U Fig. 8.33, p. 258">U p.258</span></figcaption>
 </figure>
-<div class="box thm"><span class="h">Ecuación del cohete</span>
-<p>En el espacio, sin gravedad ni aire, sea $v_{esc}$ la rapidez de escape del combustible <i>relativa al cohete</i>. En un intervalo $dt$ el cohete cambia su masa en $dm\lt0$ y expulsa una masa $-dm$ con velocidad $v-v_{esc}$ respecto a nosotros. Igualando la cantidad de movimiento en $t$ y en $t+dt$:
-  $$mv=(m+dm)(v+dv)+(-dm)(v-v_{esc})\ \Rightarrow\ m\,dv=-v_{esc}\,dm\ \ (8.37)$$
-  (se desprecia $dm\,dv$, producto de dos cantidades pequeñas). De ahí:
-  $$F=-v_{esc}\frac{dm}{dt}\ \text{(empuje)}\ (8.38),\qquad a=\frac{dv}{dt}=-\frac{v_{esc}}{m}\frac{dm}{dt}\ (8.39)$$
-  Como $dm/dt\lt0$, el empuje $F$ y $a$ son positivos. Un cohete eficaz quema combustible deprisa ($-dm/dt$ grande) y lo expulsa muy rápido ($v_{esc}$ grande). Con $v_{esc}$ constante se integra:
-  $$v-v_0=v_{esc}\ln\frac{m_0}{m}\qquad\text{(ec. 8.40)}$$
-  Partiendo del reposo ($v_0=0$), la velocidad final supera $v_{esc}$ si $m_0/m>e=2{,}718$; para ganar mucha rapidez la masa inicial debe ser casi todo combustible.</p>
-  <span class="src" data-l="U" data-ref="U §8.6 ecs. (8.37)-(8.40), pp. 259-260">U p.259-260</span></div>
-<div class="box warn"><span class="h">Gravedad, masa variable y signos</span>
-<p>(8.40) vale en el espacio. Si el cohete despega de un planeta hay que añadir el peso: $m\,\dfrac{dv}{dt}=F-mg$ (ejercicio X4). Recuerda que $dm/dt$ es <b>negativo</b>, que $m$ es la masa instantánea (la del cohete con el combustible que aún lleva) y que $v_{esc}$ es relativa al cohete, no al suelo.</p>
-  <span class="src" data-l="U" data-ref="U §8.6, pp. 259-260">U p.259-260</span></div>
-<div class="box ex"><span class="h">Ejemplo del libro 8.15 — aceleración inicial de un cohete</span>
-<p>Un cohete lejos de cualquier planeta expulsa combustible a ritmo constante: en el primer segundo expulsa $1/120$ de su masa inicial con $v_{esc}=2400$ m/s. ¿Aceleración inicial?</p>
-  <ol class="steps">
-    <li>$dm/dt=-m_0/(120\ \text{s})$.</li>
-    <li>(8.39): $a=-\dfrac{v_{esc}}{m_0}\dfrac{dm}{dt}=\dfrac{2400}{120}=20$ m/s². No depende de $m_0$: es la misma para una nave de 120 000 kg que para un astronauta con un cohetito.</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.15, p. 260">U p.260</span></div>
-<div class="box ex"><span class="h">Ejemplo del libro 8.16 — rapidez de un cohete</span>
-<p>Los $3/4$ de la masa inicial del cohete anterior son combustible y se consume totalmente en 90 s a ritmo constante (masa final $m_0/4$). Si parte del reposo, ¿rapidez final?</p>
-  <ol class="steps">
-    <li>(8.40): $v=v_0+v_{esc}\ln\dfrac{m_0}{m}=0+(2400)(\ln4)=3327$ m/s.</li>
-    <li>Fíjate: la rapidez final (3327 m/s) es mayor que $v_{esc}$ porque $m_0/m=4>e$. Al principio el combustible sale hacia atrás respecto a nosotros; cuando la rapidez del cohete supera $v_{esc}$ el combustible expulsado se mueve hacia adelante respecto a nuestro sistema.</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.16, p. 260">U p.260</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/rapidez-del-cohete-en-funcion-del-tiempo-con-la-.svg">
 <div class="figph" role="img" aria-label="Rapidez del cohete en función del tiempo, con la rapidez de escape marcada" style="aspect-ratio:340/210"></div>
 <figcaption>Ejemplo 8.16 de U: con v<sub>esc</sub> = 2400 m/s y m₀/m = 4 tras 90 s, v = 2400 ln 4 = 3327 m/s. La rapidez supera v<sub>esc</sub> cuando m < m₀/e (hacia 75,9 s). <span class="src" data-l="P" data-ref="Diagrama propio de los ejemplos 8.15 y 8.16 (U p. 260)">P</span></figcaption>
 </figure>
+<div class="box warn"><span class="h">Gravedad, masa variable y signos</span>
+<p>(8.40) vale en el espacio. Si el cohete despega de un planeta hay que añadir el peso: $m\,\dfrac{dv}{dt}=F-mg$ (ejercicio X4). Recuerda que $dm/dt$ es <b>negativo</b>, que $m$ es la masa instantánea (la del cohete con el combustible que aún lleva) y que $v_{esc}$ es relativa al cohete, no al suelo.</p>
+  <span class="src" data-l="U" data-ref="U §8.6, pp. 259-260">U p.259-260</span></div>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>Un cohete expulsa 5,0 kg de gas por segundo a 2000 m/s respecto a él. ¿Empuje? ¿Aceleración en el espacio cuando su masa es de 500 kg?<details><summary>Ver respuesta</summary>$F=-v_{esc}\,dm/dt=2000\cdot5{,}0=1{,}0\times10^4$ N; $a=F/m=20$ m/s².</details></li>
+<li>Ese mismo cohete despega en vertical desde la Tierra con 500 kg. ¿Aceleración inicial?<details><summary>Ver respuesta</summary>$m\,a=F-mg\Rightarrow a=20-9{,}8=10{,}2$ m/s². Olvidar el peso es el error típico (método de <a href="#x4">X4</a>).</details></li>
+<li>En el espacio, un cohete parte del reposo con $v_{esc}=2500$ m/s y quema combustible hasta que su masa es un tercio de la inicial. ¿Rapidez final?<details><summary>Ver respuesta</summary>$v=2500\ln3=2747$ m/s, mayor que $v_{esc}$ porque $m_0/m=3\gt e$.</details></li>
+</ol>
+</details>
+
 <h2 id="ejercicios"><span class="n">7</span>Ejercicios resueltos</h2>
-<p>Primero las <b>preguntas de examen real</b>: cinco problemas (X1–X4 de más sencillo a más elaborado y, al final de la lista, X9) y cuatro preguntas de teoría con sus cuestiones (X5–X8); luego nueve ejercicios del solucionario (E), también de sencillo a elaborado. Cada uno termina con una <b>receta</b> y, si procede, el error típico. Intenta resolver tú antes de abrir la solución. Todos usan la receta maestra de la sección 0.</p>
-<details class="sol" id="x1"><summary>X1 — Choque de un átomo de helio con una molécula de oxígeno en reposo <span class="src" data-l="X" data-ref="Examen Febrero 2018 (2ª semana) P-1">X</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244 y §8.3, p. 247">U p.243-244, 247</span></summary>
+<p>Las <b>9 preguntas de examen real</b> (X1-X9) están todas aquí, completas: los cinco problemas en el «Núcleo» y las cuatro de teoría y cuestiones en su propio bloque. Las acompañan tres ejercicios del solucionario con métodos que el examen todavía no ha pedido pero que el libro trabaja mucho (choque elástico con los dos cuerpos en movimiento, bala que se incrusta y comprime un resorte, y canoa). Ordenados por método, no por fuente. <b>Intenta resolver tú antes de abrir la solución.</b> Cada ejercicio termina con su receta.</p>
+<div class="nivel"><b>🔴 Núcleo: 8 ejercicios, un método por ejercicio</b><span>Los 5 problemas de examen real más tres del solucionario. Si solo haces esto, ya cubres los problemas que caen.</span></div>
+<table class="metodos">
+<tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>
+<tr><td><a href="#x1">X1</a> · Feb 2018</td><td>Choque en el plano: uno sale en otra dirección</td><td>Una ecuación de $P$ por componente; $K$ solo para medir lo perdido</td></tr>
+<tr><td><a href="#x2">X2</a> · Feb 2020</td><td>Explosión en el punto más alto</td><td>$m_Av_A=m_Bv_B$ + energía liberada; después, cada fragmento es un proyectil</td></tr>
+<tr><td><a href="#x3">X3</a> · Feb 2022</td><td>Cae, choca (queda pegada) y oscila</td><td>Energía → $P$ en el choque → energía o MAS respecto al <i>nuevo</i> equilibrio</td></tr>
+<tr><td><a href="#x4">X4</a> · Feb 2019</td><td>Cohete con empuje dado y gravedad variable</td><td>$M\,dv/dt=F-Mg$; integrar por tramos empalmando $v$ e $y$</td></tr>
+<tr><td><a href="#x9">X9</a> · Sep 2019</td><td>Bala que se incrusta en una varilla con pivote</td><td>Se conserva $L$ respecto al pivote, no $P$; $K_2=L^2/2I$</td></tr>
+<tr><td><a href="#e1">E1</a></td><td>Choque elástico frontal con los dos en movimiento</td><td>$P$ + velocidad relativa invertida: sistema lineal 2×2</td></tr>
+<tr><td><a href="#e3">E3</a></td><td>Bala que se incrusta y comprime un resorte (o sube: péndulo balístico)</td><td>Hacia atrás: energía después del choque da $V$; $P$ en el choque da $v_1$</td></tr>
+<tr><td><a href="#e6">E6</a></td><td>Persona que camina sobre una canoa</td><td>CM fijo: $\sum m_i\Delta x_i=0$ respecto al agua</td></tr>
+</table>
+<details class="sol" id="x1"><summary>X1 — Choque de un átomo de helio con una molécula de oxígeno en reposo <span class="src" data-l="X" data-ref="Examen Febrero 2018 (2ª semana) P-1">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244 y §8.3, p. 247">U p.243-244, 247</span></summary>
 <p class="enun">Un átomo de helio de masa $m_1=4$ u choca con una velocidad de 1200 m/s, en la dirección del eje $x$, con una molécula de oxígeno de masa $m_2=32$ u que se encuentra inicialmente en reposo. Como consecuencia del choque, el helio se mueve en la dirección del eje $y$, en sentido positivo, con una cuarta parte de la energía cinética que tenía antes del choque. Calcular: a) la velocidad que adquiere la molécula de oxígeno; b) la fracción de energía cinética total que se pierde en el choque. (3 puntos.)</p>
 <figure class="fig" data-svg="../assets/figs/t08/triangulo-de-cantidad-de-movimiento-del-choque-h.svg">
 <div class="figph" role="img" aria-label="Triángulo de cantidad de movimiento del choque helio-oxígeno" style="aspect-ratio:360/200"></div>
@@ -460,7 +394,7 @@
   <div class="recipe"><b>Receta:</b> choque en 2D: dibuja antes/después con ejes, escribe una ecuación de conservación por componente y usa la energía solo si dicen «elástico»; si no, calcúlala después para ver cuánto se perdió.</div>
   <div class="recipe"><b>Error típico:</b> sumar módulos ($4\cdot1200=4\cdot600+32\,v_2'$) en lugar de componentes; imponer conservación de la energía cinética (aquí no se cumple); o creer que $K/4$ significa $v/4$.</div>
 </details>
-<details class="sol" id="x2"><summary>X2 — Cohete de fuegos artificiales que estalla en dos fragmentos (= problema 8.97 de U) <span class="src" data-l="X" data-ref="Examen Febrero 2020 (1ª semana) P-2">X</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244; §8.3, p. 248 y §3.3 (tema 3)">U p.243-244, 248</span></summary>
+<details class="sol" id="x2"><summary>X2 — Cohete de fuegos artificiales que estalla en dos fragmentos (= problema 8.97 de U) <span class="src" data-l="X" data-ref="Examen Febrero 2020 (1ª semana) P-2">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244; §8.3, p. 248 y §3.3 (tema 3)">U p.243-244, 248</span></summary>
 <p class="enun">Un cohete de fuegos artificiales se dispara verticalmente hacia arriba. En su altura máxima de 80 m estalla y se divide en dos fragmentos, uno con masa de 1,40 kg y otro con masa de 0,28 kg. En la explosión, 860 J de energía química se convierten en energía cinética de los dos fragmentos. a) ¿Qué velocidad tiene cada fragmento inmediatamente después de la explosión? b) Se observa que los dos fragmentos caen al suelo al mismo tiempo. ¿Qué distancia hay entre los puntos en los que caen? Suponga que el suelo es horizontal y que la resistencia del aire es despreciable. (3 puntos.) <span class="src" data-l="E" data-ref="Solucionario 8-35/8-36 Prob. 8.97">= E 8.97</span></p>
 <figure class="fig" data-svg="../assets/figs/t08/dos-fragmentos-de-un-cohete-de-fuegos-artificial.svg">
 <div class="figph" role="img" aria-label="Dos fragmentos de un cohete de fuegos artificiales que estalla a 80 m de altura y caen a ambos lados" style="aspect-ratio:360/202"></div>
@@ -480,7 +414,7 @@
   <div class="recipe"><b>Receta:</b> explosión desde el reposo: $\vec P=0$ antes $\Rightarrow$ cantidades de movimiento iguales y opuestas; con la energía liberada se cierra el sistema ($K=p^2/2m$). Luego, cada fragmento es un proyectil independiente.</div>
   <div class="recipe"><b>Error típico:</b> repartir los 860 J a partes iguales, dar la misma velocidad a los dos fragmentos, o restar las distancias en lugar de sumarlas.</div>
 </details>
-<details class="sol" id="x3"><summary>X3 — Masa que cae sobre una bandeja colgada de un resorte: choque perfectamente inelástico y movimiento armónico <span class="src" data-l="X" data-ref="Examen Febrero 2022 (1ª semana) P-1">X</span> <span class="src" data-l="U" data-ref="U §7.1, p. 205; §7.2, pp. 213-215; §8.3, p. 248; §14.2, p. 438 y §14.4, p. 446">U p.205, 213-215, 248</span></summary>
+<details class="sol" id="x3"><summary>X3 — Masa que cae sobre una bandeja colgada de un resorte: choque perfectamente inelástico y movimiento armónico <span class="src" data-l="X" data-ref="Examen Febrero 2022 (1ª semana) P-1">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §7.1, p. 205; §7.2, pp. 213-215; §8.3, p. 248; §14.2, p. 438 y §14.4, p. 446">U p.205, 213-215, 248</span></summary>
 <p class="enun">Un resorte de masa despreciable y constante elástica $k=500$ N/m cuelga verticalmente y de su extremo inferior cuelga una bandeja de 0,5 kg. Se deja caer sobre la bandeja una masa deformable de 1 kg desde una altura de 0,5 m. Suponiendo que el impacto de la masa sobre la bandeja es perfectamente inelástico y que el sistema queda en movimiento armónico simple vertical, calcula: a) la velocidad de la bandeja y la masa justo después del impacto; b) la amplitud del movimiento posterior; c) el periodo de ese movimiento. (3 puntos.)</p>
 <figure class="fig" data-svg="../assets/figs/t08/niveles-de-la-bandeja-colgada-del-resorte-longit.svg">
 <div class="figph" role="img" aria-label="Niveles de la bandeja colgada del resorte: longitud natural, choque, nuevo equilibrio y puntos extremos del movimiento" style="aspect-ratio:360/236"></div>
@@ -502,7 +436,7 @@
   <div class="recipe"><b>Receta:</b> «cae–choca–oscila»: energía hasta el choque, cantidad de movimiento en el choque, energía (o MAS respecto al <i>nuevo</i> equilibrio) después. La amplitud se mide desde el equilibrio del conjunto, no desde donde ocurre el choque.</div>
   <div class="recipe"><b>Error típico:</b> (1) usar la energía a través del choque ($mgh=\tfrac12(m+M)V^2$); (2) tomar como amplitud $V/\omega=0{,}114$ m, olvidando que el choque ocurre fuera del nuevo equilibrio; (3) usar solo $M$ o solo $m$ en el periodo.</div>
 </details>
-<details class="sol" id="x4"><summary>X4 — Cohete con empuje proporcional a la masa y gravedad variable: altura a los 60 s <span class="src" data-l="X" data-ref="Examen Febrero 2019 (2ª semana) P-1">X</span> <span class="src" data-l="U" data-ref="U §8.6, pp. 259-260 (ecs. 8.37-8.39 y nota sobre la gravedad) y §2.6 (tema 2)">U p.259-260</span></summary>
+<details class="sol" id="x4"><summary>X4 — Cohete con empuje proporcional a la masa y gravedad variable: altura a los 60 s <span class="src" data-l="X" data-ref="Examen Febrero 2019 (2ª semana) P-1">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §8.6, pp. 259-260 (ecs. 8.37-8.39 y nota sobre la gravedad) y §2.6 (tema 2)">U p.259-260</span></summary>
 <p class="enun">Sea un cohete que se lanza verticalmente al espacio. Se supone que en el ascenso vertical la aceleración de la gravedad va variando siguiendo la ley $g=g_0-k_3t$, siendo $g_0$ la aceleración de la gravedad en la superficie y $t$ el tiempo. Durante los 10 primeros segundos, la fuerza impulsora del cohete viene dada por la expresión $F_1=k_1M$, donde $M$ es la masa del cohete, variable al ir consumiendo el combustible. Tras esos 10 primeros segundos, la fuerza impulsora pasa a regirse por la expresión $F_2=k_2M$. Calcular la altura alcanzada tras 60 segundos de ascenso sabiendo que $g_0=10$ m/s², $k_1=20$ m/s², $k_2=15$ m/s², $k_3=0{,}1$ m/s³. (3 puntos.)</p>
   <ol class="steps">
     <li><b>Qué es la «fuerza impulsora».</b> Es el empuje del cohete, $F=-v_{esc}\,dM/dt$ (8.38), que aquí te dan ya como función de $M$. No necesitas $v_{esc}$ ni $dM/dt$.</li>
@@ -521,58 +455,7 @@
   <div class="recipe"><b>Receta:</b> cohete con gravedad: $M\,dv/dt=F_{empuje}-Mg$; despeja $a(t)$, integra dos veces por tramos y empalma $v$ e $y$ en el cambio de régimen.</div>
   <div class="recipe"><b>Error típico:</b> (1) olvidar el peso (saldría $a=k$); (2) tratar $g$ como constante; (3) reiniciar $v$ o $y$ a cero en $t=10$ s, o integrar la fase 2 desde $t=0$; (4) intentar usar $v-v_0=v_{esc}\ln(m_0/m)$, que aquí no sirve: no se da $v_{esc}$ y esa fórmula no incluye la gravedad.</div>
 </details>
-<details class="sol" id="x5"><summary>X5 — Teoría: «Centro de masa de un sistema de partículas. Su movimiento. Conservación del momento lineal» <span class="src" data-l="X" data-ref="Examen Febrero 2018 (2ª semana) P-3 Opción 3.1">X</span> <span class="src" data-l="U" data-ref="U §8.5, pp. 254-258 y §8.2, pp. 243-244">U p.243-244, 254-258</span></summary>
-<p class="enun">Pregunta de teoría (Opción 3.1, 4 puntos): «Centro de masa de un sistema de partículas. Su movimiento. Conservación del momento lineal.»</p>
-  <ol class="steps">
-    <li><b>Definición.</b> Para partículas de masas $m_i$ en posiciones $\vec r_i$: $\vec r_{cm}=\dfrac{\sum m_i\vec r_i}{\sum m_i}$ (8.28-8.29), la posición media ponderada por la masa. En un cuerpo homogéneo con simetría está en el centro geométrico; puede quedar fuera del material (anillo).</li>
-    <li><b>Velocidad.</b> Derivando: $\vec v_{cm}=\dfrac{\sum m_i\vec v_i}{M}$ y, por tanto, $\vec P=\sum m_i\vec v_i=M\vec v_{cm}$ (8.32): la cantidad de movimiento total es la de una partícula de masa $M$ que se moviera con el centro de masa.</li>
-    <li><b>Aceleración y ecuación de movimiento.</b> $M\vec a_{cm}=\sum m_i\vec a_i=\sum\vec F_i$. Las fuerzas internas aparecen por pares acción-reacción y se anulan en la suma, de modo que $\sum\vec F_{ext}=M\vec a_{cm}$ (8.34), equivalente a $d\vec P/dt=\sum\vec F_{ext}$ (8.36): <b>el centro de masa se mueve como una partícula de masa total sometida solo a las fuerzas externas</b>.</li>
-    <li><b>Ejemplo.</b> Un proyectil que estalla en el aire: los fragmentos se dispersan, pero el centro de masa sigue la parábola que habría seguido el proyectil entero.</li>
-    <li><b>Conservación del momento lineal.</b> Si $\sum\vec F_{ext}=0$, entonces $d\vec P/dt=0$: $\vec P$ y $\vec v_{cm}$ son constantes (8.13). Las fuerzas internas cambian el momento de cada parte, pero no el total. Es una ley vectorial: puede conservarse una componente (la horizontal, por ejemplo) aunque otra no.</li>
-    <li><b>Aplicaciones típicas.</b> Retroceso de un rifle (ej. 8.4), choques (§8.3), y una persona que camina en una barca: si parte del reposo y no hay fuerza horizontal externa, $x_{cm}$ no cambia (ej. 8.14; problema 8.92).</li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> en una pregunta de teoría ordena la respuesta como definición → fórmula → demostración breve (pares acción-reacción) → condición de conservación → un ejemplo.</div>
-</details>
-<details class="sol" id="x6"><summary>X6 — Teoría: «Choques elásticos» <span class="src" data-l="X" data-ref="Examen Febrero 2019 (2ª semana) P-3 Opción 3.2">X</span> <span class="src" data-l="U" data-ref="U §8.3, p. 247 y §8.4, pp. 251-254">U p.247, 251-254</span></summary>
-<p class="enun">Pregunta de teoría (Opción 3.2, 4 puntos): «Choques elásticos.»</p>
-  <ol class="steps">
-    <li><b>Choque y por qué se conserva $\vec P$.</b> Las fuerzas de interacción son internas, grandes y breves; las externas, si existen, tienen impulso despreciable en ese intervalo: $\vec P$ antes $=\vec P$ después.</li>
-    <li><b>Clasificación.</b> Elástico: fuerzas de interacción conservativas y $K$ total final igual a la inicial. Inelástico: $K_f\lt K_i$. Totalmente inelástico: quedan unidos con la misma velocidad.</li>
-    <li><b>Caso unidimensional con B en reposo.</b> $m_Av_{A1}=m_Av_{A2}+m_Bv_{B2}$ y $\tfrac12m_Av_{A1}^2=\tfrac12m_Av_{A2}^2+\tfrac12m_Bv_{B2}^2$. Agrupando términos de A y dividiendo la ecuación de energía entre la de cantidad de movimiento ($a^2-b^2=(a+b)(a-b)$): $v_{A1}+v_{A2}=v_{B2}$. Resolviendo: $v_{A2}=\dfrac{m_A-m_B}{m_A+m_B}v_{A1}$ y $v_{B2}=\dfrac{2m_A}{m_A+m_B}v_{A1}$.</li>
-    <li><b>Casos límite.</b> $m_A=m_B$: A se para y B sale con $v_{A1}$ (intercambio de velocidades). $m_A\ll m_B$: A rebota con casi $-v_{A1}$ y B apenas se mueve. $m_A\gg m_B$: A sigue casi igual y B sale a casi $2v_{A1}$.</li>
-    <li><b>Velocidad relativa (caso general 1D).</b> $v_{B2}-v_{A2}=-(v_{B1}-v_{A1})$: la velocidad relativa invierte el sentido y conserva el módulo. Junto con $P$ da un sistema lineal más cómodo que la ecuación de $K$. Las fórmulas del paso 3 solo valen si B está inicialmente en reposo.</li>
-    <li><b>Choques elásticos en 2D.</b> Dos ecuaciones de componentes más la de energía; hace falta un dato adicional (ej. 8.12). Con masas iguales y B en reposo, las velocidades finales son perpendiculares si el choque no es frontal (si es frontal, A se para).</li>
-    <li><b>Aplicación.</b> Los moderadores de reactores: un neutrón pierde más energía chocando con núcleos ligeros (ej. 8.11).</li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> para un choque elástico 1D plantea siempre «$P$ se conserva» + «la velocidad relativa invierte el signo», y reserva (8.24)-(8.25) para el caso con B en reposo.</div>
-</details>
-<details class="sol" id="x7"><summary>X7 — Teoría: «Conservación del momento lineal o de la cantidad de movimiento» + juguete en tres piezas y balas sobre una placa <span class="src" data-l="X" data-ref="Examen Febrero 2022 (2ª semana) P-3 Opción 3.1">X</span> <span class="src" data-l="U" data-ref="U §8.1, pp. 238-242 y §8.2, pp. 243-244; Evalúe su comprensión de la sección 8.2, p. 247">U p.238-244, 247</span></summary>
-<p class="enun">Pregunta de teoría (Opción 3.1, 4 puntos): «Conservación del momento lineal o de la cantidad de movimiento», con dos cuestiones. <b>3.1a:</b> un juguete accionado por un resorte está en reposo sobre una superficie horizontal sin fricción. Al soltarse el resorte, el juguete se divide en tres piezas de masas iguales A, B y C que se deslizan por la superficie. A se aleja en la dirección $-x$ y B en la dirección $-y$. a) ¿Cuáles son los signos de las componentes de la velocidad de C? b) ¿Cuál de las tres piezas se mueve más rápido? <b>3.1b:</b> se dispara una ametralladora contra una placa de acero. ¿La fuerza media sobre la placa es mayor si las balas rebotan o si se aplastan y quedan adheridas? Explique.</p>
-  <ol class="steps">
-    <li><b>Desarrollo del tema.</b> $\vec p=m\vec v$; $\sum\vec F=d\vec p/dt$ (8.4); en un sistema de partículas las fuerzas internas forman pares acción-reacción que se anulan, $d\vec P/dt=\sum\vec F_{ext}$ (8.13); si $\sum\vec F_{ext}=0$, $\vec P$ es constante y se conserva <b>cada componente</b>. Es válido aunque haya fuerzas internas no conservativas (choques inelásticos, explosiones) y se relaciona con el centro de masa por $\vec P=M\vec v_{cm}$. Ejemplos: retroceso de un rifle, choques, cohetes.</li>
-    <li><b>Cuestión 3.1a.</b> Las fuerzas externas (peso y normal) son verticales y se anulan, y no hay fricción: la cantidad de movimiento horizontal se conserva y era cero (reposo). Con masas iguales $m$: $m\vec v_A+m\vec v_B+m\vec v_C=0\Rightarrow\vec v_C=-(\vec v_A+\vec v_B)$. Con $\vec v_A=(-v_A,0)$ y $\vec v_B=(0,-v_B)$ resulta $\vec v_C=(+v_A,+v_B)$: <b>las dos componentes de C son positivas</b> (sale hacia el primer cuadrante). Además $|\vec v_C|=\sqrt{v_A^2+v_B^2}$ es mayor que $v_A$ y que $v_B$: <b>C es la más rápida</b>.</li>
-    <li><b>Cuestión 3.1b.</b> Por el teorema impulso-cantidad de movimiento, la fuerza media sobre cada bala es $\vec F_{med}=\Delta\vec p/\Delta t$ (8.6, 8.8) y la placa recibe la opuesta (tercera ley). Si la bala se aplasta y queda adherida, $|\Delta p|=mv$ (de $mv$ a 0). Si rebota con rapidez $v'$, $|\Delta p|=mv+mv'$ (de $+mv$ a $-mv'$), hasta $2mv$ en un rebote elástico. Con igual cadencia de disparo, el impulso por unidad de tiempo, que es la fuerza media, es <b>mayor si las balas rebotan</b> (hasta el doble). Es lo mismo que en el ejemplo 8.2 de la pelota contra la pared.</li>
-  </ol>
-<figure class="fig" data-svg="../assets/figs/t08/velocidades-de-tres-piezas-iguales-que-salen-de-.svg">
-<div class="figph" role="img" aria-label="Velocidades de tres piezas iguales que salen de un juguete en reposo" style="aspect-ratio:360/208"></div>
-<figcaption>Examen Feb. 2022 (2ª sem.) P-3 Op. 3.1, cuestión a): si A va hacia −x y B hacia −y, C va hacia +x y +y y es la más rápida. Valores numéricos ilustrativos. <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2022 (2ª semana) P-3 Opción 3.1">P</span></figcaption>
-</figure>
-  <div class="recipe"><b>Receta:</b> «reposo + fuerzas externas nulas $\Rightarrow$ $\sum m\vec v=0$»: despeja la velocidad que falta como menos la suma de las otras. Para fuerzas medias: $\vec F_{med}=\Delta\vec p/\Delta t$, restando <i>vectores</i>.</div>
-</details>
-<details class="sol" id="x8"><summary>X8 — Cuestión: ¿se conserva el momento lineal de un patinador que gira en el aire? <span class="src" data-l="X" data-ref="Examen Septiembre 2023 P-3 Opción A (b)">X</span> <span class="src" data-l="U" data-ref="U §8.5, pp. 257-258 (ecs. 8.34 y 8.36)">U p.257-258</span></summary>
-<p class="enun">Sabemos que el momento angular de un patinador se conserva al dar vueltas en el aire. ¿Se conserva su momento lineal? Explique su respuesta. (Cuestión (b) de la Opción A; el tema principal de la opción es el momento angular, tema 10.)</p>
-  <ol class="steps">
-    <li>El momento lineal se conserva solo si la fuerza externa neta es nula: $d\vec P/dt=\sum\vec F_{ext}$ (8.36).</li>
-    <li>En el aire actúa sobre el patinador su peso $M\vec g$ (despreciando el aire). Luego $d\vec P/dt=M\vec g\ne0$: <b>el momento lineal no se conserva</b>. Su componente vertical cambia (sube frenando y baja acelerando: el centro de masa describe una parábola, 8.34); la componente <b>horizontal sí se conserva</b>, porque no hay fuerza horizontal.</li>
-    <li>¿Por qué sí se conserva el momento angular? El peso actúa en el centro de masa, así que su momento respecto a él es nulo; sin momento externo neto, el momento angular respecto al centro de masa es constante. Son dos leyes distintas con condiciones distintas: fuerza externa nula para $\vec P$, momento externo nulo para $\vec L$.</li>
-  </ol>
-<figure class="fig" data-svg="../assets/figs/t08/cantidad-de-movimiento-de-un-patinador-en-el-air.svg">
-<div class="figph" role="img" aria-label="Cantidad de movimiento de un patinador en el aire: componente horizontal constante y componente vertical variable" style="aspect-ratio:360/206"></div>
-<figcaption>Examen Sep. 2023 P-3 Op. A (b): en el aire el momento lineal NO se conserva (actúa el peso), aunque su componente horizontal sí. Escala de las flechas indicativa; la flecha discontinua es p total. <span class="src" data-l="P" data-ref="Diagrama propio del examen Septiembre 2023 P-3 Opción A (b)">P</span></figcaption>
-</figure>
-  <div class="recipe"><b>Receta:</b> ante «¿se conserva…?» comprueba la condición de cada ley: $\vec P$ pide $\sum\vec F_{ext}=0$ (por componentes); $\vec L$ pide $\sum\vec\tau_{ext}=0$.</div>
-</details>
-<details class="sol" id="x9"><summary>X9 — Varilla con pivote y bala incrustada: momento angular, cantidad de movimiento y energía perdida <span class="src" data-l="X" data-ref="Examen Septiembre 2019 P-1">X</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244 y §10.6, p. 320 (tema 10)">U p.243-244</span></summary>
+<details class="sol" id="x9"><summary>X9 — Varilla con pivote y bala incrustada: momento angular, cantidad de movimiento y energía perdida <span class="src" data-l="X" data-ref="Examen Septiembre 2019 P-1">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244 y §10.6, p. 320 (tema 10)">U p.243-244</span></summary>
 <p class="enun">Una varilla de longitud $L$ y masa $M$ puede rotar libremente alrededor de un pivote situado en su extremo superior A. Una bala de masa $m$ y velocidad $v$ golpea la varilla a una distancia «$a$» de su extremo A y se incrusta en ella. a) Calcular el momento angular del sistema con respecto a A inmediatamente después de que la bala choque con la varilla. b) Determinar la cantidad de movimiento del sistema inmediatamente antes y después del choque explicando la respuesta. c) ¿Cuál es la cantidad de energía que se desprende de la colisión? (3 puntos.)</p>
 <figure class="fig" data-svg="../assets/figs/t08/varilla-colgada-de-un-pivote-en-su-extremo-super.svg">
 <div class="figph" role="img" aria-label="Varilla colgada de un pivote en su extremo superior golpeada por una bala horizontal a una distancia a del pivote" style="aspect-ratio:360/204"></div>
@@ -593,8 +476,7 @@
   <div class="recipe"><b>Receta:</b> choque con un eje fijo: se conserva el momento angular respecto al eje (la fuerza del eje no hace momento), no la cantidad de movimiento. La energía cinética final es $L_A^2/(2I_A)$ y la diferencia con la inicial es la energía perdida.</div>
   <div class="recipe"><b>Error típico:</b> escribir $mv=(M+m)v'$ (conservación de $P$) o igualar las energías cinéticas antes y después, olvidando el pivote y la deformación.</div>
 </details>
-<h3>Problemas del solucionario (E)</h3>
-<details class="sol" id="e1"><summary>E1 — Problema 8.48: choque elástico frontal de dos canicas <span class="src" data-l="E" data-ref="Solucionario 8-17 Prob. 8.48">E</span> <span class="src" data-l="U" data-ref="U §8.4, p. 252 (ec. 8.27) y ejemplo 8.10, p. 253">U p.252-253</span></summary>
+<details class="sol" id="e1"><summary>E1 — Problema 8.48: choque elástico frontal de dos canicas <span class="src" data-l="E" data-ref="Solucionario 8-17 Prob. 8.48">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.4, p. 252 (ec. 8.27) y ejemplo 8.10, p. 253">U p.252-253</span></summary>
 <p class="enun">Una canica de 10,0 g se desliza hacia la izquierda a 0,400 m/s sobre una acera horizontal helada (sin fricción) y tiene un choque elástico de frente con una canica de 30,0 g que se desliza hacia la derecha a 0,200 m/s. a) Determine la velocidad (módulo y sentido) de cada canica después del choque. b) Calcule el cambio de cantidad de movimiento de cada canica y compárelos. c) Calcule el cambio de energía cinética de cada canica y compárelos.</p>
 <figure class="fig" data-svg="../assets/figs/t08/dos-canicas-antes-y-despues-de-un-choque-elastic.svg">
 <div class="figph" role="img" aria-label="Dos canicas, antes y después de un choque elástico frontal" style="aspect-ratio:360/206"></div>
@@ -611,23 +493,7 @@
   <div class="recipe"><b>Receta:</b> choque elástico 1D con los dos cuerpos en movimiento: cantidad de movimiento + velocidad relativa invertida $\Rightarrow$ sistema lineal 2×2.</div>
   <div class="recipe"><b>Error típico:</b> aplicar las fórmulas de «B en reposo» cuando B se mueve, o perder los signos de las velocidades iniciales.</div>
 </details>
-<details class="sol" id="e2"><summary>E2 — Problema 8.44: piedra que golpea un bloque unido a un resorte <span class="src" data-l="E" data-ref="Solucionario 8-15 Prob. 8.44">E</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244 y §7.2, p. 214">U p.214, 243-244</span></summary>
-<p class="enun">Un bloque de 15,0 kg está sujeto a un resorte horizontal muy ligero de constante 500,0 N/m y reposa sobre una mesa horizontal sin fricción. De repente lo golpea una piedra de 3,00 kg que viaja horizontalmente a 8,00 m/s hacia la derecha y que rebota horizontalmente a 2,00 m/s hacia la izquierda. Calcule la compresión máxima del resorte después del choque.</p>
-<figure class="fig" data-svg="../assets/figs/t08/piedra-que-golpea-un-bloque-unido-a-un-resorte-t.svg">
-<div class="figph" role="img" aria-label="Piedra que golpea un bloque unido a un resorte, tres instantes" style="aspect-ratio:360/246"></div>
-<figcaption>Problema 8.44: durante el choque se conserva la cantidad de movimiento (el bloque sale a 2,00 m/s); después el bloque comprime el resorte 0,346 m. Esquema: la longitud del resorte no está a escala. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.44 (U p. 266)">P</span></figcaption>
-</figure>
-  <ol class="steps">
-    <li><b>Dos etapas.</b> El choque (instantáneo) $\to$ cantidad de movimiento; después, el bloque comprime el resorte $\to$ energía mecánica (solo trabaja la fuerza elástica, conservativa).</li>
-    <li><b>Choque.</b> El resorte aún no está comprimido durante el choque, así que no hay fuerza horizontal externa apreciable: se conserva $P_x$ ($+x$ a la derecha): $(3{,}00)(8{,}00)=(3{,}00)(-2{,}00)+(15{,}0)\,v_b\Rightarrow v_b=30{,}0/15{,}0=2{,}00$ m/s.</li>
-    <li><b>Compresión.</b> Desde justo después del choque hasta la compresión máxima ($v=0$): $\tfrac12m_bv_b^2=\tfrac12kx^2\Rightarrow x=v_b\sqrt{m_b/k}=2{,}00\sqrt{15{,}0/500{,}0}=\mathbf{0{,}346}$ m.</li>
-    <li><b>Comprobación.</b> $K$ antes del choque $=96$ J; después $6$ J (piedra) $+\,30$ J (bloque) $=36$ J: el choque es inelástico, por eso no se podía usar la energía en el choque.</li>
-  </ol>
-  <p><b>Resultado:</b> $v_b=2{,}00$ m/s; compresión máxima $0{,}346$ m.</p>
-  <div class="recipe"><b>Receta:</b> «choque + resorte»: $P$ en el choque, energía después. Nunca energía a través del choque.</div>
-  <div class="recipe"><b>Error típico:</b> poner $+2{,}00$ m/s a la piedra que rebota (daría $v_b=1{,}20$ m/s), o escribir $\tfrac12(3)(8)^2=\tfrac12kx^2$.</div>
-</details>
-<details class="sol" id="e3"><summary>E3 — Problema 8.79: bala que se incrusta en un bloque unido a un resorte <span class="src" data-l="E" data-ref="Solucionario 8-29 Prob. 8.79">E</span> <span class="src" data-l="U" data-ref="U §8.3, p. 248 (ec. 8.16), ejemplo 8.8, p. 249 y §7.2, p. 214">U p.214, 248-249</span></summary>
+<details class="sol" id="e3"><summary>E3 — Problema 8.79: bala que se incrusta en un bloque unido a un resorte <span class="src" data-l="E" data-ref="Solucionario 8-29 Prob. 8.79">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.3, p. 248 (ec. 8.16), ejemplo 8.8, p. 249 y §7.2, p. 214">U p.214, 248-249</span></summary>
 <p class="enun">Una bala de rifle de 8,00 g golpea y se incrusta en un bloque de 0,992 kg que descansa sobre una superficie horizontal sin fricción, sujeto a un resorte. El impacto comprime el resorte 15,0 cm. La calibración del resorte indica que se requiere una fuerza de 0,750 N para comprimirlo 0,250 cm. a) Calcule la magnitud de la velocidad del bloque inmediatamente después del impacto. b) ¿Qué rapidez tenía inicialmente la bala?</p>
 <figure class="fig" data-svg="../assets/figs/t08/energia-cinetica-de-la-bala-y-energia-final-alma.svg">
 <div class="figph" role="img" aria-label="Energía cinética de la bala y energía final almacenada en el resorte" style="aspect-ratio:360/154"></div>
@@ -644,34 +510,7 @@
   <div class="recipe"><b>Receta:</b> péndulo o resorte balístico: del dato final se obtiene $V$ por energía, y de $V$ la velocidad del proyectil por cantidad de movimiento.</div>
   <div class="recipe"><b>Error típico:</b> igualar la energía de la bala a la del resorte (daría unos 29 m/s), o no pasar 0,250 cm y 15,0 cm a metros.</div>
 </details>
-<details class="sol" id="e4"><summary>E4 — Problema 8.41: choque de dos vehículos en un cruce (2D, quedan unidos) <span class="src" data-l="E" data-ref="Solucionario 8-13/8-14 Prob. 8.41">E</span> <span class="src" data-l="U" data-ref="U §8.2, p. 244; §8.3, p. 248 (ec. 8.16) y ejemplo 8.9, p. 250">U p.244, 248, 250</span></summary>
-<p class="enun">En un cruce, un automóvil subcompacto de 950 kg que viaja al este choca con una camioneta pickup de 1900 kg que viaja al norte y no respetó el semáforo. Los vehículos quedan unidos después del choque y se deslizan a 16,0 m/s en dirección 24,0° al este del norte. Calcule la rapidez de cada vehículo antes del choque. Las fuerzas de fricción con el pavimento (mojado) son despreciables.</p>
-<figure class="fig" data-svg="../assets/figs/t08/triangulo-rectangulo-de-cantidades-de-movimiento.svg">
-<div class="figph" role="img" aria-label="Triángulo rectángulo de cantidades de movimiento: el coche aporta la componente x y la camioneta la componente y" style="aspect-ratio:360/190"></div>
-<figcaption>Problema 8.41: x = este, y = norte. El coche solo aporta p en x y la camioneta solo en y; la hipotenusa es la cantidad de movimiento del conjunto unido. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.41 (U p. 266)">P</span></figcaption>
-</figure>
-  <ol class="steps">
-    <li><b>Ejes.</b> $+x$ = este y $+y$ = norte. Antes, el coche solo tiene $v_{Ax}$ y la camioneta solo $v_{By}$. Después, el conjunto de 2850 kg se mueve a 16,0 m/s a 24,0° del norte hacia el este.</li>
-    <li><b>Componentes finales.</b> El ángulo se mide desde el norte, por eso el seno va con $x$: $V_x=16{,}0\sin24{,}0^\circ=6{,}51$ m/s y $V_y=16{,}0\cos24{,}0^\circ=14{,}62$ m/s.</li>
-    <li><b>En $x$</b> (solo el coche tenía cantidad de movimiento este-oeste): $950\,v_A=2850\,V_x\Rightarrow v_A=\mathbf{19{,}5}$ m/s.</li>
-    <li><b>En $y$:</b> $1900\,v_B=2850\,V_y\Rightarrow v_B=\mathbf{21{,}9}$ m/s.</li>
-  </ol>
-  <p><b>Resultado:</b> coche $19{,}5$ m/s (este); camioneta $21{,}9$ m/s (norte).</p>
-  <div class="recipe"><b>Receta:</b> choque totalmente inelástico en 2D: una ecuación por eje; cada cuerpo solo aporta en el eje por el que se movía.</div>
-  <div class="recipe"><b>Error típico:</b> tomar el ángulo desde el eje $x$ (intercambiar seno y coseno) o sumar las magnitudes de las cantidades de movimiento.</div>
-</details>
-<details class="sol" id="e5"><summary>E5 — Problema 8.61: unidad de maniobras de un astronauta (empuje de un cohete) <span class="src" data-l="E" data-ref="Solucionario 8-21/8-22 Prob. 8.61">E</span> <span class="src" data-l="U" data-ref="U §8.6, p. 259 (ecs. 8.38-8.39) y ejemplo 8.15, p. 260">U p.259-260</span></summary>
-<p class="enun">Un astronauta de 70 kg flota en el espacio con una unidad de maniobras tripulada (MMU) de 110 kg y experimenta una aceleración de 0,029 m/s² al disparar uno de sus impulsores. a) Si la rapidez del gas N₂ que escapa, relativa al astronauta, es de 490 m/s, ¿cuánto gas se gasta en 5,0 s? b) ¿Qué empuje tiene el impulsor?</p>
-  <ol class="steps">
-    <li><b>Masa que se acelera.</b> Astronauta + MMU: $m=180$ kg. En 5 s la masa apenas cambia (se comprueba al final), así que se toman $m$ y $dm/dt$ constantes.</li>
-    <li><b>(a) Ritmo de gasto.</b> De $a=-\dfrac{v_{esc}}{m}\dfrac{dm}{dt}$ (8.39): $\dfrac{dm}{dt}=-\dfrac{ma}{v_{esc}}=-\dfrac{180\cdot0{,}029}{490}=-0{,}0107$ kg/s (negativo: la masa disminuye). Gas expulsado en 5,0 s: $0{,}0107\cdot5{,}0=\mathbf{0{,}053}$ kg (53 g; despreciable frente a 180 kg, lo que justifica el paso 1).</li>
-    <li><b>(b) Empuje.</b> $F=-v_{esc}\,dm/dt$ (8.38) $=490\cdot0{,}01065=\mathbf{5{,}22}$ N. Más directo: el empuje es la fuerza neta, $F=ma=180\cdot0{,}029=5{,}22$ N.</li>
-  </ol>
-  <p><b>Resultado:</b> a) $0{,}053$ kg de N₂; b) $F=5{,}22$ N.</p>
-  <div class="recipe"><b>Receta:</b> $F=ma=-v_{esc}\,dm/dt$: conocidas dos de las tres magnitudes ($a$, $v_{esc}$, $dm/dt$) se obtiene la tercera.</div>
-  <div class="recipe"><b>Error típico:</b> usar solo la masa del astronauta (70 kg) o solo la de la MMU, o redondear $dm/dt$ antes de calcular $F$ (conviene $F=ma$ directamente).</div>
-</details>
-<details class="sol" id="e6"><summary>E6 — Problema 8.92: mujer que camina en una canoa <span class="src" data-l="E" data-ref="Solucionario 8-34 Prob. 8.92">E</span> <span class="src" data-l="U" data-ref="U §8.5, pp. 255-256 (ecs. 8.29 y 8.32; ejemplo 8.14)">U p.255-256</span></summary>
+<details class="sol" id="e6"><summary>E6 — Problema 8.92: mujer que camina en una canoa <span class="src" data-l="E" data-ref="Solucionario 8-34 Prob. 8.92">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.5, pp. 255-256 (ecs. 8.29 y 8.32; ejemplo 8.14)">U p.255-256</span></summary>
 <p class="enun">Una mujer de 45,0 kg está de pie en una canoa de 60,0 kg y 5,00 m de longitud. Camina desde un punto a 1,00 m de un extremo hasta un punto a 1,00 m del otro extremo (es decir, 3,00 m respecto a la canoa). Si se ignora la resistencia del agua, ¿qué distancia se mueve la canoa?</p>
 <figure class="fig" data-svg="../assets/figs/t08/una-mujer-camina-por-una-canoa-y-la-canoa-se-des.svg">
 <div class="figph" role="img" aria-label="Una mujer camina por una canoa y la canoa se desplaza en sentido contrario, con el centro de masa del sistema fijo" style="aspect-ratio:360/222"></div>
@@ -687,7 +526,40 @@
   <div class="recipe"><b>Receta:</b> sistema aislado que parte del reposo: $\sum m_i\,\Delta x_i=0$ con desplazamientos medidos respecto al suelo (o al agua), no respecto al objeto móvil.</div>
   <div class="recipe"><b>Error típico:</b> usar los 3,00 m como desplazamiento de la mujer respecto al agua (darían 2,25 m para la canoa).</div>
 </details>
-<details class="sol" id="e7"><summary>E7 — Problema 8.95: obús en reposo que explota <span class="src" data-l="E" data-ref="Solucionario 8-35 Prob. 8.95">E</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244">U p.243-244</span></summary>
+<div class="nivel"><b>🟡 Práctica: 5 ejercicios más del solucionario</b><span>Repiten métodos del núcleo con otros datos. Antes de leer los pasos, dibuja tú el «antes» y el «después» con ejes y escribe $\sum mv_x$ en cada uno.</span></div>
+<details class="sol" id="e4"><summary>E4 — Problema 8.41: choque de dos vehículos en un cruce (2D, quedan unidos) <span class="src" data-l="E" data-ref="Solucionario 8-13/8-14 Prob. 8.41">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.2, p. 244; §8.3, p. 248 (ec. 8.16) y ejemplo 8.9, p. 250">U p.244, 248, 250</span></summary>
+<p class="enun">En un cruce, un automóvil subcompacto de 950 kg que viaja al este choca con una camioneta pickup de 1900 kg que viaja al norte y no respetó el semáforo. Los vehículos quedan unidos después del choque y se deslizan a 16,0 m/s en dirección 24,0° al este del norte. Calcule la rapidez de cada vehículo antes del choque. Las fuerzas de fricción con el pavimento (mojado) son despreciables.</p>
+<figure class="fig" data-svg="../assets/figs/t08/triangulo-rectangulo-de-cantidades-de-movimiento.svg">
+<div class="figph" role="img" aria-label="Triángulo rectángulo de cantidades de movimiento: el coche aporta la componente x y la camioneta la componente y" style="aspect-ratio:360/190"></div>
+<figcaption>Problema 8.41: x = este, y = norte. El coche solo aporta p en x y la camioneta solo en y; la hipotenusa es la cantidad de movimiento del conjunto unido. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.41 (U p. 266)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li><b>Ejes.</b> $+x$ = este y $+y$ = norte. Antes, el coche solo tiene $v_{Ax}$ y la camioneta solo $v_{By}$. Después, el conjunto de 2850 kg se mueve a 16,0 m/s a 24,0° del norte hacia el este.</li>
+    <li><b>Componentes finales.</b> El ángulo se mide desde el norte, por eso el seno va con $x$: $V_x=16{,}0\sin24{,}0^\circ=6{,}51$ m/s y $V_y=16{,}0\cos24{,}0^\circ=14{,}62$ m/s.</li>
+    <li><b>En $x$</b> (solo el coche tenía cantidad de movimiento este-oeste): $950\,v_A=2850\,V_x\Rightarrow v_A=\mathbf{19{,}5}$ m/s.</li>
+    <li><b>En $y$:</b> $1900\,v_B=2850\,V_y\Rightarrow v_B=\mathbf{21{,}9}$ m/s.</li>
+  </ol>
+  <p><b>Resultado:</b> coche $19{,}5$ m/s (este); camioneta $21{,}9$ m/s (norte).</p>
+  <div class="recipe"><b>Receta:</b> choque totalmente inelástico en 2D: una ecuación por eje; cada cuerpo solo aporta en el eje por el que se movía.</div>
+  <div class="recipe"><b>Error típico:</b> tomar el ángulo desde el eje $x$ (intercambiar seno y coseno) o sumar las magnitudes de las cantidades de movimiento.</div>
+</details>
+<details class="sol" id="e2"><summary>E2 — Problema 8.44: piedra que golpea un bloque unido a un resorte <span class="src" data-l="E" data-ref="Solucionario 8-15 Prob. 8.44">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244 y §7.2, p. 214">U p.214, 243-244</span></summary>
+<p class="enun">Un bloque de 15,0 kg está sujeto a un resorte horizontal muy ligero de constante 500,0 N/m y reposa sobre una mesa horizontal sin fricción. De repente lo golpea una piedra de 3,00 kg que viaja horizontalmente a 8,00 m/s hacia la derecha y que rebota horizontalmente a 2,00 m/s hacia la izquierda. Calcule la compresión máxima del resorte después del choque.</p>
+<figure class="fig" data-svg="../assets/figs/t08/piedra-que-golpea-un-bloque-unido-a-un-resorte-t.svg">
+<div class="figph" role="img" aria-label="Piedra que golpea un bloque unido a un resorte, tres instantes" style="aspect-ratio:360/246"></div>
+<figcaption>Problema 8.44: durante el choque se conserva la cantidad de movimiento (el bloque sale a 2,00 m/s); después el bloque comprime el resorte 0,346 m. Esquema: la longitud del resorte no está a escala. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.44 (U p. 266)">P</span></figcaption>
+</figure>
+  <ol class="steps">
+    <li><b>Dos etapas.</b> El choque (instantáneo) $\to$ cantidad de movimiento; después, el bloque comprime el resorte $\to$ energía mecánica (solo trabaja la fuerza elástica, conservativa).</li>
+    <li><b>Choque.</b> El resorte aún no está comprimido durante el choque, así que no hay fuerza horizontal externa apreciable: se conserva $P_x$ ($+x$ a la derecha): $(3{,}00)(8{,}00)=(3{,}00)(-2{,}00)+(15{,}0)\,v_b\Rightarrow v_b=30{,}0/15{,}0=2{,}00$ m/s.</li>
+    <li><b>Compresión.</b> Desde justo después del choque hasta la compresión máxima ($v=0$): $\tfrac12m_bv_b^2=\tfrac12kx^2\Rightarrow x=v_b\sqrt{m_b/k}=2{,}00\sqrt{15{,}0/500{,}0}=\mathbf{0{,}346}$ m.</li>
+    <li><b>Comprobación.</b> $K$ antes del choque $=96$ J; después $6$ J (piedra) $+\,30$ J (bloque) $=36$ J: el choque es inelástico, por eso no se podía usar la energía en el choque.</li>
+  </ol>
+  <p><b>Resultado:</b> $v_b=2{,}00$ m/s; compresión máxima $0{,}346$ m.</p>
+  <div class="recipe"><b>Receta:</b> «choque + resorte»: $P$ en el choque, energía después. Nunca energía a través del choque.</div>
+  <div class="recipe"><b>Error típico:</b> poner $+2{,}00$ m/s a la piedra que rebota (daría $v_b=1{,}20$ m/s), o escribir $\tfrac12(3)(8)^2=\tfrac12kx^2$.</div>
+</details>
+<details class="sol" id="e7"><summary>E7 — Problema 8.95: obús en reposo que explota <span class="src" data-l="E" data-ref="Solucionario 8-35 Prob. 8.95">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244">U p.243-244</span></summary>
 <p class="enun">Un obús en reposo de 7,0 kg explota y se divide en dos fragmentos, uno de 2,0 kg y otro de 5,0 kg. Si el fragmento más pesado gana 100 J de energía cinética en la explosión, ¿cuánta energía cinética gana el más ligero?</p>
 <figure class="fig" data-svg="../assets/figs/t08/explosion-de-un-obus-en-reposo-en-dos-fragmentos.svg">
 <div class="figph" role="img" aria-label="Explosión de un obús en reposo en dos fragmentos con la misma cantidad de movimiento y distinta energía" style="aspect-ratio:360/198"></div>
@@ -701,11 +573,7 @@
   <div class="recipe"><b>Receta:</b> en una explosión desde el reposo, la energía se reparte en proporción <b>inversa</b> a las masas.</div>
   <div class="recipe"><b>Error típico:</b> asignar los 100 J al fragmento de 2,0 kg (el enunciado se los da al más pesado) o suponer que ambos tienen igual energía.</div>
 </details>
-<details class="sol" id="e8"><summary>E8 — Problema 8.97: cohete de fuegos artificiales (1,40 kg y 0,28 kg) <span class="src" data-l="E" data-ref="Solucionario 8-35/8-36 Prob. 8.97">E</span> <span class="src" data-l="X" data-ref="Examen Febrero 2020 (1ª semana) P-2">X</span></summary>
-<p class="enun">Es exactamente el problema de examen <a href="#x2">X2</a> (Feb 2020, 1ª semana, P-2), con el mismo enunciado y los mismos datos: cohete que estalla en su altura máxima de 80,0 m, fragmentos de 1,40 kg y 0,28 kg y 860 J de energía química convertidos en energía cinética.</p>
-  <p><b>Resultados</b> (desarrollo completo en X2): $v_{1{,}40}=14{,}3$ m/s y $v_{0{,}28}=71{,}5$ m/s, horizontales y opuestas; caída en $4{,}04$ s; separación entre los puntos de impacto, $347$ m. Puedes recrearlo en el interactivo de la sección 5 con $v_0=39{,}6$ m/s, $\alpha=90^\circ$, $m_A/m_B=5$, $M=1{,}68$ kg y $u_A=14{,}31$ m/s.</p>
-</details>
-<details class="sol" id="e9"><summary>E9 — Problema 8.98: obús que estalla en su punto más alto <span class="src" data-l="E" data-ref="Solucionario 8-36 Prob. 8.98">E</span> <span class="src" data-l="U" data-ref="U §8.2, p. 244 y §8.5, p. 257 (ec. 8.34); §3.3 (tema 3)">U p.244, 257</span></summary>
+<details class="sol" id="e9"><summary>E9 — Problema 8.98: obús que estalla en su punto más alto <span class="src" data-l="E" data-ref="Solucionario 8-36 Prob. 8.98">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.2, p. 244 y §8.5, p. 257 (ec. 8.34); §3.3 (tema 3)">U p.244, 257</span></summary>
 <p class="enun">Un obús de 12,0 kg se dispara con un ángulo de 55,0° sobre la horizontal con rapidez inicial de 150 m/s. En el punto más alto de la trayectoria estalla en dos fragmentos, uno con tres veces más masa que el otro. Los dos fragmentos llegan al suelo al mismo tiempo. Despreciando la resistencia del aire: si el fragmento más pesado cae en el punto desde el que se lanzó el obús, ¿dónde cae el más ligero y cuánta energía se libera en la explosión?</p>
 <figure class="fig" data-svg="../assets/figs/t08/obus-que-estalla-en-su-punto-mas-alto-el-fragmen.svg">
 <div class="figph" role="img" aria-label="Obús que estalla en su punto más alto: el fragmento pesado cae en el punto de lanzamiento y el ligero muy lejos; el centro de masa cae donde habría caído el obús entero" style="aspect-ratio:360/202"></div>
@@ -724,6 +592,76 @@
   <div class="recipe"><b>Receta:</b> explosión en el vértice de una parábola: velocidades horizontales, conservación de $P_x$ y, para el punto de caída, el atajo del centro de masa: $\sum m_ix_i=MR$.</div>
   <div class="recipe"><b>Error típico:</b> dar la distancia desde el punto de explosión (7,55 km) en lugar de desde el lanzamiento, o suponer que el pesado queda en reposo (caería en vertical, a 1079 m).</div>
 </details>
+<details class="sol" id="e5"><summary>E5 — Problema 8.61: unidad de maniobras de un astronauta (empuje de un cohete) <span class="src" data-l="E" data-ref="Solucionario 8-21/8-22 Prob. 8.61">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.6, p. 259 (ecs. 8.38-8.39) y ejemplo 8.15, p. 260">U p.259-260</span></summary>
+<p class="enun">Un astronauta de 70 kg flota en el espacio con una unidad de maniobras tripulada (MMU) de 110 kg y experimenta una aceleración de 0,029 m/s² al disparar uno de sus impulsores. a) Si la rapidez del gas N₂ que escapa, relativa al astronauta, es de 490 m/s, ¿cuánto gas se gasta en 5,0 s? b) ¿Qué empuje tiene el impulsor?</p>
+  <ol class="steps">
+    <li><b>Masa que se acelera.</b> Astronauta + MMU: $m=180$ kg. En 5 s la masa apenas cambia (se comprueba al final), así que se toman $m$ y $dm/dt$ constantes.</li>
+    <li><b>(a) Ritmo de gasto.</b> De $a=-\dfrac{v_{esc}}{m}\dfrac{dm}{dt}$ (8.39): $\dfrac{dm}{dt}=-\dfrac{ma}{v_{esc}}=-\dfrac{180\cdot0{,}029}{490}=-0{,}0107$ kg/s (negativo: la masa disminuye). Gas expulsado en 5,0 s: $0{,}0107\cdot5{,}0=\mathbf{0{,}053}$ kg (53 g; despreciable frente a 180 kg, lo que justifica el paso 1).</li>
+    <li><b>(b) Empuje.</b> $F=-v_{esc}\,dm/dt$ (8.38) $=490\cdot0{,}01065=\mathbf{5{,}22}$ N. Más directo: el empuje es la fuerza neta, $F=ma=180\cdot0{,}029=5{,}22$ N.</li>
+  </ol>
+  <p><b>Resultado:</b> a) $0{,}053$ kg de N₂; b) $F=5{,}22$ N.</p>
+  <div class="recipe"><b>Receta:</b> $F=ma=-v_{esc}\,dm/dt$: conocidas dos de las tres magnitudes ($a$, $v_{esc}$, $dm/dt$) se obtiene la tercera.</div>
+  <div class="recipe"><b>Error típico:</b> usar solo la masa del astronauta (70 kg) o solo la de la MMU, o redondear $dm/dt$ antes de calcular $F$ (conviene $F=ma$ directamente).</div>
+</details>
+<div class="nivel"><b>📝 Preguntas de teoría (4 puntos)</b><span>Cuatro han caído: «Centro de masa de un sistema de partículas. Su movimiento. Conservación del momento lineal» en Febrero 2018 (2ª semana), «Choques elásticos» en Febrero 2019 (2ª semana), «Conservación del momento lineal» con dos cuestiones en Febrero 2022 (2ª semana) y la cuestión del patinador en Septiembre 2023. Son el 40 % del examen.</span></div>
+<details class="sol" id="x5"><summary>X5 — Teoría: «Centro de masa de un sistema de partículas. Su movimiento. Conservación del momento lineal» <span class="src" data-l="X" data-ref="Examen Febrero 2018 (2ª semana) P-3 Opción 3.1">X</span> <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="U" data-ref="U §8.5, pp. 254-258 y §8.2, pp. 243-244">U p.243-244, 254-258</span></summary>
+<p class="enun">Pregunta de teoría (Opción 3.1, 4 puntos): «Centro de masa de un sistema de partículas. Su movimiento. Conservación del momento lineal.»</p>
+  <ol class="steps">
+    <li><b>Definición.</b> Para partículas de masas $m_i$ en posiciones $\vec r_i$: $\vec r_{cm}=\dfrac{\sum m_i\vec r_i}{\sum m_i}$ (8.28-8.29), la posición media ponderada por la masa. En un cuerpo homogéneo con simetría está en el centro geométrico; puede quedar fuera del material (anillo).</li>
+    <li><b>Velocidad.</b> Derivando: $\vec v_{cm}=\dfrac{\sum m_i\vec v_i}{M}$ y, por tanto, $\vec P=\sum m_i\vec v_i=M\vec v_{cm}$ (8.32): la cantidad de movimiento total es la de una partícula de masa $M$ que se moviera con el centro de masa.</li>
+    <li><b>Aceleración y ecuación de movimiento.</b> $M\vec a_{cm}=\sum m_i\vec a_i=\sum\vec F_i$. Las fuerzas internas aparecen por pares acción-reacción y se anulan en la suma, de modo que $\sum\vec F_{ext}=M\vec a_{cm}$ (8.34), equivalente a $d\vec P/dt=\sum\vec F_{ext}$ (8.36): <b>el centro de masa se mueve como una partícula de masa total sometida solo a las fuerzas externas</b>.</li>
+    <li><b>Ejemplo.</b> Un proyectil que estalla en el aire: los fragmentos se dispersan, pero el centro de masa sigue la parábola que habría seguido el proyectil entero.</li>
+    <li><b>Conservación del momento lineal.</b> Si $\sum\vec F_{ext}=0$, entonces $d\vec P/dt=0$: $\vec P$ y $\vec v_{cm}$ son constantes (8.13). Las fuerzas internas cambian el momento de cada parte, pero no el total. Es una ley vectorial: puede conservarse una componente (la horizontal, por ejemplo) aunque otra no.</li>
+    <li><b>Aplicaciones típicas.</b> Retroceso de un rifle (ej. 8.4), choques (§8.3), y una persona que camina en una barca: si parte del reposo y no hay fuerza horizontal externa, $x_{cm}$ no cambia (ej. 8.14; problema 8.92).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> en una pregunta de teoría ordena la respuesta como definición → fórmula → demostración breve (pares acción-reacción) → condición de conservación → un ejemplo.</div>
+</details>
+<details class="sol" id="x6"><summary>X6 — Teoría: «Choques elásticos» <span class="src" data-l="X" data-ref="Examen Febrero 2019 (2ª semana) P-3 Opción 3.2">X</span> <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="U" data-ref="U §8.3, p. 247 y §8.4, pp. 251-254">U p.247, 251-254</span></summary>
+<p class="enun">Pregunta de teoría (Opción 3.2, 4 puntos): «Choques elásticos.»</p>
+  <ol class="steps">
+    <li><b>Choque y por qué se conserva $\vec P$.</b> Las fuerzas de interacción son internas, grandes y breves; las externas, si existen, tienen impulso despreciable en ese intervalo: $\vec P$ antes $=\vec P$ después.</li>
+    <li><b>Clasificación.</b> Elástico: fuerzas de interacción conservativas y $K$ total final igual a la inicial. Inelástico: $K_f\lt K_i$. Totalmente inelástico: quedan unidos con la misma velocidad.</li>
+    <li><b>Caso unidimensional con B en reposo.</b> $m_Av_{A1}=m_Av_{A2}+m_Bv_{B2}$ y $\tfrac12m_Av_{A1}^2=\tfrac12m_Av_{A2}^2+\tfrac12m_Bv_{B2}^2$. Agrupando términos de A y dividiendo la ecuación de energía entre la de cantidad de movimiento ($a^2-b^2=(a+b)(a-b)$): $v_{A1}+v_{A2}=v_{B2}$. Resolviendo: $v_{A2}=\dfrac{m_A-m_B}{m_A+m_B}v_{A1}$ y $v_{B2}=\dfrac{2m_A}{m_A+m_B}v_{A1}$.</li>
+    <li><b>Casos límite.</b> $m_A=m_B$: A se para y B sale con $v_{A1}$ (intercambio de velocidades). $m_A\ll m_B$: A rebota con casi $-v_{A1}$ y B apenas se mueve. $m_A\gg m_B$: A sigue casi igual y B sale a casi $2v_{A1}$.</li>
+    <li><b>Velocidad relativa (caso general 1D).</b> $v_{B2}-v_{A2}=-(v_{B1}-v_{A1})$: la velocidad relativa invierte el sentido y conserva el módulo. Junto con $P$ da un sistema lineal más cómodo que la ecuación de $K$. Las fórmulas del paso 3 solo valen si B está inicialmente en reposo.</li>
+    <li><b>Choques elásticos en 2D.</b> Dos ecuaciones de componentes más la de energía; hace falta un dato adicional (ej. 8.12). Con masas iguales y B en reposo, las velocidades finales son perpendiculares si el choque no es frontal (si es frontal, A se para).</li>
+    <li><b>Aplicación.</b> Los moderadores de reactores: un neutrón pierde más energía chocando con núcleos ligeros (ej. 8.11).</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> para un choque elástico 1D plantea siempre «$P$ se conserva» + «la velocidad relativa invierte el signo», y reserva (8.24)-(8.25) para el caso con B en reposo.</div>
+</details>
+<details class="sol" id="x7"><summary>X7 — Teoría: «Conservación del momento lineal o de la cantidad de movimiento» + juguete en tres piezas y balas sobre una placa <span class="src" data-l="X" data-ref="Examen Febrero 2022 (2ª semana) P-3 Opción 3.1">X</span> <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="U" data-ref="U §8.1, pp. 238-242 y §8.2, pp. 243-244; Evalúe su comprensión de la sección 8.2, p. 247">U p.238-244, 247</span></summary>
+<p class="enun">Pregunta de teoría (Opción 3.1, 4 puntos): «Conservación del momento lineal o de la cantidad de movimiento», con dos cuestiones. <b>3.1a:</b> un juguete accionado por un resorte está en reposo sobre una superficie horizontal sin fricción. Al soltarse el resorte, el juguete se divide en tres piezas de masas iguales A, B y C que se deslizan por la superficie. A se aleja en la dirección $-x$ y B en la dirección $-y$. a) ¿Cuáles son los signos de las componentes de la velocidad de C? b) ¿Cuál de las tres piezas se mueve más rápido? <b>3.1b:</b> se dispara una ametralladora contra una placa de acero. ¿La fuerza media sobre la placa es mayor si las balas rebotan o si se aplastan y quedan adheridas? Explique.</p>
+  <ol class="steps">
+    <li><b>Desarrollo del tema.</b> $\vec p=m\vec v$; $\sum\vec F=d\vec p/dt$ (8.4); en un sistema de partículas las fuerzas internas forman pares acción-reacción que se anulan, $d\vec P/dt=\sum\vec F_{ext}$ (8.13); si $\sum\vec F_{ext}=0$, $\vec P$ es constante y se conserva <b>cada componente</b>. Es válido aunque haya fuerzas internas no conservativas (choques inelásticos, explosiones) y se relaciona con el centro de masa por $\vec P=M\vec v_{cm}$. Ejemplos: retroceso de un rifle, choques, cohetes.</li>
+    <li><b>Cuestión 3.1a.</b> Las fuerzas externas (peso y normal) son verticales y se anulan, y no hay fricción: la cantidad de movimiento horizontal se conserva y era cero (reposo). Con masas iguales $m$: $m\vec v_A+m\vec v_B+m\vec v_C=0\Rightarrow\vec v_C=-(\vec v_A+\vec v_B)$. Con $\vec v_A=(-v_A,0)$ y $\vec v_B=(0,-v_B)$ resulta $\vec v_C=(+v_A,+v_B)$: <b>las dos componentes de C son positivas</b> (sale hacia el primer cuadrante). Además $|\vec v_C|=\sqrt{v_A^2+v_B^2}$ es mayor que $v_A$ y que $v_B$: <b>C es la más rápida</b>.</li>
+    <li><b>Cuestión 3.1b.</b> Por el teorema impulso-cantidad de movimiento, la fuerza media sobre cada bala es $\vec F_{med}=\Delta\vec p/\Delta t$ (8.6, 8.8) y la placa recibe la opuesta (tercera ley). Si la bala se aplasta y queda adherida, $|\Delta p|=mv$ (de $mv$ a 0). Si rebota con rapidez $v'$, $|\Delta p|=mv+mv'$ (de $+mv$ a $-mv'$), hasta $2mv$ en un rebote elástico. Con igual cadencia de disparo, el impulso por unidad de tiempo, que es la fuerza media, es <b>mayor si las balas rebotan</b> (hasta el doble). Es lo mismo que en el ejemplo 8.2 de la pelota contra la pared.</li>
+  </ol>
+<figure class="fig" data-svg="../assets/figs/t08/velocidades-de-tres-piezas-iguales-que-salen-de-.svg">
+<div class="figph" role="img" aria-label="Velocidades de tres piezas iguales que salen de un juguete en reposo" style="aspect-ratio:360/208"></div>
+<figcaption>Examen Feb. 2022 (2ª sem.) P-3 Op. 3.1, cuestión a): si A va hacia −x y B hacia −y, C va hacia +x y +y y es la más rápida. Valores numéricos ilustrativos. <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2022 (2ª semana) P-3 Opción 3.1">P</span></figcaption>
+</figure>
+  <div class="recipe"><b>Receta:</b> «reposo + fuerzas externas nulas $\Rightarrow$ $\sum m\vec v=0$»: despeja la velocidad que falta como menos la suma de las otras. Para fuerzas medias: $\vec F_{med}=\Delta\vec p/\Delta t$, restando <i>vectores</i>.</div>
+</details>
+<details class="sol" id="x8"><summary>X8 — Cuestión: ¿se conserva el momento lineal de un patinador que gira en el aire? <span class="src" data-l="X" data-ref="Examen Septiembre 2023 P-3 Opción A (b)">X</span> <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="U" data-ref="U §8.5, pp. 257-258 (ecs. 8.34 y 8.36)">U p.257-258</span></summary>
+<p class="enun">Sabemos que el momento angular de un patinador se conserva al dar vueltas en el aire. ¿Se conserva su momento lineal? Explique su respuesta. (Cuestión (b) de la Opción A; el tema principal de la opción es el momento angular, tema 10.)</p>
+  <ol class="steps">
+    <li>El momento lineal se conserva solo si la fuerza externa neta es nula: $d\vec P/dt=\sum\vec F_{ext}$ (8.36).</li>
+    <li>En el aire actúa sobre el patinador su peso $M\vec g$ (despreciando el aire). Luego $d\vec P/dt=M\vec g\ne0$: <b>el momento lineal no se conserva</b>. Su componente vertical cambia (sube frenando y baja acelerando: el centro de masa describe una parábola, 8.34); la componente <b>horizontal sí se conserva</b>, porque no hay fuerza horizontal.</li>
+    <li>¿Por qué sí se conserva el momento angular? El peso actúa en el centro de masa, así que su momento respecto a él es nulo; sin momento externo neto, el momento angular respecto al centro de masa es constante. Son dos leyes distintas con condiciones distintas: fuerza externa nula para $\vec P$, momento externo nulo para $\vec L$.</li>
+  </ol>
+<figure class="fig" data-svg="../assets/figs/t08/cantidad-de-movimiento-de-un-patinador-en-el-air.svg">
+<div class="figph" role="img" aria-label="Cantidad de movimiento de un patinador en el aire: componente horizontal constante y componente vertical variable" style="aspect-ratio:360/206"></div>
+<figcaption>Examen Sep. 2023 P-3 Op. A (b): en el aire el momento lineal NO se conserva (actúa el peso), aunque su componente horizontal sí. Escala de las flechas indicativa; la flecha discontinua es p total. <span class="src" data-l="P" data-ref="Diagrama propio del examen Septiembre 2023 P-3 Opción A (b)">P</span></figcaption>
+</figure>
+  <div class="recipe"><b>Receta:</b> ante «¿se conserva…?» comprueba la condición de cada ley: $\vec P$ pide $\sum\vec F_{ext}=0$ (por componentes); $\vec L$ pide $\sum\vec\tau_{ext}=0$.</div>
+</details>
+<div class="box tip"><span class="h">Si te toca otra pregunta de teoría del tema: «Impulso y cantidad de movimiento» o «Propulsión de un cohete»</span>
+<p>Guion propio (no es un enunciado de examen real). Define, da la ecuación, un ejemplo con números y cierra con el error típico:</p>
+  <ul>
+    <li><b>Impulso y cantidad de movimiento:</b> (1) $\vec p=m\vec v$ y $\sum\vec F=d\vec p/dt$ (8.2, 8.4); (2) $\vec J=\int\sum\vec F\,dt=\vec F_{med}\Delta t$, área bajo $F$–$t$ (8.7, 8.8); (3) teorema $\vec J=\Delta\vec p$ (8.6) frente a $W=\Delta K$; (4) ejemplo: pelota que rebota en la pared, 20 N·s y 2000 N; (5) error: restar módulos en lugar de vectores.</li>
+    <li><b>Cohete:</b> (1) idea: conservación de $P$ de cohete + gas; (2) $m\,dv=-v_{esc}\,dm$ (8.37), empuje $F=-v_{esc}\,dm/dt$ (8.38); (3) $v-v_0=v_{esc}\ln(m_0/m)$ (8.40); (4) ejemplo: $2400\ln4=3327$ m/s; (5) error: olvidar que $dm/dt\lt0$ o el peso al despegar.</li>
+  </ul>
+  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
 <h2 id="chuleta"><span class="n">8</span>Chuleta, errores frecuentes y lista de comprobación</h2>
 <table>
 <tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>

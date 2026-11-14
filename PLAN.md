@@ -43,12 +43,12 @@ Orden sugerido (de menos a más figuras): hacer 1 tema de prueba y, si el migrad
 Receta por tema NN (modelo: `contenido/tema_05/`): resumen de 5 minutos + tabla «¿qué tipo de problema es?» + prioridades + teoría condensada (una caja por idea, un error típico) + mini-tests (3 preguntas por sección) + ejercicios Núcleo/Práctica/Teoría con tabla «método que te llevas». Los X de examen **intactos**. Flujo con agentes: `fuentes-fisica` → `resolutor-ejercicios` → `redactor-tema` → `revisor-tema` (CLAUDE.md §4).
 - [x] C1. Tema 6 (formato estudio: en5 + decide, 4 mini-tests, 13 núcleo/7 práctica, x1–x11 intactos; 27 comprobaciones nuevas en t06). Pendiente menor: x7 menciona «como el solucionario 5-38»
 - [x] C2. Tema 7 (5 secciones, 5 mini-tests, 7 núcleo/5 práctica/4 teoría; X1–X8 intactos; chip de páginas aún dice pp. 204-226, revisar)
-- [ ] C3. Tema 7
-- [ ] C4. Tema 8
-- [ ] C5. Tema 9
-- [ ] C6. Tema 10
-- [ ] C7. Tema 11
-- [ ] C8. Tema 12
+- [x] C3. Tema 8 (6 secciones, 6 mini-tests, 8 núcleo/5 práctica/4 teoría; X1–X9 intactos; e8 duplicado de X2 eliminado)
+- [ ] C4. Tema 9
+- [ ] C5. Tema 10
+- [ ] C6. Tema 11
+- [ ] C7. Tema 12
+- [ ] C8. Tema 13
 - [ ] C9. Temas 14-16
 - [ ] C10. Temas 17-20
 - [ ] C11. Temas 1-4
