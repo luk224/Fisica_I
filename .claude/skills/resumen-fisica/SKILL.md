@@ -11,11 +11,17 @@ Lee primero `CLAUDE.md` (fuentes, offsets de página, temario por bloques, regla
 1. **Identificar el tema** (ej. Tema 11 Equilibrio y elasticidad, Bloque Mecánica) y su rango de páginas en U (`CLAUDE.md` §2), y los ejercicios de examen (X) del tema en `fuentes_txt/examenes_por_tema.md`.
 2. **Dossier de fuentes**: lanzar `fuentes-fisica` (haiku) con el tema. Debe devolver extractos con página impresa de U, lo que haya de A, problemas relevantes de E, y la lista de ejercicios de examen reales del tema con su referencia exacta.
 3. **Ejercicios**: lanzar `resolutor-ejercicios` (opus) con la lista de ejercicios de examen (X) y del solucionario (E) del tema; en paralelo con el paso 4 si el dossier ya está. Si el tema no tiene ningún X, debe decirlo y usar E/propios en su lugar.
-4. **Redacción**: `redactor-tema` (sonnet) copia `plantilla_tema.html` a `temas/tema_NN_<slug>.html` y lo rellena siguiendo las reglas de contenido (CLAUDE.md §3), priorizando los ejercicios de examen real. Usa solo `assets/resumen.css|js` y KaTeX local, sin dependencias externas.
-5. **Revisión**: `revisor-tema` (opus) comprueba física, citas (incluyendo que las convocatorias de examen citadas sean reales), cobertura y render. Aplicar sus correcciones.
-6. **Cierre**: actualizar `index.html` (marcar el tema como «listo»), **subir a GitHub siguiendo CLAUDE.md §4b (commit + push)**, comprobar visualmente el HTML (Claude in Chrome o captura) en ancho de escritorio y móvil, y resumir al usuario qué hay y qué falta.
+4. **Redacción**: `redactor-tema` (sonnet) copia `contenido/plantilla_tema/` a `contenido/tema_NN/` y lo rellena en el **formato «estudio»** (CLAUDE.md §8; léase `contenido/plantilla_tema/README.md` y el modelo `contenido/tema_05/`): resumen de 5 minutos, tabla «¿qué tipo de problema es?», prioridades 🔴🟡⚪, teoría condensada (una caja por idea), mini-tests «Comprueba» y ejercicios Núcleo / Práctica / Teoría, con todos los de examen real (X) en Núcleo. **No se escribe `temas/*.html` a mano**: se genera con `python herramientas/tema_datos.py generar NN`. Usa solo `assets/resumen.css|js|estudio.css|js` y KaTeX local.
+   Los resultados numéricos de cada ejercicio se recalculan en `pruebas/numerico/tNN.py` (modelo `t05.py`).
+5. **Revisión**: `revisor-tema` (opus) comprueba física, citas (incluyendo que las convocatorias de examen citadas sean reales), cobertura, formato estudio y render. Aplicar sus correcciones en `contenido/`.
+6. **Cierre**: ejecutar `python herramientas/construir.py --probar` (regenera páginas, buscador y cambios y lanza las pruebas), actualizar `index.html` (marcar el tema como «listo»), **subir a GitHub siguiendo CLAUDE.md §4b (commit + push)**, comprobar visualmente el HTML (Claude in Chrome o captura) en ancho de escritorio y móvil, y resumir al usuario qué hay y qué falta.
 
-## Convenciones de marcado (resumen)
+## Reglas del formato estudio
+- **Ningún ejercicio de examen real se elimina ni se acorta**; se listan en `examenes_requeridos` de `tema.json`.
+- Bloques de `tema.json`: `parte`, `h2` (con `prio`), `h3`, `caja`, `fig`, `libro`, `test`, `ej`, `metodos`. Las figuras SVG se declaran en `figuras` y se guardan en `assets/figs/tNN/`; se ven sirviendo por http (`python herramientas/servir.py`).
+- En fórmulas, `\lt`/`\gt` en vez de `<`/`>` sueltos.
+
+## Convenciones de marcado (resumen; es lo que va dentro de cajas, ejercicios y partes)
 - Cajas: `.box.def|thm|ex|warn|tip|intu` con `<span class="h">Título</span>`; receta: `.recipe`; pasos: `ol.steps`; ejercicio: `details.sol > summary + .enun + …`.
 - Fuente: `<span class="src" data-l="U|A|E|X|P" data-ref="referencia exacta">U p.N</span>`. Colocarlo **como hijo directo** del `.box`, `h2`, `h3` o `summary` para que salga en el margen derecho en escritorio.
   - U: `data-ref="U cap.N §N.N, p. NN"` (página impresa).
