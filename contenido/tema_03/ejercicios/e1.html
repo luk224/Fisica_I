@@ -1,0 +1,11 @@
+<p class="enun">Las coordenadas de un ave que vuela en el plano $xy$ son $x(t)=\alpha t$ e $y(t)=3.0\ \text{m}-\beta t^2$, con $\alpha=2.4$ m/s y $\beta=1.2$ m/s². a) Dibuje la trayectoria del ave entre $t=0$ y $t=2.0$ s. b) Calcule los vectores velocidad y aceleración del ave en función del tiempo. c) Obtenga el módulo y la dirección de la velocidad y de la aceleración en $t=2.0$ s. d) En ese instante, ¿el ave acelera, frena o su rapidez no cambia? ¿Está girando? Si es así, ¿hacia dónde?</p>
+  <ol class="steps">
+    <li>a) Eliminando $t=x/\alpha$ y sustituyendo en $y$, la trayectoria es la parábola $y=3.0-(\beta/\alpha^2)x^2$: parte de $(0;\,3.0)$ m en $t=0$ y baja hasta $(4.8;\,-1.8)$ m en $t=2.0$ s.</li>
+    <li>b) Derivando componente a componente (sección 3.1): $v_x=\alpha=2.4$ m/s (constante), $v_y=-2\beta t=-2.4t$. Derivando otra vez: $a_x=0$, $a_y=-2\beta=-2.4\ \text{m/s}^2$ (constante) — es formalmente idéntico a un proyectil, con $x$ uniforme e $y$ acelerada.</li>
+    <li>c) En $t=2.0$ s: $v_x=2.4$, $v_y=-4.8$ m/s, así que $v=\sqrt{2.4^2+4.8^2}=5.37$ m/s, con dirección $\theta=\arctan(-4.8/2.4)=-63.4°$ (por debajo del eje $x$). La aceleración es $\vec a=(0,-2.4)$ m/s², constante en todo instante, dirección $-y$.</li>
+    <li>d) Descomponemos $\vec a$ en paralela/perpendicular a $\vec v$ (sección 3.2): $a_\parallel=\dfrac{\vec a\cdot\vec v}{v}=\dfrac{0(2.4)+(-2.4)(-4.8)}{5.37}=+2.15\ \text{m/s}^2$. Como es positiva, el ave está <b>acelerando</b> (aumentando su rapidez) en ese instante. Además, $a_\perp=\sqrt{a^2-a_\parallel^2}=\sqrt{2.4^2-2.15^2}=1.07\ \text{m/s}^2\ne0$, así que también está <b>girando</b>. La componente $z$ de $\vec v\times\vec a$, $v_xa_y-v_ya_x=(2.4)(-2.4)-(-4.8)(0)=-5.76<0$, indica que gira hacia $-y$ (a la derecha de su dirección de avance).</li>
+  </ol>
+  {{fig:trayectoria-del-ave-con-v-y-a-en-t-2-s}}
+
+  <div class="recipe"><b>Receta:</b> deriva $x(t)$ e $y(t)$ dos veces para obtener $\vec v(t)$ y $\vec a(t)$; para saber si el objeto «acelera o frena» mira el signo de $\vec a\cdot\vec v$ (o $a_\parallel$); para saber si «gira» comprueba si $a_\perp\ne0$.</div>
+  <div class="recipe"><b>Error típico:</b> no corregir el cuadrante del $\arctan$, o creer que «acelerar» significa solo cambiar la rapidez y olvidarse de comprobar el giro.</div>

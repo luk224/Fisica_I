@@ -1,0 +1,11 @@
+<p class="enun">Los datos de prueba de un Bugatti Veyron Super Sport dan su rapidez en cuatro instantes: $t=0$ (arranque, $v=0$), $t=2.1$ s ($v=60$ mph), $t=20.0$ s ($v=200$ mph) y $t=53$ s ($v=253$ mph). Calcula la aceleración media en cada uno de los tres tramos que separan esos cuatro instantes.</p>
+  <ol class="steps">
+    <li>Convertimos todas las velocidades a m/s ($\times0.44704$): $60\to26.82$, $200\to89.41$, $253\to113.10\ \text{m/s}$.</li>
+    <li>Tramo 1 (0 a 2.1 s): $a_{\text{med}}=(26.82-0)/2.1=12.8\ \text{m/s}^2$.</li>
+    <li>Tramo 2 (2.1 a 20.0 s): $a_{\text{med}}=(89.41-26.82)/(20.0-2.1)=62.59/17.9=3.50\ \text{m/s}^2$.</li>
+    <li>Tramo 3 (20.0 a 53 s): $a_{\text{med}}=(113.10-89.41)/(53-20.0)=23.69/33=0.718\ \text{m/s}^2$.</li>
+    <li>La aceleración media va decreciendo tramo a tramo: en una gráfica $v_x$-$t$, la curva se va "aplanando" — la aceleración no es constante en todo el ensayo.</li>
+  </ol>
+  {{fig:velocidad-del-bugatti-en-cuatro-instantes}}
+
+  <div class="recipe"><b>Receta:</b> la aceleración media entre dos instantes es la pendiente de la cuerda en la gráfica $v_x$-$t$: $\Delta v_x/\Delta t$ en cada tramo por separado, nunca $v/t$ desde el origen si hay tramos intermedios.</div>

@@ -1,0 +1,13 @@
+<p class="enun">Dos cajas, A y B, están en contacto sobre una superficie horizontal <b>sin fricción</b>, con masas $m_A$ y $m_B$. Se aplica una fuerza horizontal $F$ a la caja A, y ambas se mueven juntas hacia la derecha. a) Dibuja el diagrama de cuerpo libre de A y de B por separado, e identifica los pares acción-reacción. b) Si $F$ es menor que el peso total de las dos cajas, ¿se mueven de todos modos? Complemento numérico: con $m_A=20.0$ kg, $m_B=5.0$ kg y $F=250$ N, halla la fuerza de contacto entre las cajas.</p>
+  <ol class="steps">
+    <li><b>DCL de A:</b> la fuerza aplicada $F$, su peso, la normal del suelo, y la fuerza que B ejerce sobre A (hacia la izquierda, "empujando de vuelta" porque A empuja a B hacia delante). <b>DCL de B:</b> su peso, su normal, y la fuerza que A ejerce sobre B (hacia la derecha, la que la empuja).</li>
+    <li>El <b>único</b> par acción-reacción de este problema es $\vec F_{A\text{ sobre }B}=-\vec F_{B\text{ sobre }A}$, entre las dos cajas. El peso y la normal de <i>una misma</i> caja no son un par acción-reacción entre sí (actúan sobre el mismo cuerpo y son de naturaleza distinta) — sus verdaderos pares son con la Tierra y con el suelo respectivamente, que no aparecen dibujados aquí.</li>
+    <li>b) <b>Sí</b>, se mueven para cualquier $F>0$: no hay fricción que se oponga horizontalmente, y el peso (vertical) no compite con $F$ (horizontal) — son ejes independientes, como siempre en dinámica.</li>
+    <li><b>Complemento numérico.</b> Primero el <b>sistema completo</b> (A+B como un solo bloque de masa total): $a=\dfrac{F}{m_A+m_B}=\dfrac{250}{25.0}=10.0\ \text{m/s}^2$.</li>
+    <li>Después se aísla el cuerpo más simple, B, para hallar la fuerza interna: $F_{A\text{ sobre }B}=m_Ba=5.0\times10.0=50$ N.</li>
+    <li>Comprobación aislando A: $F-F_{B\text{ sobre }A}=m_Aa \Rightarrow 250-F_{B\text{ sobre }A}=20.0\times10.0 \Rightarrow F_{B\text{ sobre }A}=50$ N — igual en magnitud a $F_{A\text{ sobre }B}$, exactamente como exige la 3ª ley.</li>
+  </ol>
+  {{fig:dos-cajas-en-contacto-y-sus-fuerzas-horizontales}}
+
+  <div class="recipe"><b>Receta:</b> en un sistema de varios cuerpos que se mueven juntos, halla primero la aceleración común tratando el conjunto como un solo cuerpo (masa total); después aísla el cuerpo más simple para hallar la fuerza de contacto interna.</div>
+  <div class="recipe"><b>Error típico:</b> creer que la fuerza se "transmite entera" a B ($F_{A\text{ sobre }B}=250$ N en vez de 50 N — parte de la fuerza se usa en acelerar a A), o emparejar el peso de una caja con su propia normal como si fueran acción-reacción.</div>

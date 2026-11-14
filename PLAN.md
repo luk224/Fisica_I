@@ -31,7 +31,7 @@ Receta por tema NN (archivo `temas/tema_NN_slug.html`):
 Orden sugerido (de menos a más figuras): hacer 1 tema de prueba y, si el migrador va bien, el resto por bloques.
 - [x] B1. Tema 1 (prueba del migrador con el tema más simple). Migrador corregido: ejercicios sin `id` en el HTML original ya no generan `id="problema 1.10"` (ahora archivo `problema-1-10` y sin atributo id). `test_numerico` acepta decimales con punto o con coma.
   *Pendiente para C11 (redacción, no tocado al migrar):* `problema-1-31` y `problema-1-51` comparan con «el solucionario da…» (viola la regla 8 bis): reescribir dejando solo el valor correcto.
-- [ ] B2. Temas 2-4
+- [x] B2. Temas 2-4 (migrados; `t02-t04.py` creados). Corregida una errata de cálculo en tema 3 X3: x_B = 71,55·4,04 = 289,1 m (decía 288,9; D≈347 m no cambia). El tema 4 no tiene ejercicios de examen real catalogados.
 - [ ] B3. Temas 6-8
 - [ ] B4. Temas 9-11
 - [ ] B5. Temas 12-14

@@ -1,0 +1,11 @@
+<p class="enun">Un satélite artificial se estrella contra la Tierra. Su masa es de 210 kg y la velocidad de impacto contra la superficie es de 311 km/h. Los restos del satélite penetraron hasta una profundidad de 81 cm. Suponiendo que era constante: a) ¿Cuál fue su aceleración durante el choque? b) ¿Qué fuerza ejerció el suelo sobre el satélite durante el choque? c) ¿Durante cuánto tiempo se ejerció la mencionada fuerza? (Considere $g=9.81$ m/s².)</p>
+  <ol class="steps">
+    <li>Convertimos a SI: $v_0=311/3.6=86.39\ \text{m/s}$, $d=0.81$ m. Tomo $+y$ hacia abajo (sentido de la caída), y supongo impacto vertical (el dato de $g$ y "profundidad" lo sugieren).</li>
+    <li>a) Como no conocemos el tiempo, usamos la ecuación 2.13 con $v=0$ al final: $0=v_0^2+2a\,d \Rightarrow |a|=\dfrac{v_0^2}{2d}=\dfrac{86.39^2}{2(0.81)}=4.61\times10^3\ \text{m/s}^2$ (unas 470 veces $g$), dirigida hacia arriba (frenando la caída).</li>
+    <li>b) La pregunta es por la fuerza <b>del suelo</b> $N$, no por la fuerza neta. Sobre el satélite actúan su peso $mg$ (hacia abajo, $+y$) y $N$ (hacia arriba, $-y$). 2ª ley: $mg-N=m(-|a|) \Rightarrow N=m(|a|+g)=210\times(4607+9.81)=9.69\times10^5\ \text{N}$, hacia arriba. (La fuerza <i>neta</i> que produce la deceleración es solo $m|a|=9.67\times10^5$ N; $N$ es mayor porque además tiene que contrarrestar el peso.)</li>
+    <li>c) Con la ecuación 2.14 (no involucra $a$): $d=\tfrac12(v_0+0)t \Rightarrow t=\dfrac{2d}{v_0}=\dfrac{2(0.81)}{86.39}=1.88\times10^{-2}\ \text{s}$ (≈19 ms).</li>
+  </ol>
+  {{fig:satelite-frenado-por-el-suelo}}
+
+  <div class="recipe"><b>Receta:</b> frenado hasta detenerse en una distancia $d$ conocida: primero $|a|=v_0^2/(2d)$ con ec. 2.13; luego el tiempo con $t=2d/v_0$ (ec. 2.14) o con $t=v_0/|a|$ (ec. 2.8). Para la fuerza de contacto en un choque vertical, plantea la 2ª ley completa (incluyendo el peso) para obtener $N$, no confundas $N$ con la fuerza neta $m|a|$. Convierte siempre a SI antes de sustituir.</div>
+  <div class="recipe"><b>Error típico:</b> operar con $v_0$ todavía en km/h, o llamar "fuerza que actúa" a $N=m(|a|+g)$ sin aclarar que es la fuerza del suelo y no la fuerza neta.</div>
