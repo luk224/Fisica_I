@@ -1,0 +1,1714 @@
+{
+ "num": 18,
+ "kick": "Bloque Termodinámica · Tema 18",
+ "titulo": "Propiedades térmicas de la materia",
+ "descripcion": "Cómo se relacionan la <b>presión, el volumen y la temperatura</b> de un gas (la ecuación del gas ideal y la de van der Waals), qué hay detrás a nivel de <b>moléculas</b> (el modelo cinético: la presión son choques y la temperatura es energía cinética media), por qué cada gas necesita una cantidad distinta de calor (<b>capacidades caloríficas</b>), cómo se reparten las rapideces de las moléculas (<b>Maxwell-Boltzmann</b>) y cuándo la materia es sólida, líquida o gas (<b>diagrama de fases</b>). Es la base de los problemas de ciclos termodinámicos de los temas 19 y 20.",
+ "chips": [
+  "Libro oficial: Sears-Zemansky, cap. 18 (pp. 584-617; resumen pp. 607-608; problema práctico p. 608; ejercicios y problemas pp. 610-616)",
+  "Ejercicios de examen: ninguno propio del tema; 3 relacionados de gas ideal (X1-X3, de los temas 19-20)",
+  "Ejercicios: 25 del libro (24 problemas del solucionario + problema práctico) + 8 ejemplos de U",
+  "2 ejemplos interactivos",
+  "⏱ ~8 h de estudio"
+ ],
+ "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
+ "titulo_pagina": "Física I · Tema 18 Propiedades térmicas de la materia",
+ "archivo": "tema_18_propiedades_termicas_materia.html",
+ "examenes_requeridos": [
+  "Examen Septiembre 2024 P-2",
+  "Examen Febrero 2025 (1ª semana) P-2",
+  "Examen Febrero 2025 (2ª semana) P-2"
+ ],
+ "figuras": {
+  "cilindro-con-un-piston-que-contiene-n-moles-de-g": {
+   "w": "340",
+   "h": "170",
+   "label": "Cilindro con un pistón que contiene n moles de gas a temperatura T: el gas empuja las paredes con una presión p y ocupa un volumen V",
+   "pie": "Un gas encerrado queda descrito por cuatro variables de estado: $p$, $V$, $T$ y $n$. La ecuación de estado las relaciona (la presión $p$ es la fuerza por unidad de área que el gas ejerce sobre las paredes).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §18.1, pp. 585-586",
+    "txt": "P"
+   }
+  },
+  "tres-graficas-del-gas-ideal-p-frente-a-v-a-tempe": {
+   "w": "340",
+   "h": "170",
+   "label": "Tres gráficas del gas ideal: p frente a V a temperatura constante (hipérbola), V frente a T a presión constante (recta por el origen) y p frente a T a volumen constante (recta por el origen)",
+   "pie": "Casos particulares de $pV=nRT$: a $T$ constante $p\\propto1/V$; a $p$ constante $V\\propto T$; a $V$ constante $p\\propto T$ (con $T$ en kelvin: las rectas pasan por el origen, el cero absoluto).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §18.1, ec. 18.6, p. 586",
+    "txt": "P"
+   }
+  },
+  "grafica-pv-de-un-mol-de-gas-ideal-con-tres-isote": {
+   "w": "340",
+   "h": "230",
+   "label": "Gráfica pV de un mol de gas ideal con tres isotermas de 200, 300 y 400 kelvin: son hipérbolas y la temperatura crece al alejarse del origen",
+   "pie": "Isotermas de 1 mol de gas ideal: $p=nRT/V$, una hipérbola por cada temperatura; cuanto más lejos del origen, mayor $T$. El punto marca el estado (24,6 L; 1 atm; 300 K).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U fig. 18.6, §18.1 p. 590",
+    "txt": "P"
+   }
+  },
+  "presion-del-aire-en-funcion-de-la-altura-una-exp": {
+   "w": "340",
+   "h": "214",
+   "label": "Presión del aire en función de la altura: una exponencial decreciente con la altura de escala de 8,05 km; en el Everest la presión es 0,33 veces la del nivel del mar",
+   "pie": "Atmósfera isoterma: $p=p_0e^{-Mgy/RT}$ con $T=273{,}15$ K. Cada $RT/Mg=8{,}05$ km la presión se divide por $e$; en la cima del Everest (8,85 km) queda el 33 %.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U ejemplo 18.4 y fig. 18.4, §18.1 pp. 588-589",
+    "txt": "P"
+   }
+  },
+  "isotermas-de-un-mol-de-co2-segun-la-ecuacion-de-": {
+   "w": "340",
+   "h": "236",
+   "label": "Isotermas de un mol de CO2 según la ecuación de van der Waals a 270, 304 (temperatura crítica) y 350 kelvin, junto a la isoterma del gas ideal a 350 kelvin",
+   "pie": "Isotermas de 1 mol de CO$_2$ con la ecuación de van der Waals (18.7), $a=0{,}364$ J·m³/mol² y $b=4{,}27\\times10^{-5}$ m³/mol. Por encima de $T_c\\approx304$ K no hay transición líquido-vapor; por debajo la isoterma se curva (el modelo ya no describe el cambio de fase). La ideal (trazos) a 350 K no tiene límite de volumen mínimo.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U ec. 18.7 y fig. 18.7, §18.1 pp. 589-590 (Tc, pc y Vc, cálculo propio)",
+    "txt": "P"
+   }
+  },
+  "diagrama-pv-esquematico-de-una-sustancia-real-is": {
+   "w": "340",
+   "h": "236",
+   "label": "Diagrama pV esquemático de una sustancia real: isotermas por encima y por debajo de la temperatura crítica y la región donde coexisten líquido y vapor, con un tramo horizontal",
+   "pie": "Gráfica $pV$ de una sustancia real (esquema; trazado con la ecuación de van der Waals en unidades reducidas y la construcción de Maxwell). Por debajo de $T_c$ la isoterma tiene un tramo horizontal: líquido y vapor coexisten a presión constante (presión de vapor). Por encima de $T_c$ no hay cambio de fase.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U fig. 18.7, §18.1 p. 590 y §18.6 pp. 604-606",
+    "txt": "P"
+   }
+  },
+  "energia-potencial-de-interaccion-entre-dos-molec": {
+   "w": "340",
+   "h": "226",
+   "label": "Energía potencial de interacción entre dos moléculas en función de la distancia: pozo con mínimo de profundidad U0 en la distancia de equilibrio r0; repulsión a distancias menores y atracción a mayores",
+   "pie": "Energía potencial entre dos moléculas: mínimo en la separación de equilibrio $r_0$ (fuerza nula), repulsión fuerte si se acercan y atracción débil si se separan. $|U_0|$ es la profundidad del «pozo».",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U fig. 18.8, §18.2 p. 591",
+    "txt": "P"
+   }
+  },
+  "molecula-que-rebota-entre-dos-paredes-de-una-caj": {
+   "w": "340",
+   "h": "168",
+   "label": "Molécula que rebota entre dos paredes de una caja de longitud L: en cada choque elástico con una pared invierte su velocidad vx",
+   "pie": "Deducción de la presión: una molécula que choca elásticamente contra una pared invierte $v_x$ y cambia su cantidad de movimiento en $\\Delta p=2mv_x$; vuelve a la misma pared cada $\\Delta t=2L/v_x$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U fig. 18.11, §18.3 pp. 593-594",
+    "txt": "P"
+   }
+  },
+  "velocidad-de-una-molecula-con-componentes-vx-vy-": {
+   "w": "340",
+   "h": "196",
+   "label": "Velocidad de una molécula con componentes vx, vy y vz: el cuadrado de la rapidez es la suma de los cuadrados y, por simetría, el promedio de vx al cuadrado es un tercio del promedio de v al cuadrado",
+   "pie": "Las moléculas se mueven en las tres direcciones por igual: $v^2=v_x^2+v_y^2+v_z^2$, y en promedio $(v_x^2)_{med}=\\tfrac13(v^2)_{med}$. De ahí sale el factor $\\tfrac23$ en (18.12).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §18.3, ec. 18.11-18.12, p. 594",
+    "txt": "P"
+   }
+  },
+  "rapidez-eficaz-en-funcion-de-la-temperatura-para": {
+   "w": "340",
+   "h": "232",
+   "label": "Rapidez eficaz en función de la temperatura para hidrógeno, helio, nitrógeno y dióxido de carbono: crece como la raíz de T y es mayor cuanto más ligera es la molécula",
+   "pie": "$v_{rms}=\\sqrt{3RT/M}$: crece como $\\sqrt T$ y, a igual $T$, es mayor para la molécula más ligera (los puntos son los valores a 300 K).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U ec. 18.19, §18.3 p. 596",
+    "txt": "P"
+   }
+  },
+  "una-molecula-en-zigzag-entre-otras-cada-tramo-re": {
+   "w": "340",
+   "h": "198",
+   "label": "Una molécula en zigzag entre otras: cada tramo recto hasta un choque tiene una longitud del orden de la trayectoria libre media lambda",
+   "pie": "Trayectoria libre media $\\lambda$: distancia media que recorre una molécula entre dos choques; hay choque cuando los centros distan menos de $2r$ (dibujo no a escala: en aire, $\\lambda\\approx 58$ nm $\\approx 290\\,r$).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §18.3, ec. 18.20-18.22, p. 598",
+    "txt": "P"
+   }
+  },
+  "atomo-unico-con-tres-grados-de-libertad-de-trasl": {
+   "w": "340",
+   "h": "198",
+   "label": "Átomo único con tres grados de libertad de traslación y molécula diatómica con tres de traslación y dos de rotación",
+   "pie": "Equipartición: cada grado de libertad cuadrático aporta en promedio $\\tfrac12kT$ por molécula. Monoatómica: 3 (traslación) $\\Rightarrow C_V=\\tfrac32R$. Diatómica: 3 + 2 (rotación; la rotación alrededor del eje de la molécula no cuenta) $\\Rightarrow C_V=\\tfrac52R$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §18.4, pp. 599-601 y fig. 18.18",
+    "txt": "P"
+   }
+  },
+  "capacidades-calorificas-molares-medidas-de-he-h2": {
+   "w": "340",
+   "h": "232",
+   "label": "Capacidades caloríficas molares medidas de He, H2, N2, O2, CO y CO2 comparadas con los valores teóricos 3R/2 y 5R/2",
+   "pie": "Valores medidos de $C_V$ (tabla 18.1, temperatura ambiente): el helio (monoatómico) coincide con $\\tfrac32R$ y los diatómicos con $\\tfrac52R$; el CO$_2$ (triatómica) tiene más grados de libertad.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U tabla 18.1, §18.4 p. 600",
+    "txt": "P"
+   }
+  },
+  "distribucion-de-maxwell-boltzmann-en-unidades-de": {
+   "w": "340",
+   "h": "232",
+   "label": "Distribución de Maxwell-Boltzmann en unidades de la rapidez más probable: el máximo está en v mp, la media en 1,128 v mp y la eficaz en 1,225 v mp",
+   "pie": "Distribución de Maxwell-Boltzmann en unidades de $v_{mp}=\\sqrt{2kT/m}$: $v_{mp}&lt;v_{med}&lt;v_{rms}$, con $v_{med}=\\sqrt{8kT/\\pi m}=1{,}128\\,v_{mp}$ y $v_{rms}=\\sqrt{3kT/m}=1{,}225\\,v_{mp}$; la «cola» hacia rapideces altas desplaza la media.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U fig. 18.23 y ec. 18.34-18.36, §18.5 pp. 603-604",
+    "txt": "P"
+   }
+  },
+  "diagrama-de-fases-presion-frente-a-temperatura-d": {
+   "w": "340",
+   "h": "244",
+   "label": "Diagrama de fases presión frente a temperatura del agua en esquema: curvas de fusión, vaporización y sublimación que se unen en el punto triple, y la curva de vaporización termina en el punto crítico",
+   "pie": "Diagrama de fases $pT$ del agua (esquema, ejes no a escala): las tres curvas se juntan en el punto triple (273,16 K; 610 Pa) y la de vaporización acaba en el punto crítico (647,4 K; 221,2×10$^5$ Pa). En el agua la curva de fusión se inclina hacia la izquierda. Con 600 Pa (menos que la presión del punto triple) no puede existir agua líquida: es la atmósfera de Marte.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U fig. 18.24, §18.6 pp. 604-606 y evalúe su comprensión 18.6, p. 607",
+    "txt": "P"
+   }
+  },
+  "diagrama-pv-del-ciclo-con-helio-isocora-de-a-a-b": {
+   "w": "340",
+   "h": "232",
+   "label": "Diagrama pV del ciclo con helio: isócora de a a b hacia arriba, isoterma de b a c y isóbara de c a a, recorrido en sentido horario; el área encerrada es el trabajo neto de 2544 julios",
+   "pie": "Ejercicio X1: estados a (0,01787 m³; $1{,}5\\times10^5$ Pa), b ($4\\times10^5$ Pa) y c (0,04766 m³); el área encerrada es el trabajo neto, 2544 J (ciclo horario: máquina térmica).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Septiembre 2024 P-2 (ejercicio relacionado)",
+    "txt": "P"
+   }
+  },
+  "diagrama-pv-del-refrigerador-isoterma-de-a-a-b-i": {
+   "w": "340",
+   "h": "232",
+   "label": "Diagrama pV del refrigerador: isoterma de a a b, isócora de b a c hacia arriba e isóbara de c a a, recorrido en sentido antihorario; el trabajo neto es negativo, menos 2372 julios",
+   "pie": "Ejercicio X2: a (0,03 m³; 70 kPa), b (0,1 m³; 21 kPa) y c (0,1 m³; 70 kPa). El ciclo es antihorario ($W&lt;0$: lo recibe el gas), un refrigerador con $K=6{,}23$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2025 (1ª semana) P-2 (ejercicio relacionado)",
+    "txt": "P"
+   }
+  },
+  "diagrama-pv-del-ciclo-triangular-isobara-de-a-a-": {
+   "w": "340",
+   "h": "232",
+   "label": "Diagrama pV del ciclo triangular: isóbara de a a b, isócora de b a c hacia abajo y una recta de c a a; sentido horario con trabajo neto de 27 kilojulios y un punto de la recta donde el calor cambia de signo",
+   "pie": "Ejercicio X3: a (0,55 m³; $4\\times10^5$ Pa), b (0,82 m³; $4\\times10^5$ Pa), c (0,82 m³; $2\\times10^5$ Pa). El triángulo encerrado es el trabajo neto, 27 kJ; en $V^*=0{,}681$ m³ el calor pasa de entrar a salir.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2025 (2ª semana) P-2 (ejercicio relacionado)",
+    "txt": "P"
+   }
+  },
+  "grafica-pv-con-la-hiperbola-de-la-expansion-isot": {
+   "w": "340",
+   "h": "214",
+   "label": "Gráfica pV con la hipérbola de la expansión isotérmica del aire desde 0,110 metros cúbicos y 0,355 atmósferas hasta 0,390 metros cúbicos y 0,100 atmósferas",
+   "pie": "Problema 18.3: expansión isotérmica; el volumen se multiplica por 3,55 y la presión se divide por 3,55.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.3, U p. 610",
+    "txt": "P"
+   }
+  },
+  "volumen-frente-a-temperatura-absoluta-a-presion-": {
+   "w": "340",
+   "h": "214",
+   "label": "Volumen frente a temperatura absoluta a presión constante: recta por el origen con los puntos del globo, 0,600 litros a 292 kelvin y 0,159 litros a 77,3 kelvin",
+   "pie": "Problema 18.11: a presión constante $V\\propto T$ (kelvin). Al enfriar de 292 K a 77,3 K el globo pasa de 0,600 L a 0,159 L.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.11, U p. 610",
+    "txt": "P"
+   }
+  },
+  "burbuja-de-aire-en-el-fondo-de-un-lago-y-en-la-s": {
+   "w": "340",
+   "h": "192",
+   "label": "Burbuja de aire en el fondo de un lago y en la superficie: sube y su volumen se multiplica por 3,74",
+   "pie": "Problema 18.14: al subir, la presión baja de 3,50 a 1,00 atm y la temperatura sube de 4 °C a 23 °C: el volumen de la burbuja se multiplica por 3,74 (el radio por 1,55; no a escala).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.14, U p. 610",
+    "txt": "P"
+   }
+  },
+  "grafica-pv-con-dos-isotermas-de-nitrogeno-300-y-": {
+   "w": "340",
+   "h": "224",
+   "label": "Gráfica pV con dos isotermas de nitrógeno, 300 y 430 kelvin, y los estados inicial 0,750 metros cúbicos y 7,50 kilopascales y final 0,410 metros cúbicos y 19,7 kilopascales",
+   "pie": "Problema 18.9: comprimir (flecha hacia la izquierda) y calentar a la vez: el estado 2 está en una isoterma más alta y a menor volumen; la presión se multiplica por 2,62.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.9, U p. 610",
+    "txt": "P"
+   }
+  },
+  "dos-cubos-a-escala-de-volumen-el-mismo-gas-ocupa": {
+   "w": "340",
+   "h": "222",
+   "label": "Dos cubos a escala de volumen: el mismo gas ocupa un volumen V en la Tierra a 273 kelvin y 1 atmósfera y solo 0,0508 V en Venus a 1276 kelvin y 92 atmósferas",
+   "pie": "Problema 18.13: la misma cantidad de gas en Venus ocupa solo el 5 % del volumen que en la Tierra: la presión (÷92) gana a la temperatura (×4,7).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.13, U p. 610",
+    "txt": "P"
+   }
+  },
+  "dos-globos-identicos-de-0-900-litros-uno-con-air": {
+   "w": "340",
+   "h": "190",
+   "label": "Dos globos idénticos de 0,900 litros, uno con aire y otro con helio: tienen el mismo número de moléculas pero la masa del aire es 7,2 veces mayor",
+   "pie": "Problema 18.6: a igual $p$, $V$ y $T$ hay el mismo número de moléculas ($2{,}24\\times10^{22}$) sea cual sea el gas; la masa depende de la masa molar (esquema, no a escala).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.6, U p. 610",
+    "txt": "P"
+   }
+  },
+  "barras-en-escala-logaritmica-con-las-densidades-": {
+   "w": "340",
+   "h": "200",
+   "label": "Barras en escala logarítmica con las densidades de las atmósferas: Marte 0,0136, Tierra 1,20, Titán 5,38 y Venus 67,6 kilogramos por metro cúbico",
+   "pie": "Problema 18.5: $\\rho=pM/RT$. La escala es logarítmica: Venus (alta $p$) es 56 veces más densa que la Tierra, Titán (muy fría) 4,5 veces y Marte 0,011 veces.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.5, U p. 610",
+    "txt": "P"
+   }
+  },
+  "presion-relativa-del-aire-frente-a-la-altura-ent": {
+   "w": "340",
+   "h": "214",
+   "label": "Presión relativa del aire frente a la altura entre 0 y 3 kilómetros: cae al 90 % a 848 metros",
+   "pie": "Problema 18.17: con $RT/Mg=8046$ m, $p/p_0=0{,}90$ a $y=-8046\\ln0{,}90=848$ m.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.17, U p. 610",
+    "txt": "P"
+   }
+  },
+  "barra-con-la-masa-inicial-de-propano-0-285-kilog": {
+   "w": "340",
+   "h": "168",
+   "label": "Barra con la masa inicial de propano 0,285 kilogramos dividida en 0,0897 que quedan y 0,195 que se han usado",
+   "pie": "Problema 18.51: con $V$ y $T$ constantes la masa es proporcional a la presión absoluta; de los 0,285 kg iniciales se usan 0,195 kg.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.51, U p. 613",
+    "txt": "P"
+   }
+  },
+  "cadena-de-conversion-masa-de-1-kilogramo-dividid": {
+   "w": "340",
+   "h": "132",
+   "label": "Cadena de conversión: masa de 1 kilogramo, dividida entre la masa molar da 55,6 moles, multiplicada por el número de Avogadro da 3,35 por diez a la 25 moléculas",
+   "pie": "Problema 18.21: masa $\\to$ (÷$M$) moles $\\to$ (×$N_A$) moléculas.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.21, U p. 611",
+    "txt": "P"
+   }
+  },
+  "dos-cubos-de-1-centimetro-cubico-en-el-vacio-hay": {
+   "w": "340",
+   "h": "202",
+   "label": "Dos cubos de 1 centímetro cúbico: en el vacío hay 2,20 por diez a la 6 moléculas y a presión atmosférica 2,45 por diez a la 19",
+   "pie": "Problema 18.23: a $V$ y $T$ fijos, $N\\propto p$. Incluso en el mejor vacío quedan millones de moléculas por cm$^3$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.23, U p. 611",
+    "txt": "P"
+   }
+  },
+  "rejilla-de-cubos-de-3-45-nanometros-de-arista-co": {
+   "w": "340",
+   "h": "238",
+   "label": "Rejilla de cubos de 3,45 nanómetros de arista con una molécula de unos 0,4 nanómetros en el centro de cada uno: casi todo es vacío",
+   "pie": "Problema 18.26: cada molécula dispone de un cubo de arista $l=(kT/p)^{1/3}=3{,}45$ nm; la molécula (~0,4 nm, a escala) es ~9 veces menor: casi todo es espacio vacío.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.26, U p. 611",
+    "txt": "P"
+   }
+  },
+  "particula-de-humo-grande-con-una-trayectoria-que": {
+   "w": "340",
+   "h": "210",
+   "label": "Partícula de humo grande con una trayectoria quebrada rodeada de moléculas de aire pequeñas con flechas: movimiento browniano",
+   "pie": "Problema 18.36: la partícula de humo, golpeada al azar, sigue un camino quebrado; en equilibrio tiene la misma energía cinética media $\\tfrac32kT$ que una molécula, pero su $v_{rms}$ es 80 000 veces menor (esquema).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.36, U p. 612",
+    "txt": "P"
+   }
+  },
+  "molecula-de-oxigeno-que-rebota-entre-dos-caras-d": {
+   "w": "340",
+   "h": "202",
+   "label": "Molécula de oxígeno que rebota entre dos caras de un cubo de 0,10 metros con la rapidez eficaz de 484 metros por segundo: cambia su momento lineal en 5,14 por diez a la menos 23 en cada choque",
+   "pie": "Problema 18.33: una molécula con $v_{rms}$ que rebota entre dos paredes separadas $L$ empuja cada una con $F=mv^2/L=1{,}24\\times10^{-19}$ N.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.33, U pp. 611-612",
+    "txt": "P"
+   }
+  },
+  "dos-distribuciones-de-maxwell-boltzmann-a-283-ke": {
+   "w": "340",
+   "h": "232",
+   "label": "Dos distribuciones de Maxwell-Boltzmann a 283 kelvin: la del gas ligero A es ancha y la del pesado B estrecha; la de B calentado a 4527 kelvin coincide con la de A",
+   "pie": "Problema 18.63: misma $T$ ⇒ misma energía cinética media, pero la molécula ligera A va más deprisa. Con $T_B=T_Am_B/m_A=4527$ K la curva de B se superpone a la de A (misma $v_{rms}$ y misma forma).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.63, U p. 614",
+    "txt": "P"
+   }
+  },
+  "barras-con-el-reparto-de-300-julios-de-calor-en-": {
+   "w": "340",
+   "h": "162",
+   "label": "Barras con el reparto de 300 julios de calor: en hidrógeno 180 de traslación y 120 de rotación, en neón los 300 de traslación; el neón se calienta más",
+   "pie": "Problema 18.38: con los mismos 300 J, el H$_2$ reparte la energía en 3/5 traslación y 2/5 rotación (sube 2,50 K); el Ne la dedica toda a traslación (sube 4,17 K).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.38, U p. 612",
+    "txt": "P"
+   }
+  },
+  "distribucion-de-maxwell-boltzmann-del-dioxido-de": {
+   "w": "340",
+   "h": "232",
+   "label": "Distribución de Maxwell-Boltzmann del dióxido de carbono a 300 kelvin con tres marcas: rapidez más probable 337, media 380 y eficaz 412 metros por segundo",
+   "pie": "Problema 18.41: $v_{mp}=337$, $v_{med}=380$ y $v_{rms}=412$ m/s para el CO$_2$ a 300 K; el máximo de la curva es $v_{mp}$ y la cola hacia la derecha empuja la media y la eficaz.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.41, U p. 612",
+    "txt": "P"
+   }
+  },
+  "barra-de-la-presion-atmosferica-de-101-3-kilopas": {
+   "w": "340",
+   "h": "174",
+   "label": "Barra de la presión atmosférica de 101,3 kilopascales con una franja estrecha que representa la presión parcial del vapor de agua de 1,40 kilopascales",
+   "pie": "Problema 18.44: el vapor de agua aporta solo el 1,4 % de la presión del aire (a escala); aun así hay 10,4 g de agua en cada m$^3$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.44, U p. 612",
+    "txt": "P"
+   }
+  },
+  "diagrama-de-fuerzas-del-globo-de-aire-caliente-e": {
+   "w": "340",
+   "h": "270",
+   "label": "Diagrama de fuerzas del globo de aire caliente: empuje hacia arriba de 6027 newtons, peso del aire caliente de 3185 newtons y peso de la carga de 2842 newtons hacia abajo",
+   "pie": "Problema 18.49: $B=\\rho_{frío}Vg=6027$ N equilibra el peso del aire caliente ($\\rho_{cal}Vg=3185$ N) y el de la carga (2842 N).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.49, U p. 612",
+    "txt": "P"
+   }
+  },
+  "diagrama-de-fuerzas-de-la-esfera-ligera-colgada-": {
+   "w": "340",
+   "h": "218",
+   "label": "Diagrama de fuerzas de la esfera ligera colgada de un hilo: tensión de 0,0604 newtons y empuje de 0,0278 hacia arriba y peso de 0,0882 hacia abajo",
+   "pie": "Problema 18.60: tensión $F=0{,}0604$ N y empuje $B=0{,}0278$ N hacia arriba equilibran el peso $mg=0{,}0882$ N (flechas a la misma escala).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.60, U p. 613",
+    "txt": "P"
+   }
+  },
+  "diagrama-de-fuerzas-del-globo-de-hidrogeno-empuj": {
+   "w": "340",
+   "h": "270",
+   "label": "Diagrama de fuerzas del globo de hidrógeno: empuje de 9040 newtons hacia arriba, peso del gas de 626 newtons y peso de la carga de 8415 newtons hacia abajo",
+   "pie": "Problema 18.57: $B=\\rho_{aire}Vg=9040$ N sostiene el gas (626 N) y una carga de 8415 N; con helio la carga baja a 7801 N.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.57, U p. 613",
+    "txt": "P"
+   }
+  },
+  "campana-de-inmersion-cilindrica-de-2-30-metros-d": {
+   "w": "340",
+   "h": "208",
+   "label": "Campana de inmersión cilíndrica de 2,30 metros de altura: en la superficie está llena de aire y en el fondo a 73 metros el agua ha subido 2,04 metros dejando 0,26 metros de aire",
+   "pie": "Problema 18.52: al bajar a 73,0 m la presión del aire sube de 1,013×10$^5$ a 8,38×10$^5$ Pa y la columna de aire pasa de 2,30 m a 0,26 m (no a escala vertical exacta).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.52, U p. 613",
+    "txt": "P"
+   }
+  },
+  "tanque-cerrado-de-4-00-metros-de-altura-con-agua": {
+   "w": "340",
+   "h": "198",
+   "label": "Tanque cerrado de 4,00 metros de altura con agua hasta una altura h y aire comprimido arriba; una manguera a 1,00 metro del fondo deja salir el agua con rapidez v2",
+   "pie": "Problema 18.59: la presión del aire, $p=2{,}10\\times10^5\\text{ Pa·m}/(4-h)$, baja al vaciarse el tanque (Boyle) y con ella la rapidez de salida.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.59, U p. 613",
+    "txt": "P"
+   }
+  },
+  "rapidez-de-salida-del-agua-frente-a-la-altura-de": {
+   "w": "340",
+   "h": "214",
+   "label": "Rapidez de salida del agua frente a la altura del agua en el tanque: 26,2 metros por segundo a 3,50 metros, 16,1 a 3,00, 5,44 a 2,00 y cero a 1,74 metros",
+   "pie": "Problema 18.59: la rapidez de salida cae de 26,2 m/s ($h=3{,}50$ m) a 0 en $h=1{,}74$ m, cuando la presión del aire más la del agua sobre la salida iguala la atmosférica.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 18.59, U p. 613",
+    "txt": "P"
+   }
+  },
+  "distribucion-de-maxwell-boltzmann-del-nitrogeno-": {
+   "w": "340",
+   "h": "214",
+   "label": "Distribución de Maxwell-Boltzmann del nitrógeno a 298 kelvin con la rapidez eficaz de 515 metros por segundo y la rapidez de escape de Europa de 2025 metros por segundo muy lejos en la cola",
+   "pie": "Problema práctico: $v_{rms}=515$ m/s ($h_{max}=102$ km); la rapidez de escape (2025 m/s) está en la «cola» de la distribución: solo una fracción $5\\times10^{-10}$ de las moléculas la supera (la marca de $v_{esc}$ no está a escala vertical).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema práctico, U p. 608",
+    "txt": "P"
+   }
+  }
+ },
+ "bloques": [
+  {
+   "t": "h2",
+   "id": "prereq",
+   "n": "0",
+   "titulo": "Antes de empezar",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U cap. 18, portadilla e introducción, p. 584",
+    "txt": "U p.584"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte01.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte02.html"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Qué ha caído en examen: este tema no tiene ejercicio de examen propio",
+   "html": [
+    "<p><b>En las convocatorias catalogadas no hay ningún ejercicio de examen cuyo tema principal sea el Tema 18</b> (ni problema ni pregunta de teoría): no se simula ninguno. Sin embargo, <b>la ecuación del gas ideal es la herramienta de arranque de todos los problemas de ciclos termodinámicos</b> (temas 19 y 20), y tres problemas reales de esos temas empiezan por un trabajo puro de este tema: hallar la presión, el volumen y la temperatura de cada estado con $pV=nRT$ y usar $C_V=\\tfrac32R$ o $\\tfrac52R$. Aquí se resuelven <b>solo como práctica relacionada</b> (primeros pasos de gas ideal; el calor, el trabajo y el rendimiento llegan con los temas 19 y 20) y se identifican con su convocatoria.</p>",
+    "  <table>",
+    "    <tr><th>Convocatoria y pregunta</th><th>De qué va (resumen)</th><th>Dónde en este resumen</th></tr>",
+    "    <tr><td>Examen Septiembre 2024 P-2</td><td>Ciclo con 1,5 mol de helio: isócora, isoterma e isóbara; $T_{max}=573{,}2$ K</td><td>§8.1, ejercicio X1</td></tr>",
+    "    <tr><td>Examen Febrero 2025 (1ª semana) P-2</td><td>Refrigerador con 1 mol de gas diatómico: isoterma, isócora, isóbara</td><td>§8.1, ejercicio X2</td></tr>",
+    "    <tr><td>Examen Febrero 2025 (2ª semana) P-2</td><td>Ciclo de gas monoatómico: isóbara, isócora y una recta</td><td>§8.1, ejercicio X3</td></tr>",
+    "  </table>"
+   ],
+   "src": {
+    "l": "X",
+    "ref": "Examen Septiembre 2024 P-2; Examen Febrero 2025 (1ª semana) P-2; Examen Febrero 2025 (2ª semana) P-2 (catalogados en los temas 19 y 20; ejercicios relacionados con el tema 18)",
+    "txt": "X"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "La receta maestra del tema: ¿qué te piden?",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Un solo estado del gas</b> (te dan $p$, $V$, $T$ y piden $n$, $m$ o la cuarta variable): usa <b>$pV=nRT$</b> (con $n=m/M$ si te dan la masa). <b>Dos estados de la misma cantidad de gas</b>: usa <b>$p_1V_1/T_1=p_2V_2/T_2$</b> (no hace falta $R$).</li>",
+    "    <li><b>Siempre presión absoluta y temperatura en kelvin</b>, también dentro de cocientes ($T_K=T_C+273{,}15$; $p_{abs}=p_{man}+p_{atm}$).</li>",
+    "    <li><b>Si cambia la cantidad de gas</b> (se escapa, se bombea), no vale (18.6): calcula $n$ o $m$ en cada estado con $pV=nRT$ y resta.</li>",
+    "    <li><b>Si preguntan por moléculas</b> (energía, rapidez, número, distancia): pasa a «por molécula» ($m$, $N$, $k$) o a «por mol» ($M$, $n$, $R$) y <b>no mezcles</b> las dos formas: $k=R/N_A$, $M=N_Am$.</li>",
+    "    <li><b>Energía por molécula:</b> $\\tfrac12m(v^2)_{med}=\\tfrac32kT$; <b>rapidez eficaz</b> $v_{rms}=\\sqrt{3kT/m}=\\sqrt{3RT/M}$ (con $M$ en kg/mol).</li>",
+    "    <li><b>Calor a volumen constante:</b> $Q=nC_V\\Delta T$ con $C_V=\\tfrac32R$ (monoatómico) o $\\tfrac52R$ (diatómico).</li>",
+    "    <li><b>Unidades:</b> $R=8{,}314$ J/(mol·K) con SI (Pa, m³, kg/mol); $R=0{,}08206$ L·atm/(mol·K) si trabajas en litros y atmósferas.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Receta propia que resume U cap. 18, Estrategias 18.1 y 18.2, pp. 587 y 596",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s1",
+   "n": "1",
+   "titulo": "Ecuaciones de estado",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §18.1, pp. 585-590",
+    "txt": "U p.585-590"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Imagina que quieres «describir» un gas encerrado en un cilindro. Con cuatro datos basta: <b>cuánto hay</b> (el número de moles $n$), <b>cuánto espacio ocupa</b> (volumen $V$), <b>cuánto empuja las paredes</b> (presión $p$) y <b>qué tan caliente está</b> (temperatura $T$). Estas magnitudes se llaman <b>variables de estado</b>. Lo importante es que <b>no son independientes</b>: si fijas tres, la cuarta queda determinada, y no puedes cambiar una (por ejemplo, comprimir el gas) sin que cambie otra (se calienta o sube la presión). Esa relación se llama <b>ecuación de estado</b>: es como la «ficha técnica» del material.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §18.1, p. 585",
+    "txt": "U p.585"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Ecuación de estado",
+   "html": [
+    "<p>Una <b>ecuación de estado</b> relaciona la presión $p$, el volumen $V$, la temperatura absoluta $T$ y la cantidad de sustancia $n$ de un material. Solo vale para <b>estados de equilibrio</b> (con $p$ y $T$ uniformes en todo el sistema). Cada sustancia tiene la suya, y la más sencilla es la del gas ideal. Para un <b>sólido o líquido</b> basta una aproximación (la expansión térmica del tema 17 más la compresibilidad):",
+    "  $$V=V_0\\,[\\,1+\\beta\\,(T-T_0)-\\kappa\\,(p-p_0)\\,]\\qquad(18.1)$$",
+    "  donde $\\beta$ es el coeficiente de expansión de volumen y $\\kappa$ la compresibilidad (se reduce el volumen al aumentar la presión).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.1, ec. 18.1, p. 585",
+    "txt": "U p.585"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "cilindro-con-un-piston-que-contiene-n-moles-de-g"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Masa molar",
+   "html": [
+    "<p>La <b>masa molar</b> $M$ de una sustancia es la masa de un mol (se mide en kg/mol; las tablas suelen darla en g/mol: agua 18,0 g/mol, nitrógeno 28,0, oxígeno 32,0, helio 4,00). La masa total de $n$ moles es",
+    "  $$m_{total}=nM\\qquad(18.2)$$</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.1, ec. 18.2, p. 585",
+    "txt": "U p.585"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Ecuación del gas ideal",
+   "html": [
+    "<p>$$pV=nRT\\qquad(18.3)$$",
+    "  con $p$ la presión <b>absoluta</b>, $T$ la temperatura <b>absoluta (kelvin)</b> y $R$ la <b>constante de los gases</b> (la misma para todos los gases):",
+    "  $$R=8{,}314\\ \\text{J/(mol·K)}=0{,}08206\\ \\text{L·atm/(mol·K)}$$",
+    "  El <b>gas ideal</b> es aquel para el cual (18.3) se cumple con precisión para todas las presiones y temperaturas. Los gases reales se le parecen mucho cuando están diluidos (baja presión y temperatura lejos de la de condensación).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.1, ec. 18.3, p. 586",
+    "txt": "U p.586"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Cómo leer $pV=nRT$",
+   "html": "<p>Cuatro lecturas cotidianas: (a) <b>$T$ fija</b>: si reduces el volumen a la mitad, la presión se duplica (la jeringa tapada). (b) <b>$p$ fija</b>: al calentar, el volumen crece en proporción (el globo al sol). (c) <b>$V$ fija</b>: al calentar, la presión sube en proporción (la olla cerrada, la rueda tras un viaje largo). (d) <b>$p$, $V$, $T$ fijos</b>: el número de moléculas es el mismo para cualquier gas (un mol ocupa unos 22,4 L en condiciones estándar). Las tres primeras son las «leyes» históricas de Boyle, Charles y Gay-Lussac; todas salen de (18.3).</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia de U §18.1, ec. 18.3 y 18.6, p. 586",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "tres-graficas-del-gas-ideal-p-frente-a-v-a-tempe"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Otras formas útiles: masa, densidad y dos estados",
+   "html": [
+    "<p>Con $n=m_{total}/M$:",
+    "  $$pV=\\frac{m_{total}}{M}RT\\qquad(18.4)\\qquad\\qquad \\rho=\\frac{m_{total}}{V}=\\frac{pM}{RT}\\qquad(18.5)$$",
+    "  y, para <b>la misma cantidad de gas</b> en dos estados distintos ($nR$ constante):",
+    "  $$\\frac{p_1V_1}{T_1}=\\frac{p_2V_2}{T_2}\\qquad(18.6)$$",
+    "  Para usar (18.6) <b>no necesitas el valor de $R$</b>, ni siquiera las unidades concretas de $p$ y $V$ (basta que sean las mismas en los dos miembros), pero sí la <b>$T$ en kelvin</b> y la $p$ absoluta.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.1, ec. 18.4-18.6, p. 586",
+    "txt": "U p.586"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico: presión manométrica y grados Celsius",
+   "html": "<p>En $pV=nRT$ la $p$ es la <b>absoluta</b> (la manométrica es $p-p_{atm}$) y la $T$ es la <b>absoluta</b>, incluso en los cocientes de (18.6): usar 27 °C en lugar de 300 K es el error más frecuente del tema (y da resultados absurdos: un globo que se agranda al enfriarlo). Y no olvides que 1 atm $=1{,}013\\times10^5$ Pa y 1 L $=10^{-3}$ m³.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §18.1, «Errores comunes», p. 587",
+    "txt": "U p.587"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Estrategia 18.1 de U: problemas con gases ideales",
+   "html": "<p><b>Identificar:</b> ¿hay un solo estado del sistema (usa (18.3)) o dos estados de la misma cantidad de gas (usa (18.6))? <b>Plantear:</b> lista $p$, $V$, $T$, $n$ (o $m$) conocidos y desconocidos; pasa a presión absoluta y kelvin. <b>Ejecutar:</b> despeja y calcula (si usas (18.3), $R$ en las unidades que correspondan). <b>Evaluar:</b> comprueba que el resultado es razonable: ¿más volumen ⇒ menos presión?, ¿más temperatura ⇒ más presión o volumen?</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia 18.1, p. 587",
+    "txt": "U p.587"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "grafica-pv-de-un-mol-de-gas-ideal-con-tres-isote"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto 18.1: volumen de un mol a temperatura y presión estándar",
+   "html": [
+    "<p>¿Qué volumen ocupa un mol de gas ideal a TPE (temperatura y presión estándar): $T=273{,}15$ K ($0$ °C) y $p=1{,}013\\times10^5$ Pa (1 atm)?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Un solo estado:</b> (18.3) $\\Rightarrow V=nRT/p$.</li>",
+    "    <li>$V=\\dfrac{(1)(8{,}314)(273{,}15)}{1{,}013\\times10^5}=\\mathbf{0{,}0224\\ m^3=22{,}4\\ L}$.</li>",
+    "    <li>Comprobación: con $R=0{,}08206$ L·atm/(mol·K): $V=(0{,}08206)(273{,}15)/1=22{,}4$ L ✓. Un mol de <b>cualquier</b> gas ideal ocupa 22,4 L a TPE.</li>",
+    "  </ol>",
+    "  <div class=\"recipe\"><b>Receta:</b> un estado ⇒ $V=nRT/p$ con todo en SI (o con $R=0{,}08206$ si usas L y atm).</div>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 18.1, p. 587",
+    "txt": "U p.587"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto 18.2: compresión en un motor de gasolina",
+   "html": [
+    "<p>En un motor la razón de compresión es 9,00 a 1: el volumen se reduce a $1/9$. La mezcla aire-combustible entra a $p_1=1{,}00$ atm y $T_1=27$ °C y, tras comprimirla, está a $p_2=21{,}7$ atm. ¿Qué temperatura tiene al final?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Dos estados de la misma cantidad de gas</b> (los dos valores de $V$ están en razón $V_1/V_2=9{,}00$): (18.6) $\\Rightarrow T_2=T_1\\,\\dfrac{p_2}{p_1}\\,\\dfrac{V_2}{V_1}$.</li>",
+    "    <li>Kelvin: $T_1=27+273=300$ K.</li>",
+    "    <li>$T_2=(300\\ \\text{K})\\,\\dfrac{21{,}7}{1{,}00}\\cdot\\dfrac{1}{9{,}00}=\\mathbf{723\\ K}=\\mathbf{450\\ ^\\circ C}$.</li>",
+    "    <li>Lectura: comprimir el gas rápidamente lo calienta mucho (en un diésel, tanto que la mezcla se enciende sola).</li>",
+    "  </ol>",
+    "  <div class=\"recipe\"><b>Receta:</b> «razón de compresión» es la razón de volúmenes; cada cociente de (18.6) se aplica por separado (volumen, presión, temperatura).</div>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 18.2, p. 588",
+    "txt": "U p.588"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto 18.3: masa de aire en un tanque de buceo",
+   "html": [
+    "<p>Un tanque de buceo de 11,0 L contiene al principio aire a 21 °C y 1 atm (aire de la habitación). Se llena hasta una presión manométrica de $2{,}10\\times10^7$ Pa, y el aire queda a 42 °C. ¿Cuánto aire (masa) se ha añadido? Masa molar media del aire: 28,8 g/mol.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Aquí cambia la cantidad de gas</b>, así que (18.6) no sirve: se calcula $n$ en cada estado con (18.3) y se resta.</li>",
+    "    <li><b>Presiones absolutas y kelvin:</b> $V=0{,}0110$ m³; estado 1: $p_1=1{,}013\\times10^5$ Pa, $T_1=294$ K; estado 2: $p_2=2{,}10\\times10^7+1{,}013\\times10^5=2{,}11\\times10^7$ Pa, $T_2=315$ K.</li>",
+    "    <li>$n_1=\\dfrac{p_1V}{RT_1}=\\dfrac{(1{,}013\\times10^5)(0{,}0110)}{(8{,}314)(294)}=0{,}46$ mol; $\\ n_2=\\dfrac{p_2V}{RT_2}=\\dfrac{(2{,}11\\times10^7)(0{,}0110)}{(8{,}314)(315)}=88{,}6$ mol.</li>",
+    "    <li>$\\Delta m=(n_2-n_1)M=(88{,}6-0{,}46)(0{,}0288\\ \\text{kg/mol})=\\mathbf{2{,}54\\ kg}$.</li>",
+    "  </ol>",
+    "  <div class=\"recipe\"><b>Receta:</b> si entra o sale gas, $n$ cambia: calcula $n$ en cada estado con $pV=nRT$ (presión absoluta) y resta; luego $m=nM$.</div>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 18.3, p. 588",
+    "txt": "U p.588"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto 18.4: presión atmosférica y altura",
+   "html": [
+    "<p>Supón que la atmósfera tiene temperatura constante $T=0$ °C, $g$ constante y composición constante ($M=28{,}8$ g/mol). ¿Cómo varía la presión con la altura $y$ y cuánta queda en la cima del Everest (8848 m)?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Presión en un fluido</b> (tema 12): $dp/dy=-\\rho g$. Y la densidad de un gas ideal es (18.5) $\\rho=pM/RT$. Juntas: $\\dfrac{dp}{dy}=-\\dfrac{Mg}{RT}\\,p$.</li>",
+    "    <li><b>Separar variables e integrar</b> desde el nivel del mar ($y=0$, $p_0=1{,}013\\times10^5$ Pa): $\\ln\\dfrac{p}{p_0}=-\\dfrac{Mg}{RT}\\,y\\Rightarrow\\ \\mathbf{p=p_0\\,e^{-Mgy/RT}}$: la presión cae <b>exponencialmente</b>.</li>",
+    "    <li><b>Altura de escala:</b> $\\dfrac{RT}{Mg}=\\dfrac{(8{,}314)(273{,}15)}{(0{,}0288)(9{,}80)}=8046\\ \\text{m}$ (cada 8,05 km la presión se divide por $e$).</li>",
+    "    <li><b>Everest:</b> $p=p_0\\,e^{-8848/8046}=0{,}333\\,p_0\\approx\\mathbf{0{,}33\\ atm}$. Por eso los alpinistas llevan oxígeno.</li>",
+    "  </ol>",
+    "  <div class=\"recipe\"><b>Receta:</b> altura para una fracción $f$ de la presión: $y=-\\dfrac{RT}{Mg}\\ln f$.</div>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 18.4, pp. 588-589",
+    "txt": "U p.588-589"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "presion-del-aire-en-funcion-de-la-altura-una-exp"
+  },
+  {
+   "t": "parte",
+   "archivo": "s1b.html"
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>El gas ideal supone moléculas puntuales que no se atraen. Un gas real tiene moléculas con <b>tamaño</b> (no pueden ocupar el volumen que ya ocupan otras) y que <b>se atraen</b> débilmente. Al comprimir mucho o enfriar, estos dos efectos dejan de ser despreciables y el gas se aparta del ideal; al final puede incluso <b>condensar</b> en un líquido. Para ver todo esto de un golpe se dibujan <b>gráficas $pV$</b>: la presión frente al volumen para varias temperaturas. Cada curva (a $T$ constante) se llama <b>isoterma</b>. Para el gas ideal son hipérbolas ($p=nRT/V$, figura de arriba); para un gas real se curvan.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §18.1, figs. 18.6-18.7, p. 590",
+    "txt": "U p.590"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Ecuación de van der Waals",
+   "html": [
+    "<p>Una ecuación de estado más realista corrige (18.3) con dos constantes propias de cada gas:",
+    "  $$\\left(p+\\frac{a\\,n^2}{V^2}\\right)(V-nb)=nRT\\qquad(18.7)$$",
+    "  $b$ representa el <b>volumen de un mol de moléculas</b> (el volumen realmente disponible es $V-nb$) y $a$ la <b>atracción entre moléculas</b> (que reduce la presión que ejerce el gas sobre las paredes). Para el CO$_2$: $a=0{,}364$ J·m³/mol² y $b=4{,}27\\times10^{-5}$ m³/mol. Un mol de CO$_2$ en 0,0224 m³ a 273,15 K estaría, según (18.7), a una presión 532 Pa menor que la del gas ideal ($\\approx 1$ atm): una diferencia de solo el 0,5 %; el gas ideal es excelente a TPE y falla cerca de la condensación.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.1, ec. 18.7, pp. 589-590",
+    "txt": "U p.589-590"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "isotermas-de-un-mol-de-co2-segun-la-ecuacion-de-"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Temperatura crítica",
+   "html": [
+    "<p>Cada isoterma representa el comportamiento a una temperatura. <b>Por debajo de $T_c$</b>, al comprimir el gas llega un momento en que <b>condensa</b> (empieza a aparecer líquido) y la presión se mantiene constante mientras coexisten líquido y vapor. <b>Por encima de $T_c$</b> no hay transición líquido-vapor: por mucho que se comprima el material sigue siendo «un fluido». Llamamos $T_c$ a la <b>temperatura crítica</b> del material (para el CO$_2$, $T_c\\approx304$ K, unos 31 °C: valor que sale de aplicar (18.7), $T_c=8a/27Rb$, cálculo propio).</p>",
+    "  <span class=\"src\" data-l=\"U\" data-ref=\"U §18.1, fig. 18.7, p. 590\">U p.590</span>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "T_c ≈ 304 K del CO2: cálculo propio con la ecuación (18.7) de U (T_c = 8a/27Rb)",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "diagrama-pv-esquematico-de-una-sustancia-real-is"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte04.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Creer que «el gas ideal es un tipo de gas». Es un <b>modelo</b> (límite de baja densidad); ningún gas real lo cumple exactamente, y cerca de la condensación (alta presión, baja temperatura) se desvía mucho. Además, $p$ de (18.3) es la presión de todo el gas, no una presión «por molécula».</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s2",
+   "n": "2",
+   "titulo": "Propiedades moleculares de la materia",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §18.2, pp. 590-593",
+    "txt": "U p.590-593"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Toda la materia está hecha de átomos y moléculas (de tamaño del orden de $10^{-10}$ m). Una cucharada de agua contiene un número de moléculas tan grande que no sirve contarlas de una en una: se cuentan <b>por docenas gigantes</b>. Un <b>mol</b> es una de esas «docenas»: el número fijo de moléculas que hace que la <b>masa en gramos</b> coincida con la <b>masa molecular en unidades atómicas</b> (un mol de agua pesa 18 g; un mol de oxígeno, 32 g). Así se pasa de lo microscópico (una molécula) a lo que se pesa en el laboratorio (un mol).</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia de U §18.2, p. 592",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Mol y número de Avogadro",
+   "html": [
+    "<p>Un <b>mol</b> es la cantidad de sustancia que contiene tantas entidades elementales (átomos, moléculas, …) como átomos hay en 0,012 kg de carbono 12. Ese número es el <b>número de Avogadro</b>",
+    "  $$N_A=6{,}022\\times10^{23}\\ \\text{moléculas/mol}$$",
+    "  y relaciona la masa molar con la masa $m$ de una molécula:",
+    "  $$M=N_A\\,m\\qquad(18.8)$$",
+    "  Número de moléculas de $n$ moles: $N=nN_A$. La constante de Boltzmann es $k=R/N_A=1{,}381\\times10^{-23}$ J/K: <b>$R$ es la constante «por mol» y $k$ es la «por molécula»</b>.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.2, ec. 18.8, p. 592",
+    "txt": "U p.592"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto 18.5: masa atómica y molecular",
+   "html": [
+    "<p>Calcula la masa de un átomo de hidrógeno ($M=1{,}008$ g/mol) y de una molécula de O$_2$ ($M=32{,}0$ g/mol).</p>",
+    "  <ol class=\"steps\">",
+    "    <li>De (18.8): $m=M/N_A$.</li>",
+    "    <li>H: $m=\\dfrac{1{,}008\\ \\text{g/mol}}{6{,}022\\times10^{23}\\ \\text{mol}^{-1}}=\\mathbf{1{,}674\\times10^{-24}\\ g}$.</li>",
+    "    <li>O$_2$: $m=\\dfrac{32{,}0}{6{,}022\\times10^{23}}=5{,}31\\times10^{-23}\\ \\text{g}=\\mathbf{53{,}1\\times10^{-24}\\ g}$ (unas 32 veces la del H).</li>",
+    "  </ol>",
+    "  <div class=\"recipe\"><b>Receta:</b> masa de una molécula $=M/N_A$ (en kg si $M$ va en kg/mol).</div>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 18.5, p. 592",
+    "txt": "U p.592"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "La fuerza entre dos moléculas: el «pozo» de potencial",
+   "html": "<p>Dos moléculas se <b>repelen</b> con mucha fuerza si se acercan demasiado (las nubes de electrones se solapan) y se <b>atraen</b> débilmente a distancias algo mayores. En una separación intermedia, $r_0$, las dos fuerzas se compensan: es la distancia de <b>equilibrio</b> y la energía potencial es mínima ($-U_0$, el fondo de un «pozo»). Para separarlas del todo hay que dar al menos la energía $|U_0|$. Es la imagen de una canica en un valle: oscila alrededor del fondo; si le das energía suficiente, sale.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §18.2, fig. 18.8, p. 591",
+    "txt": "U p.591"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "energia-potencial-de-interaccion-entre-dos-molec"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Gas, líquido y sólido vistos desde el pozo",
+   "html": "<p><b>Gas:</b> las moléculas están muy separadas (a 27 °C y 1 atm, unas diez veces su diámetro, problema E13) y la mayor parte del tiempo se mueven libres; solo interaccionan al chocar. <b>Sólido:</b> las moléculas oscilan alrededor de posiciones de equilibrio fijas (el fondo del pozo) con energía cinética pequeña frente a $|U_0|$. <b>Líquido:</b> situación intermedia, moléculas cercanas pero con energía suficiente para deslizarse. En estos términos, el <b>gas ideal</b> es un gas cuyas moléculas <b>no ejercen fuerzas de atracción</b> entre sí y, por tanto, no tienen energía potencial: toda su energía es cinética.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §18.2, pp. 591-592",
+    "txt": "U p.591-592"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Mezclar «masa molar» y «masa de una molécula»: $M$ (kg/mol) y $m=M/N_A$ (kg) difieren en un factor $6\\times10^{23}$. En las fórmulas «por molécula» ($k$, $m$) y «por mol» ($R$, $M$) hay que ser coherente: $\\sqrt{3kT/m}=\\sqrt{3RT/M}$, pero $\\sqrt{3kT/M}$ no vale.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s3",
+   "n": "3",
+   "titulo": "Modelo cinético-molecular del gas ideal",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §18.3, pp. 593-598",
+    "txt": "U p.593-598"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>¿De dónde sale la <b>presión</b> de un gas? De los <b>choques</b>. Imagina que estás bajo un paraguas bajo una lluvia fina pero muy intensa: no notas gota a gota, notas una fuerza continua. Cada molécula que rebota en la pared le da un pequeño empujón; del orden de $10^{23}$ por cm² y segundo se suman en una fuerza continua. La <b>temperatura</b>, por su parte, resulta ser una medida de lo rápido que se mueven las moléculas (de su energía cinética media). Este modelo permite deducir $pV=nRT$ <b>a partir de las leyes de Newton</b>, y de paso da significado microscópico a $T$.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia de U §18.3, p. 593",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Supuestos del modelo",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li>Un recipiente de volumen $V$ contiene un número muy grande $N$ de moléculas <b>idénticas</b> de masa $m$.</li>",
+    "    <li>Las moléculas se comportan como <b>partículas puntuales</b>: su tamaño es pequeño frente a la distancia media entre ellas y frente a las dimensiones del recipiente.</li>",
+    "    <li>Las moléculas están en <b>movimiento constante</b> y obedecen las leyes de Newton; chocan con las paredes y entre sí de forma <b>elástica</b>, y no actúan fuerzas entre ellas salvo en los choques.</li>",
+    "    <li>Las <b>paredes son rígidas</b> y de masa prácticamente infinita: no se mueven ni absorben energía.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.3, supuestos del modelo, p. 593",
+    "txt": "U p.593"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Deducción de la presión (paso a paso)",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Un choque.</b> Una molécula que se mueve con componente $v_x$ choca elásticamente con una pared perpendicular a $x$: su componente $x$ pasa de $v_x$ a $-v_x$, y su cantidad de movimiento cambia en <b>$\\Delta p_x=2mv_x$</b> (en sentido contrario la pared recibe el mismo impulso).</li>",
+    "    <li><b>Frecuencia.</b> Para volver a golpear <b>la misma pared</b> tiene que recorrer ida y vuelta una longitud $2L$ (si $L$ es la longitud del recipiente en $x$): cada $\\Delta t=2L/v_x$.</li>",
+    "    <li><b>Fuerza media de una molécula.</b> $F=\\Delta p_x/\\Delta t=mv_x^2/L$.</li>",
+    "    <li><b>Las $N$ moléculas.</b> $F=Nm(v_x^2)_{med}/L$. Dividiendo por el área de la pared $A$ ($V=AL$): <b>$p=Nm(v_x^2)_{med}/V$</b> (18.11).</li>",
+    "    <li><b>Las tres direcciones.</b> Como $v^2=v_x^2+v_y^2+v_z^2$ y ninguna dirección es especial, $(v_x^2)_{med}=\\tfrac13(v^2)_{med}$. Entonces",
+    "    $$pV=\\tfrac13Nm(v^2)_{med}=\\frac23N\\left[\\tfrac12m(v^2)_{med}\\right]\\qquad(18.12)$$</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.3, ec. 18.11-18.12, figs. 18.11-18.12, pp. 593-594",
+    "txt": "U p.593-594"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "molecula-que-rebota-entre-dos-paredes-de-una-caj"
+  },
+  {
+   "t": "fig",
+   "ref": "velocidad-de-una-molecula-con-componentes-vx-vy-"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Energía cinética y temperatura",
+   "html": [
+    "<p>El corchete de (18.12) es la energía cinética de traslación media por molécula; multiplicado por $N$ da la energía cinética de traslación total $K_{tr}$:",
+    "  $$pV=\\tfrac23K_{tr}\\qquad(18.13)$$",
+    "  Comparando con la ecuación del gas ideal $pV=nRT$ (18.3) obtenemos el resultado central del capítulo:",
+    "  $$K_{tr}=\\tfrac32\\,nRT\\qquad(18.14)\\qquad\\qquad \\tfrac12m(v^2)_{med}=\\tfrac32\\,kT\\qquad(18.16)$$",
+    "  Por mol: $\\tfrac32RT$ (18.17). Y la ecuación del gas ideal en forma «por molécula»: $pV=NkT$ (18.18). <b>La energía cinética de traslación media por molécula depende solo de la temperatura</b>: no de la presión, ni del volumen, ni del tipo de molécula. La temperatura absoluta es, literalmente, una medida de esa energía.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.3, ec. 18.13-18.18, pp. 594-595",
+    "txt": "U p.594-595"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Rapidez eficaz (rms)",
+   "html": [
+    "<p>De (18.16): $(v^2)_{med}=3kT/m$. Su raíz cuadrada es la <b>rapidez eficaz</b> o rms (raíz de la media de los cuadrados):",
+    "  $$v_{rms}=\\sqrt{(v^2)_{med}}=\\sqrt{\\frac{3kT}{m}}=\\sqrt{\\frac{3RT}{M}}\\qquad(18.19)$$",
+    "  proporcional a $\\sqrt T$ y a $1/\\sqrt{m}$. A una $T$ dada, las moléculas de gases distintos tienen <b>la misma energía cinética media</b> pero <b>diferente rapidez eficaz</b>: las ligeras van más deprisa (H$_2$ a 300 K: 1927 m/s; O$_2$: 484 m/s; CO$_2$: 412 m/s).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.3, ec. 18.19, p. 596",
+    "txt": "U p.596"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "rapidez-eficaz-en-funcion-de-la-temperatura-para"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Estrategia 18.2 de U: teoría cinético-molecular",
+   "html": "<p><b>Identificar</b> si te piden magnitudes «por molécula» o «por mol» y pasar todo a una de las dos familias: <b>por molécula</b>: $m$, $N$ y $k$ (con $N=nN_A$, $m=M/N_A$); <b>por mol</b>: $M$, $n$ y $R$. En un problema de una sola molécula (un choque, una fuerza) usa Newton; para promedios, (18.16) y (18.19). Comprueba que $T$ está en kelvin y $M$ en kg/mol.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia 18.2, p. 596",
+    "txt": "U p.596"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto 18.6: energía cinética molecular y $v_{rms}$",
+   "html": [
+    "<p>Una muestra de oxígeno (O$_2$, 32,0 g/mol) a 27 °C ($\\approx300$ K). Calcula: (a) la energía cinética de traslación media por molécula; (b) la energía cinética de traslación total de un mol; (c) la rapidez eficaz.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>(a)</b> (18.16): $\\tfrac12m(v^2)_{med}=\\tfrac32kT=\\tfrac32(1{,}381\\times10^{-23})(300)=\\mathbf{6{,}21\\times10^{-21}\\ J}$.</li>",
+    "    <li><b>(b)</b> (18.14) con $n=1$: $K_{tr}=\\tfrac32RT=\\tfrac32(8{,}314)(300)=\\mathbf{3740\\ J}$ (también $N_A\\times6{,}21\\times10^{-21}$ J).</li>",
+    "    <li><b>(c)</b> (18.19) con $M=0{,}0320$ kg/mol: $v_{rms}=\\sqrt{\\dfrac{3(8{,}314)(300)}{0{,}0320}}=\\mathbf{484\\ m/s}$.</li>",
+    "  </ol>",
+    "  <div class=\"recipe\"><b>Receta:</b> energía por molécula $=\\tfrac32kT$; por mol $=\\tfrac32RT$; $v_{rms}=\\sqrt{3RT/M}$ con $M$ en kg/mol.</div>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 18.6, p. 597",
+    "txt": "U p.597"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto 18.7: rapidez media frente a rapidez eficaz",
+   "html": [
+    "<p>Cinco moléculas tienen rapideces de 500, 600, 700, 800 y 900 m/s. Calcula la rapidez media y la rms.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Media:</b> $v_{med}=\\dfrac{500+600+700+800+900}{5}=\\mathbf{700\\ m/s}$.</li>",
+    "    <li><b>Media de los cuadrados:</b> $(v^2)_{med}=\\dfrac{(500^2+600^2+700^2+800^2+900^2)}{5}=5{,}10\\times10^5\\ \\text{m}^2/\\text{s}^2$.</li>",
+    "    <li><b>Rms:</b> $v_{rms}=\\sqrt{5{,}10\\times10^5}=\\mathbf{714\\ m/s}$, mayor que la media: elevar al cuadrado da más peso a las rapideces altas.</li>",
+    "  </ol>",
+    "  <div class=\"recipe\"><b>Receta:</b> «rms» se lee de derecha a izquierda: primero se eleva al cuadrado, luego se promedia, por último se hace la raíz.</div>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 18.7, p. 597",
+    "txt": "U p.597"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "s3b.html"
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Aunque las moléculas del aire van a unos 500 m/s, un olor tarda segundos en cruzar una habitación: cada molécula choca con otra unas $10^{10}$ veces por segundo y avanza en <b>zigzag</b>. La distancia media que recorre entre dos choques se llama <b>trayectoria libre media</b> $\\lambda$. Es como cruzar una sala llena de gente: cuanto más densa la multitud y más ancha cada persona, menos recorres sin tropezar.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia de U §18.3, p. 598",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Tiempo y trayectoria libre medios",
+   "html": [
+    "<p>Si las moléculas son esferas de radio $r$, hay choque cuando sus centros se acercan a menos de $2r$. Con $N/V$ moléculas por unidad de volumen, el tiempo medio entre choques de una molécula que se mueve con rapidez $v$ y la trayectoria libre media son",
+    "  $$t_{med}=\\frac{V}{4\\pi\\sqrt2\\,r^2\\,v\\,N}\\quad(18.20)\\qquad\\lambda=v\\,t_{med}=\\frac{V}{4\\pi\\sqrt2\\,r^2N}\\quad(18.21)$$",
+    "  y con $pV=NkT$:",
+    "  $$\\lambda=\\frac{kT}{4\\pi\\sqrt2\\,r^2\\,p}\\qquad(18.22)$$",
+    "  $\\lambda$ <b>no depende de la rapidez</b> de la molécula; aumenta con $T$ y disminuye con $p$ y con el radio.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.3, ec. 18.20-18.22, p. 598",
+    "txt": "U p.598"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "una-molecula-en-zigzag-entre-otras-cada-tramo-re"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto 18.8: trayectoria libre media en el aire",
+   "html": [
+    "<p>Calcula la trayectoria libre media del aire a 27 °C y 1 atm, y el tiempo medio entre choques de una molécula de O$_2$ con $v=v_{rms}$. Usa $r=2{,}0\\times10^{-10}$ m.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>(a)</b> (18.22): $\\lambda=\\dfrac{(1{,}381\\times10^{-23})(300)}{4\\pi\\sqrt2\\,(2{,}0\\times10^{-10})^2(1{,}013\\times10^5)}=\\mathbf{5{,}8\\times10^{-8}\\ m}$ (unos 290 radios moleculares, 58 nm).</li>",
+    "    <li><b>(b)</b> Con $v=v_{rms}=484$ m/s (ejemplo 18.6): $t_{med}=\\dfrac{\\lambda}{v}=\\dfrac{5{,}8\\times10^{-8}}{484}=\\mathbf{1{,}2\\times10^{-10}\\ s}$: una molécula choca unas $8\\times10^{9}$ veces por segundo.</li>",
+    "  </ol>",
+    "  <div class=\"recipe\"><b>Receta:</b> $\\lambda=kT/(4\\pi\\sqrt2\\,r^2p)$ y $t_{med}=\\lambda/v$; usa SI y $T$ en kelvin.</div>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 18.8, p. 598",
+    "txt": "U p.598"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores típicos del modelo cinético",
+   "html": "<p>(1) Creer que todas las moléculas tienen la misma rapidez: $v_{rms}$ es un <b>promedio</b> (§5). (2) Pensar que a igual $T$ el gas más pesado tiene más energía cinética media: es <b>la misma</b>; lo que cambia es la rapidez. (3) Atribuir la presión a las colisiones <b>entre</b> moléculas: la presión viene de los choques <b>con las paredes</b>. (4) Usar la energía cinética «total» cuando piden «por molécula» (o al revés).</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s4",
+   "n": "4",
+   "titulo": "Capacidades caloríficas",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §18.4, pp. 599-602",
+    "txt": "U p.599-602"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>En el tema 17 la capacidad calorífica era un dato de tabla. Ahora podemos <b>deducirla</b>. Piensa en cuántas «cuentas» tiene la energía para guardarse: si calientas un gas de átomos sueltos, toda la energía va a <b>mover</b> los átomos (traslación) y la temperatura sube mucho por cada julio. Si las moléculas son «pesas» (dos átomos unidos), parte de la energía se gasta en hacerlas <b>girar</b> y la temperatura sube menos por cada julio: la capacidad calorífica es mayor. Cada modo independiente de almacenar energía se llama <b>grado de libertad</b>, y todos reciben, en promedio, la misma cantidad.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia de U §18.4, p. 599",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Principio de equipartición de la energía",
+   "html": "<p>Cada componente de velocidad (lineal o angular) tiene, en promedio, una energía cinética asociada por molécula de <b>$\\tfrac12kT$</b> (y $\\tfrac12RT$ por mol): cada <b>grado de libertad</b> contribuye con $\\tfrac12kT$. Una molécula puntual (gas monoatómico) tiene <b>3</b> (traslación en $x$, $y$, $z$); una molécula diatómica tiene <b>3 de traslación y 2 de rotación</b> (alrededor de los dos ejes perpendiculares a la molécula; el giro alrededor de su propio eje no cuenta: los átomos se tratan como puntos y el momento de inercia respecto a ese eje es prácticamente nulo).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §18.4, principio de equipartición, pp. 600-601",
+    "txt": "U p.600-601"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "atomo-unico-con-tres-grados-de-libertad-de-trasl"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Capacidad calorífica molar a volumen constante",
+   "html": [
+    "<p>A volumen constante no se realiza trabajo y todo el calor va a energía cinética (interna): $dQ=nC_V\\,dT$ (18.24). En un gas monoatómico ideal, $dK_{tr}=\\tfrac32nR\\,dT$ (18.23), luego",
+    "  $$C_V=\\tfrac32R=12{,}47\\ \\text{J/(mol·K)}\\qquad(18.25)\\ \\ \\text{(monoatómico)}$$",
+    "  y para un gas diatómico ideal con energía de rotación (5 grados de libertad):",
+    "  $$C_V=\\tfrac52R=20{,}79\\ \\text{J/(mol·K)}\\qquad(18.26)\\ \\ \\text{(diatómico)}$$",
+    "  Para un <b>sólido monoatómico</b> cada átomo vibra en tres direcciones con energía cinética y potencial ($6\\times\\tfrac12kT$): energía total $E=3nRT$ y <b>regla de Dulong-Petit</b> $C_V=3R=24{,}9$ J/(mol·K) (18.28). A temperaturas bajas $C_V$ de los sólidos es mucho menor que $3R$ y disminuye al bajar $T$ (fig. 18.21: plomo, aluminio, silicio y diamante), por la misma razón por la que se «congelan» las vibraciones moleculares.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.4, ec. 18.23-18.28, pp. 599-602; fig. 18.21, p. 602",
+    "txt": "U p.599-602"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "capacidades-calorificas-molares-medidas-de-he-h2"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Valores medidos (tabla 18.1)",
+   "html": "<p>A temperatura ambiente, en J/(mol·K): He 12,47; H$_2$ 20,42; N$_2$ 20,76; O$_2$ 20,85; CO 20,85; CO$_2$ 28,46. Los monoatómicos y diatómicos coinciden con $\\tfrac32R=12{,}47$ y $\\tfrac52R=20{,}79$; las moléculas con tres o más átomos tienen más grados de libertad y valores mayores.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U tabla 18.1, p. 600",
+    "txt": "U p.600"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_18_19_cv_h2.png",
+   "alt": "Valores experimentales de la capacidad calorífica molar a volumen constante del hidrógeno gaseoso en función de la temperatura: 3R/2 por debajo de 50 K, 5R/2 entre unos 250 y 600 K y 7R/2 por encima",
+   "pie": "$C_V$ del H$_2$ medido en función de $T$ (escala logarítmica): $\\tfrac32R$ (solo traslación) por debajo de 50 K, $\\tfrac52R$ cuando entra la rotación y $\\tfrac72R$ cuando empieza la vibración (por encima de unos 600 K): los grados de libertad «se activan» al aumentar la temperatura.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 18.19, §18.4, p. 601",
+    "txt": "U p.601"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Aplicar $C_V=\\tfrac52R$ a cualquier gas: vale solo para <b>diatómicos</b> a temperatura ambiente; para el helio, el neón o el argón (monoatómicos) es $\\tfrac32R$. Y recuerda que (18.25)-(18.26) son a <b>volumen constante</b> ($C_V$); a presión constante, $C_p=C_V+R$ (tema 19). En el modelo, los grados de libertad de rotación y vibración «se congelan» a baja temperatura (figura anterior).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §18.4, p. 601 y fig. 18.19",
+    "txt": "U p.601"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s5",
+   "n": "5",
+   "titulo": "Rapideces moleculares",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §18.5, pp. 602-604",
+    "txt": "U p.602-604"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Hasta ahora hemos hablado de «la» rapidez de las moléculas, pero en realidad cada una lleva la suya: los choques las reparten al azar, de modo que unas van muy despacio y otras muy deprisa, con una mayoría cerca de un valor típico. Es como la estatura de una multitud: hay pocos muy bajos, pocos muy altos y muchos en torno a la media. La <b>distribución de Maxwell-Boltzmann</b> da exactamente esa «campana asimétrica» para un gas ideal en equilibrio a temperatura $T$.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia de U §18.5, p. 603",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Función de distribución de rapideces $f(v)$",
+   "html": [
+    "<p>$f(v)\\,dv$ es la <b>probabilidad</b> (la fracción de moléculas) de que la rapidez de una molécula elegida al azar esté entre $v$ y $v+dv$; $f(v)$ tiene unidades de s/m. El <b>área bajo la curva</b> entre dos rapideces es la fracción de moléculas con rapidez en ese intervalo; el área total vale 1; el número de moléculas con rapidez entre $v$ y $v+dv$ es $dN=Nf(v)\\,dv$ (18.29). El máximo de la curva es la <b>rapidez más probable</b> $v_{mp}$. Con ella se calculan los promedios:",
+    "  $$v_{med}=\\int_0^\\infty v\\,f(v)\\,dv\\quad(18.30)\\qquad(v^2)_{med}=\\int_0^\\infty v^2f(v)\\,dv\\quad(18.31)$$</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.5, ec. 18.29-18.31, pp. 602-603",
+    "txt": "U p.603"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Distribución de Maxwell-Boltzmann y las tres rapideces",
+   "html": [
+    "<p>$$f(v)=4\\pi\\left(\\frac{m}{2\\pi kT}\\right)^{3/2}v^2\\,e^{-mv^2/2kT}\\qquad(18.32)$$",
+    "  Se cumple (integrando):",
+    "  $$v_{mp}=\\sqrt{\\frac{2kT}{m}}\\ (18.34)\\qquad v_{med}=\\sqrt{\\frac{8kT}{\\pi m}}\\ (18.35)\\qquad v_{rms}=\\sqrt{\\frac{3kT}{m}}\\ (18.36)$$",
+    "  con $k/m=R/M$: se pueden escribir con $R$ y $M$. En función de la energía cinética de traslación $\\epsilon=\\tfrac12mv^2$ la distribución es $f(\\epsilon)=\\dfrac{8\\pi}{m}\\left(\\dfrac{m}{2\\pi kT}\\right)^{3/2}\\epsilon\\,e^{-\\epsilon/kT}$ (18.33): el exponente es $-\\epsilon/kT$. Siempre $v_{mp}&lt;v_{med}&lt;v_{rms}$, en proporción $1:1{,}128:1{,}225$. Al subir $T$ la curva <b>se aplana y su máximo se desplaza a mayor rapidez</b>; al aumentar la masa, se estrecha y se desplaza a menor rapidez. (18.36) coincide con (18.19), como debe ser.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §18.5, ec. 18.32-18.36, pp. 603-604 (18.33 en p. 603)",
+    "txt": "U p.603-604"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "distribucion-de-maxwell-boltzmann-en-unidades-de"
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_18_23_maxwell.png",
+   "alt": "Curvas de la función de distribución de Maxwell-Boltzmann para tres temperaturas T1 menor que T2 menor que T3, y fracciones de moléculas en un intervalo y por encima de una rapidez vA",
+   "pie": "a) Distribuciones de Maxwell-Boltzmann a tres temperaturas: al subir $T$ la curva se aplana y su máximo ($v_{mp}$) se desplaza a mayor rapidez. b) Las áreas sombreadas son fracciones de moléculas.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 18.23, §18.5, p. 603",
+    "txt": "U p.603"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Tabla 18.2: fracción de moléculas por debajo de $v$ (en múltiplos de $v_{rms}$)",
+   "html": [
+    "<table>",
+    "    <tr><th>$v/v_{rms}$</th><td>0,20</td><td>0,40</td><td>0,60</td><td>0,80</td><td>1,00</td><td>1,20</td><td>1,40</td><td>1,60</td><td>1,80</td><td>2,00</td></tr>",
+    "    <tr><th>Fracción con $v&lt;$</th><td>0,011</td><td>0,077</td><td>0,218</td><td>0,411</td><td>0,608</td><td>0,771</td><td>0,882</td><td>0,947</td><td>0,979</td><td>0,993</td></tr>",
+    "  </table>",
+    "  <p>Son las mismas para todos los gases ideales. Por ejemplo, el 39 % de las moléculas va más deprisa que $v_{rms}$, y solo el 0,7 % supera el doble de $v_{rms}$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U tabla 18.2, p. 604",
+    "txt": "U p.604"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Por qué importa la «cola»: evaporación y reacciones",
+   "html": "<p>Lo que escapa de un líquido es la <b>cola</b> de rapideces altas: una molécula necesita una rapidez mínima para librarse de la superficie, y el número de las que la superan crece muy deprisa con la temperatura. Cuando se evapora líquido se van las más rápidas, y las que quedan tienen menos energía media: es el <b>enfriamiento por evaporación</b> (el sudor). Del mismo modo, la velocidad de muchas reacciones químicas aumenta rápidamente con $T$ porque necesitan una <b>energía de activación</b> mínima, y la fracción de moléculas por encima de ella (la cola) crece muy deprisa al calentar.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §18.5, p. 604",
+    "txt": "U p.604"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte06.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Confundir las tres rapideces. $v_{mp}$ es el <b>máximo</b> de $f(v)$; $v_{med}$ es el promedio de $v$; $v_{rms}=\\sqrt{(v^2)_{med}}$ es la que está ligada a la energía cinética media ($\\tfrac12mv_{rms}^2=\\tfrac32kT$). Y no hay un máximo absoluto de rapidez: siempre queda una fracción minúscula, pero no nula, con rapideces muy altas (por eso «ninguna molécula puede escapar porque $v_{rms}&lt;v_{esc}$» es un razonamiento falso: ver el problema práctico).</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia de U §18.5, pp. 603-604",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s6",
+   "n": "6",
+   "titulo": "Fases de la materia",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §18.6, pp. 604-607",
+    "txt": "U p.604-607"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Una sustancia no tiene una única «forma»: según la presión y la temperatura es sólida, líquida o gaseosa. Un <b>diagrama de fases</b> es un mapa $p$-$T$ que dice en qué fase está la sustancia en cada punto, como un mapa político que dice en qué país estás. Las fronteras son las curvas donde pueden coexistir dos fases en equilibrio (hielo y agua; agua y vapor), y hay un punto muy especial donde se juntan tres.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia de U §18.6, p. 604",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Diagrama de fases",
+   "html": "<p>Cada fase es estable solo en ciertos intervalos de $T$ y $p$. La transición de una fase a otra se da en condiciones de <b>equilibrio de fases</b> y, para una presión dada, solo a una temperatura específica. Se representa en una gráfica de $p$ frente a $T$ llamada <b>diagrama de fases</b>: en cada punto solo puede existir una fase, excepto sobre las líneas continuas, donde coexisten dos. La <b>curva de fusión</b> separa sólido y líquido; la de <b>vaporización</b>, líquido y vapor; la de <b>sublimación</b>, sólido y vapor. Las tres curvas se unen en el <b>punto triple</b>, la única condición en que coexisten las tres fases; por debajo de la presión del punto triple no puede existir fase líquida.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §18.6, fig. 18.24, p. 605",
+    "txt": "U p.605"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_18_24_fases.png",
+   "alt": "Diagrama de fases pT: regiones de sólido, líquido y vapor separadas por las curvas de fusión, vaporización y sublimación, que se unen en el punto triple; la curva de vaporización termina en el punto crítico",
+   "pie": "Diagrama de fases $pT$ típico, con las líneas (a) y (s) de calentamiento a presión constante y (b), (d) de compresión isoterma.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 18.24, §18.6, p. 605",
+    "txt": "U p.605"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "diagrama-de-fases-presion-frente-a-temperatura-d"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Calentar o comprimir siguiendo una línea del diagrama",
+   "html": "<p>Si calentamos a presión constante $p_a$ (línea (a) del diagrama), la sustancia pasa por una serie de estados: las temperaturas de fusión y de ebullición para esa presión son las de los cortes con las curvas de fusión y vaporización. Si $p_s$ es menor que la del punto triple (línea (s)), el sólido pasa <b>directamente a vapor</b>: <b>sublimación</b> (el «hielo seco», CO$_2$ sólido, se sublima a presión atmosférica porque su presión de punto triple es 5,1 atm). Datos de punto triple (tabla 18.3): H$_2$ 13,80 K; O$_2$ 54,36 K; N$_2$ 63,18 K; CO$_2$ 216,55 K y $5{,}17\\times10^5$ Pa; agua 273,16 K y 610 Pa.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §18.6, tabla 18.3, p. 605",
+    "txt": "U p.605"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Punto crítico",
+   "html": "<p>La curva de vaporización termina en el <b>punto crítico</b>, con presión y temperatura críticas $p_c$ y $T_c$. Al acercarnos a él, las diferencias entre líquido y vapor (densidad, compresibilidad) se reducen, el calor de vaporización disminuye y, <b>en el punto crítico, desaparece la distinción</b> entre líquido y vapor. Por encima, al enfriar a presión constante las propiedades cambian de forma gradual, sin cambio de fase. Para casi todos los materiales las presiones críticas son mucho mayores que la atmosférica: el punto crítico del agua está en <b>647,4 K y $221{,}2\\times10^5$ Pa</b> (unas 218 atm).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §18.6, pp. 605-606",
+    "txt": "U p.605-606"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Superficies $pVT$",
+   "html": "<p>La ecuación de estado completa de un material es una <b>superficie</b> en el espacio $p$-$V$-$T$. Las isotermas $pV$ son las «curvas de nivel» de esa superficie (como en un mapa topográfico); su proyección en el plano $pT$ da el diagrama de fases. Para el gas ideal la superficie es muy simple: las isotermas son hipérbolas ($pV=$ cte), las <b>isócoras</b> (volumen constante) son rectas $p\\propto T$ y las <b>isóbaras</b> (presión constante) son rectas $V\\propto T$.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §18.6, figs. 18.26-18.27, pp. 606-607",
+    "txt": "U p.606-607"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión 18.6: ¿lagos en Marte?",
+   "html": [
+    "<p>La presión atmosférica media en Marte es de $6{,}0\\times10^2$ Pa. ¿Podría haber lagos o ríos de agua líquida? ¿Y en el pasado, con una presión mucho mayor?</p>",
+    "  <ol class=\"steps\">",
+    "    <li>La presión del punto triple del agua es 610 Pa (tabla 18.3). <b>A una presión menor que ella no puede existir agua líquida</b> (línea (s) del diagrama): el hielo sublima.</li>",
+    "    <li>600 Pa es ligeramente inferior a 610 Pa: <b>hoy no puede haber lagos ni ríos</b> en Marte (el agua se encuentra como hielo o vapor).</li>",
+    "    <li>En el pasado, con una atmósfera más densa (presión mayor que 610 Pa) y una temperatura adecuada, <b>sí pudo existir agua líquida</b>.</li>",
+    "  </ol>",
+    "  <div class=\"recipe\"><b>Receta:</b> compara la presión con la del punto triple; si es menor, no hay fase líquida a ninguna temperatura.</div>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Evalúe su comprensión de la sección 18.6, p. 607",
+    "txt": "U p.607"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Creer que el punto de ebullición del agua es «siempre 100 °C»: es 100 °C solo a 1 atm. A menor presión (en una montaña, en la campana de vacío) hierve a menos temperatura; a mayor presión (olla a presión), a más. Las curvas del diagrama son <b>presión de vapor frente a temperatura</b>. Y en el agua, a diferencia de casi todo, la curva de fusión se inclina hacia la izquierda (el hielo se funde al aumentar la presión).</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia de U §18.6, p. 605 y preguntas P18.26-P18.30, p. 610",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s7",
+   "n": "7",
+   "titulo": "Cuestiones de teoría para el examen",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U Preguntas para análisis P18.1-P18.30, pp. 609-610",
+    "txt": "U p.609-610"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte07.html"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Cuestiones cortas con respuesta",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>¿Podría usarse la temperatura Celsius en $pV=nRT$ con un valor adecuado de $R$?</b> (P18.2) No: la ecuación exige $p\\propto T$ a $V$ y $n$ fijos, y el cero de Celsius no es el cero absoluto. Habría que escribir $pV=nR(T_C+273{,}15)$: ya no es la misma ley.</li>",
+    "    <li><b>«Para que dos gases mezclados estén en equilibrio térmico deben tener la misma rapidez molecular media». ¿Es correcto?</b> (P18.12) No: lo que coincide es la <b>energía cinética media de traslación</b> ($\\tfrac32kT$); las moléculas más ligeras van más deprisa.</li>",
+    "    <li><b>Un gas pasa ante nosotros a 2000 m/s: ¿tiene mayor temperatura?</b> (P18.14) No: la temperatura mide el movimiento <b>aleatorio</b> (relativo al centro de masa del gas), no el movimiento de conjunto.</li>",
+    "    <li><b>Un gas monoatómico pasa de 25 a 50 °C: ¿se duplica la energía cinética media?</b> (P18.20) No: $K\\propto T$ absoluta; de 298 K a 323 K aumenta solo un 8,4 %.</li>",
+    "    <li><b>¿En qué factor hay que cambiar $T$ para duplicar $v_{rms}$?</b> (P18.21) $v_{rms}\\propto\\sqrt T$: hay que multiplicar $T$ por <b>4</b>.</li>",
+    "    <li><b>Se da el mismo calor a 1 mol monoatómico y a 1 mol diatómico: ¿cuál se calienta más?</b> (P18.22) El monoatómico: toda la energía va a traslación ($C_V=\\tfrac32R$); en el diatómico parte va a rotación ($C_V=\\tfrac52R$) y $\\Delta T$ es menor.</li>",
+    "    <li><b>¿Por qué hay que cocer el arroz más tiempo (y con más agua) a gran altura?</b> (P18.30) A menor presión atmosférica el agua hierve a menos de 100 °C (curva de vaporización): el agua líquida no pasa de esa temperatura menor, así que los alimentos se cuecen más despacio y hacen falta más tiempo y más agua (se evapora más). En una olla a presión ocurre lo contrario: a mayor presión el agua hierve a más de 100 °C y se cuece antes.</li>",
+    "    <li><b>Un vaso de agua en una campana de vacío hierve sin subir su temperatura: ¿por qué?</b> (P18.26) Al bajar la presión por debajo de la presión de vapor del agua a esa temperatura, el agua hierve; al evaporarse, las moléculas más rápidas se llevan energía y el agua se enfría.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Preguntas para análisis P18.2, P18.12, P18.14, P18.20, P18.21, P18.22, P18.26 y P18.30, pp. 609-610 (respuestas propias)",
+    "txt": "U p.609-610"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "ejercicios",
+   "n": "8",
+   "titulo": "Ejercicios resueltos",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte08.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-x.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte10.html"
+  },
+  {
+   "t": "ej",
+   "ref": "x1"
+  },
+  {
+   "t": "ej",
+   "ref": "x2"
+  },
+  {
+   "t": "ej",
+   "ref": "x3"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-e1.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e1"
+  },
+  {
+   "t": "ej",
+   "ref": "e2"
+  },
+  {
+   "t": "ej",
+   "ref": "e3"
+  },
+  {
+   "t": "ej",
+   "ref": "e4"
+  },
+  {
+   "t": "ej",
+   "ref": "e5"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-e2.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e6"
+  },
+  {
+   "t": "ej",
+   "ref": "e7"
+  },
+  {
+   "t": "ej",
+   "ref": "e8"
+  },
+  {
+   "t": "ej",
+   "ref": "e9"
+  },
+  {
+   "t": "ej",
+   "ref": "e10"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-e3.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e11"
+  },
+  {
+   "t": "ej",
+   "ref": "e12"
+  },
+  {
+   "t": "ej",
+   "ref": "e13"
+  },
+  {
+   "t": "ej",
+   "ref": "e14"
+  },
+  {
+   "t": "ej",
+   "ref": "e15"
+  },
+  {
+   "t": "ej",
+   "ref": "e16"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-e4.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e17"
+  },
+  {
+   "t": "ej",
+   "ref": "e18"
+  },
+  {
+   "t": "ej",
+   "ref": "e19"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-e5.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e20"
+  },
+  {
+   "t": "ej",
+   "ref": "e21"
+  },
+  {
+   "t": "ej",
+   "ref": "e22"
+  },
+  {
+   "t": "ej",
+   "ref": "e23"
+  },
+  {
+   "t": "ej",
+   "ref": "e24"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-e6.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e25"
+  },
+  {
+   "t": "h2",
+   "id": "chuleta",
+   "n": "9",
+   "titulo": "Chuleta, errores frecuentes y lista de comprobación",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte17.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores frecuentes de este tema",
+   "html": [
+    "<ul>",
+    "    <li>Usar grados Celsius o presión manométrica en $pV=nRT$ o en el cociente (18.6): siempre kelvin y presión absoluta.</li>",
+    "    <li>Mezclar unidades: $R=8{,}314$ con litros o con $M$ en g/mol (resultados 1000 veces distintos).</li>",
+    "    <li>Usar (18.6) cuando la cantidad de gas cambia (escapa o se añade): hay que calcular $n$ o $m$ en cada estado.</li>",
+    "    <li>Confundir «por molécula» ($m$, $k$) con «por mol» ($M$, $R$), o mezclarlas en la misma fórmula.</li>",
+    "    <li>Creer que a igual temperatura el gas más pesado tiene más energía cinética media (es la misma; cambia la rapidez) o que todas las moléculas van a la misma rapidez.</li>",
+    "    <li>Confundir $v_{mp}$, $v_{med}$ y $v_{rms}$ ($v_{rms}$ es la ligada a $\\tfrac32kT$).</li>",
+    "    <li>Aplicar $C_V=\\tfrac52R$ a un gas monoatómico, o $C_V$ a presión constante.</li>",
+    "    <li>En un ciclo, calcular calores y trabajos antes de tener la tabla de estados $p,V,T$; usar $C_V$ en una isóbara; olvidar que $\\Delta U=0$ en una isoterma de gas ideal.</li>",
+    "    <li>Pensar que el agua hierve «siempre a 100 °C» o que puede haber líquido por debajo de la presión del punto triple.</li>",
+    "    <li>Decir «no escapa ninguna molécula porque $v_{rms}&lt;v_{esc}$» (la cola de la distribución no tiene tope).</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte18.html"
+  },
+  {
+   "t": "h2",
+   "id": "fuentes",
+   "n": "★",
+   "titulo": "Fuentes de este tema",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "panel-fuentes.html"
+  }
+ ]
+}

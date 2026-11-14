@@ -1,0 +1,10 @@
+<p class="enun">La ecuación de estado de van der Waals es $\left[p+\dfrac{an^2}{V^2}\right](V-nb)=nRT$. Para el etano ($C_2H_6$): $a=0{,}554$ J·m³/mol² y $b=6{,}38\times10^{-5}$ m³/mol. Calcule el trabajo efectuado por 1,80 mol de etano cuando se expande de $2{,}00\times10^{-3}$ m³ a $4{,}00\times10^{-3}$ m³ a una temperatura constante de 300 K. a) Obtenga una expresión para $W$ integrando $p\,dV$. b) Evalúela: i. con la ecuación de van der Waals; ii. tratándolo como gas ideal.</p>
+  <ol class="steps">
+    <li><b>a)</b> Despejamos $p=\dfrac{nRT}{V-nb}-\dfrac{an^2}{V^2}$ y la integramos entre $V_1$ y $V_2$ (con $T$ constante): $$W=\int_{V_1}^{V_2}p\,dV=nRT\ln\frac{V_2-nb}{V_1-nb}+an^2\left(\frac1{V_2}-\frac1{V_1}\right).$$</li>
+    <li><b>b-i.</b> $nb=1{,}148\times10^{-4}$ m³; primer término $=1{,}80\cdot8{,}314\cdot300\cdot\ln\dfrac{3{,}885\times10^{-3}}{1{,}885\times10^{-3}}=3247$ J; segundo $=0{,}554\cdot1{,}80^2\cdot(250-500)=-449$ J. Total $W=\mathbf{2{,}80\times10^3\ J}$.</li>
+    <li><b>b-ii.</b> Gas ideal: $W=nRT\ln\dfrac{V_2}{V_1}=1{,}80\cdot8{,}314\cdot300\cdot\ln2=\mathbf{3{,}11\times10^3\ J}$.</li>
+    <li><b>Lectura.</b> El gas real hace menos trabajo: las fuerzas de atracción (término $a$) reducen la presión efectiva más de lo que el volumen propio de las moléculas (término $b$) la aumenta.</li>
+  </ol>
+  {{fig:isoterma-a-300-kelvin-del-etano-segun-la-ecuacio}}
+
+  <div class="recipe"><b>Receta:</b> para una ecuación de estado distinta de la ideal, despeja $p(V)$ y calcula $W=\int p\,dV$ (el trabajo siempre es el área bajo la curva $pV$).</div>

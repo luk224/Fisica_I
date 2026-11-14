@@ -1,0 +1,28 @@
+<p class="enun"><b>Examen Febrero 2018 (1ª semana) P-2 (3 puntos).</b> Sea una máquina térmica que funciona siguiendo un ciclo de Carnot 30 veces por segundo. Si los valores de las variables en los distintos puntos del ciclo son los siguientes: $V_1=5$ L, $T_1=500$ K, $P_2=4$ atm y $V_3=20$ L, calcular: a) Intercambio de calor y trabajo en cada transición del ciclo. b) Rendimiento del ciclo. c) Potencia de la máquina.</p>
+  <div class="box tip"><span class="h">Datos que hay que suponer (y escribirlo en el examen)</span><p>El enunciado no da ni la cantidad ni el tipo de gas. Hipótesis (hay que declararla en el examen): <b>1 mol de gas ideal diatómico ($\gamma=1{,}4$)</b>. Numeración: $1\to2$ expansión isoterma a $T_H=T_1$, $2\to3$ expansión adiabática, $3\to4$ compresión isoterma a $T_C$, $4\to1$ compresión adiabática (la de U fig. 20.13 con números); los datos son coherentes con esto ($p_2&lt;p_1$, $V_3>V_2$). Al final se dan también los resultados con gas monoatómico.</p></div>
+  <ol class="steps">
+    <li><b>Estado 1.</b> $p_1=\dfrac{nRT_1}{V_1}=\dfrac{8{,}314\cdot500}{5\times10^{-3}}=8{,}31\times10^5$ Pa $=8{,}21$ atm.</li>
+    <li><b>Estado 2</b> (misma isoterma, $p_1V_1=p_2V_2$): $V_2=\dfrac{p_1V_1}{p_2}=\dfrac{4157\ \text{J}}{4\cdot1{,}013\times10^5}=\mathbf{10{,}26\ L}$; $T_2=500$ K.</li>
+    <li><b>Estado 3</b> (adiabática $2\to3$, $TV^{\gamma-1}$ cte): $T_3=T_C=500\left(\dfrac{10{,}26}{20}\right)^{0{,}4}=\mathbf{382{,}8\ K}$; $p_3=\dfrac{nRT_3}{V_3}=1{,}59\times10^5$ Pa $(1{,}57$ atm).</li>
+    <li><b>Estado 4.</b> En Carnot $\dfrac{V_2}{V_1}=\dfrac{V_3}{V_4}$ ⇒ $V_4=\dfrac{V_1V_3}{V_2}=\mathbf{9{,}75\ L}$; $p_4=3{,}27\times10^5$ Pa $(3{,}22$ atm).</li>
+    <li><b>a) Calor y trabajo por transición</b> ((20.10)-(20.11); adiabáticas $W=nC_V(T_{ini}-T_{fin})$, $C_V=\frac52R$):
+      <ul>
+        <li>$1\to2$ isoterma 500 K: $Q_{12}=W_{12}=nRT_1\ln\dfrac{V_2}{V_1}=4157\ln2{,}052=\mathbf{+2988\ J}$ (entra).</li>
+        <li>$2\to3$ adiabática: $Q=0$; $W_{23}=nC_V(T_1-T_3)=\frac52\cdot8{,}314\cdot117{,}2=\mathbf{+2435\ J}$.</li>
+        <li>$3\to4$ isoterma 382,8 K: $Q_{34}=W_{34}=nRT_3\ln\dfrac{V_4}{V_3}=-nRT_3\ln\dfrac{V_2}{V_1}=\mathbf{-2288\ J}$ (sale).</li>
+        <li>$4\to1$ adiabática: $Q=0$; $W_{41}=\mathbf{-2435\ J}$.</li>
+      </ul></li>
+    <li><b>b) Rendimiento.</b> $W=2988-2288=\mathbf{700\ J}$ por ciclo; $e=\dfrac{W}{Q_H}=\dfrac{700}{2988}=\mathbf{0{,}234\ (23{,}4\,\%)}$. Coincide con $e=1-\dfrac{T_C}{T_H}=1-\dfrac{382{,}8}{500}$ (20.14), como debe en Carnot.</li>
+    <li><b>c) Potencia.</b> $P=\dfrac{W}{t}=700\ \text{J}\cdot30\ \text{s}^{-1}=\mathbf{2{,}1\times10^4\ W=21\ kW}$.</li>
+    <li><b>Comprobación con entropía:</b> $\dfrac{Q_{12}}{T_1}=+5{,}98$ J/K y $\dfrac{Q_{34}}{T_3}=-5{,}98$ J/K: suma 0 (20.20).</li>
+    <li><b>Si el gas fuese monoatómico ($\gamma=5/3$):</b> los estados 1, 2 y 4 y $Q_{12}=2988$ J no cambian; $T_3=320{,}4$ K, $p_3=1{,}31$ atm, $W_{23}=-W_{41}=2240$ J, $Q_{34}=-1915$ J, $W=1073$ J, $e=35{,}9\,\%$, $P=32{,}2$ kW.</li>
+  </ol>
+  <table>
+    <tr><th>Estado</th><th>$V$ (L)</th><th>$p$ (atm)</th><th>$T$ (K)</th></tr>
+    <tr><td>1</td><td>5,00</td><td>8,21</td><td>500</td></tr>
+    <tr><td>2</td><td>10,26</td><td>4,00</td><td>500</td></tr>
+    <tr><td>3</td><td>20,00</td><td>1,57</td><td>382,8</td></tr>
+    <tr><td>4</td><td>9,75</td><td>3,22</td><td>382,8</td></tr>
+  </table>
+  {{fig:ciclo-de-carnot-con-los-vertices-del-examen-1-2-}}
+  <div class="recipe"><b>Receta:</b> Carnot con estados sueltos: completa los vértices con $pV=nRT$ (isotermas) y $TV^{\gamma-1}$ cte (adiabáticas), usa $V_2/V_1=V_3/V_4$; calores solo en las isotermas ($nRT\ln$), trabajos de las adiabáticas iguales y opuestos; $e=1-T_C/T_H$; potencia = trabajo por ciclo × ciclos por segundo. <b>Error típico:</b> calcular $e$ con temperaturas en °C; poner calor en las adiabáticas; multiplicar el <b>calor</b> absorbido (y no el trabajo neto) por 30; no declarar la hipótesis sobre $n$ y $\gamma$.</div>

@@ -1,0 +1,1527 @@
+{
+ "num": 19,
+ "kick": "Bloque Termodinámica · Tema 19",
+ "titulo": "Primera ley de la termodinámica",
+ "descripcion": "La <b>conservación de la energía</b> aplicada al calor: cuánto trabajo hace un gas al cambiar de volumen (el <b>área bajo la curva $pV$</b>), por qué el calor y el trabajo dependen del camino pero la <b>energía interna</b> no, y cómo se resuelven los cuatro procesos clásicos (isóbaro, isócoro, isotermo y adiabático) y los <b>ciclos de gas ideal</b> que caen en examen una y otra vez.",
+ "chips": [
+  "Libro oficial: Sears-Zemansky, cap. 19 (pp. 618-646; resumen p. 637; problema práctico p. 638; ejercicios y problemas pp. 639-645)",
+  "Ejercicios de examen: 10 problemas (X1-X10) y 3 preguntas de teoría (T1)",
+  "Ejercicios: 24 del libro (solucionario) + 7 ejemplos de U + problema práctico",
+  "2 interactivos (procesos $pV$ y ciclos)",
+  "⏱ ~10 h de estudio"
+ ],
+ "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
+ "titulo_pagina": "Física I · Tema 19 Primera ley de la termodinámica",
+ "archivo": "tema_19_primera_ley_termodinamica.html",
+ "examenes_requeridos": [
+  "Examen Febrero 2023 (1ª semana) P-4 Opción B",
+  "Examen Febrero 2024 (2ª semana) P-2",
+  "Examen Febrero 2022 (1ª semana) P-2",
+  "Examen Septiembre 2019 (Reserva) P-2",
+  "Examen Septiembre 2019 (Original) P-2",
+  "Examen Febrero 2019 (1ª semana) P-1",
+  "Examen Febrero 2023 (2ª semana) P-2",
+  "Examen Septiembre 2024 P-2",
+  "Examen Febrero 2025 (2ª semana) P-2",
+  "Examen Febrero 2025 (1ª semana) P-2",
+  "Examen Febrero 2019 (2ª semana) P-2"
+ ],
+ "figuras": {
+  "un-sistema-con-calor-q-entrando-por-la-izquierda": {
+   "w": "340",
+   "h": "178",
+   "label": "Un sistema con calor Q entrando por la izquierda y trabajo W saliendo por la derecha: convención de signos de la termodinámica",
+   "pie": "Convención de signos: <b>Q &gt; 0</b> si entra calor al sistema, <b>W &gt; 0</b> si el sistema hace trabajo sobre el entorno.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §19.1, p. 619",
+    "txt": "P"
+   }
+  },
+  "diagrama-pv-con-una-curva-de-expansion-o-compres": {
+   "w": "340",
+   "h": "215",
+   "label": "Diagrama pV con una curva de expansión (o compresión) y el área bajo ella sombreada",
+   "pie": "Expansión de 1 a 2: el área bajo la curva es el trabajo, <b>W &gt; 0</b>.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §19.2, fig. 19.6, p. 621",
+    "txt": "P"
+   }
+  },
+  "diagrama-pv-con-una-curva-de-expansion-o-compres-2": {
+   "w": "340",
+   "h": "215",
+   "label": "Diagrama pV con una curva de expansión (o compresión) y el área bajo ella sombreada",
+   "pie": "Compresión de 2 a 1 por la misma curva: el mismo área, pero recorrida hacia la izquierda, <b>W &lt; 0</b>.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §19.2, fig. 19.6, p. 621",
+    "txt": "P"
+   }
+  },
+  "diagrama-pv-el-trabajo-isotermo-de-v1-a-v2-es-me": {
+   "w": "340",
+   "h": "215",
+   "label": "Diagrama pV: el trabajo isotermo de V1 a V2 es menor que el rectángulo isobárico a presión p1 porque la presión baja",
+   "pie": "Misma expansión de $V_1$ a $V_2$ ($V_2=2V_1$): el área bajo la <b>isoterma</b> (azul) es $nRT\\ln 2\\approx0{,}69\\,p_1V_1$, menor que el rectángulo del proceso <b>isobárico</b> ($p_1V_1$), porque en la isoterma la presión cae.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U ejemplo 19.1, p. 621 y ec. 19.3",
+    "txt": "P"
+   }
+  },
+  "ciclo-en-un-diagrama-pv-recorrido-en-sentido-hor": {
+   "w": "340",
+   "h": "215",
+   "label": "Ciclo en un diagrama pV recorrido en sentido horario; el área encerrada es el trabajo neto",
+   "pie": "Un ciclo recorrido en sentido <b>horario</b> encierra un área igual al trabajo neto <b>$W&gt;0$</b> (motor); en sentido <b>antihorario</b>, $W&lt;0$ (refrigerador). Al cerrarse el ciclo, $\\Delta U=0$ y $Q=W$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §19.3, pp. 622-623 y ejemplo 19.3, p. 626",
+    "txt": "P"
+   }
+  },
+  "rectangulo-abdc-en-el-diagrama-pv-del-ejemplo-19": {
+   "w": "340",
+   "h": "215",
+   "label": "Rectángulo abdc en el diagrama pV del ejemplo 19.4: dos trayectorias abd y acd con trabajo 240 J y 90 J",
+   "pie": "Ejemplo 19.4: dos caminos de $a$ a $d$. Mismo $\\Delta U=510$ J, pero $W_ {abd}=240$ J (área azul grande) y $W_ {acd}=90$ J (área naranja): $W$ y $Q$ dependen del camino.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U ejemplo 19.4, fig. 19.13, p. 627",
+    "txt": "P"
+   }
+  },
+  "evaporacion-de-un-gramo-de-agua-a-1-atmosfera-el": {
+   "w": "340",
+   "h": "215",
+   "label": "Evaporación de un gramo de agua a 1 atmósfera: el volumen pasa de 1 a 1671 centímetros cúbicos y el trabajo es el rectángulo de 169 julios",
+   "pie": "Ejemplo 19.5: 1 g de agua hierve a $p=1$ atm constante. El gas se expande de 1 a 1671 cm³: $W=169$ J, mientras que $Q=2256$ J; por tanto $\\Delta U=2087$ J.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U ejemplo 19.5, p. 628",
+    "txt": "P"
+   }
+  },
+  "cuatro-procesos-desde-el-mismo-estado-inicial-en": {
+   "w": "340",
+   "h": "215",
+   "label": "Cuatro procesos desde el mismo estado inicial en un diagrama pV: isobárico horizontal, isotérmico hiperbólico, adiabático más empinado y isocórico vertical",
+   "pie": "Los cuatro procesos de §19.5 desde el mismo estado 1: <b>isobárico</b> (horizontal), <b>isotérmico</b> ($pV$ = cte), <b>adiabático</b> (más empinado que la isoterma) e <b>isocórico</b> (vertical).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §19.5, pp. 628-630",
+    "txt": "P"
+   }
+  },
+  "dos-isotermas-de-un-gas-ideal-a-t-y-t-mas-delta-": {
+   "w": "340",
+   "h": "215",
+   "label": "Dos isotermas de un gas ideal a T y T más delta T: para subir de una a otra a volumen constante hace falta nCV por delta T; a presión constante, nCp por delta T, porque además hay trabajo",
+   "pie": "$\\Delta U$ es el mismo (de la isoterma $T$ a la de $T+\\Delta T$) por cualquier camino. A <b>volumen constante</b> todo el calor es $\\Delta U$; a <b>presión constante</b> además hay trabajo $W=nR\\Delta T$ (rectángulo), luego $C_p=C_V+R$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §19.7, pp. 631-632, ec. 19.17",
+    "txt": "P"
+   }
+  },
+  "expansion-adiabatica-y-expansion-isotermica-de-u": {
+   "w": "340",
+   "h": "215",
+   "label": "Expansión adiabática y expansión isotérmica de un gas ideal monoatómico desde el mismo estado: la adiabática baja más la presión y enfría el gas",
+   "pie": "Expansión al doble de volumen de un gas monoatómico ($\\gamma=5/3$): la isoterma llega a $p_1/2$, la <b>adiabática</b> más abajo, $p_1/2^{5/3}=0{,}31\\,p_1$, y $T_2=T_1/2^{2/3}$: el gas se <b>enfría</b> porque el trabajo sale de su $U$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §19.8, fig. 19.20, p. 634",
+    "txt": "P"
+   }
+  },
+  "compresion-adiabatica-del-motor-diesel-con-razon": {
+   "w": "340",
+   "h": "215",
+   "label": "Compresión adiabática del motor diésel con razón de compresión 15: la presión pasa de 1,01 a 44,8 por diez a la cinco pascales",
+   "pie": "Ejemplo 19.7 (motor diésel, $r=15$): $T_1=300$ K, $p_1=1{,}01\\times10^5$ Pa $\\to$ $T_2=886$ K, $p_2=44{,}8\\times10^5$ Pa. El trabajo es negativo (compresión).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U ejemplo 19.7, p. 636",
+    "txt": "P"
+   }
+  },
+  "rectangulo-abcd-en-el-diagrama-pv-con-las-energi": {
+   "w": "340",
+   "h": "215",
+   "label": "Rectángulo abcd en el diagrama pV con las energías internas de los cuatro estados, los trabajos de bc y ad, y los calores de los cuatro tramos",
+   "pie": "Examen Feb. 2024 (2ª): los tramos verticales ($ab$, $dc$) no hacen trabajo; $Q=\\Delta U+W$ da $+90$, $+890$, $+300$ y $+350$ J. (Dibujo esquemático, sin escala.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2024 (2ª semana) P-2",
+    "txt": "P"
+   }
+  },
+  "compresion-adiabatica-de-un-gas-monoatomico-de-0": {
+   "w": "340",
+   "h": "215",
+   "label": "Compresión adiabática de un gas monoatómico de 0,10 a 0,05 metros cúbicos: la presión sube de 3 a 9,52 por diez a la cinco pascales, más que en la isoterma que llegaría a 6",
+   "pie": "Examen Feb. 2022: compresión adiabática ($\\gamma=5/3$) de 0,10 a 0,05 m³. $p_2=9{,}52\\times10^5$ Pa (la isoterma, a trazos, solo daría $6\\times10^5$); el área sombreada es $|W|=26{,}4$ kJ.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2022 (1ª semana) P-2",
+    "txt": "P"
+   }
+  },
+  "expansion-adiabatica-reversible-de-3-a-9-litros-": {
+   "w": "340",
+   "h": "215",
+   "label": "Expansión adiabática reversible de 3 a 9 litros partiendo de 1 atmósfera: el área bajo la curva es 237 julios, menor que los 334 de la isoterma",
+   "pie": "Examen Sept. 2019 (Reserva): expansión adiabática de 3 a 9 L a partir de 1 atm. $p_2=0{,}160$ atm; $W=237$ J (área sombreada), menor que en la isoterma (334 J).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Septiembre 2019 (Reserva) P-2",
+    "txt": "P"
+   }
+  },
+  "cilindro-aislado-dividido-por-un-piston-conducto": {
+   "w": "340",
+   "h": "188",
+   "label": "Cilindro aislado dividido por un pistón conductor: a la izquierda un litro de aire a 2 atmósferas y a la derecha un litro a 1 atmósfera, que al soltar el pistón pasan a 4/3 L y 2/3 L a 1,5 atmósferas",
+   "pie": "Examen Sept. 2019 (Original): al soltar el pistón se alcanza $p_f=1{,}5$ atm con $T$ sin cambio (300 K); el gas de la izquierda ocupa $4/3$ L y el de la derecha $2/3$ L.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Septiembre 2019 (Original) P-2",
+    "txt": "P"
+   }
+  },
+  "ciclo-abca-de-un-mol-de-gas-monoatomico-isobara-": {
+   "w": "340",
+   "h": "215",
+   "label": "Ciclo ABCA de un mol de gas monoatómico: isóbara de A a B, isócora de B a C e isoterma de vuelta a A, en sentido horario",
+   "pie": "Examen Feb. 2019 (1ª) P-1: ciclo horario $A\\to B\\to C\\to A$. $W_ {ciclo}=81{,}7$ J $=\\sum Q$; sólo entra calor en $A\\to B$ ($380$ J): $e=0{,}215$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2019 (1ª semana) P-1",
+    "txt": "P"
+   }
+  },
+  "ciclo-de-la-maquina-termica-del-examen-isocora-d": {
+   "w": "340",
+   "h": "215",
+   "label": "Ciclo de la máquina térmica del examen: isócora de A a B, isoterma de B a C e isóbara de C a A, horario",
+   "pie": "Examen Feb. 2023 (2ª) P-2: $Q_H=16{,}1+19{,}8=35{,}9$ kJ, $|Q_C|=26{,}8$ kJ, $W=9{,}09$ kJ, $e=25{,}3\\,\\%$ (Carnot: $75\\,\\%$).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2023 (2ª semana) P-2",
+    "txt": "P"
+   }
+  },
+  "ciclo-con-helio-isocora-de-a-a-b-isoterma-de-b-a": {
+   "w": "340",
+   "h": "215",
+   "label": "Ciclo con helio: isócora de a a b, isoterma de b a c e isóbara de c a a, en sentido horario",
+   "pie": "Examen Sept. 2024 P-2 (1,5 mol de He): $Q_H=13{,}7$ kJ, $|Q_C|=11{,}2$ kJ, $W=2{,}54$ kJ, $e=18{,}5\\,\\%$ (Carnot: $62{,}5\\,\\%$).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Septiembre 2024 P-2",
+    "txt": "P"
+   }
+  },
+  "triangulo-a-b-c-del-examen-isobara-de-a-a-b-isoc": {
+   "w": "340",
+   "h": "215",
+   "label": "Triángulo a b c del examen: isóbara de a a b, isócora de b a c y recta de c a a; en la recta entra calor hasta V estrella y sale después",
+   "pie": "Examen Feb. 2025 (2ª) P-2: $a\\to b$ isóbara, $b\\to c$ isócora, $c\\to a$ recta. En la recta cambia el signo de $dQ$ en $V^*=0{,}681$ m³ (azul: entra calor; morado: sale). $W=27$ kJ (área del triángulo).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2025 (2ª semana) P-2",
+    "txt": "P"
+   }
+  },
+  "ciclo-de-refrigeracion-con-gas-diatomico-isoterm": {
+   "w": "340",
+   "h": "215",
+   "label": "Ciclo de refrigeración con gas diatómico: isoterma de a a b, isócora de b a c e isóbara de c a a, recorrido en sentido antihorario",
+   "pie": "Examen Feb. 2025 (1ª) P-2: ciclo <b>antihorario</b> ($W=-2{,}37$ kJ): calor absorbido $14{,}78$ kJ, cedido $17{,}15$ kJ, $K=6{,}23$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2025 (1ª semana) P-2",
+    "txt": "P"
+   }
+  },
+  "ciclo-de-un-kilogramo-de-aire-con-dos-adiabatica": {
+   "w": "340",
+   "h": "215",
+   "label": "Ciclo de un kilogramo de aire con dos adiabáticas, una isóbara a 30 atmósferas y una isócora, en sentido horario",
+   "pie": "Examen Feb. 2019 (2ª) P-2: dos adiabáticas, la isóbara a 30 atm (entra $1254$ kJ) y la isócora (salen $594$ kJ); $W=660$ kJ, $e=0{,}526$. (Esquema a escala.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2019 (2ª semana) P-2",
+    "txt": "P"
+   }
+  },
+  "calentamiento-isobarico-de-dos-moles-segmento-ho": {
+   "w": "340",
+   "h": "215",
+   "label": "Calentamiento isobárico de dos moles: segmento horizontal con el rectángulo de trabajo",
+   "pie": "E 19.1: calentamiento isobárico de 27 °C a 107 °C; el gas se expande a presión constante y el área del rectángulo es $W=nR\\Delta T=1330$ J.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.1",
+    "txt": "P"
+   }
+  },
+  "expansion-isobarica-de-0-110-a-0-320-metros-cubi": {
+   "w": "340",
+   "h": "215",
+   "label": "Expansión isobárica de 0,110 a 0,320 metros cúbicos a 1,65 por diez a la cinco pascales",
+   "pie": "E 19.9: expansión a presión constante $1{,}65\\times10^5$ Pa de 0,110 a 0,320 m³: $W=3{,}47\\times10^4$ J.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.9",
+    "txt": "P"
+   }
+  },
+  "proceso-isocorico-de-a-a-b-segmento-vertical-a-0": {
+   "w": "340",
+   "h": "215",
+   "label": "Proceso isocórico de a a b: segmento vertical a 0,050 metros cúbicos entre 30 y 60 kilopascales",
+   "pie": "E 19.15: proceso a volumen constante; no hay área bajo un segmento vertical, así que $W=0$. Las isotermas (a trazos) muestran que $T_b=2T_a$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.15",
+    "txt": "P"
+   }
+  },
+  "compresion-isotermica-hiperbola-recorrida-hacia-": {
+   "w": "340",
+   "h": "215",
+   "label": "Compresión isotérmica: hipérbola recorrida hacia la izquierda con el área sombreada de signo negativo",
+   "pie": "E 19.3: compresión isotérmica a 338,15 K hasta triplicar la presión; recorrida hacia la izquierda, $W=-6180$ J.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.3",
+    "txt": "P"
+   }
+  },
+  "ciclo-rectangular-1-3-2-4-del-problema-19-7-el-t": {
+   "w": "340",
+   "h": "215",
+   "label": "Ciclo rectangular 1, 3, 2, 4 del problema 19.7: el trabajo neto es el área encerrada",
+   "pie": "E 19.7: ciclo $1\\to3\\to2\\to4\\to1$. Sentido horario: $W=+(p_1-p_2)(V_2-V_1)$; en sentido contrario, el mismo valor con signo negativo.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.7 (U fig. 19.7a)",
+    "txt": "P"
+   }
+  },
+  "proceso-abc-del-problema-19-11-vertical-de-a-a-b": {
+   "w": "340",
+   "h": "215",
+   "label": "Proceso abc del problema 19.11: vertical de a a b y recta de b a c con el trapecio de trabajo 162 julios; isotermas a trazos",
+   "pie": "E 19.11: $W_ {ab}=0$; $W_ {bc}$ es el trapecio sombreado (162 J). Las isotermas (trazos) por $a$, $b$ y $c$ confirman que $T$ es mínima en $a$ (278 K).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.11 (U fig. E19.11)",
+    "txt": "P"
+   }
+  },
+  "helio-calentado-de-27-a-67-grados-a-volumen-cons": {
+   "w": "340",
+   "h": "215",
+   "label": "Helio calentado de 27 a 67 grados: a volumen constante hacen falta 4,99 julios y a presión constante 8,31 julios, la diferencia es el trabajo de 3,33 julios",
+   "pie": "E 19.18: de 27 °C a 67 °C ($\\Delta U=4{,}99$ J en ambos). Vertical: $Q=nC_V\\Delta T$; horizontal: $Q=nC_p\\Delta T$, con $W=3{,}33$ J de más.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.18",
+    "txt": "P"
+   }
+  },
+  "calentamiento-isobarico-del-co2-a-una-atmosfera-": {
+   "w": "340",
+   "h": "215",
+   "label": "Calentamiento isobárico del CO2 a una atmósfera: rectángulo de trabajo 208 julios",
+   "pie": "E 19.17: CO₂ a 1 atm de 27 °C a 127 °C. $W=208$ J (rectángulo); si la presión fuese 0,50 atm el rectángulo cambia de forma pero tiene la misma área.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.17",
+    "txt": "P"
+   }
+  },
+  "expansion-isobarica-de-tres-moles-de-gas-monoato": {
+   "w": "340",
+   "h": "215",
+   "label": "Expansión isobárica de tres moles de gas monoatómico a 2,50 atmósferas",
+   "pie": "E 19.22: expansión de 3,20 a 4,50 ×10⁻² m³ a 2,50 atm: $W=3{,}29$ kJ; $Q=8{,}23$ kJ; $\\Delta U=4{,}94$ kJ.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.22",
+    "txt": "P"
+   }
+  },
+  "tres-formas-de-duplicar-el-volumen-de-2-5-a-5-li": {
+   "w": "340",
+   "h": "215",
+   "label": "Tres formas de duplicar el volumen de 2,5 a 5 litros: isobárica hasta 601 kelvin, isotérmica hasta 301 y adiabática hasta 189",
+   "pie": "E 19.32: duplicar el volumen por tres caminos. La temperatura final es 601 K (isobárica), 301 K (isoterma) o 189 K (adiabática); la presión final, 1,00, 0,50 o $0{,}315\\times10^5$ Pa.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.32",
+    "txt": "P"
+   }
+  },
+  "compresion-adiabatica-del-aire-del-motor-al-0-09": {
+   "w": "340",
+   "h": "215",
+   "label": "Compresión adiabática del aire del motor al 0,09 de su volumen: la presión sube de 1 a 29,1 atmósferas y la temperatura de 293 a 768 kelvin",
+   "pie": "E 19.28: compresión adiabática a $0{,}0900\\,V_1$. La adiabática (morada) sube hasta $29{,}1$ atm; la isoterma (trazos) sólo daría $11{,}1$ atm. La diferencia es el calentamiento del gas.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.28",
+    "txt": "P"
+   }
+  },
+  "una-masa-de-aire-que-sube-desde-el-suelo-a-26-gr": {
+   "w": "340",
+   "h": "140",
+   "label": "Una masa de aire que sube desde el suelo a 26 grados y 1,01 por diez a la cinco pascales hasta 0,850 por diez a la cinco pascales, enfriándose a 11,6 grados",
+   "pie": "E 19.31: una masa de aire que asciende se expande y se enfría sin intercambiar calor apreciable (adiabático): de $26{,}0$ °C a $11{,}6$ °C. (Esquema; tamaños no a escala.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.31",
+    "txt": "P"
+   }
+  },
+  "figura-p19-37-con-las-trayectorias-acb-y-adb-de-": {
+   "w": "340",
+   "h": "215",
+   "label": "Figura P19.37 con las trayectorias acb y adb de a a b: el cambio de energía interna es 30 julios por cualquier camino",
+   "pie": "E 19.37: $\\Delta U_ {ab}=30$ J por cualquier camino; $Q_ {adb}=45$ J; $Q_ {ad}=23$ J y $Q_ {db}=22$ J; de $b$ a $a$ por la curva, $Q=-65$ J. (Esquema sin escala.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.37",
+    "txt": "P"
+   }
+  },
+  "figura-p19-39-camino-abc-con-area-4-kilojulios-f": {
+   "w": "340",
+   "h": "215",
+   "label": "Figura P19.39: camino abc con área 4 kilojulios frente a la recta ac con 8 kilojulios, entre dos estados de la misma temperatura",
+   "pie": "E 19.39: $T_a=T_c$ ($pV=6000$ J en ambos), luego $\\Delta U=0$ y $Q=W$ por cualquier camino: $4{,}0$ kJ por $abc$ y $8{,}0$ kJ por la recta $ac$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.39",
+    "txt": "P"
+   }
+  },
+  "ciclo-de-3-25-mol-de-helio-isobara-de-a-a-b-isoc": {
+   "w": "340",
+   "h": "215",
+   "label": "Ciclo de 3,25 mol de helio: isóbara de a a b, isócora de b a c e isoterma de c a a, con las temperaturas de cada vértice y el calor de cada tramo",
+   "pie": "E 19.36: $T_a=T_c=296$ K, $T_b=1184$ K. $\\Delta U$: $+36{,}0$, $-36{,}0$ y $0$ kJ; $W_ {ciclo}=12{,}9$ kJ.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.36",
+    "txt": "P"
+   }
+  },
+  "ciclo-abc-del-problema-19-42-isobara-de-a-a-c-ad": {
+   "w": "340",
+   "h": "215",
+   "label": "Ciclo abc del problema 19.42: isóbara de a a c, adiabática de c a b e isócora de b a a, en sentido antihorario; el trabajo total es negativo",
+   "pie": "E 19.42: ciclo antihorario. $W_ {ac}=+4789$ J, $W_ {cb}=-6735$ J, $W_ {ba}=0$: $W_ {total}=-1946$ J. (Ejes en unidades relativas; la adiabática verifica $pV^{1,4}=$ cte.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 19.42",
+    "txt": "P"
+   }
+  },
+  "isoterma-a-300-kelvin-del-etano-segun-la-ecuacio": {
+   "w": "340",
+   "h": "215",
+   "label": "Isoterma a 300 kelvin del etano según la ecuación de van der Waals comparada con la del gas ideal entre 2 y 4 litros",
+   "pie": "Problema práctico de U (p. 638): etano, 1,80 mol, 300 K, de 2,00 L a 4,00 L. El área bajo la curva de van der Waals es $2{,}80\\times10^3$ J, algo menor que la del gas ideal, $3{,}11\\times10^3$ J.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema práctico de U, p. 638",
+    "txt": "P"
+   }
+  }
+ },
+ "bloques": [
+  {
+   "t": "h2",
+   "id": "prereq",
+   "n": "0",
+   "titulo": "Antes de empezar",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U cap. 19, portadilla e introducción, p. 618",
+    "txt": "U p.618"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte01.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte02.html"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Qué ha caído en examen: es uno de los temas más preguntados",
+   "html": [
+    "<p>Hay <b>10 problemas de examen real</b> cuyo cálculo central es la primera ley y la termodinámica del gas ideal (cuatro son primera ley y procesos sin ciclo, X1–X4; los otros seis son ciclos cuya eficiencia se termina en el tema 20) y <b>3 preguntas de teoría</b>. Todos están resueltos en §11.1 y §10. No cae nada de «aprender fórmulas»: cae <b>una tabla de $Q$, $W$ y $\\Delta U$ por tramos</b>.</p>",
+    "  <table>",
+    "    <tr><th>Convocatoria y pregunta</th><th>De qué va</th><th>Dónde</th></tr>",
+    "    <tr><td>Examen Febrero 2024 (2ª semana) P-2</td><td>Dos trayectorias $abc$ y $adc$ entre dos estados: calor en cada tramo (primera ley, sin gas ideal)</td><td>§11.1, X1</td></tr>",
+    "    <tr><td>Examen Febrero 2022 (1ª semana) P-2</td><td>Compresión adiabática de gas monoatómico: $p_2$, $W$, $T_2/T_1$</td><td>§11.1, X2</td></tr>",
+    "    <tr><td>Examen Septiembre 2019 (Reserva) P-2</td><td>Trabajo de una expansión adiabática reversible de 3 L al triple</td><td>§11.1, X3</td></tr>",
+    "    <tr><td>Examen Septiembre 2019 (Original) P-2</td><td>Dos gases separados por un pistón conductor en un cilindro aislado</td><td>§11.1, X4</td></tr>",
+    "    <tr><td>Examen Febrero 2019 (1ª semana) P-1</td><td>Ciclo ABCA de un mol de gas monoatómico (isóbara, isócora, isoterma)</td><td>§11.1, X5</td></tr>",
+    "    <tr><td>Examen Febrero 2023 (2ª semana) P-2</td><td>Máquina térmica: isócora, isoterma e isóbara con 3 mol</td><td>§11.1, X6</td></tr>",
+    "    <tr><td>Examen Septiembre 2024 P-2</td><td>Ciclo con 1,5 mol de helio: isócora, isoterma e isóbara</td><td>§11.1, X7</td></tr>",
+    "    <tr><td>Examen Febrero 2025 (2ª semana) P-2</td><td>Ciclo isóbaro–isócoro–recta, gas monoatómico</td><td>§11.1, X8</td></tr>",
+    "    <tr><td>Examen Febrero 2025 (1ª semana) P-2</td><td>Refrigerador con gas diatómico: isoterma, isócora, isóbara</td><td>§11.1, X9</td></tr>",
+    "    <tr><td>Examen Febrero 2019 (2ª semana) P-2</td><td>Ciclo de 1 kg de aire con dos adiabáticas</td><td>§11.1, X10</td></tr>",
+    "    <tr><td>Examen Febrero 2018 (1ª sem.) P-3 (3.1); Febrero 2020 (1ª sem.) P-3 (3.2); Febrero 2023 (1ª sem.) P-4 (B)</td><td><b>Teoría</b> (4 puntos): «Primera ley de la termodinámica» / «Energía interna y primera ley»; en 2023 con dos cuestiones</td><td>§10, T1</td></tr>",
+    "  </table>"
+   ],
+   "src": {
+    "l": "X",
+    "ref": "Examen Febrero 2024 (2ª semana) P-2; Febrero 2022 (1ª semana) P-2; Septiembre 2019 (Reserva) P-2; Septiembre 2019 (Original) P-2; Febrero 2019 (1ª semana) P-1; Febrero 2023 (2ª semana) P-2; Septiembre 2024 P-2; Febrero 2025 (2ª semana) P-2; Febrero 2025 (1ª semana) P-2; Febrero 2019 (2ª semana) P-2; Febrero 2018 (1ª semana) P-3; Febrero 2020 (1ª semana) P-3; Febrero 2023 (1ª semana) P-4",
+    "txt": "X"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "La receta maestra del tema: qué te piden",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Dibuja el diagrama $pV$</b> con los estados y flechas (sentido horario o antihorario) antes de calcular nada.</li>",
+    "    <li><b>Una tabla de $Q$, $W$ y $\\Delta U$ por cada tramo</b> (Estrategia 19.1, U p. 626): $W$ = área bajo el tramo ($0$ si es vertical); $\\Delta U$ de los datos de $U$ o, para gas ideal, de $nC_V\\Delta T=\\tfrac{C_V}{R}\\Delta(pV)$; y $Q=\\Delta U+W$ (19.5).</li>",
+    "    <li><b>Comprueba el ciclo</b>: $\\sum\\Delta U=0$ y $W_{neto}=\\sum Q$.</li>",
+    "    <li><b>Signos</b>: $Q>0$ entra calor; $W>0$ el gas empuja al entorno (se expande).</li>",
+    "    <li><b>Gas ideal sin $n$</b>: trabaja con $pV$ (no hace falta $n$ ni $T$). <b>Temperaturas en kelvin</b> en cualquier potencia o cociente.</li>",
+    "    <li><b>Adiabático</b>: $pV^\\gamma$, $TV^{\\gamma-1}$ y $W=(p_1V_1-p_2V_2)/(\\gamma-1)$; $Q=0$ y no se dibuja con la fórmula de la isoterma.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Resumen propio del método; Estrategia 19.1 en U p. 626",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s1",
+   "n": "1",
+   "titulo": "Sistemas termodinámicos",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §19.1, pp. 618-619",
+    "txt": "U p.618-619"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>La termodinámica se pregunta: <b>¿a dónde va la energía?</b> Pones un gas en un cilindro con pistón. Si lo calientas, el gas se hincha y empuja el pistón: parte de la energía que le diste como calor se convierte en trabajo mecánico (el motor de un coche o una locomotora de vapor hacen exactamente eso), y el resto se queda dentro del gas, haciendo que sus moléculas se muevan más deprisa. Piensa en una <b>cuenta bancaria</b>: el saldo es la energía interna $U$; el calor que entra es un ingreso; el trabajo que el gas hace sobre el entorno es un gasto. La primera ley dice que el saldo cambia exactamente en <i>ingresos menos gastos</i>.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.1, p. 618",
+    "txt": "U p.618"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Sistema, entorno, estado y proceso",
+   "html": "<p>Un <b>sistema termodinámico</b> es cualquier conjunto de objetos que decidimos estudiar (el gas del cilindro, el agua de una olla); todo lo demás es el <b>entorno</b>. Un <b>estado</b> queda descrito por variables como $p$, $V$, $T$ y $n$ (tema 18). Un <b>proceso termodinámico</b> es un cambio de un estado a otro; cuando el sistema intercambia energía con el entorno, lo hace por <b>calor $Q$</b> (transferencia por diferencia de temperatura) o por <b>trabajo $W$</b> (cambio de volumen o fuerzas mecánicas).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.1, pp. 618-619",
+    "txt": "U p.618-619"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Convención de signos (la de este tema y de los exámenes)",
+   "html": "<p>$Q>0$: <b>entra</b> calor al sistema. $Q&lt;0$: sale calor. $W>0$: el sistema <b>hace trabajo sobre el entorno</b> (se expande). $W&lt;0$: el entorno hace trabajo sobre el sistema (se comprime).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.1, p. 619",
+    "txt": "U p.619"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "un-sistema-con-calor-q-entrando-por-la-izquierda"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>En mecánica (tema 6) el trabajo positivo es el que se hace <i>sobre</i> el cuerpo; aquí $W>0$ es el trabajo hecho <i>por</i> el sistema. Por eso la primera ley llevará un signo menos ($\\Delta U=Q-W$). Decide la convención al empezar y no la cambies a mitad de problema.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.1, Cuidado, p. 619",
+    "txt": "U p.619"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s2",
+   "n": "2",
+   "titulo": "Trabajo realizado al cambiar el volumen",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §19.2, pp. 620-622",
+    "txt": "U p.620-622"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Cuando el gas empuja el pistón y este se desplaza, el gas hace trabajo: <b>fuerza por distancia</b>. Como la fuerza es presión por área, $F\\,dx=pA\\,dx=p\\,dV$: <b>el trabajo es la presión multiplicada por el volumen que se «barre»</b>. Si el gas se expande, entrega energía al entorno ($W>0$); si lo comprimimos, la recibe ($W&lt;0$). Si el volumen no cambia, no hay trabajo, por mucho que suba la presión.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.2, p. 620",
+    "txt": "U p.620"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_19_5_dW.png",
+   "alt": "Cilindro con pistón que se desplaza una distancia dx; el gas ejerce una fuerza pA sobre el pistón",
+   "pie": "Trabajo infinitesimal: el sistema empuja el pistón con la fuerza $pA$ una distancia $dx$, luego $dW=pA\\,dx=p\\,dV$.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 19.5, p. 620",
+    "txt": "U p.620"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Trabajo de un gas al cambiar de volumen",
+   "html": [
+    "<p>$$dW=p\\,dV\\qquad(19.1)\\qquad\\qquad W=\\int_{V_1}^{V_2}p\\,dV\\qquad(19.2)$$",
+    "  Para un cambio finito hay que saber <b>cómo varía $p$ con $V$</b> durante el proceso. En un diagrama $pV$, $W$ es el <b>área bajo la curva</b> entre $V_1$ y $V_2$. A <b>presión constante</b>: $W=p\\,(V_2-V_1)$ (19.3).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §19.2, ec. 19.1-19.3, pp. 620-621",
+    "txt": "U p.620-621"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "diagrama-pv-con-una-curva-de-expansion-o-compres"
+  },
+  {
+   "t": "fig",
+   "ref": "diagrama-pv-con-una-curva-de-expansion-o-compres-2"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: expansión isotérmica de un gas ideal",
+   "html": [
+    "<p>Un gas ideal se expande a $T$ constante de $V_1$ a $V_2$. En el proceso $p$ no es constante, pero $p=nRT/V$ (18.3); sacamos las constantes de la integral:</p>",
+    "  <ol class=\"steps\">",
+    "    <li>$W=\\displaystyle\\int_{V_1}^{V_2}p\\,dV=\\int_{V_1}^{V_2}\\frac{nRT}{V}\\,dV=nRT\\int_{V_1}^{V_2}\\frac{dV}{V}$.</li>",
+    "    <li>$\\boxed{W=nRT\\ln\\dfrac{V_2}{V_1}=nRT\\ln\\dfrac{p_1}{p_2}}$ (en la segunda forma se usó $p_1V_1=p_2V_2$).</li>",
+    "    <li><b>Signo:</b> si $V_2>V_1$ el logaritmo es positivo (expansión, $W>0$); si $V_2&lt;V_1$ es negativo (compresión, $W&lt;0$). $T$ en kelvin.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 19.1, p. 621",
+    "txt": "U p.621"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "diagrama-pv-el-trabajo-isotermo-de-v1-a-v2-es-me"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Truco de examen: unidades del trabajo",
+   "html": "<p>Con presión en Pa y volumen en m³ el trabajo sale en julios. Si trabajas con litros y atmósferas: $1\\ \\text{L}\\!\\cdot\\!\\text{atm}=101{,}3$ J. Si el problema da $p_1V_1$ en L·atm y piden J, multiplica al final. <b>Nunca</b> mezcles $R=8{,}314$ J/(mol·K) con litros.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Consejo propio; 1 atm = 1,013×10⁵ Pa (U §18.1)",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Calcular el trabajo como $p\\,\\Delta V$ en un proceso en el que la presión <b>no</b> es constante (isotermo, adiabático, una recta oblicua): en esos casos hay que integrar o tomar el área de la figura (trapecio, rectángulo, triángulo). Y recuerda: en un tramo vertical ($V$ constante) el trabajo es cero.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia sobre U §19.2, pp. 620-621",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s3",
+   "n": "3",
+   "titulo": "Trayectorias entre estados termodinámicos",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §19.3, pp. 622-623",
+    "txt": "U p.622-623"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Ir de Madrid a Barcelona por carretera o por autopista: el punto de partida y el de llegada son los mismos, pero <b>los kilómetros recorridos y el combustible gastado no</b>. El trabajo y el calor son como el combustible: dependen de <b>el camino</b> que sigue el gas en el diagrama $pV$, no solo de los estados inicial y final. Más adelante veremos que hay una cantidad que sí depende solo de los extremos: la energía interna.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.3, pp. 622-623",
+    "txt": "U p.622-623"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_19_7_trayectorias.png",
+   "alt": "Diagrama pV con tres trayectorias del estado 1 al 2 y el área bajo cada una como trabajo",
+   "pie": "Mismo estado inicial (1) y final (2), distinto trabajo: (a) tres trayectorias; (b) primero a presión $p_1$ y después a volumen constante: el área es grande; (c) primero a volumen constante y luego a presión $p_2$: el área es mucho menor.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 19.7, p. 622",
+    "txt": "U p.622"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "El trabajo depende de la trayectoria; un ciclo completo da trabajo neto",
+   "html": "<p>«El trabajo realizado por el sistema depende no solo de los estados inicial y final, sino también de los estados intermedios, es decir, de la trayectoria.» No tiene sentido hablar del «trabajo contenido en un sistema». Si el proceso es un <b>ciclo</b> (vuelve al estado inicial), el trabajo neto es el <b>área encerrada</b> por la curva: positivo si se recorre en sentido horario, negativo si antihorario.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.3, pp. 622-623",
+    "txt": "U p.622-623"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "ciclo-en-un-diagrama-pv-recorrido-en-sentido-hor"
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_19_8_expansion.png",
+   "alt": "Dos formas de expandir un gas de 2,0 L a 5,0 L a 300 K: lentamente con una plancha caliente, o rápido hacia el vacío en un recipiente aislado",
+   "pie": "Mismos estados 1 y 2 (gas a 300 K, de 2,0 L a 5,0 L), dos procesos: (a) expansión lenta, $W>0$ y $Q>0$; (b) <b>expansión libre</b> contra el vacío en un recipiente aislado, $W=0$ y $Q=0$.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 19.8, p. 623",
+    "txt": "U p.623"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "El calor también depende de la trayectoria",
+   "html": "<p>Con los mismos estados 1 y 2 de la figura, en (a) entra calor y el gas hace trabajo; en (b) no hay calor ni trabajo. Por eso <b>no existe «el calor contenido en un cuerpo»</b>: el calor es energía <i>en tránsito</i>, no una propiedad del estado.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.3, p. 623",
+    "txt": "U p.623"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Decir «el gas tiene $Q$ julios de calor» o «el gas tiene $W$ julios de trabajo». Solo se puede decir cuánto <i>se transfiere</i> en un proceso concreto.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia sobre U §19.3, pp. 622-623",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s4",
+   "n": "4",
+   "titulo": "Energía interna y primera ley de la termodinámica",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §19.4, pp. 623-628",
+    "txt": "U p.623-628"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>La <b>energía interna $U$</b> es la «caja fuerte» de energía de un sistema: la suma de las energías cinéticas de todas sus moléculas (que se agitan, giran, vibran) y de las potenciales por sus interacciones. No se mide en directo; se deduce de lo que entra y sale. La <b>primera ley</b> es el principio de conservación de la energía con el calor incluido: si le das calor $Q$ al sistema y el sistema entrega un trabajo $W$ al entorno, lo que no se ha gastado se queda en $U$. Como $U$ es una propiedad del <i>estado</i> (como la altura de una montaña no depende del camino que subas), $\\Delta U$ solo depende del estado inicial y final, aunque $Q$ y $W$ dependan del camino.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.4, pp. 623-624",
+    "txt": "U p.623-624"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Energía interna",
+   "html": "<p>La <b>energía interna</b> $U$ de un sistema es la suma de las energías cinéticas y potenciales de todas las partículas que lo forman (movimiento y fuerzas <i>entre ellas</i>). Se denota $\\Delta U=U_2-U_1$ en un cambio de estado.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.4, p. 623",
+    "txt": "U p.623"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Cuidado: ¿es interna?",
+   "html": "<p>$\\Delta U$ <b>no</b> incluye la energía potencial debida a la interacción del sistema con su entorno (por ejemplo, subir el cilindro a una torre no cambia la $U$ del gas), ni la energía cinética del sistema como un todo.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.4, Cuidado, p. 623",
+    "txt": "U p.623"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Primera ley de la termodinámica",
+   "html": [
+    "<p>$$\\Delta U=Q-W\\qquad(19.4)\\qquad\\Longleftrightarrow\\qquad Q=\\Delta U+W\\qquad(19.5)$$",
+    "  «El cambio de energía interna de un sistema durante cualquier proceso termodinámico depende solo de los estados inicial y final, no de la trayectoria»: $U$ es una <b>función de estado</b> (función de $p$, $V$, $T$). En cambio $Q$ y $W$ individualmente dependen del camino; solo su diferencia $Q-W$ no.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §19.4, ec. 19.4-19.5, pp. 624-625",
+    "txt": "U p.624-625"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Dos casos especiales",
+   "html": "<p><b>Proceso cíclico</b> (el sistema vuelve al estado inicial): $U_2=U_1$, luego $\\Delta U=0$ y $Q=W$ (el calor neto que entra se convierte íntegramente en trabajo neto). <b>Sistema aislado</b> (no intercambia calor ni trabajo): $W=Q=0$ y $\\Delta U=0$.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.4, p. 625",
+    "txt": "U p.625"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Forma infinitesimal",
+   "html": "<p>Para cambios pequeños: $dU=dQ-dW$ (19.6), y con $dW=p\\,dV$: $dU=dQ-p\\,dV$ (19.7). Es la que se usa para estudiar cómo cambia el signo de $dQ$ a lo largo de un tramo (ver X8) o para deducir resultados del gas ideal.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.4, ec. 19.6-19.7, p. 628",
+    "txt": "U p.628"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Estrategia 19.1: cómo se aplica la primera ley",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Define el sistema</b> (qué gas, qué cilindro) y escribe los estados inicial y final de cada paso.</li>",
+    "    <li><b>Haz una tabla</b> con filas = pasos y columnas $Q$, $W$, $\\Delta U$. Escribe lo que conozcas y deduce el resto con $\\Delta U=Q-W$ en cada fila y con $\\Delta U$ total = suma de las $\\Delta U$ de los pasos.</li>",
+    "    <li>Si el proceso se parte en varios pasos con los mismos extremos que otro conocido, usa que <b>$\\Delta U$ es el mismo</b> (ejemplo 19.4).</li>",
+    "    <li><b>Evalúa</b> los signos: $Q>0$ entra calor, $W>0$ sale trabajo.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia para resolver problemas 19.1, p. 626",
+    "txt": "U p.626"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: para quemar el postre",
+   "html": [
+    "<p>Un helado de 900 kilocalorías: ¿a qué altura subirías por escaleras (masa 60 kg) para «quemarlo» si todo se convirtiese en trabajo?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Sistema:</b> tu cuerpo. Para volver al estado inicial (nada de $U$ almacenada), $\\Delta U=0$, luego $Q=W$ (la energía del alimento, $Q=900$ kcal, sale íntegra como trabajo $W=mgh$).</li>",
+    "    <li>$Q=900\\ \\text{kcal}\\cdot4186\\ \\text{J/kcal}=3{,}77\\times10^6$ J.</li>",
+    "    <li>$h=\\dfrac{Q}{mg}=\\dfrac{3{,}77\\times10^6}{60\\cdot9{,}80}=\\mathbf{6410\\ m}$ (con rendimiento del 100 %). Con un rendimiento realista del 25 %: $0{,}25\\cdot6410\\approx1600$ m.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 19.2, p. 626",
+    "txt": "U p.626"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: un proceso cíclico",
+   "html": [
+    "<p>Un sistema recorre el ciclo $a\\to b\\to a$ en <b>sentido antihorario</b> en el diagrama $pV$ y el trabajo neto vale $W=-500$ J. a) ¿Por qué es negativo? b) ¿Cuánto calor se transfiere?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>a)</b> En $a\\to b$ (curva inferior, $V$ aumenta) el gas hace trabajo positivo; en $b\\to a$ (curva superior, $V$ disminuye) el trabajo es negativo y de mayor valor absoluto porque la presión es mayor. El neto, el área encerrada, es negativo: <b>ciclo antihorario ⇒ $W&lt;0$</b>. Se hace sobre el sistema 500 J más de trabajo del que él entrega.</li>",
+    "    <li><b>b)</b> Es un ciclo: $\\Delta U=0$, luego $Q=W=\\mathbf{-500\\ J}$: salen 500 J de calor.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 19.3 y fig. 19.12, p. 626-627",
+    "txt": "U p.626-627"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: comparación de procesos",
+   "html": [
+    "<p>En el diagrama de la figura (estados $a$: $2{,}0\\times10^{-3}$ m³ y $3{,}0\\times10^4$ Pa; $b$: mismo volumen y $8{,}0\\times10^4$ Pa; $c$: $5{,}0\\times10^{-3}$ m³ y $3{,}0\\times10^4$ Pa; $d$: $5{,}0\\times10^{-3}$ m³ y $8{,}0\\times10^4$ Pa), en $ab$ entran 150 J y en $bd$ entran 600 J. Calcula: a) $\\Delta U_{ab}$; b) $\\Delta U_{abd}$; c) $Q_{acd}$.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>a)</b> $ab$ es vertical ($V$ constante): $W_{ab}=0$ y $\\Delta U_{ab}=Q_{ab}=\\mathbf{150\\ J}$.</li>",
+    "    <li><b>b)</b> $bd$ es isóbaro: $W_{bd}=p\\Delta V=8{,}0\\times10^4\\cdot3{,}0\\times10^{-3}=240$ J. Entonces $W_{abd}=240$ J, $Q_{abd}=150+600=750$ J y $\\Delta U_{abd}=750-240=\\mathbf{510\\ J}$.</li>",
+    "    <li><b>c)</b> $\\Delta U$ no depende del camino: $\\Delta U_{acd}=510$ J. En $acd$: $W_{ac}=p\\Delta V=3{,}0\\times10^4\\cdot3{,}0\\times10^{-3}=90$ J y $W_{cd}=0$, luego $W_{acd}=90$ J y $Q_{acd}=\\Delta U+W=510+90=\\mathbf{600\\ J}$.</li>",
+    "    <li><b>Lectura:</b> mismo $\\Delta U=510$ J, pero $W$ (240 J frente a 90 J) y $Q$ (750 J frente a 600 J) cambian con la trayectoria.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 19.4 y fig. 19.13, p. 627",
+    "txt": "U p.627"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "rectangulo-abdc-en-el-diagrama-pv-del-ejemplo-19"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: termodinámica del agua en ebullición",
+   "html": [
+    "<p>Un gramo de agua (1 cm³) se convierte en 1671 cm³ de vapor al hervir a 1 atm ($1{,}013\\times10^5$ Pa), con calor de vaporización $L_v=2{,}256\\times10^6$ J/kg. Calcula el trabajo y el aumento de energía interna.</p>",
+    "  <ol class=\"steps\">",
+    "    <li>Presión constante: $W=p(V_2-V_1)=1{,}013\\times10^5\\cdot(1671-1)\\times10^{-6}=\\mathbf{169\\ J}$.</li>",
+    "    <li>Calor añadido: $Q=mL_v=10^{-3}\\cdot2{,}256\\times10^6=\\mathbf{2256\\ J}$.</li>",
+    "    <li>$\\Delta U=Q-W=2256-169=\\mathbf{2087\\ J}$.</li>",
+    "    <li><b>Lectura:</b> casi toda la energía (2087 J) se queda en el sistema, sobre todo para separar las moléculas del líquido contra sus fuerzas de atracción (energía potencial); solo 169 J salen como trabajo de expansión.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 19.5, p. 628",
+    "txt": "U p.628"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "evaporacion-de-un-gramo-de-agua-a-1-atmosfera-el"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Escribir $\\Delta U=Q+W$ (que corresponde a $W$ = trabajo sobre el sistema) mientras se usa «$W>0$ si lo hace el gas», o creer que $\\Delta U=Q$ siempre. $\\Delta U=Q$ solo si $W=0$ (volumen constante). Y otro clásico: pensar que si entra calor la temperatura tiene que subir (si el gas se expande y trabaja más de lo que recibe, puede enfriarse; E5).</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia sobre U §19.4, p. 624",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s5",
+   "n": "5",
+   "titulo": "Tipos de procesos termodinámicos",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §19.5, pp. 628-630",
+    "txt": "U p.628-630"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Cuatro «movimientos» básicos en el diagrama $pV$, cada uno con un recurso que lo simplifica: no entra calor (<b>adiabático</b>), no cambia el volumen (<b>isocórico</b>), no cambia la presión (<b>isobárico</b>) o no cambia la temperatura (<b>isotérmico</b>). Casi todos los ciclos de examen son combinaciones de estos cuatro.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.5, p. 628",
+    "txt": "U p.628"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "cuatro-procesos-desde-el-mismo-estado-inicial-en"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte03.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Detalles de cada proceso",
+   "html": "<p><b>Adiabático:</b> si el gas se expande ($W>0$), $\\Delta U&lt;0$ y se <b>enfría</b>; si se comprime ($W&lt;0$), $\\Delta U>0$ y se <b>calienta</b> (la bomba de bicicleta se calienta; la botella de champán que se destapa forma una nube de niebla). <b>Isocórico:</b> calentar un gas en un recipiente rígido. <b>Isobárico:</b> hervir agua en una olla abierta. <b>Isotérmico:</b> necesita contacto con un foco a esa temperatura y suele ser lento.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.5, figs. 19.14-19.15, p. 629",
+    "txt": "U p.629"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Confundir isotermo con adiabático: en el <b>isotermo</b> la temperatura no cambia pero <b>sí entra o sale calor</b> (el que se convierte en trabajo); en el <b>adiabático</b> no hay calor pero <b>la temperatura sí cambia</b>. Otro: pensar que «isoterma» implica siempre $Q=0$.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia sobre U §19.5, pp. 628-630",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s6",
+   "n": "6",
+   "titulo": "Energía interna del gas ideal",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §19.6, p. 630",
+    "txt": "U p.630"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>En un gas ideal las moléculas no se atraen entre sí (se tratan como bolas que solo chocan), así que no hay energía potencial intermolecular y toda la energía interna es la energía cinética de las moléculas. Y esa depende solo de la <b>temperatura</b> ($\\tfrac32kT$ por molécula si es monoatómico, tema 18). Por eso, si cambias $p$ y $V$ pero la $T$ no cambia, la $U$ de un gas ideal no se entera.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.6, p. 630",
+    "txt": "U p.630"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "U de un gas ideal",
+   "html": "<p>«La energía interna $U$ de un gas ideal depende sólo de su temperatura, no de su presión ni de su volumen.» Experimentalmente se ve con la <b>expansión libre</b> de la figura 19.8b: un gas a $T$ se expande contra el vacío en un recipiente aislado ($Q=0$, $W=0$, luego $\\Delta U=0$) y su temperatura final (la de un gas poco denso) es igual a la inicial, aunque $p$ y $V$ hayan cambiado.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.6, p. 630; expansión libre §19.3 fig. 19.8b, p. 623",
+    "txt": "U p.630"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Truco de examen: ΔU de un gas ideal sin conocer el proceso",
+   "html": "<p>Si el gas es ideal, $\\Delta U$ depende solo de $T_1$ y $T_2$: en <b>cualquier</b> proceso, $\\Delta U=nC_V\\Delta T$ (19.13, §7). En particular, si $T_2=T_1$ (aunque el camino sea raro) $\\Delta U=0$ y $Q=W$ (X5 tramo $C\\to A$, E22).</p>",
+   "src": {
+    "l": "P",
+    "ref": "Consejo propio sobre U §19.6-19.7, pp. 630-632",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s7",
+   "n": "7",
+   "titulo": "Capacidades caloríficas del gas ideal",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §19.7, pp. 631-633",
+    "txt": "U p.631-633"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>¿Cuánto calor hay que dar a un mol de gas para subirle 1 K? Depende de <b>cómo</b> lo calientes. Si el volumen es fijo, todo el calor va a energía interna. Si dejas que el gas se expanda (presión constante), una parte del calor se «escapa» como trabajo empujando el pistón, así que hace falta más calor para el mismo aumento de temperatura. Por eso hay dos capacidades caloríficas molares: $C_V$ (volumen constante) y $C_p$ (presión constante), con $C_p>C_V$.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.7, pp. 631-632",
+    "txt": "U p.631-632"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Capacidades caloríficas molares a V y a p constantes",
+   "html": [
+    "<p>A <b>volumen constante</b> ($W=0$): $dQ=nC_V\\,dT$ (19.12). A <b>presión constante</b>: $dQ=nC_p\\,dT$ (19.14). Para un gas ideal, la energía interna depende solo de $T$, y como a $V$ constante $dU=dQ$, resulta",
+    "  $$dU=nC_V\\,dT\\qquad(19.13)\\quad\\text{válido en cualquier proceso del gas ideal.}$$</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §19.7, ec. 19.12-19.14, pp. 631-632",
+    "txt": "U p.631-632"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Relación $C_p=C_V+R$",
+   "html": [
+    "<p>A presión constante $dW=p\\,dV=nR\\,dT$ (19.15), y por la primera ley $dQ=dU+dW$: $nC_p\\,dT=nC_V\\,dT+nR\\,dT$, luego",
+    "  $$C_p=C_V+R\\qquad(19.17)$$",
+    "  El cociente es $\\gamma=C_p/C_V$ (19.18): para un gas <b>monoatómico</b> $C_V=\\tfrac32R$, $C_p=\\tfrac52R$, $\\gamma=5/3$; para un <b>diatómico</b> (a temperatura ambiente) $C_V=\\tfrac52R$, $C_p=\\tfrac72R$, $\\gamma=7/5=1{,}40$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §19.7, ec. 19.15-19.18, pp. 632-633",
+    "txt": "U p.632-633"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "dos-isotermas-de-un-gas-ideal-a-t-y-t-mas-delta-"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte04.html"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: enfriamiento de una habitación",
+   "html": [
+    "<p>Se enfrían 2500 mol de aire ($\\gamma=1{,}400$) de $35{,}0$ °C a $26{,}0$ °C a presión constante. Calcula $\\Delta U$ (y, como complemento, $W$ y $Q$).</p>",
+    "  <ol class=\"steps\">",
+    "    <li>De $\\gamma=1+R/C_V$: $C_V=\\dfrac{R}{\\gamma-1}=\\dfrac{8{,}314}{0{,}400}=20{,}79$ J/(mol·K).</li>",
+    "    <li>$\\Delta T=-9{,}0$ K. En cualquier proceso de gas ideal, $\\Delta U=nC_V\\Delta T=2500\\cdot20{,}79\\cdot(-9{,}0)=\\mathbf{-4{,}68\\times10^5\\ J}$.</li>",
+    "    <li><i>Complemento:</i> a $p$ constante $W=nR\\Delta T=-1{,}87\\times10^5$ J y $Q=\\Delta U+W=-6{,}55\\times10^5$ J ($=nC_p\\Delta T$ con $C_p=29{,}1$): sale mucho más calor que energía interna perdida, porque el aire exterior «empuja» al aire que se contrae.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 19.6, p. 633",
+    "txt": "U p.633"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Escribir $\\Delta U=nC_p\\Delta T$ en un proceso isobárico. $\\Delta U=nC_V\\Delta T$ <b>siempre</b> (gas ideal); $nC_p\\Delta T$ es el <b>calor</b> a presión constante. Y usar $C_V=\\tfrac52R$ para un gas monoatómico (helio, argón) o $\\tfrac32R$ para uno diatómico.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia sobre U §19.7, pp. 631-632",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s8",
+   "n": "8",
+   "titulo": "Proceso adiabático para un gas ideal",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §19.8, pp. 634-636",
+    "txt": "U p.634-636"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Comprime un gas deprisa (bomba de bicicleta, motor): no le da tiempo a ceder calor, así que todo el trabajo que haces se queda como energía interna y <b>el gas se calienta</b>. Al revés, al expandirse sin recibir calor, el gas paga el trabajo con su propia energía interna y <b>se enfría</b> (la botella de champán, las nubes que suben y se expanden). La presión sube más en una compresión adiabática que en una isotérmica, porque además de reducir el volumen, sube la temperatura.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.8, p. 634",
+    "txt": "U p.634"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Gas ideal adiabático: relaciones entre $T$, $V$ y $p$",
+   "html": [
+    "<p>De $dU=-p\\,dV$ ($Q=0$), con $dU=nC_V\\,dT$ (19.13) y $p=nRT/V$: $nC_V\\,dT=-\\dfrac{nRT}{V}dV$, es decir $\\dfrac{dT}{T}+(\\gamma-1)\\dfrac{dV}{V}=0$ (19.20), con $\\gamma=C_p/C_V$. Integrando:",
+    "  $$TV^{\\gamma-1}=\\text{cte}\\ (19.21)\\qquad T_1V_1^{\\gamma-1}=T_2V_2^{\\gamma-1}\\ (19.22)$$",
+    "  $$pV^{\\gamma}=\\text{cte}\\ (19.23)\\qquad p_1V_1^{\\gamma}=p_2V_2^{\\gamma}\\ (19.24)$$",
+    "  Trabajo entre dos estados: $$W=nC_V(T_1-T_2)\\ (19.25)\\qquad W=\\frac{p_1V_1-p_2V_2}{\\gamma-1}\\ (19.26)$$",
+    "  Como $\\gamma>1$, $dV$ y $dT$ tienen signos opuestos: expansión adiabática ⇒ enfriamiento; compresión ⇒ calentamiento. <b>Las temperaturas son absolutas (K).</b> Si te dan $p$ y $T$ pero no $V$, sustituye $V=nRT/p$: $T_2=T_1\\,(p_2/p_1)^{(\\gamma-1)/\\gamma}$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §19.8, ec. 19.19-19.26, pp. 634-635",
+    "txt": "U p.634-635"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_19_20_adiabatico.png",
+   "alt": "Diagrama pV de un proceso adiabático de a a b con el trabajo sombreado, entre las isotermas T y T+dT",
+   "pie": "Expansión adiabática $a\\to b$: el trabajo $W>0$ (área) sale de $U$ ($\\Delta U=-W&lt;0$) y la temperatura baja de $T+dT$ a $T$. La curva adiabática es más inclinada que la isoterma que pasa por el mismo punto.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 19.20, p. 634",
+    "txt": "U p.634"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "expansion-adiabatica-y-expansion-isotermica-de-u"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: compresión adiabática en un motor diésel",
+   "html": [
+    "<p>Un motor diésel comprime aire (razón de compresión $r=V_1/V_2=15{,}0$) desde $p_1=1{,}01\\times10^5$ Pa y $T_1=300$ K, con $C_V=20{,}8$ J/(mol·K) y $\\gamma=1{,}400$. Calcula $T_2$, $p_2$ y $W$ (con $n\\approx0{,}0405$ mol, es decir $V_1\\approx1{,}0$ L).</p>",
+    "  <ol class=\"steps\">",
+    "    <li>$T_2=T_1\\,r^{\\gamma-1}=300\\cdot15^{0{,}400}=\\mathbf{886\\ K}$ ($613$ °C): ¡más que suficiente para encender el gasóleo!</li>",
+    "    <li>$p_2=p_1\\,r^{\\gamma}=1{,}01\\times10^5\\cdot15^{1{,}400}=\\mathbf{44{,}8\\times10^5\\ Pa}\\approx44$ atm.</li>",
+    "    <li>$W=nC_V(T_1-T_2)=0{,}0405\\cdot20{,}8\\cdot(300-886)=\\mathbf{-494\\ J}$ (negativo: trabajo sobre el gas). Con (19.26): $\\frac{p_1V_1-p_2V_2}{\\gamma-1}=-494$ J, mismo resultado.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 19.7, p. 636",
+    "txt": "U p.636"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "compresion-adiabatica-del-motor-diesel-con-razon"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>(1) Usar $p_1V_1=p_2V_2$ en un adiabático (eso es el isotermo). (2) Usar $\\gamma=1{,}4$ con un gas monoatómico ($\\gamma=5/3$). (3) Sustituir las temperaturas en °C en $TV^{\\gamma-1}$. (4) Dar un trabajo positivo en una compresión.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia sobre U §19.8, pp. 634-635",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte05.html"
+  },
+  {
+   "t": "h2",
+   "id": "s9",
+   "n": "9",
+   "titulo": "Método para ciclos de gas ideal",
+   "prio": null,
+   "src": {
+    "l": "P",
+    "ref": "Resumen propio del método; fundamentos en U §19.2-19.7, pp. 620-633",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Un ciclo es una vuelta completa en el diagrama $pV$: el gas recorre una serie de tramos y regresa al principio. Como $U$ es función de estado, <b>$\\Delta U$ total es cero</b>, y por la primera ley lo que entra como calor neto sale como trabajo neto. Una <b>máquina térmica</b> recorre el ciclo en sentido horario ($W>0$: absorbe calor y entrega trabajo); un <b>refrigerador</b>, en antihorario ($W&lt;0$). La eficiencia compara lo que obtienes (trabajo) con lo que pagas (calor absorbido): $e=W/Q_H$, que se estudia a fondo en el tema 20.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §19.3-19.4, pp. 622-625; eficiencia (20.4) en U p. 650",
+    "txt": "U p.622-625"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Método paso a paso para el examen",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Tabla de estados</b> ($p$, $V$, $T$) de cada vértice con $pV=nRT$ (tema 18). Si no te dan $n$, trabaja con $pV$. Si $p_1V_1=p_2V_2$, esos dos estados están en la misma <b>isoterma</b>.</li>",
+    "    <li><b>Identifica cada tramo</b>: vertical ⇒ isocórico; horizontal ⇒ isobárico; hipérbola ⇒ isotérmico; curva más empinada que la isoterma ⇒ adiabático; recta oblicua ⇒ no es ninguno de los cuatro (hay que integrar o usar el trapecio).</li>",
+    "    <li><b>Por tramo</b> (tabla): $W$ (área; $0$ si vertical; $p\\Delta V$ si horizontal; $nRT\\ln(V_2/V_1)$ si isoterma; trapecio si recta), $\\Delta U=nC_V\\Delta T=\\frac{C_V}{R}\\Delta(pV)$ y $Q=\\Delta U+W$.</li>",
+    "    <li><b>Comprueba</b>: $\\sum\\Delta U=0$ y $W_{neto}=\\sum Q$; el signo de $W_{neto}$ debe coincidir con el sentido de giro.</li>",
+    "    <li><b>Eficiencia</b> (si la piden): $Q_H$ = <b>suma de todos los calores que entran</b> (todos los tramos con $Q>0$); $|Q_C|$ = suma de los que salen; $e=W/Q_H=1-|Q_C|/Q_H$. En un <b>refrigerador</b>, $K=Q_{abs}/|W|$.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Método propio basado en la Estrategia 19.1, U p. 626, y los exámenes X5-X10",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores típicos en ciclos",
+   "html": "<p>Usar $C_V$ en un tramo isóbaro (para el calor hace falta $C_p$); olvidar el calor de la isoterma en $Q_H$; contar en $Q_H$ el calor <i>neto</i> del ciclo; y usar litros y atmósferas sin pasar a SI. En un tramo recto que cruza isotermas, el calor puede <b>cambiar de signo</b> dentro del tramo (X8).</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia; casos reales en X5, X6, X8",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte06.html"
+  },
+  {
+   "t": "h2",
+   "id": "teoria",
+   "n": "10",
+   "titulo": "Cuestiones de teoría para el examen",
+   "prio": null,
+   "src": {
+    "l": "X",
+    "ref": "Examen Febrero 2018 (1ª semana) P-3 Opción 3.1; Febrero 2020 (1ª semana) P-3 Opción 3.2; Febrero 2023 (1ª semana) P-4 Opción B",
+    "txt": "X"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte07.html"
+  },
+  {
+   "t": "ej",
+   "ref": "t1"
+  },
+  {
+   "t": "h2",
+   "id": "ejercicios",
+   "n": "11",
+   "titulo": "Ejercicios resueltos",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte08.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-x.html"
+  },
+  {
+   "t": "ej",
+   "ref": "x1"
+  },
+  {
+   "t": "ej",
+   "ref": "x2"
+  },
+  {
+   "t": "ej",
+   "ref": "x3"
+  },
+  {
+   "t": "ej",
+   "ref": "x4"
+  },
+  {
+   "t": "ej",
+   "ref": "x5"
+  },
+  {
+   "t": "ej",
+   "ref": "x6"
+  },
+  {
+   "t": "ej",
+   "ref": "x7"
+  },
+  {
+   "t": "ej",
+   "ref": "x8"
+  },
+  {
+   "t": "ej",
+   "ref": "x9"
+  },
+  {
+   "t": "ej",
+   "ref": "x10"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-e.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte11.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e1"
+  },
+  {
+   "t": "ej",
+   "ref": "e2"
+  },
+  {
+   "t": "ej",
+   "ref": "e3"
+  },
+  {
+   "t": "ej",
+   "ref": "e4"
+  },
+  {
+   "t": "ej",
+   "ref": "e5"
+  },
+  {
+   "t": "ej",
+   "ref": "e6"
+  },
+  {
+   "t": "ej",
+   "ref": "e7"
+  },
+  {
+   "t": "ej",
+   "ref": "e8"
+  },
+  {
+   "t": "ej",
+   "ref": "e9"
+  },
+  {
+   "t": "ej",
+   "ref": "e10"
+  },
+  {
+   "t": "ej",
+   "ref": "e11"
+  },
+  {
+   "t": "ej",
+   "ref": "e12"
+  },
+  {
+   "t": "ej",
+   "ref": "e13"
+  },
+  {
+   "t": "ej",
+   "ref": "e14"
+  },
+  {
+   "t": "ej",
+   "ref": "e15"
+  },
+  {
+   "t": "ej",
+   "ref": "e16"
+  },
+  {
+   "t": "ej",
+   "ref": "e17"
+  },
+  {
+   "t": "ej",
+   "ref": "e18"
+  },
+  {
+   "t": "ej",
+   "ref": "e19"
+  },
+  {
+   "t": "ej",
+   "ref": "e20"
+  },
+  {
+   "t": "ej",
+   "ref": "e21"
+  },
+  {
+   "t": "ej",
+   "ref": "e22"
+  },
+  {
+   "t": "ej",
+   "ref": "e23"
+  },
+  {
+   "t": "ej",
+   "ref": "e24"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-p.html"
+  },
+  {
+   "t": "ej",
+   "ref": "vdw"
+  },
+  {
+   "t": "h2",
+   "id": "chuleta",
+   "n": "12",
+   "titulo": "Chuleta, errores frecuentes y lista de comprobación",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte13.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores frecuentes de este tema",
+   "html": [
+    "<ul>",
+    "    <li>Convención de signos: escribir $\\Delta U=Q+W$ con «$W>0$ si lo hace el gas», o dar positivo el trabajo de una compresión.</li>",
+    "    <li>Pensar que $Q$ o $W$ son propiedades del estado (solo $U$ lo es); olvidar que dependen de la trayectoria.</li>",
+    "    <li>Calcular $W=p\\Delta V$ cuando $p$ no es constante; repartir el trabajo entre un tramo vertical y uno horizontal (en el vertical es cero).</li>",
+    "    <li>Usar $C_V$ en un tramo isóbaro para el calor (hace falta $C_p$), o $C_p$ para $\\Delta U$.</li>",
+    "    <li>Usar $C_V=\\frac52R$ con gases monoatómicos (helio, argón) o $\\gamma=1{,}4$ con un monoatómico.</li>",
+    "    <li>Confundir isotermo ($T$ cte, hay calor) con adiabático ($Q=0$, cambia $T$); usar $p_1V_1=p_2V_2$ en un adiabático.</li>",
+    "    <li>Temperaturas en °C o presión manométrica en $pV=nRT$ y en las relaciones adiabáticas; mezclar L·atm con $R=8{,}314$.</li>",
+    "    <li>En un ciclo: meter en $Q_H$ el calor neto, olvidar el calor de la isoterma, o no comprobar $\\sum\\Delta U=0$.</li>",
+    "    <li>Pensar que un tramo recto cruza siempre con el mismo signo de $dQ$ (puede cambiar, X8).</li>",
+    "    <li>Creer que si $T_{final}=T_{inicial}$ entonces $Q=0$: solo implica $\\Delta U=0$ ($Q=W$).</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte14.html"
+  },
+  {
+   "t": "h2",
+   "id": "fuentes",
+   "n": "★",
+   "titulo": "Fuentes de este tema",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "panel-fuentes.html"
+  }
+ ]
+}

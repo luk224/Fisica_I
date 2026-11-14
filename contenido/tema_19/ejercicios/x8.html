@@ -1,0 +1,16 @@
+<p class="enun"><b>Examen Febrero 2025 (2ª semana) P-2 (3 puntos).</b> En un ciclo termodinámico se opera un gas ideal monoatómico. El gas se somete a un proceso isóbaro entre los estados $a$ y $b$ para pasar posteriormente por un proceso isócoro entre los estados $b$ y $c$, cerrándose el ciclo a través de un proceso que puede ser representado como una línea recta en un diagrama presión, volumen, pV. Se conoce que $p_a=4\times10^5$ Pa, $p_c=2\times10^5$ Pa, $V_a=0{,}55$ m³ y $V_b=0{,}82$ m³. Conocidos estos datos: (a) Dibuje el ciclo termodinámico descrito en un diagrama pV. (b) Calcule el calor intercambiado, el trabajo realizado y la variación de energía interna en cada proceso del ciclo. (c) Determine la eficiencia del ciclo. Considere: $C_v=3R/2$ y $C_p=5R/2$ y la constante de los gases $R=8{,}314$ J mol⁻¹K⁻¹.</p>
+  <ol class="steps">
+    <li><b>Estados.</b> $a$ (0,55 m³; $4\times10^5$ Pa) → isóbara → $b$ (0,82; $4\times10^5$) → isócora → $c$ (0,82; $2\times10^5$) → recta → $a$. Productos $pV$: 220 000, 328 000 y 164 000 J.</li>
+    <li><b>No se da $n$ y no hace falta:</b> $\Delta U=nC_V\Delta T=\frac32\Delta(pV)$ (19.13 + $pV=nRT$).</li>
+    <li><b>Tabla</b> ($W$ = área bajo cada tramo, 19.2): <table>
+      <tr><th>Tramo</th><th>$W$ (J)</th><th>$\Delta U$ (J)</th><th>$Q=\Delta U+W$ (J)</th></tr>
+      <tr><td>$a\to b$ isóbaro: $W=p\Delta V$</td><td>+108 000</td><td>+162 000</td><td><b>+270 000</b></td></tr>
+      <tr><td>$b\to c$ isócoro</td><td>0</td><td>−246 000</td><td><b>−246 000</b></td></tr>
+      <tr><td>$c\to a$ recta: $W=\frac{p_c+p_a}{2}(V_a-V_c)$</td><td>−81 000</td><td>+84 000</td><td><b>+3000</b></td></tr>
+      <tr><td><b>Ciclo</b></td><td><b>+27 000</b></td><td><b>0</b></td><td><b>+27 000</b></td></tr></table></li>
+    <li><b>Comprobación.</b> $W_{ciclo}$ = área del triángulo $\frac12\cdot0{,}27\cdot2\times10^5=27\,000$ J ✓; sentido horario ⇒ positivo.</li>
+    <li><b>(c) Eficiencia.</b> $Q_H$ = todo el calor que <b>entra</b>. En la recta el calor cambia de signo: con $p(V)=p_c+s(V-V_c)$, $s=-7{,}41\times10^5$ Pa/m³, la primera ley infinitesimal (19.7) da $dQ=dU+p\,dV=\left(\tfrac52p+\tfrac32sV\right)dV$, que se anula en $V^*=109/160=0{,}681$ m³. De $c$ a $V^*$ <b>entran 28 521 J</b> y de $V^*$ a $a$ <b>salen 25 521 J</b> (neto +3000 J). $Q_H=270\,000+28\,521=298\,521$ J ⇒ $e=\dfrac{27\,000}{298\,521}=\mathbf{9{,}0\ \%}$. (Con solo el neto del tramo, $Q_H=273\,000$ J y saldría 9,9 %; conviene al menos indicar que en la recta hay una parte con calor entrante y otra saliente.)</li>
+  </ol>
+  {{fig:triangulo-a-b-c-del-examen-isobara-de-a-a-b-isoc}}
+
+  <div class="recipe"><b>Receta:</b> sin $n$, trabaja con $pV$: $\Delta U=\frac{C_V}{R}\Delta(pV)$; trabajo = área (rectángulo, trapecio); en un tramo recto que corta isotermas, mira si $dQ$ cambia de signo (interactivo del §9). <b>Error típico:</b> inventar $n$; dar el trabajo de la recta con un solo valor de $p$; sumar en $Q_H$ el neto de la recta sin más.</div>
