@@ -4,11 +4,11 @@
  "titulo": "Sonido y oído",
  "descripcion": "El sonido es una onda mecánica <b>longitudinal</b> que viaja por el aire (o el agua, o un sólido) y que tu oído detecta como <b>cambios de presión</b>. Este tema te enseña a describirla con la amplitud de desplazamiento y la de presión, a calcular su rapidez y su intensidad (y a medirla en <b>decibelios</b>), a entender por qué un tubo de órgano o una flauta solo suena con ciertas frecuencias (<b>ondas estacionarias</b> y <b>resonancia</b>), qué pasa cuando dos sonidos se suman (<b>interferencia</b> y <b>pulsos</b>) y por qué la sirena de una ambulancia cambia de tono al pasar (<b>efecto Doppler</b>), hasta llegar a las <b>ondas de choque</b> de un avión supersónico.",
  "chips": [
-  "Libro oficial: Sears-Zemansky, cap. 16 (pp. 506-535; resumen pp. 535-536; problema práctico p. 537; ejercicios y problemas pp. 538-542)",
+  "Libro oficial: Sears-Zemansky, cap. 16 (pp. 506-536; problema práctico p. 537; ejercicios y problemas pp. 538-542)",
   "Ejercicios de examen real: ninguno (no ha caído en 2018-2025)",
-  "Ejercicios: 24 (23 del solucionario + problema práctico) + 19 ejemplos de U",
+  "Ejercicios del solucionario: 23 + problema práctico de U; teoría propia T1, C1, C2",
   "2 ejemplos interactivos",
-  "⏱ ~8 h de estudio"
+  "⏱ ruta rápida ~3 h · completa ~6 h"
  ],
  "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
  "titulo_pagina": "Física I · Tema 16 Sonido y oído",
@@ -282,69 +282,19 @@
  },
  "bloques": [
   {
-   "t": "h2",
-   "id": "prereq",
-   "n": "0",
-   "titulo": "Antes de empezar",
-   "prio": null,
-   "src": {
-    "l": "U",
-    "ref": "U cap. 16, portadilla e introducción, p. 506",
-    "txt": "U p.506"
-   }
+   "t": "parte",
+   "archivo": "en5.html"
   },
   {
    "t": "parte",
-   "archivo": "parte01.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte02.html"
-  },
-  {
-   "t": "caja",
-   "k": "tip",
-   "h": "Qué ha caído en examen: nada de este tema en las convocatorias disponibles",
-   "html": [
-    "<p>En las convocatorias que tenemos (2018-2025) <b>no hay ningún problema ni ninguna pregunta de teoría de sonido, decibelios, tubos sonoros ni efecto Doppler</b>: el índice <code>examenes_por_tema.md</code> marca el tema 16 como «ningún ejercicio de examen encontrado» y tampoco aparece en los exámenes revisados. <b>Por eso este resumen no incluye ningún ejercicio de examen real</b> y no simula ninguno. Eso no significa que no pueda caer: el examen tiene una pregunta de teoría de 4 puntos (con dos cuestiones cortas) y el tema 16 es un candidato natural. Para entrenar ese formato hay una <b>pregunta de teoría propia</b> («Efecto Doppler para el sonido») y <b>dos cuestiones cortas propias</b>, claramente marcadas como <b>no de examen</b> (apartado <a href=\"#ex-teoria\">10.1</a>); los ejercicios numéricos son los del solucionario (E), traducidos y ampliados, ordenados por secciones (apartado <a href=\"#ex-libro\">10.2</a>).</p>",
-    "  <table>",
-    "    <tr><th>Convocatoria y pregunta</th><th>Tema a desarrollar</th><th>Dónde en este resumen</th></tr>",
-    "    <tr><td>(ninguna en 2018-2025)</td><td>—</td><td>Teoría propia T1 y cuestiones C1, C2 (§10.1); problemas E (§10.2)</td></tr>",
-    "  </table>"
-   ],
-   "src": {
-    "l": "P",
-    "ref": "Resumen propio de fuentes_txt/examenes_por_tema.md (Tema 16: ningún ejercicio de examen encontrado)",
-    "txt": "P"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "tip",
-   "h": "La receta maestra del tema: ¿qué te piden?",
-   "html": [
-    "<ol class=\"steps\">",
-    "    <li><b>Distingue qué magnitud te dan.</b> Desplazamiento de las partículas ($A$, en m: diminuto), variación de presión ($p_\\text{máx}$, en Pa), intensidad ($I$, en W/m²) o nivel de intensidad ($\\beta$, en dB). Se pasa de una a otra con $p_\\text{máx}=BkA$ (16.5), $I=p_\\text{máx}^2/2\\rho v$ (16.14) y $\\beta=(10\\ \\text{dB})\\log(I/I_0)$ (16.15).</li>",
-    "    <li><b>La rapidez $v$ la fija el medio</b>, no la fuente: $v=\\sqrt{B/\\rho}$ en un fluido y $v=\\sqrt{\\gamma RT/M}$ en un gas ideal ($T$ en kelvin). Con $v$ y $f$ sale $\\lambda=v/f$. Al pasar de un medio a otro <b>se conserva $f$</b> y cambian $v$ y $\\lambda$.</li>",
-    "    <li><b>Decibelios:</b> pasa a intensidades, opera (sumas para fuentes independientes, cuadrado inverso para la distancia) y vuelve a dB. +10 dB $\\Rightarrow$ $I\\times10$; +3 dB $\\Rightarrow$ $I\\times2$; duplicar la distancia $\\Rightarrow$ −6 dB.</li>",
-    "    <li><b>Tubos:</b> dibuja nodos (N) y antinodos (A) de desplazamiento: extremo abierto = A, extremo cerrado = N. Entre N y A hay $\\lambda/4$. Abierto: $L=n\\lambda/2$ ($n=1,2,3,\\dots$); cerrado: $L=n\\lambda/4$ ($n=1,3,5,\\dots$). Después $f=v/\\lambda$.</li>",
-    "    <li><b>Interferencia (fuentes en fase):</b> calcula la diferencia de trayectorias $\\Delta$: constructiva si $\\Delta=n\\lambda$; destructiva si $\\Delta=(n+\\tfrac12)\\lambda$. Fuentes coherentes: se suman <b>amplitudes</b>; independientes: se suman <b>intensidades</b>.</li>",
-    "    <li><b>Doppler:</b> dibuja $L$ y $S$, pon el sentido «+» de $L$ a $S$ y da a $v_L$ y $v_S$ el signo que les toque; $f_L=\\dfrac{v+v_L}{v+v_S}f_S$ (16.29). Si hay reflexión, <b>dos pasos</b>. Todas las velocidades, respecto al aire.</li>",
-    "    <li><b>Supersónico:</b> $\\sin\\alpha=v/v_S=1/\\text{Mach}$ (16.31).</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "P",
-    "ref": "Receta propia que resume U cap. 16, Estrategias 16.1 y 16.2, pp. 515 y 530",
-    "txt": "P"
-   }
+   "archivo": "decide.html"
   },
   {
    "t": "h2",
    "id": "s1",
    "n": "1",
-   "titulo": "Ondas sonoras",
-   "prio": null,
+   "titulo": "Ondas sonoras: desplazamiento y presión",
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §16.1, pp. 506-510",
@@ -352,41 +302,19 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte03.html"
-  },
-  {
    "t": "caja",
    "k": "def",
-   "h": "Definición: onda sonora sinusoidal",
-   "html": [
-    "<p>Una onda sonora sinusoidal que viaja en la dirección $+x$ se describe con el desplazamiento $y(x,t)$ de las partículas del medio respecto a su equilibrio, medido <b>a lo largo de $x$</b>:",
-    "  $$y(x,t)=A\\cos(kx-\\omega t)\\qquad(16.1)$$",
-    "  con la <b>amplitud de desplazamiento</b> $A$, $k=2\\pi/\\lambda$ y $\\omega=vk=2\\pi f$. La <b>variación de presión</b> $p(x,t)$ es lo que la presión difiere de la atmosférica (como una presión manométrica: puede ser positiva o negativa). Se obtiene del módulo volumétrico $B$ del medio (tema 11):",
-    "  $$p(x,t)=-B\\,\\frac{\\partial y(x,t)}{\\partial x}\\quad(16.3)\\qquad\\Rightarrow\\qquad p(x,t)=BkA\\sin(kx-\\omega t)\\quad(16.4)$$",
-    "  La <b>amplitud de presión</b> es el valor máximo de $|p|$:",
-    "  $$\\boxed{p_\\text{máx}=BkA}\\qquad(16.5)$$</p>"
-   ],
+   "h": "El sonido: una onda longitudinal que se mide como presión",
+   "html": "<p>Cuando hablas, empujas el aire: lo comprimes un instante y lo dejas expandirse al siguiente. Esas zonas apretadas (<b>compresiones</b>) y sueltas (<b>rarefacciones</b>) se alejan de ti, pero <b>el aire no viaja</b>: cada capa solo oscila un poco hacia delante y hacia atrás, en la misma dirección en que avanza la onda (onda <b>longitudinal</b>). Se describe de dos maneras equivalentes:</p><ul><li><b>Desplazamiento</b> de las partículas a lo largo de $x$: $y(x,t)=A\\cos(kx-\\omega t)$ (16.1), con $k=2\\pi/\\lambda$, $\\omega=2\\pi f$.</li><li><b>Variación de presión</b> respecto a la atmosférica (como una presión manométrica, puede ser negativa): $p=-B\\,\\partial y/\\partial x=BkA\\sin(kx-\\omega t)$ (16.3-16.4), con $B$ el módulo volumétrico. Su amplitud es</li></ul>$$\\boxed{p_\\text{máx}=BkA=\\frac{2\\pi fB}{v}A}\\qquad(16.5)$$<p>La presión cambia donde el fluido se comprime o se estira, es decir, donde el desplazamiento <i>cambia</i> de un punto al siguiente: por eso <b>$p$ y $y$ están desfasadas $90^\\circ$</b> (la presión es máxima donde el desplazamiento es cero). A igual $A$, los sonidos agudos ($k$ grande) dan más presión; a igual $p_\\text{máx}$, $A\\propto1/f$.</p><p><b>Ejemplo mínimo</b> (ejemplo 16.1 de U): un sonido de 1000 Hz con $p_\\text{máx}=3{,}0\\times10^{-2}$ Pa en el aire ($B=1{,}42\\times10^5$ Pa, $v=344$ m/s): $k=2\\pi(1000)/344=18{,}3$ rad/m y $A=p_\\text{máx}/Bk=1{,}2\\times10^{-8}$ m. ¡Una centésima de una célula! El oído detecta presiones, no estos desplazamientos.</p><p><b>Error típico:</b> creer que el máximo de presión coincide con el máximo de desplazamiento, o usar $k=f/v$ (falta el $2\\pi$).</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.1, ec. 16.1-16.5, figs. 16.1-16.3, pp. 506-507",
-    "txt": "U p.506-507"
+    "ref": "U §16.1, ec. 16.1-16.5, figs. 16.1-16.3 y ejemplo 16.1, pp. 506-508",
+    "txt": "U p.506-508"
    }
   },
   {
    "t": "fig",
    "ref": "cilindro-imaginario-de-fluido-en-reposo-entre-x-"
-  },
-  {
-   "t": "caja",
-   "k": "intu",
-   "h": "¿De dónde sale el signo menos? ¿Por qué la presión no coincide con el desplazamiento?",
-   "html": "<p>La presión cambia cuando el fluido se <b>comprime o se estira</b>, y eso depende de cómo <i>cambia el desplazamiento de un punto al siguiente</i>, no del desplazamiento mismo (figura de arriba): si el extremo derecho de un trozo de fluido se desplaza más que el izquierdo ($\\partial y/\\partial x>0$), el trozo se estira, su volumen crece y la presión baja ($p<0$). Si todo el trozo se desplaza igual ($\\partial y/\\partial x=0$), solo se traslada, sin cambiar de volumen ni de presión. Por eso <b>$y$ y $p$ están desfasadas un cuarto de ciclo ($90^\\circ$)</b>: el desplazamiento es máximo donde la variación de presión es cero, y viceversa. Las <b>compresiones</b> (presión máxima) y las <b>rarefacciones</b> (presión mínima) están justo donde el desplazamiento es cero.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §16.1, figs. 16.2 y 16.3, pp. 506-507",
-    "txt": "U p.506-507"
-   }
   },
   {
    "t": "libro",
@@ -401,86 +329,39 @@
   },
   {
    "t": "caja",
-   "k": "thm",
-   "h": "Consecuencias de $p_\\text{máx}=BkA$",
-   "html": "<p>(1) Para una misma amplitud de desplazamiento $A$, las ondas de <b>longitud de onda más corta</b> (agudas, $k$ grande) tienen <b>mayor amplitud de presión</b>: los máximos y mínimos están más juntos. (2) Un medio con $B$ grande (poco compresible) exige más presión para el mismo $A$. (3) Con la misma $p_\\text{máx}$, un sonido grave tiene mucho más desplazamiento que uno agudo: $A=p_\\text{máx}/Bk\\propto1/f$. Por eso suele ser más cómodo describir el sonido con la presión.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §16.1, p. 507 (comentario tras la ec. 16.5)",
-    "txt": "U p.507"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.1: amplitud de una onda sonora en el aire",
-   "html": [
-    "<p>En una onda sonora de intensidad moderada, las variaciones máximas de presión son de $3{,}0\\times10^{-2}$ Pa. Calcula el desplazamiento máximo si $f=1000$ Hz. En el aire: $v=344$ m/s y $B=1{,}42\\times10^5$ Pa.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Idea.</b> Dos descripciones de la misma onda: se pasa de presión a desplazamiento con (16.5), $A=p_\\text{máx}/Bk$.</li>",
-    "    <li>$k=\\dfrac\\omega v=\\dfrac{2\\pi f}v=\\dfrac{(2\\pi\\ \\text{rad})(1000\\ \\text{Hz})}{344\\ \\text{m/s}}=18{,}3\\ \\text{rad/m}$.</li>",
-    "    <li>$A=\\dfrac{p_\\text{máx}}{Bk}=\\dfrac{3{,}0\\times10^{-2}\\ \\text{Pa}}{(1{,}42\\times10^5\\ \\text{Pa})(18{,}3\\ \\text{rad/m})}=\\mathbf{1{,}2\\times10^{-8}\\ m}$.</li>",
-    "    <li><b>Evaluar.</b> ¡Una centésima del tamaño de una célula! El oído detecta presiones, no estos minúsculos desplazamientos.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> $f\\to k=2\\pi f/v\\to A=p_\\text{máx}/(Bk)$ (o al revés).</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.1, p. 508",
-    "txt": "U p.508"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.2: el oído interno amplifica la presión",
-   "html": [
-    "<p>Con el sonido del ejemplo 16.1, el tímpano (área $43$ mm²) mueve los huesecillos, que empujan el fluido del oído interno a través del estribo (área $3{,}2$ mm²). Calcula a) la amplitud de presión y b) la amplitud de desplazamiento en el fluido, donde $v=1500$ m/s y $B=2{,}18\\times10^9$ Pa.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>a)</b> Se desprecia la masa de los huesecillos, así que <b>la fuerza es la misma</b> en ambos lados: $F_\\text{máx}=p_\\text{máx}(\\text{aire})\\,S_\\text{tímpano}=p_\\text{máx}(\\text{oído interno})\\,S_\\text{estribo}$. Luego $p_\\text{máx}(\\text{oído interno})=(3{,}0\\times10^{-2}\\ \\text{Pa})\\dfrac{43}{3{,}2}=\\mathbf{0{,}40\\ Pa}$ (factor 13).</li>",
-    "    <li><b>b)</b> La frecuencia angular es la misma (todo oscila junto), pero la onda va a 1500 m/s: $k=\\dfrac{2\\pi f}v=\\dfrac{2\\pi(1000)}{1500}=4{,}2$ rad/m. Entonces $A=\\dfrac{p_\\text{máx}}{Bk}=\\dfrac{0{,}40}{(2{,}18\\times10^9)(4{,}2)}=\\mathbf{4{,}4\\times10^{-11}\\ m}$.</li>",
-    "    <li><b>Evaluar.</b> El desplazamiento es aún menor que en el aire, pero lo que excita las células pilosas es la <b>presión</b>, que ha crecido 13 veces: parte de la gran sensibilidad del oído.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> fuerza igual ⇒ presión inversa al área; la frecuencia se conserva al cambiar de medio; $k$ cambia con $v$.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.2, figs. 16.4, pp. 508-509",
-    "txt": "U p.508-509"
-   }
-  },
-  {
-   "t": "caja",
    "k": "def",
-   "h": "Percepción: tono, volumen y timbre",
-   "html": "<p>Las magnitudes físicas se ligan a lo que oímos: el <b>tono</b> (agudo o grave) lo fija sobre todo la <b>frecuencia</b>; el <b>volumen</b>, sobre todo la <b>amplitud de presión</b> (pero el oído no es igual de sensible a todas las frecuencias: a 1000 Hz el mínimo audible es $p_\\text{máx}\\approx3\\times10^{-5}$ Pa, y a 200 Hz o 15 000 Hz hace falta unas diez veces más); el <b>timbre</b> (lo que distingue un clarinete de una flauta con la misma nota) depende de qué <b>armónicos</b> acompañan a la fundamental: un sonido rico en armónicos suena «delgado» y uno con casi solo fundamental, «suave». El <b>ruido</b>, en cambio, mezcla todas las frecuencias, no solo múltiplos enteros de una fundamental.</p>",
+   "h": "Lo que oyes: tono, volumen y timbre",
+   "html": "<p>El <b>tono</b> (agudo o grave) lo fija sobre todo la <b>frecuencia</b>; el <b>volumen</b>, sobre todo la <b>amplitud de presión</b> (a 1000 Hz el mínimo audible es $p_\\text{máx}\\approx3\\times10^{-5}$ Pa y el umbral de dolor, unos 30 Pa); el <b>timbre</b> (lo que distingue un clarinete de una flauta en la misma nota), el conjunto de <b>armónicos</b> que acompañan a la fundamental. El <b>ruido</b> mezcla todas las frecuencias. El oído medio ayuda: la fuerza del tímpano (43 mm²) se transmite al estribo (3,2 mm²), así que la presión en el oído interno se multiplica por $43/3{,}2\\approx13$ (ejemplo 16.2).</p><p><b>Error típico:</b> confundir tono (frecuencia) con volumen (amplitud).</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.1, fig. 16.5, pp. 509-510",
-    "txt": "U p.509-510"
+    "ref": "U §16.1, fig. 16.5 y ejemplo 16.2, pp. 508-510",
+    "txt": "U p.508-510"
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte04.html"
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Evalúe su comprensión (U §16.1)",
-   "html": "<p>Se aumenta la frecuencia de 100 a 400 Hz manteniendo constante la amplitud de presión. ¿Qué pasa con la amplitud de desplazamiento? <b>v. Se reduce a la cuarta parte</b>: $A=p_\\text{máx}/(Bk)$ y $k=2\\pi f/v$ se multiplica por 4, luego $A$ se divide por 4.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U «Evalúe su comprensión de la sección 16.1», pp. 510 y 544",
-    "txt": "U p.510, 544"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Con la amplitud de presión fija, la frecuencia sube de 100 a 400 Hz. ¿Qué pasa con la amplitud de desplazamiento?",
+     "a": "Se reduce a la <b>cuarta parte</b>: $A=p_\\text{máx}/(Bk)$ y $k=2\\pi f/v$ se multiplica por 4."
+    },
+    {
+     "q": "Una onda de 500 Hz en el aire ($B=1{,}42\\times10^5$ Pa, $v=344$ m/s) tiene $A=1{,}0\\times10^{-8}$ m. ¿$p_\\text{máx}$?",
+     "a": "$k=2\\pi(500)/344=9{,}13$ rad/m ⇒ $p_\\text{máx}=BkA=(1{,}42\\times10^5)(9{,}13)(1{,}0\\times10^{-8})=0{,}013$ Pa."
+    },
+    {
+     "q": "¿Dónde está la compresión (presión máxima) respecto al desplazamiento?",
+     "a": "Donde el desplazamiento es <b>cero</b>: allí las capas vecinas se acercan desde los dos lados. Presión y desplazamiento van desfasados un cuarto de ciclo."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s2",
    "n": "2",
    "titulo": "Rapidez de las ondas sonoras",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §16.2, pp. 510-513",
@@ -488,41 +369,14 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte05.html"
-  },
-  {
    "t": "caja",
    "k": "thm",
-   "h": "Rapidez del sonido en un fluido y en un sólido",
-   "html": [
-    "<p>En un <b>fluido</b> (gas o líquido) y en un <b>sólido en barra delgada</b>:",
-    "  $$v=\\sqrt{\\frac B\\rho}\\quad(16.7,\\ \\text{fluido})\\qquad\\qquad v=\\sqrt{\\frac Y\\rho}\\quad(16.8,\\ \\text{varilla sólida})$$",
-    "  con $B$ el módulo volumétrico, $Y$ el módulo de Young y $\\rho$ la densidad. (16.7) se deduce con el teorema impulso-cantidad de movimiento sobre un pistón que empuja el fluido en un tubo. (16.8) <b>solo vale para varillas</b> cuyos lados pueden ensancharse libremente; en un sólido voluminoso la rapidez depende también del módulo de corte.</p>"
-   ],
+   "h": "Rapidez del sonido: rigidez entre inercia",
+   "html": "<p>Como en una cuerda ($v=\\sqrt{F/\\mu}$), la rapidez es la raíz de «lo que devuelve al equilibrio» entre «la inercia». En el sonido lo primero es la resistencia a comprimirse:</p>$$v=\\sqrt{\\frac B\\rho}\\ \\ (16.7,\\ \\text{fluido})\\qquad v=\\sqrt{\\frac Y\\rho}\\ \\ (16.8,\\ \\text{varilla delgada})\\qquad \\boxed{v=\\sqrt{\\frac{\\gamma RT}M}}\\ \\ (16.10,\\ \\text{gas ideal})$$<p>En un gas $B=\\gamma p_0$ (16.9) y $B/\\rho$ solo depende de la <b>temperatura</b>: $v\\propto\\sqrt T$; a igual $T$, $v\\propto\\sqrt{\\gamma/M}$ (gas más ligero ⇒ más rápido). $\\gamma$ es el cociente de capacidades caloríficas (1,40 en el aire; se ve en el tema 19). $T$ en <b>kelvin</b>, $R=8{,}314$ J/(mol·K), $M$ en <b>kg/mol</b>.</p><p><b>Ejemplo mínimo</b> (ejemplos 16.3 y 16.4 de U): aire a 20 °C, $v=\\sqrt{(1{,}40)(8{,}314)(293)/(28{,}8\\times10^{-3})}=344$ m/s, y el oído (20 Hz a 20 000 Hz) abarca $\\lambda$ de 17 m a 1,7 cm. Agua: $v=\\sqrt{2{,}18\\times10^9/1{,}00\\times10^3}=1480$ m/s; un sonar de 262 Hz tiene $\\lambda=5{,}65$ m. El agua es más densa, pero muchísimo más rígida.</p><p><b>Error típico:</b> poner $T$ en °C o $M$ en g/mol (error de un factor $\\sqrt{1000}\\approx32$), o usar $B$ en una varilla (manda $Y$).</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.2, ec. 16.6-16.8, fig. 16.7, tabla 16.1, p. 511",
-    "txt": "U p.510-511"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "thm",
-   "h": "Deducción de $v=\\sqrt{B/\\rho}$ (pistón en un tubo)",
-   "html": [
-    "<ol class=\"steps\">",
-    "    <li><b>Montaje.</b> Un pistón empuja con rapidez constante $v_y$ un fluido en reposo (densidad $\\rho$, presión $p$) dentro de un tubo de sección $A$. La perturbación avanza con rapidez $v$: en un tiempo $t$ está en movimiento el fluido que ocupaba una longitud $vt$, es decir, volumen $vtA$ y masa $\\rho vtA$.</li>",
-    "    <li><b>Cantidad de movimiento.</b> Partía del reposo, así que ahora vale $(\\rho vtA)\\,v_y$.</li>",
-    "    <li><b>Sobrepresión.</b> El pistón ha avanzado $v_yt$, de modo que el volumen $vtA$ ha disminuido en $Av_yt$: $\\Delta V/V=-v_y/v$. Con $B=-\\Delta p/(\\Delta V/V)$ resulta $\\Delta p=B\\,v_y/v$.</li>",
-    "    <li><b>Impulso.</b> La presión $p$ actúa a ambos lados del fluido en movimiento; la fuerza neta es $\\Delta p\\,A$ y el impulso, $\\Delta p\\,At=B\\dfrac{v_y}{v}At$.</li>",
-    "    <li><b>Teorema impulso-cantidad de movimiento</b> (16.6): $B\\dfrac{v_y}{v}At=\\rho vtA\\,v_y\\ \\Rightarrow\\ \\dfrac Bv=\\rho v\\ \\Rightarrow\\ \\boxed{v=\\sqrt{\\dfrac B\\rho}}$ (16.7).</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U §16.2, ec. 16.6-16.7, fig. 16.7, pp. 510-511",
-    "txt": "U p.510-511"
+    "ref": "U §16.2, ec. 16.7-16.10, tabla 16.1 y ejemplos 16.3-16.4, pp. 511-513",
+    "txt": "U p.511-513"
    }
   },
   {
@@ -532,87 +386,38 @@
   {
    "t": "caja",
    "k": "thm",
-   "h": "Rapidez del sonido en un gas ideal",
-   "html": [
-    "<p>En un gas, $B$ depende de la presión: $B=\\gamma p_0$ (16.9), con $p_0$ la presión de equilibrio y $\\gamma$ el <b>cociente de capacidades caloríficas</b> (adimensional; $\\gamma=1{,}40$ para el aire, ver cap. 19). Como $B/\\rho$ no depende de la presión (solo de la temperatura), la rapidez es función de la <b>temperatura absoluta</b>:",
-    "  $$\\boxed{v=\\sqrt{\\frac{\\gamma RT}M}}\\qquad(16.10)$$",
-    "  con $T$ en <b>kelvin</b>, $R=8{,}314$ J/(mol·K) y $M$ la <b>masa molar</b> en <b>kg/mol</b>. Para un gas dado, $v\\propto\\sqrt T$; a igual $T$, $v\\propto\\sqrt{\\gamma/M}$ (más ligero ⇒ más rápido). A $20$ °C en el aire, $v=344$ m/s.</p>"
-   ],
+   "h": "De dónde sale $v=\\sqrt{B/\\rho}$: el pistón en un tubo",
+   "html": "<p>Un pistón empuja con rapidez $v_y$ un fluido en reposo dentro de un tubo de sección $A$; la perturbación avanza a $v$. En un tiempo $t$ se mueve la masa $\\rho vtA$, con cantidad de movimiento $\\rho vtA\\,v_y$. Ese volumen $vtA$ se ha reducido en $Av_yt$, así que la sobrepresión es $\\Delta p=B\\,v_y/v$ y el impulso neto, $\\Delta p\\,At$. Igualando impulso y cantidad de movimiento (16.6): $B\\dfrac{v_y}{v}At=\\rho vtA\\,v_y\\ \\Rightarrow\\ v=\\sqrt{B/\\rho}$ (16.7). Útil si en teoría te piden «deducir la rapidez del sonido».</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.2, ec. 16.9-16.10, pp. 512-513",
-    "txt": "U p.512-513"
+    "ref": "U §16.2, ec. 16.6-16.7, fig. 16.7, pp. 510-511",
+    "txt": "U p.510-511"
    }
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.3: la longitud de onda de un sonar",
-   "html": [
-    "<p>Un sonar emite 262 Hz bajo el agua. Calcula la rapidez en el agua con (16.7) y la longitud de onda. Densidad del agua $\\rho=1{,}00\\times10^3$ kg/m³; módulo volumétrico $B=2{,}18\\times10^9$ Pa (ejemplo 16.2).</p>",
-    "  <ol class=\"steps\">",
-    "    <li>$v=\\sqrt{B/\\rho}=\\sqrt{\\dfrac{2{,}18\\times10^9}{1{,}00\\times10^3}}=\\mathbf{1480\\ m/s}$ (coincide con la tabla 16.1).</li>",
-    "    <li>$\\lambda=\\dfrac vf=\\dfrac{1480}{262}=\\mathbf{5{,}65\\ m}$.</li>",
-    "    <li><b>Evaluar.</b> El agua es más densa, pero es <i>mucho</i> más incompresible ($B$ enorme): gana $B$ y $v$ es mayor que en el aire. En el aire, 262 Hz tiene $\\lambda=1{,}31$ m: a igual frecuencia, más longitud de onda en el agua.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.3, p. 512",
-    "txt": "U p.512"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.4: rapidez del sonido en el aire y longitudes de onda audibles",
-   "html": [
-    "<p>Calcula la rapidez del sonido en el aire a $20$ °C ($M=28{,}8\\times10^{-3}$ kg/mol, $\\gamma=1{,}40$) y el intervalo de longitudes de onda a las que es sensible el oído (20 Hz a 20 000 Hz).</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Kelvin y kg/mol.</b> $T=20+273=293$ K. $v=\\sqrt{\\dfrac{\\gamma RT}M}=\\sqrt{\\dfrac{(1{,}40)(8{,}314)(293)}{28{,}8\\times10^{-3}}}=\\mathbf{344\\ m/s}$.</li>",
-    "    <li>$\\lambda=v/f$: a 20 Hz, $\\lambda=\\mathbf{17\\ m}$; a 20 000 Hz, $\\lambda=\\mathbf{1{,}7\\ cm}$.</li>",
-    "    <li><b>Evaluar.</b> Coincide con la rapidez medida a 20 °C. Un bajo audible tiene casi el tamaño de una casa; el agudo más alto, el de una uña.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> $T$ en K, $M$ en kg/mol; $v\\to\\lambda=v/f$.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.4, p. 513",
-    "txt": "U p.513"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "intu",
-   "h": "Pregunta de inicio del capítulo",
-   "html": "<p>¿Por qué el sonido de un cuerno viaja más despacio en un frío día de invierno en las montañas que en un cálido día de verano a nivel del mar? ¿Por la presión, la densidad, la humedad, la temperatura o la masa por mol? <b>La temperatura</b>: de (16.10), $v\\propto\\sqrt T$; la composición del aire es esencialmente la misma, así que el aire frío transmite el sonido más despacio.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U cap. 16, pregunta de inicio, p. 505; respuesta, p. 544",
-    "txt": "U p.505, 544"
-   }
-  },
-  {
-   "t": "parte",
-   "archivo": "parte06.html"
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Evalúe su comprensión (U §16.2)",
-   "html": "<p>El mercurio es 13,6 veces más denso que el agua. De acuerdo con la tabla 16.1, a 20 °C, ¿qué líquido tiene mayor módulo volumétrico? <b>i. El mercurio.</b> De (16.7), $B=\\rho v^2$: el mercurio tiene $\\rho$ 13,6 veces mayor y una rapidez casi igual (1451 frente a 1482 m/s), así que su $B$ es unas 13 veces el del agua.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U «Evalúe su comprensión de la sección 16.2», pp. 513 y 544",
-    "txt": "U p.513, 544"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "¿Por qué el sonido de un cuerno viaja más despacio en un frío día de invierno en la montaña que en un día de verano a nivel del mar?",
+     "a": "Por la <b>temperatura</b>: $v=\\sqrt{\\gamma RT/M}\\propto\\sqrt T$. La presión no influye (se cancela en $B/\\rho$) y la composición del aire es la misma. (Pregunta de inicio del capítulo.)"
+    },
+    {
+     "q": "¿Rapidez del sonido en el aire a 0 °C ($\\gamma=1{,}40$, $M=28{,}8\\times10^{-3}$ kg/mol)?",
+     "a": "$T=273{,}15$ K ⇒ $v=\\sqrt{(1{,}40)(8{,}314)(273{,}15)/(28{,}8\\times10^{-3})}=332$ m/s."
+    },
+    {
+     "q": "El mercurio es 13,6 veces más denso que el agua y el sonido va casi igual de rápido en ambos (1451 y 1482 m/s). ¿Cuál tiene mayor módulo volumétrico?",
+     "a": "El <b>mercurio</b>: $B=\\rho v^2$ ⇒ $B_\\text{Hg}/B_\\text{agua}=13{,}6\\,(1451/1482)^2=13{,}0$."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s3",
    "n": "3",
    "titulo": "Intensidad del sonido y decibelios",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §16.3, pp. 514-518",
@@ -620,94 +425,25 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte07.html"
-  },
-  {
    "t": "caja",
    "k": "def",
-   "h": "Intensidad de una onda sonora sinusoidal",
-   "html": [
-    "<p>La potencia por unidad de área es $p(x,t)\\,v_y(x,t)$ (fuerza por área por velocidad de las partículas). Promediando $\\sin^2$ (valor medio $\\tfrac12$) se obtiene",
-    "  $$I=\\tfrac12 B\\omega kA^2\\quad(16.11)\\qquad I=\\tfrac12\\sqrt{\\rho B}\\,\\omega^2A^2\\quad(16.12)$$",
-    "  y, en términos de la amplitud de presión (más cómoda),",
-    "  $$\\boxed{I=\\frac{p_\\text{máx}^2}{2\\rho v}=\\frac{p_\\text{máx}^2}{2\\sqrt{\\rho B}}}\\qquad(16.14)$$",
-    "  A igual intensidad, ondas de distinta frecuencia tienen distinta $A$ pero <b>la misma $p_\\text{máx}$</b>. Si la fuente emite igual en todas direcciones, $I=P/4\\pi r^2$ (ley del cuadrado inverso, 15.26); en interiores no vale, por las reflexiones.</p>"
-   ],
+   "h": "Intensidad: $I=p_\\text{máx}^2/2\\rho v$",
+   "html": "<p>La <b>intensidad</b> es la potencia media que atraviesa cada m² perpendicular a la propagación (W/m²). Promediando $p\\,v_y$ en un ciclo:</p>$$I=\\tfrac12\\sqrt{\\rho B}\\,\\omega^2A^2\\quad(16.12)\\qquad\\boxed{I=\\frac{p_\\text{máx}^2}{2\\rho v}}\\quad(16.14)$$<p>La segunda es la cómoda: a igual intensidad, sonidos de distinta frecuencia tienen la <b>misma $p_\\text{máx}$</b> (pero distinto $A$; $fA$ constante, ejemplo 16.6). Si la fuente emite igual en todas direcciones, la potencia se reparte en una esfera: $I=P/4\\pi r^2$ (15.26); sobre el suelo, en una semiesfera ($2\\pi r^2$, ejemplo 16.7).</p><p><b>Ejemplo mínimo</b> (ejemplo 16.5 de U): con $p_\\text{máx}=3{,}0\\times10^{-2}$ Pa, $\\rho=1{,}20$ kg/m³ y $v=344$ m/s, $I=(3{,}0\\times10^{-2})^2/[2(1{,}20)(344)]=1{,}1\\times10^{-6}$ W/m². El oído va de $10^{-12}$ W/m² (umbral) a unos 1 W/m² (dolor).</p><p><b>Error típico:</b> aplicar el inverso del cuadrado en interiores (las reflexiones lo estropean) u olvidar el 2 del denominador.</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.3, ec. 16.11-16.14, pp. 514-515",
-    "txt": "U p.514-515"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.5: intensidad de una onda sonora en el aire",
-   "html": [
-    "<p>Calcula la intensidad de la onda del ejemplo 16.1, $p_\\text{máx}=3{,}0\\times10^{-2}$ Pa, a $20$ °C ($\\rho=1{,}20$ kg/m³, $v=344$ m/s).</p>",
-    "  <ol class=\"steps\">",
-    "    <li>$I=\\dfrac{p_\\text{máx}^2}{2\\rho v}=\\dfrac{(3{,}0\\times10^{-2})^2}{2(1{,}20)(344)}=\\mathbf{1{,}1\\times10^{-6}\\ W/m^2}$.</li>",
-    "    <li><b>Evaluar.</b> Parece poco, pero está en el rango cotidiano. El umbral de dolor ($p_\\text{máx}\\approx30$ Pa) corresponde a $I\\approx1$ W/m²; el sonido más tenue audible ($p_\\text{máx}\\approx3\\times10^{-5}$ Pa), a $10^{-12}$ W/m².</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.5, p. 515",
-    "txt": "U p.515"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.6: misma intensidad, distinta frecuencia",
-   "html": [
-    "<p>¿Qué amplitudes de desplazamiento y de presión tiene una onda de 20 Hz con la misma intensidad que la de 1000 Hz de los ejemplos 16.1 y 16.5?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>De (16.14) y (16.12): $p_\\text{máx}^2=2I\\sqrt{\\rho B}$ y $\\omega^2A^2=2I/\\sqrt{\\rho B}$. Con $\\rho$, $B$, $I$ fijos, <b>$p_\\text{máx}$ es la misma</b> ($3{,}0\\times10^{-2}$ Pa) y <b>$fA$ es constante</b>.</li>",
-    "    <li>$A_{20}=\\dfrac{f_{1000}}{f_{20}}A_{1000}=\\dfrac{1000}{20}(1{,}2\\times10^{-8})=6{,}0\\times10^{-7}$ m $=\\mathbf{0{,}60\\ mm}$.</li>",
-    "    <li><b>Evaluar.</b> Refuerza la idea de que la presión es la descripción más conveniente: no depende de la frecuencia a igual intensidad.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.6, p. 516",
-    "txt": "U p.516"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.7: ¡que se oiga!",
-   "html": [
-    "<p>En un concierto al aire libre se quiere $I=1$ W/m² a 20 m de los altavoces, que emiten igual en todas direcciones sobre el suelo. ¿Qué potencia acústica media deben tener?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>La potencia se reparte sobre un <b>hemisferio</b> de radio 20 m (el suelo no radia): área $=\\tfrac12(4\\pi)(20)^2\\approx2500$ m².</li>",
-    "    <li>$P=IA=(1\\ \\text{W/m}^2)(2500\\ \\text{m}^2)=\\mathbf{2500\\ W=2{,}5\\ kW}$.</li>",
-    "    <li><b>Evaluar.</b> La potencia eléctrica necesaria sería mucho mayor: los altavoces rinden solo un pequeño porcentaje.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> $P=I\\times\\text{área}$; el área es la de la superficie (esfera, hemisferio…) que rodea a la fuente.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.7, p. 516",
-    "txt": "U p.516"
+    "ref": "U §16.3, ec. 16.11-16.14 y ejemplos 16.5-16.7, pp. 514-516",
+    "txt": "U p.514-516"
    }
   },
   {
    "t": "caja",
    "k": "def",
-   "h": "Nivel de intensidad de sonido (decibelios)",
-   "html": [
-    "<p>$$\\boxed{\\beta=(10\\ \\text{dB})\\log\\frac I{I_0}}\\qquad(16.15)\\qquad I_0=10^{-12}\\ \\text{W/m}^2$$",
-    "  ($\\log$ es el logaritmo en base 10; $I_0$ es aproximadamente el umbral de audición a 1000 Hz). Si $I=I_0$, $\\beta=0$ dB; si $I=1$ W/m², $\\beta=120$ dB. Despejando: $I=I_0\\,10^{\\beta/(10\\ \\text{dB})}$. Para <b>dos</b> niveles, $I_0$ se cancela:",
-    "  $$\\beta_2-\\beta_1=(10\\ \\text{dB})\\log\\frac{I_2}{I_1}\\qquad(\\text{ejemplo 16.9})$$",
-    "  La percepción de volumen no es proporcional a $I$: un aumento de unos 8 a 10 dB (intensidad ×6 a ×10) se percibe como el doble de volumen.</p>"
-   ],
+   "h": "Nivel de intensidad: decibelios",
+   "html": "<p>Como el oído abarca un factor $10^{12}$ en intensidad, se usa una escala <b>logarítmica</b> (como la escala Richter): cada ×10 en $I$ suma 10 dB.</p>$$\\boxed{\\beta=(10\\ \\text{dB})\\log\\frac I{I_0}},\\quad I_0=10^{-12}\\ \\text{W/m}^2\\quad(16.15)\\qquad\\beta_2-\\beta_1=(10\\ \\text{dB})\\log\\frac{I_2}{I_1}$$<p>Despejando: $I=I_0\\,10^{\\beta/(10\\ \\text{dB})}$. Tres saltos que conviene saber: <b>×2 ⇔ +3 dB</b>; <b>×10 ⇔ +10 dB</b>; <b>distancia ×2 a una fuente puntual ⇔ −6 dB</b> (ejemplo 16.9: $10\\log\\tfrac14=-6{,}0$ dB, sea cual sea el nivel inicial). $N$ fuentes iguales e independientes: $+10\\log N$ dB. Un aumento de unos 8-10 dB se percibe como el doble de volumen.</p><p><b>Ejemplo mínimo</b> (ejemplo 16.8 de U): 92 dB son $I=10^{-12}\\cdot10^{9{,}2}=1{,}6\\times10^{-3}$ W/m², intensidad que durante años daña el oído de forma permanente.</p><p><b>Error típico:</b> <b>sumar decibelios</b>. Dos máquinas de 60 dB dan 63 dB, no 120 dB: se suman las intensidades y luego se vuelve a dB. Y el nivel en dB no cumple el inverso del cuadrado: lo cumple $I$.</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.3, ec. 16.15, tabla 16.2, pp. 516-518",
-    "txt": "U p.516-518"
+    "ref": "U §16.3, ec. 16.15, tabla 16.2, Estrategia 16.1 y ejemplos 16.8-16.9, pp. 515-518",
+    "txt": "U p.515-518"
    }
   },
   {
@@ -715,77 +451,33 @@
    "ref": "escala-de-decibelios-de-0-a-140-db-con-fuentes-d"
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.8: sordera temporal o permanente",
-   "html": [
-    "<p>Una exposición de 10 min a 120 dB desplaza el umbral del oído de 0 dB a 28 dB; 10 años a 92 dB lo desplazan de forma permanente a 28 dB. ¿Qué intensidades son 28 y 92 dB?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>Despeja $I$ de (16.15): $I=I_0\\,10^{\\beta/(10\\ \\text{dB})}$.</li>",
-    "    <li>$I_{28}=(10^{-12})\\,10^{2{,}8}=\\mathbf{6{,}3\\times10^{-10}\\ W/m^2}$; $I_{92}=(10^{-12})\\,10^{9{,}2}=\\mathbf{1{,}6\\times10^{-3}\\ W/m^2}$.</li>",
-    "    <li><b>Cuidado.</b> Si te sale un factor 10 de más, has tecleado $10\\times10^{-12}$ en vez de $1\\times10^{-12}$.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.8, p. 517",
-    "txt": "U p.517"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.9: un pájaro canta en una pradera",
-   "html": [
-    "<p>Un pájaro (fuente puntual de potencia constante) cumple la ley del cuadrado inverso. ¿Cuántos decibelios baja el nivel si te alejas al doble de la distancia?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>$\\beta_2-\\beta_1=(10\\ \\text{dB})\\log(I_2/I_1)$ y, por (15.26), $I_2/I_1=r_1^2/r_2^2=\\tfrac14$.</li>",
-    "    <li>$\\beta_2-\\beta_1=(10\\ \\text{dB})\\log\\tfrac14=\\mathbf{-6{,}0\\ dB}$.</li>",
-    "    <li><b>Evaluar.</b> El resultado es negativo (más lejos ⇒ más débil) y <b>no depende del nivel inicial</b>: cada vez que se duplica la distancia a una fuente puntual, el nivel baja 6 dB.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.9, figs. 16.11, pp. 517-518",
-    "txt": "U p.517-518"
-   }
-  },
-  {
    "t": "fig",
    "ref": "una-fuente-puntual-emite-en-todas-direcciones-a-"
   },
   {
-   "t": "caja",
-   "k": "tip",
-   "h": "Estrategia 16.1 de U y truco de examen con decibelios",
-   "html": "<p><b>Identificar:</b> ¿qué es la incógnita ($A$, $p_\\text{máx}$, $I$, $\\beta$, $f$…)? <b>Plantear:</b> ordena las cantidades (de la onda: $A$, $p_\\text{máx}$, $f$, $\\lambda$, $k$; del medio: $v$, y $B$ y $\\rho$ en un líquido o $\\gamma$, $T$ y $M$ en un gas). <b>Ejecutar:</b> $T$ en kelvin. <b>Evaluar:</b> busca una relación alternativa. <b>Truco:</b> memoriza tres saltos, $\\times2\\leftrightarrow+3$ dB, $\\times10\\leftrightarrow+10$ dB, y que $N$ fuentes iguales e independientes suman $10\\log N$ dB; el resto, con la calculadora y (16.15).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U Estrategia para resolver problemas 16.1, p. 515",
-    "txt": "U p.515"
-   }
-  },
-  {
-   "t": "parte",
-   "archivo": "parte08.html"
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Evalúe su comprensión (U §16.3)",
-   "html": "<p>Se duplica la intensidad sin cambiar la frecuencia (ni la presión, densidad y temperatura del aire). <b>La amplitud de desplazamiento y la de presión se multiplican por $\\sqrt2$</b> (de (16.12) y (16.14), $I\\propto A^2$ y $I\\propto p_\\text{máx}^2$); <b>el módulo volumétrico y la rapidez del sonido no cambian</b> (son del medio); <b>el nivel de intensidad sube $(10\\ \\text{dB})\\log2=3{,}0$ dB</b>.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U «Evalúe su comprensión de la sección 16.3», pp. 518 y 544",
-    "txt": "U p.518, 544"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Se duplica la intensidad de un sonido sin cambiar su frecuencia. ¿Qué pasa con $\\beta$, con $p_\\text{máx}$ y con $v$?",
+     "a": "$\\beta$ sube $(10\\ \\text{dB})\\log2=3{,}0$ dB; $p_\\text{máx}$ (y $A$) se multiplican por $\\sqrt2$; $v$ no cambia (es del medio)."
+    },
+    {
+     "q": "¿Qué intensidad corresponde a 80 dB?",
+     "a": "$I=10^{-12}\\cdot10^{8}=1{,}0\\times10^{-4}$ W/m²."
+    },
+    {
+     "q": "Estás a 10 m de una fuente puntual y te alejas hasta 100 m. ¿Cuántos dB baja el nivel?",
+     "a": "$I$ se divide por $10^2$ ⇒ $\\Delta\\beta=10\\log10^{-2}=-20$ dB."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s4",
    "n": "4",
-   "titulo": "Ondas sonoras estacionarias y modos normales",
-   "prio": null,
+   "titulo": "Ondas sonoras estacionarias: tubos abiertos y cerrados",
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §16.4, pp. 518-522",
@@ -793,21 +485,13 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte09.html"
-  },
-  {
    "t": "caja",
    "k": "def",
-   "h": "Nodos y antinodos de desplazamiento y de presión; extremos abiertos y cerrados",
-   "html": [
-    "<p>Un <b>nodo de desplazamiento</b> (N) es un punto donde las partículas no se mueven; un <b>antinodo de desplazamiento</b> (A), donde oscilan con amplitud máxima. En un nodo de desplazamiento el gas se comprime y expande al máximo, así que allí la presión varía al máximo: es un <b>antinodo de presión</b>. Al revés, en un antinodo de desplazamiento la presión no varía: es un <b>nodo de presión</b>.",
-    "  $$\\boxed{\\text{nodo de presión}=\\text{antinodo de desplazamiento}\\qquad\\text{antinodo de presión}=\\text{nodo de desplazamiento}}$$",
-    "  <b>Extremo cerrado</b> (tapón rígido): las partículas no pueden moverse ⇒ <b>nodo de desplazamiento</b> (antinodo de presión), como el extremo fijo de una cuerda. <b>Extremo abierto</b>: está a la presión atmosférica, que no varía ⇒ <b>nodo de presión</b> = <b>antinodo de desplazamiento</b>, como el extremo libre de una cuerda (en rigor el nodo de presión está un poco más allá del extremo, pero se desprecia si el tubo es estrecho respecto a $\\lambda$). Distancias: nodo–antinodo contiguos, $\\lambda/4$; nodo–nodo o antinodo–antinodo, $\\lambda/2$.</p>"
-   ],
+   "h": "Nodos y antinodos de desplazamiento y de presión",
+   "html": "<p>Una onda sonora que va y vuelve por un tubo forma una <b>onda estacionaria</b>, como una cuerda (tema 15). Lo nuevo: hay dos formas de mirarla y <b>sus nodos están intercambiados</b>. Donde el gas no se mueve (<b>nodo de desplazamiento</b>, N) se comprime y expande al máximo: es un <b>antinodo de presión</b>; y donde más se mueve (<b>antinodo de desplazamiento</b>, A), la presión no varía: <b>nodo de presión</b>.</p><ul><li><b>Extremo cerrado</b> (tapón): el gas no puede moverse ⇒ <b>N de desplazamiento</b> (como el extremo fijo de una cuerda).</li><li><b>Extremo abierto</b>: está a presión atmosférica ⇒ nodo de presión ⇒ <b>A de desplazamiento</b>.</li><li>N–A contiguos: $\\lambda/4$; N–N o A–A: $\\lambda/2$.</li></ul><p><b>Ejemplo mínimo</b> (tubo de Kundt): el polvo del fondo de un tubo se amontona en los nodos de desplazamiento; si los montones distan $d$, $\\lambda=2d$ y $v=2df$. Con 1000 Hz y $d=17{,}2$ cm, $v=344$ m/s. Y frente a una pared que refleja un sonido no oyes nada a $\\lambda/4$, $3\\lambda/4$… de ella: son nodos de presión (ejemplo 16.10).</p><p><b>Error típico:</b> poner un nodo de desplazamiento en el extremo abierto: allí hay nodo de <b>presión</b>.</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.4, figs. 16.12-16.13, pp. 518-519",
+    "ref": "U §16.4, figs. 16.12-16.14 y ejemplo 16.10, pp. 518-519",
     "txt": "U p.518-519"
    }
   },
@@ -817,50 +501,13 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Cómo se ve una onda estacionaria: el tubo de Kundt",
-   "html": [
-    "<p>Un tubo de vidrio de unos 1 m, cerrado en un extremo y con un diafragma que vibra (movido por un altavoz) en el otro, lleva polvo fino en el fondo. Al variar la frecuencia se pasa por valores en los que la onda estacionaria es tan intensa que el polvo es barrido por el gas allí donde este se mueve y <b>se acumula en los nodos de desplazamiento</b>, donde el gas está quieto. Nodos contiguos distan $\\lambda/2$; si $d$ es esa distancia entre montoncitos de polvo, $\\lambda=2d$ y",
-    "  $$v=\\lambda f=2\\,d\\,f$$",
-    "  Por ejemplo, con $f=1000$ Hz y $d=17{,}2$ cm: $v=2(0{,}172)(1000)=344$ m/s. Es un método para medir la rapidez del sonido en un gas.</p>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U §16.4, tubo de Kundt, fig. 16.12, p. 518",
-    "txt": "U p.518"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.10: el sonido del silencio",
-   "html": [
-    "<p>Un altavoz direccional dirige una onda de longitud $\\lambda$ hacia una pared. ¿A qué distancias de la pared no oirías nada?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>El oído detecta variaciones de presión: no oirás nada en un <b>nodo de presión</b>, que es un <b>antinodo de desplazamiento</b>.</li>",
-    "    <li>La pared es nodo de desplazamiento; el primer antinodo está a $\\lambda/4$ y los siguientes a $\\lambda/2$ más cada vez: $d=\\mathbf{\\lambda/4,\\ 3\\lambda/4,\\ 5\\lambda/4,\\dots}$</li>",
-    "    <li>Si el altavoz no es perfectamente direccional, el efecto se nota poco por las reflexiones en suelo, techo y otras paredes.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.10, fig. 16.14, p. 519",
-    "txt": "U p.519"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "Tubo abierto (abierto en los dos extremos)",
-   "html": [
-    "<p>Antinodo de desplazamiento en cada extremo: la distancia entre antinodos contiguos es $\\lambda/2$, así que $L$ debe ser un número entero de semilongitudes de onda:",
-    "  $$\\boxed{\\lambda_n=\\frac{2L}n,\\qquad f_n=\\frac{nv}{2L}=nf_1,\\qquad f_1=\\frac v{2L}\\qquad(n=1,2,3,\\dots)}\\qquad(16.16\\text{-}16.19)$$",
-    "  Están <b>todos los armónicos</b> ($f_2=2f_1$, $f_3=3f_1$, …). El 2.º armónico es el 1.er sobretono.</p>"
-   ],
+   "h": "Tubo abierto y tubo cerrado: qué frecuencias «caben»",
+   "html": "<p><b>Abierto</b> (A en los dos extremos): $L$ es un número entero de medias longitudes de onda.</p>$$\\boxed{\\lambda_n=\\frac{2L}n,\\quad f_n=\\frac{nv}{2L}=nf_1\\quad(n=1,2,3,\\dots)}\\qquad(16.16\\text{-}16.19)$$<p><b>Cerrado</b> (A en la boca, N en el fondo): $L$ es un número <b>impar</b> de cuartos de onda.</p>$$\\boxed{\\lambda_n=\\frac{4L}n,\\quad f_n=\\frac{nv}{4L}=nf_1\\quad(n=1,3,5,\\dots)}\\qquad(16.20\\text{-}16.23)$$<p>El cerrado <b>no tiene armónicos pares</b> y, a igual $L$, su fundamental es la mitad (una octava más grave). $\\lambda_n$ solo depende de la geometría; el gas y la temperatura fijan $v$ y, con ella, $f=v/\\lambda$: los instrumentos de viento suben de tono al calentarse. Una flauta se comporta como un tubo abierto; un clarinete, como uno cerrado.</p><p><b>Ejemplo mínimo</b> (ejemplo 16.11 de U, $v=345$ m/s): un tubo cerrado de fundamental 220 Hz mide $L=345/(4\\cdot220)=0{,}392$ m. Su segundo sobretono es el <b>quinto armónico</b> (1100 Hz); un tubo abierto cuyo tercer armónico sea 1100 Hz mide $L=3(345)/(2\\cdot1100)=0{,}470$ m.</p><p><b>Error típico:</b> intercambiar $2L$ y $4L$, o llamar «segundo sobretono» al $n=2$ (es $n=3$ en un abierto y $n=5$ en un cerrado).</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.4, ec. 16.16-16.19, fig. 16.17, p. 520",
-    "txt": "U p.520"
+    "ref": "U §16.4, ec. 16.16-16.23, figs. 16.17-16.18 y ejemplo 16.11, pp. 520-522",
+    "txt": "U p.520-522"
    }
   },
   {
@@ -872,21 +519,6 @@
     "l": "U",
     "ref": "U fig. 16.17, p. 520",
     "txt": "U p.520"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "thm",
-   "h": "Tubo cerrado (abierto en un extremo y cerrado en el otro)",
-   "html": [
-    "<p>Antinodo de desplazamiento en la boca y nodo en el fondo: de un nodo a un antinodo hay $\\lambda/4$, así que $L$ es un número <b>impar</b> de cuartos de onda:",
-    "  $$\\boxed{\\lambda_n=\\frac{4L}n,\\qquad f_n=\\frac{nv}{4L}=nf_1,\\qquad f_1=\\frac v{4L}\\qquad(n=1,3,5,\\dots)}\\qquad(16.20\\text{-}16.23)$$",
-    "  Faltan los armónicos pares: solo $f_1,3f_1,5f_1,\\dots$ Para la misma $L$, el cerrado tiene <b>la mitad de frecuencia fundamental</b> que el abierto (una octava más grave). Un tubo cerrado por ambos lados no sirve de instrumento: el sonido no sale.</p>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U §16.4, ec. 16.20-16.23, fig. 16.18, p. 521",
-    "txt": "U p.521"
    }
   },
   {
@@ -906,59 +538,32 @@
   },
   {
    "t": "parte",
-   "archivo": "parte10.html"
+   "archivo": "interactivo-tubo.html"
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.11: historia de dos tubos",
-   "html": [
-    "<p>Un día en que $v=345$ m/s, la fundamental de un tubo de órgano <b>cerrado</b> es 220 Hz. a) ¿Qué longitud tiene? b) Su segundo sobretono tiene la misma longitud de onda que el tercer armónico de un tubo <b>abierto</b>. ¿Qué longitud tiene el abierto?</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>a)</b> Cerrado: $f_1=v/4L$ ⇒ $L_\\text{cerrado}=\\dfrac v{4f_1}=\\dfrac{345}{4(220)}=\\mathbf{0{,}392\\ m}$.</li>",
-    "    <li><b>b)</b> En un cerrado, el segundo sobretono es el <b>quinto armónico</b> ($n=5$: los impares son 1, 3, 5…): $f_5=5(220)=1100$ Hz. Igual $\\lambda$ ⇒ igual $f$: el tercer armónico del abierto vale $3\\dfrac{v}{2L_\\text{abierto}}=1100$ Hz ⇒ $L_\\text{abierto}=\\dfrac{3(345)}{2(1100)}=\\mathbf{0{,}470\\ m}$.</li>",
-    "    <li><b>Evaluar.</b> El abierto es más largo pero su fundamental es más alta, $1100/3=367$ Hz, no hay contradicción: compara las figuras 16.17a y 16.18a.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> dibuja el modo; cuenta cuartos (cerrado) o medios (abierto) de onda; iguala frecuencias si piden compararlos.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.11, p. 521",
-    "txt": "U p.521"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "def",
-   "h": "Instrumentos de viento, timbre y temperatura",
-   "html": "<p>En un tubo real suenan varios modos a la vez; la onda estacionaria compleja emite al aire una onda con un contenido armónico parecido (un tubo muy estrecho: muchos armónicos altos; uno más ancho: sobre todo la fundamental, sonido «de flauta»). Una flauta se comporta como un tubo abierto; un clarinete, como uno cerrado (cerrado en la lengüeta). Los orificios cambian la longitud efectiva $L$. Como $f\\propto v$ y $v\\propto\\sqrt T$ (16.10), <b>el tono de los instrumentos de viento sube con la temperatura</b>, y un órgano con tubos a distinta temperatura suena desafinado.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §16.4, p. 522",
-    "txt": "U p.522"
-   }
-  },
-  {
-   "t": "parte",
-   "archivo": "parte11.html"
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Evalúe su comprensión (U §16.4)",
-   "html": "<p>Se inyecta helio a la misma presión y temperatura en lugar de aire en un tubo metálico. ¿Cambia el tono? <b>ii. Un tono más alto.</b> La longitud de onda en el tubo depende solo de su forma ($\\lambda_n=2L/n$ o $4L/n$), pero $v$ es mayor en el helio (menor masa molar, 16.10) y $f=v/\\lambda$ sube.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U «Evalúe su comprensión de la sección 16.4», pp. 522 y 544",
-    "txt": "U p.522, 544"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Un tubo cerrado de 0,25 m con aire ($v=344$ m/s). ¿Sus tres primeras frecuencias?",
+     "a": "$f_1=344/(4\\cdot0{,}25)=344$ Hz; después solo impares: $3f_1=1032$ Hz y $5f_1=1720$ Hz."
+    },
+    {
+     "q": "Se llena de helio, a la misma presión y temperatura, un tubo de órgano. ¿Cambia $\\lambda_1$? ¿Y el tono?",
+     "a": "$\\lambda_1$ no (solo depende de $L$ y del tipo de tubo); $v$ es mayor en el helio, así que $f=v/\\lambda$ sube: tono más alto."
+    },
+    {
+     "q": "En un tubo de Kundt a 3440 Hz los montones de polvo están separados 5,0 cm. ¿Rapidez del sonido en el gas?",
+     "a": "$\\lambda=2d=0{,}10$ m ⇒ $v=\\lambda f=(0{,}10)(3440)=344$ m/s."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s5",
    "n": "5",
    "titulo": "Resonancia y sonido",
-   "prio": null,
+   "prio": 2,
    "src": {
     "l": "U",
     "ref": "U §16.5, pp. 522-524",
@@ -966,18 +571,14 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte12.html"
-  },
-  {
    "t": "caja",
    "k": "def",
-   "h": "Resonancia en sistemas con muchos modos",
-   "html": "<p>Si se fuerza un sistema a oscilar con la frecuencia $f$ de una fuerza impulsora, la amplitud de la oscilación forzada es pequeña salvo cuando $f$ es (casi) igual a una <b>frecuencia de modo normal</b>: entonces el sistema está en <b>resonancia</b> y la amplitud es máxima. La gráfica amplitud-frecuencia (<b>curva de resonancia</b>) tiene picos en $f_1, f_2=2f_1, f_3=3f_1,\\dots$ de un tubo abierto. Sin rozamiento los picos serían infinitos; en un sistema real hay amortiguamiento (tema 14) y son finitos. Ejemplo biológico: el canal auditivo es un tubo de unos 2,5 cm cerrado por el tímpano, con $f_1=v/4L=(344)/[4(0{,}025)]=3440$ Hz, y por eso el oído es más sensible cerca de esa frecuencia.</p>",
+   "h": "Resonancia: la fuerza impulsora coincide con un modo normal",
+   "html": "<p>Empujar un columpio a su ritmo lo hace subir cada vez más (tema 14). Un tubo o una cuerda tienen <b>muchos</b> ritmos propios (sus modos normales): si una fuerza periódica (un altavoz, un soplo, otra cuerda) tiene una frecuencia igual a uno de ellos, el sistema responde con amplitud máxima, está en <b>resonancia</b>. La <b>curva de resonancia</b> (amplitud frente a frecuencia) tiene picos en $f_1,2f_1,3f_1\\dots$ de un tubo abierto; el amortiguamiento los hace finitos. Por eso suena una botella al soplar, y el canal auditivo (tubo cerrado de unos 2,5 cm) hace al oído más sensible cerca de $f_1=344/(4\\cdot0{,}025)=3440$ Hz.</p><p><b>Ejemplo mínimo</b> (ejemplo 16.12 de U): un tubo cerrado hace vibrar en su fundamental una cuerda que mide el 80 % del tubo. Igualando frecuencias, $\\dfrac{v_a}{4L_a}=\\dfrac{v_s}{2L_s}$ ⇒ $\\dfrac{v_s}{v_a}=\\dfrac{2(0{,}80)}{4}=0{,}40$.</p><p><b>Error típico:</b> decir que en resonancia coinciden las longitudes de onda: coinciden las <b>frecuencias</b>; al pasar de la cuerda al aire cambia $v$ y con ella $\\lambda=v/f$.</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.5, fig. 16.19, pp. 522-523",
-    "txt": "U p.522-523"
+    "ref": "U §16.5, fig. 16.19 y ejemplo 16.12, pp. 522-524",
+    "txt": "U p.522-524"
    }
   },
   {
@@ -992,45 +593,29 @@
    }
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.12: dueto órgano-guitarra",
-   "html": [
-    "<p>Un tubo <b>cerrado</b> de órgano suena junto a una guitarra y hace vibrar una cuerda con gran amplitud al ajustar su tensión. La cuerda mide el 80 % del tubo y ambos vibran en su fundamental. Calcula $v_\\text{cuerda}/v_\\text{aire}$.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Idea.</b> La gran respuesta es resonancia: tubo y cuerda tienen la <b>misma frecuencia fundamental</b>, $f_{1a}=f_{1s}$.</li>",
-    "    <li>Tubo cerrado (16.20): $f_{1a}=v_a/4L_a$. Cuerda fija en los dos extremos (15.32): $f_{1s}=v_s/2L_s$. Igualando, $\\dfrac{v_a}{4L_a}=\\dfrac{v_s}{2L_s}$ con $L_s=0{,}80L_a$ ⇒ $\\dfrac{v_s}{v_a}=\\dfrac{2L_s}{4L_a}=\\dfrac{2(0{,}80)}{4}=\\mathbf{0{,}40}$.</li>",
-    "    <li><b>Evaluar.</b> Con $v_a=345$ m/s, $v_s=138$ m/s. Misma frecuencia, distinta $\\lambda=v/f$ en cada medio: la onda estacionaria del tubo tiene mayor longitud de onda.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> resonancia ⇒ igualar frecuencias; cada sistema con su fórmula de modo normal.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.12, pp. 523-524",
-    "txt": "U p.523-524"
-   }
-  },
-  {
-   "t": "parte",
-   "archivo": "parte13.html"
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Evalúe su comprensión (U §16.5)",
-   "html": "<p>Un tubo cerrado de longitud $L$ tiene $f_1=220$ Hz. ¿En qué tubos habrá resonancia con un diapasón de 660 Hz? <b>i y iv.</b> (i) Cerrado de longitud $L$: $660=3f_1$, tercer armónico (impar) ✓. (ii) Cerrado de $2L$: $f_1=110$ Hz, $660=6f_1$ (par, no existe) ✗. (iii) Abierto de $L$: $f_1=440$ Hz, sus armónicos son 440, 880…: 660 no está ✗. (iv) Abierto de $2L$: $f_1=220$ Hz, $660=3f_1$ ✓.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U «Evalúe su comprensión de la sección 16.5», pp. 524 y 544",
-    "txt": "U p.524, 544"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Un tubo cerrado de longitud $L$ tiene $f_1=220$ Hz. ¿Resuena con un diapasón de 660 Hz? ¿Y un tubo abierto de la misma $L$?",
+     "a": "El cerrado sí: $660=3f_1$, armónico impar. El abierto tiene $f_1=440$ Hz y armónicos 440, 880…: 660 no está, no resuena."
+    },
+    {
+     "q": "¿Por qué el oído es especialmente sensible hacia los 3400 Hz?",
+     "a": "El canal auditivo es un tubo cerrado (por el tímpano) de unos 2,5 cm: $f_1=v/4L=3440$ Hz y el aire del canal resuena ahí."
+    },
+    {
+     "q": "Un alambre vibra a 137 Hz y su onda en el alambre tiene $\\lambda=0{,}500$ m. ¿El sonido que emite tiene esa misma $\\lambda$?",
+     "a": "No: tiene la misma <b>frecuencia</b>, 137 Hz, pero en el aire $\\lambda=344/137=2{,}5$ m (problema 16.33)."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s6",
    "n": "6",
    "titulo": "Interferencia de ondas",
-   "prio": null,
+   "prio": 2,
    "src": {
     "l": "U",
     "ref": "U §16.6, pp. 524-526",
@@ -1038,22 +623,14 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte14.html"
-  },
-  {
    "t": "caja",
    "k": "thm",
-   "h": "Interferencia constructiva y destructiva (fuentes en fase)",
-   "html": [
-    "<p>Dos fuentes que emiten en fase ondas de la misma frecuencia. Sea $\\Delta$ la <b>diferencia de trayectorias</b> (distancia a una fuente menos distancia a la otra):",
-    "  $$\\Delta=0,\\ \\lambda,\\ 2\\lambda,\\dots\\ \\Rightarrow\\ \\textbf{constructiva}\\qquad\\Delta=\\tfrac\\lambda2,\\ \\tfrac{3\\lambda}2,\\ \\tfrac{5\\lambda}2,\\dots\\ \\Rightarrow\\ \\textbf{destructiva}$$",
-    "  En la constructiva la amplitud total es la suma de las dos (el doble si son iguales); en la destructiva es la diferencia (cero si son iguales). La fase relativa en el punto es $\\Delta\\phi=2\\pi\\Delta/\\lambda$: un $\\lambda$ de camino añade $2\\pi$ de fase.</p>"
-   ],
+   "h": "Dos fuentes en fase: manda la diferencia de caminos",
+   "html": "<p>Dos altavoces con el mismo amplificador emiten la misma onda a la vez. En un punto, si las crestas llegan juntas se refuerzan; si cresta con valle, se cancelan. Lo decide la <b>diferencia de trayectorias</b> $\\Delta=|r_A-r_B|$:</p>$$\\Delta=0,\\lambda,2\\lambda,\\dots\\Rightarrow\\textbf{constructiva}\\qquad\\Delta=\\tfrac\\lambda2,\\tfrac{3\\lambda}2,\\dots\\Rightarrow\\textbf{destructiva}\\qquad\\Delta\\phi=\\frac{2\\pi\\Delta}{\\lambda}$$<p>Con fuentes <b>coherentes</b> (misma $f$ y fase fija) se suman <b>amplitudes de presión</b>; con fuentes <b>independientes</b>, intensidades. Con frecuencias distintas no hay puntos de interferencia estables. La onda total sigue siendo <b>viajera</b>: la interferencia solo reparte la energía en unas direcciones y la quita de otras (no es una onda estacionaria). Así funcionan los auriculares con cancelación de ruido.</p><p><b>Ejemplo mínimo</b> (ejemplo 16.13 de U, $v=350$ m/s): en P, $d_A=\\sqrt{2^2+4^2}=4{,}47$ m y $d_B=\\sqrt{1^2+4^2}=4{,}12$ m ⇒ $\\Delta=0{,}35$ m. Constructiva si $f=nv/\\Delta=1000,2000,\\dots$ Hz; destructiva si $f=500,1500,2500,\\dots$ Hz.</p><p><b>Error típico:</b> usar la distancia a un solo altavoz, o la separación entre ellos, en lugar de la diferencia de caminos; y sumar intensidades de fuentes coherentes.</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.6, figs. 16.21-16.22, pp. 524-525",
-    "txt": "U p.524-525"
+    "ref": "U §16.6, figs. 16.21-16.23 y ejemplo 16.13, pp. 524-526",
+    "txt": "U p.524-526"
    }
   },
   {
@@ -1061,61 +638,33 @@
    "ref": "dos-ondas-del-mismo-tamano-y-frecuencia-azul-y-n"
   },
   {
-   "t": "caja",
-   "k": "warn",
-   "h": "Cuidado: onda viajera, no estacionaria",
-   "html": "<p>La onda total de dos altavoces <b>sigue siendo viajera</b>: transporta energía de los altavoces al aire. La interferencia solo la canaliza hacia ciertas direcciones (constructiva) y la aleja de otras (destructiva). Un punto de interferencia destructiva es nodo de desplazamiento <i>y</i> de presión a la vez (no hay onda) si las amplitudes son iguales; si no lo son, es solo un mínimo. Es distinto de una onda estacionaria, donde un nodo de presión es antinodo de desplazamiento.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §16.6, «Cuidado: interferencia y ondas viajeras», p. 524",
-    "txt": "U p.524"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.13: interferencia de altavoces",
-   "html": [
-    "<p>Dos altavoces pequeños A y B, alimentados por el mismo amplificador y en fase, emiten ondas sinusoidales. En P (figura) las distancias son $d_A=\\sqrt{2{,}00^2+4{,}00^2}$ y $d_B=\\sqrt{1{,}00^2+4{,}00^2}$ metros. a) ¿En qué frecuencias hay interferencia constructiva en P? b) ¿Y destructiva? Rapidez del sonido, 350 m/s.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Diferencia de trayectorias:</b> $d_A=4{,}47$ m, $d_B=4{,}12$ m ⇒ $d=0{,}35$ m. Fija: no depende de $f$.</li>",
-    "    <li><b>a)</b> Constructiva: $d=n\\lambda=nv/f$ ⇒ $f_n=n\\dfrac vd=n\\dfrac{350}{0{,}35}=\\mathbf{1000,\\ 2000,\\ 3000\\ Hz,\\dots}$ ($n=1,2,3,\\dots$).</li>",
-    "    <li><b>b)</b> Destructiva: $d=\\tfrac12\\lambda,\\tfrac32\\lambda,\\dots$ ⇒ $f_n=n\\dfrac v{2d}=n\\dfrac{350}{2(0{,}35)}=\\mathbf{500,\\ 1500,\\ 2500\\ Hz,\\dots}$ ($n=1,3,5,\\dots$).</li>",
-    "    <li><b>Evaluar.</b> Al subir la frecuencia, el sonido en P alterna entre grande y casi cero. En una habitación ordinaria el efecto se difumina por las reflexiones.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> $\\Delta$ ⇒ constructiva si $\\Delta=n\\lambda$, destructiva si $\\Delta=(n+\\tfrac12)\\lambda$ ⇒ despeja $f=v/\\lambda$.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.13, fig. 16.23, p. 525",
-    "txt": "U p.525"
-   }
-  },
-  {
    "t": "fig",
    "ref": "altavoces-a-y-b-en-una-vertical-b-a-1-metro-sobr"
   },
   {
-   "t": "parte",
-   "archivo": "parte15.html"
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Evalúe su comprensión (U §16.6)",
-   "html": "<p>El altavoz A emite 500 Hz y el B emite 1000 Hz. ¿Qué interferencia hay? <b>iii. Ninguna de las dos.</b> Con frecuencias distintas la diferencia de fase entre las ondas cambia constantemente con el tiempo, así que no hay puntos de reforzamiento o cancelación estables.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U «Evalúe su comprensión de la sección 16.6», pp. 526 y 544",
-    "txt": "U p.526, 544"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Dos altavoces en fase; en P la diferencia de caminos es 0,50 m ($v=344$ m/s). ¿Frecuencia más baja con interferencia destructiva? ¿Y constructiva?",
+     "a": "Destructiva: $\\Delta=\\lambda/2$ ⇒ $\\lambda=1{,}0$ m ⇒ $f=344$ Hz. Constructiva: $\\Delta=\\lambda$ ⇒ $\\lambda=0{,}50$ m ⇒ $f=688$ Hz."
+    },
+    {
+     "q": "El altavoz A emite 500 Hz y el B, 1000 Hz. ¿Dónde hay interferencia constructiva?",
+     "a": "En ningún sitio de forma estable: con frecuencias distintas la diferencia de fase cambia continuamente con el tiempo."
+    },
+    {
+     "q": "Dos altavoces coherentes iguales dan cada uno 60 dB en un punto donde la interferencia es constructiva. ¿Nivel total?",
+     "a": "Se suman amplitudes: $p_\\text{máx}$ doble ⇒ $I$ cuádruple ⇒ $60+10\\log4=66{,}0$ dB (si fueran independientes, 63 dB)."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s7",
    "n": "7",
    "titulo": "Pulsos",
-   "prio": null,
+   "prio": 2,
    "src": {
     "l": "U",
     "ref": "U §16.7, pp. 526-528",
@@ -1123,22 +672,14 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte16.html"
-  },
-  {
    "t": "caja",
    "k": "thm",
-   "h": "Frecuencia de los pulsos",
-   "html": [
-    "<p>Dos ondas de la misma amplitud y frecuencias $f_a>f_b$ ligeramente distintas. En un punto fijo se describen con $y_a(t)=A\\sin2\\pi f_at$ e $y_b(t)=-A\\sin2\\pi f_bt$. Sumándolas, $y_a+y_b=\\big[2A\\sin\\tfrac12(2\\pi)(f_a-f_b)t\\big]\\cos\\tfrac12(2\\pi)(f_a+f_b)t$: un tono de frecuencia media $\\tfrac12(f_a+f_b)$ cuya amplitud varía lentamente con $\\tfrac12(f_a-f_b)$. Como la intensidad percibida (cuadrado de la amplitud) pasa por <b>dos máximos y dos mínimos por ciclo</b> de esa amplitud:",
-    "  $$\\boxed{f_\\text{pulso}=f_a-f_b}\\qquad(16.24)$$",
-    "  La frecuencia de los pulsos es la <b>diferencia</b> de frecuencias, y solo eso: <b>no dice cuál de las dos es mayor</b>. Se oyen pulsos hasta unos 6-7 Hz; con diferencias mayores el oído deja de percibirlos y siente consonancia o disonancia (y a veces un «tono diferencia» igual a $f_a-f_b$: 1800 y 1900 Hz dan un tono grave de 100 Hz). La forma exacta de la envolvente depende de la fase inicial de cada onda (con otras fases iniciales sería, por ejemplo, $2A|\\cos\\pi(f_a-f_b)t|$, como en la figura de abajo); lo que no cambia es la frecuencia de los pulsos.</p>"
-   ],
+   "h": "Frecuencia de los pulsos: $f_\\text{pulso}=f_a-f_b$",
+   "html": "<p>Dos sonidos de frecuencias muy próximas entran y salen de fase: oyes un tono que <b>sube y baja de volumen</b> («wow-wow-wow»). En un punto, $y_a+y_b=\\big[2A\\sin\\tfrac12(2\\pi)(f_a-f_b)t\\big]\\cos\\tfrac12(2\\pi)(f_a+f_b)t$: un tono de frecuencia media $\\tfrac12(f_a+f_b)$ con una amplitud que varía despacio. La sonoridad tiene dos máximos por ciclo de esa amplitud, así que</p>$$\\boxed{f_\\text{pulso}=f_a-f_b}\\qquad(16.24)$$<p>Se oyen pulsos hasta unos 6-7 Hz; más allá se percibe disonancia. Quien afina un instrumento ajusta hasta que los pulsos <b>desaparecen</b>.</p><p><b>Ejemplo mínimo:</b> un diapasón de 440 Hz y otro dan 3 pulsos/s ⇒ el segundo vibra a 437 o a 443 Hz.</p><p><b>Error típico:</b> creer que los pulsos dicen cuál de las dos frecuencias es mayor: solo dan la <b>diferencia</b>.</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.7, ec. 16.24, fig. 16.25, pp. 526-527",
-    "txt": "U p.526-527"
+    "ref": "U §16.7, ec. 16.24, fig. 16.25, pp. 526-528",
+    "txt": "U p.526-528"
    }
   },
   {
@@ -1157,33 +698,29 @@
    "ref": "suma-de-dos-ondas-de-12-y-10-hertz-en-un-segundo"
   },
   {
-   "t": "caja",
-   "k": "warn",
-   "h": "Error típico",
-   "html": "<p>(1) Creer que la frecuencia de los pulsos indica cuál de las dos fuentes está más alta; solo da la diferencia (por eso el diapasón desconocido de 440 Hz con 3 pulsos por segundo puede ser 437 o 443 Hz). (2) Confundir el <b>tono</b> (lo fija sobre todo la frecuencia) con la <b>sonoridad</b> (la amplitud).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §16.7, «Los datos hablan: pulsos», p. 527",
-    "txt": "U p.527"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Evalúe su comprensión (U §16.7)",
-   "html": "<p>Un diapasón vibra a 440 Hz y se oyen 3 pulsos por segundo al sonar con otro. ¿Frecuencia del segundo? <b>vi. 437 Hz o 443 Hz.</b> $|f-440|=3$ ⇒ $f=437$ o $443$ Hz: los pulsos solo dan la diferencia.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U «Evalúe su comprensión de la sección 16.7», pp. 528 y 544",
-    "txt": "U p.528, 544"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Suenan a la vez 256 Hz y 260 Hz. ¿Cuántos pulsos por segundo? ¿Qué tono se oye?",
+     "a": "$f_\\text{pulso}=4$ Hz; se oye un tono de frecuencia media, 258 Hz, que sube y baja de volumen 4 veces por segundo."
+    },
+    {
+     "q": "Afinas una cuerda contra un diapasón: oyes 2 pulsos/s; tensas un poco la cuerda y pasan a 3 pulsos/s. ¿Qué debes hacer?",
+     "a": "Al tensar sube $f$ y la diferencia ha crecido: la cuerda ya estaba <b>por encima</b>. Hay que aflojarla hasta que no haya pulsos."
+    },
+    {
+     "q": "¿Por qué con 440 Hz y 3 pulsos/s no se puede saber la otra frecuencia sin más datos?",
+     "a": "Porque $|f-440|=3$ tiene dos soluciones, 437 y 443 Hz: el pulso solo da el valor absoluto de la diferencia."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s8",
    "n": "8",
    "titulo": "Efecto Doppler",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §16.8, pp. 528-533",
@@ -1191,14 +728,10 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte17.html"
-  },
-  {
    "t": "caja",
    "k": "def",
-   "h": "Convenio de signos de U",
-   "html": "<p>El movimiento es a lo largo de la recta que une la fuente $S$ y el receptor $L$. Sean $v_S$ y $v_L$ las componentes de velocidad de la fuente y del receptor <b>respecto al medio</b> (el aire). <b>El sentido positivo, para ambas, es el que va del receptor $L$ hacia la fuente $S$.</b> La rapidez del sonido $v$ (respecto al aire) siempre es positiva.</p>",
+   "h": "Convenio de signos: «+» del receptor a la fuente",
+   "html": "<p>Una ambulancia suena aguda al acercarse y grave al alejarse: si la fuente $S$ o el receptor $L$ (<i>listener</i>) se mueven <b>respecto al aire</b>, la frecuencia que se oye, $f_L$, no es la emitida, $f_S$. Se trabaja sobre la recta que une $S$ y $L$, con $v_S$ y $v_L$ medidas <b>respecto al medio</b>, y con este convenio: <b>el sentido positivo, para las dos, es el que va de $L$ hacia $S$</b>. La rapidez del sonido $v$ siempre es positiva.</p><p><b>Error típico:</b> usar el signo «natural» (acercarse = +): invierte el resultado para la fuente.</p>",
    "src": {
     "l": "U",
     "ref": "U §16.8, p. 528",
@@ -1212,16 +745,12 @@
   {
    "t": "caja",
    "k": "thm",
-   "h": "Receptor móvil y fuente en reposo",
-   "html": [
-    "<p>La fuente quieta crea crestas separadas $\\lambda=v/f_S$. Un receptor que va hacia la fuente con $v_L$ las ve acercarse con rapidez relativa $v+v_L$, así que recibe",
-    "  $$f_L=\\frac{v+v_L}{\\lambda}=\\Big(1+\\frac{v_L}{v}\\Big)f_S\\qquad(16.25),(16.26)$$",
-    "  Si se acerca ($v_L>0$), $f_L>f_S$ (más agudo); si se aleja ($v_L<0$), $f_L&lt;f_S$. <b>$\\lambda$ no cambia</b>: cambia la rapidez con que el receptor «barre» las crestas.</p>"
-   ],
+   "h": "Receptor móvil: $\\lambda$ no cambia, cambia la rapidez relativa",
+   "html": "<p>La fuente quieta crea crestas separadas $\\lambda=v/f_S$. Si vas hacia ella con $v_L$, las crestas te llegan con rapidez relativa $v+v_L$ y las cuentas más a menudo:</p>$$f_L=\\frac{v+v_L}{\\lambda}=\\Big(1+\\frac{v_L}{v}\\Big)f_S\\qquad(16.25),(16.26)$$<p>Acercarse ($v_L>0$) ⇒ más agudo; alejarse ($v_L\\lt0$) ⇒ más grave.</p><p><b>Ejemplo mínimo</b> (ejemplo 16.16 de U): sirena quieta de 300 Hz, receptor que se aleja a 30 m/s ($v=340$ m/s): $v_L=-30$ ⇒ $f_L=(310/340)(300)=274$ Hz.</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.8, ec. 16.25-16.26, fig. 16.27, pp. 528-529",
-    "txt": "U p.528-529"
+    "ref": "U §16.8, ec. 16.25-16.26, fig. 16.27 y ejemplo 16.16, pp. 528-531",
+    "txt": "U p.528-531"
    }
   },
   {
@@ -1238,17 +767,11 @@
   {
    "t": "caja",
    "k": "thm",
-   "h": "Fuente móvil: cambia la longitud de onda",
-   "html": [
-    "<p>La rapidez de la onda respecto al aire sigue siendo $v$ (la fija el medio, no la fuente), pero $\\lambda$ ya no es $v/f_S$. En un periodo $T=1/f_S$ la cresta avanza $vT$ y la fuente avanza $v_ST$. La longitud de onda es la distancia entre crestas sucesivas, distinta delante y detrás:",
-    "  $$\\lambda_\\text{enfrente}=\\frac{v-v_S}{f_S}\\quad(16.27)\\qquad\\lambda_\\text{atrás}=\\frac{v+v_S}{f_S}\\quad(16.28)$$",
-    "  (en estas dos fórmulas $v_S$ es la <b>rapidez</b> de la fuente). Sustituyendo (16.28) en $f_L=(v+v_L)/\\lambda$ se obtiene la expresión general, válida para <b>todas</b> las combinaciones de movimientos a lo largo de la línea que une $S$ y $L$:",
-    "  $$\\boxed{f_L=\\frac{v+v_L}{v+v_S}\\,f_S}\\qquad(16.29)$$",
-    "  con $v_L$ y $v_S$ <b>positivas si van de $L$ a $S$</b> y negativas en caso contrario. Comprobaciones: si $v_L=v_S=0$ o <b>$v_L=v_S$</b> (mismo movimiento respecto al aire, p. ej. ambos quietos en el suelo con viento: respecto al aire se mueven igual), $f_L=f_S$; fuente que se acerca ($v_S<0$) ⇒ $f_L>f_S$; que se aleja ($v_S>0$) ⇒ $f_L&lt;f_S$.</p>"
-   ],
+   "h": "Fuente móvil: cambia $\\lambda$; fórmula general (16.29)",
+   "html": "<p>La onda sigue viajando a $v$ (la fija el aire), pero la fuente persigue a las crestas que emite por delante y huye de las de detrás. En un periodo la cresta avanza $v/f_S$ y la fuente $v_S/f_S$:</p>$$\\lambda_\\text{enfrente}=\\frac{v-v_S}{f_S}\\ \\ (16.27)\\qquad\\lambda_\\text{atrás}=\\frac{v+v_S}{f_S}\\ \\ (16.28)$$<p>(aquí $v_S$ es la <b>rapidez</b>). Llevando $\\lambda$ a $f_L=(v+v_L)/\\lambda$ sale la expresión que vale para <b>todas</b> las combinaciones, con los signos del convenio:</p>$$\\boxed{f_L=\\frac{v+v_L}{v+v_S}\\,f_S}\\qquad(16.29)$$<p>Comprobaciones: $v_L=v_S$ (p. ej. viento que arrastra igual a fuente y receptor) ⇒ $f_L=f_S$; fuente que se acerca ($v_S\\lt0$) ⇒ $f_L>f_S$.</p><p><b>Ejemplo mínimo</b> (ejemplo 16.14 de U): sirena de 300 Hz a 30 m/s, $v=340$ m/s: $\\lambda_\\text{enfrente}=310/300=1{,}03$ m y $\\lambda_\\text{atrás}=370/300=1{,}23$ m (en reposo, 1,13 m).</p><p><b>Error típico:</b> pensar que la fuente móvil cambia la rapidez del sonido: cambia $\\lambda$.</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.8, ec. 16.27-16.29, fig. 16.28, pp. 529-530",
+    "ref": "U §16.8, ec. 16.27-16.29, fig. 16.28 y ejemplo 16.14, pp. 529-530",
     "txt": "U p.529-530"
    }
   },
@@ -1269,115 +792,28 @@
   },
   {
    "t": "parte",
-   "archivo": "parte18.html"
+   "archivo": "interactivo-doppler.html"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "No es simétrico: la misma sirena, tres casos con 30 m/s relativos",
+   "html": "<p>Sirena de 300 Hz, $v=340$ m/s, y siempre «se alejan a 30 m/s» relativos (ejemplos 16.15-16.17 de U). Con el «+» de $L$ a $S$:</p><table><tr><th>Caso</th><th>$v_L$</th><th>$v_S$</th><th>$f_L$</th></tr><tr><td>Fuente se aleja a 30 m/s, receptor quieto</td><td>0</td><td>+30</td><td>$\\frac{340}{370}(300)=276$ Hz</td></tr><tr><td>Receptor se aleja a 30 m/s, fuente quieta</td><td>−30</td><td>0</td><td>$\\frac{310}{340}(300)=274$ Hz</td></tr><tr><td>Fuente a 45 m/s alejándose, receptor a 15 m/s hacia ella</td><td>+15</td><td>+45</td><td>$\\frac{355}{385}(300)=277$ Hz</td></tr></table><p>Tres resultados distintos: para el sonido no basta la velocidad relativa, porque el aire es una referencia física. Solo para la luz (sin medio) cuenta únicamente la velocidad relativa: $f_R=\\sqrt{\\tfrac{c-v}{c+v}}\\,f_S$ (16.30), con $v>0$ si se alejan (corrimiento al rojo; radar de la policía).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §16.8, ejemplos 16.15-16.17 y ec. 16.30, pp. 531-533",
+    "txt": "U p.531-533"
+   }
   },
   {
    "t": "caja",
    "k": "tip",
-   "h": "Estrategia 16.2 de U: problemas de efecto Doppler",
-   "html": [
-    "<ol class=\"steps\">",
-    "    <li><b>Define el eje:</b> sentido positivo del receptor a la fuente; asigna con cuidado el signo de $v_S$ y $v_L$ (todas las velocidades, <b>respecto al aire</b>). Si la fuente se mueve y piden $\\lambda$, usa (16.27) o (16.28).</li>",
-    "    <li>Usa subíndices coherentes: $S$ para la fuente, $L$ para el receptor; identifica la incógnita.</li>",
-    "    <li><b>Si hay reflexión</b> en una superficie (quieta o móvil), resuelve en <b>dos pasos</b>: primero la superficie hace de <b>receptor</b> (recibe $f'$); después de <b>fuente</b> que emite esa misma $f'$ hacia el receptor final. El sentido «+» puede cambiar entre pasos.</li>",
-    "    <li><b>Evaluar:</b> si se acercan, $f_L>f_S$; si se alejan, $f_L&lt;f_S$; sin movimiento relativo, $f_L=f_S$.</li>",
-    "  </ol>"
-   ],
+   "h": "Eco: dos pasos (Estrategia 16.2)",
+   "html": "<p>Si el sonido se refleja en un objeto (quieto o móvil), aplica (16.29) <b>dos veces</b>: (1) el objeto es el <b>receptor</b> y recibe $f'$; (2) el objeto es una <b>fuente</b> que emite $f'$ hacia el receptor final. El sentido «+» cambia de un paso a otro. Así funcionan el radar, el sonar y la ecografía Doppler.</p><p><b>Ejemplo mínimo</b> (ejemplo 16.18 de U): patrulla con sirena de 300 Hz hacia una bodega a 30 m/s ($v=340$ m/s). Paso 1, bodega receptora quieta, $v_S=-30$: $f'=\\frac{340}{310}(300)=329$ Hz. Paso 2, bodega fuente quieta y conductor que va hacia ella, $v_L=+30$: $f_L=\\frac{370}{340}(329)=358$ Hz.</p><p><b>Error típico:</b> aplicar la fórmula una sola vez, o mantener el mismo «+» en los dos pasos.</p>",
    "src": {
     "l": "U",
-    "ref": "U Estrategia para resolver problemas 16.2, p. 530",
-    "txt": "U p.530"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.14: efecto Doppler I, longitudes de onda",
-   "html": [
-    "<p>La sirena de una patrulla emite $f_S=300$ Hz; $v=340$ m/s y aire tranquilo. a) Calcula $\\lambda$ con la sirena en reposo. b) Si la sirena se mueve a 30 m/s, calcula $\\lambda$ delante y detrás.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>a)</b> No hay Doppler (nadie se mueve respecto al aire): $\\lambda=v/f_S=340/300=\\mathbf{1{,}13\\ m}$.</li>",
-    "    <li><b>b)</b> (16.27): $\\lambda_\\text{enfrente}=\\dfrac{340-30}{300}=\\mathbf{1{,}03\\ m}$. (16.28): $\\lambda_\\text{atrás}=\\dfrac{340+30}{300}=\\mathbf{1{,}23\\ m}$.</li>",
-    "    <li><b>Evaluar.</b> Menor delante y mayor detrás, como se esperaba.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.14, fig. 16.30, p. 530",
-    "txt": "U p.530"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.15: efecto Doppler II, frecuencias",
-   "html": [
-    "<p>Con un receptor en reposo y la sirena del ejemplo anterior alejándose de él a 30 m/s, ¿qué frecuencia oye?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>El receptor está detrás de la fuente: el sentido de $L$ a $S$ coincide con el movimiento de la fuente ⇒ $v_S=+30$ m/s, $v_L=0$.</li>",
-    "    <li>$f_L=\\dfrac{v}{v+v_S}f_S=\\dfrac{340}{340+30}(300)=\\mathbf{276\\ Hz}$.</li>",
-    "    <li><b>Comprobación.</b> Con la $\\lambda$ de detrás del ejemplo 16.14: $f_L=v/\\lambda=340/1{,}23=276$ Hz ✓. Se alejan ⇒ $f_L&lt;f_S$ ✓.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.15, fig. 16.31, p. 531",
-    "txt": "U p.531"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.16: efecto Doppler III, receptor móvil",
-   "html": [
-    "<p>Ahora la sirena está en reposo y el receptor se aleja de ella a 30 m/s. ¿Qué frecuencia oye?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>$v_L=-30$ m/s (el movimiento va de la fuente al receptor: en contra del «+»), $v_S=0$.</li>",
-    "    <li>$f_L=\\dfrac{v+v_L}{v}f_S=\\dfrac{340-30}{340}(300)=\\mathbf{274\\ Hz}$.</li>",
-    "    <li><b>Evaluar.</b> La velocidad relativa es la misma que en el ejemplo 16.15 (30 m/s) pero la frecuencia es distinta (274 y 276 Hz): el efecto depende de cómo se mueven $S$ y $L$ respecto al aire.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.16, fig. 16.32, p. 531",
-    "txt": "U p.531"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.17: efecto Doppler IV, fuente y receptor móviles",
-   "html": [
-    "<p>La sirena se aleja del receptor a 45 m/s (respecto al aire) y el receptor se mueve hacia la sirena a 15 m/s (respecto al aire). ¿Qué frecuencia oye?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>Ambos movimientos van en el sentido de $L$ a $S$: $v_S=+45$ m/s y $v_L=+15$ m/s.</li>",
-    "    <li>$f_L=\\dfrac{v+v_L}{v+v_S}f_S=\\dfrac{340+15}{340+45}(300)=\\mathbf{277\\ Hz}$.</li>",
-    "    <li><b>Evaluar.</b> Otra vez se alejan a 30 m/s relativos y $f_L&lt;f_S$, pero con un tercer valor: 274, 276 y 277 Hz.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.17, fig. 16.33, p. 531",
-    "txt": "U p.531"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.18: efecto Doppler V, desplazamiento Doppler doble",
-   "html": [
-    "<p>La patrulla (sirena de 300 Hz) se dirige hacia una bodega a 30 m/s. ¿Qué frecuencia escucha el conductor reflejada en la bodega?</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Dos pasos.</b> Paso 1: la bodega es el «receptor» quieto ($v_L=0$) y la sirena se acerca (va en contra del «+» de la bodega a la patrulla): $v_S=-30$ m/s. $f_W=\\dfrac{340}{340-30}(300)=\\mathbf{329\\ Hz}$.</li>",
-    "    <li>Paso 2: la bodega es la «fuente» quieta ($v_S=0$) de 329 Hz y el conductor es el receptor, que va hacia ella: $v_L=+30$ m/s. $f_L=\\dfrac{340+30}{340}(329)=\\mathbf{358\\ Hz}$.</li>",
-    "    <li><b>Evaluar.</b> Dos desplazamientos Doppler: el eco es aún más agudo (358 Hz) que lo que oiría un receptor quieto en la bodega (329 Hz).</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> eco ⇒ dos aplicaciones de (16.29), cambiando de papel al objeto reflector: receptor primero y fuente después.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.18, fig. 16.34, p. 532",
-    "txt": "U p.532"
+    "ref": "U Estrategia para resolver problemas 16.2, p. 530; ejemplo 16.18, fig. 16.34, p. 532",
+    "txt": "U p.530, 532"
    }
   },
   {
@@ -1385,41 +821,29 @@
    "ref": "doble-efecto-doppler-del-ejemplo-16-18-la-patrul"
   },
   {
-   "t": "caja",
-   "k": "def",
-   "h": "Efecto Doppler para ondas electromagnéticas",
-   "html": [
-    "<p>La luz y las ondas de radio no tienen medio: lo único que cuenta es la <b>velocidad relativa</b> $v$ entre fuente y receptor (positiva si se alejan). Con la relatividad especial (cap. 37), la frecuencia recibida es",
-    "  $$f_R=\\sqrt{\\frac{c-v}{c+v}}\\,f_S\\qquad(16.30)$$",
-    "  Alejamiento ⇒ $f_R&lt;f_S$ (corrimiento al rojo). Es la base del radar Doppler de la policía y del rastreo de satélites. Cualitativamente es igual que con el sonido, cuantitativamente no.</p>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U §16.8, ec. 16.30, figs. 16.34-16.35, pp. 532-533",
-    "txt": "U p.532-533"
-   }
-  },
-  {
-   "t": "parte",
-   "archivo": "parte19.html"
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Evalúe su comprensión (U §16.8)",
-   "html": "<p>En un concierto al aire libre sopla un viento de 10 m/s de los músicos hacia ti. ¿Hay desplazamiento Doppler? <b>No.</b> Respecto al aire, fuente y receptor se mueven a la misma velocidad, $v_S=v_L=+10$ m/s (sentido de $L$ a $S$); en (16.29) numerador y denominador son iguales y $f_L=f_S$: no hay desplazamiento Doppler.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U «Evalúe su comprensión de la sección 16.8», pp. 533 y 544",
-    "txt": "U p.533, 544"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "En un concierto al aire libre sopla un viento de 10 m/s de los músicos hacia ti. ¿Oyes las notas desplazadas?",
+     "a": "No: respecto al aire, fuente y receptor se mueven igual, $v_S=v_L=+10$ m/s, y en (16.29) numerador y denominador coinciden: $f_L=f_S$."
+    },
+    {
+     "q": "Una fuente quieta emite 500 Hz y tú vas hacia ella a 20 m/s ($v=340$ m/s). ¿Qué oyes?",
+     "a": "$v_L=+20$ ⇒ $f_L=\\frac{360}{340}(500)=529$ Hz."
+    },
+    {
+     "q": "Una ambulancia de 1000 Hz se aleja de ti a 30 m/s ($v=340$ m/s). ¿Qué oyes?",
+     "a": "La fuente se mueve en el sentido de $L$ a $S$ (se aleja de ti) ⇒ $v_S=+30$ ⇒ $f_L=\\frac{340}{370}(1000)=919$ Hz."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s9",
    "n": "9",
    "titulo": "Ondas de choque",
-   "prio": null,
+   "prio": 2,
    "src": {
     "l": "U",
     "ref": "U §16.9, pp. 533-535",
@@ -1427,22 +851,14 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte20.html"
-  },
-  {
    "t": "caja",
    "k": "thm",
-   "h": "Número Mach y ángulo del cono de choque",
-   "html": [
-    "<p>Cuando la rapidez de la fuente $v_S$ se acerca a $v$, $\\lambda_\\text{enfrente}=(v-v_S)/f_S\\to0$: las crestas se apilan delante y el avión debe empujar una gran masa de aire (la «barrera del sonido»: aumenta mucho el arrastre). Si $v_S>v$, (16.27) y (16.29) ya no describen el sonido delante de la fuente: las crestas circulares interfieren constructivamente a lo largo de las rectas tangentes, que forman un cono de semiángulo $\\alpha$. Del triángulo rectángulo de la figura ($vt$ el radio de la cresta, $v_St$ lo que avanza el avión):",
-    "  $$\\boxed{\\sin\\alpha=\\frac v{v_S}}\\qquad(16.31)\\qquad\\text{número Mach}=\\frac{v_S}v=\\frac1{\\sin\\alpha}>1$$",
-    "  El cono viaja con la fuente. Delante de él no hay sonido; dentro, un receptor quieto oye el sonido con el desplazamiento Doppler de una fuente que se aleja. <b>Cualquier objeto</b> supersónico produce onda de choque de forma continua (una bala, la punta de un látigo), no solo al «romper la barrera»; y si el piloto apaga los motores mientras sigue siendo supersónico, el cono continúa: lo crea el movimiento, no el ruido de los motores.</p>"
-   ],
+   "h": "Fuente supersónica: cono de semiángulo $\\sin\\alpha=v/v_S$",
+   "html": "<p>Si $v_S\\to v$, $\\lambda_\\text{enfrente}\\to0$: las crestas se apilan delante («barrera del sonido»). Si $v_S>v$, la fuente adelanta a sus propias crestas; las esferas que deja atrás se superponen a lo largo de un <b>cono</b> (como la «V» de una lancha): la <b>onda de choque</b>. En un tiempo $t$ la cresta tiene radio $vt$ y la fuente ha avanzado $v_St$:</p>$$\\boxed{\\sin\\alpha=\\frac v{v_S}}\\qquad(16.31)\\qquad\\text{número Mach}=\\frac{v_S}v=\\frac1{\\sin\\alpha}$$<p>El cono viaja con la fuente; lo produce de forma continua el movimiento (una bala, la punta de un látigo), no solo el instante de «romper la barrera». Dentro del cono se oye el sonido de una fuente que se aleja, más grave. Ahí (16.29) ya no describe el sonido delante de la fuente.</p><p><b>Ejemplo mínimo</b> (ejemplo 16.19 de U): Mach 1,75 a 8000 m, donde $v=320$ m/s. $\\alpha=\\arcsin(1/1{,}75)=34{,}8^\\circ$, $v_S=560$ m/s y, como $\\tan\\alpha=h/(v_St)$, el estruendo llega $t=8000/(560\\tan34{,}8^\\circ)=20{,}5$ s después de que el avión pase sobre ti.</p><p><b>Error típico:</b> escribir $\\sin\\alpha=v_S/v$ (sería mayor que 1) o creer que el estruendo se oye justo cuando el avión pasa por encima.</p>",
    "src": {
     "l": "U",
-    "ref": "U §16.9, ec. 16.31, figs. 16.36-16.37, pp. 533-534",
-    "txt": "U p.533-534"
+    "ref": "U §16.9, ec. 16.31, figs. 16.36-16.38 y ejemplo 16.19, pp. 533-535",
+    "txt": "U p.533-535"
    }
   },
   {
@@ -1457,43 +873,26 @@
    }
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 16.19: estruendo sónico de un avión supersónico",
-   "html": [
-    "<p>Un avión vuela a Mach 1,75 a 8000 m de altura, donde $v=320$ m/s. ¿Cuánto tiempo después de pasar directamente sobre nosotros oiremos el estruendo?</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Qué se pregunta.</b> Cuánto tarda el <b>cono</b> en llegar al observador $L$ desde que el avión pasó por la vertical. El avión recorre $v_St$ en ese tiempo.</li>",
-    "    <li>(16.31): $\\alpha=\\arcsin\\dfrac1{1{,}75}=\\mathbf{34{,}8^\\circ}$. Rapidez del avión: $v_S=(1{,}75)(320)=560$ m/s.</li>",
-    "    <li>De la figura, $\\tan\\alpha=\\dfrac{8000\\ \\text{m}}{v_St}$ ⇒ $t=\\dfrac{8000}{(560)(\\tan34{,}8^\\circ)}=\\mathbf{20{,}5\\ s}$.</li>",
-    "    <li><b>Evaluar.</b> En ese tiempo el avión ya está a $(560)(20{,}5)=11{,}5$ km de nosotros. Se supone $v$ constante con la altura (en realidad disminuye con ella y el cono no es perfecto).</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> $\\sin\\alpha=1/\\text{Mach}$; luego $\\tan\\alpha=h/(v_St)$ para el tiempo.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 16.19, fig. 16.38, pp. 534-535",
-    "txt": "U p.534-535"
-   }
-  },
-  {
    "t": "fig",
    "ref": "avion-supersonico-a-mach-1-75-a-8000-metros-de-a"
   },
   {
-   "t": "parte",
-   "archivo": "parte21.html"
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Evalúe su comprensión (U §16.9)",
-   "html": "<p>¿Qué oirías directamente detrás (a la izquierda) del avión supersónico de la figura 16.38? <b>iii. El sonido del avión modificado por el efecto Doppler a frecuencias menores.</b> Detrás del cono (dentro de él) el avión se aleja: oyes el sonido de una fuente que se aleja, con $f&lt;f_S$; el estruendo ya pasó.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U «Evalúe su comprensión de la sección 16.9», pp. 535 y 544",
-    "txt": "U p.535, 544"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "¿Semiángulo del cono de un avión a Mach 2?",
+     "a": "$\\sin\\alpha=1/2$ ⇒ $\\alpha=30^\\circ$."
+    },
+    {
+     "q": "Un cono de choque tiene $\\alpha=45^\\circ$. ¿A qué Mach va la fuente?",
+     "a": "Mach $=1/\\sin45^\\circ=1{,}41$."
+    },
+    {
+     "q": "¿Qué oyes justo detrás de un avión supersónico, dentro del cono, cuando el estruendo ya ha pasado?",
+     "a": "El ruido del avión con el desplazamiento Doppler de una fuente que se aleja: frecuencias <b>más bajas</b> que las emitidas."
+    }
+   ]
   },
   {
    "t": "h2",
@@ -1505,22 +904,118 @@
   },
   {
    "t": "parte",
-   "archivo": "parte22.html"
+   "archivo": "ejercicios-intro.html"
   },
   {
    "t": "parte",
-   "archivo": "ex-teoria.html"
+   "archivo": "nivel-nucleo.html"
   },
   {
-   "t": "caja",
-   "k": "tip",
-   "h": "Aviso: no es de examen",
-   "html": "<p>La pregunta T1 y las cuestiones C1 y C2 son <b>propias</b>: están escritas con el estilo de las preguntas de teoría del examen (4 puntos, a elegir entre dos opciones, con dos cuestiones cortas relacionadas), pero <b>no han caído en ninguna convocatoria</b>. Sirven para practicar la redacción de una respuesta completa.</p>",
-   "src": {
-    "l": "P",
-    "ref": "Pregunta y cuestiones propias, estilo examen; NO son de examen (el tema 16 no tiene ejercicios de examen en las convocatorias disponibles)",
-    "txt": "P"
-   }
+   "t": "metodos"
+  },
+  {
+   "t": "ej",
+   "ref": "p161"
+  },
+  {
+   "t": "ej",
+   "ref": "p168"
+  },
+  {
+   "t": "ej",
+   "ref": "p167"
+  },
+  {
+   "t": "ej",
+   "ref": "p1615"
+  },
+  {
+   "t": "ej",
+   "ref": "p1620"
+  },
+  {
+   "t": "ej",
+   "ref": "p1626"
+  },
+  {
+   "t": "ej",
+   "ref": "p1663"
+  },
+  {
+   "t": "ej",
+   "ref": "p1633"
+  },
+  {
+   "t": "ej",
+   "ref": "p1664"
+  },
+  {
+   "t": "ej",
+   "ref": "p1635"
+  },
+  {
+   "t": "ej",
+   "ref": "ppractico"
+  },
+  {
+   "t": "ej",
+   "ref": "p1640"
+  },
+  {
+   "t": "ej",
+   "ref": "p1650"
+  },
+  {
+   "t": "ej",
+   "ref": "p1655"
+  },
+  {
+   "t": "ej",
+   "ref": "p1657"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-practica.html"
+  },
+  {
+   "t": "ej",
+   "ref": "p163"
+  },
+  {
+   "t": "ej",
+   "ref": "p166"
+  },
+  {
+   "t": "ej",
+   "ref": "p1614"
+  },
+  {
+   "t": "ej",
+   "ref": "p1629"
+  },
+  {
+   "t": "ej",
+   "ref": "p1631"
+  },
+  {
+   "t": "ej",
+   "ref": "p1646"
+  },
+  {
+   "t": "ej",
+   "ref": "p1648"
+  },
+  {
+   "t": "ej",
+   "ref": "p1652"
+  },
+  {
+   "t": "ej",
+   "ref": "p1654"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-teoria.html"
   },
   {
    "t": "ej",
@@ -1535,140 +1030,15 @@
    "ref": "c2"
   },
   {
-   "t": "parte",
-   "archivo": "ex-libro.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte25.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte26.html"
-  },
-  {
-   "t": "ej",
-   "ref": "p161"
-  },
-  {
-   "t": "ej",
-   "ref": "p163"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte27.html"
-  },
-  {
-   "t": "ej",
-   "ref": "p166"
-  },
-  {
-   "t": "ej",
-   "ref": "p167"
-  },
-  {
-   "t": "ej",
-   "ref": "p168"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte28.html"
-  },
-  {
-   "t": "ej",
-   "ref": "p1614"
-  },
-  {
-   "t": "ej",
-   "ref": "p1615"
-  },
-  {
-   "t": "ej",
-   "ref": "p1620"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte29.html"
-  },
-  {
-   "t": "ej",
-   "ref": "p1626"
-  },
-  {
-   "t": "ej",
-   "ref": "p1629"
-  },
-  {
-   "t": "ej",
-   "ref": "p1631"
-  },
-  {
-   "t": "ej",
-   "ref": "p1633"
-  },
-  {
-   "t": "ej",
-   "ref": "p1663"
-  },
-  {
-   "t": "ej",
-   "ref": "p1664"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte30.html"
-  },
-  {
-   "t": "ej",
-   "ref": "p1635"
-  },
-  {
-   "t": "ej",
-   "ref": "p1640"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte31.html"
-  },
-  {
-   "t": "ej",
-   "ref": "p1646"
-  },
-  {
-   "t": "ej",
-   "ref": "p1648"
-  },
-  {
-   "t": "ej",
-   "ref": "p1650"
-  },
-  {
-   "t": "ej",
-   "ref": "p1652"
-  },
-  {
-   "t": "ej",
-   "ref": "p1654"
-  },
-  {
-   "t": "ej",
-   "ref": "p1655"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte32.html"
-  },
-  {
-   "t": "ej",
-   "ref": "p1657"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte33.html"
-  },
-  {
-   "t": "ej",
-   "ref": "ppractico"
+   "t": "caja",
+   "k": "tip",
+   "h": "Si te toca otro apartado del capítulo: «Ondas sonoras estacionarias en tubos»",
+   "html": "<p>Guion propio (no es un enunciado de examen real). El sonido como onda longitudinal: desplazamiento $y=A\\cos(kx-\\omega t)$ y presión $p=BkA\\sin(kx-\\omega t)$, desfasadas $90^\\circ$ → rapidez $v=\\sqrt{B/\\rho}$ y $v=\\sqrt{\\gamma RT/M}$ → reflexión en los extremos y onda estacionaria → nodos y antinodos de desplazamiento y de presión intercambiados; extremo cerrado = N, abierto = A → tubo abierto $f_n=nv/2L$ (todos los armónicos) y cerrado $f_n=nv/4L$ ($n$ impar) → resonancia y curva de resonancia → efecto de la temperatura y timbre. Figuras: los tres primeros modos de cada tubo con N y A, y la envolvente de desplazamiento frente a la de presión. Cuestiones típicas: «¿qué pasa al tapar un extremo?» (C1), «¿y con helio?», «dos armónicos sucesivos: ¿abierto o cerrado?» (16.63).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §16.1-16.5, ec. 16.1-16.10 y 16.16-16.23, pp. 506-524",
+    "txt": "U p.506-524"
+   }
   },
   {
    "t": "h2",
@@ -1680,7 +1050,7 @@
   },
   {
    "t": "parte",
-   "archivo": "parte34.html"
+   "archivo": "chuleta-tabla.html"
   },
   {
    "t": "caja",
@@ -1707,7 +1077,7 @@
   },
   {
    "t": "parte",
-   "archivo": "parte35.html"
+   "archivo": "lista-comprobacion.html"
   },
   {
    "t": "h2",
