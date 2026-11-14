@@ -158,10 +158,11 @@ class Migrador:
         self.bloques.append({'t': 'caja', 'k': k, 'h': h, 'html': a_json(self._tokenizar_figuras(resto[:fin.start()]).strip()), 'src': src_dict(fin)})
 
     def _libro(self, outer):
-        m = re.match(r'<figure class="bookfig">\s*<img src="([^"]+)" alt="([^"]*)" loading="lazy">\s*<figcaption>(.*?)</figcaption>\s*</figure>$', outer, re.S)
+        m = re.match(r'<figure class="bookfig">\s*<img src="([^"]+)" alt="([^"]*)"( style="[^"]*")? loading="lazy">\s*<figcaption>(.*?)</figcaption>\s*</figure>$', outer, re.S)
         assert m, outer[:100]
-        cap = m.group(3); sm = list(SRC_RE.finditer(cap)); fin = sm[-1]
-        self.bloques.append({'t': 'libro', 'img': m.group(1), 'alt': m.group(2), 'pie': a_json(cap[:fin.start()].rstrip()), 'src': src_dict(fin)})
+        cap = m.group(4); sm = list(SRC_RE.finditer(cap)); fin = sm[-1]
+        self.bloques.append({'t': 'libro', 'img': m.group(1), 'alt': m.group(2), 'pie': a_json(cap[:fin.start()].rstrip()), 'src': src_dict(fin)}
+                             | ({'estilo': m.group(3).strip()[7:-1]} if m.group(3) else {}))
 
     def _test(self, outer):
         m = re.match(r'<details class="check"><summary>(.*?)</summary>\s*<ol>(.*)</ol>\s*</details>$', outer, re.S)
@@ -201,6 +202,8 @@ class Migrador:
                 self.bloques.append({'t': 'fig', 'ref': self._figura(outer)})
             elif outer.startswith('<footer>'):
                 meta['pie'] = re.search(r'<footer>(.*?)</footer>', outer, re.S).group(1)
+            elif outer.startswith('<svg width="0"'):
+                self._parte(outer, 'defs-marcadores')
             elif outer.startswith('<section') or outer.startswith('<details') or outer.startswith('<figure') or outer.startswith('<ul') \
                     or outer.startswith('<table') or outer.startswith('<p') or outer.startswith('<div') or outer.startswith('<ol'):
                 self._parte(outer)
@@ -287,7 +290,7 @@ class Generador:
         if t == 'fig':
             return self.figura(b['ref']) + '\n'
         if t == 'libro':
-            return (f'<figure class="bookfig">\n<img src="{b["img"]}" alt="{b["alt"]}" loading="lazy">\n'
+            return (f'<figure class="bookfig">\n<img src="{b["img"]}" alt="{b["alt"]}"' + (f' style="{b["estilo"]}"' if b.get('estilo') else '') + ' loading="lazy">\n'
                     f'<figcaption>{de_json(b["pie"])} {src_html(b["src"])}</figcaption>\n</figure>\n')
         if t == 'test':
             li = ''.join(f'<li>{i["q"]}<details><summary>Ver respuesta</summary>{i["a"]}</details></li>\n' for i in b['items'])
@@ -305,7 +308,11 @@ class Generador:
         chips = ''.join(f'<span>{c}</span>' for c in t['chips'])
         hero = ('<header class="hero">\n  <div class="kick">' + t['kick'] + '</div>\n  <h1>' + t['titulo'] + '</h1>\n  <p>' + t['descripcion']
                 + '</p>\n  <div class="chips">' + chips + '</div>\n' + (self.dir.parent / 'leyenda.html').read_text(encoding='utf8').strip() + '\n</header>\n')
-        cuerpo = ''.join(self.bloque(b) for b in t['bloques'])
+        bl = t['bloques']
+        if bl and bl[0].get('archivo') == 'defs-marcadores.html':   # <svg> con los marcadores de flecha: va antes de la cabecera
+            hero = self.bloque(bl[0]) + hero
+            bl = bl[1:]
+        cuerpo = ''.join(self.bloque(b) for b in bl)
         pl = PLANTILLA.read_text(encoding='utf8')
         return (pl.replace('{{titulo_pagina}}', t['titulo_pagina']).replace('{{hero}}', hero)
                   .replace('{{cuerpo}}', cuerpo).replace('{{pie}}', t['pie']))

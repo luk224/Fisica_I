@@ -1,0 +1,14 @@
+<p class="enun">Una partícula de masa 0,5 kg que se encuentra en reposo se suelta desde una posición A, que forma un cuarto de círculo de radio $R=2{,}1$ m según se muestra en la figura, deslizándose hasta llegar al punto B con una velocidad de 5,2 m/s. A partir de este punto, la partícula se desplaza sobre una superficie horizontal hasta el punto C situado a 5 m, donde se detiene. Calcular (a) el coeficiente de fricción cinética de la superficie horizontal y (b) el trabajo de la fuerza de rozamiento sobre la partícula al deslizarse desde el punto A al B. (3 puntos.)</p>
+{{fig:cuarto-de-circulo-ab-y-tramo-horizontal-bc-con-f}}
+
+  <ol class="steps">
+    <li><b>Método.</b> En el tramo curvo la normal y la fricción cambian punto a punto: Newton sería muy difícil. Con energía solo necesitamos los extremos de cada tramo (Estrategia 7.1). Se usa B como «bisagra» entre los dos tramos. No se da $g$: se usa 9,80 (con 9,81 los resultados apenas cambian).</li>
+    <li><b>(a) Tramo BC.</b> Estado 1 = B ($v_B=5{,}2$ m/s), estado 2 = C ($v_C=0$), mismo nivel ($U_1=U_2$). Sobre la superficie horizontal $n=mg$, luego $f_k=\mu_kmg$ y $W_{otras}=-\mu_kmg\,s$.</li>
+    <li>Balance $K_B+W_{otras}=K_C$: $\tfrac12mv_B^2-\mu_kmgs=0\Rightarrow\mu_k=\dfrac{v_B^2}{2gs}=\dfrac{(5{,}2)^2}{2(9{,}8)(5)}=\dfrac{27{,}04}{98}=0{,}276$. La masa se cancela.</li>
+    <li><b>(b) Tramo AB.</b> Origen en B: $y_A=R=2{,}1$ m, $y_B=0$; $K_A=0$. La normal no trabaja (es perpendicular a la trayectoria en cada punto); la única «otra» fuerza es la fricción: $W_{otras}=W_f^{AB}$.</li>
+    <li>(7.14): $0+mgR+W_f^{AB}=\tfrac12mv_B^2+0\Rightarrow W_f^{AB}=\tfrac12mv_B^2-mgR=6{,}76-10{,}29=-3{,}53$ J (con $g=9{,}81$: $-3{,}54$ J). $\tfrac12mv_B^2=\tfrac12(0{,}5)(27{,}04)=6{,}76$ J y $mgR=(0{,}5)(9{,}8)(2{,}1)=10{,}29$ J.</li>
+    <li><b>Comprobación de sentido.</b> Sin fricción llegaría a B con $\sqrt{2gR}=6{,}42$ m/s $>5{,}2$ m/s: coherente con que la fricción haya quitado energía. Y en BC la fricción retira los 6,76 J que tenía en B.</li>
+  </ol>
+  <p><b>Resultado:</b> (a) $\mu_k\approx0{,}28$; (b) $W_f^{AB}\approx-3{,}5$ J.</p>
+  <div class="recipe"><b>Receta:</b> si un tramo tiene fricción conocida en forma ($\mu_kmgs$, horizontal) y otro la tiene desconocida (curvo), aplica $K_1+U_1+W_{otras}=K_2+U_2$ por separado en cada tramo, usando el punto común como bisagra; el trabajo desconocido sale por diferencia.</div>
+  <div class="recipe"><b>Error típico:</b> escribir $W_f^{AB}=-\mu_kmg\cdot(\pi R/2)$ con el $\mu_k$ del apartado (a): en la curva la normal no vale $mg$ ni la superficie es la misma. El trabajo de fricción en AB solo sale del balance de energía.</div>

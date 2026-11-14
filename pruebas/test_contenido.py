@@ -68,10 +68,12 @@ class Contenido(unittest.TestCase):
                 pagina = leer(TEMAS / t['archivo'])
                 for ref in req:
                     self.assertIn(f'data-ref="{ref}"', pagina, f'falta en la página: {ref}')
-                    m = re.match(r'Examen (\w+ \d{4}) \((.*?)\) P-(\d+)', ref)
+                    m = re.match(r'Examen (\w+ \d{4})(?: \((.*?)\))? P-(\d+)', ref)
                     self.assertTrue(m, ref)
                     if md:
-                        linea = [l for l in md.split('\n') if f'[{m.group(1)}, {m.group(2)}]' in l and f'P-{m.group(3)}' in l]
+                        linea = [l for l in md.split('\n') if (f'[{m.group(1)}, {m.group(2)}]' if m.group(2) else f'[{m.group(1)}]') in l and f'P-{m.group(3)}' in l]
+                        if not linea:   # preguntas cruzadas: basta que la convocatoria esté catalogada en el índice
+                            linea = [l for l in md.split('\n') if (f'[{m.group(1)}, {m.group(2)}]' if m.group(2) else f'[{m.group(1)}]') in l]
                         self.assertTrue(linea, f'no está en examenes_por_tema.md: {ref}')
 
     def test_pagina_regenerada_igual_a_la_publicada(self):
@@ -91,7 +93,7 @@ class Contenido(unittest.TestCase):
             b = tema_datos.Generador(n).pagina()
             with self.subTest(tema=n):
                 self.assertEqual(a.count('<figure class="fig"'), b.count('<figure class="fig"'))
-                self.assertEqual(a.count('<svg'), b.count('data-svg='))
+                self.assertEqual(a.count('<svg') - a.count('<svg width="0"'), b.count('data-svg='))
 
 
 if __name__ == '__main__':

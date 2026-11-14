@@ -1,0 +1,14 @@
+<p class="enun">Una partícula de masa 0,5 kg que se encuentra en reposo se suelta desde una posición A, que forma un cuarto de círculo de radio $R=2{,}1$ m según se muestra en la figura, deslizándose hasta llegar al punto B con una velocidad de 5,2 m/s. A partir de este punto, la partícula se desplaza sobre una superficie horizontal hasta el punto C situado a 5 m, donde se detiene. Calcular (a) el coeficiente de fricción cinética de la superficie horizontal y (b) el trabajo de la fuerza de rozamiento sobre la partícula al deslizarse desde el punto A al B. (3 puntos.) (Convocatoria de Septiembre 2023, no recogida en el índice principal de exámenes; el enunciado no da $g$: se usa 9,81. Es una variante del problema 7.57 de U, p. 233.)</p>
+{{fig:cuarto-de-circulo-de-radio-2-1-m-con-tramo-horiz}}
+
+  <ol class="steps">
+    <li><b>(a) Tramo BC</b> (fuerzas constantes, camino recto). Peso y normal son perpendiculares al desplazamiento ($W=0$); $n=mg$ y la fricción cinética $f_k=\mu_kmg$ va en contra: $W_f=-\mu_kmg\,s$.</li>
+    <li>Teorema entre B y C ($K_B=\tfrac12mv_B^2$, $K_C=0$): $-\mu_kmg\,s=0-\tfrac12mv_B^2\Rightarrow\mu_k=\dfrac{v_B^2}{2gs}=\dfrac{(5{,}2)^2}{2(9{,}81)(5)}=\mathbf{0{,}276}$. La masa se cancela; con $g=9{,}80$ sale también 0,276.</li>
+    <li><b>(b) Tramo AB</b> (curvo). Aquí la fricción es desconocida y varía de un punto a otro (la normal ya no es $mg$ y cambia en cada punto), pero <b>no hace falta conocerla</b>: el teorema vale en trayectorias curvas (U p.187-188) y permite obtener $W_f$ <i>por diferencia</i>.</li>
+    <li><b>Trabajo del peso en el arco.</b> Solo depende del descenso vertical, que es $R$ (como en el Ej. 6.8, donde subir una altura $h$ daba $-mgh$): $W_{peso}=+mgR=(0{,}5)(9{,}81)(2{,}1)=+10{,}30$ J. No es $mg$ por la longitud del arco. La normal es perpendicular a la trayectoria en cada punto: $W_n=0$.</li>
+    <li><b>Teorema entre A y B</b> ($K_A=0$): $W_{peso}+W_f=K_B$, luego $W_f=\tfrac12(0{,}5)(5{,}2)^2-10{,}30=6{,}76-10{,}30=\mathbf{-3{,}54\ J}$ (con $g=9{,}80$: $-3{,}53$ J).</li>
+    <li><b>Comprobación.</b> Sin fricción llegaría a B con $v=\sqrt{2gR}=6{,}42$ m/s, mayor que 5,2 m/s: la fricción tiene que quitar energía ($W_f<0$). Y en BC la fricción retira los 6,76 J que tenía la partícula en B.</li>
+  </ol>
+  <p><b>Resultado:</b> $\mu_k=0{,}276$; $W_f(A\to B)=-3{,}54$ J.</p>
+  <div class="recipe"><b>Receta:</b> cuando una fuerza no se puede calcular directamente (fricción en una curva), su trabajo se obtiene por diferencia: $W_{desconocida}=\Delta K-\sum W_{conocidas}$.</div>
+  <div class="recipe"><b>Error típico:</b> calcular la fricción del arco con $\mu_kmg\cdot(\pi R/2)$ (ni la normal es $mg$ ahí, ni $\mu_k$ tiene por qué ser el del tramo horizontal); poner $W_{peso}=mg\,(\pi R/2)$ en vez de $mgR$.</div>

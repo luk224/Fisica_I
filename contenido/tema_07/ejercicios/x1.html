@@ -1,0 +1,15 @@
+<p class="enun">Sea un bloque de 5 kg de masa que se deja deslizar, partiendo del reposo, desde el punto A de un carril a una altura $h=4$ m según la figura. El carril consta de tres tramos de los cuales sólo existe rozamiento en el tramo BC de 5 m de longitud. Al final del trayecto, en el tramo CD se encuentra un resorte cuya constante elástica es $k=400$ N/m. Cuando el bloque alcance el punto D, el resorte se ha comprimido 25 cm. Suponiendo que el choque entre la masa y el resorte es perfectamente elástico, calcular el coeficiente de rozamiento dinámico en el tramo BC. (3 puntos.)</p>
+{{fig:carril-con-tramo-rugoso-bc-y-resorte-al-final-re}}
+
+  <ol class="steps">
+    <li><b>Cómo leer el enunciado.</b> «El resorte se ha comprimido 25 cm cuando el bloque alcanza D» significa que D es el punto de <b>compresión máxima</b>: allí el bloque se detiene un instante, $v_D=0$. «Choque perfectamente elástico» quiere decir que al tocar el resorte no se pierde energía mecánica: toda la cinética se almacena como $\tfrac12kx^2$. No se da $g$: se usa 9,8 m/s².</li>
+    <li><b>Estados y origen.</b> Estado 1 = A (reposo, $y_A=h=4$ m); estado 2 = D (reposo, $y_D=0$, resorte comprimido $x=0{,}25$ m). Origen de alturas en el tramo horizontal.</li>
+    <li><b>Energías.</b> $K_1=0$, $U_1=mgh$; $K_2=0$, $U_2=\tfrac12kx^2$ ($U_{grav,2}=0$).</li>
+    <li><b>Otras fuerzas.</b> Solo hay fricción en BC (la normal no trabaja en ningún tramo). En el tramo horizontal $n=mg$, así que $f_k=\mu mg$ y $W_{otras}=-\mu mg\,L$ con $L=5$ m. En AB y CD no hay fricción.</li>
+    <li><b>Balance</b> (7.14): $mgh-\mu mgL=\tfrac12kx^2\ \Rightarrow\ \mu=\dfrac{mgh-\tfrac12kx^2}{mgL}=\dfrac hL-\dfrac{kx^2}{2mgL}$.</li>
+    <li>Números: $mgh=5\cdot9{,}8\cdot4=196$ J; $\tfrac12kx^2=\tfrac12\cdot400\cdot0{,}25^2=12{,}5$ J; $mgL=5\cdot9{,}8\cdot5=245$ J. $\mu=\dfrac{196-12{,}5}{245}=\dfrac{183{,}5}{245}=0{,}749$.</li>
+    <li><b>Comprobación.</b> Con $g=9{,}81$ sale lo mismo ($0{,}749$) porque el término dominante $h/L=0{,}8$ no depende de $g$. El valor es alto pero posible: casi toda la energía (183,5 de 196 J) se disipa en BC.</li>
+  </ol>
+  <p><b>Resultado:</b> $\mu\approx0{,}75$.</p>
+  <div class="recipe"><b>Receta:</b> toma como estado final el de compresión máxima ($v=0$): la energía inicial se reparte en «energía disipada por la fricción» más «energía elástica», $mgh=\mu mgL+\tfrac12kx^2$.</div>
+  <div class="recipe"><b>Error típico:</b> olvidar convertir 25 cm a 0,25 m (saldría $\tfrac12kx^2=125\,000$ J, absurdo) o aplicar la fricción a todo el recorrido cuando solo actúa en BC.</div>

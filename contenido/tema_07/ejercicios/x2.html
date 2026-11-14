@@ -1,0 +1,16 @@
+<p class="enun">Un bloque sólido de 1,50 kg de masa se coloca contra un resorte comprimido en la base de un plano inclinado de pendiente 30° (punto A). Al soltarse el resorte, el bloque sube por el plano. En el punto B, a 6,0 m pendiente arriba de A, el bloque tiene una velocidad de 7 m/s dirigida pendiente arriba y ya no está en contacto con el resorte. El coeficiente de fricción cinética entre el bloque y la superficie del plano es $\mu_k=0{,}50$. La masa del resorte es despreciable. Calcule la energía potencial almacenada inicialmente en el resorte. (3 puntos.) <span class="src" data-l="E" data-ref="Solucionario 7-28 Prob. 7.73">= E 7.73</span></p>
+{{fig:bloque-lanzado-por-un-resorte-por-un-plano-incli}}
+
+{{fig:diagrama-de-cuerpo-libre-del-bloque-que-sube-por}}
+
+  <ol class="steps">
+    <li><b>Estados.</b> 1 = A (reposo contra el resorte comprimido): $K_A=0$, $U_A=U_{el,A}$ (la incógnita), $y_A=0$. 2 = B: $v_B=7$ m/s, resorte ya relajado y sin contacto, $y_B=s\sin30^\circ=6{,}0\cdot0{,}5=3{,}0$ m.</li>
+    <li><b>¿Por qué no hace falta saber cuánto se comprimió ni su $k$?</b> Porque la fuerza del resorte es conservativa: todo su trabajo está contenido en $U_{el,A}$ (§7.2). Solo importa la energía total almacenada.</li>
+    <li><b>Fricción.</b> Perpendicular al plano no hay aceleración: $n=mg\cos30^\circ$ y $f_k=\mu_kmg\cos30^\circ$ (no $\mu_kmg$). Actúa durante los 6,0 m completos (también mientras el resorte empuja): $W_{otras}=-\mu_kmg\cos30^\circ\,s$.</li>
+    <li><b>Balance</b> (7.14): $U_{el,A}+W_{otras}=K_B+U_{grav,B}\ \Rightarrow\ U_{el,A}=\tfrac12mv_B^2+mgs\sin\theta+\mu_kmg\cos\theta\,s$.</li>
+    <li>Números ($g=9{,}8$): $K_B=\tfrac12(1{,}50)(7)^2=36{,}75$ J; $U_{grav,B}=(1{,}50)(9{,}8)(3{,}0)=44{,}10$ J; $|W_f|=(0{,}50)(1{,}50)(9{,}8)(0{,}866)(6{,}0)=38{,}19$ J. Suma: $U_{el,A}=36{,}75+44{,}10+38{,}19=119{,}04$ J.</li>
+    <li><b>Lectura física.</b> La energía del resorte se reparte en tres «cuentas»: cinética en B (31 %), potencial gravitatoria (37 %) y energía interna por fricción (32 %).</li>
+  </ol>
+  <p><b>Resultado:</b> $U_{el,A}\approx119$ J (con $g=9{,}81$: 119,1 J).</p>
+  <div class="recipe"><b>Receta:</b> «energía del resorte = lo que hay al final + lo que se ha perdido»: $U_{el}=K_2+mg\,s\sin\theta+\mu_kmg\cos\theta\,s$.</div>
+  <div class="recipe"><b>Error típico:</b> usar $n=mg$ en vez de $mg\cos\theta$ en el plano inclinado, o escribir $mgs$ en lugar de $mgs\sin\theta$ (la altura ganada es $s\sin\theta$, no la distancia recorrida).</div>

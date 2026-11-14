@@ -1,0 +1,1179 @@
+{
+ "num": 7,
+ "kick": "Bloque Mecánica · Tema 7",
+ "titulo": "Energía potencial y conservación de la energía",
+ "descripcion": "En el tema 6 el trabajo se calculaba fuerza a fuerza (con una integral si la fuerza varía). Aquí aparece un atajo: si una fuerza es <i>conservativa</i> (el peso, el resorte), su trabajo se puede «guardar» como <i>energía potencial</i> y recuperar después. Con ella, la energía mecánica $K+U$ se conserva y los problemas de caídas, rampas, resortes y curvas se resuelven comparando solo el estado inicial y el final. Cuando hay fricción, lo perdido se contabiliza como trabajo de las «otras» fuerzas.",
+ "chips": [
+  "Libro oficial: Sears-Zemansky, cap. 7 (pp. 204-226)",
+  "Preguntas de examen real: 8",
+  "Ejercicios del solucionario: 8",
+  "2 ejemplos interactivos",
+  "⏱ ~7 h de estudio"
+ ],
+ "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
+ "titulo_pagina": "Física I · Tema 7 Energía potencial y conservación de la energía",
+ "archivo": "tema_07_energia_potencial.html",
+ "examenes_requeridos": [
+  "Examen Febrero 2020 (2ª semana) P-1",
+  "Examen Febrero 2022 (2ª semana) P-1",
+  "Examen Septiembre 2024 P-1",
+  "Examen Septiembre 2023 P-2",
+  "Examen Febrero 2022 (1ª semana) P-3 Opción 3.1",
+  "Examen Febrero 2024 (2ª semana) P-3 Opción A",
+  "Examen Febrero 2022 (1ª semana) P-3 Opción 3.2",
+  "Examen Septiembre 2022 P-4 Opción B"
+ ],
+ "figuras": {
+  "barras-de-energia-cinetica-y-potencial-en-tres-a": {
+   "w": "360",
+   "h": "205",
+   "label": "Barras de energía cinética y potencial en tres alturas de un lanzamiento vertical",
+   "pie": "Lanzamiento vertical con v<sub>1</sub> = 20,0 m/s (ej. 7.1 de U), valores por cada kg de masa y g = 9,80 m/s². Al subir, K baja y U sube; la suma E es siempre 200 J/kg.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejemplo 7.1 (U p. 206)",
+    "txt": "P"
+   }
+  },
+  "tres-trayectorias-distintas-entre-los-mismos-pun": {
+   "w": "360",
+   "h": "200",
+   "label": "Tres trayectorias distintas entre los mismos puntos inicial y final; el trabajo del peso es el mismo",
+   "pie": "El peso hace el mismo trabajo en el camino recto, en el curvo y en el que baja y luego avanza: solo cuenta el desnivel (aquí Δy = y<sub>2</sub> − y<sub>1</sub> < 0, así que W<sub>grav</sub> = −mgΔy > 0).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (U Fig. 7.7 p. 209 y Fig. 7.18 p. 217)",
+    "txt": "P"
+   }
+  },
+  "parabola-de-energia-potencial-elastica-con-la-en": {
+   "w": "340",
+   "h": "215",
+   "label": "Parábola de energía potencial elástica con la energía total constante y tres posiciones del bloque",
+   "pie": "Resorte con k = 200 N/m y E = 4 J (amplitud 0,2 m): en los extremos toda la energía es elástica (K = 0); al pasar por x = 0 toda es cinética. K + U = 4 J en todas partes.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (U §7.2, Fig. 7.14 p. 213)",
+    "txt": "P"
+   }
+  },
+  "sillon-arrastrado-por-una-habitacion-dos-caminos": {
+   "w": "360",
+   "h": "202",
+   "label": "Sillón arrastrado por una habitación: dos caminos entre los puntos 1 y 2 con trabajos de fricción distintos",
+   "pie": "Ejemplo 7.10 de U (sillón de 40,0 kg, μ<sub>k</sub> = 0,200): la fricción hace −196 J por el camino recto y −274 J por el de dos tramos. Mismos puntos inicial y final, distinto trabajo: la fricción no es conservativa (esquema no a escala).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejemplo 7.10 (U p. 218-219)",
+    "txt": "P"
+   }
+  },
+  "curva-de-energia-potencial-con-tangentes-y-flech": {
+   "w": "340",
+   "h": "230",
+   "label": "Curva de energía potencial con tangentes y flechas de la fuerza en tres puntos",
+   "pie": "F<sub>x</sub> = −dU/dx: donde la curva baja hacia la derecha (pendiente −12,5 J/m en x = 0,6 m) la fuerza apunta a la derecha; en el fondo del pozo (x = 1,2 m) la pendiente es 0 y F = 0; donde sube (+62,5 J/m en x = 1,8 m) apunta a la izquierda. Curva U = 10[(x/1,2)⁴ − 2(x/1,2)²] J (flechas no a escala).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (U §7.4, ec. 7.16 p. 221; Fig. 7.24 p. 225)",
+    "txt": "P"
+   }
+  },
+  "pozo-doble-de-potencial-con-la-energia-total-e-5": {
+   "w": "340",
+   "h": "240",
+   "label": "Pozo doble de potencial con la energía total E = −5 J, puntos de retorno y equilibrios",
+   "pie": "Pozo doble U = 10[(x/1,2)⁴ − 2(x/1,2)²] J. Con E = −5 J la partícula queda atrapada en uno de los pozos: oscila entre los puntos de retorno x<sub>a</sub> = 0,65 m y x<sub>b</sub> = 1,57 m (o sus simétricos) y no puede cruzar la barrera central (U = 0 > E). Mínimos = equilibrio estable; máximo = equilibrio inestable.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (U §7.5, Fig. 7.24 p. 225)",
+    "txt": "P"
+   }
+  },
+  "tres-tipos-de-equilibrio-estable-en-un-minimo-de": {
+   "w": "360",
+   "h": "138",
+   "label": "Tres tipos de equilibrio: estable en un mínimo de U, inestable en un máximo y neutro en un tramo plano",
+   "pie": "Una bolita sobre un perfil que representa U(x): en el fondo del valle (mínimo) la fuerza la devuelve; en la cima (máximo) la aleja; en el llano no hay fuerza. En el punto de equilibrio F<sub>x</sub> = −dU/dx = 0.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (U §7.5, p. 225)",
+    "txt": "P"
+   }
+  },
+  "carril-con-tramo-rugoso-bc-y-resorte-al-final-re": {
+   "w": "360",
+   "h": "228",
+   "label": "Carril con tramo rugoso BC y resorte al final; reparto de la energía inicial mgh",
+   "pie": "Examen Feb. 2020 (2ª sem.) P-1: el bloque parte de A (h = 4 m) y comprime 25 cm el resorte. De los 196 J iniciales, 12,5 J quedan en el resorte y 183,5 J se disipan en BC.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2020 (2ª semana) P-1",
+    "txt": "P"
+   }
+  },
+  "bloque-lanzado-por-un-resorte-por-un-plano-incli": {
+   "w": "360",
+   "h": "262",
+   "label": "Bloque lanzado por un resorte por un plano inclinado con fricción y reparto de la energía inicial del resorte",
+   "pie": "Examen Feb. 2022 (2ª sem.) P-1 = E 7.73: la energía del resorte (119 J) se reparte en cinética en B (36,75 J), potencial gravitatoria (44,10 J) y energía interna ganada por la fricción (38,19 J).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2022 (2ª semana) P-1 y del problema 7.73",
+    "txt": "P"
+   }
+  },
+  "diagrama-de-cuerpo-libre-del-bloque-que-sube-por": {
+   "w": "360",
+   "h": "205",
+   "label": "Diagrama de cuerpo libre del bloque que sube por el plano inclinado de 30 grados con fricción",
+   "pie": "Bloque de 1,50 kg subiendo por el plano de 30° (X2, g = 9,8 m/s²): perpendicular al plano n = mg cos θ = 12,73 N; a lo largo del plano, la componente del peso mg sen θ = 7,35 N y la fricción f<sub>k</sub> = μ<sub>k</sub>n = 6,37 N frenan el movimiento (flechas no a escala exacta). La fricción usa n = mg cos θ, no mg.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2022 (2ª semana) P-1",
+    "txt": "P"
+   }
+  },
+  "bloque-lanzado-por-un-resorte-por-un-plano-incli-2": {
+   "w": "360",
+   "h": "262",
+   "label": "Bloque lanzado por un resorte por un plano inclinado con fricción y reparto de la energía inicial del resorte",
+   "pie": "Examen Sep. 2024 P-1 (g = 9,81 m/s²): 84,8 J en el resorte se convierten en 27,0 J cinéticos, 31,09 J de energía potencial gravitatoria y 26,67 J de energía interna (fricción).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Septiembre 2024 P-1",
+    "txt": "P"
+   }
+  },
+  "cuarto-de-circulo-ab-y-tramo-horizontal-bc-con-f": {
+   "w": "360",
+   "h": "322",
+   "label": "Cuarto de círculo AB y tramo horizontal BC con fricción: reparto de energía en cada tramo",
+   "pie": "Examen Sep. 2023 P-2 (g = 9,80 m/s²): en AB la energía mgR = 10,29 J se reparte entre K<sub>B</sub> = 6,76 J y energía interna 3,53 J (trabajo de la fricción = −3,53 J); en BC los 6,76 J de K<sub>B</sub> se disipan por completo.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Septiembre 2023 P-2",
+    "txt": "P"
+   }
+  },
+  "parabola-del-resorte-real-parabola-desplazada-de": {
+   "w": "340",
+   "h": "225",
+   "label": "Parábola del resorte real, parábola desplazada del estudiante y parábola correcta con U cero en x1",
+   "pie": "Cambiar el cero de U es sumar una constante (curva discontinua: misma forma y mismo mínimo en x = 0, y U = 0 en x<sub>1</sub>). Desplazar la variable (la desplazada) mueve el mínimo a x<sub>1</sub> y describe otro resorte. Valores ilustrativos con k = 2 y x<sub>1</sub> = 1.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (Examen Febrero 2024 (2ª semana) P-3 Opción A (a))",
+    "txt": "P"
+   }
+  },
+  "energia-potencial-entre-dos-particulas-con-u-0-p": {
+   "w": "340",
+   "h": "215",
+   "label": "Energía potencial entre dos partículas con U(∞)=0: positiva si se repelen, negativa si se atraen",
+   "pie": "Con U(∞) = 0, acercar dos partículas que se repelen cuesta trabajo (U crece y es positiva); dejar que se acerquen dos que se atraen libera energía (U baja de 0 y es negativa).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (Examen Febrero 2024 (2ª semana) P-3 Opción A (b))",
+    "txt": "P"
+   }
+  },
+  "energia-potencial-gravitatoria-con-tres-valores-": {
+   "w": "340",
+   "h": "215",
+   "label": "Energía potencial gravitatoria con tres valores de la energía total: ligado, límite y de escape",
+   "pie": "Con E < 0 la partícula llega a un r<sub>max</sub> finito (K = 0) y vuelve a caer; con E ≥ 0, K = E − U es positiva para todo r y el proyectil escapa.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (Examen Febrero 2022 (1ª semana) P-3 Opción 3.2b; U §13.3 p. 406)",
+    "txt": "P"
+   }
+  },
+  "energia-potencial-gravitatoria-gmm-r-y-su-aproxi": {
+   "w": "340",
+   "h": "215",
+   "label": "Energía potencial gravitatoria −GMm/r y su aproximación lineal mgh cerca de la superficie",
+   "pie": "Cerca de r = R<sub>T</sub> la curva −GMm/r se confunde con su tangente, cuya pendiente es mg: ahí U crece linealmente con la altura, U = mgh (con otro cero). Lejos de la superficie la recta deja de valer (esquema no a escala).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (Examen Septiembre 2022 P-4; U §13.3 ec. 13.9 p. 405)",
+    "txt": "P"
+   }
+  },
+  "caja-que-baja-una-distancia-d-por-una-rampa-sin-": {
+   "w": "360",
+   "h": "180",
+   "label": "Caja que baja una distancia d por una rampa sin fricción inclinada un ángulo alfa",
+   "pie": "La caja baja una distancia d medida sobre la rampa, es decir, un desnivel d sen α. La normal es perpendicular al desplazamiento y no trabaja.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (Solucionario 7-2, Prob. 7.6)",
+    "txt": "P"
+   }
+  },
+  "bloque-lanzado-por-un-resorte-sobre-una-superfic": {
+   "w": "360",
+   "h": "168",
+   "label": "Bloque lanzado por un resorte sobre una superficie horizontal y luego por una rampa de 37 grados sin fricción",
+   "pie": "Sin fricción: ½kx² = ½mv² = mgh. El resorte (k = 400 N/m, comprimido 0,220 m) da 3,11 m/s en el tramo horizontal; el bloque sube 0,494 m de altura, es decir, L = 0,821 m sobre la rampa (esquema no a escala).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (Solucionario 7-14, Prob. 7.40)",
+    "txt": "P"
+   }
+  },
+  "bloque-unido-a-un-resorte-sobre-un-suelo-con-fri": {
+   "w": "360",
+   "h": "172",
+   "label": "Bloque unido a un resorte sobre un suelo con fricción: reparto de la energía elástica inicial",
+   "pie": "Tras recorrer 0,0200 m (el resorte pasa de 0,0300 m a 0,0100 m de compresión) la energía elástica inicial se reparte en la que aún guarda el resorte, la energía interna ganada por la fricción y la energía cinética. (Esquema no a escala.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (Solucionario 7-9, Prob. 7.24)",
+    "txt": "P"
+   }
+  },
+  "energia-cinetica-del-pez-en-funcion-de-lo-que-ha": {
+   "w": "340",
+   "h": "215",
+   "label": "Energía cinética del pez en función de lo que ha descendido: máximo donde la fuerza neta es cero",
+   "pie": "K(y) = mgy − ½ky² con m = 3,00 kg y k = 900 N/m. En y = 0,050 m vale 0,345 J (v = 0,480 m/s); el máximo, 0,480 J (v = 0,566 m/s), está en y = mg/k = 0,0327 m, y el pez se detiene en y = 2mg/k = 0,0653 m.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (Solucionario 7-25/7-26, Prob. 7.67)",
+    "txt": "P"
+   }
+  },
+  "energia-cinetica-de-la-caja-frente-a-la-distanci": {
+   "w": "340",
+   "h": "215",
+   "label": "Energía cinética de la caja frente a la distancia recorrida: el máximo no está en la longitud natural del resorte",
+   "pie": "K(d) con k = 45,0 N/m, μ<sub>k</sub> = 0,300 y m = 1,60 kg. El máximo (0,693 J, v = 0,931 m/s) ocurre con el resorte aún comprimido 0,105 m, donde kx = f<sub>k</sub>; al separarse (d = 0,280 m) la caja ya ha perdido algo de velocidad (0,447 J, v = 0,747 m/s).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (Solucionario 7-25, Prob. 7.65)",
+    "txt": "P"
+   }
+  },
+  "piedra-que-baja-por-un-cuenco-con-friccion-traba": {
+   "w": "360",
+   "h": "138",
+   "label": "Piedra que baja por un cuenco con fricción: trabajos y fuerzas en el punto B",
+   "pie": "De A a B: la normal no trabaja, el peso hace +0,98 J y la fricción −0,22 J, así que K<sub>B</sub> = 0,76 J (v<sub>B</sub> = 2,76 m/s). En B la normal (5,0 N) supera al peso (1,96 N) porque hay aceleración centrípeta hacia arriba.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (Solucionario 7-3, Prob. 7.9)",
+    "txt": "P"
+   }
+  },
+  "ascensor-que-ha-bajado-1-00-m-dentro-del-resorte": {
+   "w": "360",
+   "h": "178",
+   "label": "Ascensor que ha bajado 1,00 m dentro del resorte amortiguador: fuerzas y aceleración",
+   "pie": "A 1,00 m del punto de contacto, el elevador baja a 3,65 m/s pero su aceleración (4,00 m/s²) apunta hacia arriba: está frenando. Positivo hacia arriba; las fuerzas ascendentes (fricción y resorte) superan al peso.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (Solucionario 7-8/7-9, Prob. 7.22; ejemplo 7.9 de U p. 216)",
+    "txt": "P"
+   }
+  }
+ },
+ "bloques": [
+  {
+   "t": "parte",
+   "archivo": "defs-marcadores.html"
+  },
+  {
+   "t": "h2",
+   "id": "prereq",
+   "n": "0",
+   "titulo": "Antes de empezar",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U cap. 7 Introducción, p. 204",
+    "txt": "U p.204"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte02.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte03.html"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Qué ha caído en examen",
+   "html": [
+    "<p>El índice de exámenes asigna a este tema siete preguntas: cuatro problemas de energía con rampas, resortes y fricción (Feb 2020 2ª, Feb 2022 2ª, Sept 2024 y Sept 2023) y tres de teoría con cuestiones (Feb 2022 1ª, Feb 2024 2ª y Sept 2022). Una de ellas, y otra pregunta catalogada en el tema 13, tratan la energía potencial <i>gravitatoria</i>: se resuelven aquí con las mismas ideas y se marcan como relacionadas con la gravitación. Todas están resueltas abajo:</p>",
+    "<table>",
+    "<tr><th>Pregunta de examen real</th><th>Ejercicio de esta página</th></tr>",
+    "<tr><td>Feb 2020 (2ª sem.) P-1 — carril con tramo rugoso y resorte final: μ del tramo</td><td><a href=\"#x1\">X1</a></td></tr>",
+    "<tr><td>Feb 2022 (2ª sem.) P-1 — bloque lanzado por un resorte en un plano de 30° con fricción (= problema 7.73 de U)</td><td><a href=\"#x2\">X2</a></td></tr>",
+    "<tr><td>Sep 2024 P-1 — igual planteamiento, rampa de 25°</td><td><a href=\"#x3\">X3</a></td></tr>",
+    "<tr><td>Sep 2023 P-2 — cuarto de círculo con fricción y tramo horizontal: μ<sub>k</sub> y trabajo de la fricción</td><td><a href=\"#x4\">X4</a></td></tr>",
+    "<tr><td>Feb 2022 (1ª sem.) P-3 Opción 3.1 — teoría «Fuerzas conservativas y no conservativas» + central hidroeléctrica y caja en rampa</td><td><a href=\"#x5\">X5</a></td></tr>",
+    "<tr><td>Feb 2024 (2ª sem.) P-3 Opción A — teoría «Fuerzas conservativas y no conservativas» + cero de U del resorte y signo de U entre partículas</td><td><a href=\"#x6\">X6</a></td></tr>",
+    "<tr><td>Feb 2022 (1ª sem.) P-3 Opción 3.2 — energía potencial gravitatoria: astronauta y proyectil (<i>relacionada con la gravitación; catalogada en el tema 13</i>)</td><td><a href=\"#x7\">X7</a></td></tr>",
+    "<tr><td>Sep 2022 P-4 Opción B — «Energía potencial gravitacional»: $mgh$ frente a $-GMm/r$ y trabajo entre dos playas (<i>relacionada con la gravitación</i>)</td><td><a href=\"#x8\">X8</a></td></tr>",
+    "</table>",
+    "  <p><b>Lo que viene:</b> la energía potencial gravitatoria general $U=-GMm/r$ y la velocidad de escape se desarrollan en el tema 13; la energía de un oscilador y de las ondas, en los temas 14 y 15.</p>"
+   ],
+   "src": {
+    "l": "X",
+    "ref": "Examen Febrero 2020 (2ª semana) P-1; Examen Febrero 2022 (2ª semana) P-1; Examen Septiembre 2024 P-1; Examen Septiembre 2023 P-2; Examen Febrero 2022 (1ª semana) P-3 Opción 3.1; Examen Febrero 2024 (2ª semana) P-3 Opción A; Examen Febrero 2022 (1ª semana) P-3 Opción 3.2; Examen Septiembre 2022 P-4 Opción B",
+    "txt": "X ×8"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "La receta maestra: método de energía en 5 pasos",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Elige dos estados</b>: el 1 (donde lo conoces casi todo) y el 2 (donde está la incógnita), y dibuja las fuerzas que actúan entre ambos.</li>",
+    "    <li><b>Fija el origen de alturas</b> ($y=0$ donde te convenga) con $+y$ <b>hacia arriba</b>, y que la longitud natural del resorte sea $x=0$.</li>",
+    "    <li>Escribe $K_1,\\ U_1=U_{grav,1}+U_{el,1}$ y $K_2,\\ U_2$. El peso y el resorte <b>ya están dentro de $U$</b>: no los cuentes otra vez.</li>",
+    "    <li>Calcula $W_{otras}$: el trabajo de todo lo que no sea peso ni resorte (fricción, empujes, tensiones que trabajan). La fricción da $W_f=-f_k\\,s=-\\mu_kn\\,s$; la normal no trabaja si es perpendicular al desplazamiento.</li>",
+    "    <li>Plantea $K_1+U_1+W_{otras}=K_2+U_2$ (ec. 7.14) y despeja. <b>Evalúa</b>: ¿es $K_2\\ge0$? ¿Tiene $W_{otras}$ el signo correcto (negativo si es fricción)?</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia para resolver problemas 7.1 p. 207 y 7.2 p. 215",
+    "txt": "U p.207, 215"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Convenio sobre g",
+   "html": "<p>En U y en el solucionario se usa $g=9{,}80\\ \\text{m/s}^2$. Los enunciados de examen que no la indican (Feb 2020, Feb 2022 2ª sem., Sep 2023 P-2) se resuelven aquí con 9,80; el de Sep 2024 da $g=9{,}81$. Cuando el cambio de $g$ altera el resultado, se da el valor con la otra $g$.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s1",
+   "n": "1",
+   "titulo": "Energía potencial gravitatoria",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §7.1, pp. 204-211",
+    "txt": "U p.204"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": [
+    "<p>Cuando subes un libro a una estantería, tú haces trabajo contra el peso y el libro no gana rapidez: ¿a dónde ha ido esa energía? Se ha «guardado» en la <b>posición</b>: el libro, en lo alto, tiene la <i>posibilidad</i> de volver a hacer trabajo (si cae, el peso lo acelerará). A esa energía asociada con la posición se le llama <b>energía potencial</b>. Piensa en una <b>cuenta bancaria</b>: al subir el libro «ingresas» energía en la cuenta gravitatoria; al dejarlo caer «retiras» ese dinero y lo gastas en rapidez.</p>",
+    "  <p>Así hay <i>dos formas</i> de describir una caída: (1) el peso hace trabajo positivo y por eso $K$ aumenta (tema 6); (2) la energía potencial disminuye y se convierte en energía cinética. Ambas son equivalentes; la segunda es más cómoda porque no hace falta calcular el trabajo del peso.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.1, p. 204 y Fig. 7.1",
+    "txt": "U p.204"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Energía potencial gravitatoria y trabajo del peso",
+   "html": [
+    "<p>Para un cuerpo de masa $m$ a una altura $y$ (medida hacia arriba desde el origen que elijas), cerca de la superficie terrestre:",
+    "  $$U_{grav}=mgy\\qquad\\text{(ec. 7.2)}$$",
+    "  El trabajo que hace el peso al ir de $y_1$ a $y_2$ es",
+    "  $$W_{grav}=mgy_1-mgy_2=U_{grav,1}-U_{grav,2}=-\\Delta U_{grav}\\qquad\\text{(ecs. 7.1 y 7.3)}$$",
+    "  El signo menos es fundamental: si el cuerpo <b>sube</b> ($y$ aumenta), $\\Delta U_{grav}>0$ y el peso hace trabajo <b>negativo</b>; si <b>baja</b>, $\\Delta U_{grav}<0$ y el peso hace trabajo <b>positivo</b>. Unidad: el joule.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.1 ecs. (7.1)-(7.3), p. 204",
+    "txt": "U p.204"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_7_2_grav.png",
+   "alt": "Figura 7.2 de U: a) un cuerpo que se mueve hacia abajo, de la altura y1 a la y2 menor: el peso hace trabajo positivo y la energía potencial gravitacional disminuye. b) un cuerpo que se mueve hacia arriba, de y1 a y2 mayor: el peso hace trabajo negativo y la energía potencial aumenta. Se dibujan el peso w = mg, una fuerza F otras, el desplazamiento s y las alturas medidas desde el origen O.",
+   "pie": "Fig. 7.2 de U: al bajar, el peso trabaja a favor y $U_{grav}$ disminuye; al subir, trabaja en contra y $U_{grav}$ aumenta.",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 7.2, p. 204",
+    "txt": "U p.204"
+   },
+   "estilo": "max-width:min(100%,300px)"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Dos cuidados con $U_{grav}$",
+   "html": [
+    "<ul>",
+    "    <li><b>Elige la «altura cero» donde quieras.</b> Si desplazas el origen cambian $y_1$, $y_2$, $U_1$ y $U_2$, pero <i>no</i> la diferencia $U_2-U_1=mg(y_2-y_1)$. Lo que tiene sentido físico no es el valor de $U$ en un punto, sino su <b>diferencia</b> entre dos puntos. Con $U=mgy$, $+y$ debe apuntar hacia arriba (si no, $U=-mgy$).</li>",
+    "    <li><b>¿A quién pertenece $U_{grav}$?</b> Es energía compartida del sistema cuerpo-Tierra (depende de la interacción entre ambos), no «la energía del cuerpo». Es una forma cómoda de hablar, pero no digas «el libro tiene $mgy$ julios de energía propia».</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.1 «Cuidado» pp. 205-206",
+    "txt": "U p.205-206"
+   }
+  },
+  {
+   "t": "h3",
+   "titulo": "Conservación de la energía mecánica",
+   "prio": null
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Si solo la gravedad hace trabajo, $E=K+U$ se conserva",
+   "html": [
+    "<p>Si la gravedad es la <b>única</b> fuerza que hace trabajo, el teorema trabajo-energía $W_{grav}=K_2-K_1$ y la ec. (7.3) dan",
+    "  $$K_1+U_{grav,1}=K_2+U_{grav,2}\\qquad\\text{(ec. 7.4)}$$",
+    "  es decir, la <b>energía mecánica total</b> $E=K+U_{grav}$ es constante: lo que baja una forma, sube la otra. Al lanzar una pelota hacia arriba, $\\Delta K<0$ y $\\Delta U>0$; al bajar, al revés, pero la suma es la misma en todos los puntos. Vale también si actúan otras fuerzas que <i>no hacen trabajo</i> (como una normal perpendicular al movimiento).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.1 ec. (7.4), pp. 205-206",
+    "txt": "U p.205-206"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "barras-de-energia-cinetica-y-potencial-en-tres-a"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo del libro 7.1 — altura de una pelota con conservación de la energía",
+   "html": [
+    "<p>Una pelota de béisbol de 0,145 kg sale hacia arriba a $v_1=20{,}0$ m/s. ¿Hasta qué altura sube? (Sin resistencia del aire.)</p>",
+    "  <ol class=\"steps\">",
+    "    <li>Solo trabaja el peso, luego vale (7.4). Estado 1: la mano ($y_1=0$, $U_1=0$). Estado 2: el punto más alto ($v_2=0$, $K_2=0$).</li>",
+    "    <li>$K_1+0=0+U_{grav,2}\\Rightarrow\\tfrac12mv_1^2=mgy_2$. La masa se cancela: $y_2=\\dfrac{v_1^2}{2g}=\\dfrac{(20{,}0)^2}{2(9{,}80)}=20{,}4$ m.</li>",
+    "    <li>Comprobación de energías: $K_1=\\tfrac12(0{,}145)(20{,}0)^2=29{,}0$ J y $U_{grav,2}=mgy_2=29{,}0$ J.</li>",
+    "  </ol>",
+    "  <p>Si pones el origen 5,0 m más abajo, $y_1$ y $y_2$ cambian, pero la altura que sube sigue siendo 20,4 m: solo cuentan las diferencias. Es el mismo resultado de la cinemática ($v_y^2=v_{1y}^2-2g\\,\\Delta y$), obtenido sin ecuaciones de movimiento.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 7.1, pp. 206-207",
+    "txt": "U p.206-207"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo conceptual del libro 7.3 — proyectiles lanzados con distintos ángulos",
+   "html": "<p>Dos pelotas salen de la misma altura con la misma rapidez, pero con ángulos distintos. A cualquier altura $h$ <b>llevan la misma rapidez</b>: tienen la misma $E$ (misma $K$ y $U$ iniciales) y la misma $U=mgh$ a esa altura, luego la misma $K$. La dirección no importa porque la energía es un escalar.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo conceptual 7.3, p. 209",
+    "txt": "U p.209"
+   }
+  },
+  {
+   "t": "h3",
+   "titulo": "Cuando otras fuerzas hacen trabajo",
+   "prio": null
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Energía mecánica con «otras fuerzas»",
+   "html": [
+    "<p>Si, además del peso, actúan otras fuerzas (la mano, un motor, la fricción, la resistencia del aire…), llamamos $W_{otras}$ al trabajo de su resultante. El trabajo total es $W_{grav}+W_{otras}=K_2-K_1$ (ec. 7.5), y con $W_{grav}=U_1-U_2$:",
+    "  $$K_1+U_{grav,1}+W_{otras}=K_2+U_{grav,2}\\qquad\\text{(ecs. 7.6 y 7.7)}$$",
+    "  El trabajo de todas las fuerzas distintas de la gravedad es igual al <b>cambio de la energía mecánica total</b> $E=K+U_{grav}$: si $W_{otras}>0$, $E$ aumenta; si $W_{otras}<0$ (fricción), $E$ disminuye. <b>Ojo:</b> el trabajo gravitatorio ya está dentro de $\\Delta U_{grav}$, así que no lo incluyas también en $W_{otras}$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.1 ecs. (7.5)-(7.7), p. 207",
+    "txt": "U p.207"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo del libro 7.2 — trabajo de la mano al lanzar la pelota",
+   "html": [
+    "<p>La mano de la pelota anterior sube 0,50 m mientras la lanza (sale a 20,0 m/s). Origen en el punto de salida: $y_1=-0{,}50$ m (mano al inicio), $y_2=0$.</p>",
+    "  <ol class=\"steps\">",
+    "    <li>$K_1=0$, $U_1=mgy_1=(0{,}145)(9{,}80)(-0{,}50)=-0{,}71$ J; $K_2=29{,}0$ J, $U_2=0$. (Que $U_1$ salga negativa no importa: cuentan las diferencias.)</li>",
+    "    <li>Por (7.6): $W_{otras}=(K_2-K_1)+(U_2-U_1)=29{,}0+0{,}71=29{,}7$ J. Como la fuerza de la mano $F$ es constante: $F=W_{otras}/(y_2-y_1)=29{,}7/0{,}50\\approx59$ N (unas 40 veces el peso de la pelota).</li>",
+    "    <li>A 15,0 m sobre la salida solo trabaja el peso: $K_3=K_2+U_2-U_3=29{,}0-21{,}3=7{,}7$ J, luego $v_3=\\sqrt{2K_3/m}=10$ m/s, ya suba o baje (la energía no distingue el sentido).</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 7.2, p. 208",
+    "txt": "U p.208"
+   }
+  },
+  {
+   "t": "h3",
+   "titulo": "Trayectorias curvas",
+   "prio": null
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "El trabajo del peso solo depende del desnivel",
+   "html": "<p>Si el cuerpo sigue una trayectoria curva, descomponemos el recorrido en tramos $\\Delta\\vec s=\\Delta x\\,\\hat\\imath+\\Delta y\\,\\hat\\jmath$. En cada tramo, $\\vec w\\cdot\\Delta\\vec s=(-mg\\,\\hat\\jmath)\\cdot\\Delta\\vec s=-mg\\,\\Delta y$: el movimiento horizontal no cuenta. Sumando, $W_{grav}=-mg(y_2-y_1)=U_{grav,1}-U_{grav,2}$, igual que en una caída vertical. Por eso (7.4) y (7.6) valen en rampas, columpios y montañas rusas, con solo mirar la <b>diferencia de alturas</b>, no la forma del camino.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §7.1 «Trayectorias curvas», p. 209 y Fig. 7.7",
+    "txt": "U p.209"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "tres-trayectorias-distintas-entre-los-mismos-pun"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo del libro 7.4 — rapidez al pie de un círculo vertical (sin fricción)",
+   "html": [
+    "<p>Throcky (con su patineta, 25,0 kg) baja desde el reposo por un cuarto de círculo sin fricción de radio $R=3{,}00$ m. ¿Rapidez en la base y fuerza normal allí?</p>",
+    "  <ol class=\"steps\">",
+    "    <li>La normal es siempre perpendicular al desplazamiento: no trabaja, así que $W_{otras}=0$ y vale (7.4). Origen en la base: $y_1=R$, $y_2=0$.</li>",
+    "    <li>$mgR=\\tfrac12mv_2^2\\Rightarrow v_2=\\sqrt{2gR}=\\sqrt{2(9{,}80)(3{,}00)}=7{,}67$ m/s, igual que en cualquier rampa de altura $R$, sea circular o no.</li>",
+    "    <li>Para la normal la energía no sirve: se usa Newton en el fondo, con aceleración centrípeta hacia arriba: $n-mg=m\\dfrac{v_2^2}{R}=2mg\\Rightarrow n=3mg=735$ N (el triple de su peso).</li>",
+    "  </ol>",
+    "  <p>Lección: <b>energía</b> para la rapidez en un punto; <b>segunda ley de Newton</b> para las fuerzas en ese punto.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 7.4, pp. 209-210",
+    "txt": "U p.209-210"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplos del libro 7.5 y 7.6 — la fricción se cuenta en $W_{otras}$",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>7.5 (círculo vertical con fricción).</b> Si Throcky llega abajo con solo 6,00 m/s: $K_2=\\tfrac12(25{,}0)(6{,}00)^2=450$ J, $U_1=mgR=735$ J. Por (7.6): $W_f=W_{otras}=K_2+U_2-K_1-U_1=450-735=-285$ J. La energía mecánica disminuyó 285 J. Aplicar Newton aquí sería difícil (la normal, la fricción y la aceleración cambian en cada punto); la energía solo mira los extremos.</li>",
+    "    <li><b>7.6 (plano inclinado con fricción).</b> Una caja de 12 kg sube por una rampa de 30° con $v_1=5{,}0$ m/s en la base y se detiene tras 1,6 m. $K_1=150$ J; $U_2=mgy_2=(12)(9{,}8)(0{,}80)=94$ J (con $y_2=1{,}6\\sin30^\\circ$). Entonces $-f s=(K_2+U_2)-(K_1+U_1)=94-150=-56$ J y $f=56/1{,}6=35$ N. Al volver a la base la fricción vuelve a quitar 56 J: $W_{otras}=-112$ J y $K_3=150-112=38$ J, es decir, $v_3\\approx2{,}5$ m/s (la caja regresa con solo 38 de los 150 J iniciales).</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplos 7.5 y 7.6, pp. 210-211",
+    "txt": "U p.210-211"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "¿Energía o Newton?",
+   "html": "<p>Usa energía cuando te dan o piden <b>rapideces y posiciones</b> (alturas, distancias recorridas, compresiones) y no te importa el tiempo, sobre todo si la trayectoria es curva o la fuerza varía. Usa la segunda ley (o la cinemática) si te piden un <b>tiempo</b> o una <b>aceleración</b>. En los problemas mixtos se combinan: energía para $v$, Newton para fuerzas como la normal.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia para resolver problemas 7.1, p. 207",
+    "txt": "U p.207"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s2",
+   "n": "2",
+   "titulo": "Energía potencial elástica",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §7.2, pp. 212-216",
+    "txt": "U p.212"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Un resorte comprimido o estirado es como un <b>arco tensado</b>: has hecho trabajo para deformarlo y esa energía queda guardada, lista para devolverse como movimiento. Comprimirlo 2 cm y estirarlo 2 cm guarda lo mismo, porque la deformación aparece al cuadrado; y duplicar la deformación guarda <b>cuatro</b> veces más energía.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §7.2, pp. 212-213",
+    "txt": "U p.212-213"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Energía potencial elástica",
+   "html": [
+    "<p>Para un resorte ideal (masa despreciable, fuerza $F_x=-kx$ sobre el cuerpo), con $x$ medida desde su <b>longitud natural</b> ($x>0$ estirado, $x<0$ comprimido):",
+    "  $$U_{el}=\\tfrac12kx^2\\qquad\\text{(ec. 7.10)}$$",
+    "  Nunca es negativa y vale cero con el resorte relajado. El trabajo que el resorte hace sobre el cuerpo es",
+    "  $$W_{el}=\\tfrac12kx_1^2-\\tfrac12kx_2^2=U_{el,1}-U_{el,2}=-\\Delta U_{el}\\qquad\\text{(ec. 7.11)}$$",
+    "  Si el resorte se estira más ($U_{el}$ aumenta), hace trabajo negativo; si se relaja ($U_{el}$ disminuye), hace trabajo positivo, sea cual sea el signo de $x$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.2 ecs. (7.10)-(7.11), pp. 212-213",
+    "txt": "U p.212-213"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_7_14_parabola.png",
+   "alt": "Figura 7.14 de U: gráfica de la energía potencial elástica de un resorte ideal, una parábola U_el = (1/2) k x al cuadrado con mínimo en x = 0; a la izquierda el resorte se comprime (x < 0) y a la derecha se estira (x > 0); U_el nunca es negativa.",
+   "pie": "Fig. 7.14 de U: $U_{el}=\\tfrac12kx^2$ es una parábola con el mínimo en el resorte relajado.",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 7.14, p. 213",
+    "txt": "U p.213"
+   },
+   "estilo": "max-width:min(100%,300px)"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "A diferencia de $U_{grav}$, el cero de $U_{el}$ no se elige",
+   "html": "<p>Con la gravedad podías poner $y=0$ donde quisieras. En (7.10), $x=0$ <b>debe</b> ser la longitud natural del resorte: ahí la fuerza y la energía elástica son nulas. Y no confundas $\\tfrac12kx_1^2-\\tfrac12kx_2^2$ con $\\tfrac12k(x_1-x_2)^2$: la energía no es lineal en $x$.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §7.2 «Cuidado: energía potencial gravitacional contra energía potencial elástica», p. 213",
+    "txt": "U p.213"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Conservación con resorte y caso general",
+   "html": [
+    "<p>Si el resorte es la única fuerza que hace trabajo: $K_1+U_{el,1}=K_2+U_{el,2}$ (ec. 7.12), es decir, $E=K+U_{el}$ es constante. En el caso más general (gravedad, resorte y otras fuerzas):",
+    "  $$K_1+U_{grav,1}+U_{el,1}+W_{otras}=K_2+U_{grav,2}+U_{el,2}\\ \\ \\text{(7.13)}\\qquad\\Longleftrightarrow\\qquad K_1+U_1+W_{otras}=K_2+U_2\\ \\ \\text{(7.14)}$$",
+    "  con $U=U_{grav}+U_{el}$. Esta es <b>la ecuación que más se usa en examen</b>. Se supone un resorte sin masa (si la tiene, su energía cinética es despreciable cuando su masa es mucho menor que la del cuerpo).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.2 ecs. (7.12)-(7.14), pp. 213-214",
+    "txt": "U p.213-214"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "parabola-de-energia-potencial-elastica-con-la-en"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplos del libro 7.7 y 7.8 — deslizador con resorte",
+   "html": [
+    "<p>Deslizador de 0,200 kg sobre un riel de aire sin fricción, unido a un resorte de $k=5{,}00$ N/m.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>7.7.</b> Se estira 0,100 m y se suelta. En $x=0{,}080$ m: $K_2=U_1-U_2=\\tfrac12(5{,}00)(0{,}100)^2-\\tfrac12(5{,}00)(0{,}080)^2=0{,}0250-0{,}0160=0{,}0090$ J y $|v|=\\sqrt{2K_2/m}=0{,}30$ m/s (el signo lo da el sentido: hacia $-x$ al volver, $v_x=-0{,}30$ m/s).</li>",
+    "    <li><b>7.8.</b> Parte del reposo en $x=0$ y se le aplica una fuerza constante $F=0{,}610$ N hasta $x=0{,}100$ m: $W_{otras}=F\\Delta x=0{,}0610$ J. Entonces $K_2=0+0+0{,}0610-U_2=0{,}0610-0{,}0250=0{,}0360$ J y $v=0{,}60$ m/s. Sin resorte llegaría a $\\sqrt{2(0{,}0610)/0{,}200}=0{,}78$ m/s: el resorte, al estirarse, hace trabajo negativo.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplos 7.7 y 7.8, pp. 215-216",
+    "txt": "U p.215-216"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo del libro 7.9 — ascensor frenado por un resorte y una fricción",
+   "html": [
+    "<p>Un ascensor de 2000 kg (peso 19 600 N) llega con $v_1=4{,}00$ m/s a un resorte amortiguador; el freno de seguridad aplica una fricción constante de 17 000 N y el resorte lo detiene tras comprimirse 2,00 m. ¿Qué $k$ hace falta?</p>",
+    "  <ol class=\"steps\">",
+    "    <li>Origen en el contacto ($y_1=0$) con $+y$ hacia arriba; $y_2=-2{,}00$ m. $K_1=\\tfrac12(2000)(4{,}00)^2=16\\,000$ J, $K_2=0$, $U_1=0$.</li>",
+    "    <li>$U_2=mgy_2+\\tfrac12ky_2^2=-39\\,200+\\tfrac12k(2{,}00)^2$. La fricción trabaja en contra: $W_{otras}=-(17\\,000)(2{,}00)=-34\\,000$ J.</li>",
+    "    <li>(7.14): $16\\,000-34\\,000=-39\\,200+2k\\Rightarrow k=1{,}06\\times10^4$ N/m.</li>",
+    "  </ol>",
+    "  <p><b>Parece una paradoja:</b> $\\tfrac12ky_2^2=21\\,200$ J es mayor que la energía mecánica inicial (16 000 J), pero el punto 2 está <i>por debajo</i> del origen, donde $U_{grav}$ es negativa ($-39\\,200$ J): la energía mecánica en 2 vale $E_2=21\\,200-39\\,200=-18\\,000$ J, que es 16 000 − 34 000. Más adelante (ejercicio E 7.22 de abajo) se calcula su rapidez y aceleración a 1,00 m.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 7.9, pp. 216-217 y Fig. 7.17",
+    "txt": "U p.216-217"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s3",
+   "n": "3",
+   "titulo": "Fuerzas conservativas y no conservativas",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §7.3, pp. 217-220",
+    "txt": "U p.217"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Con el peso y el resorte, la energía cinética que «prestas» a la energía potencial se recupera íntegra: la pelota lanzada hacia arriba vuelve a su altura con la misma rapidez; el deslizador rebota en el resorte con la rapidez con que llegó. Es una conversión <b>bidireccional</b>, como un depósito del que puedes retirar todo lo ingresado. La <b>fricción</b>, en cambio, es una «comisión» que no se devuelve: al frenar con el coche bloqueado, la energía cinética perdida calienta neumáticos y asfalto y no puedes recuperarla dando marcha atrás.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §7.3, pp. 217-218",
+    "txt": "U p.217-218"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Fuerza conservativa",
+   "html": [
+    "<p>Es una fuerza para la cual la relación trabajo-energía cinética es totalmente <b>reversible</b>. El trabajo de una fuerza conservativa tiene cuatro propiedades:</p>",
+    "  <ol>",
+    "    <li>puede expresarse como diferencia entre los valores inicial y final de una <b>función de energía potencial</b>: $W=U_1-U_2=-\\Delta U$;</li>",
+    "    <li>es <b>reversible</b>;</li>",
+    "    <li>es <b>independiente de la trayectoria</b>: solo depende de los puntos inicial y final;</li>",
+    "    <li>si el punto final coincide con el inicial (trayectoria cerrada), el trabajo total es <b>cero</b>.</li>",
+    "  </ol>",
+    "  <p>Ejemplos: el peso ($U=mgy$), la fuerza elástica ideal ($U=\\tfrac12kx^2$) y, más adelante, la fuerza eléctrica. Si solo trabajan fuerzas conservativas, $E=K+U$ es constante.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.3 «Fuerzas conservativas», pp. 217-218 y resumen p. 226",
+    "txt": "U p.217-218"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_7_18_conservativa.png",
+   "alt": "Figura 7.18 de U: una excursionista va de una posición inicial a una posición final siguiendo tres trayectorias distintas, sobre una montaña, en línea recta o por un valle; el trabajo de la fuerza gravitacional es el mismo en las tres, porque es una fuerza conservativa.",
+   "pie": "Fig. 7.18 de U: el trabajo de una fuerza conservativa es el mismo por cualquiera de las trayectorias entre los mismos puntos.",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 7.18, p. 217",
+    "txt": "U p.217"
+   },
+   "estilo": "max-width:min(100%,300px)"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Fuerza no conservativa y fuerza disipativa",
+   "html": "<p>No todas las fuerzas son conservativas. La <b>fricción</b> cinética no lo es: al invertir el movimiento también se invierte la fuerza, así que trabaja negativo <i>en ambos sentidos</i>, y en un viaje de ida y vuelta su trabajo no se anula. La resistencia de un fluido tampoco. El trabajo de una fuerza no conservativa <b>no puede representarse con una función de energía potencial</b> y depende del camino. Si hace que la energía mecánica se pierda (fricción, resistencia del aire) se llama <b>fuerza disipativa</b>; también hay fuerzas no conservativas que <i>aumentan</i> la energía mecánica (la explosión de un petardo).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §7.3 «Fuerzas no conservativas», p. 218",
+    "txt": "U p.218"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo del libro 7.10 — el trabajo de la fricción depende del camino",
+   "html": [
+    "<p>Mueves 2,50 m un sillón de 40,0 kg sobre un suelo horizontal con $\\mu_k=0{,}200$. El camino recto está bloqueado, así que usas uno de dos tramos de 2,00 m y 1,50 m. ¿Cuánto trabajo extra?</p>",
+    "  <ol class=\"steps\">",
+    "    <li>El sillón parte y termina en reposo y no cambia de altura: $K_1=K_2$, $U_1=U_2$, así que $W_{otras}=0$: lo que tú aportas compensa lo que quita la fricción, $W_{usted}=-W_{fric}=\\mu_kmg\\,s$.</li>",
+    "    <li>Camino recto ($s=2{,}50$ m): $W_{usted}=(0{,}200)(40{,}0)(9{,}80)(2{,}50)=196$ J.</li>",
+    "    <li>Camino de dos tramos ($s=2{,}00+1{,}50=3{,}50$ m): $W_{usted}=274$ J. Trabajo extra: $274-196=78$ J.</li>",
+    "  </ol>",
+    "  <p>Mismos puntos inicial y final, distinto trabajo de fricción ($-196$ J frente a $-274$ J): <b>es no conservativa</b>.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 7.10, pp. 218-219",
+    "txt": "U p.218-219"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "sillon-arrastrado-por-una-habitacion-dos-caminos"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo del libro 7.11 — ¿conservativa o no? (el truco de la espira)",
+   "html": "<p>Una fuerza $\\vec F=Cx\\,\\hat\\jmath$ ($C>0$) actúa sobre un electrón que da una vuelta a una espira cuadrada de lado $L$ (el eje $x$ horizontal). Solo trabaja en el tramo vertical de $x=L$: $W=\\int_0^L CL\\,dy=CL^2\\neq0$. Como el trabajo en una trayectoria <b>cerrada</b> no es cero, la fuerza <b>no es conservativa</b> y no se puede escribir con una $U$. Esa es la prueba rápida: ¿sale cero al volver al punto de partida?</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 7.11, p. 219",
+    "txt": "U p.219"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Ley de conservación de la energía (con energía interna)",
+   "html": [
+    "<p>Los efectos de las fuerzas no conservativas se describen con otra forma de energía, la <b>energía interna</b> (el calentamiento del bloque y de la superficie). Experimentalmente, su aumento es exactamente el valor absoluto del trabajo de la fricción: $\\Delta U_{int}=-W_{otras}$. Sustituyendo en (7.14):",
+    "  $$\\Delta K+\\Delta U+\\Delta U_{int}=0\\qquad\\text{(ec. 7.15)}$$",
+    "  La suma de todos los cambios de energía es cero: una forma disminuye y otra aumenta, <b>la energía nunca se crea ni se destruye, solo cambia de forma</b>. La energía <i>mecánica</i> sí puede perderse; la energía <i>total</i> no.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.3 «La ley de conservación de la energía» ec. (7.15), p. 220",
+    "txt": "U p.220"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo conceptual del libro 7.12 — trabajo de la fricción y energía interna",
+   "html": [
+    "<p>Vuelve al ejemplo 7.5 (Throcky baja la rampa con fricción). Su energía cinética pasa de 0 a 450 J ($\\Delta K=+450$ J) y la potencial de 735 J a 0 ($\\Delta U=-735$ J). El trabajo de la fricción es $W_{otras}=W_{fric}=-285$ J, así que el cambio de energía interna es $\\Delta U_{int}=-W_{otras}=+285$ J: se calientan un poco las ruedas, los cojinetes de la patineta y la rampa. Según (7.15):",
+    "  $$\\Delta K+\\Delta U+\\Delta U_{int}=+450\\ \\text{J}+(-735\\ \\text{J})+285\\ \\text{J}=0$$",
+    "  La energía total del sistema se conserva (incluidas las formas de energía interna).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo conceptual 7.12, p. 220",
+    "txt": "U p.220"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte04.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores típicos",
+   "html": [
+    "<ul>",
+    "    <li>Decir «la energía no se conserva» cuando hay fricción: se conserva la energía <i>total</i>; lo que baja es la energía <i>mecánica</i> $K+U$, que se convierte en energía interna.</li>",
+    "    <li>Querer escribir una energía potencial de la fricción: no existe, porque su trabajo depende del camino. Se cuenta como $W_{otras}=-f_ks$ (con $s$ la longitud <b>recorrida</b>, no el desplazamiento neto).</li>",
+    "    <li>Aplicar $K_1+U_1=K_2+U_2$ (sin $W_{otras}$) cuando hay fricción o una fuerza que trabaja.</li>",
+    "    <li>Contar dos veces el trabajo del peso o del resorte: una vez en $U$ y otra en $W_{otras}$.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.3, pp. 217-220 y «Los datos hablan» p. 217",
+    "txt": "U p.217-220"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s4",
+   "n": "4",
+   "titulo": "Fuerza y energía potencial",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §7.4, pp. 221-224",
+    "txt": "U p.221"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Imagina $U(x)$ como el <b>perfil de una montaña</b>. Una canica suelta sobre ella rueda <b>cuesta abajo</b>, hacia donde $U$ disminuye, y empuja con más fuerza donde la pendiente es mayor. En el fondo de un valle, en la cima y en un tramo plano, la pendiente es cero y no hay fuerza. Eso es todo el resultado de esta sección: <b>la fuerza es la pendiente de $U$ con signo cambiado</b>.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §7.4, p. 221",
+    "txt": "U p.221"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Fuerza a partir de la energía potencial (1D)",
+   "html": [
+    "<p>Para una fuerza conservativa se cumple $W=-\\Delta U$. En un desplazamiento pequeño $\\Delta x$, $F_x\\Delta x\\approx-\\Delta U$, y al tomar el límite $\\Delta x\\to0$:",
+    "  $$F_x(x)=-\\frac{dU(x)}{dx}\\qquad\\text{(ec. 7.16)}$$",
+    "  La componente de la fuerza es el <b>negativo de la derivada</b> de $U$. Donde $U$ cambia rápido, $F$ es grande; si $F_x>0$, $U$ disminuye al aumentar $x$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.4 ec. (7.16), p. 221",
+    "txt": "U p.221"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Comprobación con lo que ya sabes",
+   "html": [
+    "<ul>",
+    "    <li>Gravedad: $U=mgy\\Rightarrow F_y=-\\dfrac{d(mgy)}{dy}=-mg$: la fuerza apunta hacia $y$ decreciente.</li>",
+    "    <li>Resorte: $U=\\tfrac12kx^2\\Rightarrow F_x=-kx$: para $x>0$ la pendiente es positiva y $F_x<0$ (hacia $x=0$); para $x<0$, la pendiente es negativa y $F_x>0$ (otra vez hacia $x=0$). Es una fuerza <b>restauradora</b>.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.4 y Fig. 7.22, pp. 221-222",
+    "txt": "U p.221-222"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "curva-de-energia-potencial-con-tangentes-y-flech"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "En tres dimensiones: el gradiente",
+   "html": [
+    "<p>Con $U(x,y,z)$, cada componente es el negativo de la derivada <i>parcial</i> (se deriva respecto a esa coordenada y las otras se tratan como constantes):",
+    "  $$F_x=-\\frac{\\partial U}{\\partial x},\\quad F_y=-\\frac{\\partial U}{\\partial y},\\quad F_z=-\\frac{\\partial U}{\\partial z}\\qquad\\text{(7.17)}$$",
+    "  $$\\vec F=-\\left(\\frac{\\partial U}{\\partial x}\\hat\\imath+\\frac{\\partial U}{\\partial y}\\hat\\jmath+\\frac{\\partial U}{\\partial z}\\hat k\\right)=-\\vec\\nabla U\\qquad\\text{(7.18)}$$",
+    "  Es el <b>gradiente</b> de $U$. Con $U=mgy$ da $\\vec F=-mg\\,\\hat\\jmath$. Una montaña muy empinada (gradiente grande) empuja con fuerza intensa; la superficie plana de un lago ($U$ constante) no ejerce fuerza.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §7.4 ecs. (7.17)-(7.18), p. 223",
+    "txt": "U p.223"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplos del libro 7.13 y 7.14",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>7.13 (fuerza eléctrica).</b> Una carga fija en $x=0$ repele a otra igual que se mueve por $+x$; $U(x)=C/x$ con $C>0$. Entonces $F_x=-\\dfrac{d}{dx}\\dfrac Cx=\\dfrac{C}{x^2}>0$: repulsión, grande cuando están muy juntas y cada vez menor al alejarse.</li>",
+    "    <li><b>7.14 (disco en dos dimensiones).</b> $U(x,y)=\\tfrac12k(x^2+y^2)$. Las derivadas parciales dan $\\vec F=-k(x\\,\\hat\\imath+y\\,\\hat\\jmath)=-k\\vec r$, de módulo $F=k\\sqrt{x^2+y^2}=kr$ y dirigida hacia el origen: justo la fuerza de un resorte ideal de longitud natural despreciable fijo en $r=0$.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplos 7.13 y 7.14, pp. 222-223",
+    "txt": "U p.222-223"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "El signo de $U$ no decide el sentido de la fuerza",
+   "html": "<p>La dirección de la fuerza la determina el signo de $F_x=-dU/dx$, <b>no</b> el signo de $U$. Lo físicamente significativo es la diferencia de $U$ entre dos puntos, que es lo que mide la derivada. Por eso puedes sumar cualquier constante a $U$ sin cambiar la física, y por eso desplazar la <i>variable</i> (usar $\\tfrac12k(x-x_1)^2$ en vez de sumar una constante) <b>sí</b> la cambia (ver X6).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §7.5 «Cuidado: energía potencial y la dirección de una fuerza conservativa», p. 225",
+    "txt": "U p.225"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s5",
+   "n": "5",
+   "titulo": "Diagramas de energía",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §7.5, pp. 224-225",
+    "txt": "U p.224"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Dibuja $U(x)$ y, encima, una línea horizontal a la altura de la energía total $E$, como el <b>nivel del agua</b> en un paisaje. La partícula solo puede estar donde la curva queda por debajo del agua: la distancia vertical entre la línea $E$ y la curva es la energía cinética $K=E-U$. Donde la curva toca la línea, $K=0$: la partícula se para y da media vuelta. Una canica en un cuenco no puede subir por encima del nivel de donde se soltó.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §7.5, pp. 224-225",
+    "txt": "U p.224-225"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Diagrama de energía, pozo de potencial y puntos de retorno",
+   "html": "<p>Una gráfica que muestra a la vez $U(x)$ y la energía total $E$ es un <b>diagrama de energía</b>. Como $K=E-U\\ge0$, la partícula solo puede estar donde $U(x)\\le E$ y $U$ nunca supera a $E$. Los puntos donde $U=E$ (y por tanto $K=0$) son los <b>puntos de retorno</b>: ahí la partícula se detiene e invierte su movimiento. Una región entre dos puntos de retorno es un <b>pozo de potencial</b>. Ejemplo del libro: el deslizador con resorte oscila entre $x=-A$ y $x=+A$, con $K$ máxima en $x=0$ y nula en los extremos.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §7.5, pp. 224-225 y Fig. 7.23 p. 224",
+    "txt": "U p.224-225"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Equilibrio estable e inestable",
+   "html": "<p>Un <b>punto de equilibrio</b> es donde $F_x=-dU/dx=0$ (pendiente nula). <b>Los mínimos de $U(x)$ son equilibrios estables</b> (si te apartas, la fuerza te devuelve: fuerza restauradora); <b>los máximos son equilibrios inestables</b> (si te apartas, la fuerza te aleja). Si $E$ es solo un poco mayor que el mínimo, la partícula queda atrapada cerca del fondo; si $E$ supera el valor máximo de $U$ en un lado, puede «escapar» hacia $x$ muy grande.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §7.5, p. 225 y Fig. 7.24",
+    "txt": "U p.225"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_7_24_pozo.png",
+   "alt": "Figura 7.24 de U: a) función de energía potencial U(x) hipotética con varios mínimos y máximos y las energías totales E0, E1, E2 y E3; los mínimos son equilibrios estables y los máximos inestables; con E1 la partícula queda atrapada entre xa y xb, con E2 entre xc y xd y con E3 puede escapar. b) la fuerza correspondiente Fx = −dU/dx, positiva donde U baja hacia la derecha y negativa donde sube, con flechas rojas.",
+   "pie": "Fig. 7.24 de U: arriba, una $U(x)$ hipotética con varias energías totales; abajo, la fuerza $F_x=-dU/dx$ correspondiente (cero en los puntos de equilibrio $x_1$ a $x_4$).",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 7.24, p. 225",
+    "txt": "U p.225"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "pozo-doble-de-potencial-con-la-energia-total-e-5"
+  },
+  {
+   "t": "fig",
+   "ref": "tres-tipos-de-equilibrio-estable-en-un-minimo-de"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte05.html"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Cómo leer un diagrama de energía en un examen",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li>Traza (o localiza) la línea horizontal $E$ y marca dónde corta a $U(x)$: son los puntos de retorno; la partícula vive en los tramos donde $U\\lt E$.</li>",
+    "    <li>Si la línea $E$ pasa por <b>encima</b> de un máximo y la curva vuelve a bajar fuera, la partícula puede escapar por ese lado; si no, está atrapada.</li>",
+    "    <li>$K$ es la distancia vertical entre $E$ y $U$: máxima en el fondo del pozo, cero en los puntos de retorno.</li>",
+    "    <li>El sentido de la fuerza en cada punto es el de la bajada de $U$; es cero en mínimos y máximos.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia a partir de U §7.5, pp. 224-225",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "ejercicios",
+   "n": "6",
+   "titulo": "Ejercicios resueltos",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte06.html"
+  },
+  {
+   "t": "ej",
+   "ref": "x1"
+  },
+  {
+   "t": "ej",
+   "ref": "x2"
+  },
+  {
+   "t": "ej",
+   "ref": "x3"
+  },
+  {
+   "t": "ej",
+   "ref": "x4"
+  },
+  {
+   "t": "ej",
+   "ref": "x5"
+  },
+  {
+   "t": "ej",
+   "ref": "x6"
+  },
+  {
+   "t": "ej",
+   "ref": "x7"
+  },
+  {
+   "t": "ej",
+   "ref": "x8"
+  },
+  {
+   "t": "h3",
+   "titulo": "Problemas del solucionario (E)",
+   "prio": null
+  },
+  {
+   "t": "ej",
+   "ref": "e1"
+  },
+  {
+   "t": "ej",
+   "ref": "e2"
+  },
+  {
+   "t": "ej",
+   "ref": "e3"
+  },
+  {
+   "t": "ej",
+   "ref": "e4"
+  },
+  {
+   "t": "ej",
+   "ref": "e5"
+  },
+  {
+   "t": "ej",
+   "ref": "e6"
+  },
+  {
+   "t": "ej",
+   "ref": "e7"
+  },
+  {
+   "t": "ej",
+   "ref": "e8"
+  },
+  {
+   "t": "h2",
+   "id": "chuleta",
+   "n": "7",
+   "titulo": "Chuleta, errores frecuentes y lista de comprobación",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte07.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores frecuentes de este tema",
+   "html": [
+    "<ul>",
+    "    <li>Contar el trabajo del peso o del resorte dos veces (en $U$ y en $W_{otras}$), o aplicar $K_1+U_1=K_2+U_2$ cuando hay fricción.</li>",
+    "    <li>Poner $+y$ hacia abajo con $U=mgy$, o usar $d$ (distancia sobre la rampa) en lugar de $d\\sin\\theta$ como altura.</li>",
+    "    <li>Usar $n=mg$ en un plano inclinado: la fricción vale $\\mu_kmg\\cos\\theta$.</li>",
+    "    <li>Escribir $\\tfrac12k(x_1-x_2)^2$ en lugar de $\\tfrac12kx_1^2-\\tfrac12kx_2^2$; olvidar pasar cm a m; tomar $x$ desde un punto que no es la longitud natural.</li>",
+    "    <li>Creer que la energía no se conserva con fricción (se conserva la total, no la mecánica); intentar definir $U$ para la fricción.</li>",
+    "    <li>Suponer que la rapidez máxima está donde el resorte alcanza su longitud natural: con fricción (o con peso) está donde la fuerza neta es cero.</li>",
+    "    <li>Dar la normal o la aceleración con la energía: para fuerzas en un punto hace falta la segunda ley de Newton.</li>",
+    "    <li>Cambiar el cero de $U$ desplazando la variable ($\\tfrac12k(x-x_1)^2$) en vez de sumar una constante.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte08.html"
+  },
+  {
+   "t": "h2",
+   "id": "fuentes",
+   "n": "★",
+   "titulo": "Fuentes de este tema",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "panel-fuentes.html"
+  }
+ ]
+}
