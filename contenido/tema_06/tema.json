@@ -5,9 +5,9 @@
  "descripcion": "Un método nuevo para resolver problemas de movimiento sin pasar por el tiempo ni por la aceleración: calcular el <i>trabajo</i> de cada fuerza y compararlo con el cambio de la <i>energía cinética</i>. Sirve cuando la fuerza varía (resortes), cuando la trayectoria es curva y, en general, cuando el enunciado habla de distancias y rapideces, no de tiempos.",
  "chips": [
   "Libro oficial: Sears-Zemansky, cap. 6 (pp. 172-192)",
-  "Preguntas de examen real: 11",
+  "Preguntas de examen real: 11 (todas conservadas)",
   "Ejercicios del solucionario: 10",
-  "⏱ ~6 h de estudio"
+  "⏱ ruta rápida ~2,5 h · completa ~5 h"
  ],
  "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
  "titulo_pagina": "Física I · Tema 6 Trabajo y energía cinética",
@@ -308,89 +308,19 @@
    "archivo": "defs-marcadores.html"
   },
   {
-   "t": "h2",
-   "id": "prereq",
-   "n": "0",
-   "titulo": "Antes de empezar",
-   "prio": null,
-   "src": {
-    "l": "U",
-    "ref": "U cap. 6 Introducción, pp. 172-173",
-    "txt": "U p.172"
-   }
+   "t": "parte",
+   "archivo": "en5.html"
   },
   {
    "t": "parte",
-   "archivo": "parte02.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte03.html"
-  },
-  {
-   "t": "caja",
-   "k": "tip",
-   "h": "Qué ha caído en examen",
-   "html": [
-    "<p>El índice de exámenes asigna a este tema solo dos preguntas (la primera y la séptima de la tabla); las demás están catalogadas en otros temas, pero se resuelven <i>mejor</i> con trabajo y energía y por eso están aquí. Las convocatorias de Septiembre 2022 y 2023 no están en el índice principal (se detectaron en los recopilatorios escaneados). Todas están resueltas abajo:</p>",
-    "<table>",
-    "<tr><th>Pregunta de examen real</th><th>Ejercicio de esta página</th></tr>",
-    "<tr><td>Feb 2023 (1ª sem.) P-3 Opción A — teoría «Energía cinética y el teorema trabajo-energía» + 2 cuestiones</td><td><a href=\"#x1\">X1</a></td></tr>",
-    "<tr><td>Sep 2022 P-3 (a) — por qué no cambia la rapidez en un MCU</td><td><a href=\"#x2\">X2</a></td></tr>",
-    "<tr><td>Feb 2023 (2ª sem.) P-4 Opción B (a)(b) — trabajo de la gravedad en una órbita circular y elíptica</td><td><a href=\"#x3\">X3</a></td></tr>",
-    "<tr><td>Sep 2022 P-4 Opción B (b) — trabajo entre dos playas</td><td><a href=\"#x4\">X4</a></td></tr>",
-    "<tr><td>Feb 2024 (1ª sem.) P-1 — bala que penetra 2 m</td><td><a href=\"#x5\">X5</a></td></tr>",
-    "<tr><td>Feb 2023 (1ª sem.) P-1 — satélite que se estrella</td><td><a href=\"#x6\">X6</a></td></tr>",
-    "<tr><td>Feb 2023 (2ª sem.) P-1 — bloque contra la pared (= U 5.75); pide velocidad y trabajo</td><td><a href=\"#x7\">X7</a></td></tr>",
-    "<tr><td>Feb 2020 (1ª sem.) P-1 (c) — polea móvil, velocidad de A tras 1 m</td><td><a href=\"#x8\">X8</a></td></tr>",
-    "<tr><td>Sep 2022 P-2 (e) — masa de agua bombeada por ciclo (trabajo <i>mgh</i>)</td><td><a href=\"#x9\">X9</a></td></tr>",
-    "<tr><td>Feb 2025 (1ª sem.) P-4 Opción B (a) — constante de cada mitad de un resorte</td><td><a href=\"#x10\">X10</a></td></tr>",
-    "<tr><td>Sep 2023 P-2 — cuarto de círculo con fricción: μ<sub>k</sub> y trabajo de la fricción</td><td><a href=\"#x11\">X11</a></td></tr>",
-    "</table>",
-    "  <p><b>Lo que viene:</b> los problemas de «resorte + rampa + fricción» (Feb 2020 2ª sem. P-1; Feb 2022 2ª sem. P-1, que es el 7.73 de U; Sep 2024 P-1) usan exactamente las herramientas de este tema más la energía potencial: están en el <b>tema 7</b>. Las preguntas de trabajo y potencia en rotación (Feb 2025 2ª sem. P-3 Opción A) son del tema 10, y las de potencia de una máquina térmica del tema 20.</p>"
-   ],
-   "src": {
-    "l": "X",
-    "ref": "Examen Febrero 2023 (1ª semana) P-3 Opción A; Febrero 2023 (2ª semana) P-1; Septiembre 2022 P-3 (a); Septiembre 2022 P-4 (b); Septiembre 2022 P-2 (e); Febrero 2023 (2ª semana) P-4; Febrero 2024 (1ª semana) P-1; Febrero 2023 (1ª semana) P-1; Febrero 2020 (1ª semana) P-1; Febrero 2025 (1ª semana) P-4 Opción B; Septiembre 2023 P-2",
-    "txt": "X ×11"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "tip",
-   "h": "La receta maestra: método trabajo-energía en 5 pasos",
-   "html": [
-    "<ol class=\"steps\">",
-    "    <li><b>Elige dos puntos</b>: la posición inicial (1) y la final (2), y dibuja el diagrama de cuerpo libre con todas las fuerzas que actúan sobre el cuerpo entre ambos.</li>",
-    "    <li>Escribe <b>$K_1=\\tfrac12mv_1^2$ y $K_2=\\tfrac12mv_2^2$</b> (la masa, no el peso).</li>",
-    "    <li>Calcula el <b>trabajo de cada fuerza</b> con su signo ($W=Fs\\cos\\phi$ si es constante y el camino recto; el ángulo $\\phi$ es el que forman la fuerza y el desplazamiento) y súmalos: $W_{tot}$.</li>",
-    "    <li>Aplica $W_{tot}=K_2-K_1$ (final menos inicial, nunca al revés) y despeja la incógnita.</li>",
-    "    <li><b>Evalúa</b>: ¿tiene el signo de $W_{tot}$ el sentido correcto (más rápido o más lento)? ¿Sale $K_2\\ge0$? Si puedes, comprueba con la segunda ley y la cinemática.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Estrategia para resolver problemas 6.1, p. 179",
-    "txt": "U p.179"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "tip",
-   "h": "Convenio sobre g",
-   "html": "<p>En U y en el solucionario se usa $g=9{,}80\\ \\text{m/s}^2$. Los enunciados de examen de 2023-2025 y el de Sep 2022 dan $g=9{,}81$ (salvo Sep 2023 P-2, que no la indica: se usa 9,81); los de Feb 2020 y Feb 2022 no la indican (aquí se usa 9,80). Cuando el cambio de $g$ altera el resultado, se da el valor con la otra $g$.</p>",
-   "src": {
-    "l": "P",
-    "ref": "Explicación propia, sin página en los libros",
-    "txt": "P"
-   }
+   "archivo": "decide.html"
   },
   {
    "t": "h2",
    "id": "s1",
    "n": "1",
    "titulo": "Trabajo de una fuerza",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §6.1, pp. 173-177",
@@ -399,31 +329,17 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": [
-    "<p>En la vida diaria «trabajar» es cualquier esfuerzo, físico o mental. En física es algo mucho más estricto: una fuerza hace trabajo sobre un cuerpo <b>solo si el cuerpo se desplaza y la fuerza tiene componente a lo largo de ese desplazamiento</b>. Empujar un coche averiado 18 m es trabajo; sostener una pesa quieta en el aire durante cinco minutos, no (aunque te canses: el cansancio viene de tus músculos, no de un desplazamiento de la pesa).</p>",
-    "  <p>Una buena imagen: la energía es una <b>moneda</b> y el trabajo es una <b>transferencia</b> de monedas. Una fuerza que empuja en el sentido del movimiento <i>ingresa</i> energía al cuerpo (trabajo positivo); una que se opone <i>retira</i> energía (trabajo negativo); una que va de lado ni ingresa ni retira nada (trabajo cero).</p>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U §6.1, pp. 173 y 175",
-    "txt": "U p.173-175"
-   }
-  },
-  {
-   "t": "caja",
    "k": "def",
-   "h": "Trabajo de una fuerza constante",
+   "h": "Trabajo de una fuerza constante: $W=Fs\\cos\\phi$",
    "html": [
-    "<p>Si una fuerza constante $\\vec F$ actúa sobre una partícula que se desplaza en línea recta una distancia $s$, el trabajo de esa fuerza es",
+    "<p>Una fuerza hace trabajo sobre un cuerpo <b>solo si el cuerpo se desplaza y la fuerza tiene componente a lo largo de ese desplazamiento</b>. Sostener una pesa quieta cansa, pero no es trabajo. Fuerza constante y camino recto:</p>",
     "  $$W=Fs\\cos\\phi=\\vec F\\cdot\\vec s\\qquad\\text{(ecs. 6.2 y 6.3)}$$",
-    "  donde $\\phi$ es el ángulo entre $\\vec F$ y $\\vec s$. Si $\\vec F$ va en la dirección del desplazamiento ($\\phi=0$) se reduce a $W=Fs$ (ec. 6.1). Es un <b>escalar</b>: no tiene dirección, aunque se calcule con dos vectores. Solo cuenta la componente $F_\\parallel=F\\cos\\phi$ paralela al desplazamiento; la componente perpendicular $F_\\perp$ no trabaja.</p>",
-    "  <p>Unidad SI: el <b>joule</b>, $1\\ \\text{J}=1\\ \\text{N}\\cdot\\text{m}$. Levantar una manzana (1 N) un metro a velocidad constante cuesta 1 J.</p>"
+    "  <p>$\\phi$ es el ángulo entre $\\vec F$ y el <b>desplazamiento</b> $\\vec s$; solo trabaja $F\\cos\\phi$. Es un <b>escalar</b> y se mide en joules, $1\\ \\text{J}=1\\ \\text{N}\\cdot\\text{m}$. Imagen útil: el trabajo es una <i>transferencia</i> de energía; a favor del movimiento la mete, en contra la saca, de lado no hace nada.</p>",
+    "  <p><b>Ejemplo mínimo (ej. 6.1).</b> Empujas un coche 18 m con 210 N a $30^\\circ$ del desplazamiento: $W=(210)(18)\\cos30^\\circ=3{,}3\\times10^3$ J. Si te dan vectores, usa componentes: $\\vec F=(160,\\,-40)$ N y $\\vec s=(14,\\,11)$ m dan $W=F_xs_x+F_ys_y=2240-440=1{,}8\\times10^3$ J.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §6.1 ecs. (6.1)-(6.3), pp. 173-174",
+    "ref": "U §6.1 ecs. (6.1)-(6.3) y Ej. 6.1, pp. 173-174",
     "txt": "U p.173-174"
    }
   },
@@ -440,21 +356,7 @@
   },
   {
    "t": "parte",
-   "archivo": "parte04.html"
-  },
-  {
-   "t": "caja",
-   "k": "thm",
-   "h": "Trabajo negativo y tercera ley",
-   "html": [
-    "<p>Cuando un cuerpo hace trabajo negativo sobre otro, éste hace sobre el primero una cantidad igual de trabajo positivo, <b>siempre que ambos cuerpos tengan el mismo desplazamiento</b> (como las manos y la barra). Un levantador de pesas que baja una barra: la barra hace trabajo positivo sobre sus manos (empuja en el sentido en que se mueven) y sus manos hacen trabajo negativo sobre la barra (frenan su caída). Por eso hay que decir siempre <b>qué fuerza</b> hace el trabajo y <b>sobre qué cuerpo</b>.</p>",
-    "  <p><i>Contraejemplo:</i> si los cuerpos no se desplazan igual, la regla falla. Un bloque que desliza sobre un suelo fijo recibe del suelo una fricción que hace $W<0$ sobre el bloque; la fricción que el bloque ejerce sobre el suelo, en cambio, hace $W=0$ (el suelo no se mueve).</p>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U §6.1 «Cuidado: tenga presente quién efectúa el trabajo», p. 176 (contraejemplo de la fricción: explicación propia)",
-    "txt": "U p.176"
-   }
+   "archivo": "signo-trabajo.html"
   },
   {
    "t": "fig",
@@ -463,64 +365,34 @@
   {
    "t": "caja",
    "k": "warn",
-   "h": "Error típico",
-   "html": "<p>«Hay una fuerza, luego hay trabajo». Falso: sin desplazamiento (pesa quieta) o con la fuerza perpendicular al desplazamiento (normal, tensión en un movimiento circular, peso en un suelo horizontal) el trabajo es cero. Tampoco confundas la <b>W</b> mayúscula (trabajo) con la <b>w</b> minúscula (peso).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U p.173 (Cuidado W/w; pesa quieta, fig. 6.5 p.175)",
-    "txt": "U p.173-175"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo del libro 6.1 — empujar coches averiados",
+   "h": "Error típico: «hay fuerza, luego hay trabajo»",
    "html": [
-    "<ol class=\"steps\">",
-    "    <li>Steve empuja con $F=210$ N un coche 18 m, con la fuerza a $30^\\circ$ del desplazamiento: $W=Fs\\cos\\phi=(210)(18)\\cos30^\\circ=3{,}3\\times10^3$ J.</li>",
-    "    <li>Otro coche: $\\vec F=(160\\ \\text{N})\\hat\\imath-(40\\ \\text{N})\\hat\\jmath$ y $\\vec s=(14\\ \\text{m})\\hat\\imath+(11\\ \\text{m})\\hat\\jmath$. Con componentes, $W=F_xs_x+F_ys_y=(160)(14)+(-40)(11)=1{,}8\\times10^3$ J.</li>",
-    "  </ol>",
-    "  <p>Cuando te dan los vectores en componentes, el producto escalar por componentes es más cómodo que buscar el ángulo.</p>"
+    "<p>Sin desplazamiento (pesa quieta) o con la fuerza perpendicular al desplazamiento (normal, tensión en un MCU, peso en un suelo horizontal) el trabajo es <b>cero</b>. Y no confundas la <b>W</b> mayúscula (trabajo) con la <b>w</b> minúscula (peso).</p>",
+    "  <p>Di siempre <b>qué fuerza</b> hace el trabajo y <b>sobre qué cuerpo</b>: al bajar una barra, la barra hace trabajo positivo sobre las manos y las manos hacen trabajo negativo sobre la barra (igual y opuesto, porque las dos se desplazan lo mismo).</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U Ejemplo 6.1, p. 174",
-    "txt": "U p.174"
+    "ref": "U §6.1, «Cuidado» y fig. 6.5, pp. 173-176",
+    "txt": "U p.173-176"
    }
   },
   {
    "t": "h3",
    "titulo": "Varias fuerzas: trabajo total",
-   "prio": null
+   "prio": 1
   },
   {
    "t": "caja",
-   "k": "def",
-   "h": "Trabajo total",
-   "html": "<p>Como el trabajo es un escalar, el trabajo total sobre un cuerpo es la <b>suma algebraica</b> de los trabajos de cada fuerza: $W_{tot}=W_1+W_2+\\dots$ Equivale a calcular el trabajo de la <b>fuerza neta</b>: $W_{tot}=(\\sum\\vec F)\\cdot\\vec s$. Se puede hacer de las dos formas, y conviene comprobar una con la otra.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §6.1 «Trabajo total», p. 176",
-    "txt": "U p.176"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo del libro 6.2 — remolque de leña",
+   "k": "thm",
+   "h": "Trabajo total = suma con signo = trabajo de la fuerza neta",
    "html": [
-    "<p>Un tractor arrastra 20 m un remolque (peso 14 700 N) con una fuerza de 5000 N a $36{,}9^\\circ$ sobre la horizontal; la fricción es de 3500 N.</p>",
-    "  <ol class=\"steps\">",
-    "    <li>Peso y normal son perpendiculares al desplazamiento: $W_w=W_n=0$.</li>",
-    "    <li>Tractor: $W_T=F_Ts\\cos36{,}9^\\circ=(5000)(20)(0{,}800)=80$ kJ.</li>",
-    "    <li>Fricción ($\\phi=180^\\circ$): $W_f=-fs=-(3500)(20)=-70$ kJ.</li>",
-    "    <li>Total: $W_{tot}=0+0+80-70=10$ kJ. Por fuerza neta: $\\sum F_x=5000\\cos36{,}9^\\circ-3500=500$ N, y $W_{tot}=(500)(20)=10$ kJ ✓.</li>",
-    "  </ol>",
-    "  <p>$W_{tot}>0$: el remolque va cada vez más rápido (en la sección siguiente se calcula cuánto).</p>"
+    "<p>Como el trabajo es un escalar, el total sobre un cuerpo es la <b>suma algebraica</b> de los trabajos de cada fuerza, o bien el trabajo de la fuerza neta:</p>",
+    "  $$W_{tot}=W_1+W_2+\\dots=\\Bigl(\\sum\\vec F\\Bigr)\\cdot\\vec s$$",
+    "  <p><b>Ejemplo mínimo (ej. 6.2).</b> Un tractor arrastra 20 m un remolque tirando con 5000 N a $36{,}9^\\circ$; la fricción es de 3500 N. Peso y normal: $0$. Tractor: $(5000)(20)\\cos36{,}9^\\circ=80$ kJ. Fricción: $-(3500)(20)=-70$ kJ. Total: $10$ kJ. Por la fuerza neta: $(5000\\cos36{,}9^\\circ-3500)(20)=(500)(20)=10$ kJ ✓.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U Ejemplo 6.2, pp. 176-177",
+    "ref": "U §6.1 «Trabajo total» y Ej. 6.2, pp. 176-177",
     "txt": "U p.176-177"
    }
   },
@@ -529,11 +401,29 @@
    "ref": "trabajo-de-cada-fuerza-sobre-un-remolque-arrastr"
   },
   {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Arrastras una maleta 10 m por un suelo horizontal tirando del asa con 50 N a $60^\\circ$ de la horizontal. ¿Qué trabajo haces?",
+     "a": "$W=Fs\\cos\\phi=(50)(10)\\cos60^\\circ=250$ J. Solo trabaja la componente horizontal (25 N)."
+    },
+    {
+     "q": "Un bloque desliza 3 m mientras la fricción (6 N) lo frena. ¿Trabajo de la fricción, de la normal y del peso?",
+     "a": "$W_f=-(6)(3)=-18$ J ($\\phi=180^\\circ$); $W_n=W_w=0$ (perpendiculares al desplazamiento)."
+    },
+    {
+     "q": "Subes una caja de 2 kg una altura de 1,5 m a velocidad constante. ¿Trabajo de tu mano, del peso y total? ($g=9{,}8$)",
+     "a": "Mano: $+mgh=+29{,}4$ J. Peso: $-29{,}4$ J. Total: $0$ (la rapidez no cambia; lo verás en la sección 2)."
+    }
+   ]
+  },
+  {
    "t": "h2",
    "id": "s2",
    "n": "2",
    "titulo": "Energía cinética y teorema trabajo-energía",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §6.2, pp. 177-182",
@@ -542,13 +432,37 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>Observa tres bloques que se deslizan sin fricción. Si empujas a favor del movimiento, la fuerza neta va a favor del desplazamiento, el trabajo total es positivo y el bloque <b>acelera</b>. Si empujas en contra, el trabajo total es negativo y <b>frena</b>. Si empujas de lado (hacia abajo), la fuerza neta es cero, no hay trabajo y la rapidez no cambia. Trabajo total y cambio de rapidez van siempre de la mano: la «moneda» que el trabajo transfiere se guarda en el cuerpo como <b>energía cinética</b>, la energía del movimiento.</p>",
+   "k": "def",
+   "h": "Energía cinética: $K=\\tfrac12mv^2$",
+   "html": [
+    "$$K=\\tfrac12mv^2\\qquad\\text{(ec. 6.5)}$$",
+    "  <p>Es la energía del movimiento: un <b>escalar</b> que depende de la masa y de la <i>rapidez</i> (no de la dirección), <b>nunca es negativa</b> y vale cero solo en reposo. Unidad: J. Duplicar la masa duplica $K$; duplicar la rapidez la <b>cuadruplica</b>.</p>",
+    "  <p>Qué significa: $K$ es el trabajo total necesario para acelerar el cuerpo desde el reposo hasta $v$, y también el que puede hacer mientras se detiene. Por eso recoges la mano al atrapar una pelota: más distancia, menos fuerza para el mismo trabajo.</p>"
+   ],
    "src": {
     "l": "U",
-    "ref": "U §6.2, fig. 6.8, pp. 177-178",
-    "txt": "U p.177-178"
+    "ref": "U §6.2 ec. (6.5), pp. 178 y 181",
+    "txt": "U p.178, 181"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "energia-cinetica-segun-la-masa-y-la-rapidez"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Teorema trabajo-energía",
+   "html": [
+    "<p>El trabajo total de <b>todas</b> las fuerzas sobre una partícula es igual al cambio de su energía cinética:</p>",
+    "  $$\\boxed{W_{tot}=K_2-K_1=\\Delta K}\\qquad\\text{(ec. 6.6)}$$",
+    "  <p>$W_{tot}\\gt0$: acelera; $W_{tot}\\lt0$: frena; $W_{tot}=0$: rapidez constante. <b>Deducción</b> (fuerza neta constante): $F=ma_x$ y $v_2^2=v_1^2+2a_xs$; multiplicando por $m/2$ sale $Fs=\\tfrac12mv_2^2-\\tfrac12mv_1^2$ (6.4).</p>",
+    "  <p><b>Ejemplo mínimo (ej. 6.3).</b> El remolque anterior ($m=1500$ kg) iba a $2{,}0$ m/s: $K_2=K_1+W_{tot}=3000+10\\,000=13\\,000$ J, luego $v_2=\\sqrt{2(13\\,000)/1500}=4{,}2$ m/s. Sin calcular la aceleración.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §6.2 ecs. (6.4)-(6.6) y Ej. 6.3, pp. 178-180",
+    "txt": "U p.178-180"
    }
   },
   {
@@ -564,119 +478,15 @@
   },
   {
    "t": "caja",
-   "k": "def",
-   "h": "Energía cinética",
+   "k": "tip",
+   "h": "Cuándo compensa (y cuándo no)",
    "html": [
-    "$$K=\\tfrac12mv^2\\qquad\\text{(ec. 6.5)}$$",
-    "  <p>Es un <b>escalar</b>, depende solo de la masa y de la <i>rapidez</i> (no de la dirección del movimiento), <b>nunca es negativa</b> y vale cero solo en reposo. Se mide en joules: $1\\ \\text{J}=1\\ \\text{kg}\\cdot\\text{m}^2/\\text{s}^2$. Duplicar la masa duplica $K$; duplicar la rapidez la <b>cuadruplica</b>.</p>"
+    "<p>El teorema <b>no contiene el tiempo ni la aceleración</b>: une directamente el punto 1 con el 2. Úsalo si te dan o piden <i>distancias y rapideces</i>, si la fuerza varía o si el camino es curvo. Si te piden un <b>tiempo</b>, necesitas cinemática.</p>",
+    "  <p><b>Límites:</b> vale en un marco inercial y para cuerpos que se tratan como partículas (un patinador que se empuja de una pared gana $K$ sin que la pared haga trabajo: lo hacen sus fuerzas internas, cap. 8).</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §6.2 ec. (6.5), p. 178",
-    "txt": "U p.178"
-   }
-  },
-  {
-   "t": "fig",
-   "ref": "energia-cinetica-segun-la-masa-y-la-rapidez"
-  },
-  {
-   "t": "caja",
-   "k": "thm",
-   "h": "Teorema trabajo-energía",
-   "html": [
-    "<p>El trabajo total realizado por todas las fuerzas sobre una partícula es igual al cambio de su energía cinética:",
-    "  $$\\boxed{W_{tot}=K_2-K_1=\\Delta K}\\qquad\\text{(ec. 6.6)}$$",
-    "  $W_{tot}>0$: aumenta la rapidez. $W_{tot}<0$: disminuye. $W_{tot}=0$: se mantiene. Solo da cambios de <i>rapidez</i>, no de velocidad (dirección).</p>",
-    "  <p><b>Deducción</b> (fuerza neta constante en línea recta): por la segunda ley $F=ma_x$ y por la cinemática $v_2^2=v_1^2+2a_xs$ (ec. 2.13). Multiplicando por $m/2$: $Fs=\\tfrac12mv_2^2-\\tfrac12mv_1^2$ (ec. 6.4), y como $Fs$ es el trabajo de la fuerza neta, es $W_{tot}$.</p>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U §6.2 ecs. (6.4)-(6.6), p. 178",
-    "txt": "U p.178"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "intu",
-   "h": "¿Por qué es tan rentable?",
-   "html": "<p>El teorema <b>no contiene el tiempo ni la aceleración</b>: relaciona directamente lo que pasa en el punto 1 con lo que pasa en el punto 2 (rapideces, distancias, fuerzas). Cuando una fuerza varía durante el recorrido o la trayectoria es curva, la cinemática de aceleración constante no sirve, pero el teorema sí. A cambio, no te dice <i>cuánto tarda</i>: si te piden un tiempo, usa cinemática.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U Estrategia para resolver problemas 6.1, p. 179",
-    "txt": "U p.179"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo del libro 6.3 — la rapidez del remolque",
-   "html": "<p>El remolque del ejemplo 6.2 ($m=14\\,700/9{,}8=1500$ kg) parte con $v_1=2{,}0$ m/s. Tras los 20 m: $K_1=\\tfrac12(1500)(2{,}0)^2=3000$ J; $K_2=K_1+W_{tot}=3000+10\\,000=13\\,000$ J; $\\tfrac12(1500)v_2^2=13\\,000\\Rightarrow v_2=4{,}2$ m/s. Por dinámica: $a=500/1500=0{,}333$ m/s² y $v_2^2=v_1^2+2as=17{,}3$ m²/s², $v_2=4{,}2$ m/s: el mismo resultado, sin necesidad de la aceleración. Usar los dos métodos es una buena comprobación.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 6.3, pp. 179-180",
-    "txt": "U p.179-180"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo del libro 6.4 — martinete (fuerza media por trabajo-energía)",
-   "html": [
-    "<p>Un martillo de 200 kg se deja caer 3,00 m sobre una viga; los rieles ejercen una fricción de 60 N. Penetra 7,4 cm en el suelo hasta pararse.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>De 1 a 2 (caída):</b> $W_{tot}=(w-f)s_{12}=(1960-60)(3{,}00)=5700$ J $=K_2-0\\Rightarrow v_2=\\sqrt{2(5700)/200}=7{,}55$ m/s.</li>",
-    "    <li><b>De 2 a 3 (clavado):</b> $W_{tot}=(w-f-n)s_{23}=K_3-K_2=0-5700$ J, con $s_{23}=0{,}074$ m. De ahí $n=w-f+K_2/s_{23}=1960-60+5700/0{,}074=79\\,000$ N (unas 9 toneladas, más de 40 veces el peso).</li>",
-    "  </ol>",
-    "  <p>Una fuerza modesta actuando sobre una distancia larga da energía; una fuerza enorme sobre una distancia corta la quita. Es el mismo esquema de los problemas de «frenado en una distancia $d$».</p>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 6.4, pp. 180-181",
-    "txt": "U p.180-181"
-   }
-  },
-  {
-   "t": "libro",
-   "img": "../assets/img/fig_u_6_12_martillo.png",
-   "alt": "Figura 6.12 de U: a) martinete con el martillo a 3,00 m sobre la viga en forma de I; puntos 1 (reposo), 2 (contacto con la viga) y 3 (parada, 7,4 cm más abajo). b) Diagrama de cuerpo libre del martillo que cae: peso w = mg hacia abajo y fricción f = 60 N hacia arriba. c) Diagrama al clavar la viga: además, la normal n hacia arriba.",
-   "pie": "Fig. 6.12 de U: dos tramos, dos diagramas de cuerpo libre, dos aplicaciones del teorema.",
-   "src": {
-    "l": "U",
-    "ref": "U Fig. 6.12, p. 180",
-    "txt": "U p.180"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "thm",
-   "h": "Qué significa realmente $K$",
-   "html": "<p>$K$ es el trabajo total necesario para llevar la partícula desde el reposo hasta su rapidez actual ($W_{tot}=K-0$), y también el trabajo total que la partícula <i>puede hacer</i> mientras se detiene. Por eso recoges la mano hacia atrás al atrapar una pelota: aumentas la distancia sobre la que actúa la fuerza y, para el mismo trabajo, la fuerza es menor.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §6.2, p. 181",
-    "txt": "U p.181"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo conceptual del libro 6.5 — dos veleros",
-   "html": "<p>Dos veleros de hielo de masas $m$ y $2m$, con velas idénticas (misma fuerza $F$), parten del reposo y recorren la misma distancia $s$. ¿Cuál llega con más energía cinética? Ambos: $W_{tot}=Fs$ para los dos, y como parten del reposo, $K=Fs$ en la meta. Llegan con la misma $K$ (el ligero con más rapidez, el pesado con más masa). No hizo falta saber el tiempo.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo conceptual 6.5, p. 182",
-    "txt": "U p.182"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "warn",
-   "h": "Cuándo NO usar el teorema tal cual",
-   "html": "<p>Se dedujo con las leyes de Newton, así que vale solo en un <b>marco inercial</b> (y en otro marco inercial $W$ y $\\Delta K$ pueden ser distintos, pero se siguen igualando). Y es para cuerpos que se pueden tratar como <b>partículas</b>: un patinador que se empuja contra una pared gana energía cinética aunque la fuerza de la pared no haga trabajo (no se mueve su punto de aplicación); el trabajo lo hacen fuerzas internas entre sus partes (cap. 8).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §6.2, pp. 179 y 182",
+    "ref": "U Estrategia para resolver problemas 6.1 y §6.2, pp. 179 y 182",
     "txt": "U p.179, 182"
    }
   },
@@ -686,11 +496,10 @@
    "h": "Errores típicos",
    "html": [
     "<ul>",
-    "    <li>Escribir $W=K_1-K_2$ (al revés): el teorema es «final menos inicial».</li>",
-    "    <li>Olvidar el ½ de $K$, o usar el peso $w$ en lugar de la masa $m$.</li>",
-    "    <li>Obtener una $K$ negativa: indica que se han invertido $K_1$ y $K_2$ o hay un error de signo en algún trabajo.</li>",
-    "    <li>Confundir el trabajo de <i>una</i> fuerza con el trabajo <i>total</i>: el teorema usa el total.</li>",
-    "    <li>Querer sacar de él un tiempo: no lo contiene.</li>",
+    "    <li>Escribir $W=K_1-K_2$: es «final menos inicial».</li>",
+    "    <li>Olvidar el ½ de $K$ o usar el peso $w$ en lugar de la masa $m$.</li>",
+    "    <li>Usar el trabajo de <i>una</i> fuerza en lugar del <i>total</i>.</li>",
+    "    <li>Obtener $K_2\\lt0$: hay un signo mal o los puntos están cambiados.</li>",
     "  </ul>"
    ],
    "src": {
@@ -700,11 +509,29 @@
    }
   },
   {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Un coche de 1000 kg pasa de 10 a 20 m/s. ¿Qué trabajo total han hecho las fuerzas sobre él?",
+     "a": "$W_{tot}=\\tfrac12(1000)(20^2-10^2)=1{,}5\\times10^5$ J. Ojo: $K$ pasa de $5\\times10^4$ a $2\\times10^5$ J; doble rapidez, cuádruple $K$."
+    },
+    {
+     "q": "Dos veleros de hielo de masas $m$ y $2m$ parten del reposo empujados por la misma fuerza $F$ a lo largo de la misma distancia $s$. ¿Cuál llega con más energía cinética?",
+     "a": "Los dos igual: $K=W_{tot}=Fs$. El ligero llega más rápido, pero con la misma $K$ (ejemplo conceptual 6.5 del libro)."
+    },
+    {
+     "q": "Una bala de 20 g a 300 m/s se para tras penetrar 5,0 cm en un bloque de madera. ¿Fuerza media de la madera? (Desprecia el peso.)",
+     "a": "$F\\,d=K_1=\\tfrac12(0{,}020)(300)^2=900$ J, luego $F=900/0{,}050=1{,}8\\times10^4$ N. El mismo método que X5 y X6."
+    }
+   ]
+  },
+  {
    "t": "h2",
    "id": "s3",
    "n": "3",
-   "titulo": "Trabajo y energía con fuerza variable",
-   "prio": null,
+   "titulo": "Fuerza variable, resortes y caminos curvos",
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §6.3, pp. 183-189",
@@ -713,22 +540,12 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>Cuando estiras un resorte, cuanto más lo estiras más fuerza hace falta: la fuerza no es constante. Pero si divides el recorrido en tramos muy cortos, en cada tramo la fuerza es casi constante y su trabajo es «fuerza × tramo». Sumar todos esos trozos da una <b>integral</b>, que gráficamente es el <b>área bajo la curva fuerza–posición</b>. Eso lo cambia todo: el trabajo de una fuerza variable es un área.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §6.3, p. 183",
-    "txt": "U p.183"
-   }
-  },
-  {
-   "t": "caja",
    "k": "def",
-   "h": "Trabajo de una fuerza variable en línea recta",
+   "h": "Trabajo de una fuerza variable = área bajo $F$–$x$",
    "html": [
-    "$$W=\\int_{x_1}^{x_2}F_x\\,dx\\qquad\\text{(ec. 6.7)}$$",
-    "  <p>Es el área bajo la gráfica $F_x$–$x$ entre $x_1$ y $x_2$ (con signo: el área bajo el eje cuenta negativa si $x$ crece), o la fuerza media por el desplazamiento. Si $F_x$ es constante sale $W=F_x(x_2-x_1)=Fs$, el rectángulo del caso anterior.</p>"
+    "<p>Si la fuerza cambia con la posición, divide el recorrido en tramos tan cortos que en cada uno sea casi constante y suma los «fuerza × tramo». En el límite es una integral, y gráficamente el <b>área bajo la curva</b>:</p>",
+    "  $$W=\\int_{x_1}^{x_2}F_x\\,dx\\qquad\\text{(ec. 6.7)}$$",
+    "  <p>El área bajo el eje cuenta <b>negativa</b> (si $x$ crece). Con $F_x$ constante vuelve a ser el rectángulo $F_x(x_2-x_1)$.</p>"
    ],
    "src": {
     "l": "U",
@@ -751,46 +568,20 @@
   {
    "t": "h3",
    "titulo": "El resorte: ley de Hooke y trabajo",
-   "prio": null
-  },
-  {
-   "t": "caja",
-   "k": "def",
-   "h": "Ley de Hooke",
-   "html": [
-    "<p>Para estirar un resorte ideal una distancia $x$ respecto de su longitud sin estirar hay que aplicarle una fuerza proporcional a $x$:",
-    "  $$F_x=kx\\qquad\\text{(ec. 6.8)}$$",
-    "  $k$ es la <b>constante de fuerza</b> (N/m): un resorte blando de juguete, $\\sim1$ N/m; la suspensión de un coche, $\\sim10^5$ N/m. No es una ley fundamental, sino un modelo que funciona mientras la deformación es pequeña (se analiza en el cap. 11).</p>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U §6.3 ec. (6.8), p. 184",
-    "txt": "U p.184"
-   }
-  },
-  {
-   "t": "libro",
-   "img": "../assets/img/fig_u_6_18_resorte.png",
-   "alt": "Figura 6.18 de U: un resorte unido a una pared, relajado (arriba) y estirado una distancia x (abajo), con la fuerza aplicada Fx = kx hacia la derecha y la fuerza opuesta -Fx en el otro extremo.",
-   "pie": "Fig. 6.18 de U: la fuerza necesaria para estirar un resorte ideal es proporcional al alargamiento.",
-   "src": {
-    "l": "U",
-    "ref": "U Fig. 6.18, p. 184",
-    "txt": "U p.184"
-   },
-   "attrs": " style=\"max-width:min(100%,300px)\" loading=\"lazy\""
+   "prio": 1
   },
   {
    "t": "caja",
    "k": "thm",
-   "h": "Trabajo para deformar un resorte",
+   "h": "Ley de Hooke y trabajo para deformar un resorte",
    "html": [
-    "$$W=\\int_0^X kx\\,dx=\\tfrac12kX^2\\ \\text{(6.9)}\\qquad W=\\tfrac12kx_2^2-\\tfrac12kx_1^2\\ \\text{(6.10)}$$",
-    "  <p>Es el área del triángulo de la fig. 6.19 (base $X$, altura $kX$) o del trapecio de la 6.20. <b>Es proporcional al cuadrado de la deformación</b>: estirar 2 cm cuesta cuatro veces más trabajo que estirar 1 cm. Vale igual si el resorte se comprime ($x<0$): fuerza y desplazamiento llevan el mismo sentido, el trabajo es positivo y la fórmula no cambia.</p>"
+    "<p>Para estirar (o comprimir) un resorte ideal una distancia $x$ desde su longitud natural hay que aplicar $F_x=kx$ (ec. 6.8); $k$ es la <b>constante de fuerza</b> (N/m). El trabajo es el área del triángulo (fig. 6.19):</p>",
+    "  $$W=\\tfrac12kX^2\\ \\text{(6.9)}\\qquad W=\\tfrac12kx_2^2-\\tfrac12kx_1^2\\ \\text{(6.10)}$$",
+    "  <p>Va con el <b>cuadrado</b>: deformar el doble cuesta el cuádruple. Vale igual al comprimir. <b>Ejemplo mínimo (ej. 6.6):</b> una mujer de 600 N comprime 1,0 cm una báscula: $k=600/0{,}010=6{,}0\\times10^4$ N/m y $W=\\tfrac12(6{,}0\\times10^4)(0{,}010)^2=3{,}0$ J.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §6.3 ecs. (6.9)-(6.10), pp. 184-185",
+    "ref": "U §6.3 ecs. (6.8)-(6.10) y Ej. 6.6, pp. 184-185",
     "txt": "U p.184-185"
    }
   },
@@ -822,47 +613,47 @@
    "ref": "resorte-estirado-la-mano-hace-trabajo-positivo-y"
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo del libro 6.6 — báscula de baño",
-   "html": "<p>Una mujer de 600 N hace comprimir 1,0 cm el resorte de una báscula. $k=F/x=600/0{,}010=6{,}0\\times10^4$ N/m y el trabajo de la mujer sobre el resorte es $W=\\tfrac12kx^2=\\tfrac12(6{,}0\\times10^4)(0{,}010)^2=3{,}0$ J (positivo, como se espera). No importa qué sentido llames positivo: salen los mismos $k$ y $W$.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 6.6, p. 185",
-    "txt": "U p.185"
-   }
+   "t": "parte",
+   "archivo": "interactivo-trabajo-resorte.html"
   },
   {
    "t": "h3",
-   "titulo": "El teorema sigue valiendo",
-   "prio": null
+   "titulo": "El teorema sigue valiendo (fuerza variable y camino curvo)",
+   "prio": 1
   },
   {
    "t": "caja",
    "k": "thm",
-   "h": "Teorema trabajo-energía con fuerza variable",
-   "html": "<p>Con $a_x=\\dfrac{dv_x}{dt}=v_x\\dfrac{dv_x}{dx}$ (ec. 6.11) y $W_{tot}=\\int F_x\\,dx=\\int mv_x\\,dv_x$ (6.12) se obtiene $W_{tot}=\\tfrac12mv_2^2-\\tfrac12mv_1^2$ (6.13): el mismo teorema, aunque la fuerza no sea constante. Para una trayectoria curva, el trabajo se calcula con la integral de línea $W=\\int\\vec F\\cdot d\\vec l$ (6.14), y el teorema vale igualmente. Solo la componente de la fuerza <b>paralela a la trayectoria</b> cambia la rapidez; la componente perpendicular solo cambia la dirección.</p>",
+   "h": "Teorema general y trabajo del peso en una curva",
+   "html": [
+    "<p>Con $a_x=v_x\\,dv_x/dx$ (6.11) se llega a $W_{tot}=\\tfrac12mv_2^2-\\tfrac12mv_1^2$ (6.13) aunque la fuerza varíe. En un camino curvo el trabajo es $W=\\int\\vec F\\cdot d\\vec l$ (6.14) y el teorema vale igual. Solo la componente de la fuerza <b>paralela a la trayectoria</b> cambia la rapidez; la perpendicular solo la tuerce.</p>",
+    "  <p><b>Consecuencia que cae (ej. 6.8, columpio):</b> el trabajo del peso entre dos puntos solo depende de la altura: $W_{peso}=-mg(y_2-y_1)$, sea recto o curvo el camino. La tensión de las cadenas, siempre perpendicular al movimiento, no trabaja.</p>"
+   ],
    "src": {
     "l": "U",
-    "ref": "U §6.3 ecs. (6.11)-(6.14), pp. 186-188",
-    "txt": "U p.186-188"
+    "ref": "U §6.3 ecs. (6.11)-(6.14) y Ej. 6.8, pp. 186-189",
+    "txt": "U p.186-189"
    }
+  },
+  {
+   "t": "fig",
+   "ref": "columpio-trabajo-del-peso-la-tension-y-la-fuerza"
   },
   {
    "t": "caja",
    "k": "ex",
-   "h": "Ejemplo del libro 6.7 — deslizador con resorte, con y sin fricción",
+   "h": "Ejemplo 6.7: resorte y fricción a la vez",
    "html": [
-    "<p>Un deslizador de 0,100 kg unido a un resorte de $k=20{,}0$ N/m se mueve a $v_1=1{,}50$ m/s con el resorte relajado. ¿Hasta dónde llega, $d$?</p>",
+    "<p>Un deslizador de 0,100 kg llega a 1,50 m/s a un resorte relajado de $k=20{,}0$ N/m. ¿Cuánto lo comprime, $d$?</p>",
     "  <ol class=\"steps\">",
-    "    <li><b>Sin fricción.</b> Solo trabaja el resorte, y frena: $W_{res}=-\\tfrac12kd^2$. Con $K_2=0$: $-\\tfrac12kd^2=0-\\tfrac12mv_1^2\\Rightarrow d=v_1\\sqrt{m/k}=0{,}106$ m $=10{,}6$ cm.</li>",
-    "    <li><b>Con fricción</b> ($\\mu_k=0{,}47$): $W_f=-\\mu_kmg\\,d$. Teorema: $-\\mu_kmgd-\\tfrac12kd^2=-\\tfrac12mv_1^2$, una ecuación de segundo grado para $d$ cuya raíz positiva es $d=0{,}086$ m $=8{,}6$ cm.</li>",
+    "    <li><b>Sin fricción:</b> $-\\tfrac12kd^2=0-\\tfrac12mv_1^2\\Rightarrow d=v_1\\sqrt{m/k}=0{,}106$ m.</li>",
+    "    <li><b>Con fricción</b> ($\\mu_k=0{,}47$): $-\\mu_kmg\\,d-\\tfrac12kd^2=-\\tfrac12mv_1^2$, ecuación de segundo grado; la raíz positiva es $d=0{,}086$ m.</li>",
     "  </ol>",
-    "  <p>Con $\\mu_k=0$ la solución con fricción se reduce a la primera: buena comprobación. Con fricción llega menos lejos, como era de esperar.</p>"
+    "  <p>Lo nuevo: cuando la distancia aparece en dos trabajos (fricción y resorte) sale una <b>cuadrática</b>; quédate con la raíz positiva y comprueba que con $\\mu_k=0$ recuperas el primer caso.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U Ejemplo 6.7, pp. 186-187",
+    "ref": "U Ej. 6.7, pp. 186-187",
     "txt": "U p.186-187"
    }
   },
@@ -871,34 +662,29 @@
    "ref": "deslizador-con-resorte-reparto-de-la-energia-ini"
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo del libro 6.8 — columpio (trayectoria curva)",
-   "html": [
-    "<p>Empujas a Throcky (peso $w$) en un columpio con una fuerza horizontal variable $F$, lentamente, hasta que las cadenas (longitud $R$) forman un ángulo $\\theta_0$ con la vertical. Como casi no cambia su rapidez, $W_{tot}=0$. La tensión es perpendicular a la trayectoria en todo punto: $W_T=0$. Para $F$: casi equilibrio ⇒ $F=w\\tan\\theta$ y, con $dl=R\\,d\\theta$,",
-    "  $$W_F=\\int_0^{\\theta_0}(w\\tan\\theta)\\cos\\theta\\,(R\\,d\\theta)=wR(1-\\cos\\theta_0)=mgh.$$",
-    "  El peso hace entonces $-mgh$, donde $h=R(1-\\cos\\theta_0)$ es la altura ganada: <b>el trabajo del peso en una trayectoria curva es $-mgh$</b>, igual que si se subiera en vertical. Es un adelanto de la sección 7.1.</p>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 6.8, pp. 188-189",
-    "txt": "U p.188-189"
-   }
-  },
-  {
-   "t": "fig",
-   "ref": "columpio-trabajo-del-peso-la-tension-y-la-fuerza"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte05.html"
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Resorte de $k=200$ N/m. ¿Qué trabajo cuesta estirarlo de 0 a 10 cm? ¿Y de 10 a 20 cm?",
+     "a": "$\\tfrac12(200)(0{,}10)^2=1{,}0$ J; de 10 a 20 cm, $\\tfrac12(200)(0{,}20^2-0{,}10^2)=3{,}0$ J: el segundo tramo cuesta el triple."
+    },
+    {
+     "q": "Un bloque de 0,5 kg a 2 m/s choca sin fricción con un resorte de $k=50$ N/m. ¿Compresión máxima?",
+     "a": "$\\tfrac12kX^2=\\tfrac12mv^2\\Rightarrow X=v\\sqrt{m/k}=2\\sqrt{0{,}5/50}=0{,}20$ m."
+    },
+    {
+     "q": "Una fuerza $F_x=3x^2$ (N, con $x$ en m) empuja un cuerpo de $x=0$ a $x=2$ m. ¿Trabajo?",
+     "a": "$W=\\int_0^2 3x^2\\,dx=x^3\\big|_0^2=8{,}0$ J. Ni $F(2)\\cdot2=24$ J ni $F(0)\\cdot2=0$."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s4",
    "n": "4",
    "titulo": "Potencia",
-   "prio": null,
+   "prio": 2,
    "src": {
     "l": "U",
     "ref": "U §6.4, pp. 189-191",
@@ -907,40 +693,18 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>El trabajo no menciona el tiempo: subir una barra de 100 N un metro cuesta 100 J tardes 1 s o 1 año. Pero a ti y a un motor sí os importa <i>cuánto tardáis</i>. La <b>potencia</b> mide la rapidez con que se hace trabajo, como la velocidad mide la rapidez con que cambia la posición. La misma caja subida en 1 s en lugar de en 5 s exige cinco veces más potencia (fig. 6.25).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §6.4, fig. 6.25, p. 189",
-    "txt": "U p.189"
-   }
-  },
-  {
-   "t": "caja",
    "k": "def",
-   "h": "Potencia media e instantánea",
+   "h": "Potencia: la rapidez con que se hace trabajo",
    "html": [
-    "$$P_{med}=\\frac{\\Delta W}{\\Delta t}\\ \\text{(6.15)}\\qquad P=\\lim_{\\Delta t\\to0}\\frac{\\Delta W}{\\Delta t}=\\frac{dW}{dt}\\ \\text{(6.16)}$$",
-    "  <p>Es un escalar. Unidad SI: el <b>watt</b>, $1\\ \\text{W}=1\\ \\text{J/s}$ (también kW y MW). Otras: el caballo de potencia, $1\\ \\text{hp}=746\\ \\text{W}$, y el <b>kilowatt-hora</b>, $1\\ \\text{kW}\\cdot\\text{h}=3{,}6\\times10^6\\ \\text{J}$, que es una unidad de <i>energía</i>, no de potencia.</p>"
+    "<p>Subir una caja cuesta el mismo trabajo en 1 s que en 5 s, pero en 1 s necesitas cinco veces más <b>potencia</b>:</p>",
+    "  $$P_{med}=\\frac{\\Delta W}{\\Delta t}\\ \\text{(6.15)}\\qquad P=\\frac{dW}{dt}\\ \\text{(6.16)}$$",
+    "  <p>Unidad: el <b>watt</b>, $1\\ \\text{W}=1\\ \\text{J/s}$; $1\\ \\text{hp}=746\\ \\text{W}$. El <b>kilowatt-hora</b>, $1\\ \\text{kW}\\cdot\\text{h}=3{,}6\\times10^6\\ \\text{J}$, es una unidad de <i>energía</i>, no de potencia.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §6.4 ecs. (6.15)-(6.16), pp. 189-190",
+    "ref": "U §6.4 ecs. (6.15)-(6.16) y fig. 6.25, pp. 189-190",
     "txt": "U p.189-190"
    }
-  },
-  {
-   "t": "libro",
-   "img": "../assets/img/fig_u_6_25_potencia.png",
-   "alt": "Figura 6.25 de U: la misma caja se levanta una misma distancia haciendo 100 J de trabajo; si se tarda 5 s la potencia de salida es 100 J / 5 s = 20 W, y si se tarda 1 s es 100 J / 1 s = 100 W.",
-   "pie": "Fig. 6.25 de U: mismo trabajo, distinta potencia.",
-   "src": {
-    "l": "U",
-    "ref": "U Fig. 6.25, p. 189",
-    "txt": "U p.189"
-   },
-   "attrs": " style=\"max-width:min(100%,300px)\" loading=\"lazy\""
   },
   {
    "t": "fig",
@@ -949,31 +713,14 @@
   {
    "t": "caja",
    "k": "thm",
-   "h": "Potencia mecánica: $P=\\vec F\\cdot\\vec v$",
+   "h": "Potencia = fuerza × rapidez: $P=\\vec F\\cdot\\vec v$",
    "html": [
-    "<p>Si una fuerza $\\vec F$ actúa sobre un cuerpo que se mueve con velocidad $\\vec v$, con $\\Delta W=F_\\parallel\\Delta s$:",
-    "  $$P_{med}=F_\\parallel v_{med}\\ \\text{(6.17)}\\qquad P=F_\\parallel v\\ \\text{(6.18)}\\qquad P=\\vec F\\cdot\\vec v\\ \\text{(6.19)}$$",
-    "  Es la forma práctica: <b>potencia = fuerza × rapidez</b> (la componente de la fuerza a lo largo de la velocidad). Si la fuerza es perpendicular a la velocidad, $P=0$ (la fuerza centrípeta no cambia la rapidez).</p>"
+    "$$P=F_\\parallel v\\ \\text{(6.18)}\\qquad P=\\vec F\\cdot\\vec v\\ \\text{(6.19)}$$",
+    "  <p>Si la fuerza es perpendicular a la velocidad, $P=0$. <b>Ejemplos mínimos.</b> Ej. 6.9: un motor de avión con $3{,}22\\times10^5$ N de empuje a 250 m/s da $P=Fv=8{,}05\\times10^7$ W; con el avión parado, $P=0$ aunque haya fuerza. Ej. 6.10: una corredora de 50,0 kg sube 443 m en 15,0 min: $W=mgh=2{,}17\\times10^5$ J y $P_{med}=W/\\Delta t=241$ W (o $mgv$ con $v=0{,}492$ m/s).</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §6.4 ecs. (6.17)-(6.19), p. 190",
-    "txt": "U p.190"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplos del libro 6.9 y 6.10",
-   "html": [
-    "<ol class=\"steps\">",
-    "    <li><b>6.9 (Airbus A380).</b> Cada motor da un empuje de $3{,}22\\times10^5$ N a 250 m/s: $P=Fv=8{,}05\\times10^7$ W $=108\\,000$ hp. Con el avión parado en tierra, $v=0$ y $P=0$: ¡fuerza y potencia no son lo mismo!</li>",
-    "    <li><b>6.10 (ascenso potente).</b> Una corredora de 50,0 kg sube 443 m en 15,0 min a rapidez constante. Trabajo $=mgh=(50{,}0)(9{,}80)(443)=2{,}17\\times10^5$ J; $P_{med}=2{,}17\\times10^5/900=241$ W $=0{,}241$ kW $=0{,}323$ hp. Por la otra vía: $v=443/900=0{,}492$ m/s y $P=mgv=241$ W ✓.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplos 6.9 y 6.10, pp. 190-191",
+    "ref": "U §6.4 ecs. (6.17)-(6.19) y Ejs. 6.9-6.10, pp. 190-191",
     "txt": "U p.190-191"
    }
   },
@@ -981,12 +728,30 @@
    "t": "caja",
    "k": "warn",
    "h": "Error típico",
-   "html": "<p>Confundir <b>energía</b> con <b>potencia</b>: el kW·h (lo que cobra la compañía eléctrica) es energía; el kW es potencia. Y la potencia necesaria para subir a velocidad constante es $mgv$, no depende de cuánto se hizo antes.</p>",
+   "html": "<p>Confundir <b>energía</b> (J, kW·h: lo que cobra la compañía eléctrica) con <b>potencia</b> (W, kW, hp). Y para subir a rapidez constante la potencia es $mgv$: no depende de lo alto que vayas.</p>",
    "src": {
     "l": "U",
     "ref": "U §6.4, pp. 190-191",
     "txt": "U p.190"
    }
+  },
+  {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Un motor sube 100 kg a rapidez constante de 0,5 m/s. ¿Qué potencia da? ($g=9{,}8$)",
+     "a": "$P=Fv=mgv=(100)(9{,}8)(0{,}5)=490$ W."
+    },
+    {
+     "q": "Una bombilla de 60 W está encendida 5 h. ¿Cuánta energía consume, en kW·h y en J?",
+     "a": "$0{,}060\\ \\text{kW}\\times5\\ \\text{h}=0{,}30$ kW·h $=1{,}08\\times10^6$ J."
+    },
+    {
+     "q": "Un coche avanza a 25 m/s venciendo una resistencia de 2,0 kN. ¿Potencia necesaria, en kW y en hp?",
+     "a": "$P=Fv=(2000)(25)=50$ kW $=50\\,000/746=67$ hp."
+    }
+   ]
   },
   {
    "t": "h2",
@@ -998,11 +763,46 @@
   },
   {
    "t": "parte",
-   "archivo": "parte06.html"
+   "archivo": "ejercicios-intro.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-nucleo.html"
+  },
+  {
+   "t": "metodos"
   },
   {
    "t": "ej",
-   "ref": "x1"
+   "ref": "x7"
+  },
+  {
+   "t": "ej",
+   "ref": "x8"
+  },
+  {
+   "t": "ej",
+   "ref": "x5"
+  },
+  {
+   "t": "ej",
+   "ref": "x6"
+  },
+  {
+   "t": "ej",
+   "ref": "x11"
+  },
+  {
+   "t": "ej",
+   "ref": "e6"
+  },
+  {
+   "t": "ej",
+   "ref": "e5"
+  },
+  {
+   "t": "ej",
+   "ref": "x10"
   },
   {
    "t": "ej",
@@ -1018,36 +818,15 @@
   },
   {
    "t": "ej",
-   "ref": "x5"
-  },
-  {
-   "t": "ej",
-   "ref": "x6"
-  },
-  {
-   "t": "ej",
-   "ref": "x7"
-  },
-  {
-   "t": "ej",
-   "ref": "x8"
-  },
-  {
-   "t": "ej",
    "ref": "x9"
   },
   {
    "t": "ej",
-   "ref": "x10"
+   "ref": "e8"
   },
   {
-   "t": "ej",
-   "ref": "x11"
-  },
-  {
-   "t": "h3",
-   "titulo": "Problemas del solucionario (E)",
-   "prio": null
+   "t": "parte",
+   "archivo": "nivel-practica.html"
   },
   {
    "t": "ej",
@@ -1067,19 +846,7 @@
   },
   {
    "t": "ej",
-   "ref": "e5"
-  },
-  {
-   "t": "ej",
-   "ref": "e6"
-  },
-  {
-   "t": "ej",
    "ref": "e7"
-  },
-  {
-   "t": "ej",
-   "ref": "e8"
   },
   {
    "t": "ej",
@@ -1088,6 +855,31 @@
   {
    "t": "ej",
    "ref": "e10"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-teoria.html"
+  },
+  {
+   "t": "ej",
+   "ref": "x1"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Si te toca otra pregunta de teoría del tema: «Trabajo de una fuerza variable» o «Potencia»",
+   "html": [
+    "<p>Guion propio (no es un enunciado de examen real). Define, da la ecuación, un ejemplo con números y cierra con el error típico:</p>",
+    "  <ul>",
+    "    <li><b>Fuerza variable:</b> (1) partir en tramos y sumar $F\\Delta x$ → $W=\\int F_x\\,dx$ = área (6.7); (2) resorte: $F=kx$ y $W=\\tfrac12kX^2$ (6.8-6.9), trabajo sobre/del resorte; (3) el teorema sigue valiendo (6.13) y en curvas $W=\\int\\vec F\\cdot d\\vec l$ (6.14); (4) ejemplo: báscula, 3,0 J; (5) error: tratar $kx$ como constante.</li>",
+    "    <li><b>Potencia:</b> (1) $P_{med}=\\Delta W/\\Delta t$ y $P=dW/dt$; (2) unidades: W, hp, y el kW·h como energía; (3) $P=\\vec F\\cdot\\vec v$ (6.19); (4) ejemplo: corredora, 241 W; (5) error: confundir fuerza o energía con potencia.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
   },
   {
    "t": "h2",
@@ -1099,7 +891,7 @@
   },
   {
    "t": "parte",
-   "archivo": "parte07.html"
+   "archivo": "chuleta-tabla.html"
   },
   {
    "t": "caja",
@@ -1125,7 +917,7 @@
   },
   {
    "t": "parte",
-   "archivo": "parte08.html"
+   "archivo": "lista-comprobacion.html"
   },
   {
    "t": "h2",

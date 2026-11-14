@@ -41,7 +41,7 @@ Orden sugerido (de menos a más figuras): hacer 1 tema de prueba y, si el migrad
 
 ## Fase C — Aplicar el formato «estudio» a cada tema (redacción)
 Receta por tema NN (modelo: `contenido/tema_05/`): resumen de 5 minutos + tabla «¿qué tipo de problema es?» + prioridades + teoría condensada (una caja por idea, un error típico) + mini-tests (3 preguntas por sección) + ejercicios Núcleo/Práctica/Teoría con tabla «método que te llevas». Los X de examen **intactos**. Flujo con agentes: `fuentes-fisica` → `resolutor-ejercicios` → `redactor-tema` → `revisor-tema` (CLAUDE.md §4).
-- [ ] C1. Tema 6 · [ ] C2. Tema 7 · [ ] C3. Tema 8 · [ ] C4. Tema 9 · [ ] C5. Tema 10 · [ ] C6. Tema 11 · [ ] C7. Tema 12 · [ ] C8. Tema 13
+- [x] C1. Tema 6 (formato estudio: en5 + decide, 4 mini-tests, 13 núcleo/7 práctica, x1–x11 intactos; 27 comprobaciones nuevas en t06). Pendiente menor: x7 menciona «como el solucionario 5-38» · [ ] C2. Tema 7 · [ ] C3. Tema 8 · [ ] C4. Tema 9 · [ ] C5. Tema 10 · [ ] C6. Tema 11 · [ ] C7. Tema 12 · [ ] C8. Tema 13
 - [ ] C9. Temas 14-16 · [ ] C10. Temas 17-20 · [ ] C11. Temas 1-4
 (Se puede hacer un tema por sesión; subir cada uno al terminar.)
 
