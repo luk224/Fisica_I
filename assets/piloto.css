@@ -1,0 +1,52 @@
+/* Componentes del formato «piloto» (tema 5): prioridades, resumen de 5 minutos, mini-tests, ejemplos opcionales. */
+.prio{display:inline-block;font:700 11px/1 var(--sans);letter-spacing:.04em;padding:3px 8px;border-radius:99px;margin-left:.5em;vertical-align:middle;white-space:nowrap;border:1px solid var(--bd);background:var(--card);color:var(--fg)}
+.prio.p1{border-color:var(--warn-b);color:var(--warn-b)}
+.prio.p2{border-color:var(--tip-b);color:var(--tip-b)}
+.prio.p3{color:var(--mut)}
+.leyprio{display:flex;flex-wrap:wrap;gap:8px 18px;font:13px var(--sans);margin:.8em 0;color:var(--mut)}
+
+.en5{border:2px solid var(--acc);border-radius:12px;padding:6px 20px 14px;margin:1.4em 0;background:var(--card)}
+.en5>h2{margin:.5em 0 .2em;padding:0;border:0;font-size:1.35rem}
+.en5 h3{font-size:1.02rem;margin:1.1em 0 .2em;font-family:var(--sans)}
+.en5 table{width:100%;border-collapse:collapse;font-size:.93rem}
+.en5 th,.en5 td{border:1px solid var(--bd);padding:5px 9px;text-align:left;vertical-align:top}
+.dcev{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:.6em 0}
+.dcev>div{border:1px solid var(--bd);border-radius:10px;padding:8px 11px;font:14px/1.4 var(--sans);background:var(--bg)}
+.dcev b{display:block;color:var(--acc);font-size:1.02rem}
+.rutas{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:.6em 0}
+.rutas>div{border:1px solid var(--bd);border-radius:10px;padding:9px 12px;font:14px/1.45 var(--sans);background:var(--bg)}
+.rutas b{color:var(--acc)}
+
+table.decide{width:100%;border-collapse:collapse;font-size:.93rem;margin:.8em 0}
+table.decide th,table.decide td{border:1px solid var(--bd);padding:6px 9px;text-align:left;vertical-align:top}
+table.decide th{background:var(--card);font-family:var(--sans);font-size:.85rem}
+table.decide td:first-child{font-weight:600}
+
+details.mas{border:1px dashed var(--bd);border-radius:10px;margin:1em 0;padding:0 14px;background:transparent}
+details.mas>summary{cursor:pointer;font:600 14px var(--sans);padding:9px 0;color:var(--mut)}
+details.mas[open]>summary{border-bottom:1px dashed var(--bd);margin-bottom:6px}
+details.mas>.box{margin:.6em 0 .8em}
+
+details.check{border:1px solid var(--intu-b);border-radius:10px;margin:1.4em 0;padding:0 16px;background:var(--intu)}
+details.check>summary{cursor:pointer;font:700 14px var(--sans);padding:10px 0;color:var(--intu-b)}
+details.check ol{padding-left:1.3em;margin:.4em 0 .8em}
+details.check li{margin:.55em 0}
+details.check details{display:inline-block;margin-left:.3em;font:14px var(--sans)}
+details.check details>summary{cursor:pointer;color:var(--acc);display:inline}
+details.check details[open]{display:block;margin:.3em 0 0;padding:6px 10px;border-left:3px solid var(--acc);background:var(--bg);border-radius:0 6px 6px 0}
+
+.nivel{margin:2.2em 0 .4em;padding:8px 14px;border-left:6px solid var(--acc);background:var(--card);border-radius:0 10px 10px 0;font-family:var(--sans)}
+.nivel b{display:block;font-size:1.1rem}
+.nivel span{color:var(--mut);font-size:.9rem}
+table.metodos{width:100%;border-collapse:collapse;font-size:.9rem;margin:.6em 0}
+table.metodos th,table.metodos td{border:1px solid var(--bd);padding:5px 8px;text-align:left;vertical-align:top}
+table.metodos th{background:var(--card);font-family:var(--sans)}
+details.sol>summary .prio{font-size:10px;margin-left:.4em}
+ul.checklist input{margin-right:.5em}
+
+@media print{
+  details.mas,details.check{break-inside:avoid;border:.7pt solid #666}
+  .en5{border:1pt solid #000}
+  details.check{display:none}
+  .prio{border:.6pt solid #000;color:#000}
+}
