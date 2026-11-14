@@ -5,10 +5,10 @@
  "descripcion": "¿Por qué cae una manzana y, sin embargo, la Luna no se nos cae encima? Newton vio que es <b>la misma fuerza</b>: todo cuerpo con masa atrae a todos los demás. En este tema aprenderás la ley de gravitación, por qué $g$ vale lo que vale, la energía potencial gravitacional ($U=-GMm/r$) y con ella la rapidez de escape, cómo se mueven satélites y planetas (órbitas circulares y leyes de Kepler), qué pasa <i>dentro</i> de un planeta, por qué pesas un poco menos en el ecuador y qué es un agujero negro.",
  "chips": [
   "Libro oficial: Sears-Zemansky, cap. 13 (pp. 398-423; ejercicios y problemas, pp. 424-431)",
-  "Ejercicios de examen real: 6 (1 problema + 5 de teoría)",
-  "Ejercicios: 13 del solucionario (E1-E13) + ejemplos de U",
+  "Examen real: 1 problema y 5 preguntas de teoría (5 convocatorias), todos conservados",
+  "Ejercicios del solucionario: 13 + 1 problema práctico de U",
   "2 ejemplos interactivos",
-  "⏱ ~7 h de estudio"
+  "⏱ ruta rápida ~4 h · completa ~7 h"
  ],
  "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
  "titulo_pagina": "Física I · Tema 13 Gravitación",
@@ -377,74 +377,19 @@
  },
  "bloques": [
   {
-   "t": "h2",
-   "id": "prereq",
-   "n": "0",
-   "titulo": "Antes de empezar",
-   "prio": null,
-   "src": {
-    "l": "U",
-    "ref": "U cap. 13, portadilla y repaso, p. 398",
-    "txt": "U p.398"
-   }
+   "t": "parte",
+   "archivo": "en5.html"
   },
   {
    "t": "parte",
-   "archivo": "parte01.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte02.html"
-  },
-  {
-   "t": "caja",
-   "k": "tip",
-   "h": "Qué ha caído en examen (6 ejercicios reales)",
-   "html": [
-    "<p>En este tema <b>la teoría es lo que más cae</b>: 5 de los 6 ejercicios son una pregunta de teoría (4 puntos) con un tema a desarrollar y dos cuestiones cortas; el único problema numérico (3 puntos) es el de la gravedad en el polo y en el ecuador de Titán y de Marte. Todos están resueltos en la sección 9, con su «desarrollo modelo» completo para las teorías.</p>",
-    "  <table>",
-    "    <tr><th>Convocatoria y pregunta</th><th>Tema a desarrollar / enunciado</th><th>Dónde en este resumen</th></tr>",
-    "    <tr><td>Feb 2024 (1ª semana) P-2</td><td>Gravedad en el polo y el ecuador de Titán y de Marte</td><td>§7 y ejercicio X1</td></tr>",
-    "    <tr><td>Feb 2024 (1ª semana) P-4 Teoría B</td><td>Ley de Newton de la gravitación; (a) ¿cuándo atraigo más al Sol?; (b) $g$ frente a $R$ con la misma densidad</td><td>§1-§2 y X2</td></tr>",
-    "    <tr><td>Feb 2023 (2ª semana) P-4 Teoría B</td><td>Ley de Newton de la gravitación; trabajo de la gravedad en una órbita circular y en una elíptica</td><td>§1, §4 y X3</td></tr>",
-    "    <tr><td>Feb 2022 (1ª semana) P-3 Teoría 3.2</td><td>Energía potencial gravitatoria; ¿está el astronauta fuera de la gravedad?; energía mecánica de un proyectil</td><td>§3 y X4</td></tr>",
-    "    <tr><td>Sept 2022 P-4 Teoría B</td><td>Energía potencial gravitacional; $mgh$ frente a $-GMm/r$; trabajo entre dos playas</td><td>§3 y X5</td></tr>",
-    "    <tr><td>Sept 2023 P-4 Teoría B</td><td>Las leyes de Kepler; ¿qué viaje gasta más: Tierra→Luna o Luna→Tierra?; ¿cuándo va más rápida la Tierra?</td><td>§5 y X6</td></tr>",
-    "  </table>"
-   ],
-   "src": {
-    "l": "P",
-    "ref": "Resumen propio de fuentes_txt/examenes_por_tema.md (Tema 13)",
-    "txt": "P"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "tip",
-   "h": "La receta maestra del tema: ¿qué te piden?",
-   "html": [
-    "<ol class=\"steps\">",
-    "    <li><b>Una fuerza, un peso o una $g$</b> ⇒ ley de Newton $F=Gm_1m_2/r^2$ o $g=GM/r^2$. La distancia $r$ es <b>siempre al centro</b> del cuerpo (no la altura sobre el suelo).</li>",
-    "    <li><b>Una rapidez, una altura máxima, «¿llega?», «¿escapa?»</b> ⇒ conservación de la energía con $U=-GMm/r$: $K_1+U_1=K_2+U_2$. No uses $mgh$ si la altura no es pequeña frente al radio.</li>",
-    "    <li><b>Un satélite en órbita circular</b> ⇒ la gravedad es la fuerza centrípeta: $GMm/r^2=mv^2/r$ ⇒ $v=\\sqrt{GM/r}$, $T=2\\pi r/v$, y $E=-GMm/2r$.</li>",
-    "    <li><b>Una elipse o un periodo</b> ⇒ Kepler: $T^2=4\\pi^2a^3/(GM)$ con $a$ el semieje mayor; extremos $a(1\\mp e)$; $L$ constante ⇒ más rápido cuanto más cerca.</li>",
-    "    <li><b>Dentro de un planeta</b> ⇒ solo cuenta la masa que hay más cerca del centro que tú; un cascarón no atrae a lo que tiene dentro.</li>",
-    "    <li><b>Un planeta que gira</b> ⇒ en el ecuador $g=g_0-\\omega^2R$; en los polos, $g=g_0$.</li>",
-    "    <li><b>Unidades del SI:</b> km a m, horas y días a s, $G=6{,}67\\times10^{-11}$ N·m²/kg² (el enunciado manda si da otro valor).</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "P",
-    "ref": "Explicación propia a partir de U cap. 13, pp. 398-422",
-    "txt": "P"
-   }
+   "archivo": "decide.html"
   },
   {
    "t": "h2",
    "id": "s1",
    "n": "1",
    "titulo": "Ley de Newton de la gravitación",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §13.1, pp. 398-402",
@@ -453,31 +398,17 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": [
-    "<p>Cuando sueltas una piedra, cae hacia la Tierra; la Luna, en cambio, no cae «hacia abajo»: da vueltas. Newton se dio cuenta de que es <b>la misma atracción</b>: la Luna está continuamente cayendo hacia la Tierra, pero con tanta velocidad lateral que siempre se «pasa de largo» y se queda en órbita (lo verás en §4). Además esa atracción no es cosa de la Tierra: <b>cualquier par de objetos con masa se atrae</b>. Tú atraes a tu mesa, y la mesa a ti; no lo notas porque la fuerza es minúscula, salvo que uno de los dos cuerpos sea astronómico.</p>",
-    "  <p><i>Analogía:</i> imagina que cada masa «tira de una cuerda invisible» hacia cada otra masa; el tirón crece con el producto de las masas y se debilita muy deprisa al alejarse (con el cuadrado de la distancia: a doble distancia, cuatro veces menos).</p>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U §13.1, pp. 398-399",
-    "txt": "U p.398-399"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "Ley de Newton de la gravitación (ec. 13.1)",
+   "h": "Ley de la gravitación: $F_g=Gm_1m_2/r^2$",
    "html": [
-    "<p><b>Toda partícula de materia del universo atrae a cualquier otra con una fuerza directamente proporcional al producto de sus masas e inversamente proporcional al cuadrado de la distancia que las separa:</b></p>",
-    "  $$F_g=\\frac{G\\,m_1m_2}{r^2}\\qquad(13.1)$$",
-    "  <p>$G$ es la <b>constante gravitacional</b>, la misma para cualquier par de cuerpos: $G=6{,}67\\times10^{-11}\\ \\text{N}\\cdot\\text{m}^2/\\text{kg}^2$. La fuerza actúa <b>a lo largo de la recta que une las partículas</b> y es siempre <b>atractiva</b>. Las fuerzas de 1 sobre 2 y de 2 sobre 1 son un <b>par acción-reacción</b> (tercera ley de Newton): tienen la misma magnitud aunque las masas sean muy distintas. En forma vectorial: $\\vec F_{2\\text{ sobre }1}=-\\dfrac{Gm_1m_2}{r^2}\\,\\hat r_{21}$, con $\\hat r_{21}$ el unitario que va de 2 hacia 1.</p>"
+    "<p>Una piedra cae y la Luna da vueltas, pero es <b>la misma atracción</b>: la Luna «cae» continuamente hacia la Tierra con tanta velocidad lateral que siempre se pasa de largo (§4). Y no es cosa de la Tierra: <b>cualquier par de masas se atrae</b>. Tú atraes a tu mesa y la mesa a ti; no lo notas porque la fuerza es minúscula.</p>",
+    "  $$F_g=\\frac{G\\,m_1m_2}{r^2}\\qquad(13.1)\\qquad G=6{,}67\\times10^{-11}\\ \\text{N}\\cdot\\text{m}^2/\\text{kg}^2$$",
+    "  <p>Actúa <b>a lo largo de la recta que une las partículas</b> y es siempre <b>atractiva</b>. Las fuerzas de 1 sobre 2 y de 2 sobre 1 son un <b>par acción-reacción</b>: la misma magnitud aunque las masas sean muy distintas. En forma vectorial, $\\vec F_{2\\text{ sobre }1}=-\\dfrac{Gm_1m_2}{r^2}\\,\\hat r_{21}$ ($\\hat r_{21}$, unitario de 2 hacia 1). Si $r$ se multiplica por $n$, $F$ se divide entre $n^2$: así se contestan sin $G$ muchas cuestiones cortas. <b>Ejemplo mínimo (ejemplos 13.1 y 13.2).</b> Esferas de $0{,}0100$ kg y $0{,}500$ kg con centros a $0{,}0500$ m: $F_g=\\dfrac{(6{,}67\\times10^{-11})(0{,}0100)(0{,}500)}{(0{,}0500)^2}=1{,}33\\times10^{-10}$ N sobre cada una; aceleraciones $1{,}33\\times10^{-8}$ y $2{,}66\\times10^{-10}$ m/s²: la grande acelera 50 veces menos porque tiene 50 veces más masa. Solo notamos la gravedad de cuerpos astronómicos. <b>Error típico:</b> confundir $G$, constante universal, con $g$, la aceleración que produce un planeta (cambia de un planeta a otro: $g=GM/R^2$, §2); o creer que la Tierra atrae a la manzana más que la manzana a la Tierra: las <b>fuerzas</b> son iguales, las <b>aceleraciones</b> no.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §13.1, ec. 13.1, pp. 398-399",
-    "txt": "U p.398-399"
+    "ref": "U §13.1, ec. 13.1 y «CUIDADO: no confunda g con G», pp. 398-399; Ejemplos 13.1 y 13.2, p. 401",
+    "txt": "U p.398-401"
    }
   },
   {
@@ -485,41 +416,21 @@
    "ref": "dos-masas-distintas-que-se-atraen-con-fuerzas-de"
   },
   {
-   "t": "caja",
-   "k": "warn",
-   "h": "Error típico: constante gravitacional frente a aceleración de la gravedad",
-   "html": "<p>$G$ es una <b>constante universal</b> (vale igual en cualquier lugar y para cualquier cuerpo); $g$ es la <b>aceleración</b> que produce un planeta en su superficie, y cambia de un planeta a otro (y con la altura). Están relacionadas por $g=GM/R^2$ (§2). Otro error: pensar que la Tierra atrae más a la manzana que la manzana a la Tierra; las <b>fuerzas</b> son iguales, pero las <b>aceleraciones</b> no (la manzana tiene una masa minúscula y por eso es ella quien se mueve de forma visible).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.1, «CUIDADO: no confunda g con G», p. 399",
-    "txt": "U p.399"
-   }
+   "t": "fig",
+   "ref": "grafica-de-la-fuerza-gravitacional-frente-a-la-d"
   },
   {
    "t": "caja",
-   "k": "ex",
-   "h": "Ejemplos 13.1 y 13.2 — la fuerza entre dos esferas pequeñas",
+   "k": "def",
+   "h": "Cómo se midió $G$: la balanza de Cavendish",
    "html": [
-    "<p>En la balanza de torsión de Cavendish (más abajo), una esfera pequeña de $0{,}0100$ kg y una grande de $0{,}500$ kg tienen sus centros a $0{,}0500$ m.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Fuerza (13.1):</b> $F_g=\\dfrac{(6{,}67\\times10^{-11})(0{,}0100)(0{,}500)}{(0{,}0500)^2}=1{,}33\\times10^{-10}$ N, la misma sobre cada esfera (tercera ley).</li>",
-    "    <li><b>Aceleraciones (segunda ley):</b> $a_1=F/m_1=1{,}33\\times10^{-8}$ m/s² y $a_2=F/m_2=2{,}66\\times10^{-10}$ m/s²: la grande acelera 50 veces menos porque tiene 50 veces más masa.</li>",
-    "    <li><b>Por qué no lo notas:</b> una fuerza de $10^{-10}$ N es inapreciable; solo un cuerpo con masa astronómica (la Tierra) ejerce una fuerza gravitacional que sentimos.</li>",
-    "  </ol>"
+    "<p>Para medir $G$ hay que medir la fuerza entre dos masas conocidas, una fuerza minúscula. Cavendish (1798) usó una <b>balanza de torsión</b>: dos esferas pequeñas en los extremos de una varilla colgada de una fibra; al acercarles dos esferas grandes, la atracción gira la varilla hasta que la torca elástica de la fibra la equilibra (un rayo de luz reflejado en un espejo amplifica el giro). Medida la fuerza, $G$ sale de (13.1). Conocida $G$, se puede «pesar» la Tierra (§2).</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U Ejemplos 13.1 y 13.2, p. 401",
-    "txt": "U p.401"
+    "ref": "U §13.1, «Determinación del valor de G», fig. 13.4, p. 400",
+    "txt": "U p.400"
    }
-  },
-  {
-   "t": "parte",
-   "archivo": "s1b.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte04.html"
   },
   {
    "t": "libro",
@@ -533,47 +444,16 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "s1c.html"
-  },
-  {
    "t": "caja",
    "k": "thm",
-   "h": "Cuerpos esféricos (ec. 13.2)",
-   "html": "<p>Un cuerpo con <b>distribución de masa esféricamente simétrica</b> (la Tierra, la Luna, el Sol) atrae a cualquier cuerpo <b>exterior</b> a él <b>como si toda su masa estuviera concentrada en su centro</b>: $F_g=\\dfrac{Gm_Tm}{r^2}$ con $r$ la distancia entre los centros. Esto nos permite tratar planetas y estrellas como «partículas» (la demostración está en §6). Si el cuerpo está <i>dentro</i> del otro, la fuerza se comporta distinto: disminuye al acercarse al centro y es cero en el centro exacto.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.1, ec. 13.2, p. 399; demostración en §13.6, pp. 414-416",
-    "txt": "U p.399"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "thm",
-   "h": "Superposición de fuerzas gravitacionales",
-   "html": "<p>Si varios cuerpos atraen a uno, la fuerza total es la <b>suma vectorial</b> de las fuerzas que cada uno ejerce por separado (no hay «interferencias» entre ellas). En la práctica: calcular cada módulo con (13.1), descomponer en componentes y sumar.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.1, p. 400 (superposición de fuerzas)",
-    "txt": "U p.400"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo 13.3 — tres estrellas",
+   "h": "Cuerpos esféricos y superposición",
    "html": [
-    "<p>Una estrella pequeña ($1{,}00\\times10^{30}$ kg) está en el origen. Otra de $8{,}00\\times10^{30}$ kg está en $(2{,}00\\times10^{12}\\text{ m},0)$ y otra igual en $(2{,}00\\times10^{12}\\text{ m},2{,}00\\times10^{12}\\text{ m})$ (triángulo rectángulo de 45°). Calcula la fuerza total sobre la pequeña.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Las dos fuerzas.</b> La estrella del eje $x$ está a $d=2{,}00\\times10^{12}$ m: $F_2=\\dfrac{G(8{,}00\\times10^{30})(1{,}00\\times10^{30})}{d^2}=1{,}33\\times10^{26}$ N, hacia $+x$. La otra está a $\\sqrt2\\,d$: $F_1=\\dfrac{G(8{,}00\\times10^{30})(1{,}00\\times10^{30})}{2d^2}=6{,}67\\times10^{25}$ N, a $45^\\circ$.</li>",
-    "    <li><b>Componentes.</b> $F_{1x}=F_{1y}=F_1\\cos45^\\circ=4{,}72\\times10^{25}$ N; $F_{2x}=1{,}33\\times10^{26}$ N y $F_{2y}=0$.</li>",
-    "    <li><b>Suma.</b> $F_x=1{,}81\\times10^{26}$ N, $F_y=4{,}72\\times10^{25}$ N ⇒ $F=\\sqrt{F_x^2+F_y^2}=1{,}87\\times10^{26}$ N, con ángulo $\\theta=\\arctan(F_y/F_x)=14{,}6^\\circ$ sobre el eje $x$.</li>",
-    "  </ol>"
+    "<p>Un cuerpo con <b>distribución de masa esféricamente simétrica</b> (la Tierra, la Luna, el Sol) atrae a lo que está <b>fuera</b> de él <b>como si toda su masa estuviera en su centro</b> (13.2): $r$ es la distancia <b>entre centros</b> (dentro, la cosa cambia: §6). Si varios cuerpos atraen a uno, la fuerza total es la <b>suma vectorial</b> de las que ejerce cada uno por separado: módulo con (13.1), componentes, suma. <b>Ejemplo mínimo (ejemplo 13.3).</b> Una estrella de $1{,}00\\times10^{30}$ kg en el origen y dos de $8{,}00\\times10^{30}$ kg en $(d,0)$ y $(d,d)$, con $d=2{,}00\\times10^{12}$ m. La del eje: $F_2=\\dfrac{G(8{,}00\\times10^{30})(1{,}00\\times10^{30})}{d^2}=1{,}33\\times10^{26}$ N hacia $+x$. La otra está a $\\sqrt2\\,d$: $F_1=6{,}67\\times10^{25}$ N a $45^\\circ$, con componentes $F_{1x}=F_{1y}=4{,}72\\times10^{25}$ N. Total: $F_x=1{,}81\\times10^{26}$ N, $F_y=4{,}72\\times10^{25}$ N ⇒ $F=1{,}87\\times10^{26}$ N a $14{,}6^\\circ$ sobre el eje $x$. <b>Error típico:</b> sumar módulos sin mirar las direcciones, o medir la distancia hasta la superficie en lugar de entre centros.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U Ejemplo 13.3, pp. 401-402",
-    "txt": "U p.401-402"
+    "ref": "U §13.1, ec. 13.2 y superposición, pp. 399-400; Ejemplo 13.3, pp. 401-402",
+    "txt": "U p.399-402"
    }
   },
   {
@@ -581,26 +461,29 @@
    "ref": "tres-estrellas-en-los-vertices-de-un-triangulo-r"
   },
   {
-   "t": "caja",
-   "k": "tip",
-   "h": "Truco: ¿cómo cambia la fuerza al cambiar la distancia?",
-   "html": "<p>No hace falta recalcular con $G$: la fuerza es $\\propto1/r^2$, así que si $r$ se multiplica por $n$, $F$ se divide entre $n^2$. Esto resuelve la mitad de las cuestiones cortas («¿qué pasa si la distancia se duplica?»).</p>",
-   "src": {
-    "l": "P",
-    "ref": "Explicación propia sobre la ec. 13.1 de U",
-    "txt": "P"
-   }
-  },
-  {
-   "t": "fig",
-   "ref": "grafica-de-la-fuerza-gravitacional-frente-a-la-d"
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Dos esferas de plomo de 50 kg tienen sus centros a 0,50 m. ¿Con qué fuerza se atraen?",
+     "a": "$F=\\dfrac{(6{,}67\\times10^{-11})(50)(50)}{0{,}50^2}=6{,}67\\times10^{-7}$ N: menos de una millonésima de newton."
+    },
+    {
+     "q": "Duplicas las dos masas y también la distancia entre ellas. ¿Cómo cambia la fuerza?",
+     "a": "No cambia: el producto de masas se multiplica por 4 y $r^2$ también por 4."
+    },
+    {
+     "q": "La Tierra atrae a una manzana de 0,20 kg con 1,96 N. ¿Con qué fuerza atrae la manzana a la Tierra? ¿Qué aceleración le produce?",
+     "a": "Con 1,96 N (tercera ley). $a_T=1{,}96/(5{,}97\\times10^{24})=3{,}28\\times10^{-25}$ m/s²: inapreciable."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s2",
    "n": "2",
    "titulo": "Peso y aceleración de la gravedad",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §13.2, pp. 402-404",
@@ -609,30 +492,17 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>Tu <b>peso</b> es, simplemente, la fuerza con la que la Tierra te atrae. Entonces la ley de Newton te dice cuánto pesas en cualquier sitio: en la superficie, a 400 km de altura o en Marte. La altura importa porque cambia la distancia al <i>centro</i> de la Tierra: a doble distancia del centro, pesas la cuarta parte.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.2, p. 402",
-    "txt": "U p.402"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "Peso, aceleración de la gravedad y su variación con la distancia (ec. 13.3-13.5)",
+   "h": "Peso y $g$: $g=GM/R^2$, y con la altura $g\\propto1/r^2$",
    "html": [
-    "<p>El <b>peso</b> de un cuerpo es la fuerza gravitacional total que actúa sobre él. En la superficie de la Tierra (masa $m_T$, radio $R_T$):</p>",
-    "  $$w=F_g=\\frac{Gm_Tm}{R_T^2}\\quad(13.3)\\qquad\\Longrightarrow\\qquad g=\\frac{Gm_T}{R_T^2}\\quad(13.4)$$",
-    "  <p>$g$ no depende de la masa $m$ del cuerpo (por eso todos caen igual). A una distancia $r\\ge R_T$ <i>del centro</i>:</p>",
-    "  $$w=\\frac{Gm_Tm}{r^2}\\qquad(13.5)\\qquad\\text{y}\\qquad g(r)=\\frac{Gm_T}{r^2}$$",
-    "  <p>El peso disminuye con el cuadrado de la distancia al centro de la Tierra. Despejando, la masa de la Tierra es $m_T=gR_T^2/G=5{,}96\\times10^{24}$ kg: así «pesó» Cavendish el planeta.</p>"
+    "<p>Tu <b>peso</b> es la fuerza gravitacional total que la Tierra ejerce sobre ti. En la superficie (masa $m_T$, radio $R_T$) y a una distancia $r\\ge R_T$ <b>del centro</b>:</p>",
+    "  $$w=\\frac{Gm_Tm}{R_T^2}\\ (13.3)\\ \\Longrightarrow\\ g=\\frac{Gm_T}{R_T^2}\\ (13.4)\\qquad\\quad w(r)=\\frac{Gm_Tm}{r^2}\\ (13.5)$$",
+    "  <p>$g$ no depende de la masa del cuerpo (todos caen igual). Despejando, $m_T=gR_T^2/G=5{,}96\\times10^{24}$ kg: así se «pesa» la Tierra. A doble distancia del centro, la cuarta parte de peso. <b>Ejemplo mínimo (ejemplo 13.4).</b> Un módulo que pesa 3430 N en la Tierra tiene $m=3430/9{,}80=350$ kg, y la masa viaja con él. En Marte ($m_M=6{,}42\\times10^{23}$ kg, $R_M=3{,}39\\times10^6$ m): $w=\\dfrac{Gm_Mm}{R_M^2}=1{,}30\\times10^3$ N y $g_M=w/m=3{,}7$ m/s². Marte tiene el 11 % de la masa terrestre pero su $g$ es el 40 %: el radio (53 %) entra al cuadrado en el denominador. <b>Error típico:</b> poner la altura en lugar de la distancia al centro. A 400 km de altura, $r=6370+400=6770$ km, y allí el peso es todavía el 89 % del de la superficie (los astronautas flotan por otra razón, §4).</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §13.2, ec. 13.3-13.5, p. 403",
-    "txt": "U p.403"
+    "ref": "U §13.2, ecs. 13.3-13.5, p. 403; Ejemplo 13.4, p. 404",
+    "txt": "U p.403-404"
    }
   },
   {
@@ -640,32 +510,14 @@
    "ref": "un-cuerpo-a-una-altura-h-sobre-la-tierra-su-dist"
   },
   {
-   "t": "libro",
-   "img": "../assets/img/fig_u_13_8_peso.png",
-   "alt": "Gráfica del peso de un astronauta de 700 N en la superficie en función de su distancia al centro de la Tierra: disminuye como uno entre r al cuadrado",
-   "pie": "Peso de un astronauta de 700 N en la superficie, en función de su distancia $r$ al centro de la Tierra (la escala inferior mide la altura $r-R_T$).",
-   "src": {
-    "l": "U",
-    "ref": "U fig. 13.8, p. 403",
-    "txt": "U p.403"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "warn",
-   "h": "Error típico: la distancia es al centro, no la altura",
-   "html": "<p>En $g=GM/r^2$, $r$ es la distancia <b>al centro</b>: $r=R+h$. Si te dan «a 400 km de altura», $r=6370+400=6770$ km, no 400 km. Otro error clásico: creer que el peso de un astronauta en órbita es cero porque flota; a 400 km el peso aún es el 89 % del de la superficie (flota por otra razón, §4).</p>",
-   "src": {
-    "l": "P",
-    "ref": "Explicación propia a partir de U §13.2 (ec. 13.5) y §13.4",
-    "txt": "P"
-   }
-  },
-  {
    "t": "caja",
    "k": "def",
-   "h": "Densidad media",
-   "html": "<p>La <b>densidad media</b> de un cuerpo esférico es $\\rho=\\dfrac{M}{V}=\\dfrac{M}{\\tfrac43\\pi R^3}$. Para la Tierra: $V_T=1{,}08\\times10^{21}$ m³ y $\\rho=5500$ kg/m³ $=5{,}5$ g/cm³ (el agua tiene 1 g/cm³). Las rocas de la superficie tienen entre 2000 y 3300 kg/m³: el interior es mucho más denso que la corteza, así que la Tierra <b>no</b> es uniforme (según los modelos geofísicos, la densidad máxima, en el centro, es de unos 13 000 kg/m³). Sustituyendo $M=\\rho\\,\\tfrac43\\pi R^3$ en $g=GM/R^2$ se obtiene $g=\\tfrac43\\pi G\\rho R$: <b>con la misma densidad, $g\\propto R$</b> (lo usaremos en el examen X2).</p>",
+   "h": "Densidad media y $g$ a igual densidad",
+   "html": [
+    "<p>La <b>densidad media</b> de un cuerpo esférico es $\\rho=\\dfrac{M}{\\tfrac43\\pi R^3}$. Para la Tierra, $V_T=1{,}08\\times10^{21}$ m³ y $\\rho=5500$ kg/m³; las rocas de la superficie tienen entre 2000 y 3300 kg/m³, así que el interior es mucho más denso (unos 13 000 kg/m³ en el centro): la Tierra <b>no</b> es uniforme. Sustituyendo $M=\\rho\\,\\tfrac43\\pi R^3$ en $g=GM/R^2$:</p>",
+    "  $$g=\\tfrac43\\pi G\\rho R\\qquad\\Longrightarrow\\qquad\\text{a igual densidad, } g\\propto R$$",
+    "  <p><b>Ejemplo mínimo:</b> con $\\rho=5500$ kg/m³ y $R=R_T$ sale $g=9{,}79$ m/s² ✓. Un planeta con la misma densidad y doble radio tendría doble $g$ (y ocho veces más masa). <b>Error típico:</b> «$g\\propto M$ y $M\\propto R^3$, luego $g\\propto R^3$»: falta dividir entre $R^2$ (cuestión de examen, <a href=\"#x2\">X2</a>).</p>"
+   ],
    "src": {
     "l": "U",
     "ref": "U §13.2, densidad media de la Tierra, p. 404",
@@ -673,29 +525,29 @@
    }
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo 13.4 — gravedad en Marte",
-   "html": [
-    "<p>Un módulo de descenso que pesa 3430 N en la Tierra se envía a Marte ($R_M=3{,}39\\times10^6$ m, $m_M=6{,}42\\times10^{23}$ kg). ¿Cuál es su peso allí y cuánto vale $g_M$?</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>La masa viaja con el módulo:</b> $m=w/g=3430/9{,}80=350$ kg.</li>",
-    "    <li><b>Peso en Marte (13.3 con los datos de Marte):</b> $F_g=\\dfrac{G\\,m_M m}{R_M^2}=\\dfrac{(6{,}67\\times10^{-11})(6{,}42\\times10^{23})(350)}{(3{,}39\\times10^6)^2}=1{,}30\\times10^3$ N.</li>",
-    "    <li><b>$g_M=F_g/m=3{,}7$ m/s².</b> Marte tiene el 11 % de la masa de la Tierra pero $g_M$ es el 40 %: el radio es el 53 %, y entra al cuadrado en el denominador.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 13.4, p. 404",
-    "txt": "U p.404"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "¿A qué altura sobre el suelo pesas la cuarta parte que en la superficie terrestre?",
+     "a": "A doble distancia del centro: $r=2R_T$, es decir, $h=R_T=6370$ km (no a $4R_T$)."
+    },
+    {
+     "q": "Un planeta tiene el doble de masa y el doble de radio que la Tierra. ¿Cuánto vale $g$ en su superficie?",
+     "a": "$g=9{,}80\\cdot\\dfrac{2}{2^2}=4{,}90$ m/s²: la mitad."
+    },
+    {
+     "q": "Una persona de 70 kg sube a la Estación Espacial, a 400 km de altura. ¿Cuál es allí su peso (la atracción de la Tierra)?",
+     "a": "$w=\\dfrac{Gm_Tm}{r^2}=\\dfrac{(6{,}67\\times10^{-11})(5{,}97\\times10^{24})(70)}{(6{,}77\\times10^6)^2}=608$ N, frente a unos 686 N en el suelo: no es cero."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s3",
    "n": "3",
    "titulo": "Energía potencial gravitacional",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §13.3, pp. 405-407",
@@ -704,30 +556,17 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>Hasta ahora usabas $U=mgy$, que supone que la gravedad es constante. Pero si te alejas mucho de la Tierra, $g$ disminuye, y la fórmula falla. Imagina que la Tierra es un <b>pozo</b>: cuanto más cerca del fondo (del centro), más «hundido» estás, es decir, más negativa es tu energía potencial; subir cuesta energía. Ese pozo es lo que mide $U(r)$, y su profundidad decide si un cohete puede <b>escaparse</b> o tiene que volver.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.3, p. 405",
-    "txt": "U p.405"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "Trabajo de la gravedad y energía potencial (ec. 13.6-13.9)",
+   "h": "Energía potencial gravitacional: $U=-GMm/r$",
    "html": [
-    "<p>Cuando el cuerpo se mueve de $r_1$ a $r_2$ (medidas desde el centro de la Tierra), la gravedad ($F_r=-Gm_Tm/r^2$, ec. 13.7) hace un trabajo</p>",
-    "  $$W_{grav}=\\int_{r_1}^{r_2}F_r\\,dr=Gm_Tm\\left(\\frac1{r_2}-\\frac1{r_1}\\right)\\qquad(13.8)$$",
-    "  <p>que <b>solo depende de $r_1$ y de $r_2$, no del camino</b>: la fuerza gravitacional es <b>conservativa</b>. Entonces se define la energía potencial con $W_{grav}=U_1-U_2$, tomando $U=0$ en el infinito:</p>",
-    "  $$\\boxed{\\,U=-\\frac{Gm_Tm}{r}\\,}\\qquad(13.9)$$",
-    "  <p>$U$ es siempre <b>negativa</b> y aumenta (se hace menos negativa) al alejarse; si el cuerpo cae, la gravedad hace trabajo positivo y $U$ disminuye. Es la energía potencial del <i>sistema</i> Tierra-cuerpo. Solo importan las <i>diferencias</i> de $U$; elegir otro cero no cambia la física.</p>"
+    "<p>$U=mgy$ supone $g$ constante; lejos del suelo $g$ disminuye y la fórmula falla. Cuando el cuerpo pasa de $r_1$ a $r_2$ (medidas desde el centro), la gravedad ($F_r=-Gm_Tm/r^2$, ec. 13.7) hace un trabajo</p>",
+    "  $$W_{grav}=\\int_{r_1}^{r_2}F_r\\,dr=Gm_Tm\\left(\\frac1{r_2}-\\frac1{r_1}\\right)\\ (13.8)\\qquad\\Longrightarrow\\qquad\\boxed{\\,U=-\\frac{Gm_Tm}{r}\\,}\\ (13.9)$$",
+    "  <p>Ese trabajo <b>solo depende de $r_1$ y de $r_2$, no del camino</b>: la gravedad es <b>conservativa</b>, y se define $U$ con $W_{grav}=U_1-U_2$ y $U=0$ en el infinito. $U$ es <b>siempre negativa</b> y <b>aumenta</b> (se hace menos negativa) al alejarse: la Tierra es un <b>pozo</b> y subir cuesta energía. Es la energía del <i>sistema</i> Tierra-cuerpo; solo importan las diferencias de $U$. <b>Ejemplo mínimo:</b> un satélite de 1000 kg que sube de $R_T$ a $2R_T$ gana $\\Delta U=\\dfrac{Gm_Tm}{R_T}-\\dfrac{Gm_Tm}{2R_T}=\\dfrac{Gm_Tm}{2R_T}=3{,}13\\times10^{10}$ J. <b>Error típico:</b> mezclar dependencias, porque $F\\propto1/r^2$ pero $U\\propto1/r$ (a doble distancia la fuerza se divide entre 4 y $U$ solo entre 2); u olvidar el signo menos.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §13.3, ec. 13.6-13.9, p. 405",
-    "txt": "U p.405"
+    "ref": "U §13.3, ecs. 13.6-13.9 y «CUIDADO: fuerza contra energía potencial», pp. 405-406",
+    "txt": "U p.405-406"
    }
   },
   {
@@ -743,23 +582,16 @@
   },
   {
    "t": "caja",
-   "k": "warn",
-   "h": "Error típico: fuerza y energía potencial no varían igual con la distancia",
-   "html": "<p>La fuerza gravitacional es proporcional a $1/r^2$, pero la energía potencial es proporcional a $1/r$ (y con signo menos). No las confundas al hacer cuentas: a doble distancia la fuerza se divide entre 4, pero $U$ solo entre 2.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.3, «CUIDADO: fuerza contra energía potencial», p. 406",
-    "txt": "U p.406"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "Relación con la energía potencial cerca del suelo",
-   "html": "<p>Cerca de la superficie, $r_1\\approx r_2\\approx R_T$, y (13.8) se convierte en $W_{grav}\\approx\\dfrac{Gm_Tm}{R_T^2}(r_1-r_2)=mg(r_1-r_2)$: es la energía potencial de siempre, $U=mgy$, que es el <b>caso particular</b> de (13.9) para alturas pequeñas (con el cero en el suelo). Por eso para alturas del orden de 10 km se puede usar $mgy$ (error del 0,16 %), pero a $h=R_T$ el error sería del 50 %.</p>",
+   "h": "Relación con $U=mgy$",
+   "html": [
+    "<p>Cerca del suelo, $r_1\\approx r_2\\approx R_T$ y (13.8) da $W_{grav}\\approx\\dfrac{Gm_Tm}{R_T^2}(r_1-r_2)=mg(r_1-r_2)$: <b>$mgy$ es el caso particular de $-GMm/r$ para alturas pequeñas</b>, con el cero en el suelo. La cuenta exacta para subir una altura $h$ es</p>",
+    "  $$\\Delta U=\\frac{Gm_Tm\\,h}{R_T(R_T+h)}=mgh\\,\\frac{R_T}{R_T+h}$$",
+    "  <p><b>Ejemplo mínimo:</b> el error de $mgh$ es la fracción $h/(R_T+h)$: un 0,16 % a 10 km de altura, pero un 50 % a $h=R_T$ (en el ejemplo anterior, $mgR_T=6{,}24\\times10^{10}$ J, el doble de lo correcto). <b>Error típico:</b> decir que $mgh$ «crece con $h$» y $GMm/r$ «decrece con $r$» y que se contradicen: la expresión general lleva un signo menos y también <b>crece</b> al alejarse (cuestión de examen, <a href=\"#x5\">X5</a>).</p>"
+   ],
    "src": {
     "l": "U",
-    "ref": "U §13.3, pp. 406-407 (límite U = mgy)",
+    "ref": "U §13.3, pp. 406-407",
     "txt": "U p.406-407"
    }
   },
@@ -772,41 +604,40 @@
    "k": "thm",
    "h": "Conservación de la energía y rapidez de escape",
    "html": [
-    "<p>Si solo trabaja la gravedad, la energía mecánica $E=K+U=\\tfrac12mv^2-\\dfrac{Gm_Tm}{r}$ <b>se conserva</b>: $K_1+U_1=K_2+U_2$. La <b>rapidez de escape</b> es la rapidez mínima para llegar al infinito (donde $U=0$) con $K=0$; es decir, con $E=0$:</p>",
-    "  $$\\tfrac12mv^2-\\frac{GMm}{R}=0\\ \\Longrightarrow\\ v_{esc}=\\sqrt{\\frac{2GM}{R}}$$",
-    "  <p>No depende de la masa del cuerpo (la $m$ se simplifica) ni de la dirección de lanzamiento. Para la Tierra, $v_{esc}=1{,}12\\times10^4$ m/s $=11{,}2$ km/s. En general: si $E\\lt0$ el cuerpo está <b>ligado</b> (sube hasta un $r_{máx}$ y vuelve); si $E\\ge0$ <b>escapa</b>.</p>"
+    "<p>Si solo trabaja la gravedad, $E=K+U=\\tfrac12mv^2-\\dfrac{GMm}{r}$ <b>se conserva</b>: $K_1+U_1=K_2+U_2$. La <b>rapidez de escape</b> es la mínima para llegar al infinito ($U=0$) con $K=0$, es decir, con $E=0$:</p>",
+    "  $$\\tfrac12mv^2-\\frac{GMm}{R}=0\\ \\Longrightarrow\\ v_{esc}=\\sqrt{\\frac{2GM}{R}}\\qquad(\\text{Tierra: }1{,}12\\times10^4\\ \\text{m/s}=11{,}2\\ \\text{km/s})$$",
+    "  <p>No depende de la masa del cuerpo ni de la dirección de lanzamiento. <b>El signo de $E$ decide:</b> $E\\lt0$ ⇒ <b>ligado</b> (sube hasta $r_{máx}=GMm/|E|$ y vuelve); $E\\ge0$ ⇒ <b>escapa</b>. <b>Ejemplo mínimo (ejemplo 13.5).</b> ¿Rapidez mínima para subir desde la superficie hasta $r=2R_T$? $\\tfrac12mv_1^2-\\dfrac{Gm_Tm}{R_T}=0-\\dfrac{Gm_Tm}{2R_T}$ ⇒ $v_1=\\sqrt{Gm_T/R_T}=7910$ m/s; para escapar ($r_2=\\infty$), $v_1=\\sqrt{2Gm_T/R_T}=1{,}12\\times10^4$ m/s. <b>Error típico:</b> olvidar el 2 ($\\sqrt{GM/R}$ es la rapidez de una órbita rasante, no la de escape), o usar $mgh$ para alturas grandes (con $mgh$ siempre habría una altura máxima finita y no existiría el escape).</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §13.3, Ejemplo 13.5, p. 406 (rapidez de escape); ec. 13.29, p. 419",
+    "ref": "U §13.3, Ejemplo 13.5, p. 406",
     "txt": "U p.406"
    }
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo 13.5 — «De la Tierra a la Luna» (Julio Verne)",
-   "html": [
-    "<p>Un proyectil sale de la superficie terrestre ($R_T=6{,}37\\times10^6$ m, $m_T=5{,}97\\times10^{24}$ kg), despreciando el aire y la rotación. a) ¿Qué rapidez inicial mínima necesita para subir hasta $r=2R_T$? b) ¿Y para escapar?</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Plan:</b> solo trabaja la gravedad ⇒ $K_1+U_1=K_2+U_2$ con $U=-Gm_Tm/r$ y $K_2=0$ (en el punto más alto se para).</li>",
-    "    <li><b>a) $r_2=2R_T$:</b> $\\tfrac12mv_1^2-\\dfrac{Gm_Tm}{R_T}=0-\\dfrac{Gm_Tm}{2R_T}$ ⇒ $v_1=\\sqrt{\\dfrac{Gm_T}{R_T}}=7910$ m/s.</li>",
-    "    <li><b>b) $r_2=\\infty$:</b> $U_2=0$ y $K_2=0$ ⇒ $E=0$ ⇒ $v_1=\\sqrt{\\dfrac{2Gm_T}{R_T}}=1{,}12\\times10^4$ m/s.</li>",
-    "    <li><b>Lectura:</b> el resultado no depende de la masa del proyectil ni de la dirección del lanzamiento.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 13.5, p. 406",
-    "txt": "U p.406"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Un satélite de 1000 kg sube desde la superficie hasta $r=2R_T$. ¿Cuánto aumenta $U$? ¿Qué daría $mgh$?",
+     "a": "$\\Delta U=\\dfrac{Gm_Tm}{2R_T}=3{,}13\\times10^{10}$ J. Con $mgh=1000(9{,}80)(6{,}37\\times10^6)=6{,}24\\times10^{10}$ J, el doble: $mgh$ no vale a esa altura."
+    },
+    {
+     "q": "Calcula la rapidez de escape de la Luna ($M=7{,}35\times10^{22}$ kg, $R=1{,}74\times10^6$ m). ¿Depende de la masa del cohete?",
+     "a": "$v_{esc}=\\sqrt{2GM/R}=2{,}37\\times10^3$ m/s $=2{,}37$ km/s. No: la $m$ se simplifica."
+    },
+    {
+     "q": "Un proyectil sale de la superficie con energía mecánica total $E=-2\times10^9$ J. ¿Escapa?",
+     "a": "No: con $E\\lt0$ está ligado; sube hasta $r_{máx}=GMm/|E|$ (donde $K=0$) y vuelve a caer."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s4",
    "n": "4",
    "titulo": "Movimiento de satélites",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §13.4, pp. 407-410",
@@ -816,8 +647,10 @@
   {
    "t": "caja",
    "k": "intu",
-   "h": "Idea intuitiva: el cañón de Newton",
-   "html": "<p>Imagina un cañón en lo alto de una montaña que dispara horizontalmente. Con poca velocidad el proyectil cae cerca; con más, cae más lejos. Pero la Tierra es redonda: si la velocidad es suficiente, <b>el suelo se curva tanto como cae el proyectil</b>, y el proyectil «cae» alrededor de la Tierra sin llegar nunca al suelo. Eso es un <b>satélite</b>: un proyectil que cae sin parar y se pasa de largo. La gravedad no deja de actuar en ningún momento; lo que mantiene la órbita no es que la gravedad «desaparezca» sino la <b>velocidad lateral</b>.</p>",
+   "h": "El cañón de Newton: un satélite es un proyectil que nunca llega al suelo",
+   "html": [
+    "<p>Un cañón en lo alto de una montaña dispara horizontalmente. Con poca velocidad, el proyectil cae cerca; con más, más lejos. Como la Tierra es redonda, con velocidad suficiente <b>el suelo se curva tanto como cae el proyectil</b>: sigue cayendo, pero alrededor de la Tierra. Eso es un <b>satélite</b>. La gravedad actúa todo el rato; lo que mantiene la órbita es la <b>velocidad lateral</b>. Con más velocidad aún, la órbita se abre y el proyectil escapa.</p>"
+   ],
    "src": {
     "l": "U",
     "ref": "U §13.4, fig. 13.14, p. 407",
@@ -838,23 +671,35 @@
   {
    "t": "caja",
    "k": "thm",
-   "h": "Órbita circular (ec. 13.10-13.13)",
+   "h": "Órbita circular: $v=\\sqrt{GM/r}$, $T=2\\pi r^{3/2}/\\sqrt{GM}$",
    "html": [
-    "<p>La única fuerza sobre el satélite (masa $m$) es la gravedad, y hace de fuerza centrípeta: $\\dfrac{Gm_Tm}{r^2}=\\dfrac{mv^2}{r}$ (segunda ley en el movimiento circular). De aquí:</p>",
+    "<p>La única fuerza sobre el satélite es la gravedad, y hace de fuerza centrípeta: $\\dfrac{Gm_Tm}{r^2}=\\dfrac{mv^2}{r}$. De ahí:</p>",
     "  $$v=\\sqrt{\\frac{Gm_T}{r}}\\ \\ (13.10)\\qquad T=\\frac{2\\pi r}{v}=\\frac{2\\pi\\,r^{3/2}}{\\sqrt{Gm_T}}\\ \\ (13.11,\\,13.12)$$",
-    "  <p>Cuanto <b>más alta</b> es la órbita, <b>más lenta</b> es y <b>mayor</b> es su periodo; la rapidez no depende de la masa del satélite. La energía mecánica es</p>",
-    "  $$K=\\tfrac12mv^2=\\frac{Gm_Tm}{2r},\\quad U=-\\frac{Gm_Tm}{r},\\quad \\boxed{E=K+U=-\\frac{Gm_Tm}{2r}}\\qquad(13.13)$$",
-    "  <p>Es negativa (sistema ligado) y se cumple $U=-2K$ y $E=-K$. Como $\\vec F_g\\perp\\vec v$, la gravedad no hace trabajo en una órbita circular. Comparando con $v_{esc}=\\sqrt{2Gm_T/r}$: $v_{esc}=\\sqrt2\\,v_{circ}$ a la misma distancia.</p>"
+    "  <p><b>Más alta ⇒ más lenta y con más periodo</b>; $v$ no depende de la masa del satélite. Como $\\vec F_g\\perp\\vec v$, la gravedad no hace trabajo y la rapidez es constante. A la misma distancia, $v_{esc}=\\sqrt2\\,v_{circ}$. <b>Ejemplo mínimo (ejemplo 13.6a).</b> Satélite a 300 km de altura: $r=6370+300=6670$ km ⇒ $v=7730$ m/s, $T=5420$ s $=90{,}4$ min y $a_{rad}=v^2/r=8{,}95$ m/s² (la $g$ de esa altura). Para la Estación Espacial ($r\\approx6800$ km) sale $7{,}65$ km/s y 93,1 min, como los valores medidos. <b>Error típico:</b> usar la altura $h$ como radio de la órbita.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §13.4, ec. 13.10-13.13, pp. 408-409",
-    "txt": "U p.408-409"
+    "ref": "U §13.4, ecs. 13.10-13.12, pp. 408-409; Ejemplo 13.6, p. 410",
+    "txt": "U p.408-410"
    }
   },
   {
    "t": "fig",
    "ref": "satelite-en-orbita-circular-con-la-velocidad-tan"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Energía en órbita circular y trabajo para cambiar de órbita",
+   "html": [
+    "$$K=\\tfrac12mv^2=\\frac{Gm_Tm}{2r},\\qquad U=-\\frac{Gm_Tm}{r},\\qquad\\boxed{E=K+U=-\\frac{Gm_Tm}{2r}}\\qquad(13.13)$$",
+    "  <p>$E$ es negativa (sistema ligado) y se cumple $U=-2K$, $E=-K$. El trabajo que hacen los motores (o cualquier otra fuerza) es $W_{otras}=E_2-E_1$. <b>Ejemplo mínimo (ejemplo 13.6b-c).</b> Poner 1000 kg en la órbita de 300 km partiendo del reposo en el suelo (sin contar la rotación terrestre): $E_1=-Gm_Tm/R_T=-6{,}25\\times10^{10}$ J y $E_2=-Gm_Tm/2r=-2{,}98\\times10^{10}$ J ⇒ $W=3{,}27\\times10^{10}$ J; para que luego escape ($E=0$) faltan otros $2{,}98\\times10^{10}$ J. <b>Error típico:</b> creer que subir de órbita aumenta la rapidez: al subir $K$ baja, $U$ sube el doble de lo que baja $K$, y $E$ aumenta (<a href=\"#e9\">E9</a>).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §13.4, ec. 13.13, p. 409; Ejemplo 13.6, p. 410",
+    "txt": "U p.409-410"
+   }
   },
   {
    "t": "fig",
@@ -865,8 +710,7 @@
    "k": "warn",
    "h": "Error típico: «en órbita no hay gravedad»",
    "html": [
-    "<p>Los astronautas de la Estación Espacial (a unos 400 km) <b>no</b> están fuera del alcance de la gravedad: allí $g=8{,}7$ m/s², el 89 % del valor en el suelo. <b>Flotan porque están en caída libre</b>: la nave y el astronauta tienen la misma aceleración (hacia la Tierra), así que nada empuja al astronauta contra el suelo de la nave. Eso es la <b>ingravidez aparente</b>. La gravedad solo se anula a distancia infinita.</p>",
-    "  <p>Esa ingravidez aparente no es exclusiva de las órbitas circulares: aparece siempre que la gravedad sea la <b>única fuerza</b> sobre la nave, también en órbitas elípticas y en las abiertas (parabólicas e hiperbólicas).</p>"
+    "<p>Los astronautas de la Estación Espacial (a unos 400 km) <b>no</b> están fuera del alcance de la gravedad: allí $g=8{,}7$ m/s², el 89 % del valor en el suelo. <b>Flotan porque están en caída libre</b>: la nave y el astronauta tienen la misma aceleración hacia la Tierra, así que nada empuja al astronauta contra el piso. Eso es la <b>ingravidez aparente</b>, y aparece siempre que la gravedad sea la única fuerza (órbitas circulares, elípticas o abiertas). La gravedad solo se anula a distancia infinita; sin ella no habría órbita.</p>"
    ],
    "src": {
     "l": "U",
@@ -875,41 +719,29 @@
    }
   },
   {
-   "t": "caja",
-   "k": "def",
-   "h": "Un dato real: la Estación Espacial Internacional",
-   "html": "<p>La ISS orbita a unos 6800 km del centro de la Tierra, con rapidez de unos 7,7 km/s y periodo de 93 min. Comprobación con (13.10) y (13.11): $v=\\sqrt{Gm_T/r}=\\sqrt{(6{,}67\\times10^{-11})(5{,}97\\times10^{24})/(6{,}8\\times10^{6})}=7{,}65$ km/s y $T=2\\pi r/v=5{,}58\\times10^{3}$ s $=93{,}1$ min ✓.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.4, p. 409",
-    "txt": "U p.409"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo 13.6 — un satélite a 300 km",
-   "html": [
-    "<p>Se quiere poner un satélite de 1000 kg en órbita circular a 300 km de altura. a) ¿Qué rapidez, periodo y aceleración radial tiene? b) ¿Cuánto trabajo hace falta para ponerlo en órbita (partiendo en reposo de la plataforma)? c) ¿Y para que escape después?</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Radio de la órbita desde el centro:</b> $r=6370+300=6670$ km $=6{,}67\\times10^6$ m.</li>",
-    "    <li><b>a)</b> $v=\\sqrt{Gm_T/r}=7730$ m/s; $T=2\\pi r/v=5420$ s $=90{,}4$ min; $a_{rad}=v^2/r=8{,}96$ m/s² (es el valor de $g$ a esa altura).</li>",
-    "    <li><b>b)</b> $E_2=-\\dfrac{Gm_Tm}{2r}=-2{,}98\\times10^{10}$ J en órbita; $E_1=-\\dfrac{Gm_Tm}{R_T}=-6{,}25\\times10^{10}$ J en reposo en el suelo. Trabajo $=E_2-E_1=3{,}27\\times10^{10}$ J.</li>",
-    "    <li><b>c)</b> Para escapar hace falta $E=0$: faltan $2{,}98\\times10^{10}$ J más.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 13.6, p. 410",
-    "txt": "U p.410"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Un satélite gira en órbita circular de radio $2R_T$. ¿Rapidez y periodo?",
+     "a": "$v=\\sqrt{Gm_T/2R_T}=5{,}59\\times10^3$ m/s; $T=2\\pi r/v=1{,}43\\times10^4$ s $=3{,}98$ h."
+    },
+    {
+     "q": "Si pasas un satélite a una órbita circular de radio 4 veces mayor, ¿cómo cambian $v$ y $T$?",
+     "a": "$v\\propto1/\\sqrt r$ ⇒ se divide entre 2; $T\\propto r^{3/2}$ ⇒ se multiplica por 8."
+    },
+    {
+     "q": "Un satélite de 500 kg gira en una órbita circular de radio $7{,}00\times10^6$ m. ¿Cuánto valen $K$, $U$ y $E$?",
+     "a": "$E=-\\dfrac{Gm_Tm}{2r}=-1{,}42\\times10^{10}$ J; $K=-E=1{,}42\\times10^{10}$ J; $U=2E=-2{,}84\\times10^{10}$ J."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s5",
    "n": "5",
    "titulo": "Las leyes de Kepler y el movimiento de los planetas",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §13.5, pp. 410-414",
@@ -918,52 +750,36 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>Kepler (1601-1619), con las observaciones de Tycho Brahe, descubrió <b>tres reglas</b> sobre cómo se mueven los planetas, sin saber por qué. Newton demostró después que las tres son consecuencia de sus leyes del movimiento y de la gravitación. Las dos ideas prácticas: <b>cuanto más cerca del Sol, más rápido va el planeta</b>; y <b>cuanto más lejos está la órbita, más tarda en recorrerla</b> (mucho más: crece como $a^{3/2}$).</p>",
+   "k": "thm",
+   "h": "Las tres leyes de Kepler",
+   "html": [
+    "<p>Kepler las obtuvo (1601-1619) de las observaciones de Tycho Brahe sin saber por qué; Newton demostró que son consecuencia de sus leyes del movimiento y de la gravitación.</p>",
+    "  <ol>",
+    "    <li><b>Primera:</b> cada planeta se mueve en una <b>elipse con el Sol en uno de sus focos</b>.</li>",
+    "    <li><b>Segunda:</b> la recta del Sol al planeta <b>barre áreas iguales en tiempos iguales</b>.</li>",
+    "    <li><b>Tercera:</b> el <b>cuadrado del periodo</b> es proporcional al <b>cubo del semieje mayor</b>.</li>",
+    "  </ol>",
+    "  <p>Las dos ideas prácticas: <b>más cerca del Sol ⇒ más rápido</b>; <b>órbita más grande ⇒ periodo mucho mayor</b> ($T\\propto a^{3/2}$).</p>"
+   ],
    "src": {
     "l": "U",
-    "ref": "U §13.5, p. 410-411",
+    "ref": "U §13.5, pp. 410-411",
     "txt": "U p.410-411"
    }
   },
   {
    "t": "caja",
-   "k": "thm",
-   "h": "Las tres leyes de Kepler",
-   "html": [
-    "<ol>",
-    "    <li><b>Primera:</b> cada planeta se mueve en una <b>elipse con el Sol en uno de sus focos</b>.</li>",
-    "    <li><b>Segunda:</b> una recta del Sol a un planeta <b>barre áreas iguales en tiempos iguales</b>.</li>",
-    "    <li><b>Tercera:</b> el <b>periodo $T$ al cuadrado</b> es proporcional al <b>cubo del semieje mayor $a$</b>.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U §13.5, p. 411",
-    "txt": "U p.411"
-   }
-  },
-  {
-   "t": "parte",
-   "archivo": "s5a.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte07.html"
-  },
-  {
-   "t": "caja",
    "k": "def",
-   "h": "Perihelio y afelio",
+   "h": "Primera ley: la elipse, el perihelio y el afelio",
    "html": [
-    "$$r_{p}=a(1-e)\\ \\ \\text{(perihelio, punto más cercano)}\\qquad r_{a}=a(1+e)\\ \\ \\text{(afelio, punto más lejano)}$$",
-    "  <p>Se cumple $r_p+r_a=2a$. Las órbitas de los planetas son casi circulares (Tierra: $e=0{,}017$; Mercurio: $0{,}206$). Para una fuerza proporcional a $1/r^2$, las órbitas cerradas son elipses y las abiertas (cometas que no vuelven) son parábolas o hipérbolas.</p>"
+    "<p>Una elipse tiene dos <b>focos</b> $S$ y $S'$ (la suma de distancias de cada punto a los dos focos es constante). El <b>semieje mayor</b> $a$ es la mitad del eje largo; la <b>excentricidad</b> $e$ ($0\\le e\\lt1$) dice cuánto se separa cada foco del centro: está a $ea$. Con $e=0$, un círculo. Con el Sol en $S$:</p>",
+    "  $$r_p=a(1-e)\\ \\ \\text{(perihelio, el punto más cercano)}\\qquad r_a=a(1+e)\\ \\ \\text{(afelio, el más lejano)}\\qquad r_p+r_a=2a$$",
+    "  <p>Las órbitas planetarias son casi circulares (Tierra $e=0{,}017$; Mercurio $0{,}206$). Con una fuerza $\\propto1/r^2$ las órbitas cerradas son elipses y las abiertas, parábolas o hipérbolas. <b>Ejemplo mínimo (ejemplo 13.9).</b> El cometa Halley pasa a $8{,}75\\times10^7$ km del Sol y se aleja hasta $5{,}26\\times10^9$ km: $a=(r_p+r_a)/2=2{,}67\\times10^{12}$ m y $e=1-r_p/a=0{,}967$ (órbita muy alargada). <b>Error típico:</b> tomar $a$ como la distancia al Sol (es la media entre perihelio y afelio), o poner el Sol en el centro de la elipse.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §13.5, fig. 13.18 y p. 411; Ejemplo 13.9, p. 413",
-    "txt": "U p.411"
+    "ref": "U §13.5, fig. 13.18, p. 411; Ejemplo 13.9, p. 413",
+    "txt": "U p.411-413"
    }
   },
   {
@@ -978,68 +794,37 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "s5b.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte09.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte10.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte11.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte12.html"
+   "t": "caja",
+   "k": "thm",
+   "h": "Segunda ley = conservación del momento angular",
+   "html": [
+    "<p>En un tiempo corto $dt$ el radio vector barre un triángulo de área $dA=\\tfrac12r\\,(r\\,d\\theta)$. La <b>velocidad areolar</b> es</p>",
+    "  $$\\frac{dA}{dt}=\\tfrac12r^2\\frac{d\\theta}{dt}=\\tfrac12\\,rv\\sin\\phi=\\frac{|\\vec r\\times m\\vec v|}{2m}=\\frac{L}{2m}\\qquad(13.14\\text{-}13.16)$$",
+    "  <p>($\\phi$: ángulo entre $\\vec r$, del Sol al planeta, y $\\vec v$). La gravedad es una fuerza <b>central</b> (apunta al Sol): su torca respecto al Sol es cero ⇒ <b>$\\vec L$ es constante</b> ⇒ áreas iguales en tiempos iguales, y además la órbita es <b>plana</b>. En los <b>ápsides</b> (perihelio y afelio, donde $\\vec r\\perp\\vec v$): $v_pr_p=v_ar_a$. <b>Ejemplo mínimo (ejemplo 13.7).</b> ¿Dónde va más rápido un planeta? En el perihelio: con $r$ menor necesita más $v$ para barrer la misma área. Por energía, igual: allí $U$ es más negativa y $K=E-U$, mayor. Para el Halley, $v_p/v_a=r_a/r_p=60$. <b>Error típico:</b> creer que la rapidez orbital es constante en una elipse, o usar $v_pr_p=v_ar_a$ en puntos donde $\\vec v$ no es perpendicular a $\\vec r$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §13.5, ecs. 13.14-13.16, pp. 411-412; Ejemplo 13.7, p. 412",
+    "txt": "U p.411-412"
+   }
   },
   {
    "t": "fig",
    "ref": "elipse-con-el-sol-en-un-foco-y-dos-sectores-de-l"
   },
   {
-   "t": "libro",
-   "img": "../assets/img/fig_u_13_19_areas.png",
-   "alt": "Un planeta describe una elipse; en un tiempo dt la línea Sol-planeta barre un área dA = ½ r² dθ; la línea barre áreas iguales en tiempos iguales",
-   "pie": "Segunda ley: a) el planeta $P$ y la línea $SP$; b) el área barrida en $dt$ es $dA=\\tfrac12 r^2\\,d\\theta$; c) la línea $SP$ barre áreas iguales en tiempos iguales.",
-   "src": {
-    "l": "U",
-    "ref": "U fig. 13.19, p. 411",
-    "txt": "U p.411"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo 13.7 — rapideces orbitales (conceptual)",
-   "html": "<p>¿Dónde va más rápido un planeta? Por la segunda ley, donde está más cerca del Sol: en el <b>perihelio</b> (y más lento en el afelio). Por energía: en el perihelio $U=-GMm/r$ es más negativa, luego $K=E-U$ es mayor. Las dos explicaciones coinciden.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo conceptual 13.7, p. 412",
-    "txt": "U p.412"
-   }
-  },
-  {
-   "t": "parte",
-   "archivo": "s5c.html"
-  },
-  {
    "t": "caja",
    "k": "thm",
-   "h": "Tercera ley (ec. 13.17)",
+   "h": "Tercera ley: $T^2=4\\pi^2a^3/(GM)$",
    "html": [
-    "<p>Para una órbita circular de radio $r$ la hemos deducido en §4: $T=2\\pi r^{3/2}/\\sqrt{Gm_S}$. Newton demostró que para una elipse vale lo mismo cambiando $r$ por el <b>semieje mayor $a$</b>:</p>",
+    "<p>Para un círculo ya la tienes (§4): $T=2\\pi r^{3/2}/\\sqrt{Gm_S}$. Newton demostró que vale para la elipse cambiando $r$ por el <b>semieje mayor</b> $a$:</p>",
     "  $$T^2=\\frac{4\\pi^2}{Gm_S}\\,a^3\\qquad\\Longleftrightarrow\\qquad T=\\frac{2\\pi\\,a^{3/2}}{\\sqrt{Gm_S}}\\qquad(13.17)$$",
-    "  <p>El periodo <b>no depende de la excentricidad</b> ni de la masa del planeta, solo de $a$ y de la masa del Sol. Sirve también para pesar al astro central: con el $T$ y el $a$ de un satélite (o de una estrella orbitando), $m_X=4\\pi^2a^3/(GT^2)$. Con más precisión, el Sol y el planeta giran ambos alrededor del <b>centro de masa</b> del sistema (en el sistema solar está muy cerca del centro del Sol).</p>"
+    "  <p><b>No depende de la excentricidad</b> ni de la masa del planeta: solo de $a$ y de la masa del Sol. Al revés, con el $T$ y el $a$ de un satélite se «pesa» el cuerpo central: $M=4\\pi^2a^3/(GT^2)$. (En rigor, el Sol y el planeta giran alrededor de su <b>centro de masa</b> común, muy cerca del centro del Sol; el «bamboleo» que eso produce en otras estrellas delata planetas que no se ven.) <b>Ejemplo mínimo (ejemplos 13.8 y 13.9).</b> Palas: $T=4{,}62$ años $=1{,}46\\times10^8$ s ⇒ $a=\\left(\\dfrac{Gm_ST^2}{4\\pi^2}\\right)^{1/3}=4{,}15\\times10^{11}$ m (entre Marte y Júpiter); su excentricidad no hace falta. Halley: $a=2{,}67\\times10^{12}$ m ⇒ $T=2{,}38\\times10^9$ s, unos 75 años y medio. <b>Error típico:</b> meter la excentricidad en la tercera ley, o usar $T$ en años con $G$ en el SI.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §13.5, ec. 13.17, p. 412; centro de masa, p. 414; masa del objeto central, p. 422",
-    "txt": "U p.412"
+    "ref": "U §13.5, ec. 13.17, p. 412; Ejemplos 13.8 y 13.9, p. 413; centro de masa, fig. 13.22, p. 414",
+    "txt": "U p.412-414"
    }
   },
   {
@@ -1049,55 +834,16 @@
   {
    "t": "caja",
    "k": "ex",
-   "h": "Ejemplo 13.8 — el asteroide Palas",
+   "h": "Rapidez en el perihelio y en el afelio (problema práctico del capítulo)",
    "html": [
-    "<p>Palas tiene un periodo de 4,62 años y excentricidad 0,233. Calcula su semieje mayor.</p>",
+    "<p>Para el cometa Halley ($m=2{,}2\\times10^{14}$ kg, $r_p=8{,}75\\times10^{10}$ m, $r_a=5{,}26\\times10^{12}$ m), halla $v_p$, $v_a$ y las energías en los dos puntos.</p>",
     "  <ol class=\"steps\">",
-    "    <li>De (13.17): $a=\\left(\\dfrac{Gm_ST^2}{4\\pi^2}\\right)^{1/3}$ con $T=(4{,}62)(3{,}156\\times10^7)=1{,}46\\times10^8$ s. La excentricidad no hace falta.</li>",
-    "    <li>$a=4{,}15\\times10^{11}$ m: entre las órbitas de Marte y Júpiter (el cinturón de asteroides).</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 13.8, p. 413",
-    "txt": "U p.413"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo 13.9 — el cometa Halley",
-   "html": [
-    "<p>El Halley pasa a $8{,}75\\times10^{7}$ km del Sol en el perihelio y a $5{,}26\\times10^{9}$ km en el afelio. Calcula $a$, $e$ y $T$.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Semieje mayor:</b> $2a=r_p+r_a$ ⇒ $a=\\dfrac{8{,}75\\times10^{7}+5{,}26\\times10^{9}}{2}=2{,}67\\times10^{9}$ km $=2{,}67\\times10^{12}$ m.</li>",
-    "    <li><b>Excentricidad:</b> $r_p=a(1-e)$ ⇒ $e=1-\\dfrac{r_p}{a}=1-\\dfrac{8{,}75\\times10^7}{2{,}67\\times10^9}=0{,}967$ (órbita muy alargada).</li>",
-    "    <li><b>Periodo (13.17):</b> $T=\\dfrac{2\\pi a^{3/2}}{\\sqrt{Gm_S}}=2{,}38\\times10^9$ s $=75{,}5$ años. Volverá al perihelio en 2061.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 13.9, p. 413",
-    "txt": "U p.413"
-   }
-  },
-  {
-   "t": "fig",
-   "ref": "orbita-eliptica-muy-alargada-del-cometa-halley-c"
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Problema práctico (U, p. 424) — rapideces en perihelio y afelio (conservación de la energía y del momento angular)",
-   "html": [
-    "<p>Para el Halley ($m=2{,}2\\times10^{14}$ kg) halla $v_p$ y $v_a$ y las energías $K$, $U$ y $E$ en cada punto.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Dos conservaciones:</b> momento angular en los ápsides ($\\vec r\\perp\\vec v$): $v_p\\,r_p=v_a\\,r_a$; energía: $\\tfrac12v_p^2-\\dfrac{Gm_S}{r_p}=\\tfrac12v_a^2-\\dfrac{Gm_S}{r_a}$.</li>",
-    "    <li><b>Resolver:</b> $v_p=\\sqrt{\\dfrac{2Gm_S\\,(1/r_p-1/r_a)}{1-(r_p/r_a)^2}}=5{,}46\\times10^4$ m/s y $v_a=v_pr_p/r_a=909$ m/s.</li>",
-    "    <li><b>Energías:</b> perihelio: $K_p=3{,}28\\times10^{23}$ J, $U_p=-3{,}34\\times10^{23}$ J; afelio: $K_a=9{,}08\\times10^{19}$ J, $U_a=-5{,}55\\times10^{21}$ J. En ambos $E=-5{,}46\\times10^{21}$ J: la <b>misma</b> $E$ (negativa: sistema ligado), con $K$ y $U$ muy distintas.</li>",
-    "    <li><b>Forma general con $a$ y $e$.</b> Con $r_p=a(1-e)$ y $r_a=a(1+e)$ el mismo resultado se escribe $v_p=\\sqrt{\\dfrac{Gm_S}{a}\\,\\dfrac{1+e}{1-e}}$ y $v_a=\\sqrt{\\dfrac{Gm_S}{a}\\,\\dfrac{1-e}{1+e}}$ (con $a=2{,}67\\times10^{12}$ m y $e=0{,}967$ salen los mismos $5{,}46\\times10^4$ y $909$ m/s). La energía total solo depende de $a$: $E=\\tfrac12mv_p^2-\\dfrac{Gm_Sm}{r_p}=-\\dfrac{Gm_Sm}{2a}$, que para el Halley da $-5{,}46\\times10^{21}$ J ✓ (es la 13.13 con $a$ en lugar de $r$).</li>",
-    "    <li><b>Prueba con un círculo:</b> con $e=0$ las dos fórmulas dan $v_p=v_a=\\sqrt{Gm_S/a}$ y $r_p=r_a=a$ ✓.</li>",
-    "  </ol>"
+    "    <li><b>Dos conservaciones:</b> momento angular en los ápsides, $v_pr_p=v_ar_a$; energía, $\\tfrac12v_p^2-\\dfrac{Gm_S}{r_p}=\\tfrac12v_a^2-\\dfrac{Gm_S}{r_a}$ (dividida entre $m$).</li>",
+    "    <li><b>Resolver:</b> sustituyendo $v_a=v_pr_p/r_a$, $v_p=\\sqrt{\\dfrac{2Gm_S\\,(1/r_p-1/r_a)}{1-(r_p/r_a)^2}}=5{,}46\\times10^4$ m/s y $v_a=909$ m/s.</li>",
+    "    <li><b>Energías:</b> perihelio, $K_p=3{,}28\\times10^{23}$ J y $U_p=-3{,}34\\times10^{23}$ J; afelio, $K_a=9{,}08\\times10^{19}$ J y $U_a=-5{,}55\\times10^{21}$ J. En los dos, $E=-5{,}46\\times10^{21}$ J $=-\\dfrac{Gm_Sm}{2a}$: la 13.13 con $a$ en lugar de $r$.</li>",
+    "    <li><b>Forma general:</b> $v_p=\\sqrt{\\dfrac{Gm_S}{a}\\dfrac{1+e}{1-e}}$, $v_a=\\sqrt{\\dfrac{Gm_S}{a}\\dfrac{1-e}{1+e}}$; con $e=0$ las dos dan $\\sqrt{Gm_S/a}$, la del círculo ✓.</li>",
+    "  </ol>",
+    "  <div class=\"recipe\"><b>Receta:</b> rapideces en una elipse: $L$ constante en los ápsides + energía constante; dos ecuaciones, dos incógnitas. La energía total solo depende de $a$: $E=-GMm/2a$.</div>"
    ],
    "src": {
     "l": "U",
@@ -1106,26 +852,37 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte14.html"
+   "t": "fig",
+   "ref": "orbita-eliptica-muy-alargada-del-cometa-halley-c"
   },
   {
-   "t": "caja",
-   "k": "def",
-   "h": "El Sol tampoco está quieto: planetas de otras estrellas",
-   "html": "<p>En todo lo anterior hemos supuesto el Sol en reposo. En realidad el Sol y cada planeta giran alrededor de su <b>centro de masa común</b>; como el Sol tiene unas 750 veces la masa de todos los planetas juntos, ese centro está cerca del centro del Sol y el error es pequeño. Los astrónomos aprovechan el efecto al revés: los telescopios más sensibles detectan el «bamboleo» de una estrella que gira alrededor del centro de masa común con un planeta que no se ve, y así descubren planetas fuera del Sistema Solar.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.5, «Movimientos planetarios y el centro de masa», fig. 13.22, p. 414",
-    "txt": "U p.414"
-   }
+   "t": "parte",
+   "archivo": "interactivo-orbitas.html"
+  },
+  {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Un asteroide tiene un semieje mayor de 4 UA (la Tierra, 1 UA y 1 año). ¿Cuál es su periodo?",
+     "a": "$T\\propto a^{3/2}$: $T=4^{3/2}=8$ años. La excentricidad no importa."
+    },
+    {
+     "q": "Un cometa tiene $r_p=1{,}0\times10^{11}$ m y $r_a=5{,}0\times10^{12}$ m. Halla $a$, $e$ y el cociente $v_a/v_p$.",
+     "a": "$a=(r_p+r_a)/2=2{,}55\\times10^{12}$ m; $e=\\dfrac{r_a-r_p}{r_a+r_p}=0{,}961$; $v_a/v_p=r_p/r_a=0{,}02$ (50 veces más lento en el afelio)."
+    },
+    {
+     "q": "La Luna da una vuelta en 27,3 días a $3{,}84\times10^8$ m del centro de la Tierra. Calcula con eso la masa de la Tierra.",
+     "a": "$M=\\dfrac{4\\pi^2r^3}{GT^2}$ con $T=27{,}3\\cdot86\\,400=2{,}36\\times10^6$ s: $M=6{,}02\\times10^{24}$ kg ✓."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s6",
    "n": "6",
    "titulo": "Distribuciones esféricas de masa",
-   "prio": null,
+   "prio": 2,
    "src": {
     "l": "U",
     "ref": "U §13.6, pp. 414-417",
@@ -1134,63 +891,21 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva: la Tierra como una cebolla",
-   "html": "<p>Imagina un planeta formado por muchas capas esféricas concéntricas, como una cebolla. Newton demostró dos cosas sobre cada capa (un <b>cascarón</b> delgado): (1) <b>fuera</b> de ella, atrae como si toda su masa estuviera en el centro; (2) <b>dentro</b> de ella, <b>no atrae</b>: la fuerza total es cero (el trozo cercano tiene poca masa, pero está cerca; el lejano tiene más masa, pero está más lejos: la masa crece como $d^2$ y la fuerza decrece como $1/d^2$, así que se compensan exactamente). Por eso, dentro de un planeta, <b>solo cuenta la masa que hay más cerca del centro que tú</b>.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.6, pp. 414-416",
-    "txt": "U p.414-416"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "Cascarón y esfera sólida (ec. 13.18-13.26)",
+   "h": "Cascarón y esfera: dentro solo cuenta la masa interior",
    "html": [
-    "<ul>",
-    "    <li><b>Cascarón de masa $M$, punto exterior ($r\\gt R$):</b> $F=\\dfrac{GMm}{r^2}$ y $U=-\\dfrac{GMm}{r}$ (13.24), como una masa puntual en el centro.</li>",
-    "    <li><b>Punto interior ($r\\lt R$):</b> $U=-\\dfrac{GMm}{R}$ es <b>constante</b> ⇒ la fuerza es cero (13.25-13.26).</li>",
-    "    <li><b>Esfera sólida:</b> fuera, como puntual. Dentro, <b>solo atrae la esfera de radio $r$</b> (la masa que hay por debajo de ti); las capas exteriores no contribuyen. Si la densidad es uniforme, la masa interior es $M\\,(r/R)^3$ y $F_g=\\dfrac{GMm\\,r}{R^3}$: <b>crece linealmente con $r$</b> (como un resorte), hasta valer $GMm/R^2$ en la superficie, y es nula en el centro.</li>",
-    "  </ul>"
+    "<p>Piensa en un planeta como una cebolla de <b>cascarones</b> esféricos. Newton demostró que un cascarón (1) atrae a lo que está <b>fuera</b> como si su masa estuviera en el centro y (2) <b>no atrae nada</b> a lo que está <b>dentro</b>: el trozo cercano tiene poca masa pero está cerca y el lejano tiene más masa pero está más lejos, y se compensan exactamente.</p>",
+    "  <ul>",
+    "    <li><b>Cascarón de masa $M$ y radio $R$, punto exterior ($r\\gt R$):</b> $F=\\dfrac{GMm}{r^2}$ y $U=-\\dfrac{GMm}{r}$ (13.24).</li>",
+    "    <li><b>Punto interior ($r\\lt R$):</b> $U=-\\dfrac{GMm}{R}$ es <b>constante</b> ⇒ $F=0$ (13.25-13.26).</li>",
+    "    <li><b>Esfera sólida:</b> fuera, como una partícula; dentro, <b>solo atrae la masa $M(r)$ que hay a menos de $r$ del centro</b>: $F=GM(r)m/r^2$.</li>",
+    "  </ul>",
+    "  <p><b>Ejemplo mínimo (ejemplo 13.10).</b> Túnel por el centro de una Tierra uniforme: $M(r)=m_T(r/R_T)^3$ ⇒ $F_g=\\dfrac{Gm_Tm}{R_T^3}\\,r$. Crece <b>linealmente</b> con $r$ (como un resorte): nula en el centro y $Gm_Tm/R_T^2$ en la superficie. Si la densidad no es uniforme, $M(r)=\\int_0^r\\rho\\,4\\pi r'^2\\,dr'$ (<a href=\"#e13\">E13</a>). <b>Error típico:</b> usar $1/r^2$ con la masa total para un punto interior.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §13.6, ec. 13.18-13.26, pp. 414-416",
-    "txt": "U p.414-416"
-   }
-  },
-  {
-   "t": "ej",
-   "ref": "demostraci-n-del-cascar-n-por-anillos-opcional"
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo 13.10 — «Viaje al centro de la Tierra»",
-   "html": [
-    "<p>Se abre un túnel por el centro de una Tierra supuesta de densidad uniforme (masa $m_T$, radio $R_T$). ¿Qué fuerza gravitacional siente un cuerpo de masa $m$ a una distancia $r\\lt R_T$ del centro?</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Solo cuenta la esfera interior</b> de radio $r$; su masa es $M=m_T\\dfrac{V_r}{V_T}=m_T\\left(\\dfrac{r}{R_T}\\right)^3$ (misma densidad ⇒ la masa es proporcional al volumen).</li>",
-    "    <li><b>Fuerza (13.2 aplicada a esa esfera):</b> $F_g=\\dfrac{GMm}{r^2}=\\dfrac{Gm_Tm}{R_T^3}\\,r$.</li>",
-    "    <li><b>Lectura:</b> $F_g\\propto r$ (no $1/r^2$), vale $Gm_Tm/R_T^2$ en la superficie y 0 en el centro.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 13.10, pp. 416-417",
-    "txt": "U p.416-417"
-   }
-  },
-  {
-   "t": "libro",
-   "img": "../assets/img/fig_u_13_25_dentro.png",
-   "alt": "Corte de la Tierra con un túnel que pasa por el centro: un objeto de masa m a distancia r del centro solo siente la atracción de la esfera de radio r",
-   "pie": "Túnel por el centro de la Tierra (supuesta uniforme): un objeto a distancia $r$ del centro solo siente la masa de la esfera de radio $r$.",
-   "src": {
-    "l": "U",
-    "ref": "U fig. 13.25, p. 417",
-    "txt": "U p.417"
+    "ref": "U §13.6, ecs. 13.18-13.26, pp. 414-416; Ejemplo 13.10, pp. 416-417",
+    "txt": "U p.414-417"
    }
   },
   {
@@ -1198,15 +913,37 @@
    "ref": "gravedad-frente-a-la-distancia-al-centro-de-una-"
   },
   {
+   "t": "ej",
+   "ref": "demostraci-n-del-cascar-n-por-anillos-opcional"
+  },
+  {
    "t": "parte",
-   "archivo": "parte15.html"
+   "archivo": "interactivo-g-radial.html"
+  },
+  {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "En una Tierra uniforme, ¿cuánto vale $g$ a mitad de camino hacia el centro ($r=R_T/2$)?",
+     "a": "Dentro, $g=g_0\\,r/R_T$: $g=9{,}80/2=4{,}90$ m/s²."
+    },
+    {
+     "q": "Una masa está dentro de un cascarón esférico hueco, fuera del centro. ¿Qué fuerza le hace el cascarón?",
+     "a": "Ninguna: $U$ es constante dentro del cascarón ⇒ $F=0$ en cualquier punto interior, no solo en el centro."
+    },
+    {
+     "q": "En una Tierra uniforme, ¿a qué dos distancias del centro vale $g$ la cuarta parte de $g_0$?",
+     "a": "Dentro, $g_0r/R=g_0/4$ ⇒ $r=R_T/4$. Fuera, $g_0(R/r)^2=g_0/4$ ⇒ $r=2R_T$."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s7",
    "n": "7",
    "titulo": "Peso aparente y rotación terrestre",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §13.7, pp. 417-419",
@@ -1215,20 +952,11 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>La Tierra gira, así que no es un sistema inercial. Quien está en el <b>ecuador</b> da una vuelta al día en un círculo grande: parte de la atracción de la Tierra «se gasta» en mantenerle en ese círculo (aceleración centrípeta), y la báscula bajo sus pies empuja un poco <b>menos</b>. En el <b>polo</b>, en cambio, solo gira sobre sí mismo (no describe ningún círculo), así que la báscula marca todo el peso. Compara con la sensación de ir en un coche que toma una curva: te «aplasta» a un lado; aquí el efecto es que te aligera.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.7, p. 417",
-    "txt": "U p.417"
-   }
-  },
-  {
-   "t": "caja",
    "k": "def",
    "h": "Peso verdadero y peso aparente",
-   "html": "<p>El <b>peso verdadero</b> $\\vec w_0$ es la fuerza gravitacional de la Tierra, de magnitud $Gm_Tm/R_T^2$ (es el mismo en toda la superficie de una Tierra esférica). El <b>peso aparente</b> $\\vec w$ es lo que marca una báscula de resorte: la reacción a la fuerza $\\vec F$ que la báscula ejerce sobre el cuerpo (es decir, $\\vec w=-\\vec F$). La «aceleración de la gravedad» $\\vec g=\\vec w/m$ es la del peso aparente: la aceleración con que cae un cuerpo visto desde la Tierra que gira. Sin rotación sería $\\vec g_0=\\vec w_0/m$.</p>",
+   "html": [
+    "<p>La Tierra gira: quien está en el <b>ecuador</b> da una vuelta al día en un círculo de radio $R_T$, parte de la atracción «se gasta» en esa aceleración centrípeta y la báscula empuja un poco <b>menos</b>. En el <b>polo</b> no describe ningún círculo y la báscula marca todo el peso. El <b>peso verdadero</b> $\\vec w_0$ es la atracción gravitacional, de módulo $Gm_Tm/R_T^2$; el <b>peso aparente</b> $\\vec w$ es lo que marca una báscula de resorte: $\\vec w=-\\vec F$, con $\\vec F$ la fuerza de la báscula sobre el cuerpo. La «aceleración de la gravedad» de un lugar es la del peso aparente, $\\vec g=\\vec w/m$: la aceleración con la que cae un cuerpo visto desde la Tierra que gira (sin rotación sería $\\vec g_0=\\vec w_0/m$).</p>"
+   ],
    "src": {
     "l": "U",
     "ref": "U §13.7, fig. 13.26, pp. 417-418",
@@ -1238,15 +966,15 @@
   {
    "t": "caja",
    "k": "thm",
-   "h": "Efecto de la rotación (ec. 13.27 y 13.28)",
+   "h": "Polo y ecuador: $g=g_0-\\omega^2R$",
    "html": [
-    "<p>En el <b>polo</b>, el cuerpo está en equilibrio en un sistema inercial: $F=w_0$, es decir, $w=w_0$ y $g=g_0$. En el <b>ecuador</b>, el cuerpo describe un círculo de radio $R_T$ con rapidez $v$ y debe haber una fuerza neta hacia dentro: $w_0-F=mv^2/R_T$. Por tanto</p>",
-    "  $$w=w_0-\\frac{mv^2}{R_T}\\quad(13.27)\\qquad\\Longrightarrow\\qquad g=g_0-\\frac{v^2}{R_T}=g_0-\\omega^2R_T=g_0-\\frac{4\\pi^2R_T}{T^2}$$",
-    "  <p>Para la Tierra ($T=86\\,164$ s, el día sidéreo; en ese tiempo un punto del ecuador recorre $2\\pi R_T$): $v=465$ m/s y $v^2/R_T=0{,}0339$ m/s². En latitudes intermedias $\\vec w_0$ y $\\vec a_{rad}$ no están en la misma recta y hay que restar vectorialmente: $\\vec w=\\vec w_0-m\\vec a_{rad}$, $\\vec g=\\vec g_0-\\vec a_{rad}$ (13.28); la diferencia de módulos está entre $0$ y $0{,}0339$ m/s².</p>"
+    "<p><b>Polo:</b> el cuerpo está en equilibrio, $F=w_0$ ⇒ $w=w_0$ y $g=g_0=GM/R^2$. <b>Ecuador:</b> describe un círculo de radio $R$, así que hace falta una fuerza neta hacia el centro, $w_0-F=mv^2/R$:</p>",
+    "  $$w=w_0-\\frac{mv^2}{R_T}\\quad(13.27)\\qquad\\Longrightarrow\\qquad g=g_0-\\omega^2R=g_0-\\frac{4\\pi^2R}{T^2}$$",
+    "  <p>En latitudes intermedias se resta como vectores: $\\vec g=\\vec g_0-\\vec a_{rad}$ (13.28). <b>Ejemplo mínimo (la Tierra).</b> Con $T=86\\,164$ s (el día sidéreo): $v=465$ m/s y $\\omega^2R_T=0{,}0339$ m/s², un 0,35 % de $g_0$. Las medidas (tabla 13.1) dan algo menos de $g$ cerca del ecuador (Zona del Canal, 9° N: $9{,}78243$ m/s²), aunque también influyen la altitud y la densidad del terreno. <b>Error típico:</b> <b>sumar</b> la centrípeta en vez de restarla (en el ecuador el suelo empuja menos); dejar $R$ en km o $T$ en horas; o decir «no hay diferencia» sin comparar $\\omega^2R$ con $g_0$ (la fracción es $\\omega^2R^3/GM$, <a href=\"#x1\">X1</a>).</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §13.7, ec. 13.27 y 13.28, p. 418",
+    "ref": "U §13.7, ecs. 13.27 y 13.28 y tabla 13.1, p. 418",
     "txt": "U p.418"
    }
   },
@@ -1256,43 +984,32 @@
   },
   {
    "t": "parte",
-   "archivo": "parte16.html"
+   "archivo": "libro-peso-aparente.html"
   },
   {
-   "t": "caja",
-   "k": "def",
-   "h": "Valores medidos de $g$ (tabla 13.1)",
-   "html": "<p>La gravedad real depende de la latitud (por la rotación), pero también de la elevación y de las diferencias de densidad del terreno. La tabla 13.1 de U recoge medidas en varias estaciones; la de menor latitud, la Zona del Canal (9° N, al nivel del mar), da $g=9{,}78243$ m/s², en línea con el valor algo menor cerca del ecuador que se calcula con $g=g_0-\\omega^2R$.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.7, tabla 13.1, p. 418",
-    "txt": "U p.418"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "warn",
-   "h": "Errores típicos",
-   "html": [
-    "<ul>",
-    "    <li><b>Sumar</b> la centrípeta en vez de restarla: en el ecuador el suelo empuja <i>menos</i>, no más.</li>",
-    "    <li>Pensar que la diferencia depende de la masa del cuerpo: $g_0-g=\\omega^2R$ es una aceleración, igual para todos.</li>",
-    "    <li>Olvidar pasar km a m y horas o días a segundos antes de calcular $\\omega=2\\pi/T$.</li>",
-    "    <li>Decir «no hay diferencia» sin calcular $\\omega^2R$: lo que importa es su valor <i>frente a</i> $g_0$ (fracción $\\omega^2R^3/GM$).</li>",
-    "  </ul>"
-   ],
-   "src": {
-    "l": "P",
-    "ref": "Explicación propia a partir de U §13.7",
-    "txt": "P"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Un planeta tiene $R=6{,}0\times10^6$ m y gira en 10 h. ¿Cuánto menor es $g$ en su ecuador que en sus polos?",
+     "a": "$\\omega^2R=\\dfrac{4\\pi^2(6{,}0\\times10^6)}{(36\\,000)^2}=0{,}183$ m/s² (con $T=10\\cdot3600=36\\,000$ s)."
+    },
+    {
+     "q": "Una persona de 80 kg se pesa en el polo y en el ecuador terrestre. ¿Cuánto menos marca la báscula en el ecuador (solo por la rotación)?",
+     "a": "$m\\omega^2R_T=80(0{,}0339)=2{,}71$ N: un 0,35 %."
+    },
+    {
+     "q": "¿Con qué periodo de rotación sería $g=0$ en el ecuador terrestre?",
+     "a": "$\\omega^2R_T=g_0$ ⇒ $T=2\\pi\\sqrt{R_T/g_0}=2\\pi\\sqrt{6{,}37\\times10^6/9{,}80}=5{,}07\\times10^3$ s $\\approx84$ min."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s8",
    "n": "8",
    "titulo": "Agujeros negros",
-   "prio": null,
+   "prio": 2,
    "src": {
     "l": "U",
     "ref": "U §13.8, pp. 419-422",
@@ -1301,55 +1018,17 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Idea intuitiva",
-   "html": "<p>Si comprimes una masa en un radio cada vez menor, la rapidez de escape de su superficie, $\\sqrt{2GM/R}$, crece. Si el radio es tan pequeño que esa rapidez <b>supera la de la luz</b>, ni siquiera la luz puede salir: es un <b>agujero negro</b>. Ya en 1783 John Mitchell sugirió que una estrella con la densidad del Sol y 500 veces su radio no dejaría escapar la luz.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.8, p. 419",
-    "txt": "U p.419"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "def",
-   "h": "Punto de partida: el Sol",
-   "html": "<p>El Sol ($M=1{,}99\\times10^{30}$ kg, $R=6{,}96\\times10^{8}$ m) tiene una <b>densidad media</b> $\\rho=\\dfrac{M}{\\tfrac43\\pi R^3}=1410$ kg/m³, un 41 % más que el agua: la gravedad comprime el gas hasta ese valor. La rapidez de escape de su superficie (13.29) es $v=6{,}18\\times10^{5}$ m/s (unos 2,2 millones de km/h), aproximadamente $c/500$, e independiente de la masa del cuerpo que escapa. A igual densidad $v\\propto R$: un cuerpo con la densidad del Sol y un radio 500 veces mayor tendría $v\\gt c$.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.8, p. 419",
-    "txt": "U p.419"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "Rapidez de escape y radio de Schwarzschild (ec. 13.29 y 13.30)",
+   "h": "Rapidez de escape y radio de Schwarzschild",
    "html": [
-    "<p>La rapidez de escape de la superficie de un cuerpo esférico de masa $M$, radio $R$ y densidad media $\\rho$ es</p>",
-    "  $$v_{esc}=\\sqrt{\\frac{2GM}{R}}=\\sqrt{\\frac{8\\pi G\\rho}{3}}\\;R\\qquad(13.29)$$",
-    "  <p>(a igual densidad, $v_{esc}\\propto R$). Imponiendo $v_{esc}=c$ se obtiene el <b>radio de Schwarzschild</b> (el resultado correcto lo da la relatividad general de Einstein, que coincide con este cálculo):</p>",
-    "  $$R_S=\\frac{2GM}{c^2}\\qquad(13.30)$$",
-    "  <p>Un cuerpo esférico sin rotación de masa $M$ cuyo radio es menor que $R_S$ es un <b>agujero negro</b>. La superficie de la esfera de radio $R_S$ es el <b>horizonte de eventos</b>: nada de lo que ocurre dentro puede verse desde fuera. Lejos del agujero negro, su gravedad es la de cualquier cuerpo con la misma masa: si el Sol se convirtiera en agujero negro, las órbitas de los planetas no cambiarían.</p>"
+    "<p>Si comprimes una masa en un radio cada vez menor, la rapidez de escape de su superficie crece; cuando supera la de la luz, ni la luz sale: es un <b>agujero negro</b>. Con la densidad media $\\rho$:</p>",
+    "  $$v_{esc}=\\sqrt{\\frac{2GM}{R}}=\\sqrt{\\frac{8\\pi G\\rho}{3}}\\;R\\quad(13.29)\\qquad\\qquad R_S=\\frac{2GM}{c^2}\\quad(13.30)$$",
+    "  <p>Un cuerpo esférico sin rotación de masa $M$ y radio menor que $R_S$ (el <b>radio de Schwarzschild</b>) es un agujero negro; la esfera de radio $R_S$ es el <b>horizonte de eventos</b>: nada de lo que pasa dentro se ve desde fuera. Imponer $v_{esc}=c$ da el $R_S$ correcto, aunque por coincidencia (ni la energía de la luz es $\\tfrac12mc^2$ ni la 13.9 vale tan cerca); Schwarzschild (1916) lo obtuvo con la relatividad general. Lejos, su gravedad es la de cualquier cuerpo de igual masa: si el Sol se convirtiera en agujero negro, las órbitas de los planetas no cambiarían. <b>Ejemplo mínimo (ejemplo 13.11).</b> Una estrella de $6{,}0\\times10^{30}$ kg (unas tres masas solares) que colapsa: $R_S=\\dfrac{2(6{,}67\\times10^{-11})(6{,}0\\times10^{30})}{(3{,}00\\times10^8)^2}=8{,}9\\times10^3$ m $=8{,}9$ km, con densidad media $2{,}0\\times10^{18}$ kg/m³ (la de un núcleo atómico). Como comparación, el Sol tiene $\\rho=1410$ kg/m³ y $v_{esc}=6{,}18\\times10^5$ m/s $\\approx c/500$. <b>Error típico:</b> olvidar el 2 o no elevar $c$ al cuadrado; confundir $R_S$ con el radio de la órbita de la materia que gira alrededor.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U §13.8, ec. 13.29 y 13.30, pp. 419-420",
-    "txt": "U p.419-420"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "intu",
-   "h": "Por qué $v=c$ «funciona» y qué se sabe desde fuera",
-   "html": [
-    "<p>Igualar $v=c$ en la 13.29 da el $R_S$ correcto, pero <b>por coincidencia</b>: dos errores se compensan, pues la energía de la luz no es $\\tfrac12mc^2$ y la energía potencial cerca de un agujero negro no es la 13.9. Schwarzschild (1916) lo dedujo con la relatividad general y el resultado es el mismo.</p>",
-    "  <p>Un observador exterior solo puede conocer tres cosas del agujero negro: su <b>masa</b> (por su efecto gravitacional), su <b>carga eléctrica</b> (por las fuerzas eléctricas) y su <b>momento angular</b> (un agujero que gira arrastra el espacio a su alrededor). Cualquier otra información se pierde al colapsar dentro del horizonte.</p>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U §13.8, pp. 420-421",
-    "txt": "U p.420-421"
+    "ref": "U §13.8, ecs. 13.29 y 13.30, pp. 419-421; Ejemplo 13.11, p. 421",
+    "txt": "U p.419-421"
    }
   },
   {
@@ -1358,49 +1037,34 @@
   },
   {
    "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo 13.11 — un agujero negro de tres masas solares",
+   "k": "def",
+   "h": "Lo que se sabe desde fuera, la caída y cómo se detectan",
    "html": [
-    "<p>Una estrella de al menos tres masas solares ($M=6{,}0\\times10^{30}$ kg) puede colapsar en un agujero negro. ¿Qué radio tendría su horizonte?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>$R_S=\\dfrac{2GM}{c^2}=\\dfrac{2(6{,}67\\times10^{-11})(6{,}0\\times10^{30})}{(3{,}00\\times10^{8})^2}=8{,}9\\times10^3$ m $=8{,}9$ km.</li>",
-    "    <li><b>Densidad media</b> dentro de ese radio: $\\rho=M/(\\tfrac43\\pi R_S^3)=2{,}0\\times10^{18}$ kg/m³, comparable a la de un núcleo atómico (unas $10^{15}$ veces la de la materia ordinaria de la Tierra).</li>",
-    "  </ol>"
+    "<p>Desde fuera solo se puede conocer la <b>masa</b>, la <b>carga eléctrica</b> y el <b>momento angular</b> del agujero negro. Dentro de $R_S$ la masa sigue colapsando hasta un punto de densidad infinita, la <b>singularidad</b>. Quien viera caer una nave notaría su radio cada vez más «grave» (<b>corrimiento gravitacional al rojo</b>) y sus relojes cada vez más lentos (<b>dilatación del tiempo</b>); el viajero, antes de llegar, sería estirado por las <b>fuerzas de marea</b> (la atracción en los pies, mayor que en la cabeza). Se detectan por el <b>disco de acreción</b>, gas a más de $10^6$ K que emite rayos X, y por las estrellas que orbitan un objeto invisible: alrededor de Sgr A*, en el centro de nuestra galaxia, giran a más de 1500 km/s en torno a $8{,}2\\times10^{36}$ kg (4,1 millones de masas solares) concentrados en menos de $4{,}4\\times10^{10}$ m, compatibles con un agujero negro de $R_S=1{,}2\\times10^{10}$ m.</p>"
    ],
    "src": {
     "l": "U",
-    "ref": "U Ejemplo 13.11, p. 421",
-    "txt": "U p.421"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "def",
-   "h": "La singularidad y una visita a un agujero negro",
-   "html": [
-    "<p>Una vez la masa está dentro de $R_S$, nada impide que siga colapsando: toda ella se comprime en un punto de volumen cero, la <b>singularidad</b>, con densidad infinita. Lejos del agujero, su gravedad es la de cualquier cuerpo de la misma masa; cerca, no. Si te lanzaras hacia él, los que se quedaran atrás verían:</p>",
-    "  <ul>",
-    "    <li><b>Corrimiento gravitacional al rojo:</b> tendrían que sintonizar tu radio a frecuencias cada vez más bajas.</li>",
-    "    <li><b>Dilatación del tiempo:</b> tus relojes (y tu cuerpo) irían cada vez más lentos; no les alcanzaría la vida para verte llegar al horizonte.</li>",
-    "  </ul>",
-    "  <p>Tú, en tu sistema de referencia, llegarías al horizonte en un tiempo muy corto, pero no entero: cayendo con los pies por delante, la atracción sobre los pies sería mayor que sobre la cabeza. Esas diferencias de fuerza (<b>fuerzas de marea</b>) te estirarían hacia el agujero y te comprimirían en la dirección perpendicular, desgarrando tus átomos antes de llegar al horizonte.</p>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U §13.8, «Visita a un agujero negro», p. 421",
-    "txt": "U p.421"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "def",
-   "h": "¿Cómo se detectan?",
-   "html": "<p>El gas cercano forma un <b>disco de acreción</b> que gira y cae en espiral; la fricción lo calienta a más de $10^6$ K y emite rayos X. Además, las estrellas que orbitan en torno a un objeto invisible permiten calcular su masa con la tercera ley de Kepler: en el centro de nuestra galaxia, estrellas que giran a más de 1500 km/s alrededor de Sgr A* indican un objeto de $8{,}2\\times10^{36}$ kg ($4{,}1$ millones de masas solares) y no mayor de $4{,}4\\times10^{10}$ m de radio, compatible con un agujero negro supermasivo de $R_S=2GM/c^2=1{,}2\\times10^{10}$ m.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §13.8, «Detección de agujeros negros», pp. 421-422",
+    "ref": "U §13.8, «Visita a un agujero negro» y «Detección de agujeros negros», pp. 421-422",
     "txt": "U p.421-422"
    }
+  },
+  {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "¿A qué radio habría que comprimir la Tierra para que fuera un agujero negro?",
+     "a": "$R_S=\\dfrac{2Gm_T}{c^2}=8{,}85\\times10^{-3}$ m: unos 9 mm."
+    },
+    {
+     "q": "¿Y el Sol?",
+     "a": "$R_S=\\dfrac{2Gm_S}{c^2}=2{,}95\\times10^3$ m, unos 3 km (hoy su radio es de $6{,}96\\times10^8$ m)."
+    },
+    {
+     "q": "Si el Sol se convirtiera en un agujero negro de la misma masa, ¿cambiaría la órbita de la Tierra?",
+     "a": "No: fuera del cuerpo la gravedad solo depende de la masa ($GMm/r^2$), no del radio."
+    }
+   ]
   },
   {
    "t": "h2",
@@ -1412,15 +1076,78 @@
   },
   {
    "t": "parte",
-   "archivo": "parte17.html"
+   "archivo": "ejercicios-intro.html"
   },
   {
    "t": "parte",
-   "archivo": "ex-examenes.html"
+   "archivo": "nivel-nucleo.html"
+  },
+  {
+   "t": "metodos"
+  },
+  {
+   "t": "ej",
+   "ref": "e1"
+  },
+  {
+   "t": "ej",
+   "ref": "e2"
+  },
+  {
+   "t": "ej",
+   "ref": "e6"
+  },
+  {
+   "t": "ej",
+   "ref": "e4"
+  },
+  {
+   "t": "ej",
+   "ref": "e7"
+  },
+  {
+   "t": "ej",
+   "ref": "e9"
+  },
+  {
+   "t": "ej",
+   "ref": "e10"
+  },
+  {
+   "t": "ej",
+   "ref": "e13"
   },
   {
    "t": "ej",
    "ref": "x1"
+  },
+  {
+   "t": "ej",
+   "ref": "e12"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-practica.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e3"
+  },
+  {
+   "t": "ej",
+   "ref": "e5"
+  },
+  {
+   "t": "ej",
+   "ref": "e8"
+  },
+  {
+   "t": "ej",
+   "ref": "e11"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-teoria.html"
   },
   {
    "t": "ej",
@@ -1455,64 +1182,21 @@
    "ref": "x6"
   },
   {
-   "t": "parte",
-   "archivo": "ex-libro.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte20.html"
-  },
-  {
-   "t": "ej",
-   "ref": "e1"
-  },
-  {
-   "t": "ej",
-   "ref": "e2"
-  },
-  {
-   "t": "ej",
-   "ref": "e3"
-  },
-  {
-   "t": "ej",
-   "ref": "e4"
-  },
-  {
-   "t": "ej",
-   "ref": "e5"
-  },
-  {
-   "t": "ej",
-   "ref": "e6"
-  },
-  {
-   "t": "ej",
-   "ref": "e7"
-  },
-  {
-   "t": "ej",
-   "ref": "e8"
-  },
-  {
-   "t": "ej",
-   "ref": "e9"
-  },
-  {
-   "t": "ej",
-   "ref": "e10"
-  },
-  {
-   "t": "ej",
-   "ref": "e11"
-  },
-  {
-   "t": "ej",
-   "ref": "e12"
-  },
-  {
-   "t": "ej",
-   "ref": "e13"
+   "t": "caja",
+   "k": "tip",
+   "h": "Si te toca otro tema de teoría del capítulo: «Movimiento de satélites» o «Peso aparente y rotación terrestre»",
+   "html": [
+    "<p>Guion propio (no es un enunciado de examen real). Define, da la ecuación, un ejemplo con números y cierra con el error típico:</p>",
+    "  <ul>",
+    "    <li><b>Movimiento de satélites:</b> cañón de Newton (un satélite es un proyectil que no llega al suelo) → gravedad = fuerza centrípeta ⇒ $v=\\sqrt{GM/r}$, $T=2\\pi r^{3/2}/\\sqrt{GM}$ (13.10-13.12) → energía $E=-GMm/2r$, $U=-2K$ (13.13) → ejemplo: a 300 km, 7730 m/s y 90,4 min; trabajo para ponerlo en órbita $3{,}27\\times10^{10}$ J por tonelada → ingravidez aparente (caída libre, no ausencia de gravedad) → $v_{esc}=\\sqrt2\\,v_{circ}$.</li>",
+    "    <li><b>Peso aparente y rotación terrestre:</b> peso verdadero $w_0=GMm/R^2$ y peso aparente (lo que marca la báscula) → polo $w=w_0$; ecuador $w=w_0-mv^2/R$ (13.27); intermedio, resta vectorial (13.28) → ejemplo: Tierra, $\\omega^2R=0{,}0339$ m/s² (0,35 %) → la diferencia depende del periodo de giro al cuadrado (Titán frente a Marte, X1) → error: sumar en vez de restar.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
   },
   {
    "t": "h2",
@@ -1524,7 +1208,7 @@
   },
   {
    "t": "parte",
-   "archivo": "parte21.html"
+   "archivo": "chuleta-tabla.html"
   },
   {
    "t": "caja",
@@ -1552,7 +1236,7 @@
   },
   {
    "t": "parte",
-   "archivo": "parte22.html"
+   "archivo": "lista-comprobacion.html"
   },
   {
    "t": "h2",

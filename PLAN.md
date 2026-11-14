@@ -48,7 +48,7 @@ Receta por tema NN (modelo: `contenido/tema_05/`): resumen de 5 minutos + tabla 
 - [x] C5. Tema 10 (7 secciones, 7 mini-tests, 10 núcleo/6 práctica/2 teoría; X1–X8 intactos)
 - [x] C6. Tema 11 (5 secciones, 5 mini-tests, 7 núcleo/3 práctica; sin exámenes reales catalogados)
 - [x] C7. Tema 12 (6 secciones, 6 mini-tests, 8 núcleo/5 práctica; sin exámenes reales catalogados)
-- [ ] C8. Tema 13
+- [x] C8. Tema 13 (8 secciones, 8 mini-tests, 10 núcleo/4 práctica/8 teoría; X1–X6 intactos)
 - [ ] C9. Temas 14-16
 - [ ] C10. Temas 17-20
 - [ ] C11. Temas 1-4

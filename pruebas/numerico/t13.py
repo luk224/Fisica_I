@@ -14,6 +14,113 @@ def comprobaciones(c):
     c('pagina', 'F entre 10 g y 0,5 kg a 5 cm (1e-10 N)', G * 0.010 * 0.5 / 0.05**2 / 1e-10, 2)
     c('pagina', 'v_esc Tierra (1e4)', sp.sqrt(2 * G * mT / RT) / 1e4, 2)
     c('pagina', 'T Halley (años)', 2 * pi * sp.sqrt((2.67e12)**3 / (G * MS)) / 3.156e7, 0)
+    # §1 (ejemplos 13.1-13.3) y su test
+    F = G * 0.0100 * 0.500 / 0.0500**2
+    c('pagina', 'a1 (1e-8)', F / 0.0100 / 1e-8, 2)
+    c('pagina', 'a2 (1e-10)', F / 0.500 / 1e-10, 2)
+    d = 2.00e12
+    F2 = G * 8.00e30 * 1.00e30 / d**2
+    F1 = F2 / 2
+    Fx, Fy = F2 + F1 * sp.cos(pi / 4), F1 * sp.sin(pi / 4)
+    c('pagina', 'F2 (1e26)', F2 / 1e26, 2)
+    c('pagina', 'F1 (1e25)', F1 / 1e25, 2)
+    c('pagina', 'F1x (1e25)', Fy / 1e25, 2)
+    c('pagina', 'Fx (1e26)', Fx / 1e26, 2)
+    c('pagina', 'F (1e26)', sp.sqrt(Fx**2 + Fy**2) / 1e26, 2)
+    c('pagina', 'ángulo', sp.deg(sp.atan(Fy / Fx)), 1)
+    c('pagina', 'test F 50 kg (1e-7)', G * 50 * 50 / 0.50**2 / 1e-7, 2)
+    c('pagina', 'test a Tierra (1e-25)', 0.20 * 9.8 / mT / 1e-25, 2)
+    # §2 (ejemplo 13.4, densidad) y su test
+    c('pagina', 'm_T = gR²/G (1e24)', 9.80 * RT**2 / G / 1e24, 2)
+    m4 = 3430 / 9.80
+    c('pagina', 'masa módulo', m4, 0)
+    c('pagina', 'w Marte (1e3)', G * 6.42e23 * m4 / 3.39e6**2 / 1e3, 2)
+    c('pagina', 'g Marte', G * 6.42e23 / 3.39e6**2, 1)
+    c('pagina', 'V_T (1e21)', sp.Rational(4, 3) * pi * RT**3 / 1e21, 2)
+    c('pagina', 'g con rho', sp.Rational(4, 3) * pi * G * 5500 * RT, 2)
+    c('pagina', 'test g 2M 2R', 9.80 * 2 / 4, 2)
+    c('pagina', 'test w a 400 km', G * mT * 70 / 6.77e6**2, 0)
+    c('pagina', 'test w suelo', 70 * 9.80, 0)
+    c('pagina', '89 % a 400 km', (6370 / 6770)**2 * 100, 0)
+    # §3 (ejemplo 13.5) y su test
+    c('pagina', 'dU R->2R (1e10)', G * mT * 1000 / (2 * RT) / 1e10, 2)
+    c('pagina', 'mgR (1e10)', 1000 * 9.80 * RT / 1e10, 2)
+    c('pagina', 'error 10 km %', 10e3 / (RT + 10e3) * 100, 2)
+    c('pagina', 'v a 2R_T', sp.sqrt(G * mT / RT), -1)
+    c('pagina', 'v esc Luna (km/s)', sp.sqrt(2 * G * 7.35e22 / 1.74e6) / 1e3, 2)
+    # §4 (ejemplo 13.6, ISS) y su test
+    r = RT + 0.300e6
+    v = sp.sqrt(G * mT / r)
+    c('pagina', 'v 300 km', v, -1)
+    c('pagina', 'T 300 km (s)', 2 * pi * r / v, -1)
+    c('pagina', 'T 300 km (min)', 2 * pi * r / v / 60, 1)
+    c('pagina', 'a_rad 300 km', v**2 / r, 2)
+    c('pagina', 'E1 suelo (1e10)', G * mT * 1000 / RT / 1e10, 2)
+    c('pagina', 'E2 órbita (1e10)', G * mT * 1000 / (2 * r) / 1e10, 2)
+    c('pagina', 'W poner en órbita (1e10)', (G * mT * 1000 / RT - G * mT * 1000 / (2 * r)) / 1e10, 2)
+    rI = 6.8e6
+    c('pagina', 'v ISS (km/s)', sp.sqrt(G * mT / rI) / 1e3, 2)
+    c('pagina', 'T ISS (min)', 2 * pi * rI / sp.sqrt(G * mT / rI) / 60, 1)
+    c('pagina', 'g ISS', 9.81 * (6370 / 6770)**2, 1)
+    r = 2 * RT
+    v = sp.sqrt(G * mT / r)
+    c('pagina', 'test v 2R (1e3)', v / 1e3, 2)
+    c('pagina', 'test T 2R (1e4 s)', 2 * pi * r / v / 1e4, 2)
+    c('pagina', 'test T 2R (h)', 2 * pi * r / v / 3600, 2)
+    E = G * mT * 500 / (2 * 7.00e6)
+    c('pagina', 'test E (1e10)', E / 1e10, 2)
+    c('pagina', 'test U (1e10)', 2 * E / 1e10, 2)
+    # §5 (ejemplos 13.8-13.9, problema práctico) y su test
+    rp, ra = 8.75e10, 5.26e12
+    aH = (rp + ra) / 2
+    c('pagina', 'a Halley (1e12)', aH / 1e12, 2)
+    c('pagina', 'e Halley', 1 - rp / aH, 3)
+    c('pagina', 'ra/rp', ra / rp, 0)
+    TH = 2 * pi * sp.sqrt(aH**3 / (G * MS))
+    c('pagina', 'T Halley (1e9 s)', TH / 1e9, 2)
+    TP = 4.62 * 3.156e7
+    c('pagina', 'T Palas (1e8 s)', TP / 1e8, 2)
+    c('pagina', 'a Palas (1e11)', (G * MS * TP**2 / (4 * pi**2))**sp.Rational(1, 3) / 1e11, 2)
+    mH = 2.2e14
+    vp = sp.sqrt(2 * G * MS * (1 / rp - 1 / ra) / (1 - (rp / ra)**2))
+    va = vp * rp / ra
+    c('pagina', 'vp (1e4)', vp / 1e4, 2)
+    c('pagina', 'va', va, 0)
+    c('pagina', 'Kp (1e23)', mH * vp**2 / 2 / 1e23, 2)
+    c('pagina', 'Up (1e23)', G * MS * mH / rp / 1e23, 2)
+    c('pagina', 'Ka (1e19)', mH * va**2 / 2 / 1e19, 2)
+    c('pagina', 'Ua (1e21)', G * MS * mH / ra / 1e21, 2)
+    c('pagina', 'E (1e21)', abs(mH * vp**2 / 2 - G * MS * mH / rp) / 1e21, 2)
+    c('pagina', 'E = GMm/2a (1e21)', G * MS * mH / (2 * aH) / 1e21, 2)
+    rp2, ra2 = 1.0e11, 5.0e12
+    c('pagina', 'test a cometa (1e12)', (rp2 + ra2) / 2 / 1e12, 2)
+    c('pagina', 'test e cometa', (ra2 - rp2) / (ra2 + rp2), 3)
+    c('pagina', 'test va/vp', rp2 / ra2, 2)
+    TL = 27.3 * 86400
+    c('pagina', 'test T Luna (1e6 s)', TL / 1e6, 2)
+    c('pagina', 'test M Tierra (1e24)', 4 * pi**2 * 3.84e8**3 / (G * TL**2) / 1e24, 2)
+    # §6 test
+    c('pagina', 'test g a R/2', 9.80 / 2, 2)
+    # §7 (Tierra) y su test
+    c('pagina', 'v ecuador', 2 * pi * RT / 86164, 0)
+    c('pagina', 'w2R Tierra', 4 * pi**2 * RT / 86164**2, 4)
+    c('pagina', 'w2R/g0 %', 4 * pi**2 * RT / 86164**2 / 9.80 * 100, 2)
+    c('pagina', 'test w2R planeta', 4 * pi**2 * 6.0e6 / 36000**2, 3)
+    c('pagina', 'test 80 kg', 80 * 0.0339, 2)
+    T0 = 2 * pi * sp.sqrt(RT / 9.80)
+    c('pagina', 'test T g=0 (1e3 s)', T0 / 1e3, 2)
+    c('pagina', 'test T g=0 (min)', T0 / 60, 0)
+    # §8 (ejemplo 13.11, Sol, Sgr A*) y su test
+    c3 = 3.00e8
+    RS = 2 * G * 6.0e30 / c3**2
+    c('pagina', 'R_S 3 masas solares (1e3)', RS / 1e3, 1)
+    c('pagina', 'rho R_S (1e18)', 6.0e30 / (sp.Rational(4, 3) * pi * RS**3) / 1e18, 1)
+    c('pagina', 'rho Sol', MS / (sp.Rational(4, 3) * pi * 6.96e8**3), -1)
+    c('pagina', 'v esc Sol (1e5)', sp.sqrt(2 * G * MS / 6.96e8) / 1e5, 2)
+    c('pagina', 'Sgr A* masas solares (1e6)', 8.2e36 / MS / 1e6, 1)
+    c('pagina', 'Sgr A* R_S (1e10)', 2 * G * 8.2e36 / c3**2 / 1e10, 1)
+    c('pagina', 'test R_S Tierra (1e-3)', 2 * G * mT / c3**2 / 1e-3, 2)
+    c('pagina', 'test R_S Sol (1e3)', 2 * G * MS / c3**2 / 1e3, 2)
     # ---- E1: tres masas en línea
     m = 2.00
     FC = G * m * m / 0.10**2
