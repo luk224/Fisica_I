@@ -172,5 +172,7 @@ Por defecto **siempre claro** (el CSS ya no sigue `prefers-color-scheme`); solo 
 
 **Página de cambios:** `cambios.html` (generada desde `git log` por `herramientas/generar_cambios.py`, enlazada desde el pie del índice). Los mensajes de commit son lo que se lee ahí: claros y en español.
 
+**Siguientes pasos:** ver `PLAN.md` (lista ordenada y retomable; marcar cada paso al terminarlo).
+
 ## Volver al índice
 El enlace «← Índice de temas» (`a[href$="index.html"]`) guarda en `sessionStorage` (`volverA`) la ruta del tema (lo hace `assets/resumen.js`) y un script al final de `index.html` hace scroll hasta esa tarjeta y la resalta 2 s. No quitar ninguno de los dos; todo tema nuevo debe usar ese enlace con `href` acabado en `index.html`.
