@@ -89,3 +89,52 @@ def comprobaciones(c):
     c('e8', 'K_B', K, 2); c('e8', 'Ug', Ug, 2); c('e8', 'Wf', Wf, 2); c('e8', 'U_el', K + Ug + Wf, 0)
     # ---- X8: aproximación mgh de la energía potencial
     c('x7', 'g a 400 km (%)', 100 * (6371 / (6371 + 400))**2, 0)
+    # ---- teoría, ejemplos del libro y mini-tests (se buscan en toda la página)
+    g = 9.80
+    c('pagina', 'mínimo: libro ΔU', 2.0 * g * 1.5, 1)
+    m = 0.145
+    c('pagina', 'ej. 7.1: altura', 20.0**2 / (2 * g), 1)
+    c('pagina', 'ej. 7.1: K1', m * 20.0**2 / 2, 1)
+    U1 = m * g * (-0.50)
+    c('pagina', 'ej. 7.2: U1', abs(U1), 2)
+    c('pagina', 'ej. 7.2: W_otras', m * 20.0**2 / 2 - U1, 1)
+    c('pagina', 'ej. 7.2: F', (m * 20.0**2 / 2 - U1) / 0.50, -1)
+    c('pagina', 'ej. 7.2: U3', m * g * 15.0, 1)
+    K3 = m * 20.0**2 / 2 - m * g * 15.0
+    c('pagina', 'ej. 7.2: K3', K3, 1)
+    c('pagina', 'ej. 7.2: v3', sp.sqrt(2 * K3 / m), 0)
+    c('pagina', 'ej. 7.4: v', sp.sqrt(2 * g * 3.00), 2)
+    k, m = 5.00, 0.200
+    K = k * (0.100**2 - 0.080**2) / 2
+    c('pagina', 'ej. 7.7: K', K, 4); c('pagina', 'ej. 7.7: v', sp.sqrt(2 * K / m), 2)
+    c('pagina', 'ej. 7.8: U2', k * 0.100**2 / 2, 4)
+    K = 0.610 * 0.100 - k * 0.100**2 / 2
+    c('pagina', 'ej. 7.8: K2', K, 4); c('pagina', 'ej. 7.8: v', sp.sqrt(2 * K / m), 2)
+    c('pagina', 'ej. 7.8: v sin resorte', sp.sqrt(2 * 0.0610 / m), 2)
+    c('pagina', 'ej. 7.9: K1', 2000 * 4.00**2 / 2, 0)
+    c('pagina', 'ej. 7.9: mgy2', 2000 * g * 2.00, 0)
+    k9 = (2000 * 4.00**2 / 2 - 17000 * 2.00 + 2000 * g * 2.00) / 2
+    c('pagina', 'ej. 7.9: k (1e4)', k9 / 1e4, 2)
+    c('pagina', 'ej. 7.9: U_el', k9 * 2.00**2 / 2, 0)
+    c('pagina', 'ej. 7.10: recto', 0.200 * 40.0 * g * 2.50, 0)
+    c('pagina', 'ej. 7.10: dos tramos', 0.200 * 40.0 * g * 3.50, 0)
+    c('pagina', 'ej. 7.12: ΔK', 25.0 * 6.00**2 / 2, 0)
+    c('pagina', 'ej. 7.12: ΔU', 25.0 * g * 3.00, 0)
+    c('pagina', 'ej. 7.12: ΔU_int', 25.0 * g * 3.00 - 25.0 * 6.00**2 / 2, 0)
+    # mini-tests
+    c('pagina', 'test 1: caída', sp.sqrt(2 * g * 5.0), 2)
+    c('pagina', 'test 1: lanzada', sp.sqrt(3.0**2 + 2 * g * 5.0), 2)
+    c('pagina', 'test 1: tobogán W_f', 30 * g * 2.5 - 30 * 5.0**2 / 2, 0)
+    c('pagina', 'test 1: mochila', 8 * g * 0.75, 1)
+    c('pagina', 'test 2: U 4 cm', 500 * 0.040**2 / 2, 2)
+    c('pagina', 'test 2: U 8 cm', 500 * 0.080**2 / 2, 1)
+    c('pagina', 'test 2: v', sp.sqrt(2 * 0.40 / 0.20), 1)
+    x = sp.symbols('x', positive=True)
+    c('pagina', 'test 2: compresión', sp.solve(0.50 * g * (0.30 + x) - 200 * x**2 / 2, x)[0], 3)
+    c('pagina', 'test 3: fricción ida y vuelta', 0.30 * 10 * g * 8.0, 0)
+    c('pagina', 'test 4: F', 10 * 0.30, 1)
+    c('pagina', 'test 4: |F| en 2D', sp.sqrt(12**2 + 3**2), 1)
+    c('pagina', 'test 4: repulsión', 2.0 / 0.50**2, 1)
+    c('pagina', 'test 5: retorno', sp.sqrt(3), 2)
+    c('pagina', 'test 5: K max', 5.00 * 0.100**2 / 2, 3)
+    c('pagina', 'test 5: v max', sp.sqrt(2 * 0.025 / 0.200), 2)
