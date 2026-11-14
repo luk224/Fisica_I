@@ -47,7 +47,7 @@ class Numerico(unittest.TestCase):
                     else:
                         t = texto(d / f'{ej}.html')
                     esperado = formatear(val, dec)
-                    self.assertIn(esperado, t, f'{ej}: {desc} = {esperado} no aparece')
+                    self.assertTrue(esperado in t or esperado.replace(',', '.') in t, f'{ej}: {desc} = {esperado} no aparece')
 
 
 if __name__ == '__main__':

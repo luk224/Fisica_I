@@ -1,0 +1,719 @@
+{
+ "num": 1,
+ "kick": "Bloque Mecánica · Tema 1",
+ "titulo": "Unidades, cantidades físicas y vectores",
+ "descripcion": "El \"kit de herramientas\" antes de hacer física: cómo medir, cómo redondear con honestidad y cómo sumar magnitudes que tienen dirección (vectores).",
+ "chips": [
+  "Libro oficial: Sears-Zemansky, cap. 1 (pp. 1-33)",
+  "Ejercicios resueltos: 9 (solucionario)",
+  "Ejercicios de examen real: 0",
+  "⏱ ~3 h de estudio"
+ ],
+ "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
+ "titulo_pagina": "Física I · Tema 1 Unidades, cantidades físicas y vectores",
+ "archivo": "tema_01_unidades_vectores.html",
+ "examenes_requeridos": [],
+ "figuras": {
+  "suma-de-vectores-cola-punta": {
+   "w": "320",
+   "h": "160",
+   "label": "Suma de vectores cola-punta",
+   "pie": "Suma cola-punta: se coloca la cola de $\\vec B$ en la punta de $\\vec A$; el vector suma $\\vec A+\\vec B$ va de la cola de $\\vec A$ a la punta de $\\vec B$. La suma de vectores es conmutativa: $\\vec A+\\vec B=\\vec B+\\vec A$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del método cola-punta",
+    "txt": "P"
+   }
+  },
+  "suma-de-vectores-por-el-metodo-del-paralelogramo": {
+   "w": "320",
+   "h": "160",
+   "label": "Suma de vectores por el método del paralelogramo",
+   "pie": "Método del paralelogramo: $\\vec A$ y $\\vec B$ salen del mismo punto; se completan los lados paralelos (discontinuo) y la suma $\\vec A+\\vec B$ es la diagonal desde el origen común. Da el mismo resultado que cola-punta.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del método del paralelogramo",
+    "txt": "P"
+   }
+  },
+  "resta-de-vectores-a-menos-b": {
+   "w": "320",
+   "h": "150",
+   "label": "Resta de vectores A menos B",
+   "pie": "$\\vec A-\\vec B=\\vec A+(-\\vec B)$: se pone $-\\vec B$ (mismo tamaño, sentido contrario) a continuación de $\\vec A$. Equivale a la flecha que va de la punta de $\\vec B$ a la punta de $\\vec A$ (gris discontinuo).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de la resta de vectores",
+    "txt": "P"
+   }
+  },
+  "multiplicacion-de-un-vector-por-un-escalar": {
+   "w": "320",
+   "h": "130",
+   "label": "Multiplicación de un vector por un escalar",
+   "pie": "$c\\vec A$ con $c=2$ duplica la magnitud conservando la dirección; con $c=-\\tfrac12$ la reduce a la mitad e invierte el sentido (antiparalelo).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de c·A",
+    "txt": "P"
+   }
+  },
+  "componentes-de-un-vector": {
+   "w": "320",
+   "h": "180",
+   "label": "Componentes de un vector",
+   "pie": "Las componentes son las «sombras» de $\\vec A$ sobre los ejes: $A_x=A\\cos\\theta$ (cateto contiguo) y $A_y=A\\sin\\theta$ (cateto opuesto) del triángulo rectángulo de hipotenusa $A$. Y al revés, $A=\\sqrt{A_x^2+A_y^2}$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de componentes, ángulo desde +x",
+    "txt": "P"
+   }
+  },
+  "vectores-unitarios-y-descomposicion": {
+   "w": "320",
+   "h": "180",
+   "label": "Vectores unitarios y descomposición",
+   "pie": "Los unitarios $\\hat\\imath$ y $\\hat\\jmath$ (longitud 1) marcan los ejes. $\\vec A=A_x\\hat\\imath+A_y\\hat\\jmath$ significa: «avanza $A_x$ veces $\\hat\\imath$ y luego $A_y$ veces $\\hat\\jmath$» (el eje $z$ y $\\hat k$ salen del papel).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de vectores unitarios",
+    "txt": "P"
+   }
+  },
+  "producto-escalar-como-proyeccion": {
+   "w": "320",
+   "h": "170",
+   "label": "Producto escalar como proyección",
+   "pie": "$\\vec A\\cdot\\vec B=A\\,(B\\cos\\phi)$: la proyección de $\\vec B$ sobre la dirección de $\\vec A$ (trazo gris inferior) multiplicada por $A$. La línea discontinua es la perpendicular que «proyecta» la punta de $\\vec B$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de la proyección",
+    "txt": "P"
+   }
+  },
+  "signo-del-producto-escalar-segun-el-angulo": {
+   "w": "320",
+   "h": "125",
+   "label": "Signo del producto escalar según el ángulo",
+   "pie": "El signo de $\\vec A\\cdot\\vec B$ es el de $\\cos\\phi$: positivo si apuntan «hacia el mismo lado», cero si son perpendiculares, negativo si apuntan «hacia lados opuestos».",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del signo del producto escalar",
+    "txt": "P"
+   }
+  },
+  "producto-vectorial-y-area-del-paralelogramo": {
+   "w": "320",
+   "h": "165",
+   "label": "Producto vectorial y área del paralelogramo",
+   "pie": "El módulo $|\\vec A\\times\\vec B|=AB\\sin\\phi$ es el <b>área del paralelogramo</b> (sombreado) de lados $\\vec A$ y $\\vec B$. La dirección es perpendicular al plano: con $\\vec A$ hacia $+x$ y $\\vec B$ girando en sentido antihorario, la mano derecha da $+z$ (el punto ⊙ indica «hacia el lector»).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del producto vectorial",
+    "txt": "P"
+   }
+  },
+  "suma-de-a-hacia-y-con-b-a-30-grados-del-eje-y": {
+   "w": "300",
+   "h": "220",
+   "label": "Suma de A hacia -y con B a 30 grados del eje y",
+   "pie": "$\\vec A$ apunta hacia $-y$; $\\vec B$ está a 30.0° del eje $+y$ (60.0° del eje $+x$), dibujado a escala (10 px/m). La suma cola-punta $\\vec A+\\vec B$ cae en el 1er cuadrante, como corresponde a $C_x=7.50$, $C_y=4.99$ (ambas positivas).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio para el problema 1.31, a escala 10 px/m",
+    "txt": "P"
+   }
+  },
+  "vectores-a-b-y-a-menos-b-en-el-plano": {
+   "w": "300",
+   "h": "225",
+   "label": "Vectores A, B y A menos B en el plano",
+   "pie": "$\\vec A=(4,7)$, $\\vec B=(5,-2)$ (escala 18 px/unidad). $\\vec A-\\vec B=(-1,9)$ cae en el 2.º cuadrante (96.3°), por eso hubo que sumar 180° al resultado de la calculadora. $\\phi\\approx82.1°$ es el ángulo entre ambos (prob. 1.42); el producto vectorial (prob. 1.44) vale $-43.0\\,\\hat k$: entra en el papel.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio para los problemas 1.38, 1.42 y 1.44",
+    "txt": "P"
+   }
+  },
+  "vectores-a-y-b-a-60-grados-del-eje-x": {
+   "w": "300",
+   "h": "220",
+   "label": "Vectores A y B a ±60 grados del eje x",
+   "pie": "$\\vec A$ a +60° y $\\vec B$ a −60° forman $\\phi=120°$. Para ir de $\\vec A$ a $\\vec B$ por el camino corto se gira en sentido horario, así que $\\vec A\\times\\vec B$ apunta hacia dentro del papel (⊗, $-z$) y $\\vec B\\times\\vec A$ hacia fuera (⊙, $+z$).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio para el problema 1.46",
+    "txt": "P"
+   }
+  }
+ },
+ "bloques": [
+  {
+   "t": "h2",
+   "id": "prereq",
+   "n": "0",
+   "titulo": "Antes de empezar",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §1.1, p. 1-2",
+    "txt": "U p.1"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte01.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte02.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte03.html"
+  },
+  {
+   "t": "h2",
+   "id": "s1",
+   "n": "1",
+   "titulo": "La física y cómo resolver problemas",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>La física es una ciencia <i>experimental</i>: no se inventan leyes por elegancia, se proponen a partir de observaciones y se ponen a prueba con más experimentos. Ninguna ley es \"para siempre y en todo caso\": tiene un <b>intervalo de validez</b>. Por ejemplo, las leyes de Newton describen perfectamente una pelota o un coche, pero fallan a velocidades cercanas a la de la luz (ahí manda la relatividad) o a escala atómica (ahí manda la mecánica cuántica). Saber los límites de una ley es tan importante como saber la ley.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §1.1, p. 2",
+    "txt": "U p.2"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Estrategia IPEE",
+   "html": [
+    "<p>Para resolver cualquier problema de física, en vez de lanzarte a las fórmulas:</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Identificar</b>: ¿qué conceptos y variables intervienen? ¿qué te piden exactamente?</li>",
+    "    <li><b>Plantear</b>: elige las ecuaciones relevantes, dibuja un esquema, decide un modelo idealizado (p. ej. \"partícula puntual\", \"sin fricción\").</li>",
+    "    <li><b>Ejecutar</b>: haz el álgebra y los números, arrastrando las unidades.</li>",
+    "    <li><b>Evaluar</b>: ¿el resultado tiene sentido? ¿las unidades son las correctas? ¿el orden de magnitud es razonable?</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §1.2, Estrategia 1.1, p. 3",
+    "txt": "U p.3"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte04.html"
+  },
+  {
+   "t": "h2",
+   "id": "s2",
+   "n": "2",
+   "titulo": "Estándares y unidades",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Cantidad física",
+   "html": "<p>Una <b>cantidad física</b> es un <i>número</i> junto con una <i>unidad</i>. Decir \"la mesa mide 1.5\" no significa nada: hace falta decir \"1.5 metros\". El número por sí solo no es una medida.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §1.3, p. 4",
+    "txt": "U p.4"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "El sistema SI",
+   "html": [
+    "<p>El sistema que usamos es el <b>SI</b> (Sistema Internacional), con tres unidades básicas para la mecánica:</p>",
+    "<table>",
+    "<tr><th>Magnitud</th><th>Unidad</th><th>Definición (la que usa U, 14ª ed.)</th></tr>",
+    "<tr><td>Tiempo</td><td>segundo (s)</td><td>Duración de 9 192 631 770 ciclos de la radiación del cesio-133</td></tr>",
+    "<tr><td>Longitud</td><td>metro (m)</td><td>Distancia que recorre la luz en el vacío en 1/299 792 458 s</td></tr>",
+    "<tr><td>Masa</td><td>kilogramo (kg)</td><td>Cilindro patrón de platino-iridio en Sèvres (desde 2019 el kilogramo se define mediante constantes físicas)</td></tr>",
+    "</table>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §1.3, p. 4-6",
+    "txt": "U p.4"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte05.html"
+  },
+  {
+   "t": "h2",
+   "id": "s3",
+   "n": "3",
+   "titulo": "Uso y conversión de unidades",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte06.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Consistencia dimensional y factores unitarios",
+   "html": [
+    "<p>Toda ecuación física debe ser dimensionalmente consistente: no puedes sumar metros con segundos. Para convertir unidades, multiplica por una cadena de fracciones que valgan 1, orientadas para cancelar lo que sobra:</p>",
+    "  $$763.0\\ \\tfrac{\\text{mi}}{\\text{h}}\\times\\frac{1.609\\ \\text{km}}{1\\ \\text{mi}}\\times\\frac{1000\\ \\text{m}}{1\\ \\text{km}}\\times\\frac{1\\ \\text{h}}{3600\\ \\text{s}} = 341.0\\ \\tfrac{\\text{m}}{\\text{s}}$$"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §1.4, p. 6-7",
+    "txt": "U p.6"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo del libro 1.1 — mi/h a m/s",
+   "html": [
+    "<p>El récord de velocidad terrestre es 763.0 mi/h. Convierte a m/s.</p>",
+    "  <ol class=\"steps\">",
+    "    <li>Identifica los factores de conversión que necesitas (apéndice E de U): 1 mi = 1.609 km (no exacto, redondeado a 4 cifras), y los exactos 1 km = 1000 m, 1 h = 3600 s.</li>",
+    "    <li>Encadena los factores unitarios de manera que se cancelen mi, luego km, luego h, dejando m y s.</li>",
+    "    <li>Multiplica los números: $763.0 \\times 1.609 \\times 1000 / 3600 = 341.0$.</li>",
+    "    <li>Resultado: $341.0\\ \\text{m/s}$ (4 cifras significativas, coherente con el dato de partida).</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 1.1, p. 7",
+    "txt": "U p.7"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte07.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte08.html"
+  },
+  {
+   "t": "h2",
+   "id": "s4",
+   "n": "4",
+   "titulo": "Incertidumbre y cifras significativas",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Cifras significativas, incertidumbre, precisión y exactitud",
+   "html": "<p>Ninguna medida es infinitamente precisa: toda medida lleva una <b>incertidumbre</b> ($\\pm$ algo), que depende del instrumento. Las <b>cifras significativas</b> de un número son los dígitos que se conocen con confianza más uno estimado; comunican cuánto te puedes fiar del dato. Escribir \"12.0 mm\" en vez de \"12 mm\" no es adorno: dice que conoces la décima de milímetro. <b>Precisión</b> no es lo mismo que <b>exactitud</b>: un instrumento puede dar medidas muy repetibles (precisas) pero desviadas de calibración (poco exactas), o al revés.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §1.5, p. 8-9",
+    "txt": "U p.8"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Reglas para combinar cifras significativas (Tabla 1.2)",
+   "html": [
+    "<ul>",
+    "    <li><b>Multiplicación / división</b>: el resultado tiene tantas cifras significativas como el dato de partida con <i>menos</i> cifras.</li>",
+    "    <li><b>Suma / resta</b>: el resultado se redondea a la posición decimal <i>menos precisa</i> de los datos (no a un número de cifras).</li>",
+    "    <li>Redondea (no trunques) y hazlo <b>solo al final</b> de la cadena de cálculos: el redondeo intermedio acumula error.</li>",
+    "    <li>La notación científica deja las cifras significativas sin ambigüedad: $3\\times10^8$ tiene 1 cifra; $3.00\\times10^8$ tiene 3.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §1.5 Tabla 1.2, p. 8",
+    "txt": "U p.8"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte09.html"
+  },
+  {
+   "t": "h2",
+   "id": "s5",
+   "n": "5",
+   "titulo": "Estimaciones y órdenes de magnitud",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>A veces no necesitas un número exacto, sino saber si algo es \"del orden de 10, de 1000 o de un millón\". Un <b>cálculo de orden de magnitud</b> usa números redondos y factores de aproximación (entre 2 y 10) para llegar a una respuesta con sentido, sin pretender más precisión de la que tienen los datos.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §1.6, p. 10",
+    "txt": "U p.10"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte10.html"
+  },
+  {
+   "t": "h2",
+   "id": "s6",
+   "n": "6",
+   "titulo": "Vectores y suma de vectores",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte11.html"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Escalar y vector",
+   "html": "<p>Escalar: magnitud descrita por un solo número (con signo y unidad). Vector: magnitud descrita por una magnitud (siempre positiva) y una dirección; se representa con una flecha, cuya longitud es proporcional a la magnitud. Dos vectores son <b>iguales</b> si tienen la misma magnitud y la misma dirección, aunque estén dibujados en sitios distintos. El <b>negativo</b> de un vector $\\vec A$ es $-\\vec A$: misma magnitud, dirección opuesta.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §1.7, p. 11-12",
+    "txt": "U p.11"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>$|\\vec A+\\vec B| \\ne A+B$ en general: las magnitudes NO se suman directamente, solo cuando $\\vec A$ y $\\vec B$ son paralelos. Si son perpendiculares, por ejemplo, la magnitud de la suma se calcula con Pitágoras, no sumando. La <b>resta</b> se define como sumar el negativo: $\\vec A-\\vec B = \\vec A+(-\\vec B)$ — se dibuja como $\\vec A$ más el vector $\\vec B$ invertido. Multiplicar un vector por un escalar $c$ da $c\\vec A$: si $c>0$ mantiene la dirección (y cambia la magnitud), si $c<0$ la invierte (vector <b>antiparalelo</b>).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §1.7 ec. (1.3)-(1.4), p. 12",
+    "txt": "U p.12"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "suma-de-vectores-cola-punta"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Suma gráfica",
+   "html": "<p>Método <b>cola-punta</b>: coloca la cola del segundo vector en la punta del primero; la suma va del origen del primero al final del segundo. Método del <b>paralelogramo</b>: con ambos vectores desde el mismo origen, la suma es la diagonal del paralelogramo que forman. Ambos dan el mismo resultado, y la suma es conmutativa y asociativa.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §1.7, fig. 1.11, p. 12-13",
+    "txt": "U p.12"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "suma-de-vectores-por-el-metodo-del-paralelogramo"
+  },
+  {
+   "t": "fig",
+   "ref": "resta-de-vectores-a-menos-b"
+  },
+  {
+   "t": "fig",
+   "ref": "multiplicacion-de-un-vector-por-un-escalar"
+  },
+  {
+   "t": "h2",
+   "id": "s7",
+   "n": "7",
+   "titulo": "Componentes de vectores",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte12.html"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Componentes de un vector",
+   "html": [
+    "<p>Si $\\vec A$ forma un ángulo $\\theta$ medido desde el eje $+x$ en sentido antihorario:</p>",
+    "  $$A_x = A\\cos\\theta \\qquad A_y = A\\sin\\theta$$",
+    "  <p>y a la inversa, conocidas las componentes:</p>",
+    "  $$A = \\sqrt{A_x^2+A_y^2} \\qquad \\tan\\theta = \\frac{A_y}{A_x}$$"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §1.8 ec. (1.5)-(1.7), p. 14-16",
+    "txt": "U p.14"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "componentes-de-un-vector"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte13.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Suma por componentes",
+   "html": [
+    "<p>Si $\\vec R = \\vec A+\\vec B$, entonces cada componente se suma por separado:</p>",
+    "  $$R_x = A_x+B_x \\qquad R_y = A_y+B_y$$",
+    "  <p>y luego se recupera magnitud y ángulo de $\\vec R$ con las fórmulas anteriores. Este método se generaliza a cualquier número de vectores y a tres dimensiones (añadiendo $R_z=A_z+B_z$).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §1.8 ec. (1.9)-(1.11), p. 16-17",
+    "txt": "U p.16"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s8",
+   "n": "8",
+   "titulo": "Vectores unitarios",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Vectores unitarios î, ĵ, k̂",
+   "html": [
+    "<p>Un <b>vector unitario</b> tiene magnitud 1 y solo indica dirección. Los vectores $\\hat\\imath$, $\\hat\\jmath$, $\\hat k$ apuntan a lo largo de $+x$, $+y$, $+z$ respectivamente. Cualquier vector se escribe como combinación de ellos:</p>",
+    "  $$\\vec A = A_x\\hat\\imath + A_y\\hat\\jmath + A_z\\hat k$$",
+    "  <p>Esta notación hace que sumar, restar o multiplicar por un escalar sea \"componente a componente\", sin dibujar nada.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §1.9 ec. (1.14), p. 18-19",
+    "txt": "U p.18"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "vectores-unitarios-y-descomposicion"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo del libro 1.8 — combinación de vectores unitarios",
+   "html": [
+    "<p>Con $\\vec D = (6.00\\hat\\imath+3.00\\hat\\jmath-1.00\\hat k)$ m y $\\vec E=(4.00\\hat\\imath-5.00\\hat\\jmath+8.00\\hat k)$ m, halla $|2\\vec D-\\vec E|$.</p>",
+    "  <ol class=\"steps\">",
+    "    <li>$2\\vec D = (12.00\\hat\\imath+6.00\\hat\\jmath-2.00\\hat k)$ m.</li>",
+    "    <li>$2\\vec D-\\vec E = [(12.00-4.00)\\hat\\imath+(6.00-(-5.00))\\hat\\jmath+(-2.00-8.00)\\hat k]$ m $= (8.00\\hat\\imath+11.00\\hat\\jmath-10.00\\hat k)$ m.</li>",
+    "    <li>Magnitud: $\\sqrt{8.00^2+11.00^2+10.00^2}=\\sqrt{285}=16.9$ m.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 1.8, p. 19",
+    "txt": "U p.19"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s9",
+   "n": "9",
+   "titulo": "Producto escalar",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte14.html"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Producto escalar (producto punto)",
+   "html": [
+    "$$\\vec A\\cdot\\vec B = AB\\cos\\phi = A_xB_x+A_yB_y+A_zB_z$$",
+    "  <p>donde $\\phi$ es el ángulo entre los dos vectores. El resultado es un <b>escalar</b> (un número, no un vector), y el orden no importa: $\\vec A\\cdot\\vec B=\\vec B\\cdot\\vec A$. Para los vectores unitarios: $\\hat\\imath\\cdot\\hat\\imath=\\hat\\jmath\\cdot\\hat\\jmath=\\hat k\\cdot\\hat k=1$ y $\\hat\\imath\\cdot\\hat\\jmath=\\hat\\jmath\\cdot\\hat k=\\hat k\\cdot\\hat\\imath=0$ (por eso al desarrollar $\\vec A\\cdot\\vec B$ solo sobreviven los términos $A_xB_x$, $A_yB_y$, $A_zB_z$).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §1.10 ec. (1.16),(1.17),(1.19), p. 20-21",
+    "txt": "U p.20"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "producto-escalar-como-proyeccion"
+  },
+  {
+   "t": "fig",
+   "ref": "signo-del-producto-escalar-segun-el-angulo"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo del libro 1.9 — signo del producto escalar",
+   "html": [
+    "<p>Con $A=4$, $B=5$ y $\\phi=77°$: $\\vec A\\cdot\\vec B = 4\\times5\\times\\cos77° = 4.50$.</p>",
+    "  <p>Como $\\phi<90°$, el producto sale positivo (coherente: los vectores apuntan \"más o menos\" en la misma dirección). Si $\\phi$ fuera mayor de 90°, el coseno sería negativo y también lo sería el producto.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 1.9, p. 21",
+    "txt": "U p.21"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s10",
+   "n": "10",
+   "titulo": "Producto vectorial",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte15.html"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Producto vectorial (producto cruz)",
+   "html": [
+    "<p>Magnitud: $|\\vec A\\times\\vec B| = AB\\sin\\phi$ (con $\\phi$ el ángulo menor entre ambos). Dirección: perpendicular al plano de $\\vec A$ y $\\vec B$, dada por la <b>regla de la mano derecha</b> (dedos de $\\vec A$ hacia $\\vec B$ por el camino más corto; el pulgar señala $\\vec A\\times\\vec B$) — el sistema $\\hat\\imath,\\hat\\jmath,\\hat k$ de U es siempre <b>dextrógiro</b> (mano derecha), nunca levógiro.</p>",
+    "  <p>El producto vectorial es <b>anticonmutativo</b>: $\\vec A\\times\\vec B = -(\\vec B\\times\\vec A)$. Para los vectores unitarios: $\\hat\\imath\\times\\hat\\jmath=\\hat k$, $\\hat\\jmath\\times\\hat k=\\hat\\imath$, $\\hat k\\times\\hat\\imath=\\hat\\jmath$ (y al revés cambia el signo). En componentes:</p>",
+    "  $$C_x = A_yB_z-A_zB_y \\qquad C_y = A_zB_x-A_xB_z \\qquad C_z = A_xB_y-A_yB_x$$"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §1.10 ec. (1.20)-(1.25), p. 22-23",
+    "txt": "U p.22"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "producto-vectorial-y-area-del-paralelogramo"
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_1_manoderecha.png",
+   "alt": "Figura 1.30 de U: regla de la mano derecha para obtener la dirección de A×B, con los cuatro pasos numerados.",
+   "pie": "Fig. 1.30 de U: los cuatro pasos de la regla de la mano derecha para $\\vec A\\times\\vec B$.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 1.30, p. 22",
+    "txt": "U p.22"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo del libro 1.11 — magnitud y dirección",
+   "html": "<p>$\\vec A$ de magnitud 6, sobre el eje $+x$; $\\vec B$ de magnitud 4, a 30° de $\\vec A$. $|\\vec A\\times\\vec B| = 6\\times4\\times\\sin30° = 12$, dirección $+z$ (sale del papel, por la mano derecha).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 1.11, p. 24",
+    "txt": "U p.24"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte16.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte17.html"
+  },
+  {
+   "t": "h2",
+   "id": "ejercicios",
+   "n": "11",
+   "titulo": "Ejercicios resueltos",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte18.html"
+  },
+  {
+   "t": "ej",
+   "ref": "problema-1-10"
+  },
+  {
+   "t": "ej",
+   "ref": "problema-1-14"
+  },
+  {
+   "t": "ej",
+   "ref": "problema-1-18"
+  },
+  {
+   "t": "ej",
+   "ref": "problema-1-31"
+  },
+  {
+   "t": "ej",
+   "ref": "problema-1-38"
+  },
+  {
+   "t": "ej",
+   "ref": "problema-1-42"
+  },
+  {
+   "t": "ej",
+   "ref": "problema-1-44"
+  },
+  {
+   "t": "ej",
+   "ref": "problema-1-46"
+  },
+  {
+   "t": "ej",
+   "ref": "problema-1-51"
+  },
+  {
+   "t": "h2",
+   "id": "chuleta",
+   "n": "12",
+   "titulo": "Chuleta y lista de comprobación",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte19.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte20.html"
+  },
+  {
+   "t": "h2",
+   "id": "fuentes",
+   "n": "★",
+   "titulo": "Fuentes de este tema",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "panel-fuentes.html"
+  }
+ ]
+}

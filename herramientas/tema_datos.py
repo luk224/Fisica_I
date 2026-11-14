@@ -123,8 +123,9 @@ class Migrador:
         pm = PRIO_RE.search(summ)
         tit = summ[:min(x for x in (pm.start() if pm else 10**9, fin.start()))].strip()
         et, _, titulo = tit.partition(' — ')
-        eid = eid or et.lower()
-        meta = {'id': eid, 'etiqueta': et, 'titulo': titulo, 'prio': PRIO_RE.search(summ).group(0) if pm else None, 'src': src_dict(fin)}
+        orig = eid
+        eid = eid or re.sub(r'[^a-z0-9]+', '-', et.lower()).strip('-')
+        meta = {'id': orig and eid, 'etiqueta': et, 'titulo': titulo, 'prio': PRIO_RE.search(summ).group(0) if pm else None, 'src': src_dict(fin)}
         (self.dir / 'ejercicios').mkdir(parents=True, exist_ok=True)
         (self.dir / 'ejercicios' / f'{eid}.html').write_text(self._tokenizar_figuras(body).strip() + '\n', encoding='utf8')
         self.ej_meta.setdefault(eid, {}).update(meta)
@@ -253,7 +254,7 @@ class Generador:
     def ejercicio(self, eid):
         m = leer_json(self.dir / 'ejercicios' / f'{eid}.json')
         cuerpo = self.tokens((self.dir / 'ejercicios' / f'{eid}.html').read_text(encoding='utf8').strip())
-        idattr = f' id="{m["id"]}"'
+        idattr = f' id="{m["id"]}"' if m.get('id') else ''
         pr = (' ' + m['prio']) if m.get('prio') else ''
         return (f'<details class="sol"{idattr}><summary>{m["etiqueta"]} — {m["titulo"]}{pr} {src_html(m["src"])}</summary>\n'
                 f'{cuerpo}\n</details>\n')
@@ -267,7 +268,8 @@ class Generador:
             tb = m.get('tabla')
             if tb:
                 extra = f' · {tb["extra"]}' if tb['extra'] else ''
-                filas.append(f'<tr><td><a href="#{m["id"]}">{m["etiqueta"]}</a>{extra}</td><td>{tb["tipo"]}</td><td>{tb["metodo"]}</td></tr>')
+                enlace = f'<a href="#{m["id"]}">{m["etiqueta"]}</a>' if m.get('id') else m['etiqueta']
+                filas.append(f'<tr><td>{enlace}{extra}</td><td>{tb["tipo"]}</td><td>{tb["metodo"]}</td></tr>')
         return ('<table class="metodos">\n<tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>\n'
                 + '\n'.join(filas) + '\n</table>\n')
 

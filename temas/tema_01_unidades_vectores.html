@@ -10,8 +10,11 @@
 <script defer src="../assets/katex/katex.min.js"></script>
 <script defer src="../assets/katex/auto-render.min.js"></script>
 <script defer src="../assets/resumen.js"></script>
+<script defer src="../assets/figuras.js"></script>
 <script defer src="../assets/busqueda.js"></script>
 <link rel="stylesheet" href="../assets/interactivos.css">
+<link rel="stylesheet" href="../assets/estudio.css">
+<script defer src="../assets/estudio.js"></script>
 <script defer src="../assets/interactivos.js"></script>
 </head>
 <body>
@@ -29,7 +32,7 @@
   <h1>Unidades, cantidades físicas y vectores</h1>
   <p>El "kit de herramientas" antes de hacer física: cómo medir, cómo redondear con honestidad y cómo sumar magnitudes que tienen dirección (vectores).</p>
   <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 1 (pp. 1-33)</span><span>Ejercicios resueltos: 9 (solucionario)</span><span>Ejercicios de examen real: 0</span><span>⏱ ~3 h de estudio</span></div>
-  <div class="legend">
+<div class="legend">
     <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
     <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
     <span class="src" data-l="X" data-ref="Ejercicio de examen real, ver fuentes_txt/examenes_por_tema.md">X</span> examen real
@@ -38,313 +41,183 @@
   </div>
 </header>
 
+
 <h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U §1.1, p. 1-2">U p.1</span></h2>
 <p><b>Prerrequisitos:</b> trigonometría básica (seno, coseno, tangente, Pitágoras), notación científica y potencias de diez, y despejar ecuaciones sencillas. No hace falta cálculo todavía: este tema es "aritmética con cuidado" más geometría de vectores.</p>
 <p><b>Mapa del tema:</b> primero fijamos qué es medir (unidades SI) y cómo convertir entre unidades sin errores; luego aprendemos a no mentir sobre la precisión de un resultado (cifras significativas) ni sobre el esfuerzo de un cálculo (estimaciones); y por último introducimos los vectores — el lenguaje que usa TODO el resto de la asignatura (posición, velocidad, fuerza, campo…) — con sus dos "productos" (escalar y vectorial), que reaparecerán en trabajo (tema 6), momento angular (tema 10) y magnetismo.</p>
 <div class="box tip"><span class="h">Aviso sobre exámenes</span><p>Revisando los 16 exámenes de convocatorias pasadas disponibles, <b>no hay ningún ejercicio dedicado a este tema</b>: se trata casi siempre de forma transversal (un dato con las unidades "raras" que hay que convertir, o un ángulo que hay que descomponer en $x,y$ dentro de un problema de otro tema).</p></div>
-
 <h2 id="s1"><span class="n">1</span>La física y cómo resolver problemas</h2>
-<div class="box intu"><span class="h">Idea intuitiva</span><p>La física es una ciencia <i>experimental</i>: no se inventan leyes por elegancia, se proponen a partir de observaciones y se ponen a prueba con más experimentos. Ninguna ley es "para siempre y en todo caso": tiene un <b>intervalo de validez</b>. Por ejemplo, las leyes de Newton describen perfectamente una pelota o un coche, pero fallan a velocidades cercanas a la de la luz (ahí manda la relatividad) o a escala atómica (ahí manda la mecánica cuántica). Saber los límites de una ley es tan importante como saber la ley.</p>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+<p>La física es una ciencia <i>experimental</i>: no se inventan leyes por elegancia, se proponen a partir de observaciones y se ponen a prueba con más experimentos. Ninguna ley es "para siempre y en todo caso": tiene un <b>intervalo de validez</b>. Por ejemplo, las leyes de Newton describen perfectamente una pelota o un coche, pero fallan a velocidades cercanas a la de la luz (ahí manda la relatividad) o a escala atómica (ahí manda la mecánica cuántica). Saber los límites de una ley es tan importante como saber la ley.</p>
   <span class="src" data-l="U" data-ref="U §1.1, p. 2">U p.2</span></div>
-<div class="box thm"><span class="h">Estrategia IPEE</span><p>Para resolver cualquier problema de física, en vez de lanzarte a las fórmulas:</p>
+<div class="box thm"><span class="h">Estrategia IPEE</span>
+<p>Para resolver cualquier problema de física, en vez de lanzarte a las fórmulas:</p>
   <ol class="steps">
     <li><b>Identificar</b>: ¿qué conceptos y variables intervienen? ¿qué te piden exactamente?</li>
     <li><b>Plantear</b>: elige las ecuaciones relevantes, dibuja un esquema, decide un modelo idealizado (p. ej. "partícula puntual", "sin fricción").</li>
     <li><b>Ejecutar</b>: haz el álgebra y los números, arrastrando las unidades.</li>
     <li><b>Evaluar</b>: ¿el resultado tiene sentido? ¿las unidades son las correctas? ¿el orden de magnitud es razonable?</li>
   </ol>
-  <span class="src" data-l="U" data-ref="U §1.2, Estrategia 1.1, p. 3">U p.3</span>
-</div>
+  <span class="src" data-l="U" data-ref="U §1.2, Estrategia 1.1, p. 3">U p.3</span></div>
 <p>Un <b>modelo idealizado</b> es una simplificación deliberada: tratar la Tierra como una esfera perfecta, un cable como si no tuviera masa, un gas como "ideal". No es hacer trampa: es quedarte con lo que importa para el problema y descartar lo que complica sin cambiar la respuesta de forma relevante.
   <span class="src" data-l="U" data-ref="U §1.2, p. 3-4">U p.3</span></p>
-
 <h2 id="s2"><span class="n">2</span>Estándares y unidades</h2>
-<div class="box def"><span class="h">Cantidad física</span><p>Una <b>cantidad física</b> es un <i>número</i> junto con una <i>unidad</i>. Decir "la mesa mide 1.5" no significa nada: hace falta decir "1.5 metros". El número por sí solo no es una medida.</p>
-  <span class="src" data-l="U" data-ref="U §1.3, p. 4">U p.4</span>
-</div>
-<div class="box def"><span class="h">El sistema SI</span><p>El sistema que usamos es el <b>SI</b> (Sistema Internacional), con tres unidades básicas para la mecánica:</p>
+<div class="box def"><span class="h">Cantidad física</span>
+<p>Una <b>cantidad física</b> es un <i>número</i> junto con una <i>unidad</i>. Decir "la mesa mide 1.5" no significa nada: hace falta decir "1.5 metros". El número por sí solo no es una medida.</p>
+  <span class="src" data-l="U" data-ref="U §1.3, p. 4">U p.4</span></div>
+<div class="box def"><span class="h">El sistema SI</span>
+<p>El sistema que usamos es el <b>SI</b> (Sistema Internacional), con tres unidades básicas para la mecánica:</p>
 <table>
 <tr><th>Magnitud</th><th>Unidad</th><th>Definición (la que usa U, 14ª ed.)</th></tr>
 <tr><td>Tiempo</td><td>segundo (s)</td><td>Duración de 9 192 631 770 ciclos de la radiación del cesio-133</td></tr>
 <tr><td>Longitud</td><td>metro (m)</td><td>Distancia que recorre la luz en el vacío en 1/299 792 458 s</td></tr>
 <tr><td>Masa</td><td>kilogramo (kg)</td><td>Cilindro patrón de platino-iridio en Sèvres (desde 2019 el kilogramo se define mediante constantes físicas)</td></tr>
 </table>
-<span class="src" data-l="U" data-ref="U §1.3, p. 4-6">U p.4</span></div>
+  <span class="src" data-l="U" data-ref="U §1.3, p. 4-6">U p.4</span></div>
 <p>Para no escribir números larguísimos o diminutos, se usan <b>prefijos</b>: kilo- (k, ×10³), mili- (m, ×10⁻³), micro- (µ, ×10⁻⁶), nano- (n, ×10⁻⁹). Un kilómetro son 1000 metros; un milisegundo, una milésima de segundo.</p>
-
 <h2 id="s3"><span class="n">3</span>Uso y conversión de unidades</h2>
 <div class="box intu"><span class="h">Idea intuitiva: "unos disfrazados"</span><p>Un factor de conversión como $\dfrac{1\ \text{km}}{1000\ \text{m}}$ vale exactamente <b>1</b> (numerador y denominador son la misma distancia, solo escrita distinto). Multiplicar por él no cambia la cantidad física, solo cambia su "disfraz" (las unidades en que la escribes). La clave es elegir el factor <b>orientado</b> para que la unidad que quieres eliminar se cancele arriba con abajo.</p></div>
-<div class="box thm"><span class="h">Consistencia dimensional y factores unitarios</span><p>Toda ecuación física debe ser dimensionalmente consistente: no puedes sumar metros con segundos. Para convertir unidades, multiplica por una cadena de fracciones que valgan 1, orientadas para cancelar lo que sobra:</p>
+<div class="box thm"><span class="h">Consistencia dimensional y factores unitarios</span>
+<p>Toda ecuación física debe ser dimensionalmente consistente: no puedes sumar metros con segundos. Para convertir unidades, multiplica por una cadena de fracciones que valgan 1, orientadas para cancelar lo que sobra:</p>
   $$763.0\ \tfrac{\text{mi}}{\text{h}}\times\frac{1.609\ \text{km}}{1\ \text{mi}}\times\frac{1000\ \text{m}}{1\ \text{km}}\times\frac{1\ \text{h}}{3600\ \text{s}} = 341.0\ \tfrac{\text{m}}{\text{s}}$$
-  <span class="src" data-l="U" data-ref="U §1.4, p. 6-7">U p.6</span>
-</div>
+  <span class="src" data-l="U" data-ref="U §1.4, p. 6-7">U p.6</span></div>
 <div class="box ex"><span class="h">Ejemplo del libro 1.1 — mi/h a m/s</span>
-  <p>El récord de velocidad terrestre es 763.0 mi/h. Convierte a m/s.</p>
+<p>El récord de velocidad terrestre es 763.0 mi/h. Convierte a m/s.</p>
   <ol class="steps">
     <li>Identifica los factores de conversión que necesitas (apéndice E de U): 1 mi = 1.609 km (no exacto, redondeado a 4 cifras), y los exactos 1 km = 1000 m, 1 h = 3600 s.</li>
     <li>Encadena los factores unitarios de manera que se cancelen mi, luego km, luego h, dejando m y s.</li>
     <li>Multiplica los números: $763.0 \times 1.609 \times 1000 / 3600 = 341.0$.</li>
     <li>Resultado: $341.0\ \text{m/s}$ (4 cifras significativas, coherente con el dato de partida).</li>
   </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 1.1, p. 7">U p.7</span>
-</div>
+  <span class="src" data-l="U" data-ref="U Ejemplo 1.1, p. 7">U p.7</span></div>
 <div class="box warn"><span class="h">Error típico</span><p>Cuando la unidad está elevada al cuadrado o al cubo (área, volumen), el factor de conversión también hay que elevarlo a esa potencia: $1\ \text{cm}^3 = (10^{-2}\ \text{m})^3 = 10^{-6}\ \text{m}^3$, <b>no</b> $10^{-2}\ \text{m}^3$.</p></div>
 <div class="box tip"><span class="h">Truco de examen</span><p>Antes de dar por bueno cualquier resultado numérico, comprueba las <b>unidades</b> (análisis dimensional): si te piden una velocidad y te sale en kg, algo se rompió por el camino. Es la revisión más barata y más eficaz de la estrategia IPEE (paso "Evaluar").</p></div>
-
 <h2 id="s4"><span class="n">4</span>Incertidumbre y cifras significativas</h2>
-<div class="box def"><span class="h">Cifras significativas, incertidumbre, precisión y exactitud</span><p>Ninguna medida es infinitamente precisa: toda medida lleva una <b>incertidumbre</b> ($\pm$ algo), que depende del instrumento. Las <b>cifras significativas</b> de un número son los dígitos que se conocen con confianza más uno estimado; comunican cuánto te puedes fiar del dato. Escribir "12.0 mm" en vez de "12 mm" no es adorno: dice que conoces la décima de milímetro. <b>Precisión</b> no es lo mismo que <b>exactitud</b>: un instrumento puede dar medidas muy repetibles (precisas) pero desviadas de calibración (poco exactas), o al revés.</p>
-  <span class="src" data-l="U" data-ref="U §1.5, p. 8-9">U p.8</span>
-</div>
+<div class="box def"><span class="h">Cifras significativas, incertidumbre, precisión y exactitud</span>
+<p>Ninguna medida es infinitamente precisa: toda medida lleva una <b>incertidumbre</b> ($\pm$ algo), que depende del instrumento. Las <b>cifras significativas</b> de un número son los dígitos que se conocen con confianza más uno estimado; comunican cuánto te puedes fiar del dato. Escribir "12.0 mm" en vez de "12 mm" no es adorno: dice que conoces la décima de milímetro. <b>Precisión</b> no es lo mismo que <b>exactitud</b>: un instrumento puede dar medidas muy repetibles (precisas) pero desviadas de calibración (poco exactas), o al revés.</p>
+  <span class="src" data-l="U" data-ref="U §1.5, p. 8-9">U p.8</span></div>
 <div class="box thm"><span class="h">Reglas para combinar cifras significativas (Tabla 1.2)</span>
-  <ul>
+<ul>
     <li><b>Multiplicación / división</b>: el resultado tiene tantas cifras significativas como el dato de partida con <i>menos</i> cifras.</li>
     <li><b>Suma / resta</b>: el resultado se redondea a la posición decimal <i>menos precisa</i> de los datos (no a un número de cifras).</li>
     <li>Redondea (no trunques) y hazlo <b>solo al final</b> de la cadena de cálculos: el redondeo intermedio acumula error.</li>
     <li>La notación científica deja las cifras significativas sin ambigüedad: $3\times10^8$ tiene 1 cifra; $3.00\times10^8$ tiene 3.</li>
   </ul>
-  <span class="src" data-l="U" data-ref="U §1.5 Tabla 1.2, p. 8">U p.8</span>
-</div>
+  <span class="src" data-l="U" data-ref="U §1.5 Tabla 1.2, p. 8">U p.8</span></div>
 <div class="box warn"><span class="h">Error típico</span><p>Aplicar la regla de "menos cifras" (la de × y ÷) a una resta o suma. En $12 - 5.98$, contando cifras significativas saldría $6.0$ (2 cifras, por el "12"), pero eso es la regla equivocada: en una resta manda el <b>decimal</b> menos preciso, y "12" no tiene decimales, así que $6.02 \to 6$ (sin decimales).</p></div>
-
 <h2 id="s5"><span class="n">5</span>Estimaciones y órdenes de magnitud</h2>
-<div class="box intu"><span class="h">Idea intuitiva</span><p>A veces no necesitas un número exacto, sino saber si algo es "del orden de 10, de 1000 o de un millón". Un <b>cálculo de orden de magnitud</b> usa números redondos y factores de aproximación (entre 2 y 10) para llegar a una respuesta con sentido, sin pretender más precisión de la que tienen los datos.</p>
-  <span class="src" data-l="U" data-ref="U §1.6, p. 10">U p.10</span>
-</div>
+<div class="box intu"><span class="h">Idea intuitiva</span>
+<p>A veces no necesitas un número exacto, sino saber si algo es "del orden de 10, de 1000 o de un millón". Un <b>cálculo de orden de magnitud</b> usa números redondos y factores de aproximación (entre 2 y 10) para llegar a una respuesta con sentido, sin pretender más precisión de la que tienen los datos.</p>
+  <span class="src" data-l="U" data-ref="U §1.6, p. 10">U p.10</span></div>
 <div class="box tip"><span class="h">Truco de examen</span><p>En una estimación solo tiene sentido dar 1 cifra significativa (o directamente la potencia de diez): escribir "3×10⁸ gal/día" es correcto; escribir "3.14×10⁸ gal/día" sugiere una precisión que no tienes.</p></div>
-
 <h2 id="s6"><span class="n">6</span>Vectores y suma de vectores</h2>
 <div class="box intu"><span class="h">Idea intuitiva</span><p>Un <b>escalar</b> es un número con unidad y ya está: la temperatura, la masa, el tiempo. Un <b>vector</b> además tiene <i>dirección</i>: no es lo mismo caminar 3 km hacia el norte que 3 km hacia el este, aunque la distancia recorrida (escalar) sea la misma. El ejemplo típico es el <b>desplazamiento</b>: el vector que va del punto de partida al punto de llegada, sin importar el camino seguido.</p></div>
-<div class="box def"><span class="h">Escalar y vector</span><p>Escalar: magnitud descrita por un solo número (con signo y unidad). Vector: magnitud descrita por una magnitud (siempre positiva) y una dirección; se representa con una flecha, cuya longitud es proporcional a la magnitud. Dos vectores son <b>iguales</b> si tienen la misma magnitud y la misma dirección, aunque estén dibujados en sitios distintos. El <b>negativo</b> de un vector $\vec A$ es $-\vec A$: misma magnitud, dirección opuesta.</p>
-  <span class="src" data-l="U" data-ref="U §1.7, p. 11-12">U p.11</span>
-</div>
-<div class="box warn"><span class="h">Error típico</span><p>$|\vec A+\vec B| \ne A+B$ en general: las magnitudes NO se suman directamente, solo cuando $\vec A$ y $\vec B$ son paralelos. Si son perpendiculares, por ejemplo, la magnitud de la suma se calcula con Pitágoras, no sumando. La <b>resta</b> se define como sumar el negativo: $\vec A-\vec B = \vec A+(-\vec B)$ — se dibuja como $\vec A$ más el vector $\vec B$ invertido. Multiplicar un vector por un escalar $c$ da $c\vec A$: si $c>0$ mantiene la dirección (y cambia la magnitud), si $c<0$ la invierte (vector <b>antiparalelo</b>).</p>
-  <span class="src" data-l="U" data-ref="U §1.7 ec. (1.3)-(1.4), p. 12">U p.12</span>
-</div>
-<figure class="fig">
-<svg class="fig" viewBox="0 0 320 160" width="100%" role="img" aria-label="Suma de vectores cola-punta">
-  <line class="ax" x1="20" y1="140" x2="300" y2="140"/>
-  <line class="a" x1="30" y1="130" x2="130" y2="60" marker-end="url(#arA1)"/>
-  <line class="b" x1="130" y1="60" x2="230" y2="90" marker-end="url(#arB1)"/>
-  <line class="a" x1="30" y1="130" x2="230" y2="90" stroke-dasharray="5 4" marker-end="url(#arC1)"/>
-  <defs>
-    <marker id="arA1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker>
-    <marker id="arB1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker>
-    <marker id="arC1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker>
-  </defs>
-  <text x="70" y="80" class="sm">A</text><text x="175" y="65" class="sm">B</text><text x="120" y="120" class="sm">A + B</text>
-</svg>
+<div class="box def"><span class="h">Escalar y vector</span>
+<p>Escalar: magnitud descrita por un solo número (con signo y unidad). Vector: magnitud descrita por una magnitud (siempre positiva) y una dirección; se representa con una flecha, cuya longitud es proporcional a la magnitud. Dos vectores son <b>iguales</b> si tienen la misma magnitud y la misma dirección, aunque estén dibujados en sitios distintos. El <b>negativo</b> de un vector $\vec A$ es $-\vec A$: misma magnitud, dirección opuesta.</p>
+  <span class="src" data-l="U" data-ref="U §1.7, p. 11-12">U p.11</span></div>
+<div class="box warn"><span class="h">Error típico</span>
+<p>$|\vec A+\vec B| \ne A+B$ en general: las magnitudes NO se suman directamente, solo cuando $\vec A$ y $\vec B$ son paralelos. Si son perpendiculares, por ejemplo, la magnitud de la suma se calcula con Pitágoras, no sumando. La <b>resta</b> se define como sumar el negativo: $\vec A-\vec B = \vec A+(-\vec B)$ — se dibuja como $\vec A$ más el vector $\vec B$ invertido. Multiplicar un vector por un escalar $c$ da $c\vec A$: si $c>0$ mantiene la dirección (y cambia la magnitud), si $c<0$ la invierte (vector <b>antiparalelo</b>).</p>
+  <span class="src" data-l="U" data-ref="U §1.7 ec. (1.3)-(1.4), p. 12">U p.12</span></div>
+<figure class="fig" data-svg="../assets/figs/t01/suma-de-vectores-cola-punta.svg">
+<div class="figph" role="img" aria-label="Suma de vectores cola-punta" style="aspect-ratio:320/160"></div>
 <figcaption>Suma cola-punta: se coloca la cola de $\vec B$ en la punta de $\vec A$; el vector suma $\vec A+\vec B$ va de la cola de $\vec A$ a la punta de $\vec B$. La suma de vectores es conmutativa: $\vec A+\vec B=\vec B+\vec A$. <span class="src" data-l="P" data-ref="Diagrama propio del método cola-punta">P</span></figcaption>
 </figure>
-<div class="box thm"><span class="h">Suma gráfica</span><p>Método <b>cola-punta</b>: coloca la cola del segundo vector en la punta del primero; la suma va del origen del primero al final del segundo. Método del <b>paralelogramo</b>: con ambos vectores desde el mismo origen, la suma es la diagonal del paralelogramo que forman. Ambos dan el mismo resultado, y la suma es conmutativa y asociativa.</p>
-  <span class="src" data-l="U" data-ref="U §1.7, fig. 1.11, p. 12-13">U p.12</span>
-</div>
-<figure class="fig">
-<svg class="fig" viewBox="0 0 320 160" width="100%" role="img" aria-label="Suma de vectores por el método del paralelogramo">
-  <defs><marker id="map1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmp1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker></defs>
-  <line class="a" x1="40" y1="140" x2="170" y2="110" marker-end="url(#map1)"/>
-  <line class="b" x1="40" y1="140" x2="110" y2="50" marker-end="url(#mbp1)"/>
-  <line class="b" x1="170" y1="110" x2="240" y2="20" stroke-dasharray="5 4" marker-end="url(#mbp1)"/>
-  <line class="a" x1="110" y1="50" x2="240" y2="20" stroke-dasharray="5 4" marker-end="url(#map1)"/>
-  <line class="a" x1="40" y1="140" x2="240" y2="20" style="stroke-width:4" marker-end="url(#map1)"/>
-  <text x="100" y="138" class="sm bd">A</text>
-  <text x="62" y="84" class="sm bd">B</text>
-  <text x="188" y="52" class="sm bd">A + B</text>
-</svg>
+<div class="box thm"><span class="h">Suma gráfica</span>
+<p>Método <b>cola-punta</b>: coloca la cola del segundo vector en la punta del primero; la suma va del origen del primero al final del segundo. Método del <b>paralelogramo</b>: con ambos vectores desde el mismo origen, la suma es la diagonal del paralelogramo que forman. Ambos dan el mismo resultado, y la suma es conmutativa y asociativa.</p>
+  <span class="src" data-l="U" data-ref="U §1.7, fig. 1.11, p. 12-13">U p.12</span></div>
+<figure class="fig" data-svg="../assets/figs/t01/suma-de-vectores-por-el-metodo-del-paralelogramo.svg">
+<div class="figph" role="img" aria-label="Suma de vectores por el método del paralelogramo" style="aspect-ratio:320/160"></div>
 <figcaption>Método del paralelogramo: $\vec A$ y $\vec B$ salen del mismo punto; se completan los lados paralelos (discontinuo) y la suma $\vec A+\vec B$ es la diagonal desde el origen común. Da el mismo resultado que cola-punta. <span class="src" data-l="P" data-ref="Diagrama propio del método del paralelogramo">P</span></figcaption>
 </figure>
-<figure class="fig">
-<svg class="fig" viewBox="0 0 320 150" width="100%" role="img" aria-label="Resta de vectores A menos B">
-  <defs><marker id="mar1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbr1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmr1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker></defs>
-  <line class="a" x1="40" y1="90" x2="190" y2="70" marker-end="url(#mar1)"/>
-  <line class="b" x1="40" y1="90" x2="100" y2="30" marker-end="url(#mbr1)"/>
-  <line class="b" x1="190" y1="70" x2="130" y2="130" stroke-dasharray="5 4" marker-end="url(#mbr1)"/>
-  <line class="th" x1="100" y1="30" x2="190" y2="70" stroke-dasharray="5 4" marker-end="url(#mmr1)"/>
-  <line class="a" x1="40" y1="90" x2="130" y2="130" style="stroke-width:4" marker-end="url(#mar1)"/>
-  <text x="110" y="72" class="sm bd">A</text>
-  <text x="58" y="52" class="sm bd">B</text>
-  <text x="176" y="112" class="sm bd">−B</text>
-  <text x="60" y="122" class="sm bd">A − B</text>
-</svg>
+<figure class="fig" data-svg="../assets/figs/t01/resta-de-vectores-a-menos-b.svg">
+<div class="figph" role="img" aria-label="Resta de vectores A menos B" style="aspect-ratio:320/150"></div>
 <figcaption>$\vec A-\vec B=\vec A+(-\vec B)$: se pone $-\vec B$ (mismo tamaño, sentido contrario) a continuación de $\vec A$. Equivale a la flecha que va de la punta de $\vec B$ a la punta de $\vec A$ (gris discontinuo). <span class="src" data-l="P" data-ref="Diagrama propio de la resta de vectores">P</span></figcaption>
 </figure>
-<figure class="fig">
-<svg class="fig" viewBox="0 0 320 130" width="100%" role="img" aria-label="Multiplicación de un vector por un escalar">
-  <defs><marker id="mae1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbe1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mme1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker></defs>
-  <line class="a" x1="40" y1="25" x2="120" y2="25" marker-end="url(#mae1)"/>
-  <line class="a" x1="40" y1="65" x2="200" y2="65" marker-end="url(#mae1)"/>
-  <line class="b" x1="200" y1="105" x2="160" y2="105" marker-end="url(#mbe1)"/>
-  <text x="14" y="29" class="sm bd">A</text>
-  <text x="10" y="69" class="sm bd">2A</text>
-  <text x="210" y="109" class="sm bd">−½A</text>
-</svg>
+<figure class="fig" data-svg="../assets/figs/t01/multiplicacion-de-un-vector-por-un-escalar.svg">
+<div class="figph" role="img" aria-label="Multiplicación de un vector por un escalar" style="aspect-ratio:320/130"></div>
 <figcaption>$c\vec A$ con $c=2$ duplica la magnitud conservando la dirección; con $c=-\tfrac12$ la reduce a la mitad e invierte el sentido (antiparalelo). <span class="src" data-l="P" data-ref="Diagrama propio de c·A">P</span></figcaption>
 </figure>
-
-
 <h2 id="s7"><span class="n">7</span>Componentes de vectores</h2>
 <div class="box intu"><span class="h">Idea intuitiva</span><p>Sumar vectores gráficamente (con regla y transportador) es lento e impreciso. Es mucho mejor descomponer cada vector en sus "sombras" sobre los ejes $x$ e $y$ (sus <b>componentes</b>) y sumar número con número: la parte horizontal con la horizontal, la vertical con la vertical.</p></div>
-<div class="box def"><span class="h">Componentes de un vector</span><p>Si $\vec A$ forma un ángulo $\theta$ medido desde el eje $+x$ en sentido antihorario:</p>
+<div class="box def"><span class="h">Componentes de un vector</span>
+<p>Si $\vec A$ forma un ángulo $\theta$ medido desde el eje $+x$ en sentido antihorario:</p>
   $$A_x = A\cos\theta \qquad A_y = A\sin\theta$$
   <p>y a la inversa, conocidas las componentes:</p>
   $$A = \sqrt{A_x^2+A_y^2} \qquad \tan\theta = \frac{A_y}{A_x}$$
-  <span class="src" data-l="U" data-ref="U §1.8 ec. (1.5)-(1.7), p. 14-16">U p.14</span>
-</div>
-<figure class="fig">
-<svg class="fig" viewBox="0 0 320 180" width="100%" role="img" aria-label="Componentes de un vector">
-  <defs><marker id="mac1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbc1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmc1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker></defs>
-  <line class="ax" x1="40" y1="150" x2="300" y2="150"/>
-  <line class="ax" x1="40" y1="165" x2="40" y2="15"/>
-  <text x="292" y="143" class="sm">x</text>
-  <text x="48" y="24" class="sm">y</text>
-  <line class="a" x1="40" y1="150" x2="220" y2="60" style="stroke-width:4" marker-end="url(#mac1)"/>
-  <line class="b" x1="40" y1="150" x2="220" y2="150" stroke-dasharray="5 4" marker-end="url(#mbc1)"/>
-  <line class="b" x1="220" y1="150" x2="220" y2="60" stroke-dasharray="5 4" marker-end="url(#mbc1)"/>
-  <path d="M 90.0 150.0 A 50 50 0 0 0 84.7 127.6" class="th"/>
-  <text x="98" y="142" class="sm bd">θ</text>
-  <text x="110" y="100" class="sm bd">A</text>
-  <text x="90" y="170" class="sm">A<tspan dy="3" font-size="9">x</tspan><tspan dy="-3"> = A cos θ</tspan></text>
-  <text x="228" y="110" class="sm">A<tspan dy="3" font-size="9">y</tspan><tspan dy="-3"> = A sen θ</tspan></text>
-</svg>
+  <span class="src" data-l="U" data-ref="U §1.8 ec. (1.5)-(1.7), p. 14-16">U p.14</span></div>
+<figure class="fig" data-svg="../assets/figs/t01/componentes-de-un-vector.svg">
+<div class="figph" role="img" aria-label="Componentes de un vector" style="aspect-ratio:320/180"></div>
 <figcaption>Las componentes son las «sombras» de $\vec A$ sobre los ejes: $A_x=A\cos\theta$ (cateto contiguo) y $A_y=A\sin\theta$ (cateto opuesto) del triángulo rectángulo de hipotenusa $A$. Y al revés, $A=\sqrt{A_x^2+A_y^2}$. <span class="src" data-l="P" data-ref="Diagrama propio de componentes, ángulo desde +x">P</span></figcaption>
 </figure>
-
 <div class="box warn"><span class="h">Error típico</span><p>Las fórmulas $A_x=A\cos\theta$, $A_y=A\sin\theta$ solo valen si $\theta$ se mide desde el eje $+x$ en sentido antihorario (U Ejemplo 1.6, p. 15). Si el ángulo del enunciado se mide desde el eje $+y$, o hacia $-y$, o en sentido horario, <b>hay que convertirlo primero</b> a la convención estándar (o cambiar seno por coseno con cuidado) — es justo la dificultad del problema 1.31 más abajo. Además, la calculadora da $\theta=\arctan(A_y/A_x)$ siempre en el rango $(-90°,90°)$, es decir, solo "acierta" si $\vec A$ está en el 1er o 4º cuadrante. Si $A_x<0$ (2º o 3º cuadrante), hay que <b>sumar 180°</b> al resultado de la calculadora. Dibujar siempre un croquis rápido para saber en qué cuadrante cae el vector evita ambos errores.</p></div>
-<div class="box thm"><span class="h">Suma por componentes</span><p>Si $\vec R = \vec A+\vec B$, entonces cada componente se suma por separado:</p>
+<div class="box thm"><span class="h">Suma por componentes</span>
+<p>Si $\vec R = \vec A+\vec B$, entonces cada componente se suma por separado:</p>
   $$R_x = A_x+B_x \qquad R_y = A_y+B_y$$
   <p>y luego se recupera magnitud y ángulo de $\vec R$ con las fórmulas anteriores. Este método se generaliza a cualquier número de vectores y a tres dimensiones (añadiendo $R_z=A_z+B_z$).</p>
-  <span class="src" data-l="U" data-ref="U §1.8 ec. (1.9)-(1.11), p. 16-17">U p.16</span>
-</div>
-
+  <span class="src" data-l="U" data-ref="U §1.8 ec. (1.9)-(1.11), p. 16-17">U p.16</span></div>
 <h2 id="s8"><span class="n">8</span>Vectores unitarios</h2>
-<div class="box def"><span class="h">Vectores unitarios î, ĵ, k̂</span><p>Un <b>vector unitario</b> tiene magnitud 1 y solo indica dirección. Los vectores $\hat\imath$, $\hat\jmath$, $\hat k$ apuntan a lo largo de $+x$, $+y$, $+z$ respectivamente. Cualquier vector se escribe como combinación de ellos:</p>
+<div class="box def"><span class="h">Vectores unitarios î, ĵ, k̂</span>
+<p>Un <b>vector unitario</b> tiene magnitud 1 y solo indica dirección. Los vectores $\hat\imath$, $\hat\jmath$, $\hat k$ apuntan a lo largo de $+x$, $+y$, $+z$ respectivamente. Cualquier vector se escribe como combinación de ellos:</p>
   $$\vec A = A_x\hat\imath + A_y\hat\jmath + A_z\hat k$$
   <p>Esta notación hace que sumar, restar o multiplicar por un escalar sea "componente a componente", sin dibujar nada.</p>
-  <span class="src" data-l="U" data-ref="U §1.9 ec. (1.14), p. 18-19">U p.18</span>
-</div>
-<figure class="fig">
-<svg class="fig" viewBox="0 0 320 180" width="100%" role="img" aria-label="Vectores unitarios y descomposición">
-  <defs><marker id="mau1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbu1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmu1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker></defs>
-  <line class="ax" x1="40" y1="150" x2="300" y2="150"/>
-  <line class="ax" x1="40" y1="165" x2="40" y2="15"/>
-  <line class="b" x1="40" y1="150" x2="90" y2="150" style="stroke-width:4" marker-end="url(#mbu1)"/>
-  <line class="b" x1="40" y1="150" x2="40" y2="100" style="stroke-width:4" marker-end="url(#mbu1)"/>
-  <line class="a" x1="40" y1="150" x2="210" y2="60" marker-end="url(#mau1)"/>
-  <line class="th" x1="90" y1="150" x2="210" y2="150" stroke-dasharray="5 4" marker-end="url(#mmu1)"/>
-  <line class="th" x1="210" y1="150" x2="210" y2="60" stroke-dasharray="5 4" marker-end="url(#mmu1)"/>
-  <text x="60" y="168" class="sm bd">î</text>
-  <text x="20" y="122" class="sm bd">ĵ</text>
-  <text x="110" y="90" class="sm bd">A</text>
-  <text x="120" y="142" class="sm">A<tspan dy="3" font-size="9">x</tspan><tspan dy="-3"> î</tspan></text>
-  <text x="218" y="110" class="sm">A<tspan dy="3" font-size="9">y</tspan><tspan dy="-3"> ĵ</tspan></text>
-</svg>
+  <span class="src" data-l="U" data-ref="U §1.9 ec. (1.14), p. 18-19">U p.18</span></div>
+<figure class="fig" data-svg="../assets/figs/t01/vectores-unitarios-y-descomposicion.svg">
+<div class="figph" role="img" aria-label="Vectores unitarios y descomposición" style="aspect-ratio:320/180"></div>
 <figcaption>Los unitarios $\hat\imath$ y $\hat\jmath$ (longitud 1) marcan los ejes. $\vec A=A_x\hat\imath+A_y\hat\jmath$ significa: «avanza $A_x$ veces $\hat\imath$ y luego $A_y$ veces $\hat\jmath$» (el eje $z$ y $\hat k$ salen del papel). <span class="src" data-l="P" data-ref="Diagrama propio de vectores unitarios">P</span></figcaption>
 </figure>
-
 <div class="box ex"><span class="h">Ejemplo del libro 1.8 — combinación de vectores unitarios</span>
-  <p>Con $\vec D = (6.00\hat\imath+3.00\hat\jmath-1.00\hat k)$ m y $\vec E=(4.00\hat\imath-5.00\hat\jmath+8.00\hat k)$ m, halla $|2\vec D-\vec E|$.</p>
+<p>Con $\vec D = (6.00\hat\imath+3.00\hat\jmath-1.00\hat k)$ m y $\vec E=(4.00\hat\imath-5.00\hat\jmath+8.00\hat k)$ m, halla $|2\vec D-\vec E|$.</p>
   <ol class="steps">
     <li>$2\vec D = (12.00\hat\imath+6.00\hat\jmath-2.00\hat k)$ m.</li>
     <li>$2\vec D-\vec E = [(12.00-4.00)\hat\imath+(6.00-(-5.00))\hat\jmath+(-2.00-8.00)\hat k]$ m $= (8.00\hat\imath+11.00\hat\jmath-10.00\hat k)$ m.</li>
     <li>Magnitud: $\sqrt{8.00^2+11.00^2+10.00^2}=\sqrt{285}=16.9$ m.</li>
   </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 1.8, p. 19">U p.19</span>
-</div>
-
+  <span class="src" data-l="U" data-ref="U Ejemplo 1.8, p. 19">U p.19</span></div>
 <h2 id="s9"><span class="n">9</span>Producto escalar</h2>
 <div class="box intu"><span class="h">Idea intuitiva</span><p>El producto escalar mide "cuánto apunta un vector en la dirección del otro": geométricamente, $\vec A\cdot\vec B = A\,(B\cos\phi)$ es $A$ multiplicado por la <b>proyección</b> de $\vec B$ sobre la dirección de $\vec A$. Si son paralelos, el producto es máximo positivo; si son perpendiculares, es cero; si apuntan en direcciones opuestas, es negativo. Reaparecerá en el tema 6 como la definición de <i>trabajo</i>: $W=\vec F\cdot\vec s$.</p></div>
 <div class="box def"><span class="h">Producto escalar (producto punto)</span>
-  $$\vec A\cdot\vec B = AB\cos\phi = A_xB_x+A_yB_y+A_zB_z$$
+$$\vec A\cdot\vec B = AB\cos\phi = A_xB_x+A_yB_y+A_zB_z$$
   <p>donde $\phi$ es el ángulo entre los dos vectores. El resultado es un <b>escalar</b> (un número, no un vector), y el orden no importa: $\vec A\cdot\vec B=\vec B\cdot\vec A$. Para los vectores unitarios: $\hat\imath\cdot\hat\imath=\hat\jmath\cdot\hat\jmath=\hat k\cdot\hat k=1$ y $\hat\imath\cdot\hat\jmath=\hat\jmath\cdot\hat k=\hat k\cdot\hat\imath=0$ (por eso al desarrollar $\vec A\cdot\vec B$ solo sobreviven los términos $A_xB_x$, $A_yB_y$, $A_zB_z$).</p>
-  <span class="src" data-l="U" data-ref="U §1.10 ec. (1.16),(1.17),(1.19), p. 20-21">U p.20</span>
-</div>
-<figure class="fig">
-<svg class="fig" viewBox="0 0 320 170" width="100%" role="img" aria-label="Producto escalar como proyección">
-  <defs><marker id="mad1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbd1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmd1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker></defs>
-  <line class="a" x1="40" y1="130" x2="250" y2="130" marker-end="url(#mad1)"/>
-  <line class="b" x1="40" y1="130" x2="160" y2="50" marker-end="url(#mbd1)"/>
-  <line class="th" x1="160" y1="50" x2="160" y2="130" stroke-dasharray="4 3"/>
-  <line class="th" x1="40" y1="148" x2="160" y2="148" style="stroke-width:2.5" marker-end="url(#mmd1)"/>
-  <path d="M 80.0 130.0 A 40 40 0 0 0 73.3 107.8" class="th"/>
-  <text x="86" y="122" class="sm bd">φ</text>
-  <text x="250" y="120" class="sm bd">A</text>
-  <text x="86" y="76" class="sm bd">B</text>
-  <text x="70" y="166" class="sm">B cos φ</text>
-</svg>
+  <span class="src" data-l="U" data-ref="U §1.10 ec. (1.16),(1.17),(1.19), p. 20-21">U p.20</span></div>
+<figure class="fig" data-svg="../assets/figs/t01/producto-escalar-como-proyeccion.svg">
+<div class="figph" role="img" aria-label="Producto escalar como proyección" style="aspect-ratio:320/170"></div>
 <figcaption>$\vec A\cdot\vec B=A\,(B\cos\phi)$: la proyección de $\vec B$ sobre la dirección de $\vec A$ (trazo gris inferior) multiplicada por $A$. La línea discontinua es la perpendicular que «proyecta» la punta de $\vec B$. <span class="src" data-l="P" data-ref="Diagrama propio de la proyección">P</span></figcaption>
 </figure>
-<figure class="fig">
-<svg class="fig" viewBox="0 0 320 125" width="100%" role="img" aria-label="Signo del producto escalar según el ángulo">
-  <defs><marker id="mad2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbd2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmd2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker></defs>
-  <line class="a" x1="25" y1="70" x2="80" y2="70" marker-end="url(#mad2)"/>
-  <line class="b" x1="25" y1="70" x2="63.9" y2="31.1" marker-end="url(#mbd2)"/>
-  <text x="17" y="98" class="sm bd">φ < 90°</text>
-  <text x="17" y="114" class="sm">A·B > 0</text>
-  <line class="a" x1="125" y1="70" x2="180" y2="70" marker-end="url(#mad2)"/>
-  <line class="b" x1="125" y1="70" x2="125.0" y2="15.0" marker-end="url(#mbd2)"/>
-  <text x="117" y="98" class="sm bd">φ = 90°</text>
-  <text x="117" y="114" class="sm">A·B = 0</text>
-  <line class="a" x1="235" y1="70" x2="290" y2="70" marker-end="url(#mad2)"/>
-  <line class="b" x1="235" y1="70" x2="196.1" y2="31.1" marker-end="url(#mbd2)"/>
-  <text x="227" y="98" class="sm bd">φ > 90°</text>
-  <text x="227" y="114" class="sm">A·B < 0</text>
-</svg>
+<figure class="fig" data-svg="../assets/figs/t01/signo-del-producto-escalar-segun-el-angulo.svg">
+<div class="figph" role="img" aria-label="Signo del producto escalar según el ángulo" style="aspect-ratio:320/125"></div>
 <figcaption>El signo de $\vec A\cdot\vec B$ es el de $\cos\phi$: positivo si apuntan «hacia el mismo lado», cero si son perpendiculares, negativo si apuntan «hacia lados opuestos». <span class="src" data-l="P" data-ref="Diagrama propio del signo del producto escalar">P</span></figcaption>
 </figure>
-
 <div class="box ex"><span class="h">Ejemplo del libro 1.9 — signo del producto escalar</span>
-  <p>Con $A=4$, $B=5$ y $\phi=77°$: $\vec A\cdot\vec B = 4\times5\times\cos77° = 4.50$.</p>
+<p>Con $A=4$, $B=5$ y $\phi=77°$: $\vec A\cdot\vec B = 4\times5\times\cos77° = 4.50$.</p>
   <p>Como $\phi<90°$, el producto sale positivo (coherente: los vectores apuntan "más o menos" en la misma dirección). Si $\phi$ fuera mayor de 90°, el coseno sería negativo y también lo sería el producto.</p>
-  <span class="src" data-l="U" data-ref="U Ejemplo 1.9, p. 21">U p.21</span>
-</div>
-
+  <span class="src" data-l="U" data-ref="U Ejemplo 1.9, p. 21">U p.21</span></div>
 <h2 id="s10"><span class="n">10</span>Producto vectorial</h2>
 <div class="box intu"><span class="h">Idea intuitiva</span><p>El producto vectorial de $\vec A$ y $\vec B$ es, en módulo, $A$ multiplicado por la componente de $\vec B$ <b>perpendicular</b> a $\vec A$ — geométricamente, el área del paralelogramo que forman los dos vectores. Es máximo cuando son perpendiculares y cero cuando son paralelos (justo lo contrario que el producto escalar). El resultado no es un número sino <b>otro vector</b>, perpendicular a los dos de partida. Reaparecerá en la torca (tema 10) y el momento angular.</p></div>
 <div class="box def"><span class="h">Producto vectorial (producto cruz)</span>
-  <p>Magnitud: $|\vec A\times\vec B| = AB\sin\phi$ (con $\phi$ el ángulo menor entre ambos). Dirección: perpendicular al plano de $\vec A$ y $\vec B$, dada por la <b>regla de la mano derecha</b> (dedos de $\vec A$ hacia $\vec B$ por el camino más corto; el pulgar señala $\vec A\times\vec B$) — el sistema $\hat\imath,\hat\jmath,\hat k$ de U es siempre <b>dextrógiro</b> (mano derecha), nunca levógiro.</p>
+<p>Magnitud: $|\vec A\times\vec B| = AB\sin\phi$ (con $\phi$ el ángulo menor entre ambos). Dirección: perpendicular al plano de $\vec A$ y $\vec B$, dada por la <b>regla de la mano derecha</b> (dedos de $\vec A$ hacia $\vec B$ por el camino más corto; el pulgar señala $\vec A\times\vec B$) — el sistema $\hat\imath,\hat\jmath,\hat k$ de U es siempre <b>dextrógiro</b> (mano derecha), nunca levógiro.</p>
   <p>El producto vectorial es <b>anticonmutativo</b>: $\vec A\times\vec B = -(\vec B\times\vec A)$. Para los vectores unitarios: $\hat\imath\times\hat\jmath=\hat k$, $\hat\jmath\times\hat k=\hat\imath$, $\hat k\times\hat\imath=\hat\jmath$ (y al revés cambia el signo). En componentes:</p>
   $$C_x = A_yB_z-A_zB_y \qquad C_y = A_zB_x-A_xB_z \qquad C_z = A_xB_y-A_yB_x$$
-  <span class="src" data-l="U" data-ref="U §1.10 ec. (1.20)-(1.25), p. 22-23">U p.22</span>
-</div>
-<figure class="fig">
-<svg class="fig" viewBox="0 0 320 165" width="100%" role="img" aria-label="Producto vectorial y área del paralelogramo">
-  <defs><marker id="max1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbx1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmx1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker></defs>
-  <polygon points="40,130 180,130 280,72 140,72" fill="var(--acc)" fill-opacity="0.12" stroke="none"/>
-  <line class="a" x1="40" y1="130" x2="180" y2="130" marker-end="url(#max1)"/>
-  <line class="b" x1="40" y1="130" x2="140" y2="72" marker-end="url(#mbx1)"/>
-  <line class="a" x1="140" y1="72" x2="280" y2="72" stroke-dasharray="5 4" marker-end="url(#max1)"/>
-  <line class="b" x1="180" y1="130" x2="280" y2="72" stroke-dasharray="5 4" marker-end="url(#mbx1)"/>
-  <line class="th" x1="140" y1="72" x2="140" y2="130" stroke-dasharray="4 3"/>
-  <path d="M 75.0 130.0 A 35 35 0 0 0 70.3 112.4" class="th"/>
-  <text x="84" y="122" class="sm bd">φ</text>
-  <text x="105" y="148" class="sm bd">A</text>
-  <text x="72" y="92" class="sm bd">B</text>
-  <text x="146" y="120" class="sm">B sen φ</text>
-  <circle cx="185" cy="96" r="7" fill="var(--bg)" stroke="var(--fg)" stroke-width="1.5"/><circle cx="185" cy="96" r="2" fill="var(--fg)"/>
-  <text x="198" y="100" class="sm bd">A×B</text>
-</svg>
+  <span class="src" data-l="U" data-ref="U §1.10 ec. (1.20)-(1.25), p. 22-23">U p.22</span></div>
+<figure class="fig" data-svg="../assets/figs/t01/producto-vectorial-y-area-del-paralelogramo.svg">
+<div class="figph" role="img" aria-label="Producto vectorial y área del paralelogramo" style="aspect-ratio:320/165"></div>
 <figcaption>El módulo $|\vec A\times\vec B|=AB\sin\phi$ es el <b>área del paralelogramo</b> (sombreado) de lados $\vec A$ y $\vec B$. La dirección es perpendicular al plano: con $\vec A$ hacia $+x$ y $\vec B$ girando en sentido antihorario, la mano derecha da $+z$ (el punto ⊙ indica «hacia el lector»). <span class="src" data-l="P" data-ref="Diagrama propio del producto vectorial">P</span></figcaption>
 </figure>
-
 <figure class="bookfig">
 <img src="../assets/img/fig_u_1_manoderecha.png" alt="Figura 1.30 de U: regla de la mano derecha para obtener la dirección de A×B, con los cuatro pasos numerados." loading="lazy">
 <figcaption>Fig. 1.30 de U: los cuatro pasos de la regla de la mano derecha para $\vec A\times\vec B$. <span class="src" data-l="U" data-ref="U fig. 1.30, p. 22">U p.22</span></figcaption>
 </figure>
 <div class="box ex"><span class="h">Ejemplo del libro 1.11 — magnitud y dirección</span>
-  <p>$\vec A$ de magnitud 6, sobre el eje $+x$; $\vec B$ de magnitud 4, a 30° de $\vec A$. $|\vec A\times\vec B| = 6\times4\times\sin30° = 12$, dirección $+z$ (sale del papel, por la mano derecha).</p>
-  <span class="src" data-l="U" data-ref="U Ejemplo 1.11, p. 24">U p.24</span>
-</div>
+<p>$\vec A$ de magnitud 6, sobre el eje $+x$; $\vec B$ de magnitud 4, a 30° de $\vec A$. $|\vec A\times\vec B| = 6\times4\times\sin30° = 12$, dirección $+z$ (sale del papel, por la mano derecha).</p>
+  <span class="src" data-l="U" data-ref="U Ejemplo 1.11, p. 24">U p.24</span></div>
 <div class="box warn"><span class="h">Error típico</span><p>Olvidar que el orden importa: $\hat\jmath\times\hat\imath=-\hat k$, no $+\hat k$. Si te equivocas de orden en un producto cruz, el resultado sale con el signo (y la dirección) invertidos.</p></div>
-
 <figure class="interactivo" data-escena="vectores" data-params='{}' aria-label="Interactivo: producto escalar y vectorial de dos vectores en 3D">
   <img class="int-static" src="../assets/img/int_vectores.png" alt="Interactivo: producto escalar y vectorial de dos vectores en 3D">
   <figcaption><b>Pruébalo tú:</b> mueve las componentes de $\vec A$ y $\vec B$ y gira la escena con el ratón o el dedo. Fíjate en que $\vec A\cdot\vec B$ se anula cuando son perpendiculares, y en que $|\vec A\times\vec B|$ se anula cuando son paralelos y $\vec A\times\vec B$ siempre es perpendicular a ambos. <span class="src" data-l="P" data-ref="Interactivo propio; ejemplo con A=(2,1,1), B=(1,2,0)">P</span></figcaption>
 </figure>
-
 <h2 id="ejercicios"><span class="n">11</span>Ejercicios resueltos</h2>
 <p>Como se indica en «Antes de empezar», este tema no tiene ningún ejercicio de examen real dedicado en los 16 exámenes revisados.</p>
-
 <details class="sol"><summary>Problema 1.10 — conversión de unidades <span class="src" data-l="E" data-ref="Solucionario 1-2, Prob. 1.10">E</span></summary>
-  <p class="enun">a) Un coche va a 60 mi/h. ¿A cuántos ft/s equivale? b) La aceleración de la gravedad es 32 ft/s². ¿Cuánto es en m/s²? c) La densidad del agua es 1.0 g/cm³. ¿Cuánto es en kg/m³?</p>
+<p class="enun">a) Un coche va a 60 mi/h. ¿A cuántos ft/s equivale? b) La aceleración de la gravedad es 32 ft/s². ¿Cuánto es en m/s²? c) La densidad del agua es 1.0 g/cm³. ¿Cuánto es en kg/m³?</p>
   <ol class="steps">
     <li>a) $60\ \tfrac{\text{mi}}{\text{h}}\times\dfrac{5280\ \text{ft}}{1\ \text{mi}}\times\dfrac{1\ \text{h}}{3600\ \text{s}} = 88\ \text{ft/s}$ (conversión exacta, sin pérdida de cifras).</li>
     <li>b) $32\ \tfrac{\text{ft}}{\text{s}^2}\times\dfrac{0.3048\ \text{m}}{1\ \text{ft}} = 9.7536\ \text{m/s}^2$; como el dato "32" solo tiene 2 cifras significativas, se redondea a $9.8\ \text{m/s}^2$.</li>
@@ -352,9 +225,8 @@
   </ol>
   <div class="recipe"><b>Receta:</b> multiplica por factores unitarios orientados para cancelar la unidad que sobra; si la unidad está al cuadrado o al cubo, el factor de conversión también va elevado a esa potencia.</div>
 </details>
-
 <details class="sol"><summary>Problema 1.14 — cifras significativas <span class="src" data-l="E" data-ref="Solucionario 1-3, Prob. 1.14">E</span></summary>
-  <p class="enun">Un rectángulo mide 12 mm por 5.98 mm. Con el número correcto de cifras significativas, calcula: a) el área; b) la razón ancho/largo; c) el perímetro; d) la diferencia largo−ancho; e) la razón largo/ancho.</p>
+<p class="enun">Un rectángulo mide 12 mm por 5.98 mm. Con el número correcto de cifras significativas, calcula: a) el área; b) la razón ancho/largo; c) el perímetro; d) la diferencia largo−ancho; e) la razón largo/ancho.</p>
   <ol class="steps">
     <li>a) Área $=12\times5.98=71.76 \to$ (2 cifras, manda el "12") $= 72\ \text{mm}^2$.</li>
     <li>b) Razón $5.98/12=0.4983\to 0.50$ (2 cifras).</li>
@@ -364,9 +236,8 @@
   </ol>
   <div class="recipe"><b>Receta:</b> antes de redondear, identifica si la operación es ×÷ (cuenta cifras significativas) o +− (mira la posición decimal); redondea solo al final.</div>
 </details>
-
 <details class="sol"><summary>Problema 1.18 — estimación de orden de magnitud <span class="src" data-l="E" data-ref="Solucionario 1-4, Prob. 1.18">E</span></summary>
-  <p class="enun">Estima cuántos galones de gasolina se consumen al día en EE. UU., suponiendo 2 coches por cada 3 personas, que cada coche recorre 10 000 mi/año y rinde 20 mi/gal.</p>
+<p class="enun">Estima cuántos galones de gasolina se consumen al día en EE. UU., suponiendo 2 coches por cada 3 personas, que cada coche recorre 10 000 mi/año y rinde 20 mi/gal.</p>
   <ol class="steps">
     <li>El enunciado no da la población: hay que estimarla, que es justo la habilidad que se practica en este apartado (U §1.6). Tomamos $\approx3\times10^8$ habitantes (EE. UU., orden de magnitud).</li>
     <li>Número de coches: $3\times10^8 \times \tfrac{2}{3} = 2\times10^8$ coches.</li>
@@ -376,9 +247,8 @@
   </ol>
   <div class="recipe"><b>Receta:</b> encadena factores (número de agentes × consumo por agente × tiempo), vigilando que las unidades se cancelen; da el resultado con 1 cifra significativa.</div>
 </details>
-
 <details class="sol"><summary>Problema 1.31 — suma y resta de vectores por componentes <span class="src" data-l="E" data-ref="Solucionario 1-7/1-8, Prob. 1.31">E</span></summary>
-  <p class="enun">$\vec A$ mide 8.00 m y apunta en la dirección $-y$. $\vec B$ mide 15.0 m y forma 30.0° con el eje $+y$ (es decir, 60.0° con el eje $+x$). Calcula: a) $\vec A+\vec B$; b) $\vec B+\vec A$; c) $\vec A-\vec B$; d) $\vec B-\vec A$ (magnitud y ángulo en cada caso).</p>
+<p class="enun">$\vec A$ mide 8.00 m y apunta en la dirección $-y$. $\vec B$ mide 15.0 m y forma 30.0° con el eje $+y$ (es decir, 60.0° con el eje $+x$). Calcula: a) $\vec A+\vec B$; b) $\vec B+\vec A$; c) $\vec A-\vec B$; d) $\vec B-\vec A$ (magnitud y ángulo en cada caso).</p>
   <ol class="steps">
     <li>Componentes: $A_x=0,\ A_y=-8.00$; $B_x=15.0\sin30.0°=7.50$, $B_y=15.0\cos30.0°=12.99$.</li>
     <li>a) $\vec C=\vec A+\vec B$: $C_x=7.50$, $C_y=4.99$ → $C=\sqrt{7.50^2+4.99^2}=9.01\ \text{m}$; $\theta=\arctan(4.99/7.50)=33.6°$ (1er cuadrante, ambas componentes positivas, sin corrección).</li>
@@ -386,54 +256,27 @@
     <li>c) $\vec D=\vec A-\vec B$: $D_x=-7.50$, $D_y=-20.99$ → $D=\sqrt{7.50^2+20.99^2}=22.3\ \text{m}$; $\arctan(-20.99/-7.50)=70.3°$, pero como <b>ambas</b> componentes son negativas (3er cuadrante) hay que sumar 180°: $\theta=250.3°$.</li>
     <li>d) $\vec B-\vec A=-\vec D$: misma magnitud 22.3 m, dirección opuesta a c): $\theta=70.3°$.</li>
   </ol>
-  <figure class="fig">
-  <svg class="fig" viewBox="0 0 300 220" width="100%" role="img" aria-label="Suma de A hacia -y con B a 30 grados del eje y">
-    <line class="ax" x1="20" y1="20" x2="20" y2="200"/>
-    <line class="ax" x1="20" y1="110" x2="280" y2="110"/>
-    <line class="a" x1="20" y1="110" x2="20" y2="190" marker-end="url(#arA2)"/>
-    <line class="b" x1="20" y1="190" x2="95" y2="60" marker-end="url(#arB2)"/>
-    <line class="a" x1="20" y1="110" x2="95" y2="60" stroke-dasharray="5 4" marker-end="url(#arC2)"/>
-    <defs>
-      <marker id="arA2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker>
-      <marker id="arB2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker>
-      <marker id="arC2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker>
-    </defs>
-    <text x="26" y="155" class="sm">A</text><text x="55" y="105" class="sm">B</text><text x="45" y="80" class="sm bd">A+B</text>
-  </svg>
-  <figcaption>$\vec A$ apunta hacia $-y$; $\vec B$ está a 30.0° del eje $+y$ (60.0° del eje $+x$), dibujado a escala (10 px/m). La suma cola-punta $\vec A+\vec B$ cae en el 1er cuadrante, como corresponde a $C_x=7.50$, $C_y=4.99$ (ambas positivas). <span class="src" data-l="P" data-ref="Diagrama propio para el problema 1.31, a escala 10 px/m">P</span></figcaption>
-  </figure>
+  <figure class="fig" data-svg="../assets/figs/t01/suma-de-a-hacia-y-con-b-a-30-grados-del-eje-y.svg">
+<div class="figph" role="img" aria-label="Suma de A hacia -y con B a 30 grados del eje y" style="aspect-ratio:300/220"></div>
+<figcaption>$\vec A$ apunta hacia $-y$; $\vec B$ está a 30.0° del eje $+y$ (60.0° del eje $+x$), dibujado a escala (10 px/m). La suma cola-punta $\vec A+\vec B$ cae en el 1er cuadrante, como corresponde a $C_x=7.50$, $C_y=4.99$ (ambas positivas). <span class="src" data-l="P" data-ref="Diagrama propio para el problema 1.31, a escala 10 px/m">P</span></figcaption>
+</figure>
   <div class="recipe"><b>Receta:</b> pasa cada vector a componentes con signo, suma/resta componente a componente, recupera magnitud con Pitágoras y ángulo con arctan corrigiendo el cuadrante según los signos de las componentes.</div>
 </details>
-
 <details class="sol"><summary>Problema 1.38 — vectores unitarios y resta <span class="src" data-l="E" data-ref="Solucionario 1-12/1-13, Prob. 1.38">E</span></summary>
-  <p class="enun">$\vec A=4.00\hat\imath+7.00\hat\jmath$, $\vec B=5.00\hat\imath-2.00\hat\jmath$. Calcula: a) $|\vec A|$ y $|\vec B|$; b) $\vec A-\vec B$; c) magnitud y ángulo de $\vec A-\vec B$.</p>
+<p class="enun">$\vec A=4.00\hat\imath+7.00\hat\jmath$, $\vec B=5.00\hat\imath-2.00\hat\jmath$. Calcula: a) $|\vec A|$ y $|\vec B|$; b) $\vec A-\vec B$; c) magnitud y ángulo de $\vec A-\vec B$.</p>
   <ol class="steps">
     <li>a) $|\vec A|=\sqrt{4.00^2+7.00^2}=8.06$; $|\vec B|=\sqrt{5.00^2+2.00^2}=5.39$.</li>
     <li>b) $\vec A-\vec B=(4.00-5.00)\hat\imath+(7.00-(-2.00))\hat\jmath = -1.00\hat\imath+9.00\hat\jmath$.</li>
     <li>c) $R=\sqrt{(-1.00)^2+9.00^2}=9.06$. $\arctan(9.00/-1.00)=-83.7°$, pero $R_x<0$ y $R_y>0$ (2º cuadrante) → suma 180°: $\theta=96.3°$.</li>
   </ol>
-  <figure class="fig">
-<svg class="fig" viewBox="0 0 300 225" width="100%" role="img" aria-label="Vectores A, B y A menos B en el plano">
-  <defs><marker id="maq1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbq1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmq1" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker></defs>
-  <line class="ax" x1="30" y1="175" x2="260" y2="175"/>
-  <line class="ax" x1="70" y1="222" x2="70" y2="5"/>
-  <line class="a" x1="70" y1="175" x2="142" y2="49" marker-end="url(#maq1)"/>
-  <line class="b" x1="70" y1="175" x2="160" y2="211" marker-end="url(#mbq1)"/>
-  <line class="th" x1="160" y1="211" x2="142" y2="49" stroke-dasharray="5 4" marker-end="url(#mmq1)"/>
-  <line class="a" x1="70" y1="175" x2="52" y2="13" style="stroke-width:4" marker-end="url(#maq1)"/>
-  <path d="M 97.9 186.1 A 30 30 0 0 0 84.9 149.0" class="th"/>
-  <text x="99" y="150" class="sm bd">φ</text>
-  <text x="150" y="100" class="sm bd">A</text>
-  <text x="165" y="205" class="sm bd">B</text>
-  <text x="8" y="90" class="sm bd">A − B</text>
-</svg>
+  <figure class="fig" data-svg="../assets/figs/t01/vectores-a-b-y-a-menos-b-en-el-plano.svg">
+<div class="figph" role="img" aria-label="Vectores A, B y A menos B en el plano" style="aspect-ratio:300/225"></div>
 <figcaption>$\vec A=(4,7)$, $\vec B=(5,-2)$ (escala 18 px/unidad). $\vec A-\vec B=(-1,9)$ cae en el 2.º cuadrante (96.3°), por eso hubo que sumar 180° al resultado de la calculadora. $\phi\approx82.1°$ es el ángulo entre ambos (prob. 1.42); el producto vectorial (prob. 1.44) vale $-43.0\,\hat k$: entra en el papel. <span class="src" data-l="P" data-ref="Diagrama propio para los problemas 1.38, 1.42 y 1.44">P</span></figcaption>
 </figure>
   <div class="recipe"><b>Receta:</b> con notación $\hat\imath,\hat\jmath,\hat k$, suma/resta "componente a componente"; recuerda que restar un componente negativo equivale a sumarlo (7.00−(−2.00)=9.00).</div>
 </details>
-
 <details class="sol"><summary>Problema 1.42 — producto escalar y ángulo entre vectores <span class="src" data-l="E" data-ref="Solucionario 1-14, Prob. 1.42">E</span></summary>
-  <p class="enun">Con los mismos $\vec A=4.00\hat\imath+7.00\hat\jmath$ y $\vec B=5.00\hat\imath-2.00\hat\jmath$: a) calcula $\vec A\cdot\vec B$; b) halla el ángulo entre ambos vectores.</p>
+<p class="enun">Con los mismos $\vec A=4.00\hat\imath+7.00\hat\jmath$ y $\vec B=5.00\hat\imath-2.00\hat\jmath$: a) calcula $\vec A\cdot\vec B$; b) halla el ángulo entre ambos vectores.</p>
   <ol class="steps">
     <li>a) $\vec A\cdot\vec B = A_xB_x+A_yB_y = (4.00)(5.00)+(7.00)(-2.00) = 20.0-14.0 = 6.00$.</li>
     <li>b) $\cos\phi = \dfrac{\vec A\cdot\vec B}{AB} = \dfrac{6.00}{8.06\times5.39} = 0.138$ → $\phi = 82.1°$.</li>
@@ -441,9 +284,8 @@
   </ol>
   <div class="recipe"><b>Receta:</b> producto escalar por componentes ($A_xB_x+A_yB_y$, nunca "en cruz"), y despeja el ángulo con $\phi=\arccos(\vec A\cdot\vec B/(AB))$.</div>
 </details>
-
 <details class="sol"><summary>Problema 1.44 — producto vectorial de los mismos vectores <span class="src" data-l="E" data-ref="Solucionario 1-14, Prob. 1.44">E</span></summary>
-  <p class="enun">Calcula $\vec A\times\vec B$ para $\vec A=4.00\hat\imath+7.00\hat\jmath$ y $\vec B=5.00\hat\imath-2.00\hat\jmath$.</p>
+<p class="enun">Calcula $\vec A\times\vec B$ para $\vec A=4.00\hat\imath+7.00\hat\jmath$ y $\vec B=5.00\hat\imath-2.00\hat\jmath$.</p>
   <ol class="steps">
     <li>$\vec A\times\vec B = (4\hat\imath+7\hat\jmath)\times(5\hat\imath-2\hat\jmath) = 4(-2)(\hat\imath\times\hat\jmath) + 7(5)(\hat\jmath\times\hat\imath)$ (los términos $\hat\imath\times\hat\imath$ y $\hat\jmath\times\hat\jmath$ son nulos).</li>
     <li>Con $\hat\imath\times\hat\jmath=\hat k$ y $\hat\jmath\times\hat\imath=-\hat k$: $=-8\hat k - 35\hat k = -43.0\hat k$.</li>
@@ -452,37 +294,22 @@
   </ol>
   <div class="recipe"><b>Receta:</b> desarrolla el producto término a término usando $\hat\imath\times\hat\jmath=\hat k$, $\hat\jmath\times\hat\imath=-\hat k$; verifica siempre con $C_z=A_xB_y-A_yB_x$.</div>
 </details>
-
 <details class="sol"><summary>Problema 1.46 — producto vectorial con regla de la mano derecha <span class="src" data-l="E" data-ref="Solucionario 1-15, Prob. 1.46">E</span></summary>
-  <p class="enun">$\vec A$ mide 2.80 cm, a 60.0° sobre el eje $+x$. $\vec B$ mide 1.90 cm, a 60.0° bajo el eje $+x$. Calcula: a) $\vec A\times\vec B$ (magnitud y dirección); b) $\vec B\times\vec A$.</p>
+<p class="enun">$\vec A$ mide 2.80 cm, a 60.0° sobre el eje $+x$. $\vec B$ mide 1.90 cm, a 60.0° bajo el eje $+x$. Calcula: a) $\vec A\times\vec B$ (magnitud y dirección); b) $\vec B\times\vec A$.</p>
   <ol class="steps">
     <li>Ángulo entre ambos: $\phi = 60.0°+60.0° = 120°$ (uno está por encima del eje x, el otro por debajo).</li>
     <li>a) $|\vec A\times\vec B| = 2.80\times1.90\times\sin120° = 4.61\ \text{cm}^2$. Girando de $\vec A$ a $\vec B$ por el camino corto se gira en sentido horario, así que la mano derecha da el pulgar hacia $-z$ (hacia dentro del papel).</li>
     <li>Comprobación con componentes: $A_x=1.40$, $A_y=2.42$; $B_x=0.95$, $B_y=-1.65$; $C_z=A_xB_y-A_yB_x = 1.40(-1.65)-2.42(0.95) = -2.31-2.30=-4.61$. Signo negativo confirma $-z$.</li>
     <li>b) $\vec B\times\vec A = -(\vec A\times\vec B)$: misma magnitud 4.61 cm², dirección $+z$ (fuera del papel).</li>
   </ol>
-  <figure class="fig">
-<svg class="fig" viewBox="0 0 300 220" width="100%" role="img" aria-label="Vectores A y B a ±60 grados del eje x">
-  <defs><marker id="maq2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--acc)"/></marker><marker id="mbq2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--A)"/></marker><marker id="mmq2" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="9" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="var(--mut)"/></marker></defs>
-  <line class="ax" x1="20" y1="110" x2="280" y2="110"/>
-  <line class="a" x1="60" y1="110" x2="116.0" y2="13.2" marker-end="url(#maq2)"/>
-  <line class="b" x1="60" y1="110" x2="98.0" y2="176.0" marker-end="url(#mbq2)"/>
-  <path d="M 75.0 136.0 A 30 30 0 0 0 75.0 84.0" class="th"/>
-  <text x="96" y="102" class="sm">φ = 120°</text>
-  <text x="118" y="30" class="sm bd">A (2.80 cm)</text>
-  <text x="104" y="180" class="sm bd">B (1.90 cm)</text>
-  <circle cx="200" cy="80" r="7" fill="var(--bg)" stroke="var(--fg)" stroke-width="1.5"/><line x1="195.5" y1="75.5" x2="204.5" y2="84.5" stroke="var(--fg)" stroke-width="1.5"/><line x1="195.5" y1="84.5" x2="204.5" y2="75.5" stroke="var(--fg)" stroke-width="1.5"/>
-  <text x="213" y="84" class="sm">A×B: −z</text>
-  <circle cx="200" cy="140" r="7" fill="var(--bg)" stroke="var(--fg)" stroke-width="1.5"/><circle cx="200" cy="140" r="2" fill="var(--fg)"/>
-  <text x="213" y="144" class="sm">B×A: +z</text>
-</svg>
+  <figure class="fig" data-svg="../assets/figs/t01/vectores-a-y-b-a-60-grados-del-eje-x.svg">
+<div class="figph" role="img" aria-label="Vectores A y B a ±60 grados del eje x" style="aspect-ratio:300/220"></div>
 <figcaption>$\vec A$ a +60° y $\vec B$ a −60° forman $\phi=120°$. Para ir de $\vec A$ a $\vec B$ por el camino corto se gira en sentido horario, así que $\vec A\times\vec B$ apunta hacia dentro del papel (⊗, $-z$) y $\vec B\times\vec A$ hacia fuera (⊙, $+z$). <span class="src" data-l="P" data-ref="Diagrama propio para el problema 1.46">P</span></figcaption>
 </figure>
   <div class="recipe"><b>Receta:</b> magnitud $AB\sin\phi$ con $\phi$ el ángulo menor entre los vectores; dirección con la mano derecha, y comprueba el signo con $C_z=A_xB_y-A_yB_x$.</div>
 </details>
-
 <details class="sol"><summary>Problema 1.51 — aplicación con densidad (radio de un planeta) <span class="src" data-l="E" data-ref="Solucionario 1-16, Prob. 1.51">E</span></summary>
-  <p class="enun">Un planeta tiene 5.5 veces la masa de la Tierra ($m_T=5.97\times10^{24}$ kg) pero la misma densidad que Neptuno (1.76 g/cm³). Calcula su radio y compáralo con el de la Tierra ($r_T=6.37\times10^6$ m).</p>
+<p class="enun">Un planeta tiene 5.5 veces la masa de la Tierra ($m_T=5.97\times10^{24}$ kg) pero la misma densidad que Neptuno (1.76 g/cm³). Calcula su radio y compáralo con el de la Tierra ($r_T=6.37\times10^6$ m).</p>
   <ol class="steps">
     <li>Masa: $m = 5.5\times5.97\times10^{24} = 3.28\times10^{25}\ \text{kg}$.</li>
     <li>Densidad en unidades SI: $\rho = 1.76\ \text{g/cm}^3 = 1760\ \text{kg/m}^3$ (factor de longitud al cubo, como en el problema 1.10c).</li>
@@ -492,7 +319,6 @@
   </ol>
   <div class="recipe"><b>Receta:</b> de masa y densidad se obtiene el volumen ($V=m/\rho$), y de un volumen esférico el radio con $r=(3V/4\pi)^{1/3}$; para comparar planetas basta la razón $r\propto(m/\rho)^{1/3}$, sin recalcular todo.</div>
 </details>
-
 <h2 id="chuleta"><span class="n">12</span>Chuleta y lista de comprobación</h2>
 <table>
 <tr><th>Concepto</th><th>Fórmula</th></tr>
@@ -511,7 +337,6 @@
   <li>Sé calcular un producto escalar e interpretar su signo (paralelo/perpendicular/opuesto).</li>
   <li>Sé calcular un producto vectorial (magnitud y dirección con la mano derecha) e interpretar su signo con $C_z=A_xB_y-A_yB_x$.</li>
 </ul>
-
 <h2 id="fuentes"><span class="n">★</span>Fuentes de este tema</h2>
 <details class="fuentes-toggle">
 <summary>Mostrar lista de fuentes</summary>

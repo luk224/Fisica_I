@@ -29,7 +29,8 @@ Receta por tema NN (archivo `temas/tema_NN_slug.html`):
 5. Marcar el tema aquí, commit «Tema NN: migrado a contenido/».
 
 Orden sugerido (de menos a más figuras): hacer 1 tema de prueba y, si el migrador va bien, el resto por bloques.
-- [ ] B1. Tema 1 (prueba del migrador con el tema más simple)
+- [x] B1. Tema 1 (prueba del migrador con el tema más simple). Migrador corregido: ejercicios sin `id` en el HTML original ya no generan `id="problema 1.10"` (ahora archivo `problema-1-10` y sin atributo id). `test_numerico` acepta decimales con punto o con coma.
+  *Pendiente para C11 (redacción, no tocado al migrar):* `problema-1-31` y `problema-1-51` comparan con «el solucionario da…» (viola la regla 8 bis): reescribir dejando solo el valor correcto.
 - [ ] B2. Temas 2-4
 - [ ] B3. Temas 6-8
 - [ ] B4. Temas 9-11
