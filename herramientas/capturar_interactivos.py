@@ -3,7 +3,7 @@
 Para cada <figure class="interactivo" data-escena=… data-params=…> de los temas:
   1. abre la escena sola, en su estado inicial (tema claro), con un Chromium sin interfaz,
   2. guarda `assets/img/int_<escena>[_<modo>].png` (900×440, solo el lienzo),
-  3. añade (si falta) dentro de la figura `<img class="int-static" src="../assets/img/int_….png" …>`, que
+  3. añade (si falta) dentro de la figura (también en los fragmentos de `contenido/tema_NN/partes/`; tras ello, regenerar la página con tema_datos.py) `<img class="int-static" src="../assets/img/int_….png" …>`, que
      `assets/interactivos.css` muestra al imprimir y cuando no hay WebGL.
 
 Uso:   python herramientas/capturar_interactivos.py [filtro…] [--chrome RUTA] [--sin-html]
@@ -96,7 +96,7 @@ def main():
         captura_cruda(chrome, vacia, tmp / "vacia.png")
         # la página vacía de referencia lleva el mismo fondo; las capturas reales llevan además el lienzo
         blanco = (tmp / "vacia.png").read_bytes()
-        for ruta in sorted([*TEMAS.glob("tema_*.html"), *TEMAS.glob("ejercicios_*.html")]):
+        for ruta in sorted([*TEMAS.glob("tema_*.html"), *TEMAS.glob("ejercicios_*.html"), *TEMAS.parent.glob("contenido/tema_*/partes/*.html")]):
             txt = ruta.read_text(encoding="utf8")
             nuevo = txt
             for m in FIG.finditer(txt):

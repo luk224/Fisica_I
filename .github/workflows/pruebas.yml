@@ -1,0 +1,19 @@
+name: Pruebas
+on:
+  push:
+  pull_request:
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install sympy
+      - name: Pruebas rápidas (estructura, citas, números, índice)
+        run: python pruebas/ejecutar.py --rapido
+      - name: Pruebas en navegador (KaTeX, figuras, buscador) en los 20 temas
+        run: python pruebas/ejecutar.py
+        env:
+          PRUEBAS_TODAS: '1'

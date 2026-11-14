@@ -9,3 +9,7 @@ Libro oficial: Young & Freedman, *Sears-Zemansky Física Universitaria con Físi
 Ver `CLAUDE.md` para la metodología completa (fuentes, cronograma, flujo de trabajo con subagentes).
 
 **Índice:** [index.html](index.html) · **Web:** https://luk224.github.io/Fisica_I/
+
+**Buscador:** botón «🔍 Buscar» (o la tecla `/`) en cada tema. **Cambios:** [cambios.html](cambios.html).
+
+**En local** hay que servir la carpeta por http para que carguen las figuras: `python herramientas/servir.py`. Cómo está montado (contenido como datos, pruebas, buscador): `CLAUDE.md` §8.

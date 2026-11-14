@@ -12,10 +12,13 @@ Uso (desde la carpeta del proyecto o desde cualquier sitio):
 Requisitos: `pip install playwright pymupdf` y un Chromium de Playwright (`playwright install chromium`).
 """
 import argparse
+import functools
 import html
+import http.server
 import pathlib
 import re
 import sys
+import threading
 
 from playwright.sync_api import sync_playwright
 
@@ -29,18 +32,30 @@ def titulo(ruta: pathlib.Path) -> str:
     return html.unescape(m.group(1).strip()) if m else ruta.stem
 
 
+def servidor():
+    """Servidor http local: las figuras SVG se cargan con fetch, que no funciona desde file://."""
+    h = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(RAIZ))
+    h.log_message = lambda *a, **k: None
+    srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), h)
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    return srv
+
+
 def exportar(paginas, destinos, color=False):
+    srv = servidor()
+    base = f"http://127.0.0.1:{srv.server_address[1]}/"
     with sync_playwright() as p:
         b = p.chromium.launch()
         pg = b.new_page()
         for ruta, pdf in zip(paginas, destinos):
-            pg.goto(ruta.as_uri())
+            pg.goto(base + ruta.relative_to(RAIZ).as_posix())
             pg.wait_for_function("document.querySelector('.katex') !== null", timeout=30000)
             pg.evaluate("document.fonts.ready")
             pg.emulate_media(media="print")
             if color:
                 pg.evaluate("document.documentElement.classList.add('print-color')")
             pg.evaluate("document.querySelectorAll('details.sol').forEach(x => x.open = true)")
+            pg.evaluate("window.cargarFiguras ? window.cargarFiguras() : null")
             pg.evaluate("window.ocultarNotasDeFuentes && window.ocultarNotasDeFuentes()")
             pg.wait_for_timeout(400)
             cab = ('<div style="font:8px system-ui,sans-serif;color:#555;width:100%;padding:0 15mm;text-align:right">'
@@ -49,6 +64,7 @@ def exportar(paginas, destinos, color=False):
                    display_header_footer=True, header_template=cab, footer_template="<span></span>")
             print("OK ", pdf.relative_to(RAIZ))
         b.close()
+    srv.shutdown()
 
 
 def unir(pdfs, titulos, destino):

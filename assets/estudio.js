@@ -1,4 +1,4 @@
-// Comportamiento del formato «piloto»: ejemplos opcionales abiertos al imprimir y lista de comprobación con memoria.
+// Comportamiento del formato «estudio»: ejemplos opcionales abiertos al imprimir y lista de comprobación con memoria.
 (function () {
   var d = document;
   window.addEventListener('beforeprint', function () { d.querySelectorAll('details.mas').forEach(function (x) { x.open = true; }); });

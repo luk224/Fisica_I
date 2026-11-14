@@ -93,6 +93,10 @@ E:\UNED\FISICA I\Claude\
   assets/three/, interactivos.js|css, escenas/  motor three.js r147 local (2D ortográfico y 3D) y una escena por interactivo
   herramientas/capturar_interactivos.py  captura PNG estática de cada interactivo (PDF y sin WebGL)
   simulaciones/                   simulaciones interactivas (sim_tema03.html…); acceso solo desde el botón de la tarjeta en index.html
+  contenido/tema_NN/              FUENTE de los temas migrados (hoy el 5): tema.json + ejercicios/ + partes/ (ver §8). Las páginas de temas/ se generan desde aquí
+  assets/figs/tNN/                figuras SVG sueltas (cargan al hacer scroll); assets/busqueda*.js buscador; assets/figuras.js, estudio.css|js
+  pruebas/                        pruebas automáticas (python pruebas/ejecutar.py); .github/workflows/pruebas.yml las lanza en cada push
+  cambios.html                    página de cambios generada desde git
   .claude/agents/, .claude/skills/
 ```
 
@@ -133,7 +137,7 @@ Skills de diseño disponibles para el redactor: `frontend-design:frontend-design
 ## 4b. Publicación en GitHub (obligatorio tras cada cambio)
 Repositorio: `git@github.com:luk224/Fisica_I.git` (rama `main`, **público**). Web: https://luk224.github.io/Fisica_I/ (GitHub Pages desde `main`, carpeta raíz; hay `.nojekyll`).
 **Cada vez que se termine un tema nuevo o se haga un cambio en el proyecto (temas, assets, CLAUDE.md, agentes, índices, index.html), y antes de dar la tarea por cerrada:**
-1. Actualizar `index.html` (marcar el tema como «listo») si se añadió o terminó un tema.
+1. Actualizar `index.html` (marcar el tema como «listo») si se añadió o terminó un tema. Si se tocó un tema, ejecutar `python herramientas/construir.py --probar` (regenera páginas, buscador y cambios, y lanza las pruebas rápidas) y solo subir si pasan (§8).
 2. `git add -A`, revisar `git status` (no debe entrar nada de `.gitignore`: los `.pdf` y los textos completos con copyright de `fuentes_txt/{sears,solman}.txt` se quedan fuera; regenerarlos desde los PDF originales si hacen falta; los índices propios `examenes_por_tema.md` y `guia.txt` sí se suben).
 3. `git commit` con mensaje en español que diga qué tema o cambio (p. ej. «Tema 11: equilibrio y elasticidad»), terminado con la línea de coautoría del entorno.
 4. `git pull --rebase origin main` si hace falta y `git push origin main`.
@@ -155,6 +159,18 @@ La hoja de impresión está en `assets/resumen.css` (`@media print`: A4, blanco 
 
 ## 7. Tema claro/oscuro
 Por defecto **siempre claro** (el CSS ya no sigue `prefers-color-scheme`); solo es oscuro si el usuario lo eligió con el botón «Claro / oscuro» (se guarda en `localStorage` con la clave `tema`). Para evitar el parpadeo al abrir, **todo HTML lleva en el `<head>`, justo tras `<meta charset>`, el script mínimo** que lee `localStorage` y pone `data-theme` antes del primer pintado (ya está en `plantilla_tema.html` y en `index.html`; no quitarlo). Reglas CSS propias de un tema para el modo oscuro: usar `:root[data-theme="dark"] …`, no `@media (prefers-color-scheme:dark)`.
+
+## 8. Contenido como datos, buscador, pruebas y cambios (tema 5 = piloto del formato «estudio»)
+
+**Formato «estudio»** (probado en el tema 5; es el que deben seguir los temas nuevos y el que se irá aplicando a los demás): arranca con «El tema en 5 minutos» (método en 4 pasos, 6 fórmulas con cuándo se usa, qué cae, rutas de estudio) y la tabla «¿Qué tipo de problema es?»; insignias de prioridad 🔴/🟡/⚪ en apartados y ejercicios; teoría condensada (una caja por idea: ley/definición + ejemplo mínimo + un error típico); mini-tests «Comprueba» con respuesta plegada al final de cada sección; ejercicios en **Núcleo** (un método distinto cada uno, con tabla «método que te llevas»; **todos los de examen real van aquí**), **Práctica** (sin dibujo) y pregunta de teoría. Estilos en `assets/estudio.css|js`. Los ejemplos del libro solo se conservan si enseñan un método que no cubre ningún ejercicio. **Ningún ejercicio de examen real se elimina ni se acorta** (lo vigila `test_examenes_requeridos_presentes`).
+
+**Contenido como datos.** Un tema migrado vive en `contenido/tema_NN/`; **se edita ahí, nunca en `temas/*.html`** (se sobrescribe). `python herramientas/tema_datos.py generar N` regenera la página, `python herramientas/construir.py` regenera todo (páginas, índice del buscador y cambios). Estructura: `tema.json` (metadatos, orden de bloques, `figuras` con su pie y fuente, `examenes_requeridos`), `ejercicios/xN.json|html` (metadatos + cuerpo; `{{fig:nombre}}` inserta una figura), `partes/*.html` (fragmentos tal cual). Para migrar otro tema ya escrito: `python herramientas/tema_datos.py migrar temas/X.html N archivo.html` y `equivale N X.html` (comprueba que la página regenerada es idéntica). Las **figuras SVG** se guardan sueltas en `assets/figs/tNN/` y la página las incrusta al acercarse con el scroll (`assets/figuras.js`; conservan los colores claro/oscuro): **hace falta servir por http** (`python herramientas/servir.py`; `exportar_pdf.py` ya lo hace solo). Abrir el HTML con doble clic deja las figuras sin cargar. `capturar_interactivos.py` también actualiza los fragmentos de `contenido/`; después, regenerar.
+
+**Buscador global** (botón «🔍 Buscar», tecla `/` o Ctrl+K, en los temas y en el índice): `assets/busqueda.js` + índice `assets/busqueda_indice.js` generado por `herramientas/construir_busqueda.py` (apartados, cajas de teoría, fórmulas y ejercicios de los 20 temas; funciona también desde `file://`). Hay que regenerarlo tras tocar un tema (lo hace `construir.py`; `test_busqueda` falla si está desactualizado).
+
+**Pruebas** (`python pruebas/ejecutar.py --rapido`, segundos; sin `--rapido` añade Chrome sin interfaz: fórmulas KaTeX sin errores, figuras que cargan, buscador; `PRUEBAS_TODAS=1` revisa los 20 temas): integridad de `contenido/` (referencias, huérfanos, exámenes requeridos presentes y catalogados, página no retocada a mano), estructura y escapes de HTML (un `<` suelto en una fórmula se lee como etiqueta: escribir `\lt`), ids y enlaces, citas (páginas de U dentro del capítulo que la cita indica; exámenes que existen en `examenes_por_tema.md`), regla 8 bis, y **resultados numéricos recalculados con sympy** en `pruebas/numerico/tNN.py` (al migrar o escribir un tema, añadir su fichero con los resultados de cada ejercicio). GitHub Actions las ejecuta en cada push (no bloquea Pages: revisar el resultado). Capítulo 20 de U: llega hasta la p. 682 con sus problemas.
+
+**Página de cambios:** `cambios.html` (generada desde `git log` por `herramientas/generar_cambios.py`, enlazada desde el pie del índice). Los mensajes de commit son lo que se lee ahí: claros y en español.
 
 ## Volver al índice
 El enlace «← Índice de temas» (`a[href$="index.html"]`) guarda en `sessionStorage` (`volverA`) la ruta del tema (lo hace `assets/resumen.js`) y un script al final de `index.html` hace scroll hasta esa tarjeta y la resalta 2 s. No quitar ninguno de los dos; todo tema nuevo debe usar ese enlace con `href` acabado en `index.html`.

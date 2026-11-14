@@ -1,0 +1,956 @@
+{
+ "num": 5,
+ "kick": "Bloque Mecánica · Tema 5",
+ "titulo": "Aplicación de las leyes de Newton",
+ "descripcion": "Convertir $\\sum\\vec F=m\\vec a$ en un método fijo: cuerpo libre, rampas, cuerdas y poleas, fricción y movimiento circular. Es el tema donde se resuelve la mayoría de los problemas de dinámica del examen.",
+ "chips": [
+  "Libro oficial: Sears-Zemansky, cap. 5 (pp. 130-156)",
+  "Ejercicios de examen real: 5 (todos conservados)",
+  "Ejercicios del solucionario: 9",
+  "⏱ ruta rápida ~3 h · completa ~6 h"
+ ],
+ "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
+ "titulo_pagina": "Física I · Tema 5 Aplicación de las leyes de Newton",
+ "archivo": "tema_05_aplicacion_newton.html",
+ "figuras": {
+  "peso-descompuesto-en-un-plano-inclinado": {
+   "w": "320",
+   "h": "200",
+   "label": "Peso descompuesto en un plano inclinado",
+   "pie": "Plano inclinado un ángulo α: ejes x paralelo y y perpendicular a la rampa. El peso se descompone en w sen α (paralela, cuesta abajo) y w cos α (perpendicular, que la normal n equilibra si no hay otra fuerza). El ángulo α de la rampa reaparece entre w y la perpendicular.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (ver U Ej. 5.4, fig. 5.4)",
+    "txt": "P"
+   }
+  },
+  "peso-aparente-en-un-elevador": {
+   "w": "340",
+   "h": "205",
+   "label": "Peso aparente en un elevador",
+   "pie": "DCL de la mujer del Ej. 5.9: el peso es siempre 490 N, pero la normal n (la lectura de la báscula) vale m(g + a<sub>y</sub>): 590 N si el elevador acelera hacia arriba y 390 N si lo hace hacia abajo.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (datos de U Ej. 5.9)",
+    "txt": "P"
+   }
+  },
+  "deslizador-y-pesa-unidos-por-una-cuerda": {
+   "w": "330",
+   "h": "205",
+   "label": "Deslizador y pesa unidos por una cuerda",
+   "pie": "Ej. 5.12: el deslizador (m<sub>1</sub>) sobre el riel sin fricción y la pesa (m<sub>2</sub>) colgante están unidos por una cuerda ligera que pasa por una polea ideal. Misma T en toda la cuerda y misma magnitud de aceleración a en ambos cuerpos; la dirección de a es distinta (horizontal / vertical).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (ver U Ej. 5.12, fig. 5.15)",
+    "txt": "P"
+   }
+  },
+  "caja-arrastrada-con-una-cuerda-oblicua": {
+   "w": "330",
+   "h": "229",
+   "label": "Caja arrastrada con una cuerda oblicua",
+   "pie": "Ej. 5.15: al tirar de la cuerda con 30° sobre la horizontal, T sen 30° levanta parcialmente la caja y reduce la normal (n = w − T sen 30° = 406 N, menor que w = 500 N), de modo que la fricción f<sub>k</sub> = μ<sub>k</sub>n es menor que al tirar en horizontal. Longitudes proporcionales entre sí.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (datos de U Ej. 5.15)",
+    "txt": "P"
+   }
+  },
+  "caida-con-resistencia-del-fluido": {
+   "w": "330",
+   "h": "200",
+   "label": "Caída con resistencia del fluido",
+   "pie": "Cuerpo que cae en un fluido con f = kv: al ganar rapidez crece la resistencia hasta igualar al peso; entonces la aceleración es cero y la rapidez deja de aumentar (rapidez terminal v<sub>t</sub> = mg/k).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (ver U fig. 5.24 y ec. 5.8)",
+    "txt": "P"
+   }
+  },
+  "movimiento-circular-uniforme": {
+   "w": "340",
+   "h": "205",
+   "label": "Movimiento circular uniforme",
+   "pie": "En un movimiento circular uniforme la velocidad es tangente a la trayectoria, mientras que la aceleración y la fuerza neta apuntan siempre al centro. Si la fuerza neta desapareciera, el cuerpo saldría por la tangente en línea recta (primera ley).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (ver U §5.4, figs. 5.28-5.29)",
+    "txt": "P"
+   }
+  },
+  "coche-en-una-curva-plana": {
+   "w": "330",
+   "h": "205",
+   "label": "Coche en una curva plana",
+   "pie": "Curva sin peralte, vista por detrás del coche: la única fuerza horizontal es la fricción estática f<sub>s</sub>, que debe apuntar al centro de la curva y proporcionar m v²/R. Como f<sub>s</sub> no puede superar μ<sub>s</sub>n = μ<sub>s</sub>mg, la rapidez máxima es v<sub>máx</sub> = √(μ<sub>s</sub>gR).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (ver U Ej. 5.21, fig. 5.33)",
+    "txt": "P"
+   }
+  },
+  "bola-de-demolicion-en-equilibrio": {
+   "w": "330",
+   "h": "220",
+   "label": "Bola de demolición en equilibrio",
+   "pie": "Bola de 3620 kg en equilibrio: el cable A es horizontal y el cable B forma 40° con la vertical. Vertical: T<sub>B</sub> cos 40° = mg; horizontal: T<sub>A</sub> = T<sub>B</sub> sen 40°. (Escala 2 px por kN; la componente vertical de T<sub>B</sub>, discontinua, iguala al peso.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (U problema 5.6, p. 160 / Solucionario 5-2)",
+    "txt": "P"
+   }
+  },
+  "estudiante-en-una-bascula-dentro-de-un-elevador": {
+   "w": "340",
+   "h": "255",
+   "label": "Estudiante en una báscula dentro de un elevador",
+   "pie": "Al arrancar, la báscula marca n = 450 N &lt; 550 N: la aceleración es hacia abajo (a = −1,78 m/s²). Izquierda, DCL del sistema completo (850 kg): T − W = m a. Derecha, DCL del estudiante: n − w = m a. Escalas distintas en cada DCL.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (U problema 5.20, p. 161 / Solucionario 5-11)",
+    "txt": "P"
+   }
+  },
+  "dos-bloques-en-una-cuna-de-dos-planos-inclinados": {
+   "w": "360",
+   "h": "205",
+   "label": "Dos bloques en una cuña de dos planos inclinados",
+   "pie": "Examen Feb. 2022: m<sub>1</sub> = 80 kg (plano de 25°) y m<sub>2</sub> = 20 kg (plano de 60°) unidos por una cuerda sobre la polea del vértice. m<sub>1</sub>g sen 25° = 331 N frente a m<sub>2</sub>g sen 60° = 170 N: m<sub>1</sub> baja, m<sub>2</sub> sube, con a = 1,62 m/s² y T = 202 N. (Flechas de fuerza a escala 0,1 px/N, salvo T, orientativa.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (examen Feb. 2022, 2ª sem., P-2)",
+    "txt": "P"
+   }
+  },
+  "caja-a-punto-de-resbalar-en-una-rampa": {
+   "w": "330",
+   "h": "190",
+   "label": "Caja a punto de resbalar en una rampa",
+   "pie": "Caja de 25,0 kg (μ<sub>s</sub> = 0,35, μ<sub>k</sub> = 0,25) en una rampa de ángulo α creciente. A punto de resbalar f<sub>s</sub> = mg sen α = μ<sub>s</sub>mg cos α, de donde tan α = μ<sub>s</sub>. Una vez en movimiento la fricción cinética (57,8 N) es menor que la estática máxima (80,9 N).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (U problema 5.36, p. 163 / Solucionario 5-20)",
+    "txt": "P"
+   }
+  },
+  "dos-paquetes-unidos-por-un-cable-en-una-rampa": {
+   "w": "360",
+   "h": "190",
+   "label": "Dos paquetes unidos por un cable en una rampa",
+   "pie": "Examen Feb. 2025: dos paquetes unidos por un cable bajan por una rampa de 16°. A lo largo de la rampa actúan m g sen α (cuesta abajo), la fricción cinética f<sub>k</sub> = μ m g cos α (cuesta arriba) y la tensión T, que tira hacia atrás del paquete delantero y hacia delante del trasero. Escala de fuerzas 3 px/N; T = 1,57 N no está a escala.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (examen Feb. 2025, 2ª sem., P-1)",
+    "txt": "P"
+   }
+  },
+  "bloque-empujado-contra-una-pared-vertical": {
+   "w": "350",
+   "h": "230",
+   "label": "Bloque empujado contra una pared vertical",
+   "pie": "Examen Feb. 2023: a la izquierda, el croquis; a la derecha, el DCL del bloque. La normal la pone solo la componente horizontal de F (n = F cos 60° = 48,0 N); en vertical F sen 60° = 83,1 N vence al peso (49,1 N) y a la fricción cinética (14,4 N, hacia abajo porque el bloque sube).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (examen Feb. 2023, 2ª sem., P-1; = U prob. 5.75)",
+    "txt": "P"
+   }
+  },
+  "plano-inclinado-con-polea-fija-y-polea-movil": {
+   "w": "360",
+   "h": "235",
+   "label": "Plano inclinado con polea fija y polea móvil",
+   "pie": "Examen Feb. 2020: A (1,5 kg) sobre el plano de 30°; la cuerda pasa por la polea fija del vértice, rodea la polea móvil de la que cuelga B (1 kg) y termina atada al techo. Dos tramos sostienen la polea móvil (fuerza 2T) y, por la ligadura de la cuerda, a<sub>B</sub> = a<sub>A</sub>/2. Resultados: a<sub>A</sub> = 0,673 m/s² (A baja), a<sub>B</sub> = 0,336 m/s² (B sube), T = 5,07 N. (Longitudes de flecha no proporcionales.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (examen Feb. 2020, 1ª sem., P-1)",
+    "txt": "P"
+   }
+  },
+  "coche-en-una-curva-peraltada-sin-friccion": {
+   "w": "360",
+   "h": "230",
+   "label": "Coche en una curva peraltada sin fricción",
+   "pie": "Curva peraltada sin fricción vista de frente: la normal es perpendicular a la calzada y su componente horizontal n sen β es la que produce la aceleración centrípeta a<sub>rad</sub> = v²/R hacia el centro; n cos β = mg. Para v = 29,06 m/s y R = 225 m: β = 21,0° (el mismo para coche y camión).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (U problema 5.49, p. 163 / Solucionario 5-26)",
+    "txt": "P"
+   }
+  },
+  "cuerpo-sobre-un-cono-giratorio": {
+   "w": "360",
+   "h": "250",
+   "label": "Cuerpo sobre un cono giratorio",
+   "pie": "Examen Feb. 2018: sección del cono (semiángulo 30°) que gira con ω = 15 rpm. El cuerpo A describe un círculo horizontal de radio r = L sen 30° = 2,00 m: la aceleración (a<sub>rad</sub>) es horizontal, hacia el eje; sobre A actúan mg, la tensión T (a lo largo del hilo) y la normal n (perpendicular a la superficie, hacia fuera). Longitudes a escala 2,2 px/N salvo n (1,25 N), exagerada.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (examen Feb. 2018, 2ª sem., P-2)",
+    "txt": "P"
+   }
+  }
+ },
+ "bloques": [
+  {
+   "t": "parte",
+   "archivo": "en5.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "decide.html"
+  },
+  {
+   "t": "h2",
+   "id": "s1",
+   "n": "1",
+   "titulo": "Equilibrio: primera ley",
+   "prio": 1,
+   "src": {
+    "l": "U",
+    "ref": "U §5.1, pp. 130-135",
+    "txt": "U p.131"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Equilibrio: parado o velocidad constante",
+   "html": [
+    "<p>Si el cuerpo no acelera, las fuerzas se anulan <b>en cada eje por separado</b>:</p>",
+    "  $$\\sum F_x=0,\\qquad \\sum F_y=0\\qquad\\text{(ec. 5.1)}$$",
+    "  <p>Una lámpara colgada, una mesa o un coche que sube una cuesta a rapidez constante están en equilibrio. Es el problema más fácil: solo hay que anular sumas.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §5.1 ec. (5.1), p. 131",
+    "txt": "U p.131"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Cuerda y polea ideales",
+   "html": "<p>Una cuerda solo <b>tira</b> (nunca empuja), a lo largo de ella, y su tensión $T$ es la misma en todos sus puntos. Una polea ideal solo cambia la dirección de la cuerda, no la tensión.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.1 y 5.2, pp. 131-132",
+    "txt": "U p.131-132"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Truco del nudo (ejemplo 5.3)",
+   "html": [
+    "<p>Un motor de peso $w$ cuelga de una cadena unida en un anillo $O$ a una cadena horizontal y a otra inclinada 60°. El motor solo da $T_1=w$; para el resto, <b>toma también el anillo como cuerpo</b>:</p>",
+    "  <ol class=\"steps\">",
+    "    <li>Vertical en $O$: $T_3\\sin60^\\circ=T_1\\Rightarrow T_3=1{,}2\\,w$.</li>",
+    "    <li>Horizontal en $O$: $T_2=T_3\\cos60^\\circ=0{,}58\\,w$.</li>",
+    "  </ol>",
+    "  <p>Un cuerpo en equilibrio da solo dos ecuaciones: si faltan, añade otro cuerpo.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 5.3, p. 133",
+    "txt": "U p.133"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_5_3_motor.png",
+   "alt": "Figura 5.3 de U: a) un motor colgado de una cadena vertical unida en un anillo O a otras dos cadenas, una horizontal sujeta a la pared (T2) y otra inclinada 60 grados sujeta al techo (T3); b) diagrama de cuerpo libre del motor con T1 hacia arriba y w hacia abajo; c) diagrama del anillo O con T3 descompuesta en T3 cos 60 y T3 sen 60, T2 y T1.",
+   "pie": "Fig. 5.3 de U: el motor (b) solo da $T_1=w$; hay que añadir el anillo $O$ (c) para hallar $T_2$ y $T_3$.",
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.3, fig. 5.3, p. 133",
+    "txt": "U p.133"
+   }
+  },
+  {
+   "t": "h3",
+   "titulo": "Rampa en equilibrio",
+   "prio": 1
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Ejes paralelo y perpendicular a la rampa",
+   "html": [
+    "<p>Gira los ejes: $x$ a lo largo de la rampa, $y$ perpendicular. Así <b>solo el peso hay que descomponerlo</b>:</p>",
+    "  $$w_\\parallel=mg\\sin\\alpha\\ (\\text{cuesta abajo}),\\qquad w_\\perp=mg\\cos\\alpha\\ (\\text{contra la rampa})$$",
+    "  <p>Coche sujeto por un cable paralelo a la rampa: $T=mg\\sin\\alpha$ y $n=mg\\cos\\alpha$. <b>Truco:</b> dibuja $\\alpha$ menor de 45°; la componente paralela es la <i>corta</i> ($\\sin$) y la perpendicular la <i>larga</i> ($\\cos$). Comprueba con $\\alpha=0$ ($T=0$, $n=w$) y $\\alpha=90^\\circ$ ($T=w$, $n=0$).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.4, p. 134",
+    "txt": "U p.134"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "peso-descompuesto-en-un-plano-inclinado"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico: «la normal es igual al peso»",
+   "html": "<p>Aquí $n=mg\\cos\\alpha\\lt mg$. La normal es <b>lo que haga falta para que el cuerpo no se hunda</b>: sale de la ecuación perpendicular a la superficie y cambia si hay otra fuerza con componente perpendicular. Trata $n$ siempre como incógnita.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.4, CUIDADO, p. 134",
+    "txt": "U p.134"
+   }
+  },
+  {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Una lámpara de 10 kg cuelga de dos cuerdas simétricas que forman 30° con el techo. ¿Cuánto vale la tensión de cada cuerda? ($g=9{,}8$)",
+     "a": "$2T\\sin30^\\circ=mg\\Rightarrow T=mg=98$ N. Ojo: no es $mg/2$; las cuerdas están muy inclinadas y tiran más de lo que parece."
+    },
+    {
+     "q": "¿Puede una cuerda empujar un cuerpo?",
+     "a": "No: solo tira, siempre a lo largo de la cuerda."
+    },
+    {
+     "q": "Un bloque de 20 kg está en reposo en una rampa lisa de 30°, sujeto por un cable paralelo a la rampa. Halla $T$ y $n$.",
+     "a": "$T=mg\\sin30^\\circ=98$ N; $n=mg\\cos30^\\circ=170$ N (menor que el peso, 196 N)."
+    }
+   ]
+  },
+  {
+   "t": "h2",
+   "id": "s2",
+   "n": "2",
+   "titulo": "Dinámica: segunda ley",
+   "prio": 1,
+   "src": {
+    "l": "U",
+    "ref": "U §5.2, pp. 135-142",
+    "txt": "U p.135"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Segunda ley por componentes",
+   "html": [
+    "$$\\sum F_x=ma_x,\\qquad \\sum F_y=ma_y\\qquad\\text{(ec. 5.2)}$$",
+    "  <p>Igual que en equilibrio, pero la suma ya no es cero. Pon <b>un eje en la dirección en que sabes que acelera</b> (hacia abajo por la rampa, hacia el centro del círculo); en el otro eje $a=0$. Con varios cuerpos: una ecuación por cuerpo y por eje.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §5.2 ec. (5.2), p. 135; Estrategia 5.2, p. 136",
+    "txt": "U p.135"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico: «$m\\vec a$» no es una fuerza",
+   "html": "<p>Es el <i>resultado</i> de las fuerzas. No lo dibujes en el cuerpo libre, ni tampoco una «fuerza centrífuga».</p>",
+   "src": {
+    "l": "U",
+    "ref": "U CUIDADO y fig. 5.6, p. 136",
+    "txt": "U p.136"
+   }
+  },
+  {
+   "t": "h3",
+   "titulo": "Elevadores y peso aparente",
+   "prio": 1
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Lo que marca una báscula es la normal",
+   "html": [
+    "<p>Con $+y$ hacia arriba y aceleración $a_y$ del elevador:</p>",
+    "  $$n=m(g+a_y)$$",
+    "  <p>Aceleración hacia arriba ⇒ marca <i>más</i> que tu peso; hacia abajo ⇒ <i>menos</i>; en caída libre ($a_y=-g$) marca $0$ (ingravidez). Ejemplo 5.9: una mujer de 50,0 kg ($w=490$ N) con $a_y=+2{,}00$ marca 590 N; con $a_y=-2{,}00$, 390 N.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.9 y «Peso e ingravidez aparentes», pp. 138-139",
+    "txt": "U p.138-139"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "peso-aparente-en-un-elevador"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Importa el <b>sentido de la aceleración</b>, no el de la velocidad: un elevador que sube y frena marca menos que tu peso.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h3",
+   "titulo": "Rampa con aceleración",
+   "prio": 1
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Sin fricción: la masa no importa",
+   "html": [
+    "<p>Con $x$ cuesta abajo: $mg\\sin\\alpha=ma_x$ y $n=mg\\cos\\alpha$, luego</p>",
+    "  $$a_x=g\\sin\\alpha,\\qquad n=mg\\cos\\alpha$$",
+    "  <p>Casos límite: $\\alpha=0\\Rightarrow a=0$; $\\alpha=90^\\circ\\Rightarrow a=g$. Si cambias el sentido de $x$ (cuesta arriba), cambia el signo de $w_x$: elige uno y sé coherente.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.10, pp. 139-140",
+    "txt": "U p.139-140"
+   }
+  },
+  {
+   "t": "h3",
+   "titulo": "Dos cuerpos unidos",
+   "prio": 1
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Cuerda tensa e inextensible: misma $T$ y misma $\\lvert a\\rvert$",
+   "html": [
+    "<p>Los dos cuerpos avanzan lo mismo (aunque en direcciones distintas). Escribe $\\sum F=ma$ para cada uno con su eje positivo <b>en el sentido en que acelera</b> y <b>suma</b>: la $T$ se cancela. Ejemplo 5.12 (deslizador $m_1$ en un riel liso unido a una pesa colgante $m_2$):</p>",
+    "  $$m_2g-T=m_2a,\\quad T=m_1a\\ \\Rightarrow\\ a=\\frac{m_2}{m_1+m_2}\\,g,\\quad T=\\frac{m_1m_2}{m_1+m_2}\\,g$$",
+    "  <p>Casos límite: $m_1=0\\Rightarrow a=g,\\ T=0$; $m_2=0\\Rightarrow a=0$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.12, pp. 141-142",
+    "txt": "U p.141-142"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "deslizador-y-pesa-unidos-por-una-cuerda"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico: «tensión = peso de lo que cuelga»",
+   "html": "<p>Solo vale si no acelera. Aquí $T\\lt m_2g$ (si fuera $m_2g$ la pesa no caería).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.12, CUIDADO, p. 142",
+    "txt": "U p.142"
+   }
+  },
+  {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Una persona de 70 kg está en un ascensor que sube acelerando a 2 m/s². ¿Qué marca la báscula?",
+     "a": "$n=m(g+a)=70(9{,}8+2)=826$ N (pesa «más» de lo normal, 686 N)."
+    },
+    {
+     "q": "Atwood con $m_1=3$ kg y $m_2=5$ kg. Halla $a$ y $T$.",
+     "a": "$a=\\dfrac{m_2-m_1}{m_1+m_2}g=2{,}45$ m/s²; $T=m_1(g+a)=36{,}8$ N, entre los dos pesos (29,4 N y 49 N)."
+    },
+    {
+     "q": "Un bloque se suelta en una rampa lisa de 30°. ¿Depende su aceleración de la masa?",
+     "a": "No: $a=g\\sin30^\\circ=4{,}9$ m/s² para cualquier masa."
+    }
+   ]
+  },
+  {
+   "t": "h2",
+   "id": "s3",
+   "n": "3",
+   "titulo": "Fricción",
+   "prio": 1,
+   "src": {
+    "l": "U",
+    "ref": "U §5.3, pp. 142-150",
+    "txt": "U p.142"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Cinética (desliza) y estática (no desliza)",
+   "html": [
+    "$$f_k=\\mu_k\\,n\\quad\\text{(5.3)},\\qquad f_s\\le\\mu_s\\,n\\quad\\text{(5.4)}$$",
+    "  <p>La fricción es la componente <b>paralela</b> de la fuerza de contacto; la normal es la perpendicular. Siempre se opone al movimiento (o a la tendencia a moverse). La estática vale <b>lo que haga falta</b> hasta un máximo $\\mu_sn$, y solo «a punto de deslizar» se cumple la igualdad; si el cuerpo está parado, se calcula con $\\sum F=0$. Normalmente $\\mu_k\\lt\\mu_s$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §5.3 ec. (5.3) y (5.4), pp. 143-144",
+    "txt": "U p.143-144"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_5_19_friccion.png",
+   "alt": "Figura 5.19 de U: cuatro diagramas de una caja con la cuerda y las fuerzas n, w, T y fricción (sin fuerza aplicada, fuerza débil, a punto de deslizar y deslizando), y debajo la gráfica de la fuerza de fricción f contra la fuerza aplicada T: una recta creciente hasta (fs)máx, un salto hacia abajo y un valor casi constante fk.",
+   "pie": "Fig. 5.19 de U: mientras la caja no se mueve, $f_s$ crece con $T$ (la gráfica e es una recta de pendiente 1) hasta $(f_s)_{\\text{máx}}=\\mu_sn$; al deslizar, la fricción cae al valor, casi constante, $f_k=\\mu_kn$.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 5.19, p. 144",
+    "txt": "U p.144"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico (el más común del tema)",
+   "html": "<p>Usar siempre $f_s=\\mu_sn$. Esa es solo la <i>máxima</i>. Y en cuanto desliza, pasa a $\\mu_kn$ (menor).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Los datos hablan: fricción estática», p. 147",
+    "txt": "U p.147"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplos 5.13 y 5.14",
+   "html": "<p>Caja de 500 N: hacen falta 230 N para arrancarla y 200 N para mantenerla a velocidad constante ⇒ $\\mu_s=230/500=0{,}46$ y $\\mu_k=200/500=0{,}40$. Si con la caja parada solo tiras con 50 N, $f_s=50$ N (equilibrio), <b>no</b> $\\mu_sn=230$ N.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.13 y 5.14, p. 145",
+    "txt": "U p.145"
+   }
+  },
+  {
+   "t": "h3",
+   "titulo": "Fuerza oblicua: la normal cambia",
+   "prio": 1
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 5.15: tirar con la cuerda inclinada 30°",
+   "html": [
+    "<p>La caja de antes ($w=500$ N, $\\mu_k=0{,}40$) a velocidad constante. La componente vertical de $T$ levanta la caja y <b>reduce la normal</b>:</p>",
+    "  $$n=w-T\\sin30^\\circ,\\qquad T\\cos30^\\circ=\\mu_kn\\ \\Rightarrow\\ T=\\frac{\\mu_kw}{\\cos30^\\circ+\\mu_k\\sin30^\\circ}=188\\ \\text{N}$$",
+    "  <p>Menos que los 200 N en horizontal; la normal vale $n=406$ N $\\lt w$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.15, p. 146",
+    "txt": "U p.146"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "caja-arrastrada-con-una-cuerda-oblicua"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Truco de examen",
+   "html": "<p>Con una fuerza oblicua sobre una superficie: <b>primero</b> la ecuación perpendicular (da $n$), <b>después</b> $f=\\mu n$ y la ecuación paralela.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h3",
+   "titulo": "Pendiente con fricción",
+   "prio": 1
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Cuesta abajo con fricción y ángulo crítico",
+   "html": [
+    "<p>Con $n=mg\\cos\\alpha$ y $f_k=\\mu_kmg\\cos\\alpha$ (cuesta arriba):</p>",
+    "  $$a=g\\,(\\sin\\alpha-\\mu_k\\cos\\alpha),\\qquad \\text{desliza}\\iff\\tan\\alpha\\gt\\mu_s$$",
+    "  <p>El ángulo crítico no depende de la masa.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.16 y 5.17, pp. 146-147",
+    "txt": "U p.146-147"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "interactivo-plano-inclinado.html"
+  },
+  {
+   "t": "h3",
+   "titulo": "Rodamiento y resistencia de fluidos",
+   "prio": 2
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Rodamiento y fluidos",
+   "html": [
+    "<p><b>Rodamiento:</b> $f_r=\\mu_rn$ con $\\mu_r\\approx0{,}002$-$0{,}003$ (acero sobre acero) y $0{,}01$-$0{,}02$ (caucho sobre concreto).</p>",
+    "  <p><b>Fluido:</b> la resistencia se opone a la velocidad y <b>crece con ella</b>: $f=kv$ (baja rapidez) o $f=Dv^2$ (alta). Al caer, el peso es constante y la resistencia sube hasta igualarlo; entonces $a=0$ y se alcanza la <b>rapidez terminal</b>:</p>",
+    "  $$v_t=\\frac{mg}{k}\\quad(5.8),\\qquad v_t=\\sqrt{\\frac{mg}{D}}\\quad(5.12)$$",
+    "  <p>Ejemplo 5.18: paracaidista de 50 kg con $D=0{,}25$ kg/m ⇒ $v_t=\\sqrt{50\\cdot9{,}8/0{,}25}=44$ m/s (≈ 160 km/h).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U «Fricción de rodamiento», p. 147; ec. (5.5)-(5.12), pp. 148-149; Ej. 5.18, p. 150",
+    "txt": "U p.147-150"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "caida-con-resistencia-del-fluido"
+  },
+  {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Caja de 50 kg en el suelo, $\\mu_s=0{,}4$, $\\mu_k=0{,}3$. La empujas con 150 N horizontales. ¿Se mueve? ¿Cuánto vale la fricción?",
+     "a": "$f_{s,\\text{máx}}=\\mu_sn=0{,}4\\cdot490=196$ N $>150$ N: no se mueve y $f_s=150$ N (la fricción estática iguala al empuje; no es $\\mu_sn$)."
+    },
+    {
+     "q": "Un bloque empieza a deslizar en una rampa cuando $\\alpha=30^\\circ$. ¿Cuánto vale $\\mu_s$?",
+     "a": "$\\mu_s=\\tan\\alpha=\\tan30^\\circ=0{,}58$."
+    },
+    {
+     "q": "Tiras de una caja con una cuerda inclinada hacia arriba. ¿La normal es mayor o menor que $mg$?",
+     "a": "Menor: $n=mg-F\\sin\\theta$. Por eso es más fácil arrastrarla que empujarla hacia abajo."
+    }
+   ]
+  },
+  {
+   "t": "h2",
+   "id": "s4",
+   "n": "4",
+   "titulo": "Movimiento circular",
+   "prio": 1,
+   "src": {
+    "l": "U",
+    "ref": "U §5.4, pp. 150-155",
+    "txt": "U p.150"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "La fuerza neta apunta al centro",
+   "html": [
+    "$$a_{rad}=\\frac{v^2}{R}=\\omega^2R,\\qquad \\boxed{\\ \\sum F_{rad}=m\\frac{v^2}{R}\\ },\\qquad T_{per}=\\frac{2\\pi R}{v}$$",
+    "  <p>La «fuerza centrípeta» <b>no es una fuerza nueva</b>: es la resultante de las fuerzas reales (tensión, normal, fricción, peso) en la dirección radial. Dos ejes: uno <b>radial</b> hacia el centro ($\\sum F=mv^2/R$) y otro perpendicular al plano del giro ($\\sum F=0$). $R$ es la distancia al eje del giro; si te dan rpm, pásalas a rad/s ($\\omega=2\\pi n/60$).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §5.4 ec. (5.13)-(5.16), pp. 150-151",
+    "txt": "U p.150-151"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "movimiento-circular-uniforme"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico: «fuerza centrífuga»",
+   "html": "<p>No existe en un sistema inercial: si hubiera una fuerza hacia fuera que equilibrase la de dentro, no habría fuerza neta y el cuerpo iría recto. $mv^2/R$ es el término $m\\vec a$, no una fuerza. (El pasajero que «se va hacia fuera» sigue recto; es la puerta la que lo empuja hacia dentro.)</p>",
+   "src": {
+    "l": "U",
+    "ref": "U CUIDADO «Evite usar fuerza centrífuga», fig. 5.30, p. 151",
+    "txt": "U p.151"
+   }
+  },
+  {
+   "t": "h3",
+   "titulo": "Péndulo cónico",
+   "prio": 1
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Vertical en equilibrio, horizontal = centrípeta (ejemplo 5.20)",
+   "html": [
+    "<p>Peso y tensión $F$; el alambre forma $\\beta$ con la vertical y el radio del círculo es $R=L\\sin\\beta$ (no $L$):</p>",
+    "  $$F\\cos\\beta=mg,\\quad F\\sin\\beta=m\\frac{v^2}{R}\\ \\Rightarrow\\ \\tan\\beta=\\frac{v^2}{gR},\\quad F=\\frac{mg}{\\cos\\beta}$$",
+    "  <p>La masa se cancela. Al crecer $\\beta$ aumenta la tensión y baja el periodo $T_{per}=2\\pi\\sqrt{L\\cos\\beta/g}$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.20, p. 152",
+    "txt": "U p.152"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "interactivo-pendulo-conico.html"
+  },
+  {
+   "t": "h3",
+   "titulo": "Curva plana y curva peraltada",
+   "prio": 1
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Plana: la fricción estática es la fuerza centrípeta (ejemplo 5.21)",
+   "html": [
+    "<p>$f_s=mv^2/R$ y $n=mg$; como $f_s\\le\\mu_smg$:</p>",
+    "  $$v_{\\text{máx}}=\\sqrt{\\mu_s\\,g\\,R}$$",
+    "  <p>Con $\\mu_s=0{,}96$ y $R=230$ m: $v_{\\text{máx}}=47$ m/s (≈ 170 km/h). Con la carretera mojada baja $\\mu_s$ y baja $v_{\\text{máx}}$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.21, pp. 152-153",
+    "txt": "U p.152-153"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "coche-en-una-curva-plana"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Peraltada sin fricción (ejemplo 5.22)",
+   "html": [
+    "<p>La componente horizontal de la normal hace de centrípeta. Ejes <b>horizontal y vertical</b> (no paralelos a la calzada):</p>",
+    "  $$n\\sin\\beta=m\\frac{v^2}{R},\\quad n\\cos\\beta=mg\\ \\Rightarrow\\ \\tan\\beta=\\frac{v^2}{gR}$$",
+    "  <p>Con $R=230$ m y $v=25$ m/s: $\\beta=15{,}5^\\circ$, sin depender de la masa.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.22, p. 153",
+    "txt": "U p.153"
+   }
+  },
+  {
+   "t": "h3",
+   "titulo": "Círculo vertical",
+   "prio": 2
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Rueda de la fortuna (ejemplo 5.23)",
+   "html": [
+    "<p>Rapidez constante; la aceleración apunta al centro. Con $+y$ hacia arriba:</p>",
+    "  $$n_T=mg\\Bigl(1-\\frac{v^2}{gR}\\Bigr)\\ \\text{(arriba)},\\qquad n_B=mg\\Bigl(1+\\frac{v^2}{gR}\\Bigr)\\ \\text{(abajo)}$$",
+    "  <p>Arriba el asiento empuja <i>menos</i> que el peso; si $v^2=gR$ no empuja nada. Abajo, siempre <i>más</i>.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ej. 5.23 y fig. 5.37, pp. 154-155",
+    "txt": "U p.154-155"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_5_36_vertical.png",
+   "alt": "Figura 5.36 de U: a) un pasajero de masa m en las posiciones superior e inferior de un círculo vertical de radio R, con la velocidad v tangente y la aceleración v²/R hacia el centro; b) y c) los diagramas de cuerpo libre arriba (nT y mg) y abajo (nB y mg).",
+   "pie": "Fig. 5.36 de U: la aceleración apunta siempre al centro (hacia abajo arriba, hacia arriba abajo); se toma $+y$ hacia arriba en los dos DCL.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 5.36, p. 154",
+    "txt": "U p.154"
+   }
+  },
+  {
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Coche en una curva plana de radio 50 m con $\\mu_s=0{,}5$. ¿Cuál es la rapidez máxima sin derrapar?",
+     "a": "$v_{\\text{máx}}=\\sqrt{\\mu_sgR}=\\sqrt{0{,}5\\cdot9{,}8\\cdot50}=15{,}7$ m/s ≈ 56 km/h."
+    },
+    {
+     "q": "En esa curva plana, ¿qué fuerza hace de «fuerza centrípeta»?",
+     "a": "La fricción estática entre neumáticos y asfalto. No es una fuerza nueva."
+    },
+    {
+     "q": "En lo alto de una rueda de la fortuna, ¿la normal es mayor o menor que el peso?",
+     "a": "Menor: $n=mg-mv^2/R$; por eso la sensación de «ligereza» arriba."
+    }
+   ]
+  },
+  {
+   "t": "h2",
+   "id": "s5",
+   "n": "⚪",
+   "titulo": "Fuerzas fundamentales",
+   "prio": 3,
+   "src": {
+    "l": "U",
+    "ref": "U §5.5, pp. 155-156",
+    "txt": "U p.155"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "fuerzas-fundamentales.html"
+  },
+  {
+   "t": "h2",
+   "id": "ejercicios",
+   "n": "6",
+   "titulo": "Ejercicios resueltos",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "ejercicios-intro.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-nucleo.html"
+  },
+  {
+   "t": "metodos"
+  },
+  {
+   "t": "ej",
+   "ref": "e1"
+  },
+  {
+   "t": "ej",
+   "ref": "e4"
+  },
+  {
+   "t": "ej",
+   "ref": "x1"
+  },
+  {
+   "t": "ej",
+   "ref": "e6"
+  },
+  {
+   "t": "ej",
+   "ref": "x2"
+  },
+  {
+   "t": "ej",
+   "ref": "x3"
+  },
+  {
+   "t": "ej",
+   "ref": "x4"
+  },
+  {
+   "t": "ej",
+   "ref": "e8"
+  },
+  {
+   "t": "ej",
+   "ref": "x5"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-practica.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e2"
+  },
+  {
+   "t": "ej",
+   "ref": "e3"
+  },
+  {
+   "t": "ej",
+   "ref": "e5"
+  },
+  {
+   "t": "ej",
+   "ref": "e7"
+  },
+  {
+   "t": "ej",
+   "ref": "e9"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-teoria.html"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Si te toca una pregunta de teoría: «Fuerzas de fricción» o «Dinámica del movimiento circular»",
+   "html": [
+    "<p>Guion propio para desarrollar el tema (no es un enunciado de examen real; en este tema no ha caído teoría en los exámenes catalogados). Define, enuncia la ley, razona con un ejemplo y cierra con el error típico:</p>",
+    "  <ul>",
+    "    <li><b>Fricción:</b> (1) fuerza de contacto <i>paralela</i> a la superficie, opuesta al movimiento relativo (o a su tendencia), de origen eléctrico microscópico; la normal es la componente perpendicular. (2) Cinética: $f_k=\\mu_kn$ (5.3), independiente de la rapidez y del área. (3) Estática: $f_s\\le\\mu_sn$ (5.4), vale lo que haga falta y alcanza su máximo en el umbral; $\\mu_k<\\mu_s$; comenta la gráfica $f$–$T$ de la fig. 5.19. (4) Rodamiento ($\\mu_r$ pequeño) y resistencia de fluidos ($f=kv$, $f=Dv^2$) con la rapidez terminal. (5) Un ejemplo: bloque en una rampa, $\\tan\\alpha=\\mu_s$ en el umbral. (6) Error típico: usar $\\mu_sn$ sin estar en el umbral.</li>",
+    "    <li><b>Movimiento circular:</b> (1) la velocidad cambia de dirección, luego hay aceleración $a_{rad}=v^2/R$ hacia el centro. (2) Segunda ley: $\\sum F_{rad}=mv^2/R$; la «fuerza centrípeta» es la resultante de fuerzas reales, no una fuerza nueva. (3) Método: un eje radial y otro perpendicular al plano del giro. (4) Ejemplos: péndulo cónico ($\\tan\\beta=v^2/gR$), curva plana ($v_{\\text{máx}}=\\sqrt{\\mu_sgR}$), peraltada, círculo vertical ($n_T$ y $n_B$). (5) Cuestión corta típica: por qué no existe la «fuerza centrífuga» en un sistema inercial.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Guion propio de estudio, basado en U §5.3 y §5.4; no es un examen real",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "chuleta",
+   "n": "7",
+   "titulo": "Chuleta, errores frecuentes y lista de comprobación",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "chuleta-tabla.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores frecuentes de este tema",
+   "html": [
+    "<ul>",
+    "    <li>Suponer $n=mg$ siempre (falla en rampas, elevadores, fuerzas oblicuas, curvas peraltadas, paredes).</li>",
+    "    <li>Dibujar «$m\\vec a$» o una «fuerza centrífuga» como si fueran fuerzas.</li>",
+    "    <li>Usar $f_s=\\mu_sn$ sin estar en el umbral, o seguir usando $\\mu_s$ cuando ya hay deslizamiento.</li>",
+    "    <li>Orientar la fricción a favor del movimiento (siempre se opone al movimiento relativo) o sin saber hacia dónde se mueve el sistema.</li>",
+    "    <li>Igualar la tensión al peso de lo que cuelga cuando hay aceleración.</li>",
+    "    <li>Mezclar componentes $x$ e $y$ en una ecuación; confundir $\\sin$ y $\\cos$ en el peso (dibuja $\\alpha$ distinto de 45°).</li>",
+    "    <li>Con poleas móviles: olvidar la ligadura ($a_B=a_A/2$) y el factor $2T$.</li>",
+    "    <li>En un giro, tomar como radio la longitud de la cuerda en vez de la distancia al eje, y no convertir rpm a rad/s.</li>",
+    "    <li>Aceptar una tensión negativa o una normal negativa sin interpretar (cable flojo, cuerpo despegado).</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "lista-comprobacion.html"
+  },
+  {
+   "t": "h2",
+   "id": "fuentes",
+   "n": "★",
+   "titulo": "Fuentes de este tema",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "panel-fuentes.html"
+  }
+ ],
+ "examenes_requeridos": [
+  "Examen Febrero 2022 (2ª semana) P-2",
+  "Examen Febrero 2025 (2ª semana) P-1",
+  "Examen Febrero 2023 (2ª semana) P-1",
+  "Examen Febrero 2020 (1ª semana) P-1",
+  "Examen Febrero 2018 (2ª semana) P-2"
+ ]
+}
