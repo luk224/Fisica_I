@@ -31,7 +31,7 @@
   <div class="kick">Bloque Mecánica · Tema 12</div>
   <h1>Mecánica de fluidos</h1>
   <p>Un barco de acero que flota, el agua que sale a chorro de un depósito, un avión que se sostiene en el aire, la sangre que empuja contra las paredes de una arteria: todo son <i>fluidos</i> (líquidos y gases). Este tema tiene dos mitades. Con el fluido <b>en reposo</b> aprenderás qué es la densidad, cómo crece la presión con la profundidad, la ley de Pascal y el principio de Arquímedes. Con el fluido <b>en movimiento</b>, la ecuación de continuidad, la ecuación de Bernoulli (que es, en el fondo, conservación de la energía) y una primera idea de la viscosidad.</p>
-  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 12 (pp. 370-388; ejercicios y problemas, pp. 389-396)</span><span>Examen real: ninguno en este tema</span><span>Ejercicios: 12 del solucionario (E1-E12) + el problema práctico de U + los ejemplos 12.1-12.11</span><span>2 ejemplos interactivos</span><span>⏱ ~6 h de estudio</span></div>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 12 (pp. 370-388; ejercicios y problemas, pp. 389-396)</span><span>Examen real: ninguno en este tema</span><span>Ejercicios del solucionario: 12 + 1 problema práctico de U</span><span>2 ejemplos interactivos</span><span>⏱ ruta rápida ~3 h · completa ~5 h</span></div>
 <div class="legend">
     <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
     <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
@@ -42,30 +42,74 @@
 </header>
 
 
-<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U cap. 12 Introducción, p. 370">U p.370</span></h2>
-<p><b>Prerrequisitos:</b> las leyes de Newton y los diagramas de cuerpo libre con equilibrio ($\sum F_y=0$, temas 4 y 5); el trabajo y la energía mecánica (temas 6 y 7), porque la ecuación de Bernoulli es la ley de conservación de la energía aplicada a un fluido; el tiro horizontal (tema 3), para saber dónde cae un chorro; y la idea de presión y de módulo volumétrico del tema 11 ($p=F_\perp/A$, 1 Pa = 1 N/m²).</p>
-<p><b>Mapa del tema:</b> 12.1 define la <b>densidad</b>. 12.2 estudia el fluido <i>en reposo</i>: la <b>presión</b>, cómo crece con la profundidad ($p=p_0+\rho gh$), la <b>ley de Pascal</b>, las presiones absoluta y manométrica y los medidores (manómetro y barómetro). 12.3 es la <b>flotación</b> (principio de Arquímedes). Después el fluido se mueve: 12.4 da la <b>ecuación de continuidad</b> ($A_1v_1=A_2v_2$), 12.5 la <b>ecuación de Bernoulli</b> con sus aplicaciones (teorema de Torricelli, medidor Venturi, sustentación) y 12.6 la <b>viscosidad</b> y la turbulencia. Los ejercicios del libro se reparten así: densidad y presión (E1-E4), flotación (E5-E7), continuidad y Bernoulli (E8-E11) y viscosidad (E12).</p>
-<div class="box tip"><span class="h">Examen real: no hay ninguno de este tema</span>
-<p>Se han revisado todas las convocatorias disponibles (2018-2025) y <b>ningún problema ni pregunta de teoría trata densidad, presión, flotación, continuidad, Bernoulli o viscosidad</b>. Por eso este tema no tiene ejercicios «X»: los ejercicios resueltos son los ejemplos del libro (U), que aparecen en la teoría, y problemas del solucionario (E1-E12) y el problema práctico de U, todos resueltos paso a paso. Aun así el tema forma parte del temario oficial y usa las mismas técnicas que los exámenes de mecánica: diagramas de cuerpo libre (empuje, presión) y balance de energía (Bernoulli).</p>
-  <span class="src" data-l="P" data-ref="Revisión de fuentes_txt/examenes_por_tema.md y de los PDF de exámenes 2018-2025: sin ejercicios del tema 12">P</span></div>
-<div class="box tip"><span class="h">La receta maestra del tema: ¿el fluido está quieto o se mueve?</span>
-<ol class="steps">
-    <li><b>Quieto</b> (hidrostática): la presión solo depende de la profundidad, $p=p_0+\rho gh$; a la misma altura y en el mismo fluido, la misma presión. Si hay un cuerpo sumergido, haz su diagrama de cuerpo libre con el <b>empuje</b> $B=\rho_{fluido}V_{sum}g$.</li>
-    <li><b>En movimiento</b>: primero <b>continuidad</b> ($A_1v_1=A_2v_2$) para las rapideces, después <b>Bernoulli</b> ($p+\rho gy+\tfrac12\rho v^2=$ cte) para las presiones.</li>
-    <li><b>Escribe todas las presiones del mismo tipo</b>: todas absolutas o todas manométricas (la atmosférica se cancela si aparece en los dos miembros).</li>
-    <li><b>Elige un nivel de referencia</b> ($y=0$) y respeta el signo de $y$ (hacia arriba positivo).</li>
-    <li><b>Unidades del SI:</b> áreas en m² (el área va con el <i>cuadrado</i> del diámetro) y diámetro $\neq$ radio.</li>
-  </ol>
-  <span class="src" data-l="P" data-ref="Explicación propia a partir de §12.5, Estrategia 12.1, U p. 382">P</span></div>
-<h2 id="s1"><span class="n">1</span>Densidad <span class="src" data-l="U" data-ref="U §12.1, pp. 370-371">U p.370-371</span></h2>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>El hierro «pesa más» que el corcho, pero eso depende del tamaño: un clavo de hierro pesa menos que un tronco de corcho. Lo que distingue al <i>material</i> es cuánta masa cabe en cada unidad de volumen: la <b>densidad</b>. Una llave de acero y un clavo de acero tienen masas y volúmenes distintos pero el mismo cociente masa/volumen. Las densidades ordenan quién flota y quién se hunde.</p>
-  <span class="src" data-l="U" data-ref="U §12.1, fig. 12.1, p. 370">U p.370</span></div>
-<div class="box def"><span class="h">Densidad y gravedad específica</span>
-<p>La <b>densidad</b> de un material homogéneo es su masa por unidad de volumen:
+<section class="en5" id="en5" aria-labelledby="en5-t">
+<h2 id="en5-t" style="display:block">El tema en 5 minutos <span class="src" data-l="P" data-ref="Resumen y guía de decisión propios, basados en U cap. 12 y en los ejercicios de este tema">P</span></h2>
+<p><b>Una sola idea:</b> un fluido (líquido o gas) <b>empuja perpendicularmente</b> contra todo lo que toca, y ese empuje por unidad de área es la <b>presión</b>. El tema tiene dos mitades. <b>Fluido quieto</b>: la presión crece con la profundidad porque cada capa sostiene el peso de las que tiene encima ($p=p_0+\rho gh$); de ahí salen la prensa hidráulica (Pascal) y el empuje sobre los cuerpos sumergidos (Arquímedes). <b>Fluido en movimiento</b>: lo que entra por un tubo sale por el otro (continuidad, $A_1v_1=A_2v_2$) y la energía se conserva (Bernoulli, que es el teorema del trabajo y la energía escrito «por unidad de volumen»).</p>
+
+<p><b>Necesitas:</b> diagramas de cuerpo libre con $\sum F_y=0$ (T4-T5), la conservación de la energía (T6-T7), el tiro horizontal (T3) para saber dónde cae un chorro, y la idea de presión del tema 11 ($p=F_\perp/A$, 1 Pa = 1 N/m²). Si el enunciado no da datos: $g=9{,}8$ m/s², agua 1000 kg/m³, agua de mar 1030 kg/m³, 1 atm $=1{,}013\times10^5$ Pa.</p>
+
+<h3>El método en 4 pasos (úsalo siempre, en este orden)</h3>
+<div class="dcev">
+  <div><b>1 · ¿Quieto o se mueve?</b>Quieto: hidrostática ($p=p_0+\rho gh$, Arquímedes). Se mueve: continuidad y Bernoulli. Con viscosidad apreciable, ninguna de las dos: $\Delta p\propto L/R^4$.</div>
+  <div><b>2 · Elige puntos y nivel</b>Marca los puntos 1 y 2 donde conoces algo (superficie libre a $p_{atm}$, chorro a $p_{atm}$, interfase entre líquidos). Toma $y=0$ y $+y$ hacia arriba.</div>
+  <div><b>3 · Escribe las ecuaciones</b>Hidrostática capa a capa, o el DCL del cuerpo con el empuje $B$. En movimiento: <i>primero</i> continuidad (da la rapidez), <i>después</i> Bernoulli (da la presión).</div>
+  <div><b>4 · Unidades y presiones</b>Todas las presiones <b>absolutas</b> o todas <b>manométricas</b>. Áreas en m² con el <b>cuadrado</b> del diámetro ($A=\pi d^2/4$). Comprueba que el punto más bajo tiene más presión.</div>
+</div>
+<p style="font-size:.9rem;color:var(--mut)">Es la «Estrategia para resolver problemas 12.1» del libro (Bernoulli), ampliada al fluido en reposo. <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 12.1, p. 382">U p.382</span></p>
+
+<h3>Las 6 fórmulas que hay que saber</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\rho=\dfrac mV$, $\ p=\dfrac{F_\perp}{A}$</td><td>«densidad», «¿de qué material es?», «fuerza sobre el fondo, la tapa o el pistón».</td></tr>
+<tr><td>$p=p_0+\rho gh$ $\ $(manométrica: $\rho gh$)</td><td>«a una profundidad», «en el fondo», «¿a qué altura hay que poner el depósito?», tubo en U, manómetro, barómetro.</td></tr>
+<tr><td>$\dfrac{F_1}{A_1}=\dfrac{F_2}{A_2}$</td><td>«elevador / prensa hidráulica», «dos pistones», «¿qué fuerza hay que aplicar?».</td></tr>
+<tr><td>$B=\rho_{fluido}V_{sum}g$; flota si $\rho_{cuerpo}\le\rho_{fluido}$</td><td>«sumergido», «flota», «fracción sumergida», «tensión del hilo bajo el agua», «pesa menos en el agua».</td></tr>
+<tr><td>$A_1v_1=A_2v_2$, $\ Q=Av$</td><td>«tubo que se estrecha», «caudal», «litros por segundo», «volumen descargado en una hora».</td></tr>
+<tr><td>$p_1+\rho gy_1+\tfrac12\rho v_1^2=p_2+\rho gy_2+\tfrac12\rho v_2^2$ $\ $(Torricelli: $v=\sqrt{2gh}$)</td><td>«presión en otro punto de la tubería», «rapidez de salida por un orificio», «Venturi», «sustentación».</td></tr>
+</table>
+
+<h3>Qué cae en examen</h3>
+<p><b>Ningún examen de 2018 a 2025 tiene un problema ni una pregunta de teoría de este tema.</b> Aun así entra en el temario y en la PEC 3 (módulo 3, temas 12-16). Prepáralo así: (1) domina la <b>hidrostática con diagrama de cuerpo libre</b> (presión con la profundidad y empuje, secciones 2-3), que es el mismo método de equilibrio de los temas 4, 5 y 11; (2) aprende la pareja <b>continuidad + Bernoulli</b> (secciones 4-5), que es conservación de la masa y de la energía; (3) por si sale de teoría, lleva preparado el guion de «Preguntas de teoría». <span class="src" data-l="P" data-ref="Revisión de fuentes_txt/examenes_por_tema.md: sin ejercicios de examen del tema 12">P</span></p>
+
+<h3>Elige tu ruta</h3>
+<div class="rutas">
+  <div><b>Ruta rápida</b><br>Esta página + lo marcado <span class="prio p1">🔴 imprescindible</span> (secciones 1-5) + ejercicios del bloque «Núcleo».</div>
+  <div><b>Ruta completa</b><br>Todo lo anterior + <span class="prio p2">🟡</span> viscosidad y turbulencia + bloque «Práctica» (con el vaciado de un depósito) + guion de teoría.</div>
+  <div><b>Repaso final</b><br>Chuleta, errores frecuentes, lista de comprobación y E5, E7 y E10 sin mirar la solución.</div>
+</div>
+<div class="leyprio"><span><span class="prio p1">🔴 imprescindible</span> hace falta para resolver los problemas del tema</span><span><span class="prio p2">🟡 conveniente</span> refuerza, aparece en el libro</span><span><span class="prio p3">⚪ extra</span> cultura, no suele pedirse</span></div>
+</section>
+<section id="decide" aria-labelledby="decide-t">
+<h2 id="decide-t" style="margin-top:1.4em"><span class="n">¿?</span>¿Qué tipo de problema es? <span class="prio p1">🔴</span> <span class="src" data-l="P" data-ref="Resumen y guía de decisión propios, basados en U cap. 12 y en los ejercicios de este tema">P</span></h2>
+<p>Lee el enunciado, busca la pista en la primera columna y ve directo al método y al ejercicio modelo.</p>
+<table class="decide">
+<tr><th>Si el enunciado dice…</th><th>Haz esto</th><th>Ejercicio modelo</th></tr>
+<tr><td>«densidad del metal», «pieza con un agujero», «¿cuánto pesaba antes?»</td><td>$\rho=m/V$ con la masa y el volumen de la pieza <i>real</i> (descuenta los huecos); luego $\rho$ sirve para cualquier otra pieza.</td><td><a href="#e1">E1</a></td></tr>
+<tr><td>«¿a qué altura debe estar el depósito?», «presión en el fondo», «a 12 m de profundidad»</td><td>Manométrica $=\rho gh$ con $h$ = profundidad bajo la superficie libre; absoluta $=p_{atm}+\rho gh$.</td><td><a href="#e2">E2</a></td></tr>
+<tr><td>«elevador / prensa hidráulica», «relación de diámetros de los pistones»</td><td>Pascal: $F_2/F_1=A_2/A_1=(D_2/D_1)^2$; el trabajo es el mismo en los dos pistones.</td><td><a href="#e4">E4</a></td></tr>
+<tr><td>«presión necesaria en el pistón para levantar…»</td><td>DCL del pistón: $p_{atm}$ se cancela y queda $p_{man}=mg/A$.</td><td><a href="#e3">E3</a></td></tr>
+<tr><td>«tubo en U con dos líquidos», «manómetro», «barómetro»</td><td>Iguala presiones al nivel de la interfase (mismo fluido continuo a los dos lados): $\rho_1h_1=\rho_2h_2$.</td><td><a href="#s2">Ejemplo 12.4</a></td></tr>
+<tr><td>«sumergido colgado de una cuerda», «¿en qué líquido flota?», «tensión bajo el agua»</td><td>DCL: $T+B=mg$ con $B=\rho_fVg$; flota si $\rho_{cuerpo}\le\rho_{fluido}$.</td><td><a href="#e5">E5</a></td></tr>
+<tr><td>«tensión en el aire, en agua y en otro líquido»</td><td>Empuje = peso − tensión; los empujes están en la proporción de las densidades.</td><td><a href="#e6">E6</a></td></tr>
+<tr><td>«flota entre aceite y agua», «presión en la cara superior e inferior»</td><td>Presión capa a capa $\sum\rho_igh_i$; empuje $=(p_{abajo}-p_{arriba})A$.</td><td><a href="#e7">E7</a></td></tr>
+<tr><td>«el tubo se estrecha», «caudal», «volumen descargado en una hora»</td><td>$Q=Av$ donde conozcas las dos; en cualquier otra sección $v=Q/A$.</td><td><a href="#e8">E8</a></td></tr>
+<tr><td>«presión en otro punto de la tubería, más abajo / más arriba, con otro diámetro»</td><td>Continuidad ⇒ $v_2$; Bernoulli ⇒ $p_2$, con presiones del mismo tipo.</td><td><a href="#e10">E10</a></td></tr>
+<tr><td>«orificio en un tanque abierto», «rapidez de salida», «¿a qué distancia cae el chorro?»</td><td>Torricelli $v=\sqrt{2gh}$ ($h$ bajo la superficie); el chorro es un tiro horizontal.</td><td><a href="#e9">E9</a></td></tr>
+<tr><td>«tanque sellado con aire a presión»</td><td>$v=\sqrt{2p_{man}/\rho+2gh}$: la sobrepresión cuenta como una columna extra.</td><td><a href="#e11">E11</a></td></tr>
+<tr><td>«medidor Venturi», «diferencia de altura en los tubos verticales»</td><td>Bernoulli a la misma altura + continuidad + $p_1-p_2=\rho gh$.</td><td><a href="#s5">Ejemplo 12.9</a></td></tr>
+<tr><td>«fluido viscoso», «se reduce el radio de la tubería», «arteria estrechada»</td><td>A caudal fijo $\Delta p\propto L/R^4$: razona con cocientes.</td><td><a href="#e12">E12</a></td></tr>
+<tr><td>«¿cuánto tarda en vaciarse el depósito?»</td><td>Caudal de Torricelli = ritmo de pérdida de volumen ⇒ $dy/dt=-k\sqrt y$.</td><td><a href="#epp">Problema práctico</a></td></tr>
+<tr><td>«Desarrolle el tema…» (hidrostática; Bernoulli)</td><td>Guion: idea → ley y ecuación → ejemplo con números → error típico.</td><td><a href="#teoria-t12">Teoría</a></td></tr>
+</table>
+</section>
+<h2 id="s1"><span class="n">1</span>Densidad <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §12.1, pp. 370-371">U p.370-371</span></h2>
+<div class="box def"><span class="h">Densidad: masa por unidad de volumen, $\rho=m/V$</span>
+<p>Un clavo de hierro pesa menos que un tronco de corcho, pero el hierro «es más pesado» que el corcho: lo que distingue al <i>material</i> es cuánta masa cabe en cada unidad de volumen. Eso es la <b>densidad</b>; una llave y un clavo del mismo acero tienen masas distintas pero la misma densidad.</p>
   $$\rho=\frac{m}{V}\qquad\text{(ec. 12.1)}$$
-  Unidad del SI: kg/m³; $1\ \text{g/cm}^3=1000\ \text{kg/m}^3$. La <b>gravedad específica</b> (o densidad relativa) es la razón entre la densidad del material y la del agua a 4,0 °C (1000 kg/m³): un número puro (aluminio: 2,7). Si la densidad varía de un punto a otro (cuerpo humano, atmósfera, océano), la ec. (12.1) da la densidad <i>media</i>; en general depende de la temperatura y de la presión.</p>
-  <span class="src" data-l="U" data-ref="U §12.1, ec. 12.1, p. 370">U p.370</span></div>
+  <p>Unidad del SI: kg/m³; $1\ \text{g/cm}^3=1000\ \text{kg/m}^3$. La <b>gravedad específica</b> (densidad relativa) es $\rho/\rho_{agua}$ con el agua a 4,0 °C (1000 kg/m³): un número puro (aluminio: 2,7). Si el material no es homogéneo (cuerpo humano, atmósfera), $m/V$ da la densidad <i>media</i>; en general $\rho$ depende de la temperatura y de la presión.</p>
+  <p><b>Ejemplo mínimo (ejemplo 12.1):</b> el aire de una habitación de $4{,}0\times5{,}0\times3{,}0$ m ($V=60$ m³) a 20 °C tiene $m=\rho V=(1{,}20)(60)=72$ kg y pesa $\approx700$ N, lo que un adulto; el mismo volumen de agua pesaría $5{,}9\times10^5$ N.</p>
+  <p><b>Error típico:</b> mezclar unidades (el agua es 1000 kg/m³, no 1) o confundir «más denso» con «más pesado»: la densidad es del material, no del objeto.</p>
+  <span class="src" data-l="U" data-ref="U §12.1, ec. 12.1, p. 370; Ejemplo 12.1, pp. 370-371">U p.370-371</span></div>
 <table>
 <caption style="caption-side:top;text-align:left;font:600 .9rem var(--sans);padding:6px 4px">Tabla 12.1: densidades de algunas sustancias comunes (kg/m³) <span class="src" data-l="U" data-ref="U Tabla 12.1, p. 370">U p.370</span></caption>
 <tr><th>Material</th><th>ρ (kg/m³)</th><th>Material</th><th>ρ (kg/m³)</th></tr>
@@ -84,130 +128,100 @@
 <div class="figph" role="img" aria-label="Tres cubos de 1 metro cúbico de aire, agua y hierro con masas de 1,20 kg, 1000 kg y 7800 kg" style="aspect-ratio:340/160"></div>
 <figcaption>Mismo volumen (1 m³ de cada material), masas muy distintas: la densidad $\rho=m/V$ es la masa por unidad de volumen (valores de la tabla 12.1). Los cubos no están a escala de masa. <span class="src" data-l="P" data-ref="Diagrama propio de §12.1 de U (densidad)">P</span></figcaption>
 </figure>
-<div class="box ex"><span class="h">Ejemplo 12.1: peso del aire dentro de una habitación</span>
-<p>Calcula la masa y el peso del aire de una habitación a 20 °C de $4{,}0\times5{,}0$ m de planta y 3,0 m de altura, y compáralos con los de un volumen igual de agua.</p>
-  <ol class="steps">
-    <li><b>Volumen.</b> $V=(4{,}0)(5{,}0)(3{,}0)=60\ \text{m}^3$. Se supone la misma densidad del aire en todo el cuarto (3 m de altura no cambian nada apreciable).</li>
-    <li><b>Aire</b> (tabla 12.1, 1,20 kg/m³): $m=\rho V=(1{,}20)(60)=72$ kg y $w=mg=(72)(9{,}8)\approx700$ N.</li>
-    <li><b>Agua:</b> $m=(1000)(60)=6{,}0\times10^4$ kg y $w=5{,}9\times10^5$ N.</li>
-    <li><b>Comparación:</b> el aire del cuarto pesa lo que un adulto; el agua, unas mil veces más (el peso del agua hundiría el suelo de una casa).</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 12.1, pp. 370-371">U p.370-371</span></div>
-<div class="box warn"><span class="h">Error típico</span>
-<p>Mezclar unidades: la densidad del SI es kg/m³ (el agua, 1000), no g/cm³ (el agua, 1). Y confundir «más denso» con «más pesado»: la densidad es una propiedad del material, no del objeto.</p>
-  <span class="src" data-l="P" data-ref="Explicación propia a partir de §12.1 de U">P</span></div>
-<h2 id="s2"><span class="n">2</span>Presión en un fluido <span class="src" data-l="U" data-ref="U §12.2, pp. 371-376">U p.371-376</span></h2>
-<h3 id="s2a">2.1 ¿Qué es la presión? <span class="src" data-l="U" data-ref="U §12.2, pp. 371-372">U p.371-372</span></h3>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>Un fluido empuja <i>perpendicularmente</i> contra cualquier superficie con la que está en contacto (las paredes del recipiente, tu cuerpo dentro de una piscina). El empuje por unidad de área es la <b>presión</b>. Por eso un tacón de aguja marca el suelo y una zapatilla no: la misma fuerza, repartida en menos área, da más presión. La presión no tiene dirección: empuja <i>hacia todos lados</i> con el mismo valor en un punto.</p>
-  <span class="src" data-l="U" data-ref="U §12.2, p. 371">U p.371</span></div>
-<div class="box def"><span class="h">Presión</span>
-<p>La fuerza normal $dF_\perp$ que el fluido ejerce sobre una pequeña superficie $dA$ en un punto define la presión en ese punto; si es la misma en toda una superficie plana de área $A$:
-  $$p=\frac{dF_\perp}{dA}\ \ (12.2)\qquad\qquad p=\frac{F_\perp}{A}\ \ (12.3)$$
-  Unidad del SI: el <b>pascal</b>, $1\ \text{Pa}=1\ \text{N/m}^2$. Otras: $1\ \text{bar}=10^5$ Pa, $1\ \text{mbar}=100$ Pa y la <b>atmósfera</b>: $1\ \text{atm}=1{,}013\times10^5\ \text{Pa}=1013\ \text{mbar}=14{,}70\ \text{lb/in}^2$ (valor medio de la presión atmosférica a nivel del mar).</p>
-  <span class="src" data-l="U" data-ref="U §12.2, ecs. 12.2-12.3, p. 371">U p.371</span></div>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>Un lingote de 0,50 L tiene una masa de 5,65 kg. ¿Cuál es su densidad? ¿De qué metal puede ser (tabla 12.1)?<details><summary>Ver respuesta</summary>$\rho=\dfrac{5{,}65}{0{,}50\times10^{-3}}=11{,}3\times10^3$ kg/m³: plomo. (1 L $=10^{-3}$ m³.)</details></li>
+<li>Pasa 2,7 g/cm³ a unidades del SI. ¿Cuál es la gravedad específica de ese material?<details><summary>Ver respuesta</summary>$2{,}7\ \text{g/cm}^3=2700$ kg/m³; gravedad específica $2700/1000=2{,}7$ (es el aluminio).</details></li>
+<li>Un bloque de acero y otro de aluminio tienen la misma masa. ¿Cuál ocupa más volumen y cuántas veces más?<details><summary>Ver respuesta</summary>El de aluminio: $V_{Al}/V_{Fe}=\rho_{Fe}/\rho_{Al}=7{,}8/2{,}7=2{,}89$ veces (a igual masa, el volumen va al revés que la densidad).</details></li>
+</ol>
+</details>
+
+<h2 id="s2"><span class="n">2</span>Presión en un fluido <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §12.2, pp. 371-376">U p.371-376</span></h2>
+<div class="box def"><span class="h">Presión: fuerza perpendicular por unidad de área (un escalar)</span>
+<p>Un fluido en reposo empuja <b>perpendicularmente</b> contra cualquier superficie que toca (paredes, tu cuerpo en la piscina). Por eso un tacón de aguja marca el suelo y una zapatilla no: la misma fuerza repartida en menos área da más presión.</p>
+  $$p=\frac{dF_\perp}{dA}\ \ (12.2)\qquad\qquad p=\frac{F_\perp}{A}\ \text{ si es uniforme}\ \ (12.3)$$
+  <p>Unidad del SI: el <b>pascal</b>, $1\ \text{Pa}=1\ \text{N/m}^2$. También $1\ \text{bar}=10^5$ Pa, $1\ \text{mbar}=100$ Pa y $1\ \text{atm}=1{,}013\times10^5\ \text{Pa}=1013\ \text{mbar}=14{,}70\ \text{lb/in}^2$ (presión atmosférica media al nivel del mar). En un punto, la presión es la misma en todas las direcciones.</p>
+  <p><b>Ejemplo mínimo (ejemplo 12.2):</b> el aire a 1,00 atm empuja el suelo de 20 m² de la habitación con $F=pA=(1{,}013\times10^5)(20)=2{,}0\times10^6$ N, el peso de unas 200 toneladas. No lo hunde porque, por debajo, el aire empuja igual hacia arriba.</p>
+  <p><b>Error típico:</b> tratar la presión como un vector. La fuerza sí lo es ($F_\perp=pA$, perpendicular a cada superficie); la presión no tiene dirección propia: el doble de área recibe el doble de fuerza con la misma presión.</p>
+  <span class="src" data-l="U" data-ref="U §12.2, ecs. 12.2-12.3 y CUIDADO, p. 371; Ejemplo 12.2, p. 372">U p.371-372</span></div>
 <figure class="fig" data-svg="../assets/figs/t12/una-misma-fuerza-de-600-newtons-sobre-una-superf.svg">
 <div class="figph" role="img" aria-label="Una misma fuerza de 600 newtons sobre una superficie ancha de 200 centímetros cuadrados y sobre una punta de 1 centímetro cuadrado" style="aspect-ratio:340/160"></div>
 <figcaption>La presión es fuerza por área, $p=F_\perp/A$: los mismos 600 N repartidos en 200 cm² dan $3{,}0\times10^4$ Pa; concentrados en 1 cm² (un tacón), $6{,}0\times10^6$ Pa. <span class="src" data-l="P" data-ref="Diagrama propio de §12.2 de U (presión = fuerza / área)">P</span></figcaption>
 </figure>
-<div class="box warn"><span class="h">No confundas presión con fuerza</span>
-<p>La presión es un <b>escalar</b>: no tiene dirección propia (siempre actúa perpendicular a la superficie, sea cual sea su orientación). La fuerza es un vector. Una superficie con el doble de área recibe el doble de fuerza, pero la presión es la misma.</p>
-  <span class="src" data-l="U" data-ref="U §12.2, CUIDADO, p. 371 y fig. 12.3">U p.371</span></div>
-<div class="box ex"><span class="h">Ejemplo 12.2: la fuerza del aire</span>
-<p>En la habitación del ejemplo 12.1, ¿qué fuerza total descendente ejerce el aire sobre el piso, con una presión de 1,00 atm?</p>
-  <ol class="steps">
-    <li>La presión es uniforme y el piso horizontal: $F_\perp=pA$ vertical hacia abajo, con $A=(4{,}0)(5{,}0)=20\ \text{m}^2$.</li>
-    <li>$F_\perp=(1{,}013\times10^5\ \text{N/m}^2)(20\ \text{m}^2)=2{,}0\times10^6$ N (el peso de unas 200 toneladas).</li>
-    <li><b>No hunde el piso</b> porque por debajo el aire empuja igual hacia arriba (si hay sótano): la fuerza neta de la presión del aire es cero.</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 12.2, p. 372">U p.372</span></div>
-<h3 id="s2b">2.2 Presión y profundidad <span class="src" data-l="U" data-ref="U §12.2, pp. 372-373">U p.372-373</span></h3>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>Al sumergirte en una piscina notas la presión en los oídos y crece al bajar. La razón es el peso: a una profundidad $h$ el agua tiene que sostener la <b>columna de fluido que tiene encima</b>. Cuanto más profundo, más fluido encima, más presión. Y como el fluido está en reposo, la presión es la misma en todos los puntos de un mismo nivel: <i>no importa la forma del recipiente</i>, solo la profundidad.</p>
-  <span class="src" data-l="U" data-ref="U §12.2, p. 372">U p.372</span></div>
-<div class="box thm"><span class="h">Variación de la presión con la profundidad</span>
-<p>Un elemento fino de fluido (espesor $dy$, área $A$) en equilibrio da $pA-(p+dp)A-\rho gA\,dy=0$, es decir
-  $$\frac{dp}{dy}=-\rho g\qquad\text{(ec. 12.4)}\qquad\qquad p_2-p_1=-\rho g\,(y_2-y_1)\qquad\text{(ec. 12.5)}$$
-  (densidad $\rho$ uniforme, $g\gt0$ y $y$ hacia arriba). Si el punto 2 es la superficie (presión $p_0$) y $h$ es la <b>profundidad</b> del punto 1:
-  $$\boxed{\,p=p_0+\rho g h\,}\qquad\text{(ec. 12.6)}$$
-  La presión a una profundidad $h$ supera a la de la superficie en $\rho gh$. Es igual en dos puntos cualesquiera al mismo nivel dentro del fluido, sea cual sea la forma del recipiente.</p>
+<div class="box thm"><span class="h">Presión y profundidad: $p=p_0+\rho gh$</span>
+<p>A una profundidad $h$, el fluido sostiene la <b>columna que tiene encima</b>: cuanto más hondo, más peso encima y más presión. El equilibrio de una capa fina (espesor $dy$, área $A$) da $pA-(p+dp)A-\rho gA\,dy=0$:</p>
+  $$\frac{dp}{dy}=-\rho g\ \ (12.4)\qquad p_2-p_1=-\rho g\,(y_2-y_1)\ \ (12.5)\qquad\boxed{\,p=p_0+\rho g h\,}\ \ (12.6)$$
+  <p>($\rho$ uniforme, $y$ hacia arriba, $h$ = profundidad bajo el punto de presión $p_0$.) La presión es <b>igual en todos los puntos de un mismo nivel</b> del mismo fluido, sea cual sea la forma del recipiente.</p>
+  <p><b>Regla de bolsillo:</b> en agua, <b>cada ≈ 10 m suman ≈ 1 atm</b> ($\rho g\cdot10=9{,}8\times10^4$ Pa). En un gas, $\rho$ es tan pequeña que la diferencia es despreciable: en 3,0 m de aire, $\rho gh=(1{,}2)(9{,}8)(3{,}0)=35$ Pa, unas 0,00035 atm.</p>
+  <p><b>Error típico:</b> medir $h$ desde el fondo en lugar de <i>hacia abajo desde la superficie libre</i>; o usar una sola densidad cuando hay dos líquidos (hay que ir capa a capa).</p>
   <span class="src" data-l="U" data-ref="U §12.2, ecs. 12.4-12.6, pp. 372-373">U p.372-373</span></div>
 <figure class="fig" data-svg="../assets/figs/t12/columna-de-fluido-de-altura-h-y-area-a-en-equili.svg">
 <div class="figph" role="img" aria-label="Columna de fluido de altura h y área A en equilibrio: fuerza de la presión superior hacia abajo, su peso hacia abajo y fuerza de la presión inferior hacia arriba" style="aspect-ratio:340/215"></div>
 <figcaption>Aísla una columna de fluido de área $A$ y altura $h$: está quieta, así que $pA=p_0A+\rho ghA$ (peso de la columna $=\rho\,hA\,g$). Al simplificar $A$ sale $p=p_0+\rho gh$ (ec. 12.6). <span class="src" data-l="P" data-ref="Diagrama propio de §12.2 de U (ecs. 12.4-12.6)">P</span></figcaption>
 </figure>
-<div class="box tip"><span class="h">Truco de examen</span>
-<p>Regla de bolsillo para el agua: <b>cada ≈ 10 m de profundidad suman ≈ 1 atm</b> ($\rho gh=1000\cdot9{,}8\cdot10=9{,}8\times10^4$ Pa $\approx0{,}97$ atm). En los gases la densidad es tan pequeña que se puede despreciar: en una habitación de 3,0 m de alto la diferencia de presión es $\rho gh=(1{,}2)(9{,}8)(3{,}0)=35$ Pa $\approx0{,}00035$ atm; por eso se supone que la presión del aire es la misma en todo el cuarto.</p>
-  <span class="src" data-l="U" data-ref="U §12.2, p. 373">U p.373</span></div>
-<h3 id="s2c">2.3 Ley de Pascal y el elevador hidráulico <span class="src" data-l="U" data-ref="U §12.2, p. 373">U p.373</span></h3>
-<div class="box thm"><span class="h">Ley de Pascal</span>
-<p><b>La presión aplicada a un fluido encerrado se transmite sin disminución a todas las partes del fluido y a las paredes del recipiente.</b> Se ve en la ec. (12.6): si aumentas $p_0$ en la superficie con un pistón, $p$ aumenta lo mismo en todos los puntos. Aplicación: el <b>elevador hidráulico</b>. Una fuerza pequeña $F_1$ sobre un pistón de área pequeña $A_1$ crea una presión $p=F_1/A_1$ que actúa también sobre el pistón grande ($A_2$):
-  $$p=\frac{F_1}{A_1}=\frac{F_2}{A_2}\qquad\Rightarrow\qquad F_2=\frac{A_2}{A_1}F_1\qquad\text{(ec. 12.7)}$$
-  El cociente de áreas multiplica la fuerza. <b>No se gana energía</b>: el pistón pequeño recorre una distancia mayor en la misma proporción que el grande recorre menos, y el trabajo es el mismo.</p>
-  <span class="src" data-l="U" data-ref="U §12.2, ley de Pascal, ec. 12.7, fig. 12.7, p. 373, y explicación propia (conservación del trabajo)">U p.373</span></div>
-<figure class="bookfig">
-<img src="../assets/img/fig_u_12_7_elevador.png" alt="Figura 12.7 de U. Elevador hidráulico: una fuerza pequeña F1 sobre un pistón de área A1 produce la misma presión p en el fluido; en el pistón grande de área A2 la fuerza F2 es mayor y sostiene un automóvil." loading="lazy" style="max-width:400px!important">
-<figcaption>Fig. 12.7 de U: el elevador hidráulico es una aplicación de la ley de Pascal (el tamaño del recipiente se ha exagerado). <span class="src" data-l="U" data-ref="U Fig. 12.7, p. 373">U p.373</span></figcaption>
-</figure>
-<h3 id="s2d">2.4 Presión absoluta y presión manométrica <span class="src" data-l="U" data-ref="U §12.2, p. 373">U p.373</span></h3>
-<div class="box def"><span class="h">Absoluta y manométrica</span>
-<p>La <b>presión absoluta</b> es la presión total, medida desde el vacío. La <b>presión manométrica</b> es el exceso sobre la atmosférica:
+<div class="box def"><span class="h">Presión absoluta y presión manométrica</span>
+<p>La <b>absoluta</b> es la presión total, medida desde el vacío; la <b>manométrica</b> es el exceso sobre la atmosférica (negativa en un vacío parcial):</p>
   $$p_{man}=p-p_{atm}$$
-  (negativa si la presión es menor que la atmosférica). Un neumático con «32 lb/in²» marca la manométrica (≈ $2{,}2\times10^5$ Pa); la absoluta es $\approx3{,}2\times10^5$ Pa (47 lb/in²). Los manómetros de uso diario (de neumáticos, de depósitos) miden manométrica.</p>
-  <span class="src" data-l="U" data-ref="U §12.2, presión absoluta y manométrica, p. 373">U p.373</span></div>
-<div class="box ex"><span class="h">Ejemplo 12.3: presiones absoluta y manométrica</span>
-<p>Un tanque de almacenamiento de 12,0 m de profundidad está lleno de agua y abierto al aire por arriba. ¿Qué presión absoluta y qué presión manométrica hay en el fondo?</p>
-  <ol class="steps">
-    <li><b>Modelo.</b> El agua es prácticamente incompresible: densidad uniforme, vale $p=p_0+\rho gh$ (12.6). En la superficie toca el aire: $p_0=p_{atm}\approx1{,}01\times10^5$ Pa.</li>
-    <li><b>Absoluta:</b> $p=1{,}01\times10^5+(1000)(9{,}8)(12{,}0)=1{,}01\times10^5+1{,}18\times10^5=2{,}19\times10^5$ Pa ($\approx2{,}16$ atm).</li>
-    <li><b>Manométrica:</b> es el exceso sobre la atmosférica, $p-p_{atm}=\rho gh=1{,}18\times10^5$ Pa ($\approx1{,}16$ atm). Un manómetro en el fondo marca este valor.</li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> profundidad $h$ ⇒ manométrica $=\rho gh$; absoluta $=p_{atm}+\rho gh$.</div>
-  <span class="src" data-l="U" data-ref="U Ejemplo 12.3, p. 374">U p.374</span></div>
+  <p>Los manómetros de uso diario (neumáticos, bombonas) marcan la manométrica: un neumático a «32 lb/in²» tiene $\approx2{,}2\times10^5$ Pa manométricos y $\approx3{,}2\times10^5$ Pa absolutos.</p>
+  <p><b>Ejemplo mínimo (ejemplo 12.3):</b> en el fondo de un tanque abierto con 12,0 m de agua, manométrica $=\rho gh=(1000)(9{,}8)(12{,}0)=1{,}18\times10^5$ Pa ($\approx1{,}16$ atm) y absoluta $=1{,}01\times10^5+1{,}18\times10^5=2{,}19\times10^5$ Pa ($\approx2{,}16$ atm).</p>
+  <p><b>Error típico:</b> mezclar las dos en una misma ecuación. Si $p_{atm}$ actúa en los dos lados (pistón, cuerpo sumergido, dos puntos abiertos al aire), se cancela y puedes trabajar todo en manométricas.</p>
+  <span class="src" data-l="U" data-ref="U §12.2, presión absoluta y manométrica, p. 373; Ejemplo 12.3, p. 374">U p.373-374</span></div>
 <figure class="fig" data-svg="../assets/figs/t12/grafica-de-la-presion-absoluta-y-manometrica-del.svg">
 <div class="figph" role="img" aria-label="Gráfica de la presión absoluta y manométrica del agua en función de la profundidad, con valores a 12 metros" style="aspect-ratio:340/230"></div>
 <figcaption>Presión del agua frente a la profundidad (rectas con pendiente $\rho g$): la absoluta parte de $p_{atm}$; la manométrica parte de 0. A 12,0 m valen $2{,}19\times10^5$ Pa y $1{,}18\times10^5$ Pa. Cada ≈ 10 m de agua añaden ≈ 1 atm. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.3 de U">P</span></figcaption>
 </figure>
-<h3 id="s2e">2.5 Medidores de presión <span class="src" data-l="U" data-ref="U §12.2, pp. 374-375">U p.374-375</span></h3>
-<div class="box thm"><span class="h">Manómetro de tubo abierto y barómetro de mercurio</span>
-<p><b>Manómetro de tubo abierto:</b> un tubo en U con un líquido de densidad $\rho$ (a menudo mercurio o agua); un extremo se conecta al recipiente cuya presión $p$ se mide y el otro está abierto a la atmósfera. A la altura del nivel inferior ambas columnas deben dar la misma presión: $p+\rho gy_1=p_{atm}+\rho gy_2$, de donde
+<div class="box thm"><span class="h">Ley de Pascal y elevador hidráulico</span>
+<p><b>La presión aplicada a un fluido encerrado se transmite sin disminución a todas las partes del fluido y a las paredes del recipiente</b> (en la ec. 12.6, si subes $p_0$ con un pistón, $p$ sube lo mismo en todas partes). En el <b>elevador hidráulico</b>, una fuerza pequeña $F_1$ sobre un pistón pequeño $A_1$ crea una presión que actúa también sobre el grande $A_2$:</p>
+  $$p=\frac{F_1}{A_1}=\frac{F_2}{A_2}\quad\Rightarrow\quad F_2=\frac{A_2}{A_1}F_1\qquad\text{(ec. 12.7)}$$
+  <p><b>Ejemplo mínimo:</b> pistones de 2,0 cm y 20 cm de diámetro: $A_2/A_1=(20/2{,}0)^2=100$; con 100 N en el pequeño, el grande empuja con $1{,}0\times10^4$ N.</p>
+  <p><b>Error típico:</b> creer que se gana energía. El pistón pequeño recorre una distancia mayor en la misma proporción ($\times100$ en el ejemplo) y el trabajo $F\,d$ es el mismo. Y otro: usar el cociente de diámetros en lugar del de áreas.</p>
+  <span class="src" data-l="U" data-ref="U §12.2, ley de Pascal, ec. 12.7, fig. 12.7, p. 373">U p.373</span></div>
+<figure class="bookfig">
+<img src="../assets/img/fig_u_12_7_elevador.png" alt="Figura 12.7 de U. Elevador hidráulico: una fuerza pequeña F1 sobre un pistón de área A1 produce la misma presión p en el fluido; en el pistón grande de área A2 la fuerza F2 es mayor y sostiene un automóvil." loading="lazy" style="max-width:400px!important">
+<figcaption>Fig. 12.7 de U: el elevador hidráulico es una aplicación de la ley de Pascal (el tamaño del recipiente se ha exagerado). <span class="src" data-l="U" data-ref="U Fig. 12.7, p. 373">U p.373</span></figcaption>
+</figure>
+<div class="box thm"><span class="h">Medidores: manómetro de tubo abierto y barómetro de mercurio</span>
+<p><b>Manómetro de tubo abierto:</b> tubo en U con un líquido de densidad $\rho$, un brazo conectado al recipiente (presión $p$) y otro abierto al aire. Al nivel del líquido más bajo las dos columnas dan la misma presión, $p+\rho gy_1=p_{atm}+\rho gy_2$:</p>
   $$p-p_{atm}=\rho g(y_2-y_1)=\rho gh\qquad\text{(ec. 12.8)}$$
-  Es decir, la presión <i>manométrica</i> es proporcional a la diferencia de alturas $h$ de las columnas. <b>Barómetro de mercurio:</b> un tubo largo, cerrado por un extremo, lleno de mercurio e invertido en un plato con mercurio. Arriba solo hay vapor de mercurio ($p_0\approx0$), de modo que
+  <p>La diferencia de alturas mide la presión <i>manométrica</i>. <b>Barómetro de mercurio:</b> tubo cerrado arriba ($p_0\approx0$, solo vapor de mercurio) e invertido en un plato con mercurio:</p>
   $$p_{atm}=\rho g h\qquad\text{(ec. 12.9)}$$
-  La presión se da a menudo como la altura de la columna: $1\ \text{mm Hg}=1\ \text{torr}$. Estas unidades dependen de $\rho$ y de $g$, por eso se prefiere el pascal.</p>
-  <span class="src" data-l="U" data-ref="U §12.2, ecs. 12.8-12.9, fig. 12.8, pp. 374-375">U p.374-375</span></div>
-<div class="box tip"><span class="h">Cuánto es 1 atm en mm Hg</span>
-<p>Con $\rho_{Hg}=13{,}6\times10^3$ kg/m³ la ec. (12.9) da $h=\dfrac{p_{atm}}{\rho g}=\dfrac{1{,}013\times10^5}{(13{,}6\times10^3)(9{,}8)}=0{,}760$ m: 1 atm $=760$ mm Hg $=760$ torr. Además del tubo en U, existe el <b>manómetro de Bourdon</b>, un tubo flexible y curvado que se endereza un poco al subir la presión interior y desvía una aguja (el de los neumáticos y las bombonas de gas); mide presión manométrica.</p>
-  <span class="src" data-l="P" data-ref="Cálculo propio con la ec. 12.9 de U; manómetro de Bourdon: U fig. 12.9, p. 375">P</span></div>
+  <p><b>Ejemplo mínimo:</b> con $\rho_{Hg}=13{,}6\times10^3$ kg/m³, $h=\dfrac{1{,}013\times10^5}{(13{,}6\times10^3)(9{,}8)}=0{,}760$ m: 1 atm $=760$ mm Hg $=760$ torr (1 mm Hg = 1 torr). El <b>manómetro de Bourdon</b> (un tubo curvado que se endereza al subir la presión y mueve una aguja) también mide manométrica.</p>
+  <p><b>Error típico:</b> igualar presiones a una altura donde a un lado hay un líquido y al otro, otro distinto: solo vale dentro del <i>mismo fluido continuo</i>.</p>
+  <span class="src" data-l="U" data-ref="U §12.2, ecs. 12.8-12.9, figs. 12.8-12.9, pp. 374-375">U p.374-375</span></div>
 <figure class="bookfig">
 <img src="../assets/img/fig_u_12_8_manometros.png" alt="Figura 12.8 de U. a) Manómetro de tubo abierto: la presión p se mide con la diferencia de alturas h = y2 − y1 entre los dos brazos. b) Barómetro de mercurio: la altura h de la columna da la presión atmosférica." loading="lazy" style="max-width:560px!important">
 <figcaption>Fig. 12.8 de U: a) manómetro de tubo abierto; b) barómetro de mercurio. <span class="src" data-l="U" data-ref="U Fig. 12.8, p. 374">U p.374</span></figcaption>
 </figure>
-<div class="box ex"><span class="h">Ejemplo 12.4: historia de dos fluidos</span>
-<p>Un tubo en U se llena parcialmente de agua. Se vierte aceite (que no se mezcla con el agua) en el brazo izquierdo hasta que la interfase aceite-agua se ubica en el punto medio del tubo; ambos brazos están abiertos al aire. Halla la relación entre las alturas $h_{aceite}$ y $h_{agua}$ (medidas desde la interfase).</p>
+<div class="box ex"><span class="h">Ejemplo 12.4: tubo en U con dos líquidos (aceite y agua)</span>
+<p>Un tubo en U abierto por los dos lados tiene agua; se vierte aceite (que no se mezcla) en el brazo izquierdo hasta que la interfase aceite-agua queda en el punto medio del tubo. Relaciona las alturas $h_{aceite}$ y $h_{agua}$ medidas desde la interfase.</p>
   <ol class="steps">
-    <li><b>Por qué no basta una ecuación.</b> $p=p_0+\rho gh$ solo vale en un fluido de densidad uniforme: hay que escribirla para cada columna por separado.</li>
-    <li><b>Nivel de referencia:</b> la altura de la interfase. A esa altura, en el brazo derecho hay agua; en el izquierdo está justo el contacto aceite-agua; los dos puntos están unidos por agua continua en reposo ⇒ <b>misma presión $p$</b>. Arriba, ambas columnas están al aire ($p_0$).</li>
-    <li><b>Cada columna:</b> $p=p_0+\rho_{agua}g\,h_{agua}$ y $p=p_0+\rho_{aceite}g\,h_{aceite}$.</li>
-    <li><b>Igualar:</b> $\rho_{aceite}h_{aceite}=\rho_{agua}h_{agua}\ \Rightarrow\ h_{aceite}=\dfrac{\rho_{agua}}{\rho_{aceite}}\,h_{agua}$.</li>
-    <li><b>Valor:</b> con $\rho_{aceite}\approx850$ kg/m³, $h_{aceite}=1{,}18\,h_{agua}$. El aceite, menos denso, necesita una columna más alta para ejercer la misma presión.</li>
+    <li><b>Nivel de comparación:</b> la altura de la interfase. Ahí, a la derecha hay agua y a la izquierda el contacto aceite-agua; los dos puntos están unidos por agua en reposo ⇒ <b>misma presión $p$</b>.</li>
+    <li><b>Cada columna con su densidad</b> (las dos abiertas al aire, $p_0$): $p=p_0+\rho_{agua}g\,h_{agua}=p_0+\rho_{aceite}g\,h_{aceite}$.</li>
+    <li><b>Igualar:</b> $\rho_{aceite}h_{aceite}=\rho_{agua}h_{agua}\Rightarrow h_{aceite}=\dfrac{\rho_{agua}}{\rho_{aceite}}h_{agua}=1{,}18\,h_{agua}$ con $\rho_{aceite}\approx850$ kg/m³. El aceite, menos denso, necesita una columna más alta.</li>
   </ol>
-  <div class="recipe"><b>Receta:</b> tubo en U con dos líquidos: iguala las presiones al nivel de la interfase (el punto más bajo en el que a ambos lados hay el mismo fluido) ⇒ $\rho_1h_1=\rho_2h_2$.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Igualar presiones a una altura donde a un lado hay aceite y al otro agua (por ejemplo, en la superficie libre del agua del brazo derecho): ahí las presiones <i>no</i> son iguales.</p></div>
+  <div class="recipe"><b>Receta:</b> tubo en U con dos líquidos: iguala presiones al nivel de la interfase (el punto más bajo con el mismo fluido a los dos lados) ⇒ $\rho_1h_1=\rho_2h_2$.</div>
   <span class="src" data-l="U" data-ref="U Ejemplo 12.4, p. 375 y fig. 12.10">U p.375</span></div>
 <figure class="fig" data-svg="../assets/figs/t12/tubo-en-u-con-aceite-en-el-brazo-izquierdo-y-agu.svg">
 <div class="figph" role="img" aria-label="Tubo en U con aceite en el brazo izquierdo y agua en el derecho; la interfase y el punto del otro brazo a la misma altura tienen la misma presión; la columna de aceite es más alta" style="aspect-ratio:340/215"></div>
 <figcaption>A la altura de la interfase la presión es la misma en los dos brazos: $\rho_{ac}h_{ac}=\rho_{ag}h_{ag}$. Con $\rho_{ac}\approx850$ kg/m³, la columna de aceite es 1,18 veces la de agua (aquí $h_{ag}=8{,}0$ cm y $h_{ac}=9{,}4$ cm). <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.4 de U">P</span></figcaption>
 </figure>
-<h2 id="s3"><span class="n">3</span>Flotación y principio de Arquímedes <span class="src" data-l="U" data-ref="U §12.3, pp. 376-378">U p.376-378</span></h2>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>Un trozo de madera en el agua sube hacia la superficie y una piedra se hunde, pero la piedra también «pesa menos» dentro del agua: la notas más ligera al levantarla en la piscina. Algo empuja hacia arriba a todo cuerpo sumergido. Truco de pensamiento: imagina que en el seno del agua marcas una bolsa de agua del mismo tamaño que el cuerpo. Esa bolsa de agua <i>no se hunde ni sube</i>: está en equilibrio, así que el resto del agua la empuja hacia arriba justo con la fuerza de su peso. Si ahora cambias la bolsa por el cuerpo (misma forma, mismo tamaño), <b>el agua de alrededor ejerce exactamente la misma fuerza</b>, sin importar de qué esté hecho el cuerpo.</p>
-  <span class="src" data-l="U" data-ref="U §12.3, fig. 12.11, p. 376">U p.376</span></div>
-<div class="box thm"><span class="h">Principio de Arquímedes</span>
-<p><b>Si un cuerpo está parcial o totalmente sumergido en un fluido, éste ejerce una fuerza hacia arriba sobre el cuerpo igual al peso del fluido que desplaza.</b> Esa fuerza es la <b>fuerza de flotación</b> (o empuje) $B$:
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>¿A qué profundidad en agua dulce la presión manométrica vale 1 atm?<details><summary>Ver respuesta</summary>$h=\dfrac{p_{man}}{\rho g}=\dfrac{1{,}013\times10^5}{(1000)(9{,}8)}=10{,}3$ m (la regla de «1 atm cada 10 m»).</details></li>
+<li>El fondo de una piscina está a 3,0 m bajo la superficie. ¿Qué presión manométrica y qué presión absoluta hay ahí?<details><summary>Ver respuesta</summary>Manométrica: $\rho gh=(1000)(9{,}8)(3{,}0)=2{,}94\times10^4$ Pa. Absoluta: $1{,}013\times10^5+2{,}94\times10^4=1{,}31\times10^5$ Pa.</details></li>
+<li>En el elevador del ejemplo mínimo (pistones de 2,0 y 20 cm de diámetro), el pistón pequeño baja 50 cm. ¿Cuánto sube el grande?<details><summary>Ver respuesta</summary>El volumen de líquido que sale de un lado entra en el otro: $A_1d_1=A_2d_2\Rightarrow d_2=50/100=0{,}50$ cm. La fuerza se multiplica por 100 y el recorrido se divide por 100: mismo trabajo.</details></li>
+</ol>
+</details>
+
+<h2 id="s3"><span class="n">3</span>Flotación y principio de Arquímedes <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §12.3, pp. 376-378">U p.376-378</span></h2>
+<div class="box thm"><span class="h">Principio de Arquímedes: el empuje es el peso del fluido desplazado</span>
+<p>Imagina dentro del agua una «bolsa» de agua con la forma del cuerpo. No sube ni baja: el agua de alrededor la empuja hacia arriba justo con su peso. Si cambias la bolsa por el cuerpo, el agua de alrededor empuja <b>exactamente igual</b>, sea de lo que sea el cuerpo:</p>
+  <p><b>Si un cuerpo está parcial o totalmente sumergido en un fluido, este ejerce sobre él una fuerza hacia arriba igual al peso del fluido que desplaza:</b></p>
   $$B=\rho_{fluido}\,V_{sum}\,g$$
-  donde $V_{sum}$ es el volumen de cuerpo que está dentro del fluido. La línea de acción del empuje pasa por el centro de gravedad del fluido desplazado.</p>
-  <span class="src" data-l="U" data-ref="U §12.3, principio de Arquímedes, p. 376">U p.376</span></div>
+  <p>($V_{sum}$ = volumen de cuerpo que está dentro del fluido.) El empuje existe porque la presión crece con la profundidad: la cara inferior recibe más fuerza que la superior (figura). Su línea de acción pasa por el centro de gravedad del fluido desplazado.</p>
+  <p><b>Ejemplo mínimo (ejemplo 12.5):</b> estatua de oro de 15,0 kg colgada de un cable bajo el agua de mar. $V=m/\rho_{oro}=15{,}0/(19{,}3\times10^3)=7{,}77\times10^{-4}$ m³; $B=(1030)(7{,}77\times10^{-4})(9{,}8)=7{,}84$ N; $T=mg-B=147-7{,}84=139$ N. En el aire el empuje ($9{,}1\times10^{-3}$ N) es despreciable y $T=147$ N.</p>
+  <p><b>Error típico:</b> calcular el empuje con la densidad del <i>cuerpo</i> (es la del <i>fluido</i>) o con el volumen total cuando solo está sumergida una parte.</p>
+  <span class="src" data-l="U" data-ref="U §12.3, principio de Arquímedes, p. 376; Ejemplo 12.5, pp. 377-378">U p.376-378</span></div>
 <figure class="bookfig">
 <img src="../assets/img/fig_u_12_11_arquimedes.png" alt="Figura 12.11 de U. a) Un elemento arbitrario de fluido en equilibrio: las fuerzas de la presión sobre su superficie suman una fuerza de flotación B igual a su peso. b) Si se sustituye por un cuerpo sólido de la misma forma y tamaño, las fuerzas de presión son las mismas y la fuerza de flotación también." loading="lazy" style="max-width:600px!important">
 <figcaption>Fig. 12.11 de U: demostración del principio de Arquímedes. <span class="src" data-l="U" data-ref="U Fig. 12.11, p. 376">U p.376</span></figcaption>
@@ -216,119 +230,100 @@
 <div class="figph" role="img" aria-label="Cubo de 10 centímetros de arista sumergido en agua con la fuerza de presión sobre la cara superior hacia abajo y sobre la inferior hacia arriba; los laterales se cancelan" style="aspect-ratio:340/248"></div>
 <figcaption>Por qué existe el empuje: la presión crece con la profundidad, así que la fuerza hacia arriba en la cara inferior (a 30 cm) supera a la fuerza hacia abajo en la superior (a 20 cm). Las laterales se anulan. Cubo de 10 cm de arista en agua: $B=(p_b-p_t)A=\rho Vg=9{,}8$ N. Las fuerzas dibujadas son las debidas a la presión manométrica ($\rho gh\,A$, sin $p_{atm}A$, que actúa igual arriba y abajo y se cancela). <span class="src" data-l="P" data-ref="Diagrama propio de §12.3 de U (principio de Arquímedes)">P</span></figcaption>
 </figure>
-<div class="box def"><span class="h">¿Flota o se hunde? Comparar densidades</span>
-<p>Un cuerpo en equilibrio sobre el fluido cumple $B=mg$. Si flota con volumen sumergido $V_{sum}$: $\rho_{fluido}V_{sum}g=\rho_{cuerpo}Vg$, y la <b>fracción sumergida</b> es
+<figure class="fig" data-svg="../assets/figs/t12/diagrama-de-cuerpo-libre-de-la-estatua-de-oro-su.svg">
+<div class="figph" role="img" aria-label="Diagrama de cuerpo libre de la estatua de oro sumergida: tensión 139 N y empuje 7,84 N hacia arriba y peso 147 N hacia abajo" style="aspect-ratio:340/235"></div>
+<figcaption>Diagrama de cuerpo libre de la estatua en reposo bajo el agua de mar. El empuje (7,84 N) está dibujado más grande que a escala; el peso (147 N) y la tensión (139 N) sí guardan su proporción. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.5 de U">P</span></figcaption>
+</figure>
+<div class="box def"><span class="h">¿Flota o se hunde? Compara densidades</span>
+<p>Un cuerpo que flota en equilibrio cumple $B=mg$: $\rho_{fluido}V_{sum}g=\rho_{cuerpo}Vg$, y la <b>fracción sumergida</b> es</p>
   $$f=\frac{V_{sum}}{V}=\frac{\rho_{cuerpo}}{\rho_{fluido}}$$
-  Si $\rho_{cuerpo}\le\rho_{fluido}$ el cuerpo flota (parcialmente sumergido si $\lt$); si $\rho_{cuerpo}\gt\rho_{fluido}$ se hunde. La densidad que cuenta es la <i>media</i>: un barco de acero flota porque está hueco, y un pez ajusta su densidad con una cavidad de gas. Cuanto más denso es el fluido, menos se sumerge el cuerpo (en agua de mar, de 1030 kg/m³, flotas más que en agua dulce). El <b>hidrómetro</b> (flotador calibrado) mide así la densidad de un líquido.</p>
+  <p>Si $\rho_{cuerpo}\lt\rho_{fluido}$ flota con parte fuera; si $\rho_{cuerpo}\gt\rho_{fluido}$ se hunde. Cuenta la densidad <b>media</b>: un barco de acero flota porque está hueco, y un pez ajusta la suya con una vejiga de gas. En un fluido más denso flotas más alto (agua de mar frente a agua dulce); un <b>hidrómetro</b> (flotador calibrado) mide así la densidad de un líquido.</p>
+  <p><b>Ejemplo mínimo:</b> hielo ($920$ kg/m³): $f=0{,}92$ en agua dulce y $0{,}92/1{,}03=0{,}89$ en agua de mar (figura).</p>
+  <p><b>Error típico:</b> pensar que un cuerpo que flota tiene empuje mayor que su peso: flotando en reposo, $B=mg$ exactamente; lo que se ajusta es cuánto se sumerge.</p>
   <span class="src" data-l="U" data-ref="U §12.3, pp. 376-377 y fig. 12.12">U p.376-377</span></div>
 <figure class="fig" data-svg="../assets/figs/t12/un-bloque-de-hielo-flotando-en-agua-dulce-con-el.svg">
 <div class="figph" role="img" aria-label="Un bloque de hielo flotando en agua dulce con el 92 por ciento sumergido y en agua de mar con el 89 por ciento sumergido" style="aspect-ratio:340/200"></div>
 <figcaption>Un cuerpo que flota desplaza su propio peso de fluido: la fracción sumergida es $f=\rho_{cuerpo}/\rho_{fluido}$. Hielo ($0{,}92\times10^3$ kg/m³): $f=0{,}92$ en agua dulce y $0{,}92/1{,}03=0{,}89$ en agua de mar (flota algo más alto). <span class="src" data-l="P" data-ref="Diagrama propio de §12.3 de U (flotación)">P</span></figcaption>
-</figure>
-<div class="box ex"><span class="h">Ejemplo 12.5: flotación (la estatua de oro)</span>
-<p>Se levanta una estatua de oro macizo de 15,0 kg de un barco hundido. ¿Qué tensión hay en el cable (de masa despreciable) cuando la estatua está a) en reposo y totalmente sumergida en agua de mar, y b) en reposo fuera del agua?</p>
-  <ol class="steps">
-    <li><b>Modelo.</b> En reposo: $\sum F_y=0$. Tres fuerzas: peso $mg$ (abajo), tensión $T$ (arriba) y empuje $B$ (arriba) = peso del fluido desplazado.</li>
-    <li><b>Volumen:</b> $V=m/\rho_{oro}=15{,}0/(19{,}3\times10^3)=7{,}77\times10^{-4}$ m³ (tabla 12.1).</li>
-    <li><b>Empuje en el mar:</b> $B=\rho_{mar}Vg=(1030)(7{,}77\times10^{-4})(9{,}8)=7{,}84$ N.</li>
-    <li><b>a)</b> $T+B-mg=0\Rightarrow T=mg-B=147-7{,}84=139$ N. Una balanza de resorte en el cable marcaría 7,84 N menos que el peso real.</li>
-    <li><b>b)</b> En el aire, $B_{aire}=(1{,}2)(7{,}77\times10^{-4})(9{,}8)=9{,}1\times10^{-3}$ N: despreciable, así que $T=mg=147$ N.</li>
-    <li><b>Evaluar:</b> el empuje es proporcional a la densidad <i>del fluido</i>, no a la del cuerpo. Con un fluido de la misma densidad que la estatua, $T=0$ (el cable se aflojaría); con uno más denso, $T$ saldría negativa (haría falta empujar hacia abajo).</li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> cuerpo sumergido colgado de un hilo: $T=mg-\rho_{fluido}Vg$, con $V=m/\rho_{cuerpo}$ si está entero dentro.</div>
-  <span class="src" data-l="U" data-ref="U Ejemplo 12.5, pp. 377-378 y fig. 12.13">U p.377-378</span></div>
-<figure class="fig" data-svg="../assets/figs/t12/diagrama-de-cuerpo-libre-de-la-estatua-de-oro-su.svg">
-<div class="figph" role="img" aria-label="Diagrama de cuerpo libre de la estatua de oro sumergida: tensión 139 N y empuje 7,84 N hacia arriba y peso 147 N hacia abajo" style="aspect-ratio:340/235"></div>
-<figcaption>Diagrama de cuerpo libre de la estatua en reposo bajo el agua de mar. El empuje (7,84 N) está dibujado más grande que a escala; el peso (147 N) y la tensión (139 N) sí guardan su proporción. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.5 de U">P</span></figcaption>
 </figure>
 <figure class="interactivo" data-escena="flotacion" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: un cubo en un líquido, libre o colgado de un hilo; se pueden variar el líquido, la densidad del cuerpo y su tamaño, y se ven el peso, el empuje, las fuerzas de presión en las caras, la parte sumergida y la tensión">
   <img class="int-static" src="../assets/img/int_flotacion.png" alt="Interactivo: un cubo en un líquido, libre o colgado de un hilo; se pueden variar el líquido, la densidad del cuerpo y su tamaño, y se ven el peso, el empuje, las fuerzas de presión en las caras, la parte sumergida y la tensión">
   <figcaption><b>Pruébalo tú:</b> un cubo en un líquido. Con el cuerpo <b>libre</b>, sube la densidad del cuerpo: mientras $\rho_c\le\rho_f$ flota con la fracción sumergida $f=\rho_c/\rho_f$ (compruébalo: hielo, 920 kg/m³, en agua de mar queda sumergido el 89 %), y cuando $\rho_c\gt\rho_f$ se va al fondo. Observa que el empuje $B$ es siempre la diferencia entre la fuerza de la presión en la cara inferior y en la superior, y que las dos caras están a profundidades distintas (la recta de la derecha, con pendiente $\rho_fg$). Con el cuerpo <b>colgado</b> y totalmente sumergido, $T=mg-B$: con la estatua del ejemplo 12.5 ($\rho_c=19\,300$ kg/m³, $a\approx9{,}2$ cm, agua de mar) lees $B\approx7{,}9$ N y $T\approx139$ N; si $\rho_c\lt\rho_f$ sale $T\lt0$ (el hilo no puede empujar). Cambia a mercurio: casi todo flota. <span class="src" data-l="P" data-ref="Interactivo propio de §12.3 y del ejemplo 12.5 de U, pp. 376-378">P</span></figcaption>
 </figure>
 <div class="box intu"><span class="h">Tensión superficial (solo para situarla)</span>
-<p>Un clip de acero puede quedarse sobre el agua aunque es mucho más denso que ella, y un insecto «camina» sobre un estanque: es la <b>tensión superficial</b>, la superficie del líquido se comporta como una membrana tensa porque las moléculas de la superficie son atraídas hacia el interior. Es importante para gotas pequeñas (donde la razón superficie/volumen, $3/r$, es grande) y despreciable en volúmenes grandes: en el resto del capítulo se ignora.</p>
+<p>Un clip de acero puede quedarse sobre el agua y un insecto «camina» sobre un estanque: la superficie del líquido se comporta como una membrana tensa porque sus moléculas son atraídas hacia el interior. Es la <b>tensión superficial</b>; importa en gotas pequeñas y se desprecia en el resto del capítulo.</p>
   <span class="src" data-l="U" data-ref="U §12.3, tensión superficial, p. 378">U p.378</span></div>
-<h2 id="s4"><span class="n">4</span>Flujo de un fluido y ecuación de continuidad <span class="src" data-l="U" data-ref="U §12.4, pp. 379-381">U p.379-381</span></h2>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>Imagina un río que se estrecha entre dos rocas: el agua que entra por la parte ancha tiene que salir por la estrecha, así que <b>va más rápida</b> en el estrecho (lo mismo que cuando tapas la salida de la manguera con el dedo y el chorro sale más rápido). Si el fluido no se puede comprimir, <i>no desaparece ni se acumula agua</i>: el volumen por segundo que pasa por cualquier sección del tubo es el mismo.</p>
-  <span class="src" data-l="P" data-ref="Explicación propia a partir de §12.4 de U">P</span></div>
-<div class="box def"><span class="h">Fluido ideal, línea de flujo y tipos de flujo</span>
-<p>Un <b>fluido ideal</b> es <i>incompresible</i> (su densidad no cambia) y no tiene fricción interna (<i>viscosidad</i> nula). Los líquidos son casi incompresibles, y un gas se puede tratar como incompresible si las diferencias de presión son pequeñas. La trayectoria de una partícula del fluido es una <b>línea de flujo</b>; en <b>flujo estable</b> el patrón no cambia con el tiempo y cada elemento que pasa por un punto sigue la misma línea. Una <b>línea de corriente</b> es una curva cuya tangente en cada punto tiene la dirección de la velocidad del fluido en ese punto; en flujo estable coincide con la línea de flujo. Las líneas de flujo que pasan por el borde de una pequeña área forman un <b>tubo de flujo</b>, cuyas paredes el fluido no cruza. En el <b>flujo laminar</b> las capas adyacentes se deslizan suavemente una sobre otra; si la rapidez es grande o hay cambios bruscos, el flujo se vuelve irregular y caótico: <b>flujo turbulento</b>.</p>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>Un bloque de madera de 600 kg/m³ flota en agua dulce. ¿Qué fracción queda sumergida? ¿Y en agua de mar?<details><summary>Ver respuesta</summary>Agua dulce: $f=600/1000=0{,}60$. Agua de mar: $600/1030=0{,}583$ (un poco menos sumergido: el fluido es más denso).</details></li>
+<li>Un cuerpo de $2{,}0\times10^{-3}$ m³ que pesa 50 N cuelga de un hilo totalmente sumergido en agua. ¿Empuje y tensión?<details><summary>Ver respuesta</summary>$B=\rho_wVg=(1000)(2{,}0\times10^{-3})(9{,}8)=19{,}6$ N; $T=mg-B=50-19{,}6=30{,}4$ N.</details></li>
+<li>Un objeto pesa 10,0 N en el aire y 8,0 N (lectura del dinamómetro) sumergido en agua. ¿Volumen y densidad?<details><summary>Ver respuesta</summary>$B=10{,}0-8{,}0=2{,}0$ N $\Rightarrow V=\dfrac{B}{\rho_wg}=2{,}04\times10^{-4}$ m³; $\rho=\rho_w\dfrac{w}{B}=1000\cdot\dfrac{10{,}0}{2{,}0}=5{,}0\times10^3$ kg/m³ (método de <a href="#e6">E6</a>).</details></li>
+</ol>
+</details>
+
+<h2 id="s4"><span class="n">4</span>Flujo de un fluido y ecuación de continuidad <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §12.4, pp. 379-381">U p.379-381</span></h2>
+<div class="box def"><span class="h">Fluido ideal, líneas de flujo y tipos de flujo</span>
+<p>Un <b>fluido ideal</b> es <i>incompresible</i> (densidad constante) y sin fricción interna (<i>viscosidad</i> nula). Los líquidos son casi incompresibles; un gas puede tratarse así si las diferencias de presión son pequeñas.</p>
+  <ul>
+    <li><b>Línea de flujo:</b> trayectoria de una partícula del fluido. En <b>flujo estable</b> el patrón no cambia con el tiempo y coincide con la <b>línea de corriente</b> (curva tangente en cada punto a la velocidad).</li>
+    <li><b>Tubo de flujo:</b> las líneas de flujo que pasan por el borde de un área pequeña; el fluido no cruza sus paredes.</li>
+    <li><b>Laminar</b> (capas que se deslizan suavemente) frente a <b>turbulento</b> (irregular y caótico, a rapidez grande o con cambios bruscos).</li>
+  </ul>
   <span class="src" data-l="U" data-ref="U §12.4, p. 379">U p.379</span></div>
-<div class="box thm"><span class="h">Ecuación de continuidad</span>
-<p>La masa no se crea ni se destruye. En un tubo de flujo, en un tiempo $dt$ entra por la sección $A_1$ un cilindro de volumen $dV_1=A_1v_1\,dt$ y sale por $A_2$ uno de volumen $dV_2=A_2v_2\,dt$. Si el fluido es <b>incompresible</b> y el flujo estable, esos volúmenes son iguales:
-  $$A_1v_1=A_2v_2\qquad\text{(ec. 12.10)}$$
-  El producto $Av$ es la <b>rapidez de flujo de volumen</b> (caudal): $\dfrac{dV}{dt}=Av$ (ec. 12.11), en m³/s ($1\ \text{L/s}=10^{-3}$ m³/s). Donde el tubo se estrecha, la rapidez aumenta. Si el fluido es compresible: $\rho_1A_1v_1=\rho_2A_2v_2$ (ec. 12.12), flujo de masa constante.</p>
-  <span class="src" data-l="U" data-ref="U §12.4, ecs. 12.10-12.12, pp. 379-380">U p.379-380</span></div>
-<div class="box ex"><span class="h">Ejemplo 12.6: flujo de un fluido incompresible (aceite)</span>
-<p>Se bombea aceite incompresible (850 kg/m³) por una tubería cilíndrica a razón de 9,5 L/s. a) La primera sección tiene 8,0 cm de diámetro: ¿cuál es la rapidez del aceite y el flujo de masa? b) La segunda sección tiene 4,0 cm de diámetro: ¿cuál es la rapidez y el flujo de masa?</p>
-  <ol class="steps">
-    <li><b>a)</b> $\dfrac{dV}{dt}=9{,}5\times10^{-3}$ m³/s y $A_1=\pi(0{,}040)^2$ m². De (12.11): $v_1=\dfrac{dV/dt}{A_1}=\dfrac{9{,}5\times10^{-3}}{\pi(0{,}040)^2}=1{,}9$ m/s. Flujo de masa: $\rho\,\dfrac{dV}{dt}=(850)(9{,}5\times10^{-3})=8{,}1$ kg/s.</li>
-    <li><b>b)</b> De (12.10): $v_2=v_1\dfrac{A_1}{A_2}=1{,}9\left(\dfrac{8{,}0}{4{,}0}\right)^2=7{,}6$ m/s $=4v_1$. El flujo de volumen y el de masa son los mismos (9,5 L/s y 8,1 kg/s): el aceite no se acumula.</li>
-    <li><b>Evaluar:</b> diámetro la mitad ⇒ área la cuarta parte ⇒ rapidez cuádruple (el área va con el <i>cuadrado</i> del diámetro).</li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> calcula el caudal $Q=Av$ donde conozcas $A$ y $v$; en cualquier otra sección $v=Q/A$.</div>
-  <span class="src" data-l="U" data-ref="U Ejemplo 12.6, p. 380">U p.380</span></div>
+<div class="box thm"><span class="h">Ecuación de continuidad: lo que entra sale, $A_1v_1=A_2v_2$</span>
+<p>Cuando tapas con el dedo la salida de la manguera, el chorro sale más rápido: el agua que entra por la parte ancha tiene que salir por la estrecha. En un tiempo $dt$ entra por $A_1$ un volumen $A_1v_1\,dt$ y sale por $A_2$ otro $A_2v_2\,dt$; si el fluido es incompresible y el flujo estable, son iguales:</p>
+  $$A_1v_1=A_2v_2\ \ (12.10)\qquad\qquad Q=\frac{dV}{dt}=Av\ \ (12.11)$$
+  <p>$Q$ es la <b>rapidez de flujo de volumen</b> (caudal), en m³/s (1 L/s $=10^{-3}$ m³/s): la misma en todas las secciones. Si el fluido es compresible se conserva el flujo de <i>masa</i>: $\rho_1A_1v_1=\rho_2A_2v_2$ (12.12).</p>
+  <p><b>Ejemplo mínimo (ejemplo 12.6):</b> aceite (850 kg/m³) a 9,5 L/s por un tubo de 8,0 cm de diámetro: $v_1=\dfrac{9{,}5\times10^{-3}}{\pi(0{,}040)^2}=1{,}9$ m/s y flujo de masa $\rho Q=8{,}1$ kg/s. Si el tubo pasa a 4,0 cm: $v_2=v_1(8{,}0/4{,}0)^2=7{,}6$ m/s, con el mismo caudal y el mismo flujo de masa.</p>
+  <p><b>Error típico:</b> usar el cociente de diámetros (factor 2) en lugar del de áreas (factor 4): el área va con el <b>cuadrado</b> del diámetro.</p>
+  <span class="src" data-l="U" data-ref="U §12.4, ecs. 12.10-12.12, pp. 379-380; Ejemplo 12.6, p. 380">U p.379-380</span></div>
 <figure class="fig" data-svg="../assets/figs/t12/tubo-que-se-estrecha-de-8-a-4-centimetros-de-dia.svg">
 <div class="figph" role="img" aria-label="Tubo que se estrecha de 8 a 4 centímetros de diámetro: la velocidad pasa de 1,9 a 7,6 metros por segundo" style="aspect-ratio:340/160"></div>
 <figcaption>Continuidad (aceite incompresible, $\dot V=9{,}5$ L/s): si el diámetro se reduce a la mitad, el área se reduce a la cuarta parte y la rapidez se cuadruplica. Las flechas guardan la proporción 1 : 4. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.6 de U">P</span></figcaption>
 </figure>
-<h2 id="s5"><span class="n">5</span>Ecuación de Bernoulli <span class="src" data-l="U" data-ref="U §12.5, pp. 381-385">U p.381-385</span></h2>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>Cuando un fluido pasa de un tubo ancho a uno estrecho, <b>acelera</b>: algo tiene que empujarlo. Ese «algo» es la propia presión: el fluido que viene por detrás empuja más fuerte que el que está delante. Resultado: <b>donde el fluido va más rápido, la presión es menor</b> (si no sube ni baja). Y si además el fluido sube, parte de la energía se invierte en altura y la presión baja más. Bernoulli es el balance de energía por unidad de volumen: presión + energía potencial + energía cinética = constante. Es como el teorema del trabajo y la energía, escrito para un fluido.</p>
-  <span class="src" data-l="P" data-ref="Explicación propia a partir de §12.5 de U">P</span></div>
-<div class="box thm"><span class="h">Ecuación de Bernoulli</span>
-<p>El trabajo de las fuerzas de presión sobre un elemento de volumen $dV$ es igual a su cambio de energía cinética más su cambio de energía potencial:
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>Una manguera de 2,0 cm de diámetro lleva agua a 1,5 m/s. ¿Con qué rapidez sale por una boquilla de 0,50 cm de diámetro?<details><summary>Ver respuesta</summary>$v_2=v_1(d_1/d_2)^2=1{,}5\,(4)^2=24$ m/s.</details></li>
+<li>Un grifo llena un cubo de 10 L en 20 s. ¿Cuál es el caudal en m³/s? ¿Con qué rapidez sale el agua si el caño mide 1,0 cm de diámetro?<details><summary>Ver respuesta</summary>$Q=10/20=0{,}50$ L/s $=5{,}0\times10^{-4}$ m³/s; $v=Q/A=\dfrac{5{,}0\times10^{-4}}{\pi(0{,}0050)^2}=6{,}4$ m/s.</details></li>
+<li>Un río de profundidad uniforme pasa de 30 m a 10 m de anchura. ¿Qué le pasa a la rapidez del agua?<details><summary>Ver respuesta</summary>El área de la sección se divide por 3, así que la rapidez se multiplica por 3 (continuidad con $A$ = anchura × profundidad).</details></li>
+</ol>
+</details>
+
+<h2 id="s5"><span class="n">5</span>Ecuación de Bernoulli y sus aplicaciones <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §12.5, pp. 381-385">U p.381-385</span></h2>
+<div class="box thm"><span class="h">Ecuación de Bernoulli: la energía por unidad de volumen se conserva</span>
+<p>Si el tubo se estrecha, el fluido <b>acelera</b>: algo lo empuja, y es la propia presión (detrás empuja más que delante). Por eso, a la misma altura, <b>donde el fluido va más rápido la presión es menor</b>; y si además sube, parte de la energía se invierte en altura. El trabajo de las fuerzas de presión sobre un elemento $dV$ es igual a su cambio de energía cinética más potencial:</p>
   $$(p_1-p_2)\,dV=\tfrac12\rho\,dV\,(v_2^2-v_1^2)+\rho g\,dV\,(y_2-y_1)\qquad\text{(ec. 12.16)}$$
-  Reordenando (puntos 1 y 2 cualesquiera de un tubo de flujo):
-  $$p_1+\rho gy_1+\tfrac12\rho v_1^2=p_2+\rho gy_2+\tfrac12\rho v_2^2\qquad\text{(ec. 12.17)}$$
-  $$p+\rho gy+\tfrac12\rho v^2=\text{constante}\qquad\text{(ec. 12.18)}$$
-  Cada término tiene unidades de presión (energía por unidad de volumen, J/m³ = Pa). <b>Solo es válida para un flujo estable de un fluido incompresible sin fricción interna.</b> Si el fluido no se mueve ($v_1=v_2=0$) se reduce a $p_2-p_1=-\rho g(y_2-y_1)$ (12.5).</p>
-  <span class="src" data-l="U" data-ref="U §12.5, ecs. 12.16-12.18, p. 382">U p.381-382</span></div>
+  $$p_1+\rho gy_1+\tfrac12\rho v_1^2=p_2+\rho gy_2+\tfrac12\rho v_2^2\ \ (12.17)\qquad p+\rho gy+\tfrac12\rho v^2=\text{cte}\ \ (12.18)$$
+  <p>Cada término es energía por unidad de volumen (J/m³ = Pa). Con el fluido quieto ($v_1=v_2=0$) se reduce a la hidrostática (12.5).</p>
+  <p><b>Solo vale</b> para flujo <b>estable</b> de un fluido <b>incompresible</b> y <b>sin viscosidad</b>, a lo largo de un tubo de flujo; no en flujo turbulento ni con fricción apreciable. Y no es una relación causa-efecto: decir «el aire rápido provoca presión baja» es menos exacto que «el fluido acelera porque delante la presión es menor».</p>
+  <span class="src" data-l="U" data-ref="U §12.5, ecs. 12.16-12.18 y CUIDADO, pp. 381-382; EVALÚE 12.5, p. 385">U p.381-382, 385</span></div>
 <figure class="fig" data-svg="../assets/figs/t12/tubo-de-flujo-que-sube-y-se-estrecha-un-elemento.svg">
 <div class="figph" role="img" aria-label="Tubo de flujo que sube y se estrecha. Un elemento de fluido de volumen dV entra por la sección ancha, de área A1 y longitud ds1, empujado por la fuerza p1A1, y otro igual sale por la sección estrecha, de área A2 y longitud ds2, frenado por la fuerza p2A2. Altura y1 e y2 sobre un nivel de referencia." style="aspect-ratio:340/228"></div>
 <figcaption>Deducción de la ec. (12.16): en un tiempo corto, el fluido avanza por el tubo de flujo y todo ocurre como si el elemento de volumen $dV$ de la entrada (longitud $ds_1$, área $A_1$) pasara a la salida (longitud $ds_2$, área $A_2$; más largo porque el tubo es más estrecho). La presión empuja en la entrada ($p_1A_1\,ds_1$, trabajo positivo) y frena en la salida ($-p_2A_2\,ds_2$); la diferencia, $(p_1-p_2)\,dV$, se invierte en energía cinética y potencial de ese elemento. <span class="src" data-l="P" data-ref="Diagrama propio de la deducción de §12.5 de U (fig. 12.23)">P</span></figcaption>
 </figure>
-<div class="box thm"><span class="h">Estrategia para resolver problemas de Bernoulli</span>
+<div class="box tip"><span class="h">Receta para problemas de Bernoulli (Estrategia 12.1)</span>
 <ol class="steps">
-    <li><b>Identificar</b> los puntos 1 y 2 a los que se refiere la ecuación; Bernoulli es para flujo estable, incompresible y de fricción despreciable (tubos, depósitos grandes).</li>
-    <li><b>Plantear:</b> define el sistema de coordenadas, en particular $y=0$ (la dirección $+y$ hacia arriba). Elabora una lista de cantidades conocidas y desconocidas.</li>
-    <li><b>Ejecutar:</b> escribe la ecuación de continuidad ($A_1v_1=A_2v_2$) y despeja las incógnitas; después Bernoulli (12.17). A veces hace falta (12.11) para calcular el caudal.</li>
-    <li><b>Evaluar:</b> comprueba que las respuestas son lógicas y que las <b>presiones están todas absolutas o todas manométricas</b>; rapidez en m/s, presión en pascales.</li>
+    <li><b>Puntos 1 y 2</b> donde conozcas algo (entrada, salida, superficie libre, chorro). Nivel $y=0$ y $+y$ hacia arriba.</li>
+    <li><b>Continuidad primero</b> ($A_1v_1=A_2v_2$): te da la rapidez desconocida. Si te dan el caudal, $v=Q/A$.</li>
+    <li><b>Bernoulli después</b> (12.17): despeja la presión (o la rapidez) que falta.</li>
+    <li><b>Comprueba</b> que todas las presiones son del mismo tipo (absolutas o manométricas) y que subir y acelerar <i>bajan</i> la presión.</li>
   </ol>
-  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 12.1, p. 382">U p.382</span></div>
-<div class="box warn"><span class="h">Cuándo NO se puede usar</span>
-<p>Bernoulli no vale con viscosidad apreciable, con flujo turbulento ni si el fluido es muy compresible. Y no es una «causa»: la presión menor y la rapidez mayor van juntas (una diferencia de presión es lo que acelera al fluido), pero el enunciado «el aire que se desplaza rápido provoca presión baja» es menos exacto que decir que el fluido que acelera lo hace porque la presión es menor delante que detrás.</p>
-  <span class="src" data-l="U" data-ref="U §12.5, CUIDADO, p. 382 y EVALÚE 12.5, p. 385">U p.382, 385</span></div>
-<div class="box ex"><span class="h">Ejemplo 12.7: presión del agua en el hogar</span>
-<p>El agua entra en una casa por un tubo de 2,0 cm de diámetro, a una presión absoluta de $4{,}0\times10^5$ Pa (unas 4 atm) y con rapidez 1,5 m/s. Un tubo de 1,0 cm de diámetro lleva el agua al baño del segundo piso, 5,0 m más arriba. Calcula la rapidez, la presión y el caudal en el baño.</p>
-  <ol class="steps">
-    <li><b>Modelo.</b> Agua: incompresible, flujo estable, fricción despreciable (tubos anchos). Punto 1 = entrada ($y_1=0$); punto 2 = baño ($y_2=5{,}0$ m).</li>
-    <li><b>Continuidad primero</b> (da la rapidez desconocida): $v_2=v_1\dfrac{A_1}{A_2}=v_1\left(\dfrac{d_1}{d_2}\right)^2=1{,}5\cdot4=6{,}0$ m/s.</li>
-    <li><b>Bernoulli</b> despejando $p_2$: $p_2=p_1-\tfrac12\rho(v_2^2-v_1^2)-\rho g(y_2-y_1)$.</li>
-    <li><b>Números:</b> $\tfrac12(1000)(36-2{,}25)=1{,}69\times10^4$ Pa y $\rho g(5{,}0)=4{,}90\times10^4$ Pa ⇒ $p_2=4{,}0\times10^5-0{,}17\times10^5-0{,}49\times10^5=3{,}3\times10^5$ Pa ($\approx3{,}3$ atm).</li>
-    <li><b>Caudal:</b> $\dfrac{dV}{dt}=A_2v_2=\pi(0{,}50\times10^{-2})^2(6{,}0)=4{,}7\times10^{-4}$ m³/s $=0{,}47$ L/s.</li>
-    <li><b>Evaluar:</b> subir y acelerar «cuestan» presión: las dos correcciones restan. Con el grifo cerrado ($v=0$), solo queda la columna: $p_2=4{,}0\times10^5-0{,}49\times10^5=3{,}5\times10^5$ Pa.</li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> tubería con dos secciones y dos alturas: continuidad ⇒ velocidad desconocida; Bernoulli ⇒ presión desconocida; caudal $=Av$ en cualquier sección.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Usar el cociente de diámetros (factor 2) en lugar del de áreas (factor 4); restar presiones absolutas de un lado y manométricas del otro.</p></div>
-  <span class="src" data-l="U" data-ref="U Ejemplo 12.7, p. 383 y fig. 12.24">U p.383</span></div>
+  <p><b>Ejemplo mínimo (ejemplo 12.7):</b> agua a $4{,}0\times10^5$ Pa y 1,5 m/s por un tubo de 2,0 cm; sube 5,0 m a un baño por un tubo de 1,0 cm. Continuidad: $v_2=1{,}5\cdot(2{,}0/1{,}0)^2=6{,}0$ m/s. Bernoulli: $p_2=p_1-\tfrac12\rho(v_2^2-v_1^2)-\rho g\,\Delta y=4{,}0\times10^5-1{,}69\times10^4-4{,}90\times10^4=3{,}3\times10^5$ Pa. Caudal: $A_2v_2=4{,}7\times10^{-4}$ m³/s $=0{,}47$ L/s.</p>
+  <span class="src" data-l="U" data-ref="U Estrategia para resolver problemas 12.1, p. 382; Ejemplo 12.7, p. 383">U p.382-383</span></div>
 <figure class="fig" data-svg="../assets/figs/t12/tuberia-que-sube-5-metros-y-se-estrecha-a-la-der.svg">
 <div class="figph" role="img" aria-label="Tubería que sube 5 metros y se estrecha; a la derecha, un diagrama de barras que muestra cómo la presión baja de 4,0 a 3,3 por la energía cinética y por la altura" style="aspect-ratio:340/232"></div>
 <figcaption>Ejemplo 12.7: subir (energía potencial) y acelerar (energía cinética) «cuestan» presión: de $4{,}0\times10^5$ Pa quedan $3{,}3\times10^5$ Pa. «cin.» $=\tfrac12\rho(v_2^2-v_1^2)=0{,}17\times10^5$; «alt.» $=\rho g\,\Delta y=0{,}49\times10^5$. Tubos no a escala. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.7 de U">P</span></figcaption>
 </figure>
-<h3 id="s5b">5.1 Teorema de Torricelli <span class="src" data-l="U" data-ref="U §12.5, Ejemplo 12.8, pp. 383-384">U pp.383-384</span></h3>
-<div class="box ex"><span class="h">Ejemplo 12.8: rapidez de salida</span>
-<p>Un tanque de almacenamiento de gasolina, de área $A_1$, tiene gasolina hasta una altura $h$. El espacio sobre la gasolina está a una presión $p_0$ y sale gasolina por un tubo corto de área $A_2$ en el fondo. Deduce la rapidez de salida y el caudal.</p>
+<div class="box thm"><span class="h">Teorema de Torricelli: rapidez de salida por un orificio</span>
+<p><b>Ejemplo 12.8.</b> Tanque grande (área $A_1$) con líquido hasta una altura $h$ sobre un orificio pequeño ($A_2\ll A_1$); sobre el líquido hay aire a presión $p_0$ y fuera, $p_{atm}$.</p>
   <ol class="steps">
-    <li><b>Puntos.</b> 1 = superficie de la gasolina ($y_1=h$, $p_1=p_0$); 2 = salida ($y_2=0$, $p_2=p_{atm}$, a la presión del aire exterior). Se toma $A_1\gg A_2$.</li>
+    <li><b>Puntos:</b> 1 = superficie ($y_1=h$, $p_1=p_0$); 2 = chorro a la salida ($y_2=0$, $p_2=p_{atm}$).</li>
     <li><b>Continuidad:</b> $v_1=(A_2/A_1)v_2\approx0$ (el nivel baja muy despacio).</li>
-    <li><b>Bernoulli:</b> $p_0+\rho gh=p_{atm}+\tfrac12\rho v_2^2$ ⇒ $\displaystyle v_2=\sqrt{\frac{2(p_0-p_{atm})}{\rho}+2gh}$.</li>
-    <li><b>Tanque abierto</b> ($p_0=p_{atm}$): $\;v_2=\sqrt{2gh}$, el <b>teorema de Torricelli</b>: la rapidez de salida por una abertura a una distancia $h$ bajo la superficie es la misma que adquiriría un cuerpo que cayera libremente una altura $h$. Vale igual para un orificio en la pared lateral a profundidad $h$.</li>
-    <li><b>Caudal:</b> $\dfrac{dV}{dt}=A_2v_2$.</li>
+    <li><b>Bernoulli:</b> $p_0+\rho gh=p_{atm}+\tfrac12\rho v_2^2\ \Rightarrow\ v_2=\sqrt{\dfrac{2(p_0-p_{atm})}{\rho}+2gh}$; caudal $Q=A_2v_2$.</li>
+    <li><b>Tanque abierto</b> ($p_0=p_{atm}$): $\boxed{v_2=\sqrt{2gh}}$, la misma rapidez que un cuerpo en caída libre desde una altura $h$. Vale igual para un orificio lateral a profundidad $h$.</li>
   </ol>
-  <div class="recipe"><b>Receta:</b> depósito con orificio: Bernoulli entre la superficie (rapidez ≈ 0) y el chorro (presión atmosférica); $v=\sqrt{2\,p_{man}/\rho+2gh}$ y $Q=A_{orificio}v$.</div>
-  <span class="src" data-l="U" data-ref="U Ejemplo 12.8, pp. 383-384 y fig. 12.25">U pp.383-384</span></div>
+  <p><b>Dónde cae el chorro:</b> si el orificio está a una altura $y_0$ sobre el suelo, el chorro sale horizontal y es un <b>tiro horizontal</b> (tema 3): $x=v\sqrt{2y_0/g}$. Con el tanque abierto y nivel a altura $H$ sobre el suelo, $x=2\sqrt{h(H-h)}$, máximo ($x=H$) con el orificio a media altura.</p>
+  <p><b>Error típico:</b> tomar como $h$ la altura del orificio sobre el suelo: es la <b>profundidad bajo la superficie libre</b>. Y en un tanque cerrado, olvidar la sobrepresión del aire.</p>
+  <span class="src" data-l="U" data-ref="U §12.5, Ejemplo 12.8, pp. 383-384 y fig. 12.25">U pp.383-384</span></div>
 <figure class="fig" data-svg="../assets/figs/t12/tanque-abierto-con-un-orificio-lateral-a-profund.svg">
 <div class="figph" role="img" aria-label="Tanque abierto con un orificio lateral a profundidad h y un chorro; a la derecha una piedra que cae la misma altura h y adquiere la misma rapidez" style="aspect-ratio:340/205"></div>
 <figcaption>Teorema de Torricelli: a profundidad $h$ el agua sale con la misma rapidez que un cuerpo que cae libremente una altura $h$: $v=\sqrt{2gh}$ (con el tanque abierto y su nivel casi constante). El chorro sale horizontal y luego cae como un proyectil. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.8 de U">P</span></figcaption>
@@ -337,79 +332,75 @@
   <img class="int-static" src="../assets/img/int_torricelli.png" alt="Interactivo: tanque con un orificio lateral; se pueden variar la altura del líquido, la profundidad del orificio, la presión del aire sobre el líquido y el diámetro del orificio, y se ven la rapidez de salida, el caudal y el alcance del chorro">
   <figcaption><b>Pruébalo tú:</b> un tanque grande con un orificio. Con presión manométrica del aire 0 (tanque abierto) $v=\sqrt{2gh}$: el alcance horizontal $x=2\sqrt{h(H-h)}$ es máximo, $x=H$, con el orificio a media altura ($h=H/2$). Con $H=15$ m, $h=14{,}0$ m y $d=6$ mm reproduces el ejercicio 12.44 (E9): $v=16{,}6$ m/s y $Q=0{,}468$ L/s. Con agua de mar, $H=11$ m, $h=11$ m y 3,00 atm reproduces el 12.41 (E11): $v=28{,}4$ m/s (frente a 14,7 abierto). Al subir la presión del aire, $v$ crece como $\sqrt{2p/\rho+2gh}$ aunque $h$ no cambie. La lectura de Bernoulli de abajo muestra que $p+\rho gh$ en la superficie coincide con $\tfrac12\rho v^2$ en el chorro. <span class="src" data-l="P" data-ref="Interactivo propio del ejemplo 12.8 de U, pp. 383-384 y de los ejercicios 12.41 y 12.44, pp. 392-393">P</span></figcaption>
 </figure>
-<div class="box tip"><span class="h">Truco de examen</span>
-<p>Sea $H$ la altura de la superficie libre sobre el suelo (con el fondo del tanque apoyado en el suelo), $h$ la profundidad del orificio bajo la superficie y $y_0=H-h$ su altura sobre el suelo. En Torricelli $v=\sqrt{2gh}$ usa la <b>profundidad $h$ bajo la superficie del líquido</b>, no la altura $y_0$ del orificio. Después, el chorro es un <b>tiro horizontal</b> (tema 3): sale con $v_x=v$, $v_y=0$ desde la altura $y_0$ y cae al suelo en $t=\sqrt{2y_0/g}$; alcance $x=v\sqrt{2y_0/g}$. Con el tanque abierto, $x=2\sqrt{h(H-h)}$, máximo ($x=H$) para $h=H/2$.</p>
-  <span class="src" data-l="P" data-ref="Explicación propia a partir del ejemplo 12.8 de U y del tiro horizontal (tema 3)">P</span></div>
-<h3 id="s5c">5.2 El medidor Venturi <span class="src" data-l="U" data-ref="U §12.5, Ejemplo 12.9, p. 384">U p.384</span></h3>
 <div class="box ex"><span class="h">Ejemplo 12.9: el medidor Venturi</span>
-<p>Un medidor Venturi es un tubo con un estrechamiento (garganta) y dos tubos verticales abiertos, uno en la parte ancha (punto 1, área $A_1$) y otro en la garganta (punto 2, área $A_2$). Deduce la rapidez $v_1$ en función de $A_1$, $A_2$ y la diferencia de altura $h$ del líquido en los tubos verticales.</p>
+<p>Tubo horizontal con un estrechamiento (garganta): punto 1 en la parte ancha ($A_1$) y punto 2 en la garganta ($A_2$), cada uno con un tubo vertical abierto. Halla $v_1$ a partir de la diferencia $h$ de los niveles de líquido en los tubos verticales.</p>
   <ol class="steps">
-    <li><b>Tres herramientas, una por incógnita:</b> Bernoulli relaciona presiones y velocidades; continuidad relaciona $v_1$ y $v_2$; la hidrostática de los tubos verticales convierte la diferencia de presión en una altura medible.</li>
-    <li><b>Bernoulli con $y_1=y_2$</b> (tubo horizontal): $p_1+\tfrac12\rho v_1^2=p_2+\tfrac12\rho v_2^2$.</li>
-    <li><b>Continuidad:</b> $v_2=(A_1/A_2)v_1$; sustituyendo, $p_1-p_2=\tfrac12\rho v_1^2\left[\left(\dfrac{A_1}{A_2}\right)^2-1\right]$.</li>
-    <li><b>Tubos verticales</b> (12.6): cada columna equilibra la presión de su punto, $p_1-p_2=\rho gh$.</li>
-    <li><b>Igualar y despejar:</b> $\displaystyle v_1=\sqrt{\frac{2gh}{(A_1/A_2)^2-1}}$.</li>
-    <li><b>Evaluar:</b> $A_1\gt A_2$ ⇒ $v_2\gt v_1$ y $p_2\lt p_1$: en la garganta, más rápido y menos presión. Esa diferencia de presión empuja al fluido hacia la garganta (lo acelera) y lo frena a la salida. Error típico: pensar que la presión es mayor donde el tubo es más estrecho («se aprieta»).</li>
+    <li><b>Una herramienta por incógnita:</b> Bernoulli ($y_1=y_2$): $p_1+\tfrac12\rho v_1^2=p_2+\tfrac12\rho v_2^2$. Continuidad: $v_2=(A_1/A_2)v_1$. Tubos verticales (hidrostática): $p_1-p_2=\rho gh$.</li>
+    <li><b>Sustituir:</b> $p_1-p_2=\tfrac12\rho v_1^2\left[(A_1/A_2)^2-1\right]=\rho gh\ \Rightarrow\ \displaystyle v_1=\sqrt{\frac{2gh}{(A_1/A_2)^2-1}}$.</li>
+    <li><b>Con números</b> (propios): $A_1/A_2=2$ y $h=10{,}0$ cm ⇒ $v_1=\sqrt{\dfrac{2(9{,}8)(0{,}100)}{3}}=0{,}81$ m/s, $v_2=1{,}62$ m/s; para agua $p_1-p_2=\rho gh=980$ Pa. Con $A_1=10$ cm², caudal $Q=A_1v_1=8{,}1\times10^{-4}$ m³/s.</li>
+    <li><b>Evaluar:</b> en la garganta, más rápido y <b>menos</b> presión. Error típico: pensar que donde el tubo se estrecha «se aprieta» y la presión sube.</li>
   </ol>
-  <div class="recipe"><b>Receta:</b> medidor de caudal: Bernoulli a la misma altura + continuidad + $\Delta p=\rho gh$ del manómetro; despejar $v_1$.</div>
+  <div class="recipe"><b>Receta:</b> medidor de caudal: Bernoulli a la misma altura + continuidad + $\Delta p=\rho gh$ del manómetro ⇒ despejar $v_1$.</div>
   <span class="src" data-l="U" data-ref="U Ejemplo 12.9, p. 384 y fig. 12.26">U p.384</span></div>
 <figure class="bookfig">
 <img src="../assets/img/fig_u_12_26_venturi.png" alt="Figura 12.26 de U. Medidor Venturi: un tubo horizontal con un estrechamiento y dos tubos verticales; el nivel es más bajo en la garganta (punto 2), donde la presión es menor; h es la diferencia de alturas." loading="lazy" style="max-width:400px!important">
 <figcaption>Fig. 12.26 de U: el medidor Venturi (la diferencia de altura $h$ es el resultado de la presión reducida en la garganta). <span class="src" data-l="U" data-ref="U Fig. 12.26, p. 384">U p.384</span></figcaption>
 </figure>
-<div class="box ex"><span class="h">Ejemplo numérico propio: Venturi con $A_1/A_2=2$ y $h=10{,}0$ cm</span>
-<ol class="steps">
-    <li>$v_1=\sqrt{\dfrac{2(9{,}8)(0{,}100)}{2^2-1}}=0{,}81$ m/s y $v_2=2v_1=1{,}62$ m/s.</li>
-    <li>Para agua ($\rho=1000$ kg/m³), la diferencia de presión es $p_1-p_2=\rho gh=(1000)(9{,}8)(0{,}100)=980$ Pa (comprobación: $\tfrac12\rho v_1^2(4-1)=980$ Pa).</li>
-    <li>El caudal es $Q=A_1v_1$; con $A_1=10$ cm² $=1{,}0\times10^{-3}$ m²: $Q=(1{,}0\times10^{-3})(0{,}808)=8{,}1\times10^{-4}$ m³/s $\approx0{,}81$ L/s.</li>
-  </ol>
-  <span class="src" data-l="P" data-ref="Ejemplo numérico propio basado en el ejemplo 12.9 de U">P</span></div>
-<h3 id="s5d">5.3 Sustentación en un ala (ejemplo conceptual) <span class="src" data-l="U" data-ref="U Ejemplo conceptual 12.10, pp. 384-385">U p.384-385</span></h3>
-<div class="box ex"><span class="h">Ejemplo conceptual 12.10: sustentación</span>
-<p>Las líneas de flujo del aire que pasa sobre el ala de un avión se <b>juntan</b> (el área de flujo se estrecha), así que la rapidez es mayor y, por Bernoulli, la presión sobre el ala es menor que debajo. La diferencia de presión da una fuerza neta hacia arriba: la <b>sustentación</b>. Una explicación equivalente: la forma del ala imparte al aire una cantidad de movimiento hacia abajo, y la reacción sobre el avión es hacia arriba.</p>
-  <div class="box warn"><span class="h">Cuidado: explicación errónea frecuente</span><p>«El aire va más rápido por arriba porque tiene que recorrer más distancia y encontrarse con el de abajo en el borde de salida» es falso: las partículas vecinas que se separan en el borde de ataque <i>no</i> se vuelven a encontrar en el de salida. El flujo sobre el ala es mucho más rápido de lo que sugiere esa idea.</p></div>
+<div class="box intu"><span class="h">Ejemplo conceptual 12.10: sustentación de un ala</span>
+<p>Sobre el ala las líneas de flujo se <b>juntan</b>: el aire va más rápido y, por Bernoulli, la presión arriba es menor que abajo; la diferencia de presión da una fuerza neta hacia arriba, la <b>sustentación</b>. Visto con cantidad de movimiento: el ala desvía el aire hacia abajo y la reacción sobre el avión es hacia arriba.</p>
+  <p><b>Error típico:</b> «el aire de arriba va más rápido porque recorre más camino y debe encontrarse con el de abajo en el borde de salida». Es falso: las partículas que se separan en el borde de ataque <i>no</i> se reencuentran, y el flujo de arriba es mucho más rápido de lo que esa idea sugiere.</p>
   <span class="src" data-l="U" data-ref="U Ejemplo conceptual 12.10, pp. 384-385 y fig. 12.27">U p.384-385</span></div>
 <figure class="fig" data-svg="../assets/figs/t12/ala-de-avion-con-las-lineas-de-flujo-mas-juntas-.svg">
 <div class="figph" role="img" aria-label="Ala de avión con las líneas de flujo más juntas por arriba (más rápido, menos presión) y más separadas por abajo; la fuerza neta es hacia arriba" style="aspect-ratio:340/200"></div>
 <figcaption>Sustentación (ejemplo conceptual 12.10): sobre el ala las líneas de flujo se juntan, el aire va más rápido y la presión es menor; la diferencia de presión empuja el ala hacia arriba. Dibujo esquemático. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo conceptual 12.10 de U">P</span></figcaption>
 </figure>
-<h2 id="s6"><span class="n">6</span>Viscosidad y turbulencia <span class="src" data-l="U" data-ref="U §12.6, pp. 385-387">U p.385-387</span></h2>
-<div class="box intu"><span class="h">Idea intuitiva</span>
-<p>Hasta ahora el fluido «se deslizaba sin rozar». Pero la miel, el aceite de motor o la lava no fluyen igual que el agua: tienen mucha <b>viscosidad</b>, que es la <b>fricción interna</b> del fluido. Es lo que hace que cueste remar una canoa en aguas tranquilas (y también lo que hace que funcione el remo). Los fluidos «espesos» (miel) son más viscosos que los que fluyen con facilidad (agua, gasolina). La viscosidad de los líquidos disminuye con la temperatura (la lava caliente fluye mejor); la de los gases, aumenta.</p>
-  <span class="src" data-l="U" data-ref="U §12.6, p. 385">U p.385</span></div>
-<div class="box thm"><span class="h">Fluido viscoso en un tubo</span>
-<p>El fluido viscoso se adhiere a las paredes: en un tubo cilíndrico la rapidez es <b>cero en la pared</b> y <b>máxima en el centro</b>, con un perfil parabólico (como tubos concéntricos que se deslizan unos respecto a otros). Las fuerzas viscosas se oponen a ese deslizamiento, así que para mantener el flujo hay que aplicar una presión mayor detrás que delante: <b>aunque el tubo sea horizontal y de sección constante, aparece una caída de presión</b> (no se cumple Bernoulli sin fricción). A caudal fijo, la diferencia de presión necesaria para un tubo de longitud $L$ y radio $R$ es
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>Por un tubo horizontal fluye agua; en el punto 1 va a 2,0 m/s y en el 2 a 6,0 m/s. ¿Cuánto vale $p_1-p_2$? ¿Dónde es mayor la presión?<details><summary>Ver respuesta</summary>$p_1-p_2=\tfrac12\rho(v_2^2-v_1^2)=\tfrac12(1000)(36-4)=1{,}6\times10^4$ Pa. Mayor en el punto 1, donde va más despacio.</details></li>
+<li>Un orificio está 5,0 m bajo la superficie de un tanque abierto. ¿Rapidez de salida? ¿Y si el aire del tanque cerrado estuviera a 1,0 atm manométrica?<details><summary>Ver respuesta</summary>Abierto: $v=\sqrt{2(9{,}8)(5{,}0)}=9{,}9$ m/s. Cerrado: $v=\sqrt{\dfrac{2(1{,}013\times10^5)}{1000}+98}=\sqrt{202{,}6+98}=17{,}3$ m/s.</details></li>
+<li>En un Venturi con $A_1/A_2=3$ la diferencia de niveles es $h=5{,}0$ cm. ¿Cuánto vale $v_1$?<details><summary>Ver respuesta</summary>$v_1=\sqrt{\dfrac{2(9{,}8)(0{,}050)}{3^2-1}}=0{,}350$ m/s (y $v_2=3v_1$).</details></li>
+</ol>
+</details>
+
+<h2 id="s6"><span class="n">6</span>Viscosidad y turbulencia <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §12.6, pp. 385-387">U p.385-387</span></h2>
+<div class="box thm"><span class="h">Fluido viscoso en un tubo: $\Delta p\propto L/R^4$</span>
+<p>La miel o el aceite de motor no fluyen como el agua: tienen mucha <b>viscosidad</b>, la <b>fricción interna</b> del fluido. La de los líquidos baja al calentarlos (la lava caliente fluye mejor); la de los gases, sube.</p>
+  <p>Un fluido viscoso se adhiere a las paredes: en un tubo la rapidez es <b>cero en la pared</b> y <b>máxima en el centro</b> (perfil parabólico, como tubos concéntricos que se deslizan). Para mantener el flujo hace falta más presión detrás que delante <b>aunque el tubo sea horizontal y de sección constante</b>: aparece una caída de presión que Bernoulli no prevé. A caudal fijo, en un tubo de longitud $L$ y radio $R$:</p>
   $$\Delta p\ \propto\ \frac{L}{R^{4}}$$
-  Reducir $R$ a la mitad exige $2^4=16$ veces más diferencia de presión; reducirlo un 10 % la multiplica por $(1/0{,}90)^4=1{,}52$ (+52 %). Por eso un leve estrechamiento de las arterias (colesterol) eleva mucho la presión arterial y fuerza al corazón.</p>
+  <p><b>Ejemplo mínimo:</b> reducir $R$ a la mitad exige $2^4=16$ veces más diferencia de presión; reducirlo un 10 %, $(1/0{,}90)^4=1{,}52$ veces (+52 %). Por eso un leve estrechamiento de una arteria obliga al corazón a trabajar mucho más.</p>
+  <p><b>Error típico:</b> usar $R^2$ (como en la continuidad) en lugar de $R^4$.</p>
   <span class="src" data-l="U" data-ref="U §12.6, viscosidad, pp. 385-386 y fig. 12.29">U p.385-386</span></div>
 <figure class="fig" data-svg="../assets/figs/t12/perfil-parabolico-de-velocidad-en-un-tubo-y-graf.svg">
 <div class="figph" role="img" aria-label="Perfil parabólico de velocidad en un tubo y gráfica de barras: si el radio se reduce a la mitad, la diferencia de presión necesaria se multiplica por 16" style="aspect-ratio:340/160"></div>
 <figcaption>Fluido viscoso en un tubo: la rapidez es nula en la pared y máxima en el centro. Para mantener el mismo caudal, $\Delta p\propto L/R^4$: con $R/2$ hace falta $2^4=16$ veces más diferencia de presión. <span class="src" data-l="P" data-ref="Diagrama propio de §12.6 de U (viscosidad, fig. 12.29)">P</span></figcaption>
 </figure>
 <div class="box def"><span class="h">Turbulencia</span>
-<p>Si la rapidez excede cierto valor crítico, el flujo deja de ser laminar: el patrón se vuelve irregular y caótico y cambia continuamente con el tiempo. <b>La ecuación de Bernoulli no es aplicable en regiones de turbulencia</b> (el flujo no es estable). Cuanto mayor es la viscosidad, más tendencia hay a flujo laminar. El flujo normal de sangre en la aorta es laminar; una patología cardiaca puede volverlo turbulento y se oye con un estetoscopio. Un ejemplo conceptual (12.11) es el lanzamiento de una <b>bola curva</b>: al girar, la bola arrastra aire y crea una región de mayor presión en un lado y menor en el otro; la fuerza resultante apunta hacia el lado de baja presión (lo mismo con el «top spin» del tenis o las pelotas de golf).</p>
+<p>Por encima de cierta rapidez crítica el flujo deja de ser laminar: se vuelve irregular, caótico y cambia con el tiempo. <b>Bernoulli no se aplica en regiones turbulentas</b> (el flujo no es estable). Cuanto más viscoso es el fluido, más tiende al flujo laminar. La sangre en la aorta fluye de forma laminar; una patología puede volverla turbulenta y se oye con el estetoscopio.</p>
+  <p><b>Ejemplo conceptual 12.11 (bola curva):</b> una pelota que gira arrastra aire; a un lado la presión es mayor y al otro menor, y la fuerza neta empuja la pelota hacia el lado de baja presión (lo mismo con el efecto «top spin» del tenis o el de las pelotas de golf).</p>
   <span class="src" data-l="U" data-ref="U §12.6, turbulencia, p. 386 y Ejemplo conceptual 12.11, p. 387">U p.386-387</span></div>
-<h2 id="ejercicios"><span class="n">7</span>Ejercicios resueltos</h2>
-<p>No hay ejercicios de examen real de este tema en las convocatorias disponibles (2018-2025), así que no se simula ninguno. Los ejercicios son los problemas del solucionario (E), en el orden del tema, más el problema práctico de U. Todos los números están comprobados. Cada uno termina con una <b>receta</b> reutilizable. Con $g=9{,}8$ m/s² y $\rho_{agua}=1000$ kg/m³, agua de mar 1030 kg/m³ (tabla 12.1). Antes de abrir cada solución, intenta plantearlo tú.</p>
-<details class="sol" id="e1"><summary>E1 — Problema 12.2: cubo con un orificio (densidad y peso original) <span class="src" data-l="E" data-ref="Solucionario 12-1, Prob. 12.2">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.2, p. 390 y §12.1, ec. 12.1, tabla 12.1">U p.370, 390</span></summary>
-<p class="enun">Un cubo de 5,0 cm de lado está hecho de una aleación metálica. Después de perforar de lado a lado un orificio cilíndrico de 2,0 cm de diámetro, perpendicular a una cara, el cubo pesa 6,30 N. a) ¿Cuál es la densidad del metal? b) ¿Cuánto pesaba el cubo antes de taladrarlo?</p>
-  <ol class="steps">
-    <li><b>Qué objeto conocemos.</b> Los 6,30 N son el peso del cubo <i>ya agujereado</i>; su volumen es el del cubo menos el del cilindro hueco (radio 1,0 cm, longitud igual al lado porque atraviesa el cubo).</li>
-    <li><b>Volumen de metal:</b> $V=L^3-\pi r^2L=125-\pi(1{,}0)^2(5{,}0)=125-15{,}7=109\ \text{cm}^3=1{,}09\times10^{-4}$ m³ (1 cm³ $=10^{-6}$ m³).</li>
-    <li><b>Masa:</b> de $w=mg$, $m=6{,}30/9{,}8=0{,}643$ kg.</li>
-    <li><b>a) Densidad (12.1):</b> $\rho=m/V=0{,}643/(1{,}09\times10^{-4})=5{,}9\times10^3$ kg/m³. Razonable: entre el aluminio ($2{,}7\times10^3$) y el hierro ($7{,}8\times10^3$), según la tabla 12.1.</li>
-    <li><b>b) Cubo macizo:</b> mismo metal, misma densidad: $m_0=\rho L^3=(5{,}9\times10^3)(1{,}25\times10^{-4})=0{,}735$ kg ⇒ $w_0=m_0g=7{,}2$ N.</li>
-    <li><b>Atajo:</b> el agujero quita $\pi r^2L/L^3=12{,}6\,\%$ del volumen ⇒ $w_0=6{,}30/(1-0{,}126)=7{,}2$ N.</li>
-  </ol>
-<figure class="fig" data-svg="../assets/figs/t12/cubo-de-5-centimetros-de-lado-con-un-orificio-ci.svg">
-<div class="figph" role="img" aria-label="Cubo de 5 centímetros de lado con un orificio cilíndrico de 2 centímetros de diámetro que lo atraviesa" style="aspect-ratio:340/190"></div>
-<figcaption>El volumen de metal es el del cubo menos el del cilindro hueco (que atraviesa los 5,0 cm): 109 cm³. Con 6,30 N ($m=0{,}643$ kg) resulta $\rho=5{,}9\times10^3$ kg/m³. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.2 de U">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> densidad = masa del objeto <i>real</i> / volumen del objeto <i>real</i> (descontando los huecos); luego la densidad es una propiedad del material y sirve para cualquier otra pieza.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Dividir la masa del cubo agujereado entre el volumen del cubo entero; olvidar pasar cm³ a m³.</p></div>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>Un tubo con un fluido viscoso se estrecha un 20 % de radio (de $R$ a $0{,}80R$). A igual caudal y longitud, ¿por cuánto se multiplica la diferencia de presión?<details><summary>Ver respuesta</summary>$(1/0{,}80)^4=2{,}44$: casi dos veces y media.</details></li>
+<li>Con el mismo radio y el mismo caudal, se dobla la longitud de la tubería. ¿Qué pasa con $\Delta p$?<details><summary>Ver respuesta</summary>Se duplica: $\Delta p\propto L$.</details></li>
+<li>Un fluido viscoso recorre un tubo horizontal de sección constante. Según Bernoulli la presión sería la misma en todo el tubo. ¿Por qué no lo es?<details><summary>Ver respuesta</summary>Bernoulli supone viscosidad nula. Con fricción interna, la diferencia de presión hace el trabajo que disipan las fuerzas viscosas: la presión baja a lo largo del tubo aunque $v$ y $y$ no cambien.</details></li>
+</ol>
 </details>
-<details class="sol" id="e2"><summary>E2 — Problema 12.11: altura mínima de la bolsa de suero <span class="src" data-l="E" data-ref="Solucionario 12-3, Prob. 12.11">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.11, p. 391 y §12.2, ec. 12.6, p. 373">U p.373, 391</span></summary>
+
+<h2 id="ejercicios"><span class="n">7</span>Ejercicios resueltos</h2>
+<p>Este tema <b>no tiene ninguna pregunta de examen real</b> (convocatorias 2018-2025), así que los ejercicios son los del solucionario (E1-E12, traducidos y ampliados) y el problema práctico del capítulo, ordenados por <b>método</b>, no por fuente: ocho en el Núcleo (uno por método) y cinco de Práctica que repiten esos métodos en situaciones nuevas. Los ejemplos del libro que enseñan algo distinto (tubo en U con dos líquidos, medidor Venturi) están resueltos dentro de la teoría. <b>Intenta resolver tú antes de abrir la solución.</b> Cada ejercicio termina con su receta. Datos por defecto: $g=9{,}8$ m/s², agua 1000 kg/m³, agua de mar 1030 kg/m³ (tabla 12.1).</p>
+<div class="nivel"><b>🔴 Núcleo: 8 ejercicios, un método por ejercicio</b><span>Presión con la profundidad, prensa hidráulica, flotación, fluidos en capas, continuidad, Bernoulli en una tubería, Torricelli con el alcance del chorro y viscosidad. Si solo haces esto, cubres todo lo que se puede pedir del tema.</span></div>
+<table class="metodos">
+<tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>
+<tr><td><a href="#e2">E2</a></td><td>Presión con la profundidad</td><td>Manométrica $=\rho gh$ con $h$ bajo la superficie libre ⇒ $h=p_{man}/(\rho g)$</td></tr>
+<tr><td><a href="#e4">E4</a></td><td>Prensa hidráulica (Pascal)</td><td>$F_2/F_1=A_2/A_1=(D_2/D_1)^2$; mismo trabajo en los dos pistones</td></tr>
+<tr><td><a href="#e5">E5</a></td><td>Flotación con hilo</td><td>DCL $T+B=mg$ ⇒ $V$; flota si $\rho_{cuerpo}\le\rho_{fluido}$</td></tr>
+<tr><td><a href="#e7">E7</a></td><td>Varios fluidos apilados</td><td>$p=p_0+\sum\rho_igh_i$ capa a capa; empuje $=(p_{abajo}-p_{arriba})A$</td></tr>
+<tr><td><a href="#e8">E8</a></td><td>Continuidad y caudal</td><td>$Q=Av$ donde conoces ambos; $v=Q/A$ en cualquier sección; volumen $=Qt$</td></tr>
+<tr><td><a href="#e10">E10</a></td><td>Bernoulli en una tubería</td><td>Continuidad ⇒ $v_2$; Bernoulli ⇒ $p_2$, todas las presiones del mismo tipo</td></tr>
+<tr><td><a href="#e9">E9</a></td><td>Torricelli + tiro horizontal</td><td>$v=\sqrt{2gh}$ ($h$ bajo la superficie), $Q=A_{or}v$; chorro = tiro horizontal</td></tr>
+<tr><td><a href="#e12">E12</a></td><td>Flujo viscoso</td><td>A caudal fijo $\Delta p\propto L/R^4$ ⇒ cocientes</td></tr>
+</table>
+<details class="sol" id="e2"><summary>E2 — Problema 12.11: altura mínima de la bolsa de suero <span class="src" data-l="E" data-ref="Solucionario 12-3, Prob. 12.11">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.11, p. 391 y §12.2, ec. 12.6, p. 373">U p.373, 391</span></summary>
 <p class="enun">En la alimentación intravenosa se inserta una aguja en una vena del brazo del paciente y se conecta un tubo entre la aguja y un depósito de fluido (densidad 1050 kg/m³) que está a una altura $h$ sobre el brazo. El depósito está abierto a la atmósfera por arriba. Si la presión manométrica dentro de la vena es de 5980 Pa, ¿qué valor mínimo de $h$ permite que entre fluido en la vena?</p>
   <ol class="steps">
     <li><b>Condición física.</b> El fluido entra si la presión en la punta de la aguja es al menos la de la sangre; en el caso límite el fluido está en reposo y las dos presiones son iguales ⇒ basta la hidrostática.</li>
@@ -426,25 +417,7 @@
   <div class="recipe"><b>Receta:</b> «¿a qué altura debe estar el depósito para vencer una presión $p$?» ⇒ $h=p_{man}/(\rho g)$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Sumar $p_{atm}$ a un lado y no al otro (mezclar absoluta y manométrica).</p></div>
 </details>
-<details class="sol" id="e3"><summary>E3 — Problema 12.24: elevador hidráulico II (presión necesaria) <span class="src" data-l="E" data-ref="Solucionario 12-6, Prob. 12.24">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.24, p. 392 y §12.2, p. 371">U p.371, 392</span></summary>
-<p class="enun">El pistón del elevador hidráulico para autos tiene 0,30 m de diámetro. ¿Qué presión manométrica, en pascales y en atmósferas, se requiere para levantar un auto de 1200 kg?</p>
-  <ol class="steps">
-    <li><b>DCL del pistón con el auto encima, en equilibrio.</b> Hacia arriba, la fuerza del aceite $pA$ (presión absoluta). Hacia abajo, el peso $mg$ y la fuerza del aire de encima, $p_{atm}A$.</li>
-    <li><b>$\sum F_y=0$:</b> $pA-p_{atm}A-mg=0\ \Rightarrow\ p-p_{atm}=\dfrac{mg}{A}$. <b>La atmósfera se cancela sola</b> y queda exactamente la manométrica.</li>
-    <li><b>Área</b> (radio = mitad del diámetro): $A=\pi(0{,}15)^2=0{,}0707$ m².</li>
-    <li><b>Número:</b> $p_{man}=\dfrac{(1200)(9{,}8)}{0{,}0707}=1{,}66\times10^5$ Pa $\approx1{,}7\times10^5$ Pa.</li>
-    <li><b>En atmósferas:</b> $\dfrac{1{,}66\times10^5}{1{,}013\times10^5}=1{,}64$ atm ($\approx1{,}6$ atm).</li>
-    <li><b>Evaluar:</b> cuanto mayor es el diámetro del pistón, menor es la presión manométrica necesaria.</li>
-  </ol>
-<figure class="fig" data-svg="../assets/figs/t12/piston-del-elevador-con-el-automovil-encima-y-su.svg">
-<div class="figph" role="img" aria-label="Pistón del elevador con el automóvil encima y su diagrama de cuerpo libre: fuerza del aceite hacia arriba igual al peso más la fuerza del aire" style="aspect-ratio:340/190"></div>
-<figcaption>DCL del pistón con el auto: $pA=mg+p_{atm}A$ ($18{,}9\ \text{kN}=11{,}8+7{,}2$ kN, a escala). La fuerza atmosférica se cancela sola y queda $p_{man}A=mg$, $p_{man}=1{,}66\times10^5$ Pa. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.24 de U">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> pistón en equilibrio con aire por el otro lado: $p_{man}=F/A$.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Usar el diámetro como radio (da una presión 4 veces menor); dar la absoluta (≈ 2,7×10⁵ Pa, unas 2,6 atm) cuando se pide la manométrica.</p></div>
-</details>
-<details class="sol" id="e4"><summary>E4 — Problema 12.23: elevador hidráulico I (relación de diámetros) <span class="src" data-l="E" data-ref="Solucionario 12-6, Prob. 12.23">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.23, p. 392 y §12.2, ec. 12.7, p. 373">U p.373, 392</span></summary>
+<details class="sol" id="e4"><summary>E4 — Problema 12.23: elevador hidráulico I (relación de diámetros) <span class="src" data-l="E" data-ref="Solucionario 12-6, Prob. 12.23">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.23, p. 392 y §12.2, ec. 12.7, p. 373">U p.373, 392</span></summary>
 <p class="enun">Para el elevador hidráulico de la figura 12.7, ¿cuál debe ser la proporción entre el diámetro del recipiente bajo el auto y el diámetro del recipiente donde se aplica la fuerza $F_1$, de manera que el auto de 1520 kg pueda ser levantado con una fuerza $F_1$ de solo 125 N?</p>
   <ol class="steps">
     <li><b>Ley de Pascal.</b> La presión se transmite igual a todo el fluido y los dos pistones están a la misma altura: $p=F_1/A_1=F_2/A_2$ (12.7).</li>
@@ -461,7 +434,7 @@
   <div class="recipe"><b>Receta:</b> Pascal: $F_2/F_1=A_2/A_1=(D_2/D_1)^2$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Dar 119 (cociente de áreas) como cociente de diámetros.</p></div>
 </details>
-<details class="sol" id="e5"><summary>E5 — Problema 12.26: líquido de densidad mínima en el que flota una roca <span class="src" data-l="E" data-ref="Solucionario 12-6 y 12-7, Prob. 12.26">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.26, p. 392 y §12.3, p. 376">U p.376, 392</span></summary>
+<details class="sol" id="e5"><summary>E5 — Problema 12.26: líquido de densidad mínima en el que flota una roca <span class="src" data-l="E" data-ref="Solucionario 12-6 y 12-7, Prob. 12.26">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.26, p. 392 y §12.3, p. 376">U p.376, 392</span></summary>
 <p class="enun">Una roca tiene una masa de 1,80 kg. Cuando la roca se suspende del extremo inferior de una cuerda y se sumerge totalmente en agua, la tensión en la cuerda es de 12,8 N. ¿Cuál es la menor densidad de un líquido en el que la roca va a flotar?</p>
   <ol class="steps">
     <li><b>Paso 1: volumen de la roca, a partir del agua.</b> Equilibrio sumergida: $T+B=mg\Rightarrow B=mg-T=17{,}64-12{,}8=4{,}84$ N. Con Arquímedes $B=\rho_wVg\Rightarrow V=\dfrac{4{,}84}{(1000)(9{,}8)}=4{,}94\times10^{-4}$ m³.</li>
@@ -478,24 +451,7 @@
   <div class="recipe"><b>Receta:</b> «¿flota?» ⇒ compara densidades. Una pesada en agua con cuerda da el volumen: $V=(mg-T)/(\rho_wg)$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Usar la tensión (12,8 N) como si fuera el empuje.</p></div>
 </details>
-<details class="sol" id="e6"><summary>E6 — Problema 12.35: densidad de un líquido desconocido por pesadas <span class="src" data-l="E" data-ref="Solucionario 12-9 y 12-10, Prob. 12.35">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.35, p. 392 y §12.3, p. 376">U p.376, 392</span></summary>
-<p class="enun">Una roca cuelga de un hilo ligero. Cuando está en el aire, la tensión en el hilo es de 39,2 N. Cuando está totalmente sumergida en agua, la tensión es de 28,4 N. Cuando está totalmente sumergida en un líquido desconocido, la tensión es de 21,5 N. Determina la densidad del líquido desconocido.</p>
-  <ol class="steps">
-    <li><b>Por qué tres pesadas bastan.</b> La diferencia «aire − sumergido» es el empuje. El volumen de la roca es el mismo en ambos líquidos, así que los empujes están en la proporción de las densidades.</li>
-    <li><b>Empuje en agua:</b> $B_w=39{,}2-28{,}4=10{,}8$ N ⇒ $V=B_w/(\rho_wg)=1{,}10\times10^{-3}$ m³.</li>
-    <li><b>Empuje en el líquido:</b> $B_L=39{,}2-21{,}5=17{,}7$ N $=\rho_LVg$.</li>
-    <li><b>Cociente (sin calcular $V$):</b> $\dfrac{\rho_L}{\rho_w}=\dfrac{B_L}{B_w}=\dfrac{17{,}7}{10{,}8}=1{,}64\Rightarrow\rho_L=1{,}64\times10^3$ kg/m³.</li>
-    <li><b>Extra:</b> densidad de la roca, $\rho_{roca}=\rho_w\dfrac{39{,}2}{10{,}8}=3{,}63\times10^3$ kg/m³.</li>
-  </ol>
-<figure class="fig" data-svg="../assets/figs/t12/tres-dinamometros-que-sostienen-la-misma-roca-en.svg">
-<div class="figph" role="img" aria-label="Tres dinamómetros que sostienen la misma roca en el aire (39,2 newtons), en agua (28,4 newtons) y en un líquido desconocido (21,5 newtons)" style="aspect-ratio:340/235"></div>
-<figcaption>La roca en tres medios: la lectura baja en la medida del empuje. $B_{agua}=39{,}2-28{,}4=10{,}8$ N y $B_L=39{,}2-21{,}5=17{,}7$ N; el cociente es $\rho_L/\rho_{agua}=1{,}64$. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.35 de U">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> $\rho_L=\rho_w\,\dfrac{w-T_L}{w-T_w}$ (método de la balanza hidrostática).</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Dividir las tensiones ($28{,}4/21{,}5$) en lugar de los empujes.</p></div>
-</details>
-<details class="sol" id="e7"><summary>E7 — Problema 12.33: bloque en la interfase aceite-agua <span class="src" data-l="E" data-ref="Solucionario 12-8 y 12-9, Prob. 12.33">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.33, p. 392 (figura E12.33), §12.2 p. 373 y §12.3 p. 376">U p.373, 376, 392</span></summary>
+<details class="sol" id="e7"><summary>E7 — Problema 12.33: bloque en la interfase aceite-agua <span class="src" data-l="E" data-ref="Solucionario 12-8 y 12-9, Prob. 12.33">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.33, p. 392 (figura E12.33), §12.2 p. 373 y §12.3 p. 376">U p.373, 376, 392</span></summary>
 <p class="enun">Un bloque cúbico de madera de 10,0 cm por lado flota en la interfase entre aceite y agua con su superficie inferior 1,50 cm bajo la interfase. La densidad del aceite es de 790 kg/m³. a) ¿Qué presión manométrica hay en la superficie superior del bloque? b) ¿Y en la cara inferior? c) ¿Qué masa y densidad tiene el bloque? (En la figura, la capa de aceite mide 10,0 cm de espesor y está abierta al aire: el bloque tiene 8,50 cm en el aceite y 1,50 cm en el agua, y su cara superior está 1,50 cm bajo la superficie del aceite.)</p>
   <ol class="steps">
     <li><b>Geometría.</b> La interfase está a 10,0 cm bajo la superficie del aceite y la cara inferior a 1,50 cm bajo la interfase ⇒ la cara superior queda a $10{,}0+1{,}50-10{,}0=1{,}50$ cm bajo la superficie del aceite.</li>
@@ -513,7 +469,7 @@
   <div class="recipe"><b>Receta:</b> varios fluidos apilados: $p=p_0+\sum\rho_igh_i$ capa a capa. Empuje $=(p_{abajo}-p_{arriba})A=$ peso del fluido desplazado (de cada fluido, su parte).</div>
   <div class="box warn"><span class="h">Error típico</span><p>Usar una sola densidad para toda la profundidad; olvidar que el aceite también desplaza (empuja) y calcular el empuje solo con el agua.</p></div>
 </details>
-<details class="sol" id="e8"><summary>E8 — Problema 12.38: continuidad en un tubo de sección variable <span class="src" data-l="E" data-ref="Solucionario 12-10, Prob. 12.38">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.38, p. 392 y §12.4, ec. 12.10, p. 380">U p.380, 392</span></summary>
+<details class="sol" id="e8"><summary>E8 — Problema 12.38: continuidad en un tubo de sección variable <span class="src" data-l="E" data-ref="Solucionario 12-10, Prob. 12.38">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.38, p. 392 y §12.4, ec. 12.10, p. 380">U p.380, 392</span></summary>
 <p class="enun">Fluye agua por un tubo de sección transversal variable, llenándolo en todos sus puntos. En el punto 1, el área transversal del tubo es de 0,070 m², y la rapidez del fluido es de 3,50 m/s. ¿Qué rapidez tiene el fluido en puntos donde el área transversal es a) 0,105 m²? b) ¿0,047 m²? c) Calcula el volumen de agua descargada del extremo abierto del tubo en una hora.</p>
   <ol class="steps">
     <li><b>Por qué continuidad.</b> El agua es incompresible y el tubo está lleno: lo que entra por una sección en un tiempo $dt$ sale por cualquier otra ⇒ $A_1v_1=A_2v_2$ (12.10).</li>
@@ -530,7 +486,24 @@
   <div class="recipe"><b>Receta:</b> calcula $Q=Av$ donde conozcas ambos; en cualquier otra sección $v=Q/A$; volumen en un tiempo $t$: $Qt$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Pensar que hace falta el área de salida para el apartado c): no, el caudal es único.</p></div>
 </details>
-<details class="sol" id="e9"><summary>E9 — Problema 12.44: Torricelli, orificio en la pared de un tanque <span class="src" data-l="E" data-ref="Solucionario 12-12, Prob. 12.44">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.44, p. 393 y §12.5, Ejemplo 12.8, pp. 383-384">U pp.383-384, 393</span></summary>
+<details class="sol" id="e10"><summary>E10 — Problema 12.46: Bernoulli con cambio de altura y de sección <span class="src" data-l="E" data-ref="Solucionario 12-12, Prob. 12.46">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.46, p. 393 y §12.5, ec. 12.17, p. 382">U p.382, 393</span></summary>
+<p class="enun">En cierto punto de una tubería, la rapidez del agua es de 3,00 m/s y la presión manométrica es de $5{,}00\times10^4$ Pa. Calcula la presión manométrica en un segundo punto de la tubería, 11,0 m más abajo que el primero, si el diámetro del tubo ahí es el doble que en el primer punto.</p>
+  <ol class="steps">
+    <li><b>Continuidad.</b> Diámetro doble ⇒ área cuádruple ⇒ $v_2=v_1/4=0{,}750$ m/s.</li>
+    <li><b>Bernoulli (12.17)</b> con $y_1-y_2=11{,}0$ m. Se pueden usar presiones manométricas en los dos puntos, porque $p_{atm}$ aparece a ambos lados y se cancela: $p_2=p_1+\tfrac12\rho(v_1^2-v_2^2)+\rho g(y_1-y_2)$.</li>
+    <li><b>Términos.</b> Cinético: $\tfrac12(1000)(9-0{,}5625)=4{,}22\times10^3$ Pa. Altura: $(1000)(9{,}8)(11{,}0)=1{,}078\times10^5$ Pa.</li>
+    <li><b>Resultado:</b> $p_2=5{,}00\times10^4+4{,}22\times10^3+1{,}078\times10^5=1{,}62\times10^5$ Pa (manométrica).</li>
+    <li><b>Sentido:</b> bajar y frenar hacen <i>subir</i> la presión; los dos términos suman. El de altura domina (≈ 26 veces el cinético).</li>
+  </ol>
+<figure class="fig" data-svg="../assets/figs/t12/tuberia-que-desciende-11-metros-y-duplica-su-dia.svg">
+<div class="figph" role="img" aria-label="Tubería que desciende 11 metros y duplica su diámetro: la velocidad pasa de 3,00 a 0,750 metros por segundo y la presión manométrica de 5,00×10⁴ a 1,62×10⁵ pascales" style="aspect-ratio:340/205"></div>
+<figcaption>Dos efectos suman presión en el punto bajo: bajar 11,0 m ($+1{,}078\times10^5$ Pa) y frenar ($+4{,}2\times10^3$ Pa). Las presiones son manométricas. Flechas de velocidad no a escala. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.46 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> Bernoulli entre dos puntos de una tubería: (i) continuidad ⇒ $v_2$; (ii) $p_2=p_1+\tfrac12\rho(v_1^2-v_2^2)+\rho g(y_1-y_2)$, con todas las presiones del mismo tipo.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Equivocarse con el signo del término de altura (el punto más bajo tiene <i>más</i> presión); poner $v_2=v_1/2$ (cociente de diámetros).</p></div>
+</details>
+<details class="sol" id="e9"><summary>E9 — Problema 12.44: Torricelli, orificio en la pared de un tanque <span class="src" data-l="E" data-ref="Solucionario 12-12, Prob. 12.44">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.44, p. 393 y §12.5, Ejemplo 12.8, pp. 383-384">U pp.383-384, 393</span></summary>
 <p class="enun">Se corta un orificio circular de 6,00 mm de diámetro en el costado de un tanque grande de agua, 14,0 m debajo del nivel del agua en el tanque. El tanque está abierto al aire por arriba. Calcula a) la rapidez de salida del agua y b) el volumen descargado por segundo.</p>
   <ol class="steps">
     <li><b>Bernoulli entre la superficie (1) y el chorro justo fuera del orificio (2).</b> Ambos a $p_{atm}$ (superficie abierta; chorro libre en el aire) ⇒ las presiones se cancelan.</li>
@@ -548,24 +521,77 @@
   <div class="recipe"><b>Receta:</b> tanque abierto, orificio a profundidad $h$: $v=\sqrt{2gh}$; caudal $Q=A_{orificio}\sqrt{2gh}$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Usar como $h$ la altura del orificio sobre el suelo en vez de la profundidad bajo la superficie; usar el diámetro como radio.</p></div>
 </details>
-<details class="sol" id="e10"><summary>E10 — Problema 12.46: Bernoulli con cambio de altura y de sección <span class="src" data-l="E" data-ref="Solucionario 12-12, Prob. 12.46">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.46, p. 393 y §12.5, ec. 12.17, p. 382">U p.382, 393</span></summary>
-<p class="enun">En cierto punto de una tubería, la rapidez del agua es de 3,00 m/s y la presión manométrica es de $5{,}00\times10^4$ Pa. Calcula la presión manométrica en un segundo punto de la tubería, 11,0 m más abajo que el primero, si el diámetro del tubo ahí es el doble que en el primer punto.</p>
+<details class="sol" id="e12"><summary>E12 — Problema 12.50: tubería viscosa, efecto de reducir el radio <span class="src" data-l="E" data-ref="Solucionario 12-13, Prob. 12.50">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.50, p. 393 y §12.6, p. 386">U p.386, 393</span></summary>
+<p class="enun">Se requiere una diferencia de presión de $6{,}00\times10^4$ Pa para mantener una velocidad de flujo de volumen de 0,800 m³/s para un fluido viscoso que fluye a través de una sección de tubo cilíndrico que tiene un radio de 0,210 m. ¿Qué diferencia de presión es necesaria para mantener la misma rapidez de volumen del flujo si el radio de la tubería se reduce a 0,0700 m?</p>
   <ol class="steps">
-    <li><b>Continuidad.</b> Diámetro doble ⇒ área cuádruple ⇒ $v_2=v_1/4=0{,}750$ m/s.</li>
-    <li><b>Bernoulli (12.17)</b> con $y_1-y_2=11{,}0$ m. Se pueden usar presiones manométricas en los dos puntos, porque $p_{atm}$ aparece a ambos lados y se cancela: $p_2=p_1+\tfrac12\rho(v_1^2-v_2^2)+\rho g(y_1-y_2)$.</li>
-    <li><b>Términos.</b> Cinético: $\tfrac12(1000)(9-0{,}5625)=4{,}22\times10^3$ Pa. Altura: $(1000)(9{,}8)(11{,}0)=1{,}078\times10^5$ Pa.</li>
-    <li><b>Resultado:</b> $p_2=5{,}00\times10^4+4{,}22\times10^3+1{,}078\times10^5=1{,}62\times10^5$ Pa (manométrica).</li>
-    <li><b>Sentido:</b> bajar y frenar hacen <i>subir</i> la presión; los dos términos suman. El de altura domina (≈ 26 veces el cinético).</li>
+    <li><b>Por qué no Bernoulli.</b> Con viscosidad hay fricción interna: hace falta una diferencia de presión solo para mantener el flujo aunque la velocidad media no cambie. U da la ley de escala: a caudal fijo, $\Delta p\propto L/R^4$.</li>
+    <li><b>Mismo tubo, misma longitud, mismo caudal</b> ⇒ $\Delta p\,R^4=$ cte ⇒ $\Delta p_2=\Delta p_1\left(\dfrac{R_1}{R_2}\right)^4$.</li>
+    <li><b>Números:</b> $R_1/R_2=0{,}210/0{,}0700=3\Rightarrow3^4=81$ ⇒ $\Delta p_2=81\cdot6{,}00\times10^4=4{,}86\times10^6$ Pa ($\approx48$ atm).</li>
+    <li><b>Sentido físico:</b> reducir el radio a un tercio multiplica por 81 la presión necesaria (reducirlo a la mitad: ×16). Por eso un pequeño estrechamiento de una arteria obliga al corazón a trabajar mucho más.</li>
   </ol>
-<figure class="fig" data-svg="../assets/figs/t12/tuberia-que-desciende-11-metros-y-duplica-su-dia.svg">
-<div class="figph" role="img" aria-label="Tubería que desciende 11 metros y duplica su diámetro: la velocidad pasa de 3,00 a 0,750 metros por segundo y la presión manométrica de 5,00×10⁴ a 1,62×10⁵ pascales" style="aspect-ratio:340/205"></div>
-<figcaption>Dos efectos suman presión en el punto bajo: bajar 11,0 m ($+1{,}078\times10^5$ Pa) y frenar ($+4{,}2\times10^3$ Pa). Las presiones son manométricas. Flechas de velocidad no a escala. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.46 de U">P</span></figcaption>
+<figure class="fig" data-svg="../assets/figs/t12/dos-tubos-del-mismo-caudal-uno-de-radio-0-210-me.svg">
+<div class="figph" role="img" aria-label="Dos tubos del mismo caudal: uno de radio 0,210 metros que necesita 6,00×10⁴ pascales y otro de radio 0,0700 metros que necesita 4,86×10⁶ pascales" style="aspect-ratio:340/205"></div>
+<figcaption>Reducir el radio a un tercio multiplica por $3^4=81$ la diferencia de presión necesaria para el mismo caudal (la altura de las barras no está a escala: la segunda es 81 veces mayor). <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.50 de U">P</span></figcaption>
 </figure>
 
-  <div class="recipe"><b>Receta:</b> Bernoulli entre dos puntos de una tubería: (i) continuidad ⇒ $v_2$; (ii) $p_2=p_1+\tfrac12\rho(v_1^2-v_2^2)+\rho g(y_1-y_2)$, con todas las presiones del mismo tipo.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Equivocarse con el signo del término de altura (el punto más bajo tiene <i>más</i> presión); poner $v_2=v_1/2$ (cociente de diámetros).</p></div>
+  <div class="recipe"><b>Receta:</b> flujo viscoso en tubo, caudal fijo: $\Delta p\propto L/R^4$ ⇒ razona con cocientes, sin necesidad de conocer la viscosidad.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar $R^2$ (como en la continuidad) en lugar de $R^4$.</p></div>
 </details>
-<details class="sol" id="e11"><summary>E11 — Problema 12.41: tanque sellado con aire a presión <span class="src" data-l="E" data-ref="Solucionario 12-11, Prob. 12.41">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.41, p. 392 y §12.5, Ejemplo 12.8, pp. 383-384">U pp.383-384, 392</span></summary>
+<div class="nivel"><b>🟡 Práctica: 5 ejercicios más</b><span>Repiten métodos del núcleo: densidad de una pieza con un hueco, presión en el pistón de un elevador, densidad de un líquido por pesadas, un tanque presurizado y el problema práctico del libro (tiempo de vaciado de un depósito). Antes de leer los pasos, marca los puntos 1 y 2 y decide si las presiones van absolutas o manométricas.</span></div>
+<details class="sol" id="e1"><summary>E1 — Problema 12.2: cubo con un orificio (densidad y peso original) <span class="src" data-l="E" data-ref="Solucionario 12-1, Prob. 12.2">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.2, p. 390 y §12.1, ec. 12.1, tabla 12.1">U p.370, 390</span></summary>
+<p class="enun">Un cubo de 5,0 cm de lado está hecho de una aleación metálica. Después de perforar de lado a lado un orificio cilíndrico de 2,0 cm de diámetro, perpendicular a una cara, el cubo pesa 6,30 N. a) ¿Cuál es la densidad del metal? b) ¿Cuánto pesaba el cubo antes de taladrarlo?</p>
+  <ol class="steps">
+    <li><b>Qué objeto conocemos.</b> Los 6,30 N son el peso del cubo <i>ya agujereado</i>; su volumen es el del cubo menos el del cilindro hueco (radio 1,0 cm, longitud igual al lado porque atraviesa el cubo).</li>
+    <li><b>Volumen de metal:</b> $V=L^3-\pi r^2L=125-\pi(1{,}0)^2(5{,}0)=125-15{,}7=109\ \text{cm}^3=1{,}09\times10^{-4}$ m³ (1 cm³ $=10^{-6}$ m³).</li>
+    <li><b>Masa:</b> de $w=mg$, $m=6{,}30/9{,}8=0{,}643$ kg.</li>
+    <li><b>a) Densidad (12.1):</b> $\rho=m/V=0{,}643/(1{,}09\times10^{-4})=5{,}9\times10^3$ kg/m³. Razonable: entre el aluminio ($2{,}7\times10^3$) y el hierro ($7{,}8\times10^3$), según la tabla 12.1.</li>
+    <li><b>b) Cubo macizo:</b> mismo metal, misma densidad: $m_0=\rho L^3=(5{,}9\times10^3)(1{,}25\times10^{-4})=0{,}735$ kg ⇒ $w_0=m_0g=7{,}2$ N.</li>
+    <li><b>Atajo:</b> el agujero quita $\pi r^2L/L^3=12{,}6\,\%$ del volumen ⇒ $w_0=6{,}30/(1-0{,}126)=7{,}2$ N.</li>
+  </ol>
+<figure class="fig" data-svg="../assets/figs/t12/cubo-de-5-centimetros-de-lado-con-un-orificio-ci.svg">
+<div class="figph" role="img" aria-label="Cubo de 5 centímetros de lado con un orificio cilíndrico de 2 centímetros de diámetro que lo atraviesa" style="aspect-ratio:340/190"></div>
+<figcaption>El volumen de metal es el del cubo menos el del cilindro hueco (que atraviesa los 5,0 cm): 109 cm³. Con 6,30 N ($m=0{,}643$ kg) resulta $\rho=5{,}9\times10^3$ kg/m³. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.2 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> densidad = masa del objeto <i>real</i> / volumen del objeto <i>real</i> (descontando los huecos); luego la densidad es una propiedad del material y sirve para cualquier otra pieza.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Dividir la masa del cubo agujereado entre el volumen del cubo entero; olvidar pasar cm³ a m³.</p></div>
+</details>
+<details class="sol" id="e3"><summary>E3 — Problema 12.24: elevador hidráulico II (presión necesaria) <span class="src" data-l="E" data-ref="Solucionario 12-6, Prob. 12.24">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.24, p. 392 y §12.2, p. 371">U p.371, 392</span></summary>
+<p class="enun">El pistón del elevador hidráulico para autos tiene 0,30 m de diámetro. ¿Qué presión manométrica, en pascales y en atmósferas, se requiere para levantar un auto de 1200 kg?</p>
+  <ol class="steps">
+    <li><b>DCL del pistón con el auto encima, en equilibrio.</b> Hacia arriba, la fuerza del aceite $pA$ (presión absoluta). Hacia abajo, el peso $mg$ y la fuerza del aire de encima, $p_{atm}A$.</li>
+    <li><b>$\sum F_y=0$:</b> $pA-p_{atm}A-mg=0\ \Rightarrow\ p-p_{atm}=\dfrac{mg}{A}$. <b>La atmósfera se cancela sola</b> y queda exactamente la manométrica.</li>
+    <li><b>Área</b> (radio = mitad del diámetro): $A=\pi(0{,}15)^2=0{,}0707$ m².</li>
+    <li><b>Número:</b> $p_{man}=\dfrac{(1200)(9{,}8)}{0{,}0707}=1{,}66\times10^5$ Pa $\approx1{,}7\times10^5$ Pa.</li>
+    <li><b>En atmósferas:</b> $\dfrac{1{,}66\times10^5}{1{,}013\times10^5}=1{,}64$ atm ($\approx1{,}6$ atm).</li>
+    <li><b>Evaluar:</b> cuanto mayor es el diámetro del pistón, menor es la presión manométrica necesaria.</li>
+  </ol>
+<figure class="fig" data-svg="../assets/figs/t12/piston-del-elevador-con-el-automovil-encima-y-su.svg">
+<div class="figph" role="img" aria-label="Pistón del elevador con el automóvil encima y su diagrama de cuerpo libre: fuerza del aceite hacia arriba igual al peso más la fuerza del aire" style="aspect-ratio:340/190"></div>
+<figcaption>DCL del pistón con el auto: $pA=mg+p_{atm}A$ ($18{,}9\ \text{kN}=11{,}8+7{,}2$ kN, a escala). La fuerza atmosférica se cancela sola y queda $p_{man}A=mg$, $p_{man}=1{,}66\times10^5$ Pa. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.24 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> pistón en equilibrio con aire por el otro lado: $p_{man}=F/A$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar el diámetro como radio (da una presión 4 veces menor); dar la absoluta (≈ 2,7×10⁵ Pa, unas 2,6 atm) cuando se pide la manométrica.</p></div>
+</details>
+<details class="sol" id="e6"><summary>E6 — Problema 12.35: densidad de un líquido desconocido por pesadas <span class="src" data-l="E" data-ref="Solucionario 12-9 y 12-10, Prob. 12.35">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.35, p. 392 y §12.3, p. 376">U p.376, 392</span></summary>
+<p class="enun">Una roca cuelga de un hilo ligero. Cuando está en el aire, la tensión en el hilo es de 39,2 N. Cuando está totalmente sumergida en agua, la tensión es de 28,4 N. Cuando está totalmente sumergida en un líquido desconocido, la tensión es de 21,5 N. Determina la densidad del líquido desconocido.</p>
+  <ol class="steps">
+    <li><b>Por qué tres pesadas bastan.</b> La diferencia «aire − sumergido» es el empuje. El volumen de la roca es el mismo en ambos líquidos, así que los empujes están en la proporción de las densidades.</li>
+    <li><b>Empuje en agua:</b> $B_w=39{,}2-28{,}4=10{,}8$ N ⇒ $V=B_w/(\rho_wg)=1{,}10\times10^{-3}$ m³.</li>
+    <li><b>Empuje en el líquido:</b> $B_L=39{,}2-21{,}5=17{,}7$ N $=\rho_LVg$.</li>
+    <li><b>Cociente (sin calcular $V$):</b> $\dfrac{\rho_L}{\rho_w}=\dfrac{B_L}{B_w}=\dfrac{17{,}7}{10{,}8}=1{,}64\Rightarrow\rho_L=1{,}64\times10^3$ kg/m³.</li>
+    <li><b>Extra:</b> densidad de la roca, $\rho_{roca}=\rho_w\dfrac{39{,}2}{10{,}8}=3{,}63\times10^3$ kg/m³.</li>
+  </ol>
+<figure class="fig" data-svg="../assets/figs/t12/tres-dinamometros-que-sostienen-la-misma-roca-en.svg">
+<div class="figph" role="img" aria-label="Tres dinamómetros que sostienen la misma roca en el aire (39,2 newtons), en agua (28,4 newtons) y en un líquido desconocido (21,5 newtons)" style="aspect-ratio:340/235"></div>
+<figcaption>La roca en tres medios: la lectura baja en la medida del empuje. $B_{agua}=39{,}2-28{,}4=10{,}8$ N y $B_L=39{,}2-21{,}5=17{,}7$ N; el cociente es $\rho_L/\rho_{agua}=1{,}64$. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.35 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> $\rho_L=\rho_w\,\dfrac{w-T_L}{w-T_w}$ (método de la balanza hidrostática).</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Dividir las tensiones ($28{,}4/21{,}5$) en lugar de los empujes.</p></div>
+</details>
+<details class="sol" id="e11"><summary>E11 — Problema 12.41: tanque sellado con aire a presión <span class="src" data-l="E" data-ref="Solucionario 12-11, Prob. 12.41">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.41, p. 392 y §12.5, Ejemplo 12.8, pp. 383-384">U pp.383-384, 392</span></summary>
 <p class="enun">Un tanque sellado que contiene agua de mar hasta una altura de 11,0 m contiene también aire sobre el agua a una presión manométrica de 3,00 atm. Sale agua del tanque a través de un orificio pequeño en el fondo. ¿Qué tan rápido se está moviendo el agua?</p>
   <ol class="steps">
     <li><b>Puntos.</b> 1 en la superficie del agua ($y_1=11{,}0$ m, $p_1=p_{atm}+3{,}00$ atm); 2 en el chorro a la salida ($y_2=0$, $p_2=p_{atm}$).</li>
@@ -582,23 +608,7 @@
   <div class="recipe"><b>Receta:</b> depósito presurizado: $v=\sqrt{2\,p_{man,superficie}/\rho+2gh}$; la sobrepresión equivale a una columna extra $p_{man}/(\rho g)$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Poner $p_1=3{,}00$ atm absoluta y $p_2=p_{atm}$ (mezclar tipos de presión); olvidar la columna de agua.</p></div>
 </details>
-<details class="sol" id="e12"><summary>E12 — Problema 12.50: tubería viscosa, efecto de reducir el radio <span class="src" data-l="E" data-ref="Solucionario 12-13, Prob. 12.50">E</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.50, p. 393 y §12.6, p. 386">U p.386, 393</span></summary>
-<p class="enun">Se requiere una diferencia de presión de $6{,}00\times10^4$ Pa para mantener una velocidad de flujo de volumen de 0,800 m³/s para un fluido viscoso que fluye a través de una sección de tubo cilíndrico que tiene un radio de 0,210 m. ¿Qué diferencia de presión es necesaria para mantener la misma rapidez de volumen del flujo si el radio de la tubería se reduce a 0,0700 m?</p>
-  <ol class="steps">
-    <li><b>Por qué no Bernoulli.</b> Con viscosidad hay fricción interna: hace falta una diferencia de presión solo para mantener el flujo aunque la velocidad media no cambie. U da la ley de escala: a caudal fijo, $\Delta p\propto L/R^4$.</li>
-    <li><b>Mismo tubo, misma longitud, mismo caudal</b> ⇒ $\Delta p\,R^4=$ cte ⇒ $\Delta p_2=\Delta p_1\left(\dfrac{R_1}{R_2}\right)^4$.</li>
-    <li><b>Números:</b> $R_1/R_2=0{,}210/0{,}0700=3\Rightarrow3^4=81$ ⇒ $\Delta p_2=81\cdot6{,}00\times10^4=4{,}86\times10^6$ Pa ($\approx48$ atm).</li>
-    <li><b>Sentido físico:</b> reducir el radio a un tercio multiplica por 81 la presión necesaria (reducirlo a la mitad: ×16). Por eso un pequeño estrechamiento de una arteria obliga al corazón a trabajar mucho más.</li>
-  </ol>
-<figure class="fig" data-svg="../assets/figs/t12/dos-tubos-del-mismo-caudal-uno-de-radio-0-210-me.svg">
-<div class="figph" role="img" aria-label="Dos tubos del mismo caudal: uno de radio 0,210 metros que necesita 6,00×10⁴ pascales y otro de radio 0,0700 metros que necesita 4,86×10⁶ pascales" style="aspect-ratio:340/205"></div>
-<figcaption>Reducir el radio a un tercio multiplica por $3^4=81$ la diferencia de presión necesaria para el mismo caudal (la altura de las barras no está a escala: la segunda es 81 veces mayor). <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.50 de U">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> flujo viscoso en tubo, caudal fijo: $\Delta p\propto L/R^4$ ⇒ razona con cocientes, sin necesidad de conocer la viscosidad.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Usar $R^2$ (como en la continuidad) en lugar de $R^4$.</p></div>
-</details>
-<details class="sol" id="epp"><summary>Problema práctico: ¿cuánto tiempo se tarda en vaciar un tanque? <span class="src" data-l="U" data-ref="U Problema práctico del cap. 12, p. 389 y fig. 12.32">U p.389</span> <span class="src" data-l="P" data-ref="Resolución propia del Problema práctico del cap. 12 de U (con comprobación numérica)">P</span></summary>
+<details class="sol" id="epp"><summary>Problema práctico: ¿cuánto tiempo se tarda en vaciar un tanque? <span class="src" data-l="U" data-ref="U Problema práctico del cap. 12, p. 389 y fig. 12.32">U p.389</span> <span class="prio p3">⚪</span> <span class="src" data-l="P" data-ref="Resolución propia del Problema práctico del cap. 12 de U (con comprobación numérica)">P</span></summary>
 <p class="enun">Un gran tanque cilíndrico de diámetro $D$ está abierto al aire libre en la parte superior y contiene agua hasta una altura $H$. Se abre en el fondo un pequeño orificio circular de diámetro $d\ll D$ (figura 12.32). Desprecia los efectos de la viscosidad. a) Encuentra $y$, la altura del agua en el tanque un tiempo $t$ después de abrir el orificio, como función de $t$. b) ¿Cuánto tiempo se tarda en vaciar el tanque por completo? c) Si se duplica la altura inicial $H$, ¿en qué factor aumenta el tiempo de vaciado?</p>
   <ol class="steps">
     <li><b>Rapidez de salida.</b> Con el nivel a una altura $y$ sobre el orificio, Torricelli: $v=\sqrt{2gy}$ (el nivel baja despacio, $v_1\approx0$).</li>
@@ -617,6 +627,14 @@
   <div class="recipe"><b>Receta:</b> vaciado de un depósito: caudal de salida (Torricelli) = ritmo de pérdida de volumen ⇒ ecuación diferencial $dy/dt=-k\sqrt y$ ⇒ $y=(\sqrt H-kt/2)^2$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Suponer una rapidez de salida constante (daría un tiempo $(D/d)^2H/\sqrt{2gH}$, la mitad del real) o integrar mal la raíz.</p></div>
 </details>
+<div class="nivel" id="teoria-t12"><b>📝 Preguntas de teoría (4 puntos)</b><span>Ningún «Desarrolle el tema…» de los exámenes revisados es de este tema. Por si cae, aquí tienes un guion para las dos preguntas naturales del capítulo.</span></div>
+<div class="box tip"><span class="h">Si te toca una pregunta de teoría del tema: «Estática de fluidos» o «Fluidos en movimiento: continuidad y Bernoulli»</span>
+<p>Guion propio (no es un enunciado de examen real). Define, da la ecuación, un ejemplo con números y cierra con el error típico:</p>
+  <ul>
+    <li><b>Estática de fluidos:</b> (1) densidad $\rho=m/V$ y presión $p=F_\perp/A$, escalar, en Pa; (2) deducción de $p=p_0+\rho gh$ con el equilibrio de una capa (12.4-12.6), con su dibujo; misma presión a un mismo nivel; absoluta y manométrica; (3) ley de Pascal y elevador hidráulico, $F_2=(A_2/A_1)F_1$ con el mismo trabajo; manómetro y barómetro (760 mm Hg); (4) principio de Arquímedes $B=\rho_fV_{sum}g$, por qué existe (diferencia de presión entre caras) y condición de flotación $f=\rho_c/\rho_f$; ejemplo: estatua de oro, $T=139$ N (ejemplo 12.5); (5) error: empuje con la densidad del cuerpo o mezclar absoluta y manométrica.</li>
+    <li><b>Fluidos en movimiento:</b> (1) fluido ideal, flujo estable, líneas de flujo, laminar frente a turbulento; (2) continuidad $A_1v_1=A_2v_2$ y caudal $Q=Av$ como conservación de la masa (12.10-12.12); (3) Bernoulli (12.17) deducido con el teorema del trabajo y la energía (12.16) y sus condiciones de validez; (4) aplicaciones: Torricelli $v=\sqrt{2gh}$, Venturi y sustentación; ejemplo: tubería del ejemplo 12.7 ($p_2=3{,}3\times10^5$ Pa); (5) límites: viscosidad ($\Delta p\propto L/R^4$) y turbulencia; error: cociente de diámetros en lugar del de áreas.</li>
+  </ul>
+  <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
 <h2 id="chuleta"><span class="n">8</span>Chuleta, errores frecuentes y lista de comprobación</h2>
 <table>
 <tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
@@ -648,15 +666,19 @@
   <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
 <ul class="checklist">
   <li>Sé calcular una densidad (incluso con huecos) y pasar de masa a peso y a volumen (§1, E1).</li>
-  <li>Sé aplicar $p=p_0+\rho gh$ y distinguir presión absoluta y manométrica (§2, E2, E3, ejemplo 12.3).</li>
-  <li>Sé aplicar la ley de Pascal a un elevador hidráulico (E3, E4).</li>
-  <li>Sé resolver un tubo en U con dos fluidos y un manómetro igualando presiones a un mismo nivel (ejemplo 12.4, E7).</li>
-  <li>Sé plantear un cuerpo sumergido o flotante con el empuje y el DCL, y decidir si flota (§3, E5, E6, ejemplo 12.5).</li>
-  <li>Sé usar la continuidad $A_1v_1=A_2v_2$ y el caudal $Q=Av$ (§4, E8).</li>
-  <li>Sé aplicar Bernoulli entre dos puntos de una tubería con cambio de altura y de sección (E10, ejemplo 12.7).</li>
-  <li>Sé deducir y usar Torricelli, también con un tanque presurizado, y hallar el alcance del chorro (E9, ampliación; E11).</li>
+  <li>Sé explicar por qué la presión es un escalar y calcular la fuerza que ejerce sobre una superficie (§2).</li>
+  <li>Sé aplicar $p=p_0+\rho gh$ y distinguir presión absoluta y manométrica (§2, E2, E3).</li>
+  <li>Sé aplicar la ley de Pascal a un elevador hidráulico y explicar por qué no se gana energía (§2, E4).</li>
+  <li>Sé resolver un tubo en U con dos líquidos, un manómetro y un barómetro igualando presiones a un mismo nivel (ejemplo 12.4, §2).</li>
+  <li>Sé plantear un cuerpo sumergido o flotante con el empuje y el DCL, y decidir si flota (§3, E5, E6).</li>
+  <li>Sé calcular presiones con varios fluidos apilados y ver el empuje como diferencia de presiones (E7).</li>
+  <li>Sé usar la continuidad $A_1v_1=A_2v_2$ y el caudal $Q=Av$, con el área en función del diámetro (§4, E8).</li>
+  <li>Sé aplicar Bernoulli entre dos puntos de una tubería con cambio de altura y de sección (§5, E10).</li>
+  <li>Sé deducir y usar Torricelli, también con un tanque presurizado, y hallar el alcance del chorro (E9, E11).</li>
   <li>Sé explicar el medidor Venturi y la sustentación de un ala (ejemplos 12.9 y 12.10).</li>
-  <li>Sé la dependencia $\Delta p\propto1/R^4$ de un fluido viscoso y qué implica (E12, §6).</li>
+  <li>Sé la dependencia $\Delta p\propto L/R^4$ de un fluido viscoso y cuándo no vale Bernoulli (§6, E12).</li>
+  <li>Sé plantear e integrar el vaciado de un depósito (problema práctico).</li>
+  <li>Sé desarrollar de memoria «Estática de fluidos» y «Fluidos en movimiento: continuidad y Bernoulli» (guion de teoría).</li>
 </ul>
 <h2 id="fuentes"><span class="n">★</span>Fuentes de este tema</h2>
 <details class="fuentes-toggle">
