@@ -1,0 +1,1194 @@
+{
+ "num": 15,
+ "kick": "Bloque Oscilaciones y ondas · Tema 15",
+ "titulo": "Ondas mecánicas",
+ "descripcion": "Una cuerda de guitarra, la «ola» de un estadio, el sonido que llega a tu oído, un terremoto: en todos ellos <b>una perturbación viaja</b> por un medio sin que el medio avance con ella. Este tema te enseña a describir una onda con tres números ($A$, $\\lambda$, $f$), a escribir su <b>función de onda</b> $y(x,t)$, a calcular su rapidez y la potencia que transporta, y a entender por qué una cuerda sujeta por los dos extremos solo suena con ciertas frecuencias (las <b>ondas estacionarias</b> y los <b>modos normales</b>).",
+ "chips": [
+  "Libro oficial: Sears-Zemansky, cap. 15 (pp. 469-503; resumen p. 495; problema práctico p. 496; ejercicios y problemas pp. 496-503)",
+  "Ejercicios de examen real: 1 (teoría; ningún problema numérico)",
+  "Ejercicios: 19 (18 del solucionario + problema práctico) + ejemplos de U",
+  "2 ejemplos interactivos",
+  "⏱ ~7 h de estudio"
+ ],
+ "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
+ "titulo_pagina": "Física I · Tema 15 Ondas mecánicas",
+ "archivo": "tema_15_ondas_mecanicas.html",
+ "examenes_requeridos": [
+  "Examen Febrero 2019 (1ª semana) P-3 Teoría Opción 3.1"
+ ],
+ "figuras": {
+  "dos-graficas-de-una-onda-sinusoidal-arriba-el-de": {
+   "w": "340",
+   "h": "275",
+   "label": "Dos gráficas de una onda sinusoidal: arriba el desplazamiento y frente a la posición x en un instante, con la longitud de onda lambda entre crestas; abajo y frente al tiempo en un punto, con el periodo T entre máximos",
+   "pie": "Arriba: foto de la cuerda en $t=0$ ($y$ contra $x$): la <b>longitud de onda</b> $\\lambda$ es la distancia entre dos crestas. Abajo: película de <i>una</i> partícula ($y$ contra $t$): el <b>periodo</b> $T$ es el tiempo entre dos máximos. La amplitud $A$ es la misma en ambas.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §15.2-15.3 (fig. 15.9)",
+    "txt": "P"
+   }
+  },
+  "tres-fotos-de-la-misma-onda-en-t-igual-a-0-t-cua": {
+   "w": "340",
+   "h": "244",
+   "label": "Tres fotos de la misma onda en t igual a 0, T cuarto y T medios: la forma se desplaza hacia la derecha un cuarto y media longitud de onda sin cambiar",
+   "pie": "Tres «fotos» de la misma onda. La forma <b>no cambia</b>: se desplaza a la derecha $v\\,t$ (un cuarto de $\\lambda$ cuando pasa $T/4$, media $\\lambda$ cuando pasa $T/2$). El punto verde sigue una cresta; la línea de trazos marca dónde estaba en $t=0$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §15.3 (fig. 15.9, ec. 15.7)",
+    "txt": "P"
+   }
+  },
+  "cuerda-con-una-onda-viajera-hacia-la-derecha-y-f": {
+   "w": "340",
+   "h": "190",
+   "label": "Cuerda con una onda viajera hacia la derecha y flechas verticales con la velocidad transversal de varias partículas: cero en crestas y valles, máxima hacia arriba y hacia abajo en los puntos de desplazamiento cero",
+   "pie": "La onda avanza hacia $+x$ (flecha azul) pero cada partícula (punto verde) solo sube o baja. Para $y=A\\cos(kx-\\omega t)$ en $t=0$: $v_{y}=\\omega A\\sin kx$. En las crestas y valles $v_{y}=0$; en los puntos con $y=0$ la rapidez transversal es máxima ($\\pm\\omega A$). Las flechas naranja no están a escala de $y$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §15.3 (fig. 15.10)",
+    "txt": "P"
+   }
+  },
+  "trozo-de-cuerda-curvada-hacia-arriba-entre-x-y-x": {
+   "w": "340",
+   "h": "195",
+   "label": "Trozo de cuerda curvada hacia arriba entre x y x más delta x con la tensión F tirando de cada extremo en la dirección de la cuerda y la fuerza neta vertical hacia arriba",
+   "pie": "Un trozo de cuerda de longitud $\\Delta x$ cuya forma es cóncava hacia arriba ($\\partial^2y/\\partial x^2>0$). La tensión $F$ tira de cada extremo en la dirección de la cuerda; las componentes horizontales se cancelan y las verticales no: queda una fuerza neta hacia arriba, proporcional a la curvatura. (Inclinaciones exageradas.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §15.4 (fig. 15.13)",
+    "txt": "P"
+   }
+  },
+  "fuente-puntual-rodeada-de-dos-esferas-de-radios-": {
+   "w": "340",
+   "h": "190",
+   "label": "Fuente puntual rodeada de dos esferas de radios r y 2r y un mismo cono de ondas que cruza un área A en la esfera pequeña y un área 4A en la grande, con intensidades I e I cuartos",
+   "pie": "Una fuente puntual reparte la misma potencia $P$ sobre esferas cada vez mayores: el mismo «cono» cruza un área $A$ a distancia $r$ y $4A$ a $2r$, así que la intensidad cae a $I/4$. Ley del cuadrado inverso: $I\\propto 1/r^2$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §15.5 (ley del cuadrado inverso, ec. 15.26)",
+    "txt": "P"
+   }
+  },
+  "dos-casos-de-superposicion-de-pulsos-dos-pulsos-": {
+   "w": "340",
+   "h": "245",
+   "label": "Dos casos de superposición de pulsos: dos pulsos hacia arriba que al coincidir dan un pulso de doble altura, y un pulso hacia arriba con otro hacia abajo que al coincidir se anulan",
+   "pie": "Principio de superposición: el desplazamiento total es la <b>suma algebraica</b> de los dos. Trazos: cada pulso por separado; línea gruesa: la cuerda real. Después de cruzarse, cada pulso sigue su camino sin deformarse.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §15.6 (figs. 15.20-15.21)",
+    "txt": "P"
+   }
+  },
+  "onda-estacionaria-con-dos-fotos-en-instantes-sep": {
+   "w": "340",
+   "h": "215",
+   "label": "Onda estacionaria con dos fotos en instantes separados medio periodo, con nodos N en x igual a 0, lambda medios, lambda y tres lambda medios y antinodos A en los puntos intermedios; la distancia entre nodos es lambda medios y entre un nodo y un antinodo lambda cuartos",
+   "pie": "<b>Onda estacionaria</b> $y=(A_{OE}\\sin kx)\\sin\\omega t$. Azul y naranja: dos fotos separadas medio periodo; gris a trazos: la envolvente $\\pm A_{OE}|\\sin kx|$. Los <b>nodos</b> N (puntos verdes) no se mueven nunca y distan $\\lambda/2$; los <b>antinodos</b> A oscilan con amplitud máxima $A_{OE}=2A$ y están a $\\lambda/4$ de cada nodo.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §15.7 (figs. 15.23e y 15.24)",
+    "txt": "P"
+   }
+  },
+  "cuerda-fija-en-ambos-extremos-con-un-dedo-apoyad": {
+   "w": "340",
+   "h": "152",
+   "label": "Cuerda fija en ambos extremos con un dedo apoyado en un tercio de su longitud; vibra en el tercer armónico con nodos en los extremos, en L tercios y en dos L tercios",
+   "pie": "Un dedo apoyado en $x=L/3$ impone un <b>nodo</b> allí. Solo pueden sonar los modos que tienen un nodo en $L/3$: $n=3,6,9,\\dots$ (aquí $n=3$, $f_3=3f_1$). Los modos $n=1,2$ no tienen nodo en ese punto (allí su amplitud no es cero), así que el dedo los amortigua.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §15.8 (fig. 15.26) y cuestión corta C2",
+    "txt": "P"
+   }
+  },
+  "grafica-del-desplazamiento-y-en-cm-de-la-particu": {
+   "w": "340",
+   "h": "210",
+   "label": "Gráfica del desplazamiento y en cm de la partícula en x igual a 0,360 m entre 0,11 y 0,20 segundos: a 0,150 s vale 4,95 cm y está subiendo; el siguiente máximo de 7,00 cm llega a 0,155 s, 5,0 ms después",
+   "pie": "Ejercicio 15.7 d): $y(t)$ de la partícula en $x=0{,}360$ m. A $t=0{,}150$ s está en $+4{,}95$ cm y <b>subiendo</b>; el máximo ($7{,}00$ cm) llega 5,0 ms después, $T/8$ (el periodo es 40,0 ms).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 15.7",
+    "txt": "P"
+   }
+  },
+  "tres-fotos-de-una-onda-sinusoidal-en-t-igual-a-0": {
+   "w": "340",
+   "h": "215",
+   "label": "Tres fotos de una onda sinusoidal en t igual a 0, 0,5 milisegundos y 1,0 milisegundos: cada foto es la anterior desplazada 0,3125 centímetros hacia la izquierda, es decir en sentido menos x",
+   "pie": "Ejercicio 15.48 b): la cuerda en $t=0$, $0{,}5$ ms y $1{,}0$ ms. $\\lambda=5{,}00$ cm. Cada $0{,}5$ ms la forma se corre $v\\,\\Delta t=0{,}3125$ cm hacia $-x$ sin deformarse (puntos: la cresta que estaba en $x=5$ cm).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 15.48",
+    "txt": "P"
+   }
+  },
+  "diapason-que-hace-vibrar-una-cuerda-horizontal-q": {
+   "w": "340",
+   "h": "165",
+   "label": "Diapasón que hace vibrar una cuerda horizontal que pasa por una polea y sostiene una masa de 1,50 kilogramos; la tensión es el peso de la masa, 14,7 newtons",
+   "pie": "Ejercicio 15.15: la masa en equilibrio fija la tensión ($F=mg=14{,}7$ N); la frecuencia la impone el diapasón. Ondas dibujadas con amplitud exagerada y $\\lambda$ no a escala.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 15.15",
+    "txt": "P"
+   }
+  },
+  "cuerda-vertical-de-6-00-metros-que-pesa-29-4-new": {
+   "w": "340",
+   "h": "195",
+   "label": "Cuerda vertical de 6,00 metros que pesa 29,4 newtons colgada del techo con una masa de 0,500 kilogramos abajo; las flechas de tensión crecen hacia arriba: 4,90, 19,6 y 34,3 newtons",
+   "pie": "Ejercicio 15.20: la tensión en cada punto sostiene la masa más la cuerda que hay <b>por debajo</b>; crece linealmente hacia arriba (flechas a escala) y por eso $v=\\sqrt{F/\\mu}$ también crece.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 15.20",
+    "txt": "P"
+   }
+  },
+  "cinco-fotos-de-la-cuerda-con-dos-pulsos-triangul": {
+   "w": "340",
+   "h": "338",
+   "label": "Cinco fotos de la cuerda con dos pulsos triangulares que se cruzan, a 0,25, 0,50, 0,75, 1,00 y 1,25 segundos: se tocan, forman un trapecio de 1 centímetro, un triángulo de 2 centímetros de altura, de nuevo un trapecio y se separan sin deformarse",
+   "pie": "Ejercicio 15.32. Trazos: cada pulso por separado; línea gruesa: la cuerda (suma). Escalas de $x$ e $y$ distintas (la altura está ampliada).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 15.32 (fig. E15.32)",
+    "txt": "P"
+   }
+  },
+  "onda-estacionaria-con-nodos-en-0-15-30-y-45-cent": {
+   "w": "340",
+   "h": "205",
+   "label": "Onda estacionaria con nodos en 0, 15, 30 y 45 centímetros y antinodos en 7,5, 22,5 y 37,5 centímetros; entre nodos hay 15,0 centímetros, entre nodo y antinodo 7,50 centímetros y la longitud de onda es 30,0 centímetros",
+   "pie": "Ejercicio 15.36: nodo–nodo = antinodo–antinodo = $\\lambda/2=15{,}0$ cm; nodo–antinodo $=\\lambda/4=7{,}50$ cm; la longitud de onda es $30{,}0$ cm. La amplitud en el antinodo es $A_{OE}=2A$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 15.36",
+    "txt": "P"
+   }
+  },
+  "dos-dibujos-de-una-cuerda-de-60-centimetros-libr": {
+   "w": "340",
+   "h": "240",
+   "label": "Dos dibujos de una cuerda de 60 centímetros: libre vibra en su fundamental a 440 hercios; con un dedo a 45 centímetros del puente solo vibra esa parte y suena a 587 hercios",
+   "pie": "Ejercicio 15.45: el dedo acorta la parte que vibra ($F$ y $\\mu$ no cambian, así que $v$ tampoco) y $f_1\\propto 1/L$. De $440\\to587$ Hz hace falta $x=60{,}0\\cdot440/587=45{,}0$ cm. Alargar la cuerda no es posible: no se puede bajar de 440 Hz.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 15.45 (fig. E15.45)",
+    "txt": "P"
+   }
+  },
+  "arriba-la-cuerda-en-su-tercer-armonico-con-longi": {
+   "w": "340",
+   "h": "222",
+   "label": "Arriba la cuerda en su tercer armónico con longitud de onda 0,500 metros; abajo el sonido que emite, con la misma frecuencia pero longitud de onda 0,765 metros, porque el sonido va más rápido en el aire",
+   "pie": "Ejercicio 15.44: cuerda y aire vibran con la <b>misma frecuencia</b> (449,7 Hz), pero sus longitudes de onda son distintas porque las rapideces lo son ($224{,}8$ m/s en la cuerda, 344 m/s en el aire). Misma escala horizontal en los dos dibujos.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 15.44",
+    "txt": "P"
+   }
+  },
+  "recta-de-frecuencias-con-los-armonicos-multiplos": {
+   "w": "340",
+   "h": "140",
+   "label": "Recta de frecuencias con los armónicos múltiplos de 156 hercios: 156, 312, 468, 624 y 780; los dos armónicos consecutivos medidos, 624 y 780, están separados 156 hercios que es la fundamental",
+   "pie": "Ejercicio 15.58: los armónicos son $f_n=nf_1$; dos consecutivos siempre se diferencian en $f_1$. 624 Hz es el cuarto y 780 Hz el quinto armónico.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 15.58",
+    "txt": "P"
+   }
+  },
+  "vista-desde-arriba-de-una-cuerda-de-longitud-l-q": {
+   "w": "340",
+   "h": "276",
+   "label": "Vista desde arriba de una cuerda de longitud L que gira con velocidad angular omega; debajo, gráfica de la tensión F y de la rapidez de onda v en función de r partido por L, ambas máximas en el eje y nulas en el extremo libre",
+   "pie": "Problema práctico de U (cuerda que gira): $F(r)=\\dfrac{m\\omega^2}{2L}(L^2-r^2)$ y $v(r)=\\omega\\sqrt{(L^2-r^2)/2}$. Normalizadas con $F_0=m\\omega^2L/2$ y $v_0=\\omega L/\\sqrt2$ (valores en $r=0$): ambas valen 0 en el extremo libre $r=L$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema práctico del cap. 15",
+    "txt": "P"
+   }
+  }
+ },
+ "bloques": [
+  {
+   "t": "h2",
+   "id": "prereq",
+   "n": "0",
+   "titulo": "Antes de empezar",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U cap. 15, portadilla e introducción, p. 469",
+    "txt": "U p.469"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte01.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte02.html"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Qué ha caído en examen: solo teoría de ondas estacionarias",
+   "html": [
+    "<p>En las convocatorias disponibles (2018-2025) <b>no ha caído ningún problema numérico (P-1 / P-2) de ondas mecánicas</b>. Lo único de este tema que aparece en un examen real es <b>una pregunta de teoría</b> (vale 4 puntos): «<b>Ondas estacionarias en una cuerda</b>», <b>Examen Febrero 2019 (1ª semana) P-3 Teoría Opción 3.1</b> (el enunciado es solo el título). Está desarrollada en el apartado <a href=\"#ex-examenes\">9.1</a> como esquema de respuesta modelo, con dos cuestiones cortas <b>propias</b> (no son de examen) del estilo de las que acompañan a la teoría desde 2022.</p>",
+    "  <table>",
+    "    <tr><th>Convocatoria y pregunta</th><th>Tema a desarrollar</th><th>Dónde en este resumen</th></tr>",
+    "    <tr><td>Feb 2019 (1ª semana) P-3 Teoría 3.1</td><td>Ondas estacionarias en una cuerda</td><td>§7, §8 y apartado 9.1</td></tr>",
+    "  </table>",
+    "  <p>Como no hay problemas de examen, los <b>ejercicios numéricos</b> de este tema son los del solucionario (E), traducidos y ampliados, ordenados de menos a más; no se simula ningún enunciado de examen. Dado que la teoría de ondas estacionarias sí cae, estudia §6-§8 con especial cuidado.</p>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Resumen propio de fuentes_txt/examenes_por_tema.md (Tema 15)",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "La receta maestra del tema: ¿qué te piden?",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Pasa todo a $A$, $\\lambda$ (o $k$), $f$ (o $\\omega$) y $v$.</b> Una función de onda $y=A\\cos(kx\\mp\\omega t)$ ya contiene $A$, $k$ y $\\omega$; de ahí $v=\\omega/k=\\lambda f$ y el <b>sentido</b> (signo $-$: hacia $+x$; signo $+$: hacia $-x$). Si el enunciado trae $\\pi[\\ldots]$ o $2\\pi[\\ldots]$ dentro del coseno, multiplica antes de leer $k$ y $\\omega$.</li>",
+    "    <li><b>Dos rapideces distintas, ¡no las mezcles!</b> $v$ es la rapidez <i>de la onda</i> (la fija el medio: en una cuerda $v=\\sqrt{F/\\mu}$); $v_y=\\partial y/\\partial t$ es la rapidez <i>de una partícula</i> de la cuerda (oscila con MAS; máximo $\\omega A$).</li>",
+    "    <li><b>Dinámica ↔ cinemática:</b> en un problema de cuerda siempre se igualan dos expresiones de $v$: $v=\\lambda f$ (cinemática) y $v=\\sqrt{F/\\mu}$ (dinámica). $\\mu$ es masa <i>por unidad de longitud</i>: $\\mu=m/L$.</li>",
+    "    <li><b>Potencia:</b> $P_{med}=\\tfrac12\\sqrt{\\mu F}\\,\\omega^2A^2$ (cuadrática en $A$ y en $\\omega$); fuente puntual: $I=P/4\\pi r^2$.</li>",
+    "    <li><b>Cuerda fija en los dos extremos:</b> $L=n\\lambda_n/2$, $f_n=n\\,v/2L=nf_1$, $n=1,2,3,\\dots$ Dibuja siempre los nodos (N) y antinodos (A): nodo–nodo $=\\lambda/2$, nodo–antinodo $=\\lambda/4$.</li>",
+    "    <li><b>Suma de ondas:</b> $y=y_1+y_2$ punto a punto; extremo fijo invierte el pulso, extremo libre no.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Receta propia que resume U cap. 15, Estrategias 15.1 y 15.2, pp. 475 y 490",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s1",
+   "n": "1",
+   "titulo": "Tipos de ondas mecánicas",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §15.1, pp. 469-470",
+    "txt": "U p.469-470"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte03.html"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Definición: onda transversal y longitudinal",
+   "html": "<p>Una onda mecánica necesita un medio con un <b>estado de equilibrio</b> y una <b>fuerza restauradora</b> que lo devuelve a él cuando se perturba (la tensión en una cuerda, la presión en un fluido). Se llama <b>transversal</b> si el desplazamiento de las partículas es <b>perpendicular</b> a la dirección en que viaja la onda (cuerda), y <b>longitudinal</b> si es <b>paralelo</b> (sonido en un tubo). Las ondas en la superficie del agua combinan ambos movimientos: las partículas describen círculos. La rapidez $v$ de la onda depende solo de las propiedades del medio; no de cómo se agita la fuente.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §15.1, fig. 15.1, pp. 469-470",
+    "txt": "U p.469-470"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_15_1_tipos.png",
+   "alt": "Tres formas de producir una onda: transversal en una cuerda, longitudinal en un fluido y superficial en un líquido, con el movimiento de las partículas",
+   "pie": "Tres formas de producir una onda que se mueve hacia la derecha: (a) transversal en una cuerda, (b) longitudinal en un fluido, (c) en la superficie de un líquido.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 15.1, p. 469",
+    "txt": "U p.469"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Creer que la onda «arrastra» el medio. Una boya en el mar sube y baja con las olas, pero no se aleja de la costa por ellas. Lo que se propaga es la perturbación y su energía.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §15.1, p. 470",
+    "txt": "U p.470"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión (U §15.1)",
+   "html": "<p>¿Qué tipo de onda es «la ola» del estadio? <b>Transversal</b>: la ola viaja horizontalmente de un espectador al siguiente, pero el desplazamiento de cada espectador es vertical, perpendicular a esa dirección.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 15.1», pp. 470 y 504",
+    "txt": "U p.470"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s2",
+   "n": "2",
+   "titulo": "Ondas periódicas: $\\lambda$, $T$, $f$ y $v=\\lambda f$",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §15.2, pp. 470-473",
+    "txt": "U p.470-473"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte04.html"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Definiciones y ecuación fundamental",
+   "html": [
+    "<p><b>Amplitud</b> $A$: desplazamiento máximo de una partícula respecto al equilibrio. <b>Periodo</b> $T$ y <b>frecuencia</b> $f=1/T$ (en hertz): los de la oscilación de cada partícula (son los de la fuente). <b>Longitud de onda</b> $\\lambda$: distancia entre puntos correspondientes de ciclos sucesivos. <b>Rapidez</b> de la onda:",
+    "  $$v=\\lambda f\\qquad(15.1)$$",
+    "  (una onda periódica avanza $\\lambda$ cada $T$). Con la frecuencia angular $\\omega=2\\pi f$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §15.2, ec. 15.1, figs. 15.3-15.7, pp. 470-472",
+    "txt": "U p.470-472"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "dos-graficas-de-una-onda-sinusoidal-arriba-el-de"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: longitud de onda de un sonido musical",
+   "html": [
+    "<p>La rapidez del sonido en el aire a 20 °C es 344 m/s. Calcula la longitud de onda de una nota de $f=262$ Hz (do central de un piano) y la de la nota una octava más alta ($f$ doble).</p>",
+    "  <ol class=\"steps\">",
+    "    <li>La rapidez la fija el aire; la frecuencia, la fuente. Con $v=\\lambda f$: $\\lambda=v/f=\\dfrac{344\\ \\text{m/s}}{262\\ \\text{Hz}}=\\mathbf{1{,}31\\ m}$.</li>",
+    "    <li>Una octava más alta es el doble de frecuencia, $f'=524$ Hz, con la misma $v$: $\\lambda'=344/524=0{,}656$ m $=\\lambda/2$. (El ejemplo de U compara con el do alto, de frecuencia $4f=1048$ Hz, cuya longitud de onda es $0{,}328$ m.)</li>",
+    "  </ol>",
+    "  <p><b>Moraleja:</b> a mayor frecuencia, menor longitud de onda; $v$ no cambia.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 15.1, p. 472",
+    "txt": "U p.472"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Pensar que al doblar la frecuencia se dobla la rapidez. En un medio dado <b>$v$ es constante</b>: si $f$ sube, $\\lambda$ baja en la misma proporción. (Evalúe 15.2 de U: al duplicar $\\lambda$ en una cuerda, $v$ no cambia y $f$ se reduce a la mitad.)</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 15.2», pp. 473 y 504",
+    "txt": "U p.473"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s3",
+   "n": "3",
+   "titulo": "Descripción matemática de una onda: la función de onda",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §15.3, pp. 473-478",
+    "txt": "U p.473-478"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte05.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Función de onda sinusoidal",
+   "html": [
+    "<p>Si el extremo $x=0$ oscila con $y(0,t)=A\\cos\\omega t$ y la onda viaja hacia $+x$ con rapidez $v$:",
+    "  $$y(x,t)=A\\cos\\left[\\omega\\left(\\frac xv-t\\right)\\right]=A\\cos 2\\pi\\left(\\frac x\\lambda-\\frac tT\\right)\\qquad(15.3),(15.4)$$",
+    "  Con el <b>número de onda</b> $k=2\\pi/\\lambda$ (rad/m) y $\\omega=vk$ (15.5, 15.6):",
+    "  $$\\boxed{y(x,t)=A\\cos(kx-\\omega t)}\\ \\text{(hacia }+x\\text{)}\\ (15.7)\\qquad\\boxed{y(x,t)=A\\cos(kx+\\omega t)}\\ \\text{(hacia }-x\\text{)}\\ (15.8)$$",
+    "  Fase constante ⇒ $kx\\mp\\omega t=$ cte ⇒ $dx/dt=\\pm\\omega/k=\\pm v$: por eso se ve que el signo del término $\\omega t$ marca el sentido (con $-$ la cresta se mueve hacia $+x$). La cantidad $kx-\\omega t$ es la <b>fase</b>.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §15.3, ec. 15.3-15.8, pp. 473-475",
+    "txt": "U p.473-475"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "tres-fotos-de-la-misma-onda-en-t-igual-a-0-t-cua"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Velocidad y aceleración de las partículas",
+   "html": [
+    "<p>Fijando $x$ y derivando respecto a $t$ (derivadas <b>parciales</b>) se obtiene el movimiento de una partícula de la cuerda:",
+    "  $$v_y(x,t)=\\frac{\\partial y}{\\partial t}=\\omega A\\sin(kx-\\omega t)\\ (15.9)\\qquad a_y(x,t)=\\frac{\\partial^2y}{\\partial t^2}=-\\omega^2A\\cos(kx-\\omega t)=-\\omega^2y\\ (15.10)$$",
+    "  Cada partícula hace un MAS ($a_y=-\\omega^2y$) de amplitud $A$: $v_{y,máx}=\\omega A$. Derivando respecto a $x$ (la pendiente de la cuerda) se llega a la <b>ecuación de onda</b>, que cumple cualquier onda que viaja con rapidez $v$ sin deformarse:",
+    "  $$\\frac{\\partial^2y}{\\partial x^2}=\\frac1{v^2}\\frac{\\partial^2y}{\\partial t^2}\\qquad(15.12)$$</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §15.3, ec. 15.9, 15.10 y 15.12, pp. 476-477",
+    "txt": "U p.476-477"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "cuerda-con-una-onda-viajera-hacia-la-derecha-y-f"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Confundir $v$ (rapidez <i>de la onda</i>, constante, $v=\\omega/k$) con $v_y$ (rapidez <i>transversal de una partícula</i>, varía con $x$ y $t$, máximo $\\omega A$). Una onda lenta de gran amplitud y frecuencia alta puede hacer que las partículas vayan mucho más rápido que la onda. Y no confundas la $\\omega$ de la onda con la velocidad angular de un cuerpo que gira (ocurre en el problema práctico del final).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §15.3, p. 476",
+    "txt": "U p.476"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Estrategia 15.1 de U: problemas de ondas mecánicas",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Identificar:</b> ¿es cinemática (solo $v,\\lambda,f,A$, posiciones y velocidades de partículas) o también dinámica (aparecen $F,\\mu$, leyes de Newton)?</li>",
+    "    <li><b>Plantear:</b> lista de datos; dibuja $y$ contra $x$ (foto) y $y$ contra $t$ (película) con los valores conocidos. Elige entre (15.1), (15.6) y las formas (15.3), (15.4), (15.7) de la función de onda; si falta $v$ y no hay $\\lambda$ ni $f$, usa la relación dinámica.</li>",
+    "    <li><b>Ejecutar:</b> para escribir $y(x,t)$ hay que conocer $A$ y dos cualesquiera de $v,\\lambda,f$ (o $v,k,\\omega$).</li>",
+    "    <li><b>Evaluar:</b> comprueba que $v,f,\\lambda$ cumplen $v=\\lambda f$ y la función en uno o más casos especiales ($x=0$, $t=0$).</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia para resolver problemas 15.1, p. 475",
+    "txt": "U p.475"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: onda en un tendedero",
+   "html": [
+    "<p>El extremo de una cuerda de tendedero se mueve sinusoidalmente con $f=2{,}00$ Hz y $A=0{,}075$ m; la rapidez de onda es $v=12{,}0$ m/s. En $t=0$ el extremo tiene desplazamiento positivo máximo y está un instante en reposo. Calcula $\\omega$, $T$, $\\lambda$, $k$; escribe la función de onda y el desplazamiento del extremo y de un punto a $3{,}00$ m.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>a)</b> $A=0{,}075$ m y $f=2{,}00$ Hz son los del extremo. $\\omega=2\\pi f=4{,}00\\pi=12{,}6$ rad/s; $T=1/f=0{,}500$ s; $\\lambda=v/f=12{,}0/2{,}00=6{,}00$ m; $k=2\\pi/\\lambda=\\omega/v=1{,}05$ rad/m.</li>",
+    "    <li><b>b)</b> Hacia $+x$ y con máximo en $x=0,t=0$ ⇒ coseno sin fase inicial: $y(x,t)=(0{,}075\\ \\text{m})\\cos\\left[2\\pi\\left(\\dfrac{x}{6{,}00\\ \\text{m}}-\\dfrac{t}{0{,}500\\ \\text{s}}\\right)\\right]=(0{,}075\\ \\text{m})\\cos[(1{,}05\\ \\text{rad/m})x-(12{,}6\\ \\text{rad/s})t]$.</li>",
+    "    <li><b>c)</b> En $x=0$: $y=(0{,}075\\ \\text{m})\\cos(12{,}6\\,t)$. En $x=3{,}00$ m: la fase se retrasa $kx=\\pi$ ⇒ $y=(0{,}075\\ \\text{m})\\cos(\\pi-12{,}6\\,t)=-(0{,}075\\ \\text{m})\\cos(12{,}6\\,t)$: oscila con el mismo MAS pero <b>en oposición de fase</b> (la mitad de $\\lambda$ está a $3{,}00$ m).</li>",
+    "  </ol>",
+    "  <div class=\"recipe\"><b>Receta:</b> $f\\to\\omega$, $T$; $v/f\\to\\lambda$; $\\omega/v\\to k$; sentido y condición inicial $\\to$ signo y seno/coseno.</div>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 15.2, p. 476",
+    "txt": "U p.476"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte06.html"
+  },
+  {
+   "t": "h2",
+   "id": "s4",
+   "n": "4",
+   "titulo": "Rapidez de una onda transversal en una cuerda",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §15.4, pp. 478-482",
+    "txt": "U p.478-482"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte07.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Rapidez en una cuerda",
+   "html": [
+    "<p>$$v=\\sqrt{\\frac F\\mu}\\qquad(15.14)$$",
+    "  con $F$ la tensión y $\\mu=m/L$ la masa por unidad de longitud. <b>Deducción (idea):</b> en un trozo de longitud $\\Delta x$ las componentes verticales de la tensión no se cancelan si la cuerda está curvada: la fuerza neta es $F\\,\\dfrac{\\partial^2y}{\\partial x^2}\\Delta x$. La segunda ley de Newton, con masa $\\mu\\Delta x$, da $F\\dfrac{\\partial^2y}{\\partial x^2}=\\mu\\dfrac{\\partial^2y}{\\partial t^2}$, que es la ecuación de onda (15.12) con $v^2=F/\\mu$. La rapidez depende <b>solo del medio</b> ($F$ y $\\mu$), no de $A$, $\\lambda$ ni $f$ (hipótesis: $A\\ll\\lambda$, cuerda sin rigidez).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §15.4, ec. 15.14, fig. 15.13, pp. 478-480",
+    "txt": "U p.478-480"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "trozo-de-cuerda-curvada-hacia-arriba-entre-x-y-x"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: señales por una cuerda en un tiro de mina",
+   "html": [
+    "<p>Una cuerda de $2{,}00$ kg cuelga de un soporte en el borde de un tiro vertical de $80{,}0$ m; en el extremo inferior lleva una caja de $20{,}0$ kg. a) Rapidez de una onda transversal. b) Si un punto de la cuerda hace MAS con $f=2{,}00$ Hz, ¿cuántas longitudes de onda caben en la cuerda?</p>",
+    "  <ol class=\"steps\">",
+    "    <li>Se desprecia la masa de la cuerda frente a la caja, de modo que la tensión es el peso de la caja: $F=(20{,}0)(9{,}80)=196$ N.</li>",
+    "    <li>$\\mu=m/L=2{,}00/80{,}0=0{,}0250$ kg/m. <b>a)</b> $v=\\sqrt{F/\\mu}=\\sqrt{196/0{,}0250}=\\mathbf{88{,}5\\ m/s}$.</li>",
+    "    <li><b>b)</b> $\\lambda=v/f=88{,}5/2{,}00=44{,}3$ m ⇒ $80{,}0/44{,}3=\\mathbf{1{,}81}$ longitudes de onda.</li>",
+    "  </ol>",
+    "  <div class=\"recipe\"><b>Receta:</b> equilibrio de lo que cuelga $\\to F$; $\\mu=m/L$; $v=\\sqrt{F/\\mu}$; luego $\\lambda=v/f$.</div>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 15.3, pp. 481-482",
+    "txt": "U p.481-482"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión (U §15.4)",
+   "html": "<p>Las seis cuerdas de una guitarra tienen la misma longitud y tensión muy similar, pero distinto grosor. ¿En cuál viajan las ondas más deprisa? En la <b>más delgada</b> (menor $\\mu$ ⇒ mayor $v=\\sqrt{F/\\mu}$).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 15.4», pp. 482 y 504",
+    "txt": "U p.482"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s5",
+   "n": "5",
+   "titulo": "Energía del movimiento ondulatorio",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §15.5, pp. 482-485",
+    "txt": "U p.482-485"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte08.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Potencia de una onda sinusoidal en una cuerda",
+   "html": [
+    "<p>La potencia instantánea en un punto es $P(x,t)=-F\\,\\dfrac{\\partial y}{\\partial x}\\dfrac{\\partial y}{\\partial t}$, que para $y=A\\cos(kx-\\omega t)$ queda",
+    "  $$P(x,t)=\\sqrt{\\mu F}\\,\\omega^2A^2\\sin^2(kx-\\omega t)\\qquad(15.23)$$",
+    "  Es siempre positiva (la energía solo avanza). Sus valores máximo y medio ($\\langle\\sin^2\\rangle=\\tfrac12$) son",
+    "  $$P_{máx}=\\sqrt{\\mu F}\\,\\omega^2A^2\\ (15.24)\\qquad\\boxed{P_{med}=\\tfrac12\\sqrt{\\mu F}\\,\\omega^2A^2}\\ (15.25)$$",
+    "  Duplicar la amplitud o la frecuencia cuadruplica la potencia; duplicar la tensión la multiplica por $\\sqrt2$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §15.5, ec. 15.23-15.25, p. 483",
+    "txt": "U p.482-483"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Intensidad y ley del cuadrado inverso",
+   "html": [
+    "<p>La <b>intensidad</b> $I$ es la potencia media por unidad de área perpendicular a la propagación (W/m²). Una fuente puntual que radia uniformemente en el espacio reparte su potencia $P$ sobre esferas de área $4\\pi r^2$: $I=P/4\\pi r^2$, luego",
+    "  $$\\frac{I_1}{I_2}=\\frac{r_2^2}{r_1^2}\\qquad(15.26)$$",
+    "  Si $r$ se duplica, $I$ cae a $I/4$. (Supone que no hay absorción ni reflexión.)</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §15.5, ec. 15.26, p. 484",
+    "txt": "U p.484"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "fuente-puntual-rodeada-de-dos-esferas-de-radios-"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: potencia en la cuerda del tendedero",
+   "html": [
+    "<p>En el ejemplo 15.2 (cuerda de $\\mu=0{,}250$ kg/m, tensión $F=36{,}0$ N, $A=0{,}075$ m, $\\omega=4{,}00\\pi$ rad/s) calcula la potencia máxima, la media y la media cuando la amplitud baja a $7{,}50$ mm.</p>",
+    "  <ol class=\"steps\">",
+    "    <li>$\\sqrt{\\mu F}=\\sqrt{(0{,}250)(36{,}0)}=3{,}00$ kg/s. <b>a)</b> $P_{máx}=\\sqrt{\\mu F}\\,\\omega^2A^2=(3{,}00)(4{,}00\\pi)^2(0{,}075)^2=\\mathbf{2{,}66\\ W}$.</li>",
+    "    <li><b>b)</b> $P_{med}=\\tfrac12P_{máx}=\\mathbf{1{,}33\\ W}$.</li>",
+    "    <li><b>c)</b> $A$ pasa a ser $1/10$ ⇒ $P_{med}$ pasa a ser $1/100$: $\\mathbf{13{,}3\\ mW}$.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 15.4, pp. 483-484",
+    "txt": "U p.483-484"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: la ley del cuadrado inverso",
+   "html": [
+    "<p>Una sirena radia uniformemente en todas direcciones. A $15{,}0$ m la intensidad es $0{,}250$ W/m². ¿A qué distancia es $0{,}010$ W/m²?</p>",
+    "  <ol class=\"steps\">",
+    "    <li>$r_2=r_1\\sqrt{I_1/I_2}=(15{,}0)\\sqrt{0{,}250/0{,}010}=(15{,}0)(5)=\\mathbf{75{,}0\\ m}$.</li>",
+    "    <li>Comprobación: $r$ se hace 5 veces mayor ⇒ $I$ cae $5^2=25$ veces ($0{,}250/25=0{,}010$) ✓.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 15.5, p. 484",
+    "txt": "U p.484"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Olvidar el $\\tfrac12$ (eso es $P_{máx}$), usar $f$ en lugar de $\\omega=2\\pi f$, o escribir $I\\propto1/r$ (es $1/r^2$) o $r_2/r_1=I_1/I_2$ sin la raíz.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Error típico propio sobre U §15.5, ec. 15.25-15.26",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión (U §15.5)",
+   "html": "<p>Cuatro cuerdas idénticas llevan ondas de 10 Hz: i) $F=10$ N, $A=1{,}0$ mm; ii) $F=40$ N, $A=1{,}0$ mm; iii) $F=10$ N, $A=4{,}0$ mm; iv) $F=20$ N, $A=2{,}0$ mm. Como $P_{med}\\propto\\sqrt F\\,A^2$ y $\\omega$ y $\\mu$ son iguales: respecto a i), ii) es $\\sqrt4=2$ veces mayor; iii) $4^2=16$; iv) $\\sqrt2\\cdot2^2\\approx5{,}7$. Orden de mayor a menor: <b>iii, iv, ii, i</b>.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 15.5», pp. 485 y 504",
+    "txt": "U p.485"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s6",
+   "n": "6",
+   "titulo": "Interferencia, condiciones de frontera y superposición",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §15.6, pp. 485-487",
+    "txt": "U p.485-487"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte09.html"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Condiciones de frontera: extremo fijo y extremo libre",
+   "html": [
+    "<p><b>Extremo fijo</b> (atado a un soporte rígido): la pared <i>impide</i> el desplazamiento del extremo; el pulso reflejado vuelve <b>invertido</b> (si llegó hacia arriba, vuelve hacia abajo). Razón: la cuerda tira de la pared hacia arriba y, por la 3.ª ley de Newton, la pared tira de la cuerda hacia abajo, lanzando un pulso hacia abajo.</p>",
+    "  <p><b>Extremo libre</b> (anillo sin rozamiento en una varilla, sin fuerza transversal): el pulso vuelve <b>sin invertirse</b>; el extremo sube hasta el máximo y lanza de vuelta un pulso del mismo signo.</p>",
+    "  <p><b>Por qué:</b> si dos pulsos iguales pero invertidos llegan desde lados opuestos a un punto O, en O se anulan siempre ($y=0$), exactamente lo que impone un extremo fijo: la parte «imagen» invertida es el pulso reflejado. Si los dos pulsos tienen el mismo signo, en O la pendiente es cero (no hay fuerza transversal), lo que corresponde a un extremo libre: el reflejado no se invierte.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §15.6, figs. 15.18 y 15.19, p. 485; figs. 15.20-15.21, p. 486",
+    "txt": "U p.485-486"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte10.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Principio de superposición",
+   "html": [
+    "<p>Cuando dos ondas coinciden en una región, el desplazamiento <b>real</b> de cada punto es la <b>suma algebraica</b> de los desplazamientos que cada onda produciría por sí sola:",
+    "  $$y(x,t)=y_1(x,t)+y_2(x,t)\\qquad(15.27)$$",
+    "  Es válido para ondas mecánicas siempre que la fuerza restauradora sea proporcional al desplazamiento (ecuación de onda lineal). Dos pulsos que se cruzan siguen su camino <b>sin alterarse</b>: durante el cruce se suman y después reaparecen idénticos. Si coinciden con el mismo signo, <b>interferencia constructiva</b> (suma más grande); con signos opuestos, <b>destructiva</b> (se compensan, incluso se anulan en todos los puntos).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §15.6, ec. 15.27, figs. 15.20-15.21, p. 486",
+    "txt": "U p.486"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "dos-casos-de-superposicion-de-pulsos-dos-pulsos-"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Pensar que al cruzarse dos pulsos «rebotan» o se destruyen. Se suman <i>mientras</i> coinciden y después cada uno continúa con su forma original (ejercicio 15.32, más abajo). Tampoco desaparece la energía en la interferencia destructiva: sigue en la cuerda (como energía cinética de las partes que justo en ese instante se mueven).</p>",
+   "src": {
+    "l": "P",
+    "ref": "Error típico propio sobre U §15.6",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión (U §15.6)",
+   "html": "<p>Con dos pulsos de forma distinta que viajan en sentidos opuestos, dibuja la cuerda cuando se acercan, se superponen y se cruzan. <b>Recetario:</b> desplaza cada pulso $v\\,t$ en su sentido <i>sin deformarlo</i> y suma punto a punto; al final cada pulso conserva su forma original.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 15.6», p. 487",
+    "txt": "U p.487"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s7",
+   "n": "7",
+   "titulo": "Ondas estacionarias en una cuerda",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §15.7, pp. 487-491",
+    "txt": "U p.487-491"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte11.html"
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_15_23_estacionaria.png",
+   "alt": "Fotografías de ondas estacionarias en una cuerda con media, una, una y media y dos longitudes de onda, y esquema de nodos y antinodos",
+   "pie": "Ondas estacionarias en una cuerda (fotos con exposición larga): media, una, una y media y dos longitudes de onda; en (e) los nodos (N) y los antinodos (A).",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 15.23, p. 487",
+    "txt": "U p.487"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Deducción de la onda estacionaria (cuerda fija en $x=0$)",
+   "html": [
+    "<p>La onda incidente viaja hacia $-x$ y la reflejada hacia $+x$, con la misma $A$, $k$ y $\\omega$; la reflexión en el extremo fijo invierte el signo:",
+    "  $$y_1=-A\\cos(kx+\\omega t),\\qquad y_2=A\\cos(kx-\\omega t).$$",
+    "  Con $\\cos(a\\pm b)=\\cos a\\cos b\\mp\\sin a\\sin b$, el término $\\cos kx\\cos\\omega t$ se cancela y quedan los dos términos con senos:",
+    "  $$y=y_1+y_2=\\boxed{(A_{OE}\\sin kx)\\sin\\omega t},\\qquad A_{OE}=2A\\qquad(15.28)$$",
+    "  Comprobación: en $x=0$ vale $y=0$ para todo $t$ ✓ (extremo fijo). La función es el <b>producto</b> de un factor de posición ($A_{OE}\\sin kx$) por uno de tiempo ($\\sin\\omega t$): la <b>forma no se desplaza</b>, y <b>cada punto hace un MAS</b> de frecuencia $\\omega$ y amplitud $|A_{OE}\\sin kx|$ que depende de dónde esté. Todos los puntos entre dos nodos consecutivos suben y bajan <b>a la vez</b>; a un lado y otro de un nodo, en oposición.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §15.7, ec. 15.28, p. 489",
+    "txt": "U p.489"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Nodos y antinodos",
+   "html": [
+    "<p><b>Nodos</b> (amplitud cero): $\\sin kx=0\\Rightarrow kx=0,\\pi,2\\pi,\\dots$, es decir",
+    "  $$x=0,\\ \\frac\\lambda2,\\ \\lambda,\\ \\frac{3\\lambda}2,\\ \\dots\\qquad(15.29)$$",
+    "  separados $\\lambda/2$. <b>Antinodos</b> (amplitud máxima $A_{OE}=2A$): $\\sin kx=\\pm1\\Rightarrow x=\\lambda/4,\\,3\\lambda/4,\\dots$: también separados $\\lambda/2$ y a $\\lambda/4$ de cada nodo. La onda estacionaria <b>no transporta energía</b> a lo largo de la cuerda: las dos ondas llevan la misma potencia en sentidos opuestos y la potencia neta es nula.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §15.7, ec. 15.29, pp. 489-490",
+    "txt": "U p.489-490"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "onda-estacionaria-con-dos-fotos-en-instantes-sep"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Estrategia 15.2 de U: ondas estacionarias",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Dibuja</b> la forma en un instante con nodos (N) y antinodos (A): nodo–nodo (o antinodo–antinodo) $=\\lambda/2$; nodo–antinodo $=\\lambda/4$.</li>",
+    "    <li><b>Ecuaciones:</b> casi siempre la función (15.28). La rapidez de onda sale de $\\lambda$ y $f$ ($v=\\lambda f$) o de las propiedades del medio ($F$, $\\mu$).</li>",
+    "    <li><b>Velocidad y aceleración</b> de un punto: primera y segunda derivada parcial respecto a $t$ de $y(x,t)$.</li>",
+    "    <li><b>Evalúa:</b> compara con el dibujo y comprueba las condiciones de frontera (desplazamiento nulo en un extremo fijo).</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia para resolver problemas 15.2, p. 490",
+    "txt": "U p.490"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: ondas estacionarias en una cuerda de guitarra",
+   "html": [
+    "<p>Una cuerda de guitarra está en el eje $x$, fija en $x=0$ (el puente). Una onda sinusoidal de amplitud $A=0{,}750$ mm y $f=440$ Hz viaja hacia $-x$ a $v=143{,}0$ m/s y se refleja en el extremo fijo. Halla: a) $y(x,t)$ de la onda estacionaria; b) los nodos; c) la amplitud de la onda estacionaria y las magnitudes máximas de $v_y$ y $a_y$.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>a)</b> $\\omega=2\\pi f=2{,}76\\times10^3$ rad/s; $k=\\omega/v=19{,}3$ rad/m. Con (15.28): $A_{OE}=2A=1{,}50$ mm ⇒ $y(x,t)=(1{,}50\\ \\text{mm})\\sin[(19{,}3\\ \\text{rad/m})x]\\sin[(2{,}76\\times10^3\\ \\text{rad/s})t]$.</li>",
+    "    <li><b>b)</b> Los nodos están en $x=n\\lambda/2$ con $\\lambda=v/f=0{,}325$ m ⇒ $x=0;\\ 0{,}163;\\ 0{,}325;\\ 0{,}488$ m, …</li>",
+    "    <li><b>c)</b> $A_{OE}=1{,}50$ mm (en los antinodos, $x=0{,}081;\\ 0{,}244;\\ 0{,}406$ m, …). Para un punto, $v_y=\\partial y/\\partial t=A_{OE}\\omega\\sin kx\\cos\\omega t$ ⇒ $v_{y,máx}=\\omega A_{OE}=(2764{,}6)(1{,}50\\times10^{-3})=\\mathbf{4{,}15\\ m/s}$ y $a_{y,máx}=\\omega^2A_{OE}=\\mathbf{1{,}15\\times10^4\\ m/s^2}$ (¡unas 1170 veces $g$!), ambas en un antinodo.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 15.6, pp. 490-491",
+    "txt": "U p.490-491"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores típicos",
+   "html": "<p>(1) Decir que los nodos están separados $\\lambda$ (son $\\lambda/2$). (2) Tomar como amplitud de cada onda viajera la de la estacionaria ($A=A_{OE}/2$). (3) Decir que la onda estacionaria transporta energía. (4) Confundir la rapidez de la onda ($v=\\lambda f$, constante) con la rapidez transversal de un punto (máxima $\\omega A_{OE}$ en un antinodo).</p>",
+   "src": {
+    "l": "P",
+    "ref": "Errores típicos propios sobre U §15.7",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión (U §15.7)",
+   "html": "<p>Si se duplica la frecuencia del ejemplo anterior (de 440 a 880 Hz), ¿siguen siendo nodos los de antes? <b>Sí</b>: $\\lambda$ se reduce a la mitad y el espaciado entre nodos ($\\lambda/2$) también, luego aparecen todos los nodos anteriores <b>más uno nuevo entre cada par</b>.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 15.7», pp. 491 y 504",
+    "txt": "U p.491"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s8",
+   "n": "8",
+   "titulo": "Modos normales de una cuerda",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §15.8, pp. 491-494",
+    "txt": "U p.491-494"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte12.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Modos normales de una cuerda fija en ambos extremos",
+   "html": [
+    "<p>La condición $\\sin kL=0$ (nodo en $x=L$) da $kL=n\\pi$:",
+    "  $$L=n\\frac{\\lambda_n}2\\ (15.30)\\qquad\\lambda_n=\\frac{2L}n\\ (15.31)\\qquad f_n=\\frac{v}{\\lambda_n}=n\\frac{v}{2L}=nf_1\\ \\ (15.32\\text{-}15.33)\\qquad n=1,2,3,\\dots$$",
+    "  y, con $v=\\sqrt{F/\\mu}$,",
+    "  $$\\boxed{f_1=\\frac1{2L}\\sqrt{\\frac F\\mu}}\\qquad(15.35)\\qquad y_n(x,t)=A_{OE}\\sin k_nx\\,\\sin\\omega_nt\\ \\ (15.34)$$",
+    "  <b>Nomenclatura:</b> $f_1$ es la frecuencia <b>fundamental</b> (primer armónico); $f_n$ es el <b>$n$-ésimo armónico</b>, que es también el <b>$(n-1)$-ésimo sobretono</b> (el segundo armónico es el primer sobretono; el tercer armónico, el segundo sobretono). El modo $n$ tiene $n$ antinodos y $n+1$ nodos (contando los extremos). La frecuencia fundamental <b>sube</b> con la tensión y <b>baja</b> con la longitud y con la densidad lineal.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §15.8, ec. 15.30-15.35, pp. 491-493",
+    "txt": "U p.491-493"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_15_26_modos.png",
+   "alt": "Los cuatro primeros modos normales de una cuerda fija en ambos extremos con nodos N, antinodos A y la relación entre L y media longitud de onda",
+   "pie": "Primeros cuatro modos normales ($n=1,2,3,4$) de una cuerda fija en ambos extremos, con nodos (N), antinodos (A) y $L=n\\lambda/2$.",
+   "src": {
+    "l": "U",
+    "ref": "U fig. 15.26, p. 492",
+    "txt": "U p.492"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte13.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Ondas estacionarias complejas",
+   "html": "<p>Un oscilador armónico simple tiene una sola frecuencia; una cuerda (muchas partículas) tiene un <b>número infinito de modos</b>. Si la cuerda se pulsa o golpea (guitarra, piano), su movimiento es una <b>superposición de varios modos normales</b> a la vez, con distinta amplitud cada uno. La cuerda hace vibrar el aire con la <b>misma frecuencia</b> (no la misma longitud de onda) que ella: el sonido es una mezcla de la fundamental y sus armónicos, y de esa mezcla (<b>contenido armónico</b>) depende el timbre.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §15.8, figs. 15.27-15.29, pp. 492-493",
+    "txt": "U p.492-493"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "cuerda-fija-en-ambos-extremos-con-un-dedo-apoyad"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: contrabajo gigante",
+   "html": [
+    "<p>Una cuerda de $L=5{,}00$ m con $\\mu=40{,}0$ g/m tiene fundamental $f_1=20{,}0$ Hz. Calcula a) la tensión, b) frecuencia y $\\lambda$ del segundo armónico, c) frecuencia y $\\lambda$ del segundo sobretono.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>a)</b> De (15.35), $F=4\\mu L^2f_1^2=4(40{,}0\\times10^{-3})(5{,}00)^2(20{,}0)^2=\\mathbf{1600\\ N}$.</li>",
+    "    <li><b>b)</b> Segundo armónico ($n=2$): $f_2=2f_1=\\mathbf{40{,}0\\ Hz}$, $\\lambda_2=2L/2=\\mathbf{5{,}00\\ m}$.</li>",
+    "    <li><b>c)</b> Segundo sobretono = tercer armónico ($n=3$): $f_3=3f_1=\\mathbf{60{,}0\\ Hz}$, $\\lambda_3=2L/3=\\mathbf{3{,}33\\ m}$.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 15.7, p. 494",
+    "txt": "U p.494"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo resuelto: de la cuerda al aire",
+   "html": [
+    "<p>¿Qué frecuencia y longitud de onda tiene el sonido que emite la cuerda anterior vibrando en su fundamental? ($v_{sonido}=344$ m/s.)</p>",
+    "  <ol class=\"steps\">",
+    "    <li>La frecuencia del sonido es la de la cuerda: $f=f_1=20{,}0$ Hz.</li>",
+    "    <li>$\\lambda_{sonido}=v_{sonido}/f=344/20{,}0=\\mathbf{17{,}2\\ m}$, muy distinta de $\\lambda_1=2L=10{,}0$ m de la cuerda, porque las rapideces de onda son distintas.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 15.8, p. 494",
+    "txt": "U p.494"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte14.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores típicos",
+   "html": "<p>(1) «Segundo sobretono» $\\neq$ «segundo armónico» ($n=3$ frente a $n=2$). (2) Creer que la $\\lambda$ del sonido en el aire es $2L/n$ (esa es la de la cuerda; en el aire $\\lambda=v_{sonido}/f$). (3) Redondear hacia arriba al contar armónicos audibles ($n\\le f_{lím}/f_1$, parte entera). (4) Poner $f_n\\propto n^2$ o $f_1\\propto F$ (es $\\propto\\sqrt F$).</p>",
+   "src": {
+    "l": "P",
+    "ref": "Errores típicos propios sobre U §15.8",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Evalúe su comprensión (U §15.8)",
+   "html": "<p>Mientras vibra una cuerda de guitarra, se toca suavemente su punto medio para que no vibre ahí. ¿Qué modos no pueden estar presentes? Tocar el centro impone un <b>nodo en $x=L/2$</b>; solo valen los modos con nodo en $L/2$ (los $n$ pares). Quedan excluidos $\\mathbf{n=1,3,5,\\dots}$ (que tienen un antinodo en el centro).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U «Evalúe su comprensión de la sección 15.8», pp. 494 y 504",
+    "txt": "U p.494"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "ejercicios",
+   "n": "9",
+   "titulo": "Ejercicios resueltos",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte15.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-examenes.html"
+  },
+  {
+   "t": "ej",
+   "ref": "x1"
+  },
+  {
+   "t": "ej",
+   "ref": "c1"
+  },
+  {
+   "t": "ej",
+   "ref": "c2"
+  },
+  {
+   "t": "parte",
+   "archivo": "ex-libro.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte18.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte19.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e151"
+  },
+  {
+   "t": "ej",
+   "ref": "e157"
+  },
+  {
+   "t": "ej",
+   "ref": "e1548"
+  },
+  {
+   "t": "ej",
+   "ref": "e1528"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte20.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e1516"
+  },
+  {
+   "t": "ej",
+   "ref": "e1515"
+  },
+  {
+   "t": "ej",
+   "ref": "e1518"
+  },
+  {
+   "t": "ej",
+   "ref": "e1520"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte21.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e1522"
+  },
+  {
+   "t": "ej",
+   "ref": "e1525"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte22.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e1532"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte23.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e1536"
+  },
+  {
+   "t": "ej",
+   "ref": "e1540"
+  },
+  {
+   "t": "ej",
+   "ref": "e1547"
+  },
+  {
+   "t": "ej",
+   "ref": "e1545"
+  },
+  {
+   "t": "ej",
+   "ref": "e1544"
+  },
+  {
+   "t": "ej",
+   "ref": "e1558"
+  },
+  {
+   "t": "ej",
+   "ref": "e1566"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte24.html"
+  },
+  {
+   "t": "ej",
+   "ref": "e19p"
+  },
+  {
+   "t": "h2",
+   "id": "chuleta",
+   "n": "10",
+   "titulo": "Chuleta, errores frecuentes y lista de comprobación",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte25.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores frecuentes de este tema",
+   "html": [
+    "<ul>",
+    "    <li>Confundir la rapidez de la onda $v=\\lambda f=\\sqrt{F/\\mu}$ con la rapidez de una partícula $v_y$ (máximo $\\omega A$).</li>",
+    "    <li>Leer $f=\\omega$ o $\\lambda=1/k$: pasa siempre con $\\omega=2\\pi f$ y $k=2\\pi/\\lambda$; y olvidar el $\\pi$ factorizado dentro del coseno.</li>",
+    "    <li>Signo de la fase: $kx-\\omega t$ es hacia $+x$; $kx+\\omega t$, hacia $-x$.</li>",
+    "    <li>Usar la masa total $m$ en lugar de $\\mu=m/L$; olvidar que la tensión de una cuerda pesada varía con la posición.</li>",
+    "    <li>Creer que al doblar $f$ o $F$ se dobla $v$ ($v$ no depende de $f$; $v\\propto\\sqrt F$).</li>",
+    "    <li>Olvidar el ½ en $P_{med}$ o la raíz en la ley del inverso del cuadrado.</li>",
+    "    <li>Nodos separados $\\lambda$ (son $\\lambda/2$); amplitud de la viajera = $A_{OE}$ (es $A_{OE}/2$); onda estacionaria que «transporta energía».</li>",
+    "    <li>«Segundo sobretono» = $n=3$, no $n=2$; contar los armónicos audibles redondeando hacia arriba.</li>",
+    "    <li>Pensar que los pulsos «chocan» y rebotan al cruzarse: se suman y siguen.</li>",
+    "    <li>Tocar el centro de una cuerda elimina los modos impares ($n=1,3,5,\\dots$), no los pares.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte26.html"
+  },
+  {
+   "t": "h2",
+   "id": "fuentes",
+   "n": "★",
+   "titulo": "Fuentes de este tema",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "panel-fuentes.html"
+  }
+ ]
+}

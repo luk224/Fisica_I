@@ -1,0 +1,13 @@
+<p class="enun">Una cuerda uniforme de longitud $L$ y masa $m$ se sujeta por un extremo y se hace girar en un círculo horizontal con velocidad angular $\omega$. Desprecia la gravedad. a) En un punto a distancia $r$ del extremo fijo, ¿cuál es la tensión $F$? b) ¿Cuál es la rapidez de las ondas transversales en ese punto? c) Calcula el tiempo que tarda una onda transversal en ir de un extremo de la cuerda al otro. (Esta $\omega$ es la de giro de la cuerda, no la de la onda.)</p>
+  <ol class="steps">
+    <li><b>Qué esperar.</b> La tensión en $r$ debe proporcionar la fuerza centrípeta de <b>todo lo que hay más afuera</b>; cuanto más cerca del eje, más masa hay fuera ⇒ $F$ máxima en $r=0$ y nula en el extremo libre $r=L$. Igual para $v=\sqrt{F/\mu}$.</li>
+    <li><b>DCL del trozo exterior</b> (de $r$ a $L$). Única fuerza horizontal: la tensión $F(r)$, dirigida hacia el eje. Su masa es $m(L-r)/L$ y su centro de masa está en $(L+r)/2$, con aceleración centrípeta $\omega^2(L+r)/2$. La segunda ley para el centro de masa: $$F(r)=\frac{m(L-r)}{L}\,\omega^2\frac{L+r}{2}=\boxed{\frac{m\omega^2}{2L}(L^2-r^2)}.$$ Comprobación: $F(L)=0$ ✓; $F(0)=m\omega^2L/2$ (toda la masa con su centro en $L/2$) ✓.</li>
+    <li><b>Comprobación con un elemento.</b> Trozo $dr$ de masa $dm=(m/L)\,dr$: $F(r)-F(r+dr)=dm\,\omega^2r\Rightarrow dF/dr=-\frac mL\omega^2r$; integrando con $F(L)=0$ sale la misma expresión.</li>
+    <li><b>b)</b> $\mu=m/L$ ⇒ $v(r)=\sqrt{F/\mu}=\boxed{\omega\sqrt{\dfrac{L^2-r^2}{2}}}$ (15.14). No depende de $m$. Máxima en el eje, $\omega L/\sqrt2$, y nula en el extremo.</li>
+    <li><b>c)</b> $v=dr/dt\Rightarrow dt=dr/v$. Como $v$ cambia de punto a punto, se suma (integra): $$t=\int_0^L\frac{dr}{\omega\sqrt{(L^2-r^2)/2}}=\frac{\sqrt2}{\omega}\int_0^L\frac{dr}{\sqrt{L^2-r^2}}=\frac{\sqrt2}{\omega}\Big[\arcsin\frac rL\Big]_0^L=\boxed{\frac{\pi}{\sqrt2\,\omega}}.$$ La integral converge aunque $v\to0$ en $r=L$.</li>
+    <li><b>Evaluación.</b> Unidades: $[\omega]^{-1}$ = s ✓. Notable: $t$ <b>no depende de $L$</b> ni de $m$: una cuerda más larga es también más rápida (mayor tensión) en la misma proporción. Ejemplo: a 2 vueltas/s, $\omega=12{,}6$ rad/s ⇒ $t=0{,}177$ s.</li>
+  </ol>
+  {{fig:vista-desde-arriba-de-una-cuerda-de-longitud-l-q}}
+
+  <div class="recipe"><b>Receta:</b> tensión variable: DCL del trozo «más allá» del punto $\Rightarrow F(r)\Rightarrow v(r)=\sqrt{F(r)/\mu}\Rightarrow t=\int dr/v(r)$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar $t=L/v$ con una sola $v$; o poner toda la masa en el extremo ($F=m\omega^2L$).</p></div>

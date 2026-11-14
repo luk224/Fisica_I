@@ -1,0 +1,14 @@
+<p class="enun">Dos pulsos triangulares idénticos viajan uno hacia el otro por una cuerda estirada, como en la figura E15.32 (cada uno: altura 1,00 cm; subida 1,00 cm y bajada 1,00 cm, es decir, base de 2,00 cm), con rapidez 2,00 cm/s. Los bordes delanteros están separados 1,00 cm en $t=0$. Dibuja la forma de la cuerda en $t=0{,}250$; $0{,}500$; $0{,}750$; $1{,}000$ y $1{,}250$ s.</p>
+  <ol class="steps">
+    <li><b>Ejes.</b> $x$ en cm; pulso izquierdo con vértice en $x=-1$ y base $[-2,0]$, hacia $+x$; pulso derecho con vértice en $x=2$ y base $[1,3]$, hacia $-x$. El punto medio es $x=0{,}5$.</li>
+    <li><b>Principio de superposición</b> (15.27): cada pulso avanza como si el otro no existiera y el desplazamiento de la cuerda es la <b>suma algebraica</b>. En cada instante el pulso izquierdo ocupa $[-2+2t,\,2t]$ y el derecho $[1-2t,\,3-2t]$.</li>
+    <li><b>$t=0{,}250$ s.</b> Cada uno avanzó 0,50 cm: bases $[-1{,}5;\,0{,}5]$ y $[0{,}5;\,2{,}5]$: <b>se tocan</b> en $x=0{,}5$; aún no se solapan ⇒ dos triángulos que comparten un punto.</li>
+    <li><b>$t=0{,}500$ s.</b> Bases $[-1;1]$ y $[0;2]$, solape $[0;1]$: ahí el izquierdo <b>baja</b> ($y=1-x$) y el derecho <b>sube</b> ($y=x$) ⇒ suma $=1$ cm constante. Forma: <b>trapecio</b> (sube de $x=-1$ a $0$, meseta de 1,00 cm entre 0 y 1, baja de 1 a 2).</li>
+    <li><b>$t=0{,}750$ s.</b> Ambos sobre $[-0{,}5;1{,}5]$, vértices coincidentes en $x=0{,}5$ ⇒ <b>triángulo de altura 2,00 cm</b> y base 2,00 cm (interferencia constructiva total).</li>
+    <li><b>$t=1{,}000$ s.</b> Simétrico de $t=0{,}5$: de nuevo el trapecio de altura 1,00 cm sobre $[-1;2]$.</li>
+    <li><b>$t=1{,}250$ s.</b> Se tocan en $x=0{,}5$ y se separan; <b>cada pulso conserva su forma original</b> tras cruzarse.</li>
+  </ol>
+  {{fig:cinco-fotos-de-la-cuerda-con-dos-pulsos-triangul}}
+
+  <div class="recipe"><b>Receta:</b> superposición: desplazar cada pulso $vt$ en su sentido, sin deformarlo, y sumar punto a punto (las zonas de pendientes opuestas se compensan; las iguales se suman).</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Pensar que los pulsos «rebotan» o se destruyen al chocar.</p></div>

@@ -170,7 +170,8 @@ class Migrador:
 
     def _libro(self, outer):
         m = re.match(r'<figure class="bookfig">\s*<img src="([^"]+)" alt="([^"]*)"((?: (?:style|loading)="[^"]*")*)>\s*<figcaption>(.*?)</figcaption>\s*</figure>$', outer, re.S)
-        assert m, outer[:100]
+        if not m:   # recorte con otra estructura (varias imágenes, etc.): se conserva tal cual
+            return self._parte(outer)
         cap = m.group(4); sm = list(SRC_RE.finditer(cap)); fin = sm[-1]
         self.bloques.append({'t': 'libro', 'img': m.group(1), 'alt': m.group(2), 'pie': a_json(cap[:fin.start()].rstrip()), 'src': src_dict(fin)}
                              | ({'attrs': m.group(3)} if m.group(3) != ' loading="lazy"' else {}))

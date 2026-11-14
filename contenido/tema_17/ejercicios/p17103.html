@@ -1,0 +1,11 @@
+<p class="enun">Una barra de latón de 12,0 cm, una de cobre de 18,0 cm y una de aluminio de 24,0 cm, todas con sección de 2,30 cm², se sueldan para formar una barra de 54,0 cm, con la de cobre en la parte media. El extremo libre del latón se mantiene a 100,0 °C y el del aluminio a 0,0 °C. No hay pérdida de calor por los costados y se ha establecido una corriente de calor estable. Determina a) la temperatura $T_1$ en la unión latón-cobre; b) la temperatura $T_2$ en la unión cobre-aluminio; c) la corriente de calor en el aluminio.</p>
+  <ol class="steps">
+    <li><b>Idea.</b> Tres tramos en serie $\Rightarrow$ la misma $H$ en los tres. Dos incógnitas ($T_1$, $T_2$) y dos ecuaciones ($H_\text{lat}=H_{Cu}$, $H_\text{lat}=H_{Al}$); el área común se cancela.</li>
+    <li><b>Ecuaciones:</b> $\dfrac{109(100-T_1)}{0{,}120}=\dfrac{385(T_1-T_2)}{0{,}180}=\dfrac{205\,T_2}{0{,}240}$.</li>
+    <li><b>Atajo con resistencias.</b> $R_i=L_i/k_i$: latón $1{,}101\times10^{-3}$, cobre $4{,}68\times10^{-4}$, aluminio $1{,}171\times10^{-3}$ m²·K/W; total $2{,}739\times10^{-3}$. $H/A=100/2{,}739\times10^{-3}=3{,}65\times10^4$ W/m².</li>
+    <li><b>a)</b> $T_1=100-(H/A)R_\text{lat}=\mathbf{59{,}8\ °C}$. <b>b)</b> $T_2=T_1-(H/A)R_{Cu}=\mathbf{42{,}7\ °C}$.</li>
+    <li><b>c)</b> $H=(H/A)\,A=(3{,}65\times10^4)(2{,}30\times10^{-4})=\mathbf{8{,}40\ W}$ (con el aluminio: $205\cdot2{,}30\times10^{-4}\cdot42{,}7/0{,}240=8{,}40$ W ✓; con el cobre también 8,40 W).</li>
+  </ol>
+  {{fig:barra-de-tres-tramos-laton-cobre-y-aluminio-con-}}
+  <div class="recipe"><b>Receta:</b> $n$ tramos en serie: $H=A\Delta T_\text{total}/\sum(L_i/k_i)$ y cada salto $\Delta T_i=(H/A)L_i/k_i$, en orden desde el extremo caliente.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Resolver el sistema con las longitudes en cm junto a $k$ en W/(m·K) en el apartado c) (en las razones se cancelan, pero para $H$ no).</p></div>

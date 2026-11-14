@@ -1,0 +1,13 @@
+<p class="enun">Ciertas ondas transversales en una cuerda tienen rapidez 8,00 m/s, amplitud 0,0700 m y longitud de onda 0,320 m. Viajan en la dirección $-x$ y en $t=0$ el extremo $x=0$ tiene su desplazamiento máximo hacia arriba. a) Calcula frecuencia, periodo y número de onda. b) Escribe una función de onda. c) Calcula el desplazamiento de la partícula en $x=0{,}360$ m en $t=0{,}150$ s. d) ¿Cuánto tiempo debe pasar después de $t=0{,}150$ s para que esa partícula vuelva a tener su desplazamiento máximo hacia arriba?</p>
+  <ol class="steps">
+    <li><b>a)</b> $f=v/\lambda=8{,}00/0{,}320=\mathbf{25{,}0\ Hz}$ (15.1); $T=1/f=\mathbf{0{,}0400\ s}$; $k=2\pi/\lambda=\mathbf{19{,}6\ rad/m}$ (15.5); además $\omega=2\pi f=157$ rad/s.</li>
+    <li><b>b) Elegir la forma.</b> Hacia $-x$ ⇒ fase $kx+\omega t$ (15.8): para seguir una cresta (fase constante) al crecer $t$ debe disminuir $x$. En $x=0$: $y(0,t)=A\cos\omega t$, que en $t=0$ vale $+A$ ✓. Por tanto $$y(x,t)=(0{,}0700\ \text{m})\cos[(19{,}6\ \text{rad/m})x+(157\ \text{rad/s})t]=A\cos2\pi\left(\frac x{0{,}320\ \text{m}}+\frac t{0{,}0400\ \text{s}}\right).$$</li>
+    <li><b>c)</b> La forma con $\lambda$ y $T$ evita redondeos: fase $=2\pi(0{,}360/0{,}320+0{,}150/0{,}0400)=2\pi(1{,}125+3{,}75)=2\pi(4{,}875)$. Como el coseno tiene periodo $2\pi$ solo importa la parte fraccionaria: $\cos(2\pi\cdot0{,}875)=\cos315^\circ=0{,}707$ ⇒ $y=\mathbf{+0{,}0495\ m=4{,}95\ cm}$.</li>
+    <li><b>d) ¿Sube o baja?</b> $v_y=\partial y/\partial t=-A\omega\sin(\text{fase})=-(0{,}0700)(157)\sin315^\circ=+7{,}78$ m/s $>0$: está <b>subiendo</b> hacia el máximo.</li>
+    <li>El máximo exige fase $=2\pi n$: $x/\lambda+t/T=n\Rightarrow t=T(n-1{,}125)$. Para $n=5$: $t=0{,}0400(3{,}875)=0{,}155$ s (el primero posterior a 0,150 s; $n=4$ da 0,115 s, anterior). $\Delta t=\mathbf{0{,}0050\ s=5{,}0\ ms}$.</li>
+    <li><b>Comprobación.</b> Le faltaba $1-0{,}875=0{,}125$ ciclo ⇒ $\Delta t=T/8=0{,}005$ s ✓ (está a $45^\circ$ del máximo, subiendo).</li>
+  </ol>
+  {{fig:grafica-del-desplazamiento-y-en-cm-de-la-particu}}
+
+  <div class="recipe"><b>Receta:</b> función de onda: sentido $\to$ signo de $\omega t$; condición en $x=0,t=0$ $\to$ seno o coseno (o fase inicial); números con $2\pi(x/\lambda\pm t/T)$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar $kx-\omega t$ para una onda hacia $-x$; o calcular la fase con $k$ y $\omega$ redondeados (el error se amplifica cuando la fase vale varios ciclos).</p></div>

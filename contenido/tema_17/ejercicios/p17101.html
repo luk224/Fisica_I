@@ -1,0 +1,12 @@
+<p class="enun">Calcula el cociente entre las tasas de pérdida de calor a través de una ventana de un solo vidrio de 0,15 m² y de una ventana de doble vidrio de la misma área. Cada vidrio tiene 4,2 mm de espesor, y el espacio entre los dos vidrios de la ventana doble es de 7,0 mm. El vidrio tiene $k=0{,}80$ W/(m·K). Las películas de aire en las superficies interior y exterior de ambas ventanas tienen una resistencia térmica combinada de 0,15 m²·K/W.</p>
+  <ol class="steps">
+    <li><b>Idea.</b> Las capas (película de aire, vidrio, cámara de aire, vidrio, película) están en serie: <b>las resistencias se suman</b> y $H=A\Delta T/R_\text{total}$ (17.23). Con la misma $A$ y $\Delta T$, $H_s/H_d=R_d/R_s$.</li>
+    <li><b>Vidrio:</b> $R_v=L/k=4{,}2\times10^{-3}/0{,}80=5{,}25\times10^{-3}$ m²·K/W.</li>
+    <li><b>Cámara de aire</b> (aire inmóvil, $k=0{,}024$): $R_a=7{,}0\times10^{-3}/0{,}024=0{,}292$ m²·K/W.</li>
+    <li><b>Sencilla:</b> $R_s=R_v+0{,}15=0{,}155$. <b>Doble:</b> $R_d=2R_v+R_a+0{,}15=0{,}452$ m²·K/W.</li>
+    <li><b>Cociente:</b> $H_s/H_d=0{,}452/0{,}155=\mathbf{2{,}9}$.</li>
+    <li><b>Lectura.</b> El vidrio aporta poquísimo aislamiento; lo que aísla son las películas de aire y, sobre todo, <b>la cámara de aire inmóvil</b>.</li>
+  </ol>
+  {{fig:resistencias-termicas-en-serie-de-una-ventana-se}}
+  <div class="recipe"><b>Receta:</b> paredes compuestas: suma de $R=L/k$ (más las de las películas) y $H=A\Delta T/R$; en cocientes, $A$ y $\Delta T$ se cancelan.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Olvidar las películas de aire (daría un cociente enorme y falso) o usar el área en $R$ (aquí $R$ es por m²).</p></div>
