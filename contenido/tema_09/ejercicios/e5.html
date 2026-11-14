@@ -1,0 +1,14 @@
+<p class="enun">Un volante de radio 0,300 m parte del reposo y acelera con aceleración angular constante de 0,600 rad/s². Calcule la magnitud de las aceleraciones tangencial y radial, así como de la aceleración resultante, de un punto de su borde a) al principio; b) después de girar 60,0°; c) después de girar 120,0°.</p>
+  <ol class="steps">
+    <li><b>Componentes.</b> $a_{tan}=r\alpha$ y $a_{rad}=\omega^2r$, perpendiculares: $a=\sqrt{a_{tan}^2+a_{rad}^2}$.</li>
+    <li><b>$a_{tan}$ es la misma en los tres casos</b> ($\alpha$ constante): $(0{,}300)(0{,}600)=0{,}180$ m/s².</li>
+    <li><b>$\omega$ en función del ángulo.</b> Nos dan ángulos, no tiempos: usa 9.12 (sin $t$), con $\Delta\theta$ <b>en radianes</b>: $\omega^2=2\alpha\,\Delta\theta$, luego $a_{rad}=2a_{tan}\Delta\theta$.</li>
+    <li><b>a)</b> $\omega=0$: $a_{rad}=0$, $a=0{,}180$ m/s².</li>
+    <li><b>b)</b> $\Delta\theta=\pi/3=1{,}047$ rad: $\omega=\sqrt{2(0{,}600)(1{,}047)}=1{,}121$ rad/s; $a_{rad}=(0{,}300)(1{,}121)^2=0{,}377$ m/s²; $a=\sqrt{0{,}180^2+0{,}377^2}=0{,}418$ m/s².</li>
+    <li><b>c)</b> $\Delta\theta=2\pi/3=2{,}094$ rad: $\omega=1{,}585$ rad/s; $a_{rad}=0{,}754$ m/s² (el doble que en b, porque $a_{rad}\propto\Delta\theta$); $a=\sqrt{0{,}180^2+0{,}754^2}=0{,}775$ m/s².</li>
+  </ol>
+  {{fig:tres-posiciones-de-un-punto-del-borde-con-sus-ac}}
+
+  <p><b>Resultado:</b> $a_{tan}=0{,}180$ m/s² siempre; $a_{rad}=0$; 0,377; 0,754 m/s²; $a=0{,}180$; 0,418; 0,775 m/s². Puedes verlo en el primer interactivo de la sección 3.</p>
+  <div class="recipe"><b>Receta:</b> punto de un cuerpo que gira con $\alpha$ constante: $a_{tan}$ fija, $a_{rad}$ crece con $\omega^2$; si el dato es un ángulo usa $\omega^2=\omega_0^2+2\alpha\Delta\theta$ (en rad). Suma componentes con Pitágoras (son perpendiculares).</div>
+  <p><b>Error típico.</b> Meter $\Delta\theta=60$ (grados) en $\omega^2=2\alpha\Delta\theta$, o sumar $a_{tan}+a_{rad}$ como escalares.</p>

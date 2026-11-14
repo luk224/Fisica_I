@@ -1,0 +1,14 @@
+<p class="enun">Un disco compuesto de 140,0 cm de diámetro exterior está formado por un disco sólido uniforme de 50,0 cm de radio y densidad de área 3,00 g/cm², rodeado por un anillo concéntrico de radio interior 50,0 cm y radio exterior 70,0 cm y densidad de área 2,00 g/cm². Calcule su momento de inercia respecto a un eje perpendicular a su plano que pasa por su centro.</p>
+  <ol class="steps">
+    <li><b>Piezas.</b> $I=I_{disco}+I_{anillo}$. Tabla 9.2: disco macizo $\tfrac12mR^2$ (f); anillo grueso $\tfrac12m(R_1^2+R_2^2)$ (e; la longitud axial no interviene, vale para una lámina).</li>
+    <li><b>Unidades SI.</b> 1 g/cm² $=10$ kg/m²: 3,00 g/cm² $=30{,}0$ kg/m² y 2,00 g/cm² $=20{,}0$ kg/m².</li>
+    <li><b>Masas = densidad × área.</b> $m_d=30{,}0\,\pi(0{,}500)^2=23{,}56$ kg; $m_a=20{,}0\,\pi(0{,}700^2-0{,}500^2)=15{,}08$ kg.</li>
+    <li><b>Momentos.</b> $I_d=\tfrac12(23{,}56)(0{,}500)^2=2{,}945$ kg·m²; $I_a=\tfrac12(15{,}08)(0{,}500^2+0{,}700^2)=5{,}579$ kg·m².</li>
+    <li><b>Total.</b> $I=2{,}945+5{,}579=8{,}52$ kg·m².</li>
+    <li><b>Interpretación.</b> El anillo tiene menos masa que el disco y, sin embargo, más $I$: su masa está más lejos del eje.</li>
+  </ol>
+  {{fig:disco-compuesto-por-un-disco-macizo-y-un-anillo-}}
+
+  <p><b>Resultado:</b> $I=8{,}52$ kg·m².</p>
+  <div class="recipe"><b>Receta:</b> cuerpos compuestos coaxiales: masa de cada pieza = densidad × área (o volumen), $I$ de cada una con la tabla 9.2 y suma. Un hueco se puede tratar como «disco grande menos disco pequeño».</div>
+  <p><b>Error típico.</b> Escribir el anillo como $\tfrac12m(R_2^2-R_1^2)$ (es suma, no resta) o no convertir g/cm² a kg/m².</p>

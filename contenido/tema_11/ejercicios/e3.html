@@ -1,0 +1,12 @@
+<p class="enun">La viga horizontal de la figura E11.14 pesa 190 N y su centro de gravedad está en su centro. Calcula a) la tensión del cable y b) las componentes horizontal y vertical de la fuerza que ejerce la pared sobre la viga. (La viga mide 4,00 m y está unida a la pared por una bisagra; del extremo libre cuelga una carga de 300 N; el cable, de 5,00 m, va del extremo libre a un punto de la pared 3,00 m más arriba que la bisagra.)</p>
+  <ol class="steps">
+    <li><b>Geometría del cable.</b> Triángulo 3-4-5: el ángulo $\theta$ del cable con la viga cumple $\mathrm{sen}\,\theta=3/5=0{,}600$, $\cos\theta=4/5=0{,}800$.</li>
+    <li><b>DCL de la viga.</b> Peso 190 N en el centro (2,00 m de la bisagra); carga 300 N en el extremo (4,00 m); tensión $T$ en el extremo, hacia el punto de la pared: componentes $T\cos\theta$ (hacia la pared) y $T\,\mathrm{sen}\,\theta$ (hacia arriba); bisagra con $H_h$ y $H_v$ (dirección desconocida). Tres incógnitas: $T$, $H_h$, $H_v$.</li>
+    <li><b>a) Torcas respecto a la bisagra</b> ($H_h$ y $H_v$ no dan torca; $T\cos\theta$ tampoco, su recta es la propia viga): $T\,\mathrm{sen}\,\theta\,(4{,}00)-190(2{,}00)-300(4{,}00)=0$ ⇒ $T=\dfrac{380+1200}{4{,}00\cdot0{,}600}=\mathbf{658\ N}$.</li>
+    <li><b>b) Fuerzas:</b> $\sum F_x=H_h-T\cos\theta=0$ ⇒ $H_h=658\cdot0{,}800=\mathbf{527\ N}$ (la pared empuja la viga hacia fuera: el cable tira de ella hacia la pared). $\sum F_y=H_v+T\,\mathrm{sen}\,\theta-190-300=0$ ⇒ $H_v=490-395=\mathbf{95\ N}$ hacia arriba.</li>
+    <li><b>Comprobación con otro punto.</b> Respecto al extremo libre: $-H_v(4{,}00)+190(2{,}00)=0$ ⇒ $H_v=95$ N ✓. Respecto al punto de la pared donde se ata el cable: $H_h(3{,}00)-190(2{,}00)-300(4{,}00)=0$ ⇒ $H_h=527$ N ✓.</li>
+  </ol>
+  {{fig:viga-horizontal-de-4-00-m-con-bisagra-en-la-pare}}
+
+  <div class="recipe"><b>Receta (viga + cable + bisagra):</b> (1) torcas respecto a la bisagra ⇒ $T$; (2) $\sum F_x$ ⇒ $H_h$; (3) $\sum F_y$ ⇒ $H_v$; (4) comprueba con torcas en el extremo libre.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Suponer que la bisagra solo empuja a lo largo de la viga ($H_v=0$) o poner $T\cos\theta$ en la torca (su brazo de palanca es cero).</p></div>

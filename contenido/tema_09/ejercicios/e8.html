@@ -1,0 +1,14 @@
+<p class="enun">Una varilla delgada uniforme de masa $M$ y longitud $L$ se dobla por su centro de manera que los dos segmentos quedan perpendiculares. Determine el momento de inercia respecto a un eje perpendicular a su plano que pasa por a) el punto donde se cruzan los dos segmentos; b) el punto medio de la recta que conecta los dos extremos.</p>
+  <p>Cada segmento es una varilla de masa $M/2$ y longitud $L/2$.</p>
+  <ol class="steps">
+    <li><b>a) Eje por el vértice.</b> Cada segmento gira alrededor de <i>su extremo</i>: $I_s=\tfrac13\tfrac M2\left(\tfrac L2\right)^2=\tfrac1{24}ML^2$ (tabla 9.2b). Que el otro segmento esté a 90° da igual: la distancia de cada elemento a un eje perpendicular al plano es su distancia al vértice. $I_a=2I_s=\tfrac1{12}ML^2$.</li>
+    <li><b>b) Eje por el punto medio de la hipotenusa.</b> El centro de masa de cada segmento está a $d=L/4$ de ese punto (por simetría, igual para los dos).</li>
+    <li><b>Ejes paralelos.</b> $I_s=I_{cm}+\tfrac M2d^2=\tfrac1{12}\tfrac M2\left(\tfrac L2\right)^2+\tfrac M2\left(\tfrac L4\right)^2=\tfrac{ML^2}{96}+\tfrac{ML^2}{32}=\tfrac{ML^2}{24}$.</li>
+    <li><b>Total.</b> $I_b=2I_s=\tfrac1{12}ML^2$.</li>
+    <li><b>Interpretación.</b> Coinciden porque, para cada segmento, el vértice y el punto $P$ están a la misma distancia ($L/4$) de su cm: $\tfrac1{24}=\tfrac1{96}+\tfrac1{32}$ es justo $\tfrac13m\ell^2=\tfrac1{12}m\ell^2+m(\ell/2)^2$.</li>
+  </ol>
+  {{fig:varilla-doblada-en-angulo-recto-con-un-eje-por-e}}
+
+  <p><b>Resultado:</b> a) y b): $\tfrac1{12}ML^2$.</p>
+  <div class="recipe"><b>Receta:</b> divide el cuerpo en piezas de la tabla 9.2; para cada pieza localiza su cm, mide $d$ hasta el eje y usa $I_{cm}+md^2$; suma.</div>
+  <p><b>Error típico.</b> Usar la masa o la longitud de la varilla entera para cada segmento, o tomar como $d$ la distancia del eje al extremo del segmento en lugar de a su cm (el teorema solo vale desde el cm).</p>

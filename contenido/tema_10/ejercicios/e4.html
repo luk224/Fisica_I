@@ -1,0 +1,13 @@
+<p class="enun">Una cuerda delgada y ligera se enrolla alrededor del borde exterior de un cilindro hueco uniforme de masa 4,75 kg y radios interno 20,0 cm y externo 35,0 cm. El cilindro se libera desde el reposo. a) ¿Qué distancia debe haber caído antes de que su centro se mueva a 6,66 m/s? b) Si se suelta ese cilindro sin cuerda, ¿con qué rapidez se mueve su centro tras caer la distancia del inciso a)? c) ¿Por qué se obtienen dos respuestas distintas si cae la misma distancia?</p>
+  <ol class="steps">
+    <li><b>Por qué energía.</b> Piden una distancia a partir de una velocidad, sin tiempos: la conservación de la energía es lo más directo (ej. 10.4). La tensión no hace trabajo neto: su punto de aplicación está instantáneamente en reposo.</li>
+    <li><b>Momento de inercia</b> del cilindro hueco grueso (tabla 9.2): $I=\tfrac12M(R_1^2+R_2^2)$ con $R_1=0{,}200$ m y $R_2=0{,}350$ m. <b>Ligadura:</b> la cuerda está en el borde <i>exterior</i>, $v_{cm}=R_2\omega$.</li>
+    <li><b>Energía:</b> $Mgd=\tfrac12Mv_{cm}^2+\tfrac12I\omega^2=\tfrac12Mv_{cm}^2\left[1+\tfrac12\left(1+\tfrac{R_1^2}{R_2^2}\right)\right]$; el corchete vale $1+\tfrac12(1+0{,}3265)=1{,}663$.</li>
+    <li><b>a)</b> $d=\dfrac{1{,}663\,v_{cm}^2}{2g}=\dfrac{1{,}663\,(6{,}66)^2}{2(9{,}8)}=\mathbf{3{,}76}$ m. La masa se simplifica.</li>
+    <li><b>b) Sin cuerda</b> no gira: caída libre, $v=\sqrt{2gd}=\sqrt{2(9{,}8)(3{,}764)}=\mathbf{8{,}59}$ m/s.</li>
+    <li><b>c)</b> La misma $\Delta U=Mgd$ se convierte, con cuerda, en traslación <i>y</i> rotación (el 40 % va a rotación: $0{,}663/1{,}663$); sin cuerda, todo en traslación. Por eso con cuerda el centro va más lento.</li>
+    <li><b>Casos límite (comprobación).</b> Cilindro macizo ($R_1=0$): $d=\tfrac32v^2/2g=3{,}39$ m. Hueco de pared delgada ($R_1=R_2$): $d=v^2/g=4{,}53$ m. Nuestro caso, 3,76 m, queda entre los dos, como debe ser.</li>
+  </ol>
+  {{fig:cilindro-hueco-que-cae-desenrollando-una-cuerda-}}
+  <div class="recipe"><b>Receta:</b> cuerpo que cae desenrollando una cuerda: $Mgd=\tfrac12Mv^2\left(1+\dfrac{I}{MR^2}\right)$ con $R$ el radio donde está la cuerda. El factor $1+I/MR^2$ mide «cuánto cuesta» hacerlo girar.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar $I=MR^2$ (pared delgada) o $\tfrac12MR^2$ (macizo) para un hueco grueso; poner $\omega=v/R_1$ (la cuerda está en el radio exterior); mezclar cm y m.</p></div>

@@ -1,0 +1,28 @@
+<p class="enun">Desarrolle el tema: <b>Conservación del momento angular</b> (en Febrero 2019 y Febrero 2020 esta pregunta aparece sin cuestiones; en Septiembre 2024 con las siguientes). (a) Si se detiene un huevo crudo en rotación durante un instante y se vuelve a soltar, vuelve a girar. Si se hace lo mismo con un huevo duro, se mantiene quieto. Explique a qué se debe y relaciónelo con los contenidos de la asignatura. (b) Un helicóptero tiene un rotor principal grande que gira en un plano horizontal y proporciona sustentación, y un rotor pequeño en la cola que gira en un plano vertical. ¿Para qué sirve? Si, sin el rotor de cola, el piloto alterase la velocidad angular del rotor principal, ¿qué consecuencias tendría? Algunos helicópteros no tienen rotor de cola pero sí dos rotores principales grandes en un plano horizontal. ¿Por qué es importante que giren en direcciones opuestas?</p>
+  <p><b>Esquema para desarrollar el tema</b> (§10.5-10.6):</p>
+  <ol class="steps">
+    <li><b>Momento angular de una partícula</b> respecto a O: $\vec L=\vec r\times m\vec v$ (10.24), $L=mvl$ (10.25); depende del punto O.</li>
+    <li><b>Ley de variación.</b> Derivando: $d\vec L/dt=\vec v\times m\vec v+\vec r\times m\vec a=\vec r\times\vec F=\vec\tau$ (10.26). Para un sistema, las torcas internas se cancelan por pares: $\sum\vec\tau_{ext}=d\vec L/dt$ (10.29), análoga de $\sum\vec F=d\vec p/dt$.</li>
+    <li><b>Cuerpo rígido</b> girando en torno a un eje de simetría: $\vec L=I\vec\omega$; con eje fijo, $L_z=I\omega_z$ (10.28).</li>
+    <li><b>Principio de conservación.</b> Si $\sum\vec\tau_{ext}=0$, $\vec L$ es constante (10.31). Si el sistema cambia de forma alrededor de un eje: $I_1\omega_{1z}=I_2\omega_{2z}$ (10.30).</li>
+    <li><b>Ejemplos:</b> patinadora y profesor con mancuernas (ej. 10.10, p. 321: de 0,5 a 2,5 rev/s, $K$ de 64 a 320 J, la diferencia la aportan los brazos); «choque» rotacional de discos (ej. 10.11, $K_f=\tfrac23K_i$); puerta y bala (ej. 10.12). Idea clave: <b>$L$ se conserva; $K$, en general, no.</b></li>
+    <li><b>Carácter vectorial:</b> también se conserva la dirección, y de ahí los giróscopos y la precesión (§10.7).</li>
+    <li><b>Condición a vigilar:</b> la conservación depende del punto respecto al cual se calcula; elige el pivote donde actúan las fuerzas desconocidas.</li>
+  </ol>
+  <p><b>Cuestión (a): huevo crudo y huevo duro</b> (U P10.24, p. 328).</p>
+  <ol class="steps">
+    <li><b>Huevo duro:</b> es (casi) un sólido rígido; al pararlo un instante se detiene <i>todo</i> él: $\omega=0$ ⇒ $L=0$. Al soltarlo no hay torca externa que lo ponga en marcha: sigue quieto.</li>
+    <li><b>Huevo crudo:</b> cáscara rígida con un interior líquido débilmente unido a ella. Al tocar la cáscara solo se para la cáscara; el líquido sigue girando por inercia y <b>conserva casi todo su momento angular</b>.</li>
+    <li>Al soltarlo, el sistema (cáscara + líquido) está libre de torcas externas apreciables, y su $L$ total se conserva. La fricción interna líquido-cáscara es una torca <i>interna</i>: transfiere momento angular del líquido a la cáscara, que vuelve a girar.</li>
+    <li>Relación con la asignatura: la conservación de $L$ de un sistema y el papel de las torcas internas (§10.6); la diferencia entre cuerpo rígido y no rígido ($L=I\omega$ solo vale para el rígido).</li>
+  </ol>
+  <p><b>Cuestión (b): rotor de cola y rotores opuestos</b> (U P10.25, p. 328).</p>
+  <ol class="steps">
+    <li>El motor aplica una torca al rotor principal y, por la tercera ley, el rotor aplica una torca igual y opuesta al fuselaje (torcas internas del helicóptero). En vuelo estacionario, el $L_{total}$ vertical se conserva si no hay torca externa.</li>
+    <li><b>Para qué sirve el rotor de cola:</b> genera un empuje horizontal en el extremo de la cola que, por su brazo hasta el eje del rotor principal, da una <b>torca externa</b> que compensa la torca de reacción sobre el fuselaje: así el fuselaje no gira. Sirve también para orientar el helicóptero. (No da sustentación.)</li>
+    <li><b>Sin rotor de cola, si el piloto cambia $\omega$ del rotor:</b> $\Delta L_{rotor}+\Delta L_{fuselaje}=0$: el fuselaje empezaría a girar en sentido <i>contrario</i> al cambio del rotor (si lo acelera, gira al revés; si lo frena, en el mismo sentido que el rotor). Incluso con $\omega$ constante, la torca del motor que compensa la resistencia del aire haría girar el fuselaje.</li>
+    <li><b>Dos rotores principales en sentidos opuestos:</b> sus momentos angulares son opuestos y pueden sumar cero, y las torcas de reacción sobre el fuselaje se cancelan; si ambos cambian su $\omega$ por igual, $\Delta L_1+\Delta L_2=0$ sin que el fuselaje gire. Si girasen en el mismo sentido, las reacciones se sumarían.</li>
+  </ol>
+  {{fig:dos-esquemas-vistos-desde-arriba-un-rotor-que-gi}}
+  <div class="recipe"><b>Receta:</b> en cuestiones cualitativas de momento angular: (1) define el sistema; (2) identifica las torcas externas (¿hay alguna? ¿respecto a qué eje?); (3) si no hay, $L_{total}$ constante; (4) las torcas internas solo <i>redistribuyen</i> $L$ entre las partes del sistema.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Decir que en el huevo crudo «la energía» lo vuelve a poner en marcha (lo que se redistribuye es $L$; la energía disminuye por la fricción interna); explicar el rotor de cola como fuente de sustentación.</p></div>

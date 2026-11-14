@@ -1,0 +1,22 @@
+<p class="enun"><b>9.44.</b> Una cubeta de masa $m$ se ata a un cable de masa despreciable enrollado en el borde exterior de una polea uniforme sin fricción de radio $R$. En términos de esas variables, ¿cuál debe ser el momento de inercia de la polea para que siempre tenga la mitad de la energía cinética de la cubeta?<br><b>9.45.</b> Un alambre ligero y delgado se enrolla en el borde de una rueda que gira sin fricción alrededor de un eje horizontal fijo por su centro. La rueda es un disco uniforme de radio $R=0{,}280$ m. Del extremo libre cuelga un objeto de masa $m=4{,}20$ kg. El sistema se libera del reposo y el objeto desciende con aceleración constante una distancia de 3,00 m en 2,00 s. ¿Cuál es la masa de la rueda?</p>
+  <p><b>9.44.</b></p>
+  <ol class="steps">
+    <li><b>Ligadura.</b> El cable no resbala: $v=R\omega$.</li>
+    <li><b>Energías.</b> Polea $K_p=\tfrac12I\omega^2$; cubeta $K_c=\tfrac12mv^2=\tfrac12mR^2\omega^2$.</li>
+    <li><b>Condición.</b> $K_p=\tfrac12K_c\Rightarrow\tfrac12I\omega^2=\tfrac14mR^2\omega^2\Rightarrow I=\tfrac12mR^2$.</li>
+    <li><b>Interpretación.</b> No depende de $\omega$: si se cumple en un instante, se cumple siempre. Es el $I$ de un disco macizo con la masa de la cubeta.</li>
+  </ol>
+  <p><b>9.45.</b></p>
+  <ol class="steps">
+    <li><b>Cinemática del objeto</b> (MRUA desde el reposo): $\Delta y=\tfrac12(v_0+v)t\Rightarrow v=2\Delta y/t=2(3{,}00)/2{,}00=3{,}00$ m/s ($a=1{,}50$ m/s², menor que $g$ porque la rueda «frena»).</li>
+    <li><b>Rueda.</b> Alambre sin resbalar: $\omega=v/R=3{,}00/0{,}280=10{,}71$ rad/s.</li>
+    <li><b>Energía.</b> Sin rozamiento: $mg\Delta y=\tfrac12mv^2+\tfrac12I\omega^2$.</li>
+    <li><b>Despejar $I$.</b> $I=\dfrac{2\,(123{,}48-18{,}90)}{114{,}80}=1{,}82$ kg·m².</li>
+    <li><b>Masa.</b> Disco uniforme: $I=\tfrac12MR^2\Rightarrow M=\dfrac{2I}{R^2}=\dfrac{2(1{,}82)}{0{,}0784}=46{,}5$ kg.</li>
+    <li><b>Comprobación</b> con $v=\sqrt{2gh/(1+M/2m)}$ (ejemplo 9.8): con $M=46{,}5$ kg sale $v=3{,}00$ m/s ✓. Atajo: $M=2m\left(\dfrac{2gh}{v^2}-1\right)=8{,}40(6{,}53-1)=46{,}5$ kg.</li>
+  </ol>
+  {{fig:rueda-con-un-hilo-enrollado-del-que-cuelga-una-m}}
+
+  <p><b>Resultado:</b> 9.44: $I=\tfrac12mR^2$. 9.45: $M=46{,}5$ kg. Compruébalo en el interactivo de la sección 4.</p>
+  <div class="recipe"><b>Receta:</b> «polea + masa colgada» sin rozamiento y sin pedir tiempos: (1) ligadura $v=R\omega$; (2) energía $mgh=\tfrac12mv^2+\tfrac12I(v/R)^2$; (3) despeja la incógnita. Si dan distancia y tiempo, la rapidez final sale del MRUA ($v=2\Delta y/t$ desde el reposo).</div>
+  <p><b>Error típico.</b> Tomar $v=\Delta y/t=1{,}50$ m/s (es la velocidad <i>media</i>, no la final) u olvidar la energía cinética del objeto colgado y poner $mgh=\tfrac12I\omega^2$.</p>

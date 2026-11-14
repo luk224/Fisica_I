@@ -1,0 +1,1016 @@
+{
+ "num": 11,
+ "kick": "Bloque Mecánica · Tema 11",
+ "titulo": "Equilibrio y elasticidad",
+ "descripcion": "Un puente, una escalera apoyada en la pared, tu antebrazo sosteniendo una mancuerna: todos están <i>quietos</i> aunque actúen fuerzas sobre ellos. Aquí aprendes cuándo un cuerpo rígido no se traslada ni gira (dos condiciones, $\\sum\\vec F=0$ y $\\sum\\vec\\tau=0$), cómo se plantea y se resuelve un problema de equilibrio, y qué le pasa a un cuerpo <i>real</i> cuando lo estiras, lo comprimes o lo cortas (esfuerzo, deformación y módulos de elasticidad).",
+ "chips": [
+  "Libro oficial: Sears-Zemansky, cap. 11 (pp. 339-355)",
+  "Examen real: ninguno en este tema",
+  "Ejercicios: 9 del solucionario (E1-E9) + el problema práctico de U + los ejemplos 11.1-11.7",
+  "2 ejemplos interactivos",
+  "⏱ ~6 h de estudio"
+ ],
+ "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
+ "titulo_pagina": "Física I · Tema 11 Equilibrio y elasticidad",
+ "archivo": "tema_11_equilibrio_elasticidad.html",
+ "examenes_requeridos": [],
+ "figuras": {
+  "tres-barras-dos-fuerzas-opuestas-en-la-misma-rec": {
+   "w": "340",
+   "h": "150",
+   "label": "Tres barras: dos fuerzas opuestas en la misma recta (equilibrio), un par de fuerzas (la barra gira aunque la fuerza neta es cero) y una fuerza única (la barra se acelera)",
+   "pie": "Las dos condiciones son independientes: un par de fuerzas cumple $\\sum\\vec F=0$ pero hace girar la barra; una sola fuerza en el centro no la hace girar pero la acelera.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de la fig. 11.1 de U",
+    "txt": "P"
+   }
+  },
+  "una-barra-ligera-con-una-masa-2m-a-la-izquierda-": {
+   "w": "340",
+   "h": "160",
+   "label": "Una barra ligera con una masa 2m a la izquierda y una masa m a la derecha, apoyada en su centro de gravedad, que queda más cerca de la masa mayor",
+   "pie": "El centro de gravedad está más cerca de la masa mayor: sus torcas se igualan, $(2m)d_1=m\\,d_2$. Apoyada ahí, la barra queda en equilibrio; también $x_\\mathrm{cm}=\\frac{\\sum m_ix_i}{\\sum m_i}$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de §11.2 de U (centro de gravedad)",
+    "txt": "P"
+   }
+  },
+  "cuatro-tipos-de-apoyo-y-la-fuerza-que-ejercen-pa": {
+   "w": "340",
+   "h": "240",
+   "label": "Cuatro tipos de apoyo y la fuerza que ejercen: pared lisa (normal), suelo con fricción (normal y fricción), bisagra (dos componentes) y cable (tensión a lo largo del cable)",
+   "pie": "Qué fuerza puede hacer cada apoyo sobre el cuerpo. Dibujar bien estas fuerzas y su punto de aplicación es la mitad del problema.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio (fuerzas de enlace, §11.3 de U)",
+    "txt": "P"
+   }
+  },
+  "atleta-en-posicion-de-plancha-apoyado-en-los-ded": {
+   "w": "340",
+   "h": "195",
+   "label": "Atleta en posición de plancha apoyado en los dedos de los pies (34 % del peso) y en los antebrazos (66 %); su centro de gravedad está a 1,01 m de los pies",
+   "pie": "Reparto del peso en los dos apoyos y posición del cg (1,01 m desde los dedos, 0,52 m desde los antebrazos). Las flechas son proporcionales a las fuerzas.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejemplo 11.2 de U",
+    "txt": "P"
+   }
+  },
+  "tres-tipos-de-esfuerzo-tension-una-barra-se-alar": {
+   "w": "340",
+   "h": "182",
+   "label": "Tres tipos de esfuerzo: tensión (una barra se alarga), volumétrico (un cuerpo se comprime por todos lados) y corte (una cara se desliza respecto a la opuesta), con su esfuerzo, su deformación y su módulo",
+   "pie": "Los tres módulos son «esfuerzo ÷ deformación». Las deformaciones están dibujadas muy exageradas (en la realidad son del orden de $10^{-3}$ o menos).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de la fig. 11.12 de U",
+    "txt": "P"
+   }
+  },
+  "una-viga-apoyada-en-sus-extremos-se-flexiona-la-": {
+   "w": "340",
+   "h": "200",
+   "label": "Una viga apoyada en sus extremos se flexiona: la parte superior está en compresión y la inferior en tensión; la sección en I es ancha arriba y abajo y estrecha en el centro",
+   "pie": "La flexión mezcla compresión (arriba) y tensión (abajo); por eso la viga en I concentra el material en las alas. Flexión muy exagerada.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de las figs. 11.15-11.16 de U",
+    "txt": "P"
+   }
+  },
+  "varilla-de-acero-de-2-0-m-colgada-del-techo-con-": {
+   "w": "340",
+   "h": "200",
+   "label": "Varilla de acero de 2,0 m colgada del techo con una fresadora de 550 kg; se alarga 1,8 mm (dibujo exagerado)",
+   "pie": "La varilla se alarga $\\Delta l=1{,}8$ mm sobre 2,0 m (la deformación es solo $9{,}0\\times10^{-4}$: el dibujo la exagera).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejemplo 11.5 de U",
+    "txt": "P"
+   }
+  },
+  "placa-cuadrada-de-laton-de-0-80-m-de-lado-con-un": {
+   "w": "340",
+   "h": "190",
+   "label": "Placa cuadrada de latón de 0,80 m de lado con una fuerza tangente de 2,8×10⁴ N en el canto superior y otra igual y opuesta en el canto inferior; el canto superior se desplaza x = 0,16 mm respecto al inferior",
+   "pie": "Esfuerzo de corte: en cada canto actúa una fuerza paralela a él, y son iguales y opuestas. Deformación $x/h=2{,}0\\times10^{-4}$; el desplazamiento $x$ de la figura está muy exagerado.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejemplo 11.7 de U",
+    "txt": "P"
+   }
+  },
+  "barra-de-50-cm-con-una-masa-de-0-055-kg-en-el-ex": {
+   "w": "340",
+   "h": "170",
+   "label": "Barra de 50 cm con una masa de 0,055 kg en el extremo izquierdo, otra de 0,110 kg en el derecho y el apoyo de equilibrio a 29,8 cm del extremo izquierdo",
+   "pie": "Barra de 0,120 kg con dos masas en los extremos: el apoyo único debe ir en $x_\\mathrm{cm}=29{,}8$ cm. Las flechas de peso son proporcionales a las masas.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 11.1",
+    "txt": "P"
+   }
+  },
+  "tabla-de-3-00-m-y-160-n-sostenida-por-dos-person": {
+   "w": "340",
+   "h": "180",
+   "label": "Tabla de 3,00 m y 160 N sostenida por dos personas: 60 N en el extremo izquierdo y 100 N a 2,40 m de ese extremo",
+   "pie": "Diagrama de cuerpo libre de la tabla: $F_1=60$ N, $w=160$ N en el centro y $F_2=100$ N a $x=2{,}40$ m. Las torcas respecto al extremo izquierdo dan $x$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 11.6",
+    "txt": "P"
+   }
+  },
+  "viga-horizontal-de-4-00-m-con-bisagra-en-la-pare": {
+   "w": "340",
+   "h": "205",
+   "label": "Viga horizontal de 4,00 m con bisagra en la pared, cable de 5,00 m al punto de la pared 3,00 m más arriba, peso de la viga 190 N y carga de 300 N en el extremo; fuerzas T = 658 N, H horizontal 527 N y H vertical 95 N",
+   "pie": "DCL de la viga: tres incógnitas ($T$, $H_h$, $H_v$). Torcas respecto a la bisagra → $T=658$ N. Flechas aproximadamente a escala (la de 95 N es muy corta).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 11.14",
+    "txt": "P"
+   }
+  },
+  "grafica-de-la-friccion-necesaria-f-s-frente-a-la": {
+   "w": "340",
+   "h": "215",
+   "label": "Gráfica de la fricción necesaria f_s frente a la posición s del hombre en la escalera: recta de 60 N a 615 N que corta el límite de 360 N en s = 2,7 m",
+   "pie": "Fricción necesaria $f_s=n_1=60+111\\,s$ (N). Corta al máximo $\\mu_sn_2=360$ N en $s=2{,}7$ m: ahí empieza a resbalar. A 1,0 m hace falta 171 N.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 11.10",
+    "txt": "P"
+   }
+  },
+  "viga-de-8-0-m-y-1150-kg-inclinada-30-grados-sobr": {
+   "w": "340",
+   "h": "205",
+   "label": "Viga de 8,0 m y 1150 kg inclinada 30 grados sobre la horizontal, con bisagra en la pared y un cable atado a 6,0 m de la bisagra que forma 40 grados con la viga; tensión 1,01×10⁴ N y fuerzas de la bisagra",
+   "pie": "DCL de la viga de E5: el cable forma $40^\\circ$ con la viga, es decir, sube $10^\\circ$ sobre la horizontal. Flechas proporcionales a las fuerzas.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 11.46",
+    "txt": "P"
+   }
+  },
+  "rectas-esfuerzo-deformacion-del-acero-y-del-cobr": {
+   "w": "340",
+   "h": "215",
+   "label": "Rectas esfuerzo-deformación del acero y del cobre: con el mismo esfuerzo de 2,26×10⁷ Pa el acero se deforma 1,1×10⁻⁴ y el cobre 2,1×10⁻⁴",
+   "pie": "La pendiente de cada recta es $Y$ (acero $2{,}0\\times10^{11}$ Pa, cobre $1{,}1\\times10^{11}$ Pa). Con el mismo esfuerzo, el material de menor $Y$ se deforma más.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 11.26",
+    "txt": "P"
+   }
+  },
+  "placa-cuadrada-de-acero-de-10-0-cm-de-lado-con-u": {
+   "w": "340",
+   "h": "195",
+   "label": "Placa cuadrada de acero de 10,0 cm de lado con una fuerza tangente de 9,0×10⁵ N en cada uno de sus cuatro lados; el cuadrado se deforma en un rombo y el desplazamiento es x = 0,24 cm",
+   "pie": "Fuerza $F_\\parallel=9{,}0\\times10^5$ N en cada lado. Las cuatro fuerzas tangentes se equilibran por pares: la placa no se mueve, solo se deforma. Deformación $x/h=2{,}4\\times10^{-2}$, $x=0{,}24$ cm; el cambio de forma está muy exagerado.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 11.36",
+    "txt": "P"
+   }
+  },
+  "barras-de-igual-masa-de-agua-1-000-m-en-la-super": {
+   "w": "340",
+   "h": "166",
+   "label": "Barras de igual masa de agua: 1,000 m³ en la superficie y 0,947 m³ en el fondo del abismo Challenger",
+   "pie": "La misma masa de agua ocupa un 5,3 % menos de volumen a 10,9 km de profundidad; por eso su densidad aumenta un 5,6 %.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejercicio 11.34",
+    "txt": "P"
+   }
+  },
+  "varilla-de-1-05-m-sostenida-por-un-alambre-a-fin": {
+   "w": "340",
+   "h": "200",
+   "label": "Varilla de 1,05 m sostenida por un alambre A fino a la izquierda y otro B grueso a la derecha; el peso w se cuelga a 0,70 m de A para esfuerzos iguales o a 0,60 m para deformaciones iguales",
+   "pie": "Dos posiciones para colgar $w$: con esfuerzos iguales $T_B=2T_A$ ($x=0{,}70$ m); con deformaciones iguales $T_B=\\tfrac43T_A$ ($x=0{,}60$ m). Distancias medidas desde A.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 11.83",
+    "txt": "P"
+   }
+  },
+  "varilla-horizontal-de-cobre-con-un-pivote-en-el-": {
+   "w": "340",
+   "h": "226",
+   "label": "Varilla horizontal de cobre con un pivote en el extremo derecho junto a la pared y un cable a l0/4 del extremo izquierdo que forma 30 grados con la varilla; fuerzas T, mg y P para 1 kg",
+   "pie": "DCL de la varilla (valores para $m=1$ kg y $\\theta=30^\\circ$): $T=\\tfrac{2mg}{3\\,\\mathrm{sen}\\,\\theta}$, $P_y=\\tfrac{mg}{3}$. Solo se comprime el tramo de $3l_0/4$ entre el cable y el pivote.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del Problema práctico del cap. 11 (fig. 11.21 de U)",
+    "txt": "P"
+   }
+  }
+ },
+ "bloques": [
+  {
+   "t": "h2",
+   "id": "prereq",
+   "n": "0",
+   "titulo": "Antes de empezar",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U cap. 11 Introducción, p. 339",
+    "txt": "U p.339"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte01.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte02.html"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Examen real: no hay ninguno de este tema",
+   "html": "<p>Se han revisado todas las convocatorias disponibles (2018-2025) y <b>ningún problema ni pregunta de teoría trata equilibrio de cuerpos rígidos, centro de gravedad o elasticidad</b>. Por eso este tema no tiene ejercicios «X»: los ejercicios resueltos son el problema práctico del libro (U) y problemas del solucionario (E), más los ejemplos de U en la teoría. Aun así la técnica es muy útil: es exactamente la misma que la de los problemas de torcas y rodadura del tema 10 y de estática de poleas y planos de los temas 4 y 5. Además, este tema cierra el módulo 2 (temas 6-11) del curso.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Revisión de fuentes_txt/examenes_por_tema.md y de los PDF de exámenes 2018-2025: sin ejercicios del tema 11",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "La receta maestra del tema: equilibrio en 5 pasos",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Dibuja el cuerpo solo</b> (diagrama de cuerpo libre) con <i>todas</i> las fuerzas externas y <i>dónde</i> se aplican: pesos en el centro de gravedad, normales, fricción, tensiones <i>a lo largo del cable</i>, y la fuerza de una bisagra como <b>dos componentes desconocidas</b>.</li>",
+    "    <li><b>Cuenta las incógnitas.</b> En el plano hay tres ecuaciones independientes ($\\sum F_x=0$, $\\sum F_y=0$, $\\sum\\tau_z=0$): necesitas tres incógnitas como máximo.</li>",
+    "    <li><b>Elige el punto de las torcas</b> donde se cruzan fuerzas desconocidas (la bisagra, el pie de la escalera): no producen torca y desaparecen de la ecuación.</li>",
+    "    <li><b>Calcula cada torca con el brazo de palanca perpendicular</b> $l=r\\,\\mathrm{sen}\\,\\varphi$ y el signo (antihorario $+$).</li>",
+    "    <li><b>Comprueba con otro punto de referencia:</b> si $\\sum\\tau=0$ respecto a un punto y $\\sum\\vec F=0$, es cero respecto a cualquiera; los resultados deben coincidir.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia para resolver problemas 11.1, p. 344",
+    "txt": "U p.344"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s1",
+   "n": "1",
+   "titulo": "Condiciones de equilibrio",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §11.1, p. 340",
+    "txt": "U p.340"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Un cuerpo «aguanta quieto» si no se mueve <i>ni</i> gira. Para que no se mueva, las fuerzas deben compensarse (como en un tira y afloja empatado). Pero eso no basta: si empujas hacia arriba por un lado de una barra y hacia abajo por el otro con la misma fuerza, la fuerza total es cero... y la barra gira (así se mueve el volante de un coche). Hacen falta <b>dos</b> condiciones: una para la traslación y otra para la rotación.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §11.1, fig. 11.1, p. 340",
+    "txt": "U p.340"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Condiciones de equilibrio de un cuerpo rígido",
+   "html": [
+    "<p><b>Primera condición</b> (el centro de masa no se acelera): la fuerza neta externa es cero.",
+    "  $$\\sum\\vec F=0\\qquad\\text{(ec. 11.1)}$$",
+    "  <b>Segunda condición</b> (el cuerpo no tiene aceleración angular): la torca neta externa, calculada respecto a <i>cualquier</i> punto, es cero.",
+    "  $$\\sum\\vec\\tau=0\\qquad\\text{(ec. 11.2)}$$",
+    "  Un cuerpo rígido <b>solo puede estar en equilibrio si se cumplen las dos</b>. Cuando está además en reposo se llama <b>equilibrio estático</b>. (Un cuerpo que se traslada con velocidad constante y sin girar también está en equilibrio, pero no estático.) En problemas planos, en el plano $xy$, las dos condiciones son tres ecuaciones: $\\sum F_x=0$, $\\sum F_y=0$, $\\sum\\tau_z=0$ (ec. 11.6).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §11.1, ecs. 11.1-11.2, p. 340; ec. 11.6, p. 343",
+    "txt": "U p.340, 343"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "tres-barras-dos-fuerzas-opuestas-en-la-misma-rec"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Creer que $\\sum\\vec F=0$ es suficiente. Un <i>par de fuerzas</i> (dos fuerzas iguales, opuestas y no alineadas) tiene fuerza neta cero pero torca distinta de cero: el cuerpo gira. Y al revés: una fuerza única aplicada en el centro de masa no produce torca respecto a ese punto, pero acelera el cuerpo.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §11.1, fig. 11.1, p. 340",
+    "txt": "U p.340"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s2",
+   "n": "2",
+   "titulo": "Centro de gravedad",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §11.2, pp. 340-343",
+    "txt": "U p.340-343"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>El peso de un cuerpo no actúa en un solo punto: cada trocito de materia pesa. Pero, a efectos de torca, es <b>como si todo el peso actuara en un único punto</b>: el centro de gravedad. Si apoyas una regla justo en ese punto, se queda horizontal; si apoyas en otro, cae hacia el lado más pesado. Cuanto más lejos del apoyo está una masa, más «palanca» hace, por eso el punto de equilibrio queda más cerca de la masa mayor (una balanza de brazos desiguales).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §11.2, pp. 340-342",
+    "txt": "U p.340-342"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Centro de masa y de gravedad",
+   "html": [
+    "<p>El <b>centro de masa</b> de un conjunto de partículas (o de piezas, cada una concentrada en su propio centro) es",
+    "  $$x_{cm}=\\frac{m_1x_1+m_2x_2+\\cdots}{m_1+m_2+\\cdots}=\\frac{\\sum m_ix_i}{\\sum m_i},\\qquad \\vec r_{cm}=\\frac{\\sum m_i\\vec r_i}{\\sum m_i}\\qquad\\text{(ecs. 11.3-11.4)}$$",
+    "  La torca gravitacional total respecto a cualquier punto es $\\vec\\tau=\\vec r_{cm}\\times M\\vec g=\\vec r_{cm}\\times\\vec w$ (ec. 11.5): la misma que si todo el peso actuara en el centro de masa. Si $\\vec g$ vale lo mismo en todos los puntos del cuerpo, el <b>centro de gravedad</b> coincide con el centro de masa. En un cuerpo homogéneo y simétrico (esfera, cubo, barra, placa rectangular) está en su centro geométrico.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §11.2, ecs. 11.3-11.5, pp. 341-342",
+    "txt": "U p.341-342"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "una-barra-ligera-con-una-masa-2m-a-la-izquierda-"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "¿Y si $g$ cambia con la altura?",
+   "html": "<p>En rigor el centro de gravedad solo coincide con el centro de masa si $g$ es igual en todo el cuerpo. La variación es ínfima: en las Torres Petronas (452 m de altura, fig. 11.3 de U) $g$ en la base es solo un 0,014 % mayor que en la punta y su centro de gravedad está apenas 2 cm bajo el centro de masa. En todo este capítulo se supone, por tanto, cg = cm.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §11.2, fig. 11.3, p. 342",
+    "txt": "U p.342"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Estabilidad: el cg debe caer dentro del área de apoyo",
+   "html": "<p>Un cuerpo apoyado en varios puntos está en equilibrio mientras la vertical que baja desde su centro de gravedad cae <i>dentro</i> del área delimitada por los apoyos. Cuanto más bajo está el cg y mayor es el área de apoyo, más difícil es volcarlo: por eso los camiones (cg alto) vuelcan en pendientes en las que un coche aguanta, y los cuadrúpedos son más estables que los bípedos.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §11.2, fig. 11.5, pp. 342-343",
+    "txt": "U p.342-343"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_11_5_apoyo.png",
+   "alt": "Figura 11.5 de U. Un automóvil y un camión sobre una pendiente: a) el centro de gravedad cae dentro del área de apoyo y el automóvil está en equilibrio; b) y c) el centro de gravedad queda fuera del área de apoyo y el vehículo vuelca; cuanto más alto el cg, menor la inclinación necesaria.",
+   "pie": "Fig. 11.5 de U: el vehículo vuelca cuando la vertical del cg sale del área de apoyo.",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 11.5, p. 342",
+    "txt": "U p.342"
+   },
+   "attrs": " loading=\"lazy\" style=\"max-width:520px!important\""
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 11.1: caminando por una tabla",
+   "html": [
+    "<p>Una tabla uniforme de longitud $L=6{,}0$ m y masa $M=90$ kg descansa sobre dos caballetes separados $D=1{,}5$ m y equidistantes del centro de la tabla. Throckmorton quiere ponerse de pie en el extremo derecho. Si la tabla no debe moverse, ¿qué masa máxima puede tener?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Situación límite.</b> Justo antes de volcar, el cg del sistema tabla + Throckmorton está exactamente sobre el caballete derecho. Origen en el centro de la tabla, eje $x$ a la derecha: la tabla está en $x=0$, él en $x=L/2=3{,}0$ m y el caballete derecho en $x_S=D/2$.</li>",
+    "    <li><b>Centro de gravedad (11.3).</b> $x_{cg}=\\dfrac{M(0)+m(L/2)}{M+m}=\\dfrac{mL}{2(M+m)}$. Igualándolo a $D/2$: $mL=(M+m)D$.</li>",
+    "    <li><b>Despejar:</b> $m=\\dfrac{M\\,D}{L-D}=\\dfrac{(90\\ \\text{kg})(1{,}5\\ \\text{m})}{6{,}0\\ \\text{m}-1{,}5\\ \\text{m}}=\\mathbf{30\\ kg}$.</li>",
+    "    <li><b>Comprobación con otro origen</b> (el caballete derecho): $x_{cg}=\\dfrac{M(-D/2)+m[(L/2)-(D/2)]}{M+m}=0$ ⇒ $m=\\dfrac{MD/2}{(L-D)/2}=30$ kg. El resultado no depende del origen. Un adulto de 60 kg solo podría ponerse a la mitad de la distancia entre el caballete derecho y el extremo.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 11.1, p. 343 y fig. 11.6, p. 343",
+    "txt": "U p.343"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Cómo se localiza el cg de un objeto irregular",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Cuelga</b> el objeto de un punto cualquiera: en equilibrio, el cg queda en la vertical que pasa por ese punto (si no, el peso haría torca y el objeto giraría).</li>",
+    "    <li><b>Traza esa vertical</b> sobre el objeto (un hilo con plomada).</li>",
+    "    <li><b>Cuelga</b> el objeto de otro punto y traza la nueva vertical.</li>",
+    "    <li>El <b>cg está en el cruce</b> de las dos verticales (fig. 11.4 de U, un tarro de café).</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §11.2, fig. 11.4, p. 342",
+    "txt": "U p.342"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s3",
+   "n": "3",
+   "titulo": "Resolver problemas de equilibrio de cuerpos rígidos",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §11.3, pp. 343-347",
+    "txt": "U p.343-347"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Un problema de equilibrio es un problema de <b>contabilidad de fuerzas y de palancas</b>. Tienes un cuerpo quieto, unas fuerzas que conoces (pesos) y otras que «se ajustan solas» para que todo cuadre (normales, fricción, tensiones, fuerza de una bisagra). Las ecuaciones $\\sum F_x=0$, $\\sum F_y=0$, $\\sum\\tau=0$ dicen cuánto vale cada una. El truco que lo hace fácil: al calcular torcas puedes elegir <b>cualquier punto</b>, así que eliges el que «elimina» las fuerzas que no te interesan.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §11.3, p. 343",
+    "txt": "U p.343"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Estrategia para resolver problemas de equilibrio",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Identificar:</b> el cuerpo debe poder tratarse como rígido, sin giro ni aceleración. Decide qué incógnitas hay.</li>",
+    "    <li><b>Plantear:</b> dibuja la situación, y después un <b>diagrama de cuerpo libre</b> con todas las fuerzas externas y su punto de aplicación; elige ejes, el sentido positivo de las torcas y el punto de referencia.</li>",
+    "    <li><b>Ejecutar:</b> escribe $\\sum F_x=0$, $\\sum F_y=0$, $\\sum\\tau_z=0$; tantas ecuaciones como incógnitas, tomando torcas respecto a dos o más puntos si hace falta.</li>",
+    "    <li><b>Evaluar:</b> repite con otro punto de referencia; deben salir las mismas respuestas.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia para resolver problemas 11.1, p. 344",
+    "txt": "U p.344"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "cuatro-tipos-de-apoyo-y-la-fuerza-que-ejercen-pa"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>La torca depende del punto que elijas, pero <b>una vez elegido, usa el mismo punto para todas las torcas</b> de esa ecuación. Y no supongas que la fuerza de una bisagra va «a lo largo de la viga»: su dirección es desconocida, por eso se pone con dos componentes. La tensión de un cable, en cambio, sí va siempre a lo largo del cable.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §11.3, CUIDADO, p. 343 y fig. 11.9, p. 345",
+    "txt": "U p.343, 345"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 11.2: localizar el centro de gravedad en una plancha",
+   "html": [
+    "<p>Un atleta de 1,80 m en posición de plancha se apoya solo en los dedos de los pies y en los antebrazos. Dos básculas indican que el 34,0 % de su peso $w$ cae en los dedos y el 66,0 % en los antebrazos; la distancia de los dedos a los antebrazos es 1,53 m. ¿A qué distancia de los dedos está su centro de gravedad?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Modelo.</b> Cuerpo rígido en reposo: valen las condiciones (11.6). Su peso actúa en el cg, que debe estar entre los dos apoyos. Fuerzas verticales: $n_T=0{,}340\\,w$ en los dedos (T), $n_F=0{,}660\\,w$ en los antebrazos (F) y $w$ a una distancia $L_{cg}$ de T. No hay fuerzas horizontales. $\\sum F_y=0{,}340w+0{,}660w-w=0$ se cumple sola (por eso las básculas suman el 100 %).</li>",
+    "    <li><b>Punto de torcas en T:</b> la fuerza $n_T$ no produce torca y la única incógnita es $L_{cg}$. Con antihorario $+$: $\\;0{,}340w(0)-w\\,L_{cg}+0{,}660w\\,(1{,}53\\ \\text{m})=0$.</li>",
+    "    <li><b>Resultado.</b> $L_{cg}=0{,}660\\cdot1{,}53\\ \\text{m}\\approx\\mathbf{1{,}01\\ m}$ desde los dedos. El peso $w$ se simplifica: no hace falta conocerlo.</li>",
+    "    <li><b>Comprobación con otro punto</b> (respecto a F): $-0{,}340w(1{,}53)+w(1{,}53-L_{cg})=0$ ⇒ $1{,}53-L_{cg}=0{,}52$ m ⇒ $L_{cg}=1{,}01$ m. Coincide.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 11.2, p. 344 y fig. 11.8, p. 344",
+    "txt": "U p.344"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "atleta-en-posicion-de-plancha-apoyado-en-los-ded"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Truco de examen",
+   "html": "<p>El apoyo que soporta más fracción del peso es el <b>más cercano</b> al centro de gravedad (aquí los antebrazos, 66 %, están a 0,52 m del cg; los dedos, 34 %, a 1,01 m). Regla rápida: $n_1\\,d_1=n_2\\,d_2$.</p>",
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia a partir del ejemplo 11.2 de U, p. 344",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 11.3: ¿se deslizará la escalera?",
+   "html": [
+    "<p>Sir Lancelot (800 N) sube por una escalera uniforme de 5,0 m y 180 N apoyada en una pared vertical <b>sin fricción</b>; forma 53,1° con la horizontal. Se detiene a un tercio del camino. a) Fuerzas normal y de fricción en la base. b) Coeficiente de fricción estática mínimo para que no resbale. c) Magnitud y dirección de la fuerza de contacto en la base.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Geometría.</b> 53,1° es el triángulo 3-4-5: con 5,0 m de escalera, la base está a 3,0 m de la pared y el apoyo superior a 4,0 m de altura. El peso de la escalera actúa en su centro (a 1,5 m de la pared en horizontal) y Lancelot está a $\\tfrac13\\cdot3{,}0=1{,}0$ m.</li>",
+    "    <li><b>DCL.</b> Pared lisa: solo $n_1$ horizontal. Suelo: normal $n_2$ vertical y fricción $f_s$ hacia la pared. Pesos 180 N y 800 N. Tres incógnitas: $n_1,n_2,f_s$.</li>",
+    "    <li><b>Fuerzas (11.6).</b> $\\sum F_x=f_s-n_1=0$; $\\sum F_y=n_2-800-180=0$ ⇒ $n_2=\\mathbf{980\\ N}$.</li>",
+    "    <li><b>Torcas respecto a la base B</b> (ahí actúan $n_2$ y $f_s$, que desaparecen). Brazo de $n_1$: la altura 4,0 m; brazos de los pesos: sus distancias <i>horizontales</i>. $\\sum\\tau_B=n_1(4{,}0)-180(1{,}5)-800(1{,}0)=0$ ⇒ $n_1=1070/4{,}0\\approx\\mathbf{268\\ N}$, y $f_s=n_1=\\mathbf{268\\ N}$.</li>",
+    "    <li><b>b)</b> Para no resbalar: $f_s\\le\\mu_sn_2$ ⇒ $(\\mu_s)_{\\text{mín}}=f_s/n_2=268/980=\\mathbf{0{,}27}$.</li>",
+    "    <li><b>c)</b> La fuerza de contacto en B es la suma vectorial de normal y fricción: $\\vec F_B=(268\\ \\text{N})\\hat\\imath+(980\\ \\text{N})\\hat\\jmath$, de modo que $F_B=\\sqrt{268^2+980^2}\\approx1{,}02\\times10^3\\ \\text{N}$ (1016 N) y $\\theta=\\arctan(980/268)\\approx\\mathbf{75^\\circ}$ sobre la horizontal. <b>No va a lo largo de la escalera</b> (53,1°): si lo hiciera, su torca respecto al extremo superior sería cero y la de los pesos quedaría sin compensar.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 11.3, p. 345 y fig. 11.9, p. 345; fricción estática ec. 5.4, p. 144",
+    "txt": "U p.345"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_11_9_escalera.png",
+   "alt": "Figura 11.9 de U. a) Lancelot subiendo una escalera apoyada en una pared sin fricción, a 53,1 grados; b) diagrama de cuerpo libre con n1, n2, fs y los pesos de 180 N y 800 N con sus brazos de 1,5 m, 1,0 m y la altura de 4,0 m; c) la fuerza de contacto en B, de 1020 N a 75 grados.",
+   "pie": "Fig. 11.9 de U: situación, DCL de la escalera y fuerza de contacto en la base.",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 11.9, p. 345",
+    "txt": "U p.345"
+   },
+   "attrs": " loading=\"lazy\" style=\"max-width:100%!important\""
+  },
+  {
+   "t": "parte",
+   "archivo": "parte03.html"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 11.4: el brazo que sostiene una mancuerna",
+   "html": [
+    "<p>El antebrazo horizontal sostiene una mancuerna de peso $w$ a una distancia $L$ del codo. El bíceps tira, mediante un tendón, con una fuerza $\\vec T$ que forma un ángulo $\\theta$ con el antebrazo y se aplica a una distancia $D$ del codo (se desprecia el peso del antebrazo). El codo ejerce sobre el antebrazo una fuerza $\\vec E$ de dirección desconocida. Calcula $T$, $E_x$ y $E_y$ para $w=200$ N, $D=0{,}050$ m, $L=0{,}30$ m y $\\theta=80^\\circ$.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Incógnitas:</b> $T$, $E_x$, $E_y$ (tres), tres ecuaciones. Sea $h=D\\tan\\theta$ la altura a la que «apunta» el tendón sobre el codo.</li>",
+    "    <li><b>Torcas respecto al codo</b> (elimina $E_x$ y $E_y$): $\\;T\\,\\mathrm{sen}\\,\\theta\\,D-L\\,w=0$ ⇒ $T=\\dfrac{Lw}{D\\,\\mathrm{sen}\\,\\theta}=\\dfrac{(0{,}30)(200)}{(0{,}050)(0{,}98)}\\approx\\mathbf{1220\\ N}$ (¡seis veces el peso!). El tendón se inserta muy cerca del codo, así que su brazo de palanca es pequeño.</li>",
+    "    <li><b>$\\sum F_x=0$:</b> las componentes horizontales se cancelan: $E_x=T\\cos\\theta=\\dfrac{Lw}{h}\\approx\\mathbf{210\\ N}$.</li>",
+    "    <li><b>$\\sum F_y=0$:</b> $T\\,\\mathrm{sen}\\,\\theta+E_y-w=0$ ⇒ $E_y=-\\dfrac{(L-D)\\,w}{D}=-\\mathbf{1000\\ N}$. El signo menos indica que, en realidad, $\\vec E$ apunta <i>hacia abajo</i>.</li>",
+    "    <li><b>Módulo:</b> $E=\\sqrt{E_x^2+E_y^2}\\approx1020$ N. El peso del antebrazo (unos 20 N) es despreciable frente a estas fuerzas.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 11.4, pp. 346-347 y fig. 11.10, p. 346",
+    "txt": "U p.346-347"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_11_10_brazo.png",
+   "alt": "Figura 11.10 de U. a) El antebrazo con la mancuerna, la fuerza T del tendón del bíceps y la fuerza E del codo; b) diagrama de cuerpo libre del antebrazo con las distancias L y D y los ángulos.",
+   "pie": "Fig. 11.10 de U: antebrazo con mancuerna y su DCL (el tendón está dibujado muy lejos del codo «por claridad»).",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 11.10, p. 346",
+    "txt": "U p.346"
+   },
+   "attrs": " loading=\"lazy\" style=\"max-width:560px!important\""
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Truco de examen",
+   "html": "<p>Cuando una fuerza desconocida actúe en un punto (bisagra, codo, pie de escalera), <b>toma las torcas respecto a ese punto</b>: te ahorras dos incógnitas de golpe. Y si el resultado de una componente sale negativo no es un error: significa que apunta al revés de como la dibujaste.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §11.3, Ejemplo 11.4 (EVALUAR), pp. 346-347",
+    "txt": "U p.346-347"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s4",
+   "n": "4",
+   "titulo": "Esfuerzo, deformación y módulos de elasticidad",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §11.4, pp. 347-353",
+    "txt": "U p.347-353"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>El «cuerpo rígido» es una idealización: en la vida real todo se estira, se comprime o se tuerce un poco cuando lo cargas. Una cuerda de escalada se alarga algo cuando cuelgas de ella; un buzo se «encoge» muy poco a gran profundidad; un listón se deforma al cortarlo con unas tijeras. La regla general (la de un resorte, pero para materiales) es sencilla: <b>cuanto más fuerte tiras por cada centímetro cuadrado, más se deforma fracción por fracción, y en proporción directa</b> (siempre que no te pases). Lo que importa no es la fuerza total, sino la <i>fuerza por unidad de área</i> (esfuerzo) y la <i>fracción</i> que cambia el tamaño (deformación): así un alambre fino y uno grueso del mismo material se comparan con la misma constante.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §11.4, fig. 11.12-11.13, p. 347",
+    "txt": "U p.347"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Ley de Hooke y módulo de elasticidad",
+   "html": [
+    "<p>En las deformaciones elásticas, el <b>esfuerzo</b> (fuerza por unidad de área) es proporcional a la <b>deformación</b> (cambio fraccionario). Su cociente es una constante del material, el <b>módulo de elasticidad</b>:",
+    "  $$\\frac{\\text{esfuerzo}}{\\text{deformación}}=\\text{módulo de elasticidad}\\qquad\\text{(ec. 11.7)}$$",
+    "  Hay tres tipos de esfuerzo y, para cada uno, un módulo.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §11.4, ec. 11.7, p. 347",
+    "txt": "U p.347"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "tres-tipos-de-esfuerzo-tension-una-barra-se-alar"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Tensión y compresión: módulo de Young $Y$",
+   "html": [
+    "<p>Una barra de longitud $l_0$ y área transversal $A$ sometida a fuerzas $F_\\perp$ perpendiculares a la sección (que la estiran o la comprimen):",
+    "  $$\\text{esfuerzo}=\\frac{F_\\perp}{A}\\ \\text{(11.8)},\\qquad \\text{deformación}=\\frac{\\Delta l}{l_0}\\ \\text{(11.9)},\\qquad Y=\\frac{F_\\perp/A}{\\Delta l/l_0}=\\frac{F_\\perp\\,l_0}{A\\,\\Delta l}\\ \\text{(11.10)}$$",
+    "  El esfuerzo se mide en pascales (1 Pa = 1 N/m²) y la deformación es adimensional, así que $Y$ también va en Pa. El mismo $Y$ vale para estirar y para comprimir. Un material con $Y$ grande (acero) es rígido; con $Y$ pequeño (goma), blando. Despejando: $\\Delta l=\\dfrac{F_\\perp\\,l_0}{A\\,Y}$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §11.4, ecs. 11.8-11.10, pp. 348-349 (compresión, p. 349)",
+    "txt": "U p.348-349"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Compresión, flexión y viga en I",
+   "html": [
+    "<p>Si las fuerzas de los extremos <i>empujan</i> en lugar de jalar, la barra está en <b>compresión</b>: el esfuerzo y la deformación se definen igual (con $\\Delta l$ en sentido contrario) y la ley de Hooke y (11.10) valen mientras el esfuerzo no sea muy grande. Muchos materiales tienen el mismo $Y$ en tensión y en compresión, pero no el hormigón (concreto): aguanta compresión y falla con una tensión comparable. Por eso los romanos y otras civilizaciones usaban <b>arcos</b>: el peso de encima comprime las piedras y no las pone en tensión.</p>",
+    "  <p>Con frecuencia un cuerpo sufre ambas a la vez. Una viga horizontal apoyada en sus extremos se pandea por su peso: la parte <b>superior</b> queda en compresión y la <b>inferior</b> en tensión, y en la línea central no hay ni una ni otra. Por eso la sección en <b>I</b> es ancha arriba y abajo (donde están los esfuerzos) y angosta en el centro (ahorra peso).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §11.4, figs. 11.15-11.16, p. 349",
+    "txt": "U p.349"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "una-viga-apoyada-en-sus-extremos-se-flexiona-la-"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Esfuerzo volumétrico: módulo volumétrico $B$",
+   "html": [
+    "<p>Cuando un fluido (o un sólido) se comprime por todos lados, el esfuerzo es la <b>presión</b> $p=F_\\perp/A$ (ec. 11.11; un escalar, no un vector) y la deformación es el cambio fraccionario de volumen $\\Delta V/V_0$ (ec. 11.12). El módulo volumétrico es",
+    "  $$B=-\\frac{\\Delta p}{\\Delta V/V_0}\\quad\\text{(11.13)},\\qquad k=\\frac1B\\ \\text{(compresibilidad, 11.14)}$$",
+    "  El signo menos es porque un aumento de presión ($\\Delta p>0$) reduce el volumen ($\\Delta V&lt;0$): así $B>0$. Una $B$ grande significa que el material es difícil de comprimir. Para el agua, $k=46{,}4\\times10^{-6}\\ \\text{atm}^{-1}$ (tabla 11.2).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §11.4, ecs. 11.11-11.14, pp. 350-351; tabla 11.2, p. 351",
+    "txt": "U p.350-351"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Esfuerzo de corte: módulo de corte $S$",
+   "html": [
+    "<p>Cuando las fuerzas son <b>tangentes</b> a las superficies (como unas tijeras o el cortado de un libro con la mano), el cuerpo se deforma sin cambiar de volumen: una cara se desplaza una distancia $x$ respecto a la opuesta, separada $h$:",
+    "  $$\\text{esfuerzo}=\\frac{F_\\parallel}{A}\\ \\text{(11.15)},\\qquad\\text{deformación}=\\frac{x}{h}\\ \\text{(11.16)},\\qquad S=\\frac{F_\\parallel/A}{x/h}=\\frac{F_\\parallel\\,h}{A\\,x}\\ \\text{(11.17)}$$",
+    "  Aquí $A$ es el área de la cara <i>paralela</i> a la fuerza. Para un material dado, $S$ suele ser de un tercio a un medio de $Y$. Solo existe en sólidos (los fluidos no resisten el corte).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §11.4, ecs. 11.15-11.17, p. 352",
+    "txt": "U p.352"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Módulos de algunos materiales (Pa)",
+   "html": [
+    "<table>",
+    "  <tr><th>Material</th><th>$Y$ (Young)</th><th>$B$ (volumétrico)</th><th>$S$ (corte)</th></tr>",
+    "  <tr><td>Aluminio</td><td>$7{,}0\\times10^{10}$</td><td>$7{,}5\\times10^{10}$</td><td>$2{,}5\\times10^{10}$</td></tr>",
+    "  <tr><td>Latón</td><td>$9{,}0\\times10^{10}$</td><td>$6{,}0\\times10^{10}$</td><td>$3{,}5\\times10^{10}$</td></tr>",
+    "  <tr><td>Cobre</td><td>$11\\times10^{10}$</td><td>$14\\times10^{10}$</td><td>$4{,}4\\times10^{10}$</td></tr>",
+    "  <tr><td>Hierro</td><td>$21\\times10^{10}$</td><td>$16\\times10^{10}$</td><td>$7{,}7\\times10^{10}$</td></tr>",
+    "  <tr><td>Plomo</td><td>$1{,}6\\times10^{10}$</td><td>$4{,}1\\times10^{10}$</td><td>$0{,}6\\times10^{10}$</td></tr>",
+    "  <tr><td>Níquel</td><td>$21\\times10^{10}$</td><td>$17\\times10^{10}$</td><td>$7{,}8\\times10^{10}$</td></tr>",
+    "  <tr><td>Goma de silicona</td><td>$0{,}001\\times10^{10}$</td><td>$0{,}2\\times10^{10}$</td><td>$0{,}0002\\times10^{10}$</td></tr>",
+    "  <tr><td>Acero</td><td>$20\\times10^{10}$</td><td>$16\\times10^{10}$</td><td>$7{,}5\\times10^{10}$</td></tr>",
+    "  <tr><td>Tendón (típico)</td><td>$0{,}12\\times10^{10}$</td><td>—</td><td>—</td></tr>",
+    "  </table>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Tabla 11.1, p. 349",
+    "txt": "U p.349"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores típicos con los módulos",
+   "html": [
+    "<ul>",
+    "    <li>Dejar el área en cm² o mm²: pasa siempre a m² ($1\\ \\text{cm}^2=10^{-4}\\ \\text{m}^2$, $1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$) antes de dividir.</li>",
+    "    <li>Usar el <b>diámetro</b> como radio en $A=\\pi r^2=\\pi d^2/4$.</li>",
+    "    <li>Confundir el módulo: $Y$ para estirar o comprimir, $B$ para presión por todos lados, $S$ para fuerzas tangentes.</li>",
+    "    <li>Mezclar unidades de presión: $k$ en atm$^{-1}$ con $\\Delta p$ en Pa (1 atm $=1{,}013\\times10^5$ Pa).</li>",
+    "    <li>Olvidar que un esfuerzo volumétrico <i>reduce</i> el volumen ($\\Delta V&lt;0$): el signo menos de (11.13).</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia sobre U §11.4, pp. 347-353",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 11.5: esfuerzo y deformación por tensión",
+   "html": [
+    "<p>Una varilla de acero de 2,0 m de longitud y $0{,}30\\ \\text{cm}^2$ de área transversal se cuelga de un soporte y de su extremo libre se cuelga una fresadora de 550 kg. Determina el esfuerzo, la deformación y el alargamiento.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Esfuerzo (11.8).</b> $F_\\perp=mg=550\\cdot9{,}8=5390$ N; $A=0{,}30\\ \\text{cm}^2=3{,}0\\times10^{-5}\\ \\text{m}^2$. $\\sigma=F_\\perp/A=1{,}80\\times10^{8}\\ \\text{Pa}\\approx\\mathbf{1{,}8\\times10^8\\ Pa}$.</li>",
+    "    <li><b>Deformación</b> (de 11.10: $\\Delta l/l_0=\\sigma/Y$). Acero: $Y=20\\times10^{10}$ Pa (tabla 11.1): $1{,}8\\times10^8/2{,}0\\times10^{11}=\\mathbf{9{,}0\\times10^{-4}}$.</li>",
+    "    <li><b>Alargamiento.</b> $\\Delta l=(\\Delta l/l_0)\\,l_0=9{,}0\\times10^{-4}\\cdot2{,}0\\ \\text{m}=\\mathbf{1{,}8\\ mm}$ (el peso propio de la varilla se desprecia).</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 11.5, p. 350",
+    "txt": "U p.350"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "varilla-de-acero-de-2-0-m-colgada-del-techo-con-"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 11.6: esfuerzo y deformación volumétricos",
+   "html": [
+    "<p>Una prensa hidráulica contiene $0{,}25\\ \\text{m}^3$ (250 L) de aceite. Calcula la disminución de volumen del aceite cuando se somete a un aumento de presión $\\Delta p=1{,}6\\times10^7$ Pa (unas 160 atm). El módulo volumétrico del aceite es $B=5{,}0\\times10^9$ Pa (aproximadamente $5{,}0\\times10^4$ atm) y su compresibilidad es $k=1/B=20\\times10^{-6}\\ \\text{atm}^{-1}$.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Deformación:</b> de (11.13), $\\dfrac{\\Delta V}{V_0}=-\\dfrac{\\Delta p}{B}=-\\dfrac{1{,}6\\times10^7}{5{,}0\\times10^9}=-3{,}2\\times10^{-3}$ (un $-0{,}32\\ \\%$).</li>",
+    "    <li><b>Cambio de volumen:</b> $\\Delta V=-3{,}2\\times10^{-3}\\cdot0{,}25\\ \\text{m}^3=\\mathbf{-8{,}0\\times10^{-4}\\ m^3}$.</li>",
+    "    <li><b>Por la otra vía</b> (con atmósferas, ec. 11.14): $\\Delta V=-k\\,V_0\\,\\Delta p=-(20\\times10^{-6}\\ \\text{atm}^{-1})(0{,}25\\ \\text{m}^3)(160\\ \\text{atm})=-8{,}0\\times10^{-4}\\ \\text{m}^3$. El signo menos indica que el volumen disminuye; aunque 160 atm es una presión grande, el cambio fraccionario es muy pequeño.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 11.6, p. 351",
+    "txt": "U p.351"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 11.7: esfuerzo y deformación por corte",
+   "html": [
+    "<p>La placa de latón de la base de una escultura exterior experimenta fuerzas de corte causadas por un terremoto. La placa cuadrada mide 0,80 m por lado y 0,50 cm de espesor. ¿Qué fuerza se ejerce en cada uno de sus extremos (cantos superior e inferior) si el desplazamiento resultante es $x=0{,}16$ mm? ($S=3{,}5\\times10^{10}$ Pa para el latón.)</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Planteamiento.</b> Se aplica una fuerza $F_\\parallel$ <i>tangente</i> al canto superior y otra igual y opuesta al canto inferior; la dimensión transversal es $h=0{,}80$ m. La incógnita es $F_\\parallel$.</li>",
+    "    <li><b>Deformación (11.16):</b> $x/h=0{,}16\\times10^{-3}/0{,}80=\\mathbf{2{,}0\\times10^{-4}}$.</li>",
+    "    <li><b>Esfuerzo</b> (de 11.17): $F_\\parallel/A=S\\,(x/h)=(3{,}5\\times10^{10})(2{,}0\\times10^{-4})=\\mathbf{7{,}0\\times10^{6}\\ Pa}$.</li>",
+    "    <li><b>Fuerza en cada canto:</b> el área de cada canto es $A=(0{,}80\\ \\text{m})(0{,}0050\\ \\text{m})=4{,}0\\times10^{-3}\\ \\text{m}^2$ ⇒ $F_\\parallel=\\sigma A=\\mathbf{2{,}8\\times10^{4}\\ N}$.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 11.7, p. 352",
+    "txt": "U p.352"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "placa-cuadrada-de-laton-de-0-80-m-de-lado-con-un"
+  },
+  {
+   "t": "h2",
+   "id": "s5",
+   "n": "5",
+   "titulo": "Elasticidad y plasticidad",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §11.5, pp. 353-354",
+    "txt": "U p.353-354"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>La ley de Hooke «esfuerzo ∝ deformación» solo vale si no te pasas. Estira un clip: al principio vuelve a su forma; si lo estiras mucho, se queda doblado para siempre; si sigues, se rompe. La gráfica esfuerzo–deformación de un metal cuenta esa historia en una curva: una recta al principio (Hooke), un tramo todavía reversible, un «punto de no retorno», una zona donde el material fluye y queda deformado, y por último la fractura.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §11.5, p. 353",
+    "txt": "U p.353"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Los puntos de la curva esfuerzo–deformación (fig. 11.19)",
+   "html": [
+    "<ul>",
+    "    <li><b>Límite proporcional (a):</b> hasta aquí la curva es una recta y vale la ley de Hooke.</li>",
+    "    <li><b>Límite elástico o punto de rendimiento (b):</b> entre $a$ y $b$ el material sigue siendo <i>elástico</i> (si descargas, recupera su longitud) aunque ya no sea proporcional. El esfuerzo en $b$ es el límite elástico. Suele corresponder a deformaciones menores del 1 %.</li>",
+    "    <li><b>Zona plástica ($b\\to d$):</b> si cargas más allá de $b$ (hasta $c$, por ejemplo) y luego descargas, el material <b>no vuelve</b> a $\\varepsilon=0$: sigue una recta aproximadamente paralela a la primera y queda una <b>deformación permanente</b>.</li>",
+    "    <li><b>Punto de fractura (d):</b> el material se rompe. El esfuerzo que lo causa es el <b>esfuerzo de ruptura</b> (para tensión, resistencia a la tensión). Un material <b>dúctil</b> se estira mucho en la zona plástica antes de romper (puede pasar del 30 %); uno <b>frágil</b> se rompe poco después del límite elástico.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §11.5, fig. 11.19, p. 353; esfuerzo de ruptura, p. 354",
+    "txt": "U p.353-354"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_11_19_esfuerzo.png",
+   "alt": "Figura 11.19 de U. Diagrama de esfuerzo-deformación típico de un metal dúctil sometido a tensión, con el límite proporcional a, el límite elástico o punto de rendimiento b, el punto c, el punto de fractura d, la zona elástica, la zona plástica y la deformación permanente.",
+   "pie": "Fig. 11.19 de U: diagrama esfuerzo–deformación de un metal dúctil.",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 11.19, p. 353",
+    "txt": "U p.353"
+   },
+   "attrs": " loading=\"lazy\" style=\"max-width:380px!important\""
+  },
+  {
+   "t": "parte",
+   "archivo": "parte04.html"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Esfuerzos de ruptura (Pa)",
+   "html": "<p>Aluminio $2{,}2\\times10^{8}$; latón $4{,}7\\times10^{8}$; vidrio $10\\times10^{8}$; hierro $3{,}0\\times10^{8}$; acero $(5\\text{–}20)\\times10^{8}$; tendón (típico) $1\\times10^{8}$. Dos materiales pueden tener constantes elásticas parecidas y esfuerzos de ruptura muy distintos: el hierro y el acero tienen casi el mismo $Y$ (rigidez comparable), pero el acero es más fuerte, porque tiene mayor esfuerzo de ruptura.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Tabla 11.3 y texto, p. 354",
+    "txt": "U p.354"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Materiales biológicos y caucho: histéresis elástica",
+   "html": "<p>El caucho vulcanizado y los tendones no tienen una región plástica clásica. El caucho se estira más de siete veces su longitud sin perder la elasticidad, pero el esfuerzo <i>no</i> es proporcional a la deformación y, al descargar, sigue una curva <b>distinta</b> de la de carga (fig. 11.20 de U): es la <b>histéresis elástica</b>, causada por rozamiento interno. El trabajo hecho al deformarlo es mayor que el que se recupera; la diferencia se disipa en calor, y por eso el caucho se usa en soportes que amortiguan vibraciones.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §11.5, fig. 11.20, p. 353",
+    "txt": "U p.353"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Confundir «límite proporcional» con «límite elástico»: el primero es el final de la recta (Hooke); el segundo es el final de la recuperación completa. Y no aplicar $\\Delta l=F\\,l_0/(AY)$ cuando el esfuerzo supera el límite proporcional: la fórmula solo vale en la zona de Hooke.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §11.5, p. 353",
+    "txt": "U p.353"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "ejercicios",
+   "n": "6",
+   "titulo": "Ejercicios resueltos",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Sobre estos ejercicios: no hay examen real de este tema",
+   "html": "<p>Ninguna convocatoria de 2018 a 2025 incluye un problema de equilibrio o elasticidad, así que <b>no hay ejercicios «X»</b>. Los nueve ejercicios E1-E9 son del solucionario (E, problemas de fin de capítulo traducidos y ampliados, de más fácil a más difícil) y, además, se resuelve el problema práctico del libro (U). Léelos con el método de las cinco etapas de la receta maestra. Los ejemplos 11.1 a 11.7 de U están resueltos en la teoría (§2 a §4).</p>",
+   "src": {
+    "l": "P",
+    "ref": "Sin ejercicios de examen real en el tema 11 (fuentes_txt/examenes_por_tema.md)",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "ej",
+   "ref": "e1"
+  },
+  {
+   "t": "ej",
+   "ref": "e2"
+  },
+  {
+   "t": "ej",
+   "ref": "e3"
+  },
+  {
+   "t": "ej",
+   "ref": "e4"
+  },
+  {
+   "t": "ej",
+   "ref": "e5"
+  },
+  {
+   "t": "ej",
+   "ref": "e6"
+  },
+  {
+   "t": "ej",
+   "ref": "e7"
+  },
+  {
+   "t": "ej",
+   "ref": "e8"
+  },
+  {
+   "t": "ej",
+   "ref": "e9"
+  },
+  {
+   "t": "ej",
+   "ref": "prac"
+  },
+  {
+   "t": "h2",
+   "id": "chuleta",
+   "n": "7",
+   "titulo": "Chuleta, errores frecuentes y lista de comprobación",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte05.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores frecuentes de este tema",
+   "html": [
+    "<ul>",
+    "    <li>Pensar que $\\sum\\vec F=0$ basta: también hace falta $\\sum\\vec\\tau=0$.</li>",
+    "    <li>Calcular torcas respecto a puntos distintos en la misma ecuación, o usar la distancia al punto de aplicación en lugar del brazo de palanca perpendicular.</li>",
+    "    <li>Suponer la dirección de la fuerza de una bisagra o de una base de escalera: se descompone en dos componentes. El cable sí tira a lo largo de sí mismo.</li>",
+    "    <li>Poner fricción en una pared «lisa» o olvidar que $f_s\\le\\mu_sn$ es una desigualdad (la fricción vale lo que haga falta, hasta el máximo).</li>",
+    "    <li>Olvidar una incógnita: tres ecuaciones, tres incógnitas como máximo en el plano.</li>",
+    "    <li>Dejar áreas en cm² o mm²; usar $d$ como $r$; confundir $Y$, $B$ y $S$; olvidar el signo menos de $B$.</li>",
+    "    <li>Aplicar $\\Delta l=Fl_0/(AY)$ fuera de la zona de Hooke, o a todo un cuerpo cuando solo se comprime un tramo.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte06.html"
+  },
+  {
+   "t": "h2",
+   "id": "fuentes",
+   "n": "★",
+   "titulo": "Fuentes de este tema",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "panel-fuentes.html"
+  }
+ ]
+}

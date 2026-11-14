@@ -33,7 +33,7 @@ Orden sugerido (de menos a más figuras): hacer 1 tema de prueba y, si el migrad
   *Pendiente para C11 (redacción, no tocado al migrar):* `problema-1-31` y `problema-1-51` comparan con «el solucionario da…» (viola la regla 8 bis): reescribir dejando solo el valor correcto.
 - [x] B2. Temas 2-4 (migrados; `t02-t04.py` creados). Corregida una errata de cálculo en tema 3 X3: x_B = 71,55·4,04 = 289,1 m (decía 288,9; D≈347 m no cambia). El tema 4 no tiene ejercicios de examen real catalogados.
 - [x] B3. Temas 6-8 (migrador ampliado: `<svg>` de marcadores y `style` en recortes del libro; `t06-t08.py` creados). Correcciones de redondeo: T7 e3 0,518 m/s; T8 x9 I_A=0,6731. Pendiente (índice de exámenes): faltan en `examenes_por_tema.md` entradas propias de Sept 2022 P-2(e) y P-3(a), citadas en el tema 6 (la prueba solo exige la convocatoria).
-- [ ] B4. Temas 9-11
+- [x] B4. Temas 9-11 (migrados; `t09-t11.py` creados, sin correcciones de contenido). Migrador: atributos extra en recortes del libro (`attrs`) y ejercicios sin título (`prac`).
 - [ ] B5. Temas 12-14
 - [ ] B6. Temas 15-17
 - [ ] B7. Temas 18-20 (los de más figuras; tema 18 pesa 370 KB)

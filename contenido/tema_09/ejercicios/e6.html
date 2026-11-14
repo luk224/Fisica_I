@@ -1,0 +1,23 @@
+<p class="enun"><b>9.30.</b> Bloques pequeños de masa $m$ están sujetos en los extremos y en el centro de una varilla de longitud $L$ y masa despreciable. Calcule el momento de inercia respecto a un eje perpendicular a la varilla que pasa por a) el centro; b) un punto a un cuarto de su longitud desde un extremo.<br><b>9.31.</b> Dos esferas pequeñas de 0,300 kg (masas puntuales) están pegadas a los extremos de una barra uniforme de 2,00 m y 4,00 kg. Calcule $I$ respecto a: a) un eje perpendicular a la barra por su centro; b) un eje perpendicular a la barra que pasa por una de las esferas; c) un eje paralelo a la barra que pasa por ambas esferas; d) un eje paralelo a la barra a 0,500 m de ella.</p>
+  <p><b>9.30.</b></p>
+  <ol class="steps">
+    <li><b>Definición.</b> $I=\sum m_ir_i^2$ con $r_i$ la distancia perpendicular al eje; la varilla no cuenta (masa despreciable).</li>
+    <li><b>a)</b> Distancias $L/2$, 0 y $L/2$: $I=2m(L/2)^2=\tfrac12mL^2$.</li>
+    <li><b>b)</b> Distancias $L/4$ (extremo cercano), $L/4$ (centro) y $3L/4$ (extremo lejano): $I=m\tfrac{L^2}{16}+m\tfrac{L^2}{16}+m\tfrac{9L^2}{16}=\tfrac{11}{16}mL^2$.</li>
+    <li><b>Comprobación con ejes paralelos:</b> masa total $3m$, $d=L/4$ desde el eje de a): $\tfrac12mL^2+3m\tfrac{L^2}{16}=\tfrac{11}{16}mL^2$. ✓</li>
+  </ol>
+  {{fig:tres-masas-iguales-sobre-una-varilla-ligera-con-}}
+
+  <p><b>9.31</b> ($M=4{,}00$ kg, $L=2{,}00$ m, $m=0{,}300$ kg).</p>
+  <ol class="steps">
+    <li><b>Principio.</b> $I$ es aditivo: $I=I_{barra}+I_{esferas}$, ambos respecto al <i>mismo</i> eje.</li>
+    <li><b>a)</b> Barra por el centro $\tfrac1{12}ML^2=1{,}333$; esferas a $L/2$: $2m(L/2)^2=0{,}600$. $I=1{,}93$ kg·m².</li>
+    <li><b>b)</b> Barra por un extremo $\tfrac13ML^2=5{,}333$; la esfera del eje aporta 0 y la otra $mL^2=1{,}200$. $I=6{,}53$ kg·m². (Ejes paralelos: $1{,}933+(4{,}60)(1{,}00)^2=6{,}53$ ✓.)</li>
+    <li><b>c)</b> Eje a lo largo de la barra: todas las masas están sobre el eje ($r_i=0$): $I=0$.</li>
+    <li><b>d)</b> Eje paralelo a 0,500 m: todas las masas a la misma distancia: $I=(M+2m)d^2=(4{,}60)(0{,}500)^2=1{,}15$ kg·m².</li>
+  </ol>
+  {{fig:barra-uniforme-con-dos-esferas-en-los-extremos-y}}
+
+  <p><b>Resultado:</b> 9.30: $\tfrac12mL^2$ y $\tfrac{11}{16}mL^2$. 9.31: 1,93; 6,53; 0; 1,15 kg·m².</p>
+  <div class="recipe"><b>Receta:</b> $I$ de un conjunto = suma de los $I$ de cada pieza respecto al <i>mismo</i> eje: masas puntuales con $mr^2$, cuerpos con la tabla 9.2, trasladados con $I_{cm}+Md^2$ si su eje no pasa por su cm.</div>
+  <p><b>Error típico.</b> Medir $r$ al «punto» del eje en lugar de la distancia perpendicular a la recta del eje; olvidar que $I$ cambia con el eje (el mismo objeto da 1,93; 6,53; 0 y 1,15 kg·m²).</p>

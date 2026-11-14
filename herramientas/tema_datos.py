@@ -158,11 +158,11 @@ class Migrador:
         self.bloques.append({'t': 'caja', 'k': k, 'h': h, 'html': a_json(self._tokenizar_figuras(resto[:fin.start()]).strip()), 'src': src_dict(fin)})
 
     def _libro(self, outer):
-        m = re.match(r'<figure class="bookfig">\s*<img src="([^"]+)" alt="([^"]*)"( style="[^"]*")? loading="lazy">\s*<figcaption>(.*?)</figcaption>\s*</figure>$', outer, re.S)
+        m = re.match(r'<figure class="bookfig">\s*<img src="([^"]+)" alt="([^"]*)"((?: (?:style|loading)="[^"]*")*)>\s*<figcaption>(.*?)</figcaption>\s*</figure>$', outer, re.S)
         assert m, outer[:100]
         cap = m.group(4); sm = list(SRC_RE.finditer(cap)); fin = sm[-1]
         self.bloques.append({'t': 'libro', 'img': m.group(1), 'alt': m.group(2), 'pie': a_json(cap[:fin.start()].rstrip()), 'src': src_dict(fin)}
-                             | ({'estilo': m.group(3).strip()[7:-1]} if m.group(3) else {}))
+                             | ({'attrs': m.group(3)} if m.group(3) != ' loading="lazy"' else {}))
 
     def _test(self, outer):
         m = re.match(r'<details class="check"><summary>(.*?)</summary>\s*<ol>(.*)</ol>\s*</details>$', outer, re.S)
@@ -259,7 +259,7 @@ class Generador:
         cuerpo = self.tokens((self.dir / 'ejercicios' / f'{eid}.html').read_text(encoding='utf8').strip())
         idattr = f' id="{m["id"]}"' if m.get('id') else ''
         pr = (' ' + m['prio']) if m.get('prio') else ''
-        return (f'<details class="sol"{idattr}><summary>{m["etiqueta"]} — {m["titulo"]}{pr} {src_html(m["src"])}</summary>\n'
+        return (f'<details class="sol"{idattr}><summary>{m["etiqueta"]}{" — " + m["titulo"] if m.get("titulo") else ""}{pr} {src_html(m["src"])}</summary>\n'
                 f'{cuerpo}\n</details>\n')
 
     def metodos(self):
@@ -290,7 +290,7 @@ class Generador:
         if t == 'fig':
             return self.figura(b['ref']) + '\n'
         if t == 'libro':
-            return (f'<figure class="bookfig">\n<img src="{b["img"]}" alt="{b["alt"]}"' + (f' style="{b["estilo"]}"' if b.get('estilo') else '') + ' loading="lazy">\n'
+            return (f'<figure class="bookfig">\n<img src="{b["img"]}" alt="{b["alt"]}"' + b.get('attrs', ' loading="lazy"') + '>\n'
                     f'<figcaption>{de_json(b["pie"])} {src_html(b["src"])}</figcaption>\n</figure>\n')
         if t == 'test':
             li = ''.join(f'<li>{i["q"]}<details><summary>Ver respuesta</summary>{i["a"]}</details></li>\n' for i in b['items'])

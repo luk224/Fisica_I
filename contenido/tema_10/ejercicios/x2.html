@@ -1,0 +1,17 @@
+<p class="enun">Un cuerpo formado por dos discos macizos y homogéneos de radio 40 mm unidos por un cilindro de masa despreciable y radio 25 mm, similar a un yoyó, tiene una masa total de 100 g. Se enrolla una cuerda de longitud 1 m al cilindro interior. Si el extremo de la cuerda se mantiene fijo y el cuerpo parte del reposo, calcular: (a) la aceleración angular del cuerpo; (b) la aceleración lineal de su centro de masas; (c) la velocidad del centro de masas en el instante en que se ha desenrollado completamente el hilo.</p>
+  <ol class="steps">
+    <li><b>Datos en SI</b> ($g=9{,}8$ m/s²): $M=0{,}100$ kg (cada disco, 0,050 kg), $R=0{,}040$ m (discos), $b=0{,}025$ m (eje, donde sale la cuerda), $L=1$ m.</li>
+    <li><b>Momento de inercia.</b> Cada disco macizo respecto a su eje: $\tfrac12m_dR^2$ (tabla 9.2); el eje no tiene masa. $I_{cm}=2\cdot\tfrac12(0{,}050)(0{,}040)^2=8{,}0\times10^{-5}$ kg·m². Ojo: en $I$ entra $R$ (donde está la masa), pero el brazo de la tensión es $b$ (donde está la cuerda).</li>
+    <li><b>Fuerzas</b> (eje $y$ hacia abajo): peso $Mg$ en el cm y tensión $T$ hacia arriba, a distancia $b$ del eje.</li>
+    <li><b>Traslación:</b> $Mg-T=Ma_{cm}$. <b>Rotación respecto al cm:</b> solo $T$ da torca: $Tb=I_{cm}\alpha$.</li>
+    <li><b>Ligadura.</b> El punto del eje en contacto con la cuerda vertical está instantáneamente en reposo, como el punto de contacto de una rueda: $a_{cm}=b\alpha$.</li>
+    <li><b>Resolver.</b> De 4 y 5: $T=I_{cm}a_{cm}/b^2$. Entonces $Mg=a_{cm}(M+I_{cm}/b^2)$:
+    $$a_{cm}=\frac{g}{1+I_{cm}/(Mb^2)},\qquad \frac{I_{cm}}{Mb^2}=\frac{8{,}0\times10^{-5}}{0{,}100\,(0{,}025)^2}=1{,}28$$</li>
+    <li><b>(b)</b> $a_{cm}=9{,}8/2{,}28=\mathbf{4{,}30\ m/s^2}$ hacia abajo. <b>(a)</b> $\alpha=a_{cm}/b=4{,}298/0{,}025=\mathbf{172\ rad/s^2}$. La tensión (no pedida) es $T=M(g-a_{cm})=0{,}550$ N.</li>
+    <li><b>(c)</b> La aceleración es constante (todas las fuerzas lo son), así que $v^2=2a_{cm}\Delta y$ con $\Delta y=L=1$ m (al desenrollarse 1 m de hilo, el cm baja 1 m): $v=\sqrt{2(4{,}298)(1)}=\mathbf{2{,}93\ m/s}$. Tiempo: $t=\sqrt{2L/a}=0{,}68$ s; $\omega_f=v/b=117$ rad/s.</li>
+    <li><b>Comprobación por energía</b> (ej. 10.4): $MgL=\tfrac12Mv^2+\tfrac12I_{cm}(v/b)^2$ ⇒ $v=\sqrt{2gL/(1+I/Mb^2)}=2{,}93$ m/s ✓ (la tensión no trabaja: su punto de aplicación está en reposo).</li>
+  </ol>
+  {{fig:yoyo-de-dos-discos-de-40-milimetros-de-radio-con}}
+  <p><b>Resultado:</b> (a) $\alpha=172$ rad/s²; (b) $a_{cm}=4{,}30$ m/s²; (c) $v_{cm}=2{,}93$ m/s (con $g=9{,}81$ salen los mismos valores a 3 cifras).</p>
+  <div class="recipe"><b>Receta:</b> yoyó o carrete con la cuerda fija: $\sum F=Ma$, $\sum\tau_{cm}=I\alpha$ con el brazo $b$ del punto donde sale la cuerda, y $a=b\alpha$ ⇒ $a=\dfrac{g}{1+I_{cm}/(Mb^2)}$. Para la velocidad tras bajar $h$: energía con $\omega=v/b$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar $R$ en la ligadura ($a=R\alpha$) o $b$ en el momento de inercia; contar mal la masa de cada disco (50 g, no 100 g); creer que el yoyó cae con $g$.</p></div>

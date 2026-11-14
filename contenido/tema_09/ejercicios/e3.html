@@ -1,0 +1,14 @@
+<p class="enun">El rodillo de una imprenta gira un ángulo $\theta(t)=\gamma t^2-\beta t^3$, con $\gamma=3{,}20$ rad/s² y $\beta=0{,}500$ rad/s³. a) Calcule la velocidad angular en función del tiempo. b) Calcule la aceleración angular en función del tiempo. c) ¿Cuál es la máxima velocidad angular positiva y en qué instante ocurre?</p>
+  <ol class="steps">
+    <li><b>Aquí $\alpha$ NO es constante</b> ($\theta$ tiene un término en $t^3$): no valen 9.7-9.12; hay que derivar.</li>
+    <li><b>a)</b> $\omega_z=\dfrac{d\theta}{dt}=2\gamma t-3\beta t^2=(6{,}40\ \text{rad/s}^2)\,t-(1{,}50\ \text{rad/s}^3)\,t^2$.</li>
+    <li><b>b)</b> $\alpha_z=\dfrac{d\omega_z}{dt}=2\gamma-6\beta t=6{,}40\ \text{rad/s}^2-(3{,}00\ \text{rad/s}^3)\,t$.</li>
+    <li><b>c)</b> Un máximo de $\omega_z$ está donde su derivada se anula: $\alpha_z=0\Rightarrow t^*=\dfrac{\gamma}{3\beta}=\dfrac{32}{15}=2{,}13$ s. Es máximo porque $\alpha_z$ pasa de positiva a negativa ($d\alpha_z/dt=-6\beta<0$).</li>
+    <li><b>Valor.</b> $\omega_z(t^*)=6{,}40(2{,}133)-1{,}50(2{,}133)^2=6{,}83$ rad/s.</li>
+    <li><b>Después.</b> $\omega_z$ se anula en $t=64/15=4{,}27$ s y se hace negativa, cada vez mayor en valor absoluto; por eso se pide la máxima velocidad angular <i>positiva</i> y no la máxima rapidez.</li>
+  </ol>
+  {{fig:graficas-de-la-velocidad-angular-y-de-la-acelera}}
+
+  <p><b>Resultado:</b> a) $\omega_z=6{,}40t-1{,}50t^2$; b) $\alpha_z=6{,}40-3{,}00t$; c) 6,83 rad/s en $t=2{,}13$ s.</p>
+  <div class="recipe"><b>Receta:</b> si $\theta(t)$ no es un polinomio de grado ≤ 2, deriva: $\omega=\dot\theta$, $\alpha=\ddot\theta$. Extremos de $\omega$ $\Leftrightarrow$ $\alpha=0$.</div>
+  <p><b>Error típico.</b> Aplicar $\omega=\omega_0+\alpha t$ con un $\alpha$ «fijo» cuando $\alpha$ depende de $t$.</p>

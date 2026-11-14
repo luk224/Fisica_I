@@ -1,0 +1,14 @@
+<p class="enun">Una varilla uniforme delgada de masa $M$ y longitud $L$ gira alrededor de un eje perpendicular que pasa por O, a una distancia $h$ de uno de sus extremos. a) Calcule por integración su momento de inercia respecto a ese eje. b) Parte del reposo y adquiere una aceleración angular constante $\alpha$: ¿qué trabajo se realiza sobre ella en un tiempo $t$? c) En ese instante, ¿cuál es la aceleración del punto más alejado del eje?</p>
+  <ol class="steps">
+    <li><b>Elemento de masa.</b> Eje $x$ a lo largo de la varilla con origen en O: ocupa de $x=-h$ a $x=L-h$. La masa por unidad de longitud es $M/L$ (uniforme), así que $dm=\tfrac ML\,dx$ y todos los puntos del elemento están a distancia $|x|$ del eje.</li>
+    <li><b>a) Integral.</b> $I=\int x^2dm=\dfrac ML\int_{-h}^{L-h}x^2dx=\dfrac{M}{3L}\left[(L-h)^3+h^3\right]=M\left(\dfrac{L^2}{3}-Lh+h^2\right)$.</li>
+    <li><b>Comprobación.</b> Con $h=0$ sale $\tfrac13ML^2$ y con $h=L/2$ sale $\tfrac1{12}ML^2$ (tabla 9.2); y por ejes paralelos, $I=\tfrac1{12}ML^2+M\left(\tfrac L2-h\right)^2$, que es lo mismo.</li>
+    <li><b>b) Trabajo.</b> Con $\alpha$ constante desde el reposo, $\omega=\alpha t$. El teorema trabajo-energía da $W=\Delta K=\tfrac12I\omega^2=\tfrac12M\left(\tfrac{L^2}{3}-Lh+h^2\right)\alpha^2t^2$.</li>
+    <li><b>c) Aceleración del punto más lejano.</b> Está a $r=\max(h,\,L-h)$ del eje. $a_{tan}=r\alpha$ y $a_{rad}=\omega^2r=r\alpha^2t^2$ son perpendiculares: $a=\sqrt{a_{tan}^2+a_{rad}^2}=r\alpha\sqrt{1+\alpha^2t^4}$. No es constante: $a_{tan}$ sí lo es, pero $a_{rad}$ crece con $t^2$.</li>
+    <li><b>Con números</b> ($M=2{,}0$ kg, $L=1{,}2$ m, $h=0{,}30$ m, $\alpha=2{,}0$ rad/s², $t=1{,}5$ s): $I=2{,}0(0{,}48-0{,}36+0{,}09)=0{,}42$ kg·m²; $\omega=3{,}0$ rad/s y $W=\tfrac12(0{,}42)(3{,}0)^2=1{,}9$ J; $r=0{,}90$ m, $a_{tan}=1{,}8$ m/s², $a_{rad}=8{,}1$ m/s² y $a=8{,}3$ m/s².</li>
+  </ol>
+  {{fig:varilla-uniforme-de-longitud-l-con-un-eje-perpen}}
+
+  <p><b>Resultado:</b> a) $I=M\left(\tfrac{L^2}3-Lh+h^2\right)$; b) $W=\tfrac12I\alpha^2t^2$; c) $a_{tan}=r\alpha$, $a_{rad}=r\alpha^2t^2$, $a=r\alpha\sqrt{1+\alpha^2t^4}$ con $r=\max(h,L-h)$.</p>
+  <div class="recipe"><b>Receta:</b> varilla con un eje fuera del centro: pon el origen en el eje, integra $x^2\,dm$ entre los extremos medidos <i>desde el eje</i> y comprueba con los casos $h=0$ y $h=L/2$ de la tabla 9.2. Luego encadena: $\omega=\alpha t$, $W=\Delta K=\tfrac12I\omega^2$, y las componentes $a_{tan}=r\alpha$ y $a_{rad}=\omega^2r$ del punto elegido.</div>
+  <p><b>Error típico.</b> Integrar de 0 a $L$ (eje en el extremo) cuando el eje está en O, o tomar $r=L/2$ para el punto más lejano.</p>

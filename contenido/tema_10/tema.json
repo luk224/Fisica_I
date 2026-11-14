@@ -1,0 +1,1356 @@
+{
+ "num": 10,
+ "kick": "Bloque Mecánica · Tema 10",
+ "titulo": "Dinámica del movimiento de rotación",
+ "descripcion": "En el tema 9 describiste el giro; ahora descubres <i>qué lo provoca</i>. La fuerza que acelera un movimiento rectilíneo tiene un gemelo para la rotación, la <b>torca</b> (o momento de una fuerza), y la segunda ley de Newton se convierte en $\\sum\\tau=I\\alpha$. Con ella entenderás por qué una bola rueda por una rampa más despacio que un bloque que desliza, qué hace la fricción en un yoyó, cómo una patinadora acelera su giro al encoger los brazos (<b>conservación del momento angular</b>) y por qué un giróscopo no se cae.",
+ "chips": [
+  "Libro oficial: Sears-Zemansky, cap. 10 (pp. 304-339)",
+  "Examen real: 6 problemas y 4 preguntas de teoría (2 temas)",
+  "Ejercicios: 9 bloques del solucionario + 1 problema práctico de U",
+  "3 ejemplos interactivos",
+  "⏱ ~8 h de estudio"
+ ],
+ "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
+ "titulo_pagina": "Física I · Tema 10 Dinámica del movimiento de rotación",
+ "archivo": "tema_10_dinamica_rotacion.html",
+ "examenes_requeridos": [],
+ "figuras": {
+  "una-fuerza-f-aplicada-en-un-punto-a-distancia-r-": {
+   "w": "340",
+   "h": "190",
+   "label": "Una fuerza F aplicada en un punto a distancia r del punto O; el brazo de palanca es la distancia perpendicular de O a la línea de acción de F",
+   "pie": "La torca de $\\vec F$ respecto a O es $F\\,l$, con $l=r\\,\\mathrm{sen}\\,\\varphi$ la distancia <i>perpendicular</i> de O a la línea de acción. En el ejemplo 10.1 es $r=0{,}80$ m, $\\varphi=109^\\circ$, $F=900$ N.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §10.1, ecs. 10.1-10.2 (cf. ejemplo 10.1)",
+    "txt": "P"
+   }
+  },
+  "cilindro-con-un-cable-enrollado-del-que-se-tira-": {
+   "w": "360",
+   "h": "190",
+   "label": "Cilindro con un cable enrollado del que se tira con una fuerza tangencial F",
+   "pie": "Ejemplo 10.2: el cable se tira tangencialmente, así que el brazo de palanca es el radio $R$ y $\\tau=FR$; la aceleración del cable es la tangencial del borde.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejemplo 10.2 de U",
+    "txt": "P"
+   }
+  },
+  "yoyo-que-baja-desenrollando-una-cuerda-fija-con-": {
+   "w": "360",
+   "h": "240",
+   "label": "Yoyó que baja desenrollando una cuerda fija, con la tensión hacia arriba y el peso hacia abajo",
+   "pie": "Yoyó: la cuerda sale a distancia $b$ del eje, así que $Tb=I_{cm}\\alpha$, y $a_{cm}=b\\alpha$ porque el punto de la cuerda está en reposo. La tensión sube y el peso baja: $T&lt;Mg$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejemplo 10.6 de U (p. 313)",
+    "txt": "P"
+   }
+  },
+  "esfera-o-cilindro-que-rueda-hacia-abajo-por-una-": {
+   "w": "340",
+   "h": "214",
+   "label": "Esfera o cilindro que rueda hacia abajo por una rampa con el peso, la normal y la fricción estática hacia arriba de la rampa",
+   "pie": "Cuerpo que baja rodando: el peso y la normal no dan torca respecto al centro de masa; la fricción estática $f$ (hacia <i>arriba</i> de la rampa) es la que lo hace girar y, a la vez, frena su traslación.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejemplo 10.7 de U (p. 314)",
+    "txt": "P"
+   }
+  },
+  "diagrama-de-barras-de-la-aceleracion-relativa-de": {
+   "w": "340",
+   "h": "204",
+   "label": "Diagrama de barras de la aceleración relativa de cuerpos que bajan por una rampa según su forma",
+   "pie": "Aceleración del centro de masa en una rampa, en unidades de $g\\,\\mathrm{sen}\\,\\beta$, para $I_{cm}=cMR^2$. Cuanto mayor es $c$ (más masa lejos del eje), más se «gasta» en girar y más lenta es la bajada. Independiente de $M$ y $R$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §10.3, ejemplos 10.5 y 10.7",
+    "txt": "P"
+   }
+  },
+  "fuerza-tangencial-sobre-el-borde-de-un-disco-que": {
+   "w": "340",
+   "h": "184",
+   "label": "Fuerza tangencial sobre el borde de un disco que gira un ángulo pequeño dθ; el arco recorrido es R dθ",
+   "pie": "Al girar $d\\theta$, el punto de aplicación recorre el arco $ds=R\\,d\\theta$; solo la componente tangencial trabaja: $dW=F_{tan}R\\,d\\theta=\\tau\\,d\\theta$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §10.4, ecs. 10.19-10.23",
+    "txt": "P"
+   }
+  },
+  "grafica-de-la-potencia-frente-al-tiempo-una-rect": {
+   "w": "320",
+   "h": "200",
+   "label": "Gráfica de la potencia frente al tiempo, una recta de 0 a 400 vatios en 8 segundos",
+   "pie": "Ejemplo 10.8 (piedra de afilar, $\\tau=10$ N·m, $I=2{,}0$ kg·m²): $\\omega$ crece linealmente, así que $P=\\tau\\omega$ también; el área bajo la curva es el trabajo (1600 J) y la potencia media, la mitad de la final.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejemplo 10.8 de U (pp. 316-317)",
+    "txt": "P"
+   }
+  },
+  "grafica-del-momento-angular-frente-al-tiempo-una": {
+   "w": "320",
+   "h": "200",
+   "label": "Gráfica del momento angular frente al tiempo, una parábola, con la tangente en t igual a 3 segundos",
+   "pie": "Ejemplo 10.9: con $\\omega_z=40t^2$ e $I=2{,}5$ kg·m², el momento angular es $L_z=100t^2$; la torca es su <i>pendiente</i> (tangente): $\\tau_z=dL_z/dt=200t=600$ N·m a los 3 s.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejemplo 10.9 de U (p. 319)",
+    "txt": "P"
+   }
+  },
+  "vista-desde-arriba-del-profesor-con-mancuernas-g": {
+   "w": "350",
+   "h": "232",
+   "label": "Vista desde arriba del profesor con mancuernas girando con los brazos extendidos y con las mancuernas pegadas al cuerpo",
+   "pie": "Ejemplo 10.10: sin torca externa, $L_z=I\\omega_z$ se conserva. Al reducir $I$ cinco veces, $\\omega$ crece cinco veces y $K=\\tfrac12I\\omega^2$ también (el trabajo lo hacen los brazos).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejemplo 10.10 de U (p. 321)",
+    "txt": "P"
+   }
+  },
+  "dos-discos-coaxiales-con-velocidades-angulares-d": {
+   "w": "360",
+   "h": "198",
+   "label": "Dos discos coaxiales con velocidades angulares distintas que se acoplan y giran juntos",
+   "pie": "Ejemplo 10.11: «choque» rotacional. $I_A\\omega_A+I_B\\omega_B=(I_A+I_B)\\omega$; es el equivalente rotacional de un choque perfectamente inelástico.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del ejemplo 10.11 de U (pp. 321-322)",
+    "txt": "P"
+   }
+  },
+  "vista-desde-arriba-del-vector-momento-angular-de": {
+   "w": "350",
+   "h": "258",
+   "label": "Vista desde arriba del vector momento angular del giróscopo, que gira en horizontal porque la torca del peso es perpendicular a L",
+   "pie": "Vista desde arriba de un giróscopo: la torca del peso es horizontal y perpendicular a $\\vec L$, así que $d\\vec L=\\vec\\tau\\,dt$ <i>gira</i> $\\vec L$ sin cambiar su módulo. El ángulo girado es $d\\phi=|d\\vec L|/L$.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio de U §10.7, ecs. 10.32-10.33 y ejemplo 10.13",
+    "txt": "P"
+   }
+  },
+  "cilindro-macizo-en-una-rampa-de-50-grados-con-el": {
+   "w": "360",
+   "h": "232",
+   "label": "Cilindro macizo en una rampa de 50 grados con el peso, la normal y la fricción hacia arriba, y comparación con la fricción que necesitaría el cilindro hueco",
+   "pie": "Examen 2023: el macizo rueda con justo $\\mu_s=\\tfrac13\\tan50^\\circ=0{,}397$ ($f=2{,}50$ N); el hueco necesita $f=3{,}76$ N, más que el máximo disponible: resbala. (Fuerzas con longitudes proporcionales a su valor.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2023 (1ª semana) P-2",
+    "txt": "P"
+   }
+  },
+  "yoyo-de-dos-discos-de-40-milimetros-de-radio-con": {
+   "w": "360",
+   "h": "258",
+   "label": "Yoyó de dos discos de 40 milímetros de radio con la cuerda sobre un eje de 25 milímetros, con la tensión y el peso",
+   "pie": "Examen 2018: el yoyó baja con $a_{cm}=g/(1+I/Mb^2)=4{,}30$ m/s², bastante menos que $g$ porque parte de la energía se gasta en girar. (Fuerzas con longitudes proporcionales.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2018 (1ª semana) P-1",
+    "txt": "P"
+   }
+  },
+  "cilindro-que-sube-rodando-por-una-rampa-de-35-gr": {
+   "w": "360",
+   "h": "232",
+   "label": "Cilindro que sube rodando por una rampa de 35 grados empujado por una fuerza paralela aplicada en su eje; la fricción apunta hacia abajo de la rampa",
+   "pie": "Examen 2025: $F$ pasa por el eje (no da torca); la torca la da la fricción, que por eso apunta <i>hacia abajo</i> de la rampa. (Longitudes de $mg$, $n$ y $F$ a escala; $f$ no, porque es unas diez veces menor.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2025 (1ª semana) P-1",
+    "txt": "P"
+   }
+  },
+  "grafica-de-la-friccion-necesaria-para-rodar-sin-": {
+   "w": "320",
+   "h": "200",
+   "label": "Gráfica de la fricción necesaria para rodar sin deslizar, t al cuadrado entre 6, y el máximo de 88,2 newtons que se cruzan en 23 segundos",
+   "pie": "Examen 2019: la fricción que hace falta para rodar es $f=F/3=t^2/6$; empieza a deslizar cuando alcanza $\\mu_s mg=88{,}2$ N, en $t=23{,}0$ s. A los 4 s, $f=2{,}67$ N y todavía rueda.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2019 (1ª semana) P-2",
+    "txt": "P"
+   }
+  },
+  "vista-desde-arriba-de-una-barra-con-eje-en-un-ex": {
+   "w": "350",
+   "h": "224",
+   "label": "Vista desde arriba de una barra con eje en un extremo y un acróbata que salta del otro extremo; la barra gira en sentido contrario",
+   "pie": "Examen 2024: tomando momentos respecto al eje, el acróbata se lleva $+1800$ kg·m²/s y la barra, $-1800$; con $I=30$ kg·m² resulta $\\omega=60$ rad/s en sentido contrario.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Febrero 2024 (2ª semana) P-1",
+    "txt": "P"
+   }
+  },
+  "varilla-vertical-que-cuelga-de-un-pivote-a-y-es-": {
+   "w": "360",
+   "h": "198",
+   "label": "Varilla vertical que cuelga de un pivote A y es golpeada por una bala horizontal a una distancia a de A",
+   "pie": "Examen Sept. 2019: respecto al pivote A la fuerza del pivote no da torca, así que $L_A=mva$ se conserva en el choque. El brazo de palanca de la bala es $a$ (distancia de A a su trayectoria).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Septiembre 2019 P-1 (a)",
+    "txt": "P"
+   }
+  },
+  "dos-esquemas-vistos-desde-arriba-un-rotor-que-gi": {
+   "w": "350",
+   "h": "200",
+   "label": "Dos esquemas vistos desde arriba: un rotor que gira en un sentido y dos rotores que giran en sentidos opuestos",
+   "pie": "Septiembre 2024, cuestión (b): el motor aplica una torca al rotor y, por reacción, una opuesta al fuselaje; el rotor de cola la compensa. Con dos rotores contrarrotatorios los momentos angulares (y las reacciones) se anulan.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del examen Septiembre 2024 P-3 Opción A (b)",
+    "txt": "P"
+   }
+  },
+  "aro-que-rueda-sin-resbalar-con-los-vectores-velo": {
+   "w": "360",
+   "h": "196",
+   "label": "Aro que rueda sin resbalar con los vectores velocidad del punto más alto, el centro, el punto de la derecha y el punto de contacto",
+   "pie": "Problema 10.17: velocidad de cada punto = $\\vec v_{cm}$ + velocidad de giro ($R\\omega=v_{cm}$, tangente): arriba $2v_{cm}$, contacto 0, lateral $\\sqrt2\\,v_{cm}$ a 45° hacia abajo. (Flechas a escala.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 10.17 (Solucionario 10-8)",
+    "txt": "P"
+   }
+  },
+  "rueda-con-eje-fijo-y-una-cuerda-tirada-horizonta": {
+   "w": "360",
+   "h": "204",
+   "label": "Rueda con eje fijo y una cuerda tirada horizontalmente en su borde, con el peso y la fuerza del eje",
+   "pie": "Problema 10.10: la cuerda da la torca $PR$; el peso y la fuerza del eje pasan por el eje (torca nula), y la fuerza del eje equilibra a $P$ y al peso. (Longitudes proporcionales.)",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 10.10 (Solucionario 10-4/10-5)",
+    "txt": "P"
+   }
+  },
+  "cilindro-hueco-que-cae-desenrollando-una-cuerda-": {
+   "w": "360",
+   "h": "240",
+   "label": "Cilindro hueco que cae desenrollando una cuerda comparado con el mismo cilindro en caída libre, con el reparto de energía",
+   "pie": "Problema 10.25: la misma energía $Mgd$ se reparte entre traslación y rotación (60 % / 40 %) con cuerda; sin cuerda toda es traslación y el centro cae más deprisa.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 10.25 (Solucionario 10-12)",
+    "txt": "P"
+   }
+  },
+  "bola-de-bolos-que-sube-rodando-una-rampa-con-la-": {
+   "w": "360",
+   "h": "200",
+   "label": "Bola de bolos que sube rodando una rampa con la fricción estática apuntando hacia arriba de la rampa",
+   "pie": "Problema 10.26: al subir, la bola se frena y su giro también; la torca que frena el giro solo puede venir de la fricción, que apunta <i>hacia arriba</i> (igual que al bajar). $\\vec a_{cm}$ apunta rampa abajo.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 10.26 (Solucionario 10-12)",
+    "txt": "P"
+   }
+  },
+  "piedra-de-afilar-con-una-manivela-de-0-5-metros-": {
+   "w": "360",
+   "h": "222",
+   "label": "Piedra de afilar con una manivela de 0,5 metros, el hacha apretando el borde con fricción y el rozamiento del eje",
+   "pie": "Problema 10.54 a): sentido positivo = el del giro. La manivela da $+33{,}82$ N·m; el hacha ($\\mu_kn=96$ N a 0,260 m) $-24{,}96$ y el eje $-6{,}50$: sobra $2{,}36$ N·m para acelerar.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 10.54 (Solucionario 10-21)",
+    "txt": "P"
+   }
+  },
+  "grafica-de-la-aceleracion-del-yoyo-en-unidades-d": {
+   "w": "320",
+   "h": "200",
+   "label": "Gráfica de la aceleración del yoyó en unidades de g frente al cociente entre el radio del eje y el de los discos",
+   "pie": "Problema 10.67: $a/g=1/(1+R^2/2b^2)$. Con eje muy fino el yoyó casi no baja ($a\\to0$); con $b\\to R$ se comporta como un cilindro ($a\\to\\tfrac23g$).",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 10.67 (Solucionario 10-28)",
+    "txt": "P"
+   }
+  },
+  "bloque-girando-alrededor-de-un-orificio-con-dos-": {
+   "w": "360",
+   "h": "200",
+   "label": "Bloque girando alrededor de un orificio con dos radios, 0,8 metros y 0,354 metros, y sus velocidades",
+   "pie": "Problema 10.86: al acortar la cuerda, $L=mvr$ se conserva y la rapidez crece como $1/r$; la tensión crece como $1/r^3$ hasta romper la cuerda a 30,0 N.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 10.86 (Solucionario 10-36)",
+    "txt": "P"
+   }
+  },
+  "plataforma-giratoria-con-un-corredor-en-el-borde": {
+   "w": "350",
+   "h": "190",
+   "label": "Plataforma giratoria con un corredor en el borde antes y después de detenerse respecto a ella",
+   "pie": "Problema 10.87: sentido positivo = el del corredor. $L_{inicial}=mRv-I\\omega_1=462-16=446$ kg·m²/s; al final $(I+mR^2)\\omega_2=575\\,\\omega_2$, de donde $\\omega_2=+0{,}776$ rad/s.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema 10.87 (Solucionario 10-36/10-37)",
+    "txt": "P"
+   }
+  },
+  "bola-de-billar-golpeada-horizontalmente-a-una-al": {
+   "w": "360",
+   "h": "176",
+   "label": "Bola de billar golpeada horizontalmente a una altura h sobre su centro",
+   "pie": "Problema práctico de U: el golpe a $h=\\tfrac25R$ por encima del centro da justo $v_0=R\\omega_0$ y la bola rueda sin deslizar desde el principio.",
+   "src": {
+    "l": "P",
+    "ref": "Diagrama propio del problema práctico de U (p. 327)",
+    "txt": "P"
+   }
+  }
+ },
+ "bloques": [
+  {
+   "t": "h2",
+   "id": "prereq",
+   "n": "0",
+   "titulo": "Antes de empezar",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U cap. 10 Introducción, p. 304",
+    "txt": "U p.304"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte01.html"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte02.html"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Qué ha caído en examen (y dónde está resuelto)",
+   "html": [
+    "<p>Este es un tema <b>muy examinado</b>: hay seis problemas de 3 puntos y cuatro preguntas de teoría de 4 puntos (sobre dos temas) con este contenido, y casi todos son de dos tipos: <b>cuerpo que rueda o se desenrolla con fricción</b> (yoyós, cilindros en rampas) y <b>conservación del momento angular en un choque o un salto</b>. Están todos resueltos paso a paso como X1-X8.</p>",
+    "  <table>",
+    "  <tr><th>Examen real</th><th>De qué va</th><th>Ejercicio</th></tr>",
+    "  <tr><td>Febrero 2023 (1ª sem.) P-2</td><td>Cilindro macizo en rampa de 50°: $\\mu_s$ mínimo, aceleración, ¿y si es hueco?</td><td><a href=\"#x1\">X1</a></td></tr>",
+    "  <tr><td>Febrero 2018 (1ª sem.) P-1</td><td>Yoyó de dos discos con cuerda fija: $\\alpha$, $a_{cm}$, $v_{cm}$</td><td><a href=\"#x2\">X2</a></td></tr>",
+    "  <tr><td>Febrero 2025 (1ª sem.) P-1</td><td>Cilindro que sube rodando una rampa de 35° tirado por una fuerza: $F_{máx}$ y tiempo mínimo</td><td><a href=\"#x3\">X3</a></td></tr>",
+    "  <tr><td>Febrero 2019 (1ª sem.) P-2</td><td>Cilindro empujado en su centro con $F=t^2/2$: ¿cuándo desliza?</td><td><a href=\"#x4\">X4</a></td></tr>",
+    "  <tr><td>Febrero 2024 (2ª sem.) P-1</td><td>Acróbata que salta de una barra con eje: conservación de $L$, energía cinética</td><td><a href=\"#x5\">X5</a></td></tr>",
+    "  <tr><td>Septiembre 2019 P-1 (a)</td><td>Bala que se incrusta en una varilla con pivote: momento angular</td><td><a href=\"#x6\">X6</a></td></tr>",
+    "  <tr><td>Febrero 2025 (2ª sem.) P-3 Opción A</td><td>Teoría: «Trabajo y potencia en un movimiento de rotación» + 2 cuestiones</td><td><a href=\"#x7\">X7</a></td></tr>",
+    "  <tr><td>Septiembre 2024 P-3 Opción A; Feb. 2019 (1ª) P-3 (3.2); Feb. 2020 (2ª) P-3 (3.1)</td><td>Teoría: «Conservación del momento angular» (+ huevo crudo/duro y rotor de cola en Sept. 2024)</td><td><a href=\"#x8\">X8</a></td></tr>",
+    "  </table>"
+   ],
+   "src": {
+    "l": "X",
+    "ref": "Exámenes reales del tema 10 (ver tabla; índice en fuentes_txt/examenes_por_tema.md)",
+    "txt": "X"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "La receta maestra: dinámica de rotación en 6 pasos",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Dibuja y elige el sentido positivo de giro</b> (normalmente el antihorario) y, para cada cuerpo, su diagrama de cuerpo libre con <i>el punto de aplicación</i> de cada fuerza: ahora el dónde importa tanto como el cuánto.</li>",
+    "    <li><b>Decide qué hace cada cuerpo:</b> ¿solo gira alrededor de un eje fijo (rueda con cojinetes, puerta)? ¿solo se traslada? ¿ambas cosas (rueda que rueda, yoyó)?</li>",
+    "    <li><b>Escribe las ecuaciones:</b> $\\sum\\vec F=M\\vec a_{cm}$ (traslación) y $\\sum\\tau=I\\alpha$ <i>respecto al eje fijo o respecto al centro de masa</i> (rotación). Una torca por cada fuerza que no pase por ese punto: $\\tau=\\pm F\\,l$.</li>",
+    "    <li><b>Añade la ligadura geométrica:</b> cuerda que no resbala, $a=R\\alpha$; rodar sin resbalar, $v_{cm}=R\\omega$ y $a_{cm}=R\\alpha$.</li>",
+    "    <li><b>Si hay fricción estática,</b> su valor es el que haga falta para cumplir la ligadura, y solo debe comprobarse al final que $f\\le\\mu_sn$.</li>",
+    "    <li><b>Si te piden un estado final y no un tiempo</b> (o hay un choque/salto), cambia de método: energía (§10.3-10.4) o conservación de $L$ (§10.6). Comprueba unidades (rad, kg·m²) y casos límite.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia para resolver problemas 10.1, p. 308 y §10.3, pp. 313-314",
+    "txt": "U p.308, 313"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s1",
+   "n": "1",
+   "titulo": "Torca (momento de una fuerza)",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §10.1, pp. 304-306",
+    "txt": "U p.304"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Para abrir una puerta pesada empujas lejos de las bisagras y <i>perpendicularmente</i> a ella; si empujas junto a las bisagras, o en la dirección de la propia puerta, no se mueve por mucho que empujes. Para aflojar una tuerca usas una llave larga. Lo que «hace girar» no es la fuerza sola, sino <b>la fuerza multiplicada por la distancia perpendicular al eje</b>. A esa cantidad la llamamos <b>torca</b> (los ingenieros la llaman «momento de una fuerza»; también «par»). Es para la rotación lo que la fuerza es para la traslación: la causa de que cambie el estado de giro.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §10.1, introducción, p. 304 (fig. 10.1)",
+    "txt": "U p.304"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Torca de una fuerza respecto a un punto O",
+   "html": [
+    "<p>Si la fuerza $\\vec F$ actúa en un punto cuyo vector de posición respecto a O es $\\vec r$, la magnitud de su torca respecto a O es",
+    "  $$\\tau=Fl=rF\\,\\sin\\phi=F_{tan}\\,r\\qquad\\text{(ec. 10.1 y 10.2)}$$",
+    "  donde $\\phi$ es el ángulo entre $\\vec r$ y $\\vec F$, $l=r\\sin\\phi$ es el <b>brazo de palanca</b> (distancia <i>perpendicular</i> de O a la línea de acción de $\\vec F$) y $F_{tan}=F\\sin\\phi$ es la componente de $\\vec F$ perpendicular a $\\vec r$. La componente radial $F_{rad}$ no produce torca. En el plano, una torca que gira en sentido antihorario es positiva y una horaria, negativa. Unidades: N·m (¡no se llaman julios!).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.1, ecs. (10.1)-(10.2), pp. 304-305",
+    "txt": "U p.304-305"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "una-fuerza-f-aplicada-en-un-punto-a-distancia-r-"
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "La torca como vector",
+   "html": [
+    "<p>La torca es en realidad el producto vectorial",
+    "  $$\\vec\\tau=\\vec r\\times\\vec F\\qquad\\text{(ec. 10.3)}$$",
+    "  Su módulo es $rF\\sin\\phi$ y su dirección es <b>perpendicular al plano</b> de $\\vec r$ y $\\vec F$, con el sentido de la regla de la mano derecha: apunta con los dedos de la mano derecha a lo largo de $\\vec r$ y enróscalos hacia $\\vec F$; el pulgar da $\\vec\\tau$. Para giros en un plano ($\\vec\\tau$ perpendicular a la página), se usa un punto $\\odot$ para «sale de la página» (antihorario, $+$) y una cruz $\\otimes$ para «entra en la página» (horario, $-$).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.1, ec. (10.3) y fig. 10.4, p. 305",
+    "txt": "U p.305"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_10_4_mano.png",
+   "alt": "Figura 10.4 de U. La torca como producto vectorial r por F: con los dedos de la mano derecha en la dirección de r y enroscados hacia F, el pulgar da la dirección de la torca; dos llaves, una con la torca hacia arriba y otra hacia abajo.",
+   "pie": "Fig. 10.4 de U: regla de la mano derecha para $\\vec\\tau=\\vec r\\times\\vec F$.",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 10.4, p. 305",
+    "txt": "U p.305"
+   },
+   "attrs": " loading=\"lazy\" style=\"max-width:280px!important\""
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico: la torca siempre es respecto a un punto",
+   "html": "<p>No existe «la torca de una fuerza» sin decir <i>respecto a qué punto o eje</i>: cambia si cambias O. Y recuerda que el brazo de palanca es la distancia <i>perpendicular</i> de O a la <i>recta</i> de la fuerza, no la distancia a su punto de aplicación (salvo que $\\vec F\\perp\\vec r$). Si la recta de acción pasa por O (fuerza aplicada en O o dirigida hacia O), la torca es cero.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §10.1, CUIDADO La torca siempre se mide con respecto a un punto, p. 304",
+    "txt": "U p.304"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.1: aflojar una junta de tubería",
+   "html": [
+    "<p>Un plomero pone un pedazo de tubo («extensión») en el mango de su llave y se para en el extremo, con todo su peso, $F=900$ N, aplicado a $r=0{,}80$ m del centro de la junta. El mango y la extensión forman 19° con la horizontal. Calcula la torca respecto al centro de la junta.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Ángulo $\\phi$.</b> $\\vec r$ va del centro de la junta al extremo de la llave (19° sobre la horizontal) y $\\vec F$ es el peso (vertical, hacia abajo): $\\phi=90^\\circ+19^\\circ=109^\\circ$.</li>",
+    "    <li><b>Brazo de palanca.</b> $l=r\\sin\\phi=(0{,}80\\ \\text{m})\\sin109^\\circ=0{,}756$ m.</li>",
+    "    <li><b>Torca.</b> $\\tau=Fl=(900\\ \\text{N})(0{,}756\\ \\text{m})=680\\ \\text{N}\\!\\cdot\\!\\text{m}$. Con la otra forma: $F_{tan}=F\\sin\\phi=851$ N y $\\tau=F_{tan}r=680$ N·m.</li>",
+    "    <li><b>Dirección.</b> Por la regla de la mano derecha, $\\vec\\tau$ <i>sale</i> de la página (antihoraria): la llave tiende a girar aflojando la junta.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.1, pp. 305-306",
+    "txt": "U p.305-306"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s2",
+   "n": "2",
+   "titulo": "Torca y aceleración angular de un cuerpo rígido",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §10.2, pp. 306-310",
+    "txt": "U p.306"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Empieza con una sola partícula de masa $m$ atada a una varilla ligera de longitud $r$ que gira alrededor de un eje. Si la empujas con una fuerza tangencial $F_{tan}$, la segunda ley dice $F_{tan}=ma_{tan}$. Multiplica por $r$: $F_{tan}r=m\\,a_{tan}\\,r=m\\,(r\\alpha)\\,r=(mr^2)\\alpha$. A la izquierda tienes la torca; entre paréntesis, el momento de inercia de la partícula. Para un cuerpo rígido (muchas partículas que giran con el mismo $\\alpha$) se suman todas, y como las <b>torcas internas se anulan por pares</b> (acción y reacción son iguales, opuestas y están sobre la misma recta), solo quedan las externas:</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §10.2, pp. 306-307 (fig. 10.6)",
+    "txt": "U p.306-307"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Segunda ley de Newton para la rotación",
+   "html": [
+    "$$\\sum\\tau_z=I\\,\\alpha_z\\qquad\\text{(ec. 10.7)}$$",
+    "  <p>La torca neta (suma de las torcas de las fuerzas externas respecto al eje $z$) es el momento de inercia respecto a ese eje por la aceleración angular. Es el calco de $\\sum F_x=ma_x$: torca ↔ fuerza, $I$ ↔ masa, $\\alpha$ ↔ aceleración. A más $I$, más cuesta cambiar el giro. Con $\\alpha$ en rad/s². Vale para cuerpos rígidos (y también en los giros alrededor del centro de masa que veremos en §10.3).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.2, ec. (10.7), p. 307",
+    "txt": "U p.307"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Estrategia 10.1: dinámica rotacional de cuerpos rígidos",
+   "html": [
+    "<ol class=\"steps\">",
+    "    <li><b>Identificar:</b> usa $\\sum\\tau_z=I\\alpha_z$ cuando la incógnita sea una fuerza, una torca, una aceleración (angular), o un tiempo; para velocidades tras un desplazamiento, suele ser mejor la energía.</li>",
+    "    <li><b>Plantear:</b> esquema con el eje; un diagrama de cuerpo libre <i>por cada cuerpo</i> con las dimensiones y los ángulos; ejes y sentido de giro positivo; relaciones geométricas ($a=R\\alpha$ para una cuerda que no resbala).</li>",
+    "    <li><b>Ejecutar:</b> aplica $\\sum\\vec F=m\\vec a$ y/o $\\sum\\tau_z=I\\alpha_z$ a cada cuerpo; tantas ecuaciones como incógnitas.</li>",
+    "    <li><b>Evaluar:</b> comprueba signos, unidades y casos límite.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Estrategia para resolver problemas 10.1, p. 308",
+    "txt": "U p.308"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.2: cable que se desenrolla (I)",
+   "html": [
+    "<p>Un cilindro sólido uniforme de masa $M=50$ kg y diámetro 0,120 m ($R=0{,}060$ m) gira sin fricción en torno a su eje. Un cable ligero enrollado en él se tira con una fuerza constante $F=9{,}0$ N. ¿Qué aceleración angular tiene el cilindro y qué aceleración tiene el cable?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Torca.</b> El cable sale tangente al borde, así que el brazo de palanca es $R$: $\\tau=FR=(9{,}0)(0{,}060)=0{,}54$ N·m. La normal y el peso pasan por el eje: torca cero.</li>",
+    "    <li><b>Momento de inercia</b> (cilindro macizo, tabla 9.2): $I=\\tfrac12MR^2=\\tfrac12(50)(0{,}060)^2=0{,}090$ kg·m².</li>",
+    "    <li><b>Segunda ley:</b> $\\alpha=\\tau/I=0{,}54/0{,}090=6{,}0$ rad/s².</li>",
+    "    <li><b>Cable</b> (no resbala): $a=R\\alpha=(0{,}060)(6{,}0)=0{,}36$ m/s². (Nota: $a=F/M=0{,}18$ m/s² <i>no</i> vale: el cilindro no se traslada, gira.)</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.2, p. 308",
+    "txt": "U p.308"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "cilindro-con-un-cable-enrollado-del-que-se-tira-"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.3: cable que se desenrolla (II), con un bloque",
+   "html": [
+    "<p>El cable del ejemplo anterior se sustituye por un bloque de masa $m$ colgado de él. El bloque se suelta; ¿qué aceleración $a$ tiene y qué tensión $T$ soporta el cable?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Bloque</b> (solo traslación, $y$ hacia abajo): $mg-T=ma$.</li>",
+    "    <li><b>Cilindro</b> (solo giro): la tensión da la torca $TR=I\\alpha=\\tfrac12MR^2\\alpha$.</li>",
+    "    <li><b>Ligadura:</b> $a=R\\alpha$, de donde $T=\\tfrac12Ma$.</li>",
+    "    <li><b>Resolver:</b> $mg=ma+\\tfrac12Ma$ ⇒ $a=\\dfrac{g}{1+M/2m}$ y $T=\\dfrac{Mmg}{M+2m}$. Siempre $a\\lt g$ y $T\\lt mg$ (el bloque no está en caída libre porque tiene que hacer girar el cilindro). Es el mismo resultado que dio la energía en el tema 9.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.3, pp. 309-310",
+    "txt": "U p.309-310"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Suponer que la tensión de un cable que mueve una polea o un cilindro con masa es $T=mg$, o que es la misma a ambos lados de la polea. Con una polea con masa, las tensiones a cada lado son <i>distintas</i> y su diferencia es justo lo que produce la torca $\\Delta T\\cdot R=I\\alpha$.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U Preguntas P10.10 y ejemplo 10.3, pp. 309-310 y 328",
+    "txt": "U p.309, 328"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s3",
+   "n": "3",
+   "titulo": "Rotación de un cuerpo rígido en torno a un eje móvil: rodadura",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §10.3, pp. 309-315",
+    "txt": "U p.309"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Una rueda que rueda por el suelo hace dos cosas a la vez: su <i>centro</i> avanza como si fuera una partícula, y la rueda <i>gira</i> alrededor de ese centro. El movimiento de cualquier cuerpo rígido (una moneda lanzada al aire, un balón que bota, una bola de bolos) se puede separar así en <b>traslación del centro de masa + rotación alrededor del centro de masa</b>. Lo bueno es que ambas partes se tratan por separado, cada una con su ley: $\\sum\\vec F=M\\vec a_{cm}$ y $\\sum\\tau_{cm}=I_{cm}\\alpha$.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §10.3, introducción, pp. 309-310 (figs. 10.10-10.12)",
+    "txt": "U p.309-310"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Energía cinética de traslación + rotación",
+   "html": [
+    "$$K=\\tfrac12Mv_{cm}^2+\\tfrac12I_{cm}\\omega^2\\qquad\\text{(ec. 10.8)}$$",
+    "  <p>Se obtiene escribiendo la velocidad de cada partícula como $\\vec v_i=\\vec v_{cm}+\\vec v_i'$ (la del centro de masa más la del giro alrededor de él). Si el cuerpo cambia de altura, además hay energía potencial gravitatoria $U=Mgy_{cm}$ (se calcula como si toda la masa estuviera en el centro de masa).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.3, ecs. (10.8)-(10.9) y energía potencial, pp. 310-311",
+    "txt": "U p.310-311"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Rodar sin resbalar",
+   "html": [
+    "<p>Vista desde el centro de masa, la rueda solo gira, y el punto de contacto se mueve hacia atrás con rapidez $R\\omega$. Pero visto desde el suelo, ese punto está <b>instantáneamente en reposo</b> (si no, estaría patinando). Para eso hace falta que la velocidad del centro, hacia delante, compense exactamente:",
+    "  $$v_{cm}=R\\omega\\qquad\\text{(ec. 10.11)}$$",
+    "  y, derivando, $a_{cm}=R\\alpha$. Cada punto del cuerpo tiene la velocidad $\\vec v_{cm}+\\vec v'$: el punto de contacto, 0; el centro, $v_{cm}$; el punto más alto, <b>$2v_{cm}$</b>; los de los lados, $\\sqrt2\\,v_{cm}$ a 45°. Equivale a decir que la rueda gira, en cada instante, alrededor del punto de contacto, y por eso $K=\\tfrac12I_P\\omega^2$ con $I_P=I_{cm}+MR^2$ (ejes paralelos): da lo mismo que (10.8).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.3, «Rodar sin resbalar», ec. (10.11) y fig. 10.13, p. 311",
+    "txt": "U p.311"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_10_13_rodadura.png",
+   "alt": "Figura 10.13 de U. El movimiento de una rueda es la suma de la traslación del centro de masa (todos los puntos con velocidad v_cm) y la rotación alrededor del centro de masa (velocidad Rω tangente). El punto de contacto está en reposo, el superior tiene 2 v_cm y los laterales forman 45 grados.",
+   "pie": "Fig. 10.13 de U: traslación + rotación = movimiento combinado. El punto 1 (contacto) está en reposo; el 3 va a $2v_{cm}$.",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 10.13, p. 311",
+    "txt": "U p.311"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico: $v_{cm}=R\\omega$ no siempre vale",
+   "html": "<p>Solo vale cuando <i>rueda sin resbalar</i>. Un coche que «arranca» con las ruedas patinando tiene $R\\omega>v_{cm}$; un coche que derrapa frenando con las ruedas bloqueadas, $R\\omega&lt;v_{cm}$. En esos casos hay fricción <i>cinética</i> ($f_k=\\mu_kn$) y $v_{cm}$ y $\\omega$ son independientes.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §10.3, CUIDADO Rodar sin resbalar, p. 311 (fig. 10.14)",
+    "txt": "U p.311"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.4: rapidez de un yoyó (energía)",
+   "html": [
+    "<p>Un yoyó es un cilindro macizo de masa $M$ y radio $R$ con un hilo enrollado, cuyo extremo se sujeta fijo. Se suelta desde el reposo y baja una altura $h$. ¿Qué rapidez tiene su centro?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Ligadura.</b> El punto del hilo está en reposo: $v_{cm}=R\\omega$.</li>",
+    "    <li><b>Energía</b> (la tensión no trabaja, su punto de aplicación está en reposo): $Mgh=\\tfrac12Mv_{cm}^2+\\tfrac12\\left(\\tfrac12MR^2\\right)\\left(\\dfrac{v_{cm}}{R}\\right)^2=\\tfrac34Mv_{cm}^2$.</li>",
+    "    <li><b>Resultado:</b> $v_{cm}=\\sqrt{\\dfrac{4gh}{3}}$, menor que $\\sqrt{2gh}$ de la caída libre: un tercio de la energía va a girar el cilindro.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.4, p. 312",
+    "txt": "U p.312"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.5: carrera de cuerpos que ruedan",
+   "html": [
+    "<p>Un cuerpo con $I_{cm}=cMR^2$ (esfera sólida $c=\\tfrac25$, cilindro $\\tfrac12$, esfera hueca $\\tfrac23$, aro $1$) baja rodando sin resbalar una altura $h$ desde el reposo. ¿Qué rapidez lleva?</p>",
+    "  <ol class=\"steps\">",
+    "    <li>$Mgh=\\tfrac12Mv_{cm}^2+\\tfrac12(cMR^2)(v_{cm}/R)^2=\\tfrac12(1+c)Mv_{cm}^2$.</li>",
+    "    <li>$v_{cm}=\\sqrt{\\dfrac{2gh}{1+c}}$. <b>No depende de $M$ ni de $R$:</b> todos los cilindros macizos llegan a la vez, sean grandes o pequeños, de plomo o de madera.</li>",
+    "    <li>Gana el de menor $c$ (el que tiene su masa más cerca del eje): esfera sólida $\\gt$ cilindro macizo $\\gt$ esfera hueca $\\gt$ aro. Y todos pierden contra un bloque que desliza sin fricción ($c=0$, $v=\\sqrt{2gh}$).</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.5, pp. 312-313",
+    "txt": "U p.312-313"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Dinámica de traslación y rotación a la vez",
+   "html": [
+    "<p>Cuando el eje de rotación pasa por el centro de masa, es un eje de simetría y no cambia de dirección (rueda, cilindro, esfera), se cumplen por separado",
+    "  $$\\sum\\vec F_{ext}=M\\vec a_{cm}\\quad(10.12)\\qquad\\qquad\\sum\\tau_{cm}=I_{cm}\\,\\alpha_z\\quad(10.13)$$",
+    "  <b>aunque el centro de masa esté acelerando.</b> Es decir: la traslación se calcula con las fuerzas como si todas estuvieran en el centro de masa; el giro, con las torcas respecto al centro de masa. El peso, aplicado en el centro de masa, no da torca respecto a él. Dos incógnitas (la aceleración y $\\alpha$) más la ligadura $a_{cm}=R\\alpha$.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.3, ecs. (10.12)-(10.13), p. 313",
+    "txt": "U p.313"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.6: aceleración de un yoyó",
+   "html": [
+    "<p>El mismo yoyó del ejemplo 10.4 (cilindro macizo con el hilo enrollado en su borde, extremo fijo). Calcula su aceleración y la tensión del hilo.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>DCL.</b> Peso $Mg$ (en el centro, hacia abajo) y tensión $T$ (hacia arriba, en el borde: brazo $R$). Eje $y$ hacia abajo.</li>",
+    "    <li><b>Traslación:</b> $Mg-T=Ma_{cm}$. <b>Rotación respecto al cm:</b> solo $T$ da torca: $TR=I_{cm}\\alpha=\\tfrac12MR^2\\alpha$ ⇒ $T=\\tfrac12MR\\alpha$.</li>",
+    "    <li><b>Ligadura</b> (el hilo no resbala): $a_{cm}=R\\alpha$ ⇒ $T=\\tfrac12Ma_{cm}$.</li>",
+    "    <li><b>Resolver:</b> $Mg=\\tfrac32Ma_{cm}$ ⇒ $\\boxed{a_{cm}=\\tfrac23g}$ y $\\boxed{T=\\tfrac13Mg}$. (Coincide con lo que da la energía del ejemplo 10.4: $v^2=2ah=\\tfrac43gh$.)</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.6, pp. 313-314",
+    "txt": "U p.313-314"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "yoyo-que-baja-desenrollando-una-cuerda-fija-con-"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.7: bola de bolos que rueda por una rampa",
+   "html": [
+    "<p>Una bola de bolos (esfera sólida, $I_{cm}=\\tfrac25MR^2$) baja rodando sin resbalar por una rampa de ángulo $\\beta$. ¿Qué aceleración tiene y cuánta fricción hace falta?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>DCL.</b> Peso $Mg$ (en el cm), normal $n$ (su recta pasa por el cm) y fricción estática $f$ en el punto de contacto, paralela a la rampa. Eje $x$ rampa abajo. Solo $f$ da torca respecto al cm.</li>",
+    "    <li><b>Sentido de $f$.</b> La bola aumenta su giro en el sentido de «bajar rodando»; la única torca que lo logra es la de $f$, y para eso debe apuntar <b>hacia arriba</b> de la rampa. (Se opone al deslizamiento que habría sin ella, no «al movimiento».)</li>",
+    "    <li><b>Ecuaciones:</b> $Mg\\sin\\beta-f=Ma_{cm}$; $fR=\\tfrac25MR^2\\alpha$; $a_{cm}=R\\alpha$ ⇒ $f=\\tfrac25Ma_{cm}$.</li>",
+    "    <li><b>Resolver:</b> $Mg\\sin\\beta=\\tfrac75Ma_{cm}$ ⇒ $\\boxed{a_{cm}=\\tfrac57g\\sin\\beta}$ y $\\boxed{f=\\tfrac27Mg\\sin\\beta}$.</li>",
+    "    <li><b>Condición para no resbalar:</b> $f\\le\\mu_sn=\\mu_sMg\\cos\\beta$ ⇒ $\\mu_s\\ge\\tfrac27\\tan\\beta$.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.7, p. 314",
+    "txt": "U p.314"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "esfera-o-cilindro-que-rueda-hacia-abajo-por-una-"
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Receta general: cuerpo con $I_{cm}=cMR^2$ que rueda por una rampa",
+   "html": [
+    "$$a_{cm}=\\frac{g\\sin\\beta}{1+c},\\qquad f=\\frac{c}{1+c}\\,Mg\\sin\\beta,\\qquad \\mu_{s,\\min}=\\frac{c}{1+c}\\tan\\beta$$",
+    "  <p>Con $c=\\tfrac25$ (esfera) sale el $\\tfrac57$ del ejemplo 10.7; con $c=\\tfrac12$ (cilindro), $\\tfrac23$ y $\\mu_{s,\\min}=\\tfrac13\\tan\\beta$; con $c=1$ (aro), $\\tfrac12$ y $\\mu_{s,\\min}=\\tfrac12\\tan\\beta$. El cuerpo que tiene más $I$ necesita <b>más</b> fricción para rodar sin resbalar, porque hace falta más torca para darle la misma $\\alpha$. Vale igual cuando el cuerpo <i>sube</i> la rampa (ver problema 10.26).</p>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Generalización propia de los ejemplos 10.5-10.7 de U (pp. 312-314)",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "diagrama-de-barras-de-la-aceleracion-relativa-de"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte03.html"
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Por qué la fricción estática «no gasta» energía",
+   "html": "<p>En la rodadura sin resbalar el punto de contacto está en reposo instantáneo, así que la fricción estática <b>no realiza trabajo</b> sobre el cuerpo: la energía mecánica se conserva (por eso funcionan los ejemplos 10.4 y 10.5 con energía). Lo único que hace es <i>transferir</i> energía de traslación a rotación. La fricción de rodamiento real, causada por la deformación de la rueda y del suelo (fig. 10.20 de U), sí disipa energía, pero con cuerpos ideales se desprecia.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §10.3, «Fricción de rodamiento», pp. 314-315 y p. 312",
+    "txt": "U p.312, 314-315"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s4",
+   "n": "4",
+   "titulo": "Trabajo y potencia en el movimiento de rotación",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §10.4, pp. 315-317",
+    "txt": "U p.315"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Cuando empujas el borde de un tiovivo, la fuerza trabaja porque su punto de aplicación se desplaza. Si el borde gira un ángulo pequeño $d\\theta$, ese punto recorre un arco $ds=R\\,d\\theta$, y solo la componente <i>tangencial</i> de la fuerza trabaja (la radial es perpendicular al desplazamiento). El resultado cabe en una línea: <b>trabajo = torca × ángulo girado</b>, la versión giratoria de «fuerza × distancia».</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §10.4, pp. 315-316 (fig. 10.21)",
+    "txt": "U p.315-316"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Trabajo, energía y potencia en rotación",
+   "html": [
+    "$$dW=\\tau_z\\,d\\theta\\ (10.19)\\qquad W=\\int_{\\theta_1}^{\\theta_2}\\tau_z\\,d\\theta\\ (10.20)\\qquad W=\\tau_z\\,\\Delta\\theta\\ \\ (\\tau\\ \\text{constante})\\ (10.21)$$",
+    "  $$W_{tot}=\\tfrac12I\\omega_2^2-\\tfrac12I\\omega_1^2=\\Delta K_{rot}\\ (10.22)\\qquad\\qquad P=\\frac{dW}{dt}=\\tau_z\\,\\omega_z\\ (10.23)$$",
+    "  <p>El trabajo total de las torcas es el cambio de energía cinética de rotación (teorema trabajo-energía). La demostración: $\\tau_z=I\\alpha_z=I\\omega_z\\,d\\omega_z/d\\theta$, luego $\\tau_z\\,d\\theta=I\\omega_z\\,d\\omega_z$, que al integrar da $\\Delta(\\tfrac12I\\omega^2)$. La potencia es la torca por la velocidad angular, análogo de $P=Fv$: a potencia fija, más torca significa menos revoluciones (por eso las marchas cortas de un coche). <b>$\\theta$ en radianes y $\\omega$ en rad/s.</b></p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.4, ecs. (10.19)-(10.23), pp. 315-316",
+    "txt": "U p.315-316"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "fuerza-tangencial-sobre-el-borde-de-un-disco-que"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte04.html"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.8: potencia a partir de la torca (piedra de afilar)",
+   "html": [
+    "<p>Un motor eléctrico aplica una torca constante $\\tau=10$ N·m a una piedra de afilar, con $I=2{,}0$ kg·m², que parte del reposo. ¿Cuánto vale $\\omega$ a los 8,0 s? ¿Cuánto trabajo se ha hecho? ¿Qué potencia instantánea y media hay?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Aceleración angular</b> (constante): $\\alpha=\\tau/I=10/2{,}0=5{,}0$ rad/s².</li>",
+    "    <li><b>Velocidad y ángulo a los 8,0 s:</b> $\\omega=\\alpha t=40$ rad/s; $\\Delta\\theta=\\tfrac12\\alpha t^2=160$ rad.</li>",
+    "    <li><b>Trabajo:</b> $W=\\tau\\Delta\\theta=(10)(160)=1600$ J. Comprobación: $\\Delta K=\\tfrac12I\\omega^2=\\tfrac12(2{,}0)(40)^2=1600$ J ✓.</li>",
+    "    <li><b>Potencia:</b> $P=\\tau\\omega$ crece desde 0 hasta $(10)(40)=400$ W; la media es $P_{med}=W/t=1600/8{,}0=200$ W (la mitad de la final, porque $P$ crece linealmente).</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.8, pp. 316-317",
+    "txt": "U p.316-317"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "grafica-de-la-potencia-frente-al-tiempo-una-rect"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico",
+   "html": "<p>Usar revoluciones, grados o rpm en $W=\\tau\\Delta\\theta$ o $P=\\tau\\omega$ (da un resultado en «N·m·rev», no en julios), o decir que la componente radial de la fuerza realiza trabajo. Otro: confundir la <b>torca</b> (N·m) con el <b>trabajo</b> (J): tienen las mismas unidades pero son magnitudes distintas (una es un vector, la otra un escalar).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §10.4, ecs. (10.21)-(10.23), pp. 315-316",
+    "txt": "U p.315-316"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s5",
+   "n": "5",
+   "titulo": "Momento angular",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §10.5, pp. 317-319",
+    "txt": "U p.317"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>El <b>momento lineal</b> $\\vec p=m\\vec v$ mide «lo difícil que es parar» una partícula en línea recta. El <b>momento angular</b> mide lo difícil que es parar su <i>giro</i> alrededor de un punto: una partícula con mucha masa, rápida y cuya recta de movimiento pasa lejos del punto (brazo $l$ grande) «lleva» mucho momento angular, aunque se mueva en línea recta. Una bola de billar que pasa a 10 cm de ti y otra a 1 m, con la misma velocidad, tienen distinto momento angular respecto a tu posición. Y lo verdaderamente importante: igual que $\\sum\\vec F=d\\vec p/dt$, la torca es la rapidez con la que cambia el momento angular.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §10.5, introducción, p. 317",
+    "txt": "U p.317"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "def",
+   "h": "Momento angular de una partícula",
+   "html": [
+    "<p>Respecto a un origen O (en un sistema inercial), una partícula de masa $m$, posición $\\vec r$ y velocidad $\\vec v$ tiene",
+    "  $$\\vec L=\\vec r\\times\\vec p=\\vec r\\times m\\vec v\\ (10.24)\\qquad L=mvr\\sin\\phi=mvl\\ (10.25)$$",
+    "  con $l$ la distancia <i>perpendicular</i> de O a la recta de $\\vec v$ (el «brazo de palanca» del momento lineal). $\\vec L$ es perpendicular al plano de $\\vec r$ y $\\vec v$ (regla de la mano derecha) y depende del origen O elegido. Unidades: kg·m²/s.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.5, ecs. (10.24)-(10.25) y fig. 10.23, p. 317",
+    "txt": "U p.317"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_10_23_momento.png",
+   "alt": "Figura 10.23 de U. Una partícula de masa m en el plano xy con vector de posición r respecto al origen O y cantidad de movimiento p igual a m v; el momento angular L es perpendicular al plano y su módulo es m v l, con l igual a r sen phi.",
+   "pie": "Fig. 10.23 de U: $\\vec L=\\vec r\\times m\\vec v$, perpendicular al plano del movimiento, con $L=mvl$.",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 10.23, p. 317",
+    "txt": "U p.317"
+   },
+   "attrs": " loading=\"lazy\" style=\"max-width:340px!important\""
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "La torca es la rapidez de cambio del momento angular",
+   "html": [
+    "<p>Derivando $\\vec L=\\vec r\\times m\\vec v$ ($\\vec v\\times\\vec v=0$): $\\dfrac{d\\vec L}{dt}=\\vec r\\times m\\vec a=\\vec r\\times\\vec F$, es decir",
+    "  $$\\frac{d\\vec L}{dt}=\\vec\\tau\\quad\\text{(partícula, 10.26)}\\qquad\\qquad\\sum\\vec\\tau_{ext}=\\frac{d\\vec L}{dt}\\quad\\text{(sistema, 10.29)}$$",
+    "  En un sistema de partículas las torcas <i>internas</i> se cancelan por pares, así que solo cuentan las <b>externas</b> y $\\vec L$ es el momento angular total. Para un <b>cuerpo rígido</b> que gira con velocidad angular $\\omega$ en torno a un eje de simetría,",
+    "  $$\\vec L=I\\vec\\omega\\qquad\\text{(10.28)}\\qquad L_z=I\\omega_z\\ \\text{(eje fijo)},\\qquad \\frac{dL_z}{dt}=I\\alpha_z=\\sum\\tau_z$$",
+    "  que contiene a $\\sum\\tau_z=I\\alpha_z$ como caso particular (con $I$ constante).</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.5, ecs. (10.26), (10.28), (10.29), pp. 317-319",
+    "txt": "U p.317-319"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.9: momento angular y torca de una hélice",
+   "html": [
+    "<p>Una hélice de avión tiene $I=2{,}5$ kg·m² y su velocidad angular aumenta con el tiempo según $\\omega_z(t)=\\left(40\\ \\text{rad/s}^3\\right)t^2$. Calcula $L_z$ y $\\tau_z$ en $t=3{,}0$ s.</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Momento angular:</b> $L_z=I\\omega_z=(2{,}5)(40)t^2=100\\,t^2$ ⇒ en $t=3$ s: $L_z=900$ kg·m²/s.</li>",
+    "    <li><b>Torca:</b> $\\tau_z=dL_z/dt=200\\,t$ ⇒ en $t=3$ s: $\\tau_z=600$ N·m. (Comprobación con $I\\alpha_z$: $\\alpha_z=d\\omega_z/dt=80t=240$ rad/s², $I\\alpha_z=600$ N·m ✓.)</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.9, p. 319",
+    "txt": "U p.319"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "grafica-del-momento-angular-frente-al-tiempo-una"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Error típico: «$\\vec L$ siempre va a lo largo de $\\vec\\omega$»",
+   "html": "<p>$\\vec L=I\\vec\\omega$ (10.28) solo vale si el eje de giro es de simetría. Si no lo es (una rueda de coche mal equilibrada, un cuerpo irregular), $\\vec L$ <b>no es paralelo a $\\vec\\omega$</b> y, aunque $\\omega$ sea constante, $\\vec L$ describe un cono alrededor del eje: cambia de dirección, así que hace falta una torca externa neta para mantener el giro. Esa torca la ejercen los cojinetes y es la razón de que haya que <b>equilibrar las ruedas</b> de un coche: así su eje de giro pasa a ser de simetría.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §10.5, fig. 10.27, p. 319",
+    "txt": "U p.319"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s6",
+   "n": "6",
+   "titulo": "Conservación del momento angular",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §10.6, pp. 320-322",
+    "txt": "U p.320"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Si no hay torca, el momento angular no cambia: <b>un cuerpo que gira sigue girando igual salvo que algo lo frene o lo acelere</b>. Pero $L=I\\omega$ puede mantenerse constante aunque $I$ cambie, y entonces $\\omega$ cambia en sentido contrario: la patinadora que gira con los brazos abiertos y los recoge gira mucho más rápido; el saltador de trampolín se encoge para dar más vueltas y se estira para entrar al agua; el gato que cae gira su cuerpo sin apoyarse en nada. Es una de las leyes más fundamentales de la física, igual que la conservación de la energía o de la cantidad de movimiento.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §10.6, introducción, fig. 10.28, p. 320",
+    "txt": "U p.320"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Principio de conservación del momento angular",
+   "html": [
+    "<p>Si la suma de las torcas externas respecto a un punto o eje es cero ($\\sum\\vec\\tau_{ext}=0$), el momento angular total del sistema respecto a ese punto <b>se conserva</b>: $\\vec L=\\text{constante}$ (10.31). Si el sistema gira alrededor de un eje y cambia su forma:",
+    "  $$I_1\\omega_{1z}=I_2\\omega_{2z}\\qquad\\text{(10.30)}$$",
+    "  Las torcas internas (los músculos de la patinadora, los pies del corredor sobre la plataforma) no pueden cambiar $L$ total; solo lo <i>redistribuyen</i> entre las partes del sistema. Atención: $L$ se conserva, <b>la energía cinética en general no</b> ($K=L^2/2I$ cambia si cambia $I$; la diferencia es el trabajo de las fuerzas internas o la energía perdida en un choque). Y la conservación depende del punto respecto al cual se calcula: conviene elegir el eje o pivote donde actúan las fuerzas desconocidas, para que su torca sea cero.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.6, ecs. (10.30)-(10.31), p. 320",
+    "txt": "U p.320"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.10: «cualquiera puede bailar ballet»",
+   "html": [
+    "<p>Un profesor se para en el centro de una mesa giratoria sin fricción, con los brazos extendidos y una mancuerna de 5,0 kg en cada mano a 1,0 m del eje, girando una vuelta cada 2,0 s. Su momento de inercia sin mancuernas es 3,0 kg·m² con los brazos extendidos y 2,2 kg·m² con las manos en el abdomen. ¿Qué $\\omega$ tiene cuando pega las mancuernas al abdomen (a 0,20 m del eje)?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Sin torca externa respecto al eje vertical,</b> $L_z$ se conserva: $I_1\\omega_{1z}=I_2\\omega_{2z}$.</li>",
+    "    <li><b>Momentos de inercia</b> (mancuernas como partículas): $I_1=3{,}0+2(5{,}0)(1{,}0)^2=13$ kg·m²; $I_2=2{,}2+2(5{,}0)(0{,}20)^2=2{,}6$ kg·m². Ojo: $\\omega_{1z}=1\\ \\text{rev}/2{,}0\\ \\text{s}=0{,}50$ rev/s.</li>",
+    "    <li><b>Resultado:</b> $\\omega_{2z}=\\dfrac{I_1}{I_2}\\omega_{1z}=\\dfrac{13}{2{,}6}(0{,}50)=2{,}5$ rev/s: cinco veces más rápido. No hizo falta pasar a rad/s porque aparece una razón de $\\omega$.</li>",
+    "    <li><b>Energía:</b> $K_1=\\tfrac12(13)(3{,}14)^2=64$ J y $K_2=\\tfrac12(2{,}6)(15{,}7)^2=320$ J. La energía cinética <i>aumenta</i> 256 J: es el trabajo que hacen los músculos del profesor al tirar de las mancuernas hacia dentro (tirando hacia dentro de las mancuernas, que tienden a seguir en línea recta).</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.10, p. 321",
+    "txt": "U p.321"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "vista-desde-arriba-del-profesor-con-mancuernas-g"
+  },
+  {
+   "t": "parte",
+   "archivo": "parte05.html"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.11: «choque» rotacional de dos discos",
+   "html": [
+    "<p>Un disco A (volante de motor, $I_A=0{,}040$ kg·m²) gira a $\\omega_A=50$ rad/s y otro B ($I_B=0{,}020$ kg·m², giro en el mismo sentido) a $\\omega_B=200$ rad/s. Se acoplan con un embrague y giran juntos. ¿Con qué $\\omega$? ¿Se conserva la energía?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>L se conserva</b> (el embrague solo ejerce torcas internas): $I_A\\omega_A+I_B\\omega_B=(I_A+I_B)\\omega$.</li>",
+    "    <li>$\\omega=\\dfrac{(0{,}040)(50)+(0{,}020)(200)}{0{,}060}=\\dfrac{2{,}0+4{,}0}{0{,}060}=100$ rad/s.</li>",
+    "    <li><b>Energía:</b> $K_i=\\tfrac12(0{,}040)(50)^2+\\tfrac12(0{,}020)(200)^2=450$ J; $K_f=\\tfrac12(0{,}060)(100)^2=300$ J. Se pierden 150 J (un tercio), convertidos en energía térmica por la fricción del embrague: igual que en un choque perfectamente inelástico.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.11, pp. 321-322",
+    "txt": "U p.321-322"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "dos-discos-coaxiales-con-velocidades-angulares-d"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.12: momento angular en una acción policíaca (puerta y bala)",
+   "html": [
+    "<p>Una puerta de 1,00 m de ancho y 15 kg, con bisagras en un costado, gira sin fricción en torno a un eje vertical. Una bala de 10 g a 400 m/s se incrusta en el centro de la puerta, perpendicularmente. ¿Con qué rapidez angular gira la puerta? ¿Se conserva la energía cinética?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Sistema</b> puerta + bala; respecto al eje de las bisagras no hay torca externa (la fuerza de las bisagras pasa por el eje), así que $L$ se conserva.</li>",
+    "    <li><b>Antes:</b> solo la bala; $L=mvl=(0{,}010)(400)(0{,}50)=2{,}0$ kg·m²/s.</li>",
+    "    <li><b>Después:</b> $L=I\\omega$ con $I=I_{puerta}+I_{bala}=\\tfrac13Md^2+ml^2=\\tfrac13(15)(1{,}00)^2+(0{,}010)(0{,}50)^2=5{,}0+0{,}0025\\approx5{,}0$ kg·m² (tabla 9.2, puerta como varilla por un extremo).</li>",
+    "    <li>$\\omega=\\dfrac{2{,}0}{5{,}0}=0{,}40$ rad/s.</li>",
+    "    <li><b>Energía:</b> $K_1=\\tfrac12(0{,}010)(400)^2=800$ J; $K_2=\\tfrac12(5{,}0)(0{,}40)^2=0{,}40$ J. Casi toda se pierde en deformar la puerta y la bala (choque inelástico). Mismo método que en el problema de examen X6.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.12, p. 322",
+    "txt": "U p.322"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores típicos",
+   "html": [
+    "<ul>",
+    "    <li><b>Conservar la energía cinética</b> en lugar de $L$ en un choque o un cambio de forma. Lo que se conserva es $L$ (sin torca externa); $K$ solo en choques perfectamente elásticos.</li>",
+    "    <li><b>Conservar la cantidad de movimiento lineal</b> cuando hay un eje o pivote fijo: la fuerza del eje cambia $\\vec p$, pero su torca respecto al eje es cero. Hay que tomar momentos <i>respecto al eje</i>.</li>",
+    "    <li><b>Mezclar signos:</b> si dos cuerpos giran en sentidos opuestos, sus momentos angulares se restan. Elige un sentido positivo y respétalo.</li>",
+    "    <li><b>Olvidar la masa que se mueve:</b> la mancuerna, la bala o el corredor aportan $mr^2$ al momento de inercia final.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia a partir de U §10.6, pp. 320-322",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "s7",
+   "n": "7",
+   "titulo": "Giróscopos y precesión",
+   "prio": null,
+   "src": {
+    "l": "U",
+    "ref": "U §10.7, pp. 322-325",
+    "txt": "U p.322"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "intu",
+   "h": "Idea intuitiva",
+   "html": "<p>Un volante apoyado en un extremo de su eje, si no gira, <i>se cae</i> por su peso. Pero si gira deprisa, ¡no cae!: su eje describe lentamente un círculo horizontal alrededor del pivote. Es la <b>precesión</b>, la que hace que una peonza no se caiga, que que el eje de la Tierra dibuje un cono cada 26 000 años. La clave: <b>una torca no hace caer al giróscopo, hace girar su vector $\\vec L$</b>, igual que en una pelota atada a una cuerda: la tensión, perpendicular a la velocidad, no cambia la rapidez, solo la hace girar.</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §10.7, pp. 322-324 (figs. 10.32-10.34)",
+    "txt": "U p.322-324"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_10_32_giroscopo.png",
+   "alt": "Figura 10.32 de U. Un giróscopo apoyado en un extremo: el volante gira alrededor de su eje horizontal con velocidad angular omega, mientras el eje describe un movimiento circular horizontal alrededor del pivote, la precesión, con rapidez angular Omega.",
+   "pie": "Fig. 10.32 de U: un giróscopo apoyado en un extremo. El giro del volante es $\\omega$; el giro horizontal del eje es la precesión $\\Omega$.",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 10.32, p. 323",
+    "txt": "U p.323"
+   },
+   "attrs": " loading=\"lazy\" style=\"max-width:340px!important\""
+  },
+  {
+   "t": "caja",
+   "k": "thm",
+   "h": "Cómo y a qué rapidez precesa un giróscopo",
+   "html": [
+    "<p>El peso $\\vec w=M\\vec g$ actúa en el centro de masa, a distancia $r$ del pivote, y da una torca $\\vec\\tau=\\vec r\\times\\vec w$ <b>horizontal y perpendicular a $\\vec L$</b> (que va a lo largo del eje, $L=I\\omega$). Durante $dt$, $d\\vec L=\\vec\\tau\\,dt$ es perpendicular a $\\vec L$: cambia su <i>dirección</i> y no su módulo. El eje gira un ángulo $d\\phi=|d\\vec L|/L=\\tau\\,dt/L$, así que la rapidez angular de precesión es",
+    "  $$\\boxed{\\Omega=\\frac{d\\phi}{dt}=\\frac{\\tau}{L}=\\frac{wr}{I\\omega}}\\qquad\\text{(ec. 10.33)}$$",
+    "  Es <b>inversamente proporcional</b> a la rapidez de giro $\\omega$: un giróscopo que gira muy deprisa precesa muy despacio, y si la fricción lo frena, ¡la precesión se hace más rápida! La aproximación (hemos ignorado la componente vertical de $\\vec L$) es buena si $\\Omega\\ll\\omega$ (precesión «lenta»). Si el volante no gira, no hay $\\vec L$ inicial y cae. Cuando el giro se frena y $\\Omega$ crece, el eje deja de ser un círculo limpio: además cabecea arriba y abajo, un «bamboleo» llamado <b>nutación</b>, superpuesto a la precesión.</p>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.7, ecs. (10.32)-(10.33), pp. 323-324 (figs. 10.33-10.35); nutación, p. 324",
+    "txt": "U p.323-324"
+   }
+  },
+  {
+   "t": "fig",
+   "ref": "vista-desde-arriba-del-vector-momento-angular-de"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejemplo 10.13: giróscopo en precesión",
+   "html": [
+    "<p>La rueda de un giróscopo es un cilindro macizo uniforme de radio $R=3{,}0$ cm cuyo centro está a $r=2{,}0$ cm del pivote; el eje tiene masa despreciable. Vista desde arriba, el eje tarda 4,0 s en dar una vuelta de precesión. a) ¿En qué sentido precesa? b) ¿Con qué rapidez angular $\\omega$ gira la rueda?</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>a) Sentido.</b> El peso (hacia abajo) actúa en $\\vec r$ y da $\\vec\\tau=\\vec r\\times\\vec w$, horizontal; con la regla de la mano derecha, $\\vec\\tau$ apunta hacia arriba de la página en la vista desde arriba. Como $d\\vec L=\\vec\\tau\\,dt$ tiene esa dirección y es perpendicular a $\\vec L$, el vector $\\vec L$ (y con él el eje) gira en el sentido de las agujas del reloj vista desde arriba.</li>",
+    "    <li><b>b)</b> $\\Omega=\\dfrac{2\\pi\\ \\text{rad}}{4{,}0\\ \\text{s}}=1{,}57$ rad/s. ¡No confundir $\\Omega$ con $\\omega$!</li>",
+    "    <li>Con $I=\\tfrac12MR^2$ (ec. 10.33): $\\omega=\\dfrac{wr}{I\\Omega}=\\dfrac{Mgr}{\\tfrac12MR^2\\,\\Omega}=\\dfrac{2gr}{R^2\\Omega}=\\dfrac{2(9{,}8)(2{,}0\\times10^{-2})}{(3{,}0\\times10^{-2})^2(1{,}57)}\\approx280\\ \\text{rad/s}\\approx2600\\ \\text{rpm}$. La masa se simplifica.</li>",
+    "    <li><b>Evaluar:</b> $\\Omega$ es solo el 0,6 % de $\\omega$: precesión muy lenta, como supone la fórmula.</li>",
+    "  </ol>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U Ejemplo 10.13, p. 325 (fig. 10.36)",
+    "txt": "U p.325"
+   }
+  },
+  {
+   "t": "libro",
+   "img": "../assets/img/fig_u_10_34_giro.png",
+   "alt": "Figura 10.34 de U. a) Volante giratorio con momento angular inicial L_i a lo largo del eje y la torca debida al peso, horizontal y perpendicular a L; b) vista desde arriba: cada cambio dL es perpendicular a L, de modo que L precesa alrededor del pivote sin cambiar de módulo.",
+   "pie": "Fig. 10.34 de U: a) $\\vec L_i$ a lo largo del eje y torca del peso; b) vista desde arriba, los $d\\vec L$ perpendiculares a $\\vec L$ lo hacen girar.",
+   "src": {
+    "l": "U",
+    "ref": "U Fig. 10.34, p. 323",
+    "txt": "U p.323"
+   },
+   "attrs": " loading=\"lazy\" style=\"max-width:520px!important\""
+  },
+  {
+   "t": "parte",
+   "archivo": "parte06.html"
+  },
+  {
+   "t": "caja",
+   "k": "ex",
+   "h": "Ejercicio 10.52: el mismo giróscopo en la Luna",
+   "html": [
+    "<p>Un giróscopo precesa a $\\Omega_T=0{,}50$ rad/s en la Tierra. ¿Con qué rapidez precesaría en una base lunar, donde $g_L=0{,}165\\,g$? (La masa, $r$, $I$ y $\\omega$ son los mismos.)</p>",
+    "  <ol class=\"steps\">",
+    "    <li><b>Qué cambia:</b> $\\Omega=\\dfrac{mgr}{I\\omega}$ (10.33). Solo $g$ difiere; el resto es constante, así que $\\Omega\\propto g$.</li>",
+    "    <li>$\\dfrac{\\Omega_L}{\\Omega_T}=\\dfrac{g_L}{g}$ ⇒ $\\Omega_L=0{,}165\\,(0{,}50\\ \\text{rad/s})=\\mathbf{0{,}0825\\ rad/s}$, unas seis veces más lenta: con menos peso, menos torca, menos precesión (si $g\\to0$, $\\Omega\\to0$).</li>",
+    "  </ol>",
+    "  <span class=\"src\" data-l=\"E\" data-ref=\"Solucionario 10-21, Prob. 10.52\">E</span>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.7, ec. 10.33, p. 324; Problema 10.52, p. 331",
+    "txt": "U p.324, 331"
+   }
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores típicos",
+   "html": [
+    "<ul>",
+    "    <li><b>Pensar que la torca «empuja» el eje en su propia dirección</b>: la torca va en la dirección de $d\\vec L$, que es perpendicular a $\\vec L$ (como una fuerza centrípeta no cambia la rapidez, solo la dirección).</li>",
+    "    <li><b>Confundir $\\Omega$ (precesión, rad/s) con $\\omega$ (giro del volante)</b>: la fórmula (10.33) tiene $\\omega$ en el denominador y $\\Omega$ a la izquierda.</li>",
+    "    <li><b>Aplicarla con precesión rápida</b>: solo vale cuando $\\Omega\\ll\\omega$.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "U",
+    "ref": "U §10.7, pp. 323-324 y Preguntas P10.24-P10.25, p. 328",
+    "txt": "U p.323-324, 328"
+   }
+  },
+  {
+   "t": "h2",
+   "id": "ejercicios",
+   "n": "8",
+   "titulo": "Ejercicios resueltos",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte07.html"
+  },
+  {
+   "t": "ej",
+   "ref": "x1"
+  },
+  {
+   "t": "ej",
+   "ref": "x2"
+  },
+  {
+   "t": "ej",
+   "ref": "x3"
+  },
+  {
+   "t": "ej",
+   "ref": "x4"
+  },
+  {
+   "t": "ej",
+   "ref": "x5"
+  },
+  {
+   "t": "ej",
+   "ref": "x6"
+  },
+  {
+   "t": "ej",
+   "ref": "x7"
+  },
+  {
+   "t": "ej",
+   "ref": "x8"
+  },
+  {
+   "t": "ej",
+   "ref": "e1"
+  },
+  {
+   "t": "ej",
+   "ref": "e2"
+  },
+  {
+   "t": "ej",
+   "ref": "e3"
+  },
+  {
+   "t": "ej",
+   "ref": "e4"
+  },
+  {
+   "t": "ej",
+   "ref": "e5"
+  },
+  {
+   "t": "ej",
+   "ref": "e6"
+  },
+  {
+   "t": "ej",
+   "ref": "e7"
+  },
+  {
+   "t": "ej",
+   "ref": "e8"
+  },
+  {
+   "t": "ej",
+   "ref": "e9"
+  },
+  {
+   "t": "ej",
+   "ref": "prac"
+  },
+  {
+   "t": "h2",
+   "id": "chuleta",
+   "n": "9",
+   "titulo": "Chuleta, errores frecuentes y lista de comprobación",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "parte08.html"
+  },
+  {
+   "t": "caja",
+   "k": "warn",
+   "h": "Errores frecuentes de este tema",
+   "html": [
+    "<ul>",
+    "    <li>Calcular una torca sin decir respecto a qué punto, o usar la distancia al punto de aplicación en lugar del brazo de palanca perpendicular.</li>",
+    "    <li>Usar $v_{cm}=R\\omega$ cuando el cuerpo resbala, o fricción cinética ($\\mu_kn$) cuando rueda sin resbalar: la estática vale lo que haga falta, con máximo $\\mu_sn$.</li>",
+    "    <li>Dibujar mal el sentido de la fricción: lo decide la $\\alpha$ necesaria, no «el sentido del movimiento».</li>",
+    "    <li>Confundir $R$ (donde está la masa, en $I$) con $b$ (donde está la cuerda, en la torca y la ligadura) en yoyós y carretes.</li>",
+    "    <li>Conservar $K$ o $\\vec p$ en vez de $L$ en choques y saltos con un eje o pivote fijo; no tomar momentos respecto al pivote.</li>",
+    "    <li>Olvidar la masa que se añade al $I$ final (bala, corredor, mancuernas) o los signos relativos de $L$.</li>",
+    "    <li>Usar revoluciones, grados o rpm en fórmulas que piden radianes y rad/s.</li>",
+    "    <li>Confundir $\\Omega$ (precesión) con $\\omega$ (giro) y aplicar (10.33) con precesión rápida.</li>",
+    "  </ul>"
+   ],
+   "src": {
+    "l": "P",
+    "ref": "Explicación propia, sin página en los libros",
+    "txt": "P"
+   }
+  },
+  {
+   "t": "parte",
+   "archivo": "parte09.html"
+  },
+  {
+   "t": "h2",
+   "id": "fuentes",
+   "n": "★",
+   "titulo": "Fuentes de este tema",
+   "prio": null,
+   "src": null
+  },
+  {
+   "t": "parte",
+   "archivo": "panel-fuentes.html"
+  }
+ ]
+}

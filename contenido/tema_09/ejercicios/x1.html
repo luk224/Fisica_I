@@ -1,0 +1,25 @@
+<p class="enun"><b>Cuestión (a).</b> Se pretende fabricar un carro de cuatro ruedas destinado a circular en una carrera con una pendiente cuesta abajo, con el objetivo de que circule lo más rápido posible. Considerando invariable el coeficiente de fricción entre las ruedas y la carretera, y que la masa total del carro no se verá influenciada por el tamaño de las ruedas, desarrolle de forma razonada por qué opción optaría en cada caso: (1) ruedas grandes y pesadas o ruedas pequeñas y ligeras; (2) ruedas sólidas o ruedas con radios.<br><b>Cuestión (b).</b> Un volante gira con velocidad angular constante. Un punto situado en el borde, ¿tiene aceleración tangencial? ¿Y aceleración radial? ¿Tienen estas aceleraciones una magnitud constante? ¿Y una dirección constante? Justifique las respuestas. (Es una de las dos cuestiones que acompañan al desarrollo del tema de teoría de esa pregunta, de 4 puntos en total.)</p>
+  <p><b>Se resuelve primero (b), que es cinemática de rotación pura.</b></p>
+  <ol class="steps">
+    <li><b>Dato clave.</b> «$\omega$ constante» significa $\alpha_z=d\omega_z/dt=0$. Sea $R$ el radio del volante.</li>
+    <li><b>Aceleración tangencial.</b> Mide el cambio de la <i>rapidez</i>: $a_{tan}=R\alpha=0$. <b>No hay</b> aceleración tangencial: la rapidez $v=R\omega$ no cambia.</li>
+    <li><b>Aceleración radial.</b> Mide el cambio de <i>dirección</i> de la velocidad: $a_{rad}=\omega^2R=v^2/R\neq0$. <b>Sí hay</b> aceleración radial (centrípeta); sin ella el punto seguiría en línea recta.</li>
+    <li><b>Magnitudes.</b> $a_{tan}=0$ es constante; $a_{rad}=\omega^2R$ es constante porque $\omega$ y $R$ lo son.</li>
+    <li><b>Direcciones.</b> $\vec a_{rad}$ apunta siempre hacia el eje; al girar el punto, «hacia el eje» cambia de dirección (da una vuelta completa por revolución). <b>La dirección de $\vec a_{rad}$ no es constante</b> (y de la tangencial, al ser nula, no hay dirección que discutir).</li>
+  </ol>
+  {{fig:volante-con-velocidad-angular-constante-y-la-ace}}
+
+  <p><b>Resultado (b):</b> $a_{tan}=0$; $a_{rad}=\omega^2R\neq0$, de módulo constante y dirección variable (siempre hacia el eje). Es un movimiento circular uniforme: velocidad de módulo constante, pero <i>acelerado</i>.</p>
+  <p><b>Ahora (a).</b></p>
+  <ol class="steps">
+    <li><b>Qué decide la rapidez.</b> Si las ruedas ruedan sin deslizar, el punto de contacto está instantáneamente en reposo y el rozamiento estático no realiza trabajo: la energía mecánica se conserva. Al bajar una altura $h$, $Mgh$ se reparte entre la traslación del carro y la rotación de las ruedas (energía de rodadura $K=\tfrac12Mv_{cm}^2+\tfrac12I\omega^2$, que verás en el tema 10).</li>
+    <li><b>Planteamiento.</b> Carro de masa total $M$ (incluidas las ruedas), cuatro ruedas de masa $m_r$ y radio $r$, cada una con $I=c\,m_rr^2$ (tabla 9.2: $c=\tfrac12$ para un disco macizo; $c\approx1$ si la masa está en la llanta). Rodar sin deslizar: $\omega=v/r$.</li>
+    <li><b>Energía cinética.</b> $K=\tfrac12Mv^2+4\cdot\tfrac12(c\,m_rr^2)(v/r)^2=\tfrac12(M+4c\,m_r)v^2$. <b>El radio $r$ se simplifica.</b></li>
+    <li><b>Rapidez.</b> $Mgh=\tfrac12(M+4c\,m_r)v^2\ \Rightarrow\ v=\sqrt{\dfrac{2gh}{1+4c\,m_r/M}}$. Gana el carro con menor $c\,m_r$.</li>
+    <li><b>Caso (1).</b> Con $M$ fija, el tamaño no cuenta (se simplificó $r$) pero sí la masa de las ruedas: <b>ruedas pequeñas y ligeras</b> (lo que importa es «ligeras»).</li>
+    <li><b>Caso (2).</b> Con la misma masa de rueda, la de radios tiene la masa en la llanta ($c\to1$, como un aro) y la maciza tiene $c=\tfrac12$ (disco): <b>ruedas sólidas</b>, porque guardan menos energía en girar. (Si la de radios fuese mucho más ligera, habría que comparar el producto $c\,m_r$.)</li>
+  </ol>
+  {{fig:una-rueda-maciza-y-una-rueda-de-radios-con-la-mi}}
+
+  <div class="recipe"><b>Receta:</b> (b) separa la aceleración de un punto en $a_{tan}=r\alpha$ (cambio de rapidez) y $a_{rad}=\omega^2r$ (cambio de dirección); con $\omega$ constante solo queda la radial, que gira con el punto. (a) Para «¿qué rueda o cuerpo baja más rápido?» escribe $K=\tfrac12Mv^2+\tfrac12I\omega^2$ con $\omega=v/r$, pon $I=c\,mr^2$ y mira qué parámetros sobreviven: gana el que tenga menor $c\,m$.</div>
+  <p><b>Error típico.</b> Decir que «con velocidad angular constante no hay aceleración» (se confunde rapidez constante con velocidad constante); en (a), elegir ruedas grandes «porque recorren más por vuelta» (el radio se simplifica) o pensar que el rozamiento frena al carro (en rodadura sin deslizar no hace trabajo).</p>
