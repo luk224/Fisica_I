@@ -17,7 +17,7 @@
 ## Fase A — Que los temas nuevos nazcan ya en el formato bueno
 - [x] **A1. Plantilla y skill.** Actualizar `plantilla_tema.html` y `.claude/skills/resumen-fisica/SKILL.md` al formato «estudio» (CLAUDE.md §8: resumen de 5 minutos, «¿qué tipo de problema es?», prioridades 🔴🟡⚪, teoría condensada, mini-tests, ejercicios Núcleo/Práctica/Teoría).
   *Hecho cuando:* la plantilla describe `contenido/tema_NN/` (no HTML a mano) y el skill lo dice.
-- [ ] **A2. Agentes.** Actualizar `.claude/agents/redactor-tema.md` (escribe en `contenido/`, ejecuta `tema_datos.py generar`), `resolutor-ejercicios.md` (entrega también el fichero `pruebas/numerico/tNN.py`) y `revisor-tema.md` (comprueba el formato estudio y las pruebas).
+- [x] **A2. Agentes.** Actualizar `.claude/agents/redactor-tema.md` (escribe en `contenido/`, ejecuta `tema_datos.py generar`), `resolutor-ejercicios.md` (entrega también el fichero `pruebas/numerico/tNN.py`) y `revisor-tema.md` (comprueba el formato estudio y las pruebas).
   *Hecho cuando:* los tres mencionan `contenido/`, `construir.py --probar` y la regla de exámenes intactos.
 
 ## Fase B — Migrar los temas antiguos a `contenido/` (sin cambiar su contenido)
