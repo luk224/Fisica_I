@@ -2,13 +2,13 @@
  "num": 17,
  "kick": "Bloque Termodinámica · Tema 17",
  "titulo": "Temperatura y calor",
- "descripcion": "Qué es la <b>temperatura</b> y cómo se mide, cuánto se dilatan los cuerpos al calentarse, cuánta energía hay que entregar para calentar o fundir algo (<b>calor</b>) y de qué tres maneras viaja el calor de un sitio a otro (<b>conducción, convección y radiación</b>). Es la puerta de entrada a la termodinámica y a la pregunta de teoría que ha caído en examen.",
+ "descripcion": "Qué es la <b>temperatura</b> y cómo se mide, cuánto se <b>dilatan</b> los cuerpos al calentarse, cuánta energía hace falta para calentar, fundir o hervir algo (<b>calor</b>, calorimetría) y de qué tres maneras viaja el calor de un sitio a otro (<b>conducción, convección y radiación</b>). Esta última parte es la pregunta de teoría que ha caído en examen.",
  "chips": [
   "Libro oficial: Sears-Zemansky, cap. 17 (pp. 546-583; resumen pp. 572-573; problema práctico p. 573; ejercicios y problemas pp. 574-582)",
-  "Ejercicio de examen con texto: 1 (Feb 2025 2ª sem. P-4, teoría); otros 2 de teoría solo constan en el índice",
-  "Ejercicios: 24 (23 del solucionario + problema práctico) + 15 ejemplos de U",
+  "Examen real: 1 pregunta de teoría con texto (Feb 2025 2ª sem. P-4); otras 2 con el mismo título solo constan en el índice",
+  "Ejercicios del solucionario: 23 + problema práctico de U",
   "2 ejemplos interactivos",
-  "⏱ ~9 h de estudio"
+  "⏱ ruta rápida ~3 h · completa ~7 h"
  ],
  "pie": "Resumen generado a partir de los libros y exámenes indicados. Numeración de páginas: la impresa en U; el resto sin página, ver leyenda.",
  "titulo_pagina": "Física I · Tema 17 Temperatura y calor",
@@ -493,71 +493,19 @@
  },
  "bloques": [
   {
-   "t": "h2",
-   "id": "prereq",
-   "n": "0",
-   "titulo": "Antes de empezar",
-   "prio": null,
-   "src": {
-    "l": "U",
-    "ref": "U cap. 17, portadilla e introducción, p. 546",
-    "txt": "U p.546"
-   }
+   "t": "parte",
+   "archivo": "en5.html"
   },
   {
    "t": "parte",
-   "archivo": "parte01.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte02.html"
-  },
-  {
-   "t": "caja",
-   "k": "tip",
-   "h": "Qué ha caído en examen: siempre teoría de «Mecanismos de transferencia de calor»",
-   "html": [
-    "<p>En las convocatorias catalogadas (2018-2025) el tema 17 ha salido <b>tres veces como pregunta de teoría</b> y siempre con el mismo título, «Mecanismos de transferencia de calor», acompañado de dos cuestiones cortas. <b>No hay ningún problema numérico de examen de este tema</b> en las convocatorias disponibles. De las tres teorías, <b>solo el texto de Feb 2025 2ª sem. P-4 se puede leer</b>; los PDF de Feb 2022 2ª y Feb 2024 2ª son escaneos sin texto extraíble y de ellos solo consta el resumen del índice (no se simulan ni se inventa su enunciado).</p>",
-    "  <table>",
-    "    <tr><th>Convocatoria y pregunta</th><th>Tema a desarrollar y cuestiones</th><th>Dónde en este resumen</th></tr>",
-    "    <tr><td>Examen Febrero 2025 (2ª semana) P-4, Teoría Opción B</td><td>«Mecanismos de transferencia de calor» + (a) clavo en la patata al horno y (b) casa a temperatura constante</td><td>Resuelta completa en §8.1 (X1); teoría en §7</td></tr>",
-    "    <tr><td>Examen Febrero 2022 (2ª semana) P-3, Teoría Opción 3.2</td><td>«Mecanismos de transferencia de calor» + humedad / calor percibido y bloques de metal y madera a igual temperatura (solo consta el resumen del índice; PDF sin texto)</td><td>La teoría es la misma (§7, X1); la idea del metal y la madera, en §7 (conducción)</td></tr>",
-    "    <tr><td>Examen Febrero 2024 (2ª semana) P-4, Teoría Opción B</td><td>«Mecanismos de transferencia de calor» + tuberías congeladas / termómetro de mercurio y papel de aluminio en el horno (solo consta el resumen del índice; PDF sin texto)</td><td>La teoría es la misma (§7, X1); dilatación en §4 y radiación en §7</td></tr>",
-    "  </table>"
-   ],
-   "src": {
-    "l": "X",
-    "ref": "Examen Febrero 2025 (2ª semana) P-4; Febrero 2022 (2ª semana) P-3 y Febrero 2024 (2ª semana) P-4 solo constan en el índice de exámenes",
-    "txt": "X"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "tip",
-   "h": "La receta maestra del tema: ¿qué te piden?",
-   "html": [
-    "<ol class=\"steps\">",
-    "    <li><b>Dibuja el sistema y decide qué intercambia energía.</b> ¿Cambia la temperatura (<b>$Q=mc\\Delta T$</b>), cambia de fase (<b>$Q=\\pm mL$</b>, la temperatura no cambia), o hay un flujo continuo por conducción o radiación (<b>potencia $H$ en W</b>)?</li>",
-    "    <li><b>Signos:</b> $\\Delta T=T_f-T_i$; $Q&gt;0$ entra calor al cuerpo, $Q&lt;0$ sale. En un sistema aislado $\\sum Q=0$.</li>",
-    "    <li><b>Si hay cambios de fase, comprueba el estado final</b>: calcula el calor disponible hasta la temperatura de cambio y el necesario para completarlo antes de plantear $\\sum Q=0$ con una $T$ desconocida.</li>",
-    "    <li><b>Dilatación:</b> lineal $\\Delta L=\\alpha L_0\\Delta T$; volumen $\\Delta V=\\beta V_0\\Delta T$ ($\\beta=3\\alpha$); si no puede dilatarse, esfuerzo $F/A=-Y\\alpha\\Delta T$.</li>",
-    "    <li><b>Conducción:</b> $H=kA(T_H-T_C)/L$; en capas en serie se suman las resistencias $R=L/k$ y la $H$ es la misma; en ramas paralelas se suman las $H$.</li>",
-    "    <li><b>Radiación:</b> $H=Ae\\sigma T^4$ con $T$ en kelvin; neta $H=Ae\\sigma(T^4-T_s^4)$.</li>",
-    "    <li><b>Unidades:</b> en $\\Delta T$, $c$, $k$, $\\alpha$ da igual °C o K (un intervalo es igual); en <b>radiación</b> y en los cocientes de presiones, <b>siempre kelvin</b>.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "P",
-    "ref": "Receta propia que resume U cap. 17, Estrategias 17.1, 17.2 y 17.3, pp. 553, 563 y 566",
-    "txt": "P"
-   }
+   "archivo": "decide.html"
   },
   {
    "t": "h2",
    "id": "s1",
    "n": "1",
    "titulo": "Temperatura y equilibrio térmico",
-   "prio": null,
+   "prio": 2,
    "src": {
     "l": "U",
     "ref": "U §17.1, pp. 546-547",
@@ -565,29 +513,14 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte03.html"
-  },
-  {
    "t": "caja",
    "k": "def",
-   "h": "Equilibrio térmico y aislante ideal",
-   "html": "<p>Cuando ponemos dos sistemas en contacto, la interacción entre ellos (flujo de calor, §17.5) hace que sus propiedades cambien hasta que dejan de cambiar: llamamos <b>equilibrio térmico</b> a ese estado. Un <b>aislante ideal</b> es un material que <b>no permite</b> la interacción térmica entre dos sistemas (ayuda a que se igualen despacio o no se igualen).</p>",
+   "h": "Equilibrio térmico y ley cero: lo que mide un termómetro",
+   "html": "<p>Por el tacto sabemos qué está «caliente» o «frío», pero el tacto engaña (lo verás en §7.1). La <b>temperatura</b> se mide con un <b>termómetro</b>: un objeto con una propiedad que cambia al calentarse (la altura del mercurio, la presión de un gas, la curvatura de una tira de dos metales soldados que se dilatan distinto). Dos sistemas en contacto se influyen hasta que sus propiedades <b>dejan de cambiar</b>: han llegado al <b>equilibrio térmico</b>. Un <b>aislante ideal</b> impide esa interacción.</p>\n<p><b>Ley cero de la termodinámica:</b> si C (el termómetro) está en equilibrio térmico con A y con B, entonces A y B están en equilibrio térmico entre sí. Por eso <b>dos sistemas están en equilibrio térmico si y solo si tienen la misma temperatura</b>, y un termómetro puede «medir» la de otro cuerpo.</p>\n<p><b>Ejemplo mínimo:</b> el termómetro en la boca marca 37 °C <b>cuando deja de subir</b>; antes estás leyendo la temperatura del mercurio, que aún no está en equilibrio contigo. Un termómetro siempre mide su propia temperatura. <span class=\"src\" data-l=\"P\" data-ref=\"Ejemplo propio de U §17.1, pp. 546-547\">P</span></p>\n<p><b>Error típico:</b> confundir <b>temperatura</b> (propiedad del cuerpo, como el nivel de un depósito) con <b>calor</b> (energía en tránsito entre cuerpos a distinta temperatura, como el caudal entre dos depósitos; §5).</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.1, p. 546",
-    "txt": "U p.546"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "thm",
-   "h": "Ley cero de la termodinámica",
-   "html": "<p>Si el sistema <b>C</b> (un termómetro) está en equilibrio térmico con <b>A</b> y con <b>B</b>, entonces <b>A y B también están en equilibrio térmico entre sí</b>. Y por tanto: <b>dos sistemas están en equilibrio térmico si y solo si tienen la misma temperatura</b>. Esto es lo que permite que un termómetro «mida» la temperatura de otro cuerpo.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §17.1, ley cero, p. 547",
-    "txt": "U p.547"
+    "ref": "U §17.1, ley cero y fig. 17.3, pp. 546-547",
+    "txt": "U p.546-547"
    }
   },
   {
@@ -595,48 +528,33 @@
    "ref": "tres-cuerpos-a-b-y-c-si-a-y-b-estan-cada-uno-en-"
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "¿Qué mide el termómetro?",
-   "html": "<p>Un termómetro de mercurio en la boca indica 37 °C <b>cuando ya no sube</b>: es entonces, y solo entonces, cuando la temperatura del mercurio (lo que lees) es la tuya. Si lo lees antes, estás leyendo la temperatura del mercurio, que aún no está en equilibrio contigo. Un termómetro mide su propia temperatura, y la ley cero asegura que coincide con la del cuerpo cuando hay equilibrio.</p>",
-   "src": {
-    "l": "P",
-    "ref": "Ejemplo propio de U §17.1, p. 546-547",
-    "txt": "P"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "intu",
-   "h": "Otro termómetro: la tira bimetálica",
-   "html": "<p>Dos láminas de metales distintos soldadas entre sí se dilatan de forma diferente al calentarse: la tira se <b>curva</b> más cuanto más caliente está. Así funcionan muchos termostatos (la curvatura abre o cierra un contacto eléctrico).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §17.1, fig. 17.3, p. 547",
-    "txt": "U p.547"
-   }
-  },
-  {
    "t": "fig",
    "ref": "tira-bimetalica-recta-a-la-temperatura-inicial-y"
   },
   {
-   "t": "caja",
-   "k": "warn",
-   "h": "Error típico",
-   "html": "<p>Confundir <b>temperatura</b> con <b>calor</b>. La temperatura es una propiedad del cuerpo (como la altura de un nivel); el calor es energía <i>en tránsito</i> entre cuerpos a distinta temperatura (como el caudal del agua entre los depósitos), §17.5.</p>",
-   "src": {
-    "l": "P",
-    "ref": "Explicación propia, sin página en los libros",
-    "txt": "P"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Metes en agua caliente un termómetro que estaba a 20 °C. A los 2 s marca 35 °C y sigue subiendo. ¿Está el agua a 35 °C?",
+     "a": "No se sabe todavía: el termómetro mide <b>su propia</b> temperatura y aún no está en equilibrio con el agua. Hay que esperar a que deje de subir."
+    },
+    {
+     "q": "A y B no se han tocado nunca, pero cada uno está en equilibrio térmico con C. Si los pones en contacto, ¿pasa calor de uno a otro?",
+     "a": "No: por la ley cero A y B están en equilibrio entre sí, tienen la misma temperatura y no hay flujo neto de calor."
+    },
+    {
+     "q": "Una tira bimetálica está hecha de latón ($\\alpha=2{,}0\\times10^{-5}$ K$^{-1}$) y acero ($1{,}2\\times10^{-5}$ K$^{-1}$). Al calentarla, ¿qué metal queda en el lado exterior de la curva?",
+     "a": "El <b>latón</b>: se alarga más que el acero y el lado más largo de una curva es el exterior (convexo)."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s2",
    "n": "2",
    "titulo": "Termómetros y escalas de temperatura",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §17.2, pp. 547-549",
@@ -644,21 +562,14 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte04.html"
-  },
-  {
    "t": "caja",
    "k": "thm",
-   "h": "Conversiones entre escalas",
-   "html": [
-    "<p>$$T_F=\\tfrac95T_C+32^\\circ\\quad(17.1)$$ $$T_C=\\tfrac59(T_F-32^\\circ)\\quad(17.2)$$ $$T_K=T_C+273{,}15\\quad(17.3)$$</p>",
-    "  <p>Se lee «293 kelvins» (o «293 K»), <b>nunca «grados kelvin»</b>.</p>"
-   ],
+   "h": "Celsius, Fahrenheit y Kelvin: valores e intervalos",
+   "html": "<p>Una escala es una regla con <b>un cero</b> y <b>un tamaño de grado</b>. Celsius: el agua se congela a 0 °C y hierve a 100 °C (a presión normal). Fahrenheit pone esos puntos en 32 °F y 212 °F: 180 grados en el mismo intervalo, así que su grado es <b>más pequeño</b> (5/9 del Celsius). Kelvin: mismo grado que Celsius, pero con el cero en el <b>cero absoluto</b> (§3).</p>\n$$T_F=\\tfrac95T_C+32^\\circ\\ (17.1)\\qquad T_C=\\tfrac59(T_F-32^\\circ)\\ (17.2)\\qquad T_K=T_C+273{,}15\\ (17.3)$$\n<p>«20 °C» es un <b>valor</b> (un punto de la escala): se convierte con las fórmulas. «10 C°» es un <b>intervalo</b> (una diferencia): solo cuenta el tamaño del grado, $1\\ \\text{C}^\\circ=1\\ \\text{K}=1{,}8\\ \\text{F}^\\circ$. Por eso en $\\Delta T$, $\\alpha$, $c$ o $k$ da igual usar °C o K. Se dice «293 kelvins» (293 K), nunca «grados kelvin». Algunos termómetros no tocan el cuerpo: miden la radiación infrarroja que emite (§7.3).</p>\n<p><b>Ejemplo mínimo</b> (ejemplo 17.1 de U): de hielo a 32,00 °F a agua a 98,60 °F. En Celsius, 0,00 °C y 37,00 °C; en kelvin, 273,15 K y 310,15 K. El intervalo es 37,00 C° $=$ 37,00 K $=66{,}60$ F° $=1{,}8\\times37{,}00$.</p>\n<p><b>Error típico:</b> aplicar el $+32$ a un intervalo. Un cambio de 10 C° son <b>18 F°</b>, no 50.</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.2, ec. 17.1-17.3, pp. 548-549",
-    "txt": "U p.548-549"
+    "ref": "U §17.2, ec. 17.1-17.3, fig. 17.4, pp. 548-549; ejemplo 17.1, p. 550",
+    "txt": "U p.548-550"
    }
   },
   {
@@ -677,52 +588,29 @@
    }
   },
   {
-   "t": "caja",
-   "k": "intu",
-   "h": "Termómetros de infrarrojos",
-   "html": "<p>Algunos termómetros (como el de arteria temporal) no tocan el cuerpo: miden la <b>radiación infrarroja</b> que este emite (§7.3) y de ella deducen la temperatura.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §17.2, fig. 17.4, p. 548",
-    "txt": "U p.548"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "warn",
-   "h": "Valor frente a intervalo (el error más común del tema)",
-   "html": "<p>«20 °C» es un <b>valor</b> (un punto de la escala); «10 C°» es un <b>intervalo</b> (una diferencia). Para valores se usan las ecuaciones con el $+32$ o el $+273{,}15$; para <b>intervalos</b> solo cuenta el tamaño del grado: $1\\ \\text{C}^\\circ=1\\ \\text{K}=1{,}8\\ \\text{F}^\\circ$. Un cambio de 10 C° es 10 K o <b>18 F°</b> (no 50 °F). Por eso en $\\Delta T$, $\\alpha$, $c$ o $k$ se puede usar indistintamente °C o K.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §17.2, p. 548 (valor frente a intervalo) y p. 549 (cuidado con «grados kelvin»)",
-    "txt": "U p.548-549"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.1: temperatura corporal",
-   "html": [
-    "<p>Un trozo de hielo a 32,00 °F se convierte en agua a la temperatura corporal de 98,60 °F. Expresa ambas temperaturas en °C y en K y calcula $\\Delta T$ en ambas escalas.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Fahrenheit a Celsius</b> con (17.2): $T_1=\\tfrac59(32{,}00-32)=0{,}00$ °C; $T_2=\\tfrac59(98{,}60-32)=37{,}00$ °C. Entonces $\\Delta T=37{,}00$ C°.</li>",
-    "    <li><b>A kelvin</b> con (17.3): $T_1=273{,}15$ K y $T_2=310{,}15$ K, luego $\\Delta T=37{,}00$ K (el mismo número que en Celsius).</li>",
-    "    <li><b>En Fahrenheit</b>, el intervalo es $\\Delta T=98{,}60-32{,}00=66{,}60$ F° $=1{,}8\\times37{,}00$.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> valores: fórmula completa; intervalos: Celsius = kelvin y Fahrenheit = 1,8 × Celsius.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.1, p. 550",
-    "txt": "U p.550"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Expresa 25,0 °C en °F y en K.",
+     "a": "$T_F=\\tfrac95(25{,}0)+32=77{,}0$ °F; $T_K=25{,}0+273{,}15=298{,}15$ K."
+    },
+    {
+     "q": "La temperatura de una habitación sube 15 C°. ¿Cuánto sube en K y en F°?",
+     "a": "En kelvin, <b>15 K</b> (mismo tamaño de grado); en Fahrenheit, $1{,}8\\times15=$ <b>27 F°</b>. Sin $+32$ ni $+273{,}15$: es un intervalo."
+    },
+    {
+     "q": "El papel arde hacia 451 °F. ¿Cuántos °C son?",
+     "a": "$T_C=\\tfrac59(451-32)=233$ °C (232,8 °C)."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s3",
    "n": "3",
    "titulo": "Termómetros de gas y la escala Kelvin",
-   "prio": null,
+   "prio": 2,
    "src": {
     "l": "U",
     "ref": "U §17.3, pp. 549-550",
@@ -730,23 +618,13 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte05.html"
-  },
-  {
    "t": "caja",
    "k": "def",
-   "h": "Escala Kelvin con el termómetro de gas a volumen constante",
-   "html": [
-    "<p>Se define el cociente de dos temperaturas Kelvin como el cociente de las presiones del termómetro de gas:",
-    "  $$\\frac{T_2}{T_1}=\\frac{p_2}{p_1}\\qquad(17.4)$$",
-    "  Para fijar el tamaño del grado se elige un estado de referencia, el <b>punto triple del agua</b> (coexisten hielo, agua y vapor; 0,01 °C y 610 Pa), al que por definición se asigna $T_\\text{triple}=273{,}16$ K. Entonces:",
-    "  $$T=T_\\text{triple}\\,\\frac{p}{p_\\text{triple}}=(273{,}16\\ \\text{K})\\,\\frac{p}{p_\\text{triple}}\\qquad(17.5)$$",
-    "  El <b>cero absoluto</b> es $T=0$ K $=-273{,}15$ °C, donde $p=0$ en (17.5).</p>"
-   ],
+   "h": "Termómetro de gas a volumen constante: el cero absoluto",
+   "html": "<p>Un líquido concreto (mercurio, alcohol) da una escala que depende de la sustancia. Un <b>gas diluido</b> a <b>volumen constante</b> no: sea cual sea el gas, su presión crece en línea recta con la temperatura, y al extrapolar todas las rectas cortan $p=0$ en el mismo punto, $-273{,}15$ °C: el <b>cero absoluto</b>, $0$ K. La escala Kelvin se define con cocientes de presiones:</p>\n$$\\frac{T_2}{T_1}=\\frac{p_2}{p_1}\\ (17.4)\\qquad T=(273{,}16\\ \\text{K})\\,\\frac{p}{p_\\text{triple}}\\ (17.5)$$\n<p>El estado de referencia es el <b>punto triple del agua</b> (hielo, agua y vapor juntos: 0,01 °C y 610 Pa), al que se asignan 273,16 K.</p>\n<p><b>Ejemplo mínimo:</b> un termómetro de gas marca $4{,}00\\times10^4$ Pa en el punto triple y $5{,}00\\times10^4$ Pa en un baño. Con (17.5), $T=(273{,}16)(5{,}00/4{,}00)=341{,}45$ K $=68{,}3$ °C. <span class=\"src\" data-l=\"P\" data-ref=\"Ejemplo propio de U §17.3, ec. 17.5, p. 550\">P</span></p>\n<p><b>Error típico:</b> usar °C en $T_2/T_1=p_2/p_1$ (el cero de Celsius no es el cero absoluto). Y creer que en el cero absoluto «se para todo»: la energía molecular es la mínima posible, pero no nula.</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.3, ec. 17.4-17.5, pp. 549-550",
+    "ref": "U §17.3, ec. 17.4-17.5, figs. 17.5-17.6, pp. 549-550",
     "txt": "U p.549-550"
    }
   },
@@ -755,40 +633,29 @@
    "ref": "presion-frente-a-temperatura-en-un-termometro-de"
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo: usar (17.5)",
-   "html": [
-    "<p>Un termómetro de gas a volumen constante marca $p_\\text{triple}=4{,}00\\times10^4$ Pa en el punto triple. Si en un baño marca $p=5{,}00\\times10^4$ Pa, ¿qué temperatura tiene el baño?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>(17.5): $T=(273{,}16\\ \\text{K})\\dfrac{5{,}00\\times10^4}{4{,}00\\times10^4}=\\mathbf{341{,}45\\ K}$.</li>",
-    "    <li>En Celsius: $341{,}45-273{,}15=\\mathbf{68{,}3}$ °C.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> razona con cocientes de presiones y <b>kelvin</b>; luego pasa a °C si lo piden.</div>"
-   ],
-   "src": {
-    "l": "P",
-    "ref": "Ejemplo propio de U §17.3, ec. 17.5, p. 550",
-    "txt": "P"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "warn",
-   "h": "Error típico",
-   "html": "<p>Usar °C en $T_2/T_1=p_2/p_1$ (el «cero» de Celsius no es el cero absoluto). Y creer que en el cero absoluto «todo movimiento molecular cesa»: ahí la energía es la <b>mínima posible</b>, pero por efectos cuánticos no es nula del todo.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §17.3, p. 550",
-    "txt": "U p.550"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Un termómetro de gas marca $6{,}00\\times10^4$ Pa en el punto triple. ¿Qué presión marcará en agua hirviendo a 373,15 K?",
+     "a": "$p=(6{,}00\\times10^4)\\dfrac{373{,}15}{273{,}16}=8{,}20\\times10^4$ Pa."
+    },
+    {
+     "q": "Un gas a volumen constante está a 27 °C. ¿A qué temperatura se duplica su presión?",
+     "a": "Al doble de la temperatura <b>en kelvin</b>: $2(300{,}15\\ \\text{K})=600{,}3$ K $\\approx327$ °C (no 54 °C)."
+    },
+    {
+     "q": "¿Por qué el cero absoluto no depende del gas que se use en el termómetro?",
+     "a": "Porque, con gases muy diluidos, todas las rectas $p(T)$ a volumen constante extrapolan a $p=0$ en el mismo punto, $-273{,}15$ °C."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s4",
    "n": "4",
    "titulo": "Expansión térmica",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §17.4, pp. 551-556",
@@ -796,22 +663,14 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte06.html"
-  },
-  {
    "t": "caja",
    "k": "def",
    "h": "Expansión lineal",
-   "html": [
-    "<p>Una dimensión lineal (longitud, diámetro, lado) que vale $L_0$ a la temperatura $T_0$ cambia, para un $\\Delta T=T-T_0$ no muy grande, en",
-    "  $$\\Delta L=\\alpha\\,L_0\\,\\Delta T\\qquad(17.6)\\qquad\\Longleftrightarrow\\qquad L=L_0\\,(1+\\alpha\\,\\Delta T)\\qquad(17.7)$$",
-    "  donde $\\alpha$ es el <b>coeficiente de expansión lineal</b> (unidades K$^{-1}$ o (C°)$^{-1}$). Valores típicos (tabla 17.1): aluminio $2{,}4\\times10^{-5}$; latón $2{,}0\\times10^{-5}$; cobre $1{,}7\\times10^{-5}$; acero $1{,}2\\times10^{-5}$ K$^{-1}$; vidrio $0{,}4$ a $0{,}9\\times10^{-5}$. Para un $\\Delta T$ de 100 C° el cambio fraccionario $\\Delta L/L_0$ es del orden de $1/1000$.</p>"
-   ],
+   "html": "<p>Al calentar un sólido sus átomos vibran más y, como la fuerza entre ellos no es simétrica, se separan algo más en promedio: el objeto <b>se dilata</b>. El cambio relativo de longitud es proporcional al cambio de temperatura:</p>\n$$\\Delta L=\\alpha\\,L_0\\,\\Delta T\\ (17.6)\\qquad\\Longleftrightarrow\\qquad L=L_0(1+\\alpha\\,\\Delta T)\\ (17.7)$$\n<p>$\\alpha$ es el <b>coeficiente de expansión lineal</b>, en K$^{-1}$ (tabla 17.1): aluminio $2{,}4\\times10^{-5}$, latón $2{,}0\\times10^{-5}$, cobre $1{,}7\\times10^{-5}$, acero $1{,}2\\times10^{-5}$, vidrio $0{,}4$-$0{,}9\\times10^{-5}$. Vale para cualquier dimensión lineal (longitud, diámetro, lado) y para $\\Delta T$ no muy grandes; con 100 C°, $\\Delta L/L_0$ es del orden de $10^{-3}$.</p>\n<p><b>Ejemplo mínimo</b> (ejemplo 17.2 de U): una cinta de acero de 50,000 m a 20 °C, a 35 °C se alarga $\\Delta L=(1{,}2\\times10^{-5})(50{,}000)(15)=9{,}0$ mm y mide 50,009 m. Si con ella lees 35,794 m a 35 °C, la distancia real es $(1+1{,}8\\times10^{-4})(35{,}794)=35{,}800$ m.</p>\n<p><b>Error típico:</b> tomar como $L_0$ un valor que no corresponde a $T_0$, o equivocar el signo de $\\Delta T=T-T_0$.</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.4, ec. 17.6-17.7, tabla 17.1, pp. 551-552",
-    "txt": "U p.551-552"
+    "ref": "U §17.4, ec. 17.6-17.7, tabla 17.1, pp. 551-552; ejemplo 17.2, p. 553",
+    "txt": "U p.551-553"
    }
   },
   {
@@ -820,36 +679,13 @@
   },
   {
    "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.2: la cinta métrica del topógrafo",
-   "html": [
-    "<p>Una cinta métrica de acero mide exactamente 50,000 m a 20 °C (sus marcas están calibradas a esa temperatura). a) ¿Cuánto mide a 35 °C? b) A 35 °C el topógrafo lee 35,794 m en la cinta: ¿cuál es la distancia real?</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>a)</b> $\\Delta T=35-20=15$ C°. (17.6): $\\Delta L=\\alpha L_0\\Delta T=(1{,}2\\times10^{-5})(50{,}000)(15)=9{,}0\\times10^{-3}$ m $=9{,}0$ mm, y $L=50{,}000+0{,}009=\\mathbf{50{,}009\\ m}$.</li>",
-    "    <li><b>b)</b> A 35 °C la cinta se ha estirado: cada «metro» de la cinta mide en realidad un poco más. La distancia real es mayor que la leída por el factor $L/L_0=1+\\alpha\\Delta T=1+1{,}8\\times10^{-4}$: $(1+1{,}8\\times10^{-4})(35{,}794)=\\mathbf{35{,}800\\ m}$.</li>",
-    "    <li><b>Evaluar.</b> Los metales se dilatan poco con cambios moderados, pero esos 6 mm de diferencia pueden importar en un trabajo de precisión.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> $L=L_0(1+\\alpha\\Delta T)$ con $L_0$ el valor a la temperatura de referencia y $\\Delta T=T-T_0$.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.2, p. 553",
-    "txt": "U p.553"
-   }
-  },
-  {
-   "t": "caja",
    "k": "def",
-   "h": "Expansión de volumen y relación $\\beta=3\\alpha$",
-   "html": [
-    "<p>Para el volumen: $\\Delta V=\\beta\\,V_0\\,\\Delta T$ (17.8), con $\\beta$ el <b>coeficiente de expansión volumétrica</b> (tabla 17.2: mercurio $18\\times10^{-5}$, etanol $75\\times10^{-5}$ K$^{-1}$). En un <b>sólido isótropo</b> los tres lados crecen igual ($V_0=L_0^3$, $dV=3L_0^2\\,dL=3\\alpha V_0\\,dT$), por lo que",
-    "  $$\\beta=3\\alpha\\qquad(17.9)$$",
-    "  (por ejemplo, el cobre: $3\\times1{,}7\\times10^{-5}=5{,}1\\times10^{-5}$, el valor de la tabla 17.2).</p>"
-   ],
+   "h": "Expansión de volumen: $\\beta=3\\alpha$; orificios y recipientes",
+   "html": "<p>Para el volumen, $\\Delta V=\\beta\\,V_0\\,\\Delta T$ (17.8), con el <b>coeficiente de expansión volumétrica</b> $\\beta$ (tabla 17.2: mercurio $18\\times10^{-5}$, etanol $75\\times10^{-5}$ K$^{-1}$). En un sólido isótropo los tres lados crecen igual ($V=L^3$, $dV=3L^2dL$), de modo que</p>\n$$\\beta=3\\alpha\\qquad(17.9)$$\n<p>Un <b>orificio</b> en una placa <b>se agranda</b> al calentarla, como si fuera del mismo material (piensa en una foto que se amplía). Y la <b>cavidad</b> de un recipiente cambia de volumen como el sólido del recipiente.</p>\n<p><b>Ejemplo mínimo</b> (ejemplo 17.3 de U): un frasco de vidrio de 200 cm³ ($\\alpha=0{,}40\\times10^{-5}$, $\\beta=1{,}2\\times10^{-5}$ K$^{-1}$) lleno de mercurio, de 20 a 100 °C. Se derrama la diferencia de dilataciones: $(200)(80)(18-1{,}2)\\times10^{-5}=2{,}7$ cm³. Así funciona un termómetro de mercurio.</p>\n<p><b>Error típico:</b> creer que el agujero se encoge, o suponer que el recipiente no se dilata.</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.4, ec. 17.8-17.9, tabla 17.2, pp. 552-553",
-    "txt": "U p.552-553"
+    "ref": "U §17.4, ec. 17.8-17.9, tabla 17.2, fig. 17.10, pp. 552-553; ejemplo 17.3, p. 554",
+    "txt": "U p.552-554"
    }
   },
   {
@@ -858,40 +694,9 @@
   },
   {
    "t": "caja",
-   "k": "warn",
-   "h": "Cuidado: un orificio también se dilata",
-   "html": "<p>Un agujero en una placa <b>se agranda</b> al calentarla, como si estuviera hecho del mismo material que la placa (no se encoge «porque haya más material alrededor»). Igual que una cavidad (el interior de un recipiente) cambia su volumen como el sólido correspondiente. Imagina que la placa es una fotografía que se amplía: también se amplía el agujero.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §17.4, fig. 17.10 y Estrategia 17.1, pp. 552-553",
-    "txt": "U p.552-553"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.3: el mercurio que se desborda",
-   "html": [
-    "<p>Un frasco de vidrio de 200 cm³ se llena hasta el borde con mercurio a 20 °C. ¿Cuánto mercurio se desborda al llevarlo a 100 °C? El coeficiente lineal del vidrio es $0{,}40\\times10^{-5}$ K$^{-1}$.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Idea.</b> Se dilatan los dos: el mercurio y la <i>cavidad</i> del vidrio. Lo derramado es la <b>diferencia</b> de dilataciones.</li>",
-    "    <li>$\\beta_\\text{vidrio}=3\\alpha=3(0{,}40\\times10^{-5})=1{,}2\\times10^{-5}$ K$^{-1}$ (17.9); $\\beta_\\text{Hg}=18\\times10^{-5}$ K$^{-1}$ (tabla 17.2).</li>",
-    "    <li>$\\Delta V_\\text{Hg}-\\Delta V_\\text{vidrio}=V_0\\Delta T(\\beta_\\text{Hg}-\\beta_\\text{vidrio})=(200\\ \\text{cm}^3)(80\\ \\text{C}^\\circ)(18-1{,}2)\\times10^{-5}=\\mathbf{2{,}7\\ cm^3}$.</li>",
-    "    <li><b>Evaluar.</b> Es el funcionamiento de un termómetro de mercurio: el mercurio se dilata más que el vidrio y sube por el tubo. Y por eso agua caliente afloja la tapa metálica de un frasco de vidrio (el metal se dilata más).</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> recipiente lleno que se calienta: derrame $=(\\beta_\\text{líq}-\\beta_\\text{recip})V_0\\Delta T$.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.3, p. 554",
-    "txt": "U p.554"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "El agua es especial: la densidad máxima está a 4 °C",
-   "html": "<p>Entre 0 y 4 °C el agua <b>se contrae</b> al calentarse (su $\\beta$ es negativo); por encima de 4 °C se dilata. Por eso el agua tiene su <b>mayor densidad a 4 °C</b>, y también por eso el hielo (que se dilata al congelarse) flota y los lagos se congelan de arriba hacia abajo: el fondo sigue a 4 °C y la vida sobrevive.</p>",
+   "h": "El agua es especial: densidad máxima a 4 °C",
+   "html": "<p>Entre 0 y 4 °C el agua <b>se contrae</b> al calentarse; por encima de 4 °C se dilata. Su densidad es máxima a 4 °C. Además se <b>dilata al congelarse</b>: el hielo flota, los lagos se congelan de arriba abajo (el fondo se queda a 4 °C) y las tuberías con agua revientan al helarse.</p>",
    "src": {
     "l": "U",
     "ref": "U §17.4, fig. 17.12, p. 554",
@@ -912,16 +717,12 @@
   {
    "t": "caja",
    "k": "def",
-   "h": "Esfuerzo térmico",
-   "html": [
-    "<p>Si una barra de longitud $L_0$ y sección $A$ está <b>sujeta</b> y no puede dilatarse ni contraerse, aparece un esfuerzo. Se calcula como en el tema 11: (1) la barra «quiere» cambiar $(\\Delta L/L_0)_\\text{térmico}=\\alpha\\Delta T$; (2) la fuerza de las sujeciones produce una deformación igual y opuesta $(\\Delta L/L_0)_\\text{tensión}=F/(AY)$; (3) la suma es cero. Resultado:",
-    "  $$\\boxed{\\frac FA=-Y\\,\\alpha\\,\\Delta T}\\qquad(17.12)$$",
-    "  Si $\\Delta T&gt;0$ el esfuerzo es negativo (<b>compresión</b>); si $\\Delta T&lt;0$ es positivo (<b>tracción</b>). La longitud de la barra no interviene en el esfuerzo.</p>"
-   ],
+   "h": "Esfuerzo térmico: cuando no puede dilatarse",
+   "html": "<p>Si una barra está <b>sujeta</b> y no puede cambiar de longitud, aparece un esfuerzo. Se razona como en el tema 11: la barra «querría» deformarse $\\alpha\\Delta T$; las sujeciones le imponen una deformación $F/(AY)$ igual y contraria; la suma es cero:</p>\n$$\\boxed{\\frac FA=-Y\\,\\alpha\\,\\Delta T}\\qquad(17.12)$$\n<p>Si $\\Delta T\\gt0$ sale negativo: <b>compresión</b>; si $\\Delta T\\lt0$, <b>tracción</b>. La longitud de la barra no interviene.</p>\n<p><b>Ejemplo mínimo</b> (ejemplo 17.4 de U): un cilindro de aluminio de 20 cm² entre dos paredes rígidas, de 17,2 a 22,3 °C ($Y=7{,}0\\times10^{10}$ Pa): $F/A=-(7{,}0\\times10^{10})(2{,}4\\times10^{-5})(5{,}1)=-8{,}6\\times10^6$ Pa y $F=-1{,}7\\times10^4$ N. ¡Con solo 5 C°! Por eso hay juntas de dilatación.</p>\n<p><b>Error típico:</b> meter la longitud en el esfuerzo, o calcular $F$ con $\\Delta L$ en vez de con el esfuerzo.</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.4, ec. 17.10-17.12, pp. 554-555",
-    "txt": "U p.554-555"
+    "ref": "U §17.4, ec. 17.10-17.12, pp. 554-555; ejemplo 17.4, pp. 555-556",
+    "txt": "U p.554-556"
    }
   },
   {
@@ -929,46 +730,33 @@
    "ref": "una-barra-que-se-calienta-se-alarga-si-es-libre-"
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.4: el cilindro de aluminio entre paredes",
-   "html": [
-    "<p>Un cilindro de aluminio de 10 cm de longitud y 20 cm² de sección se usa como espaciador entre dos paredes rígidas de acero. A 17,2 °C apenas se desliza entre ellas; si se calienta a 22,3 °C, ¿qué esfuerzo tiene y qué fuerza ejerce sobre cada pared? ($Y_\\text{Al}=7{,}0\\times10^{10}$ Pa, $\\alpha_\\text{Al}=2{,}4\\times10^{-5}$ K$^{-1}$)</p>",
-    "  <ol class=\"steps\">",
-    "    <li>$\\Delta T=22{,}3-17{,}2=5{,}1$ C°.</li>",
-    "    <li>(17.12): $F/A=-Y\\alpha\\Delta T=-(7{,}0\\times10^{10})(2{,}4\\times10^{-5})(5{,}1)=\\mathbf{-8{,}6\\times10^{6}\\ Pa}$ (compresión).</li>",
-    "    <li>$F=A\\,(F/A)=(20\\times10^{-4}\\ \\text{m}^2)(-8{,}6\\times10^6\\ \\text{Pa})=\\mathbf{-1{,}7\\times10^4\\ N}$ (unas 1,7 toneladas-fuerza).</li>",
-    "    <li><b>Evaluar.</b> ¡Con solo 5 C°! Por eso los ingenieros prevén juntas de dilatación. (La longitud, 10 cm, no se usó.)</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> pieza que no puede dilatarse: $F/A=-Y\\alpha\\Delta T$ y $F=A(F/A)$.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.4, pp. 555-556",
-    "txt": "U p.555-556"
-   }
-  },
-  {
    "t": "parte",
-   "archivo": "parte07.html"
+   "archivo": "interactivo-dilatacion.html"
   },
   {
-   "t": "caja",
-   "k": "tip",
-   "h": "Estrategia 17.1 (U): expansión térmica",
-   "html": "<p>(1) Identifica si es lineal o de volumen. (2) Lista datos e incógnitas; $L_0$ y $\\Delta L$ en las mismas unidades; $\\alpha$ o $\\beta$ en K$^{-1}$ con $\\Delta T$ en K o °C. (3) Si te dan $T_0$ y un cambio dado de longitud o volumen, obtén $\\Delta T$ y calcula $T=T_0+\\Delta T$. (4) Un orificio o una cavidad se dilatan como el material. (5) Comprueba que el resultado es razonable (los cambios son del orden de $10^{-3}$).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U Estrategia para resolver problemas 17.1, p. 553",
-    "txt": "U p.553"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Una barra de aluminio de 2,00 m pasa de 20 a 70 °C. ¿Cuánto se alarga?",
+     "a": "$\\Delta L=(2{,}4\\times10^{-5})(2{,}00)(50)=2{,}4\\times10^{-3}$ m $=2{,}4$ mm."
+    },
+    {
+     "q": "Una placa de acero tiene un agujero de 10,000 cm de diámetro a 20 °C. ¿Qué diámetro tiene a 120 °C?",
+     "a": "Crece como el acero: $10{,}000\\,[1+(1{,}2\\times10^{-5})(100)]=10{,}012$ cm."
+    },
+    {
+     "q": "Una varilla de acero ($Y=2{,}0\\times10^{11}$ Pa) soldada entre dos paredes se enfría 20 C°. ¿Esfuerzo?",
+     "a": "$F/A=-Y\\alpha\\Delta T=-(2{,}0\\times10^{11})(1{,}2\\times10^{-5})(-20)=+4{,}8\\times10^7$ Pa: <b>tracción</b> (las paredes la estiran)."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s5",
    "n": "5",
    "titulo": "Cantidad de calor",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §17.5, pp. 556-559",
@@ -976,18 +764,14 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte08.html"
-  },
-  {
    "t": "caja",
    "k": "def",
-   "h": "Calor y flujo de calor",
-   "html": "<p>La transferencia de energía que se da <b>exclusivamente por una diferencia de temperatura</b> se llama <b>flujo de calor</b> (o transferencia de calor), y la energía así transferida se llama <b>calor</b> ($Q$, en J). Unidades: $1\\ \\text{cal}=4{,}186$ J; $1\\ \\text{kcal}=4186$ J; $1\\ \\text{Btu}=252\\ \\text{cal}=1055$ J. Una Caloría de los alimentos es una kcal.</p>",
+   "h": "Calor: energía en tránsito por una diferencia de temperatura",
+   "html": "<p>Una cuchara fría en un café caliente: la cuchara se calienta y el café se enfría hasta igualarse. La energía que pasa <b>solo por la diferencia de temperatura</b> se llama <b>calor</b> ($Q$, en J); el proceso, <b>flujo de calor</b>. Joule vio que agitar el agua (trabajo) la calienta igual que una llama: en los dos casos se entrega energía. Unidades: $1\\ \\text{cal}=4{,}186$ J, $1\\ \\text{kcal}=4186$ J (la «Caloría» de los alimentos), $1\\ \\text{Btu}=1055$ J.</p>\n<p><b>Error típico:</b> hablar del «calor de un cuerpo». Un cuerpo tiene temperatura y energía interna (el saldo de una cuenta); el calor es lo que pasa de un cuerpo a otro (una transferencia).</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.5, p. 556",
-    "txt": "U p.556"
+    "ref": "U §17.5, pp. 556-557",
+    "txt": "U p.556-557"
    }
   },
   {
@@ -996,27 +780,12 @@
   },
   {
    "t": "caja",
-   "k": "warn",
-   "h": "Cuidado: un cuerpo no «contiene» calor",
-   "html": "<p>No existe algo que pueda llamarse «la cantidad de calor de un cuerpo»: el calor es energía <b>en tránsito</b>, no una propiedad almacenada. Un cuerpo tiene temperatura y energía interna; <b>calor es lo que pasa de un cuerpo a otro</b>. Piensa en una cuenta bancaria: el saldo es la energía interna, el movimiento de dinero es el calor (y el trabajo).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §17.5, p. 557 (cuidado)",
-    "txt": "U p.557"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "Calor y calor específico",
-   "html": [
-    "<p>La cantidad de calor necesaria para cambiar la temperatura de una masa $m$ en $\\Delta T$ (sin cambio de fase) es",
-    "  $$Q=m\\,c\\,\\Delta T\\qquad(17.13)$$",
-    "  con $c$ el <b>calor específico</b> del material [J/(kg·K)]. En forma diferencial: $dQ=mc\\,dT$ (17.14) y $c=\\dfrac1m\\dfrac{dQ}{dT}$ (17.15). El agua tiene un calor específico muy alto, $c\\approx4190$ J/(kg·K); el aluminio, 910; el cobre, 390; el hielo, 2100 (tabla 17.3). $Q&gt;0$ si entra calor ($\\Delta T&gt;0$) y $Q&lt;0$ si sale.</p>"
-   ],
+   "h": "Calor específico: $Q=mc\\Delta T$",
+   "html": "<p>El calor necesario para cambiar en $\\Delta T$ la temperatura de una masa $m$ (sin cambio de fase) es</p>\n$$Q=m\\,c\\,\\Delta T\\ (17.13)\\qquad dQ=mc\\,dT\\ (17.14)$$\n<p>$c$ es el <b>calor específico</b> [J/(kg·K)] (tabla 17.3): agua 4190, hielo 2100, aluminio 910, cobre 390. $Q\\gt0$ si entra calor y $Q\\lt0$ si sale. A igual $Q$ y $m$, se calienta más lo que tiene $c$ pequeño (metales); el agua, con su $c$ enorme, modera el clima costero y sirve de refrigerante. Con una potencia constante $P$ y sin pérdidas, $dT/dt=P/(mc)$.</p>\n<p><b>Ejemplo mínimo</b> (ejemplos 17.5 y 17.6 de U): una fiebre de 37,0 a 39,0 °C en 80 kg (como agua) exige $Q=(80)(4190)(2{,}0)=6{,}7\\times10^5$ J. Un chip de silicio de 23 mg ($c=705$) que recibe 7,4 mW se calienta a $dT/dt=7{,}4\\times10^{-3}/[(23\\times10^{-6})(705)]=0{,}46$ K/s.</p>\n<p><b>Error típico:</b> masa en gramos, o $\\Delta T$ como temperatura absoluta (353 K) en lugar del intervalo.</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.5, ec. 17.13-17.15, tabla 17.3, pp. 557-559",
+    "ref": "U §17.5, ec. 17.13-17.15, tabla 17.3, pp. 557-559; ejemplos 17.5-17.6, pp. 557-558",
     "txt": "U p.557-559"
    }
   },
@@ -1026,63 +795,39 @@
   },
   {
    "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.5: el calor de una fiebre",
-   "html": [
-    "<p>Un hombre de 80 kg con gripe tiene 39,0 °C en vez de 37,0 °C. Suponiendo que el cuerpo es agua en su mayor parte, ¿cuánto calor hizo falta?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>$\\Delta T=39{,}0-37{,}0=2{,}0$ C° $=2{,}0$ K.</li>",
-    "    <li>(17.13): $Q=mc\\Delta T=(80)(4190)(2{,}0)=\\mathbf{6{,}7\\times10^5\\ J}$ $\\approx160$ kcal.</li>",
-    "    <li><b>Evaluar.</b> El calor específico real del cuerpo es unos 3480 J/(kg·K) (83 % del del agua, porque proteínas y grasas tienen menos): $Q=5{,}6\\times10^5$ J $=133$ kcal. Si no fuera por los sistemas reguladores, los alimentos (miles de kcal) cambiarían mucho nuestra temperatura.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> $Q=mc\\Delta T$ con $m$ en kg y $\\Delta T=T_f-T_i$; para varios cuerpos con el mismo $\\Delta T$: $Q=(\\sum m_ic_i)\\Delta T$.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.5, p. 557",
-    "txt": "U p.557"
-   }
-  },
-  {
-   "t": "caja",
    "k": "def",
-   "h": "Capacidad calorífica molar. Regla de Dulong y Petit",
-   "html": "<p>Si se usa el número de moles $n$ en lugar de la masa ($m=nM$, 17.16), $Q=nMc\\Delta T$ (17.17) $=nC\\Delta T$ (17.18), con la <b>capacidad calorífica molar</b> $C=Mc$ (17.19) [J/(mol·K)]. Para los sólidos elementales, $C\\approx25$ J/(mol·K) (regla de Dulong y Petit): el aluminio da 24,6; el cobre, 24,8; el hierro, 26,3 (tabla 17.3). La explicación se verá en el tema 18: cada átomo aporta la misma energía por grado.</p>",
+   "h": "Capacidad calorífica molar y regla de Dulong y Petit",
+   "html": "<p>Con moles en vez de masa ($m=nM$): $Q=nC\\Delta T$ (17.18), con la <b>capacidad calorífica molar</b> $C=Mc$ (17.19) [J/(mol·K)]. Casi todos los sólidos elementales tienen $C\\approx25$ J/(mol·K) (<b>regla de Dulong y Petit</b>): aluminio 24,6, cobre 24,8, hierro 26,3. El tema 18 explica por qué.</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.5, ec. 17.16-17.19, tabla 17.3, regla de Dulong y Petit, pp. 558-559",
+    "ref": "U §17.5, ec. 17.16-17.19, tabla 17.3, pp. 558-559",
     "txt": "U p.558-559"
    }
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.6: circuitos sobrecalentados",
-   "html": [
-    "<p>Un elemento de circuito de 23 mg de silicio recibe energía de la corriente a razón de $7{,}4\\ \\text{mW}=7{,}4\\times10^{-3}$ J/s. Si no se elimina calor, ¿con qué rapidez sube su temperatura? ($c_\\text{Si}=705$ J/(kg·K))</p>",
-    "  <ol class=\"steps\">",
-    "    <li>La energía entra como un calor $dQ/dt=7{,}4\\times10^{-3}$ J/s. De (17.14), $dQ=mc\\,dT$; dividiendo entre $dt$: $\\dfrac{dT}{dt}=\\dfrac{dQ/dt}{mc}$.</li>",
-    "    <li>$\\dfrac{dT}{dt}=\\dfrac{7{,}4\\times10^{-3}}{(23\\times10^{-6})(705)}=\\mathbf{0{,}46\\ K/s}$ (unos 27 K/min).</li>",
-    "    <li><b>Evaluar.</b> A ese ritmo el elemento se autodestruiría pronto: la evacuación de calor es clave en el diseño electrónico.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> potencia constante sin pérdidas: $dT/dt=P/(mc)$.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.6, p. 558",
-    "txt": "U p.558"
-   }
-  },
-  {
-   "t": "parte",
-   "archivo": "parte09.html"
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "¿Cuánto calor hace falta para calentar 2,0 kg de agua de 20 a 80 °C?",
+     "a": "$Q=(2{,}0)(4190)(60)=5{,}0\\times10^5$ J."
+    },
+    {
+     "q": "Das 1000 J a 0,10 kg de cobre y otros 1000 J a 0,10 kg de agua. ¿Cuánto sube cada uno?",
+     "a": "Cobre: $1000/[(0{,}10)(390)]=25{,}6$ C°. Agua: $1000/[(0{,}10)(4190)]=2{,}39$ C°. El de $c$ pequeño se calienta mucho más."
+    },
+    {
+     "q": "El oro tiene $c=130$ J/(kg·K) y $M=0{,}197$ kg/mol. ¿Cumple la regla de Dulong y Petit?",
+     "a": "$C=Mc=(0{,}197)(130)=25{,}6$ J/(mol·K) $\\approx25$: sí."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s6",
    "n": "6",
    "titulo": "Calorimetría y cambios de fase",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §17.6, pp. 559-564",
@@ -1090,22 +835,14 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte10.html"
-  },
-  {
    "t": "caja",
    "k": "thm",
-   "h": "Calor de cambio de fase",
-   "html": [
-    "<p>Para convertir una masa $m$ de una fase en otra, a la temperatura de cambio de fase,",
-    "  $$Q=\\pm\\,m\\,L\\qquad(17.20)$$",
-    "  con $+$ si el calor <b>entra</b> al material (fusión, vaporización) y $-$ si <b>sale</b> (congelación, condensación). $L_f$ es el <b>calor de fusión</b> y $L_v$ el <b>calor de vaporización</b> [J/kg]. Para el agua a presión atmosférica: $L_f=3{,}34\\times10^5$ J/kg (0 °C) y $L_v=2{,}256\\times10^6$ J/kg (100 °C) (tabla 17.4). Vaporizar cuesta unas 7 veces más que fundir. Otros valores de la tabla 17.4: plomo $L_f=24{,}5\\times10^3$ J/kg (fusión a 327,3 °C); hidrógeno $L_f=58{,}6\\times10^3$ J/kg (fusión a 13,84 K).</p>"
-   ],
+   "h": "Cambio de fase: $Q=\\pm mL$ a temperatura constante",
+   "html": "<p>Calienta hielo a ritmo constante: sube hasta 0 °C, <b>se queda en 0 °C</b> mientras se funde, luego sube como agua y <b>se queda en 100 °C</b> mientras hierve. En las mesetas la energía rompe uniones entre moléculas en vez de agitarlas más. Para cambiar de fase una masa $m$:</p>\n$$Q=\\pm\\,m\\,L\\qquad(17.20)$$\n<p>con $+$ si entra calor (fusión, vaporización) y $-$ si sale (congelación, condensación). Agua a 1 atm: $L_f=3{,}34\\times10^5$ J/kg (0 °C) y $L_v=2{,}256\\times10^6$ J/kg (100 °C); vaporizar cuesta casi 7 veces más que fundir (tabla 17.4). Otras manifestaciones: la <b>sublimación</b> (hielo seco), el <b>sobreenfriamiento</b> (agua líquida bajo 0 °C) y el <b>enfriamiento por evaporación</b> (el sudor se lleva $mL_v$ de la piel).</p>\n<p><b>Ejemplo mínimo:</b> fundir 0,50 kg de hielo a 0 °C cuesta $(0{,}50)(3{,}34\\times10^5)=1{,}67\\times10^5$ J; calentar luego esa agua hasta 100 °C, solo $2{,}1\\times10^5$ J. <span class=\"src\" data-l=\"P\" data-ref=\"Ejemplo propio de U §17.6, ec. 17.20 y tabla 17.4, pp. 560-561\">P</span></p>\n<p><b>Error típico:</b> usar $c_\\text{agua}$ para el hielo, olvidar el $mL$ al pasar por 0 °C o 100 °C, o confundir $L_f$ y $L_v$.</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.6, ec. 17.20, tabla 17.4, pp. 560-561",
-    "txt": "U p.560-561"
+    "ref": "U §17.6, ec. 17.20, tabla 17.4, figs. 17.20-17.23, pp. 560-562",
+    "txt": "U p.560-562"
    }
   },
   {
@@ -1121,24 +858,13 @@
   },
   {
    "t": "caja",
-   "k": "intu",
-   "h": "Otros casos que ves a diario",
-   "html": "<p>La <b>sublimación</b> (sólido a gas sin pasar por líquido: el hielo seco, la naftalina), el <b>sobreenfriamiento</b> (agua líquida por debajo de 0 °C si no hay dónde empezar a congelarse) y el <b>enfriamiento por evaporación</b> (el sudor se lleva calor al evaporarse) son manifestaciones de lo mismo: las fases son estados de equilibrio y pasar de una a otra exige o libera energía $mL$.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §17.6, figs. 17.22-17.23, p. 562",
-    "txt": "U p.562"
-   }
-  },
-  {
-   "t": "caja",
    "k": "thm",
-   "h": "Calorimetría: sistema aislado",
-   "html": "<p>En un sistema aislado (sin intercambio con el exterior) <b>la suma algebraica de los calores de todos los cuerpos es cero</b>: $\\sum Q=0$. Cada cuerpo aporta $mc\\Delta T$ (si cambia $T$) o $\\pm mL$ (si cambia de fase), con su signo. Un calorímetro es justamente un recipiente aislado en el que se mezclan cuerpos para medir calores específicos o de fusión.</p>",
+   "h": "Calorimetría: $\\sum Q=0$ y comprobar el estado final",
+   "html": "<p>En un sistema <b>aislado</b>, la suma algebraica de los calores de todos los cuerpos es cero: $\\sum Q=0$. Cada cuerpo aporta $mc(T_f-T_i)$ si cambia de temperatura y $\\pm mL$ si cambia de fase, <b>con su signo</b> (el que se enfría da $Q\\lt0$). Sin cambios de fase, $T_f$ es la media de las temperaturas iniciales ponderada por $mc$.</p>\n<p><b>Ejemplo mínimo</b> (ejemplo 17.7 de U): 0,300 kg de café (agua) a 70,0 °C en una taza de aluminio de 0,120 kg a 20,0 °C:</p>\n$$T_f=\\frac{(0{,}300)(4190)(70{,}0)+(0{,}120)(910)(20{,}0)}{(0{,}300)(4190)+(0{,}120)(910)}=66{,}0\\ ^\\circ\\text{C}$$\n<p><b>Con hielo o vapor, primero decide el estado final</b> (Estrategia 17.2): compara el calor que un cuerpo puede dar hasta la temperatura de cambio de fase con el que el otro necesita para completarlo. Si no alcanza, $T_f$ es la del cambio de fase y la incógnita pasa a ser <b>la masa</b> que cambia. Ejemplo 17.9 de U: 0,10 kg de agua a 25 °C en una olla de cobre de 2,0 kg a 150 °C. Suponer «nada hierve» da 106 °C, imposible para agua líquida; así que $T_f=100$ °C y hierve una fracción $x=\\dfrac{(2{,}0)(390)(50)-(0{,}10)(4190)(75)}{(0{,}10)(2{,}256\\times10^6)}=0{,}034$ (3,4 g).</p>\n<p><b>Error típico:</b> despejar $T_f$ sin comprobarla y aceptar resultados absurdos (agua líquida a 106 °C o a $-5{,}9$ °C).</p>",
    "src": {
     "l": "U",
-    "ref": "U Estrategia 17.2, §17.6, p. 563",
-    "txt": "U p.563"
+    "ref": "U §17.6, Estrategia 17.2, p. 563; ejemplos 17.7 y 17.9, pp. 563-564",
+    "txt": "U p.563-564"
    }
   },
   {
@@ -1146,116 +872,33 @@
    "ref": "recipiente-aislado-con-agua-fria-y-un-cuerpo-cal"
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.7: cambio de temperatura sin cambio de fase",
-   "html": [
-    "<p>Un campista vierte 0,300 kg de café (a 70,0 °C, con el calor específico del agua) en una taza de aluminio de 0,120 kg a 20,0 °C. ¿Cuál es la temperatura de equilibrio? Sin intercambio con el exterior.</p>",
-    "  <ol class=\"steps\">",
-    "    <li>$Q_\\text{café}+Q_\\text{Al}=0$ con $Q=mc(T-T_0)$ en cada uno (el café pierde, la taza gana):",
-    "    $m_Cc_W(T-70{,}0)+m_{Al}c_{Al}(T-20{,}0)=0$.</li>",
-    "    <li>Despejando: $T=\\dfrac{m_Cc_WT_{0C}+m_{Al}c_{Al}T_{0Al}}{m_Cc_W+m_{Al}c_{Al}}=\\dfrac{(0{,}300)(4190)(70)+(0{,}120)(910)(20)}{(0{,}300)(4190)+(0{,}120)(910)}=\\mathbf{66{,}0\\ °C}$.</li>",
-    "    <li><b>Evaluar.</b> $T$ queda cerca de la temperatura del café: tiene 2,5 veces la masa y un calor específico 4,6 veces mayor. Con $T=66{,}0$ °C: $Q_C=-5{,}0\\times10^3$ J y $Q_{Al}=+5{,}0\\times10^3$ J, como debe ser.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> $\\sum m_ic_i(T-T_{0i})=0$ y despeja $T$ (media ponderada por $m\\,c$ de las temperaturas iniciales).</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.7, p. 563",
-    "txt": "U p.563"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.8: cambios de temperatura y de fase",
-   "html": [
-    "<p>Un vaso contiene 0,25 kg de cola (como agua) a 25 °C. ¿Cuánto hielo, a $-20$ °C, hay que añadir para que la temperatura final sea 0 °C con todo el hielo fundido? Desprecia la capacidad del vidrio.</p>",
-    "  <ol class=\"steps\">",
-    "    <li>La cola solo se enfría: $Q_C=m_Cc_W(0-25)&lt;0$. El hielo se calienta de $-20$ a 0 °C ($Q_I=m_Ic_I(0+20)$) <b>y además se funde</b> ($Q_2=m_IL_f$).</li>",
-    "    <li>$Q_C+Q_I+Q_2=0\\Rightarrow m_I\\,[\\,c_I(20)+L_f\\,]=m_Cc_W(25)$, y",
-    "    $m_I=\\dfrac{(0{,}25)(4190)(25)}{(2100)(20)+3{,}34\\times10^5}=\\dfrac{26\\,188}{376\\,000}=\\mathbf{0{,}070\\ kg=70\\ g}$.</li>",
-    "    <li><b>Evaluar.</b> Tres o cuatro cubitos medianos para 250 g de bebida: razonable.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> con hielo de por medio, suma «calentar el hielo» + «fundirlo» + «calentar el agua resultante».</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.8, p. 563",
-    "txt": "U p.563"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.9: ¿qué cocina? (hay que decidir el estado final)",
-   "html": [
-    "<p>Una olla gruesa de cobre de 2,0 kg está a 150 °C. Vierte 0,10 kg de agua a 25 °C y tapa la olla. ¿Temperatura final y fase del agua? Sin pérdidas.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>Tres finales posibles:</b> (1) nada hierve y $T&lt;100$ °C; (2) parte hierve y $T=100$ °C (mezcla agua-vapor); (3) todo hierve y $T\\ge100$ °C.</li>",
-    "    <li><b>Caso 1</b> (supongamos que nada hierve): $T=\\dfrac{(0{,}10)(4190)(25)+(2{,}0)(390)(150)}{(0{,}10)(4190)+(2{,}0)(390)}=106$ °C. Pero eso pasa de 100 °C: <b>contradice la hipótesis</b>, así que algo hierve.</li>",
-    "    <li><b>Caso 2</b> ($T=100$ °C; hierve una fracción $x$ del agua): $m_Wc_W(100-25)+x\\,m_WL_v+m_{Cu}c_{Cu}(100-150)=0\\Rightarrow x=\\dfrac{(2{,}0)(390)(50)-(0{,}10)(4190)(75)}{(0{,}10)(2{,}256\\times10^6)}=\\dfrac{39\\,000-31\\,425}{225\\,600}=\\mathbf{0{,}034}$.</li>",
-    "    <li><b>Conclusión:</b> $T=100$ °C y se evaporan $0{,}034\\times0{,}10$ kg $=3{,}4$ g; el resto, líquido.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> supón un estado final, calcula, y comprueba que es coherente; si no, prueba el siguiente (aquí: mezcla a 100 °C y la fracción $x\\in(0,1]$ como incógnita).</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.9, p. 564",
-    "txt": "U p.564"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.10: la estufa de gasolina",
-   "html": [
-    "<p>En una estufa portátil, el 30 % de la energía de combustión calienta el agua. Si se calienta 1,00 kg de agua de 20 a 100 °C y se evaporan 0,25 kg, ¿cuánta gasolina se quema? (1 g de gasolina libera 46 000 J.)</p>",
-    "  <ol class=\"steps\">",
-    "    <li>Calentar: $Q_1=(1{,}00)(4190)(80)=3{,}35\\times10^5$ J. Evaporar: $Q_2=mL_v=(0{,}25)(2{,}256\\times10^6)=5{,}64\\times10^5$ J. Total: $8{,}99\\times10^5$ J.</li>",
-    "    <li>Solo el 30 % llega al agua: energía de combustión $=8{,}99\\times10^5/0{,}30=3{,}00\\times10^6$ J.</li>",
-    "    <li>Gasolina: $3{,}00\\times10^6/46\\,000=\\mathbf{65\\ g}$ (unos 0,09 L).</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> suma todos los calores útiles y divide por la eficiencia.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.10, p. 564",
-    "txt": "U p.564"
-   }
-  },
-  {
    "t": "parte",
-   "archivo": "parte11.html"
+   "archivo": "interactivo-fases.html"
   },
   {
-   "t": "caja",
-   "k": "tip",
-   "h": "Estrategia 17.2 (U): problemas de calorimetría",
-   "html": "<p>(1) Usa $\\sum Q=0$; cada cuerpo con su $Q=mc\\Delta T$ y, si cambia de fase, su $\\pm mL$. (2) <b>Antes de resolver</b>, calcula qué puede pasar: ¿el calor liberado al enfriar un cuerpo hasta la temperatura de cambio de fase basta para completar el cambio del otro? (3) Si no, la temperatura final es la de cambio de fase y la incógnita es <b>la masa que cambia</b>. (4) Si hay duda, supón un estado final, resuelve y <b>comprueba</b> (ejemplo 17.9).</p>",
-   "src": {
-    "l": "U",
-    "ref": "U Estrategia para resolver problemas 17.2, p. 563",
-    "txt": "U p.563"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "warn",
-   "h": "Errores típicos",
-   "html": "<p>Usar el $c$ del agua para el hielo (son distintos: 4190 y 2100); olvidar el $mL$ al pasar por 0 °C o 100 °C; poner los signos al revés ($Q$ del cuerpo caliente es <b>negativo</b>); no comprobar que el estado final supuesto es coherente.</p>",
-   "src": {
-    "l": "P",
-    "ref": "Explicación propia, sin página en los libros",
-    "txt": "P"
-   }
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Mezclas 0,20 kg de agua a 80 °C con 0,30 kg de agua a 20 °C en un recipiente aislado. ¿Temperatura final?",
+     "a": "Mismo $c$ ⇒ media ponderada por la masa: $T_f=\\dfrac{(0{,}20)(80)+(0{,}30)(20)}{0{,}50}=44$ °C."
+    },
+    {
+     "q": "¿Cuánto calor cede 10 g de vapor a 100 °C al condensarse y enfriarse hasta 40 °C?",
+     "a": "$(0{,}010)(2{,}256\\times10^6)+(0{,}010)(4190)(60)=2{,}51\\times10^4$ J. Por eso una quemadura de vapor es peor que una de agua a 100 °C."
+    },
+    {
+     "q": "Echas 1,0 kg de hielo a 0 °C en 1,0 kg de agua a 20 °C. ¿Se funde todo?",
+     "a": "No: el agua puede dar como mucho $(1{,}0)(4190)(20)=8{,}4\\times10^4$ J hasta 0 °C, y fundir todo el hielo pide $3{,}34\\times10^5$ J. Final: 0 °C con hielo sobrante (se funden 0,25 kg)."
+    }
+   ]
   },
   {
    "t": "h2",
    "id": "s7",
    "n": "7",
    "titulo": "Mecanismos de transferencia de calor",
-   "prio": null,
+   "prio": 1,
    "src": {
     "l": "U",
     "ref": "U §17.7, pp. 565-571",
@@ -1263,14 +906,10 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte12.html"
-  },
-  {
    "t": "caja",
    "k": "def",
-   "h": "Los tres mecanismos",
-   "html": "<p><b>Conducción</b>: transferencia dentro de un cuerpo, o entre cuerpos en contacto, <b>sin desplazamiento de materia</b> (los átomos transmiten la energía; en los metales, además, los electrones libres). <b>Convección</b>: transferencia por el <b>movimiento de una masa de fluido</b> de una región a otra. <b>Radiación</b>: transferencia por <b>ondas electromagnéticas</b> (infrarrojo, luz visible, ultravioleta); no necesita medio material. La rapidez de transferencia es la <b>corriente de calor</b> $H=dQ/dt$, en watts.</p>",
+   "h": "Tres mecanismos y la corriente de calor $H$",
+   "html": "<p>El café caliente pierde calor de tres formas a la vez: por el <b>contacto</b> con la taza (conducción), por el <b>aire que sube</b> y se lleva la energía (convección) y porque <b>emite infrarrojo</b> (radiación).</p>\n<ul><li><b>Conducción:</b> dentro de un cuerpo o entre cuerpos en contacto, <b>sin desplazamiento de materia</b>: los átomos se pasan la energía chocando (en los metales, además, los electrones libres).</li>\n<li><b>Convección:</b> por el <b>movimiento de una masa de fluido</b> de una región a otra.</li>\n<li><b>Radiación:</b> por <b>ondas electromagnéticas</b>; <b>no necesita medio</b> (así llega el calor del Sol).</li></ul>\n<p>La rapidez de transferencia es la <b>corriente de calor</b> $H=dQ/dt$, en <b>watts</b>.</p>",
    "src": {
     "l": "U",
     "ref": "U §17.7, p. 565",
@@ -1284,16 +923,12 @@
   {
    "t": "caja",
    "k": "thm",
-   "h": "Ley de la conducción de calor",
-   "html": [
-    "<p>Para una varilla de sección $A$ y longitud $L$, con costados aislados y extremos a $T_H&gt;T_C$ (estado estable):",
-    "  $$\\boxed{H=\\frac{dQ}{dt}=kA\\,\\frac{T_H-T_C}{L}}\\qquad(17.21)$$",
-    "  $H$ es proporcional al área y a la diferencia de temperatura, e inversamente proporcional a la longitud (fig. 17.24). $(T_H-T_C)/L$ es el <b>gradiente de temperatura</b>; $k$ es la <b>conductividad térmica</b> del material [W/(m·K)]: grande en los buenos conductores y pequeña en los aislantes. En forma local, $H=-kA\\,dT/dx$ (17.22): el signo menos dice que el calor fluye hacia las temperaturas decrecientes.</p>"
-   ],
+   "h": "Ley de la conducción: $H=kA\\,\\Delta T/L$",
+   "html": "<p>Varilla de sección $A$ y longitud $L$, costados aislados, extremos a $T_H\\gt T_C$, en estado estable:</p>\n$$\\boxed{H=\\frac{dQ}{dt}=kA\\,\\frac{T_H-T_C}{L}}\\ (17.21)\\qquad H=-kA\\frac{dT}{dx}\\ (17.22)$$\n<p>$H$ crece con el área y con la diferencia de temperatura y baja con la longitud. $(T_H-T_C)/L$ es el <b>gradiente de temperatura</b> (en estado estable $T$ baja en línea recta) y $k$ la <b>conductividad térmica</b> [W/(m·K)] (tabla 17.5): cobre 385, aluminio 205, latón 109, acero 50,2, hielo 1,6, vidrio 0,8, madera 0,12-0,04, espuma de poliestireno 0,027, aire 0,024. Los buenos aislantes (lana, plumas, fibra de vidrio) lo son porque atrapan <b>aire inmóvil</b>.</p>\n<p><b>Ejemplo mínimo</b> (ejemplo 17.11 de U): una hielera de poliestireno de 0,80 m² y 2,0 cm, con 0 °C dentro y 30 °C fuera: $H=(0{,}027)(0{,}80)(30{,}0)/0{,}020=32{,}4$ W. En 3 h entran $3{,}5\\times10^5$ J y funden $1{,}0$ kg de hielo.</p>\n<p><b>Error típico:</b> áreas en cm² sin pasar a m², o creer que $H$ disminuye a lo largo de la varilla (en estado estable es la misma en cada sección).</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.7, ec. 17.21-17.22, fig. 17.24, pp. 565-566",
-    "txt": "U p.565-566"
+    "ref": "U §17.7, ec. 17.21-17.22, fig. 17.24, tabla 17.5, pp. 565-566; ejemplo 17.11, p. 567",
+    "txt": "U p.565-567"
    }
   },
   {
@@ -1313,69 +948,24 @@
   },
   {
    "t": "caja",
-   "k": "thm",
-   "h": "Conductividad térmica de algunos materiales",
-   "html": [
-    "<table>",
-    "<tr><th>Material</th><th>$k$ [W/(m·K)]</th><th>Material</th><th>$k$ [W/(m·K)]</th></tr>",
-    "<tr><td>Cobre</td><td>385</td><td>Vidrio</td><td>0,8</td></tr>",
-    "<tr><td>Aluminio</td><td>205</td><td>Madera</td><td>0,12–0,04</td></tr>",
-    "<tr><td>Latón</td><td>109</td><td>Espuma de poliestireno</td><td>0,027</td></tr>",
-    "<tr><td>Acero</td><td>50,2</td><td>Aire</td><td>0,024</td></tr>",
-    "<tr><td>Hielo</td><td>1,6</td><td colspan=\"2\"></td></tr>",
-    "</table>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U tabla 17.5, p. 565",
-    "txt": "U p.565"
-   }
-  },
-  {
-   "t": "caja",
    "k": "intu",
-   "h": "¿Por qué el metal se siente más frío que la madera?",
-   "html": "<p>Toca un trozo de metal y uno de madera que están a 20 °C: el metal te parece más frío. No lo está: lo que <b>tu mano nota es la corriente de calor $H$</b>, no la temperatura, y con su $k$ muy grande el metal extrae calor de tu piel mucho más deprisa que la madera. Por eso el metal a 20 °C «se siente frío» y a 200 °C, quema. Los buenos aislantes (lana, poliestireno, fibra de vidrio, plumas) lo son sobre todo porque atrapan <b>aire inmóvil</b>, de $k$ muy pequeña.</p>",
+   "h": "¿Por qué el metal «se siente» más frío que la madera?",
+   "html": "<p>Un trozo de metal y uno de madera a 20 °C están a la <b>misma temperatura</b>, pero el metal parece más frío. Lo que nota tu mano es la <b>corriente de calor</b> $H$, no la temperatura: con su $k$ cientos de veces mayor, el metal saca calor de tu piel mucho más deprisa. Por la misma razón, a 200 °C el metal quema y la madera se puede tocar un instante. (Ha caído como cuestión de examen.)</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.7, p. 565-566",
+    "ref": "U §17.7, pp. 565-566",
     "txt": "U p.565-566"
    }
   },
   {
    "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.11: conducción a través de una hielera",
-   "html": [
-    "<p>Una hielera de poliestireno tiene 0,80 m² de pared (con tapa) y 2,0 cm de espesor, llena de hielo, agua y latas a 0 °C. Con la pared exterior a 30 °C, ¿qué corriente de calor entra y cuánto hielo se derrite en 3 h?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>(17.21) con $k=0{,}027$ W/(m·K): $H=kA\\dfrac{T_H-T_C}L=(0{,}027)(0{,}80)\\dfrac{30{,}0}{0{,}020}=\\mathbf{32{,}4\\ W}$.</li>",
-    "    <li>$Q=Ht=(32{,}4)(10\\,800\\ \\text{s})=3{,}5\\times10^5$ J, y con (17.20): $m=Q/L_f=\\dfrac{3{,}5\\times10^5}{3{,}34\\times10^5}=\\mathbf{1{,}0\\ kg}$.</li>",
-    "    <li><b>Evaluar.</b> La corriente es baja gracias a la baja conductividad del poliestireno.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> conducción + cambio de fase: $H=kA\\Delta T/L$, luego $Q=Ht$ y $m=Q/L$.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.11, p. 567",
-    "txt": "U p.567"
-   }
-  },
-  {
-   "t": "caja",
    "k": "def",
-   "h": "Resistencia térmica. Capas en serie y ramas en paralelo",
-   "html": [
-    "<p>Se puede escribir (17.21) como $H=A\\,(T_H-T_C)/R$ (17.23) con la <b>resistencia térmica</b> $R=L/k$ (17.24) [m²·K/W] de una capa de espesor $L$. Dos reglas (Estrategia 17.3):</p>",
-    "  <ul>",
-    "    <li><b>Capas (o barras) en serie</b>: por todas pasa la <b>misma $H$</b> (nada se acumula) y las <b>resistencias se suman</b>: $R=R_1+R_2+\\dots$; la caída de temperatura en cada capa es proporcional a su $R$ (más caída donde más resistencia).</li>",
-    "    <li><b>Ramas en paralelo</b> (mismos extremos): cada rama tiene su propia $H=kA\\Delta T/L$ y las <b>corrientes se suman</b>. En una unión, $\\sum H_\\text{entra}=\\sum H_\\text{sale}$.</li>",
-    "  </ul>"
-   ],
+   "h": "Resistencia térmica: capas en serie y ramas en paralelo",
+   "html": "<p>Se puede escribir (17.21) como $H=A\\,(T_H-T_C)/R$ (17.23), con la <b>resistencia térmica</b> de una capa $R=L/k$ (17.24) [m²·K/W]. Como en los circuitos (Estrategia 17.3):</p>\n<ul><li><b>Serie</b> (capas o barras una tras otra): por todas pasa la <b>misma $H$</b> y las <b>resistencias se suman</b>; cada capa se lleva una caída de temperatura proporcional a su $R$.</li>\n<li><b>Paralelo</b> (ramas con los mismos extremos) o <b>nudos</b>: cada rama lleva su $H$ y las <b>corrientes se suman</b> ($\\sum H_\\text{entra}=\\sum H_\\text{sale}$).</li></ul>\n<p><b>Ejemplo mínimo</b> (ejemplos 17.12 y 17.13 de U): acero de 10,0 cm y cobre de 20,0 cm, ambos de 4,00 cm² de sección, entre 100 °C y 0 °C. <b>En serie</b>: igualando las $H$, la unión queda a 20,7 °C y $H=15{,}9$ W. <b>En paralelo</b> (cada barra entre 100 y 0 °C): $20{,}1+77{,}0=97{,}1$ W.</p>\n<p><b>Error típico:</b> sumar conductividades en serie, o poner la unión a la media de las temperaturas (la mayor caída está en la capa de mayor $R$).</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.7, ec. 17.23-17.24 y Estrategia 17.3, pp. 566-567",
-    "txt": "U p.566-567"
+    "ref": "U §17.7, ec. 17.23-17.24, Estrategia 17.3, pp. 566-567; ejemplos 17.12-17.13, pp. 567-568",
+    "txt": "U p.566-568"
    }
   },
   {
@@ -1387,34 +977,14 @@
    "ref": "una-barra-que-llega-a-una-union-se-reparte-en-ot"
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplos resueltos 17.12 y 17.13: dos barras en serie y en paralelo",
-   "html": [
-    "<p>Una barra de acero de 10,0 cm y una de cobre de 20,0 cm, ambas de sección cuadrada de 2,00 cm de lado, se sueldan extremo con extremo. El extremo del acero está a 100 °C y el del cobre a 0 °C. a) Temperatura de la unión y corriente total. b) Si en vez de soldarlas se separan y cada una tiene un extremo a 100 °C y el otro a 0 °C, ¿corriente total?</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>a) Serie.</b> Misma $H$: $\\dfrac{k_SA(T_H-T)}{L_S}=\\dfrac{k_{Cu}A(T-T_C)}{L_{Cu}}$; el área se cancela y $T=\\dfrac{(k_S/L_S)T_H+(k_{Cu}/L_{Cu})T_C}{k_S/L_S+k_{Cu}/L_{Cu}}=\\dfrac{(502)(100)+(1925)(0)}{502+1925}=\\mathbf{20{,}7\\ °C}$.</li>",
-    "    <li>Corriente: $H=\\dfrac{(50{,}2)(4{,}00\\times10^{-4})(100-20{,}7)}{0{,}100}=\\mathbf{15{,}9\\ W}$ (la misma por el cobre).</li>",
-    "    <li><b>b) Paralelo.</b> Cada barra con $\\Delta T=100$ K: $H_S=\\dfrac{(50{,}2)(4{,}00\\times10^{-4})(100)}{0{,}100}=20{,}1$ W y $H_{Cu}=\\dfrac{(385)(4{,}00\\times10^{-4})(100)}{0{,}200}=77{,}0$ W; total $\\mathbf{97{,}1\\ W}$.</li>",
-    "    <li><b>Evaluar.</b> En paralelo la corriente es mucho mayor: más sección total y un gradiente completo en cada barra.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> serie $\\to$ misma $H$ (o suma de $R$); paralelo $\\to$ suma de $H$.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplos 17.12 y 17.13, pp. 567-568",
-    "txt": "U p.567-568"
-   }
-  },
-  {
    "t": "parte",
    "archivo": "s7b.html"
   },
   {
    "t": "caja",
    "k": "def",
-   "h": "Convección",
-   "html": "<p>Es la transferencia de calor por <b>movimiento de una masa de fluido</b> de una región a otra. Si el fluido lo mueve un ventilador o una bomba, es <b>convección forzada</b> (calefacción por aire, refrigeración del motor, la sangre bombeada por el corazón, principal transporte de calor dentro del cuerpo); si el movimiento se debe a diferencias de densidad causadas por la dilatación térmica (el aire caliente, menos denso, sube), es <b>convección natural o libre</b>. No existe una ecuación sencilla; hechos experimentales: la corriente de calor es <b>proporcional al área</b> de la superficie y aproximadamente a la potencia $5/4$ de la diferencia de temperatura. Cerca de una pared se forma una <b>película de fluido casi inmóvil</b> que aísla; la convección forzada la adelgaza (el viento enfría más).</p>",
+   "h": "Convección: natural o forzada",
+   "html": "<p>Es transferencia por el <b>movimiento de una masa de fluido</b>. <b>Forzada</b>, si la mueve un ventilador o una bomba (calefacción por aire, refrigeración del motor, la sangre bombeada por el corazón, principal transporte de calor dentro del cuerpo). <b>Natural o libre</b>, si se mueve por diferencias de densidad debidas a la dilatación térmica: el aire caliente, menos denso, sube.</p>\n<p>No hay una ecuación sencilla; hechos experimentales: $H$ es <b>proporcional al área</b> (radiadores y aletas con mucha superficie) y aproximadamente a $(\\Delta T)^{5/4}$. Junto a una pared hay una <b>película de fluido casi inmóvil</b> que aísla; la convección forzada la adelgaza (por eso el viento frío enfría más). A gran escala mueve el clima, las corrientes oceánicas y las térmicas que aprovechan los planeadores.</p>\n<p><b>Error típico:</b> llamar convección al calor que pasa a través de una pared sólida (eso es conducción).</p>",
    "src": {
     "l": "U",
     "ref": "U §17.7, figs. 17.27-17.28, p. 568",
@@ -1426,34 +996,17 @@
    "ref": "celda-de-conveccion-natural-en-una-habitacion-co"
   },
   {
-   "t": "caja",
-   "k": "intu",
-   "h": "Convección a gran escala",
-   "html": "<p>La convección en la atmósfera es el motor del clima, la de los océanos transporta calor por todo el planeta, y los planeadores y los halcones suben aprovechando las corrientes térmicas que se elevan del suelo caliente.</p>",
-   "src": {
-    "l": "U",
-    "ref": "U §17.7, p. 568",
-    "txt": "U p.568"
-   }
-  },
-  {
    "t": "parte",
    "archivo": "s7c.html"
   },
   {
    "t": "caja",
    "k": "thm",
-   "h": "Ley de Stefan-Boltzmann",
-   "html": [
-    "<p>Todo cuerpo emite ondas electromagnéticas por estar a una temperatura $T$. La corriente de calor radiada por una superficie de área $A$ es",
-    "  $$\\boxed{H=A\\,e\\,\\sigma\\,T^4}\\qquad(17.25)\\qquad\\sigma=5{,}67\\times10^{-8}\\ \\text{W/(m}^2\\text{·K}^4\\text{)}$$",
-    "  con $T$ <b>en kelvin</b> y $e$ la <b>emisividad</b> (entre 0 y 1; mayor en superficies oscuras y mates). El cuerpo también <b>absorbe</b> la radiación del entorno a temperatura $T_s$, así que la corriente <b>neta</b> es",
-    "  $$H_\\text{neta}=A\\,e\\,\\sigma\\,(T^4-T_s^4)\\qquad(17.26)$$",
-    "  ($H_\\text{neta}&gt;0$ significa que el cuerpo pierde calor). En equilibrio, $T=T_s$ y no hay transferencia neta.</p>"
-   ],
+   "h": "Radiación: ley de Stefan-Boltzmann",
+   "html": "<p>Todo cuerpo emite ondas electromagnéticas por estar a una temperatura $T$ (a 20 °C casi todo infrarrojo; a 800 °C ya brilla en rojo):</p>\n$$\\boxed{H=A\\,e\\,\\sigma\\,T^4}\\ (17.25)\\qquad\\sigma=5{,}67\\times10^{-8}\\ \\text{W/(m}^2\\text{·K}^4\\text{)}$$\n<p>con $T$ <b>en kelvin</b> y la <b>emisividad</b> $e$ entre 0 y 1. El cuerpo también absorbe la radiación del entorno a $T_s$, así que la corriente <b>neta</b> es</p>\n$$H_\\text{neta}=A\\,e\\,\\sigma\\,(T^4-T_s^4)\\qquad(17.26)$$\n<p><b>Ejemplo mínimo</b> (ejemplos 17.14 y 17.15 de U): el cuerpo humano (1,20 m², $e\\approx1$, piel a 303 K) emite $574$ W, pero con el entorno a 293 K pierde solo $72$ W netos. Y una placa de acero de 10 cm de lado a 800 °C ($e=0{,}60$) radia por <b>sus dos caras</b>, $A=0{,}020$ m²: $H=900$ W.</p>\n<p><b>Error típico:</b> usar °C en $T^4$; calcular $(T-T_s)^4$ en lugar de $T^4-T_s^4$; esperar 16 veces más al «doblar» la temperatura en °C (solo vale doblando kelvin).</p>",
    "src": {
     "l": "U",
-    "ref": "U §17.7, ec. 17.25-17.26, pp. 569-570",
+    "ref": "U §17.7, ec. 17.25-17.26, pp. 569-570; ejemplos 17.14-17.15, pp. 569-570",
     "txt": "U p.569-570"
    }
   },
@@ -1467,61 +1020,13 @@
   },
   {
    "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.14: radiación de una placa en la forja",
-   "html": [
-    "<p>Una placa de acero cuadrada de 10 cm de lado se calienta a 800 °C en una forja. Su emisividad es 0,60. ¿Qué potencia emite por radiación?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>Tiene dos caras: $A=2(0{,}10)^2=0{,}020$ m². $T=800+273=1073$ K.</li>",
-    "    <li>(17.25): $H=Ae\\sigma T^4=(0{,}020)(0{,}60)(5{,}67\\times10^{-8})(1073)^4=\\mathbf{900\\ W}$.</li>",
-    "    <li><b>Evaluar.</b> Un herrero cerca la nota fácilmente.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> cuenta bien el área que radia (las dos caras) y pasa a kelvin.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.14, p. 569",
-    "txt": "U p.569"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo resuelto 17.15: radiación del cuerpo humano",
-   "html": [
-    "<p>Superficie del cuerpo 1,20 m² a 30 °C (303 K), emisividad $e\\approx1$. a) ¿Cuánto radia? b) Si el entorno está a 20 °C (293 K), ¿qué pérdida neta?</p>",
-    "  <ol class=\"steps\">",
-    "    <li>a) $H=Ae\\sigma T^4=(1{,}20)(1)(5{,}67\\times10^{-8})(303)^4=\\mathbf{574\\ W}$.</li>",
-    "    <li>b) (17.26): $H_\\text{neta}=(1{,}20)(5{,}67\\times10^{-8})\\,[(303)^4-(293)^4]=\\mathbf{72\\ W}$: el entorno devuelve casi toda la radiación.</li>",
-    "  </ol>",
-    "  <div class=\"recipe\"><b>Receta:</b> la pérdida neta usa la diferencia de cuartas potencias, no la cuarta potencia de la diferencia.</div>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 17.15, p. 570",
-    "txt": "U p.570"
-   }
-  },
-  {
-   "t": "caja",
    "k": "intu",
-   "h": "Buen absorbedor = buen emisor. El termo. El efecto invernadero",
-   "html": "<p>Una superficie que absorbe bien la radiación también la emite bien ($e$ alta); un radiador ideal ($e=1$) es el <b>cuerpo negro</b>; un reflector ideal casi no emite. De ahí el <b>termo</b> (frasco Dewar): doble pared de vidrio con vacío entre ellas (elimina conducción y convección) y plateada (refleja la radiación y emite poco). Y el <b>efecto invernadero</b>: la Tierra absorbe radiación solar y emite al espacio en infrarrojo; el CO$_2$ y otros gases absorben parte de ese infrarrojo y lo reemiten hacia abajo, elevando la temperatura media unos 33 °C. Los bebés prematuros en incubadora pueden enfriarse por radiación hacia paredes frías aunque el aire esté templado.</p>",
+   "h": "Buen absorbedor, buen emisor: el termo y el efecto invernadero",
+   "html": "<p>Una superficie que absorbe bien también emite bien ($e$ alta); el radiador ideal ($e=1$) es el <b>cuerpo negro</b>, y un reflector ideal casi no emite. El <b>termo</b> (frasco Dewar) tiene doble pared con <b>vacío</b> (sin conducción ni convección) y <b>plateada</b> (refleja y emite poco). En el <b>efecto invernadero</b>, la Tierra emite infrarrojo y el CO$_2$ y otros gases absorben parte y lo reemiten hacia abajo, elevando la temperatura media unos 33 °C. Un bebé en una incubadora puede enfriarse por radiación hacia paredes frías aunque el aire esté templado.</p>",
    "src": {
     "l": "U",
     "ref": "U §17.7, pp. 570-571",
     "txt": "U p.570-571"
-   }
-  },
-  {
-   "t": "caja",
-   "k": "warn",
-   "h": "Errores típicos en radiación",
-   "html": "<p>(1) Usar °C en $T^4$ (siempre kelvin). (2) Creer que la radiación necesita aire: viaja por el vacío. (3) Doblar la temperatura en °C y esperar $2^4=16$ veces más (solo vale para el doble de la temperatura en kelvin). (4) Olvidar restar la absorción del entorno cuando piden la pérdida <b>neta</b>.</p>",
-   "src": {
-    "l": "P",
-    "ref": "Explicación propia, sin página en los libros",
-    "txt": "P"
    }
   },
   {
@@ -1532,14 +1037,7 @@
    "t": "caja",
    "k": "thm",
    "h": "Los tres mecanismos de un vistazo",
-   "html": [
-    "<table>",
-    "<tr><th>Mecanismo</th><th>¿Qué transporta la energía?</th><th>¿Necesita medio?</th><th>Ley</th><th>Depende de</th></tr>",
-    "<tr><td>Conducción</td><td>choques entre partículas y electrones libres; no hay desplazamiento de materia</td><td>sí (sólido o fluido en reposo)</td><td>$H=kA\\,\\Delta T/L$</td><td>$k$, $A$, $\\Delta T$, $1/L$</td></tr>",
-    "<tr><td>Convección</td><td>el propio fluido en movimiento</td><td>sí (fluido)</td><td>empírica, $\\propto A\\,\\Delta T^{5/4}$</td><td>área, movimiento del fluido</td></tr>",
-    "<tr><td>Radiación</td><td>ondas electromagnéticas</td><td><b>no</b></td><td>$H=Ae\\sigma T^4$; neta $Ae\\sigma(T^4-T_s^4)$</td><td>$T^4$ (K), $e$, $A$</td></tr>",
-    "</table>"
-   ],
+   "html": "<table>\n<tr><th>Mecanismo</th><th>¿Qué transporta la energía?</th><th>¿Necesita medio?</th><th>Ley</th><th>Depende de</th></tr>\n<tr><td>Conducción</td><td>choques entre partículas y electrones libres; sin desplazamiento de materia</td><td>sí (sólido o fluido en reposo)</td><td>$H=kA\\,\\Delta T/L$</td><td>$k$, $A$, $\\Delta T$, $1/L$</td></tr>\n<tr><td>Convección</td><td>el propio fluido en movimiento</td><td>sí (fluido)</td><td>empírica, $\\propto A\\,\\Delta T^{5/4}$</td><td>área, movimiento del fluido</td></tr>\n<tr><td>Radiación</td><td>ondas electromagnéticas</td><td><b>no</b></td><td>$H=Ae\\sigma T^4$; neta $Ae\\sigma(T^4-T_s^4)$</td><td>$T^4$ (K), $e$, $A$</td></tr>\n</table>\n<p>En la práctica actúan a la vez (una olla: radiación y conducción desde el fuego, conducción por el fondo, convección en el agua). En <b>estado estable</b>, si el calor atraviesa en serie varias capas o mecanismos, <b>la corriente $H$ es la misma en todos</b>: es la clave del problema práctico de U.</p>",
    "src": {
     "l": "U",
     "ref": "U §17.7, pp. 565-570 (cuadro propio)",
@@ -1547,8 +1045,22 @@
    }
   },
   {
-   "t": "parte",
-   "archivo": "parte17.html"
+   "t": "test",
+   "titulo": "✍️ Comprueba que lo has entendido (2 min)",
+   "items": [
+    {
+     "q": "Una plancha de espuma de poliestireno de 2,0 m² y 5,0 cm separa dos zonas con 20 K de diferencia. ¿Qué corriente de calor la atraviesa?",
+     "a": "$H=(0{,}027)(2{,}0)(20)/0{,}050=21{,}6$ W."
+    },
+    {
+     "q": "Un cuerpo pasa de 300 K a 600 K (entorno a 0 K). ¿Por cuánto se multiplica la potencia que radia? ¿Y si pasara de 27 °C a 54 °C?",
+     "a": "Doblar los kelvin: $2^4=16$. De 27 a 54 °C la temperatura absoluta solo pasa de 300 K a 327 K: factor $(327{,}15/300{,}15)^4=1{,}41$."
+    },
+    {
+     "q": "¿Por qué un termo lleva vacío entre sus paredes y estas están plateadas?",
+     "a": "El vacío suprime la conducción y la convección (no hay medio); el plateado refleja la radiación y, como mal absorbedor, también emite poco."
+    }
+   ]
   },
   {
    "t": "h2",
@@ -1560,27 +1072,14 @@
   },
   {
    "t": "parte",
-   "archivo": "parte18.html"
+   "archivo": "ejercicios-intro.html"
   },
   {
    "t": "parte",
-   "archivo": "ex-x.html"
+   "archivo": "nivel-nucleo.html"
   },
   {
-   "t": "ej",
-   "ref": "x1"
-  },
-  {
-   "t": "parte",
-   "archivo": "ex-libro.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte21.html"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte22.html"
+   "t": "metodos"
   },
   {
    "t": "ej",
@@ -1589,10 +1088,6 @@
   {
    "t": "ej",
    "ref": "p179"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte23.html"
   },
   {
    "t": "ej",
@@ -1607,24 +1102,12 @@
    "ref": "p1721"
   },
   {
-   "t": "parte",
-   "archivo": "parte24.html"
-  },
-  {
-   "t": "ej",
-   "ref": "p1723"
-  },
-  {
-   "t": "ej",
-   "ref": "p1724"
-  },
-  {
    "t": "ej",
    "ref": "p1731"
   },
   {
-   "t": "parte",
-   "archivo": "parte25.html"
+   "t": "ej",
+   "ref": "p1724"
   },
   {
    "t": "ej",
@@ -1636,23 +1119,7 @@
   },
   {
    "t": "ej",
-   "ref": "p1746"
-  },
-  {
-   "t": "ej",
-   "ref": "p1738"
-  },
-  {
-   "t": "ej",
    "ref": "p1793"
-  },
-  {
-   "t": "ej",
-   "ref": "p1797"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte26.html"
   },
   {
    "t": "ej",
@@ -1660,15 +1127,43 @@
   },
   {
    "t": "ej",
-   "ref": "p1756"
-  },
-  {
-   "t": "ej",
    "ref": "p1759"
   },
   {
    "t": "ej",
+   "ref": "p17102"
+  },
+  {
+   "t": "ej",
    "ref": "p1763"
+  },
+  {
+   "t": "ej",
+   "ref": "p1767"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-practica.html"
+  },
+  {
+   "t": "ej",
+   "ref": "p1723"
+  },
+  {
+   "t": "ej",
+   "ref": "p1738"
+  },
+  {
+   "t": "ej",
+   "ref": "p1746"
+  },
+  {
+   "t": "ej",
+   "ref": "p1797"
+  },
+  {
+   "t": "ej",
+   "ref": "p1756"
   },
   {
    "t": "ej",
@@ -1680,27 +1175,30 @@
   },
   {
    "t": "ej",
-   "ref": "p17102"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte27.html"
-  },
-  {
-   "t": "ej",
-   "ref": "p1767"
-  },
-  {
-   "t": "ej",
    "ref": "p17108"
-  },
-  {
-   "t": "parte",
-   "archivo": "parte28.html"
   },
   {
    "t": "ej",
    "ref": "pp"
+  },
+  {
+   "t": "parte",
+   "archivo": "nivel-teoria.html"
+  },
+  {
+   "t": "ej",
+   "ref": "x1"
+  },
+  {
+   "t": "caja",
+   "k": "tip",
+   "h": "Si te toca otro apartado del capítulo: «Calorimetría y cambios de fase» o «Expansión térmica»",
+   "html": "<p>Guion propio (no es un enunciado de examen real). <b>Calorimetría:</b> temperatura y calor (ley cero; el calor es energía en tránsito) → $Q=mc\\Delta T$, calor específico y capacidad molar (Dulong y Petit) → fases y $Q=\\pm mL$ con la curva $T$–$Q$ del agua (mesetas a 0 y 100 °C) → $\\sum Q=0$ en un sistema aislado y cómo decidir el estado final → aplicaciones (evaporación del sudor, quemadura de vapor, el agua como regulador del clima). <b>Expansión térmica:</b> origen microscópico → $\\Delta L=\\alpha L_0\\Delta T$, $\\Delta V=\\beta V_0\\Delta T$, $\\beta=3\\alpha$ → orificios y recipientes → anomalía del agua a 4 °C → esfuerzo térmico $F/A=-Y\\alpha\\Delta T$ y juntas de dilatación. Figuras: curva de calentamiento del agua; barra libre frente a barra sujeta. Cuestiones típicas: tuberías que revientan al helarse, el termómetro de mercurio, el papel de aluminio frente a la patata (ver la práctica de cuestiones de X1).</p>",
+   "src": {
+    "l": "U",
+    "ref": "U §17.4-17.6, ec. 17.6-17.20, pp. 551-564",
+    "txt": "U p.551-564"
+   }
   },
   {
    "t": "h2",
@@ -1712,7 +1210,7 @@
   },
   {
    "t": "parte",
-   "archivo": "parte29.html"
+   "archivo": "chuleta-tabla.html"
   },
   {
    "t": "caja",
@@ -1740,7 +1238,7 @@
   },
   {
    "t": "parte",
-   "archivo": "parte30.html"
+   "archivo": "lista-comprobacion.html"
   },
   {
    "t": "h2",
