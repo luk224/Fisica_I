@@ -1,10 +1,11 @@
 <p class="enun">$\vec A$ mide 8.00 m y apunta en la dirección $-y$. $\vec B$ mide 15.0 m y forma 30.0° con el eje $+y$ (es decir, 60.0° con el eje $+x$). Calcula: a) $\vec A+\vec B$; b) $\vec B+\vec A$; c) $\vec A-\vec B$; d) $\vec B-\vec A$ (magnitud y ángulo en cada caso).</p>
   <ol class="steps">
-    <li>Componentes: $A_x=0,\ A_y=-8.00$; $B_x=15.0\sin30.0°=7.50$, $B_y=15.0\cos30.0°=12.99$.</li>
+    <li><b>Componentes.</b> $A_x=0,\ A_y=-8.00$ m. El ángulo de $\vec B$ se mide desde el eje $+y$, así que el lado <i>contiguo</i> a 30.0° es el vertical: $B_x=15.0\sin30.0°=7.50$ m, $B_y=15.0\cos30.0°=12.99$ m (o, con 60.0° desde $+x$, $B_x=15.0\cos60.0°$, $B_y=15.0\sin60.0°$: lo mismo).</li>
     <li>a) $\vec C=\vec A+\vec B$: $C_x=7.50$, $C_y=4.99$ → $C=\sqrt{7.50^2+4.99^2}=9.01\ \text{m}$; $\theta=\arctan(4.99/7.50)=33.6°$ (1er cuadrante, ambas componentes positivas, sin corrección).</li>
-    <li>b) $\vec B+\vec A=\vec A+\vec B$ por conmutatividad: mismo resultado, 9.01 m a 33.6° (el solucionario da 33.7° por redondear $B_y$ a 13.0 m antes de dividir; sin ese redondeo intermedio sale 33.6°).</li>
+    <li>b) $\vec B+\vec A=\vec A+\vec B$ por conmutatividad: mismo resultado, 9.01 m a 33.6°.</li>
     <li>c) $\vec D=\vec A-\vec B$: $D_x=-7.50$, $D_y=-20.99$ → $D=\sqrt{7.50^2+20.99^2}=22.3\ \text{m}$; $\arctan(-20.99/-7.50)=70.3°$, pero como <b>ambas</b> componentes son negativas (3er cuadrante) hay que sumar 180°: $\theta=250.3°$.</li>
     <li>d) $\vec B-\vec A=-\vec D$: misma magnitud 22.3 m, dirección opuesta a c): $\theta=70.3°$.</li>
   </ol>
   {{fig:suma-de-a-hacia-y-con-b-a-30-grados-del-eje-y}}
+  <div class="box warn"><span class="h">Error típico</span><p>Usar $B_x=B\cos30°$ porque «la $x$ siempre va con coseno»: eso solo vale si el ángulo se mide desde $+x$. Y fiarse del arctan de la calculadora en el 3er cuadrante: da 70.3° en vez de 250.3°.</p></div>
   <div class="recipe"><b>Receta:</b> pasa cada vector a componentes con signo, suma/resta componente a componente, recupera magnitud con Pitágoras y ángulo con arctan corrigiendo el cuadrante según los signos de las componentes.</div>
