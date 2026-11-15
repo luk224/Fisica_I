@@ -31,7 +31,7 @@
   <div class="kick">Bloque Mecánica · Tema 3</div>
   <h1>Movimiento en dos o en tres dimensiones</h1>
   <p>Todo lo del tema 2, pero ahora en un plano (o en el espacio): posición, velocidad y aceleración se convierten en vectores, y de ahí salen directamente los proyectiles, el movimiento circular y la velocidad relativa.</p>
-  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 3 (pp. 67-101)</span><span>Ejercicios de examen real: 3</span><span>Ejercicios del solucionario: 6</span><span>⏱ ~5 h de estudio</span></div>
+  <div class="chips"><span>Libro oficial: Sears-Zemansky, cap. 3 (pp. 67-90; resumen, ejercicios y problemas, pp. 91-101)</span><span>Preguntas de examen real: 3 (todas conservadas)</span><span>Ejercicios del solucionario: 6</span><span>2 ejemplos interactivos</span><span>⏱ ruta rápida ~2 h · completa ~4 h</span></div>
 <div class="legend">
     <span class="src" data-l="U" data-ref="Sears-Zemansky, Física Universitaria Vol. 1 — libro oficial">U</span> libro oficial
     <span class="src" data-l="E" data-ref="Instructor's Solutions Manual (en inglés), problemas de fin de capítulo">E</span> solucionario
@@ -42,165 +42,214 @@
 </header>
 
 
-<h2 id="prereq"><span class="n">0</span>Antes de empezar <span class="src" data-l="U" data-ref="U cap. 3 Introducción, p. 67">U p.67</span></h2>
-<p><b>Prerrequisitos:</b> vectores y su descomposición en componentes (tema 1: suma, resta, módulo, ángulo con $\tan\theta=y/x$ cuidando el cuadrante) y todo el tema 2 (velocidad y aceleración como derivadas, las cuatro ecuaciones de aceleración constante) — aquí se repite exactamente el mismo patrón «media = cuerda/instantánea = tangente», pero componente a componente.</p>
-<p><b>Mapa del tema:</b> la sección 3.1 convierte posición y velocidad en vectores $\vec r(t)$, $\vec v(t)$ en 2D/3D (misma idea del tema 2, una copia por cada eje). La 3.2 introduce lo realmente nuevo del tema: descomponer la aceleración en una parte que cambia la <i>rapidez</i> y otra que cambia la <i>dirección</i>. Con eso en la mano, la 3.3 (proyectiles) y la 3.4 (círculo) son dos casos particulares y muy típicos de examen: en el proyectil la aceleración es constante en módulo y dirección; en el círculo uniforme es constante en módulo pero gira sin parar. La 3.5 cierra el tema con la velocidad relativa, primero en una dimensión (ya la intuyes del tema 2) y luego en el plano, que es donde de verdad aparece la suma vectorial.</p>
-<div class="box tip"><span class="h">Este tema en examen</span><p>De los exámenes revisados, hay <b>2 preguntas de teoría</b> de este tema (proyectiles y movimiento circular) y <b>1 problema numérico</b> (fragmentos de un cohete que caen tras una explosión en el punto más alto, mezclado con conservación de la cantidad de movimiento del tema 8). No es un tema con muchos problemas de examen en solitario, pero sus ideas — descomponer la aceleración, tratar los ejes por separado, sumar velocidades relativas — reaparecen constantemente en temas posteriores (Newton, energía, rotación).</p></div>
-<h2 id="s1"><span class="n">1</span>Vectores de posición y velocidad</h2>
-<div class="box intu"><span class="h">Idea intuitiva</span><p>En el tema 2 la posición era un solo número con signo, $x(t)$. Ahora, si el movimiento no es en línea recta, hace falta un vector: $\vec r(t)$ apunta desde el origen hasta donde está la partícula en cada instante. Lo bonito es que <b>cada componente vive su propia vida</b>: $x(t)$ no sabe nada de $y(t)$ ni de $z(t)$, cada una se deriva por separado como en el tema 2 — lo único que las conecta es que comparten el mismo reloj $t$. Esta idea de «componentes independientes, mismo tiempo» es la que hace posible resolver proyectiles descomponiendo en dos problemas 1D.</p></div>
-<div class="box def"><span class="h">Vector de posición</span>
-<p>$$\vec r = x\hat\imath + y\hat\jmath + z\hat k$$</p>
-  <p>Durante un intervalo $\Delta t$ la partícula pasa de $\vec r_1$ a $\vec r_2$; el desplazamiento es $\Delta\vec r=\vec r_2-\vec r_1$, y la <b>velocidad media</b> es ese desplazamiento entre el tiempo transcurrido:</p>
-  $$\vec v_{\text{med}} = \frac{\Delta\vec r}{\Delta t} = \frac{\vec r_2-\vec r_1}{t_2-t_1} \qquad\text{(ec. 3.2)}$$
-  <p>Es exactamente la misma idea que la ec. 2.2 del tema 2, componente a componente: la componente $x$ de la ec. 3.2 es justo $v_{\text{med-}x}=\Delta x/\Delta t$.</p>
-  <span class="src" data-l="U" data-ref="U §3.1 ec. (3.1)-(3.2), p. 67-68">U p.67</span></div>
-<div class="box def"><span class="h">Velocidad instantánea</span>
-<p>Igual que en el tema 2, la <b>velocidad instantánea</b> es el límite de la velocidad media cuando $\Delta t\to0$, es decir, la derivada del vector posición:</p>
-  $$\vec v = \frac{d\vec r}{dt} \qquad\text{(ec. 3.3)}$$
-  <p>Como cada componente de $\vec r$ se deriva por separado,</p>
-  $$v_x=\frac{dx}{dt}\quad v_y=\frac{dy}{dt}\quad v_z=\frac{dz}{dt} \qquad\text{(ec. 3.4)}$$
-  <p>y la rapidez (el módulo de $\vec v$) es $v=\sqrt{v_x^2+v_y^2+v_z^2}$ (ec. 3.6).</p>
-  <span class="src" data-l="U" data-ref="U §3.1 ec. (3.3)-(3.6), p. 68-69">U p.68</span></div>
-<div class="box thm"><span class="h">El vector velocidad siempre es tangente a la trayectoria</span>
-<p>En cualquier instante, $\vec v$ es <b>tangente</b> a la curva que dibuja $\vec r(t)$ en ese punto — apunta en la dirección en la que se movería la partícula un instante después. Esto será clave en las secciones 3.3 y 3.4: la dirección de $\vec v$ define qué significa «paralelo» y «perpendicular» al movimiento.</p>
-  <span class="src" data-l="U" data-ref="U §3.1 p. 68, fig. 3.4 p. 69">U p.68</span></div>
-<div class="box ex"><span class="h">Ejemplo del libro 3.1 — el vehículo robot en Marte</span>
-<p>Un vehículo tiene $x(t)=2.0\ \text{m}-(0.25\ \text{m/s}^2)t^2$, $y(t)=(1.0\ \text{m/s})t+(0.025\ \text{m/s}^3)t^3$. Derivando componente a componente (ec. 3.4), $v_x=-(0.50\ \text{m/s}^2)t$ y $v_y=1.0\ \text{m/s}+(0.075\ \text{m/s}^3)t^2$. En $t=2.0$ s: $v_x=-1.0$ m/s, $v_y=1.3$ m/s, así que $v=\sqrt{1.0^2+1.3^2}=1.6\ \text{m/s}$, con $\alpha=\arctan(v_y/v_x)$ corregido de cuadrante a $128°$ (38° al oeste del norte, porque $v_x<0$ y $v_y>0$ sitúan al vector en el segundo cuadrante).</p>
-  <p>Matiz importante: la velocidad <i>media</i> en un intervalo (aquí, de $t=0$ a $t=2.0$ s) en general <b>no coincide</b> con la velocidad <i>instantánea</i> al final de ese intervalo — la misma advertencia que ya vimos con $x(t)$ en el tema 2, ahora también en $y(t)$.</p>
+<section class="en5" id="en5" aria-labelledby="en5-t">
+<h2 id="en5-t" style="display:block">El tema en 5 minutos <span class="src" data-l="P" data-ref="Resumen y guía de decisión propios, basados en U cap. 3 y en los ejercicios de este tema">P</span></h2>
+<p><b>Es el tema 2 en un plano, con flechas.</b> Posición, velocidad y aceleración pasan a ser <b>vectores</b> y cada componente se trata como un movimiento rectilíneo aparte, unidos solo por el reloj $t$. Lo realmente nuevo es una idea: la aceleración tiene una parte que cambia <i>lo rápido</i> que vas y otra que cambia <i>hacia dónde</i> vas. De ahí salen los tres casos que cuentan: el <b>proyectil</b> (aceleración constante $-g$), el <b>círculo</b> (aceleración que apunta al centro) y la <b>velocidad relativa</b> (sumar vectores entre observadores).</p>
+
+<p><b>Necesitas:</b> del tema 1, componentes de un vector, módulo y ángulo con el cuadrante correcto; del tema 2, derivar $x(t)$ y las ecuaciones de aceleración constante. U usa $g=9.80\ \text{m/s}^2$; los exámenes suelen dar $9.81$.</p>
+
+<h3>El método en 4 pasos (para cualquier problema del tema)</h3>
+<div class="dcev">
+  <div><b>1 · Dibuja y elige ejes</b>Pon el origen y los ejes ($+y$ hacia arriba). Descompón en componentes todo vector inclinado: $v_{0x}=v_0\cos\alpha_0$, $v_{0y}=v_0\sin\alpha_0$.</div>
+  <div><b>2 · ¿Qué caso es?</b>Parábola (solo actúa $g$) ⇒ proyectil. Trayectoria circular ⇒ $a_{\text{rad}}$. «Respecto a…» (río, viento, tren) ⇒ velocidad relativa. $x(t)$, $y(t)$ dadas ⇒ derivar.</div>
+  <div><b>3 · Un eje cada vez</b>En $x$: $a_x=0$. En $y$: $a_y=-g$. Lista de 5 por eje (tema 2); el tiempo es el único dato común. «Cima» ⇒ $v_y=0$; «llega al suelo» ⇒ $y=0$.</div>
+  <div><b>4 · Recompón y comprueba</b>Módulo $\sqrt{v_x^2+v_y^2}$ y ángulo con el cuadrante bien; ¿signos coherentes con el dibujo? ¿Alcance y alturas razonables? ¿Unidades SI?</div>
+</div>
+
+<h3>Las 6 fórmulas que hay que saber</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\vec v=\dfrac{d\vec r}{dt},\quad \vec a=\dfrac{d\vec v}{dt}$ (componente a componente)</td><td>Te dan $x(t)$, $y(t)$ y piden velocidad o aceleración en un instante (E1).</td></tr>
+<tr><td>$a_\parallel=\dfrac{\vec a\cdot\vec v}{v},\quad a_\perp=\sqrt{a^2-a_\parallel^2}$</td><td>«¿Acelera, frena o gira?»: $a_\parallel$ cambia la rapidez, $a_\perp$ la dirección (E1).</td></tr>
+<tr><td>$x=x_0+v_{0x}t,\quad y=y_0+v_{0y}t-\tfrac12gt^2$</td><td>Cualquier proyectil: tiempo de vuelo, alcance, posición en un instante (E3, E4, X3).</td></tr>
+<tr><td>$v_x=v_{0x},\quad v_y=v_{0y}-gt$</td><td>Velocidad (módulo y ángulo) en un instante; cima ($v_y=0$) e impacto (E3, E4).</td></tr>
+<tr><td>$a_{\text{rad}}=\dfrac{v^2}{R}=\dfrac{4\pi^2R}{T^2}$</td><td>Movimiento circular: centrifugadora, noria, curva; «cuántas $g$» (E5, X2).</td></tr>
+<tr><td>$\vec v_{P/A}=\vec v_{P/B}+\vec v_{B/A}$</td><td>Río, viento, tren, dos observadores: suma con signo en 1D, vectorial en 2D (E6, X1b).</td></tr>
+</table>
+<p style="font-size:.9rem;color:var(--mut)">La altura máxima $h=v_0^2\sin^2\alpha_0/2g$ y el alcance $R=v_0^2\sin2\alpha_0/g$ solo valen si salida y llegada están a la misma altura (§3 y chuleta).</p>
+
+<h3>Qué cae en examen</h3>
+<p>Hay <b>3 preguntas de examen real</b> de este tema, todas resueltas aquí: <b>una teoría</b> de 4 puntos sobre «Movimiento de proyectiles», con dos cuestiones sobre las dos balas y la semilla del pájaro (X1); <b>otra teoría</b> sobre «Movimiento en círculo», con cuestiones sobre cómo varía $a_{\text{rad}}$ y la velocidad media en una vuelta (X2); y <b>un problema</b> de 3 puntos en el que un cohete de fuegos artificiales explota en su punto más alto y sus dos fragmentos caen como proyectiles horizontales (X3, mezcla con el tema 8). Las ideas del tema (separar ejes, $a_{\text{rad}}$, sumar velocidades) reaparecen además en Newton, energía y rotación. <span class="src" data-l="X" data-ref="Examen Febrero 2023 (2ª semana) P-3 Opción A; Febrero 2025 (1ª semana) P-3 Opción A; Febrero 2020 (1ª semana) P-2">X ×3</span></p>
+
+<h3>Elige tu ruta</h3>
+<div class="rutas">
+  <div><b>Ruta rápida</b><br>Esta página + lo marcado <span class="prio p1">🔴 imprescindible</span> + ejercicios del bloque «Núcleo» (con el problema de examen).</div>
+  <div><b>Ruta completa</b><br>Todo lo anterior + <span class="prio p2">🟡 conveniente</span> + bloque «Práctica» + las dos preguntas de teoría X1 y X2.</div>
+  <div><b>Repaso final</b><br>Chuleta, errores frecuentes, lista de comprobación y X3, E4 y E6 sin mirar la solución.</div>
+</div>
+<div class="leyprio"><span><span class="prio p1">🔴 imprescindible</span> cae o hace falta para resolver lo que cae</span><span><span class="prio p2">🟡 conveniente</span> refuerza, aparece en el libro</span><span><span class="prio p3">⚪ extra</span> cultura, no suele pedirse</span></div>
+</section>
+<section id="decide" aria-labelledby="decide-t">
+<h2 id="decide-t" style="margin-top:1.4em"><span class="n">¿?</span>¿Qué tipo de problema es? <span class="prio p1">🔴</span> <span class="src" data-l="P" data-ref="Resumen y guía de decisión propios, basados en U cap. 3 y en los ejercicios de este tema">P</span></h2>
+<p>Lee el enunciado, busca la pista en la primera columna y ve directo al método y al ejercicio modelo.</p>
+<table class="decide">
+<tr><th>Si el enunciado dice…</th><th>Haz esto</th><th>Ejercicio modelo</th></tr>
+<tr><td>«$x(t)=\ldots$, $y(t)=\ldots$», «velocidad y aceleración en $t=\ldots$», «¿acelera, frena o gira?»</td><td>Deriva cada componente; $a_\parallel=\vec a\cdot\vec v/v$ y $a_\perp=\sqrt{a^2-a_\parallel^2}$.</td><td><a href="#e1">E1</a></td></tr>
+<tr><td>«se lanza con $v_0$ a un ángulo», «altura máxima», «alcance», «velocidad en la cima»</td><td>Descompón $v_0$; $x$ uniforme, $y$ con $-g$; cima ⇒ $v_y=0$; mismo nivel ⇒ $t_{\text{vuelo}}=2t_{\text{subida}}$.</td><td><a href="#e4">E4</a>, <a href="#e2">E2</a></td></tr>
+<tr><td>«sale horizontalmente de una mesa / acantilado», «golpea el suelo en…»</td><td>$v_{0y}=0$: $t=\sqrt{2h/g}$ (solo depende de la altura) y $x=v_0t$.</td><td><a href="#e3">E3</a></td></tr>
+<tr><td>«explota / se rompe en lo alto», «caen al mismo tiempo», «distancia entre los puntos de caída»</td><td>Cantidad de movimiento (tema 8) para las velocidades; «mismo tiempo» ⇒ $v_{0y}=0$ en los dos; cada trozo es un lanzamiento horizontal; sentidos opuestos ⇒ suma las distancias.</td><td><a href="#x3">X3</a></td></tr>
+<tr><td>«gira a $n$ rev/s», «periodo», «aceleración centrípeta», «cuántas $g$»</td><td>$T=1/f$; $a_{\text{rad}}=4\pi^2R/T^2=v^2/R$; radio en metros.</td><td><a href="#e5">E5</a></td></tr>
+<tr><td>«río», «viento», «tren», «respecto al agua / al suelo», «ida y vuelta»</td><td>$\vec v_{P/A}=\vec v_{P/B}+\vec v_{B/A}$; tramo a tramo con su signo; en 2D, triángulo de velocidades (§5).</td><td><a href="#e6">E6</a>, <a href="#s5">§5</a></td></tr>
+<tr><td>«Desarrolle el tema “Movimiento de proyectiles”»</td><td>Guion: modelo → ejes independientes → ecuaciones → cima, altura, alcance → cuestiones con las dos balas y los dos observadores.</td><td><a href="#x1">X1</a></td></tr>
+<tr><td>«Desarrolle el tema “Movimiento en círculo”»</td><td>Guion: $a$ siempre hacia el centro → $a_{\text{rad}}=v^2/R$ → periodo → no uniforme → cuestiones de proporcionalidad y de «media» en una vuelta.</td><td><a href="#x2">X2</a></td></tr>
+</table>
+</section>
+<h2 id="s1"><span class="n">1</span>Vectores de posición y velocidad <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §3.1, pp. 67-70">U p.67-70</span></h2>
+<div class="box def"><span class="h">Posición, velocidad media y velocidad instantánea (ahora con vectores)</span>
+<p><b>Idea:</b> en el tema 2 la posición era un número con signo; si el movimiento no es una recta hace falta una flecha. El <b>vector de posición</b> $\vec r$ va del origen a la partícula y <b>cada componente vive su propia vida</b>: $x(t)$, $y(t)$ y $z(t)$ solo comparten el reloj.</p>
+$$\vec r = x\hat\imath + y\hat\jmath + z\hat k \qquad \vec v_{\text{med}} = \frac{\Delta\vec r}{\Delta t}=\frac{\vec r_2-\vec r_1}{t_2-t_1}\qquad\text{(ec. 3.1-3.2)}$$
+<p>La <b>velocidad instantánea</b> es el límite de la media cuando $\Delta t\to0$: la derivada del vector, que se hace componente a componente. Su módulo es la rapidez:</p>
+$$\vec v = \frac{d\vec r}{dt}\quad v_x=\frac{dx}{dt},\ v_y=\frac{dy}{dt},\ v_z=\frac{dz}{dt}\qquad v=\sqrt{v_x^2+v_y^2+v_z^2}\qquad\text{(ec. 3.3-3.6)}$$
+<p>Y una propiedad geométrica que se usará todo el tema: $\vec v$ es siempre <b>tangente a la trayectoria</b> y apunta hacia donde irá la partícula un instante después (fig. 3.4 de U).</p>
+<p><b>Ejemplo mínimo (propio):</b> $\vec r=(2t,\ t^2)$ m. Derivando, $\vec v=(2,\ 2t)$ m/s; en $t=3$ s, $\vec v=(2,\ 6)$ m/s, $v=\sqrt{2^2+6^2}=6.32$ m/s a $\arctan(6/2)=71.6°$ sobre el eje $x$.</p>
+  <span class="src" data-l="U" data-ref="U §3.1 ec. (3.1)-(3.6), p. 67-69">U p.67-69</span></div>
+<div class="box ex"><span class="h">Ejemplo 3.1 de U: el vehículo robot en Marte</span>
+<p>Un vehículo sigue $x(t)=2.0\ \text{m}-(0.25\ \text{m/s}^2)t^2$, $y(t)=(1.0\ \text{m/s})t+(0.025\ \text{m/s}^3)t^3$. Derivando cada una, $v_x=-(0.50\ \text{m/s}^2)t$ y $v_y=1.0\ \text{m/s}+(0.075\ \text{m/s}^3)t^2$. En $t=2.0$ s: $v_x=-1.0$ m/s, $v_y=1.3$ m/s, $v=1.6$ m/s, y como $v_x\lt0$, $v_y\gt0$ el vector está en el segundo cuadrante: $128°$ (38° al oeste del norte).</p>
+<p>Ojo: la velocidad <i>media</i> de $t=0$ a $t=2.0$ s <b>no</b> coincide con la instantánea al final del intervalo.</p>
   <span class="src" data-l="U" data-ref="U Ejemplo 3.1, p. 69-70">U p.69</span></div>
 <figure class="fig" data-svg="../assets/figs/t03/trayectoria-del-vehiculo-robot-con-r-y-v.svg">
 <div class="figph" role="img" aria-label="Trayectoria del vehículo robot con r y v" style="aspect-ratio:270/255"></div>
 <figcaption>Trayectoria del vehículo (U Ej. 3.1): el vector posición r va del origen al vehículo y la velocidad v (v_x = −1.0, v_y = 1.3 m/s en t = 2.0 s) es siempre tangente a la trayectoria, apuntando hacia donde irá después. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 3.1">P</span></figcaption>
 </figure>
-<div class="box warn"><span class="h">Error típico</span><p>Al calcular el ángulo con $\arctan(v_y/v_x)$, la calculadora solo da valores entre $-90°$ y $90°$: si el vector está en el segundo o tercer cuadrante (como en el ejemplo de arriba, $v_x<0$), hay que sumar $180°$ al resultado. Dibujar siempre el vector (aunque sea a mano alzada) antes de fiarte del arcotangente.</p></div>
-<h2 id="s2"><span class="n">2</span>El vector aceleración</h2>
-<div class="box intu"><span class="h">Idea intuitiva</span><p>Otra vez el mismo patrón: aceleración media = cambio de $\vec v$ entre el tiempo, aceleración instantánea = derivada de $\vec v$. Lo nuevo y realmente importante de este tema es <b>qué significa geométricamente</b> ese vector aceleración: se puede partir en un trozo paralelo a la velocidad (que solo cambia lo rápido que vas) y un trozo perpendicular (que solo cambia hacia dónde vas) — como pisar el acelerador/freno de un coche (componente paralela) frente a girar el volante (componente perpendicular).</p></div>
+<div class="box warn"><span class="h">Error típico: el cuadrante del arcotangente</span>
+<p>La calculadora da $\arctan(v_y/v_x)$ solo entre $-90°$ y $90°$. Si $v_x\lt0$ (segundo o tercer cuadrante), hay que sumar $180°$. Por ejemplo, $\vec v=(-3,\,-4)$ m/s: $\arctan(4/3)=53.1°$ pero el vector está en el tercer cuadrante, a $233.1°$ del eje $+x$. <b>Dibuja siempre el vector</b> antes de fiarte del arcotangente.</p>
+  <span class="src" data-l="P" data-ref="Aviso propio sobre el cuadrante; cálculo propio">P</span></div>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>$\vec r=(2t,\ t^2)$ m. ¿Velocidad en $t=3$ s (módulo y ángulo)?<details><summary>Ver respuesta</summary>$\vec v=(2,\ 2t)=(2,\ 6)$ m/s: $v=6.32$ m/s, a $71.6°$ sobre el eje $x$.</details></li>
+<li>$\vec v=(-3,\,-4)$ m/s. ¿Rapidez y ángulo respecto a $+x$?<details><summary>Ver respuesta</summary>$v=5$ m/s. $\arctan(4/3)=53.1°$, pero $v_x\lt0$ y $v_y\lt0$ ⇒ tercer cuadrante: $233.1°$ (o $53.1°$ por debajo del eje $-x$).</details></li>
+<li>Una partícula pasa de $(0,0)$ en $t=0$ a $(6,8)$ m en $t=2$ s. ¿Velocidad media?<details><summary>Ver respuesta</summary>$\vec v_{\text{med}}=(3,\ 4)$ m/s, de módulo 5 m/s. Solo depende de los puntos extremos, no del camino.</details></li>
+</ol>
+</details>
+
+<h2 id="s2"><span class="n">2</span>El vector aceleración <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §3.2, pp. 70-75">U p.70-75</span></h2>
 <div class="box def"><span class="h">Aceleración media e instantánea</span>
-$$\vec a_{\text{med}} = \frac{\Delta\vec v}{\Delta t} = \frac{\vec v_2-\vec v_1}{t_2-t_1} \qquad\text{(ec. 3.8)}$$
-  $$\vec a = \frac{d\vec v}{dt} \qquad\text{(ec. 3.9)}$$
-  <p>Componente a componente, $a_x=dv_x/dt$, etc. (ec. 3.10) — de nuevo, cada eje se deriva por su cuenta.</p>
+<p>Mismo patrón otra vez: la aceleración es el cambio de $\vec v$ por unidad de tiempo, y como $\vec v$ es un vector, <b>cualquier cambio de $\vec v$ cuenta</b>, también un simple giro con rapidez constante.</p>
+$$\vec a_{\text{med}} = \frac{\Delta\vec v}{\Delta t} = \frac{\vec v_2-\vec v_1}{t_2-t_1}\qquad \vec a = \frac{d\vec v}{dt}\quad a_x=\frac{dv_x}{dt},\ a_y=\frac{dv_y}{dt}\qquad\text{(ec. 3.8-3.10)}$$
   <span class="src" data-l="U" data-ref="U §3.2 ec. (3.8)-(3.10), p. 70-71">U p.70</span></div>
-<div class="box thm"><span class="h">Componentes paralela y perpendicular de la aceleración</span>
-<p>$\vec a$ solo tiene la misma dirección que $\vec v$ si la trayectoria es recta en ese tramo; en cualquier trayectoria curva son direcciones distintas. Conviene descomponer $\vec a$ en dos direcciones tomando como referencia la propia $\vec v$:</p>
-  <ul>
-    <li><b>Componente paralela</b> a $\vec v$ (equivalente a $a\cos\phi$ con $\phi$ el ángulo entre $\vec a$ y $\vec v$; en componentes, $a_\parallel=\vec a\cdot\vec v/v$): mide el cambio de <i>rapidez</i>. Si $a_\parallel>0$ el objeto acelera (en el sentido cotidiano); si $a_\parallel<0$, frena.</li>
-    <li><b>Componente perpendicular</b> a $\vec v$ ($a_\perp=\sqrt{a^2-a_\parallel^2}$): mide el cambio de <i>dirección</i> — si $a_\perp\ne0$, la trayectoria está girando (curvándose).</li>
-  </ul>
-  <p>Casos límite: si $\vec a=\vec 0$, movimiento rectilíneo uniforme (tema 2 puro). Si $a_\parallel=0$ pero $a_\perp\ne0$, la rapidez no cambia pero la dirección sí — por ejemplo, el movimiento circular uniforme de la sección 3.4 (aunque cualquier curva recorrida a rapidez constante cumple esto, no solo el círculo). Si ambas componentes son distintas de cero, cambian a la vez la rapidez y la dirección (el caso general, y también el del movimiento circular no uniforme).</p>
-  <span class="src" data-l="U" data-ref="U §3.2 p. 73-74">U p.73</span></div>
+<div class="box thm"><span class="h">Lo realmente nuevo: aceleración paralela y perpendicular a $\vec v$</span>
+<p><b>Idea:</b> es pisar el acelerador/freno (cambia <i>lo rápido</i> que vas) frente a girar el volante (cambia <i>hacia dónde</i> vas). Se descompone $\vec a$ tomando como referencia la propia $\vec v$:</p>
+<ul>
+<li><b>Paralela:</b> $a_\parallel=\dfrac{\vec a\cdot\vec v}{v}$. Cambia la <i>rapidez</i>: si $a_\parallel\gt0$ el objeto acelera; si $a_\parallel\lt0$, frena.</li>
+<li><b>Perpendicular:</b> $a_\perp=\sqrt{a^2-a_\parallel^2}$. Cambia la <i>dirección</i>: si $a_\perp\ne0$ la trayectoria se curva hacia ese lado.</li>
+</ul>
+<p>Casos límite: $\vec a=\vec 0$ ⇒ movimiento rectilíneo uniforme; $a_\parallel=0$, $a_\perp\ne0$ ⇒ rapidez constante pero girando (p. ej. MCU); ambas distintas de cero ⇒ cambian a la vez rapidez y dirección. En una trayectoria curva, $\vec a$ y $\vec v$ nunca tienen la misma dirección.</p>
+<p><b>Ejemplo mínimo (propio):</b> $\vec v=(4,\,-3)$ m/s y $\vec a=(0,\,-2)$ m/s². Entonces $v=5$ m/s y $a_\parallel=\dfrac{0\cdot4+(-2)(-3)}{5}=1.2$ m/s² $\gt0$: acelera; $a_\perp=\sqrt{2^2-1.2^2}=1.6$ m/s²: además gira.</p>
+  <span class="src" data-l="U" data-ref="U §3.2 p. 73-74">U p.73-74</span></div>
 <figure class="fig" data-svg="../assets/figs/t03/aceleracion-descompuesta-en-paralela-y-perpendic.svg">
 <div class="figph" role="img" aria-label="Aceleración descompuesta en paralela y perpendicular a la velocidad" style="aspect-ratio:320/200"></div>
 <figcaption>a se descompone respecto a v: la componente paralela a∥ (verde) cambia la rapidez —aquí es negativa, así que el objeto frena— y la perpendicular a⊥ (morado) cambia la dirección: la trayectoria se curva hacia el lado de a⊥. <span class="src" data-l="P" data-ref="Diagrama propio de la sección 3.2">P</span></figcaption>
 </figure>
-<div class="box warn"><span class="h">Error típico</span><p>Pensar que «acelerar» solo significa ir más rápido. En física, cualquier cambio de $\vec v$ —incluido un simple giro con rapidez constante— es aceleración. Para saber si un objeto va más rápido/más lento, mira el signo de $\vec a\cdot\vec v$ (equivalente a $a_\parallel$); para saber si está girando, mira si $a_\perp\ne0$. Son dos preguntas independientes.</p></div>
-<div class="box ex"><span class="h">Ejemplo del libro 3.3 — un esquiador</span>
-<p>Un esquiador acelera cuesta abajo con $\vec a$ constante en módulo y dirección. En un instante dado, U descompone esa $\vec a$ respecto a la $\vec v$ de ese instante y obtiene $a_\parallel=0.54\ \text{m/s}^2$ (la componente que lo acelera, a favor de la pendiente) y $a_\perp=0.21\ \text{m/s}^2$ (la que curva ligeramente su trayectoria en ese punto). Es el mismo cálculo que en el ejercicio E1 más abajo, con la diferencia de que aquí $\vec a$ es constante y $\vec v$ va cambiando, así que $a_\parallel$ y $a_\perp$ cambian de un instante a otro aunque $\vec a$ no cambie.</p>
-  <span class="src" data-l="U" data-ref="U Ejemplo 3.3, p. 74">U p.74</span></div>
-<h2 id="s3"><span class="n">3</span>Movimiento de proyectiles</h2>
-<div class="box intu"><span class="h">Idea intuitiva</span><p>Un proyectil (una pelota lanzada, una bala, un balón) tiene un movimiento que parece complicado en el aire, pero se vuelve trivial si lo separas en dos películas independientes reproducidas a la vez: en el eje $x$ nada cambia la velocidad (es tema 2 con $a=0$); en el eje $y$ hay caída libre pura (tema 2 con $a=-g$). Lo único que las conecta es que comparten el reloj $t$.</p></div>
-<div class="box def"><span class="h">El modelo del proyectil</span>
-<p>Se llama <b>movimiento de proyectil</b> a cualquier cuerpo que se lanza al aire y se mueve libremente bajo la acción de la gravedad, con estas simplificaciones: la aceleración es constante, $a_x=0$ y $a_y=-g$; se ignora la resistencia del aire; y se trata la Tierra como plana en la escala del problema (curvatura despreciable). Es el mismo tipo de modelo idealizado que la partícula puntual del tema 1: no es exacto, pero captura lo esencial y es tratable a mano.</p>
-  <span class="src" data-l="U" data-ref="U §3.3 p. 75-76">U p.75</span></div>
-<div class="box thm"><span class="h">La idea central: x e y son independientes, unidas solo por t</span>
-<p>Con velocidad inicial $v_0$ y ángulo $\alpha_0$ sobre la horizontal:</p>
-  $$v_{0x}=v_0\cos\alpha_0 \qquad v_{0y}=v_0\sin\alpha_0 \qquad\text{(ec. 3.18)}$$
-  <p>Posición en cualquier instante (dos ecuaciones separadas, unidas solo por $t$):</p>
-  $$x=x_0+(v_0\cos\alpha_0)t \qquad\text{(ec. 3.19)}$$
-  $$y=y_0+(v_0\sin\alpha_0)t-\tfrac12gt^2 \qquad\text{(ec. 3.20)}$$
-  <p>Velocidad en cualquier instante:</p>
-  $$v_x=v_0\cos\alpha_0 \qquad\text{(ec. 3.21, constante)}$$
-  $$v_y=v_0\sin\alpha_0-gt \qquad\text{(ec. 3.22)}$$
-  <p>La rapidez y la dirección en cualquier instante salen de combinar las dos componentes: $v=\sqrt{v_x^2+v_y^2}$ y $\tan\alpha=v_y/v_x$, exactamente igual que en la sección 3.1 (ecs. 3.23-3.25). Eliminando $t$ entre las ecs. 3.19-3.20 (despejando $t=x/(v_0\cos\alpha_0)$ de la primera y sustituyendo en la segunda) se obtiene la trayectoria $y(x)$, que es una <b>parábola</b>:</p>
-  $$y=(\tan\alpha_0)\,x-\frac{g}{2v_0^2\cos^2\alpha_0}\,x^2 \qquad\text{(ec. 3.26)}$$
-  <span class="src" data-l="U" data-ref="U §3.3 ec. (3.15,3.17 con 3.18),(3.23)-(3.26), p. 76-78">U p.76</span></div>
+<div class="box warn"><span class="h">Error típico: «acelerar» no es solo «ir más rápido»</span>
+<p>Para saber si va más rápido o más lento mira el signo de $\vec a\cdot\vec v$ (el de $a_\parallel$); para saber si gira, mira si $a_\perp\ne0$. Son dos preguntas independientes. Es lo que se hace en E1.</p>
+  <span class="src" data-l="P" data-ref="Aviso propio basado en U §3.2">P</span></div>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>$\vec v=(4,\,-3)$ m/s, $\vec a=(0,\,-2)$ m/s². ¿Acelera o frena? ¿Gira?<details><summary>Ver respuesta</summary>$a_\parallel=\vec a\cdot\vec v/v=6/5=1.2$ m/s² $\gt0$ ⇒ acelera; $a_\perp=\sqrt{4-1.44}=1.6$ m/s² $\ne0$ ⇒ también gira.</details></li>
+<li>Un coche toma una curva con el velocímetro fijo en 60 km/h. ¿Tiene aceleración?<details><summary>Ver respuesta</summary>Sí: $a_\parallel=0$ pero $a_\perp\ne0$, porque la dirección de $\vec v$ cambia.</details></li>
+<li>$\vec v=(2,0)$ m/s y $\vec a=(0,3)$ m/s². ¿Qué pasa con la rapidez en ese instante?<details><summary>Ver respuesta</summary>$a_\parallel=0$, $a_\perp=3$ m/s²: la rapidez no cambia en ese instante; solo gira.</details></li>
+</ol>
+</details>
+
+<h2 id="s3"><span class="n">3</span>Movimiento de proyectiles <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §3.3, pp. 75-82">U p.75-82</span></h2>
+<div class="box def"><span class="h">El modelo del proyectil y la idea central</span>
+<p><b>Idea:</b> un proyectil parece complicado en el aire, pero se vuelve trivial si lo separas en <b>dos películas independientes</b>: en $x$ nada cambia la velocidad (tema 2 con $a=0$); en $y$ hay caída libre (tema 2 con $a=-g$). Solo comparten el reloj $t$.</p>
+<p>Modelo: $a_x=0$, $a_y=-g$ constante, sin resistencia del aire y con Tierra plana. Con velocidad inicial $v_0$ y ángulo $\alpha_0$ sobre la horizontal:</p>
+$$v_{0x}=v_0\cos\alpha_0 \quad v_{0y}=v_0\sin\alpha_0\qquad x=x_0+(v_0\cos\alpha_0)t \quad y=y_0+(v_0\sin\alpha_0)t-\tfrac12gt^2\qquad\text{(ec. 3.18-3.20)}$$
+$$v_x=v_0\cos\alpha_0 \ \text{(constante)}\quad v_y=v_0\sin\alpha_0-gt\qquad v=\sqrt{v_x^2+v_y^2}\quad\tan\alpha=\frac{v_y}{v_x}\qquad\text{(ec. 3.21-3.25)}$$
+<p>Eliminando $t$ sale la trayectoria, una <b>parábola</b>: $y=(\tan\alpha_0)\,x-\dfrac{g}{2v_0^2\cos^2\alpha_0}\,x^2$ (ec. 3.26).</p>
+  <span class="src" data-l="U" data-ref="U §3.3 ec. (3.15,3.17 con 3.18),(3.19)-(3.26), p. 75-78">U p.75-78</span></div>
 <figure class="fig" data-svg="../assets/figs/t03/trayectoria-parabolica-con-vectores-velocidad.svg">
 <div class="figph" role="img" aria-label="Trayectoria parabólica con vectores velocidad" style="aspect-ratio:320/245"></div>
 <figcaption>Trayectoria de un proyectil (puntos a intervalos iguales): v_x (verde) no cambia nunca; v_y (morado) disminuye, vale 0 en la cima y cambia de signo; la aceleración a = −g (naranja) es la misma en todos los puntos. h es la altura máxima y R el alcance. <span class="src" data-l="P" data-ref="Diagrama propio de la sección 3.3">P</span></figcaption>
 </figure>
-<div class="box tip"><span class="h">Truco de examen</span><p>Antes de escribir ninguna cuenta, descompón $v_0$ en $v_{0x}$ y $v_{0y}$ y trabaja cada eje aparte: $x$ es tema 2 con $a=0$ (velocidad constante); $y$ es tema 2 con $a=-g$ (caída libre). No mezcles las dos ecuaciones salvo para usar el mismo $t$. Es, con diferencia, el error de examen más común no hacerlo desde la primera línea.</p></div>
-<div class="box thm"><span class="h">Altura máxima y alcance (¡con su letra pequeña!)</span>
-<p>«Punto más alto» significa siempre $v_y=0$ (no $v=0$: en la cima sigue habiendo $v_x=v_0\cos\alpha_0\ne0$, el proyectil no se para en el aire). Con la ec. 3.22, eso ocurre en $t_1=v_0\sin\alpha_0/g$, y sustituyendo en la ec. 3.20 sale la altura máxima. Si además el punto de lanzamiento y el de llegada están <b>a la misma altura</b> (caso simétrico), por simetría de la parábola el tiempo total de vuelo es $t_2=2t_1$, y sustituyendo en la ec. 3.19 sale el alcance:</p>
-  $$h=\frac{v_0^2\sin^2\alpha_0}{2g} \qquad R=\frac{v_0^2\sin2\alpha_0}{g}$$
-  <p>El alcance $R$ es máximo cuando $\sin2\alpha_0=1$, es decir, para $\alpha_0=45°$; y dos ángulos complementarios ($\alpha_0$ y $90°-\alpha_0$) dan siempre el mismo alcance, porque $\sin2\alpha_0=\sin(2(90°-\alpha_0))$.</p>
+<div class="box tip"><span class="h">Truco de examen</span>
+<p>Antes de escribir ninguna cuenta, descompón $v_0$ en $v_{0x}$ y $v_{0y}$ y trabaja cada eje aparte con la lista del tema 2. Mezclar los dos ejes (salvo por el tiempo común) es el error de examen más frecuente.</p>
+  <span class="src" data-l="P" data-ref="Consejo propio basado en U §3.3">P</span></div>
+<figure class="interactivo" data-escena="proyectil" data-params='{"dim":2}' aria-label="Interactivo: trayectoria de un proyectil con su velocidad y sus componentes">
+  <img class="int-static" src="../assets/img/int_proyectil.png" alt="Interactivo: trayectoria de un proyectil con su velocidad y sus componentes">
+  <figcaption><b>Pruébalo tú:</b> cambia $v_0$, el ángulo y la altura inicial. La componente horizontal $v_x$ no cambia nunca; la vertical $v_y$ disminuye a razón de $g$ y es cero en el punto más alto. Comprueba que 45° da el máximo alcance cuando $y_0=0$. <span class="src" data-l="P" data-ref="Interactivo propio: proyectil sin resistencia del aire, g = 9,8 m/s²">P</span></figcaption>
+</figure>
+<div class="box thm"><span class="h">Punto más alto, altura máxima y alcance</span>
+<p>«Punto más alto» significa $v_y=0$ (<b>no</b> $v=0$: en la cima sigue $v_x=v_0\cos\alpha_0$). De $v_y=0$ sale $t_1=v_0\sin\alpha_0/g$. Si salida y llegada están <b>a la misma altura</b>, el vuelo dura $2t_1$ por simetría y:</p>
+$$h=\frac{v_0^2\sin^2\alpha_0}{2g} \qquad R=\frac{v_0^2\sin2\alpha_0}{g}$$
+<p>$R$ es máximo para $\alpha_0=45°$ y dos ángulos complementarios ($\alpha_0$ y $90°-\alpha_0$) dan el mismo alcance. <b>Ejemplo mínimo (propio):</b> $v_0=20$ m/s a $30°$: $v_{0y}=10$ m/s, $t_1=1.02$ s, $h=5.10$ m, $R=20^2\sin60°/9.80=35.3$ m, igual que a $60°$.</p>
   <span class="src" data-l="U" data-ref="U Ejemplo 3.8, p. 80">U p.80</span></div>
 <figure class="fig" data-svg="../assets/figs/t03/trayectorias-a-30-45-y-60-grados-con-la-misma-ra.svg">
 <div class="figph" role="img" aria-label="Trayectorias a 30, 45 y 60 grados con la misma rapidez inicial" style="aspect-ratio:320/190"></div>
 <figcaption>Con la misma v₀ y salida y llegada a la misma altura, el alcance es máximo a 45°; dos ángulos complementarios (30° y 60°) dan el mismo alcance, pero el de 60° sube más y tarda más. Escala en unidades de v₀²/g. <span class="src" data-l="P" data-ref="Diagrama propio de R = v₀² sen 2α₀ / g">P</span></figcaption>
 </figure>
-<div class="box warn"><span class="h">Error típico: las fórmulas de h y R no son universales</span>
-<p>Las fórmulas de $h$ y $R$ de la caja anterior <b>solo</b> valen si el lanzamiento y la llegada están a la misma altura. Si el proyectil sale desde una ventana o cae a un nivel distinto (por ejemplo, lanzado desde un tejado hacia la calle), hay que volver a las ecuaciones generales 3.19-3.22 y resolver con las alturas reales de salida y llegada — es justo lo del Ejemplo 3.9 (una pelota lanzada desde una ventana, con llegada más abajo que la salida). Memorizar $R=v_0^2\sin2\alpha_0/g$ sin comprobar esta condición es una fuente constante de errores.</p>
-  <span class="src" data-l="U" data-ref="U Ejemplo 3.9, p. 81">U p.81</span></div>
-<div class="box ex"><span class="h">Ejemplo del libro 3.10 — el mono y el dardo</span>
-<p>Como curiosidad que ilustra muy bien el modelo: un dardo apuntado directamente a un mono que se suelta de una rama en el instante del disparo siempre lo alcanza, sin importar la velocidad del dardo (siempre que el mono no llegue al suelo antes de que el dardo lo alcance). La razón es la misma idea central de esta sección: en todo instante, cualquier proyectil ha «caído» exactamente $\tfrac12gt^2$ por debajo de la línea recta que seguiría si no existiera la gravedad — y esa caída es igual para el dardo que para el mono, que también cae en caída libre desde que se suelta.</p>
+<div class="box warn"><span class="h">Error típico: $h$ y $R$ solo valen con la misma altura de salida y llegada</span>
+<p>Si lanzas desde una ventana o llegas a otro nivel, hay que volver a las ecuaciones generales (3.19-3.22) y fijar $y$ de llegada. <b>Ejemplo mínimo (propio):</b> una pelota sale a 10 m/s y $30°$ desde 15 m de altura. Llega al suelo cuando $15+5t-4.9t^2=0$, es decir $t=2.33$ s (la raíz negativa no tiene sentido); recorre $x=10\cos30°\cdot2.33=20.2$ m. La fórmula $R=v_0^2\sin2\alpha_0/g$ daría $8.8$ m, un valor sin sentido aquí.</p>
+  <span class="src" data-l="P" data-ref="Ejemplo numérico propio; la idea (alturas distintas) está en U Ejemplo 3.9, p. 81">P</span></div>
+<div class="box ex"><span class="h">Curiosidad (⚪): el dardo y el mono, ejemplo 3.10 de U</span>
+<p>Un dardo apuntado directamente a un mono que se suelta en el instante del disparo siempre lo alcanza, sea cual sea la velocidad del dardo. Razón: en todo instante ambos han «caído» $\tfrac12gt^2$ por debajo de la recta que seguirían sin gravedad.</p>
   <span class="src" data-l="U" data-ref="U Ejemplo 3.10, p. 81-82">U p.81</span></div>
 <figure class="fig" data-svg="../assets/figs/t03/el-dardo-siempre-alcanza-al-mono-que-se-suelta.svg">
 <div class="figph" role="img" aria-label="El dardo siempre alcanza al mono que se suelta" style="aspect-ratio:330/190"></div>
 <figcaption>Si se apunta directamente al mono y este se suelta al disparar, en cada instante el dardo y el mono han bajado lo mismo respecto a la línea de tiro (½gt²), así que se encuentran siempre, sea cual sea la velocidad del dardo. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 3.10">P</span></figcaption>
 </figure>
-<figure class="interactivo" data-escena="proyectil" data-params='{"dim":2}' aria-label="Interactivo: trayectoria de un proyectil con su velocidad y sus componentes">
-  <img class="int-static" src="../assets/img/int_proyectil.png" alt="Interactivo: trayectoria de un proyectil con su velocidad y sus componentes">
-  <figcaption><b>Pruébalo tú:</b> cambia $v_0$, el ángulo y la altura inicial. La componente horizontal $v_x$ no cambia nunca; la vertical $v_y$ disminuye a razón de $g$ y es cero en el punto más alto. Comprueba que 45° da el máximo alcance cuando $y_0=0$. <span class="src" data-l="P" data-ref="Interactivo propio: proyectil sin resistencia del aire, g = 9,8 m/s²">P</span></figcaption>
-</figure>
-<h2 id="s4"><span class="n">4</span>Movimiento en un círculo</h2>
-<div class="box intu"><span class="h">Idea intuitiva</span><p>Piensa en un coche tomando una curva a velocidad constante: el velocímetro no cambia, pero claramente está acelerando porque cambia de dirección todo el rato. Esa aceleración, en el caso de rapidez constante (movimiento circular uniforme, MCU), apunta siempre <b>hacia el centro</b> del círculo — de ahí el nombre «centrípeta» («que busca el centro»).</p></div>
-<div class="box def"><span class="h">Movimiento circular uniforme (MCU)</span>
-<p>Es el movimiento de una partícula que recorre una trayectoria circular con <b>rapidez constante</b>. Como la rapidez no cambia, la componente paralela de la aceleración (sección 3.2) es nula: toda la aceleración es perpendicular a $\vec v$, es decir, puramente radial.</p>
-  <span class="src" data-l="U" data-ref="U §3.4 p. 82-83">U p.82</span></div>
-<div class="box thm"><span class="h">Aceleración centrípeta</span>
-$$a_{\text{rad}}=\frac{v^2}{R} \qquad\text{(ec. 3.27)}$$
-  <p>Con el periodo $T$ (tiempo de una vuelta completa), la rapidez es $v=2\pi R/T$ (ec. 3.28), y sustituyendo:</p>
-  $$a_{\text{rad}}=\frac{4\pi^2R}{T^2} \qquad\text{(ec. 3.29)}$$
-  <p>La deducción (comparando triángulos semejantes formados por $\vec v$ y $\Delta\vec v$ frente al radio y el arco recorrido) es la misma idea de «límite de una cuerda que se convierte en tangente» que ya usamos para definir velocidad y aceleración instantáneas.</p>
-  <span class="src" data-l="U" data-ref="U §3.4 ec. (3.27)-(3.29), p. 83-84">U p.83</span></div>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>$v_0=20$ m/s a $30°$ desde el suelo: ¿tiempo a la cima y altura máxima? ($g=9.80$)<details><summary>Ver respuesta</summary>$v_{0y}=10$ m/s: $t_1=10/9.80=1.02$ s; $h=10^2/(2\cdot9.80)=5.10$ m.</details></li>
+<li>Con la misma $v_0=20$ m/s, ¿qué ángulo da el mayor alcance y cuánto vale? ¿Qué otro ángulo iguala el de $30°$?<details><summary>Ver respuesta</summary>$45°$: $R=20^2/9.80=40.8$ m. A $30°$ el alcance es $35.3$ m, igual que a $60°$ (complementarios).</details></li>
+<li>En el punto más alto de un proyectil, ¿cuánto valen la velocidad y la aceleración?<details><summary>Ver respuesta</summary>$\vec v=(v_0\cos\alpha_0,\ 0)$ (no es cero) y $\vec a=(0,\,-g)$ (sigue siendo $g$ hacia abajo).</details></li>
+</ol>
+</details>
+
+<h2 id="s4"><span class="n">4</span>Movimiento en un círculo <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §3.4, pp. 82-86">U p.82-86</span></h2>
+<div class="box def"><span class="h">Movimiento circular uniforme y aceleración centrípeta</span>
+<p><b>Idea:</b> un coche toma una curva con el velocímetro fijo: la rapidez no cambia, pero acelera porque su dirección cambia todo el rato. En el <b>movimiento circular uniforme</b> (MCU, rapidez constante) $a_\parallel=0$, así que toda la aceleración es perpendicular a $\vec v$ y apunta <b>al centro</b> (de ahí «centrípeta»):</p>
+$$a_{\text{rad}}=\frac{v^2}{R}\qquad v=\frac{2\pi R}{T}\ \Rightarrow\ a_{\text{rad}}=\frac{4\pi^2R}{T^2}\qquad\text{(ec. 3.27-3.29)}$$
+<p>($T$ es el periodo, el tiempo de una vuelta.) Deducción de la ec. 3.27: triángulos semejantes formados por $\vec v_1,\vec v_2,\Delta\vec v$ y por las posiciones, con el límite $\Delta t\to0$.</p>
+<p><b>Ejemplo mínimo (propio):</b> una noria de $R=10$ m con $T=20$ s: $v=2\pi\cdot10/20=3.14$ m/s y $a_{\text{rad}}=4\pi^2\cdot10/20^2=0.987$ m/s² (una décima de $g$).</p>
+  <span class="src" data-l="U" data-ref="U §3.4 ec. (3.27)-(3.29), p. 82-84">U p.82-84</span></div>
 <figure class="fig" data-svg="../assets/figs/t03/movimiento-circular-uniforme-v-tangente-y-a-haci.svg">
 <div class="figph" role="img" aria-label="Movimiento circular uniforme: v tangente y a hacia el centro" style="aspect-ratio:270/215"></div>
 <figcaption>En el MCU la velocidad (azul) es tangente y de módulo constante; la aceleración (naranja) apunta siempre hacia el centro, perpendicular a v, y su módulo es constante, v²/R. Lo que cambia es su dirección. <span class="src" data-l="P" data-ref="Diagrama propio de la sección 3.4">P</span></figcaption>
+</figure>
+<figure class="interactivo" data-escena="circulo" data-params='{"dim":2}' aria-label="Interactivo: movimiento circular uniforme con velocidad y aceleración radial">
+  <img class="int-static" src="../assets/img/int_circulo.png" alt="Interactivo: movimiento circular uniforme con velocidad y aceleración radial">
+  <figcaption><b>Pruébalo tú:</b> la velocidad es siempre tangente y la aceleración apunta al centro. Prueba a reducir el periodo: $a_{rad}=v^2/R=4\pi^2R/T^2$ crece mucho más rápido que $v$. <span class="src" data-l="P" data-ref="Interactivo propio de a_rad = v²/R (U §3.4, pp. 82-85)">P</span></figcaption>
 </figure>
 <figure class="bookfig">
 <img src="../assets/img/fig_u_3_29_circular_proyectil.png" alt="Figura 3.29 de U: comparación entre movimiento circular uniforme (aceleración de módulo constante pero dirección variable, siempre hacia el centro, perpendicular a la velocidad) y movimiento de proyectil (aceleración constante en módulo y dirección, perpendicular a la velocidad solo en el punto más alto)." loading="lazy">
 <figcaption>Fig. 3.29 de U: a) en el MCU, $\vec a$ tiene magnitud constante pero dirección variable (siempre hacia el centro, siempre perpendicular a $\vec v$); b) en el proyectil, $\vec a$ es constante en magnitud y dirección, y solo es perpendicular a $\vec v$ en la cima. <span class="src" data-l="U" data-ref="U fig. 3.29, p. 84">U p.84</span></figcaption>
 </figure>
-<div class="box warn"><span class="h">Error típico: confundir el vector aceleración con el vector velocidad</span>
-<p>En una trayectoria curva, $\vec a$ y $\vec v$ <b>nunca</b> pueden tener la misma dirección (si la tuvieran, la trayectoria sería recta). En el MCU, $\vec a$ es siempre perpendicular a $\vec v$; en el proyectil, solo lo es en el punto más alto. Fuera de ese punto, $\vec a$ (constante, hacia abajo) tiene una componente paralela a $\vec v$ que cambia la rapidez y otra perpendicular que curva la trayectoria — exactamente el criterio de la sección 3.2.</p>
-  <span class="src" data-l="U" data-ref="U §3.4 CUIDADO, p. 84">U p.84</span></div>
+<div class="box warn"><span class="h">Error típico: confundir la dirección de $\vec a$ con la de $\vec v$</span>
+<p>En una trayectoria curva $\vec a$ y $\vec v$ nunca tienen la misma dirección. En el MCU son perpendiculares siempre; en el proyectil, solo en la cima. Y no confundas $d|\vec v|/dt$ (cuánto cambia la rapidez) con $|d\vec v/dt|=|\vec a|$: en el MCU la primera es 0 y la segunda es $v^2/R\ne0$.</p>
+  <span class="src" data-l="U" data-ref="U §3.4 CUIDADO, p. 84-85">U p.84</span></div>
 <div class="box thm"><span class="h">Movimiento circular no uniforme</span>
-<p>Si además la rapidez cambia con el tiempo, aparece también una <b>componente tangencial</b> de la aceleración:</p>
-  $$a_{\text{tan}}=\frac{d|\vec v|}{dt} \qquad\text{(ec. 3.30)}$$
-  <p>junto con la componente radial de siempre, $a_{\text{rad}}=v^2/R$ (que ahora usa la rapidez instantánea). El módulo total de la aceleración es $a=\sqrt{a_{\text{rad}}^2+a_{\text{tan}}^2}$.</p>
+<p>Si además cambia la rapidez aparece una componente <b>tangencial</b> y la radial usa la rapidez instantánea:</p>
+$$a_{\text{tan}}=\frac{d|\vec v|}{dt}\qquad a_{\text{rad}}=\frac{v^2}{R}\qquad a=\sqrt{a_{\text{rad}}^2+a_{\text{tan}}^2}\qquad\text{(ec. 3.30)}$$
+<p><b>Ejemplo mínimo (propio):</b> con $a_{\text{rad}}=4$ m/s² y $a_{\text{tan}}=3$ m/s², $a=\sqrt{4^2+3^2}=5$ m/s².</p>
   <span class="src" data-l="U" data-ref="U §3.4 ec. (3.30), p. 85">U p.85</span></div>
 <figure class="fig" data-svg="../assets/figs/t03/aceleracion-tangencial-y-radial-en-un-circulo-no.svg">
 <div class="figph" role="img" aria-label="Aceleración tangencial y radial en un círculo no uniforme" style="aspect-ratio:280/225"></div>
 <figcaption>Si la rapidez también cambia: a_rad = v²/R (hacia el centro, cambia la dirección) y a_tan = d|v|/dt (a lo largo de v, cambia el módulo). La aceleración total es su suma vectorial, de módulo √(a_rad² + a_tan²). <span class="src" data-l="P" data-ref="Diagrama propio de la ec. 3.30">P</span></figcaption>
 </figure>
-<div class="box warn"><span class="h">Error típico</span><p>$a_{\text{tan}}=d|\vec v|/dt$ (cuánto cambia la <i>rapidez</i>, un escalar) <b>no</b> es lo mismo que $|d\vec v/dt|=|\vec a|$ (el módulo de <i>todo</i> el vector aceleración, que incluye también el giro). En el MCU puro, $d|\vec v|/dt=0$ porque la rapidez no cambia, pero $|\vec a|=a_{\text{rad}}\ne0$ porque sí está girando.</p></div>
-<figure class="interactivo" data-escena="circulo" data-params='{"dim":2}' aria-label="Interactivo: movimiento circular uniforme con velocidad y aceleración radial">
-  <img class="int-static" src="../assets/img/int_circulo.png" alt="Interactivo: movimiento circular uniforme con velocidad y aceleración radial">
-  <figcaption><b>Pruébalo tú:</b> la velocidad es siempre tangente y la aceleración apunta al centro. Prueba a reducir el periodo: $a_{rad}=v^2/R=4\pi^2R/T^2$ crece mucho más rápido que $v$. <span class="src" data-l="P" data-ref="Interactivo propio de a_rad = v²/R (U §3.4, pp. 82-85)">P</span></figcaption>
-</figure>
-<h2 id="s5"><span class="n">5</span>Velocidad relativa</h2>
-<div class="box intu"><span class="h">Idea intuitiva</span><p>Si vas en un tren a 3.0 m/s y caminas por el pasillo a 1.0 m/s en el sentido de la marcha, alguien parado en el andén te ve moverte a 4.0 m/s: tu velocidad depende de <i>quién mira</i>. Esa es la velocidad relativa: no hay una única «velocidad verdadera», solo velocidades relativas a un observador (marco de referencia) concreto.</p></div>
-<div class="box def"><span class="h">Marco de referencia</span>
-<p>Un <b>marco de referencia</b> es un sistema de coordenadas (un origen y unos ejes) junto con una escala de tiempo, respecto al cual se miden posiciones, velocidades y aceleraciones. Toda velocidad es relativa a un marco concreto: no tiene sentido preguntar «¿cuál es la velocidad de este coche?» sin decir respecto a qué (¿al suelo? ¿a otro coche?).</p>
-  <span class="src" data-l="U" data-ref="U §3.5, p. 86">U p.86</span></div>
-<div class="box def"><span class="h">Velocidad relativa en una dimensión</span>
-$$v_{P/A,x}=v_{P/B,x}+v_{B/A,x} \qquad\text{(ec. 3.32)}$$
-  <p>Léase «la velocidad de $P$ relativa a $A$ es la velocidad de $P$ relativa a $B$ más la velocidad de $B$ relativa a $A$» — los subíndices se comportan casi como una fracción que se simplifica: $P/A=(P/B)(B/A)$. Además, invertir el orden de los dos marcos cambia el signo:</p>
-  $$v_{A/B,x}=-v_{B/A,x} \qquad\text{(ec. 3.33)}$$
-  <span class="src" data-l="U" data-ref="U §3.5 ec. (3.32)-(3.33), p. 86-87">U p.86</span></div>
-<div class="box thm"><span class="h">Velocidad relativa en dos o tres dimensiones</span>
-<p>La misma idea con vectores completos (transformación galileana de la velocidad):</p>
-  $$\vec v_{P/A}=\vec v_{P/B}+\vec v_{B/A} \qquad\text{(ec. 3.35)}$$
-  <p>Aquí ya no basta con sumar y restar números: hay que sumar <b>vectores</b> (por componentes, o con un diagrama y trigonometría). Si las tres velocidades están en la misma recta, esta ecuación se reduce a la 3.32. Igual que en 1D, invertir el orden cambia el signo: $\vec v_{A/B}=-\vec v_{B/A}$ (ec. 3.36).</p>
-  <p>Esta suma sencilla de velocidades (transformación de Galileo) deja de ser válida a velocidades cercanas a la de la luz, donde hace falta la relatividad especial — fuera del alcance de esta asignatura, pero conviene saber que el modelo tiene un límite.</p>
-  <span class="src" data-l="U" data-ref="U §3.5 ec. (3.34)-(3.36), p. 88-89">U p.88</span></div>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>MCU con $R=0.50$ m y $v=2.0$ m/s. ¿$a_{\text{rad}}$?<details><summary>Ver respuesta</summary>$a_{\text{rad}}=v^2/R=4.0/0.50=8.0$ m/s², hacia el centro.</details></li>
+<li>Si $v$ se multiplica por 5 con el mismo radio, ¿cuánto cambia $a_{\text{rad}}$? ¿Y si $R$ pasa a $R/3$ con la misma $v$?<details><summary>Ver respuesta</summary>$a_{\text{rad}}\propto v^2$: se multiplica por 25. $a_{\text{rad}}\propto1/R$: se multiplica por 3.</details></li>
+<li>$a_{\text{rad}}=4$ m/s² y $a_{\text{tan}}=3$ m/s². ¿Módulo de $\vec a$? ¿Cambia la rapidez?<details><summary>Ver respuesta</summary>$a=5$ m/s². Sí cambia: $a_{\text{tan}}\ne0$.</details></li>
+</ol>
+</details>
+
+<h2 id="s5"><span class="n">5</span>Velocidad relativa <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §3.5, pp. 86-90">U p.86-90</span></h2>
+<div class="box def"><span class="h">Marco de referencia y velocidad relativa</span>
+<p><b>Idea:</b> vas en un tren a 3.0 m/s y caminas 1.0 m/s en el sentido de la marcha: alguien en el andén te ve a 4.0 m/s. Toda velocidad es relativa a un <b>marco de referencia</b> (un origen, unos ejes y un reloj). Los subíndices se «simplifican» como una fracción, $P/A=(P/B)(B/A)$:</p>
+$$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\vec v_{P/B}+\vec v_{B/A}\quad \vec v_{A/B}=-\vec v_{B/A}\qquad\text{(ec. 3.32-3.36)}$$
+<p>En 1D se suma con signo; en 2D o 3D se suman <b>vectores</b> (por componentes, o con un triángulo y trigonometría). Es la transformación de Galileo; deja de valer cerca de la velocidad de la luz (relatividad, fuera de esta asignatura).</p>
+  <span class="src" data-l="U" data-ref="U §3.5 ec. (3.32)-(3.36), p. 86-89">U p.86-89</span></div>
 <figure class="bookfig">
 <img src="../assets/img/fig_u_3_34_velocidad_relativa.png" alt="Figura 3.34 de U: una pasajera camina a 1.0 m/s a lo ancho de un vagón que se mueve a 3.0 m/s; el diagrama vectorial (panel c) suma ambas velocidades en ángulo recto y da una velocidad relativa al suelo de 3.2 m/s a 18° del movimiento del tren." loading="lazy">
 <figcaption>Fig. 3.34 de U: la pasajera camina a $v_{P/B}=1.0$ m/s perpendicular al movimiento del tren ($v_{B/A}=3.0$ m/s); sumando los vectores (panel c) sale $v_{P/A}=\sqrt{3.0^2+1.0^2}=3.2$ m/s, a $\phi=18°$ de la dirección del tren. <span class="src" data-l="U" data-ref="U fig. 3.34, p. 88">U p.88</span></figcaption>
 </figure>
-<div class="box ex"><span class="h">Ejemplos del libro 3.14-3.15 — el avión con viento cruzado</span>
-<p>Un avión vuela con rumbo norte (respecto al aire) a $v_{P/A}=240$ km/h, y sopla un viento del oeste al este $v_{A/E}=100$ km/h (aquí «$A$» es el aire y «$E$» la Tierra). Por la ec. 3.35, $\vec v_{P/E}=\vec v_{P/A}+\vec v_{A/E}$: dos vectores perpendiculares que se suman con Pitágoras, $v_{P/E}=\sqrt{240^2+100^2}=260$ km/h, desviado $\arctan(100/240)=22.6°$ al este del norte respecto al rumbo que marca la brújula — el viento arrastra al avión aunque apunte exactamente al norte.</p>
-  <p>El Ejemplo 3.15 resuelve el problema inverso: ¿en qué dirección debe apuntar el piloto (misma rapidez respecto al aire, 240 km/h) para que su velocidad <i>resultante</i> sea exactamente hacia el norte? Ahora el triángulo vectorial se arma al revés (se fija $\vec v_{P/E}$ en dirección norte y se busca el ángulo de $\vec v_{P/A}$ que, sumado a los 100 km/h del viento, lo consigue): la respuesta es apuntar 25° al oeste del norte, con una rapidez resultante sobre el suelo de 218 km/h — inferior a los 240 km/h porque parte del esfuerzo del avión ahora se usa en contrarrestar el viento, no en avanzar.</p>
-  <span class="src" data-l="U" data-ref="U Ejemplos 3.14-3.15, p. 89-90">U p.89</span></div>
+<div class="box ex"><span class="h">Ejemplos 3.14-3.15 de U: el avión con viento cruzado</span>
+<p><b>Ejemplo 3.14.</b> Un avión apunta al norte a $v_{P/A}=240$ km/h (respecto al aire) y sopla viento del oeste a $v_{A/T}=100$ km/h ($T$ es la Tierra). Por la ec. 3.35, $\vec v_{P/T}=\vec v_{P/A}+\vec v_{A/T}$: dos vectores perpendiculares, $v_{P/T}=\sqrt{240^2+100^2}=260$ km/h, desviado $\arctan(100/240)=22.6°$ al este del norte.</p>
+<p><b>Ejemplo 3.15 (el problema inverso).</b> ¿Hacia dónde apuntar (misma rapidez respecto al aire) para ir <i>exactamente</i> al norte? Se fija $\vec v_{P/T}$ al norte y se busca el ángulo: $\sin\theta=100/240$ ⇒ $\theta=24.6°\approx25°$ al oeste del norte, con $v_{P/T}=\sqrt{240^2-100^2}=218$ km/h, menor que 240 porque parte del esfuerzo se gasta en contrarrestar el viento.</p>
+  <span class="src" data-l="U" data-ref="U Ejemplos 3.14-3.15, p. 89-90">U p.89-90</span></div>
 <figure class="fig" data-svg="../assets/figs/t03/triangulo-de-velocidades-del-avion-ejemplo-3-14.svg">
 <div class="figph" role="img" aria-label="Triángulo de velocidades del avión (ejemplo 3.14)" style="aspect-ratio:320/180"></div>
 <figcaption>Ej. 3.14: apuntando al norte, v<sub>P/E</sub> = v<sub>P/A</sub> + v<sub>A/E</sub>: el viento del oeste desvía el avión 22.6° hacia el este y su velocidad respecto al suelo es 260 km/h (no 240). <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 3.14">P</span></figcaption>
@@ -209,10 +258,30 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x} \qquad\text{(ec. 3.32)}$$
 <div class="figph" role="img" aria-label="Triángulo de velocidades del avión (ejemplo 3.15)" style="aspect-ratio:320/180"></div>
 <figcaption>Ej. 3.15: para volar exactamente hacia el norte hay que apuntar 25° al oeste del norte; así el viento compensa la desviación y la velocidad sobre el suelo (218 km/h) apunta al norte, pero es menor que 240. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 3.15">P</span></figcaption>
 </figure>
-<div class="box tip"><span class="h">Truco de examen</span><p>En un problema de velocidad relativa en el plano, identifica primero qué vector conoces por completo (magnitud y dirección) y cuál tiene una incógnita en la magnitud y otra en el ángulo (o viceversa); casi siempre se puede armar un triángulo rectángulo (si las dos velocidades «base» son perpendiculares, como el viento cruzado) y resolver con Pitágoras y arcotangente, sin necesidad de descomponer en $x,y$ desde el principio.</p></div>
+<div class="box tip"><span class="h">Truco de examen</span>
+<p>Identifica qué vector conoces entero y cuál tiene una incógnita en el módulo y otra en el ángulo. Si las dos velocidades «base» son perpendiculares (viento cruzado, río), basta un triángulo rectángulo con Pitágoras y arcotangente. Y en 1D, suma o resta cada tramo por separado y <b>nunca promedies velocidades</b> (E6).</p>
+  <span class="src" data-l="P" data-ref="Consejo propio basado en U §3.5">P</span></div>
+<details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
+<ol>
+<li>Un tren va a $3.0$ m/s respecto al suelo y una persona camina por él a $1.0$ m/s en sentido contrario. ¿Su velocidad respecto al suelo?<details><summary>Ver respuesta</summary>$v_{P/A}=v_{P/B}+v_{B/A}=-1.0+3.0=2.0$ m/s en el sentido del tren.</details></li>
+<li>Un bote cruza un río apuntando perpendicular a la orilla a $5.0$ m/s (respecto al agua); la corriente es de $3.0$ m/s. ¿Velocidad respecto a la orilla?<details><summary>Ver respuesta</summary>$\sqrt{5.0^2+3.0^2}=5.83$ m/s, desviado $\arctan(3/5)=31.0°$ río abajo.</details></li>
+<li>Si $v_{B/A}=+20$ m/s, ¿cuánto vale $v_{A/B}$?<details><summary>Ver respuesta</summary>$v_{A/B}=-v_{B/A}=-20$ m/s.</details></li>
+</ol>
+</details>
+
 <h2 id="ejercicios"><span class="n">6</span>Ejercicios resueltos</h2>
-<p>Empezamos con cuatro ejercicios del solucionario sobre vectores/proyectiles (E1-E4), seguimos con los dos ejercicios de examen real de teoría (X1, X2 — proyectiles y círculo), un problema de examen mixto con el tema 8 (X3), y cerramos con uno de MCU y uno de velocidad relativa del solucionario (E5, E6).</p>
-<details class="sol"><summary>E1 — Problema 3.7: aceleración de un ave, ¿acelera o gira? <span class="src" data-l="E" data-ref="Solucionario 3-4/3-5, Prob. 3.7">E</span></summary>
+<p>Las <b>3 preguntas de examen real</b> (X1-X3) están aquí completas: el problema (X3) en el «Núcleo» y las dos teorías (X1, X2) en su propio bloque. Las acompañan seis ejercicios del solucionario del libro (E1-E6, traducidos y ampliados) que cubren los métodos que el examen no ha pedido por sí solos: derivar $\vec r(t)$ y descomponer la aceleración, proyectil con ángulo, lanzamiento horizontal, movimiento circular y velocidad relativa. Están ordenados por <b>método</b>, no por fuente. <b>Intenta resolver tú antes de abrir la solución.</b> Cada ejercicio termina con su receta.</p>
+<div class="nivel"><b>🔴 Núcleo: 6 ejercicios, un método por ejercicio</b><span>El problema de examen real (X3) más cinco del solucionario. Derivar y descomponer la aceleración, proyectil con ángulo, lanzamiento horizontal, explosión seguida de caída, aceleración centrípeta y velocidad relativa: si solo haces esto, cubres lo que cae.</span></div>
+<table class="metodos">
+<tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>
+<tr><td><a href="#e1">E1</a></td><td>Posición dada como función del tiempo: ¿acelera, frena o gira?</td><td>Deriva $x(t)$, $y(t)$; $a_\parallel=\vec a\cdot\vec v/v$ y $a_\perp$</td></tr>
+<tr><td><a href="#e4">E4</a></td><td>Proyectil con ángulo desde el suelo (cima, altura, alcance)</td><td>Descompón $v_0$; cima ⇒ $v_y=0$; alcance $=2v_{0x}t_1$ si mismo nivel</td></tr>
+<tr><td><a href="#e3">E3</a></td><td>Lanzamiento horizontal desde una mesa</td><td>$v_{0y}=0$: $t=\sqrt{2h/g}$; $x=v_0t$; recompón $v_x$, $v_y$</td></tr>
+<tr><td><a href="#x3">X3</a> · Feb 2020</td><td>Explosión en el punto más alto y caída de los fragmentos</td><td>«Mismo tiempo» ⇒ $v_{0y}=0$ en los dos; $t=\sqrt{2h/g}$; sentidos opuestos ⇒ suma las distancias</td></tr>
+<tr><td><a href="#e5">E5</a></td><td>Aceleración centrípeta a partir de las revoluciones por segundo</td><td>$T=1/f$; $a_{\text{rad}}=4\pi^2R/T^2$; dividir entre $g$</td></tr>
+<tr><td><a href="#e6">E6</a></td><td>Velocidad relativa en un río, ida y vuelta</td><td>Suma/resta la corriente con su signo en cada tramo; suma tiempos, nunca velocidades</td></tr>
+</table>
+<details class="sol" id="e1"><summary>E1 — Problema 3.7: aceleración de un ave, ¿acelera o gira? <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-4/3-5, Prob. 3.7">E</span></summary>
 <p class="enun">Las coordenadas de un ave que vuela en el plano $xy$ son $x(t)=\alpha t$ e $y(t)=3.0\ \text{m}-\beta t^2$, con $\alpha=2.4$ m/s y $\beta=1.2$ m/s². a) Dibuje la trayectoria del ave entre $t=0$ y $t=2.0$ s. b) Calcule los vectores velocidad y aceleración del ave en función del tiempo. c) Obtenga el módulo y la dirección de la velocidad y de la aceleración en $t=2.0$ s. d) En ese instante, ¿el ave acelera, frena o su rapidez no cambia? ¿Está girando? Si es así, ¿hacia dónde?</p>
   <ol class="steps">
     <li>a) Eliminando $t=x/\alpha$ y sustituyendo en $y$, la trayectoria es la parábola $y=3.0-(\beta/\alpha^2)x^2$: parte de $(0;\,3.0)$ m en $t=0$ y baja hasta $(4.8;\,-1.8)$ m en $t=2.0$ s.</li>
@@ -228,38 +297,7 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x} \qquad\text{(ec. 3.32)}$$
   <div class="recipe"><b>Receta:</b> deriva $x(t)$ e $y(t)$ dos veces para obtener $\vec v(t)$ y $\vec a(t)$; para saber si el objeto «acelera o frena» mira el signo de $\vec a\cdot\vec v$ (o $a_\parallel$); para saber si «gira» comprueba si $a_\perp\ne0$.</div>
   <div class="recipe"><b>Error típico:</b> no corregir el cuadrante del $\arctan$, o creer que «acelerar» significa solo cambiar la rapidez y olvidarse de comprobar el giro.</div>
 </details>
-<details class="sol"><summary>E2 — Problema 3.12: mariscal de campo (proyectil clásico) <span class="src" data-l="E" data-ref="Solucionario 3-7/3-8, Prob. 3.12">E</span></summary>
-<p class="enun">Un mariscal de campo novato lanza un balón con una componente de velocidad inicial hacia arriba de 12.0 m/s y una componente horizontal de 20.0 m/s. Desprecie la resistencia del aire. a) ¿Cuánto tarda el balón en llegar al punto más alto de la trayectoria? b) ¿A qué altura está ese punto? c) ¿Cuánto tiempo pasa, desde el lanzamiento, hasta que el balón vuelve a su nivel original? ¿Cómo se compara con el de a)? d) ¿Qué distancia horizontal recorre en ese tiempo?</p>
-  <ol class="steps">
-    <li>a) «Punto más alto» = $v_y=0$: con la ec. 3.22, $0=v_{0y}-gt_1 \Rightarrow t_1=v_{0y}/g=12.0/9.80=1.22$ s.</li>
-    <li>b) Altura máxima: $h=v_{0y}^2/(2g)=12.0^2/(2\times9.80)=7.35$ m.</li>
-    <li>c) Al volver a su nivel original se cumple $y=0$; por la simetría de la parábola (subida y bajada duran lo mismo cuando se llega a la misma altura de salida), ese instante es el doble del tiempo de subida: $t=2t_1=2.45$ s — el doble que en a).</li>
-    <li>d) Alcance horizontal en ese tiempo: como $v_x$ es constante, $R=v_{0x}\,t=20.0\times2.45=49.0$ m.</li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t03/pase-del-mariscal-de-campo.svg">
-<div class="figph" role="img" aria-label="Pase del mariscal de campo" style="aspect-ratio:320/112"></div>
-<figcaption>Con v<sub>0x</sub> = 20.0 y v<sub>0y</sub> = 12.0 m/s: el punto más alto (v_y = 0) se alcanza en 1.22 s a 7.35 m; el balón vuelve a su nivel a los 2.45 s (el doble) y ha avanzado 49.0 m. Dibujado a escala real (la trayectoria es poco alta). <span class="src" data-l="P" data-ref="Diagrama propio del problema 3.12">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> «punto más alto» siempre es $v_y=0$ (ec. 3.22); «vuelve a su altura original» es $y=y_0$, y si sale y llega a la misma altura ese tiempo total es el doble del tiempo de subida (simetría); el alcance sale de multiplicar $v_{0x}$ (constante) por el tiempo total de vuelo.</div>
-  <div class="recipe"><b>Error típico:</b> usar $v_0$ total en vez de $v_{0y}$ para la altura máxima, o pensar que la aceleración se anula en la cima (sigue siendo $-g$ en todo momento).</div>
-</details>
-<details class="sol"><summary>E3 — Problema 3.9: libro empujado desde una mesa (lanzamiento horizontal) <span class="src" data-l="E" data-ref="Solucionario 3-6/3-7, Prob. 3.9">E</span></summary>
-<p class="enun">Un libro se desliza fuera de una mesa horizontal con $v_0=1.10$ m/s y golpea el suelo en $t=0.480$ s. Calcula a) la altura de la mesa, b) la distancia horizontal recorrida hasta el impacto, y c) las componentes horizontal y vertical de la velocidad, y la rapidez y el ángulo de la velocidad justo al llegar al suelo.</p>
-  <ol class="steps">
-    <li>Es un lanzamiento horizontal: $v_{0y}=0$, así que la caída vertical es idéntica a una caída libre desde el reposo. a) $h=\tfrac12gt^2=\tfrac12(9.80)(0.480)^2=1.13$ m.</li>
-    <li>b) Como $v_x=v_0=1.10$ m/s es constante, $x=v_0t=1.10\times0.480=0.528$ m.</li>
-    <li>c) $v_x$ no cambia: $v_x=1.10$ m/s. $v_y=-gt=-9.80\times0.480=-4.70$ m/s. Rapidez $v=\sqrt{1.10^2+4.70^2}=4.83$ m/s, con ángulo $\arctan(4.70/1.10)=76.8°$ bajo la horizontal.</li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t03/libro-que-cae-de-una-mesa-con-lanzamiento-horizo.svg">
-<div class="figph" role="img" aria-label="Libro que cae de una mesa con lanzamiento horizontal" style="aspect-ratio:330/190"></div>
-<figcaption>Lanzamiento horizontal: el libro sale a 1.10 m/s, cae 1.13 m en 0.480 s y avanza 0.528 m. La vertical es una caída libre normal; v_x = 1.10 m/s no cambia, y al llegar al suelo v_y = −4.70 m/s (rapidez 4.83 m/s, a 76.8° bajo la horizontal; la flecha azul no está a escala). <span class="src" data-l="P" data-ref="Diagrama propio del problema 3.9">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> en un lanzamiento horizontal, el tiempo de caída depende <b>solo</b> del eje vertical ($t=\sqrt{2h/g}$); la velocidad horizontal nunca cambia y solo sirve para hallar el alcance, $x=v_0t$.</div>
-  <div class="recipe"><b>Error típico:</b> creer que una $v_0$ horizontal mayor hace que el libro tarde más o menos en caer — el tiempo de caída es el mismo que si se soltara sin empujarlo.</div>
-</details>
-<details class="sol"><summary>E4 — Problema 3.16: proyectil lanzado a 60° <span class="src" data-l="E" data-ref="Solucionario 3-9, Prob. 3.16">E</span></summary>
+<details class="sol" id="e4"><summary>E4 — Problema 3.16: proyectil lanzado a 60° <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-9, Prob. 3.16">E</span></summary>
 <p class="enun">Se lanza un proyectil con $v_0=40.0$ m/s a $60.0°$ sobre la horizontal desde el nivel del suelo. Calcula a) las componentes de $v_0$; b) el tiempo hasta el punto más alto; c) la altura máxima; d) el alcance horizontal; e) las componentes horizontal y vertical de su aceleración y de su velocidad en el punto de altura máxima.</p>
   <ol class="steps">
     <li>a) $v_{0x}=40.0\cos60°=20.0$ m/s; $v_{0y}=40.0\sin60°=34.6$ m/s.</li>
@@ -276,7 +314,79 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x} \qquad\text{(ec. 3.32)}$$
   <div class="recipe"><b>Receta:</b> descompón $v_0$ primero (paso a); resuelve cada eje por separado; usa la fórmula de $R$ solo porque aquí sí se cumple la condición de igual altura de salida y llegada.</div>
   <div class="recipe"><b>Error típico:</b> decir que en el punto más alto «$v=0$» — solo es cero la componente vertical; la horizontal sigue siendo $v_{0x}$.</div>
 </details>
-<details class="sol"><summary>X1 — Teoría: Movimiento de proyectiles <span class="src" data-l="X" data-ref="Examen Febrero 2023 (2ª semana) P-3 Opción A">X</span></summary>
+<details class="sol" id="e3"><summary>E3 — Problema 3.9: libro empujado desde una mesa (lanzamiento horizontal) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-6/3-7, Prob. 3.9">E</span></summary>
+<p class="enun">Un libro se desliza fuera de una mesa horizontal con $v_0=1.10$ m/s y golpea el suelo en $t=0.480$ s. Calcula a) la altura de la mesa, b) la distancia horizontal recorrida hasta el impacto, y c) las componentes horizontal y vertical de la velocidad, y la rapidez y el ángulo de la velocidad justo al llegar al suelo.</p>
+  <ol class="steps">
+    <li>Es un lanzamiento horizontal: $v_{0y}=0$, así que la caída vertical es idéntica a una caída libre desde el reposo. a) $h=\tfrac12gt^2=\tfrac12(9.80)(0.480)^2=1.13$ m.</li>
+    <li>b) Como $v_x=v_0=1.10$ m/s es constante, $x=v_0t=1.10\times0.480=0.528$ m.</li>
+    <li>c) $v_x$ no cambia: $v_x=1.10$ m/s. $v_y=-gt=-9.80\times0.480=-4.70$ m/s. Rapidez $v=\sqrt{1.10^2+4.70^2}=4.83$ m/s, con ángulo $\arctan(4.70/1.10)=76.8°$ bajo la horizontal.</li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t03/libro-que-cae-de-una-mesa-con-lanzamiento-horizo.svg">
+<div class="figph" role="img" aria-label="Libro que cae de una mesa con lanzamiento horizontal" style="aspect-ratio:330/190"></div>
+<figcaption>Lanzamiento horizontal: el libro sale a 1.10 m/s, cae 1.13 m en 0.480 s y avanza 0.528 m. La vertical es una caída libre normal; v_x = 1.10 m/s no cambia, y al llegar al suelo v_y = −4.70 m/s (rapidez 4.83 m/s, a 76.8° bajo la horizontal; la flecha azul no está a escala). <span class="src" data-l="P" data-ref="Diagrama propio del problema 3.9">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> en un lanzamiento horizontal, el tiempo de caída depende <b>solo</b> del eje vertical ($t=\sqrt{2h/g}$); la velocidad horizontal nunca cambia y solo sirve para hallar el alcance, $x=v_0t$.</div>
+  <div class="recipe"><b>Error típico:</b> creer que una $v_0$ horizontal mayor hace que el libro tarde más o menos en caer — el tiempo de caída es el mismo que si se soltara sin empujarlo.</div>
+</details>
+<details class="sol" id="x3"><summary>X3 — Fragmentos de un cohete de fuegos artificiales <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2020 (1ª semana) P-2">X</span></summary>
+<p class="enun">Un cohete de fuegos artificiales se dispara verticalmente hacia arriba. En su altura máxima de 80 m, estalla y se divide en dos fragmentos, uno con masa de 1.40 kg y otro con masa de 0.28 kg. En la explosión, 860 J de energía química se convierte en energía cinética de los dos fragmentos. a) (Tema 8: conservación de la cantidad de movimiento) Con esos datos se obtiene que los fragmentos salen despedidos con $v_A=14.3$ m/s y $v_B=71.5$ m/s (se comprueba que $m_Av_A=m_Bv_B=20.0$ kg·m/s, cantidad de movimiento conservada en sentidos opuestos). b) <b>Se observa que los dos fragmentos caen al suelo al mismo tiempo.</b> ¿Qué distancia hay entre los puntos en los que caen? Suponga que el suelo es horizontal y que la resistencia del aire es despreciable.</p>
+  <ol class="steps">
+    <li>El apartado a) es del tema 8 (colisiones/explosiones): se resuelve con conservación de la cantidad de movimiento total (nula antes de estallar, porque el cohete estaba momentáneamente parado en su punto más alto) junto con la energía cinética liberada; el resultado, $v_A=14.3$ m/s y $v_B=71.5$ m/s, se toma aquí como dato de partida para centrarnos en el apartado b), que sí es de este tema.</li>
+    <li><b>Por qué las velocidades de salida son horizontales.</b> Conservar la cantidad de movimiento vertical solo dice que $m_Av_{Ay}+m_Bv_{By}=0$ — por sí sola, esa ecuación permitiría que un fragmento saliera hacia arriba y el otro hacia abajo, no obliga a que ninguno de los dos sea cero. El dato que cierra el argumento es el del enunciado: <b>los dos caen al suelo al mismo tiempo</b>. Como ambos parten de la misma altura $h=80$ m, y el tiempo de caída de un proyectil depende solo de $v_{0y}$ y $h$ (no de la velocidad horizontal), «mismo tiempo de caída» obliga a que los dos tengan la <b>misma</b> $v_{0y}$. Llamando $v_{0y}$ a ese valor común, la conservación vertical queda $m_Av_{0y}+m_Bv_{0y}=(m_A+m_B)v_{0y}=0$, y como $m_A+m_B\ne0$, forzosamente $v_{0y}=0$ para los dos. Solo entonces sus velocidades de salida son puramente <b>horizontales</b>, en sentidos opuestos (para que la componente horizontal, también nula al principio, se conserve).</li>
+    <li>Con $v_{0y}=0$ para los dos, cada fragmento cae como un <b>lanzamiento horizontal</b> (sección 3.3) desde $h=80$ m: $t=\sqrt{2h/g}=\sqrt{2(80)/9.80}=4.04$ s — el mismo tiempo para ambos, como ya exigía el enunciado.</li>
+    <li>Distancia horizontal de cada uno (sin redondear las velocidades intermedias, $v_A=14.31$, $v_B=71.55$ m/s): $x_A=v_At=14.31\times4.04=57.8$ m; $x_B=v_Bt=71.55\times4.04=289.1$ m.</li>
+    <li>Como los fragmentos salen en <b>sentidos opuestos</b>, la separación entre los dos puntos de caída es la <b>suma</b> de ambas distancias: $D=x_A+x_B=57.8+289.1\approx347$ m.</li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t03/fragmentos-que-salen-horizontales-en-sentidos-op.svg">
+<div class="figph" role="img" aria-label="Fragmentos que salen horizontales en sentidos opuestos" style="aspect-ratio:320/150"></div>
+<figcaption>Los dos fragmentos salen horizontales (v<sub>0y</sub> = 0) desde 80 m, con sentidos opuestos, y caen en el mismo tiempo (4.04 s). Las distancias se suman: D = 57.8 + 288.9 ≈ 347 m. Dibujado con la misma escala horizontal y vertical. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio X3">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> en una explosión seguida de caída, primero resuelve la parte dinámica (tema 8) para obtener las velocidades de salida; el dato «caen al mismo tiempo» + conservación de la cantidad de movimiento vertical es lo que fuerza $v_{0y}=0$ para ambos; después trata cada fragmento como un lanzamiento horizontal independiente desde la misma altura.</div>
+  <div class="recipe"><b>Error típico:</b> restar las distancias en vez de sumarlas (van en sentidos opuestos, se alejan uno del otro); o no justificar por qué las velocidades de salida son horizontales — no es un dato gratuito, sale de conservar la componente vertical de la cantidad de movimiento.</div>
+</details>
+<details class="sol" id="e5"><summary>E5 — Problema 3.24: aceleración centrípeta de un bailarín <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-14, Prob. 3.24">E</span></summary>
+<p class="enun">Un bailarín de ballet gira sobre un eje vertical a 3.0 revoluciones por segundo. La distancia de su oído interno al eje de giro es de 7.0 cm. Calcula la aceleración centrípeta de su oído interno, y exprésala como múltiplo de $g$.</p>
+  <ol class="steps">
+    <li>Frecuencia $f=3.0$ rev/s, así que el periodo es $T=1/f=0.333$ s. Radio $R=0.070$ m.</li>
+    <li>Con la ec. 3.29: $a_{\text{rad}}=4\pi^2R/T^2=4\pi^2(0.070)/(0.333)^2=24.9\ \text{m/s}^2$.</li>
+    <li>Como múltiplo de $g$: $24.9/9.80\approx2.5\,g$.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> de revoluciones por segundo a periodo, $T=1/f$; aplica directamente $a_{\text{rad}}=4\pi^2R/T^2$ (equivalente a $v^2/R$ pero sin pasar por $v$).</div>
+  <div class="recipe"><b>Error típico:</b> confundir «3.0 rev/s» con el periodo $T$ o con una velocidad angular en rad/s directamente, u olvidar convertir el radio de cm a m.</div>
+</details>
+<details class="sol" id="e6"><summary>E6 — Problema 3.32: remero contra caminante, velocidad relativa en un río <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-16, Prob. 3.32">E</span></summary>
+<p class="enun">Dos muelles, A y B, están situados en un río; B está 1500 m río abajo de A. Dos amigos deben ir de A a B y regresar. Uno rema su bote con rapidez constante de 4.00 km/h relativa al agua; el otro camina por la orilla con rapidez constante de 4.00 km/h. La velocidad del río es 2.80 km/h en la dirección de A a B. ¿Cuánto tardará cada persona en hacer el viaje de ida y vuelta?</p>
+  <ol class="steps">
+    <li><b>Remero, tramo río abajo</b> (a favor de la corriente): con la ec. 3.32, $v=4.00+2.80=6.80$ km/h respecto a tierra. Tiempo: $t_1=1.50/6.80=0.221$ h.</li>
+    <li><b>Remero, tramo río arriba</b> (en contra): $v=4.00-2.80=1.20$ km/h. Tiempo: $t_2=1.50/1.20=1.25$ h.</li>
+    <li>Tiempo total del remero: $t_1+t_2=1.47$ h $=88.2$ min.</li>
+    <li><b>Caminante:</b> siempre a 4.00 km/h en tierra firme, sin corriente que le afecte. Recorre $2\times1.50=3.00$ km en total: $t=3.00/4.00=0.750$ h $=45.0$ min.</li>
+    <li>El remero tarda casi el doble. No es una compensación simétrica: pasa mucho más tiempo en el tramo lento (río arriba, a solo 1.20 km/h) del que gana en el tramo rápido (río abajo, a 6.80 km/h) — el tiempo perdido a baja velocidad pesa más que el tiempo ganado a alta velocidad.</li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t03/remero-y-caminante-entre-los-muelles-a-y-b.svg">
+<div class="figph" role="img" aria-label="Remero y caminante entre los muelles A y B" style="aspect-ratio:320/178"></div>
+<figcaption>El remero suma la corriente río abajo (6.80 km/h) y la resta río arriba (1.20 km/h): tarda 0.221 + 1.25 = 1.47 h. El caminante, siempre a 4.00 km/h, tarda 0.750 h. Las flechas del remero son proporcionales a su velocidad: el tramo lento pesa mucho más que el rápido. <span class="src" data-l="P" data-ref="Diagrama propio del problema 3.32">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> en un problema de ida y vuelta con corriente, suma o resta la velocidad del medio (con su signo) en cada tramo por separado (ec. 3.32), calcula el tiempo de cada tramo y súmalos — nunca promedies las velocidades directamente.</div>
+  <div class="recipe"><b>Error típico:</b> promediar $(6.80+1.20)/2=4.00$ km/h y concluir (incorrectamente) que el remero tarda lo mismo que el caminante.</div>
+</details>
+<div class="nivel"><b>🟡 Práctica: 1 ejercicio más</b><span>Un proyectil con las componentes de $\vec v_0$ ya dadas: repasa «cima», «vuelve a su nivel» y alcance. Resuélvelo sin dibujo y compáralo con la solución.</span></div>
+<details class="sol" id="e2"><summary>E2 — Problema 3.12: mariscal de campo (proyectil clásico) <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 3-7/3-8, Prob. 3.12">E</span></summary>
+<p class="enun">Un mariscal de campo novato lanza un balón con una componente de velocidad inicial hacia arriba de 12.0 m/s y una componente horizontal de 20.0 m/s. Desprecie la resistencia del aire. a) ¿Cuánto tarda el balón en llegar al punto más alto de la trayectoria? b) ¿A qué altura está ese punto? c) ¿Cuánto tiempo pasa, desde el lanzamiento, hasta que el balón vuelve a su nivel original? ¿Cómo se compara con el de a)? d) ¿Qué distancia horizontal recorre en ese tiempo?</p>
+  <ol class="steps">
+    <li>a) «Punto más alto» = $v_y=0$: con la ec. 3.22, $0=v_{0y}-gt_1 \Rightarrow t_1=v_{0y}/g=12.0/9.80=1.22$ s.</li>
+    <li>b) Altura máxima: $h=v_{0y}^2/(2g)=12.0^2/(2\times9.80)=7.35$ m.</li>
+    <li>c) Al volver a su nivel original se cumple $y=0$; por la simetría de la parábola (subida y bajada duran lo mismo cuando se llega a la misma altura de salida), ese instante es el doble del tiempo de subida: $t=2t_1=2.45$ s — el doble que en a).</li>
+    <li>d) Alcance horizontal en ese tiempo: como $v_x$ es constante, $R=v_{0x}\,t=20.0\times2.45=49.0$ m.</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> «punto más alto» siempre es $v_y=0$ (ec. 3.22); «vuelve a su altura original» es $y=y_0$, y si sale y llega a la misma altura ese tiempo total es el doble del tiempo de subida (simetría); el alcance sale de multiplicar $v_{0x}$ (constante) por el tiempo total de vuelo.</div>
+  <div class="recipe"><b>Error típico:</b> usar $v_0$ total en vez de $v_{0y}$ para la altura máxima, o pensar que la aceleración se anula en la cima (sigue siendo $-g$ en todo momento).</div>
+</details>
+<div class="nivel" id="teoria-t03"><b>📝 Preguntas de teoría (4 puntos)</b><span>Han caído tal cual en Febrero 2023 (2ª semana) y Febrero 2025 (1ª semana): es el 40 % del examen. Estudia las dos y el guion de otras posibles.</span></div>
+<details class="sol" id="x1"><summary>X1 — Teoría: Movimiento de proyectiles <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="X" data-ref="Examen Febrero 2023 (2ª semana) P-3 Opción A">X</span></summary>
 <p class="enun">Desarrolle el tema: <i>Movimiento de proyectiles</i>. Además, responda a las siguientes cuestiones: (a) Un tirador olímpico dispara una bala horizontalmente con su pistola errando el tiro su objetivo, al mismo tiempo deja caer otra bala desde la altura del cañón de la pistola. Si no hay resistencia del aire, ¿qué bala llegará primero al suelo? Explique su respuesta. (b) Un pájaro que vuela en línea recta con altitud y módulo de velocidad constantes deja caer una semilla de su pico. Si se ignora la resistencia del aire, ¿qué trayectoria de la semilla observaría el pájaro? ¿Y una persona situada en el suelo?</p>
   <ol class="steps">
     <li><b>El modelo.</b> Un proyectil es un cuerpo que se mueve libremente bajo la gravedad, con $a_x=0$, $a_y=-g$, despreciando la resistencia del aire y la curvatura terrestre (sección 3.3).</li>
@@ -299,7 +409,7 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x} \qquad\text{(ec. 3.32)}$$
 
   <div class="recipe"><b>Receta:</b> en teoría de proyectiles, la frase clave del desarrollo es «$x$ uniforme, $y$ uniformemente acelerado, unidos solo por $t$»; cuando la pregunta involucra dos observadores, plantea directamente la ecuación de velocidad relativa (3.35) en vez de razonar solo cualitativamente.</div>
 </details>
-<details class="sol"><summary>X2 — Teoría: Movimiento en círculo <span class="src" data-l="X" data-ref="Examen Febrero 2025 (1ª semana) P-3 Opción A">X</span></summary>
+<details class="sol" id="x2"><summary>X2 — Teoría: Movimiento en círculo <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="X" data-ref="Examen Febrero 2025 (1ª semana) P-3 Opción A">X</span></summary>
 <p class="enun">Desarrolle el tema: <i>Movimiento en círculo</i>. Además, responda a las siguientes cuestiones: (a) En un movimiento circular uniforme, ¿Cómo varía la aceleración radial cuando la velocidad tangencial aumenta cinco veces? Y ¿Cómo varía la aceleración radial si el radio de curvatura se reduce a un tercio de su valor inicial? (b) ¿Cuánto vale la velocidad tangencial media en un giro completo de un movimiento circular uniforme? Razone la respuesta.</p>
   <ol class="steps">
     <li><b>Idea de partida.</b> En cualquier trayectoria curva hay aceleración aunque la rapidez sea constante, porque la <i>dirección</i> de $\vec v$ cambia (sección 3.2). El movimiento circular uniforme (MCU) es el caso particular con rapidez constante en un círculo.</li>
@@ -313,67 +423,46 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x} \qquad\text{(ec. 3.32)}$$
   </ol>
   <div class="recipe"><b>Receta:</b> para «cómo varía X al cambiar Y», escribe el cociente entre la fórmula final e inicial dejando fijo solo lo que el enunciado mantiene constante; para cualquier pregunta sobre una «media» en un ciclo completo, distingue si te piden la magnitud vectorial (con frecuencia sale cero) o la escalar (rapidez o distancia, que no).</div>
 </details>
-<details class="sol"><summary>X3 — Fragmentos de un cohete de fuegos artificiales <span class="src" data-l="X" data-ref="Examen Febrero 2020 (1ª semana) P-2">X</span></summary>
-<p class="enun">Un cohete de fuegos artificiales se dispara verticalmente hacia arriba. En su altura máxima de 80 m, estalla y se divide en dos fragmentos, uno con masa de 1.40 kg y otro con masa de 0.28 kg. En la explosión, 860 J de energía química se convierte en energía cinética de los dos fragmentos. a) (Tema 8: conservación de la cantidad de movimiento) Con esos datos se obtiene que los fragmentos salen despedidos con $v_A=14.3$ m/s y $v_B=71.5$ m/s (se comprueba que $m_Av_A=m_Bv_B=20.0$ kg·m/s, cantidad de movimiento conservada en sentidos opuestos). b) <b>Se observa que los dos fragmentos caen al suelo al mismo tiempo.</b> ¿Qué distancia hay entre los puntos en los que caen? Suponga que el suelo es horizontal y que la resistencia del aire es despreciable.</p>
-  <ol class="steps">
-    <li>El apartado a) es del tema 8 (colisiones/explosiones): se resuelve con conservación de la cantidad de movimiento total (nula antes de estallar, porque el cohete estaba momentáneamente parado en su punto más alto) junto con la energía cinética liberada; el resultado, $v_A=14.3$ m/s y $v_B=71.5$ m/s, se toma aquí como dato de partida para centrarnos en el apartado b), que sí es de este tema.</li>
-    <li><b>Por qué las velocidades de salida son horizontales.</b> Conservar la cantidad de movimiento vertical solo dice que $m_Av_{Ay}+m_Bv_{By}=0$ — por sí sola, esa ecuación permitiría que un fragmento saliera hacia arriba y el otro hacia abajo, no obliga a que ninguno de los dos sea cero. El dato que cierra el argumento es el del enunciado: <b>los dos caen al suelo al mismo tiempo</b>. Como ambos parten de la misma altura $h=80$ m, y el tiempo de caída de un proyectil depende solo de $v_{0y}$ y $h$ (no de la velocidad horizontal), «mismo tiempo de caída» obliga a que los dos tengan la <b>misma</b> $v_{0y}$. Llamando $v_{0y}$ a ese valor común, la conservación vertical queda $m_Av_{0y}+m_Bv_{0y}=(m_A+m_B)v_{0y}=0$, y como $m_A+m_B\ne0$, forzosamente $v_{0y}=0$ para los dos. Solo entonces sus velocidades de salida son puramente <b>horizontales</b>, en sentidos opuestos (para que la componente horizontal, también nula al principio, se conserve).</li>
-    <li>Con $v_{0y}=0$ para los dos, cada fragmento cae como un <b>lanzamiento horizontal</b> (sección 3.3) desde $h=80$ m: $t=\sqrt{2h/g}=\sqrt{2(80)/9.80}=4.04$ s — el mismo tiempo para ambos, como ya exigía el enunciado.</li>
-    <li>Distancia horizontal de cada uno (sin redondear las velocidades intermedias, $v_A=14.31$, $v_B=71.55$ m/s): $x_A=v_At=14.31\times4.04=57.8$ m; $x_B=v_Bt=71.55\times4.04=289.1$ m.</li>
-    <li>Como los fragmentos salen en <b>sentidos opuestos</b>, la separación entre los dos puntos de caída es la <b>suma</b> de ambas distancias: $D=x_A+x_B=57.8+289.1\approx347$ m.</li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t03/fragmentos-que-salen-horizontales-en-sentidos-op.svg">
-<div class="figph" role="img" aria-label="Fragmentos que salen horizontales en sentidos opuestos" style="aspect-ratio:320/150"></div>
-<figcaption>Los dos fragmentos salen horizontales (v<sub>0y</sub> = 0) desde 80 m, con sentidos opuestos, y caen en el mismo tiempo (4.04 s). Las distancias se suman: D = 57.8 + 288.9 ≈ 347 m. Dibujado con la misma escala horizontal y vertical. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio X3">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> en una explosión seguida de caída, primero resuelve la parte dinámica (tema 8) para obtener las velocidades de salida; el dato «caen al mismo tiempo» + conservación de la cantidad de movimiento vertical es lo que fuerza $v_{0y}=0$ para ambos; después trata cada fragmento como un lanzamiento horizontal independiente desde la misma altura.</div>
-  <div class="recipe"><b>Error típico:</b> restar las distancias en vez de sumarlas (van en sentidos opuestos, se alejan uno del otro); o no justificar por qué las velocidades de salida son horizontales — no es un dato gratuito, sale de conservar la componente vertical de la cantidad de movimiento.</div>
-</details>
-<details class="sol"><summary>E5 — Problema 3.24: aceleración centrípeta de un bailarín <span class="src" data-l="E" data-ref="Solucionario 3-14, Prob. 3.24">E</span></summary>
-<p class="enun">Un bailarín de ballet gira sobre un eje vertical a 3.0 revoluciones por segundo. La distancia de su oído interno al eje de giro es de 7.0 cm. Calcula la aceleración centrípeta de su oído interno, y exprésala como múltiplo de $g$.</p>
-  <ol class="steps">
-    <li>Frecuencia $f=3.0$ rev/s, así que el periodo es $T=1/f=0.333$ s. Radio $R=0.070$ m.</li>
-    <li>Con la ec. 3.29: $a_{\text{rad}}=4\pi^2R/T^2=4\pi^2(0.070)/(0.333)^2=24.9\ \text{m/s}^2$.</li>
-    <li>Como múltiplo de $g$: $24.9/9.80\approx2.5\,g$.</li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> de revoluciones por segundo a periodo, $T=1/f$; aplica directamente $a_{\text{rad}}=4\pi^2R/T^2$ (equivalente a $v^2/R$ pero sin pasar por $v$).</div>
-  <div class="recipe"><b>Error típico:</b> confundir «3.0 rev/s» con el periodo $T$ o con una velocidad angular en rad/s directamente, u olvidar convertir el radio de cm a m.</div>
-</details>
-<details class="sol"><summary>E6 — Problema 3.32: remero contra caminante, velocidad relativa en un río <span class="src" data-l="E" data-ref="Solucionario 3-16, Prob. 3.32">E</span></summary>
-<p class="enun">Dos muelles, A y B, están situados en un río; B está 1500 m río abajo de A. Dos amigos deben ir de A a B y regresar. Uno rema su bote con rapidez constante de 4.00 km/h relativa al agua; el otro camina por la orilla con rapidez constante de 4.00 km/h. La velocidad del río es 2.80 km/h en la dirección de A a B. ¿Cuánto tardará cada persona en hacer el viaje de ida y vuelta?</p>
-  <ol class="steps">
-    <li><b>Remero, tramo río abajo</b> (a favor de la corriente): con la ec. 3.32, $v=4.00+2.80=6.80$ km/h respecto a tierra. Tiempo: $t_1=1.50/6.80=0.221$ h.</li>
-    <li><b>Remero, tramo río arriba</b> (en contra): $v=4.00-2.80=1.20$ km/h. Tiempo: $t_2=1.50/1.20=1.25$ h.</li>
-    <li>Tiempo total del remero: $t_1+t_2=1.47$ h $=88.2$ min.</li>
-    <li><b>Caminante:</b> siempre a 4.00 km/h en tierra firme, sin corriente que le afecte. Recorre $2\times1.50=3.00$ km en total: $t=3.00/4.00=0.750$ h $=45.0$ min.</li>
-    <li>El remero tarda casi el doble. No es una compensación simétrica: pasa mucho más tiempo en el tramo lento (río arriba, a solo 1.20 km/h) del que gana en el tramo rápido (río abajo, a 6.80 km/h) — el tiempo perdido a baja velocidad pesa más que el tiempo ganado a alta velocidad.</li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t03/remero-y-caminante-entre-los-muelles-a-y-b.svg">
-<div class="figph" role="img" aria-label="Remero y caminante entre los muelles A y B" style="aspect-ratio:320/178"></div>
-<figcaption>El remero suma la corriente río abajo (6.80 km/h) y la resta río arriba (1.20 km/h): tarda 0.221 + 1.25 = 1.47 h. El caminante, siempre a 4.00 km/h, tarda 0.750 h. Las flechas del remero son proporcionales a su velocidad: el tramo lento pesa mucho más que el rápido. <span class="src" data-l="P" data-ref="Diagrama propio del problema 3.32">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> en un problema de ida y vuelta con corriente, suma o resta la velocidad del medio (con su signo) en cada tramo por separado (ec. 3.32), calcula el tiempo de cada tramo y súmalos — nunca promedies las velocidades directamente.</div>
-  <div class="recipe"><b>Error típico:</b> promediar $(6.80+1.20)/2=4.00$ km/h y concluir (incorrectamente) que el remero tarda lo mismo que el caminante.</div>
-</details>
-<h2 id="chuleta"><span class="n">7</span>Chuleta y lista de comprobación</h2>
+<div class="box tip"><span class="h">Si te toca otra pregunta de teoría del tema: «Vector aceleración» o «Velocidad relativa»</span>
+<p>Guion propio (no es un enunciado de examen real). Define, da la ecuación, un ejemplo con números y cierra con el error típico:</p>
+<ul>
+<li><b>Vector aceleración:</b> (1) idea: cualquier cambio de $\vec v$; (2) $\vec a_{\text{med}}=\Delta\vec v/\Delta t$ y $\vec a=d\vec v/dt$, componente a componente; (3) $a_\parallel$ cambia la rapidez y $a_\perp$ la dirección; (4) casos: $\vec a=\vec0$, MCU, proyectil; (5) ejemplo: $\vec v=(4,-3)$, $\vec a=(0,-2)$ ⇒ $a_\parallel=1.2$, $a_\perp=1.6$ m/s²; (6) error típico: creer que acelerar es solo ir más rápido.</li>
+<li><b>Velocidad relativa:</b> (1) idea: toda velocidad se mide respecto a un marco; (2) $\vec v_{P/A}=\vec v_{P/B}+\vec v_{B/A}$ y $\vec v_{A/B}=-\vec v_{B/A}$; (3) en 1D, suma con signo; en 2D, suma de vectores; (4) ejemplo: avión a 240 km/h con viento cruzado de 100 km/h ⇒ 260 km/h, desviado $22.6°$; (5) límite: a velocidades cercanas a $c$ no vale (relatividad); (6) error típico: promediar velocidades en un viaje de ida y vuelta.</li>
+</ul>
+  <span class="src" data-l="P" data-ref="Guion propio basado en U §3.2 y §3.5">P</span></div>
+<h2 id="chuleta"><span class="n">7</span>Chuleta, errores frecuentes y lista de comprobación</h2>
 <table>
-<tr><th>Concepto</th><th>Fórmula</th></tr>
-<tr><td>Posición, velocidad</td><td>$\vec r=x\hat\imath+y\hat\jmath+z\hat k$; $\vec v=d\vec r/dt$, componente a componente (ec. 3.2-3.6)</td></tr>
-<tr><td>Aceleración: paralela/perpendicular</td><td>$a_\parallel=\vec a\cdot\vec v/v$ (cambia rapidez); $a_\perp=\sqrt{a^2-a_\parallel^2}$ (cambia dirección)</td></tr>
-<tr><td>Proyectiles</td><td>$x=x_0+v_0\cos\alpha_0\,t$; $y=y_0+v_0\sin\alpha_0\,t-\tfrac12gt^2$; $v_x=v_0\cos\alpha_0$; $v_y=v_0\sin\alpha_0-gt$ (ec. 3.18-3.22)</td></tr>
-<tr><td>Altura máxima / alcance (misma altura salida-llegada)</td><td>$h=v_0^2\sin^2\alpha_0/(2g)$; $R=v_0^2\sin2\alpha_0/g$</td></tr>
-<tr><td>Movimiento circular</td><td>$a_{\text{rad}}=v^2/R=4\pi^2R/T^2$ (ec. 3.27-3.29); si no uniforme, $+\,a_{\text{tan}}=d|\vec v|/dt$ (ec. 3.30)</td></tr>
-<tr><td>Velocidad relativa 1D</td><td>$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}$; $v_{A/B,x}=-v_{B/A,x}$ (ec. 3.32-3.33)</td></tr>
-<tr><td>Velocidad relativa 2D/3D</td><td>$\vec v_{P/A}=\vec v_{P/B}+\vec v_{B/A}$ (ec. 3.35), suma vectorial</td></tr>
+<tr><th>Concepto</th><th>Fórmula o regla (ec. de U)</th></tr>
+<tr><td>Posición y velocidad</td><td>$\vec r=x\hat\imath+y\hat\jmath+z\hat k$ (3.1); $\vec v_{\text{med}}=\Delta\vec r/\Delta t$ (3.2); $\vec v=d\vec r/dt$ (3.3), $v_x=dx/dt$ (3.4); $v=\sqrt{v_x^2+v_y^2}$; $\vec v$ tangente a la trayectoria</td></tr>
+<tr><td>Aceleración</td><td>$\vec a_{\text{med}}=\Delta\vec v/\Delta t$ (3.8); $\vec a=d\vec v/dt$ (3.9), $a_x=dv_x/dt$ (3.10)</td></tr>
+<tr><td>Paralela y perpendicular</td><td>$a_\parallel=\vec a\cdot\vec v/v$ (cambia la rapidez: $\gt0$ acelera, $\lt0$ frena); $a_\perp=\sqrt{a^2-a_\parallel^2}$ (cambia la dirección)</td></tr>
+<tr><td>Proyectil (ecuaciones)</td><td>$v_{0x}=v_0\cos\alpha_0$, $v_{0y}=v_0\sin\alpha_0$ (3.18); $x=x_0+v_{0x}t$ (3.19); $y=y_0+v_{0y}t-\tfrac12gt^2$ (3.20); $v_x=v_{0x}$ (3.21); $v_y=v_{0y}-gt$ (3.22); trayectoria parábola (3.26)</td></tr>
+<tr><td>Cima, altura y alcance</td><td>Cima: $v_y=0$, $t_1=v_{0y}/g$. Mismo nivel: $h=v_0^2\sin^2\alpha_0/2g$, $R=v_0^2\sin2\alpha_0/g$, máximo a $45°$; ángulos complementarios, mismo $R$</td></tr>
+<tr><td>Lanzamiento horizontal</td><td>$v_{0y}=0$: $t=\sqrt{2h/g}$ (solo depende de $h$), $x=v_0t$</td></tr>
+<tr><td>Movimiento circular</td><td>$a_{\text{rad}}=v^2/R$ (3.27), $v=2\pi R/T$ (3.28), $a_{\text{rad}}=4\pi^2R/T^2$ (3.29), hacia el centro; $T=1/f$</td></tr>
+<tr><td>Circular no uniforme</td><td>$a_{\text{tan}}=d|\vec v|/dt$ (3.30); $a=\sqrt{a_{\text{rad}}^2+a_{\text{tan}}^2}$</td></tr>
+<tr><td>Velocidad relativa</td><td>1D: $v_{P/A,x}=v_{P/B,x}+v_{B/A,x}$ (3.32), $v_{A/B}=-v_{B/A}$ (3.33). 2D: $\vec v_{P/A}=\vec v_{P/B}+\vec v_{B/A}$ (3.35), $\vec v_{A/B}=-\vec v_{B/A}$ (3.36)</td></tr>
 </table>
+<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+<ul>
+<li>No separar los ejes en un proyectil, o usar $v_0$ total en lugar de $v_{0y}$ para la altura máxima.</li>
+<li>Decir que en la cima $v=0$ o $a=0$: solo $v_y=0$; la aceleración sigue siendo $-g$.</li>
+<li>Usar $R=v_0^2\sin2\alpha_0/g$ cuando salida y llegada están a distinto nivel.</li>
+<li>No corregir el cuadrante del arcotangente cuando $v_x\lt0$.</li>
+<li>Creer que acelerar es solo ir más rápido (olvidar $a_\perp$), o que $\vec a$ y $\vec v$ van en la misma dirección en una curva.</li>
+<li>Confundir $a_{\text{tan}}=d|\vec v|/dt$ con $|\vec a|$; usar $T$ en rev/s o el radio en cm.</li>
+<li>Promediar velocidades en un trayecto de ida y vuelta con corriente; restar las distancias de dos fragmentos que se alejan en sentidos opuestos.</li>
+</ul>
+  <span class="src" data-l="P" data-ref="Resumen propio de los errores tratados en el tema">P</span></div>
 <ul class="checklist">
-  <li>Sé derivar $\vec r(t)$ dos veces para obtener $\vec v(t)$ y $\vec a(t)$ en 2D/3D, componente a componente.</li>
-  <li>Sé descomponer $\vec a$ en paralela y perpendicular a $\vec v$, e interpretar si el objeto acelera y/o gira.</li>
-  <li>Sé resolver un problema de proyectiles completo (altura máxima, alcance, velocidad final), incluyendo el caso en que salida y llegada están a distinta altura.</li>
-  <li>Sé aplicar $a_{\text{rad}}=v^2/R$, tanto con $v$ directamente como en función del periodo $T$.</li>
-  <li>Sé plantear un problema de velocidad relativa en una dimensión (suma algebraica) y en dos dimensiones (suma vectorial, triángulo rectángulo).</li>
+  <li>Sé derivar $\vec r(t)$ dos veces para obtener $\vec v(t)$ y $\vec a(t)$ en 2D/3D y dar módulo y ángulo con el cuadrante correcto (§1, E1).</li>
+  <li>Sé descomponer $\vec a$ en paralela y perpendicular a $\vec v$ e interpretar si el objeto acelera, frena y/o gira (§2, E1).</li>
+  <li>Sé resolver un proyectil con ángulo: componentes, cima, tiempo de vuelo, altura, alcance y velocidad final (§3, E4, E2).</li>
+  <li>Sé resolver un lanzamiento horizontal y un lanzamiento desde otra altura sin usar la fórmula del alcance (§3, E3).</li>
+  <li>Sé combinar una explosión con la caída de los fragmentos y justificar por qué salen en horizontal (X3).</li>
+  <li>Sé aplicar $a_{\text{rad}}=v^2/R=4\pi^2R/T^2$ y razonar cómo varía con $v$ y con $R$ (§4, E5, X2).</li>
+  <li>Sé sumar velocidades relativas en 1D (tramo a tramo) y en 2D con un triángulo (§5, E6).</li>
+  <li>Sé desarrollar de memoria «Movimiento de proyectiles» y «Movimiento en círculo» y responder sus cuestiones (X1, X2).</li>
 </ul>
 <h2 id="fuentes"><span class="n">★</span>Fuentes de este tema</h2>
 <details class="fuentes-toggle">

@@ -39,3 +39,23 @@ def comprobaciones(c):
     c('x3', 'p', p, 1); c('x3', 'v_A', p / mA, 1); c('x3', 'v_B', p / mB, 1)
     t = sp.sqrt(2 * 80 / g)
     c('x3', 't caída', t, 2); c('x3', 'x_A', p / mA * t, 1); c('x3', 'x_B', p / mB * t, 1); c('x3', 'D', p * (1 / mA + 1 / mB) * t, 0)
+    # ---- teoría y mini-tests (página)
+    t = sp.symbols('t')
+    vv = [sp.diff(q, t).subs(t, 3) for q in (2 * t, t ** 2)]
+    c('pagina', '§1 ej. mínimo: vx', vv[0], 0); c('pagina', '§1 ej. mínimo: vy', vv[1], 0)
+    c('pagina', '§1 ej. mínimo: v', sp.sqrt(vv[0] ** 2 + vv[1] ** 2), 2); c('pagina', '§1 ej. mínimo: ángulo', sp.deg(sp.atan(vv[1] / vv[0])), 1)
+    c('pagina', '§1 ej. 3.1: v', sp.sqrt(1.0 ** 2 + 1.3 ** 2), 1); c('pagina', '§1 ej. 3.1: ángulo', 180 - sp.deg(sp.atan(1.3 / 1.0)), 0)
+    c('pagina', '§1 aviso: arctan(4/3)', sp.deg(sp.atan(sp.Rational(4, 3))), 1); c('pagina', '§1 aviso: cuadrante', 180 + sp.deg(sp.atan(sp.Rational(4, 3))), 1)
+    c('pagina', '§1 test: |v| (-3,-4)', 5, 0); c('pagina', '§1 test: v media', 3.0, 1)
+    ap = (0 * 4 + (-2) * (-3)) / 5.0
+    c('pagina', '§2 a paralela', ap, 1); c('pagina', '§2 a perpendicular', sp.sqrt(2.0 ** 2 - ap ** 2), 1)
+    v0 = 20.0
+    c('pagina', '§3 v0y', v0 * sin(30), 0); c('pagina', '§3 t1', v0 * sin(30) / g, 2); c('pagina', '§3 h', (v0 * sin(30)) ** 2 / (2 * g), 2)
+    c('pagina', '§3 R 30°', v0 ** 2 * sin(60) / g, 1); c('pagina', '§3 R 60°', v0 ** 2 * sin(120) / g, 1); c('pagina', '§3 R 45°', v0 ** 2 / g, 1)
+    tv = (5 + sp.sqrt(25 + 4 * 4.9 * 15)) / (2 * 4.9)
+    c('pagina', '§3 ventana: t', tv, 2); c('pagina', '§3 ventana: x', 10 * cos(30) * tv, 1); c('pagina', '§3 ventana: R fórmula', 100 * sin(60) / g, 1)
+    c('pagina', '§4 noria: v', 2 * sp.pi * 10 / 20, 2); c('pagina', '§4 noria: a', 4 * sp.pi ** 2 * 10 / 20 ** 2, 3)
+    c('pagina', '§4 test: a rad', 2.0 ** 2 / 0.50, 1); c('pagina', '§4 test: a total', sp.sqrt(4 ** 2 + 3 ** 2), 0)
+    c('pagina', '§5 tren: v', -1.0 + 3.0, 1); c('pagina', '§5 bote: v', sp.sqrt(5.0 ** 2 + 3.0 ** 2), 2); c('pagina', '§5 bote: ángulo', sp.deg(sp.atan(3 / 5.0)), 1)
+    c('pagina', 'ej. 3.14: v', sp.sqrt(240 ** 2 + 100 ** 2), 0); c('pagina', 'ej. 3.14: ángulo', sp.deg(sp.atan(100 / 240.0)), 1)
+    c('pagina', 'ej. 3.15: ángulo', sp.deg(sp.asin(100 / 240.0)), 1); c('pagina', 'ej. 3.15: v', sp.sqrt(240 ** 2 - 100 ** 2), 0)
