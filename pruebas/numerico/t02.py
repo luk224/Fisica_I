@@ -46,3 +46,35 @@ def comprobaciones(c):
     a2 = 15 - g0 + k3 * s
     v2 = v1.subs(t, 10) + sp.integrate(a2, (s, 10, t)); y2 = y1.subs(t, 10) + sp.integrate(v2.subs(t, s), (s, 10, t))
     c('x4', 'v2(60)', v2.subs(t, 60), 0); c('x4', 'y2(60)', y2.subs(t, 60), 0)
+    # ---- teoría y mini-tests (página)
+    g = 9.80
+    c('pagina', 'fig. 2.1: v media arrancones', (277 - 19) / 3.0, 0); c('pagina', 'fig. 2.2: v media camioneta', (19 - 277) / 9.0, 0)
+    c('pagina', 'nadador: rapidez media', 100.0 / 46.91, 3)
+    c('pagina', 'test: v media corredor', (-20 - 10) / (8.0 - 2.0), 1); c('pagina', 'test: rapidez pista', 400 / 80, 1)
+    x = 20 + 5 * t ** 2
+    c('pagina', 'ej. 2.1: Δx 1-2 s', x.subs(t, 2) - x.subs(t, 1), 0); c('pagina', 'ej. 2.1: v(1)', sp.diff(x, t).subs(t, 1), 0)
+    c('pagina', 'ej. 2.1: v(2)', sp.diff(x, t).subs(t, 2), 0)
+    x = 3 * t ** 2 - 12 * t
+    c('pagina', 'test: v(1)', sp.diff(x, t).subs(t, 1), 0); c('pagina', 'test: t parada', sp.solve(sp.diff(x, t), t)[0], 0)
+    vx = 60 + sp.Rational(1, 2) * t ** 2
+    c('pagina', 'ej. 2.3: a(1)', sp.diff(vx, t).subs(t, 1), 1); c('pagina', 'ej. 2.3: a(3)', sp.diff(vx, t).subs(t, 3), 1)
+    c('pagina', 'test: a media', (5.0 - 20) / 3.0, 1); c('pagina', 'test: a(2) de 2t³', sp.diff(2 * t ** 3, t, 2).subs(t, 2), 0)
+    c('pagina', 'ej. 2.4: x(2)', 5.0 + 15 * 2.0 + 0.5 * 4.0 * 2.0 ** 2, 0); c('pagina', 'ej. 2.4: v(2)', 15 + 4.0 * 2.0, 0)
+    c('pagina', 'ej. 2.4: x a 25 m/s', 5.0 + (25 ** 2 - 15 ** 2) / (2 * 4.0), 0)
+    c('pagina', 'test: d frenado', 25 ** 2 / (2 * 5.0), 1); c('pagina', 'test: t frenado', 25 / 5.0, 1)
+    c('pagina', 'test: x reposo', 0.5 * 2.0 * 4.0 ** 2, 0); c('pagina', 'test: v reposo', 2.0 * 4.0, 1)
+    c('pagina', 'test: a sin t', (30 ** 2 - 10 ** 2) / (2 * 100), 1)
+    c('pagina', 'ej. 2.7: y(1)', 15.0 - 0.5 * g, 1); c('pagina', 'ej. 2.7: v(1)', 15.0 - g, 1)
+    c('pagina', 'ej. 2.7: h max', 15.0 ** 2 / (2 * g), 1); c('pagina', 'ej. 2.7: v a 5 m', sp.sqrt(15.0 ** 2 - 2 * g * 5.00), 1)
+    r = sorted(sp.solve(g / 2 * t ** 2 - 15.0 * t - 5.00, t))
+    c('pagina', 'ej. 2.8: t ficticia', r[0], 2); c('pagina', 'ej. 2.8: t', r[1], 2)
+    r = sorted(sp.solve(g / 2 * t ** 2 - 15.0 * t + 5.00, t))
+    c('pagina', 'ej. 2.8: t subiendo', r[0], 2); c('pagina', 'ej. 2.8: t bajando', r[1], 2)
+    c('pagina', 'test: t caída 20 m', sp.sqrt(2 * 20.0 / g), 2); c('pagina', 'test: v caída 20 m', sp.sqrt(2 * g * 20.0), 1)
+    c('pagina', 'test: t subida', 19.6 / g, 2); c('pagina', 'test: h subida', 19.6 ** 2 / (2 * g), 1)
+    vx = 10 + sp.integrate(sp.Rational(2) - sp.Rational(1, 10) * t, (t, 0, t)); xx = 50 + sp.integrate(vx, (t, 0, t))
+    tm = sp.solve(sp.Rational(2) - sp.Rational(1, 10) * t, t)[0]
+    c('pagina', 'ej. 2.9: t vmax', tm, 0); c('pagina', 'ej. 2.9: vmax', vx.subs(t, tm), 0); c('pagina', 'ej. 2.9: x', xx.subs(t, tm), 0)
+    v6 = sp.integrate(6 * t, (t, 0, t))
+    c('pagina', 'test: v(2) con a=6t', v6.subs(t, 2), 0); c('pagina', 'test: x(2) con a=6t', sp.integrate(v6, (t, 0, t)).subs(t, 2), 0)
+    c('pagina', 'test: Δv tramo', 3 * 4, 0)

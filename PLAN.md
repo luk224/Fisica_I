@@ -51,7 +51,7 @@ Receta por tema NN (modelo: `contenido/tema_05/`): resumen de 5 minutos + tabla 
 - [x] C8. Tema 13 (8 secciones, 8 mini-tests, 10 núcleo/4 práctica/8 teoría; X1–X6 intactos)
 - [x] C9. Temas 14-16: [x] tema 14 (8 secciones, 8 mini-tests, 11 núcleo/7 práctica/8 teoría; X1–X7 intactos) · [x] tema 15 (8 secciones, 8 mini-tests, 11 núcleo/8 práctica/3 teoría; X1 intacto) · [x] tema 16 (9 secciones, 9 mini-tests, 15 núcleo/9 práctica; sin exámenes reales)
 - [x] C10. Temas 17-20: [x] tema 17 (7 secciones, 7 mini-tests, 15 núcleo/9 práctica/1 teoría; X1 intacto) · [x] tema 18 (6 secciones, 6 mini-tests, 15 núcleo/13 práctica/8 cuestiones; X1–X3 intactos) · [x] tema 19 (6 secciones, 18 núcleo con X1–X10/17 práctica; X intactos; pendiente: la receta de X8 dice «interactivo del §9», ahora §6) · [x] tema 20 (8 secciones, 8 mini-tests, 19 núcleo/15 práctica/2 teoría; X1–X9 intactos)
-- [ ] C11. Temas 1-4: [x] tema 1 (8 secciones, 8 mini-tests, 6 núcleo/3 práctica; 1.31 y 1.51 reescritos por regla 8 bis) · [ ] tema 2 · [ ] tema 3 · [ ] tema 4
+- [ ] C11. Temas 1-4: [x] tema 1 (8 secciones, 8 mini-tests, 6 núcleo/3 práctica; 1.31 y 1.51 reescritos por regla 8 bis) · [x] tema 2 (6 secciones, 6 mini-tests, 7 núcleo/2 práctica; X1–X4 intactos; ej. 2.8 corregido a y=−5,00 m) · [ ] tema 3 · [ ] tema 4
 (Se puede hacer un tema por sesión; subir cada uno al terminar.)
 
 ## Fase D — Mejoras de método de academia (primero en el tema 5, luego se generalizan)
