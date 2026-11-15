@@ -25,3 +25,18 @@ def comprobaciones(c):
     # ---- E8: dos cajas en contacto
     a = 250 / 25.0
     c('e8', 'a', a, 1); c('e8', 'F contacto', 5.0 * a, 0)
+    # ---- teoría y mini-tests (fuera de los ejercicios)
+    import math
+    g = 9.8
+    c('pagina', 'luchadores: R', math.hypot(-100, 80), 0); c('pagina', 'luchadores: theta', 180 - math.degrees(math.atan(80 / 100)), 0)
+    c('pagina', 'mini-test s1: R', math.hypot(30, 40), 0); c('pagina', 'mini-test s1: ángulo', math.degrees(math.atan(40 / 30)), 1)
+    c('pagina', 'mini-test s1: n caja 5 kg', 5 * g, 0)
+    c('pagina', 'ejemplo 4.4: a', 20 / 40, 2)
+    c('pagina', 'mini-test s3: a', 12 / 3, 0); c('pagina', 'mini-test s3: a 6-2', (6 - 2) / 4, 0)
+    c('pagina', 'mini-test s3: a coche', 25 / 10, 1); c('pagina', 'mini-test s3: F coche', 1200 * 25 / 10, 0)
+    c('pagina', 'ejemplo 4.7: m', 2.49e4 / 9.80, -1)
+    c('pagina', 'mini-test s4: w Luna', 70 * 1.62, 0); c('pagina', 'mini-test s4: m', 98 / 9.8, 0)
+    c('pagina', 'mini-test s4: m paquete', 200 / g, 1); c('pagina', 'mini-test s4: T', 200 + 200 / g * 2, 0)
+    c('pagina', 'mini-test s5: F manzana', 1 * g, 1); c('pagina', 'mini-test s5: cociente a (exp)', math.log10(1e4 / 1e-6), 0)
+    c('pagina', 'mini-test s6: a', 20 / 4, 0)
+    c('pagina', 'teoría: peso 70 kg Tierra', 70 * g, 0)

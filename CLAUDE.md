@@ -93,7 +93,7 @@ E:\UNED\FISICA I\Claude\
   assets/three/, interactivos.js|css, escenas/  motor three.js r147 local (2D ortográfico y 3D) y una escena por interactivo
   herramientas/capturar_interactivos.py  captura PNG estática de cada interactivo (PDF y sin WebGL)
   simulaciones/                   simulaciones interactivas (sim_tema03.html…); acceso solo desde el botón de la tarjeta en index.html
-  contenido/tema_NN/              FUENTE de los temas migrados (los 20 temas): tema.json + ejercicios/ + partes/ (ver §8). Las páginas de temas/ se generan desde aquí
+  contenido/tema_NN/              FUENTE de los temas migrados (los 20 temas, todos en formato estudio): tema.json + ejercicios/ + partes/ (ver §8). Las páginas de temas/ se generan desde aquí
   assets/figs/tNN/                figuras SVG sueltas (cargan al hacer scroll); assets/busqueda*.js buscador; assets/figuras.js, estudio.css|js
   pruebas/                        pruebas automáticas (python pruebas/ejecutar.py); .github/workflows/pruebas.yml las lanza en cada push
   cambios.html                    página de cambios generada desde git
