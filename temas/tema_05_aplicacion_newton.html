@@ -312,7 +312,11 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 </table>
 <details class="sol" id="e1"><summary>E1 — Problema 5.6: bola de demolición con dos cables (equilibrio) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 5-2, Prob. 5.6">E</span></summary>
 <p class="enun">Una bola de demolición de 3620 kg está sujeta por dos cables ligeros de acero. El cable B forma 40° con la vertical y el cable A es horizontal. Calcule a) la tensión $T_B$ y b) la tensión $T_A$.</p>
-  <figure class="fig" data-svg="../assets/figs/t05/bola-de-demolicion-en-equilibrio.svg">
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>¿Está en equilibrio? Entonces $\sum F_x=0$ y $\sum F_y=0$. Dibuja el DCL de la bola: peso, $T_A$ y $T_B$.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Solo un cable tiene componente vertical: empieza por el eje vertical, donde hay una única incógnita.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t05/bola-de-demolicion-en-equilibrio.svg">
 <div class="figph" role="img" aria-label="Bola de demolición en equilibrio" style="aspect-ratio:330/220"></div>
 <figcaption>Bola de 3620 kg en equilibrio: el cable A es horizontal y el cable B forma 40° con la vertical. Vertical: T<sub>B</sub> cos 40° = mg; horizontal: T<sub>A</sub> = T<sub>B</sub> sen 40°. (Escala 2 px por kN; la componente vertical de T<sub>B</sub>, discontinua, iguala al peso.) <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.6, p. 160 / Solucionario 5-2)">P</span></figcaption>
 </figure>
@@ -323,9 +327,14 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
   <div class="recipe"><b>Receta:</b> en equilibrio con varias cuerdas, empieza por el eje que tenga <b>una sola incógnita</b>.</div>
   <div class="recipe"><b>Error típico:</b> confundir seno y coseno cuando el ángulo se mide desde la vertical (la componente <i>vertical</i> es $T\cos40^\circ$).</div>
 </details>
+</details>
 <details class="sol" id="e4"><summary>E4 — Problema 5.20: peso aparente en un elevador <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 5-11, Prob. 5.20">E</span></summary>
 <p class="enun">Un estudiante de 550 N está de pie sobre una báscula de baño dentro de un elevador de 850 kg (incluido el estudiante) sostenido por un cable. Al arrancar, la báscula marca 450 N. a) Halle la aceleración del elevador (módulo y sentido). b) ¿Y si la báscula marca 670 N? c) Si marca 0, ¿debería preocuparse? d) ¿Qué tensión hay en el cable en los casos a) y c)?</p>
-  <figure class="fig" data-svg="../assets/figs/t05/estudiante-en-una-bascula-dentro-de-un-elevador.svg">
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>La báscula marca la normal $n$, no el peso. Dibuja el DCL del estudiante: $n$ hacia arriba y $mg$ hacia abajo. ¿Cuánto vale $m$?</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Segunda ley con $+y$ hacia arriba: $n-mg=ma$. Si el resultado sale negativo, la aceleración apunta hacia abajo.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t05/estudiante-en-una-bascula-dentro-de-un-elevador.svg">
 <div class="figph" role="img" aria-label="Estudiante en una báscula dentro de un elevador" style="aspect-ratio:340/255"></div>
 <figcaption>Al arrancar, la báscula marca n = 450 N &lt; 550 N: la aceleración es hacia abajo (a = −1,78 m/s²). Izquierda, DCL del sistema completo (850 kg): T − W = m a. Derecha, DCL del estudiante: n − w = m a. Escalas distintas en cada DCL. <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.20, p. 161 / Solucionario 5-11)">P</span></figcaption>
 </figure>
@@ -339,9 +348,14 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
   <div class="recipe"><b>Receta:</b> peso aparente = normal = $m(g+a_y)$; elige el cuerpo cuya ecuación contenga la incógnita (el estudiante para $a$, el sistema completo para $T$).</div>
   <div class="recipe"><b>Error típico:</b> igualar la lectura de la báscula con el peso; olvidar el signo de $a$.</div>
 </details>
+</details>
 <details class="sol" id="x1"><summary>X1 — Dos bloques en planos de 25° y 60° (sin fricción) <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2022 (2ª semana) P-2">X</span></summary>
 <p class="enun">Dos bloques de masas $m_1=80$ kg y $m_2=20$ kg, unidos por una cuerda que pasa por una polea sin fricción, descansan en los dos planos inclinados de una cuña (25° con la horizontal el de $m_1$, 60° el de $m_2$). a) Indicar hacia dónde se moverá el sistema. b) Calcular la aceleración del sistema. c) Calcular la tensión de la cuerda. No hay fricción entre los bloques y las superficies. (3 puntos.)</p>
-  <figure class="fig" data-svg="../assets/figs/t05/dos-bloques-en-una-cuna-de-dos-planos-inclinados.svg">
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Antes de calcular: ¿qué bloque «gana»? Compara $m_1g\sin25^\circ$ con $m_2g\sin60^\circ$ para fijar el sentido.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Una ecuación $\sum F=ma$ por bloque, con $+x$ en el sentido de su movimiento; suma las dos y $T$ desaparece.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t05/dos-bloques-en-una-cuna-de-dos-planos-inclinados.svg">
 <div class="figph" role="img" aria-label="Dos bloques en una cuña de dos planos inclinados" style="aspect-ratio:360/205"></div>
 <figcaption>Examen Feb. 2022: m<sub>1</sub> = 80 kg (plano de 25°) y m<sub>2</sub> = 20 kg (plano de 60°) unidos por una cuerda sobre la polea del vértice. m<sub>1</sub>g sen 25° = 331 N frente a m<sub>2</sub>g sen 60° = 170 N: m<sub>1</sub> baja, m<sub>2</sub> sube, con a = 1,62 m/s² y T = 202 N. (Flechas de fuerza a escala 0,1 px/N, salvo T, orientativa.) <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2022, 2ª sem., P-2)">P</span></figcaption>
 </figure>
@@ -361,9 +375,14 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
     <ul><li><b>Planteamiento (≈30 %):</b> DCL de ambos bloques, ejes paralelos a cada plano y signo del movimiento; comparación de $m_1g\sin25^\circ$ con $m_2g\sin60^\circ$ para el sentido.</li><li><b>Ecuaciones (≈40 %):</b> Las dos ecuaciones $\sum F=ma$ (una por bloque) y la suma que elimina $T$.</li><li><b>Resultado y unidades (≈30 %):</b> $a=1{,}62\ \text{m/s}^2$ y $T=202$ N con unidades; comprobar $T$ con el otro bloque.</li></ul>
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
+</details>
 <details class="sol" id="e6"><summary>E6 — Problema 5.36: ángulo de deslizamiento (umbral de la fricción estática) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 5-20, Prob. 5.36">E</span></summary>
 <p class="enun">Una caja de 25,0 kg con libros descansa sobre una rampa que forma un ángulo $\alpha$ con la horizontal; $\mu_k=0{,}25$ y $\mu_s=0{,}35$. a) Al aumentar $\alpha$, ¿con qué ángulo mínimo empieza la caja a resbalar? b) Con ese ángulo, ¿qué aceleración tiene una vez en movimiento? c) ¿Con qué rapidez se mueve tras deslizar 5,0 m?</p>
-  <figure class="fig" data-svg="../assets/figs/t05/caja-a-punto-de-resbalar-en-una-rampa.svg">
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Mientras la caja no resbala está en equilibrio: ¿cuánto valen $n$ y $f_s$ en función de $\alpha$?</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>El umbral es cuando $f_s$ alcanza su máximo $\mu_sn$; ahí desaparece la masa de la ecuación. Una vez en movimiento, la fricción pasa a ser cinética.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t05/caja-a-punto-de-resbalar-en-una-rampa.svg">
 <div class="figph" role="img" aria-label="Caja a punto de resbalar en una rampa" style="aspect-ratio:330/190"></div>
 <figcaption>Caja de 25,0 kg (μ<sub>s</sub> = 0,35, μ<sub>k</sub> = 0,25) en una rampa de ángulo α creciente. A punto de resbalar f<sub>s</sub> = mg sen α = μ<sub>s</sub>mg cos α, de donde tan α = μ<sub>s</sub>. Una vez en movimiento la fricción cinética (57,8 N) es menor que la estática máxima (80,9 N). <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.36, p. 163 / Solucionario 5-20)">P</span></figcaption>
 </figure>
@@ -376,9 +395,14 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
   <div class="recipe"><b>Receta:</b> «a punto de deslizar» ⇔ $f_s=\mu_sn$; en un plano sin otras fuerzas, $\tan\alpha_c=\mu_s$. Una vez en marcha, se pasa a $\mu_k$.</div>
   <div class="recipe"><b>Error típico:</b> usar $f_s=\mu_sn$ cuando el cuerpo no está en el umbral; seguir usando $\mu_s$ cuando ya desliza.</div>
 </details>
+</details>
 <details class="sol" id="x2"><summary>X2 — Dos paquetes unidos por un cable en una rampa con fricción <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2025 (2ª semana) P-1">X</span></summary>
 <p class="enun">Dos paquetes unidos por un cable sometido a tensión se deslizan por una rampa de $\alpha=16^\circ$ debido a la gravedad. El paquete que va en primer lugar tiene una masa $m_1=5{,}5$ kg y un coeficiente de fricción cinética $\mu_1=0{,}2$. El que va en segundo lugar tiene $m_2=8{,}5$ kg y $\mu_2=0{,}25$. (a) Calcule la aceleración de cada paquete. (b) Determine la tensión en el cable. (c) ¿Qué sucedería si se invierten las posiciones de los paquetes de manera que el de 8,5 kg desciende en primer lugar? Considere $g=9{,}81\ \text{m/s}^2$. (3 puntos.)</p>
-  <figure class="fig" data-svg="../assets/figs/t05/dos-paquetes-unidos-por-un-cable-en-una-rampa.svg">
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Supón primero el cable tenso (misma $a$ para los dos). Para cada paquete: $n=m g\cos\alpha$ y $f=\mu n$.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Dos ecuaciones a lo largo de la rampa con incógnitas $a$ y $T$. Si $T$ saliera negativa, el cable no puede empujar: se afloja. En c) calcula la aceleración de cada paquete suelto.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t05/dos-paquetes-unidos-por-un-cable-en-una-rampa.svg">
 <div class="figph" role="img" aria-label="Dos paquetes unidos por un cable en una rampa" style="aspect-ratio:360/190"></div>
 <figcaption>Examen Feb. 2025: dos paquetes unidos por un cable bajan por una rampa de 16°. A lo largo de la rampa actúan m g sen α (cuesta abajo), la fricción cinética f<sub>k</sub> = μ m g cos α (cuesta arriba) y la tensión T, que tira hacia atrás del paquete delantero y hacia delante del trasero. Escala de fuerzas 3 px/N; T = 1,57 N no está a escala. <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2025, 2ª sem., P-1)">P</span></figcaption>
 </figure>
@@ -399,9 +423,14 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
     <ul><li><b>Planteamiento (≈30 %):</b> Suponer cable tenso, ejes a lo largo de la rampa, $n_i=m_ig\cos\alpha$ y $f_i=\mu_in_i$.</li><li><b>Ecuaciones (≈40 %):</b> Una ecuación por paquete, misma $a$, y despeje de $a$ y $T$; en c) la aceleración de cada paquete suelto para ver que el cable se afloja.</li><li><b>Resultado y unidades (≈30 %):</b> $0{,}532\ \text{m/s}^2$, $T=1{,}57$ N y conclusión de c) razonada con números.</li></ul>
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
+</details>
 <details class="sol" id="x3"><summary>X3 — Bloque empujado contra una pared (fuerza oblicua, fricción y trabajo) <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2023 (2ª semana) P-1">X</span></summary>
 <p class="enun">Se coloca un bloque de 5 kg contra una pared vertical. Se aplica una fuerza constante $F$ al bloque, con $F=96{,}0$ N y un ángulo de 60,0° con la horizontal. El coeficiente de fricción cinética entre el bloque y la pared es 0,300. Si el bloque está inicialmente en reposo: (a) ¿Cuál será el módulo de su velocidad después de recorrer 0,400 m sobre la pared? (b) ¿Cuál será el trabajo realizado en el desplazamiento? Considere $g=9{,}81\ \text{m/s}^2$. (3 puntos.)</p>
-    <figure class="fig" data-svg="../assets/figs/t05/bloque-empujado-contra-una-pared-vertical.svg">
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Descompón $F$ en horizontal y vertical. ¿Qué fuerza horizontal equilibra la pared?</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>La normal sale del eje horizontal: $n=F\cos60^\circ$. Después $f=\mu n$ y $\sum F_y=ma$ da $a$; con $a$ constante, $v^2=2ad$.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t05/bloque-empujado-contra-una-pared-vertical.svg">
 <div class="figph" role="img" aria-label="Bloque empujado contra una pared vertical" style="aspect-ratio:350/230"></div>
 <figcaption>Examen Feb. 2023: a la izquierda, el croquis; a la derecha, el DCL del bloque. La normal la pone solo la componente horizontal de F (n = F cos 60° = 48,0 N); en vertical F sen 60° = 83,1 N vence al peso (49,1 N) y a la fricción cinética (14,4 N, hacia abajo porque el bloque sube). <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2023, 2ª sem., P-1; = U prob. 5.75)">P</span></figcaption>
 </figure>
@@ -422,9 +451,14 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
     <ul><li><b>Planteamiento (≈30 %):</b> DCL con $F$ descompuesta; la normal sale del eje horizontal ($n=F\cos60^\circ$) antes de calcular $f=\mu n$.</li><li><b>Ecuaciones (≈40 %):</b> Eje vertical $\sum F_y=ma$ → $a$; después $v^2=2ad$ (o trabajo–energía).</li><li><b>Resultado y unidades (≈30 %):</b> $a=3{,}94\ \text{m/s}^2$, $v=1{,}77$ m/s; $W_F=33{,}3$ J con signo y unidades.</li></ul>
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
+</details>
 <details class="sol" id="x4"><summary>X4 — Plano inclinado con fricción y polea móvil <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2020 (1ª semana) P-1">X</span></summary>
 <p class="enun">Sea el sistema de poleas de la figura, en el que tanto las poleas como las cuerdas se pueden considerar de masa despreciable. Sabiendo que el coeficiente de fricción dinámico y estático entre la masa A y la superficie inclinada es el mismo y vale 0,1, determinar: a) la aceleración de las masas A, de 1,5 kg, y B, de 1 kg; b) la tensión en las cuerdas; c) la velocidad de A después de haber recorrido un metro sobre el plano inclinado, suponiendo que el sistema parte del reposo. (3 puntos.)</p>
-  <p>La figura del examen (plano inclinado de 30°): A sobre el plano; la cuerda sube paralela al plano hasta una polea <b>fija</b> en el vértice, baja vertical, rodea por debajo una polea <b>móvil</b> de la que cuelga B, y sube hasta un soporte fijo en el techo. g no está indicada: se usa 9,80.</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Ligadura de la polea móvil: ¿qué relación hay entre lo que baja A y lo que sube B? ¿Y entre las tensiones?</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Comprueba el sentido de movimiento antes de poner la fricción (la fricción se opone al movimiento). Ecuación de A, ecuación de B con $2T$, y la ligadura $a_B=a_A/2$.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<p>La figura del examen (plano inclinado de 30°): A sobre el plano; la cuerda sube paralela al plano hasta una polea <b>fija</b> en el vértice, baja vertical, rodea por debajo una polea <b>móvil</b> de la que cuelga B, y sube hasta un soporte fijo en el techo. g no está indicada: se usa 9,80.</p>
   <figure class="fig" data-svg="../assets/figs/t05/plano-inclinado-con-polea-fija-y-polea-movil.svg">
 <div class="figph" role="img" aria-label="Plano inclinado con polea fija y polea móvil" style="aspect-ratio:360/235"></div>
 <figcaption>Examen Feb. 2020: A (1,5 kg) sobre el plano de 30°; la cuerda pasa por la polea fija del vértice, rodea la polea móvil de la que cuelga B (1 kg) y termina atada al techo. Dos tramos sostienen la polea móvil (fuerza 2T) y, por la ligadura de la cuerda, a<sub>B</sub> = a<sub>A</sub>/2. Resultados: a<sub>A</sub> = 0,673 m/s² (A baja), a<sub>B</sub> = 0,336 m/s² (B sube), T = 5,07 N. (Longitudes de flecha no proporcionales.) <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2020, 1ª sem., P-1)">P</span></figcaption>
@@ -446,9 +480,14 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
     <ul><li><b>Planteamiento (≈30 %):</b> Sentido del movimiento comprobado antes de la fricción; ligadura $a_B=a_A/2$ y fuerza $2T$ en la polea móvil.</li><li><b>Ecuaciones (≈40 %):</b> Ecuación de A (con $f=\mu n$) y de B; despeje de $a_A$, $a_B$, $T$.</li><li><b>Resultado y unidades (≈30 %):</b> $0{,}673$ y $0{,}336\ \text{m/s}^2$, $T=5{,}07$ N y $10{,}1$ N, $v_A=1{,}16$ m/s.</li></ul>
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
+</details>
 <details class="sol" id="e8"><summary>E8 — Problema 5.49: curva peraltada sin fricción <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 5-26, Prob. 5.49">E</span></summary>
 <p class="enun">Un coche de 1125 kg y un camión de 2250 kg se acercan a una curva de 225 m de radio. a) ¿Con qué ángulo debe peraltarse la curva para que ambos la tomen a 65,0 mi/h sin depender de la fricción? ¿Debe el camión ir más despacio? b) Calcule la fuerza normal sobre cada vehículo a esa velocidad.</p>
-  <figure class="fig" data-svg="../assets/figs/t05/coche-en-una-curva-peraltada-sin-friccion.svg">
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Sin fricción, ¿qué fuerzas actúan sobre el coche? ¿Hacia dónde apunta la aceleración centrípeta?</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Vertical: $n\cos\beta=mg$; horizontal, al centro: $n\sin\beta=mv^2/R$. Divide las dos ecuaciones y la masa desaparece. Pasa mi/h a m/s.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t05/coche-en-una-curva-peraltada-sin-friccion.svg">
 <div class="figph" role="img" aria-label="Coche en una curva peraltada sin fricción" style="aspect-ratio:360/230"></div>
 <figcaption>Curva peraltada sin fricción vista de frente: la normal es perpendicular a la calzada y su componente horizontal n sen β es la que produce la aceleración centrípeta a<sub>rad</sub> = v²/R hacia el centro; n cos β = mg. Para v = 29,06 m/s y R = 225 m: β = 21,0° (el mismo para coche y camión). <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.49, p. 163 / Solucionario 5-26)">P</span></figcaption>
 </figure>
@@ -460,9 +499,14 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
   <div class="recipe"><b>Receta:</b> peralte ideal: $\tan\beta=v^2/(gR)$; ejes horizontal/vertical, no paralelos a la calzada.</div>
   <div class="recipe"><b>Error típico:</b> escribir $n=mg\cos\beta$ (eso es en un plano inclinado sin aceleración horizontal; aquí $n=mg/\cos\beta$).</div>
 </details>
+</details>
 <details class="sol" id="x5"><summary>X5 — Cuerpo sobre un cono giratorio (movimiento circular) <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2018 (2ª semana) P-2">X</span></summary>
 <p class="enun">Sobre la superficie exterior lisa y sin fricción de un cono de revolución, que gira alrededor de su propio eje con una velocidad angular de 15 r.p.m., está situado un cuerpo A de 2 kg sujeto al vértice del cono por un hilo inextensible y sin masa de 4 m de longitud. Calcular: a) velocidad lineal del cuerpo A respecto a la Tierra; b) reacción de la superficie del cono sobre A; c) tensión del hilo; d) velocidad angular a que debe girar el cono para anular su fuerza de reacción sobre A. (3 puntos.)</p>
-  <p>La figura del examen: cono de eje vertical y vértice arriba; el ángulo de 30° está entre el eje y la generatriz (semiángulo del cono). g no indicada: 9,80.</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Radio de la circunferencia: $r=L\sin\theta$ (no la longitud del hilo). Pasa $\omega$ a rad/s.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Ejes: uno hacia el centro del giro (ahí va $mv^2/r$) y otro vertical (ahí $\sum F=0$). La reacción es $n=0$ cuando se despega el cuerpo.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<p>La figura del examen: cono de eje vertical y vértice arriba; el ángulo de 30° está entre el eje y la generatriz (semiángulo del cono). g no indicada: 9,80.</p>
   <figure class="fig" data-svg="../assets/figs/t05/cuerpo-sobre-un-cono-giratorio.svg">
 <div class="figph" role="img" aria-label="Cuerpo sobre un cono giratorio" style="aspect-ratio:360/250"></div>
 <figcaption>Examen Feb. 2018: sección del cono (semiángulo 30°) que gira con ω = 15 rpm. El cuerpo A describe un círculo horizontal de radio r = L sen 30° = 2,00 m: la aceleración (a<sub>rad</sub>) es horizontal, hacia el eje; sobre A actúan mg, la tensión T (a lo largo del hilo) y la normal n (perpendicular a la superficie, hacia fuera). Longitudes a escala 2,2 px/N salvo n (1,25 N), exagerada. <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2018, 2ª sem., P-2)">P</span></figcaption>
@@ -483,6 +527,7 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
     <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) velocidad (0,6) · b) reacción (0,9) · c) tensión (0,9) · d) $\omega_0$ (0,6). Dentro de cada apartado suele valorarse en este orden:</p>
     <ul><li><b>Planteamiento (≈30 %):</b> Radio de giro $r=L\sin\theta$ (no la longitud del hilo), $\omega$ en rad/s, y ejes: uno hacia el centro, otro perpendicular.</li><li><b>Ecuaciones (≈40 %):</b> Radial: $T\sin\theta-n\cos\theta=mv^2/r$; perpendicular: $T\cos\theta+n\sin\theta=mg$; resolver el sistema; en d) imponer $n=0$.</li><li><b>Resultado y unidades (≈30 %):</b> $v=3{,}14$ m/s, $n=1{,}25$ N, $T=21{,}9$ N, $\omega_0=1{,}68$ rad/s, con unidades.</li></ul>
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
+</details>
 </details>
 <div class="nivel"><b>🟡 Práctica: 5 ejercicios más del solucionario</b><span>Repiten métodos del núcleo con otros datos. Aquí van sin dibujo: haz tú el cuerpo libre antes de leer los pasos.</span></div>
 <details class="sol" id="e2"><summary>E2 — Problema 5.8: coche sostenido por un cable en una rampa lisa <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 5-3, Prob. 5.8">E</span></summary>

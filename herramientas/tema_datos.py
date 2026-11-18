@@ -275,6 +275,12 @@ class Generador:
         cuerpo = self.tokens((self.dir / 'ejercicios' / f'{eid}.html').read_text(encoding='utf8').strip())
         idattr = f' id="{m["id"]}"' if m.get('id') else ''
         pr = (' ' + m['prio']) if m.get('prio') else ''
+        if m.get('pistas'):
+            fin = cuerpo.index('</p>', cuerpo.index('class="enun"')) + 4
+            pistas = ''.join(f'<details class="mas pista"><summary>Pista {i}</summary><p>{t}</p></details>\n'
+                             for i, t in enumerate(m['pistas'], 1))
+            cuerpo = (f'{cuerpo[:fin]}\n<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>\n{pistas}'
+                      f'<details class="mas pasos"><summary>Solución completa</summary>\n{cuerpo[fin:].strip()}\n</details>')
         return (f'<details class="sol"{idattr}><summary>{m["etiqueta"]}{" — " + m["titulo"] if m.get("titulo") else ""}{pr} {src_html(m["src"])}</summary>\n'
                 f'{cuerpo}\n</details>\n')
 
