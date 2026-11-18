@@ -1,0 +1,37 @@
+#separator:tab
+#html:true
+#tags column:3
+Signos	\(Q>0\) entra a la sustancia de trabajo. Máquina: \(Q_H>0\), \(Q_C&lt;0\), \(W>0\). Refrigerador: \(Q_C>0\), \(Q_H&lt;0\), \(W&lt;0\) (U p. 650)	Fisica1 Tema20 chuleta
+Ciclo	\(\Delta U=0\); \(W=Q=Q_H+Q_C=|Q_H|-|Q_C|\) (20.1)-(20.2); \(|Q_H|=|Q_C|+|W|\) (20.8)	Fisica1 Tema20 chuleta
+Máquina	\(e=\dfrac{W}{Q_H}=1-\dfrac{|Q_C|}{Q_H}\) (20.3)-(20.4); potencia \(P=W\cdot\) (ciclos/s); \(e&lt;1\) siempre	Fisica1 Tema20 chuleta
+Otto / Diesel	\(e_{Otto}=1-r^{1-\gamma}\) (20.6); \(r=8\), \(\gamma=1{,}4\): 0,56; Diesel \(r=15\)-\(20\): 0,65-0,70	Fisica1 Tema20 chuleta
+Refrigerador	\(K=\dfrac{|Q_C|}{|W|}=\dfrac{|Q_C|}{|Q_H|-|Q_C|}\) (20.9); \(K=H/P\)	Fisica1 Tema20 chuleta
+Segunda ley	Kelvin-Planck: ninguna máquina con \(e=1\) (calor de un solo foco, todo en trabajo, mismo estado final). Clausius: ningún proceso con único resultado calor de frío a caliente	Fisica1 Tema20 chuleta
+Carnot (gas ideal)	2 isotermas + 2 adiabáticas; \(Q_H=nRT_H\ln\frac{V_b}{V_a}\) (20.10); \(Q_C=-nRT_C\ln\frac{V_c}{V_d}\) (20.11); \(\frac{V_b}{V_a}=\frac{V_c}{V_d}\); \(\frac{|Q_C|}{|Q_H|}=\frac{T_C}{T_H}\) (20.13); \(e=1-\frac{T_C}{T_H}\) (20.14); \(K=\frac{T_C}{T_H-T_C}\) (20.15); <b>kelvin</b>	Fisica1 Tema20 chuleta
+Máxima eficiencia	Ninguna máquina entre \(T_H\) y \(T_C\) supera a Carnot; ciclo cualquiera: \(T_H=T_{max}\), \(T_C=T_{min}\)	Fisica1 Tema20 chuleta
+Entropía	\(dS=dQ/T\) (20.17); \(\Delta S=\int_1^2 dQ/T\) (20.19) reversible; isotermo \(\Delta S=Q/T\) (20.18); \(S\) función de estado (camino reversible inventado)	Fisica1 Tema20 chuleta
+\(\Delta S\) habituales	\(mc\ln\frac{T_2}{T_1}\); \(\pm mL/T\); gas ideal: isotermo \(nR\ln\frac{V_2}{V_1}\), isócoro \(nC_V\ln\frac{T_2}{T_1}\), isóbaro \(nC_p\ln\frac{T_2}{T_1}\), adiabático reversible 0; expansión libre \(nR\ln\frac{V_2}{V_1}\)	Fisica1 Tema20 chuleta
+Ciclos y principio	Carnot \(\frac{Q_H}{T_H}+\frac{Q_C}{T_C}=0\) (20.20); ciclo reversible \(\oint\frac{dQ}{T}=0\) (20.21); \(\Delta S_{total}\ge0\), \(=0\) solo si reversible	Fisica1 Tema20 chuleta
+Microscópica	\(S=k\ln w\) (20.22); \(\Delta S=k\ln\frac{w_2}{w_1}\) (20.23); expansión libre \(w_2=2^Nw_1\) ⇒ \(\Delta S=nR\ln2\)	Fisica1 Tema20 chuleta
+Constantes	\(R=8{,}314\) J/(mol·K); \(k=R/N_A\); \(L_f=3{,}34\times10^5\) J/kg; \(c_{agua}=4190\) J/(kg·K); \(1\ \text{atm}=1{,}013\times10^5\) Pa; 1 hp = 746 W	Fisica1 Tema20 chuleta
+Enunciado: «recibe … J de calor y cede … J», «eficiencia térmica del motor». ¿Qué método?	\(W=|Q_H|-|Q_C|\), \(e=W/Q_H\).	Fisica1 Tema20 decide
+Enunciado: «refrigerador con coeficiente de rendimiento …», «potencia eléctrica». ¿Qué método?	\(|W|=|Q_C|/K\), \(|Q_H|=|Q_C|+|W|\); con tiempos, \(K=H/P\).	Fisica1 Tema20 decide
+Enunciado: «ciclo Otto», «razón de compresión \(r\)». ¿Qué método?	\(e=1-r^{1-\gamma}\); \(|Q_C|=(1-e)Q_H\).	Fisica1 Tema20 decide
+Enunciado: «máquina de Carnot entre … K y … K», «recibe … J». ¿Qué método?	\(|Q_C|=|Q_H|\,T_C/T_H\), \(W=|Q_H|-|Q_C|\), \(e=1-T_C/T_H\) (kelvin).	Fisica1 Tema20 decide
+Enunciado: «refrigerador de Carnot», «… ciclos/min: potencia de entrada». ¿Qué método?	\(K=T_C/(T_H-T_C)\); \(|Q_H|=|Q_C|\,T_H/T_C\); \(P=|W|\cdot\) ciclos/s.	Fisica1 Tema20 decide
+Enunciado: «fabrica hielo», «el calor expulsado derrite … kg de hielo». ¿Qué método?	El calor del cambio de fase (\(mL\)) es el de un foco; luego Carnot y primera ley.	Fisica1 Tema20 decide
+Enunciado: «ciclo de Carnot con \(V_1\), \(T_1\), \(P_2\), \(V_3\)…», «… veces por segundo». ¿Qué método?	Vértices: isotermas \(pV=\) cte, adiabáticas \(TV^{\gamma-1}=\) cte; \(Q\) solo en las isotermas; \(P=W\cdot f\).	Fisica1 Tema20 decide
+Enunciado: «sistema de frío con ciclo de Carnot», «variación de entropía en cada transformación». ¿Qué método?	Ciclo antihorario; \(K_{Carnot}\); \(\Delta S=Q/T\) en isotermas, 0 en adiabáticas; suma 0.	Fisica1 Tema20 decide
+Enunciado: «compresión isotérmica reversible: cambio de entropía». ¿Qué método?	\(Q=W\) ⇒ \(\Delta S=Q/T\).	Fisica1 Tema20 decide
+Enunciado: «se funde … con una fuente a …», «se evapora a \(T\)». ¿Qué método?	\(\Delta S=\pm Q/T\) de cada cuerpo a \(T\) fija; suma.	Fisica1 Tema20 decide
+Enunciado: «se enfría hasta la temperatura ambiente», «se mezcla agua caliente y fría». ¿Qué método?	Cuerpo: \(mc\ln\frac{T_2}{T_1}\); ambiente: \(Q/T\); mezcla: \(T_f\) por calorimetría.	Fisica1 Tema20 decide
+Enunciado: «expansión libre», «el globo estalla en el vacío». ¿Qué método?	Camino reversible isotermo: \(\Delta S=nR\ln\frac{V_2}{V_1}\).	Fisica1 Tema20 decide
+Enunciado: «cilindro aislado», «pistón conductor», «se abandona el pistón». ¿Qué método?	\(\Delta U_{tot}=0\) ⇒ \(T_f\); misma \(p\); \(\Delta S=\sum nR\ln\frac{V_f}{V_i}\gt0\).	Fisica1 Tema20 decide
+Enunciado: «ciclo de refrigeración: isoterma, isócora, isóbara». ¿Qué método?	Tabla de calores; \(K\) = calores que entran entre \(|W|\).	Fisica1 Tema20 decide
+Enunciado: «trabajo, calor, energía interna <b>y entropía</b> en cada proceso». ¿Qué método?	Tabla del tema 19 + columna \(\Delta S\) (\(nC_p\ln\), \(nC_V\ln\), \(nR\ln\)); suma 0.	Fisica1 Tema20 decide
+Enunciado: «alcanza una temperatura máxima de …», «compárela con la máxima eficiencia posible». ¿Qué método?	\(Q_H\) = calores que entran; \(e=W/Q_H\) frente a \(1-T_{min}/T_{max}\).	Fisica1 Tema20 decide
+Enunciado: «cerrándose el ciclo por una línea recta». ¿Qué método?	En la recta, busca dónde \(dQ\) cambia de signo: solo cuenta en \(Q_H\) la parte que entra.	Fisica1 Tema20 decide
+Enunciado: «compresión adiabática … calentamiento a presión constante … isócora», «1 kg de aire». ¿Qué método?	Calor solo en los tramos no adiabáticos: \(e=1-|Q_C|/Q_H\).	Fisica1 Tema20 decide
+Enunciado: «central de energía oceánica», «eficiencia real de la planta». ¿Qué método?	Potencias: \(P_H=P_W+P_C\); \(T_C=T_H(1-e)\).	Fisica1 Tema20 decide
+Enunciado: «Desarrolle: segunda ley / procesos reversibles e irreversibles / ciclo de Carnot», «¿viola la primera o la segunda ley?». ¿Qué método?	Guion: dirección de los procesos → reversibles → máquinas y refrigeradores → enunciados → Carnot → entropía.	Fisica1 Tema20 decide
+Errores frecuentes de este tema	<ul> <li>Temperaturas en °C en \(e=1-T_C/T_H\), en \(K=T_C/(T_H-T_C)\) o dentro de un logaritmo de \(\Delta S\).</li> <li>Llamar «eficiencia» a un refrigerador (es \(K=|Q_C|/|W|\)) y poner los signos de máquina (\(Q_C&lt;0\)) en un refrigerador, o al revés.</li> <li>Calcular \(e\) con el calor neto del ciclo en el denominador; olvidar el calor de una isoterma o de una isócora en \(Q_H\); no separar los tramos que entran de los que salen (X8).</li> <li>Poner calor en las adiabáticas; usar \(\gamma=1{,}4\) con gases monoatómicos (helio, argón: \(\gamma=5/3\)).</li> <li>Decir \(\Delta S=0\) «porque \(Q=0\)» en una expansión libre o en un sistema aislado con un proceso irreversible; usar \(\Delta S=Q/T\) cuando \(T\) cambia.</li> <li>Creer que \(\Delta S\) de un cuerpo no puede ser negativa (solo la <b>total</b> no baja), o que un ciclo cambia la entropía del gas.</li> <li>Comparar un ciclo cualquiera con Carnot usando temperaturas intermedias en vez de \(T_{max}\) y \(T_{min}\).</li> <li>Decir que Carnot tiene \(e=100\,\%\) o que mejor mantenimiento permitiría \(e=1\); definir «reversible» como «que se puede deshacer».</li> <li>Dar los enunciados de la segunda ley sin «como único resultado» / «terminando en el mismo estado».</li> </ul>	Fisica1 Tema20 error
