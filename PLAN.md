@@ -55,7 +55,7 @@ Receta por tema NN (modelo: `contenido/tema_05/`): resumen de 5 minutos + tabla 
 (Se puede hacer un tema por sesión; subir cada uno al terminar.)
 
 ## Fase D — Mejoras de método de academia (primero en el tema 5, luego se generalizan)
-- [ ] D1. **Desglose de puntos** de cada problema de examen (planteamiento / ecuaciones / resultado y unidades) en el tema 5.
+- [x] D1. **Desglose de puntos** de cada problema de examen (planteamiento / ecuaciones / resultado y unidades) en el tema 5. Hecho: caja «Cómo se reparte la puntuación» (fuente P, orientativa) al final de X1-X5 del tema 5.
 - [ ] D2. **Pistas progresivas** (pista 1, 2, solución) en los ejercicios del bloque Núcleo.
 - [ ] D3. **Problemas gemelos** de los X: variante con otros datos y solo el resultado, generados con sympy (un fichero `contenido/tema_NN/gemelos.json` + pruebas numéricas).
 - [ ] D4. **Ejemplo resuelto → con huecos → solo** (tres escalones) en 2-3 métodos del tema 5.
