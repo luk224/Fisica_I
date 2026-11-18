@@ -123,6 +123,6 @@
       });
     }
     window.ocultarNotasDeFuentes = ocultarNotasDeFuentes;
-    window.addEventListener('beforeprint', function () { d.querySelectorAll('details.sol').forEach(function (x) { x.open = true; }); ocultarNotasDeFuentes(); });
+    window.addEventListener('beforeprint', function () { d.querySelectorAll('details.sol, details.pasos').forEach(function (x) { x.open = true; }); ocultarNotasDeFuentes(); });
   });
 })();

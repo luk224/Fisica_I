@@ -30,7 +30,7 @@ class Navegador(unittest.TestCase):
             for p in paginas():
                 # copia con todas las soluciones abiertas: así también se cargan las figuras de los ejercicios
                 copia = TEMAS / ('_tmp_' + p.name)
-                copia.write_text(leer(p).replace('<details class="sol"', '<details open class="sol"'), encoding='utf8')
+                copia.write_text(leer(p).replace('<details class="sol"', '<details open class="sol"').replace('<details class="mas pasos"', '<details open class="mas pasos"'), encoding='utf8')
                 dom = volcar_dom(base + f'temas/_tmp_{p.name}')
                 with self.subTest(pagina=p.name):
                     self.assertGreater(dom.count('class="katex"'), 50, 'KaTeX no ha renderizado')

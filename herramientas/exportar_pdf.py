@@ -54,7 +54,7 @@ def exportar(paginas, destinos, color=False):
             pg.emulate_media(media="print")
             if color:
                 pg.evaluate("document.documentElement.classList.add('print-color')")
-            pg.evaluate("document.querySelectorAll('details.sol').forEach(x => x.open = true)")
+            pg.evaluate("document.querySelectorAll('details.sol, details.pasos').forEach(x => x.open = true)")
             pg.evaluate("window.cargarFiguras ? window.cargarFiguras() : null")
             pg.evaluate("window.ocultarNotasDeFuentes && window.ocultarNotasDeFuentes()")
             pg.wait_for_timeout(400)
