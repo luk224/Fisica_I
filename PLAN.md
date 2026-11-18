@@ -60,7 +60,7 @@ Receta por tema NN (modelo: `contenido/tema_05/`): resumen de 5 minutos + tabla 
 - [~] D3. (DESCARTADO por el usuario: redundante.) **Problemas gemelos** de los X: variante con otros datos y solo el resultado, generados con sympy (un fichero `contenido/tema_NN/gemelos.json` + pruebas numéricas).
 - [ ] D4. **Ejemplo resuelto → con huecos → solo** (tres escalones) en 2-3 métodos del tema 5.
 - [ ] D5. **«Encuentra el error»** (solución con un fallo típico) y **pregunta previa** al inicio de cada sección.
-- [ ] D6. **Mini-examen de cierre** (1 problema + 1 teoría, 30-35 min, con rúbrica) y **respuesta modelo de teoría** (4 puntos).
+- [x] D6. **Mini-examen de cierre** (1 problema + 1 teoría, 30-35 min, con rúbrica) y **respuesta modelo de teoría** (4 puntos). Hecho solo la respuesta modelo de teoría (fricción y movimiento circular, con reparto orientativo) en el tema 5; el mini-examen completo se descarta por redundante con los X.
 - [x] D7. **Tarjetas Anki** (fórmula ↔ cuándo se usa; error ↔ corrección) generadas desde las chuletas: script `herramientas/exportar_anki.py`. Hecho: `herramientas/exportar_anki.py` (lo llama construir.py) → `anki/tema_NN.txt` y `anki/todo.txt` (735 tarjetas: chuleta, decide y errores típicos).
 - [ ] D8. Probar el tema 5 con una persona que no lo haya visto y anotar dónde se atasca.
 - [ ] D9. Generalizar lo que funcione a los demás temas (añadir al flujo de la Fase C).
