@@ -297,6 +297,10 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 </details>
 <details class="sol" id="x2"><summary>X2 — Satélite que se estrella <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2023 (1ª semana) P-1">X</span></summary>
 <p class="enun">Un satélite artificial se estrella contra la Tierra. Su masa es de 210 kg y la velocidad de impacto contra la superficie es de 311 km/h. Los restos del satélite penetraron hasta una profundidad de 81 cm. Suponiendo que era constante: a) ¿Cuál fue su aceleración durante el choque? b) ¿Qué fuerza ejerció el suelo sobre el satélite durante el choque? c) ¿Durante cuánto tiempo se ejerció la mencionada fuerza? (Considere $g=9.81$ m/s².)</p>
+<figure class="fig" data-svg="../assets/figs/t02/x6-planteamiento.svg">
+<div class="figph" role="img" aria-label="Planteamiento del satélite que se estrella: esquema y diagrama de cuerpo libre" style="aspect-ratio:360/318"></div>
+<figcaption>Planteamiento: esquema del impacto con los datos y DCL durante el choque (sin resultados). El suelo o el material empuja hacia arriba; el peso, hacia abajo. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
+</figure>
   <ol class="steps">
     <li>Convertimos a SI: $v_0=311/3.6=86.39\ \text{m/s}$, $d=0.81$ m. Tomo $+y$ hacia abajo (sentido de la caída), y supongo impacto vertical (el dato de $g$ y "profundidad" lo sugieren).</li>
     <li>a) Como no conocemos el tiempo, usamos la ecuación 2.13 con $v=0$ al final: $0=v_0^2+2a\,d \Rightarrow |a|=\dfrac{v_0^2}{2d}=\dfrac{86.39^2}{2(0.81)}=4.61\times10^3\ \text{m/s}^2$ (unas 470 veces $g$), dirigida hacia arriba (frenando la caída).</li>
@@ -313,6 +317,10 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 </details>
 <details class="sol" id="x3"><summary>X3 — Bala que penetra un material <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2024 (1ª semana) P-1">X</span></summary>
 <p class="enun">Para probar una protección antibalas, se dispara una bala de 10 g de masa contra una pieza de un nuevo material que se encuentra en el suelo, de forma que la trayectoria de la bala es perpendicular sobre el material (es decir, vertical hacia abajo). La bala queda incrustada en el material penetrando 2 m de profundidad. Si se disparó a 100 m/s y se supone que la aceleración al incrustarse es constante: a) el valor de la deceleración; b) ¿qué fuerza ejerció el material sobre la bala para frenarla? c) ¿qué tiempo tardó la bala hasta pararse? (Considere $g=9.81$ m/s².)</p>
+<figure class="fig" data-svg="../assets/figs/t02/x5-planteamiento.svg">
+<div class="figph" role="img" aria-label="Planteamiento de la bala que penetra el material: esquema y diagrama de cuerpo libre" style="aspect-ratio:360/318"></div>
+<figcaption>Planteamiento: esquema del impacto con los datos y DCL durante el choque (sin resultados). El suelo o el material empuja hacia arriba; el peso, hacia abajo. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
+</figure>
   <ol class="steps">
     <li>Tomo $+x$ en el sentido de avance de la bala (hacia abajo). $v_0=100$ m/s, $v=0$, $d=2$ m, $m=0.010$ kg.</li>
     <li>a) Con la ecuación 2.13 ($v=0$ al final): $|a|=\dfrac{v_0^2}{2d}=\dfrac{100^2}{2(2)}=2500\ \text{m/s}^2$ (unas 255 veces $g$).</li>
@@ -355,6 +363,10 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 </details>
 <details class="sol" id="x4"><summary>X4 — Cohete con aceleración variable por tramos <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2019 (2ª semana) P-1">X</span></summary>
 <p class="enun">Un cohete se lanza verticalmente. La aceleración de la gravedad efectiva decrece con el tiempo, $g(t)=g_0-k_3t$ con $g_0=10\ \text{m/s}^2$ y $k_3=0.1\ \text{m/s}^3$. Durante los primeros 10 s el motor ejerce una fuerza $F_1=k_1M$ (con $k_1=20\ \text{m/s}^2$); de $t=10$ s a $t=60$ s, una fuerza menor $F_2=k_2M$ (con $k_2=15\ \text{m/s}^2$). Calcula la altura alcanzada tras 60 s de ascenso.</p>
+<figure class="fig" data-svg="../assets/figs/t02/x4-planteamiento.svg">
+<div class="figph" role="img" aria-label="Planteamiento del cohete: dos tramos con su diagrama de cuerpo libre" style="aspect-ratio:360/472"></div>
+<figcaption>Planteamiento como en el examen: tramos de empuje y DCL de cada uno (sin resultados). F₁ = k₁M y F₂ = k₂M; el peso es Mg(t) con g decreciente. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
+</figure>
   <ol class="steps">
     <li>Por la 2ª ley de Newton, $F-Mg(t)=Ma(t)$; como $F=kM$, la masa se cancela y queda $a(t)=k-g(t)=k-g_0+k_3t$: la aceleración no es constante, hay que integrar (ec. 2.17-2.18), no usar las ecuaciones de la sección 2.4.</li>
     <li><b>Tramo 1 (0-10 s):</b> $a_1(t)=k_1-g_0+k_3t = 10+0.1t\ \text{m/s}^2$. Integrando desde $v(0)=0,\ y(0)=0$: $v_1(t)=10t+0.05t^2$; $y_1(t)=5t^2+t^3/60$.</li>
