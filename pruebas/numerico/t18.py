@@ -351,3 +351,10 @@ def comprobaciones(c):
     c('x3', 'QH', QH, 0)
     c('x3', 'e', Wc / QH, 3)
     c('x3', 'e neto', Wc / 273000 * 100, 1)
+    # ---- D9: errores
+    nn = 4.86e-4 / 4.00e-3
+    c('pagina', 'error 1: p del fallo (1e2)', nn * 8.314 * 18.0 / 0.0200 / 1e2, 1); c('pagina', 'error 1: p (1e4)', nn * 8.314 * 291.15 / 0.0200 / 1e4, 2)
+    m1 = 0.2848
+    c('pagina', 'error 2: usado del fallo', m1 * (1 - 0.340 / 1.30), 3); c('pagina', 'error 2: m2', m1 * 4.413e5 / 1.401e6, 4); c('pagina', 'error 2: usado', m1 - m1 * 4.413e5 / 1.401e6, 3)
+    c('pagina', 'error 3: v del fallo', sp.sqrt(3 * 8.314 * 300 / 32.0), 1); c('pagina', 'error 3: v', sp.sqrt(3 * 8.314 * 300 / 0.0320), 0)
+    c('pagina', 'error 4: ΔT', 5 / 3 * 2.50, 2)

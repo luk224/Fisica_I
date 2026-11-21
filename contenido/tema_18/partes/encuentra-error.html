@@ -1,0 +1,17 @@
+<div class="nivel"><b>🔎 Encuentra el error</b><span>Cuatro soluciones con un fallo típico. Localiza dónde se rompe antes de abrir la respuesta: es la mejor forma de que no te pase en el examen.</span></div>
+<details class="mas"><summary>1. Temperatura en el gas ideal <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Un tanque de 20,0 L contiene 0,122 mol de helio a 18,0 °C. ¿Qué presión hay?</p>
+<p><b>Solución con fallo.</b> $p=nRT/V=(0{,}122)(8{,}314)(18{,}0)/0{,}0200=9{,}1\times10^2$ Pa.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>En $pV=nRT$ la temperatura va en kelvin: $T=291{,}15$ K. Entonces $p=(0{,}1215)(8{,}314)(291{,}15)/0{,}0200=\mathbf{1{,}47\times10^4\ Pa}$.</p></details></details>
+<details class="mas"><summary>2. Presión manométrica y masa de gas <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Un tanque de propano está a 1,30 MPa manométricos y se gasta hasta 0,340 MPa manométricos. Si al principio hay 0,2848 kg, ¿cuánto gas se ha usado?</p>
+<p><b>Solución con fallo.</b> $m\propto p$ con las presiones del manómetro: $m_2=0{,}2848(0{,}340/1{,}30)=0{,}0745$ kg y se usan $0{,}210$ kg.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>La proporcionalidad $m\propto p$ vale con la presión <i>absoluta</i> ($p_{man}+p_{atm}$): $m_2=0{,}2848\,\dfrac{4{,}413\times10^5}{1{,}401\times10^6}=0{,}0897$ kg y se usan $\mathbf{0{,}195\ kg}$.</p></details></details>
+<details class="mas"><summary>3. Masa molar en g/mol <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Calcula $v_{rms}$ del oxígeno ($M=32{,}0$ g/mol) a 300 K.</p>
+<p><b>Solución con fallo.</b> $v_{rms}=\sqrt{3RT/M}=\sqrt{3(8{,}314)(300)/32{,}0}=15{,}3$ m/s.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>$M$ debe ir en kg/mol: $0{,}0320$. Entonces $v_{rms}=\sqrt{3(8{,}314)(300)/0{,}0320}=\mathbf{484\ m/s}$. (Con g/mol sale un factor $\sqrt{1000}\approx32$ menor.)</p></details></details>
+<details class="mas"><summary>4. Capacidad calorífica y tipo de molécula <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Dos recipientes rígidos, uno con H₂ y otro con Ne, reciben el mismo calor y tienen los mismos moles. El H₂ sube 2,50 K. ¿Cuánto sube el Ne?</p>
+<p><b>Solución con fallo.</b> «Mismo calor, mismos moles, misma subida»: 2,50 K.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>A volumen constante $Q=nC_V\Delta T$ y $C_V$ depende del gas: el H₂ (diatómico) tiene $C_V=\tfrac52R$ y el Ne (monoatómico) $\tfrac32R$. Entonces $\Delta T_{Ne}=\tfrac{5/2}{3/2}(2{,}50)=\mathbf{4{,}17\ K}$.</p></details></details>
