@@ -71,7 +71,6 @@ Receta por tema NN (modelo: `contenido/tema_05/`): resumen de 5 minutos + tabla 
 - [ ] E2. Comprobar que la acción de GitHub (`.github/workflows/pruebas.yml`) pasa en verde y arreglarla si no.
 - [x] E3. Actualizar `index.html` (tarjetas y progreso) y el aviso de «11 de 20 secciones listas» si ya no es correcto. Hecho: quitado `data-p` de las tarjetas (el contador marcaba 11 de 20 con los 20 temas listos).
 - [ ] E4. Zona de entrenamiento (problemas con pistas, tests tipo PEC, simulacro cronometrado, cuaderno de errores) — diseñar antes con el usuario.
-- [ ] E5. PWA / uso sin conexión; cuenta o código de recuperación para el progreso entre dispositivos (hoy las casillas son de `localStorage`).
 - [ ] E6. Calendario de estudio hacia atrás desde las PEC (CLAUDE.md §2) y módulo 0 de matemáticas con diagnóstico.
 
 ## Notas para quien retome
