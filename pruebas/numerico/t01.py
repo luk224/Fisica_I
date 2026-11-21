@@ -64,3 +64,6 @@ def comprobaciones(c):
     c('pagina', 'ej. 1.11: |A×B|', 6 * 4 * sin(30), 0)
     c('pagina', 'test: área 4·5·sin30', 4 * 5 * sin(30), 0)
     c('pagina', 'test: C_z (1,2)×(3,1)', 1 * 1 - 2 * 3, 0)
+    # ---- D9: errores
+    c('pagina', 'error 1: m² (1e6)', 2.0 * 1000**2 / 1e6, 1)
+    c('pagina', 'error 3: θ', 180 + sp.deg(sp.atan(20.99 / 7.50)), 1)
