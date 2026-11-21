@@ -260,3 +260,9 @@ def comprobaciones(c):
     c('pagina', 'test s7: amplitud en lambda/8', 6.0 * sp.sin(pi / 4), 2)
     c('pagina', 'test s8: lambda1', 2 * 0.60, 2)
     c('pagina', 'test s8: f1', 240 / 1.20, 0)
+    # ---- D9: errores
+    c('pagina', 'error 1: y', 0.0700 * sp.cos(2 * sp.pi * 0.875), 4)
+    c('pagina', 'error 2: r del fallo (1e8)', 30.0 * 10.0 / 1e-6 / 1e8, 1); c('pagina', 'error 2: r (1e4)', 30.0 * sp.sqrt(10.0 / 1e-6) / 1e4, 1)
+    mu = 8.75e-3 / 0.750; f = 344 / 0.765
+    c('pagina', 'error 3: F del fallo (1e3)', mu * (f * 0.750) ** 2 / 1e3, 2); c('pagina', 'error 3: F', mu * (f * 0.500) ** 2, 0)
+    c('pagina', 'error 4: F del fallo (1e3)', 7.50e-3 * (2 * 0.800 * 624) ** 2 / 1e3, 2); c('pagina', 'error 4: F', 7.50e-3 * (2 * 0.800 * 156) ** 2, 0)

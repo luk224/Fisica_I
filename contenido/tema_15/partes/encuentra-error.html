@@ -1,0 +1,17 @@
+<div class="nivel"><b>🔎 Encuentra el error</b><span>Cuatro soluciones con un fallo típico. Localiza dónde se rompe antes de abrir la respuesta: es la mejor forma de que no te pase en el examen.</span></div>
+<details class="mas"><summary>1. Sentido de la onda <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Una onda $y=A\cos(\cdot)$ con $A=0{,}0700$ m, $\lambda=0{,}320$ m y $T=0{,}0400$ s viaja hacia $-x$ y vale $+A$ en $x=0$, $t=0$. ¿Qué valor tiene en $x=0{,}360$ m, $t=0{,}150$ s?</p>
+<p><b>Solución con fallo.</b> «Una onda viaja con $kx-\omega t$»: $y=A\cos2\pi(0{,}360/0{,}320-0{,}150/0{,}0400)=-0{,}0495$ m.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>Hacia $-x$ la fase es $kx+\omega t$: $y=A\cos2\pi(1{,}125+3{,}75)=A\cos(2\pi\cdot0{,}875)=\mathbf{+0{,}0495\ m}$. Con el signo equivocado hasta el signo de $y$ sale mal.</p></details></details>
+<details class="mas"><summary>2. Ley del inverso del cuadrado <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Un avión da 10,0 W/m² a 30,0 m. ¿A qué distancia la intensidad es 1,0 μW/m²?</p>
+<p><b>Solución con fallo.</b> «$I\propto1/r$»: $r_2=30{,}0\,(10{,}0/10^{-6})=3{,}0\times10^8$ m.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>Una fuente puntual reparte su potencia sobre una esfera: $I\propto1/r^2$, así que la distancia lleva la <i>raíz</i>: $r_2=30{,}0\sqrt{10{,}0/10^{-6}}=\mathbf{9{,}5\times10^4\ m}$.</p></details></details>
+<details class="mas"><summary>3. Segundo sobretono <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Una cuerda de 75,0 cm y 8,75 g vibra en su segundo sobretono con $f=449{,}7$ Hz. ¿Qué tensión tiene?</p>
+<p><b>Solución con fallo.</b> «Segundo sobretono = $n=2$»: $\lambda=L=0{,}750$ m, $v=337$ m/s y $F=\mu v^2=1{,}33\times10^3$ N.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>El primer sobretono es $n=2$; el segundo es $n=3$: $\lambda=2L/3=0{,}500$ m, $v=224{,}8$ m/s y $F=\mu v^2=\mathbf{590\ N}$.</p></details></details>
+<details class="mas"><summary>4. Armónicos consecutivos <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Una cuerda de 0,800 m con $\mu=7{,}50$ g/m tiene dos armónicos consecutivos de 624 Hz y 780 Hz. ¿Qué tensión tiene?</p>
+<p><b>Solución con fallo.</b> «624 Hz es la fundamental»: $v=2Lf=998$ m/s y $F=\mu v^2=7{,}48\times10^3$ N.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>Dos armónicos consecutivos se diferencian en $f_1$: $f_1=780-624=156$ Hz (624 Hz es el cuarto armónico). Entonces $v=2Lf_1=249{,}6$ m/s y $F=\mu v^2=\mathbf{467\ N}$.</p></details></details>
