@@ -40,3 +40,8 @@ def comprobaciones(c):
     c('pagina', 'mini-test s5: F manzana', 1 * g, 1); c('pagina', 'mini-test s5: cociente a (exp)', math.log10(1e4 / 1e-6), 0)
     c('pagina', 'mini-test s6: a', 20 / 4, 0)
     c('pagina', 'teoría: peso 70 kg Tierra', 70 * g, 0)
+    # ---- D9: errores
+    c('pagina', 'error 1: del fallo (1e4)', 2400 * 12.0 / 1e4, 2); c('pagina', 'error 1: F', 2400 / 9.80 * 12.0, -1)
+    c('pagina', 'error 2: del fallo', 625 - 625 / 9.80 * 2.50, 0); c('pagina', 'error 2: n', 625 + 625 / 9.80 * 2.50, 0)
+    c('pagina', 'error 3: a', 7.4, 1)
+    c('pagina', 'error 4: del fallo (1e7)', 45.0**2 / (2 * 0.018) * 850 / 1e7, 1); c('pagina', 'error 4: F (1e6)', 12.5**2 / (2 * 0.018) * 850 / 1e6, 1)
