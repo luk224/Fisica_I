@@ -284,3 +284,9 @@ def comprobaciones(c):
     c('pagina', 'ej 17.15: neta', 1.20 * sig * (303**4 - 293**4), 0)
     c('pagina', 'test s7: H espuma', 0.027 * 2.0 * 20 / 0.050, 1)
     c('pagina', 'test s7: factor', (327.15 / 300.15)**4, 2)
+    # ---- D9: errores
+    c('pagina', 'error 1: ΔT_F', 10 * 9 / 5, 0); c('pagina', 'error 1: del fallo', 10 * 9 / 5 + 32, 0)
+    c('pagina', 'error 2: Q total', 0.0180 * 2100 * 10 + 0.0180 * 3.34e5, 0)
+    Ar = 0.0399 * 0.60 * 5.67e-8
+    c('pagina', 'error 3: H del fallo', Ar * (95**4 - 20**4), 3); c('pagina', 'error 3: H', Ar * (368**4 - 293**4), 0)
+    c('pagina', 'error 4: del fallo', 0.080 * 29.0 / 0.030, 0); c('pagina', 'error 4: H/A', 29.0 / (0.030 / 0.080 + 0.022 / 0.027), 1)

@@ -1,0 +1,17 @@
+<div class="nivel"><b>🔎 Encuentra el error</b><span>Cuatro soluciones con un fallo típico. Localiza dónde se rompe antes de abrir la respuesta: es la mejor forma de que no te pase en el examen.</span></div>
+<details class="mas"><summary>1. Intervalo frente a valor <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">La temperatura de un gas sube 10 C°. ¿Cuántos grados Fahrenheit sube?</p>
+<p><b>Solución con fallo.</b> $T_F=\tfrac95T_C+32$: $\tfrac95(10)+32=50$ °F.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>El $+32$ solo se usa para convertir <i>valores</i>. Un <i>cambio</i> de temperatura se convierte solo con el factor: $\Delta T_F=\tfrac95(10)=\mathbf{18\ F^\circ}$.</p></details></details>
+<details class="mas"><summary>2. Calor sin el cambio de fase <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">¿Cuánto calor hace falta para pasar 18,0 g de hielo a $-10{,}0$ °C a agua líquida a 0 °C?</p>
+<p><b>Solución con fallo.</b> $Q=mc\Delta T=(0{,}0180)(2100)(10{,}0)=378$ J.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>Eso solo calienta el hielo hasta 0 °C. Falta fundirlo, a temperatura constante: $Q=mL_f=(0{,}0180)(3{,}34\times10^5)=6012$ J. En total $378+6012=\mathbf{6390\ J}$.</p></details></details>
+<details class="mas"><summary>3. Radiación en grados Celsius <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Una olla de área 0,0399 m² y emisividad 0,60 a 95 °C, con alrededores a 20 °C. ¿Qué potencia pierde por radiación?</p>
+<p><b>Solución con fallo.</b> $H=Ae\sigma(T^4-T_s^4)=0{,}110$ W, con $T=95$ y $T_s=20$.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>La ley de Stefan-Boltzmann exige temperaturas en kelvin: $368^4-293^4$ y $H=(0{,}0399)(0{,}60)(5{,}67\times10^{-8})(368^4-293^4)=\mathbf{15\ W}$. (Con °C el resultado es unas 135 veces menor.)</p></details></details>
+<details class="mas"><summary>4. Capas en serie <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Pared de madera (3,0 cm, $k=0{,}080$ W/(m·K)) y poliestireno (2,2 cm, $k=0{,}027$), con 29,0 C° entre las dos caras. ¿Qué $H/A$ hay?</p>
+<p><b>Solución con fallo.</b> «El salto total de 29,0 C° es el de la madera»: $H/A=0{,}080(29{,}0)/0{,}030=77$ W/m².</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>El salto total se reparte entre las <i>dos</i> capas y la misma $H/A$ las atraviesa. Con resistencias $R=L/k$: $R=0{,}375+0{,}815=1{,}19$ m²·K/W y $H/A=29{,}0/1{,}19=\mathbf{24{,}4\ W/m^2}$.</p></details></details>
