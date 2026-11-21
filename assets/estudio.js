@@ -49,6 +49,12 @@
         }
       }
     });
+    /* «solo lo esencial» en la teoría: sin la pregunta previa, los ejemplos mínimos y los resueltos de libro, las figuras del libro ni los mini-tests */
+    main.querySelectorAll('[data-vg="teo"]').forEach(function (el) {
+      if (el.matches('details.check, figure.bookfig, .box.ex')) el.setAttribute('data-extra', '');
+      el.querySelectorAll('p.previa, details.check, figure.bookfig, .box.ex').forEach(function (x) { x.setAttribute('data-extra', ''); });
+      el.querySelectorAll('.box p').forEach(function (x) { if (/^\s*Ejemplo mínimo/.test(x.textContent)) x.setAttribute('data-extra', ''); });
+    });
     var nx = main.querySelectorAll('[data-examen]').length;
     var bar = d.createElement('div'); bar.className = 'vistas'; bar.setAttribute('role', 'group'); bar.setAttribute('aria-label', 'Vista del tema');
     var tabs = [['todo', 'Todo'], ['teoria', 'Teoría'], ['ejercicios', 'Ejercicios']].concat(nx ? [['examen', 'Examen (' + nx + ')']] : []);
