@@ -69,6 +69,14 @@ a.card:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 @media (max-width:600px){.cover{min-height:240px}.cover .in{padding:22px}.wrap{padding:0 14px 48px}.mod h2{font-size:1.2rem}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @media print{.cover img,.mod img{display:none}.btn-sim{display:none}}
+.crono{margin:18px 0 0;padding:16px 18px;background:var(--paper);border:1px solid var(--bd);border-radius:12px}
+.crono h2{margin:0 0 10px;font:600 1.1rem var(--serif);border:0;padding:0}
+.crono .nota{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;margin:0;padding:0;list-style:none}
+.crono .nota li{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:8px 12px;font-size:14px}
+.crono .nota li b{display:block;font-weight:600}
+.crono .nota li span{color:var(--mut);font-size:13px}
+.crono p{margin:10px 0 0;font-size:13.5px;color:var(--mut)}
+.crono p b{color:var(--fg)}
 </style>
 </head>
 <body>
@@ -81,6 +89,15 @@ a.card:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 </header>
 <div class="prog"><b id="pt">Progreso</b><div class="bar"><i id="pb"></i></div></div>
 <div class="prog"><b>Para repasar</b><span><a href="temas/formulario.html">Fórmulas de los 20 temas y resumen de una página →</a></span></div>
+<section class="crono"><h2>Cómo se aprueba</h2>
+<ul class="nota">
+<li><b>Examen presencial · 80 %</b><span>2 problemas de 3 puntos + 1 pregunta de teoría a elegir entre 2 (4 puntos, con 2 cuestiones cortas). 120 min, calculadora no programable.</span></li>
+<li><b>PEC · 15 % (voluntarias)</b><span>Cuatro cuestionarios en AGORA, uno por módulo (fechas en cada módulo). Renunciar a ellas no penaliza.</span></li>
+<li><b>Prácticas de laboratorio · 5 %</b><span>Obligatorias: sin ellas no se aprueba. Si ya las superaste, valen 5 cursos.</span></li>
+</ul>
+<p><b>Con PEC:</b> nota final = 0,8·examen + 0,15·PEC + 0,05·prácticas. <b>Sin PEC:</b> 0,95·examen + 0,05·prácticas (el examen aporta como máximo 9,5). Se toma la más alta de las dos. Las PEC solo suman si en el examen sacas <b>al menos 4</b>; para aprobar sin PEC hace falta un <b>5</b> en el examen.</p>
+<p><b>Ejemplo:</b> examen 5, PEC 8, prácticas 8 → con PEC 0,8·5 + 0,15·8 + 0,05·8 = <b>5,6</b>; sin PEC 0,95·5 + 0,05·8 = 5,15.</p>
+</section>
 
 <div class="mod"><img src="assets/img/stock/f1.jpg" alt="" loading="lazy" style="object-position:center 55%"><div><small>Módulo 1 · temas 1-5</small><h2>Fundamentos de la mecánica</h2><span class="pec"><b>PEC 1</b> · Cuestionario · abre vie 30 oct 2026, 00:00 · cierra lun 2 nov 2026, 23:59</span></div></div>
 <div class="grid">
