@@ -535,3 +535,8 @@ def comprobaciones(c):
     c('pagina', 'test s7 isoterma', 2 * R * ln(3), 1)
     c('pagina', 'test s7 focos', -sp.Rational(1000, 400) + sp.Rational(1000, 300), 2)
     c('pagina', 'test s8 Rln2', R * ln(2), 2)
+    # ---- D9: errores
+    c('pagina', 'error 1: del fallo', 2200 / 4300, 2)
+    c('pagina', 'error 2: del fallo (1e4)', 6450 * 520 / 300 / 1e4, 2); c('pagina', 'error 2: Q_C (1e3)', 6450 * 300 / 520 / 1e3, 2)
+    c('pagina', 'error 3: ΔS', 0.100 * 8.314 * sp.log(425 / 2.40e-3), 1)
+    c('pagina', 'error 4: del fallo (1e4)', 165 * 76.85 / 1e4, 2); c('pagina', 'error 4: P', 165 * 76.85 / 60, 0)

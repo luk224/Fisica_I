@@ -1,0 +1,17 @@
+<div class="nivel"><b>🔎 Encuentra el error</b><span>Cuatro soluciones con un fallo típico. Localiza dónde se rompe antes de abrir la respuesta: es la mejor forma de que no te pase en el examen.</span></div>
+<details class="mas"><summary>1. Eficiencia de una máquina <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Un motor diésel realiza 2200 J de trabajo y cede 4300 J de calor por ciclo. ¿Qué eficiencia tiene?</p>
+<p><b>Solución con fallo.</b> $e=W/|Q_C|=2200/4300=0{,}51$.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>La eficiencia compara el trabajo con el calor que se <i>suministra</i>: $Q_H=W+|Q_C|=6500$ J y $e=2200/6500=\mathbf{0{,}34}$.</p></details></details>
+<details class="mas"><summary>2. Razón de temperaturas en Carnot <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Una máquina de Carnot entre 520 K y 300 K recibe 6,45 kJ a 520 K. ¿Cuánto calor cede?</p>
+<p><b>Solución con fallo.</b> $|Q_C|=Q_H\,T_H/T_C=6450(520/300)=1{,}12\times10^4$ J.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>El calor cedido es menor que el absorbido: $|Q_C|/|Q_H|=T_C/T_H$, luego $|Q_C|=6450(300/520)=\mathbf{3{,}72\times10^3\ J}$ (con la razón al revés, la máquina cedería más calor que el que recibe).</p></details></details>
+<details class="mas"><summary>3. Expansión libre <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">0,100 mol de aire en un globo de 2,40 L se expande libremente hasta 425 m³ en el vacío. ¿Cuánto vale $\Delta S$?</p>
+<p><b>Solución con fallo.</b> «Es adiabático ($Q=0$), luego $\Delta S=Q/T=0$».</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>$\Delta S=Q/T$ vale solo para procesos reversibles. Como $S$ es función de estado, se usa una isoterma reversible entre los mismos estados: $\Delta S=nR\ln(V_2/V_1)=0{,}100(8{,}314)\ln(425/2{,}40\times10^{-3})=\mathbf{+10{,}0\ J/K}$.</p></details></details>
+<details class="mas"><summary>4. Potencia de un refrigerador <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Un refrigerador de Carnot hace 76,85 J de trabajo por ciclo y funciona a 165 ciclos por minuto. ¿Qué potencia tiene?</p>
+<p><b>Solución con fallo.</b> $P=165\cdot76{,}85=1{,}27\times10^4$ W.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>La potencia es trabajo por <i>segundo</i>: $165$ ciclos/min $=2{,}75$ ciclos/s y $P=\dfrac{165\cdot76{,}85}{60}=\mathbf{211\ W}$.</p></details></details>
