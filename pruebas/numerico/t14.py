@@ -229,3 +229,7 @@ def comprobaciones(c):
     c('pagina', 'test8: A estatica', 2.0 / 200, 3)
     c('pagina', 'test8: A resonancia', 2.0 / (1.0 * sp.sqrt(200 / 0.50)), 2)
     c('pagina', 'test8: b sin pico', sp.sqrt(2 * 200 * 0.50), 1)
+    # ---- D9: errores
+    c('pagina', 'error 1: del fallo', 42.5 * (2.54 / 1.30 - 1), 1); c('pagina', 'error 1: m', 42.5 * ((2.54 / 1.30) ** 2 - 1), 0)
+    c('pagina', 'error 3: x', 10.0 / sp.sqrt(2), 2)
+    c('pagina', 'error 4: I del fallo (1e3)', 1.80 * 9.80 * 0.200 * (120 / (2 * sp.pi)) ** 2 / 1e3, 2); c('pagina', 'error 4: I', 1.80 * 9.80 * 0.200 * (1.20 / (2 * sp.pi)) ** 2, 3)
