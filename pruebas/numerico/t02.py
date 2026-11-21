@@ -78,3 +78,8 @@ def comprobaciones(c):
     v6 = sp.integrate(6 * t, (t, 0, t))
     c('pagina', 'test: v(2) con a=6t', v6.subs(t, 2), 0); c('pagina', 'test: x(2) con a=6t', sp.integrate(v6, (t, 0, t)).subs(t, 2), 0)
     c('pagina', 'test: Δv tramo', 3 * 4, 0)
+    # ---- D9: errores
+    c('pagina', 'error 1: del fallo', 70 / 6, 1); c('pagina', 'error 1: v0', 2 * 70.0 / 6.00 - 15.0, 2)
+    c('pagina', 'error 2: t del fallo', 2.40 / 0.120, 1); c('pagina', 'error 2: t', 2 * 2.40 / (3 * 0.120), 1)
+    c('pagina', 'error 3: t del fallo', 20.0 / 2.80, 2); c('pagina', 'error 3: t', 20.0 / 1.40, 1)
+    c('pagina', 'error 4: v del fallo', sp.sqrt(9.50**2 + 2 * 9.80 * 3.60), 1); c('pagina', 'error 4: v', sp.sqrt(9.50**2 - 2 * 9.80 * 3.60), 2)
