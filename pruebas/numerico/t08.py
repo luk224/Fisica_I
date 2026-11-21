@@ -167,3 +167,9 @@ def comprobaciones(c):
     c('pagina', 'test 5: balsa', sp.solve(80 * (5 - a) - 120 * a, a)[0], 1)
     c('pagina', 'test 6: F (1e4)', sp.Rational(2000 * 5, 10**4), 1); c('pagina', 'test 6: a', sp.Rational(10**4, 500), 0)
     c('pagina', 'test 6: a con g', 20 - g, 1); c('pagina', 'test 6: v', 2500 * sp.log(3), 0)
+    # ---- D9: errores y respuestas modelo
+    c('pagina', 'error 1: V correcto', 6 / 3, 2); c('pagina', 'error 1: V del fallo', sp.sqrt(sp.Rational(18, 3)), 2)
+    c('pagina', 'error 2: vA2 del fallo', (10 - 30) / 40 * -0.4, 3); c('pagina', 'error 2: vA2', 0.5, 3)
+    c('pagina', 'error 3: v del fallo', sp.sqrt(144 / 2), 2); c('pagina', 'error 3: v', 12 / 2, 1)
+    c('pagina', 'error 4: d del fallo', 45.0 * 3 / 60.0, 2); c('pagina', 'error 4: d', 45.0 * 3 / (60.0 + 45.0), 2)
+    c('pagina', 'modelo: patinador', 40 * 3 / 60, 1)
