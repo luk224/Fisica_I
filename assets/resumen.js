@@ -29,6 +29,21 @@
         macros: { '\\sin': '\\operatorname{sen}', '\\lim': '\\mathop{\\operatorname{lim}}\\limits' } /* subíndice siempre debajo de «lim», también en línea */
       });
     } catch (e) {}
+    /* Fórmulas en línea y tablas más anchas que la columna (iPad en vertical, móvil): se vuelven desplazables en vez de ensanchar la página,
+       que en Safari de iOS obliga a hacer zoom horizontal */
+    function contener() {
+      var mn = d.querySelector('main'); if (!mn) return;
+      var borde = mn.getBoundingClientRect().right + 1;
+      d.querySelectorAll('main span.katex').forEach(function (k) {
+        if (k.closest('.katex-display, .kx-scroll') || k.getBoundingClientRect().right <= borde) return;
+        var w = d.createElement('span'); w.className = 'kx-scroll'; k.parentNode.insertBefore(w, k); w.appendChild(k);
+      });
+      d.querySelectorAll('main table').forEach(function (t) {
+        if (!t.classList.contains('tb-scroll') && t.scrollWidth > t.parentElement.clientWidth + 1) t.classList.add('tb-scroll');
+      });
+    }
+    contener(); window.addEventListener('load', contener);
+    var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(contener, 200); });
     var toc = d.querySelector('.side-toc');
     var hs = [].slice.call(d.querySelectorAll('main h2[id]'));
     if (toc) hs.forEach(function (h) {
