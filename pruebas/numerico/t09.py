@@ -155,3 +155,8 @@ def comprobaciones(c):
     c('pagina', 'test 4: v polea', sp.sqrt(2 * 9.8 * 1.0 / (1 + 4.0 / (2 * 2.0))), 2); c('pagina', 'test 4: caída libre', sp.sqrt(2 * 9.8), 2)
     c('pagina', 'test 5: varilla cm', 0.50 * 1.2**2 / 12, 3); c('pagina', 'test 5: varilla extremo', 0.50 * 1.2**2 / 12 + 0.50 * 0.60**2, 2)
     c('pagina', 'test 5: disco borde', 1.5 * 2.0 * 0.20**2, 2); c('pagina', 'test 5: esfera', 0.4 * 5.0 * 0.10**2 + 5.0 * 0.10**2, 3)
+    # ---- D9: errores y respuestas modelo
+    c('pagina', 'error 1: vueltas', 432 / (2 * sp.pi), 1)
+    c('pagina', 'error 2: a_rad', 10**2 * 0.30, 0)
+    c('pagina', 'error 3: ω', sp.sqrt(2 * 0.600 * sp.pi / 3), 2); c('pagina', 'error 3: ω del fallo', sp.sqrt(2 * 0.600 * 60), 2)
+    c('pagina', 'modelo: K disco', 0.5 * 0.010 * 10**2, 2)
