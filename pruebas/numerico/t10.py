@@ -207,3 +207,9 @@ def comprobaciones(c):
     c('pagina', 'test 6: w niño', 120 / 240, 2)
     c('pagina', 'test 7: Luna', 0.165 * 0.50, 4); c('pagina', 'test 7: Omega', 2.0 * 0.050 / 0.40, 2)
     c('pagina', 'test 7: T', 2 * pi / 0.25, 1)
+    # ---- D9: errores y respuestas modelo
+    c('pagina', 'error 1: τ', 4 * 10 * sin(30), 1); c('pagina', 'error 1: τ del fallo', 4 * 10 * cos(30), 1)
+    c('pagina', 'error 2: a', 2 / 3 * 9.81 * sin(50), 2); c('pagina', 'error 2: a del fallo', 9.81 * sin(50), 2)
+    c('pagina', 'error 3: v', sp.sqrt(2 * 9.8 / 1.5), 2); c('pagina', 'error 3: v del fallo', sp.sqrt(2 * 9.8), 2)
+    c('pagina', 'error 4: v', 4.00 * 0.800 / 0.400, 2)
+    c('pagina', 'modelo: K1', 0.5 * 4 * 2**2, 0); c('pagina', 'modelo: K2', 0.5 * 1 * 8**2, 0); c('pagina', 'modelo: piedra', 10 * 160, 0)
