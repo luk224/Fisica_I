@@ -125,7 +125,6 @@ def comprobaciones(c):
     c('pagina', 'ej. 8.4: KB', sp.Rational(1, 2) * sp.Rational(5, 1000) * 300**2, 0)
     c('pagina', 'ej. 8.4: KR', sp.Rational(1, 2) * 3 * sp.Rational(1, 2)**2, 3)
     vA = (sp.Rational(4, 10) - sp.Rational(3, 10) * 2) / sp.Rational(5, 10)
-    c('pagina', 'ej. 8.5: vA2', vA, 2)
     c('pagina', 'ej. 8.7: v2', sp.Rational(4, 10) / sp.Rational(8, 10), 2)
     c('pagina', 'ej. 8.7: K2', sp.Rational(1, 2) * sp.Rational(8, 10) * sp.Rational(1, 2)**2, 2)
     v2 = sp.sqrt(2 * g * sp.Rational(3, 100)); v1 = sp.Rational(2005, 5) * v2
@@ -136,7 +135,6 @@ def comprobaciones(c):
     s = sp.solve([sp.Symbol('a') * sp.Rational(5, 10) + sp.Symbol('b') * sp.Rational(3, 10) - sp.Rational(4, 10),
                   sp.Symbol('b') - sp.Symbol('a') - 4], ['a', 'b'])
     c('pagina', 'ej. 8.10: vA2', list(s.values())[0], 1)
-    c('pagina', 'ej. 8.12: vB2', sp.sqrt(sp.Rational(5, 10) * 12 / sp.Rational(3, 10)), 2)
     c('pagina', 'ej. 8.13: x_cm/d', 2 * cos(sp.Rational(105, 2)) / 18, 3)
     c('pagina', 'ej. 8.13: x_cm (1e-12)', 2 * cos(sp.Rational(105, 2)) / 18 * sp.Rational(957, 100), 1)
     c('pagina', 'ej. 8.14: Ramón', sp.Rational(90 * 6, 60), 1)

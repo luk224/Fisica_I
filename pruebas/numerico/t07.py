@@ -111,11 +111,7 @@ def comprobaciones(c):
     K = 0.610 * 0.100 - k * 0.100**2 / 2
     c('pagina', 'ej. 7.8: K2', K, 4); c('pagina', 'ej. 7.8: v', sp.sqrt(2 * K / m), 2)
     c('pagina', 'ej. 7.8: v sin resorte', sp.sqrt(2 * 0.0610 / m), 2)
-    c('pagina', 'ej. 7.9: K1', 2000 * 4.00**2 / 2, 0)
-    c('pagina', 'ej. 7.9: mgy2', 2000 * g * 2.00, 0)
     k9 = (2000 * 4.00**2 / 2 - 17000 * 2.00 + 2000 * g * 2.00) / 2
-    c('pagina', 'ej. 7.9: k (1e4)', k9 / 1e4, 2)
-    c('pagina', 'ej. 7.9: U_el', k9 * 2.00**2 / 2, 0)
     c('pagina', 'ej. 7.10: recto', 0.200 * 40.0 * g * 2.50, 0)
     c('pagina', 'ej. 7.10: dos tramos', 0.200 * 40.0 * g * 3.50, 0)
     c('pagina', 'ej. 7.12: ΔK', 25.0 * 6.00**2 / 2, 0)

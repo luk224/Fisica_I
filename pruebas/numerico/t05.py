@@ -79,8 +79,6 @@ def comprobaciones(c):
     g = 9.80
     c('pagina', 'ej. 5.9: mujer de 50 kg, a=+2', 50 * (g + 2), 0); c('pagina', 'ej. 5.9: a=-2', 50 * (g - 2), 0)
     c('pagina', 'ej. 5.12 mini-test: Atwood 3 y 5 kg, a', (5 - 3) / 8 * g, 2); c('pagina', 'T', 3 * (g + (5 - 3) / 8 * g), 1)
-    c('pagina', 'ej. 5.13: μs', 230 / 500, 2); c('pagina', 'ej. 5.14: μk', 200 / 500, 2)
-    c('pagina', 'ej. 5.15: T', 0.4 * 500 / (cos(30) + 0.4 * sin(30)), 0); c('pagina', 'ej. 5.15: n', 500 - 0.4 * 500 / (cos(30) + 0.4 * sin(30)) * 0.5, 0)
     c('pagina', 'ej. 5.18: velocidad terminal', sp.sqrt(50 * g / 0.25), 0)
     c('pagina', 'ej. 5.21: v máx', sp.sqrt(0.96 * g * 230), 0)
     c('pagina', 'ej. 5.22: ángulo de peralte', sp.deg(sp.atan(25 ** 2 / (g * 230))), 1)

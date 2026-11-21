@@ -59,7 +59,7 @@ def servidor():
         srv.shutdown()
 
 
-def volcar_dom(url, alto=60000, ms=9000):
+def volcar_dom(url, alto=100000, ms=9000):
     """DOM final de la página tras ejecutar su JavaScript (Chrome sin interfaz)."""
     c = chrome()
     r = subprocess.run([c, '--headless=new', '--no-sandbox', '--disable-gpu', f'--virtual-time-budget={ms}', f'--window-size=1100,{alto}',

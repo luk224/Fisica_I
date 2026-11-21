@@ -398,37 +398,6 @@
    }
   },
   {
-   "t": "caja",
-   "k": "ex",
-   "h": "Ejemplo 11.3: escalera contra una pared lisa",
-   "html": [
-    "<p>Escalera uniforme de 5,0 m y 180 N que forma 53,1° con el suelo (triángulo 3-4-5: base a 3,0 m de la pared, apoyo a 4,0 m de altura). Sir Lancelot (800 N) se para a un tercio del camino, a 1,0 m en horizontal de la base. a) Normal y fricción en la base. b) $\\mu_s$ mínimo. c) Fuerza total del suelo.</p>",
-    "  <ol class=\"steps\">",
-    "    <li><b>DCL.</b> Pared lisa ⇒ solo una normal horizontal $n_1$. Suelo ⇒ normal $n_2$ y fricción $f_s$ hacia la pared. Tres incógnitas.</li>",
-    "    <li><b>a)</b> $\\sum F_y=0$ ⇒ $n_2=800+180=\\mathbf{980\\ N}$ (no depende de dónde esté él). Torcas respecto a la base (desaparecen $n_2$ y $f_s$; brazo de $n_1$, la altura; de los pesos, su distancia horizontal): $n_1(4{,}0)=180(1{,}5)+800(1{,}0)$ ⇒ $n_1=\\mathbf{268\\ N}$, y $\\sum F_x=0$ ⇒ $f_s=n_1=\\mathbf{268\\ N}$.</li>",
-    "    <li><b>b)</b> No resbala si $f_s\\le\\mu_sn_2$ ⇒ $\\mu_{s,\\text{mín}}=268/980=\\mathbf{0{,}27}$.</li>",
-    "    <li><b>c)</b> El suelo empuja con $\\sqrt{268^2+980^2}\\approx1{,}02\\times10^3$ N, a $\\arctan(980/268)\\approx\\mathbf{75^\\circ}$ sobre la horizontal: <b>no va a lo largo de la escalera</b> (53,1°). Si lo hiciera, su torca respecto al extremo superior sería cero y la de los pesos quedaría sin compensar.</li>",
-    "  </ol>"
-   ],
-   "src": {
-    "l": "U",
-    "ref": "U Ejemplo 11.3, p. 345 y fig. 11.9, p. 345; fricción estática ec. 5.4, p. 144",
-    "txt": "U p.345"
-   }
-  },
-  {
-   "t": "libro",
-   "img": "../assets/img/fig_u_11_9_escalera.png",
-   "alt": "Figura 11.9 de U. a) Lancelot subiendo una escalera apoyada en una pared sin fricción, a 53,1 grados; b) diagrama de cuerpo libre con n1, n2, fs y los pesos de 180 N y 800 N con sus brazos de 1,5 m, 1,0 m y la altura de 4,0 m; c) la fuerza de contacto en B, de 1020 N a 75 grados.",
-   "pie": "Fig. 11.9 de U: situación, DCL de la escalera y fuerza de contacto en la base.",
-   "src": {
-    "l": "U",
-    "ref": "U Fig. 11.9, p. 345",
-    "txt": "U p.345"
-   },
-   "attrs": " loading=\"lazy\" style=\"max-width:100%!important\""
-  },
-  {
    "t": "parte",
    "archivo": "interactivo-escalera.html"
   },
@@ -471,7 +440,7 @@
      "a": "Torcas respecto al extremo izquierdo: $n_D(4{,}0)=200(2{,}0)+400(1{,}0)$ ⇒ $n_D=200$ N; $\\sum F_y=0$ ⇒ $n_I=600-200=400$ N. Empuja más el apoyo más cercano a la caja."
     },
     {
-     "q": "La escalera del ejemplo 11.3, sin nadie encima. ¿Qué coeficiente de fricción mínimo necesita?",
+     "q": "Una escalera uniforme de 5,0 m y 180 N forma 53,1° con el suelo y se apoya en una pared lisa (base a 3,0 m de la pared), sin nadie encima. ¿Qué coeficiente de fricción mínimo necesita?",
      "a": "$n_2=180$ N; torcas en la base: $n_1(4{,}0)=180(1{,}5)$ ⇒ $n_1=f_s=67{,}5$ N; $\\mu_{s,\\text{mín}}=67{,}5/180=0{,}375$."
     },
     {
@@ -819,17 +788,12 @@
   {
    "t": "caja",
    "k": "warn",
-   "h": "Errores frecuentes de este tema",
+   "h": "Otros errores frecuentes de este tema",
    "html": [
     "<ul>",
-    "    <li>Pensar que $\\sum\\vec F=0$ basta: también hace falta $\\sum\\vec\\tau=0$.</li>",
-    "    <li>Calcular torcas respecto a puntos distintos en la misma ecuación, o usar la distancia al punto de aplicación en lugar del brazo de palanca perpendicular.</li>",
-    "    <li>Suponer la dirección de la fuerza de una bisagra o de una base de escalera: se descompone en dos componentes. El cable sí tira a lo largo de sí mismo.</li>",
     "    <li>Poner fricción en una pared «lisa» o olvidar que $f_s\\le\\mu_sn$ es una desigualdad (la fricción vale lo que haga falta, hasta el máximo).</li>",
     "    <li>Olvidar una incógnita: tres ecuaciones, tres incógnitas como máximo en el plano.</li>",
-    "    <li>Dejar áreas en cm² o mm²; usar $d$ como $r$; confundir $Y$, $B$ y $S$; olvidar el signo menos de $B$.</li>",
-    "    <li>Aplicar $\\Delta l=Fl_0/(AY)$ fuera de la zona de Hooke, o a todo un cuerpo cuando solo se comprime un tramo.</li>",
-    "  </ul>"
+    "</ul>"
    ],
    "src": {
     "l": "P",

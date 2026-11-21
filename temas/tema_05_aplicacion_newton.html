@@ -196,19 +196,7 @@ $$f_k=\mu_k\,n\quad\text{(5.3)},\qquad f_s\le\mu_s\,n\quad\text{(5.4)}$$
 <div class="box warn"><span class="h">Error típico (el más común del tema)</span>
 <p>Usar siempre $f_s=\mu_sn$. Esa es solo la <i>máxima</i>. Y en cuanto desliza, pasa a $\mu_kn$ (menor).</p>
   <span class="src" data-l="U" data-ref="U «Los datos hablan: fricción estática», p. 147">U p.147</span></div>
-<div class="box ex"><span class="h">Ejemplos 5.13 y 5.14</span>
-<p>Caja de 500 N: hacen falta 230 N para arrancarla y 200 N para mantenerla a velocidad constante ⇒ $\mu_s=230/500=0{,}46$ y $\mu_k=200/500=0{,}40$. Si con la caja parada solo tiras con 50 N, $f_s=50$ N (equilibrio), <b>no</b> $\mu_sn=230$ N.</p>
-  <span class="src" data-l="U" data-ref="U Ej. 5.13 y 5.14, p. 145">U p.145</span></div>
 <h3>Fuerza oblicua: la normal cambia <span class="prio p1">🔴</span></h3>
-<div class="box ex"><span class="h">Ejemplo 5.15: tirar con la cuerda inclinada 30°</span>
-<p>La caja de antes ($w=500$ N, $\mu_k=0{,}40$) a velocidad constante. La componente vertical de $T$ levanta la caja y <b>reduce la normal</b>:</p>
-  $$n=w-T\sin30^\circ,\qquad T\cos30^\circ=\mu_kn\ \Rightarrow\ T=\frac{\mu_kw}{\cos30^\circ+\mu_k\sin30^\circ}=188\ \text{N}$$
-  <p>Menos que los 200 N en horizontal; la normal vale $n=406$ N $\lt w$.</p>
-  <span class="src" data-l="U" data-ref="U Ej. 5.15, p. 146">U p.146</span></div>
-<figure class="fig" data-svg="../assets/figs/t05/caja-arrastrada-con-una-cuerda-oblicua.svg">
-<div class="figph" role="img" aria-label="Caja arrastrada con una cuerda oblicua" style="aspect-ratio:330/229"></div>
-<figcaption>Ej. 5.15: al tirar de la cuerda con 30° sobre la horizontal, T sen 30° levanta parcialmente la caja y reduce la normal (n = w − T sen 30° = 406 N, menor que w = 500 N), de modo que la fricción f<sub>k</sub> = μ<sub>k</sub>n es menor que al tirar en horizontal. Longitudes proporcionales entre sí. <span class="src" data-l="P" data-ref="Diagrama propio (datos de U Ej. 5.15)">P</span></figcaption>
-</figure>
 <div class="box tip"><span class="h">Truco de examen</span>
 <p>Con una fuerza oblicua sobre una superficie: <b>primero</b> la ecuación perpendicular (da $n$), <b>después</b> $f=\mu n$ y la ecuación paralela.</p>
   <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
@@ -586,7 +574,7 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <p class="enun">Una caja de masa $m$ se arrastra por un suelo horizontal (coeficiente de fricción cinética $\mu_k$) mediante una cuerda de la que se tira con una fuerza $F$ a un ángulo $\theta$ sobre la horizontal. a) Obtenga una expresión de $F$ para mover la caja con rapidez constante, en función de $m$, $\mu_k$, $\theta$ y $g$. b) Aplíquela a un paciente de 90 kg arrastrado con $\theta=25^\circ$ y $\mu_k=0{,}35$.</p>
   <ol class="steps">
     <li>Rapidez constante ⇒ $a=0$ (equilibrio, ec. 5.1).</li>
-    <li>Vertical: $n+F\sin\theta-mg=0\Rightarrow n=mg-F\sin\theta$ (la cuerda «aligera» la caja, ejemplo 5.15).</li>
+    <li>Vertical: $n+F\sin\theta-mg=0\Rightarrow n=mg-F\sin\theta$ (la cuerda «aligera» la caja).</li>
     <li>Horizontal: $F\cos\theta-\mu_k(mg-F\sin\theta)=0\Rightarrow F=\dfrac{\mu_kmg}{\cos\theta+\mu_k\sin\theta}$.</li>
     <li><b>b)</b> $F=\dfrac{0{,}35(90)(9{,}80)}{\cos25^\circ+0{,}35\sin25^\circ}=\mathbf{293\ N}$ (el solucionario da 290 N a dos cifras). Tirando en horizontal haría falta $\mu_kmg=309$ N: inclinar la cuerda ahorra fuerza.</li>
   </ol>
@@ -667,18 +655,14 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <tr><td>Curva plana</td><td>$v_{\text{máx}}=\sqrt{\mu_sgR}$</td></tr>
 <tr><td>Círculo vertical (rapidez constante)</td><td>$n_T=mg(1-v^2/gR)$ arriba; $n_B=mg(1+v^2/gR)$ abajo</td></tr>
 </table>
-<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+<div class="box warn"><span class="h">Otros errores frecuentes de este tema</span>
 <ul>
-    <li>Suponer $n=mg$ siempre (falla en rampas, elevadores, fuerzas oblicuas, curvas peraltadas, paredes).</li>
-    <li>Dibujar «$m\vec a$» o una «fuerza centrífuga» como si fueran fuerzas.</li>
-    <li>Usar $f_s=\mu_sn$ sin estar en el umbral, o seguir usando $\mu_s$ cuando ya hay deslizamiento.</li>
     <li>Orientar la fricción a favor del movimiento (siempre se opone al movimiento relativo) o sin saber hacia dónde se mueve el sistema.</li>
-    <li>Igualar la tensión al peso de lo que cuelga cuando hay aceleración.</li>
     <li>Mezclar componentes $x$ e $y$ en una ecuación; confundir $\sin$ y $\cos$ en el peso (dibuja $\alpha$ distinto de 45°).</li>
     <li>Con poleas móviles: olvidar la ligadura ($a_B=a_A/2$) y el factor $2T$.</li>
     <li>En un giro, tomar como radio la longitud de la cuerda en vez de la distancia al eje, y no convertir rpm a rad/s.</li>
     <li>Aceptar una tensión negativa o una normal negativa sin interpretar (cable flojo, cuerpo despegado).</li>
-  </ul>
+</ul>
   <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
 <ul class="checklist">
   <li>Sé construir un DCL correcto (solo fuerzas externas sobre el cuerpo, sin $m\vec a$ ni fuerza centrífuga) y elegir ejes adecuados.</li>

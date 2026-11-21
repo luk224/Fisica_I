@@ -219,19 +219,6 @@ $$a_{\text{med-}x} = \frac{v_{2x}-v_{1x}}{t_2-t_1} = \frac{\Delta v_x}{\Delta t}
 <div class="box warn"><span class="h">Error típico: el signo de $g$ y el punto más alto</span>
 <p>Fija el sentido $+$ <i>antes</i> de sustituir y no lo cambies: con $+y$ arriba, $a_y=-9.80$ m/s² <b>tanto subiendo como bajando</b>; con $+y$ abajo, $a_y=+9.80$ m/s². Y en el punto más alto $v_y=0$, pero la aceleración <b>no</b> es cero: sigue siendo $-g$ (si lo fuera, la pelota se quedaría flotando).</p>
   <span class="src" data-l="U" data-ref="U §2.5 CUIDADO, pp. 50 y 52">U p.50, 52</span></div>
-<div class="box ex"><span class="h">Ejemplo del libro 2.8 — ¿dos soluciones o una?</span>
-<p>Con la pelota anterior, ¿cuándo está 5.00 m <b>por debajo</b> del punto de lanzamiento?</p>
-  <ol class="steps">
-    <li>Ec. 2.12 con $y=-5.00$ m: $-5.00=15.0t-4.90t^2$, una ecuación de <b>segundo grado</b> en $t$.</li>
-    <li>Raíces: $t=3.36$ s y $t=-0.30$ s. La negativa es ficticia (antes de soltarla): la respuesta es $t=3.36$ s.</li>
-    <li>Para $y=+5.00$ m salen $t=0.38$ s y $t=2.68$ s: <b>las dos valen</b> (subiendo y bajando). Para $y=+15.0$ m no hay raíces reales: nunca llega, su altura máxima es 11.5 m.</li>
-  </ol>
-<p>La ecuación siempre da dos raíces; decide con <b>física</b> (signo del tiempo, sube o baja, altura máxima) cuáles tienen sentido.</p>
-  <span class="src" data-l="U" data-ref="U Ejemplo 2.8, pp. 52-53">U p.52-53</span></div>
-<figure class="fig" data-svg="../assets/figs/t02/parabola-y-t-que-corta-dos-veces-la-altura-de-5-.svg">
-<div class="figph" role="img" aria-label="Parábola y(t) que corta dos veces la altura de 5 m" style="aspect-ratio:320/200"></div>
-<figcaption>La recta y = 5.00 m corta la parábola y = 15.0t − ½gt² en dos instantes: uno subiendo (t₁) y otro bajando (t₂). Las dos raíces de la ecuación de segundo grado son físicamente válidas. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 2.8">P</span></figcaption>
-</figure>
 <details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
 <ol>
 <li>Sueltas una piedra desde 20.0 m. ¿Cuánto tarda en llegar al suelo y a qué velocidad llega? ($g=9.80$ m/s²)<details><summary>Ver respuesta</summary>$20.0=\tfrac12(9.80)t^2$ ⇒ $t=2.02$ s; $v=\sqrt{2(9.80)(20.0)}=19.8$ m/s hacia abajo.</details></li>
@@ -517,13 +504,11 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 <tr><td>Caída libre</td><td>$a_y=-g$ con $+y$ arriba; $g=9.80\ \text{m/s}^2$ (siempre positivo); altura máxima $h=v_0^2/2g$ en $t=v_0/g$</td></tr>
 <tr><td>Aceleración variable</td><td>$v_x=v_{0x}+\int_0^t a_x\,dt'$ (2.17); $x=x_0+\int_0^t v_x\,dt'$ (2.18); área bajo $a$–$t$ $=\Delta v_x$, área bajo $v_x$–$t$ $=\Delta x$</td></tr>
 </table>
-<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+<div class="box warn"><span class="h">Otros errores frecuentes de este tema</span>
 <ul>
-    <li>Confundir velocidad media (desplazamiento/tiempo, con signo) con rapidez media (distancia/tiempo).</li>
     <li>Calcular «la velocidad en $t$» como $x(t)/t$ en vez de derivar.</li>
     <li>Decidir si frena mirando solo el signo de $a_x$, sin compararlo con el de $v_x$.</li>
     <li>Usar las ecuaciones de aceleración constante cuando $a$ depende del tiempo, o reiniciar $v=0$, $x=0$ al cambiar de tramo.</li>
-    <li>Poner $a_y=+9.80$ m/s² con el eje $+y$ hacia arriba; creer que en el punto más alto $a=0$.</li>
     <li>Quedarse con una raíz sin sentido físico (tiempo negativo, «sigue subiendo» cuando ya baja), o creer que dos móviles se alcanzan cuando tienen la misma velocidad.</li>
     <li>Operar con km/h sin pasar a m/s; confundir la fuerza de contacto $N=m(|a|+g)$ con la fuerza neta $m|a|$.</li>
 </ul>

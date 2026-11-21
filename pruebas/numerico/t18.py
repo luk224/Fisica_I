@@ -234,7 +234,6 @@ def comprobaciones(c):
     c('pagina', 'ej 18.3: dm', (round(n2b, 1) - round(n1b, 2)) * 0.0288, 2)
     Hs = R * 273.15 / (0.0288 * g)
     c('pagina', 'altura de escala', Hs, 0)
-    c('pagina', 'Everest p/p0', sp.exp(-8848 / Hs), 3)
     a_, b_, Vm = 0.364, 4.27e-5, 0.0224
     dvw = R * 273.15 / Vm - (R * 273.15 / (Vm - b_) - a_ / Vm**2)
     c('pagina', 'vdW diferencia Pa', dvw, 0)

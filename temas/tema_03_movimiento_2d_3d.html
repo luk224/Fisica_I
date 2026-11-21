@@ -251,18 +251,6 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
 <img src="../assets/img/fig_u_3_34_velocidad_relativa.png" alt="Figura 3.34 de U: una pasajera camina a 1.0 m/s a lo ancho de un vagón que se mueve a 3.0 m/s; el diagrama vectorial (panel c) suma ambas velocidades en ángulo recto y da una velocidad relativa al suelo de 3.2 m/s a 18° del movimiento del tren." loading="lazy">
 <figcaption>Fig. 3.34 de U: la pasajera camina a $v_{P/B}=1.0$ m/s perpendicular al movimiento del tren ($v_{B/A}=3.0$ m/s); sumando los vectores (panel c) sale $v_{P/A}=\sqrt{3.0^2+1.0^2}=3.2$ m/s, a $\phi=18°$ de la dirección del tren. <span class="src" data-l="U" data-ref="U fig. 3.34, p. 88">U p.88</span></figcaption>
 </figure>
-<div class="box ex"><span class="h">Ejemplos 3.14-3.15 de U: el avión con viento cruzado</span>
-<p><b>Ejemplo 3.14.</b> Un avión apunta al norte a $v_{P/A}=240$ km/h (respecto al aire) y sopla viento del oeste a $v_{A/T}=100$ km/h ($T$ es la Tierra). Por la ec. 3.35, $\vec v_{P/T}=\vec v_{P/A}+\vec v_{A/T}$: dos vectores perpendiculares, $v_{P/T}=\sqrt{240^2+100^2}=260$ km/h, desviado $\arctan(100/240)=22.6°$ al este del norte.</p>
-<p><b>Ejemplo 3.15 (el problema inverso).</b> ¿Hacia dónde apuntar (misma rapidez respecto al aire) para ir <i>exactamente</i> al norte? Se fija $\vec v_{P/T}$ al norte y se busca el ángulo: $\sin\theta=100/240$ ⇒ $\theta=24.6°\approx25°$ al oeste del norte, con $v_{P/T}=\sqrt{240^2-100^2}=218$ km/h, menor que 240 porque parte del esfuerzo se gasta en contrarrestar el viento.</p>
-  <span class="src" data-l="U" data-ref="U Ejemplos 3.14-3.15, p. 89-90">U p.89-90</span></div>
-<figure class="fig" data-svg="../assets/figs/t03/triangulo-de-velocidades-del-avion-ejemplo-3-14.svg">
-<div class="figph" role="img" aria-label="Triángulo de velocidades del avión (ejemplo 3.14)" style="aspect-ratio:320/180"></div>
-<figcaption>Ej. 3.14: apuntando al norte, v<sub>P/E</sub> = v<sub>P/A</sub> + v<sub>A/E</sub>: el viento del oeste desvía el avión 22.6° hacia el este y su velocidad respecto al suelo es 260 km/h (no 240). <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 3.14">P</span></figcaption>
-</figure>
-<figure class="fig" data-svg="../assets/figs/t03/triangulo-de-velocidades-del-avion-ejemplo-3-15.svg">
-<div class="figph" role="img" aria-label="Triángulo de velocidades del avión (ejemplo 3.15)" style="aspect-ratio:320/180"></div>
-<figcaption>Ej. 3.15: para volar exactamente hacia el norte hay que apuntar 25° al oeste del norte; así el viento compensa la desviación y la velocidad sobre el suelo (218 km/h) apunta al norte, pero es menor que 240. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 3.15">P</span></figcaption>
-</figure>
 <div class="box tip"><span class="h">Truco de examen</span>
 <p>Identifica qué vector conoces entero y cuál tiene una incógnita en el módulo y otra en el ángulo. Si las dos velocidades «base» son perpendiculares (viento cruzado, río), basta un triángulo rectángulo con Pitágoras y arcotangente. Y en 1D, suma o resta cada tramo por separado y <b>nunca promedies velocidades</b> (E6).</p>
   <span class="src" data-l="P" data-ref="Consejo propio basado en U §3.5">P</span></div>
@@ -504,15 +492,11 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
 <tr><td>Circular no uniforme</td><td>$a_{\text{tan}}=d|\vec v|/dt$ (3.30); $a=\sqrt{a_{\text{rad}}^2+a_{\text{tan}}^2}$</td></tr>
 <tr><td>Velocidad relativa</td><td>1D: $v_{P/A,x}=v_{P/B,x}+v_{B/A,x}$ (3.32), $v_{A/B}=-v_{B/A}$ (3.33). 2D: $\vec v_{P/A}=\vec v_{P/B}+\vec v_{B/A}$ (3.35), $\vec v_{A/B}=-\vec v_{B/A}$ (3.36)</td></tr>
 </table>
-<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+<div class="box warn"><span class="h">Otros errores frecuentes de este tema</span>
 <ul>
-<li>No separar los ejes en un proyectil, o usar $v_0$ total en lugar de $v_{0y}$ para la altura máxima.</li>
-<li>Decir que en la cima $v=0$ o $a=0$: solo $v_y=0$; la aceleración sigue siendo $-g$.</li>
-<li>Usar $R=v_0^2\sin2\alpha_0/g$ cuando salida y llegada están a distinto nivel.</li>
-<li>No corregir el cuadrante del arcotangente cuando $v_x\lt0$.</li>
-<li>Creer que acelerar es solo ir más rápido (olvidar $a_\perp$), o que $\vec a$ y $\vec v$ van en la misma dirección en una curva.</li>
-<li>Confundir $a_{\text{tan}}=d|\vec v|/dt$ con $|\vec a|$; usar $T$ en rev/s o el radio en cm.</li>
-<li>Promediar velocidades en un trayecto de ida y vuelta con corriente; restar las distancias de dos fragmentos que se alejan en sentidos opuestos.</li>
+    <li>No separar los ejes en un proyectil, o usar $v_0$ total en lugar de $v_{0y}$ para la altura máxima.</li>
+    <li>Decir que en la cima $v=0$ o $a=0$: solo $v_y=0$; la aceleración sigue siendo $-g$.</li>
+    <li>Promediar velocidades en un trayecto de ida y vuelta con corriente; restar las distancias de dos fragmentos que se alejan en sentidos opuestos.</li>
 </ul>
   <span class="src" data-l="P" data-ref="Resumen propio de los errores tratados en el tema">P</span></div>
 <ul class="checklist">

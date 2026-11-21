@@ -134,14 +134,6 @@
 <div class="box tip"><span class="h">Si entra o sale gas, (18.6) no sirve</span>
 <p>(18.6) supone $n$ constante. Si un tanque se llena o se vacía, calcula $n$ (o $m$) en cada estado con $pV=nRT$ y resta. Atajo: en un recipiente rígido a $T$ constante, $m\propto p_{abs}$. <b>Ejemplo del libro</b> (ejemplo 18.3): llenar un tanque de buceo de 11,0 L desde 1 atm y 21 °C hasta $2{,}11\times10^7$ Pa absolutos y 42 °C añade $(88{,}6-0{,}46)$ mol $\times0{,}0288$ kg/mol $=2{,}54$ kg de aire. <span class="src" data-l="U" data-ref="U Ejemplo 18.3, p. 588">U p.588</span> El mismo método está en el ejercicio <a href="#e10">E10</a> (propano).</p>
   <span class="src" data-l="U" data-ref="U §18.1, Ejemplo 18.3, p. 588">U p.588</span></div>
-<div class="box ex"><span class="h">Atmósfera isoterma: la presión cae exponencialmente con la altura</span>
-<p>Supón $T$, $g$ y composición constantes ($T=0$ °C, $M=28{,}8$ g/mol). La presión de un fluido cumple $dp/dy=-\rho g$ (tema 12) y la densidad del gas es (18.5) $\rho=pM/RT$. Juntas: $\dfrac{dp}{p}=-\dfrac{Mg}{RT}dy$, e integrando desde el nivel del mar:</p>
-<p>$$p=p_0\,e^{-Mgy/RT},\qquad \frac{RT}{Mg}=\frac{(8{,}314)(273{,}15)}{(0{,}0288)(9{,}80)}=8046\ \text{m}$$ (cada 8,05 km la presión se divide por $e$). En la cima del Everest (8848 m), $p=p_0e^{-8848/8046}=0{,}333\,p_0$. Para una fracción $f$: $y=-\dfrac{RT}{Mg}\ln f$ (ejercicio <a href="#e9">E9</a>).</p>
-  <span class="src" data-l="U" data-ref="U Ejemplo 18.4, pp. 588-589">U p.588-589</span></div>
-<figure class="fig" data-svg="../assets/figs/t18/presion-del-aire-en-funcion-de-la-altura-una-exp.svg">
-<div class="figph" role="img" aria-label="Presión del aire en función de la altura: una exponencial decreciente con la altura de escala de 8,05 km; en el Everest la presión es 0,33 veces la del nivel del mar" style="aspect-ratio:340/214"></div>
-<figcaption>Atmósfera isoterma: $p=p_0e^{-Mgy/RT}$ con $T=273{,}15$ K. Cada $RT/Mg=8{,}05$ km la presión se divide por $e$; en la cima del Everest (8,85 km) queda el 33 %. <span class="src" data-l="P" data-ref="Diagrama propio de U ejemplo 18.4 y fig. 18.4, §18.1 pp. 588-589">P</span></figcaption>
-</figure>
 <h3 id="s1b">1.1 Gases reales: gráficas pV y van der Waals <span class="prio p2">🟡</span></h3>
 <div class="box thm"><span class="h">Gráficas $pV$, isotermas y la ecuación de van der Waals</span>
 <p>Una <b>isoterma</b> es la curva $p(V)$ a $T$ fija. Para el gas ideal son hipérbolas $p=nRT/V$, más altas cuanto mayor es $T$. Un gas real se aparta de ellas porque sus moléculas <b>ocupan sitio</b> y <b>se atraen</b>. Van der Waals lo corrige con dos constantes propias de cada gas:</p>
@@ -1008,19 +1000,11 @@
 <tr><td>Maxwell-Boltzmann</td><td>$f(v)=4\pi\left(\tfrac{m}{2\pi kT}\right)^{3/2}v^2e^{-mv^2/2kT}$ (18.32); $v_{mp}=\sqrt{2kT/m}$, $v_{med}=\sqrt{8kT/\pi m}$, $v_{rms}=\sqrt{3kT/m}$ (18.34-18.36); proporción $1:1{,}128:1{,}225$; tabla 18.2</td></tr>
 <tr><td>Fases</td><td>punto triple (agua 273,16 K; 610 Pa); punto crítico del agua 647,4 K y $221{,}2\times10^5$ Pa; por debajo de la presión del punto triple no hay líquido; sublimación</td></tr>
 </table>
-<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+<div class="box warn"><span class="h">Otros errores frecuentes de este tema</span>
 <ul>
-    <li>Usar grados Celsius o presión manométrica en $pV=nRT$ o en el cociente (18.6): siempre kelvin y presión absoluta.</li>
-    <li>Mezclar unidades: $R=8{,}314$ con litros o con $M$ en g/mol (resultados 1000 veces distintos).</li>
     <li>Usar (18.6) cuando la cantidad de gas cambia (escapa o se añade): hay que calcular $n$ o $m$ en cada estado.</li>
-    <li>Confundir «por molécula» ($m$, $k$) con «por mol» ($M$, $R$), o mezclarlas en la misma fórmula.</li>
-    <li>Creer que a igual temperatura el gas más pesado tiene más energía cinética media (es la misma; cambia la rapidez) o que todas las moléculas van a la misma rapidez.</li>
-    <li>Confundir $v_{mp}$, $v_{med}$ y $v_{rms}$ ($v_{rms}$ es la ligada a $\tfrac32kT$).</li>
-    <li>Aplicar $C_V=\tfrac52R$ a un gas monoatómico, o $C_V$ a presión constante.</li>
     <li>En un ciclo, calcular calores y trabajos antes de tener la tabla de estados $p,V,T$; usar $C_V$ en una isóbara; olvidar que $\Delta U=0$ en una isoterma de gas ideal.</li>
-    <li>Pensar que el agua hierve «siempre a 100 °C» o que puede haber líquido por debajo de la presión del punto triple.</li>
-    <li>Decir «no escapa ninguna molécula porque $v_{rms}&lt;v_{esc}$» (la cola de la distribución no tiene tope).</li>
-  </ul>
+</ul>
   <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
 <ul class="checklist">
   <li>Sé qué son las variables de estado y una ecuación de estado, y plantear un problema de gas ideal con un estado o con dos (§1; E6, E3, E1, E2, E4, E5).</li>

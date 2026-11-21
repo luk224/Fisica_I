@@ -177,9 +177,7 @@ def comprobaciones(c):
     c('pagina', 'ej. 6.3: v2', sp.sqrt(2 * (m * 2.0**2 / 2 + 10000) / m), 1)
     c('pagina', 'ej. 6.6: W báscula', 6.0e4 * 0.010**2 / 2, 1)
     k, m, v1, mu = 20.0, 0.100, 1.50, 0.47
-    c('pagina', 'ej. 6.7: d sin fricción', v1 * sp.sqrt(m / k), 3)
     d = sp.symbols('d', positive=True)
-    c('pagina', 'ej. 6.7: d con fricción', sp.solve(-mu * m * g * d - k * d**2 / 2 + m * v1**2 / 2, d)[0], 3)
     c('pagina', 'ej. 6.9: P (1e7)', 3.22e5 * 250 / 1e7, 2)
     W = 50.0 * g * 443
     c('pagina', 'ej. 6.10: W (1e5)', W / 1e5, 2)

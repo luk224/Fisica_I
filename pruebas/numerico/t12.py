@@ -97,7 +97,6 @@ def comprobaciones(c):
     c('pagina', 'ej. 12.3: abs atm', (1.01e5 + 1000 * 9.8 * 12.0) / 1.013e5, 2)
     c('pagina', 'Pascal: A2/A1', (20 / 2.0)**2, 0)
     c('pagina', 'barometro h', 1.013e5 / (13.6e3 * 9.8), 3)
-    c('pagina', 'ej. 12.4: h_ac/h_ag', 1000 / 850, 2)
     V = 15.0 / 19.3e3
     c('pagina', 'ej. 12.5: V (1e-4)', V / 1e-4, 2)
     c('pagina', 'ej. 12.5: B (V redondeado)', 1030 * 7.77e-4 * 9.8, 2)

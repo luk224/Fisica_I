@@ -120,11 +120,6 @@ def comprobaciones(c):
     c('pagina', 'test s3: T letrero', Tl, 0)
     c('pagina', 'test s3: H_h letrero', Tl * cos(30), 1)
     n1 = (180 * 1.5 + 800 * 1.0) / 4.0
-    c('pagina', 'ej. 11.3: n2', 980, 0)
-    c('pagina', 'ej. 11.3: n1', n1, 0)
-    c('pagina', 'ej. 11.3: mu min', n1 / 980, 2)
-    c('pagina', 'ej. 11.3: F suelo (1e3)', sp.sqrt(n1**2 + 980**2) / 1e3, 2)
-    c('pagina', 'ej. 11.3: angulo', sp.deg(sp.atan(980 / n1)), 0)
     T4 = 0.30 * 200 / (0.050 * sin(80))
     c('pagina', 'ej. 11.4: T', T4, -1)
     c('pagina', 'ej. 11.4: E_x', T4 * cos(80), -1)

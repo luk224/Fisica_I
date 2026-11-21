@@ -194,19 +194,6 @@
 <img src="../assets/img/fig_u_12_8_manometros.png" alt="Figura 12.8 de U. a) Manómetro de tubo abierto: la presión p se mide con la diferencia de alturas h = y2 − y1 entre los dos brazos. b) Barómetro de mercurio: la altura h de la columna da la presión atmosférica." loading="lazy" style="max-width:560px!important">
 <figcaption>Fig. 12.8 de U: a) manómetro de tubo abierto; b) barómetro de mercurio. <span class="src" data-l="U" data-ref="U Fig. 12.8, p. 374">U p.374</span></figcaption>
 </figure>
-<div class="box ex"><span class="h">Ejemplo 12.4: tubo en U con dos líquidos (aceite y agua)</span>
-<p>Un tubo en U abierto por los dos lados tiene agua; se vierte aceite (que no se mezcla) en el brazo izquierdo hasta que la interfase aceite-agua queda en el punto medio del tubo. Relaciona las alturas $h_{aceite}$ y $h_{agua}$ medidas desde la interfase.</p>
-  <ol class="steps">
-    <li><b>Nivel de comparación:</b> la altura de la interfase. Ahí, a la derecha hay agua y a la izquierda el contacto aceite-agua; los dos puntos están unidos por agua en reposo ⇒ <b>misma presión $p$</b>.</li>
-    <li><b>Cada columna con su densidad</b> (las dos abiertas al aire, $p_0$): $p=p_0+\rho_{agua}g\,h_{agua}=p_0+\rho_{aceite}g\,h_{aceite}$.</li>
-    <li><b>Igualar:</b> $\rho_{aceite}h_{aceite}=\rho_{agua}h_{agua}\Rightarrow h_{aceite}=\dfrac{\rho_{agua}}{\rho_{aceite}}h_{agua}=1{,}18\,h_{agua}$ con $\rho_{aceite}\approx850$ kg/m³. El aceite, menos denso, necesita una columna más alta.</li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> tubo en U con dos líquidos: iguala presiones al nivel de la interfase (el punto más bajo con el mismo fluido a los dos lados) ⇒ $\rho_1h_1=\rho_2h_2$.</div>
-  <span class="src" data-l="U" data-ref="U Ejemplo 12.4, p. 375 y fig. 12.10">U p.375</span></div>
-<figure class="fig" data-svg="../assets/figs/t12/tubo-en-u-con-aceite-en-el-brazo-izquierdo-y-agu.svg">
-<div class="figph" role="img" aria-label="Tubo en U con aceite en el brazo izquierdo y agua en el derecho; la interfase y el punto del otro brazo a la misma altura tienen la misma presión; la columna de aceite es más alta" style="aspect-ratio:340/215"></div>
-<figcaption>A la altura de la interfase la presión es la misma en los dos brazos: $\rho_{ac}h_{ac}=\rho_{ag}h_{ag}$. Con $\rho_{ac}\approx850$ kg/m³, la columna de aceite es 1,18 veces la de agua (aquí $h_{ag}=8{,}0$ cm y $h_{ac}=9{,}4$ cm). <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 12.4 de U">P</span></figcaption>
-</figure>
 <details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
 <ol>
 <li>¿A qué profundidad en agua dulce la presión manométrica vale 1 atm?<details><summary>Ver respuesta</summary>$h=\dfrac{p_{man}}{\rho g}=\dfrac{1{,}013\times10^5}{(1000)(9{,}8)}=10{,}3$ m (la regla de «1 atm cada 10 m»).</details></li>
@@ -739,24 +726,18 @@
 <tr><td>Viscosidad</td><td>a caudal fijo, $\Delta p\propto L/R^4$ (reducir $R$ a la mitad ⇒ ×16)</td></tr>
 <tr><td>Valores útiles</td><td>$\rho_{agua}=1000$, $\rho_{mar}=1030$, $\rho_{aire}=1{,}20$, $\rho_{Hg}=13{,}6\times10^3$ kg/m³; $g=9{,}8$ m/s²</td></tr>
 </table>
-<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+<div class="box warn"><span class="h">Otros errores frecuentes de este tema</span>
 <ul>
-    <li>Confundir presión con fuerza (la presión es un escalar), o usar el diámetro como radio al calcular $A$.</li>
-    <li>Mezclar presiones absoluta y manométrica en una misma ecuación; dar la absoluta cuando se pide la manométrica.</li>
-    <li>Aplicar $p=p_0+\rho gh$ con dos fluidos distintos con una sola densidad: hay que ir capa a capa.</li>
-    <li>Calcular el empuje con la densidad del <i>cuerpo</i> (es la del <i>fluido</i>), o con el volumen total cuando solo está sumergida una parte.</li>
-    <li>En continuidad, usar el cociente de diámetros en lugar del de áreas (factor al cuadrado).</li>
-    <li>En Torricelli, medir $h$ desde el suelo en lugar de desde la superficie libre; olvidar la presión del aire en un tanque cerrado.</li>
     <li>Signo del término $\rho gy$ en Bernoulli: el punto más bajo tiene más presión.</li>
     <li>Aplicar Bernoulli con viscosidad o en flujo turbulento; usar $R^2$ en lugar de $R^4$ para la caída de presión viscosa.</li>
-  </ul>
+</ul>
   <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
 <ul class="checklist">
   <li>Sé calcular una densidad (incluso con huecos) y pasar de masa a peso y a volumen (§1, E1).</li>
   <li>Sé explicar por qué la presión es un escalar y calcular la fuerza que ejerce sobre una superficie (§2).</li>
   <li>Sé aplicar $p=p_0+\rho gh$ y distinguir presión absoluta y manométrica (§2, E2, E3).</li>
   <li>Sé aplicar la ley de Pascal a un elevador hidráulico y explicar por qué no se gana energía (§2, E4).</li>
-  <li>Sé resolver un tubo en U con dos líquidos, un manómetro y un barómetro igualando presiones a un mismo nivel (ejemplo 12.4, §2).</li>
+  <li>Sé resolver un tubo en U con dos líquidos, un manómetro y un barómetro igualando presiones a un mismo nivel (E7, §2).</li>
   <li>Sé plantear un cuerpo sumergido o flotante con el empuje y el DCL, y decidir si flota (§3, E5, E6).</li>
   <li>Sé calcular presiones con varios fluidos apilados y ver el empuje como diferencia de presiones (E7).</li>
   <li>Sé usar la continuidad $A_1v_1=A_2v_2$ y el caudal $Q=Av$, con el área en función del diámetro (§4, E8).</li>

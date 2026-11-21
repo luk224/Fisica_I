@@ -161,18 +161,6 @@
 <div class="box warn"><span class="h">Conservar la cantidad de movimiento = conservar sus componentes</span>
 <p>$\vec P$ se calcula con una suma <b>vectorial</b>. Dos cantidades de movimiento de 18 y 24 kg·m/s en direcciones perpendiculares suman 30 kg·m/s (no 42). Lo más seguro es trabajar con componentes: $P_x=p_{Ax}+p_{Bx}+\dots$ y $P_y=p_{Ay}+p_{By}+\dots$ Según «Los datos hablan», más del 29 % de los estudiantes falla un problema de conservación de la cantidad de movimiento, sobre todo por olvidar que es un vector o por sumar módulos.</p>
   <span class="src" data-l="U" data-ref="U Cuidado y «Los datos hablan», pp. 244 y 251">U p.244, 251</span></div>
-<div class="box ex"><span class="h">Ejemplo 8.5: choque en línea recta (el signo es la dirección)</span>
-<p>Dos deslizadores sin fricción: $m_A=0{,}50$ kg a $+2{,}0$ m/s y $m_B=0{,}30$ kg a $-2{,}0$ m/s. Tras el choque, B va a $+2{,}0$ m/s. ¿Y A?</p>
-  <ol class="steps">
-    <li>Antes: $P_x=(0{,}50)(2{,}0)+(0{,}30)(-2{,}0)=0{,}40$ kg·m/s.</li>
-    <li>Después: $0{,}40=0{,}50\,v_{A2x}+(0{,}30)(2{,}0)\Rightarrow v_{A2x}=-0{,}40$ m/s: A rebota.</li>
-    <li>$\Delta p_A=-1{,}2$ y $\Delta p_B=+1{,}2$ kg·m/s (iguales y opuestos), pero el ligero cambia más de velocidad ($+4{,}0$ frente a $-2{,}4$ m/s).</li>
-  </ol>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.5, pp. 245-246">U p.245-246</span></div>
-<figure class="fig" data-svg="../assets/figs/t08/dos-deslizadores-que-chocan-en-un-riel-de-aire-a.svg">
-<div class="figph" role="img" aria-label="Dos deslizadores que chocan en un riel de aire, antes y después" style="aspect-ratio:360/206"></div>
-<figcaption>Ejemplo 8.5 de U: la cantidad de movimiento total (0,40 kg·m/s) es la misma antes y después; A invierte su sentido (v<sub>Ax</sub> = −0,40 m/s). Las flechas de antes y de después tienen escalas distintas. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.5 (U p. 245)">P</span></figcaption>
-</figure>
 <details class="check"><summary>✍️ Comprueba que lo has entendido (2 min)</summary>
 <ol>
 <li>Un patinador de 60 kg y una patinadora de 40 kg, en reposo sobre hielo, se empujan. Ella sale a 3,0 m/s. ¿Y él?<details><summary>Ver respuesta</summary>$0=40(3{,}0)+60\,v\Rightarrow v=-2{,}0$ m/s: 2,0 m/s en sentido contrario.</details></li>
@@ -201,7 +189,7 @@
 <div class="box thm"><span class="h">Totalmente inelástico: una sola velocidad final</span>
 <p>Como los dos cuerpos acaban con la misma $\vec v_2$, queda una incógnita por componente:</p>
   $$m_A\vec v_{A1}+m_B\vec v_{B1}=(m_A+m_B)\,\vec v_2\qquad\text{(ec. 8.16)}$$
-  <p>Con B en reposo, $v_{2x}=\dfrac{m_A}{m_A+m_B}v_{A1x}$ y $\dfrac{K_2}{K_1}=\dfrac{m_A}{m_A+m_B}\lt1$ (8.17, 8.18): siempre se pierde energía (no hace falta memorizarlas). <b>Ejemplo mínimo (ejemplo 8.7).</b> Los deslizadores del ejemplo 8.5 con Velcro: $v_{2x}=\dfrac{0{,}40}{0{,}80}=0{,}50$ m/s; $K$ pasa de 1,6 J a 0,10 J: queda 1/16, el resto calienta y deforma. <b>Error típico:</b> imponer $K_1=K_2$ cuando los cuerpos quedan unidos.</p>
+  <p>Con B en reposo, $v_{2x}=\dfrac{m_A}{m_A+m_B}v_{A1x}$ y $\dfrac{K_2}{K_1}=\dfrac{m_A}{m_A+m_B}\lt1$ (8.17, 8.18): siempre se pierde energía (no hace falta memorizarlas). <b>Ejemplo mínimo (ejemplo 8.7).</b> Los mismos deslizadores ($m_A=0{,}50$ kg a $+2{,}0$ m/s y $m_B=0{,}30$ kg a $-2{,}0$ m/s) con Velcro: $v_{2x}=\dfrac{0{,}40}{0{,}80}=0{,}50$ m/s; $K$ pasa de 1,6 J a 0,10 J: queda 1/16, el resto calienta y deforma. <b>Error típico:</b> imponer $K_1=K_2$ cuando los cuerpos quedan unidos.</p>
   <span class="src" data-l="U" data-ref="U §8.3 ecs. (8.16)-(8.18), p. 248 y ejemplo 8.7, pp. 248-249">U p.248-249</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/barras-de-energia-cinetica-antes-y-despues-de-un.svg">
 <div class="figph" role="img" aria-label="Barras de energía cinética antes y después de un choque totalmente inelástico" style="aspect-ratio:360/182"></div>
@@ -255,7 +243,7 @@
 <div class="box thm"><span class="h">Caso general en línea recta: la velocidad relativa se invierte</span>
 <p>La ecuación (8.23) dice que la velocidad de B respecto a A cambia de signo y conserva su módulo, y eso vale en <b>cualquier</b> choque elástico rectilíneo, aunque los dos se muevan:</p>
   $$v_{B2x}-v_{A2x}=-\,(v_{B1x}-v_{A1x})\qquad\text{(ecs. 8.26 y 8.27)}$$
-  <p>Junto con la conservación de $P$ forma un sistema <b>lineal</b> de dos ecuaciones. <b>Ejemplo mínimo (ejemplo 8.10).</b> Los deslizadores del ejemplo 8.5 con resortes ideales: $v_{B2x}-v_{A2x}=-(-2{,}0-2{,}0)=4{,}0$ m/s y $0{,}50\,v_{A2x}+0{,}30\,v_{B2x}=0{,}40$ kg·m/s, de donde $v_{A2x}=-1{,}0$ m/s y $v_{B2x}=+3{,}0$ m/s; $K=1{,}6$ J antes y después. <b>Error típico:</b> resolver la ecuación cuadrática de la energía cuando la de la velocidad relativa da lo mismo con menos cuentas.</p>
+  <p>Junto con la conservación de $P$ forma un sistema <b>lineal</b> de dos ecuaciones. <b>Ejemplo mínimo (ejemplo 8.10).</b> Dos deslizadores ($m_A=0{,}50$ kg a $+2{,}0$ m/s y $m_B=0{,}30$ kg a $-2{,}0$ m/s) con resortes ideales: $v_{B2x}-v_{A2x}=-(-2{,}0-2{,}0)=4{,}0$ m/s y $0{,}50\,v_{A2x}+0{,}30\,v_{B2x}=0{,}40$ kg·m/s, de donde $v_{A2x}=-1{,}0$ m/s y $v_{B2x}=+3{,}0$ m/s; $K=1{,}6$ J antes y después. <b>Error típico:</b> resolver la ecuación cuadrática de la energía cuando la de la velocidad relativa da lo mismo con menos cuentas.</p>
   <span class="src" data-l="U" data-ref="U §8.4 ecs. (8.26)-(8.27), p. 252 y ejemplo 8.10, p. 253">U p.252-253</span></div>
 <figure class="fig" data-svg="../assets/figs/t08/posicion-de-las-velocidades-de-los-dos-cuerpos-s.svg">
 <div class="figph" role="img" aria-label="Posición de las velocidades de los dos cuerpos sobre una recta, antes y después de un choque elástico, y velocidad del centro de masa" style="aspect-ratio:360/218"></div>
@@ -266,18 +254,6 @@
   <figcaption><b>Pruébalo tú:</b> cambia las masas, las velocidades y el coeficiente de restitución $e$, y mueve el tiempo (o pulsa «En marcha»). Las barras de la izquierda muestran $p_A$, $p_B$ y el total $P$ antes y después: <i>las dos barras totales siempre son iguales</i>. Las de la derecha muestran $K_A$, $K_B$ y el total: solo son iguales con $e=1$. El punto del CM (centro de masa) avanza con velocidad constante. Con $m_A=0{,}50$ kg, $m_B=0{,}30$ kg, $v_{A1}=2{,}0$ m/s y $v_{B1}=-2{,}0$ m/s: $e=1$ da $v_{A2}=-1{,}0$ y $v_{B2}=3{,}0$ m/s (ejemplo 8.10); $e=0$ da $0{,}50$ m/s para los dos (ejemplo 8.7); $e=0{,}6$ da $-0{,}40$ y $2{,}0$ m/s (ejemplo 8.5). Las masas $m_A=0{,}3$ kg y $m_B=0{,}1$ kg (10 veces las masas reales; solo importa su razón) con $v_{A1}=0{,}2$ m/s, $v_{B1}=-0{,}4$ m/s y $e=1$ reproducen el problema 8.48: $-0{,}1$ m/s para la canica de 30 g y $+0{,}5$ m/s para la de 10 g. <span class="src" data-l="P" data-ref="Interactivo propio de choques en una dimensión (U §8.2-8.4, pp. 243-254; Solucionario 8-17 Prob. 8.48)">P</span></figcaption>
 </figure>
 <h3>Choques elásticos en el plano <span class="prio p2">🟡</span></h3>
-<div class="box ex"><span class="h">Ejemplo 8.12: en 2D hace falta un dato más</span>
-<p>En el plano hay cuatro incógnitas (dos componentes por cuerpo) y solo tres ecuaciones ($K$ y dos de $P$): el enunciado tiene que dar un dato extra. Disco A de 0,500 kg a 4,00 m/s según $+x$; disco B de 0,300 kg en reposo; tras el choque elástico, A va a 2,00 m/s.</p>
-  <ol class="steps">
-    <li>Energía: $v_{B2}=\sqrt{\dfrac{m_A(v_{A1}^2-v_{A2}^2)}{m_B}}=\sqrt{\dfrac{0{,}500(16-4)}{0{,}300}}=4{,}47$ m/s.</li>
-    <li>$P_x$ y $P_y$ con los ángulos $\alpha$ (A, por encima de $x$) y $\beta$ (B, por debajo); elevando al cuadrado y sumando se elimina $\beta$: $\alpha=36{,}9^\circ$ y $\beta=26{,}6^\circ$. Comprobación: $p_y=\pm0{,}600$ kg·m/s.</li>
-  </ol>
-  <p><b>Masas iguales y B en reposo:</b> $\vec v_{A1}=\vec v_{A2}+\vec v_{B2}$ y $v_{A1}^2=v_{A2}^2+v_{B2}^2$ solo son compatibles si $\vec v_{A2}\cdot\vec v_{B2}=0$: salen a <b>90°</b> (billar), salvo en un choque frontal, en que A se para. <span class="src" data-l="P" data-ref="Deducción propia a partir de U §8.4, p. 254">P</span></p>
-  <span class="src" data-l="U" data-ref="U Ejemplo 8.12, p. 254 y texto de la p. 252">U p.252, 254</span></div>
-<figure class="fig" data-svg="../assets/figs/t08/velocidades-antes-y-despues-de-un-choque-elastic.svg">
-<div class="figph" role="img" aria-label="Velocidades antes y después de un choque elástico en el plano entre dos discos de hockey" style="aspect-ratio:360/202"></div>
-<figcaption>Ejemplo 8.12 de U: disco A (0,500 kg) a 4,00 m/s choca con B (0,300 kg) en reposo; A sale a 2,00 m/s con α = 36,9° y B sale a 4,47 m/s con β = 26,6°. <span class="src" data-l="P" data-ref="Diagrama propio del ejemplo 8.12 (U p. 254)">P</span></figcaption>
-</figure>
 <figure class="interactivo" data-escena="choque-2d" data-params='{"dim":2,"marcas":false}' aria-label="Interactivo: choque de dos discos lisos en el plano con parámetro de impacto, masas y coeficiente de restitución ajustables, y triángulo de cantidad de movimiento">
   <img class="int-static" src="../assets/img/int_choque-2d.png" alt="Interactivo: choque de dos discos lisos en el plano con parámetro de impacto, masas y coeficiente de restitución ajustables, y triángulo de cantidad de movimiento">
   <figcaption><b>Pruébalo tú:</b> un disco incide sobre otro en reposo y la trayectoria pasa a una distancia $b$ (parámetro de impacto) del centro del segundo. Al ser lisos, la fuerza va según la recta de los centros (línea discontinua): con $b=0$ el choque es frontal y con $b$ grande los discos casi se rozan. Cambia $b$, las masas y $e$ y observa el triángulo de la derecha: $\vec p_1'+\vec p_2'=\vec P$ siempre; la energía cinética solo se conserva con $e=1$. Con <b>masas iguales y $e=1$ los dos discos salen formando $90^\circ$</b> (por ejemplo $m_1=m_2$, $v_0=5{,}0$ m/s, $b=0{,}50$ m: $2{,}5$ m/s a $60^\circ$ y $4{,}33$ m/s a $-30^\circ$). Con $m_1=0{,}5$ kg, $m_2=0{,}3$ kg, $v_0=4{,}0$ m/s, $b\approx0{,}45$ m y $e=1$ se reproduce el ejemplo 8.12: $2{,}0$ m/s a $36{,}9^\circ$ y $4{,}47$ m/s a $-26{,}7^\circ$. <span class="src" data-l="P" data-ref="Interactivo propio de choques bidimensionales (U §8.4, pp. 251-254, ejemplo 8.12)">P</span></figcaption>
@@ -812,17 +788,14 @@
 <tr><td>Explosión desde el reposo</td><td>$\vec P=0$: $p$ igual y opuesta; $K=p^2/2m$ (energía en razón inversa a la masa); el centro de masa sigue su trayectoria</td></tr>
 <tr><td>Choque + algo después</td><td>$P$ en el choque; <b>energía</b> (resorte, péndulo) o cinemática (proyectil, MAS) <i>después</i>; nunca energía a través de un choque inelástico</td></tr>
 </table>
-<div class="box warn"><span class="h">Errores frecuentes de este tema</span>
+<div class="box warn"><span class="h">Otros errores frecuentes de este tema</span>
 <ul>
-    <li>Sumar <i>módulos</i> de cantidades de movimiento en lugar de componentes, o perder el signo de una velocidad que va hacia el sentido negativo.</li>
     <li>Imponer la conservación de la energía cinética en un choque que no es elástico (o a través de un choque inelástico, p. ej. bala-bloque-resorte).</li>
-    <li>Usar (8.24)-(8.25) cuando el cuerpo B no está inicialmente en reposo; o resolver la ecuación cuadrática de la energía cuando la velocidad relativa da un sistema lineal.</li>
     <li>Confundir «inelástico» con «totalmente inelástico»: solo en este último quedan unidos con la misma velocidad.</li>
     <li>Decir que la cantidad de movimiento no se conserva porque hay gravedad o fricción: durante un choque breve el impulso de esas fuerzas es despreciable. Pero en un tiro con peso (patinador en el aire) sí cambia $P_y$ con el tiempo.</li>
     <li>Medir los desplazamientos respecto al objeto móvil (la canoa) en lugar de respecto al suelo o al agua en los problemas de centro de masa.</li>
-    <li>En un cohete: olvidar que $dm/dt\lt0$, usar $v_{esc}$ como velocidad respecto al suelo, o aplicar (8.40) con gravedad y empuje dado sin $v_{esc}$.</li>
     <li>En una explosión: repartir la energía a partes iguales, olvidar que las velocidades son opuestas, o dar la distancia desde el punto de explosión en lugar de desde el lanzamiento.</li>
-  </ul>
+</ul>
   <span class="src" data-l="P" data-ref="Explicación propia, sin página en los libros">P</span></div>
 <ul class="checklist">
   <li>Sé definir $\vec p=m\vec v$ y el impulso, enunciar $\vec J=\Delta\vec p$ y calcular una fuerza media a partir de $\Delta\vec p/\Delta t$ (restando vectores).</li>
