@@ -136,3 +136,9 @@ def comprobaciones(c):
     c('pagina', 'test s5: v cerrado', sp.sqrt(2 * 1.013e5 / 1000 + 2 * 9.8 * 5.0), 1)
     c('pagina', 'test s5: Venturi v1', sp.sqrt(2 * 9.8 * 0.050 / (3**2 - 1)), 3)
     c('pagina', 'test s6: -20 %', (1 / 0.80)**4, 2)
+    # ---- D9: errores y respuestas modelo
+    c('pagina', 'error 1: D2/D1', sp.sqrt(sp.Rational(1520 * 98, 10) / 125), 1)
+    c('pagina', 'error 2: p del fallo (1e4)', (5.00e4 + 0.5 * 1000 * (9 - 0.5625) - 1000 * 9.8 * 11) / 1e4, 2); c('pagina', 'error 2: p (1e5)', (5.00e4 + 0.5 * 1000 * (9 - 0.5625) + 1000 * 9.8 * 11) / 1e5, 2)
+    c('pagina', 'error 3: p del fallo', 1000 * 9.8 * 0.115, 0); c('pagina', 'error 3: p', 790 * 9.8 * 0.100 + 1000 * 9.8 * 0.0150, 0)
+    c('pagina', 'error 4: v', sp.sqrt(2 * 9.8 * 14.0), 1); c('pagina', 'error 4: v del fallo', sp.sqrt(2 * 9.8 * 1.0), 2)
+    c('pagina', 'modelo: h bolsa', 5980 / (1050 * 9.8), 3)

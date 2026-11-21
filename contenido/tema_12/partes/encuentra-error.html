@@ -1,0 +1,17 @@
+<div class="nivel"><b>🔎 Encuentra el error</b><span>Cuatro soluciones con un fallo típico. Localiza dónde se rompe antes de abrir la respuesta: es la mejor forma de que no te pase en el examen.</span></div>
+<details class="mas"><summary>1. Elevador hidráulico <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Para levantar un coche de 1520 kg con 125 N hace falta $A_2/A_1=119$. ¿Cuál es la relación entre los diámetros?</p>
+<p><b>Solución con fallo.</b> «La relación es 119».</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>119 es el cociente de <i>áreas</i>. Como $A=\pi D^2/4$, $D_2/D_1=\sqrt{119}=\mathbf{10{,}9}$.</p></details></details>
+<details class="mas"><summary>2. Signo de la altura en Bernoulli <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Agua a 3,00 m/s y $5{,}00\times10^4$ Pa (manométrica); 11,0 m más abajo el diámetro es doble. ¿Qué presión hay allí?</p>
+<p><b>Solución con fallo.</b> $p_2=p_1+\tfrac12\rho(v_1^2-v_2^2)-\rho g(y_1-y_2)=-5{,}36\times10^4$ Pa.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>El punto más bajo tiene <i>más</i> presión, no menos: el término de altura es $+\rho g(y_1-y_2)$ con $y_1-y_2=+11{,}0$ m. Con $v_2=v_1/4$: $p_2=5{,}00\times10^4+4{,}22\times10^3+1{,}078\times10^5=\mathbf{1{,}62\times10^5}$ Pa. (Una presión manométrica negativa tan grande ya es una señal de alarma.)</p></details></details>
+<details class="mas"><summary>3. Fluidos apilados <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Un bloque flota en la interfase aceite-agua: su cara inferior está a 10,0 cm bajo el aceite más 1,50 cm de agua. ¿Qué presión manométrica hay en esa cara?</p>
+<p><b>Solución con fallo.</b> «Todo es agua»: $p=\rho_wg(0{,}115)=1127$ Pa.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>Hay que bajar capa a capa con la densidad de cada fluido: $p=\rho_{ac}g(0{,}100)+\rho_wg(0{,}0150)=774+147=\mathbf{921\ Pa}$.</p></details></details>
+<details class="mas"><summary>4. Torricelli y la profundidad <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Un orificio está a 1,0 m del suelo y a 14,0 m bajo la superficie libre de un tanque abierto. ¿Con qué rapidez sale el agua?</p>
+<p><b>Solución con fallo.</b> $h=1{,}0$ m (la altura del orificio): $v=\sqrt{2(9{,}8)(1{,}0)}=4{,}43$ m/s.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>En Torricelli $h$ es la <i>profundidad bajo la superficie libre</i>: $v=\sqrt{2(9{,}8)(14{,}0)}=\mathbf{16{,}6\ m/s}$. La altura sobre el suelo solo importa para el alcance del chorro.</p></details></details>
