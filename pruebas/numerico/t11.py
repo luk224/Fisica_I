@@ -147,3 +147,10 @@ def comprobaciones(c):
     c('pagina', 'test s4: x corte (1e-6)', 1.0e4 / 0.010 / 2.5e10 * 0.050 * 1e6, 1)
     c('pagina', 'test s5: F ruptura', 5e8 * 1.0e-6, 0)
     c('pagina', 'test s5: masa', 5e8 * 1.0e-6 / g, 0)
+    # ---- D9: errores y respuestas modelo
+    c('pagina', 'error 1: n1 del fallo', (160 * 1.5 + 740 * 1.0) / 4.0, 0); c('pagina', 'error 1: n1', (160 * 1.5 + 740 * 0.6) / 4.0, 0)
+    c('pagina', 'error 2: T del fallo', 490 / 0.6, 0); c('pagina', 'error 2: T', (190 * 2 + 300 * 4) / (0.6 * 4), 0)
+    A = sp.pi * 0.0150**2 / 4
+    c('pagina', 'error 3: deformación del fallo (1e-5)', 2000 / A / 2.0e11 * 1e5, 1); c('pagina', 'error 3: deformación (1e-4)', 4000 / A / 2.0e11 * 1e4, 1)
+    c('pagina', 'error 4: del fallo (1e-3)', 9.0e5 / (0.10 * 0.10) / 7.5e10 * 1e3, 1); c('pagina', 'error 4: (1e-2)', 9.0e5 / (0.10 * 0.00500) / 7.5e10 * 1e2, 1)
+    c('pagina', 'modelo: alargamiento (1e-5)', 4000 / A / 2.0e11 * 0.750 * 1e5, 1)

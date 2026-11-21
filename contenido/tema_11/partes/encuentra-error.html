@@ -1,0 +1,17 @@
+<div class="nivel"><b>🔎 Encuentra el error</b><span>Cuatro soluciones con un fallo típico. Localiza dónde se rompe antes de abrir la respuesta: es la mejor forma de que no te pase en el examen.</span></div>
+<details class="mas"><summary>1. Brazo de palanca en una escalera <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Una escalera de 5,0 m (160 N) se apoya en una pared lisa a 4,0 m de altura, con la base a 3,0 m. Un hombre de 740 N está a 1,0 m a lo largo de ella. ¿Qué fuerza ejerce la pared?</p>
+<p><b>Solución con fallo.</b> Torcas respecto a la base: $n_1(4{,}0)=160(1{,}5)+740(1{,}0)\Rightarrow n_1=245$ N.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>El brazo del hombre es la distancia <i>horizontal</i> a la base, no la distancia a lo largo de la escalera: $\tfrac35(1{,}0)=0{,}6$ m. Entonces $n_1(4{,}0)=240+444\Rightarrow n_1=\mathbf{171\ N}$.</p></details></details>
+<details class="mas"><summary>2. Fuerza de una bisagra <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Una viga de 4,00 m (190 N) con una carga de 300 N en el extremo libre está unida a la pared por una bisagra y a un cable (3-4-5) que parte del extremo libre. Halla $T$.</p>
+<p><b>Solución con fallo.</b> «La bisagra solo empuja a lo largo de la viga, $H_v=0$»: $T\sin\theta=490\Rightarrow T=817$ N.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>La bisagra puede ejercer una fuerza en cualquier dirección: hay tres incógnitas ($T$, $H_h$, $H_v$). Torcas respecto a la bisagra: $T(0{,}600)(4{,}00)=190(2{,}00)+300(4{,}00)\Rightarrow T=\mathbf{658\ N}$ (y $H_v=95$ N).</p></details></details>
+<details class="mas"><summary>3. Varillas en serie <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Una varilla de acero y otra de cobre, del mismo diámetro (1,50 cm), unidas por un extremo, soportan 4000 N. ¿Cuál es la deformación del acero?</p>
+<p><b>Solución con fallo.</b> «La fuerza se reparte entre las dos»: $F=2000$ N, esfuerzo $=1{,}13\times10^7$ Pa y deformación $=5{,}7\times10^{-5}$.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>En serie, cada varilla soporta toda la fuerza: $F=4000$ N, esfuerzo $=2{,}26\times10^7$ Pa y deformación del acero $=2{,}26\times10^7/2{,}0\times10^{11}=\mathbf{1{,}1\times10^{-4}}$. (El reparto de la fuerza es de varillas en paralelo.)</p></details></details>
+<details class="mas"><summary>4. Corte y área <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Una placa cuadrada de acero (10,0 cm de lado, 0,500 cm de espesor) recibe $9{,}0\times10^5$ N paralelos a cada lado. ¿Cuál es su deformación por corte?</p>
+<p><b>Solución con fallo.</b> Área $=0{,}10\times0{,}10$ m²: esfuerzo $=9{,}0\times10^7$ Pa y deformación $=9{,}0\times10^7/7{,}5\times10^{10}=1{,}2\times10^{-3}$.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>El área es la de la cara <i>sobre la que actúa la fuerza</i> (lado por espesor): $5{,}00\times10^{-4}$ m². Esfuerzo $=1{,}8\times10^9$ Pa y deformación $=1{,}8\times10^9/7{,}5\times10^{10}=\mathbf{2{,}4\times10^{-2}}$.</p></details></details>
