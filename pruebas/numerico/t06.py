@@ -199,3 +199,9 @@ def comprobaciones(c):
     c('pagina', 'mini-test: motor', 100 * g * 0.5, 0)
     c('pagina', 'mini-test: bombilla (1e6 J)', 0.060 * 5 * 3.6e6 / 1e6, 2)
     c('pagina', 'mini-test: coche hp', 2000 * 25 / 746, 0)
+    # ---- D9: errores, previas y respuestas modelo
+    c('pagina', 'error 1: W oblicua', 40 * 2 * cos(30), 1)
+    c('pagina', 'error 2: K1 (1e5)', 0.5 * 1000 * 20**2 / 1e5, 2); c('pagina', 'error 2: d', 0.5 * 1000 * 20**2 / 5000, 1)
+    c('pagina', 'error 3: W resorte', 200 * (0.20**2 - 0.10**2) / 2, 1)
+    c('pagina', 'error 4: W (1e5)', 1000 * (20**2 - 10**2) / 2 / 1e5, 1)
+    c('pagina', 'modelo: resorte 0 a 10 cm', 200 * 0.10**2 / 2, 1)
