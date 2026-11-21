@@ -247,3 +247,8 @@ def comprobaciones(c):
     c('pagina', 'ej 16.19: t', 8000 / (1.75 * 320 * sp.tan(al)), 1)
     c('pagina', 'test s9: alpha Mach 2', sp.deg(sp.asin(sp.Rational(1, 2))), 0)
     c('pagina', 'test s9: Mach', 1 / sp.sin(pi / 4), 2)
+    # ---- D9: errores
+    c('pagina', 'error 1: r del fallo', 15.0 / sp.sqrt(3), 1)
+    c('pagina', 'error 2: f del fallo', 344 / 0.656, 0)
+    c('pagina', 'error 3: f del fallo', (344 + 18.0) / (344 + 30.0) * 352, 0); c('pagina', 'error 3: f', (344 + 18.0) / (344 - 30.0) * 352, 0)
+    c('pagina', 'error 4: T del fallo', 20.0 * (370 / 349) ** 2, 1); c('pagina', 'error 4: T', 293.15 * (370 / 349) ** 2, 1)

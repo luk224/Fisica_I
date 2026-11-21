@@ -1,0 +1,17 @@
+<div class="nivel"><b>🔎 Encuentra el error</b><span>Cuatro soluciones con un fallo típico. Localiza dónde se rompe antes de abrir la respuesta: es la mejor forma de que no te pase en el examen.</span></div>
+<details class="mas"><summary>1. Decibelios y distancia <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Una conversación a 15,0 m suena a 20,0 dB. ¿A qué distancia sonará a 60,0 dB?</p>
+<p><b>Solución con fallo.</b> «El nivel cumple el inverso del cuadrado»: $60/20=3$, luego $r=15{,}0/\sqrt3=8{,}7$ m.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>El inverso del cuadrado vale para la <i>intensidad</i>, no para los decibelios. $+40$ dB es $I_2/I_1=10^4$, luego $r_2=r_1/\sqrt{10^4}=15{,}0/100=\mathbf{0{,}150\ m}$.</p></details></details>
+<details class="mas"><summary>2. Tubo cerrado <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Un tubo abierto de 0,328 m suena a 524 Hz (fundamental). Si se tapa un extremo, ¿cuál es la nueva fundamental?</p>
+<p><b>Solución con fallo.</b> «La longitud de onda sigue siendo $2L$»: $\lambda=0{,}656$ m y $f=344/0{,}656=524$ Hz.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>En el extremo cerrado hay un nodo de desplazamiento y en el abierto un antinodo: $L=\lambda/4$. Entonces $\lambda=4L=1{,}31$ m y $f=344/1{,}31=\mathbf{262\ Hz}$: una octava más grave.</p></details></details>
+<details class="mas"><summary>3. Signos en el efecto Doppler <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Un tren emite 352 Hz a 30,0 m/s y un pasajero de otro tren que viene en sentido contrario va a 18,0 m/s. ¿Qué frecuencia oye cuando se acercan?</p>
+<p><b>Solución con fallo.</b> «La fuente se acerca, luego $v_S=+30{,}0$»: $f=\dfrac{344+18{,}0}{344+30{,}0}(352)=341$ Hz.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>Con la flecha «$+$» del receptor a la fuente, una fuente que <i>se acerca</i> al receptor va en contra: $v_S=-30{,}0$. Así $f=\dfrac{344+18{,}0}{344-30{,}0}(352)=\mathbf{406\ Hz}$, mayor que 352 Hz, como corresponde a acercarse.</p></details></details>
+<details class="mas"><summary>4. Temperatura en kelvin <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
+<p class="enun">Un tubo de órgano da 349 Hz a 20,0 °C. ¿A qué temperatura da 370 Hz?</p>
+<p><b>Solución con fallo.</b> $f\propto\sqrt T$: $T_2=20{,}0\,(370/349)^2=22{,}5$ °C.</p>
+<details class="mas"><summary>¿Qué falla?</summary><p>La proporción $v\propto\sqrt T$ exige kelvin: $T_2=293{,}15\,(370/349)^2=329{,}5$ K $=\mathbf{56{,}3\ ^\circ C}$.</p></details></details>
