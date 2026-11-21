@@ -59,3 +59,8 @@ def comprobaciones(c):
     c('pagina', '§5 tren: v', -1.0 + 3.0, 1); c('pagina', '§5 bote: v', sp.sqrt(5.0 ** 2 + 3.0 ** 2), 2); c('pagina', '§5 bote: ángulo', sp.deg(sp.atan(3 / 5.0)), 1)
     c('pagina', 'ej. 3.14: v', sp.sqrt(240 ** 2 + 100 ** 2), 0); c('pagina', 'ej. 3.14: ángulo', sp.deg(sp.atan(100 / 240.0)), 1)
     c('pagina', 'ej. 3.15: ángulo', sp.deg(sp.asin(100 / 240.0)), 1); c('pagina', 'ej. 3.15: v', sp.sqrt(240 ** 2 - 100 ** 2), 0)
+    # ---- D9: errores
+    c('pagina', 'error 1: del fallo', 40.0**2 / (2 * 9.80), 1); c('pagina', 'error 1: h', (40.0 * sin(60))**2 / (2 * 9.80), 1)
+    c('pagina', 'error 2: del fallo', 1.13 / 1.10, 2); c('pagina', 'error 2: t', sp.sqrt(2 * 1.13 / 9.80), 3)
+    c('pagina', 'error 3: del fallo', 4 * sp.pi**2 * 0.070 / 3.0**2, 2); c('pagina', 'error 3: a', 4 * sp.pi**2 * 0.070 / (1 / 3.0)**2, 1)
+    c('pagina', 'error 4: t', 1.50 / 6.80 + 1.50 / 1.20, 2)
