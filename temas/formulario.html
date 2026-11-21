@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem('tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física I · Formulario y resumen</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+<script defer src="../assets/busqueda.js"></script>
+<link rel="stylesheet" href="../assets/estudio.css">
+<script defer src="../assets/estudio.js"></script>
+<style>
+.form-bloque{margin:2.2em 0 .2em;font:600 12.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.form-tema h2{margin-top:.4em}
+.form-tema .lema{margin:-.3em 0 .6em;color:var(--mut)}
+.form-tema h3{font:600 .95rem var(--sans);margin:1.1em 0 .2em}
+.form-tema,.form-cte{--w1:46%}
+@media(min-width:720px){.form-tema table td:first-child{width:var(--w1)}}
+details.chul{border:1px solid var(--bd);border-radius:10px;background:var(--card);margin:.9em 0;padding:0 16px}
+details.chul>summary{cursor:pointer;font:600 15px var(--sans);padding:11px 0;color:var(--acc)}
+details.chul[open]>summary{border-bottom:1px solid var(--bd);margin-bottom:8px}
+.form-tema .ir{font:14px var(--sans);margin:.4em 0 0}
+.resumen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin:1em 0}
+.rcard{border:1px solid var(--bd);border-radius:12px;background:var(--card);padding:14px 16px;font:14px/1.45 var(--sans)}
+.rcard h3{margin:0 0 .3em;font:600 1rem/1.3 var(--sans)}
+.rcard h3 a{text-decoration:none;color:inherit}
+.rcard h3 span{color:var(--acc);margin-right:.35em}
+.rcard p{margin:.35em 0}
+.rcard .ojo{color:var(--mut);font-size:13.5px}
+@media print{.form-tema{break-inside:auto}.rcard{break-inside:avoid}details.chul>summary{list-style:none}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Índice de temas</a>
+  <span><button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+
+<div class="layout">
+<nav class="side-toc" aria-label="Índice del tema"><b>En esta página</b></nav>
+<main>
+
+<header class="hero">
+  <div class="kick">Formulario y resumen</div>
+  <h1>Fórmulas y resumen de los 20 temas</h1>
+  <p>Todas las fórmulas del curso organizadas por tema: primero lo imprescindible con <b>cuándo se usa</b> cada una, y debajo la chuleta completa. Al final, un resumen de una página con la idea de cada tema.</p>
+  <div class="chips"><span><a href="#f1">Mecánica</a></span><span><a href="#f14">Oscilaciones y ondas</a></span><span><a href="#f17">Termodinámica</a></span><span><a href="#cte">Constantes</a></span><span><a href="#resumen">Resumen final</a></span></div>
+</header>
+
+
+<h2 id="cte">Constantes, unidades y prefijos</h2>
+<table>
+<tr><th>Dato</th><th>Valor</th></tr>
+<tr><td>Aceleración de la gravedad</td><td>$g=9{,}81\ \text{m/s}^2$</td></tr>
+<tr><td>Constante de gravitación</td><td>$G=6{,}67\times10^{-11}\ \mathrm{N\cdot m^2/kg^2}$</td></tr>
+<tr><td>Masa y radio de la Tierra</td><td>$m_T=5{,}97\times10^{24}$ kg; $R_T=6{,}37\times10^{6}$ m</td></tr>
+<tr><td>Constante de los gases</td><td>$R=8{,}314\ \mathrm{J/(mol\cdot K)}$</td></tr>
+<tr><td>Constante de Boltzmann; número de Avogadro</td><td>$k=1{,}381\times10^{-23}$ J/K; $N_A=6{,}022\times10^{23}$ mol$^{-1}$</td></tr>
+<tr><td>Constante de Stefan-Boltzmann</td><td>$\sigma=5{,}67\times10^{-8}\ \mathrm{W/(m^2\cdot K^4)}$</td></tr>
+<tr><td>Rapidez de la luz</td><td>$c=3{,}00\times10^{8}$ m/s</td></tr>
+<tr><td>Temperatura</td><td>$T(\text{K})=T(^\circ\text{C})+273{,}15$</td></tr>
+<tr><td>Prefijos del SI</td><td>$\text{G}=10^{9}$, M $=10^{6}$, k $=10^{3}$, c $=10^{-2}$, m $=10^{-3}$, μ $=10^{-6}$, n $=10^{-9}$</td></tr>
+<tr><td>Ángulos</td><td>$180^\circ=\pi$ rad; 1 rpm $=2\pi/60$ rad/s</td></tr>
+</table>
+<p class="form-bloque">Mecánica · Temas 1-13</p>
+<section class="form-tema" id="f1">
+<h2 id="f1-t"><span class="n">1</span> Unidades, cantidades físicas y vectores</h2>
+<p class="lema">Magnitudes, unidades SI y vectores</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Regla o fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>Factor unitario: $\dfrac{1\ \text{km}}{1000\ \text{m}}=1$; en áreas y volúmenes el factor va <b>al cuadrado o al cubo</b></td><td>«exprese en m/s», «en kg/m³», datos en km/h, g/cm³, cm², litros, millas…</td></tr>
+<tr><td>Cifras significativas: en $\times\div$ manda el dato con <b>menos cifras</b>; en $+-$ manda el <b>decimal</b> menos preciso</td><td>«con el número correcto de cifras significativas», y al dar cualquier resultado final.</td></tr>
+<tr><td>$A_x=A\cos\theta,\quad A_y=A\sin\theta$ $\ $($\theta$ desde $+x$, antihorario)</td><td>Te dan un vector como «módulo y ángulo» y tienes que sumarlo o restarlo.</td></tr>
+<tr><td>$A=\sqrt{A_x^2+A_y^2},\quad\tan\theta=\dfrac{A_y}{A_x}$ $\ $(si $A_x\lt 0$, suma 180°)</td><td>Tienes las componentes y te piden «magnitud y dirección».</td></tr>
+<tr><td>$\vec A\cdot\vec B=AB\cos\phi=A_xB_x+A_yB_y+A_zB_z$</td><td>«producto escalar», «ángulo entre dos vectores», «¿son perpendiculares?» (y en el tema 6: trabajo).</td></tr>
+<tr><td>$|\vec A\times\vec B|=AB\sin\phi$; $\ C_z=A_xB_y-A_yB_x$; dirección: mano derecha</td><td>«producto vectorial», «vector perpendicular a ambos», «área del paralelogramo» (y en el tema 10: momento de una fuerza).</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 1</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula o regla (ec. de U)</th></tr>
+<tr><td>Unidades SI básicas (mecánica)</td><td>metro (m), kilogramo (kg), segundo (s); prefijos: n $10^{-9}$, µ $10^{-6}$, m $10^{-3}$, c $10^{-2}$, k $10^{3}$, M $10^{6}$, G $10^{9}$</td></tr>
+<tr><td>Conversión</td><td>multiplicar por factores que valen 1; $1\ \text{cm}^3=10^{-6}\ \text{m}^3$; $1\ \text{g/cm}^3=10^3\ \text{kg/m}^3$; $1\ \text{km/h}=\tfrac{1}{3.6}\ \text{m/s}$</td></tr>
+<tr><td>Equivalencias útiles</td><td>1 in = 2.54 cm (exacta); 1 ft = 0.3048 m; 1 mi = 1.609 km; 1 h = 3600 s</td></tr>
+<tr><td>Cifras significativas</td><td>$\times\div$: tantas como el dato con menos cifras. $+-$: hasta el decimal del dato menos preciso. Redondear (no truncar) y solo al final</td></tr>
+<tr><td>Estimación</td><td>datos redondos, factores encadenados, resultado con 1 cifra o como potencia de 10</td></tr>
+<tr><td>Vectores</td><td>$\vec A-\vec B=\vec A+(-\vec B)$ (1.4); $|\vec A+\vec B|=A+B$ solo si son paralelos</td></tr>
+<tr><td>Componentes</td><td>$A_x=A\cos\theta,\ A_y=A\sin\theta$ (1.5), $\theta$ desde $+x$ antihorario</td></tr>
+<tr><td>Módulo y dirección</td><td>$A=\sqrt{A_x^2+A_y^2}$ (1.6); $\tan\theta=A_y/A_x$ (1.7): si $A_x\lt 0$, sumar 180°</td></tr>
+<tr><td>Suma por componentes</td><td>$R_x=A_x+B_x,\ R_y=A_y+B_y,\ R_z=A_z+B_z$ (1.9-1.10)</td></tr>
+<tr><td>Vectores unitarios</td><td>$\vec A=A_x\hat\imath+A_y\hat\jmath+A_z\hat k$ (1.14); $A=\sqrt{A_x^2+A_y^2+A_z^2}$ (1.11)</td></tr>
+<tr><td>Producto escalar</td><td>$\vec A\cdot\vec B=AB\cos\phi$ (1.16) $=A_xB_x+A_yB_y+A_zB_z$ (1.19); $\hat\imath\cdot\hat\imath=1$, $\hat\imath\cdot\hat\jmath=0$; $=0$ si son perpendiculares</td></tr>
+<tr><td>Producto vectorial</td><td>$|\vec A\times\vec B|=AB\sin\phi$ (1.20), mano derecha; $\vec B\times\vec A=-\vec A\times\vec B$ (1.21); $\hat\imath\times\hat\jmath=\hat k$, $\hat\jmath\times\hat k=\hat\imath$, $\hat k\times\hat\imath=\hat\jmath$ (1.22)</td></tr>
+<tr><td>Producto vectorial (componentes)</td><td>$C_x=A_yB_z-A_zB_y,\ C_y=A_zB_x-A_xB_z,\ C_z=A_xB_y-A_yB_x$ (1.25)</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_01_unidades_vectores.html">→ Abrir el tema 1 completo</a></p>
+</section>
+<section class="form-tema" id="f2">
+<h2 id="f2-t"><span class="n">2</span> Movimiento rectilíneo</h2>
+<p class="lema">Posición, velocidad y aceleración en una recta</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$v_{\text{med-}x}=\dfrac{\Delta x}{\Delta t},\qquad v_x=\dfrac{dx}{dt}$</td><td>Te dan posiciones, o $x(t)$ como fórmula: «velocidad media», «velocidad en $t=…$», «¿cuándo se para?» ($v_x=0$).</td></tr>
+<tr><td>$a_x=\dfrac{dv_x}{dt}=\dfrac{d^2x}{dt^2}$</td><td>Te dan $v_x(t)$ o $x(t)$ y piden la aceleración; el máximo de $v_x$ está donde $a_x=0$.</td></tr>
+<tr><td>$v_x=v_{0x}+a_xt$</td><td>$a$ constante y <b>no</b> interviene la distancia: tiempos de frenado, velocidad al cabo de $t$.</td></tr>
+<tr><td>$x=x_0+v_{0x}t+\tfrac12a_xt^2$</td><td>$a$ constante y <b>no</b> interviene $v_x$ final: posición en un instante, persecuciones (igualar dos $x(t)$), caída desde una altura.</td></tr>
+<tr><td>$v_x^2=v_{0x}^2+2a_x(x-x_0)$</td><td>$a$ constante y <b>no</b> interviene el tiempo: frenar en una distancia, altura máxima, velocidad al llegar al suelo.</td></tr>
+<tr><td>$v_x=v_{0x}+\displaystyle\int_0^t a_x\,dt',\quad x=x_0+\int_0^t v_x\,dt'$</td><td>La aceleración <b>depende del tiempo</b> ($a(t)$, $g(t)$, fuerza que cambia por tramos).</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 2</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula o regla (ec. de U)</th></tr>
+<tr><td>Desplazamiento y velocidad media</td><td>$\Delta x=x_2-x_1$ (2.1); $v_{\text{med-}x}=\Delta x/\Delta t$ (2.2), con signo. Rapidez media $=$ distancia total/tiempo $\ge0$</td></tr>
+<tr><td>Velocidad instantánea</td><td>$v_x=\lim_{\Delta t\to0}\Delta x/\Delta t=dx/dt$ (2.3): pendiente de la <b>tangente</b> en $x$–$t$; rapidez $=|v_x|$</td></tr>
+<tr><td>Aceleración media e instantánea</td><td>$a_{\text{med-}x}=\Delta v_x/\Delta t$ (2.4); $a_x=dv_x/dt$ (2.5) $=d^2x/dt^2$ (2.6): pendiente en $v_x$–$t$</td></tr>
+<tr><td>¿Acelera o frena?</td><td>$v_x$ y $a_x$ mismo signo → la rapidez aumenta; signos opuestos → frena (Tabla 2.3)</td></tr>
+<tr><td>Aceleración constante (Tabla 2.4)</td><td>$v_x=v_{0x}+a_xt$ (2.8) [sin $x$]; $x=x_0+v_{0x}t+\tfrac12a_xt^2$ (2.12) [sin $v_x$]; $v_x^2=v_{0x}^2+2a_x(x-x_0)$ (2.13) [sin $t$]; $x-x_0=\tfrac12(v_{0x}+v_x)t$ (2.14) [sin $a_x$]</td></tr>
+<tr><td>Velocidad media con $a$ constante</td><td>$v_{\text{med-}x}=\tfrac12(v_{0x}+v_x)$ (2.10)</td></tr>
+<tr><td>Frenar hasta parar en $d$</td><td>$|a|=v_0^2/(2d)$; $t=2d/v_0=v_0/|a|$</td></tr>
+<tr><td>Caída libre</td><td>$a_y=-g$ con $+y$ arriba; $g=9.80\ \text{m/s}^2$ (siempre positivo); altura máxima $h=v_0^2/2g$ en $t=v_0/g$</td></tr>
+<tr><td>Aceleración variable</td><td>$v_x=v_{0x}+\int_0^t a_x\,dt'$ (2.17); $x=x_0+\int_0^t v_x\,dt'$ (2.18); área bajo $a$–$t$ $=\Delta v_x$, área bajo $v_x$–$t$ $=\Delta x$</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_02_movimiento_rectilineo.html">→ Abrir el tema 2 completo</a></p>
+</section>
+<section class="form-tema" id="f3">
+<h2 id="f3-t"><span class="n">3</span> Movimiento en dos o en tres dimensiones</h2>
+<p class="lema">Proyectiles, movimiento circular y velocidad relativa</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\vec v=\dfrac{d\vec r}{dt},\quad \vec a=\dfrac{d\vec v}{dt}$ (componente a componente)</td><td>Te dan $x(t)$, $y(t)$ y piden velocidad o aceleración en un instante (E1).</td></tr>
+<tr><td>$a_\parallel=\dfrac{\vec a\cdot\vec v}{v},\quad a_\perp=\sqrt{a^2-a_\parallel^2}$</td><td>«¿Acelera, frena o gira?»: $a_\parallel$ cambia la rapidez, $a_\perp$ la dirección (E1).</td></tr>
+<tr><td>$x=x_0+v_{0x}t,\quad y=y_0+v_{0y}t-\tfrac12gt^2$</td><td>Cualquier proyectil: tiempo de vuelo, alcance, posición en un instante (E3, E4, X3).</td></tr>
+<tr><td>$v_x=v_{0x},\quad v_y=v_{0y}-gt$</td><td>Velocidad (módulo y ángulo) en un instante; cima ($v_y=0$) e impacto (E3, E4).</td></tr>
+<tr><td>$a_{\text{rad}}=\dfrac{v^2}{R}=\dfrac{4\pi^2R}{T^2}$</td><td>Movimiento circular: centrifugadora, noria, curva; «cuántas $g$» (E5, X2).</td></tr>
+<tr><td>$\vec v_{P/A}=\vec v_{P/B}+\vec v_{B/A}$</td><td>Río, viento, tren, dos observadores: suma con signo en 1D, vectorial en 2D (E6, X1b).</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 3</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula o regla (ec. de U)</th></tr>
+<tr><td>Posición y velocidad</td><td>$\vec r=x\hat\imath+y\hat\jmath+z\hat k$ (3.1); $\vec v_{\text{med}}=\Delta\vec r/\Delta t$ (3.2); $\vec v=d\vec r/dt$ (3.3), $v_x=dx/dt$ (3.4); $v=\sqrt{v_x^2+v_y^2}$; $\vec v$ tangente a la trayectoria</td></tr>
+<tr><td>Aceleración</td><td>$\vec a_{\text{med}}=\Delta\vec v/\Delta t$ (3.8); $\vec a=d\vec v/dt$ (3.9), $a_x=dv_x/dt$ (3.10)</td></tr>
+<tr><td>Paralela y perpendicular</td><td>$a_\parallel=\vec a\cdot\vec v/v$ (cambia la rapidez: $\gt0$ acelera, $\lt0$ frena); $a_\perp=\sqrt{a^2-a_\parallel^2}$ (cambia la dirección)</td></tr>
+<tr><td>Proyectil (ecuaciones)</td><td>$v_{0x}=v_0\cos\alpha_0$, $v_{0y}=v_0\sin\alpha_0$ (3.18); $x=x_0+v_{0x}t$ (3.19); $y=y_0+v_{0y}t-\tfrac12gt^2$ (3.20); $v_x=v_{0x}$ (3.21); $v_y=v_{0y}-gt$ (3.22); trayectoria parábola (3.26)</td></tr>
+<tr><td>Cima, altura y alcance</td><td>Cima: $v_y=0$, $t_1=v_{0y}/g$. Mismo nivel: $h=v_0^2\sin^2\alpha_0/2g$, $R=v_0^2\sin2\alpha_0/g$, máximo a $45°$; ángulos complementarios, mismo $R$</td></tr>
+<tr><td>Lanzamiento horizontal</td><td>$v_{0y}=0$: $t=\sqrt{2h/g}$ (solo depende de $h$), $x=v_0t$</td></tr>
+<tr><td>Movimiento circular</td><td>$a_{\text{rad}}=v^2/R$ (3.27), $v=2\pi R/T$ (3.28), $a_{\text{rad}}=4\pi^2R/T^2$ (3.29), hacia el centro; $T=1/f$</td></tr>
+<tr><td>Circular no uniforme</td><td>$a_{\text{tan}}=d|\vec v|/dt$ (3.30); $a=\sqrt{a_{\text{rad}}^2+a_{\text{tan}}^2}$</td></tr>
+<tr><td>Velocidad relativa</td><td>1D: $v_{P/A,x}=v_{P/B,x}+v_{B/A,x}$ (3.32), $v_{A/B}=-v_{B/A}$ (3.33). 2D: $\vec v_{P/A}=\vec v_{P/B}+\vec v_{B/A}$ (3.35), $\vec v_{A/B}=-\vec v_{B/A}$ (3.36)</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_03_movimiento_2d_3d.html">→ Abrir el tema 3 completo</a></p>
+</section>
+<section class="form-tema" id="f4">
+<h2 id="f4-t"><span class="n">4</span> Leyes del movimiento de Newton</h2>
+<p class="lema">Las tres leyes de Newton y el diagrama de cuerpo libre</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\vec R=\sum\vec F$, $\ R_x=\sum F_x$, $\ R_y=\sum F_y$</td><td>Varias fuerzas sobre un cuerpo: «fuerza neta», «resultante».</td></tr>
+<tr><td>$\sum\vec F=0\ \Leftrightarrow\ \vec a=0$</td><td>«En reposo», «velocidad constante», «equilibrio» (1ª ley).</td></tr>
+<tr><td>$\sum\vec F=m\vec a$, $\ 1\ \text{N}=1\ \text{kg}\cdot\text{m/s}^2$</td><td>Casi siempre: fuerza ↔ aceleración (2ª ley).</td></tr>
+<tr><td>$w=mg$</td><td>«Pesa», «el peso es…», pasar de N a kg o viceversa.</td></tr>
+<tr><td>$\vec F_{A\text{ sobre }B}=-\vec F_{B\text{ sobre }A}$</td><td>Fuerza entre dos cuerpos, pares acción-reacción, fuerzas de contacto internas (3ª ley).</td></tr>
+<tr><td>$a=\Delta v/\Delta t$ o $\ a=v^2/(2\Delta x)$ (cinemática)</td><td>Cuando el enunciado da movimiento y pide una fuerza.</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 4</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Superposición</td><td>$\vec R=\sum\vec F$ (4.1); $R_x=\sum F_x$, $R_y=\sum F_y$ (4.2)</td></tr>
+<tr><td>1ª ley (inercia)</td><td>sin fuerza neta, velocidad constante (o reposo): $\sum\vec F=0\Leftrightarrow\vec a=0$ (4.3)</td></tr>
+<tr><td>2ª ley (dinámica)</td><td>$\sum\vec F=m\vec a$ (4.6); $\sum F_x=ma_x$, $\sum F_y=ma_y$ (4.7)</td></tr>
+<tr><td>Newton</td><td>$1\ \text{N}=1\ \text{kg}\cdot\text{m/s}^2$</td></tr>
+<tr><td>Peso</td><td>$w=mg$ (4.9): fuerza en N, depende de $g$; $g=9.80$ m/s² (Luna: $1.62$)</td></tr>
+<tr><td>3ª ley (acción-reacción)</td><td>$\vec F_{A\text{ sobre }B}=-\vec F_{B\text{ sobre }A}$ (4.10): cuerpos distintos</td></tr>
+<tr><td>Diagrama de cuerpo libre</td><td>un cuerpo, solo fuerzas externas sobre él, ejes, $\sum F=ma$ por eje</td></tr>
+<tr><td>Cinemática de apoyo</td><td>$a=\Delta v/\Delta t$; $v^2=v_0^2+2a\Delta x$; $m=w/g$</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_04_leyes_newton.html">→ Abrir el tema 4 completo</a></p>
+</section>
+<section class="form-tema" id="f5">
+<h2 id="f5-t"><span class="n">5</span> Aplicación de las leyes de Newton</h2>
+<p class="lema">Método de dinámica: rampas, cuerdas, fricción y círculos</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\sum F=0$ en cada eje</td><td>El cuerpo está parado o va a velocidad constante (cuerdas, rampa con cable).</td></tr>
+<tr><td>$w_\parallel=mg\sin\alpha$, $\;n=mg\cos\alpha$</td><td>Hay una rampa y no hay otra fuerza perpendicular a ella.</td></tr>
+<tr><td>$f_k=\mu_k n$</td><td>El cuerpo desliza. Calcula antes $n$ (¡no siempre es $mg$!).</td></tr>
+<tr><td>$f_s\le\mu_s n$</td><td>El cuerpo <b>no</b> desliza. Solo vale $=\mu_sn$ «a punto de deslizar».</td></tr>
+<tr><td>Cuerda ideal: misma $T$ y misma $\lvert a\rvert$</td><td>Dos cuerpos unidos. Suma las dos ecuaciones y la $T$ se cancela.</td></tr>
+<tr><td>$\sum F_{rad}=mv^2/R$ (hacia el centro)</td><td>Hay un giro (péndulo cónico, curva, cono, rueda).</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 5</summary>
+<table>
+<tr><th>Situación</th><th>Ecuaciones clave</th></tr>
+<tr><td>Equilibrio (ec. 5.1)</td><td>$\sum F_x=0,\ \sum F_y=0$</td></tr>
+<tr><td>Dinámica (ec. 5.2)</td><td>$\sum F_x=ma_x,\ \sum F_y=ma_y$</td></tr>
+<tr><td>Plano inclinado (ejes paralelo/perpendicular)</td><td>$w_\parallel=w\sin\alpha,\ w_\perp=w\cos\alpha$; sin fricción $a=g\sin\alpha$, $n=mg\cos\alpha$</td></tr>
+<tr><td>Fricción cinética / estática</td><td>$f_k=\mu_kn$ (5.3); $f_s\le\mu_sn$ (5.4)</td></tr>
+<tr><td>Con fricción cuesta abajo / umbral</td><td>$a=g(\sin\alpha-\mu_k\cos\alpha)$; deslizar ⇔ $\tan\alpha=\mu_s$</td></tr>
+<tr><td>Peso aparente</td><td>$n=m(g+a_y)$</td></tr>
+<tr><td>Dos cuerpos con cuerda ideal</td><td>misma $T$; misma $\lvert a\rvert$; Atwood $a=\dfrac{m_2-m_1}{m_1+m_2}g$</td></tr>
+<tr><td>Resistencia de un fluido</td><td>$f=kv\ \to\ v_t=mg/k$; $f=Dv^2\ \to\ v_t=\sqrt{mg/D}$</td></tr>
+<tr><td>Movimiento circular</td><td>$a_{rad}=v^2/R=\omega^2R$; $\sum F_{rad}=mv^2/R$; $T_{per}=2\pi R/v$</td></tr>
+<tr><td>Péndulo cónico / curva peraltada</td><td>$\tan\beta=v^2/(gR)$; $R=L\sin\beta$ en el péndulo</td></tr>
+<tr><td>Curva plana</td><td>$v_{\text{máx}}=\sqrt{\mu_sgR}$</td></tr>
+<tr><td>Círculo vertical (rapidez constante)</td><td>$n_T=mg(1-v^2/gR)$ arriba; $n_B=mg(1+v^2/gR)$ abajo</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_05_aplicacion_newton.html">→ Abrir el tema 5 completo</a></p>
+</section>
+<section class="form-tema" id="f6">
+<h2 id="f6-t"><span class="n">6</span> Trabajo y energía cinética</h2>
+<p class="lema">Trabajo y teorema trabajo-energía cinética</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$W=Fs\cos\phi=\vec F\cdot\vec s$</td><td>Fuerza constante y camino recto. $\phi$ = ángulo entre la fuerza y el <b>desplazamiento</b>.</td></tr>
+<tr><td>$K=\tfrac12mv^2$</td><td>Siempre que aparezca una rapidez. Nunca es negativa.</td></tr>
+<tr><td>$W_{tot}=K_2-K_1$</td><td>El corazón del tema: da rapideces, distancias de frenado, fuerzas medias.</td></tr>
+<tr><td>$W=\int F_x\,dx$ (área bajo $F$–$x$)</td><td>La fuerza cambia con la posición (te dan $F(x)$ o una gráfica).</td></tr>
+<tr><td>$F=kx$, $\;W=\tfrac12kx_2^2-\tfrac12kx_1^2$</td><td>Hay un resorte. Ese es el trabajo <i>sobre</i> el resorte; el resorte hace el contrario.</td></tr>
+<tr><td>$P=\dfrac{dW}{dt}=\vec F\cdot\vec v$</td><td>Piden potencia, «hp», «cuánto puede subir un motor».</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 6</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Trabajo de fuerza constante</td><td>$W=Fs\cos\phi=\vec F\cdot\vec s$ (6.2-6.3); $1\ \text{J}=1\ \text{N}\cdot\text{m}$</td></tr>
+<tr><td>Signo</td><td>$\phi\lt90^\circ$: $W\gt0$; $\phi=90^\circ$: $W=0$; $\phi\gt90^\circ$: $W\lt0$</td></tr>
+<tr><td>Trabajo total</td><td>$W_{tot}=\sum W_i=(\sum\vec F)\cdot\vec s$</td></tr>
+<tr><td>Energía cinética</td><td>$K=\tfrac12mv^2\ge0$ (6.5)</td></tr>
+<tr><td>Teorema trabajo-energía</td><td>$W_{tot}=K_2-K_1=\Delta K$ (6.6), válido también para $F$ variable y trayectoria curva</td></tr>
+<tr><td>Fuerza variable</td><td>$W=\int_{x_1}^{x_2}F_x\,dx$ = área bajo $F_x(x)$ (6.7); curva: $W=\int\vec F\cdot d\vec l$ (6.14)</td></tr>
+<tr><td>Resorte (Hooke)</td><td>$F_x=kx$ (6.8); trabajo sobre el resorte $\tfrac12kX^2$ (6.9), $\tfrac12kx_2^2-\tfrac12kx_1^2$ (6.10); el resorte hace el <b>negativo</b></td></tr>
+<tr><td>Peso en un camino cualquiera</td><td>$W_{peso}=-mg(y_2-y_1)$ (Ej. 6.8)</td></tr>
+<tr><td>Fricción cinética sobre recorrido $d$</td><td>$W_f=-f_kd=-\mu_kn\,d$</td></tr>
+<tr><td>Frenado hasta parar</td><td>$F_{media}\,d=K_1$; sin fuerzas motrices $s=v_0^2/(2\mu_kg)$</td></tr>
+<tr><td>Potencia</td><td>$P_{med}=\Delta W/\Delta t$ (6.15); $P=dW/dt$ (6.16); $P=\vec F\cdot\vec v=F_\parallel v$ (6.18-6.19)</td></tr>
+<tr><td>Unidades</td><td>$1\ \text{W}=1\ \text{J/s}$; $1\ \text{hp}=746\ \text{W}$; $1\ \text{kW}\cdot\text{h}=3{,}6\times10^6\ \text{J}$</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_06_trabajo_energia_cinetica.html">→ Abrir el tema 6 completo</a></p>
+</section>
+<section class="form-tema" id="f7">
+<h2 id="f7-t"><span class="n">7</span> Energía potencial y conservación de la energía</h2>
+<p class="lema">Energía potencial y conservación de la energía</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$U_{grav}=mgy$, $\;W_{grav}=-\Delta U_{grav}$</td><td>Hay alturas. Solo cuenta el <b>desnivel</b>, no la forma del camino.</td></tr>
+<tr><td>$U_{el}=\tfrac12kx^2$</td><td>Hay un resorte; $x$ desde la longitud natural (estirado o comprimido, igual).</td></tr>
+<tr><td>$K_1+U_1+W_{otras}=K_2+U_2$</td><td>El corazón del tema: todos los problemas de examen. Sin «otras», $E=K+U$ constante.</td></tr>
+<tr><td>$W_f=-\mu_kn\,s$ ($n=mg\cos\theta$ en rampa)</td><td>Hay rozamiento: va en $W_{otras}$ y siempre resta.</td></tr>
+<tr><td>$\Delta K+\Delta U+\Delta U_{int}=0$</td><td>Teoría: «fuerzas conservativas y no conservativas», a dónde va la energía perdida.</td></tr>
+<tr><td>$F_x=-\dfrac{dU}{dx}$</td><td>Te dan $U(x)$ o una gráfica: fuerza, equilibrios (mínimo estable, máximo inestable), puntos de retorno.</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 7</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Energía potencial gravitatoria</td><td>$U_{grav}=mgy$ (7.2); $W_{grav}=U_1-U_2=-\Delta U_{grav}$ (7.1, 7.3); $+y$ hacia arriba, origen a elegir</td></tr>
+<tr><td>Energía potencial elástica</td><td>$U_{el}=\tfrac12kx^2$ (7.10), $x=0$ en la longitud natural; $W_{el}=U_{el,1}-U_{el,2}$ (7.11)</td></tr>
+<tr><td>Conservación de la energía mecánica</td><td>$K_1+U_1=K_2+U_2$ (7.4, 7.12): solo trabajan fuerzas conservativas; $E=K+U$ constante</td></tr>
+<tr><td>Con otras fuerzas (fricción, mano…)</td><td>$K_1+U_1+W_{otras}=K_2+U_2$ (7.6, 7.13, <b>7.14</b>), con $U=U_{grav}+U_{el}$</td></tr>
+<tr><td>Trabajo de la fricción cinética</td><td>$W_f=-f_ks=-\mu_kn\,s$ ($s$ = longitud recorrida; en un plano inclinado $n=mg\cos\theta$)</td></tr>
+<tr><td>Rampa sin fricción desde el reposo</td><td>$v=\sqrt{2g\Delta h}$, independiente de la forma del camino</td></tr>
+<tr><td>Resorte que lanza un bloque por una rampa con fricción</td><td>$U_{el}=K_2+mgs\sin\theta+\mu_kmg\cos\theta\,s$</td></tr>
+<tr><td>Fuerza conservativa</td><td>trabajo $=-\Delta U$, reversible, independiente de la trayectoria, nulo en trayectoria cerrada</td></tr>
+<tr><td>Ley de conservación de la energía</td><td>$\Delta K+\Delta U+\Delta U_{int}=0$ (7.15); $\Delta U_{int}=-W_{otras}$</td></tr>
+<tr><td>Fuerza a partir de $U$</td><td>$F_x=-dU/dx$ (7.16); $\vec F=-\vec\nabla U$ (7.17, 7.18)</td></tr>
+<tr><td>Diagramas de energía</td><td>$K=E-U\ge0$; puntos de retorno donde $U=E$; mínimos de $U$ = equilibrio estable, máximos = inestable</td></tr>
+<tr><td>Rapidez máxima</td><td>donde $dK/dx=0$, es decir, fuerza neta cero ($kx=mg$ en vertical, $kx=f_k$ con fricción)</td></tr>
+<tr><td>Fuerza en un punto (normal, aceleración)</td><td>energía para $v$; Newton en ese punto: en el fondo de una curva $n-mg=mv^2/R$</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_07_energia_potencial.html">→ Abrir el tema 7 completo</a></p>
+</section>
+<section class="form-tema" id="f8">
+<h2 id="f8-t"><span class="n">8</span> Cantidad de movimiento, impulso y colisiones</h2>
+<p class="lema">Cantidad de movimiento, impulso y colisiones</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\vec J=\vec F_{med}\,\Delta t=\Delta\vec p$</td><td>«Fuerza media», «tiempo de contacto», «rebota o se queda pegada».</td></tr>
+<tr><td>$\sum m\vec v$ antes $=\sum m\vec v$ después</td><td>Todo choque, explosión o empujón con fuerzas externas nulas o despreciables. Por componentes.</td></tr>
+<tr><td>$m_A\vec v_{A1}+m_B\vec v_{B1}=(m_A+m_B)\vec v_2$</td><td>«Quedan unidos», «se incrusta», «queda pegada»: choque totalmente inelástico.</td></tr>
+<tr><td>$v_{B2x}-v_{A2x}=-(v_{B1x}-v_{A1x})$</td><td>«Choque elástico» en línea recta, junto con $P$ (sistema lineal).</td></tr>
+<tr><td>$\vec r_{cm}=\dfrac{\sum m_i\vec r_i}{M}$, $\ \sum\vec F_{ext}=M\vec a_{cm}$</td><td>Centro de masa: canoa, explosión en vuelo, teoría «centro de masa y su movimiento».</td></tr>
+<tr><td>$M\dfrac{dv}{dt}=F_{empuje}-Mg$, $\ F=-v_{esc}\dfrac{dm}{dt}$</td><td>Cohete. Sin gravedad y con $v_{esc}$ constante, $v-v_0=v_{esc}\ln\dfrac{m_0}{m}$.</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 8</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Cantidad de movimiento</td><td>$\vec p=m\vec v$ (8.2), $p_x=mv_x$ (8.3); unidad kg·m/s; $\sum\vec F=d\vec p/dt$ (8.4)</td></tr>
+<tr><td>Impulso</td><td>$\vec J=\sum\vec F\Delta t$ (8.5), $\vec J=\int\sum\vec F\,dt$ (8.7), $\vec J=\vec F_{med}\Delta t$ (8.8); unidad N·s; área bajo la gráfica $F$–$t$</td></tr>
+<tr><td>Teorema impulso–cantidad de movimiento</td><td>$\vec J=\vec p_2-\vec p_1=\Delta\vec p$ (8.6); por componentes (8.9)</td></tr>
+<tr><td>Sistema de partículas</td><td>$\vec P=\sum m_i\vec v_i$ (8.14); $d\vec P/dt=\sum\vec F_{ext}$ (8.13, 8.36)</td></tr>
+<tr><td>Conservación de $\vec P$</td><td>si $\sum\vec F_{ext}=0$ (o es despreciable durante el choque): $\vec P$ antes $=\vec P$ después, por componentes</td></tr>
+<tr><td>Choque totalmente inelástico</td><td>$m_A\vec v_{A1}+m_B\vec v_{B1}=(m_A+m_B)\vec v_2$ (8.16); con B en reposo, $K_2/K_1=m_A/(m_A+m_B)$ (8.18)</td></tr>
+<tr><td>Choque elástico 1D, B en reposo</td><td>$v_{A2}=\dfrac{m_A-m_B}{m_A+m_B}v_{A1}$, $v_{B2}=\dfrac{2m_A}{m_A+m_B}v_{A1}$ (8.24, 8.25)</td></tr>
+<tr><td>Choque elástico 1D, caso general</td><td>$P$ se conserva y $v_{B2}-v_{A2}=-(v_{B1}-v_{A1})$ (8.27)</td></tr>
+<tr><td>Coeficiente de restitución (propio)</td><td>$e=-\dfrac{v_{B2x}-v_{A2x}}{v_{B1x}-v_{A1x}}$; $\Delta K=-\tfrac12\mu(1-e^2)(v_{A1x}-v_{B1x})^2$</td></tr>
+<tr><td>Centro de masa</td><td>$\vec r_{cm}=\dfrac{\sum m_i\vec r_i}{\sum m_i}$ (8.28, 8.29); $M\vec v_{cm}=\vec P$ (8.32)</td></tr>
+<tr><td>Movimiento del centro de masa</td><td>$\sum\vec F_{ext}=M\vec a_{cm}$ (8.34); sin fuerzas externas, $\vec v_{cm}$ constante y $\sum m_i\Delta x_i=0$ si parte del reposo</td></tr>
+<tr><td>Cohete</td><td>$m\,dv=-v_{esc}\,dm$ (8.37); empuje $F=-v_{esc}\,dm/dt$ (8.38); $a=-\dfrac{v_{esc}}{m}\dfrac{dm}{dt}$ (8.39); $v-v_0=v_{esc}\ln\dfrac{m_0}{m}$ (8.40); con gravedad, $m\,dv/dt=F-mg$</td></tr>
+<tr><td>Explosión desde el reposo</td><td>$\vec P=0$: $p$ igual y opuesta; $K=p^2/2m$ (energía en razón inversa a la masa); el centro de masa sigue su trayectoria</td></tr>
+<tr><td>Choque + algo después</td><td>$P$ en el choque; <b>energía</b> (resorte, péndulo) o cinemática (proyectil, MAS) <i>después</i>; nunca energía a través de un choque inelástico</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_08_momento_colisiones.html">→ Abrir el tema 8 completo</a></p>
+</section>
+<section class="form-tema" id="f9">
+<h2 id="f9-t"><span class="n">9</span> Rotación de cuerpos rígidos</h2>
+<p class="lema">Cinemática de la rotación e inercia</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\omega_z=\dfrac{d\theta}{dt}$, $\ \alpha_z=\dfrac{d\omega_z}{dt}$</td><td>Te dan $\theta(t)$ como función: «velocidad angular máxima», «en qué instante se para».</td></tr>
+<tr><td>$\omega_z=\omega_{0z}+\alpha_zt$, $\ \theta-\theta_0=\omega_{0z}t+\tfrac12\alpha_zt^2$, $\ \omega_z^2=\omega_{0z}^2+2\alpha_z\Delta\theta$</td><td>«Aceleración angular constante», «parte del reposo», «cuántas vueltas da».</td></tr>
+<tr><td>$v=r\omega$, $\ a_{tan}=r\alpha$, $\ a_{rad}=\omega^2r$</td><td>«Punto del borde», «aceleración tangencial/radial/total», cable que no resbala.</td></tr>
+<tr><td>$I=\sum m_ir_i^2$ y tabla 9.2</td><td>«Momento de inercia» de masas puntuales, varillas, discos, aros, esferas o piezas compuestas.</td></tr>
+<tr><td>$K=\tfrac12I\omega^2$, $\ mgh=\tfrac12mv^2+\tfrac12I\omega^2$</td><td>«Energía de rotación», «bloque que cuelga de una polea», «¿qué rueda baja más rápido?».</td></tr>
+<tr><td>$I_P=I_{cm}+Md^2$, $\ I=\int r^2\,dm$</td><td>Eje que no es el de la tabla; cuerpo continuo o de densidad variable.</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 9</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Ángulo en radianes</td><td>$\theta=s/r$, $s=r\theta$ (9.1); $2\pi$ rad $=1$ rev $=360^\circ$; 1 rpm $=2\pi/60$ rad/s</td></tr>
+<tr><td>Velocidad angular</td><td>$\omega_z=d\theta/dt$ (9.3); media $\Delta\theta/\Delta t$ (9.2)</td></tr>
+<tr><td>Aceleración angular</td><td>$\alpha_z=d\omega_z/dt=d^2\theta/dt^2$ (9.5-9.6); se acelera si $\omega_z$ y $\alpha_z$ tienen el mismo signo</td></tr>
+<tr><td>$\alpha_z$ constante</td><td>$\omega_z=\omega_{0z}+\alpha_zt$ (9.7); $\theta-\theta_0=\tfrac12(\omega_{0z}+\omega_z)t$ (9.10); $\theta=\theta_0+\omega_{0z}t+\tfrac12\alpha_zt^2$ (9.11); $\omega_z^2=\omega_{0z}^2+2\alpha_z(\theta-\theta_0)$ (9.12)</td></tr>
+<tr><td>Punto a distancia $r$ del eje</td><td>$v=r\omega$ (9.13); $a_{tan}=r\alpha$ (9.14); $a_{rad}=v^2/r=r\omega^2$ (9.15); $a=\sqrt{a_{tan}^2+a_{rad}^2}$</td></tr>
+<tr><td>Momento de inercia</td><td>$I=\sum m_ir_i^2$ (9.16); $I=\int r^2dm$ (9.20); aditivo; depende del eje</td></tr>
+<tr><td>Energía cinética de rotación</td><td>$K=\tfrac12I\omega^2$ (9.17); cable sin resbalar: $v=R\omega$</td></tr>
+<tr><td>Energía potencial de un cuerpo</td><td>$U=Mgy_{cm}$ (9.18)</td></tr>
+<tr><td>Ejes paralelos</td><td>$I_P=I_{cm}+Md^2$ (9.19)</td></tr>
+<tr><td>Tabla 9.2 (eje por el cm salvo b, d)</td><td>varilla $\tfrac1{12}ML^2$ (por un extremo $\tfrac13ML^2$); placa $\tfrac1{12}M(a^2+b^2)$; cilindro hueco grueso $\tfrac12M(R_1^2+R_2^2)$; cilindro sólido $\tfrac12MR^2$; aro $MR^2$; esfera sólida $\tfrac25MR^2$; esfera hueca $\tfrac23MR^2$</td></tr>
+<tr><td>Bloque que cuelga de una rueda</td><td>$v=\sqrt{\dfrac{2mgh}{m+I/R^2}}$; con $I=\tfrac12MR^2$: $v=\sqrt{2gh/(1+M/2m)}$</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_09_rotacion_cuerpos_rigidos.html">→ Abrir el tema 9 completo</a></p>
+</section>
+<section class="form-tema" id="f10">
+<h2 id="f10-t"><span class="n">10</span> Dinámica del movimiento de rotación</h2>
+<p class="lema">Torca, momento angular y rodadura</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\tau=Fl=rF\sin\phi$, $\ \vec\tau=\vec r\times\vec F$</td><td>«Torca de la fuerza respecto a O», «brazo de palanca», «sentido de giro».</td></tr>
+<tr><td>$\sum\tau_z=I\alpha_z$</td><td>Eje fijo: polea, rueda con cojinetes, piedra de afilar, «fuerza que ejerce el eje».</td></tr>
+<tr><td>$\sum\vec F=M\vec a_{cm}$, $\ \sum\tau_{cm}=I_{cm}\alpha$, $\ a_{cm}=R\alpha$</td><td>«Rueda sin deslizar», «yoyó», «cilindro en una rampa», «coeficiente mínimo de fricción».</td></tr>
+<tr><td>$K=\tfrac12Mv_{cm}^2+\tfrac12I_{cm}\omega^2$, $\ v_{cm}=R\omega$</td><td>«Velocidad tras bajar una altura $h$», «¿qué cuerpo llega antes?».</td></tr>
+<tr><td>$W=\tau\,\Delta\theta$, $\ W_{tot}=\Delta K_{rot}$, $\ P=\tau\omega$</td><td>«Trabajo de un motor», «potencia», teoría «Trabajo y potencia en rotación».</td></tr>
+<tr><td>$L=I\omega$, $\ L=mvl$, $\ \sum\tau_{ext}=0\Rightarrow L_1=L_2$</td><td>«Se incrusta», «salta del extremo», «encoge los brazos», «se acoplan», «pivote».</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 10</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Torca de una fuerza</td><td>$\tau=Fl=rF\sin\phi=F_{tan}r$ (10.2); $\vec\tau=\vec r\times\vec F$ (10.3); antihoraria $+$</td></tr>
+<tr><td>Segunda ley de la rotación</td><td>$\sum\tau_z=I\alpha_z$ (10.7), torcas externas respecto al eje</td></tr>
+<tr><td>Energía cinética de un cuerpo que rueda</td><td>$K=\tfrac12Mv_{cm}^2+\tfrac12I_{cm}\omega^2$ (10.8); $U=Mgy_{cm}$</td></tr>
+<tr><td>Rodar sin resbalar</td><td>$v_{cm}=R\omega$ (10.11), $a_{cm}=R\alpha$; punto de contacto en reposo, el de arriba va a $2v_{cm}$</td></tr>
+<tr><td>Traslación + rotación</td><td>$\sum\vec F_{ext}=M\vec a_{cm}$ (10.12); $\sum\tau_{cm}=I_{cm}\alpha_z$ (10.13)</td></tr>
+<tr><td>Rodar por una rampa, $I_{cm}=cMR^2$</td><td>$a_{cm}=\dfrac{g\sin\beta}{1+c}$; $f=\dfrac{c}{1+c}Mg\sin\beta$; $\mu_{s,min}=\dfrac{c}{1+c}\tan\beta$ ($c$: esfera $\tfrac25$, cilindro $\tfrac12$, esfera hueca $\tfrac23$, aro $1$); $v=\sqrt{2gh/(1+c)}$</td></tr>
+<tr><td>Yoyó (cuerda a distancia $b$ del eje)</td><td>$a_{cm}=\dfrac{g}{1+I_{cm}/(Mb^2)}$; cilindro: $\tfrac23g$, $T=\tfrac13Mg$</td></tr>
+<tr><td>Trabajo y potencia en rotación</td><td>$W=\int\tau_z\,d\theta$, $W=\tau_z\Delta\theta$ (10.20-10.21); $W_{tot}=\Delta K_{rot}$ (10.22); $P=\tau_z\omega_z$ (10.23)</td></tr>
+<tr><td>Momento angular</td><td>partícula $\vec L=\vec r\times m\vec v$, $L=mvl$ (10.24-10.25); rígido $L_z=I\omega_z$ (10.28); $\sum\vec\tau_{ext}=d\vec L/dt$ (10.26, 10.29)</td></tr>
+<tr><td>Conservación de $L$</td><td>si $\sum\tau_{ext}=0$: $\vec L$ cte (10.31); $I_1\omega_1=I_2\omega_2$ (10.30). $K$ no se conserva en general</td></tr>
+<tr><td>Giróscopo</td><td>$\Omega=\dfrac{\tau}{L}=\dfrac{wr}{I\omega}$ (10.33), precesión lenta $\Omega\ll\omega$</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_10_dinamica_rotacion.html">→ Abrir el tema 10 completo</a></p>
+</section>
+<section class="form-tema" id="f11">
+<h2 id="f11-t"><span class="n">11</span> Equilibrio y elasticidad</h2>
+<p class="lema">Equilibrio de cuerpos rígidos y elasticidad</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\sum\vec F=0$, $\ \sum\vec\tau=0$ (en el plano $\sum F_x=\sum F_y=\sum\tau_z=0$)</td><td>Siempre que algo esté «en reposo», «en equilibrio», «sin moverse ni girar».</td></tr>
+<tr><td>$\tau=Fl=rF\,\mathrm{sen}\,\varphi$</td><td>Cada torca: «brazo de palanca», viga inclinada, cable que forma un ángulo.</td></tr>
+<tr><td>$x_{cg}=\dfrac{\sum m_ix_i}{\sum m_i}$</td><td>«¿Dónde pongo el apoyo?», «¿dónde está el centro de gravedad?», «¿hasta dónde puede ir sin que vuelque?».</td></tr>
+<tr><td>$f_s\le\mu_sn$</td><td>Escaleras y apoyos con rozamiento: «¿resbala?», «coeficiente mínimo», «¿hasta dónde sube?».</td></tr>
+<tr><td>$Y=\dfrac{F_\perp/A}{\Delta l/l_0}\ \Rightarrow\ \Delta l=\dfrac{F_\perp l_0}{AY}$</td><td>«Alargamiento», «se estira», «se acorta», alambre, cable o varilla cargados.</td></tr>
+<tr><td>$B=-\dfrac{\Delta p}{\Delta V/V_0}$, $\ S=\dfrac{F_\parallel/A}{x/h}$</td><td>$B$: «presión», «profundidad», «cambio de volumen o densidad». $S$: fuerzas tangentes, «corte», «desplazamiento lateral».</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 11</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Condiciones de equilibrio</td><td>$\sum\vec F=0$ (11.1); $\sum\vec\tau=0$ respecto a cualquier punto (11.2). En el plano: $\sum F_x=\sum F_y=\sum\tau_z=0$ (11.6)</td></tr>
+<tr><td>Centro de masa / gravedad</td><td>$x_{cm}=\sum m_ix_i/\sum m_i$ (11.3); $\vec\tau_{peso}=\vec r_{cm}\times\vec w$ (11.5); con $g$ uniforme cg = cm</td></tr>
+<tr><td>Torca</td><td>$\tau=Fl=rF\,\mathrm{sen}\,\varphi$; antihoraria $+$ (10.2)</td></tr>
+<tr><td>Estabilidad</td><td>la vertical del cg cae dentro del área de apoyo</td></tr>
+<tr><td>Fricción estática</td><td>$f_s\le\mu_sn$; $\mu_{s,\text{mín}}=f_s/n$</td></tr>
+<tr><td>Ley de Hooke</td><td>esfuerzo / deformación = módulo (11.7)</td></tr>
+<tr><td>Tensión / compresión</td><td>$\sigma=F_\perp/A$; $\varepsilon=\Delta l/l_0$; $Y=\dfrac{F_\perp l_0}{A\,\Delta l}$ (11.8-11.10); $\Delta l=\dfrac{F_\perp l_0}{AY}$</td></tr>
+<tr><td>Volumétrico</td><td>$p=F_\perp/A$; $B=-\dfrac{\Delta p}{\Delta V/V_0}$ (11.13); $k=1/B$ (11.14)</td></tr>
+<tr><td>Corte</td><td>$S=\dfrac{F_\parallel/A}{x/h}=\dfrac{F_\parallel h}{A\,x}$ (11.17)</td></tr>
+<tr><td>Límites</td><td>proporcional $a$ (Hooke) → elástico $b$ (reversible) → plástico (deformación permanente) → fractura $d$ (esfuerzo de ruptura)</td></tr>
+<tr><td>Valores útiles</td><td>acero $Y=20\times10^{10}$ Pa, $B=16\times10^{10}$, $S=7{,}5\times10^{10}$; cobre $Y=11\times10^{10}$; agua $k=46{,}4\times10^{-6}$ atm$^{-1}$; 1 atm $=1{,}013\times10^5$ Pa</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_11_equilibrio_elasticidad.html">→ Abrir el tema 11 completo</a></p>
+</section>
+<section class="form-tema" id="f12">
+<h2 id="f12-t"><span class="n">12</span> Mecánica de fluidos</h2>
+<p class="lema">Presión, Arquímedes y Bernoulli</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\rho=\dfrac mV$, $\ p=\dfrac{F_\perp}{A}$</td><td>«densidad», «¿de qué material es?», «fuerza sobre el fondo, la tapa o el pistón».</td></tr>
+<tr><td>$p=p_0+\rho gh$ $\ $(manométrica: $\rho gh$)</td><td>«a una profundidad», «en el fondo», «¿a qué altura hay que poner el depósito?», tubo en U, manómetro, barómetro.</td></tr>
+<tr><td>$\dfrac{F_1}{A_1}=\dfrac{F_2}{A_2}$</td><td>«elevador / prensa hidráulica», «dos pistones», «¿qué fuerza hay que aplicar?».</td></tr>
+<tr><td>$B=\rho_{fluido}V_{sum}g$; flota si $\rho_{cuerpo}\le\rho_{fluido}$</td><td>«sumergido», «flota», «fracción sumergida», «tensión del hilo bajo el agua», «pesa menos en el agua».</td></tr>
+<tr><td>$A_1v_1=A_2v_2$, $\ Q=Av$</td><td>«tubo que se estrecha», «caudal», «litros por segundo», «volumen descargado en una hora».</td></tr>
+<tr><td>$p_1+\rho gy_1+\tfrac12\rho v_1^2=p_2+\rho gy_2+\tfrac12\rho v_2^2$ $\ $(Torricelli: $v=\sqrt{2gh}$)</td><td>«presión en otro punto de la tubería», «rapidez de salida por un orificio», «Venturi», «sustentación».</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 12</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Densidad</td><td>$\rho=m/V$ (12.1); gravedad específica $=\rho/\rho_{agua}$; $1\ \text{g/cm}^3=10^3\ \text{kg/m}^3$</td></tr>
+<tr><td>Presión</td><td>$p=F_\perp/A$ (12.3); 1 Pa = 1 N/m²; 1 atm $=1{,}013\times10^5$ Pa</td></tr>
+<tr><td>Presión con la profundidad</td><td>$p=p_0+\rho gh$ (12.6); $p_2-p_1=-\rho g(y_2-y_1)$ (12.5); ≈ +1 atm cada 10 m de agua</td></tr>
+<tr><td>Absoluta / manométrica</td><td>$p_{man}=p-p_{atm}$</td></tr>
+<tr><td>Pascal (elevador)</td><td>$F_2=\dfrac{A_2}{A_1}F_1$ (12.7); $\dfrac{D_2}{D_1}=\sqrt{\dfrac{F_2}{F_1}}$; el trabajo se conserva</td></tr>
+<tr><td>Manómetro / barómetro</td><td>$p-p_{atm}=\rho gh$ (12.8); $p_{atm}=\rho gh$ (12.9); 1 mm Hg = 1 torr</td></tr>
+<tr><td>Arquímedes</td><td>$B=\rho_{fluido}V_{sum}g$; flota si $\rho_{cuerpo}\le\rho_{fluido}$, con $f=\rho_{cuerpo}/\rho_{fluido}$; colgado: $T=mg-B$</td></tr>
+<tr><td>Continuidad</td><td>$A_1v_1=A_2v_2$ (12.10); $Q=dV/dt=Av$ (12.11); compresible: $\rho_1A_1v_1=\rho_2A_2v_2$ (12.12)</td></tr>
+<tr><td>Bernoulli</td><td>$p_1+\rho gy_1+\tfrac12\rho v_1^2=p_2+\rho gy_2+\tfrac12\rho v_2^2$ (12.17); estable, incompresible, sin viscosidad</td></tr>
+<tr><td>Torricelli</td><td>$v=\sqrt{2gh}$; con presión extra: $v=\sqrt{2(p_0-p_{atm})/\rho+2gh}$; alcance $x=v\sqrt{2y_0/g}$</td></tr>
+<tr><td>Venturi</td><td>$v_1=\sqrt{\dfrac{2gh}{(A_1/A_2)^2-1}}$</td></tr>
+<tr><td>Viscosidad</td><td>a caudal fijo, $\Delta p\propto L/R^4$ (reducir $R$ a la mitad ⇒ ×16)</td></tr>
+<tr><td>Valores útiles</td><td>$\rho_{agua}=1000$, $\rho_{mar}=1030$, $\rho_{aire}=1{,}20$, $\rho_{Hg}=13{,}6\times10^3$ kg/m³; $g=9{,}8$ m/s²</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_12_mecanica_fluidos.html">→ Abrir el tema 12 completo</a></p>
+</section>
+<section class="form-tema" id="f13">
+<h2 id="f13-t"><span class="n">13</span> Gravitación</h2>
+<p class="lema">Ley de la gravitación, órbitas y Kepler</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$F_g=\dfrac{Gm_1m_2}{r^2}$</td><td>«fuerza entre dos masas», «fuerza neta sobre A», «¿cuándo atraigo más al Sol?», «si la distancia se duplica…».</td></tr>
+<tr><td>$g=\dfrac{GM}{R^2}$, $\ g(r)=\dfrac{GM}{r^2}$, $\ g=\tfrac43\pi G\rho R$</td><td>«gravedad en la superficie de un planeta», «a qué altura $g$ vale…», «con la misma densidad, ¿cómo depende $g$ de $R$?».</td></tr>
+<tr><td>$U=-\dfrac{GMm}{r}$, $\ v_{esc}=\sqrt{\dfrac{2GM}{R}}$</td><td>«rapidez de escape», «altura máxima», «se deja caer desde muy alto», «energía mecánica mayor o menor que cero», «$mgh$ frente a $GMm/r$».</td></tr>
+<tr><td>$v=\sqrt{\dfrac{GM}{r}}$, $\ T=\dfrac{2\pi r^{3/2}}{\sqrt{GM}}$, $\ E=-\dfrac{GMm}{2r}$</td><td>«satélite en órbita circular», «geoestacionario», «trabajo para cambiar de órbita».</td></tr>
+<tr><td>$T^2=\dfrac{4\pi^2a^3}{GM}$, $\ r_{p,a}=a(1\mp e)$, $\ v_pr_p=v_ar_a$</td><td>«leyes de Kepler», «periodo de un planeta o cometa», «perihelio y afelio», «¿cuándo va más rápido?», «masa del cuerpo central».</td></tr>
+<tr><td>$g_{ec}=g_0-\omega^2R=g_0-\dfrac{4\pi^2R}{T^2}$</td><td>«gravedad en el polo y en el ecuador», «peso aparente», «cuerda de la que cuelga… en el ecuador».</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 13</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Ley de gravitación</td><td>$F_g=\dfrac{Gm_1m_2}{r^2}$ (13.1); $G=6{,}67\times10^{-11}$ N·m²/kg²; esferas: masa en el centro (13.2)</td></tr>
+<tr><td>Peso y $g$</td><td>$w=\dfrac{Gm_Tm}{r^2}$ (13.3, 13.5); $g=\dfrac{GM}{R^2}$ (13.4); $m_T=gR_T^2/G=5{,}96\times10^{24}$ kg; $\rho=M/(\tfrac43\pi R^3)$; a igual densidad $g=\tfrac43\pi G\rho R\propto R$</td></tr>
+<tr><td>Energía potencial</td><td>$U=-\dfrac{GMm}{r}$ (13.9), $U=0$ en $\infty$; $W_{grav}=GMm\left(\dfrac1{r_2}-\dfrac1{r_1}\right)$ (13.8); cerca del suelo $U\approx mgy$</td></tr>
+<tr><td>Conservación y escape</td><td>$K_1+U_1=K_2+U_2$; $v_{esc}=\sqrt{2GM/R}$ (Tierra: 11,2 km/s); $E\lt0$ ligado, $E\ge0$ escapa; $r_{máx}=GMm/|E|$</td></tr>
+<tr><td>Órbita circular</td><td>$v=\sqrt{GM/r}$ (13.10); $T=2\pi r/v=2\pi r^{3/2}/\sqrt{GM}$ (13.11, 13.12); $E=-\dfrac{GMm}{2r}$, $K=-E$, $U=2E$ (13.13); $v_{esc}=\sqrt2\,v_{circ}$</td></tr>
+<tr><td>Elipse</td><td>$r_p=a(1-e)$, $r_a=a(1+e)$, $r_p+r_a=2a$; en los ápsides $v_pr_p=v_ar_a$; $E=-\dfrac{GMm}{2a}$</td></tr>
+<tr><td>Kepler</td><td>1.ª elipse con el Sol en un foco; 2.ª $\dfrac{dA}{dt}=\dfrac{L}{2m}=\text{cte}$ (13.14-13.16); 3.ª $T^2=\dfrac{4\pi^2}{Gm_S}a^3$ (13.17); masa central $M=\dfrac{4\pi^2a^3}{GT^2}$</td></tr>
+<tr><td>Dentro de esferas</td><td>cascarón: $F=0$ dentro (13.25-13.26); esfera uniforme: $g=g_0\,r/R$ dentro, $g_0(R/r)^2$ fuera; en general solo cuenta $M(r)$</td></tr>
+<tr><td>Peso aparente</td><td>ecuador $g=g_0-\omega^2R=g_0-4\pi^2R/T^2$ (13.27); polo $g=g_0$; latitud intermedia $\vec g=\vec g_0-\vec a_{rad}$ (13.28); Tierra: $\omega^2R=0{,}0339$ m/s²</td></tr>
+<tr><td>Agujeros negros</td><td>$v_{esc}=\sqrt{2GM/R}=\sqrt{8\pi G\rho/3}\,R$ (13.29); $R_S=2GM/c^2$ (13.30)</td></tr>
+<tr><td>Datos útiles</td><td>$m_T=5{,}97\times10^{24}$ kg; $R_T=6{,}37\times10^6$ m; $g_0=9{,}81$ m/s²; $m_S=1{,}99\times10^{30}$ kg; $c=3{,}00\times10^8$ m/s; 1 año $=3{,}156\times10^7$ s; día sidéreo 86 164 s</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_13_gravitacion.html">→ Abrir el tema 13 completo</a></p>
+</section>
+<p class="form-bloque">Oscilaciones y ondas · Temas 14-16</p>
+<section class="form-tema" id="f14">
+<h2 id="f14-t"><span class="n">14</span> Movimiento periódico</h2>
+<p class="lema">Movimiento armónico simple y péndulos</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\omega=2\pi f=\dfrac{2\pi}{T}$, $\ \omega=\sqrt{\dfrac km}$, $\ T=2\pi\sqrt{\dfrac mk}$</td><td>«periodo», «frecuencia», «cuántas oscilaciones», «qué masa hay que colgar», «si se duplica la masa…», «resorte cortado por la mitad».</td></tr>
+<tr><td>$x=A\cos(\omega t+\phi)$, $\ v_x=-\omega A\sin(\omega t+\phi)$, $\ a_x=-\omega^2x$</td><td>«dónde está en $t=\dots$», «en qué sentido se mueve», «escribe $x(t)$», «velocidad y aceleración máximas» ($\omega A$, $\omega^2A$).</td></tr>
+<tr><td>$A=\sqrt{x_0^2+\dfrac{v_{0x}^2}{\omega^2}}$, $\ \tan\phi=-\dfrac{v_{0x}}{\omega x_0}$</td><td>«en $t=0$ está en… y se mueve a…», «amplitud y ángulo de fase», un choque que deja al oscilador fuera de su equilibrio.</td></tr>
+<tr><td>$E=\tfrac12mv_x^2+\tfrac12kx^2=\tfrac12kA^2$, $\ v=\omega\sqrt{A^2-x^2}$</td><td>«energía del MAS» (teoría), «rapidez cuando está en $x$», «¿dónde $K=U$?», «energía perdida» si baja la amplitud.</td></tr>
+<tr><td>$T=2\pi\sqrt{\dfrac Lg}$, $\ T=2\pi\sqrt{\dfrac{I}{mgd}}$</td><td>«péndulo», «reloj de péndulo en una montaña o en la Luna», «cuerpo que cuelga de un eje», «medir un momento de inercia».</td></tr>
+<tr><td>$k\,\Delta l=mg$ y $T=2\pi\sqrt{\Delta l/g}$; choque: $mv=(m+M)V$</td><td>«resorte vertical», «se cuelga… y se estira…», «cae sobre una bandeja / masilla que se pega», «fuerza que ejerce el resorte».</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 14</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Magnitudes</td><td>$f=\dfrac1T$ (14.1); $\omega=2\pi f=\dfrac{2\pi}{T}$ (14.2); $A$ = desplazamiento máximo</td></tr>
+<tr><td>Definición de MAS</td><td>$F_x=-kx$ (14.3); $a_x=\dfrac{d^2x}{dt^2}=-\dfrac km\,x$ (14.4)</td></tr>
+<tr><td>Resorte (masa $m$)</td><td>$\omega=\sqrt{\dfrac km}$ (14.10); $f=\dfrac1{2\pi}\sqrt{\dfrac km}$ (14.11); $T=2\pi\sqrt{\dfrac mk}$ (14.12); <b>no dependen de $A$</b></td></tr>
+<tr><td>Posición, velocidad, aceleración</td><td>$x=A\cos(\omega t+\phi)$ (14.13); $v_x=-\omega A\sin(\omega t+\phi)$ (14.15); $a_x=-\omega^2A\cos(\omega t+\phi)=-\omega^2x$ (14.16); $v_{máx}=\omega A$, $a_{máx}=\omega^2A$</td></tr>
+<tr><td>Condiciones iniciales</td><td>$x_0=A\cos\phi$ (14.14); $v_{0x}=-\omega A\sin\phi$ (14.17); $\phi=\arctan\!\left(-\dfrac{v_{0x}}{\omega x_0}\right)$ (14.18); $A=\sqrt{x_0^2+\dfrac{v_{0x}^2}{\omega^2}}$ (14.19); ¡comprueba el cuadrante!</td></tr>
+<tr><td>Energía</td><td>$E=\tfrac12mv_x^2+\tfrac12kx^2=\tfrac12kA^2$ (14.20-14.21); $v_x=\pm\sqrt{\dfrac km}\sqrt{A^2-x^2}$ (14.22); $K=U$ en $|x|=A/\sqrt2$; en $A/2$: $U=E/4$</td></tr>
+<tr><td>Resorte vertical</td><td>$k\,\Delta l=mg$ fija el equilibrio ($x=0$); misma $\omega=\sqrt{k/m}$; $T=2\pi\sqrt{\Delta l/g}$; fuerza neta $=-kx$, fuerza del resorte $=mg-kx$</td></tr>
+<tr><td>Choque con un oscilador</td><td>$P$ se conserva en el choque, $E$ no; después, MAS con la masa total: $A_2=A_1\sqrt{\dfrac{M}{M+m}}$ si cae en el equilibrio (Ej. 14.5)</td></tr>
+<tr><td>MAS angular</td><td>$\tau_z=-\kappa\theta$; $\omega=\sqrt{\dfrac{\kappa}{I}}$, $f=\dfrac1{2\pi}\sqrt{\dfrac{\kappa}{I}}$ (14.24)</td></tr>
+<tr><td>Péndulo simple</td><td>$\omega=\sqrt{\dfrac gL}$, $T=2\pi\sqrt{\dfrac Lg}$ (14.32-14.34); no depende de $m$; $\theta$ pequeño ($\lt15^\circ$)</td></tr>
+<tr><td>Péndulo físico</td><td>$\omega=\sqrt{\dfrac{mgd}{I}}$, $T=2\pi\sqrt{\dfrac{I}{mgd}}$ (14.38-14.39); $L_{eq}=I/(md)$; varilla por un extremo: $T=2\pi\sqrt{\dfrac{2L}{3g}}$</td></tr>
+<tr><td>Molécula (Van der Waals)</td><td>$k=\dfrac{72U_0}{R_0^2}$ (14.29)</td></tr>
+<tr><td>Amortiguado</td><td>$F_x=-bv_x$ (14.40); $x=Ae^{-(b/2m)t}\cos(\omega' t+\phi)$ (14.42); $\omega'=\sqrt{\dfrac km-\dfrac{b^2}{4m^2}}$ (14.43); crítico $b=2\sqrt{km}$ (14.44); $\dfrac{dE}{dt}=-bv_x^2$ (14.45)</td></tr>
+<tr><td>Forzado y resonancia</td><td>$A=\dfrac{F_{máx}}{\sqrt{(k-m\omega_d^2)^2+b^2\omega_d^2}}$ (14.46); pico en $\omega_d\approx\omega$; el pico desaparece si $b\ge\sqrt{2km}$</td></tr>
+<tr><td>Oscilador que rueda</td><td>$M_{ef}=M+\dfrac{I_{cm}}{R^2}$: cilindro $\tfrac32M$, esfera $\tfrac75M$, aro $2M$; $T=2\pi\sqrt{M_{ef}/k}$ (problema práctico)</td></tr>
+<tr><td>Cambios relativos pequeños</td><td>$\dfrac{\Delta f}{f}\approx\tfrac12\dfrac{\Delta k}{k}-\tfrac12\dfrac{\Delta m}{m}$ (por ser $f\propto\sqrt{k/m}$)</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_14_movimiento_periodico.html">→ Abrir el tema 14 completo</a></p>
+</section>
+<section class="form-tema" id="f15">
+<h2 id="f15-t"><span class="n">15</span> Ondas mecánicas</h2>
+<p class="lema">Ondas mecánicas y ondas estacionarias</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$v=\lambda f$, $\ \omega=2\pi f$, $\ k=\dfrac{2\pi}{\lambda}$, $\ v=\dfrac\omega k$</td><td>Siempre: «longitud de onda de un sonido de … Hz», «frecuencia, periodo y número de onda», pasar de unas magnitudes a otras.</td></tr>
+<tr><td>$y=A\cos(kx-\omega t)$ (hacia $+x$), $\ A\cos(kx+\omega t)$ (hacia $-x$)</td><td>«escribe la función de onda», «¿hacia dónde viaja?», «desplazamiento del punto $x$ en el instante $t$».</td></tr>
+<tr><td>$v_y=\dfrac{\partial y}{\partial t}$, $\ v_{y,máx}=\omega A$, $\ a_{y,máx}=\omega^2A$</td><td>«rapidez transversal de una partícula», «aceleración máxima de un punto de la cuerda» (¡no es $v$!).</td></tr>
+<tr><td>$v=\sqrt{\dfrac F\mu}$, $\ \mu=\dfrac mL$</td><td>«tensión necesaria», «cuerda que pasa por una polea con una masa», «cuerda que pesa…», «qué pasa si se duplica la tensión».</td></tr>
+<tr><td>$P_{med}=\tfrac12\sqrt{\mu F}\,\omega^2A^2$, $\ I=\dfrac{P}{4\pi r^2}$</td><td>«potencia media que transporta», «si la amplitud se reduce a la mitad», «intensidad a otra distancia de una fuente puntual».</td></tr>
+<tr><td>$y=(2A\sin kx)\sin\omega t$; $\ L=n\dfrac{\lambda_n}2$, $\ f_n=n\dfrac{v}{2L}=nf_1$</td><td>«onda estacionaria», «nodos y antinodos», «fundamental, armónicos, sobretonos», «dónde poner el dedo», «dos armónicos consecutivos».</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 15</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Onda periódica</td><td>$v=\lambda f$ (15.1); $T=1/f$; $\omega=2\pi f$; $k=\dfrac{2\pi}\lambda$ (15.5); $\omega=vk$ (15.6)</td></tr>
+<tr><td>Función de onda</td><td>$y=A\cos(kx-\omega t)$, hacia $+x$ (15.7); $y=A\cos(kx+\omega t)$, hacia $-x$ (15.8); $y=A\cos2\pi\left(\dfrac x\lambda\mp\dfrac tT\right)$ (15.4)</td></tr>
+<tr><td>Partícula de la cuerda</td><td>$v_y=\omega A\sin(kx-\omega t)$ (15.9), $v_{y,máx}=\omega A$; $a_y=-\omega^2y$ (15.10)</td></tr>
+<tr><td>Ecuación de onda</td><td>$\dfrac{\partial^2y}{\partial x^2}=\dfrac1{v^2}\dfrac{\partial^2y}{\partial t^2}$ (15.12)</td></tr>
+<tr><td>Rapidez en una cuerda</td><td>$v=\sqrt{F/\mu}$ (15.14); $\mu=m/L$</td></tr>
+<tr><td>Potencia</td><td>$P(x,t)=\sqrt{\mu F}\,\omega^2A^2\sin^2(kx-\omega t)$ (15.23); $P_{máx}=\sqrt{\mu F}\,\omega^2A^2$ (15.24); $P_{med}=\tfrac12\sqrt{\mu F}\,\omega^2A^2$ (15.25)</td></tr>
+<tr><td>Intensidad</td><td>$I=P/\text{área}$; fuente puntual $I=\dfrac P{4\pi r^2}$, $\dfrac{I_1}{I_2}=\dfrac{r_2^2}{r_1^2}$ (15.26)</td></tr>
+<tr><td>Reflexión y superposición</td><td>extremo fijo: pulso invertido; extremo libre: sin invertir; $y=y_1+y_2$ (15.27)</td></tr>
+<tr><td>Onda estacionaria</td><td>$y=(A_{OE}\sin kx)\sin\omega t$, $A_{OE}=2A$ (15.28); nodos $x=0,\lambda/2,\lambda,\dots$ (15.29); N–N = A–A = $\lambda/2$; N–A = $\lambda/4$; sin transporte neto de energía</td></tr>
+<tr><td>Modos normales (extremos fijos)</td><td>$L=n\lambda_n/2$ (15.30); $\lambda_n=\dfrac{2L}n$ (15.31); $f_n=n\dfrac v{2L}=nf_1$ (15.32-15.33); $f_1=\dfrac1{2L}\sqrt{\dfrac F\mu}$ (15.35); $n$-ésimo armónico = $(n-1)$-ésimo sobretono</td></tr>
+<tr><td>Máximos de un punto en un modo</td><td>$v_{y,máx}=\omega_nA_{OE}|\sin k_nx|$, $a_{y,máx}=\omega_n^2A_{OE}|\sin k_nx|$ (MAS de amplitud local)</td></tr>
+<tr><td>Cuerda y aire</td><td>misma frecuencia, distinta $\lambda$: $\lambda_{aire}=v_{sonido}/f$</td></tr>
+<tr><td>Cambios pequeños</td><td>$\dfrac{\Delta f}f\approx\tfrac12\dfrac{\Delta F}F$ (con $L$, $\mu$ fijas); $f_1L=$ cte a igual $F$ y $\mu$</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_15_ondas_mecanicas.html">→ Abrir el tema 15 completo</a></p>
+</section>
+<section class="form-tema" id="f16">
+<h2 id="f16-t"><span class="n">16</span> Sonido y oído</h2>
+<p class="lema">Sonido, intensidad, tubos y Doppler</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$p_\text{máx}=BkA$, $\ k=\dfrac{2\pi f}{v}$</td><td>«amplitud de presión», «desplazamiento máximo de las moléculas», «umbral de dolor (30 Pa)».</td></tr>
+<tr><td>$v=\sqrt{\dfrac B\rho}$, $\ v=\sqrt{\dfrac Y\rho}$, $\ v=\sqrt{\dfrac{\gamma RT}{M}}$</td><td>«rapidez del sonido en el agua, en una barra, en helio a 27 °C», «¿a qué temperatura…?», «módulo volumétrico a partir de $\lambda$».</td></tr>
+<tr><td>$I=\dfrac{p_\text{máx}^2}{2\rho v}$, $\ I=\dfrac{P}{4\pi r^2}$; $\ \beta=(10\ \text{dB})\log\dfrac I{I_0}$</td><td>«intensidad», «potencia del altavoz», «nivel en decibelios», «¿a qué distancia oirás 60 dB?», «varias fuentes a la vez».</td></tr>
+<tr><td>Abierto: $f_n=\dfrac{nv}{2L}$ ($n=1,2,3\dots$); cerrado: $f_n=\dfrac{nv}{4L}$ ($n=1,3,5\dots$)</td><td>«tubo de órgano», «flauta», «tubo de ensayo», «dos armónicos sucesivos», «¿abierto o cerrado?», «resonancia».</td></tr>
+<tr><td>Constructiva $\Delta=n\lambda$, destructiva $\Delta=(n+\tfrac12)\lambda$; $\ f_\text{pulso}=f_a-f_b$</td><td>«dos altavoces en fase», «frecuencia más baja con interferencia destructiva», «pulsos por segundo», «afinar».</td></tr>
+<tr><td>$f_L=\dfrac{v+v_L}{v+v_S}\,f_S$ («+» de $L$ a $S$); $\ \sin\alpha=\dfrac v{v_S}$</td><td>«sirena que se acerca», «tren», «eco en un objeto que se mueve», «radar», «Mach», «¿cuándo se oye el estruendo?».</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 16</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Onda sonora</td><td>$y=A\cos(kx-\omega t)$ (16.1); $p=-B\,\partial y/\partial x$ (16.3); $p_\text{máx}=BkA$ (16.5); $y$ y $p$ desfasadas $90^\circ$; $k=2\pi/\lambda$, $v=\lambda f=\omega/k$</td></tr>
+<tr><td>Rapidez del sonido</td><td>fluido $v=\sqrt{B/\rho}$ (16.7); varilla sólida $v=\sqrt{Y/\rho}$ (16.8); $B=\gamma p_0$ (16.9); gas ideal $v=\sqrt{\gamma RT/M}$ (16.10), $T$ en K, $M$ en kg/mol; aire a 20 °C: 344 m/s; $v\propto\sqrt T$</td></tr>
+<tr><td>Intensidad</td><td>$I=\tfrac12\sqrt{\rho B}\,\omega^2A^2$ (16.12); $I=\dfrac{p_\text{máx}^2}{2\rho v}$ (16.14); fuente puntual $I=P/4\pi r^2$, $I_1/I_2=r_2^2/r_1^2$ (15.26)</td></tr>
+<tr><td>Decibelios</td><td>$\beta=(10\ \text{dB})\log(I/I_0)$, $I_0=10^{-12}$ W/m² (16.15); $\Delta\beta=10\log(I_2/I_1)$; ×2 ⇔ +3 dB; ×10 ⇔ +10 dB; distancia ×2 ⇔ −6 dB; $N$ fuentes independientes ⇔ $10\log N$</td></tr>
+<tr><td>Extremos de un tubo</td><td>abierto: A de desplazamiento (nodo de presión); cerrado: N de desplazamiento (antinodo de presión); N–A $=\lambda/4$; N–N $=\lambda/2$</td></tr>
+<tr><td>Tubo abierto</td><td>$\lambda_n=\dfrac{2L}n$; $f_n=\dfrac{nv}{2L}=nf_1$, $n=1,2,3,\dots$; $f_1=\dfrac v{2L}$ (16.16-16.19)</td></tr>
+<tr><td>Tubo cerrado</td><td>$\lambda_n=\dfrac{4L}n$; $f_n=\dfrac{nv}{4L}=nf_1$, $n=1,3,5,\dots$; $f_1=\dfrac v{4L}$ (16.20-16.23); mitad de $f_1$ que un abierto igual</td></tr>
+<tr><td>Resonancia</td><td>amplitud máxima si la frecuencia impulsora $=$ frecuencia de un modo normal; $\lambda$ cambia con el medio, $f$ no</td></tr>
+<tr><td>Interferencia (fuentes en fase)</td><td>constructiva: $\Delta=0,\lambda,2\lambda,\dots$; destructiva: $\Delta=\tfrac\lambda2,\tfrac{3\lambda}2,\dots$; $\Delta\phi=2\pi\Delta/\lambda$; coherentes: suma de amplitudes; independientes: suma de intensidades</td></tr>
+<tr><td>Pulsos</td><td>$f_\text{pulso}=f_a-f_b$ (16.24); no indica cuál es mayor</td></tr>
+<tr><td>Doppler (sentido + de $L$ a $S$)</td><td>$f_L=\dfrac{v+v_L}{v+v_S}f_S$ (16.29); receptor móvil $f_L=(1+v_L/v)f_S$ (16.26); $\lambda_\text{enfrente}=\dfrac{v-v_S}{f_S}$, $\lambda_\text{atrás}=\dfrac{v+v_S}{f_S}$ (16.27-16.28); reflexión: dos pasos; luz $f_R=\sqrt{\tfrac{c-v}{c+v}}f_S$ (16.30)</td></tr>
+<tr><td>Onda de choque</td><td>$\sin\alpha=v/v_S=1/\text{Mach}$ (16.31); estruendo tras $t$: $\tan\alpha=h/(v_St)$ (ejemplo 16.19)</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_16_sonido_oido.html">→ Abrir el tema 16 completo</a></p>
+</section>
+<p class="form-bloque">Termodinámica · Temas 17-20</p>
+<section class="form-tema" id="f17">
+<h2 id="f17-t"><span class="n">17</span> Temperatura y calor</h2>
+<p class="lema">Temperatura, dilatación, calor y transmisión</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$T_K=T_C+273{,}15$, $\ T_F=\tfrac95T_C+32^\circ$; intervalos: $1\ \text{K}=1\ \text{C}^\circ=1{,}8\ \text{F}^\circ$</td><td>«exprese en kelvin / Fahrenheit», «¿a qué temperatura coinciden?», «un cambio de … grados».</td></tr>
+<tr><td>$\Delta L=\alpha L_0\Delta T$, $\ \Delta V=\beta V_0\Delta T$ ($\beta=3\alpha$); $\ \dfrac FA=-Y\alpha\Delta T$</td><td>«¿cuánto se alarga?», «remache», «se derrama del frasco», «juntas de dilatación», «barra sujeta entre paredes».</td></tr>
+<tr><td>$Q=mc\Delta T$ $\ $($\Delta T=T_f-T_i$)</td><td>«¿cuánto calor para calentar…?», «resistencia de 200 W: ¿cuánto tarda?», «el martillo calienta el clavo».</td></tr>
+<tr><td>$Q=\pm mL$ $\ $($L_f$ fusión, $L_v$ vaporización); $\ \sum Q=0$</td><td>«hielo a −10 °C hasta vapor», «se mezcla…, ¿temperatura final?», «¿se funde todo el hielo?», «calor específico de un metal».</td></tr>
+<tr><td>$H=kA\dfrac{T_H-T_C}{L}$; $\ R=\dfrac Lk$, $\ H=\dfrac{A\,\Delta T}{\sum R}$</td><td>«varilla entre agua hirviendo y hielo», «temperatura de la unión», «pared de dos capas», «doble acristalamiento», «unión en Y».</td></tr>
+<tr><td>$H=Ae\sigma T^4$; $\ H_\text{neta}=Ae\sigma(T^4-T_s^4)$, $T$ en K</td><td>«potencia radiada», «pérdida neta con el entorno a 20 °C», «emisividad», «¿qué potencia mantiene la esfera a …?».</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 17</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Ley cero y escalas</td><td>$T_A=T_C$ y $T_B=T_C\Rightarrow T_A=T_B$; $T_F=\tfrac95T_C+32^\circ$ (17.1); $T_C=\tfrac59(T_F-32^\circ)$ (17.2); $T_K=T_C+273{,}15$ (17.3); intervalos: $1\ \text{C}^\circ=1\ \text{K}=1{,}8\ \text{F}^\circ$; $-40$ °C $=-40$ °F</td></tr>
+<tr><td>Termómetro de gas</td><td>$T_2/T_1=p_2/p_1$ (17.4); $T=(273{,}16\ \text{K})\,p/p_\text{triple}$ (17.5); cero absoluto $0$ K $=-273{,}15$ °C</td></tr>
+<tr><td>Expansión térmica</td><td>$\Delta L=\alpha L_0\Delta T$ (17.6); $L=L_0(1+\alpha\Delta T)$ (17.7); $\Delta V=\beta V_0\Delta T$ (17.8); $\beta=3\alpha$ (17.9); un orificio se dilata como el material; agua: densidad máxima a 4 °C</td></tr>
+<tr><td>Esfuerzo térmico</td><td>$F/A=-Y\alpha\Delta T$ (17.12); $\Delta T\gt0\Rightarrow$ compresión; no depende de $L_0$</td></tr>
+<tr><td>Calor y calor específico</td><td>$Q=mc\Delta T$ (17.13); $dT/dt=P/(mc)$; $Q=nC\Delta T$, $C=Mc$ (17.18-17.19), sólidos $C\approx25$ J/(mol·K); 1 cal $=4{,}186$ J; $c_\text{agua}=4190$, $c_\text{hielo}=2100$ J/(kg·K)</td></tr>
+<tr><td>Cambio de fase</td><td>$Q=\pm mL$ (17.20); agua: $L_f=3{,}34\times10^5$, $L_v=2{,}256\times10^6$ J/kg; $T$ constante durante el cambio</td></tr>
+<tr><td>Calorimetría</td><td>sistema aislado: $\sum Q=0$ (Estrategia 17.2); con hielo o vapor, comparar presupuestos y comprobar el estado final</td></tr>
+<tr><td>Conducción</td><td>$H=kA(T_H-T_C)/L$ (17.21); $H=-kA\,dT/dx$ (17.22); $R=L/k$, $H=A\Delta T/R$ (17.23-17.24); serie: misma $H$, $\sum R$; paralelo o nudo: $\sum H$</td></tr>
+<tr><td>Convección</td><td>movimiento de fluido; natural (densidad) o forzada (bomba, ventilador); $H\propto A$, $\propto\Delta T^{5/4}$; película de fluido aislante</td></tr>
+<tr><td>Radiación</td><td>$H=Ae\sigma T^4$ (17.25); $H_\text{neta}=Ae\sigma(T^4-T_s^4)$ (17.26); $\sigma=5{,}67\times10^{-8}$ W/(m²·K⁴); $T$ en K; no necesita medio; buen absorbedor = buen emisor</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_17_temperatura_calor.html">→ Abrir el tema 17 completo</a></p>
+</section>
+<section class="form-tema" id="f18">
+<h2 id="f18-t"><span class="n">18</span> Propiedades térmicas de la materia</h2>
+<p class="lema">Gas ideal y teoría cinética</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$pV=nRT$; $\ n=\dfrac{m}{M}$, $\ N=nN_A$, $\ pV=NkT$</td><td>«¿qué presión hay en el tanque?», «¿cuántos moles / moléculas / qué masa?», cada vértice de un ciclo.</td></tr>
+<tr><td>$\dfrac{p_1V_1}{T_1}=\dfrac{p_2V_2}{T_2}$ ($n$ fijo); isoterma $pV$ cte, isócora $p/T$ cte, isóbara $V/T$ cte</td><td>«se comprime y se calienta», «la burbuja sube a la superficie», «el globo se enfría», los estados de un ciclo.</td></tr>
+<tr><td>$\rho=\dfrac{pM}{RT}$</td><td>«densidad de la atmósfera de Marte», «globo de aire caliente», «empuje del aire sobre una esfera».</td></tr>
+<tr><td>$\tfrac12m(v^2)_{med}=\tfrac32kT$, $\ K_{tr}=\tfrac32nRT$, $\ v_{rms}=\sqrt{\dfrac{3RT}{M}}$</td><td>«energía cinética media por molécula», «rapidez eficaz», «¿a qué $T$ igualan su $v_{rms}$?», «movimiento browniano».</td></tr>
+<tr><td>$Q=nC_V\Delta T$, $\ C_V=\tfrac32R$ (mono), $\tfrac52R$ (di)</td><td>«recipiente rígido», «mismo calor a H$_2$ y a Ne», calores de los ciclos (con $C_p=C_V+R$, tema 19).</td></tr>
+<tr><td>$v_{mp}:v_{med}:v_{rms}=\sqrt2:\sqrt{8/\pi}:\sqrt3$ $\ (1:1{,}128:1{,}225)$</td><td>«rapidez más probable / media / eficaz», «¿puede escapar alguna molécula?» (la cola de Maxwell-Boltzmann).</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 18</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Cantidad de sustancia</td><td>$m_{total}=nM$ (18.2); $N=nN_A$; $M=N_Am$ (18.8); $N_A=6{,}022\times10^{23}$ mol$^{-1}$; $k=R/N_A=1{,}381\times10^{-23}$ J/K</td></tr>
+<tr><td>Gas ideal</td><td>$pV=nRT$ (18.3); $pV=\tfrac{m}{M}RT$ (18.4); $pV=NkT$ (18.18); $R=8{,}314$ J/(mol·K) $=0{,}08206$ L·atm/(mol·K); 1 mol a TPE: 22,4 L</td></tr>
+<tr><td>Densidad</td><td>$\rho=pM/RT$ (18.5)</td></tr>
+<tr><td>Dos estados (mismo $n$)</td><td>$\dfrac{p_1V_1}{T_1}=\dfrac{p_2V_2}{T_2}$ (18.6); $p$ absoluta y $T$ en K</td></tr>
+<tr><td>Procesos (ciclos)</td><td>isoterma: $pV$ cte; isócora: $p/T$ cte; isóbara: $V/T$ cte; sin $n$: $nT=pV/R$ y $nC_V\Delta T=\tfrac{C_V}{R}\Delta(pV)$</td></tr>
+<tr><td>Si cambia la cantidad de gas</td><td>$n$ o $m$ en cada estado con (18.3)-(18.4) y restar; $V$, $T$ fijos: $m\propto p_{abs}$</td></tr>
+<tr><td>Atmósfera isoterma</td><td>$p=p_0e^{-Mgy/RT}$; altura de escala $RT/Mg\approx8{,}05$ km</td></tr>
+<tr><td>Van der Waals</td><td>$\left(p+\dfrac{an^2}{V^2}\right)(V-nb)=nRT$ (18.7); $b$: volumen de las moléculas; $a$: atracción</td></tr>
+<tr><td>Presión por choques</td><td>$p=Nm(v_x^2)_{med}/V$ (18.11); $pV=\tfrac23N\left[\tfrac12m(v^2)_{med}\right]$ (18.12); $(v_x^2)_{med}=\tfrac13(v^2)_{med}$</td></tr>
+<tr><td>Energía y temperatura</td><td>$K_{tr}=\tfrac32nRT$ (18.14); $\tfrac12m(v^2)_{med}=\tfrac32kT$ (18.16); por mol: $\tfrac32RT$ (18.17)</td></tr>
+<tr><td>Rapidez eficaz</td><td>$v_{rms}=\sqrt{3kT/m}=\sqrt{3RT/M}$ (18.19); $M$ en kg/mol</td></tr>
+<tr><td>Trayectoria libre media</td><td>$\lambda=\dfrac{V}{4\pi\sqrt2\,r^2N}=\dfrac{kT}{4\pi\sqrt2\,r^2p}$ (18.21-18.22); $t_{med}=\lambda/v$</td></tr>
+<tr><td>Capacidades caloríficas</td><td>$Q=nC_V\Delta T$ (18.24); $C_V=\tfrac32R$ monoatómico (18.25); $C_V=\tfrac52R$ diatómico (18.26); sólidos $3R$ (18.28)</td></tr>
+<tr><td>Maxwell-Boltzmann</td><td>$f(v)=4\pi\left(\tfrac{m}{2\pi kT}\right)^{3/2}v^2e^{-mv^2/2kT}$ (18.32); $v_{mp}=\sqrt{2kT/m}$, $v_{med}=\sqrt{8kT/\pi m}$, $v_{rms}=\sqrt{3kT/m}$ (18.34-18.36); proporción $1:1{,}128:1{,}225$; tabla 18.2</td></tr>
+<tr><td>Fases</td><td>punto triple (agua 273,16 K; 610 Pa); punto crítico del agua 647,4 K y $221{,}2\times10^5$ Pa; por debajo de la presión del punto triple no hay líquido; sublimación</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_18_propiedades_termicas_materia.html">→ Abrir el tema 18 completo</a></p>
+</section>
+<section class="form-tema" id="f19">
+<h2 id="f19-t"><span class="n">19</span> Primera ley de la termodinámica</h2>
+<p class="lema">Primera ley: trabajo, calor y procesos del gas</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$\Delta U=Q-W$, $\ Q=\Delta U+W$; ciclo: $\Delta U=0$, $Q=W$</td><td>en <b>todos</b> los problemas, tramo a tramo; «¿absorbe o desprende calor?», «dos trayectorias entre los mismos estados».</td></tr>
+<tr><td>$W=\displaystyle\int p\,dV$ = área; isóbaro $p\Delta V$; isócoro $0$; isotermo $nRT\ln\dfrac{V_2}{V_1}$</td><td>«¿cuánto trabajo efectúa el gas?», cada tramo de un ciclo; recta oblicua: trapecio.</td></tr>
+<tr><td>$\Delta U=nC_V\Delta T=\dfrac{C_V}{R}\Delta(pV)$ (gas ideal, cualquier proceso)</td><td>«cambio de energía interna», «temperatura final», ciclos sin $n$.</td></tr>
+<tr><td>$Q=nC_V\Delta T$ ($V$ cte), $\ Q=nC_p\Delta T$ ($p$ cte); $\ C_p=C_V+R$, $\ \gamma=C_p/C_V$</td><td>«recipiente rígido», «a presión constante», «gas monoatómico / diatómico», «dado $\gamma$».</td></tr>
+<tr><td>Adiabático: $pV^\gamma$ y $TV^{\gamma-1}$ constantes; $\ T_2=T_1\left(\dfrac{p_2}{p_1}\right)^{(\gamma-1)/\gamma}$</td><td>«se comprime adiabáticamente», «razón de compresión», «sin intercambio de calor», motores.</td></tr>
+<tr><td>$W_{adiab}=\dfrac{p_1V_1-p_2V_2}{\gamma-1}=nC_V(T_1-T_2)$; $\ e=\dfrac{W}{Q_H}$, $\ K=\dfrac{Q_{abs}}{|W|}$</td><td>trabajo de un tramo adiabático; rendimiento de una máquina o refrigerador (se termina en el tema 20).</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 19</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Signos</td><td>$Q>0$ entra calor; $W>0$ el sistema hace trabajo (U p. 619)</td></tr>
+<tr><td>Trabajo</td><td>$dW=p\,dV$ (19.1); $W=\int_{V_1}^{V_2}p\,dV$ (19.2) = área bajo la curva $pV$; isobárico $W=p(V_2-V_1)$ (19.3); isótermo (gas ideal) $W=nRT\ln\frac{V_2}{V_1}=nRT\ln\frac{p_1}{p_2}$; isócoro $W=0$; ciclo: $W$ = área encerrada (horario $>0$)</td></tr>
+<tr><td>Primera ley</td><td>$\Delta U=Q-W$ (19.4); $Q=\Delta U+W$ (19.5); $dU=dQ-p\,dV$ (19.7); ciclo: $\Delta U=0$, $Q=W$; aislado: $Q=W=\Delta U=0$</td></tr>
+<tr><td>Procesos</td><td>adiabático $Q=0$, $\Delta U=-W$ (19.8); isocórico $W=0$, $\Delta U=Q$ (19.9); isobárico $W=p\Delta V$ (19.10); isotérmico (gas ideal) $\Delta U=0$, $Q=W$</td></tr>
+<tr><td>Gas ideal: $U$</td><td>$U$ depende solo de $T$; $\Delta U=nC_V\Delta T$ en <b>cualquier</b> proceso (19.13); también $\Delta U=\frac{C_V}{R}\Delta(pV)$</td></tr>
+<tr><td>Calores molares</td><td>$Q=nC_V\Delta T$ a $V$ cte (19.12); $Q=nC_p\Delta T$ a $p$ cte (19.14); $C_p=C_V+R$ (19.17); $\gamma=C_p/C_V$ (19.18); monoatómico $C_V=\frac32R$, $\gamma=\frac53$; diatómico $C_V=\frac52R$, $\gamma=\frac75$; $C_V=R/(\gamma-1)$</td></tr>
+<tr><td>Adiabático gas ideal</td><td>$TV^{\gamma-1}$ cte (19.21-19.22); $pV^\gamma$ cte (19.23-19.24); $T^\gamma p^{1-\gamma}$ cte, $T_2=T_1(p_2/p_1)^{(\gamma-1)/\gamma}$; $W=nC_V(T_1-T_2)=\dfrac{p_1V_1-p_2V_2}{\gamma-1}$ (19.25-19.26)</td></tr>
+<tr><td>Isóbaro: reparto del calor</td><td>$W/Q=R/C_p$ (monoatómico 2/5); $\Delta U/Q=C_V/C_p=1/\gamma$</td></tr>
+<tr><td>Ciclos (para el tema 20)</td><td>$e=W/Q_H=1-|Q_C|/Q_H$ (20.4); refrigerador $K=Q_{abs}/|W|$ (20.9); Carnot $e=1-T_C/T_H$ (20.14)</td></tr>
+<tr><td>Conversiones</td><td>$1\ \text{L}\!\cdot\!\text{atm}=101{,}3$ J; $1\ \text{atm}=1{,}013\times10^5$ Pa; $1\ \text{cal}=4{,}18$ J (o 4,186); $R=8{,}314$ J/(mol·K)</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_19_primera_ley_termodinamica.html">→ Abrir el tema 19 completo</a></p>
+</section>
+<section class="form-tema" id="f20">
+<h2 id="f20-t"><span class="n">20</span> Segunda ley de la termodinámica</h2>
+<p class="lema">Segunda ley: eficiencia, Carnot y entropía</p>
+<h3>Lo imprescindible y cuándo se usa</h3>
+<table>
+<tr><th>Fórmula</th><th>Cuándo se usa</th></tr>
+<tr><td>$|Q_H|=|Q_C|+|W|$; $\ e=\dfrac{W}{Q_H}=1-\dfrac{|Q_C|}{Q_H}$</td><td>«eficiencia», «rendimiento», «calor entrante y cedido», «potencia» (× ciclos por segundo).</td></tr>
+<tr><td>$K=\dfrac{|Q_C|}{|W|}=\dfrac{|Q_C|}{|Q_H|-|Q_C|}$</td><td>«refrigerador», «ciclo de refrigeración», «coeficiente de rendimiento», «sistema de frío».</td></tr>
+<tr><td>Carnot: $\dfrac{|Q_C|}{|Q_H|}=\dfrac{T_C}{T_H}$, $\ e=1-\dfrac{T_C}{T_H}$, $\ K=\dfrac{T_C}{T_H-T_C}$</td><td>«ciclo de Carnot», «máquina ideal», «máxima eficiencia posible con estos focos» ($T_{max}$ y $T_{min}$).</td></tr>
+<tr><td>Otto: $e=1-\dfrac{1}{r^{\gamma-1}}$</td><td>«razón de compresión», «motor de gasolina» (ciclo Otto ideal).</td></tr>
+<tr><td>$\Delta S=\dfrac{Q}{T}$ ($T$ fija); $\ mc\ln\dfrac{T_2}{T_1}$; $\ nC_V\ln\dfrac{T_2}{T_1}$, $nC_p\ln\dfrac{T_2}{T_1}$, $nR\ln\dfrac{V_2}{V_1}$</td><td>«variación de entropía» de un cuerpo, un foco o un tramo de un ciclo; expansión libre.</td></tr>
+<tr><td>$\Delta S_{total}\ge0$ (0 si reversible); ciclo: $\Delta S_{gas}=0$</td><td>«¿es reversible?», «¿viola la segunda ley?», comprobar el resultado.</td></tr>
+</table>
+<details class="chul" open><summary>Chuleta completa del tema 20</summary>
+<table>
+<tr><th>Concepto</th><th>Fórmula (ec. de U)</th></tr>
+<tr><td>Signos</td><td>$Q>0$ entra a la sustancia de trabajo. Máquina: $Q_H>0$, $Q_C&lt;0$, $W>0$. Refrigerador: $Q_C>0$, $Q_H&lt;0$, $W&lt;0$ (U p. 650)</td></tr>
+<tr><td>Ciclo</td><td>$\Delta U=0$; $W=Q=Q_H+Q_C=|Q_H|-|Q_C|$ (20.1)-(20.2); $|Q_H|=|Q_C|+|W|$ (20.8)</td></tr>
+<tr><td>Máquina</td><td>$e=\dfrac{W}{Q_H}=1-\dfrac{|Q_C|}{Q_H}$ (20.3)-(20.4); potencia $P=W\cdot$ (ciclos/s); $e&lt;1$ siempre</td></tr>
+<tr><td>Otto / Diesel</td><td>$e_{Otto}=1-r^{1-\gamma}$ (20.6); $r=8$, $\gamma=1{,}4$: 0,56; Diesel $r=15$-$20$: 0,65-0,70</td></tr>
+<tr><td>Refrigerador</td><td>$K=\dfrac{|Q_C|}{|W|}=\dfrac{|Q_C|}{|Q_H|-|Q_C|}$ (20.9); $K=H/P$</td></tr>
+<tr><td>Segunda ley</td><td>Kelvin-Planck: ninguna máquina con $e=1$ (calor de un solo foco, todo en trabajo, mismo estado final). Clausius: ningún proceso con único resultado calor de frío a caliente</td></tr>
+<tr><td>Carnot (gas ideal)</td><td>2 isotermas + 2 adiabáticas; $Q_H=nRT_H\ln\frac{V_b}{V_a}$ (20.10); $Q_C=-nRT_C\ln\frac{V_c}{V_d}$ (20.11); $\frac{V_b}{V_a}=\frac{V_c}{V_d}$; $\frac{|Q_C|}{|Q_H|}=\frac{T_C}{T_H}$ (20.13); $e=1-\frac{T_C}{T_H}$ (20.14); $K=\frac{T_C}{T_H-T_C}$ (20.15); <b>kelvin</b></td></tr>
+<tr><td>Máxima eficiencia</td><td>Ninguna máquina entre $T_H$ y $T_C$ supera a Carnot; ciclo cualquiera: $T_H=T_{max}$, $T_C=T_{min}$</td></tr>
+<tr><td>Entropía</td><td>$dS=dQ/T$ (20.17); $\Delta S=\int_1^2 dQ/T$ (20.19) reversible; isotermo $\Delta S=Q/T$ (20.18); $S$ función de estado (camino reversible inventado)</td></tr>
+<tr><td>$\Delta S$ habituales</td><td>$mc\ln\frac{T_2}{T_1}$; $\pm mL/T$; gas ideal: isotermo $nR\ln\frac{V_2}{V_1}$, isócoro $nC_V\ln\frac{T_2}{T_1}$, isóbaro $nC_p\ln\frac{T_2}{T_1}$, adiabático reversible 0; expansión libre $nR\ln\frac{V_2}{V_1}$</td></tr>
+<tr><td>Ciclos y principio</td><td>Carnot $\frac{Q_H}{T_H}+\frac{Q_C}{T_C}=0$ (20.20); ciclo reversible $\oint\frac{dQ}{T}=0$ (20.21); $\Delta S_{total}\ge0$, $=0$ solo si reversible</td></tr>
+<tr><td>Microscópica</td><td>$S=k\ln w$ (20.22); $\Delta S=k\ln\frac{w_2}{w_1}$ (20.23); expansión libre $w_2=2^Nw_1$ ⇒ $\Delta S=nR\ln2$</td></tr>
+<tr><td>Constantes</td><td>$R=8{,}314$ J/(mol·K); $k=R/N_A$; $L_f=3{,}34\times10^5$ J/kg; $c_{agua}=4190$ J/(kg·K); $1\ \text{atm}=1{,}013\times10^5$ Pa; 1 hp = 746 W</td></tr>
+</table>
+</details>
+<p class="ir"><a href="tema_20_segunda_ley_termodinamica.html">→ Abrir el tema 20 completo</a></p>
+</section>
+<h2 id="resumen">Resumen de los 20 temas</h2>
+<p>Una idea y un error típico por tema. El detalle está en cada tema («El tema en 5 minutos»).</p>
+<div class="resumen-grid">
+<div class="rcard"><h3><a href="tema_01_unidades_vectores.html"><span>1</span>Unidades, cantidades físicas y vectores</a></h3>
+<p>Medir con unidades del SI, no dar más cifras de las que se tienen y manejar <b>vectores</b>: se suman por componentes y se multiplican con el producto escalar (da un número, mide cuánto apuntan igual) y el vectorial (da un vector perpendicular a ambos).</p>
+<p class="ojo"><b>Ojo:</b> Pasar todo a SI antes de operar; $\vec A\times\vec B=-\vec B\times\vec A$.</p></div>
+<div class="rcard"><h3><a href="tema_02_movimiento_rectilineo.html"><span>2</span>Movimiento rectilíneo</a></h3>
+<p>Cada magnitud es la <b>derivada</b> de la anterior. Con aceleración constante bastan <b>cuatro ecuaciones</b> (frenados, arranques, persecuciones); la caída libre es el caso $a=-g$.</p>
+<p class="ojo"><b>Ojo:</b> El signo depende del eje elegido: frenar es $a$ de signo contrario a $v$.</p></div>
+<div class="rcard"><h3><a href="tema_03_movimiento_2d_3d.html"><span>3</span>Movimiento en dos o en tres dimensiones</a></h3>
+<p>El tema 2 en un plano: cada componente es un movimiento rectilíneo y solo las une el tiempo. Tres casos: <b>proyectil</b> ($a=-g$, $v_x$ constante), <b>círculo</b> ($a_{rad}=v^2/R$ hacia el centro) y <b>velocidad relativa</b> (suma de vectores).</p>
+<p class="ojo"><b>Ojo:</b> En lo alto del proyectil $v_y=0$ pero $v_x\neq0$ y la aceleración sigue siendo $g$.</p></div>
+<div class="rcard"><h3><a href="tema_04_leyes_newton.html"><span>4</span>Leyes del movimiento de Newton</a></h3>
+<p>$\sum\vec F=m\vec a$: la velocidad solo cambia si la fuerza neta no es cero. Sin fuerza neta hay velocidad constante (no necesariamente reposo). Acción y reacción son iguales y opuestas.</p>
+<p class="ojo"><b>Ojo:</b> Acción y reacción actúan sobre cuerpos distintos: nunca aparecen juntas en un mismo DCL.</p></div>
+<div class="rcard"><h3><a href="tema_05_aplicacion_newton.html"><span>5</span>Aplicación de las leyes de Newton</a></h3>
+<p>Un método fijo: <b>DCL de cada cuerpo</b>, una ecuación por eje y una relación extra (fricción $f=\mu n$, misma $T$ en una cuerda ideal, $a_{rad}=v^2/R$).</p>
+<p class="ojo"><b>Ojo:</b> La normal no siempre vale $mg$; la fricción estática cumple $f_s\le\mu_sn$, no es igual.</p></div>
+<div class="rcard"><h3><a href="tema_06_trabajo_energia_cinetica.html"><span>6</span>Trabajo y energía cinética</a></h3>
+<p>El trabajo total sobre un cuerpo es lo que cambia su energía cinética: $W_{tot}=K_2-K_1$. Relaciona rapideces y distancias <b>sin tiempo ni aceleración</b> y vale también con fuerzas variables (resorte) y trayectorias curvas.</p>
+<p class="ojo"><b>Ojo:</b> El trabajo es un escalar con signo; una fuerza perpendicular al desplazamiento no hace trabajo.</p></div>
+<div class="rcard"><h3><a href="tema_07_energia_potencial.html"><span>7</span>Energía potencial y conservación de la energía</a></h3>
+<p>El trabajo del peso y del resorte se guarda como <b>energía potencial</b>. Se compara el estado inicial y el final: $K_1+U_1+W_{otras}=K_2+U_2$; sin «otras» fuerzas, $E=K+U$ se conserva.</p>
+<p class="ojo"><b>Ojo:</b> Fijar el nivel $U=0$ y no contar el peso a la vez como fuerza y como energía potencial.</p></div>
+<div class="rcard"><h3><a href="tema_08_momento_colisiones.html"><span>8</span>Cantidad de movimiento, impulso y colisiones</a></h3>
+<p>En choques y explosiones se conserva la <b>cantidad de movimiento total</b> $\vec P=\sum m\vec v$ (sin fuerzas externas). La energía cinética solo se conserva en el choque <b>elástico</b>; en el totalmente inelástico los cuerpos quedan unidos.</p>
+<p class="ojo"><b>Ojo:</b> $\vec p$ es un vector (signos por componentes); en un choque inelástico $K$ disminuye.</p></div>
+<div class="rcard"><h3><a href="tema_09_rotacion_cuerpos_rigidos.html"><span>9</span>Rotación de cuerpos rígidos</a></h3>
+<p>Con un eje fijo, $\theta$, $\omega$ y $\alpha$ obedecen las mismas ecuaciones que $x$, $v$ y $a$. Energía de giro $K=\tfrac12I\omega^2$ con $I=\sum mr^2$; un punto a distancia $r$ lleva $v=r\omega$.</p>
+<p class="ojo"><b>Ojo:</b> Usar $\omega$ en rad/s (no en rpm); $I$ depende del eje elegido (ejes paralelos: $I=I_{cm}+Md^2$).</p></div>
+<div class="rcard"><h3><a href="tema_10_dinamica_rotacion.html"><span>10</span>Dinámica del movimiento de rotación</a></h3>
+<p>$\tau=rF\sin\phi$ y $\sum\tau=I\alpha$ (la segunda ley del giro). Un cuerpo que rueda sin deslizar suma traslación y giro: $v_{cm}=R\omega$. Sin torca externa se conserva $L=I\omega$.</p>
+<p class="ojo"><b>Ojo:</b> La torca depende del eje y del brazo perpendicular; en la rodadura sin deslizar $v_{cm}=R\omega$ une las dos ecuaciones.</p></div>
+<div class="rcard"><h3><a href="tema_11_equilibrio_elasticidad.html"><span>11</span>Equilibrio y elasticidad</a></h3>
+<p>Equilibrio: $\sum\vec F=0$ y $\sum\vec\tau=0$ (no se traslada ni gira). Elasticidad: esfuerzo $=$ módulo $\times$ deformación (Young, volumétrico, cortante).</p>
+<p class="ojo"><b>Ojo:</b> Calcular las torcas respecto a un punto donde actúen fuerzas desconocidas: desaparecen del cálculo.</p></div>
+<div class="rcard"><h3><a href="tema_12_mecanica_fluidos.html"><span>12</span>Mecánica de fluidos</a></h3>
+<p>Fluido quieto: $p=p_0+\rho gh$, Pascal y Arquímedes (empuje $=$ peso del fluido desalojado). Fluido en movimiento: continuidad $A_1v_1=A_2v_2$ y Bernoulli $p+\rho gy+\tfrac12\rho v^2=$ cte.</p>
+<p class="ojo"><b>Ojo:</b> Usar la misma clase de presión (absoluta o manométrica) en los dos lados de Bernoulli.</p></div>
+<div class="rcard"><h3><a href="tema_13_gravitacion.html"><span>13</span>Gravitación</a></h3>
+<p>$F=Gm_1m_2/r^2$ con $U=-GMm/r$. Órbita circular $v=\sqrt{GM/r}$, escape $v=\sqrt{2GM/R}$, tercera ley $T^2\propto a^3$ y momento angular constante en una órbita.</p>
+<p class="ojo"><b>Ojo:</b> $r$ es la distancia al centro ($R+h$); $U\lt0$ y $E\lt0$ si el cuerpo está ligado.</p></div>
+<div class="rcard"><h3><a href="tema_14_movimiento_periodico.html"><span>14</span>Movimiento periódico</a></h3>
+<p>Si $F_x=-kx$ el cuerpo oscila con MAS: $x=A\cos(\omega t+\phi)$, $\omega=\sqrt{k/m}$ (muelle) o $\sqrt{g/L}$ (péndulo simple, ángulos pequeños). $E=\tfrac12kA^2$ y el periodo no depende de la amplitud.</p>
+<p class="ojo"><b>Ojo:</b> La velocidad es máxima en el equilibrio y la aceleración en los extremos; la fase va en radianes.</p></div>
+<div class="rcard"><h3><a href="tema_15_ondas_mecanicas.html"><span>15</span>Ondas mecánicas</a></h3>
+<p>Una onda es una perturbación que viaja: $y=A\cos(kx-\omega t)$, $v=\lambda f$; en una cuerda $v=\sqrt{F/\mu}$. Dos ondas que se cruzan dan una onda estacionaria con nodos y modos $f_n=nf_1$.</p>
+<p class="ojo"><b>Ojo:</b> El medio fija la rapidez y la fuente la frecuencia; no confundir $v$ de la onda con la de cada partícula.</p></div>
+<div class="rcard"><h3><a href="tema_16_sonido_oido.html"><span>16</span>Sonido y oído</a></h3>
+<p>Onda longitudinal de presión, $v=\sqrt{B/\rho}$. Intensidad y decibelios $\beta=(10\ \text{dB})\log(I/I_0)$, tubos abiertos y cerrados, pulsos ($f_a-f_b$) y efecto Doppler.</p>
+<p class="ojo"><b>Ojo:</b> Tubo cerrado: solo armónicos impares; los decibelios son logarítmicos (duplicar $I$ suma 3 dB).</p></div>
+<div class="rcard"><h3><a href="tema_17_temperatura_calor.html"><span>17</span>Temperatura y calor</a></h3>
+<p>Dilatación $\Delta L=\alpha L_0\Delta T$; calor $Q=mc\Delta T$ y $Q=mL$ en cambios de fase; mezclas $\sum Q=0$; ritmo de transmisión por conducción, convección y radiación.</p>
+<p class="ojo"><b>Ojo:</b> Kelvin para gases y radiación; durante un cambio de fase la temperatura no cambia.</p></div>
+<div class="rcard"><h3><a href="tema_18_propiedades_termicas_materia.html"><span>18</span>Propiedades térmicas de la materia</a></h3>
+<p>$pV=nRT$ liga presión, volumen, temperatura y moles. Teoría cinética: $K_{trans}=\tfrac32kT$ por molécula, $v_{rms}=\sqrt{3kT/m}$; $C_V=\tfrac32R$ (monoatómico) o $\tfrac52R$ (diatómico). Es el primer paso de los ciclos: la tabla de estados $p,V,T$.</p>
+<p class="ojo"><b>Ojo:</b> $T$ en kelvin y presión absoluta; $n$ en moles.</p></div>
+<div class="rcard"><h3><a href="tema_19_primera_ley_termodinamica.html"><span>19</span>Primera ley de la termodinámica</a></h3>
+<p>$\Delta U=Q-W$ con $W=\int p\,dV$ (área bajo la curva $pV$). En un gas ideal $\Delta U=nC_V\Delta T$ en cualquier proceso. Isóbaro, isócoro, isotermo ($\Delta U=0$) y adiabático ($Q=0$, $pV^{\gamma}=$ cte).</p>
+<p class="ojo"><b>Ojo:</b> $W$ es el que hace el gas (positivo al expandirse); en un ciclo completo $\Delta U=0$ y $W=Q_{neto}$.</p></div>
+<div class="rcard"><h3><a href="tema_20_segunda_ley_termodinamica.html"><span>20</span>Segunda ley de la termodinámica</a></h3>
+<p>Máquina: $e=W/Q_H=1-|Q_C|/Q_H$; refrigerador: $K=|Q_C|/|W|$. El ciclo de Carnot da el máximo, $e=1-T_C/T_H$. Entropía: $\Delta S=\int dQ/T$ (camino reversible) y la total nunca disminuye.</p>
+<p class="ojo"><b>Ojo:</b> En Carnot las temperaturas van en kelvin; ninguna máquina tiene $e=1$.</p></div>
+</div>
+
+<footer>Fórmulas tomadas de la chuleta de cada tema (fuente principal: U, Sears-Zemansky vol. 1). Página generada: se edita en cada tema.</footer>
+</main>
+</div>
+</body>
+</html>
