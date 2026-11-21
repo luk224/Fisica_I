@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem('tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física I · Ruta de estudio</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+<script defer src="../assets/busqueda.js"></script>
+<link rel="stylesheet" href="../assets/estudio.css">
+<script defer src="../assets/estudio.js"></script>
+<style>
+.ru .ctl{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:1em 0;font:15px var(--sans)}
+.ru input[type=number]{font:16px var(--sans);width:5em;padding:5px 8px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--fg)}
+.ru .pec{border:1px solid var(--bd);border-radius:12px;padding:6px 16px 12px;margin:1em 0;background:var(--card);font-family:var(--sans)}
+.ru .pec h2{margin:.5em 0 .1em;font-size:1.2rem}.ru .res{color:var(--mut);font-size:14.5px}
+.ru table{width:100%;border-collapse:collapse;font:14.5px/1.4 var(--sans);margin:.6em 0}
+.ru th,.ru td{padding:7px 8px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}
+.ru th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
+.ru tr.hecho td{opacity:.5;text-decoration:line-through}
+.ru .fuera{color:#b5701a}
+.ru .tag{font:700 11px var(--sans);padding:2px 8px;border-radius:99px;border:1px solid currentColor;margin-left:6px;white-space:nowrap}
+.ru .t1{color:var(--warn-b)}.ru .t2{color:#b5701a}.ru .t3{color:var(--mut)}
+@media(max-width:600px){.ru th,.ru td{padding:6px 4px;font-size:14px}.ru .tag{display:inline-block;margin:3px 0 0}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Índice de temas</a>
+  <span><button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+
+<div class="layout">
+<nav class="side-toc" aria-label="Índice del tema"><b>En esta página</b></nav>
+<main>
+
+<header class="hero">
+  <div class="kick">Ruta de estudio</div>
+  <h1>🗓️ Ruta de estudio hasta las PEC</h1>
+  <p>Dime cuántas horas por semana puedes dedicar y calculo qué temas te caben antes de cada PEC, empezando por los que más rinden en el examen (ver <a href="prioridades.html">prioridades</a>) y respetando lo que cada tema necesita antes. Marca lo que ya has estudiado y el plan se recalcula. Todo se guarda solo en este navegador.</p>
+</header>
+
+
+<div class="ru"><div class="ctl"><label>Horas por semana: <input type="number" id="hs" min="1" max="60" value="8"></label><span id="hoy"></span></div>
+<div id="out"></div>
+<p class="res">Las horas por tema son una estimación del camino mínimo (teoría condensada, ejercicios clave y exámenes) y las dependencias son orientativas. Cada PEC cierra a las 23:59 de la fecha indicada. La fecha del examen presencial la publica la UNED: lo que no quepa antes de la PEC 4 queda para el repaso final.</p></div>
+<script type="application/json" id="datos">{"temas": [{"n": 1, "nombre": "Unidades, cantidades físicas y vectores", "h": 2.0, "nivel": 3, "dep": [], "url": "tema_01_unidades_vectores.html"}, {"n": 2, "nombre": "Movimiento rectilíneo", "h": 3.0, "nivel": 1, "dep": [], "url": "tema_02_movimiento_rectilineo.html"}, {"n": 3, "nombre": "Movimiento en dos o en tres dimensiones", "h": 3.0, "nivel": 2, "dep": [1, 2], "url": "tema_03_movimiento_2d_3d.html"}, {"n": 4, "nombre": "Leyes del movimiento de Newton", "h": 2.0, "nivel": 2, "dep": [1], "url": "tema_04_leyes_newton.html"}, {"n": 5, "nombre": "Aplicación de las leyes de Newton", "h": 4.0, "nivel": 1, "dep": [3, 4], "url": "tema_05_aplicacion_newton.html"}, {"n": 6, "nombre": "Trabajo y energía cinética", "h": 6.5, "nivel": 2, "dep": [2, 4], "url": "tema_06_trabajo_energia_cinetica.html"}, {"n": 7, "nombre": "Energía potencial y conservación de la energía", "h": 5.5, "nivel": 1, "dep": [6], "url": "tema_07_energia_potencial.html"}, {"n": 8, "nombre": "Cantidad de movimiento, impulso y colisiones", "h": 6.0, "nivel": 1, "dep": [6], "url": "tema_08_momento_colisiones.html"}, {"n": 9, "nombre": "Rotación de cuerpos rígidos", "h": 3.0, "nivel": 3, "dep": [2], "url": "tema_09_rotacion_cuerpos_rigidos.html"}, {"n": 10, "nombre": "Dinámica del movimiento de rotación", "h": 6.0, "nivel": 1, "dep": [9, 6], "url": "tema_10_dinamica_rotacion.html"}, {"n": 11, "nombre": "Equilibrio y elasticidad", "h": 2.5, "nivel": 3, "dep": [10], "url": "tema_11_equilibrio_elasticidad.html"}, {"n": 12, "nombre": "Mecánica de fluidos", "h": 3.0, "nivel": 3, "dep": [4, 6], "url": "tema_12_mecanica_fluidos.html"}, {"n": 13, "nombre": "Gravitación", "h": 6.0, "nivel": 2, "dep": [7, 5], "url": "tema_13_gravitacion.html"}, {"n": 14, "nombre": "Movimiento periódico", "h": 6.5, "nivel": 2, "dep": [7, 3], "url": "tema_14_movimiento_periodico.html"}, {"n": 15, "nombre": "Ondas mecánicas", "h": 4.0, "nivel": 3, "dep": [14], "url": "tema_15_ondas_mecanicas.html"}, {"n": 16, "nombre": "Sonido y oído", "h": 4.5, "nivel": 3, "dep": [15], "url": "tema_16_sonido_oido.html"}, {"n": 17, "nombre": "Temperatura y calor", "h": 5.0, "nivel": 2, "dep": [], "url": "tema_17_temperatura_calor.html"}, {"n": 18, "nombre": "Propiedades térmicas de la materia", "h": 6.0, "nivel": 3, "dep": [17], "url": "tema_18_propiedades_termicas_materia.html"}, {"n": 19, "nombre": "Primera ley de la termodinámica", "h": 8.5, "nivel": 1, "dep": [18, 6], "url": "tema_19_primera_ley_termodinamica.html"}, {"n": 20, "nombre": "Segunda ley de la termodinámica", "h": 8.5, "nivel": 2, "dep": [19], "url": "tema_20_segunda_ley_termodinamica.html"}], "hitos": [{"nombre": "PEC 1 · temas 1-5", "fecha": "2026-11-02", "temas": [1, 2, 3, 4, 5]}, {"nombre": "PEC 2 · temas 6-11", "fecha": "2026-11-30", "temas": [6, 7, 8, 9, 10, 11]}, {"nombre": "PEC 3 · temas 12-16", "fecha": "2026-12-14", "temas": [12, 13, 14, 15, 16]}, {"nombre": "PEC 4 · temas 17-20", "fecha": "2027-01-18", "temas": [17, 18, 19, 20]}]}</script>
+<script>
+(function(){
+  var D=JSON.parse(document.getElementById('datos').textContent), KEY='ruta_fisica_v1', S={hs:8,hecho:{}};
+  try{var g=JSON.parse(localStorage.getItem(KEY));if(g){S.hs=g.hs||8;S.hecho=g.hecho||{}}}catch(e){}
+  function guarda(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+  var hs=document.getElementById('hs');hs.value=S.hs;
+  var por={};D.temas.forEach(function(t){por[t.n]=t});
+  var NOM=['','Imprescindible','Recomendado','Completo'];
+  function f(d){return d.toLocaleDateString('es-ES',{day:'numeric',month:'short'})}
+  function dias(a,b){return Math.round((b-a)/86400000)}
+  function fila(t,a,b,atras){var chk='<input type="checkbox" data-c="'+t.n+'"'+(S.hecho[t.n]?' checked':'')+' aria-label="Estudiado">';
+    return '<tr class="'+(S.hecho[t.n]?'hecho':'')+'"><td>'+chk+'</td><td><a href="'+t.url+'"><b>'+t.n+'</b> '+t.nombre+'</a><span class="tag t'+t.nivel+'">'+NOM[t.nivel]+'</span>'+(atras?'<span class="tag t3">pendiente de antes</span>':'')+'</td><td>'+(a?f(a)+' – '+f(b):'—')+'</td><td>'+String(t.h).replace('.',',')+' h</td></tr>'}
+  function lista(arr){return arr.map(function(t){return '<a href="'+t.url+'">'+t.n+'</a> <label><input type="checkbox" data-c="'+t.n+'"> ya lo he estudiado</label>'}).join(' · ')}
+  function pinta(){
+    var hoy=new Date();hoy.setHours(0,0,0,0);
+    document.getElementById('hoy').textContent='Hoy: '+hoy.toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+    var elegidos={}, ini=hoy, h='', acarreo=[];
+    D.hitos.forEach(function(hi){
+      var fin=new Date(hi.fecha+'T00:00:00');
+      var propios=D.temas.filter(function(t){return hi.temas.indexOf(t.n)>=0});
+      if(fin<hoy){
+        var pend=propios.filter(function(t){return !S.hecho[t.n]});
+        acarreo=acarreo.concat(pend);
+        h+='<div class="pec"><h2>'+hi.nombre+'</h2><p class="res">Ya ha pasado'+(pend.length?'; '+pend.length+' temas siguen sin marcar y se pasan al siguiente hito (también entran en el examen).':'.')+'</p></div>';return}
+      var grupo=propios.concat(acarreo.filter(function(t){return propios.indexOf(t)<0}));
+      var rest=grupo.filter(function(t){return !S.hecho[t.n]&&!elegidos[t.n]});
+      var cap=Math.max(0,dias(ini,fin)+1)/7*S.hs, usada=0, sel=[];
+      function mete(t){ if(elegidos[t.n]||S.hecho[t.n]||sel.indexOf(t)>=0) return;
+        (t.dep||[]).forEach(function(d){if(!S.hecho[d]&&!elegidos[d]&&grupo.indexOf(por[d])>=0)mete(por[d])});
+        if(usada+t.h<=cap+0.01&&sel.indexOf(t)<0){usada+=t.h;sel.push(t)} }
+      [propios,acarreo].forEach(function(origen){[1,2,3].forEach(function(nv){rest.filter(function(t){return t.nivel===nv&&origen.indexOf(t)>=0}).forEach(mete)})});
+      sel.sort(function(a,b){return a.n-b.n});
+      var ac=0, filas=sel.map(function(t){var a=new Date(ini.getTime()+ac/S.hs*7*86400000);ac+=t.h;var b=new Date(ini.getTime()+ac/S.hs*7*86400000-86400000);elegidos[t.n]=1;return fila(t,a,b,propios.indexOf(t)<0)});
+      var fuera=rest.filter(function(t){return !elegidos[t.n]}), total=rest.reduce(function(s,t){return s+t.h},0);
+      h+='<div class="pec"><h2>'+hi.nombre+' (cierra el '+f(fin)+')</h2><p class="res">Desde el '+f(ini)+' hay '+Math.max(0,dias(ini,fin)+1)+' días: caben ~<b>'+cap.toFixed(0)+' h</b> con '+S.hs+' h/semana; pendiente aquí: <b>'+total.toFixed(0)+' h</b>. '+
+        (fuera.length?'<span class="fuera">No cabe todo: se eligen primero los temas que más puntúan y los que hacen falta antes.</span>':'<b>Te da tiempo de todo.</b>')+'</p>';
+      h+='<table><thead><tr><th></th><th>Tema</th><th>Cuándo</th><th>Horas</th></tr></thead><tbody>'+filas.join('')+propios.filter(function(t){return S.hecho[t.n]}).map(function(t){return fila(t)}).join('')+'</tbody></table>';
+      if(fuera.length)h+='<p class="res"><b>Para después</b> (si sobra tiempo): '+lista(fuera)+'</p>';
+      h+='</div>'; ini=new Date(Math.max(ini.getTime(),fin.getTime()+86400000)); });
+    var sin=D.temas.filter(function(t){return !S.hecho[t.n]&&!elegidos[t.n]});
+    if(sin.length)h+='<div class="pec"><h2>Sin hueco antes de la última PEC</h2><p class="res">Faltan <b>'+sin.reduce(function(s,t){return s+t.h},0).toFixed(0)+' h</b> de estos temas, que son materia de examen: '+lista(sin)+'. Sube las horas por semana o déjalos para el repaso final.</p></div>';
+    document.getElementById('out').innerHTML=h}
+  hs.oninput=hs.onchange=function(){S.hs=Math.max(1,parseInt(hs.value,10)||8);guarda();pinta()};
+  document.getElementById('out').addEventListener('change',function(e){if(e.target.dataset.c){S.hecho[e.target.dataset.c]=e.target.checked;guarda();pinta()}});
+  pinta();
+})();
+</script>
+
+<footer>Página generada por herramientas/prioridades.py. Las PEC son voluntarias (15 % de la nota).</footer>
+</main>
+</div>
+</body>
+</html>

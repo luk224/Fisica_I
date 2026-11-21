@@ -71,7 +71,8 @@ Receta por tema NN (modelo: `contenido/tema_05/`): resumen de 5 minutos + tabla 
 - [ ] E2. Comprobar que la acción de GitHub (`.github/workflows/pruebas.yml`) pasa en verde y arreglarla si no.
 - [x] E3. Actualizar `index.html` (tarjetas y progreso) y el aviso de «11 de 20 secciones listas» si ya no es correcto. Hecho: quitado `data-p` de las tarjetas (el contador marcaba 11 de 20 con los 20 temas listos).
 - [ ] E4. Zona de entrenamiento (problemas con pistas, tests tipo PEC, simulacro cronometrado, cuaderno de errores) — diseñar antes con el usuario.
-- [ ] E6. Calendario de estudio hacia atrás desde las PEC (CLAUDE.md §2) y módulo 0 de matemáticas con diagnóstico.
+- [x] E6a. Calendario de estudio hacia atrás desde las PEC: `temas/ruta.html` y `temas/prioridades.html` (qué cae y cuánto cuesta, tres rutas), generados por `herramientas/prioridades.py`; el índice lleva «Cómo se aprueba».
+- [ ] E6b. Módulo 0 de matemáticas con diagnóstico.
 
 ## Notas para quien retome
 - Si un paso falla en las pruebas por una cita o un número, **arregla el contenido**, no la prueba (salvo que la prueba esté mal; el capítulo 20 de U llega hasta la p. 682, ya corregido).

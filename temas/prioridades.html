@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem('tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física I · Prioridades de estudio</title>
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+<script defer src="../assets/busqueda.js"></script>
+<link rel="stylesheet" href="../assets/estudio.css">
+<script defer src="../assets/estudio.js"></script>
+<style>
+.pr-tabla{width:100%;border-collapse:collapse;font:14px/1.35 var(--sans)}
+.pr-tabla th,.pr-tabla td{padding:7px 8px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--bd)}
+.pr-tabla th{font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+.pr-tabla td a{color:var(--fg);text-decoration:none}.pr-tabla td a:hover{color:var(--acc)}
+.pr-tabla td small{display:block;color:var(--mut);font-size:12px}
+.pr-tabla td.bar{position:relative;min-width:80px}
+.pr-tabla .fill{position:absolute;left:8px;top:50%;height:55%;transform:translateY(-50%);background:color-mix(in srgb,var(--acc) 26%,transparent);border-radius:4px}
+.pr-tabla .num{position:relative;font-weight:700}
+.pr-tabla td.herr{color:var(--mut)}
+.pr-tabla tfoot td{border-top:2px solid var(--bd)}
+.pr-tag{font:700 11.5px var(--sans);padding:2px 8px;border-radius:99px;border:1px solid currentColor;display:inline-block;white-space:nowrap}
+.pr-tag.t1{color:var(--warn-b)}.pr-tag.t2{color:#a06a00}.pr-tag.t3{color:var(--mut)}
+:root[data-theme="dark"] .pr-tag.t2{color:#e5b04a}
+.pr-rutas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:1em 0}
+.pr-ruta{border:1px solid var(--bd);border-radius:12px;padding:4px 14px 12px;background:var(--card);font-family:var(--sans);min-width:0}
+.pr-ruta h3{margin:.5em 0 .1em}.pr-ruta .big{font:800 1.4rem var(--sans);margin:.1em 0}
+.pr-ruta .big small{font:500 .8rem var(--sans);color:var(--mut);display:block}
+.pr-ruta .lst{color:var(--mut);font-size:.85rem;line-height:1.5;overflow-wrap:anywhere}
+.pr-nota{color:var(--mut);font:.85rem var(--sans)}
+.pr-ctl{display:flex;gap:8px;flex-wrap:wrap;margin:.8em 0}
+.pr-ctl button{font:600 .85rem var(--sans);background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:99px;padding:6px 14px;cursor:pointer}
+.pr-ctl button[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:#fff}
+.pr-barras{font-family:var(--sans)}
+.pr-barras .brow{display:grid;grid-template-columns:2.4em 1fr 3.6em;gap:8px;align-items:center;margin:4px 0;font-size:.85rem}
+.pr-barras .brow a{color:var(--acc);text-decoration:none;font-weight:700}
+.pr-barras .brow b{text-align:right}
+.pr-barras .bt{display:block;background:color-mix(in srgb,var(--fg) 8%,transparent);border-radius:4px;height:14px;overflow:hidden}
+.pr-barras .bt i{display:block;height:100%;border-radius:4px;background:var(--mut)}
+.pr-barras .bt i.t1{background:var(--warn-b)}.pr-barras .bt i.t2{background:#d59a00}
+@media(max-width:640px){.pr-tabla th.herr,.pr-tabla td.herr{display:none}.pr-tabla th,.pr-tabla td{padding:6px 4px}}
+@media print{.pr-ctl{display:none}.pr-barras .bt i,.pr-tabla .fill{background:#999!important}.pr-ruta,.pr-tabla tr{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Índice de temas</a>
+  <span><button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+
+<div class="layout">
+<nav class="side-toc" aria-label="Índice del tema"><b>En esta página</b></nav>
+<main>
+
+<header class="hero">
+  <div class="kick">Prioridades de estudio</div>
+  <h1>🎯 ¿Por dónde empiezo?</h1>
+  <p>No todos los temas «pagan» lo mismo en el examen: unos aparecen una y otra vez y otros casi nunca. Esta página cruza <b>cuánto ha caído</b> cada tema con <b>cuánto cuesta estudiarlo</b> y te propone tres rutas según el tiempo que tengas. Para convertirlas en un calendario, usa la <a href="ruta.html">ruta de estudio</a>.</p>
+</header>
+
+
+<div class="box warn"><span class="h">Léelo con cuidado</span>
+<p>Es <b>frecuencia histórica</b> de los exámenes finales, no una probabilidad de que algo caiga este año. Sirve para ordenar el esfuerzo, no para dejar temas sin ver: un tema con pocas preguntas puede ser requisito de otro que sí cae (las rutas incluyen los previos) y <b>las PEC (15 % de la nota) sí preguntan todos los temas de su módulo</b>, incluidos los que casi nunca caen en el examen. Los exámenes analizados son los 16 catalogados en el índice del proyecto: no son todos los que ha habido.</p></div>
+<h2 id="rutas">Tres rutas según tu tiempo</h2>
+<div class="pr-rutas"><div class="pr-ruta"><h3>🔴 Imprescindible</h3><p class="big">60,5 h <small>· 13 temas · 75,3 % de las preguntas</small></p><p>Los temas que más caen o mejor rinden por hora, más los previos que necesitan.</p><p class="lst"><b>Temas:</b> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 17, 18, 19</p></div><div class="pr-ruta"><h3>🟡 Recomendada</h3><p class="big">81,5 h <small>· 16 temas · 98,6 % de las preguntas</small></p><p>Lo anterior más los temas de frecuencia media.</p><p class="lst"><b>Temas:</b> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 17, 18, 19, 20</p></div><div class="pr-ruta"><h3>⚪ Completa</h3><p class="big">95,5 h <small>· 20 temas · 100,0 % de las preguntas</small></p><p>Todo el temario.</p><p class="lst"><b>Temas:</b> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20</p></div></div>
+<p class="pr-nota">Las horas de cada ruta incluyen los temas previos necesarios. Son <b>estimaciones mías</b> del camino mínimo de cada tema (teoría condensada, ejercicios clave y exámenes), para alguien que lo ve por primera vez; ajústalas a tu ritmo.</p>
+<h2 id="tabla">Tema a tema</h2>
+<div class="pr-ctl" role="group" aria-label="Ordenar la tabla">
+  <button type="button" data-o="i" aria-pressed="true">Orden del temario</button>
+  <button type="button" data-o="ex" aria-pressed="false">Más cae primero</button>
+  <button type="button" data-o="ratio" aria-pressed="false">Más rentable primero</button>
+</div>
+<table id="tp" class="pr-tabla">
+<thead><tr><th>Tema</th><th>Preguntas</th><th>% total</th><th>Horas</th><th>Prioridad</th><th class="herr" title="Preguntas de otro tema que usan este como herramienta (no suman al total)">Herram.</th></tr></thead>
+<tbody>
+<tr data-i="1" data-ex="0" data-ratio="0.000"><td><a href="tema_01_unidades_vectores.html"><b>1</b> Unidades, cantidades físicas y vectores</a></td><td class="bar"><span class="fill" style="width:0%"></span><span class="num">0</span></td><td>0,0 %</td><td>2</td><td><span class="pr-tag t3">⚪ Completa</span></td><td class="herr">—</td></tr>
+<tr data-i="2" data-ex="4" data-ratio="1.333"><td><a href="tema_02_movimiento_rectilineo.html"><b>2</b> Movimiento rectilíneo</a></td><td class="bar"><span class="fill" style="width:33%"></span><span class="num">4</span></td><td>5,5 %</td><td>3</td><td><span class="pr-tag t1">🔴 Imprescindible</span></td><td class="herr">—</td></tr>
+<tr data-i="3" data-ex="3" data-ratio="1.000"><td><a href="tema_03_movimiento_2d_3d.html"><b>3</b> Movimiento en dos o en tres dimensiones</a><small>Antes: 1, 2</small></td><td class="bar"><span class="fill" style="width:25%"></span><span class="num">3</span></td><td>4,1 %</td><td>3</td><td><span class="pr-tag t2">🟡 Recomendada</span></td><td class="herr">2</td></tr>
+<tr data-i="4" data-ex="0" data-ratio="0.000"><td><a href="tema_04_leyes_newton.html"><b>4</b> Leyes del movimiento de Newton</a><small>Antes: 1</small></td><td class="bar"><span class="fill" style="width:0%"></span><span class="num">0</span></td><td>0,0 %</td><td>2</td><td><span class="pr-tag t2">🟡 Recomendada</span></td><td class="herr">3</td></tr>
+<tr data-i="5" data-ex="5" data-ratio="1.250"><td><a href="tema_05_aplicacion_newton.html"><b>5</b> Aplicación de las leyes de Newton</a><small>Antes: 3, 4</small></td><td class="bar"><span class="fill" style="width:42%"></span><span class="num">5</span></td><td>6,8 %</td><td>4</td><td><span class="pr-tag t1">🔴 Imprescindible</span></td><td class="herr">—</td></tr>
+<tr data-i="6" data-ex="2" data-ratio="0.308"><td><a href="tema_06_trabajo_energia_cinetica.html"><b>6</b> Trabajo y energía cinética</a><small>Antes: 2, 4</small></td><td class="bar"><span class="fill" style="width:17%"></span><span class="num">2</span></td><td>2,7 %</td><td>6,5</td><td><span class="pr-tag t2">🟡 Recomendada</span></td><td class="herr">3</td></tr>
+<tr data-i="7" data-ex="7" data-ratio="1.273"><td><a href="tema_07_energia_potencial.html"><b>7</b> Energía potencial y conservación de la energía</a><small>Antes: 6</small></td><td class="bar"><span class="fill" style="width:58%"></span><span class="num">7</span></td><td>9,6 %</td><td>5,5</td><td><span class="pr-tag t1">🔴 Imprescindible</span></td><td class="herr">—</td></tr>
+<tr data-i="8" data-ex="9" data-ratio="1.500"><td><a href="tema_08_momento_colisiones.html"><b>8</b> Cantidad de movimiento, impulso y colisiones</a><small>Antes: 6</small></td><td class="bar"><span class="fill" style="width:75%"></span><span class="num">9</span></td><td>12,3 %</td><td>6</td><td><span class="pr-tag t1">🔴 Imprescindible</span></td><td class="herr">—</td></tr>
+<tr data-i="9" data-ex="0" data-ratio="0.000"><td><a href="tema_09_rotacion_cuerpos_rigidos.html"><b>9</b> Rotación de cuerpos rígidos</a><small>Antes: 2</small></td><td class="bar"><span class="fill" style="width:0%"></span><span class="num">0</span></td><td>0,0 %</td><td>3</td><td><span class="pr-tag t3">⚪ Completa</span></td><td class="herr">1</td></tr>
+<tr data-i="10" data-ex="10" data-ratio="1.667"><td><a href="tema_10_dinamica_rotacion.html"><b>10</b> Dinámica del movimiento de rotación</a><small>Antes: 9, 6</small></td><td class="bar"><span class="fill" style="width:83%"></span><span class="num">10</span></td><td>13,7 %</td><td>6</td><td><span class="pr-tag t1">🔴 Imprescindible</span></td><td class="herr">1</td></tr>
+<tr data-i="11" data-ex="0" data-ratio="0.000"><td><a href="tema_11_equilibrio_elasticidad.html"><b>11</b> Equilibrio y elasticidad</a><small>Antes: 10</small></td><td class="bar"><span class="fill" style="width:0%"></span><span class="num">0</span></td><td>0,0 %</td><td>2,5</td><td><span class="pr-tag t3">⚪ Completa</span></td><td class="herr">—</td></tr>
+<tr data-i="12" data-ex="0" data-ratio="0.000"><td><a href="tema_12_mecanica_fluidos.html"><b>12</b> Mecánica de fluidos</a><small>Antes: 4, 6</small></td><td class="bar"><span class="fill" style="width:0%"></span><span class="num">0</span></td><td>0,0 %</td><td>3</td><td><span class="pr-tag t3">⚪ Completa</span></td><td class="herr">—</td></tr>
+<tr data-i="13" data-ex="5" data-ratio="0.833"><td><a href="tema_13_gravitacion.html"><b>13</b> Gravitación</a><small>Antes: 7, 5</small></td><td class="bar"><span class="fill" style="width:42%"></span><span class="num">5</span></td><td>6,8 %</td><td>6</td><td><span class="pr-tag t2">🟡 Recomendada</span></td><td class="herr">1</td></tr>
+<tr data-i="14" data-ex="6" data-ratio="0.923"><td><a href="tema_14_movimiento_periodico.html"><b>14</b> Movimiento periódico</a><small>Antes: 7, 3</small></td><td class="bar"><span class="fill" style="width:50%"></span><span class="num">6</span></td><td>8,2 %</td><td>6,5</td><td><span class="pr-tag t2">🟡 Recomendada</span></td><td class="herr">2</td></tr>
+<tr data-i="15" data-ex="1" data-ratio="0.250"><td><a href="tema_15_ondas_mecanicas.html"><b>15</b> Ondas mecánicas</a><small>Antes: 14</small></td><td class="bar"><span class="fill" style="width:8%"></span><span class="num">1</span></td><td>1,4 %</td><td>4</td><td><span class="pr-tag t3">⚪ Completa</span></td><td class="herr">—</td></tr>
+<tr data-i="16" data-ex="0" data-ratio="0.000"><td><a href="tema_16_sonido_oido.html"><b>16</b> Sonido y oído</a><small>Antes: 15</small></td><td class="bar"><span class="fill" style="width:0%"></span><span class="num">0</span></td><td>0,0 %</td><td>4,5</td><td><span class="pr-tag t3">⚪ Completa</span></td><td class="herr">—</td></tr>
+<tr data-i="17" data-ex="3" data-ratio="0.600"><td><a href="tema_17_temperatura_calor.html"><b>17</b> Temperatura y calor</a></td><td class="bar"><span class="fill" style="width:25%"></span><span class="num">3</span></td><td>4,1 %</td><td>5</td><td><span class="pr-tag t2">🟡 Recomendada</span></td><td class="herr">—</td></tr>
+<tr data-i="18" data-ex="0" data-ratio="0.000"><td><a href="tema_18_propiedades_termicas_materia.html"><b>18</b> Propiedades térmicas de la materia</a><small>Antes: 17</small></td><td class="bar"><span class="fill" style="width:0%"></span><span class="num">0</span></td><td>0,0 %</td><td>6</td><td><span class="pr-tag t3">⚪ Completa</span></td><td class="herr">—</td></tr>
+<tr data-i="19" data-ex="12" data-ratio="1.412"><td><a href="tema_19_primera_ley_termodinamica.html"><b>19</b> Primera ley de la termodinámica</a><small>Antes: 18, 6</small></td><td class="bar"><span class="fill" style="width:100%"></span><span class="num">12</span></td><td>16,4 %</td><td>8,5</td><td><span class="pr-tag t1">🔴 Imprescindible</span></td><td class="herr">1</td></tr>
+<tr data-i="20" data-ex="6" data-ratio="0.706"><td><a href="tema_20_segunda_ley_termodinamica.html"><b>20</b> Segunda ley de la termodinámica</a><small>Antes: 19</small></td><td class="bar"><span class="fill" style="width:50%"></span><span class="num">6</span></td><td>8,2 %</td><td>8,5</td><td><span class="pr-tag t2">🟡 Recomendada</span></td><td class="herr">6</td></tr>
+</tbody>
+<tfoot><tr><td><b>Total</b></td><td><b>73</b></td><td>100 %</td><td><b>95,5</b></td><td></td><td class="herr"></td></tr></tfoot>
+</table>
+<h2 id="barras">Qué parte del examen es cada tema</h2>
+<div class="pr-barras"><div class="brow"><a href="tema_19_primera_ley_termodinamica.html">19</a><span class="bt"><i class="t1" style="width:100%"></i></span><b>16,4 %</b></div><div class="brow"><a href="tema_10_dinamica_rotacion.html">10</a><span class="bt"><i class="t1" style="width:83%"></i></span><b>13,7 %</b></div><div class="brow"><a href="tema_08_momento_colisiones.html">8</a><span class="bt"><i class="t1" style="width:75%"></i></span><b>12,3 %</b></div><div class="brow"><a href="tema_07_energia_potencial.html">7</a><span class="bt"><i class="t1" style="width:58%"></i></span><b>9,6 %</b></div><div class="brow"><a href="tema_14_movimiento_periodico.html">14</a><span class="bt"><i class="t2" style="width:50%"></i></span><b>8,2 %</b></div><div class="brow"><a href="tema_20_segunda_ley_termodinamica.html">20</a><span class="bt"><i class="t2" style="width:50%"></i></span><b>8,2 %</b></div><div class="brow"><a href="tema_05_aplicacion_newton.html">5</a><span class="bt"><i class="t1" style="width:42%"></i></span><b>6,8 %</b></div><div class="brow"><a href="tema_13_gravitacion.html">13</a><span class="bt"><i class="t2" style="width:42%"></i></span><b>6,8 %</b></div><div class="brow"><a href="tema_02_movimiento_rectilineo.html">2</a><span class="bt"><i class="t1" style="width:33%"></i></span><b>5,5 %</b></div><div class="brow"><a href="tema_03_movimiento_2d_3d.html">3</a><span class="bt"><i class="t2" style="width:25%"></i></span><b>4,1 %</b></div><div class="brow"><a href="tema_17_temperatura_calor.html">17</a><span class="bt"><i class="t2" style="width:25%"></i></span><b>4,1 %</b></div><div class="brow"><a href="tema_06_trabajo_energia_cinetica.html">6</a><span class="bt"><i class="t2" style="width:17%"></i></span><b>2,7 %</b></div><div class="brow"><a href="tema_15_ondas_mecanicas.html">15</a><span class="bt"><i class="t3" style="width:8%"></i></span><b>1,4 %</b></div><div class="brow"><a href="tema_01_unidades_vectores.html">1</a><span class="bt"><i class="t3" style="width:0%"></i></span><b>0,0 %</b></div><div class="brow"><a href="tema_04_leyes_newton.html">4</a><span class="bt"><i class="t2" style="width:0%"></i></span><b>0,0 %</b></div><div class="brow"><a href="tema_09_rotacion_cuerpos_rigidos.html">9</a><span class="bt"><i class="t3" style="width:0%"></i></span><b>0,0 %</b></div><div class="brow"><a href="tema_11_equilibrio_elasticidad.html">11</a><span class="bt"><i class="t3" style="width:0%"></i></span><b>0,0 %</b></div><div class="brow"><a href="tema_12_mecanica_fluidos.html">12</a><span class="bt"><i class="t3" style="width:0%"></i></span><b>0,0 %</b></div><div class="brow"><a href="tema_16_sonido_oido.html">16</a><span class="bt"><i class="t3" style="width:0%"></i></span><b>0,0 %</b></div><div class="brow"><a href="tema_18_propiedades_termicas_materia.html">18</a><span class="bt"><i class="t3" style="width:0%"></i></span><b>0,0 %</b></div></div>
+<h2 id="niveles">Cómo leer los niveles</h2>
+<ul>
+<li>🔴 <b>Imprescindible</b> (temas 2, 5, 7, 8, 10, 19): al menos el 9 % de las preguntas contadas o 1,25 preguntas por hora de estudio. Aquí se gana o se pierde el aprobado.</li>
+<li>🟡 <b>Recomendada</b> (temas 3, 4, 6, 13, 14, 17, 20): al menos el 4 % de las preguntas, 0,8 preguntas por hora o tres apariciones como herramienta en otros temas.</li>
+<li>⚪ <b>Completa</b> (temas 1, 9, 11, 12, 15, 16, 18): casi no caen en estos exámenes, pero siguen siendo materia (sin ninguna pregunta contada: 1, 4, 9, 11, 12, 16, 18) y entran en las PEC.</li>
+</ul>
+<h2 id="metodo">Cómo se ha calculado</h2>
+<div class="box tip"><span class="h">Método y límites</span>
+<ul>
+<li><b>Cuánto cae.</b> Una entrada del índice de exámenes es una pregunta; cuenta en el tema de su sección (73 en total). Las que el índice marca como secundarias o referencias cruzadas suman solo en «Herram.».</li>
+<li><b>Cuánto cuesta.</b> Estimación automática del camino mínimo: el 40 % de la teoría de la página a 45 palabras por minuto, el 30 % de los ejercicios a 20 minutos cada uno y cada examen a 15 minutos, redondeada a media hora. Es una estimación, no una medida.</li>
+<li><b>Dependencias.</b> Orientativas (criterio del autor, no del libro), en <code>contenido/prioridades.json</code>.</li>
+<li><b>Regenerar.</b> <code>python3 herramientas/prioridades.py</code> (lo hace <code>construir.py</code>).</li>
+</ul></div>
+<script>
+(function(){
+  var tb=document.querySelector('#tp tbody'),rows=[].slice.call(tb.rows);
+  document.querySelectorAll('.pr-ctl button').forEach(function(b){b.addEventListener('click',function(){
+    var o=b.dataset.o;document.querySelectorAll('.pr-ctl button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    rows.slice().sort(function(a,c){return o==='i'?a.dataset.i-c.dataset.i:c.dataset[o]-a.dataset[o]||a.dataset.i-c.dataset.i}).forEach(function(r){tb.appendChild(r)});
+  })});
+})();
+</script>
+
+<footer>Datos: índice de exámenes del proyecto y volumen de cada tema. Página generada por herramientas/prioridades.py.</footer>
+</main>
+</div>
+</body>
+</html>

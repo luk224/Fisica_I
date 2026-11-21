@@ -9,6 +9,8 @@ import json
 import pathlib
 import re
 
+from pagina_extra import pagina
+
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 CONT = RAIZ / 'contenido'
 BLOQUES = [('Mecánica', range(1, 14), 'Temas 1-13'), ('Oscilaciones y ondas', range(14, 17), 'Temas 14-16'),
@@ -77,15 +79,10 @@ def generar():
             '  <p>Todas las fórmulas del curso organizadas por tema: primero lo imprescindible con <b>cuándo se usa</b> cada una, y debajo la chuleta completa. '
             'Al final, un resumen de una página con la idea de cada tema.</p>\n'
             f'  <div class="chips">{chips}<span><a href="#cte">Constantes</a></span><span><a href="#resumen">Resumen final</a></span></div>\n</header>\n')
-    pl = leer(CONT / 'plantilla_pagina.html')
-    pl = pl.replace('<button id="btn-sol" type="button">Mostrar soluciones</button> ', '')
-    pl = pl.replace('<script defer src="../assets/figuras.js"></script>\n', '').replace('<link rel="stylesheet" href="../assets/interactivos.css">\n', '')
-    pl = pl.replace('<script defer src="../assets/interactivos.js"></script>\n', '').replace('</head>', f'<style>{CSS}</style>\n</head>')
-    html = (pl.replace('{{titulo_pagina}}', 'Física I · Formulario y resumen').replace('{{hero}}', hero).replace('{{cuerpo}}', ''.join(cuerpo))
-              .replace('{{pie}}', 'Fórmulas tomadas de la chuleta de cada tema (fuente principal: U, Sears-Zemansky vol. 1). Página generada: se edita en cada tema.'))
-    destino = RAIZ / 'temas' / 'formulario.html'
-    destino.write_text(html, encoding='utf8')
-    return destino
+    return pagina('Física I · Formulario y resumen', hero, ''.join(cuerpo),
+                  'Fórmulas tomadas de la chuleta de cada tema (fuente principal: U, Sears-Zemansky vol. 1). Página generada: se edita en cada tema.',
+                  'formulario.html', CSS)
+
 
 
 if __name__ == '__main__':
