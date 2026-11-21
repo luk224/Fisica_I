@@ -83,6 +83,23 @@
       window.addEventListener('afterprint', function () { d.documentElement.classList.remove('print-color'); });
       bt.parentNode.insertBefore(bc, bt); bt.parentNode.insertBefore(d.createTextNode(' '), bt);
     }
+    /* Fuentes (U/E/X/P junto a cada párrafo, leyenda, tabla final): ocultas por defecto; el botón las muestra y se recuerda */
+    d.querySelectorAll('.chips span').forEach(function (c) { if (/Libro oficial|solucionario/i.test(c.textContent)) c.classList.add('fuente-chip'); });
+    var bt2 = d.getElementById('btn-tema');
+    if (bt2 && d.querySelector('main .src')) {
+      var bf = d.createElement('button'); bf.id = 'btn-fuentes'; bf.type = 'button';
+      function setF(v, guarda) {
+        d.documentElement.classList.toggle('con-fuentes', v); bf.setAttribute('aria-pressed', v ? 'true' : 'false');
+        bf.textContent = v ? 'Ocultar fuentes' : 'Mostrar fuentes';
+        if (guarda) { try { localStorage.setItem('fuentes', v ? '1' : '0'); } catch (e) {} }
+        if (window.aplicaVistas) window.aplicaVistas();
+      }
+      bf.title = 'Muestra u oculta la fuente (libro, solucionario, examen) de cada párrafo';
+      bf.addEventListener('click', function () { setF(!d.documentElement.classList.contains('con-fuentes'), true); });
+      bt2.parentNode.insertBefore(bf, bt2); bt2.parentNode.insertBefore(d.createTextNode(' '), bt2);
+      var v0 = false; try { v0 = localStorage.getItem('fuentes') === '1'; } catch (e) {}
+      setF(v0, false);
+    }
     var btn = d.getElementById('btn-tema');
     if (btn) btn.addEventListener('click', function () {
       var r = d.documentElement, cur = r.getAttribute('data-theme');

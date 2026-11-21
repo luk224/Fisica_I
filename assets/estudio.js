@@ -86,6 +86,7 @@
         vista = 'todo'; esencial = false; guarda(); aplica(); setTimeout(function () { t.scrollIntoView(); }, 30);
       }
     }
+    window.aplicaVistas = aplica;
     aplica(); alcanza(); window.addEventListener('hashchange', alcanza);
     d.addEventListener('click', function (e) {
       var a = e.target.closest('a[href^="#"]'); if (!a || bar.contains(a)) return;

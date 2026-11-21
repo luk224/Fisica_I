@@ -213,3 +213,16 @@ figure.bookfig img{max-width:100%!important;height:auto;background:#fff;border-r
   html.print-color thead th,html.print-color tr:first-child>th{background:color-mix(in srgb,var(--fg) 8%,transparent);color:var(--mut)}
   html.print-color figcaption{color:var(--mut)}
 }
+
+/* Fuentes ocultas por defecto (el botón «Mostrar fuentes» de resumen.js añade html.con-fuentes) */
+@media screen{
+  html:not(.con-fuentes) main .src:not(#panel-fuentes .src),
+  html:not(.con-fuentes) .legend,
+  html:not(.con-fuentes) .chips span.fuente-chip,
+  html:not(.con-fuentes) details.fuentes-toggle,
+  html:not(.con-fuentes) h2#fuentes,
+  html:not(.con-fuentes) #panel-fuentes,
+  html:not(.con-fuentes) .side-toc a[href="#fuentes"],
+  html:not(.con-fuentes) .mnav-list a[href="#fuentes"]{display:none}
+}
+#btn-fuentes[aria-pressed="true"]{border-color:var(--acc);color:var(--acc)}
