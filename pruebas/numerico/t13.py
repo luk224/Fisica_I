@@ -303,3 +303,8 @@ def comprobaciones(c):
     c('x6', 'E/kg desde Tierra (MJ)', abs(UT - (-G * mT / RT - G * ML / (d - RT))) / 1e6, 0)
     c('x6', 'E/kg desde Luna (MJ)', abs(UT - (-G * ML / RL - G * mT / (d - RL))) / 1e6, 1)
     c('x6', 'v_p/v_a', (1 + 0.017) / (1 - 0.017), 3)
+    # ---- D9: errores
+    c('pagina', 'error 1: h del fallo (1e7)', (10 ** 0.5) * RT / 1e7, 2); c('pagina', 'error 1: h (1e7)', (10 ** 0.5 - 1) * RT / 1e7, 2)
+    c('pagina', 'error 2: v del fallo (1e4)', sp.sqrt(G * mT / 8.9e5) / 1e4, 1); c('pagina', 'error 2: v (1e3)', sp.sqrt(G * mT / 7.26e6) / 1e3, 2)
+    c('pagina', 'error 3: v del fallo (1e3)', sp.sqrt(G * 6.42e23 / 3.39e6) / 1e3, 2); c('pagina', 'error 3: v (1e3)', sp.sqrt(2 * G * 6.42e23 / 3.39e6) / 1e3, 2)
+    c('pagina', 'error 4: g_ec', 3.727 - 0.0171, 3); c('pagina', 'error 4: del fallo', 3.727 + 0.0171, 3)
