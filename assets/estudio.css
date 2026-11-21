@@ -57,3 +57,18 @@ ul.checklist input{margin-right:.5em}
 details.pista>summary{color:var(--acc)}
 details.pasos>summary{color:var(--fg)}
 .previa{border-left:4px solid var(--acc);background:var(--tint);border-radius:0 8px 8px 0;padding:8px 12px;margin:.8em 0;font:15px var(--sans)}
+
+/* Vistas del tema (solo en pantalla; al imprimir sale todo). Las pone assets/estudio.js. */
+.vistas{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:1em 0 0;font-family:var(--sans)}
+.vistas button{font:600 13.5px var(--sans);background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:99px;padding:6px 14px;cursor:pointer}
+.vistas button[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:#fff}
+.vistas .ves{margin-left:auto;font:600 13.5px var(--sans);color:var(--mut);display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+@media screen{
+  body.v-teoria [data-vg="dec"],body.v-teoria [data-vg="ejer"]{display:none}
+  body.v-ejercicios [data-vg="intro"],body.v-ejercicios [data-vg="teo"],body.v-ejercicios [data-vg="cierre"]{display:none}
+  body.v-examen [data-vg="intro"],body.v-examen [data-vg="dec"],body.v-examen [data-vg="teo"],body.v-examen [data-vg="cierre"]{display:none}
+  body.v-examen [data-vg="ejer"]:not([data-examen]):not(h2){display:none}
+  body.solo-esencial [data-extra]{display:none}
+  .vh,.side-toc a[hidden],.mnav-list a[hidden]{display:none!important}
+}
+@media print{.vistas{display:none}}

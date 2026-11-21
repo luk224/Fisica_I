@@ -6,12 +6,10 @@ Datos:
   - `fuentes_txt/examenes_por_tema.md`: una entrada = una pregunta de examen. Cuenta en el tema de su sección, salvo las marcadas
     «(secundario)», «referencia cruzada» o «principal Tema N» (esas suman como «herramienta»); «(secundario: Tema N…)» dentro de una entrada
     suma como herramienta en el tema N.
-  - horas: estimación propia del «camino mínimo» (teoría condensada + ejercicios clave + exámenes) a partir del volumen de cada tema
-    (palabras de la página, nº de ejercicios y de exámenes); se pueden corregir a mano en `contenido/prioridades.json` («horas»).
+  - horas: las de la «ruta rápida» del chip ⏱ de cada tema (`tema.json`); se pueden corregir en `contenido/prioridades.json` («horas»).
   - dependencias y fechas de las PEC: `contenido/prioridades.json`.
 """
 import collections
-import glob
 import html
 import json
 import pathlib
@@ -80,15 +78,12 @@ def leer_examenes():
     return prin, herr
 
 
-def estimar_horas(n, t, x):
-    """Camino mínimo: ~40 % de la teoría a 45 palabras/min, ~30 % de los ejercicios a 20 min y cada examen a 15 min."""
-    s = (RAIZ / t['archivo']).read_text(encoding='utf8') if (RAIZ / t['archivo']).exists() else (RAIZ / 'temas' / pathlib.Path(t['archivo']).name).read_text(encoding='utf8')
-    s = re.sub(r'<(svg|script|style)\b.*?</\1>', '', s, flags=re.S)
-    s = re.sub(r'\$\$?.*?\$\$?', '', s, flags=re.S)
-    palabras = len(re.sub(r'<[^>]+>', ' ', s).split())
-    ej = len(glob.glob(str(CONT / f'tema_{n:02d}' / 'ejercicios' / '*.json')))
-    h = 0.4 * palabras / 45 / 60 + 0.3 * ej * 20 / 60 + x * 15 / 60
-    return max(1.5, round(h * 2) / 2)
+def horas_tema(n, t):
+    """Horas de la «ruta rápida» del chip ⏱ de la cabecera del tema (`tema.json`)."""
+    m = re.search(r'ruta rápida ~(\d+(?:,\d+)?) h', (CONT / f'tema_{n:02d}' / 'tema.json').read_text(encoding='utf8'))
+    if not m:
+        raise SystemExit(f'tema {n}: falta el chip «ruta rápida ~N h» en tema.json')
+    return float(m.group(1).replace(',', '.'))
 
 
 def fh(x):
@@ -100,10 +95,10 @@ def pc(x):
 
 
 def nivel(r):
-    """🔴 ≥ 9 % de las preguntas o ≥ 1,25 preguntas/hora; 🟡 ≥ 4 %, ≥ 0,8 preguntas/hora o ≥ 3 apariciones como herramienta; ⚪ el resto."""
-    if r['pct'] >= 9 or r['ratio'] >= 1.25:
+    """🔴 ≥ 9 % de las preguntas o ≥ 2 preguntas/hora; 🟡 ≥ 4 % o ≥ 3 apariciones como herramienta; ⚪ el resto."""
+    if r['pct'] >= 9 or r['ratio'] >= 2:
         return 1
-    if r['pct'] >= 4 or r['ratio'] >= 0.8 or r['herr'] >= 3:
+    if r['pct'] >= 4 or r['herr'] >= 3:
         return 2
     return 3
 
@@ -114,8 +109,7 @@ def cargar():
     filas = []
     for n in range(1, 21):
         t = json.loads((CONT / f'tema_{n:02d}' / 'tema.json').read_text(encoding='utf8'))
-        x = len(glob.glob(str(CONT / f'tema_{n:02d}' / 'ejercicios' / 'x*.json')))
-        h = DATOS['horas'].get(str(n)) or estimar_horas(n, t, x)
+        h = DATOS['horas'].get(str(n)) or horas_tema(n, t)
         r = dict(n=n, nombre=t['titulo'], url=pathlib.Path(t['archivo']).name, h=h, ex=prin.get(n, 0), herr=herr.get(n, 0), dep=DEP.get(n, []))
         r['pct'] = 100 * r['ex'] / tot
         r['ratio'] = r['ex'] / h
@@ -169,7 +163,7 @@ def pagina_prioridades(filas, tot):
 <p>Es <b>frecuencia histórica</b> de los exámenes finales, no una probabilidad de que algo caiga este año. Sirve para ordenar el esfuerzo, no para dejar temas sin ver: un tema con pocas preguntas puede ser requisito de otro que sí cae (las rutas incluyen los previos) y <b>las PEC (15 % de la nota) sí preguntan todos los temas de su módulo</b>, incluidos los que casi nunca caen en el examen. Los exámenes analizados son los 16 catalogados en el índice del proyecto: no son todos los que ha habido.</p></div>
 <h2 id="rutas">Tres rutas según tu tiempo</h2>
 <div class="pr-rutas">{cards}</div>
-<p class="pr-nota">Las horas de cada ruta incluyen los temas previos necesarios. Son <b>estimaciones mías</b> del camino mínimo de cada tema (teoría condensada, ejercicios clave y exámenes), para alguien que lo ve por primera vez; ajústalas a tu ritmo.</p>
+<p class="pr-nota">Las horas de cada ruta incluyen los temas previos necesarios. Son las de la <b>ruta rápida</b> de cada tema (chip ⏱ de su cabecera: lo esencial, los ejercicios clave y los exámenes), pensada para quien lo ve por primera vez; la «completa» tarda casi el doble. Ajústalas a tu ritmo.</p>
 <h2 id="tabla">Tema a tema</h2>
 <div class="pr-ctl" role="group" aria-label="Ordenar la tabla">
   <button type="button" data-o="i" aria-pressed="true">Orden del temario</button>
@@ -187,15 +181,15 @@ def pagina_prioridades(filas, tot):
 <div class="pr-barras">{barras}</div>
 <h2 id="niveles">Cómo leer los niveles</h2>
 <ul>
-<li>🔴 <b>Imprescindible</b> (temas {", ".join(nn[1])}): al menos el 9 % de las preguntas contadas o 1,25 preguntas por hora de estudio. Aquí se gana o se pierde el aprobado.</li>
-<li>🟡 <b>Recomendada</b> (temas {", ".join(nn[2])}): al menos el 4 % de las preguntas, 0,8 preguntas por hora o tres apariciones como herramienta en otros temas.</li>
+<li>🔴 <b>Imprescindible</b> (temas {", ".join(nn[1])}): al menos el 9 % de las preguntas contadas o 2 preguntas por hora de estudio. Aquí se gana o se pierde el aprobado.</li>
+<li>🟡 <b>Recomendada</b> (temas {", ".join(nn[2])}): al menos el 4 % de las preguntas o tres apariciones como herramienta en otros temas.</li>
 <li>⚪ <b>Completa</b> (temas {", ".join(nn[3])}): casi no caen en estos exámenes, pero siguen siendo materia{(" (sin ninguna pregunta contada: " + ", ".join(cero) + ")") if cero else ""} y entran en las PEC.</li>
 </ul>
 <h2 id="metodo">Cómo se ha calculado</h2>
 <div class="box tip"><span class="h">Método y límites</span>
 <ul>
 <li><b>Cuánto cae.</b> Una entrada del índice de exámenes es una pregunta; cuenta en el tema de su sección ({tot} en total). Las que el índice marca como secundarias o referencias cruzadas suman solo en «Herram.».</li>
-<li><b>Cuánto cuesta.</b> Estimación automática del camino mínimo: el 40 % de la teoría de la página a 45 palabras por minuto, el 30 % de los ejercicios a 20 minutos cada uno y cada examen a 15 minutos, redondeada a media hora. Es una estimación, no una medida.</li>
+<li><b>Cuánto cuesta.</b> Las horas de la «ruta rápida» del chip ⏱ de la cabecera de cada tema: son estimaciones, no mediciones.</li>
 <li><b>Dependencias.</b> Orientativas (criterio del autor, no del libro), en <code>contenido/prioridades.json</code>.</li>
 <li><b>Regenerar.</b> <code>python3 herramientas/prioridades.py</code> (lo hace <code>construir.py</code>).</li>
 </ul></div>
@@ -284,7 +278,7 @@ def pagina_ruta(filas):
             '  <p>Dime cuántas horas por semana puedes dedicar y calculo qué temas te caben antes de cada PEC, empezando por los que más rinden en el examen (ver <a href="prioridades.html">prioridades</a>) '
             'y respetando lo que cada tema necesita antes. Marca lo que ya has estudiado y el plan se recalcula. Todo se guarda solo en este navegador.</p>\n</header>\n')
     cuerpo = ('<div class="ru"><div class="ctl"><label>Horas por semana: <input type="number" id="hs" min="1" max="60" value="8"></label><span id="hoy"></span></div>\n<div id="out"></div>\n'
-              '<p class="res">Las horas por tema son una estimación del camino mínimo (teoría condensada, ejercicios clave y exámenes) y las dependencias son orientativas. '
+              '<p class="res">Las horas por tema son las de la «ruta rápida» de cada tema (estimaciones) y las dependencias son orientativas. '
               'Cada PEC cierra a las 23:59 de la fecha indicada. La fecha del examen presencial la publica la UNED: lo que no quepa antes de la PEC 4 queda para el repaso final.</p></div>\n'
               f'<script type="application/json" id="datos">{datos}</script>\n<script>{RUTA_JS}</script>\n')
     pagina('Física I · Ruta de estudio', hero, cuerpo, 'Página generada por herramientas/prioridades.py. Las PEC son voluntarias (15 % de la nota).', 'ruta.html', RUTA_CSS)
