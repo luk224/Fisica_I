@@ -33,6 +33,8 @@ Cada entrada indica el tema principal y, si aplica, un tema secundario entre par
 ## Tema 6 — Trabajo y energía cinética
 - **[Febrero 2023, 1ª semana]** (archivo: E689010160-23F1.pdf) — P-3 Teoría Opción A: "Energía cinética y el teorema trabajo-energía" + cuestiones sobre signo del trabajo total.
 - **[Febrero 2023, 2ª semana]** (archivo: E689010160-23F2.pdf) — P-1 (secundario): cálculo de velocidad y trabajo mediante teorema trabajo-energía en bloque contra pared (principal Tema 5).
+- **[Septiembre 2022]** (sólo en recopilatorios) — P-3 (a): cuestión «¿por qué no cambia el módulo de la velocidad de una partícula en movimiento circular uniforme, pese a que sobre ella actúa siempre una fuerza neta?» (trabajo nulo de la fuerza centrípeta).
+- **[Septiembre 2022]** (sólo en recopilatorios; referencia cruzada, tema principal 20) — P-2 (e): máquina de Carnot que absorbe 400 J por ciclo con eficiencia térmica del 23 %; ¿qué masa de agua puede bombear desde un pozo de 20 m por cada ciclo? (trabajo útil $W=eQ_H$ y $W=mgh$).
 
 ## Tema 7 — Energía potencial y conservación de la energía
 - **[Febrero 2020, 2ª semana]** (archivo: E689010160-20F2.pdf) — P-1: bloque que desliza por un carril con fricción en un tramo y comprime un resorte al final; hallar el coeficiente de rozamiento dinámico.
