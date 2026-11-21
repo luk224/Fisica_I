@@ -22,6 +22,7 @@ def main():
         correr(H / 'tema_datos.py', 'generar', int(d.name.split('_')[1]))
     correr(H / 'formulario.py')
     correr(H / 'prioridades.py')
+    correr(H / 'practica.py')
     correr(H / 'construir_busqueda.py')
     correr(H / 'exportar_anki.py')
     correr(H / 'generar_cambios.py')

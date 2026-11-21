@@ -71,6 +71,7 @@ Receta por tema NN (modelo: `contenido/tema_05/`): resumen de 5 minutos + tabla 
 - [ ] E2. Comprobar que la acción de GitHub (`.github/workflows/pruebas.yml`) pasa en verde y arreglarla si no.
 - [x] E3. Actualizar `index.html` (tarjetas y progreso) y el aviso de «11 de 20 secciones listas» si ya no es correcto. Hecho: quitado `data-p` de las tarjetas (el contador marcaba 11 de 20 con los 20 temas listos).
 - [ ] E4. Zona de entrenamiento (problemas con pistas, tests tipo PEC, simulacro cronometrado, cuaderno de errores) — diseñar antes con el usuario.
+- [x] E4a. Práctica al azar con diagnóstico del error y cuestiones tipo test por módulo: `temas/practica.html` (54 series en 19 temas + 4 bancos de cuestiones), generadores en `assets/practica.js`, recálculo en `pruebas/test_practica.py`. Pendiente de E4: simulacro cronometrado con el formato del examen, cuaderno de errores y problemas gemelos de los X.
 - [x] E6a. Calendario de estudio hacia atrás desde las PEC: `temas/ruta.html` y `temas/prioridades.html` (qué cae y cuánto cuesta, tres rutas), generados por `herramientas/prioridades.py`; el índice lleva «Cómo se aprueba».
 - [ ] E6b. Módulo 0 de matemáticas con diagnóstico.
 
