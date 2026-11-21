@@ -438,3 +438,8 @@ def comprobaciones(c):
     c('pagina', 'test s6 e', sp.Rational(150, 600), 2)
     c('pagina', 'test s6 dU diat', sp.Rational(5, 2) * (500 - 200), 0)
     c('pagina', 'test s6 e2', sp.Rational(900 + 300 - 1000, 1200), 3)
+    # ---- D9: errores
+    c('pagina', 'error 1: T del fallo', 127 + 3600 / (5 * 1.5 * 8.314), 0); c('pagina', 'error 1: T', 127 + (1500 - 2100) / (5 * 1.5 * 8.314), 0)
+    c('pagina', 'error 2: del fallo', 0.0100 * 12.47 * 40.0, 2); c('pagina', 'error 2: Q', 0.0100 * 20.78 * 40.0, 2)
+    c('pagina', 'error 3: del fallo (1e5)', 3e5 * 2**1.4 / 1e5, 2); c('pagina', 'error 3: p (1e5)', 3e5 * 2**(sp.Rational(5, 3)) / 1e5, 2)
+    c('pagina', 'error 4: Q (1e3)', 0.5 * (3.0 + 1.0) * 1e5 * 0.040 / 1e3, 1)
