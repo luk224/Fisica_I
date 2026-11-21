@@ -138,3 +138,10 @@ def comprobaciones(c):
     c('pagina', 'test 5: retorno', sp.sqrt(3), 2)
     c('pagina', 'test 5: K max', 5.00 * 0.100**2 / 2, 3)
     c('pagina', 'test 5: v max', sp.sqrt(2 * 0.025 / 0.200), 2)
+    # ---- D9: errores y respuestas modelo
+    g = 9.8
+    c('pagina', 'error 1: v', sp.sqrt(2 * g * 5 * sin(30)), 2)
+    c('pagina', 'error 2: s correcto', 64 / (2 * g * (sin(30) + 0.3 * cos(30))), 2); c('pagina', 'error 2: s del fallo', 64 / (2 * g * (sin(30) + 0.3)), 2)
+    c('pagina', 'error 4: n', 0.20 * (g + 7.6 / 0.50), 1)
+    c('pagina', 'modelo: fricción 2 m', 0.2 * 1 * g * 2, 2); c('pagina', 'modelo: fricción 4 m', 0.2 * 1 * g * 4, 2); c('pagina', 'modelo: peso 2 m', 1 * g * 2, 1)
+    c('pagina', 'modelo: ΔU frente a mgh (%)', (1 - 6.37e6 / (6.37e6 + 1000)) * 100, 3)
