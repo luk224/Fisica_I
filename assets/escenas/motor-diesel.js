@@ -15,7 +15,7 @@ Interactivos.registrar('motor-diesel', function (c) {
   var CX = -4.3, CY = -2.3, RC = 1.0, LB = 2.6, WL = 1.15, TOPE_P = 0.25, PH = 0.5;
   var PX0 = 1.0, PW = 5.4, PY0 = -2.7, PHH = 5.0;
   var yTDC = CY + RC + LB, crownTDC = yTDC + TOPE_P, carrera = 2 * RC;
-  var BASE = -1.4, BX = [-2.5, -1.7, -0.9], fijos = [], ticks = [], eEt, eAd, eEs, eIn, eA, eB, eC, eD, eX, eY, ePS, ePI, eBT, eBn = [], eBv = [], barras = [];
+  var BASE = -1.4, BX = [-2.55, -1.6, -0.65], fijos = [], ticks = [], eEt, eAd, eEs, eIn, eA, eB, eC, eD, eX, eY, ePS, ePI, eBT, eBn = [], eBv = [], barras = [];
   var NP = 36, parts = [], rnd = [], llamaE, llamaI, brillo, biela, brazo, pin, centro, pistonR, pistonB, gasR, culata, valA, valE, inyec, chorro, ciclo, actual, sombra, pto, ptoC, ptoR;
   var l1 = c.lectura(''), l2 = c.lectura(''), l3 = c.lectura(''), l4 = c.lectura(''), l5 = c.lectura('');
   var fm = function (x, d) { return x.toFixed(d).replace('.', ',').replace(/^-/, '−'); };
@@ -158,10 +158,10 @@ Interactivos.registrar('motor-diesel', function (c) {
     // barras de energía acumulada
     var AC = acum(fi, K), sc = 2.4 / Math.max(K.Qin, 1), vals = [AC.qi, AC.w, AC.qo], nom = ['Q_H', 'W', '|Q_C|'];
     for (i = 0; i < 3; i++) {
-      var yv = BASE + vals[i] * sc; barras[i].poner(BX[i] - 0.3, Math.min(BASE, yv), BX[i] + 0.3, Math.max(BASE, yv));
-      eBn[i].poner(nom[i]); eBn[i].mover(BX[i], -3.05); eBv[i].poner(fm(vals[i], 0) + ' J'); eBv[i].mover(BX[i], Math.max(BASE, yv) + 0.22);
+      var yv = BASE + vals[i] * sc; barras[i].poner(BX[i] - 0.36, Math.min(BASE, yv), BX[i] + 0.36, Math.max(BASE, yv));
+      eBn[i].poner(nom[i]); eBn[i].mover(BX[i], 1.55); eBv[i].poner(fm(vals[i], 0) + ' J'); eBv[i].mover(BX[i], Math.max(BASE, yv) + 0.22);
     }
-    eBT.poner('Energía acumulada'); eBT.mover(-1.7, 1.55);
+    eBT.poner('Energía acumulada'); eBT.mover(-1.6, 1.95);
     ePS.poner('PMS'); ePS.mover(CX - WL - 0.15, CY + RC); ePI.poner('PMI'); ePI.mover(CX - WL - 0.15, CY - RC);
   }
   function e_(K) { return '✘ ' + (K.e < 0.6 ? 'falta eficiencia (sube r o baja r_c)' : 'demasiado caliente (baja r_c o r)'); }
@@ -182,7 +182,7 @@ Interactivos.registrar('motor-diesel', function (c) {
   eX = c.etiqueta('', 0, 0, 'r'); eY = c.etiqueta('', 0, 0, 'l'); eA = c.etiqueta('', 0, 0, 'c'); eB = c.etiqueta('', 0, 0, 'c'); eC = c.etiqueta('', 0, 0, 'c'); eD = c.etiqueta('', 0, 0, 'c');
   ePS = c.etiqueta('', 0, 0, 'r'); ePI = c.etiqueta('', 0, 0, 'r'); eBT = c.etiqueta('', 0, 0, 'c');
   for (var q = 0; q < 3; q++) { eBn.push(c.etiqueta('', 0, 0, 'c')); eBv.push(c.etiqueta('', 0, 0, 'c')); }
-  c.leyenda([['var(--fg)', 'ciclo ideal a→b→c→d→a (la línea a p₀ de admisión y escape se anula)', 'linea'], ['var(--warn-b)', 'proceso en curso / estado del aire (más caliente = más naranja)', 'punto'], ['var(--X)', 'área = trabajo neto W (y barra verde: trabajo acumulado, negativo al comprimir)', 'area'], ['var(--warn-b)', 'llama de la combustión; puntos = moléculas de aire (azul entra, gris sale)', 'area'], ['var(--U)', 'aire frío y válvula de admisión', 'area']]);
+  c.leyenda([['var(--fg)', 'ciclo ideal a→b→c→d→a (la línea a p₀ de admisión y escape se anula)', 'linea'], ['var(--warn-b)', 'proceso en curso / estado del aire (más caliente = más naranja)', 'punto'], ['var(--X)', 'área = trabajo neto W; barra verde W: trabajo acumulado (negativo al comprimir)', 'area'], ['var(--warn-b)', 'barra roja Q_H: calor que entra al quemar el combustible', 'area'], ['var(--U)', 'barra azul |Q_C|: calor que sale por el escape', 'area'], ['var(--warn-b)', 'llama de la combustión; puntos = moléculas de aire (azul entra, gris sale)', 'area'], ['var(--U)', 'aire frío y válvula de admisión', 'area']]);
   c.alCambiarTema(function (p) { P = p; c.renderer.setClearColor(p.bg); if (!listo) return; clave = ''; calc(); });
   listo = true; calc();
 });
