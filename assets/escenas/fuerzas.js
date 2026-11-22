@@ -1,4 +1,5 @@
-/* Segunda ley de Newton en 2D (tema 4): dos fuerzas sobre un cuerpo, ΣF y a = ΣF/m. params: {"dim":2}. */
+/* Segunda ley de Newton en 2D (tema 4): dos fuerzas sobre un cuerpo, ΣF y a = ΣF/m. params: {"dim":2}.
+   Cada fuerza se maneja arrastrando la punta de su flecha (módulo y dirección a la vez) o con los deslizadores. */
 Interactivos.registrar('fuerzas', function (c) {
   var T = c.THREE, H = c.H, rad = Math.PI / 180;
   var F1 = 10, a1 = 0, F2 = 8, a2 = 90, m = 2, P = c.colores(), w;
@@ -20,10 +21,13 @@ Interactivos.registrar('fuerzas', function (c) {
     ls('(' + fm(sx) + ' , ' + fm(sy) + ') N'); lm(fm(mod) + ' N' + (mod > 1e-6 ? ', ' + fm(Math.atan2(sy, sx) / rad) + '°' : '  (equilibrio: ΣF = 0, a = 0)'));
     la(fm(mod / m) + ' m/s²' + (mod > 1e-6 ? ' en la misma dirección que ΣF' : ''));
   }
-  c.slider('F₁ (N)', 0, 15, 0.5, F1, function (s) { F1 = s; if (fs) calc(); });
-  c.slider('Ángulo de F₁ (°)', -180, 180, 1, a1, function (s) { a1 = s; if (fs) calc(); });
-  c.slider('F₂ (N)', 0, 15, 0.5, F2, function (s) { F2 = s; if (fs) calc(); });
-  c.slider('Ángulo de F₂ (°)', -180, 180, 1, a2, function (s) { a2 = s; if (fs) calc(); });
+  var sF1 = c.slider('F₁ (N)', 0, 15, 0.5, F1, function (s) { F1 = s; if (fs) calc(); });
+  var sA1 = c.slider('Ángulo de F₁ (°)', -180, 180, 1, a1, function (s) { a1 = s; if (fs) calc(); });
+  var sF2 = c.slider('F₂ (N)', 0, 15, 0.5, F2, function (s) { F2 = s; if (fs) calc(); });
+  var sA2 = c.slider('Ángulo de F₂ (°)', -180, 180, 1, a2, function (s) { a2 = s; if (fs) calc(); });
+  function punta(sF, sA) { return function (wx, wy) { if (Math.hypot(wx, wy) > 0.4) c.fijar(sA, Math.atan2(wy, wx) / rad); c.fijar(sF, Math.min(15, Math.hypot(wx, wy))); }; }
+  c.agarres([{ titulo: 'Arrastra la punta de F₁', x: function () { return [F1 * Math.cos(a1 * rad), F1 * Math.sin(a1 * rad)]; }, mover: punta(sF1, sA1) },
+             { titulo: 'Arrastra la punta de F₂', x: function () { return [F2 * Math.cos(a2 * rad), F2 * Math.sin(a2 * rad)]; }, mover: punta(sF2, sA2) }]);
   c.slider('Masa m (kg)', 0.5, 10, 0.5, m, function (s) { m = s; if (fs) calc(); });
   c.leyenda([['var(--U)', 'F₁', 'linea'], ['var(--A)', 'F₂', 'linea'], ['var(--warn-b)', 'ΣF = F₁ + F₂', 'linea']]);
   c.alCambiarTema(function (p) {

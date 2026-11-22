@@ -217,7 +217,7 @@
         if (dos) scene.traverse(function (o) { if (o.reescalar) o.reescalar(z.s); });
         renderer.render(scene, camera);
         if (dos && params.marcas !== false) marcas();
-        if (dos) posEtiquetas();
+        if (dos) { posEtiquetas(); posAgarres(); }
       }
       /* Etiquetas de texto sobre el lienzo 2D (HTML, en coordenadas del mundo): ctx.etiqueta('texto', x, y, 'l'|'r'|'c') devuelve {poner, mover, ver, ancla, quitar}; solo 2D. */
       var capaE = null, etiq = [];
@@ -229,6 +229,18 @@
           var px = (e.x - L) / (R - L) * W, py = (T2 - e.y) / (T2 - B) * Hh;
           e.el.style.display = e.vis && px > -80 && px < W + 80 && py > -20 && py < Hh + 20 ? '' : 'none';
           e.el.style.left = px + 'px'; e.el.style.top = py + 'px';
+        });
+      }
+      /* Asas arrastrables (solo 2D): círculos pulsantes sobre el lienzo, en coordenadas del mundo. Ver ctx.agarres. */
+      var capaG = null, agr = [], hintAg = null;
+      function posAgarres() {
+        if (!capaG) return;
+        var W = stage.clientWidth, Hh = stage.clientHeight, L = camera.left, R = camera.right, T2 = camera.top, B = camera.bottom;
+        if (!W || !Hh || !(R > L) || !(T2 > B)) return;
+        agr.forEach(function (g) {
+          var p = g.a.x(), vis = !g.a.ver || g.a.ver(), px = (p[0] - L) / (R - L) * W, py = (T2 - p[1]) / (T2 - B) * Hh;
+          g.el.style.display = vis && px > -20 && px < W + 20 && py > -20 && py < Hh + 20 ? '' : 'none';
+          g.el.style.left = px + 'px'; g.el.style.top = py + 'px';
         });
       }
       /* Números en los ejes (solo 2D): etiquetas HTML sobre el lienzo, con paso 1·2·5·10ᵏ según la zona visible. */
@@ -369,7 +381,35 @@
             quitar: function () { var i = etiq.indexOf(o); if (i >= 0) etiq.splice(i, 1); if (el.parentNode) el.parentNode.removeChild(el); } };
           etiq.push(o); return o;
         },
-        alCambiarTema: function (cb) { temaCbs.push(cb); cb(paleta()); }
+        alCambiarTema: function (cb) { temaCbs.push(cb); cb(paleta()); },
+        /* Solo 2D. Asas que se arrastran con el ratón o el dedo directamente sobre el dibujo (la vista solo se mueve si se agarra el fondo):
+           agarres([{ x() → [x, y] posición actual en el mundo, mover(wx, wy) nuevo valor según el puntero, ver() opcional, titulo }]).
+           Para que el deslizador correspondiente siga al asa, mover() llama a ctx.fijar(deslizador, valor). */
+        agarres: function (lista) {
+          if (!dos) return;
+          if (!capaG) { capaG = document.createElement('div'); capaG.className = 'int-grips'; capaG.setAttribute('aria-hidden', 'true'); stage.appendChild(capaG); }
+          lista.forEach(function (a) {
+            var el = document.createElement('span'); el.className = 'int-grip'; if (a.titulo) el.title = a.titulo; capaG.appendChild(el); agr.push({ a: a, el: el });
+          });
+          function cerca(wx, wy, radio) {
+            var mejor = -1, dm = radio, i;
+            for (i = 0; i < agr.length; i++) {
+              if (agr[i].a.ver && !agr[i].a.ver()) continue;
+              var p = agr[i].a.x(), d = Math.hypot(p[0] - wx, p[1] - wy); if (d < dm) { dm = d; mejor = i; }
+            }
+            return mejor;
+          }
+          ctx.arrastre = {
+            coger: function (wx, wy, radio) { var i = cerca(wx, wy, radio); if (i >= 0) agr[i].el.classList.add('on'); return i; },
+            mover: function (i, wx, wy) { agr[i].a.mover(wx, wy); },
+            fin: function (i) { if (agr[i]) agr[i].el.classList.remove('on'); },
+            cerca: cerca
+          };
+          if (!hintAg) { hintAg = true; var h = stage.querySelector('.int-hint'); if (h) h.textContent = 'Arrastra los círculos del dibujo · rueda o pellizco: zoom · doble clic: restablecer'; }
+          pedir();
+        },
+        /* Pone un deslizador (el que devuelve ctx.slider) en un valor y avisa a la escena; el navegador lo ajusta al rango y al paso. */
+        fijar: function (r, v) { r.value = v; r.dispatchEvent(new Event('input')); }
       };
       if (dos) activarZoom();
       fn(ctx);
@@ -406,13 +446,14 @@
         cv.addEventListener('pointerdown', function (e) {
           if (ctx.arrastre && !Object.keys(ptrs).length) {
             var m = mundo(e.clientX, e.clientY), rc = cv.getBoundingClientRect();
-            var i = ctx.arrastre.coger(m[0], m[1], 18 * (camera.right - camera.left) / rc.width);
-            if (i >= 0) { arr = { id: e.pointerId, i: i }; cv.setPointerCapture(e.pointerId); return; }
+            var i = ctx.arrastre.coger(m[0], m[1], 24 * (camera.right - camera.left) / rc.width);
+            if (i >= 0) { arr = { id: e.pointerId, i: i }; try { cv.setPointerCapture(e.pointerId); } catch (x) {} return; }
           }
-          ptrs[e.pointerId] = { x: e.clientX, y: e.clientY }; cv.setPointerCapture(e.pointerId);
+          ptrs[e.pointerId] = { x: e.clientX, y: e.clientY }; try { cv.setPointerCapture(e.pointerId); } catch (x) {}
         });
         cv.addEventListener('pointermove', function (e) {
           if (arr && arr.id === e.pointerId) { var m = mundo(e.clientX, e.clientY); ctx.arrastre.mover(arr.i, m[0], m[1]); pedir(); return; }
+          if (ctx.arrastre && !Object.keys(ptrs).length) { var mh = mundo(e.clientX, e.clientY), rh = cv.getBoundingClientRect(); cv.style.cursor = ctx.arrastre.cerca(mh[0], mh[1], 24 * (camera.right - camera.left) / rh.width) >= 0 ? 'grab' : ''; }
           var p = ptrs[e.pointerId]; if (!p) return; var ids = Object.keys(ptrs);
           if (ids.length === 1) { mover(e.clientX - p.x, e.clientY - p.y); p.x = e.clientX; p.y = e.clientY; return; }
           if (ids.length !== 2) return;
@@ -421,7 +462,7 @@
           var d1 = Math.hypot(a.x - b.x, a.y - b.y), m1x = (a.x + b.x) / 2, m1y = (a.y + b.y) / 2, q = frac(m1x, m1y);
           if (d0 > 0 && d1 > 0) zoomEn(q[0], q[1], d0 / d1); mover(m1x - m0x, m1y - m0y);
         });
-        function suelta(e) { delete ptrs[e.pointerId]; if (arr && arr.id === e.pointerId) arr = null; }
+        function suelta(e) { delete ptrs[e.pointerId]; if (arr && arr.id === e.pointerId) { if (ctx.arrastre.fin) ctx.arrastre.fin(arr.i); arr = null; } }
         cv.addEventListener('pointerup', suelta); cv.addEventListener('pointercancel', suelta);
         cv.addEventListener('dblclick', reset); btnReset.addEventListener('click', reset);
       }

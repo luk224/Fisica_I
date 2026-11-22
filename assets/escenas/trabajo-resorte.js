@@ -1,4 +1,5 @@
-/* Trabajo de un resorte (tema 6): área bajo F_x(x) = −kx entre x₁ y x₂ y teorema trabajo-energía. params: {"dim":2}. */
+/* Trabajo de un resorte (tema 6): área bajo F_x(x) = −kx entre x₁ y x₂ y teorema trabajo-energía. params: {"dim":2}.
+   x₁ (negro) y x₂ (naranja) se arrastran sobre la recta; el área sombreada cambia al instante. */
 Interactivos.registrar('trabajo-resorte', function (c) {
   var T = c.THREE, H = c.H;
   var k = 200, x1 = 0.3, x2 = 0, m = 0.5, v1 = 0, P = c.colores(), w, clave = '', kx = 1;
@@ -25,8 +26,10 @@ Interactivos.registrar('trabajo-resorte', function (c) {
     lf(fm(-k * x1) + ' N  ,  ' + fm(-k * x2) + ' N');
   }
   c.slider('Constante k (N/m)', 50, 500, 50, k, function (s) { k = s; if (sombra) calc(); });
-  c.slider('Posición inicial x₁ (m)', -0.4, 0.4, 0.05, x1, function (s) { x1 = s; if (sombra) calc(); });
-  c.slider('Posición final x₂ (m)', -0.4, 0.4, 0.05, x2, function (s) { x2 = s; if (sombra) calc(); });
+  var sX1 = c.slider('Posición inicial x₁ (m)', -0.4, 0.4, 0.05, x1, function (s) { x1 = s; if (sombra) calc(); });
+  var sX2 = c.slider('Posición final x₂ (m)', -0.4, 0.4, 0.05, x2, function (s) { x2 = s; if (sombra) calc(); });
+  c.agarres([{ titulo: 'Arrastra x₁ (posición inicial)', x: function () { return [x1 * kx, -k * x1]; }, mover: function (wx) { c.fijar(sX1, wx / kx); } },
+             { titulo: 'Arrastra x₂ (posición final)', x: function () { return [x2 * kx, -k * x2]; }, mover: function (wx) { c.fijar(sX2, wx / kx); } }]);
   c.slider('Masa m (kg)', 0.1, 2, 0.1, m, function (s) { m = s; if (sombra) calc(); });
   c.slider('Rapidez inicial v₁ (m/s)', 0, 10, 0.5, v1, function (s) { v1 = s; if (sombra) calc(); });
   c.leyenda([['var(--acc)', 'F_x = −kx (fuerza del resorte, N)', 'linea'], ['var(--X)', 'área = trabajo (signo según el sentido)', 'area']]);

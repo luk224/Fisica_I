@@ -63,9 +63,11 @@ Interactivos.registrar('torricelli', function (c) {
   }
   c.selector('Líquido', FL.map(function (q) { return q[0]; }), iF, function (i) { iF = i; calc(); });
   c.slider('Altura del líquido H (m)', 0.5, 15, 0.5, Ht, function (v) { Ht = v; calc(); }, function (v) { return f(v, 1) + ' m'; });
-  c.slider('Profundidad del orificio h (m)', 0.1, 15, 0.1, hh, function (v) { hh = v; calc(); }, function (v) { return f(Math.min(v, Ht), 1) + ' m'; });
+  var sHh = c.slider('Profundidad del orificio h (m)  — también arrastrando el orificio', 0.1, 15, 0.1, hh, function (v) { hh = v; calc(); }, function (v) { return f(Math.min(v, Ht), 1) + ' m'; });
   c.slider('Presión manométrica del aire sobre el líquido (atm; 0 = abierto)', 0, 3, 0.05, pm, function (v) { pm = v; calc(); }, function (v) { return f(v, 2) + ' atm'; });
   c.slider('Diámetro del orificio d (mm)', 1, 50, 1, dd, function (v) { dd = v; calc(); }, function (v) { return f(v, 0) + ' mm'; });
+  c.agarres([{ titulo: 'Arrastra el orificio hacia arriba o hacia abajo', x: function () { return [tw, Math.max(0, Ht - Math.min(hh, Ht))]; },
+    mover: function (wx, wy) { c.fijar(sHh, Math.max(0.1, Math.min(Ht, Ht - wy))); } }]);
   c.leyenda([['var(--U)', 'líquido', 'area'], ['var(--acc)', 'chorro (tiro horizontal)', 'linea'], ['var(--X)', 'velocidad de salida (proporcional a v, con tope)', 'linea'], ['var(--mut)', 'aire sobre el líquido y cota h', 'linea']]);
   c.alCambiarTema(function (p) {
     P = p; c.renderer.setClearColor(p.bg);
