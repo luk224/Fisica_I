@@ -14,7 +14,7 @@ Interactivos.registrar('mas-circulo', function (c) {
   var fm = function (v, d) { var f = Math.pow(10, d); return (Math.round(v * f) / f).toFixed(d).replace('-', '−').replace('.', ','); };
   par();
   var sg = function (v, n) { if (Math.abs(v) < 1e-12) return '0'; var d = Math.max(0, Math.min(6, n - 1 - Math.floor(Math.log(Math.abs(v)) / Math.LN10 + 1e-9))); return fm(v, d); };
-  var ejes, circ, fasor, conec, curva, guias, muelle, bloque, qp, cp, eq, pared, tcks, barE, barK, barU, ctn = [];
+  var sX0, sV0, q0, q0l, ejes, circ, fasor, conec, curva, guias, muelle, bloque, qp, cp, eq, pared, tcks, barE, barK, barU, ctn = [];
   var lw = c.lectura('Frecuencia angular, frecuencia y periodo'), lA = c.lectura('Amplitud y ángulo de fase (de x₀ y v₀ₓ)'),
       lt = c.lectura('En este instante'), le = c.lectura('Energía');
   var eMas, eMenos, eT, e2T, et, ex, eE, eK, eU, eEq;
@@ -45,7 +45,8 @@ Interactivos.registrar('mas-circulo', function (c) {
     barE = rect(P.mut, 0.55); barK = rect(P.L, 1); barU = rect(P.A, 1); [barE, barK, barU].forEach(function (b) { b.position.z = 0.1; c.scene.add(b); });
     qp = H.punto(T, 0, 0, w * 3.2, P.W); qp.position.z = 0.6; c.scene.add(qp);
     cp = H.punto(T, 0, 0, w * 3.2, P.W); cp.position.z = 0.6; c.scene.add(cp);
-    ctn = [ejes, tcks, eq, pared, circ, guias, conec, curva, muelle];
+    q0l = H.cinta(T, [], P.mut, w * 0.8, [w * 3, w * 3]); q0l.position.z = 0.09; c.scene.add(q0l); q0 = H.punto(T, 0, 0, w * 2.2, P.mut); q0.position.z = 0.55; c.scene.add(q0);
+    q0.material.color.set(P.mut); ctn = [ejes, tcks, eq, pared, circ, guias, conec, curva, muelle];
     eMas = c.etiqueta('+A', GX - 0.06, 0, 'r'); eMenos = c.etiqueta('−A', GX - 0.06, 0, 'r');
     eT = c.etiqueta('T', GX + GW, -0.13, 'c'); e2T = c.etiqueta('2T', GX + 2 * GW, -0.13, 'c'); et = c.etiqueta('t', GX + 2 * GW + 0.2, 0.12, 'c'); ex = c.etiqueta('x', GX + 0.1, 1.2, 'l');
     eE = c.etiqueta('E', BX[0], BY - 0.12, 'c'); eK = c.etiqueta('K', BX[1], BY - 0.12, 'c'); eU = c.etiqueta('U', BX[2], BY - 0.12, 'c'); eEq = c.etiqueta('x = 0', XB - 0.35, 0.0, 'r');
@@ -59,6 +60,7 @@ Interactivos.registrar('mas-circulo', function (c) {
     for (i = 0; i <= 260; i++) { var ss = 2 * i / 260; cp2.push([GX + GW * ss, a * Math.cos(2 * Math.PI * ss + phi)]); }
     curva.set([cp2]);
     guias.set([[[GX - 0.05, a], [GX + 2 * GW, a]], [[GX - 0.05, -a], [GX + 2 * GW, -a]]]);
+    var q0x = a * Math.sin(phi), q0y = a * Math.cos(phi); q0.mover(q0x, q0y); q0l.set([[[0, 0], [q0x, q0y]]]);
     fasor.poner([0, 0], [qx, y]); qp.mover(qx, y); cp.mover(gc, y);
     conec.set([[[XB + 0.14, y], [gc, y]]]);
     /* resorte (zigzag vertical) del techo al bloque */
@@ -76,8 +78,10 @@ Interactivos.registrar('mas-circulo', function (c) {
   }
   c.slider('Masa m (kg)', 0.1, 5, 0.1, m, function (v) { m = v; calc(); }, function (v) { return fm(v, 1) + ' kg'; });
   c.slider('Constante del resorte k (N/m)', 10, 500, 10, k, function (v) { k = v; calc(); }, function (v) { return fm(v, 0) + ' N/m'; });
-  c.slider('Posición inicial x₀ (cm)', -20, 20, 0.5, x0, function (v) { x0 = v; calc(); }, function (v) { return fm(v, 1) + ' cm'; });
-  c.slider('Velocidad inicial v₀ₓ (m/s)', -5, 5, 0.05, v0, function (v) { v0 = v; calc(); }, function (v) { return fm(v, 2) + ' m/s'; });
+  sX0 = c.slider('Posición inicial x₀ (cm)', -20, 20, 0.5, x0, function (v) { x0 = v; calc(); }, function (v) { return fm(v, 1) + ' cm'; });
+  sV0 = c.slider('Velocidad inicial v₀ₓ (m/s)', -5, 5, 0.05, v0, function (v) { v0 = v; calc(); }, function (v) { return fm(v, 2) + ' m/s'; });
+  c.agarres([{ titulo: 'Estado inicial (t = 0): la altura es x₀ y la posición horizontal es −v₀ₓ/ω', x: function () { return [a * Math.sin(phi), a * Math.cos(phi)]; },
+    mover: function (wx, wy) { c.fijar(sX0, wy * Av * 100); c.fijar(sV0, -om * wx * Av); } }]);
   c.reproductor({ max: 2, valor: 0, paso: 0.005, vel: 0.25, ciclico: true, etiqueta: 'Tiempo (en periodos)',
     fmt: function (v) { return 't = ' + fm(v * Tp, 2) + ' s = ' + fm(v, 2) + ' T'; }, cb: function (v) { s = v; calc(); } });
   c.leyenda([['var(--U)', 'fasor de longitud A (gira con ω)', 'linea'], ['var(--acc)', 'x(t) = A cos(ωt+φ)', 'linea'], ['var(--X)', 'barra K', 'area'], ['var(--A)', 'barra U (K+U = E, la barra gris)', 'area'], ['var(--warn-b)', 'Q y su proyección x', 'punto']]);
@@ -87,7 +91,7 @@ Interactivos.registrar('mas-circulo', function (c) {
     ejes.material.color.set(p.fg); tcks.material.color.set(p.fg); pared.material.color.set(p.fg); muelle.material.color.set(p.fg);
     eq.material.color.set(p.mut); circ.material.color.set(p.mut); guias.material.color.set(p.mut); conec.material.color.set(p.mut);
     curva.material.color.set(p.acc); fasor.material.color.set(p.S); bloque.material.color.set(p.acc);
-    barE.material.color.set(p.mut); barK.material.color.set(p.L); barU.material.color.set(p.A); qp.material.color.set(p.W); cp.material.color.set(p.W);
+    q0.material.color.set(p.mut); q0l.material.color.set(p.mut); barE.material.color.set(p.mut); barK.material.color.set(p.L); barU.material.color.set(p.A); qp.material.color.set(p.W); cp.material.color.set(p.W);
   });
   c.vista(-4.2, GX + 2 * GW + 0.45, -1.5, 1.55);
   nuevo(); listo = true; calc();

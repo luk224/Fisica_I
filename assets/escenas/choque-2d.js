@@ -6,7 +6,7 @@
 Interactivos.registrar('choque-2d', function (c) {
   var T = c.THREE, H = c.H, P = c.colores();
   var m1 = 1, m2 = 1, v0 = 5, b = 0.5, e = 1, fs = 0.5, anim = 0, R = 1.0;
-  var d1, d2, o1, o2, p1a, p2a, pCM, traza, normal, tri0, tri1, tri2, sep, rSl = null, ya = false, ult = 0, pausa = 0, vis = true, tCM, t1, t2, tP, cmLin;
+  var sB, ray, cxs = -0.87, d1, d2, o1, o2, p1a, p2a, pCM, traza, normal, tri0, tri1, tri2, sep, rSl = null, ya = false, ult = 0, pausa = 0, vis = true, tCM, t1, t2, tP, cmLin;
   var f2 = function (t) { var r = Math.round(t * 100) / 100; return String(r === 0 ? 0 : r).replace('-', '−').replace('.', ','); };
   var f1 = function (t) { var r = Math.round(t * 10) / 10; return String(r === 0 ? 0 : r).replace('-', '−').replace('.', ','); };
   var lA = c.lectura('Parámetro de impacto b y ángulo α de la recta de los centros'), lV1 = c.lectura('Velocidad final del disco 1'), lV2 = c.lectura('Velocidad final del disco 2'),
@@ -22,6 +22,7 @@ Interactivos.registrar('choque-2d', function (c) {
     c.vista(-3.7, 9.2, -3.2, 3.2); var w = 0.0055 * 6.4;
     d1 = disco(P.acc); d2 = disco(P.A);
     o1 = H.cinta(T, [], P.acc, w * 1.5); o2 = H.cinta(T, [], P.A, w * 1.5); o1.position.z = 0.1; o2.position.z = 0.1; c.scene.add(o1, o2);
+    ray = H.cinta(T, [], P.acc, w, [w * 4, w * 3]); ray.position.z = 0.02; c.scene.add(ray);
     normal = H.cinta(T, [], P.mut, w, [w * 4, w * 3]); normal.position.z = 0.02; traza = H.cinta(T, [], P.mut, w, [w * 4, w * 3]); traza.position.z = 0.02; c.scene.add(normal, traza);
     p1a = H.flecha2D(T, P.acc, w * 1.8); p2a = H.flecha2D(T, P.A, w * 1.8); p1a.position.z = 0.3; p2a.position.z = 0.3; c.scene.add(p1a, p2a);
     pCM = H.punto(T, 0, 0, w * 3.4, P.fg); pCM.position.z = 0.4; c.scene.add(pCM);
@@ -36,7 +37,7 @@ Interactivos.registrar('choque-2d', function (c) {
     var a1x = v0 - J / m1 * nx, a1y = -J / m1 * ny, a2x = J / m2 * nx, a2y = J / m2 * ny;
     if (Math.abs(a1x) < 1e-9) a1x = 0; if (Math.abs(a1y) < 1e-9) a1y = 0; if (Math.abs(a2y) < 1e-9) a2y = 0; if (Math.abs(a2x) < 1e-9) a2x = 0;
     var s1 = Math.hypot(a1x, a1y), s2 = Math.hypot(a2x, a2y), vmax = Math.max(v0, s1, s2, 0.5), Tt = 2.2 / vmax, t = fs * Tt;
-    var cx = -Math.sqrt(R * R - b * b), cy = b;
+    var cx = -Math.sqrt(R * R - b * b), cy = b; ray.set([[[-3.6, cy], [cx, cy]]]);
     var x1, y1, x2, y2;
     if (t < 0) { x1 = cx + v0 * t; y1 = cy; x2 = 0; y2 = 0; } else { x1 = cx + a1x * t; y1 = cy + a1y * t; x2 = a2x * t; y2 = a2y * t; }
     d1.poner(x1, y1, 0.5); d2.poner(x2, y2, 0.5); o1.set([circ(x1, y1, 0.5)]); o2.set([circ(x2, y2, 0.5)]);
@@ -65,8 +66,9 @@ Interactivos.registrar('choque-2d', function (c) {
   c.slider('Masa del disco 1 (incidente), m₁ (kg)', 0.1, 5, 0.1, m1, function (v) { m1 = v; calc(); }, function (v) { return f2(v) + ' kg'; });
   c.slider('Masa del disco 2 (en reposo), m₂ (kg)', 0.1, 5, 0.1, m2, function (v) { m2 = v; calc(); }, function (v) { return f2(v) + ' kg'; });
   c.slider('Rapidez inicial v₀ del disco 1 (m/s)', 1, 10, 0.5, v0, function (v) { v0 = v; calc(); }, function (v) { return f1(v) + ' m/s'; });
-  c.slider('Parámetro de impacto b (m)', 0, 0.99, 0.01, b, function (v) { b = v; calc(); }, function (v) { return f2(v) + ' m'; });
+  sB = c.slider('Parámetro de impacto b (m)  — también arrastrando la trayectoria', 0, 0.99, 0.01, b, function (v) { b = v; calc(); }, function (v) { return f2(v) + ' m'; });
   c.slider('Coeficiente de restitución e (0 = inelástico, 1 = elástico)', 0, 1, 0.05, e, function (v) { e = v; calc(); }, f2);
+  c.agarres([{ titulo: 'Arrastra hacia arriba o abajo: parámetro de impacto b', x: function () { return [-3.0, b]; }, mover: function (wx, wy) { c.fijar(sB, wy); } }]);
   c.reproductor({ max: 2, valor: fs + 1, paso: 0.01, vel: 2 / 3.2, pausaFin: 0.9, etiqueta: 'Instante del choque',
     fmt: function (v) { return v < 0.995 ? 'antes del choque' : v > 1.005 ? 'después del choque' : 'justo en el choque'; }, cb: function (v) { fs = v - 1; calc(); } });
   c.leyenda([['var(--acc)', 'disco 1 y su cantidad de movimiento', 'area'], ['var(--A)', 'disco 2 y su cantidad de movimiento', 'area'], ['var(--fg)', 'P total, que no cambia (triángulo de la derecha)', 'linea'], ['var(--mut)', 'recta de los centros (línea de la fuerza) y trayectoria del centro de masa', 'linea']]);
@@ -75,7 +77,7 @@ Interactivos.registrar('choque-2d', function (c) {
     if (!d1) return;
     d1.material.color.set(p.acc); o1.material.color.set(p.acc); p1a.material.color.set(p.acc); tri1.material.color.set(p.acc);
     d2.material.color.set(p.A); o2.material.color.set(p.A); p2a.material.color.set(p.A); tri2.material.color.set(p.A);
-    normal.material.color.set(p.mut); traza.material.color.set(p.mut); pCM.material.color.set(p.fg); tri0.material.color.set(p.fg); sep.material.color.set(p.bd);
+    ray.material.color.set(p.acc); normal.material.color.set(p.mut); traza.material.color.set(p.mut); pCM.material.color.set(p.fg); tri0.material.color.set(p.fg); sep.material.color.set(p.bd);
   });
   nuevo(); calc();
 });

@@ -9,7 +9,7 @@ Interactivos.registrar('orbitas-kepler', function (c) {
   var G = 6.67e-11, MT = 5.97e24, GM = G * MT, R0 = 6.67e6, RT = 6.37e6, RE = RT / R0;
   var VC = Math.sqrt(GM / R0), T0 = Math.sqrt(R0 * R0 * R0 / GM), EN = GM / R0;
   var k = 1.2, verSec = 0, s = 0.35, listo = false, S = 3, w = 0.02, clave = '', sucio = true, kTab = -1;
-  var tierra, borde, orbita, nave, vflecha, fflecha, sectA, sectB, barK, barU, barE, zeroE, panel = [], etL, etK, etU, etE, etTierra, etLanz;
+  var sK, rep, v0f, tierra, borde, orbita, nave, vflecha, fflecha, sectA, sectB, barK, barU, barE, zeroE, panel = [], etL, etK, etU, etE, etTierra, etLanz;
   var th = [], tt = [], thEnd = 2 * Math.PI, tmax = 1, d = 0.44, k2 = 1.44, crash = false, bound = true;
   var lV = c.lectura('Rapidez de lanzamiento v₀ y energía por kilogramo E/m'), lO = c.lectura('Órbita: excentricidad e, semieje mayor a, periodo T'),
       lA = c.lectura('Distancias extremas rₚ, rₐ y rapideces vₚ, vₐ'), lN = c.lectura('Nave en el instante elegido'), lS = c.lectura('Áreas barridas en tiempos iguales (2.ª ley)');
@@ -49,7 +49,7 @@ Interactivos.registrar('orbitas-kepler', function (c) {
     var ra = bound ? Math.max(1, k2 / (2 - k2), 1) : 6; if (k < 1) ra = 1;
     var S2 = Math.max(1.5, Math.min(9, 1.12 * ra)); if (!bound) S2 = 6.2;
     var kk = k.toFixed(3) + '|' + P.fg + '|' + S2; if (kk === clave && tierra) return false; clave = kk; S = S2;
-    [tierra, borde, orbita, nave, vflecha, fflecha, sectA, sectB, zeroE, barK, barU, barE, etLanz].forEach(function (o) { if (o) { if (o.quitar) o.quitar(); else c.scene.remove(o); } });
+    [tierra, borde, orbita, nave, v0f, vflecha, fflecha, sectA, sectB, zeroE, barK, barU, barE, etLanz].forEach(function (o) { if (o) { if (o.quitar) o.quitar(); else c.scene.remove(o); } });
     panel.forEach(function (o) { c.scene.remove(o); }); panel = [];
     w = 0.0055 * 2 * S; c.vista(-1.6 * S, 1.6 * S, -S, S);
     var pts = [], i; for (i = 0; i <= 64; i++) pts.push([RE * Math.cos(2 * Math.PI * i / 64), RE * Math.sin(2 * Math.PI * i / 64)]);
@@ -59,6 +59,7 @@ Interactivos.registrar('orbitas-kepler', function (c) {
     sectA = nuevoSector(P.L); sectB = nuevoSector(P.A);
     fflecha = H.flecha2D(T, P.L, w * 1.8); fflecha.position.z = 0.4; c.scene.add(fflecha);
     vflecha = H.flecha2D(T, P.A, w * 1.8); vflecha.position.z = 0.45; c.scene.add(vflecha);
+    v0f = H.flecha2D(T, P.mut, w * 1.6); v0f.position.z = 0.35; c.scene.add(v0f);
     nave = H.punto(T, 1, 0, w * 4.2, P.fg); nave.position.z = 0.6; c.scene.add(nave);
     zeroE = H.cinta(T, [], P.mut, w * 0.9); zeroE.position.z = 0.1; c.scene.add(zeroE);
     barK = H.cinta(T, [], P.L, w * 3.2); barK.position.z = 0.2; c.scene.add(barK);
@@ -102,7 +103,7 @@ Interactivos.registrar('orbitas-kepler', function (c) {
     } else { lS('(sectores ocultos)'); }
     /* nave en el instante elegido */
     var t = s * tmax, q = angEn(t), pp = pos(q), r = rOf(q), v = Math.sqrt(Math.max(0, 2 * (E + 1 / r)));
-    nave.mover(pp[0], pp[1]);
+    nave.mover(pp[0], pp[1]); v0f.poner([1, 0], [1, 0.3 * S * k]);
     /* velocidad: componente radial vr = e·sinθ·(k.../...) ; v = (vr, vθ) con vθ = k/r y vr = d·sin θ / k */
     var vr = d * Math.sin(q) / k, vt = k / r, ur = [Math.cos(q), Math.sin(q)], ut = [-Math.sin(q), Math.cos(q)];
     var vx = vr * ur[0] + vt * ut[0], vy = vr * ur[1] + vt * ut[1], Lv = 0.45 * S;
@@ -131,11 +132,19 @@ Interactivos.registrar('orbitas-kepler', function (c) {
     var minutos = t * T0 / 60;
     lN(fm(minutos, 1) + ' min   ·   r = ' + fm(r * R0 / 1e6) + '×10⁶ m (' + fm(r) + ' r₀)   ·   v = ' + fm(v * VC / 1000) + ' km/s   ·   K/|U| = ' + fm(K / Math.abs(U)) + (crash && s >= 1 - 1e-9 ? '   ·   ¡se estrella!' : ''));
   }
-  c.slider('Rapidez de lanzamiento v₀ / vc  (tangente a la superficie)', 0.7, 1.5, 0.01, k, function (v) { k = v; if (listo) calc(); }, function (v) { return fm(v) + ' vc  (' + fm(v * VC / 1000) + ' km/s)' + (v * v >= 2 - 1e-9 ? '  ≥ v_esc' : ''); });
+  sK = c.slider('Rapidez de lanzamiento v₀ / vc  (tangente a la superficie)', 0.7, 1.5, 0.01, k, function (v) { k = v; if (listo) calc(); }, function (v) { return fm(v) + ' vc  (' + fm(v * VC / 1000) + ' km/s)' + (v * v >= 2 - 1e-9 ? '  ≥ v_esc' : ''); });
   c.selector('Sectores de igual tiempo (2.ª ley)', ['Mostrar', 'Ocultar'], 0, function (i) { verSec = i; sucio = true; if (listo) calc(); });
   nuevo(); listo = true;
-  c.reproductor({ max: 1, valor: s, paso: 0.001, vel: function () { return 1 / 10; }, pausaFin: 1.2, etiqueta: 'Instante del movimiento',
+  rep = c.reproductor({ max: 1, valor: s, paso: 0.001, vel: function () { return 1 / 10; }, pausaFin: 1.2, etiqueta: 'Instante del movimiento',
     fmt: function (v) { return 't = ' + fm(v * tmax * T0 / 60, 1) + ' min'; }, cb: function (v) { s = v; calc(); } });
+  c.agarres([
+    { titulo: 'Arrastra la punta de la flecha de lanzamiento: rapidez v₀', x: function () { return [1, 0.3 * S * k]; }, mover: function (wx, wy) { c.fijar(sK, wy / (0.3 * S)); } },
+    { titulo: 'Arrastra la nave a lo largo de la órbita', x: function () { return pos(angEn(s * tmax)); },
+      mover: function (wx, wy) {
+        var q = Math.atan2(wy, wx); if (q < 0) q += 2 * Math.PI; q = Math.min(q, thEnd);
+        var lo = 0, hi = th.length - 1, m; while (hi - lo > 1) { m = (lo + hi) >> 1; if (th[m] <= q) lo = m; else hi = m; }
+        rep.pause(); rep.poner(tt[lo] / tmax);
+      } }]);
   c.leyenda([['var(--acc)', 'Tierra (RT = 6370 km)', 'linea'], ['var(--mut)', 'trayectoria', 'linea'], ['var(--fg)', 'nave', 'punto'], ['var(--A)', 'velocidad (proporcional a v)', 'linea'],
     ['var(--X)', 'fuerza gravitatoria hacia el centro (proporcional a 1/r²)', 'linea'], ['var(--X)', 'primer sector barrido en el intervalo de tiempo', 'area'], ['var(--A)', 'segundo sector (mismo intervalo, misma área)', 'area'], ['var(--acc)', 'barras de la izquierda: K (arriba, verde), U (abajo, azul) y E (raya fina)', 'area']]);
   c.alCambiarTema(function (p) {

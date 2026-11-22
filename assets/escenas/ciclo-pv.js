@@ -61,8 +61,17 @@ Interactivos.registrar('ciclo-pv', function (c) {
     }
   }
   c.selector('Qué se muestra', ['Recta c→a del examen de Feb. 2025 (2ª): ¿dónde entra y dónde sale calor?', 'Ciclo isócora–isoterma–isóbara (Feb. 2023 y Sept. 2024): eficiencia'], 0, function (i) { modo = i; if (listo) { clave = ''; mostrar(); calc(); c.pedir(); } });
-  sl.push([0, c.slider('Posición V sobre la recta c→a (m³)', 0.55, 0.82, 0.005, Vp, function (v) { Vp = v; calc(); }, function (v) { return fm(v, 3) + ' m³'; })]);
-  sl.push([1, c.slider('Razón de presiones r = pB/pA', 1.5, 8, 0.1, rr, function (v) { rr = v; calc(); }, function (v) { return fm(v, 1); })]);
+  var sVp, sRr;
+  sVp = c.slider('Posición V sobre la recta c→a (m³)', 0.55, 0.82, 0.005, Vp, function (v) { Vp = v; calc(); }, function (v) { return fm(v, 3) + ' m³'; });
+  sl.push([0, sVp]);
+  sRr = c.slider('Razón de presiones r = pB/pA', 1.5, 8, 0.1, rr, function (v) { rr = v; calc(); }, function (v) { return fm(v, 1); });
+  sl.push([1, sRr]);
+  c.agarres([
+    { titulo: 'Arrastra el punto por la recta c→a', ver: function () { return modo === 0; }, x: function () { return [gx(Vp), gy((pc + sl_ * (Vp - Vc)) / 1e5)]; },
+      mover: function (wx) { c.fijar(sVp, mapa.x0 + wx / mapa.w * (mapa.x1 - mapa.x0)); } },
+    { titulo: 'Arrastra B hacia arriba o abajo para cambiar la razón de presiones r', ver: function () { return modo === 1; }, x: function () { return [gx(1), gy(rr)]; },
+      mover: function (wx, wy) { c.fijar(sRr, wy / mapa.h * (mapa.y1 - mapa.y0)); } }
+  ]);
   function mostrar() { sl.forEach(function (q) { q[1].parentNode.style.display = q[0] === modo ? '' : 'none'; }); }
   eX = c.etiqueta('', 0, 0, 'r'); eY = c.etiqueta('', 0, 0, 'l'); eA = c.etiqueta('', 0, 0, 'c'); eB = c.etiqueta('', 0, 0, 'c'); eC = c.etiqueta('', 0, 0, 'c'); eD = c.etiqueta('', 0, 0, 'c');
   c.leyenda([['var(--fg)', 'ciclo', 'linea'], ['var(--U)', 'tramo recorrido de c a la posición elegida (modo de la recta)', 'linea'], ['var(--X)', 'área = trabajo neto', 'area'], ['var(--warn-b)', 'posición actual', 'punto']]);

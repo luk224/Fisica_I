@@ -6,7 +6,7 @@
 Interactivos.registrar('choques', function (c) {
   var T = c.THREE, H = c.H, P = c.colores();
   var m1 = 0.5, m2 = 0.3, v1 = 2, v2 = -2, e = 1, fs = -0.55, anim = 0;
-  var suelo, traza, pCM, b1, b2, o1, o2, a1, a2, base1, base2, barras = [], rSl = null, etCM, ya = false;
+  var sM1, sM2, gA = [0, 0], gB = [0, 0], suelo, traza, pCM, b1, b2, o1, o2, a1, a2, base1, base2, barras = [], rSl = null, etCM, ya = false;
   var YP = -4.8, YK = -7.2, KP = 2.3, KK = 4.7, BW = 0.75;
   var f2 = function (t) { var r = Math.round(t * 100) / 100; return String(r === 0 ? 0 : r).replace('-', '−').replace('.', ','); };
   var lT = c.lectura('Instante t (el choque ocurre en t = 0)'), lV0 = c.lectura('Velocidades antes (vA1 ; vB1)'), lV1 = c.lectura('Velocidades después (vA2 ; vB2)'),
@@ -47,6 +47,7 @@ Interactivos.registrar('choques', function (c) {
     if (!choque && t < 0) t = 0;
     var w1 = 1.1 + 0.55 * Math.sqrt(m1), w2 = 1.1 + 0.55 * Math.sqrt(m2), h1 = 0.55 * w1 + 0.2, h2 = 0.55 * w2 + 0.2;
     var u1 = t < 0 ? v1 : vf1, u2 = t < 0 ? v2 : vf2, x1 = -w1 / 2 + u1 * t, x2 = w2 / 2 + u2 * t, xc = (m1 * x1 + m2 * x2) / M;
+    gA = [x1 - w1 / 2, h1 / 2, u1 * t]; gB = [x2 + w2 / 2, h2 / 2, u2 * t];
     b1.poner(x1 - w1 / 2, 0, x1 + w1 / 2, h1); b2.poner(x2 - w2 / 2, 0, x2 + w2 / 2, h2);
     o1.set([contorno(x1 - w1 / 2, 0, x1 + w1 / 2, h1)]); o2.set([contorno(x2 - w2 / 2, 0, x2 + w2 / 2, h2)]);
     var kv = 2.6 / vmax;
@@ -66,11 +67,14 @@ Interactivos.registrar('choques', function (c) {
     lC(f2(vcm) + ' m/s'); lR(f2(v2 - v1) + ' → ' + f2(vf2 - vf1) + ' m/s' + (choque ? '  (cociente = −e = ' + f2(-e) + ')' : ''));
     lE(!choque ? 'No hay choque: el cuerpo A no alcanza al cuerpo B (hace falta vA1 > vB1).' : e >= 0.995 ? 'Choque elástico: se conserva K.' : e <= 0.005 ? 'Totalmente inelástico: quedan unidos, misma velocidad final.' : 'Choque inelástico: se pierde parte de K.');
   }
-  c.slider('Masa del cuerpo A, mA (kg)', 0.1, 5, 0.1, m1, function (v) { m1 = v; calc(); }, function (v) { return f2(v) + ' kg'; });
-  c.slider('Masa del cuerpo B, mB (kg)', 0.1, 5, 0.1, m2, function (v) { m2 = v; calc(); }, function (v) { return f2(v) + ' kg'; });
+  sM1 = c.slider('Masa del cuerpo A, mA (kg)  — también arrastrando el borde del bloque', 0.1, 5, 0.1, m1, function (v) { m1 = v; calc(); }, function (v) { return f2(v) + ' kg'; });
+  sM2 = c.slider('Masa del cuerpo B, mB (kg)  — también arrastrando el borde del bloque', 0.1, 5, 0.1, m2, function (v) { m2 = v; calc(); }, function (v) { return f2(v) + ' kg'; });
   c.slider('Velocidad inicial del cuerpo A, vA1 (m/s)', -6, 6, 0.1, v1, function (v) { v1 = v; calc(); }, function (v) { return f2(v) + ' m/s'; });
   c.slider('Velocidad inicial del cuerpo B, vB1 (m/s)', -6, 6, 0.1, v2, function (v) { v2 = v; calc(); }, function (v) { return f2(v) + ' m/s'; });
   c.slider('Coeficiente de restitución e (0 = inelástico, 1 = elástico)', 0, 1, 0.05, e, function (v) { e = v; calc(); }, f2);
+  var mDe = function (ancho) { return Math.pow(Math.max(0, ancho - 1.1) / 0.55, 2); };
+  c.agarres([{ titulo: 'Arrastra el borde izquierdo: tamaño = masa de A', x: function () { return [gA[0], gA[1]]; }, mover: function (wx) { c.fijar(sM1, mDe(gA[2] - wx)); } },
+             { titulo: 'Arrastra el borde derecho: tamaño = masa de B', x: function () { return [gB[0], gB[1]]; }, mover: function (wx) { c.fijar(sM2, mDe(wx - (gB[2]))); } }]);
   c.reproductor({ max: 2, valor: fs + 1, paso: 0.01, vel: 2 / 3.2, pausaFin: 0.9, etiqueta: 'Instante del choque',
     fmt: function (v) { return v < 0.995 ? 'antes del choque' : v > 1.005 ? 'después del choque' : 'justo en el choque'; }, cb: function (v) { fs = v - 1; calc(); } });
   c.leyenda([['var(--acc)', 'cuerpo A', 'area'], ['var(--A)', 'cuerpo B', 'area'], ['var(--fg)', 'suma de los dos (el sistema)', 'area'], ['var(--mut)', 'centro de masa (punto del CM) y línea de referencia de las barras', 'linea']]);

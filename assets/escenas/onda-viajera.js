@@ -12,7 +12,7 @@ Interactivos.registrar('onda-viajera', function (c) {
   var A = 12, lam = 2, f = 1, sg = 1, xp = 1.2, s = 0;           /* A en cm; s = tiempo en s */
   var LX = 6, KY = 4, Y1 = 1.7, Y2 = -1.5, TW = 2, KT = LX / TW, w = 0.016, listo = false, col = [];
   var fm = function (v, d) { var q = Math.pow(10, d); return (Math.round(v * q) / q).toFixed(d).replace('-', '−').replace('.', ','); };
-  var cuerda, ejes1, ejes2, marca, flechaV, cresta, dcresta, parti, gra, pt, cursor, bl, bT, tk;
+  var sA, sL, sF, sX, cuerda, ejes1, ejes2, marca, flechaV, cresta, dcresta, parti, gra, pt, cursor, bl, bT, tk;
   var lw = c.lectura('Parámetros de la onda'), lt = c.lectura('En este instante'), lp = c.lectura('Partícula marcada');
   var eL, eT, eV, ex, et, ey, eyt, eP, eC;
 
@@ -60,10 +60,16 @@ Interactivos.registrar('onda-viajera', function (c) {
     lt('t = ' + fm(s, 2) + ' s:   la cresta marcada (azul) está en x = ' + fm(xc, 2) + ' m y avanza ' + (sg > 0 ? 'hacia +x' : 'hacia −x') + ' con rapidez ' + fm(v, 2) + ' m/s');
     lp('x = ' + fm(xp, 2) + ' m:   y = ' + fm(yp * 100, 2) + ' cm   ·   vᵧ = ' + fm(vy, 3) + ' m/s   ·   a_y = ' + fm(ay, 2) + ' m/s²   (vᵧ máx = ωA = ' + fm(om * a, 3) + ' m/s; no confundir con v)');
   }
-  c.slider('Amplitud A (cm)', 2, 30, 0.5, A, function (v) { A = v; calc(); }, function (v) { return fm(v, 1) + ' cm'; });
-  c.slider('Longitud de onda λ (m)', 0.5, 6, 0.1, lam, function (v) { lam = v; calc(); }, function (v) { return fm(v, 1) + ' m'; });
-  c.slider('Frecuencia f (Hz)', 0.5, 4, 0.25, f, function (v) { f = v; calc(); }, function (v) { return fm(v, 2) + ' Hz'; });
-  c.slider('Posición de la partícula marcada x (m)', 0, 6, 0.1, xp, function (v) { xp = v; calc(); }, function (v) { return fm(v, 1) + ' m'; });
+  sA = c.slider('Amplitud A (cm)', 2, 30, 0.5, A, function (v) { A = v; calc(); }, function (v) { return fm(v, 1) + ' cm'; });
+  sL = c.slider('Longitud de onda λ (m)', 0.5, 6, 0.1, lam, function (v) { lam = v; calc(); }, function (v) { return fm(v, 1) + ' m'; });
+  sF = c.slider('Frecuencia f (Hz)', 0.5, 4, 0.25, f, function (v) { f = v; calc(); }, function (v) { return fm(v, 2) + ' Hz'; });
+  sX = c.slider('Posición de la partícula marcada x (m)', 0, 6, 0.1, xp, function (v) { xp = v; calc(); }, function (v) { return fm(v, 1) + ' m'; });
+  c.agarres([
+    { titulo: 'Arrastra la partícula a lo largo de la cuerda (posición x)', x: function () { return [xp, Y1 + KY * (A / 100) * Math.cos(2 * Math.PI / lam * xp - sg * 2 * Math.PI * f * s)]; }, mover: function (wx) { c.fijar(sX, wx); } },
+    { titulo: 'Arrastra la cresta hacia arriba o abajo: amplitud A', x: function () { var xc = (((sg * lam * f * s) % lam) + lam) % lam; return [xc, Y1 + KY * A / 100]; }, mover: function (wx, wy) { c.fijar(sA, (wy - Y1) / KY * 100); } },
+    { titulo: 'Arrastra el extremo de λ: longitud de onda', x: function () { return [lam, Y1 - 1.35]; }, mover: function (wx) { c.fijar(sL, wx); } },
+    { titulo: 'Arrastra el extremo de T: frecuencia f = 1/T', x: function () { return [KT * Math.min(1 / f, TW), Y2 - 1.5]; }, mover: function (wx) { c.fijar(sF, 1 / Math.max(0.05, wx / KT)); } }
+  ]);
   c.selector('Sentido de propagación', ['hacia +x:  y = A cos(kx − ωt)', 'hacia −x:  y = A cos(kx + ωt)'], 0, function (i) { sg = i === 0 ? 1 : -1; calc(); });
   c.reproductor({ max: TW, valor: 0, paso: 0.01, vel: 0.5, ciclico: true, etiqueta: 'Tiempo (s)',
     fmt: function (v) { return 't = ' + fm(v, 2) + ' s'; }, cb: function (v) { s = v; calc(); } });
