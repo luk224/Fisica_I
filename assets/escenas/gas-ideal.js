@@ -119,6 +119,17 @@ Interactivos.registrar('gas-ideal', function (c) {
   sl.push([1, c.slider('Temperatura T (K)', 240, 450, 2, Tv, function (v) { Tv = v; calc(); }, function (v) { return fm(v, 0) + ' K'; })]);
   sl.push([1, c.slider('Volumen V (L)', 0.05, 0.5, 0.005, Vv, function (v) { Vv = v; calc(); }, function (v) { return fm(v, 3) + ' L'; })]);
   function mostrar() { sl.forEach(function (q) { q[1].parentNode.style.display = q[0] === modo ? '' : 'none'; }); }
+  function Vde(wx) { return mapa.X0 + (wx - mapa.x0) / mapa.w * (mapa.X1 - mapa.X0); }
+  function pde(wy) { return mapa.Y0 + (wy - mapa.y0) / mapa.h * (mapa.Y1 - mapa.Y0); }
+  c.agarres([
+    { titulo: 'Arrastra el estado (V, p) sobre la gráfica: cambian el volumen y la temperatura', ver: function () { return modo === 0; },
+      x: function () { return [gx(V), gy(Math.min(n * RL * Tk / V, ymaxA))]; },
+      mover: function (wx, wy) { var v = Math.max(10, Math.min(60, Vde(wx))); c.fijar(sl[2][1], v); c.fijar(sl[1][1], pde(wy) * v / (n * RL)); } },
+    { titulo: 'Arrastra el pistón: volumen V', ver: function () { return modo === 0; }, x: function () { return [V / 6 + 0.14, HB / 2]; }, mover: function (wx) { c.fijar(sl[2][1], (wx - 0.14) * 6); } },
+    { titulo: 'Arrastra el punto: volumen y temperatura de la isoterma', ver: function () { return modo === 1; },
+      x: function () { var Vm = Math.max(Vv, B_ * 1000 * 1.05); return [gx(Vm), gy(Math.max(0, Math.min(vdw(Tv, Vm), ymaxV)))]; },
+      mover: function (wx, wy) { var v = Math.max(0.05, Math.min(0.5, Vde(wx))), Lm = v / 1000; c.fijar(sl[4][1], v); c.fijar(sl[3][1], (pde(wy) * 1e6 + A_ / (Lm * Lm)) * (Lm - B_) / R); } }
+  ]);
   c.reproductor({ max: 600, valor: 0, paso: 0.05, vel: 1, ciclico: true, etiqueta: 'Tiempo (la animación solo afecta al modo de partículas)', fmt: function (v) { return fm(v, 1) + ' s'; }, cb: function (v) { tt = v; calc(); } });
   eX = c.etiqueta('', 0, 0, 'r'); eY = c.etiqueta('', 0, 0, 'l'); eA = c.etiqueta('', 0, 0, 'c'); eB = c.etiqueta('', 0, 0, 'c'); eC = c.etiqueta('', 0, 0, 'c'); eD = c.etiqueta('', 0, 0, 'c');
   c.leyenda([['var(--fg)', 'gas ideal (isoterma, trazos)', 'linea'], ['var(--U)', 'van der Waals (CO₂) / partículas', 'linea'], ['var(--E)', 'isoterma crítica', 'linea'], ['var(--warn-b)', 'estado actual', 'punto'], ['var(--E)', 'punto crítico (modo CO₂)', 'punto']]);

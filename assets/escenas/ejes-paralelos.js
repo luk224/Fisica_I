@@ -63,7 +63,12 @@ Interactivos.registrar('ejes-paralelos', function (c) {
   c.selector('Cuerpo uniforme ', ['Varilla delgada (eje ⊥ a ella): ML²/12', 'Cilindro macizo (eje paralelo al de simetría): MR²/2', 'Esfera maciza (eje paralelo a un diámetro): 2MR²/5', 'Aro o cilindro hueco de pared delgada: MR²'], 0, function (i) { cuerpo = i; if (listo) dibujaCuerpo(); });
   c.slider('Masa M (kg)', 1, 20, 0.5, M, function (v) { M = v; calc(); });
   c.slider('Tamaño: L (varilla) o R (resto) (m)', 0.2, 3, 0.1, s, function (v) { s = v; calc(); });
-  c.reproductor({ max: FM, valor: f, paso: 0.01, vel: 0.25, pausaFin: 0.8, etiqueta: 'Distancia d del eje al CM', fmt: function (v) { return 'd = ' + f2(v) + (cuerpo === 0 ? ' L' : ' R'); }, cb: function (v) { f = v; calc(); } });
+  var rp = c.reproductor({ max: FM, valor: f, paso: 0.01, vel: 0.25, pausaFin: 0.8, etiqueta: 'Distancia d del eje al CM', fmt: function (v) { return 'd = ' + f2(v) + (cuerpo === 0 ? ' L' : ' R'); }, cb: function (v) { f = v; calc(); } });
+  var gp = function (wx, k) { rp.pause(); rp.poner(Math.max(0, Math.min(FM, k))); };
+  c.agarres([
+    { titulo: 'Arrastra el eje a lo largo del cuerpo: distancia d', x: function () { return [CX + f * (cuerpo === 0 ? 2 * RG : RG), CY]; }, mover: function (wx) { gp(wx, (wx - CX) / (cuerpo === 0 ? 2 * RG : RG)); } },
+    { titulo: 'Arrastra el punto de la curva: distancia d', x: function () { return [gx(f), GY0 + (CO[cuerpo] + f * f) / (CO[cuerpo] + FM * FM) * (GY1 - GY0 - 0.2)]; }, mover: function (wx) { gp(wx, (wx - GX0) / (GX1 - GX0) * FM); } }
+  ]);
   c.leyenda([['var(--acc)', 'I(P) (curva) frente a d', 'linea'], ['var(--mut)', 'I(cm) (valor en d = 0)', 'linea'], ['var(--warn-b)', 'M·d² (lo que añade el desplazamiento) y eje de giro', 'linea'], ['var(--fg)', '× centro de masa', 'punto']]);
   c.alCambiarTema(function (p) { P = p; c.renderer.setClearColor(p.bg); if (listo) dibujaCuerpo(); });
   c.vista(-6.4, 8, -3.4, 3.7); w = 0.0055 * 7.1;

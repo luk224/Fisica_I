@@ -52,9 +52,11 @@ Interactivos.registrar('momento-angular', function (c) {
     lKk(f1(Kc) + ' J   (inicial ' + f1(K1) + ' J)');
     lW(f1(Kc - K1) + ' J   (la energía no se conserva: L sí)');
   }
-  c.slider('Distancia de las mancuernas al eje r (m)', 0.2, 1.0, 0.01, r, function (v) { r = v; calc(); }, function (v) { return f2(v) + ' m'; });
+  var sR = c.slider('Distancia de las mancuernas al eje r (m)  — también arrastrando una mancuerna', 0.2, 1.0, 0.01, r, function (v) { r = v; calc(); }, function (v) { return f2(v) + ' m'; });
   c.slider('Masa de cada mancuerna m (kg)', 0, 10, 0.5, m, function (v) { m = v; calc(); }, function (v) { return f1(v) + ' kg'; });
   c.slider('Giro inicial ω₁ con r = 1,0 m (rev/s)', 0.2, 1.0, 0.05, w1, function (v) { w1 = v; calc(); }, function (v) { return f2(v) + ' rev/s'; });
+  c.agarres([{ titulo: 'Arrastra una mancuerna hacia el eje o hacia fuera: distancia r', x: function () { var x = r * sx, a = ph * rad; return [CX + x * Math.cos(a), 0.1 + x * Math.sin(a)]; },
+    mover: function (wx, wy) { c.fijar(sR, Math.hypot(wx - CX, wy - 0.1) / sx); } }]);
   c.reproductor({ max: 360, valor: 35, paso: 1, vel: function () { return om(r) / rad * 0.35; }, ciclico: true, etiqueta: 'Giro de la mesa', fmt: function (v) { return Math.round(v) + '°'; }, cb: function (v) { ph = v; calc(); } });
   c.leyenda([['var(--A)', 'mancuernas (masa m)', 'punto'], ['var(--U)', 'barra azul: L = I ω (constante)', 'area'], ['var(--A)', 'barra naranja: K (la línea discontinua marca K₁)', 'area']]);
   nuevo(); listo = true;

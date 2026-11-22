@@ -90,9 +90,13 @@ Interactivos.registrar('amortiguado-resonancia', function (c) {
   c.slider('Masa m (kg)', 0.1, 2, 0.05, m, function (v) { m = v; calc(); }, function (v) { return fm(v, 2) + ' kg'; });
   c.slider('Constante del resorte k (N/m)', 1, 10, 0.5, k, function (v) { k = v; calc(); }, function (v) { return fm(v, 1) + ' N/m'; });
   c.slider('Amortiguamiento b / bcrít  (bcrít = 2√(km))', 0.03, 2, 0.01, bt, function (v) { bt = Math.round(v * 100) / 100; calc(); }, function (v) { return fm(v, 2) + ' bcrít'; });
-  c.slider('Frecuencia impulsora ωd / ω₀', 0.05, 2.5, 0.05, rd, function (v) { rd = v; calc(); }, function (v) { return fm(v, 2) + ' ω₀'; });
-  c.reproductor({ max: TM, valor: 0, paso: 0.01, vel: 0.5, ciclico: false, pausaFin: 1.5, etiqueta: 'Tiempo (en periodos T₀)',
+  var sRd = c.slider('Frecuencia impulsora ωd / ω₀', 0.05, 2.5, 0.05, rd, function (v) { rd = v; calc(); }, function (v) { return fm(v, 2) + ' ω₀'; });
+  var rep = c.reproductor({ max: TM, valor: 0, paso: 0.01, vel: 0.5, ciclico: false, pausaFin: 1.5, etiqueta: 'Tiempo (en periodos T₀)',
     fmt: function (v) { return 't = ' + fm(v * T0, 2) + ' s = ' + fm(v, 2) + ' T₀'; }, cb: function (v) { s = v; calc(); } });
+  c.agarres([
+    { titulo: 'Arrastra el punto de la gráfica x(t) para elegir el instante', x: function () { return [tx(s * T0), X(s * T0)]; }, mover: function (wx) { rep.pause(); rep.poner(Math.max(0, Math.min(TM, (wx - LX) / LW * TM))); } },
+    { titulo: 'Arrastra el punto de la resonancia: frecuencia impulsora ωd/ω₀', x: function () { return [rx(rd), Math.min(RB + RH * 1.04, RB + RH * Amp(rd) / Math.min(12, H.techo(Math.max(1.2, (bt < Math.SQRT1_2 ? 1 / (2 * bt * Math.sqrt(1 - bt * bt)) : 1) * 1.1))))]; }, mover: function (wx) { c.fijar(sRd, (wx - RX) / RW * RMAX); } }
+  ]);
   c.leyenda([['var(--acc)', 'x(t) y A(ωd) del b elegido', 'linea'], ['var(--mut)', 'envolvente ±Ae^(−bt/2m) (a trazos)', 'linea'], ['var(--mut)', 'otros b = 0,2 · 0,4 · 0,7 · 1,0 · 2,0 × √(km) (fig. 14.28)', 'linea'], ['var(--X)', 'pico de resonancia', 'punto'], ['var(--warn-b)', 'instante / ωd elegido', 'punto']]);
   c.alCambiarTema(function (p) {
     P = p; c.renderer.setClearColor(p.bg);

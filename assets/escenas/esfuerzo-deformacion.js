@@ -77,10 +77,16 @@ Interactivos.registrar('esfuerzo-deformacion', function (c) {
   }
   c.selector('Escala de la deformación', ['Toda la curva, hasta la fractura', 'Ampliar la zona elástica (hasta 3 veces la deformación en b)'], 0, function (i) { modo = i; if (listo) { calc(); slC.dispatchEvent(new Event('input')); } });
   c.slider('Módulo de Young Y (×10¹⁰ Pa)', 5, 21, 0.5, Y, function (v) { Y = v; calc(); }, function (v) { return f1(v); });
-  c.slider('Límite elástico (esfuerzo en b, ×10⁸ Pa)', 1, 10, 0.5, sy, function (v) { sy = v; calc(); }, function (v) { return f1(v); });
+  var sSy = c.slider('Límite elástico (esfuerzo en b, ×10⁸ Pa)', 1, 10, 0.5, sy, function (v) { sy = v; calc(); }, function (v) { return f1(v); });
   c.slider('Resistencia máxima (×10⁸ Pa, al menos 1,05 × el límite elástico)', 1.5, 12, 0.5, sm, function (v) { sm = v; calc(); }, function (v) { return f1(Math.max(v, 1.05 * sy)); });
-  c.slider('Deformación de fractura (%)', 1, 30, 1, ef, function (v) { ef = v; calc(); }, function (v) { return String(v) + ' %'; });
+  var sEf = c.slider('Deformación de fractura (%)', 1, 30, 1, ef, function (v) { ef = v; calc(); }, function (v) { return String(v) + ' %'; });
   slC = c.slider('Carga aplicada (recorre ε en la escala elegida)', 0, 100, 0.5, u, function (v) { u = v; calc(); }, function (v) { return f3(eFor(v)) + ' %'; });
+  c.agarres([
+    { titulo: 'Arrastra el punto de carga a lo largo de la curva', x: function () { var e = eLoad(); return [Math.min(e, ef) * kx, e >= ef ? par().sf : sig(e)]; },
+      mover: function (wx) { var e = Math.max(0, wx / kx); c.fijar(slC, modo === 0 ? 100 * Math.cbrt(Math.min(e, ef) / ef) : 100 * e / (3 * par().ey)); } },
+    { titulo: 'Arrastra el punto b hacia arriba o abajo: límite elástico', x: function () { return [par().ey * kx, sy]; }, mover: function (wx, wy) { c.fijar(sSy, wy); } },
+    { titulo: 'Arrastra el punto de fractura d: deformación de fractura', ver: function () { return modo === 0; }, x: function () { return [ef * kx, par().sf]; }, mover: function (wx) { c.fijar(sEf, wx / kx); } }
+  ]);
   ea = c.etiqueta('a', 0, 0, 'r'); eb = c.etiqueta('b', 0, 0, 'l'); ed = c.etiqueta('d', 0, 0, 'c'); eL = c.etiqueta('carga', 0, 0, 'l');
   ex = c.etiqueta('ε (%)', 0, 0, 'r'); ey = c.etiqueta('σ (×10⁸ Pa)', 0, 0, 'l'); eEl = c.etiqueta('zona elástica', 0, 0, 'l'); ePl = c.etiqueta('zona plástica', 0, 0, 'c');
   c.leyenda([['var(--acc)', 'curva σ(ε)', 'linea'], ['var(--warn-b)', 'punto de carga y descarga a trazos (pendiente Y)', 'punto'], ['var(--U)', 'zona elástica (hasta b)', 'area'], ['var(--A)', 'zona plástica (b hasta d)', 'area']]);

@@ -10,7 +10,7 @@ Interactivos.registrar('dilatacion-termica', function (c) {
   var T = c.THREE, H = c.H, P = c.colores(), listo = false;
   var MAT = [['Acero', 1.2e-5, 20e10], ['Aluminio', 2.4e-5, 7.0e10], ['Latón', 2.0e-5, 9.0e10], ['Cobre', 1.7e-5, 11e10]];
   var mat = 0, L0 = 12, Ti = -9, Tf = 33, hueco = 0, suj = 0, EXAG = 100, LD = 9, X0 = 1.5, w = 0.05;
-  var cuerpo, pared1, pared2, contorno, ref, marco, barraD, f1, f2, clave = '';
+  var gxr = X0 + LD, gxw = X0 + LD, cuerpo, pared1, pared2, contorno, ref, marco, barraD, f1, f2, clave = '';
   var eL0, eH, eT, eW1, eW2, eDL, eSg;
   var lE = c.lectura('Deformación térmica libre  α ΔT'), lD = c.lectura('Alargamiento libre  ΔL = α L₀ ΔT'), lL = c.lectura('Longitud final si pudiera dilatarse'),
       lS = c.lectura('Esfuerzo  F/A'), lF = c.lectura('Fuerza sobre cada cm² de sección'), lR = c.lectura('Qué ocurre');
@@ -49,7 +49,7 @@ Interactivos.registrar('dilatacion-termica', function (c) {
     var s = LD / L0, dD = dLr * s * EXAG, hD = h * s * EXAG, dLD = dLl * s * EXAG, xr = X0 + LD + dD, xw = X0 + LD + hD, fr = Math.max(0, Math.min(1, (Tf + 10) / 120));
     var col = new T.Color(P.S).lerp(new T.Color(P.W), fr); cuerpo.material.color.copy(col);
     poner(pared1, 0.45, X0, -1.5, 1.5); poner(pared2, xw, xw + 1.3, -1.5, 1.5);
-    poner(cuerpo, X0, xr, -0.55, 0.55); contorno.set(caja(X0, xr, -0.55, 0.55));
+    gxr = xr; gxw = xw; poner(cuerpo, X0, xr, -0.55, 0.55); contorno.set(caja(X0, xr, -0.55, 0.55));
     /* cota del alargamiento libre (no dibujado más allá de la pared) */
     var xl = X0 + LD + dLD, lim = Math.min(xl, 15.6);
     barraD.set(Math.abs(dLD) > 0.02 ? [[[X0 + LD, -0.95], [Math.min(X0 + LD + dLD, lim), -0.95]], [[X0 + LD, -0.8], [X0 + LD, -1.1]], [[Math.min(X0 + LD + dLD, lim), -0.8], [Math.min(X0 + LD + dLD, lim), -1.1]]] : []);
@@ -74,8 +74,14 @@ Interactivos.registrar('dilatacion-termica', function (c) {
   c.selector('Sujeción', ['Con hueco ajustable', 'Soldada a las dos paredes'], suj, function (i) { suj = i; calc(); });
   c.slider('Longitud inicial L₀ (m)', 3, 30, 1, L0, function (v) { L0 = v; calc(); }, function (v) { return fm(v, 0) + ' m'; });
   c.slider('Temperatura inicial (°C)', -20, 40, 1, Ti, function (v) { Ti = v; calc(); }, function (v) { return fm(v, 0) + ' °C'; });
-  c.slider('Temperatura final (°C)', -20, 120, 1, Tf, function (v) { Tf = v; calc(); }, function (v) { return fm(v, 0) + ' °C'; });
-  c.slider('Hueco (mm) — solo con hueco ajustable', 0, 12, 0.5, hueco, function (v) { hueco = v; calc(); }, function (v) { return fm(v, 1) + ' mm'; });
+  var sTf = c.slider('Temperatura final (°C)', -20, 120, 1, Tf, function (v) { Tf = v; calc(); }, function (v) { return fm(v, 0) + ' °C'; });
+  var sHu = c.slider('Hueco (mm) — solo con hueco ajustable', 0, 12, 0.5, hueco, function (v) { hueco = v; calc(); }, function (v) { return fm(v, 1) + ' mm'; });
+  c.agarres([
+    { titulo: 'Arrastra el extremo de la barra: temperatura final (calienta o enfría)', x: function () { return [gxr, 0]; },
+      mover: function (wx) { var m = MAT[mat], s = LD / L0; c.fijar(sTf, Ti + (wx - X0 - LD) / (m[1] * L0 * s * EXAG)); } },
+    { titulo: 'Arrastra la pared derecha: tamaño del hueco', ver: function () { return suj === 0; }, x: function () { return [gxw, 1.0]; },
+      mover: function (wx) { c.fijar(sHu, (wx - X0 - LD) / ((LD / L0) * EXAG) * 1000); } }
+  ]);
   eL0 = c.etiqueta('', 0, 0, 'c'); eH = c.etiqueta('', 0, 0, 'c'); eT = c.etiqueta('', 0, 0, 'c'); eW1 = c.etiqueta('pared', 0, 0, 'c'); eW2 = c.etiqueta('pared', 0, 0, 'c');
   eDL = c.etiqueta('', 0, 0, 'c'); eSg = c.etiqueta('', 0, 0, 'c');
   c.leyenda([['var(--U)', 'barra a la temperatura final (azul frío → rojo caliente); contorno a trazos: tamaño inicial', 'area'], ['var(--warn-b)', 'cota del alargamiento libre', 'linea']]);

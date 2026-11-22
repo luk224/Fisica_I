@@ -4,7 +4,7 @@
 Interactivos.registrar('energia-rampa', function (c) {
   var T = c.THREE, H = c.H, rad = Math.PI / 180, kres = 2000, LR = 15, CC = 1.2, D = 1.3;
   var m = 1.5, th = 30, mu = 0.5, U0 = 119, s = 6, g = 9.8, P = c.colores(), w;
-  var ejes, suelo, pared, muelle, blq, barras = [], marco, pA;
+  var sS, sTh, ejes, suelo, pared, muelle, blq, barras = [], marco, pA;
   var lS = c.lectura('Recorrido s por la rampa desde A'), lX = c.lectura('Compresión del resorte'), lUe = c.lectura('Energía potencial elástica'),
       lK = c.lectura('Energía cinética K (rapidez v)'), lUg = c.lectura('Energía potencial gravitatoria = m·g·s·sen θ'),
       lQ = c.lectura('Energía interna ganada por fricción ΔU int = μk·m·g·cos θ·s'), lT = c.lectura('Suma: elástica + cinética + gravitatoria + interna'), lE = c.lectura('Estado');
@@ -59,10 +59,16 @@ Interactivos.registrar('energia-rampa', function (c) {
     lE(!mueve ? 'La fuerza del resorte no vence a mg·sen θ + fricción: el bloque no se mueve.' : parado ? 'K = 0: se detiene (aquí acaba el modelo).' : se < x0 ? 'El resorte aún empuja al bloque.' : 'Resorte relajado: solo actúan peso y fricción.');
   }
   c.slider('Masa m (kg)', 0.5, 5, 0.1, m, function (v) { m = v; calc(); }, function (v) { return f1(v) + ' kg'; });
-  c.slider('Ángulo de la rampa θ (°)', 10, 60, 1, th, function (v) { th = v; calc(); }, function (v) { return v + '°'; });
+  sTh = c.slider('Ángulo de la rampa θ (°)', 10, 60, 1, th, function (v) { th = v; calc(); }, function (v) { return v + '°'; });
   c.slider('Fricción cinética μk', 0, 1, 0.05, mu, function (v) { mu = v; calc(); }, fm);
   c.slider('Energía elástica inicial del resorte (J)', 0, 200, 0.1, U0, function (v) { U0 = v; calc(); }, function (v) { return f1(v) + ' J'; });
-  c.slider('Recorrido s desde A (m)', 0, 12, 0.05, s, function (v) { s = v; calc(); }, function (v) { return fm(v) + ' m'; });
+  sS = c.slider('Recorrido s desde A (m)', 0, 12, 0.05, s, function (v) { s = v; calc(); }, function (v) { return fm(v) + ' m'; });
+  c.agarres([
+    { titulo: 'Arrastra el bloque por la rampa: recorrido s', x: function () { var q = CC + Math.min(s, 12) + D / 2, t = th * rad; return [q * Math.cos(t) - 0.5 * D * Math.sin(t), q * Math.sin(t) + 0.5 * D * Math.cos(t)]; },
+      mover: function (wx, wy) { var t = th * rad; c.fijar(sS, wx * Math.cos(t) + wy * Math.sin(t) - CC - D / 2); } },
+    { titulo: 'Arrastra el extremo de la rampa: ángulo θ', x: function () { return [LR * Math.cos(th * rad), LR * Math.sin(th * rad)]; },
+      mover: function (wx, wy) { c.fijar(sTh, Math.atan2(wy, Math.max(wx, 1e-6)) / rad); } }
+  ]);
   c.selector('Valor de g', ['9,80 m/s²', '9,81 m/s²'], 0, function (i) { g = i ? 9.81 : 9.8; calc(); });
   c.leyenda([['var(--acc)', 'energía elástica del resorte', 'area'], ['var(--X)', 'energía cinética K', 'area'], ['var(--A)', 'energía potencial gravitatoria (altura ganada)', 'area'], ['var(--warn-b)', 'energía interna ganada por fricción (−W de la fricción)', 'area'],
     ['var(--mut)', 'barra completa = energía elástica inicial', 'linea']]);

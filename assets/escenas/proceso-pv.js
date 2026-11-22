@@ -6,7 +6,7 @@ Interactivos.registrar('proceso-pv', function (c) {
   var T = c.THREE, H = c.H, P = c.colores(), listo = false;
   var R = 8.314, p1 = 101325, n = 1;
   var proc = 0, gas = 0, T1 = 300, r = 2, q = 2, clave = '';
-  var ejes, curva, ref, sombra, pu1, pu2, ticks = [], eX, eY, eP;
+  var g2 = [2.2, 1], ejes, curva, ref, sombra, pu1, pu2, ticks = [], eX, eY, eP;
   var lE1 = c.lectura(''), lE2 = c.lectura(''), lW = c.lectura(''), lQ = c.lectura(''), lU = c.lectura(''), lC = c.lectura('');
   var fm = function (x, d) { return x.toFixed(d).replace('.', ',').replace(/^-/, '−'); };
   var NOM = ['isobárico (p constante)', 'isocórico (V constante)', 'isotérmico (T constante)', 'adiabático (Q = 0)'];
@@ -55,7 +55,7 @@ Interactivos.registrar('proceso-pv', function (c) {
       curva.set([xs]); sombra.set(hs); sombra.material.color.set(W >= 0 ? P.L : P.W);
     }
     ref.set(proc === 2 ? [] : [H.grafica(function (x) { return 1 / (x / kx); }, 0.35 * kx, 3.2 * kx, 120, Y1)[0] || [[kx, 1], [kx, 1]]]);
-    pu1.mover(kx, 1); pu2.mover(x2 * kx, Math.min(y2, Y1));
+    pu1.mover(kx, 1); pu2.mover(x2 * kx, Math.min(y2, Y1)); g2 = [x2 * kx, Math.min(y2, Y1)];
     eP.poner(NOM[proc] + (proc === 2 ? '' : '   ·   isoterma por 1 (trazos)')); eP.mover(X1 * kx, Y1 + 0.3); eP.ancla('r');
     lE1('Estado 1:  p₁ = 1,00 atm   V₁ = ' + fm(V1 * 1000, 1) + ' L   T₁ = ' + fm(T1, 0) + ' K   (n = 1 mol)');
     lE2('Estado 2:  p₂ = ' + fm(p2 / 101325, 2) + ' atm   V₂ = ' + fm(V2 * 1000, 1) + ' L   T₂ = ' + fm(T2, 1) + ' K');
@@ -70,6 +70,8 @@ Interactivos.registrar('proceso-pv', function (c) {
   sl.push([1, c.slider('Volumen final V₂ / V₁', 0.5, 3, 0.05, r, function (v) { r = v; calc(); }, function (v) { return fm(v, 2); })]);
   sl.push([1, c.slider('Presión final p₂ / p₁ (isocórico)', 0.4, 3, 0.05, q, function (v) { q = v; calc(); }, function (v) { return fm(v, 2); })]);
   sl.push([1, c.slider('Temperatura inicial T₁ (K)', 200, 500, 10, T1, function (v) { T1 = v; calc(); }, function (v) { return fm(v, 0) + ' K'; })]);
+  c.agarres([{ titulo: 'Arrastra el estado final 2 (horizontal: volumen; vertical: presión en el isocórico)', x: function () { return g2; },
+    mover: function (wx, wy) { if (proc === 1) c.fijar(sl[1][1], wy); else c.fijar(sl[0][1], wx / kx); } }]);
   eX = c.etiqueta('', 0, 0, 'r'); eY = c.etiqueta('', 0, 0, 'l'); eP = c.etiqueta('', 0, 0, 'c');
   c.leyenda([['var(--U)', 'proceso (trayectoria)', 'linea'], ['var(--X)', 'área = W (verde: W > 0; naranja: W < 0)', 'area'], ['var(--fg)', 'isoterma por el estado 1', 'linea'], ['var(--warn-b)', 'estado final', 'punto']]);
   c.alCambiarTema(function (p) { P = p; c.renderer.setClearColor(p.bg); if (!listo) return; clave = ''; calc(); });

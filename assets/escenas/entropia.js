@@ -71,7 +71,9 @@ Interactivos.registrar('entropia', function (c) {
   c.selector('Qué se muestra', ['Mezcla de dos masas de agua (ej. 20.10)', 'Expansión libre y microestados (ej. 20.8 y 20.11)'], 0, function (i) { modo = i; if (listo) { clave = ''; mostrar(); calc(); c.pedir(); } });
   sl.push([0, c.slider('Temperatura del cuerpo caliente T₁ (K)', 273.15, 400, 1, T1, function (v) { T1 = v; if (T2 > T1) T2 = T1; calc(); }, function (v) { return fm(v, 0) + ' K'; })]);
   sl.push([0, c.slider('Temperatura del cuerpo frío T₂ (K)', 273.15, 400, 1, T2, function (v) { T2 = Math.min(v, T1); calc(); }, function (v) { return fm(Math.min(v, T1), 0) + ' K'; })]);
-  sl.push([1, c.slider('Razón de volúmenes r = V₂ / V₁', 1, 6, 0.05, rr, function (v) { rr = v; calc(); }, function (v) { return fm(v, 2); })]);
+  var sRr = c.slider('Razón de volúmenes r = V₂ / V₁', 1, 6, 0.05, rr, function (v) { rr = v; calc(); }, function (v) { return fm(v, 2); });
+  sl.push([1, sRr]);
+  c.agarres([{ titulo: 'Arrastra el punto: razón de volúmenes r = V₂/V₁', ver: function () { return modo === 1; }, x: function () { return [rr * 1.233, R * Math.log(rr) * 2.5 / 16]; }, mover: function (wx) { c.fijar(sRr, wx / 1.233); } }]);
   eV0 = c.etiqueta('', 0, 0, 'c'); eV1 = c.etiqueta('', 0, 0, 'c'); eV2 = c.etiqueta('', 0, 0, 'c');
   eX = c.etiqueta('', 0, 0, 'r'); eY = c.etiqueta('', 0, 0, 'l'); eA = c.etiqueta('', 0, 0, 'c'); eB = c.etiqueta('', 0, 0, 'c'); eC = c.etiqueta('', 0, 0, 'c'); eD = c.etiqueta('', 0, 0, 'c');
   c.leyenda([['var(--U)', 'modo 1: ΔS del cuerpo caliente (negativa)', 'area'], ['var(--A)', 'modo 1: ΔS del cuerpo frío (positiva)', 'area'], ['var(--fg)', 'modo 1: ΔS total · modo 2: curva ΔS = nR ln r', 'linea'], ['var(--acc)', 'modo 2: moléculas (ilustrativas)', 'punto'], ['var(--warn-b)', 'modo 2: estado actual', 'punto']]);

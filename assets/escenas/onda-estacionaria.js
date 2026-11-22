@@ -62,7 +62,8 @@ Interactivos.registrar('onda-estacionaria', function (c) {
   }
   c.selector('Modo normal n', ['n = 1 (fundamental)', 'n = 2', 'n = 3', 'n = 4', 'n = 5', 'n = 6', 'n = 7', 'n = 8'], n - 1, function (i) { n = i + 1; calc(); });
   c.slider('Tensión F (N)', 67, 1867, 50, F, function (v) { F = v; calc(); }, function (v) { return fm(v, 0) + ' N'; });
-  c.slider('Amplitud A de cada onda viajera (cm)', 0.2, 2, 0.1, A, function (v) { A = v; calc(); }, function (v) { return fm(v, 1) + ' cm'; });
+  var sAo = c.slider('Amplitud A de cada onda viajera (cm)', 0.2, 2, 0.1, A, function (v) { A = v; calc(); }, function (v) { return fm(v, 1) + ' cm'; });
+  c.agarres([{ titulo: 'Arrastra el antinodo hacia arriba o abajo: amplitud A', x: function () { return [LW / (2 * n), KY * 2 * A / 100]; }, mover: function (wx, wy) { c.fijar(sAo, wy * 100 / (2 * KY)); } }]);
   c.selector('Mostrar', ['la suma y las dos ondas viajeras', 'solo la suma (onda estacionaria)'], 0, function (i) { vista = i; calc(); });
   c.reproductor({ max: 2, valor: 0.1, paso: 0.005, vel: 0.2, ciclico: true, etiqueta: 'Tiempo (en periodos del modo)',
     fmt: function (v) { return 't = ' + fm(v, 2) + ' T'; }, cb: function (v) { s = v; calc(); } });

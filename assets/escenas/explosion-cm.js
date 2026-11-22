@@ -54,11 +54,19 @@ Interactivos.registrar('explosion-cm', function (c) {
     lT(f2(Tt) + ' s  ;  t = ' + f2(t) + ' s' + (ex ? ' (después de estallar)' : ' (antes de estallar)')); lX(f0(d.xA) + ' ; ' + f0(d.xB) + ' m');
     lR(f0(d.R) + ' m'); lM(f0((d.mA * d.xA + d.mB * d.xB) / M) + ' m  (coincide con R)'); lK(f0(d.dK) + ' J'); lC(f0(cmx) + ' ; ' + f0(Math.max(0, cmy)) + ' m');
   }
-  c.slider('Rapidez inicial del obús, v₀ (m/s)', 10, 160, 0.1, v0, function (v) { v0 = v; calc(); }, function (v) { return f1(v) + ' m/s'; });
-  c.slider('Ángulo de disparo α (°)', 10, 90, 1, al, function (v) { al = v; calc(); }, function (v) { return v + '°'; });
+  var sV = c.slider('Rapidez inicial del obús, v₀ (m/s)', 10, 160, 0.1, v0, function (v) { v0 = v; calc(); }, function (v) { return f1(v) + ' m/s'; });
+  var sAl = c.slider('Ángulo de disparo α (°)', 10, 90, 1, al, function (v) { al = v; calc(); }, function (v) { return v + '°'; });
   c.slider('Razón de masas mA / mB (A es el fragmento pesado)', 1, 10, 0.1, rm, function (v) { rm = v; calc(); }, f1);
   c.slider('Masa total del obús, M (kg)', 1, 20, 0.01, M, function (v) { M = v; calc(); }, function (v) { return f2(v) + ' kg'; });
-  c.slider('Velocidad de A hacia atrás respecto al obús, uA (m/s)', -100, 300, 0.01, uA, function (v) { uA = v; calc(); }, function (v) { return f2(v) + ' m/s'; });
+  var sUA = c.slider('Velocidad de A hacia atrás respecto al obús, uA (m/s)', -100, 300, 0.01, uA, function (v) { uA = v; calc(); }, function (v) { return f2(v) + ' m/s'; });
+  c.agarres([
+    { titulo: 'Arrastra el vértice: cambia la rapidez y el ángulo de disparo', x: function () { var d = datos(); return [d.xa * KX, d.H]; },
+      mover: function (wx, wy) { var vy = Math.sqrt(2 * g * Math.max(wy, 0.01)), vx = (wx / KX) * g / vy; c.fijar(sV, Math.hypot(vx, vy)); c.fijar(sAl, Math.atan2(vy, vx) / rad); } },
+    { titulo: 'Arrastra el punto de caída de A: velocidad hacia atrás uA', x: function () { var d = datos(); return [d.xA * KX, 0]; },
+      mover: function (wx) { var d = datos(); c.fijar(sUA, d.vx - (wx / KX - d.xa) / d.ts); } },
+    { titulo: 'Arrastra el punto de caída de B: velocidad hacia atrás uA', x: function () { var d = datos(); return [d.xB * KX, 0]; },
+      mover: function (wx) { var d = datos(); c.fijar(sUA, ((wx / KX - d.xa) / d.ts - d.vx) / rm); } }
+  ]);
   c.reproductor({ max: 1, valor: fs, paso: 0.002, vel: 1 / 5, pausaFin: 0.9, etiqueta: 'Instante del vuelo', fmt: function (v) { return Math.round(v * 100) + ' % del vuelo'; }, cb: function (v) { fs = v; calc(); } });
   c.leyenda([['var(--acc)', 'fragmento A (pesado)', 'punto'], ['var(--A)', 'fragmento B (ligero)', 'punto'], ['var(--fg)', 'centro de masa: sigue la parábola del obús entero (trazo discontinuo)', 'punto'], ['var(--warn-b)', 'punto de la explosión (vértice)', 'punto'], ['var(--mut)', 'eje horizontal comprimido respecto al vertical (los números de los ejes son metros reales)', 'linea']]);
   c.alCambiarTema(function (p) {

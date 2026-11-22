@@ -31,10 +31,18 @@ Interactivos.registrar('mua', function (c) {
     ld(vt ? fm(X(t0) - x0) + ' m  (= v₀t + ½at²)' : fm(V(t0)) + ' m/s');
   }
   function cambia() { if (!tg) return; nuevo(); calc(); }
-  c.slider('x₀ (m)', -10, 10, 1, x0, function (s) { x0 = s; cambia(); });
-  c.slider('v₀ (m/s)', -10, 10, 1, v0, function (s) { v0 = s; cambia(); });
-  c.slider('a (m/s²)', -5, 5, 0.5, a, function (s) { a = s; cambia(); });
-  c.slider('Instante t (s)', 0, TM, 0.1, t0, function (s) { t0 = s; if (tg) calc(); });
+  var sX0 = c.slider('x₀ (m)', -10, 10, 1, x0, function (s) { x0 = s; cambia(); });
+  var sV0 = c.slider('v₀ (m/s)', -10, 10, 1, v0, function (s) { v0 = s; cambia(); });
+  var sA = c.slider('a (m/s²)', -5, 5, 0.5, a, function (s) { a = s; cambia(); });
+  var sT = c.slider('Instante t (s)', 0, TM, 0.1, t0, function (s) { t0 = s; if (tg) calc(); });
+  c.agarres(vt ? [
+    { titulo: 'Arrastra el punto: instante t', x: function () { return [t0 * kx, V(t0)]; }, mover: function (wx) { c.fijar(sT, wx / kx); } },
+    { titulo: 'Arrastra el origen hacia arriba o abajo: velocidad inicial v₀', x: function () { return [0, v0]; }, mover: function (wx, wy) { c.fijar(sV0, wy); } },
+    { titulo: 'Arrastra el final de la recta: cambia la pendiente a', x: function () { return [TM * kx, V(TM)]; }, mover: function (wx, wy) { c.fijar(sA, (wy - v0) / TM); } }
+  ] : [
+    { titulo: 'Arrastra el punto: instante t', x: function () { return [t0 * kx, X(t0)]; }, mover: function (wx) { c.fijar(sT, wx / kx); } },
+    { titulo: 'Arrastra el origen hacia arriba o abajo: posición inicial x₀', x: function () { return [0, x0]; }, mover: function (wx, wy) { c.fijar(sX0, wy); } }
+  ]);
   c.leyenda(vt ? [['var(--acc)', 'v(t)', 'linea'], ['var(--X)', 'área = desplazamiento', 'area']] : [['var(--acc)', 'x(t)', 'linea'], ['var(--warn-b)', 'tangente (pendiente v)', 'linea']]);
   c.alCambiarTema(function (p) {
     P = p; c.renderer.setClearColor(p.bg);

@@ -52,7 +52,8 @@ Interactivos.registrar('g-radial', function (c) {
     lR('r = ' + fm(u) + ' RT = ' + fm(r / 1e6) + '×10⁶ m' + (u < 1 ? '   ·   profundidad bajo la superficie: ' + fm((1 - u) * RT / 1e3, 0) + ' km' : '   ·   altura sobre la superficie: ' + fm((u - 1) * RT / 1e3, 0) + ' km'));
   }
   c.selector('Modelo de planeta', modelos.map(function (q) { return q.n; }), im, function (i) { im = i; if (listo) calc(); });
-  c.slider('Distancia al centro r (en radios terrestres)', 0, XH, 0.01, u, function (v) { u = Math.max(0.002, v); if (listo) calc(); }, function (v) { return fm(v) + ' RT'; });
+  var sU = c.slider('Distancia al centro r (en radios terrestres)', 0, XH, 0.01, u, function (v) { u = Math.max(0.002, v); if (listo) calc(); }, function (v) { return fm(v) + ' RT'; });
+  c.agarres([{ titulo: 'Arrastra el punto a lo largo de r', x: function () { return [u * kx, gDe(im, u)]; }, mover: function (wx) { c.fijar(sU, wx / kx); } }]);
   c.leyenda([['var(--acc)', 'g(r) del modelo elegido', 'linea'], ['var(--mut)', 'a trazos: esfera uniforme de la Tierra (comparación)', 'linea'], ['var(--A)', 'punto elegido', 'punto']]);
   c.alCambiarTema(function (p) {
     P = p; c.renderer.setClearColor(p.bg);

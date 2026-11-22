@@ -7,7 +7,7 @@ Interactivos.registrar('polea-masa', function (c) {
   var T = c.THREE, H = c.H, P = c.colores(), g = 9.8;
   var M = 46.5, m = 4.2, R = 0.28, h = 3, cc = 0.5, fr = 0.6, anim = false, ult = 0, pausa = 0, sl, listo = false, w = 0.0575;
   var WX = -3.2, WY = 1.0, WR = 1.2, YB = -3.1, BH = 4.2;
-  var disco, aro, spokeA, cuerda, caja, cajaB, cabo, marca, marcaP, base, barra1, barra2a, barra2b, marco, eP, eB, e1, e2;
+  var gBl = [0, 0], ksP = 1, disco, aro, spokeA, cuerda, caja, cajaB, cabo, marca, marcaP, base, barra1, barra2a, barra2b, marco, eP, eB, e1, e2;
   var lt = c.lectura('Tiempo t (de 0 a la llegada abajo)'), ls = c.lectura('Descenso s'), lv = c.lectura('Rapidez del bloque v = a·t (= Rω)'), lo = c.lectura('Velocidad angular de la rueda ω = v/R'),
       lKb = c.lectura('Energía cinética del bloque ½mv²'), lKw = c.lectura('Energía cinética de la rueda ½Iω²'), lU = c.lectura('Energía potencial perdida m·g·s'), lF = c.lectura('Al llegar abajo (s = h)');
   var f2 = function (x) { var q = Math.round(x * 100) / 100; return String(q === 0 ? 0 : q).replace('-', '−').replace('.', ','); };
@@ -36,7 +36,7 @@ Interactivos.registrar('polea-masa', function (c) {
     var a = m * g / (m + cc * M), Tt = Math.sqrt(2 * h / a), t = fr * Tt, s = 0.5 * a * t * t, v = a * t, om = v / R, I = cc * M * R * R;
     var Kb = 0.5 * m * v * v, Kw = 0.5 * I * om * om, U = m * g * s, vf = Math.sqrt(2 * m * g * h / (m + cc * M)), Et = m * g * h;
     var y0 = WY - 1.2, ks = (y0 - YB - 0.9) / h, yt = y0 - s * ks, bw = 0.45 + 0.1 * Math.sqrt(m), bh = 0.4 + 0.1 * Math.sqrt(m), th = s / R, ph = Math.PI / 2 - th;
-    cuerda.set([[[WX + WR, WY], [WX + WR, yt]]]);
+    gBl = [WX + WR, yt - bh / 2, bh]; ksP = ks; cuerda.set([[[WX + WR, WY], [WX + WR, yt]]]);
     caja.position.x = WX + WR; caja.position.y = yt - bh / 2; caja.scale.set(bw, bh, 1);
     cajaB.set([[[WX + WR - bw / 2, yt], [WX + WR + bw / 2, yt], [WX + WR + bw / 2, yt - bh], [WX + WR - bw / 2, yt - bh], [WX + WR - bw / 2, yt]]]);
     var mx = WX + (WR - 0.05) * Math.cos(ph), my = WY + (WR - 0.05) * Math.sin(ph);
@@ -56,8 +56,10 @@ Interactivos.registrar('polea-masa', function (c) {
   c.slider('Radio de la rueda R (m)', 0.1, 0.6, 0.01, R, function (v) { R = v; calc(); });
   c.slider('Altura de caída h (m)', 1, 5, 0.5, h, function (v) { h = v; calc(); });
   c.slider('Factor c de I = c·M·R²  (½ disco macizo, 1 aro)', 0.1, 1, 0.05, cc, function (v) { cc = v; calc(); }, f2);
-  c.reproductor({ max: 1, valor: fr, paso: 0.002, vel: 1 / 3, pausaFin: 0.9, etiqueta: 'Instante de la caída',
+  rs = c.reproductor({ max: 1, valor: fr, paso: 0.002, vel: 1 / 3, pausaFin: 0.9, etiqueta: 'Instante de la caída',
     fmt: function (v) { return 't = ' + f2(v * Math.sqrt(2 * h / (m * g / (m + cc * M)))) + ' s'; }, cb: function (v) { fr = v; calc(); } });
+  c.agarres([{ titulo: 'Arrastra el bloque hacia abajo: avanza el tiempo de la caída', x: function () { return gBl; },
+    mover: function (wx, wy) { var s = (WY - 1.2 - (wy + gBl[2] / 2)) / ksP; rs.pause(); rs.poner(Math.sqrt(Math.max(0, Math.min(1, s / h)))); } }]);
   c.leyenda([['var(--A)', 'bloque (m) y su energía cinética', 'area'], ['var(--acc)', 'rueda (M, R) y su energía cinética de rotación', 'area'], ['var(--fg)', 'energía potencial perdida m·g·s', 'area']]);
   c.alCambiarTema(function (p) {
     P = p; c.renderer.setClearColor(p.bg);

@@ -7,7 +7,7 @@
 Interactivos.registrar('equilibrio-escalera', function (c) {
   var T = c.THREE, H = c.H, P = c.colores(), rad = Math.PI / 180, L = 5.0, K = 0.0022;
   var th = 53.1, s = 1.67, wh = 800, we = 180, mu = 0.40, listo = false, w = 0.0055 * 6.8;
-  var suelo, pared, hach, escal, ahom, aW, aH, aN1, aN2, aF, lim, hombre, cm;
+  var sTh, sS, suelo, pared, hach, escal, ahom, aW, aH, aN1, aN2, aF, lim, hombre, cm;
   var eN1, eN2, eF, eWh, eWe, eLim;
   var lN2 = c.lectura('Normal del suelo  n₂ = peso del hombre + peso de la escalera'), lN1 = c.lectura('Normal de la pared  n₁  (torcas respecto al pie)'),
       lF = c.lectura('Fricción necesaria  fₛ = n₁'), lMu = c.lectura('μₛ mínimo = fₛ / n₂'), lE = c.lectura('¿Resbala?'), lS = c.lectura('Hasta dónde puede subir sin resbalar');
@@ -54,11 +54,17 @@ Interactivos.registrar('equilibrio-escalera', function (c) {
     lE(resbala ? 'SÍ: fₛ necesaria > μ n₂, la escalera desliza' : 'No: fₛ ≤ μ n₂, equilibrio');
     lS(!(wh > 0) ? 'sin hombre no hay límite' : smax >= L ? 'puede llegar arriba (s = ' + f2(L) + ' m)' : smax <= 0 ? 'ni siquiera con el hombre al pie (falta fricción)' : 'hasta s = ' + f2(smax) + ' m a lo largo de la escalera');
   }
-  c.slider('Ángulo con el suelo θ (°)', 30, 80, 0.1, th, function (v) { th = v; calc(); }, function (v) { return f1(v) + '°'; });
-  c.slider('Posición del hombre s (m a lo largo de la escalera)', 0, 5, 0.01, s, function (v) { s = v; calc(); }, function (v) { return f2(v) + ' m'; });
+  sTh = c.slider('Ángulo con el suelo θ (°)', 30, 80, 0.1, th, function (v) { th = v; calc(); }, function (v) { return f1(v) + '°'; });
+  sS = c.slider('Posición del hombre s (m a lo largo de la escalera)', 0, 5, 0.01, s, function (v) { s = v; calc(); }, function (v) { return f2(v) + ' m'; });
   c.slider('Peso del hombre (N)', 0, 1000, 10, wh, function (v) { wh = v; calc(); }, function (v) { return f0(v) + ' N'; });
   c.slider('Peso de la escalera (N)', 100, 400, 10, we, function (v) { we = v; calc(); }, function (v) { return f0(v) + ' N'; });
   c.slider('Coeficiente de fricción estática del suelo μₛ', 0.05, 1, 0.01, mu, function (v) { mu = v; calc(); }, function (v) { return fm(v); });
+  c.agarres([
+    { titulo: 'Arrastra al hombre por la escalera: posición s', x: function () { return [s * Math.cos(th * rad), s * Math.sin(th * rad)]; },
+      mover: function (wx, wy) { c.fijar(sS, wx * Math.cos(th * rad) + wy * Math.sin(th * rad)); } },
+    { titulo: 'Arrastra la parte alta de la escalera: ángulo θ', x: function () { return [L * Math.cos(th * rad), L * Math.sin(th * rad)]; },
+      mover: function (wx, wy) { c.fijar(sTh, Math.atan2(wy, Math.max(wx, 1e-6)) / rad); } }
+  ]);
   c.leyenda([['var(--A)', 'escalera y hombre (peso en su punto)', 'linea'], ['var(--fg)', 'pesos', 'linea'], ['var(--U)', 'normales n₁ (pared) y n₂ (suelo)', 'linea'],
              ['var(--warn-b)', 'fricción fₛ en el pie', 'linea'], ['var(--X)', 'trazo verde: máximo que aguanta la fricción', 'linea']]);
   c.alCambiarTema(function (p) {

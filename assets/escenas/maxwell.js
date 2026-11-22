@@ -8,7 +8,7 @@ Interactivos.registrar('maxwell', function (c) {
   var R = 8.314, NA = 6.022e23, kB = 1.381e-23;
   var GAS = [['H₂', 2.016], ['He', 4.00], ['Ne', 20.18], ['N₂', 28.00], ['O₂', 32.00], ['Ar', 39.95], ['CO₂', 44.00]];
   var gA = 3, gB = 6, TA = 298.15, TB = 298.15, vA = 2025, log = 0;
-  var ejes, cA, cB, mk, relleno, guiaA, X0 = 1.6, W = 21.5, Y0 = 0.2, HH = 6, XM = 1000, ticksX = [], eX, eY, eNA, eNB, eMP, eMD, eRM, eVA;
+  var pkA = [0, 0], pkB = [0, 0], ejes, cA, cB, mk, relleno, guiaA, X0 = 1.6, W = 21.5, Y0 = 0.2, HH = 6, XM = 1000, ticksX = [], eX, eY, eNA, eNB, eMP, eMD, eRM, eVA;
   var fm = function (x, d) { return x.toFixed(d).replace('.', ',').replace(/^-/, '−'); };
   var fe = function (x) { if (x === 0) return '0'; var e = Math.floor(Math.log(x) / Math.LN10 + 1e-12), m = x / Math.pow(10, e); return fm(m, 2) + '×10' + String(e).replace('-', '⁻').replace(/\d/g, function (d) { return '⁰¹²³⁴⁵⁶⁷⁸⁹'[d]; }); };
   var lA = c.lectura(''), lB = c.lectura(''), lK = c.lectura(''), lF = c.lectura('');
@@ -53,6 +53,7 @@ Interactivos.registrar('maxwell', function (c) {
       pos.push(xp(v0), Y0, 0, xp(v1), Y0, 0, xp(v0), y0, 0, xp(v1), Y0, 0, xp(v1), y1, 0, xp(v0), y0, 0);
     }
     relleno.geometry.dispose(); relleno.geometry = new T3.BufferGeometry(); relleno.geometry.setAttribute('position', new T3.Float32BufferAttribute(pos, 3));
+    pkA = [xp(VA.mp), ya(VA.mp)]; pkB = [xp(VB.mp), mapY(fb(VB.mp), fref)];
     guiaA.set([[[xp(vA), Y0 - 0.1], [xp(vA), Y0 + HH * 0.5]]]);
     eX.poner('rapidez v (m/s)'); eX.mover(X0 + W, Y0 - 0.95); eY.poner(log ? 'f(v)  (escala logarítmica: 12 decenas)' : 'f(v)'); eY.mover(X0 + 0.1, Y0 + HH + 0.45);
     eNA.poner(GAS[gA][0] + ' a ' + fm(TA, 1) + ' K'); eNA.mover(X0 + W - 0.2, Y0 + HH - 0.2); eNA.ancla('r');
@@ -69,10 +70,16 @@ Interactivos.registrar('maxwell', function (c) {
   }
   var sels = [];
   c.selector('Gas A (curva azul)', GAS.map(function (g) { return g[0] + ' (' + fm(g[1], 2) + ' g/mol)'; }), gA, function (i) { gA = i; calc(); });
-  c.slider('Temperatura de A (K)', 50, 1000, 0.05, TA, function (v) { TA = v; calc(); }, function (v) { return fm(v, 2) + ' K'; });
+  var sTA = c.slider('Temperatura de A (K)', 50, 1000, 0.05, TA, function (v) { TA = v; calc(); }, function (v) { return fm(v, 2) + ' K'; });
   c.selector('Gas B (curva naranja, para comparar)', GAS.map(function (g) { return g[0] + ' (' + fm(g[1], 2) + ' g/mol)'; }), gB, function (i) { gB = i; calc(); });
-  c.slider('Temperatura de B (K)', 50, 1000, 0.05, TB, function (v) { TB = v; calc(); }, function (v) { return fm(v, 2) + ' K'; });
-  c.slider('Rapidez v_A para la «cola» sombreada (m/s)', 100, 4000, 25, vA, function (v) { vA = v; calc(); }, function (v) { return fm(v, 0) + ' m/s'; });
+  var sTB = c.slider('Temperatura de B (K)', 50, 1000, 0.05, TB, function (v) { TB = v; calc(); }, function (v) { return fm(v, 2) + ' K'; });
+  var sVA = c.slider('Rapidez v_A para la «cola» sombreada (m/s)', 100, 4000, 25, vA, function (v) { vA = v; calc(); }, function (v) { return fm(v, 0) + ' m/s'; });
+  var vDe = function (wx) { return (wx - X0) / W * XM; };
+  c.agarres([
+    { titulo: 'Arrastra la línea: rapidez v_A de la cola', x: function () { return [X0 + W * vA / XM, Y0 + HH * 0.5]; }, mover: function (wx) { c.fijar(sVA, vDe(wx)); } },
+    { titulo: 'Arrastra el máximo de A hacia los lados: temperatura de A', x: function () { return pkA; }, mover: function (wx) { var v = Math.max(50, vDe(wx)), M = GAS[gA][1] / 1000; c.fijar(sTA, v * v * M / (2 * R)); } },
+    { titulo: 'Arrastra el máximo de B hacia los lados: temperatura de B', x: function () { return pkB; }, mover: function (wx) { var v = Math.max(50, vDe(wx)), M = GAS[gB][1] / 1000; c.fijar(sTB, v * v * M / (2 * R)); } }
+  ]);
   c.selector('Eje vertical', ['Lineal', 'Logarítmico (se ve la cola)'], 0, function (i) { log = i; calc(); });
   eX = c.etiqueta('', 0, 0, 'r'); eY = c.etiqueta('', 0, 0, 'l'); eNA = c.etiqueta('', 0, 0, 'r'); eNB = c.etiqueta('', 0, 0, 'r');
   eMP = c.etiqueta('', 0, 0, 'r'); eMD = c.etiqueta('', 0, 0, 'c'); eRM = c.etiqueta('', 0, 0, 'l'); eVA = c.etiqueta('', 0, 0, 'l');

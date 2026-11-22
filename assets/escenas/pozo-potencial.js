@@ -91,6 +91,10 @@ Interactivos.registrar('pozo-potencial', function (c) {
   sE = c.slider('Energía total E (J)', YL, YH, 0.5, E, function (s) { E = s; calc(); });
   sX = c.slider('Posición de la partícula (fracción del dominio, 0 → 1)', 0, 1, 0.005, f, function (s) { f = s; calc(); },
     function (s) { return fm(cv.x0 + s * (cv.x1 - cv.x0)) + ' m'; });
+  c.agarres([
+    { titulo: 'Arrastra la partícula a lo largo de x', x: function () { var x = xr(); return [x * kx, cv.U(x)]; }, mover: function (wx) { c.fijar(sX, Math.max(0, Math.min(1, (wx / kx - cv.x0) / (cv.x1 - cv.x0)))); } },
+    { titulo: 'Arrastra la línea de energía total E hacia arriba o abajo', x: function () { return [(cv.x1 - 0.12 * (cv.x1 - cv.x0)) * kx, E]; }, mover: function (wx, wy) { c.fijar(sE, wy); } }
+  ]);
   c.leyenda([['var(--acc)', 'U(x)', 'linea'], ['var(--mut)', 'energía total E', 'linea'], ['var(--X)', 'región permitida y K = E − U', 'linea'],
     ['var(--warn-b)', 'puntos de retorno (K = 0)', 'punto'], ['var(--fg)', 'equilibrio estable (mínimo)', 'punto'], ['var(--E)', 'equilibrio inestable (máximo)', 'punto'],
     ['var(--A)', 'partícula y fuerza F = −dU/dx', 'punto']]);

@@ -15,7 +15,7 @@ Interactivos.registrar('rodadura-rampa', function (c) {
     { nom: 'esfera hueca (c = 2/3)', c: 2 / 3, col: 'E' },
     { nom: 'aro (c = 1)', c: 1, col: 'A' }
   ];
-  var pista = [], meta, rampa, ang, etAng, lect = [], lMu;
+  var sPos = 0, sTh, rep, pista = [], meta, rampa, ang, etAng, lect = [], lMu;
   var f2 = function (x) { var q = Math.round(x * 100) / 100; return String(q === 0 ? 0 : q).replace('-', '−').replace('.', ','); };
   var f3 = function (x) { var q = Math.round(x * 1000) / 1000; return String(q === 0 ? 0 : q).replace('-', '−').replace('.', ','); };
 
@@ -65,6 +65,7 @@ Interactivos.registrar('rodadura-rampa', function (c) {
       var m = modelo(cu), p = pista[i], s = Math.min(Ls, 0.5 * m.a * tt * tt), ph = cu.c === 0 ? 0 : 0.5 * m.alfa * tt * tt;
       if (m.rueda && cu.c > 0) ph = s / Rr;
       if (s >= Ls && cu.c > 0) { if (m.rueda) ph = Ls / Rr; else ph = 0.5 * m.alfa * (Math.sqrt(2 * Ls / m.a)) * (Math.sqrt(2 * Ls / m.a)); }
+      if (i === 1) sPos = s;
       p.gr.position.x = X0 + (X1 - X0 - RB) * (s / Ls) + 0;
       p.gr.rotation.z = -ph;
       var col = m.rueda ? P.fg : P.W; p.r1.material.color.set(col); p.r2.material.color.set(col); p.pc.material.color.set(col);
@@ -74,13 +75,19 @@ Interactivos.registrar('rodadura-rampa', function (c) {
     });
     dibujaRampa();
   }
-  c.slider('Ángulo de la rampa θ (°)', 5, 60, 1, th, function (v) { th = v; calc(); }, function (v) { return v + '°'; });
+  sTh = c.slider('Ángulo de la rampa θ (°)', 5, 60, 1, th, function (v) { th = v; calc(); }, function (v) { return v + '°'; });
   c.slider('Longitud de la rampa L (m)', 1, 5, 0.1, Ls, function (v) { Ls = v; calc(); }, function (v) { return f2(v) + ' m'; });
   c.slider('Fricción de la rampa μ (μs = μk)', 0, 1, 0.01, mu, function (v) { mu = v; calc(); }, f2);
   cuerpos.forEach(function (cu) { lect.push(c.lectura(cu.nom)); });
   nuevo(); listo = true;
-  c.reproductor({ max: 1, valor: 0.6, paso: 0.002, vel: function () { return 0.35 / tMax(); }, pausaFin: 1.0, etiqueta: 'Instante de la carrera',
+  rep = c.reproductor({ max: 1, valor: 0.6, paso: 0.002, vel: function () { return 0.35 / tMax(); }, pausaFin: 1.0, etiqueta: 'Instante de la carrera',
     fmt: function (v) { return 't = ' + f2(v * tMax()) + ' s'; }, cb: function (v) { t = v; calc(); } });
+  c.agarres([
+    { titulo: 'Arrastra la esfera sólida a lo largo de su carril: instante de la carrera', x: function () { return [X0 + (X1 - X0 - RB) * (sPos / Ls), YL[1] + RB]; },
+      mover: function (wx) { var s = Math.max(0, Math.min(Ls, (wx - X0) / (X1 - X0 - RB) * Ls)); rep.pause(); rep.poner(Math.min(1, Math.sqrt(2 * s / modelo(cuerpos[1]).a) / tMax())); } },
+    { titulo: 'Arrastra el vértice de la rampa: ángulo θ', x: function () { var bx = 3.6, hh = Math.min(Math.tan(th * rad) * bx, 2.6); return [0.4 + hh / Math.tan(th * rad), -6.1 + hh]; },
+      mover: function (wx, wy) { c.fijar(sTh, Math.atan2(wy + 6.1, Math.max(wx - 0.4, 1e-6)) / rad); } }
+  ]);
   c.leyenda([['var(--fg)', 'marca de giro (roja si el cuerpo resbala)', 'linea'], ['var(--mut)', 'cada carril = distancia recorrida a lo largo de la rampa; gana el de menor c', 'linea']]);
   c.alCambiarTema(function (p) {
     P = p; c.renderer.setClearColor(p.bg);

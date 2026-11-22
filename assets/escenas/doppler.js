@@ -12,7 +12,7 @@
 Interactivos.registrar('doppler', function (c) {
   var T = c.THREE, H = c.H, P = c.colores();
   var v = 340, fS = 100, uS = 100, vL = 0, s = 0.06;                      /* s = tiempo en s */
-  var X0 = -9, XA = 16, XB = -22, NF = 10, w = 0.15, listo = false, col = [], TP = 1 / fS, TMAX = 0.065;
+  var KV = 0.042, X0 = -9, XA = 16, XB = -22, NF = 10, w = 0.15, listo = false, col = [], TP = 1 / fS, TMAX = 0.065;
   var fm = function (a, d) { var q = Math.pow(10, d), z = Math.round(a * q) / q; if (z === 0) z = 0; return z.toFixed(d).replace('-', '−').replace('.', ','); };
   var frentes, cono, centros, ejeS, fuente, rA, rB, fa, fb, eS, eA, eB, ev;
   var l1 = c.lectura('Fuente y ondas'), l2 = c.lectura('Receptores'), l3 = c.lectura('En este instante');
@@ -48,7 +48,7 @@ Interactivos.registrar('doppler', function (c) {
     } else cono.set([]);
     fuente.mover(xs, 0); rA.mover(xa, 0); rB.mover(XB, 0);
     eS.mover(xs, 1.7); eA.mover(xa, 1.7); eB.mover(XB, 1.7);
-    fa.poner([xs, -1.6], [xs + (uS > 0 ? 4.2 : 0), -1.6]); fb.poner([xa, -1.6], [xa - (vL > 0 ? 4.2 : vL < 0 ? -4.2 : 0), -1.6]);
+    fa.poner([xs, -1.6], [xs + KV * uS, -1.6]); fb.poner([xa, -1.6], [xa - KV * vL, -1.6]);
     if (uS > 0) { ev.poner('uₛ'); ev.mover(xs + 4.6, -1.6); } else { ev.poner(''); }
     var M = uS / v, fA = (v + vL) / (v - uS) * fS, fB = v / (v + uS) * fS;
     l1('v = 340 m/s (la fija el aire)  ·  fₛ = 100 Hz  ·  λ₀ = v/fₛ = 3,40 m  ·  uₛ = ' + fm(uS, 0) + ' m/s  ·  Mach = ' + fm(M, 2));
@@ -61,11 +61,15 @@ Interactivos.registrar('doppler', function (c) {
     }
     l3((pasada ? 'AVISO: la fuente (x = ' + fm(xs, 1) + ' m) ha rebasado a L₁ (x = ' + fm(xa, 1) + ' m): lo que ves después ya no corresponde a «L₁ delante».  ' : '') + 't = ' + fm(s * 1000, 0) + ' ms:  la fuente está en x = ' + fm(xs, 1) + ' m; las ' + cen.length / 2 + ' cruces grises marcan dónde estaba al emitir cada frente; L₁ está en x = ' + fm(xa, 1) + ' m');
   }
-  c.slider('Rapidez de la fuente uₛ (m/s)', 0, 400, 10, uS, function (a) { uS = a; calc(); }, function (a) { return fm(a, 0) + ' m/s  (Mach ' + fm(a / v, 2) + ')'; });
-  c.slider('Velocidad del receptor L₁ hacia la fuente, vₗ (m/s)', -200, 200, 10, vL, function (a) { vL = a; calc(); }, function (a) { return (a > 0 ? '+' : a < 0 ? '−' : '') + fm(Math.abs(a), 0) + ' m/s'; });
+  var sU = c.slider('Rapidez de la fuente uₛ (m/s)', 0, 400, 10, uS, function (a) { uS = a; calc(); }, function (a) { return fm(a, 0) + ' m/s  (Mach ' + fm(a / v, 2) + ')'; });
+  var sV = c.slider('Velocidad del receptor L₁ hacia la fuente, vₗ (m/s)', -200, 200, 10, vL, function (a) { vL = a; calc(); }, function (a) { return (a > 0 ? '+' : a < 0 ? '−' : '') + fm(Math.abs(a), 0) + ' m/s'; });
+  c.agarres([
+    { titulo: 'Arrastra la punta de la flecha de la fuente: rapidez uₛ', x: function () { return [X0 + uS * s + KV * uS, -1.6]; }, mover: function (wx) { c.fijar(sU, (wx - X0) / (s + KV)); } },
+    { titulo: 'Arrastra la punta de la flecha del receptor L₁: velocidad vₗ (hacia la fuente = positiva)', x: function () { return [XA - vL * s - KV * vL, -1.6]; }, mover: function (wx) { c.fijar(sV, (XA - wx) / (s + KV)); } }
+  ]);
   c.reproductor({ max: TMAX, valor: s, paso: 0.0005, vel: 0.03, ciclico: true, etiqueta: 'Tiempo (ms)',
     fmt: function (a) { return 't = ' + fm(a * 1000, 0) + ' ms'; }, cb: function (a) { s = a; calc(); } });
-  c.leyenda([['var(--acc)', 'frentes de onda (crestas)', 'linea'], ['var(--A)', 'fuente S y su velocidad uₛ (flecha no a escala)', 'punto'], ['var(--warn-b)', 'receptor L₁ (delante) y su vₗ', 'punto'], ['var(--X)', 'receptor L₂ (detrás, quieto)', 'punto'], ['var(--fg)', 'onda de choque (solo si uₛ > v)', 'linea']]);
+  c.leyenda([['var(--acc)', 'frentes de onda (crestas)', 'linea'], ['var(--A)', 'fuente S y su velocidad uₛ (flecha a escala: 100 m/s = 4,2 m del dibujo)', 'punto'], ['var(--warn-b)', 'receptor L₁ (delante) y su vₗ', 'punto'], ['var(--X)', 'receptor L₂ (detrás, quieto)', 'punto'], ['var(--fg)', 'onda de choque (solo si uₛ > v)', 'linea']]);
   c.alCambiarTema(function (p) {
     P = p; c.renderer.setClearColor(p.bg);
     col.forEach(function (q) { var m = q[0].material; if (m && m.color) m.color.set(p[q[1]]); });
