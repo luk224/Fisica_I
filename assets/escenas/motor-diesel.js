@@ -93,14 +93,14 @@ Interactivos.registrar('motor-diesel', function (c) {
     var s0 = S.et === 2 ? (S.V - K.Vb) / (K.Vc - K.Vb) : 1, fade = S.et === 2 ? 1 : S.et === 3 ? Math.max(0, 1 - 1.5 * Math.sqrt((S.V - K.Vc) / (K.Va - K.Vc))) : 0;
     var tong = [], tong2 = [], NT = 7, kk, L = S.et === 2 ? 0.55 + 0.45 * s0 : 1;
     if (fade > 0) for (kk = 0; kk < NT; kk++) {
-      var xk = xa + (xb - xa) * (kk + 0.5) / NT, hw = (xb - xa) / NT * 0.75, la = hc * L * (0.6 + 0.4 * rnd[kk][0]) * (1 + 0.12 * Math.sin(fi * 0.9 + kk * 2.1)), ap = Math.max(yb, yt - la);
-      tong.push([[xk - hw, yt], [xk + hw, yt], [xk + 0.06 * Math.sin(fi * 0.7 + kk), ap]]);
+      var xk = xa + (xb - xa) * (kk + 0.5) / NT, hw = (xb - xa) / NT * 0.75, la = hc * L * (0.6 + 0.4 * rnd[kk][0]) * (1 + 0.12 * Math.sin(fi * 0.22 + kk * 2.1)), ap = Math.max(yb, yt - la);
+      tong.push([[xk - hw, yt], [xk + hw, yt], [xk + 0.06 * Math.sin(fi * 0.18 + kk), ap]]);
       tong2.push([[xk - hw * 0.5, yt], [xk + hw * 0.5, yt], [xk, Math.max(yb, yt - la * 0.6)]]);
     }
     llamaE.set(tong); llamaI.set(tong2); llamaE.material.opacity = 0.9 * fade; llamaI.material.opacity = 0.9 * fade;
     brillo.poner(x0 + 0.03, m.crown, x1 - 0.03, headY); brillo.material.opacity = 0.3 * fade * (S.et === 2 || S.et === 3 ? 1 : 0) + (S.et === 2 && fi < 376 ? 0.5 * (1 - (fi - 360) / 16) : 0);
     for (i = 0; i < NP; i++) {
-      var rr = rnd[i], bx = xa + (xb - xa) * rr[0], by = yb + (yt - yb) * rr[1], jit = 0.02 + 0.045 * Math.sqrt(S.T / T0) * (S.et === 0 || S.et === 5 ? 0.5 : 1), ph = fi * 0.45 + rr[2] * 6.283, px, py, s1, vis = true, pc;
+      var rr = rnd[i], bx = xa + (xb - xa) * rr[0], by = yb + (yt - yb) * rr[1], jit = 0.012 + 0.02 * Math.sqrt(S.T / T0) * (S.et === 0 || S.et === 5 ? 0.5 : 1), ph = fi * 0.07 + rr[2] * 6.283, px, py, s1, vis = true, pc;
       px = bx + Math.sin(ph) * jit; py = by + Math.cos(ph * 1.3) * jit;
       if (S.et === 0) { s1 = fr_(i / NP + fi / 75); px = CX - 0.5 + (px - (CX - 0.5)) * s1; py = headY + 0.55 + (py - headY - 0.55) * s1; vis = py < yt + 0.02 || s1 < 0.5; pc = cf.clone(); }
       else if (S.et >= 4) { s1 = fr_(i / NP + (fi - 540) / 80); px = px + (CX + 0.5 - px) * s1; py = py + (headY + 0.9 - py) * s1; vis = s1 < 0.97 && (fi - 540) / 80 + i / NP > 0.2 * 0 ; pc = cl.clone().lerp(cm, Math.min(1, s1 * 1.5)); }
