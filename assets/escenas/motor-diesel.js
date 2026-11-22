@@ -4,26 +4,33 @@
    c→d expansión adiabática, d→a enfriamiento a volumen constante (escape; sale |QC| = n·Cv·(Td − T0), Cv = 5R/2). Tb = T0·r^(γ−1), Tc = rc·Tb, Td = T0·rc^γ.
    e = W/QH = 1 − (rc^γ − 1)/(r^(γ−1)·γ·(rc − 1)); con rc → 1 da el Otto 1 − r^(1−γ). Carnot entre T0 y Tc: 1 − T0/Tc.
    El dibujo es un mecanismo biela-manivela real (R = 1, L = 2,6): V se calcula de la posición del pistón, así que dibujo y diagrama van siempre a la par.
+   Modo Otto (selector): mismo r y el mismo calor Q_H que el Diesel, pero con la combustión a V constante en el punto muerto: Tc = Tb + Q_H/(n·Cv), pc = pb·Tc/Tb, e = 1 − r^(1−γ).
+   Barras de energía acumulada (Q_H entrado, W, |Q_C|) por integración numérica de p dV y de dQ = n·Cv·dT + p dV a lo largo del ángulo; potencia P = W·rpm/120 y par medio M = W/4π (4 tiempos).
    Ángulo del cigüeñal φ (0-720°): 0-180 admisión (p0), 180-360 compresión, 360-540 combustión (p = pb mientras V ≤ rc·Vb) y expansión, 540-560 se abre el escape
    (p cae a volumen casi constante), 560-720 escape (p0). Asas: pasador del cigüeñal (gira el motor), culata (r) y punto c del diagrama (rc). */
 Interactivos.registrar('motor-diesel', function (c) {
   var T = c.THREE, H = c.H, P = c.colores(), listo = false, clave = '';
   var gam = 1.4, Rg = 8.314, p0 = 101325, T0 = 300, Vd = 5e-4, VMAX = 600, PMAX = 9, TOPE = 2300;
-  var r = 18, rc = 2, fi = 400, rep, sR, sRc;
+  var r = 18, rc = 2, fi = 400, rep, sR, sRc, mod = 0, rpm = 2000;
   var CX = -4.3, CY = -2.3, RC = 1.0, LB = 2.6, WL = 1.15, TOPE_P = 0.25, PH = 0.5;
   var PX0 = 1.0, PW = 5.4, PY0 = -2.7, PHH = 5.0;
   var yTDC = CY + RC + LB, crownTDC = yTDC + TOPE_P, carrera = 2 * RC;
-  var fijos = [], ticks = [], eEt, eAd, eEs, eIn, eA, eB, eC, eD, eX, eY;
+  var BASE = -1.4, BX = [-2.5, -1.7, -0.9], fijos = [], ticks = [], eEt, eAd, eEs, eIn, eA, eB, eC, eD, eX, eY, ePS, ePI, eBT, eBn = [], eBv = [], barras = [];
   var NP = 36, parts = [], rnd = [], llamaE, llamaI, brillo, biela, brazo, pin, centro, pistonR, pistonB, gasR, culata, valA, valE, inyec, chorro, ciclo, actual, sombra, pto, ptoC, ptoR;
-  var l1 = c.lectura(''), l2 = c.lectura(''), l3 = c.lectura(''), l4 = c.lectura('');
+  var l1 = c.lectura(''), l2 = c.lectura(''), l3 = c.lectura(''), l4 = c.lectura(''), l5 = c.lectura('');
   var fm = function (x, d) { return x.toFixed(d).replace('.', ',').replace(/^-/, '−'); };
   function gx(V) { return PX0 + V / VMAX * PW; }
   function gy(p) { return PY0 + p / PMAX * PHH; }
   function ciclo_() {
     var Vb = Vd / (r - 1), Va = Vb * r, n = p0 * Va / (Rg * T0), pb = p0 * Math.pow(r, gam), Tb = T0 * Math.pow(r, gam - 1), Tc = rc * Tb;
     var pd = pb * Math.pow(rc / r, gam), Td = T0 * Math.pow(rc, gam), Qin = n * 3.5 * Rg * (Tc - Tb), Qout = n * 2.5 * Rg * (T0 - Td), W = Qin + Qout;
-    var e = 1 - (Math.pow(rc, gam) - 1) / (Math.pow(r, gam - 1) * gam * (rc - 1));
-    return { Vb: Vb, Va: Va, n: n, pb: pb, Tb: Tb, Tc: Tc, pd: pd, Td: Td, Qin: Qin, Qout: Qout, W: W, e: e, eO: 1 - Math.pow(r, 1 - gam), eC: 1 - T0 / Tc, Vc: rc * Vb };
+    var eD = 1 - (Math.pow(rc, gam) - 1) / (Math.pow(r, gam - 1) * gam * (rc - 1)), eO = 1 - Math.pow(r, 1 - gam);
+    var K = { Vb: Vb, Va: Va, n: n, pb: pb, pc: pb, Tb: Tb, Tc: Tc, pd: pd, Td: Td, Qin: Qin, Qout: Qout, W: W, e: eD, eOtro: eO, Vc: rc * Vb };
+    if (mod === 1) {
+      var Tc2 = Tb + Qin / (n * 2.5 * Rg), Td2 = Tc2 * Math.pow(r, 1 - gam), Qo2 = n * 2.5 * Rg * (T0 - Td2);
+      K.Tc = Tc2; K.pc = pb * Tc2 / Tb; K.Vc = Vb; K.pd = K.pc * Math.pow(r, -gam); K.Td = Td2; K.Qout = Qo2; K.W = Qin + Qo2; K.e = K.W / Qin; K.eOtro = eD;
+    }
+    K.eC = 1 - T0 / K.Tc; return K;
   }
   function hVis(rr) { return 0.5 + 0.04 * (24 - rr); }  /* altura de la cámara con el pistón arriba: exagerada para que se vea (la real sería carrera/(r − 1)) */
   function mecanismo(f) {
@@ -34,10 +41,23 @@ Interactivos.registrar('motor-diesel', function (c) {
     var m = mecanismo(f), V = K.Vb + Vd * m.xd / carrera, p, Tg, et;
     if (f < 180) { et = 0; p = p0; Tg = T0; }
     else if (f < 360) { et = 1; p = p0 * Math.pow(K.Va / V, gam); Tg = p * V / (K.n * Rg); }
-    else if (f < 540) { if (V <= K.Vc * 1.0000001) { et = 2; p = K.pb; } else { et = 3; p = K.pb * Math.pow(K.Vc / V, gam); } Tg = p * V / (K.n * Rg); }
+    else if (f < 540) {
+      if (mod === 1 && f < 372) { var V7 = K.Vb + Vd * mecanismo(372).xd / carrera; et = 2; p = K.pb + (K.pc * Math.pow(K.Vb / V7, gam) - K.pb) * (f - 360) / 12; }
+      else if (mod === 0 && V <= K.Vc * 1.0000001) { et = 2; p = K.pc; } else { et = 3; p = K.pc * Math.pow(K.Vc / V, gam); }
+      Tg = p * V / (K.n * Rg);
+    }
     else if (f < 560) { et = 4; p = K.pd + (p0 - K.pd) * (f - 540) / 20; Tg = p * V / (K.n * Rg); }
     else { et = 5; p = p0; Tg = T0; }
     return { m: m, V: V, p: p, T: Tg, et: et };
+  }
+  function acum(f1, K) {
+    var w = 0, qi = 0, qo = 0, s0 = estado(0, K), pp = s0.p, Vp = s0.V, Tp = s0.T, pet = s0.et, fs = [], f, s1, dW, dQ;
+    for (f = 1; f < f1; f++) fs.push(f); if (f1 > 0) fs.push(f1);
+    fs.forEach(function (ff) {
+      s1 = estado(ff, K); dW = (s1.p + pp) / 2 * (s1.V - Vp); dQ = K.n * 2.5 * Rg * (s1.T - Tp) + dW; w += dW;
+      if ((s1.et === 2 || pet === 2) && dQ > 0) qi += dQ; if ((s1.et === 4 || pet === 4) && dQ < 0) qo -= dQ; pet = s1.et; pp = s1.p; Vp = s1.V; Tp = s1.T;
+    });
+    return { w: w, qi: qi, qo: qo };
   }
   function rect(col, op, z) {
     var q = new T.Mesh(new T.PlaneGeometry(1, 1), new T.MeshBasicMaterial({ color: col, transparent: true, opacity: op })); q.position.z = z;
@@ -52,10 +72,11 @@ Interactivos.registrar('motor-diesel', function (c) {
   }
   function add(o) { c.scene.add(o); fijos.push(o); return o; }
   function construir() {
-    var k = P.fg + P.bg + P.S + P.W + P.L + P.A + P.acc; if (k === clave && ciclo) return; clave = k;
+    var K0 = ciclo_(); PMAX = mod === 0 ? 9 : Math.max(4, Math.ceil(K0.pc / 1e6 * 1.05 / 4) * 4); var TP = mod === 0 ? [0, 2, 4, 6, 8] : [0, PMAX / 4, PMAX / 2, 3 * PMAX / 4, PMAX];
+    var k = P.fg + P.bg + P.S + P.W + P.L + P.A + P.acc + mod + PMAX; if (k === clave && ciclo) return; clave = k;
     fijos.forEach(function (o) { c.scene.remove(o); }); fijos = [];
     c.vista(-6.8, 6.9, -3.75, 4.3); var w = 0.04, i;
-    var rej = []; [0, 200, 400, 600].forEach(function (v) { rej.push([[gx(v), PY0], [gx(v), PY0 + PHH]]); }); [0, 2, 4, 6, 8].forEach(function (v) { rej.push([[PX0, gy(v)], [PX0 + PW, gy(v)]]); });
+    var rej = []; [0, 200, 400, 600].forEach(function (v) { rej.push([[gx(v), PY0], [gx(v), PY0 + PHH]]); }); TP.forEach(function (v) { rej.push([[PX0, gy(v)], [PX0 + PW, gy(v)]]); });
     var a = add(H.cinta(T, rej, P.bd, w * 0.5)); a.position.z = -0.3;
     var b = add(H.cinta(T, [[[PX0, PY0], [PX0 + PW, PY0]], [[PX0, PY0], [PX0, PY0 + PHH]]], P.fg, w)); b.position.z = -0.2;
     var cir = []; for (i = 0; i <= 72; i++) cir.push([CX + RC * Math.sin(2 * Math.PI * i / 72), CY + RC * Math.cos(2 * Math.PI * i / 72)]);
@@ -70,15 +91,17 @@ Interactivos.registrar('motor-diesel', function (c) {
     sombra = add(H.cinta(T, [], P.L, w * 0.8)); sombra.position.z = 0.02;
     ciclo = add(H.cinta(T, [], P.fg, w * 1.4)); ciclo.position.z = 0.1; actual = add(H.cinta(T, [], P.W, w * 2.6)); actual.position.z = 0.14;
     pto = add(H.punto(T, 0, 0, w * 4.2, P.W)); pto.position.z = 0.5;
+    add(H.cinta(T, [[[-2.95, BASE], [-0.3, BASE]]], P.fg, w)).position.z = -0.2;
+    barras = [rect(P.W, 0.8, 0.05), rect(P.L, 0.8, 0.05), rect(P.S, 0.8, 0.05)];
     parts = []; for (i = 0; i < NP; i++) { var q = add(H.punto(T, 0, 0, w * 2.1, P.S)); q.position.z = 0.3; parts.push(q); }
     ticks.forEach(function (e) { e.ver(false); }); var j = 0, tx;
     [0, 200, 400, 600].forEach(function (v) { tx = ticks[j] || (ticks[j] = c.etiqueta('', 0, 0, 'c')); j++; tx.poner(fm(v, 0)); tx.mover(gx(v), PY0 - 0.25); tx.ver(true); });
-    [0, 2, 4, 6, 8].forEach(function (v) { tx = ticks[j] || (ticks[j] = c.etiqueta('', 0, 0, 'r')); j++; tx.poner(fm(v, 0)); tx.mover(PX0 - 0.1, gy(v)); tx.ver(true); });
+    TP.forEach(function (v) { tx = ticks[j] || (ticks[j] = c.etiqueta('', 0, 0, 'r')); j++; tx.poner(fm(v, 0)); tx.mover(PX0 - 0.1, gy(v)); tx.ver(true); });
     eX.poner('V (cm³)'); eX.mover(PX0 + PW, PY0 - 0.55); eY.poner('p (MPa)'); eY.mover(PX0 + 0.1, PY0 + PHH + 0.3);
   }
   function calc() {
     if (!listo) return; construir(); var K = ciclo_(), S = estado(fi, K), m = S.m, i, hmin = hVis(r), headY = crownTDC + hmin;
-    var xl = CX - WL, xr = CX + WL, x0 = CX - WL, x1 = CX + WL;
+    var pcM = K.pc / 1e6, xl = CX - WL, xr = CX + WL, x0 = CX - WL, x1 = CX + WL;
     culata.set([[[xl, -1.55], [xl, headY], [xr, headY], [xr, -1.55]]]);
     pistonR.poner(x0 + 0.03, m.crown - PH, x1 - 0.03, m.crown); pistonB.set([[[x0 + 0.03, m.crown - PH], [x0 + 0.03, m.crown], [x1 - 0.03, m.crown], [x1 - 0.03, m.crown - PH], [x0 + 0.03, m.crown - PH]]]);
     var u = Math.max(0, Math.min(1, (S.T - T0) / (TOPE - T0))), col = new T.Color(P.S).lerp(new T.Color(P.W), u);
@@ -86,11 +109,12 @@ Interactivos.registrar('motor-diesel', function (c) {
     var abA = S.et === 0 ? 0.16 : 0, abE = S.et === 5 || S.et === 4 ? 0.16 : 0;
     valA.set([[[CX - 0.5, headY + 0.7 - abA], [CX - 0.5, headY - abA]], [[CX - 0.72, headY - abA], [CX - 0.28, headY - abA]]]);
     valE.set([[[CX + 0.5, headY + 0.7 - abE], [CX + 0.5, headY - abE]], [[CX + 0.28, headY - abE], [CX + 0.72, headY - abE]]]);
-    inyec.set([[[CX - 0.13, headY + 0.5], [CX + 0.13, headY + 0.5], [CX, headY], [CX - 0.13, headY + 0.5]]]);
+    inyec.set(mod === 0 ? [[[CX - 0.13, headY + 0.5], [CX + 0.13, headY + 0.5], [CX, headY], [CX - 0.13, headY + 0.5]]] : [[[CX - 0.07, headY + 0.5], [CX + 0.07, headY + 0.5], [CX + 0.07, headY], [CX - 0.07, headY], [CX - 0.07, headY + 0.5]]]);
+    eIn.poner(mod === 0 ? 'inyector' : 'bujía');
     // llama, gases y moléculas dentro de la cámara (todo en función de φ: al girar hacia atrás se deshace)
-    var xa = x0 + 0.12, xb = x1 - 0.12, yb = m.crown + 0.08, yt = headY - 0.06, hc = headY - m.crown, fr_ = function (z) { return z - Math.floor(z); };
+    var xa = x0 + 0.12, xb = x1 - 0.12, yb = m.crown + 0.08, yt = headY - 0.06, hc = headY - m.crown, s0o = mod === 1 ? Math.min(1, (fi - 360) / 12) : 0, fr_ = function (z) { return z - Math.floor(z); };
     var cl = new T.Color(P.W), cf = new T.Color(P.S), cm = new T.Color(P.mut), wh = new T.Color('#ffffff');
-    var s0 = S.et === 2 ? (S.V - K.Vb) / (K.Vc - K.Vb) : 1, fade = S.et === 2 ? 1 : S.et === 3 ? Math.max(0, 1 - 1.5 * Math.sqrt((S.V - K.Vc) / (K.Va - K.Vc))) : 0;
+    var s0 = S.et === 2 ? (mod === 1 ? s0o : (S.V - K.Vb) / (K.Vc - K.Vb)) : 1, fade = S.et === 2 ? 1 : S.et === 3 ? Math.max(0, 1 - 1.5 * Math.sqrt((S.V - K.Vc) / (K.Va - K.Vc))) : 0;
     var tong = [], tong2 = [], NT = 7, kk, L = S.et === 2 ? 0.55 + 0.45 * s0 : 1;
     if (fade > 0) for (kk = 0; kk < NT; kk++) {
       var xk = xa + (xb - xa) * (kk + 0.5) / NT, hw = (xb - xa) / NT * 0.75, la = hc * L * (0.6 + 0.4 * rnd[kk][0]) * (1 + 0.12 * Math.sin(fi * 0.22 + kk * 2.1)), ap = Math.max(yb, yt - la);
@@ -107,44 +131,58 @@ Interactivos.registrar('motor-diesel', function (c) {
       else pc = u < 0.3 ? cf.clone() : S.et >= 2 ? new T.Color('#ffc233') : cl.clone();
       parts[i].visible = vis; parts[i].mover(px, py); parts[i].material.color.copy(pc);
     }
-    chorro.set(S.et === 2 ? [[[CX, headY - 0.02], [CX - 0.3, Math.max(m.crown + 0.05, headY - 0.38)]], [[CX, headY - 0.02], [CX, Math.max(m.crown + 0.05, headY - 0.42)]], [[CX, headY - 0.02], [CX + 0.3, Math.max(m.crown + 0.05, headY - 0.38)]]] : []);
+    chorro.set(S.et !== 2 ? [] : mod === 0 ? [[[CX, headY - 0.02], [CX - 0.3, Math.max(m.crown + 0.05, headY - 0.38)]], [[CX, headY - 0.02], [CX, Math.max(m.crown + 0.05, headY - 0.42)]], [[CX, headY - 0.02], [CX + 0.3, Math.max(m.crown + 0.05, headY - 0.38)]]] : [[[CX, headY - 0.02], [CX - 0.12, headY - 0.16], [CX + 0.12, headY - 0.26], [CX, headY - 0.42]]]);
     biela.set([[m.pin, [CX, m.yp]]]); brazo.set([[[CX, CY], m.pin]]); pin.mover(m.pin[0], m.pin[1]);
     eAd.mover(CX - 0.75, headY + 0.5); eEs.mover(CX + 0.75, headY + 0.5); eIn.mover(CX, headY + 0.95);
-    var NOM = ['1.er tiempo: ADMISIÓN (entra aire a p₀)', '2.º tiempo: COMPRESIÓN adiabática (a→b)', '3.er tiempo: INYECCIÓN y combustión a p constante (b→c)', '3.er tiempo: EXPANSIÓN adiabática (c→d), carrera de potencia', '4.º tiempo: se abre el ESCAPE (d→a), p baja a V constante', '4.º tiempo: ESCAPE (el pistón expulsa los gases)'];
+    var NOM = ['1.er tiempo: ADMISIÓN (entra aire a p₀)', '2.º tiempo: COMPRESIÓN adiabática (a→b)', (mod === 0 ? '3.er tiempo: INYECCIÓN y combustión a p constante (b→c)' : '3.er tiempo: CHISPA y combustión a V constante (b→c)'), '3.er tiempo: EXPANSIÓN adiabática (c→d), carrera de potencia', '4.º tiempo: se abre el ESCAPE (d→a), p baja a V constante', '4.º tiempo: ESCAPE (el pistón expulsa los gases)'];
     eEt.poner(NOM[S.et]); eEt.mover(CX + 1.4, 3.95);
     // diagrama pV: ciclo ideal en MPa y cm³
-    var ab = [], cd = [], hs = [], Vb = K.Vb * 1e6, Va = K.Va * 1e6, Vc = K.Vc * 1e6, pb = K.pb / 1e6;
-    for (i = 0; i <= 50; i++) { var V1 = Vb + (Va - Vb) * i / 50; ab.push([gx(V1), gy(p0 * Math.pow(Va / V1, gam) / 1e6)]); if (i % 1 === 0) { var top = V1 <= Vc ? pb : pb * Math.pow(Vc / V1, gam); hs.push([[gx(V1), gy(p0 * Math.pow(Va / V1, gam) / 1e6)], [gx(V1), gy(top)]]); } }
-    for (i = 0; i <= 50; i++) { var V2 = Vc + (Va - Vc) * i / 50; cd.push([gx(V2), gy(pb * Math.pow(Vc / V2, gam))]); }
-    var pbc = [[gx(Vb), gy(pb)], [gx(Vc), gy(pb)]], pda = [[gx(Va), gy(K.pd / 1e6)], [gx(Va), gy(p0 / 1e6)]], pad = [[gx(Vb), gy(p0 / 1e6)], [gx(Va), gy(p0 / 1e6)]];
+    var ab = [], cd = [], hs = [], Vb = K.Vb * 1e6, Va = K.Va * 1e6, Vc = K.Vc * 1e6, pb = K.pb / 1e6, pcc = K.pc / 1e6;
+    for (i = 0; i <= 50; i++) { var V1 = Vb + (Va - Vb) * i / 50; ab.push([gx(V1), gy(p0 * Math.pow(Va / V1, gam) / 1e6)]); if (i % 1 === 0) { var top = V1 <= Vc ? pcc : pcc * Math.pow(Vc / V1, gam); hs.push([[gx(V1), gy(p0 * Math.pow(Va / V1, gam) / 1e6)], [gx(V1), gy(top)]]); } }
+    for (i = 0; i <= 50; i++) { var V2 = Vc + (Va - Vc) * i / 50; cd.push([gx(V2), gy(pcc * Math.pow(Vc / V2, gam))]); }
+    var pbc = [[gx(Vb), gy(pb)], [gx(Vc), gy(pcc)]], pda = [[gx(Va), gy(K.pd / 1e6)], [gx(Va), gy(p0 / 1e6)]], pad = [[gx(Vb), gy(p0 / 1e6)], [gx(Va), gy(p0 / 1e6)]];
     ciclo.set([ab, pbc, cd, pda]); sombra.set(hs);
     actual.set(S.et === 1 ? [ab] : S.et === 2 ? [pbc] : S.et === 3 ? [cd] : S.et === 4 ? [pda] : [pad]);
     pto.mover(gx(S.V * 1e6), gy(S.p / 1e6));
-    eA.poner('a'); eA.mover(gx(Va) + 0.15, gy(p0 / 1e6) + 0.2); eB.poner('b'); eB.mover(gx(Vb) - 0.05, gy(pb) + 0.28); eC.poner('c'); eC.mover(gx(Vc) + 0.12, gy(pb) + 0.28);
+    eA.poner('a'); eA.mover(gx(Va) + 0.15, gy(p0 / 1e6) + 0.2); eB.poner('b'); eB.mover(gx(Vb) + (mod ? 0.22 : -0.05), gy(pb) + (mod ? 0.12 : 0.28)); eC.poner('c'); eC.mover(gx(Vc) + (mod ? 0.22 : 0.12), gy(pcc) + (mod ? 0 : 0.28));
     eD.poner('d'); eD.mover(gx(Va) + 0.17, gy(K.pd / 1e6));
     [eA, eB, eC, eD].forEach(function (e) { e.ver(true); });
     var ang = 0; (function () { var lo = 0, hi = 180, th, V; for (var q = 0; q < 40; q++) { th = (lo + hi) / 2; V = K.Vb + Vd * (crownTDC - (CY + RC * Math.cos(th * Math.PI / 180) + Math.sqrt(LB * LB - RC * RC * Math.pow(Math.sin(th * Math.PI / 180), 2)) + TOPE_P)) / carrera; if (V < K.Vc) lo = th; else hi = th; } ang = (lo + hi) / 2; })();
     l1('Cigüeñal φ = ' + fm(fi, 0) + '° de 720°   ·   p = ' + fm(S.p / 1e6, 2) + ' MPa   ·   V = ' + fm(S.V * 1e6, 0) + ' cm³   ·   T del aire = ' + fm(S.T, 0) + ' K');
-    l2('Compresión: V_b = ' + fm(Vb, 1) + ' cm³ (r = ' + fm(r, 1) + '), T_b = ' + fm(K.Tb, 0) + ' K, p_b = ' + fm(pb, 2) + ' MPa  ·  la inyección dura hasta V_c = r_c·V_b = ' + fm(Vc, 1) + ' cm³ (' + fm(ang, 0) + '° tras el punto muerto), T_c = ' + fm(K.Tc, 0) + ' K');
-    l3('Calor que entra (b→c, isóbara) Q_H = ' + fm(K.Qin, 0) + ' J  ·  calor que sale (d→a, isócora) |Q_C| = ' + fm(-K.Qout, 0) + ' J  ·  trabajo por ciclo W = ' + fm(K.W, 0) + ' J (el área sombreada)');
+    l2('Compresión: V_b = ' + fm(Vb, 1) + ' cm³ (r = ' + fm(r, 1) + '), T_b = ' + fm(K.Tb, 0) + ' K, p_b = ' + fm(pb, 2) + ' MPa  ·  ' + (mod === 0 ? 'la inyección dura hasta V_c = r_c·V_b = ' + fm(Vc, 1) + ' cm³ (' + fm(ang, 0) + '° tras el punto muerto), T_c = ' + fm(K.Tc, 0) + ' K'
+      : 'la chispa salta en el punto muerto y quema a V constante: T_c = ' + fm(K.Tc, 0) + ' K, p_c = ' + fm(pcc, 2) + ' MPa (mismo calor Q_H que el Diesel)'));
+    l3('Calor que entra (b→c, ' + (mod === 0 ? 'isóbara' : 'isócora') + ') Q_H = ' + fm(K.Qin, 0) + ' J  ·  calor que sale (d→a, isócora) |Q_C| = ' + fm(-K.Qout, 0) + ' J  ·  trabajo por ciclo W = ' + fm(K.W, 0) + ' J (el área sombreada)');
     var ok = K.e >= 0.6 && K.Tc <= 2000;
-    l4('Eficiencia e = W/Q_H = ' + fm(100 * K.e, 1) + ' %  (Otto con el mismo r: ' + fm(100 * K.eO, 1) + ' %; Carnot entre 300 K y T_c: ' + fm(100 * K.eC, 1) + ' %)   ·   RETO e ≥ 60 % con T_c ≤ 2000 K: ' + (ok ? '✔ conseguido' : e_(K)));
+    l4('Eficiencia e = W/Q_H = ' + fm(100 * K.e, 1) + ' %  (' + (mod === 0 ? 'Otto con el mismo r: ' : 'Diesel con el mismo r y r_c: ') + fm(100 * K.eOtro, 1) + ' %; Carnot entre 300 K y T_c: ' + fm(100 * K.eC, 1) + ' %)   ·   RETO e ≥ 60 % con T_c ≤ 2000 K: ' + (ok ? '✔ conseguido' : e_(K)));
+    l5('A ' + fm(rpm, 0) + ' rpm (un ciclo cada 2 vueltas): potencia P = W·rpm/120 = ' + fm(K.W * rpm / 120 / 1000, 1) + ' kW (' + fm(K.W * rpm / 120 / 735.5, 1) + ' CV) y par medio M = W/4π = ' + fm(K.W / (4 * Math.PI), 1) + ' N·m   ·   con el mismo combustible el otro motor da W = ' + fm(K.eOtro * K.Qin, 0) + ' J   (en pantalla gira en cámara lenta)');
+    // barras de energía acumulada
+    var AC = acum(fi, K), sc = 2.4 / Math.max(K.Qin, 1), vals = [AC.qi, AC.w, AC.qo], nom = ['Q_H', 'W', '|Q_C|'];
+    for (i = 0; i < 3; i++) {
+      var yv = BASE + vals[i] * sc; barras[i].poner(BX[i] - 0.3, Math.min(BASE, yv), BX[i] + 0.3, Math.max(BASE, yv));
+      eBn[i].poner(nom[i]); eBn[i].mover(BX[i], -3.05); eBv[i].poner(fm(vals[i], 0) + ' J'); eBv[i].mover(BX[i], Math.max(BASE, yv) + 0.22);
+    }
+    eBT.poner('Energía acumulada'); eBT.mover(-1.7, 1.55);
+    ePS.poner('PMS'); ePS.mover(CX - WL - 0.15, CY + RC); ePI.poner('PMI'); ePI.mover(CX - WL - 0.15, CY - RC);
   }
   function e_(K) { return '✘ ' + (K.e < 0.6 ? 'falta eficiencia (sube r o baja r_c)' : 'demasiado caliente (baja r_c o r)'); }
+  c.selector('Motor', ['Diesel (encendido por compresión, inyección a p constante)', 'Otto (gasolina, chispa): mismo r y mismo calor Q_H'], 0, function (i) { mod = i; if (listo) { clave = ''; calc(); c.pedir(); } });
+  var sRpm = c.slider('Régimen del motor (rpm)', 800, 4000, 100, rpm, function (v) { rpm = v; calc(); }, function (v) { return fm(v, 0) + ' rpm'; });
   sR = c.slider('Razón de compresión r = Va/Vb', 10, 24, 0.5, r, function (v) { r = v; calc(); }, function (v) { return fm(v, 1); });
-  sRc = c.slider('Razón de corte r_c = Vc/Vb (cuánto dura la inyección)', 1.1, 4, 0.05, rc, function (v) { rc = v; calc(); }, function (v) { return fm(v, 2); });
+  sRc = c.slider('Razón de corte r_c = Vc/Vb (duración de la inyección; en el Otto fija el calor Q_H)', 1.1, 4, 0.05, rc, function (v) { rc = v; calc(); }, function (v) { return fm(v, 2); });
   rep = c.reproductor({ max: 720, valor: fi, paso: 1, vel: 160, ciclico: true, etiqueta: 'Ángulo del cigüeñal', fmt: function (v) { return 'φ = ' + Math.round(v) + '°'; }, cb: function (v) { fi = v; calc(); } });
   c.agarres([
     { titulo: 'Gira el cigüeñal arrastrando el círculo: mueves el motor a mano', x: function () { return mecanismo(fi).pin; },
       mover: function (wx, wy) { var t = Math.atan2(wx - CX, wy - CY) * 180 / Math.PI; if (t < 0) t += 360; var d = ((t - (fi % 360) + 540) % 360) - 180; rep.pause(); rep.poner((((fi + d) % 720) + 720) % 720); } },
     { titulo: 'Sube o baja la culata: cambia la razón de compresión r', x: function () { return [CX + WL, crownTDC + hVis(r)]; },
       mover: function (wx, wy) { c.fijar(sR, 24 - (wy - crownTDC - 0.5) / 0.04); } },
-    { titulo: 'Arrastra c hacia la derecha: la inyección dura más (razón de corte)', x: function () { var K = ciclo_(); return [gx(K.Vc * 1e6), gy(K.pb / 1e6)]; },
+    { titulo: 'Arrastra c hacia la derecha: la inyección dura más (razón de corte)', ver: function () { return mod === 0; }, x: function () { var K = ciclo_(); return [gx(K.Vc * 1e6), gy(K.pc / 1e6)]; },
       mover: function (wx) { c.fijar(sRc, ((wx - PX0) / PW * VMAX) / (ciclo_().Vb * 1e6)); } }
   ]);
   eEt = c.etiqueta('', 0, 0, 'c'); eAd = c.etiqueta('admisión', 0, 0, 'r'); eEs = c.etiqueta('escape', 0, 0, 'l'); eIn = c.etiqueta('inyector', 0, 0, 'c');
   eX = c.etiqueta('', 0, 0, 'r'); eY = c.etiqueta('', 0, 0, 'l'); eA = c.etiqueta('', 0, 0, 'c'); eB = c.etiqueta('', 0, 0, 'c'); eC = c.etiqueta('', 0, 0, 'c'); eD = c.etiqueta('', 0, 0, 'c');
-  c.leyenda([['var(--fg)', 'ciclo Diesel ideal a→b→c→d→a (la línea a p₀ de admisión y escape se anula)', 'linea'], ['var(--warn-b)', 'proceso en curso / estado del aire (más caliente = más naranja)', 'punto'], ['var(--X)', 'área = trabajo neto W', 'area'], ['var(--warn-b)', 'llama de la combustión; puntos = moléculas de aire (azul entra, gris sale)', 'area'], ['var(--U)', 'aire frío y válvula de admisión', 'area']]);
+  ePS = c.etiqueta('', 0, 0, 'r'); ePI = c.etiqueta('', 0, 0, 'r'); eBT = c.etiqueta('', 0, 0, 'c');
+  for (var q = 0; q < 3; q++) { eBn.push(c.etiqueta('', 0, 0, 'c')); eBv.push(c.etiqueta('', 0, 0, 'c')); }
+  c.leyenda([['var(--fg)', 'ciclo ideal a→b→c→d→a (la línea a p₀ de admisión y escape se anula)', 'linea'], ['var(--warn-b)', 'proceso en curso / estado del aire (más caliente = más naranja)', 'punto'], ['var(--X)', 'área = trabajo neto W (y barra verde: trabajo acumulado, negativo al comprimir)', 'area'], ['var(--warn-b)', 'llama de la combustión; puntos = moléculas de aire (azul entra, gris sale)', 'area'], ['var(--U)', 'aire frío y válvula de admisión', 'area']]);
   c.alCambiarTema(function (p) { P = p; c.renderer.setClearColor(p.bg); if (!listo) return; clave = ''; calc(); });
   listo = true; calc();
 });
