@@ -22,6 +22,7 @@ figure.interactivo .int-grip.on{animation:none;background:color-mix(in srgb,var(
 @keyframes int-pulso{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--acc) 55%,transparent)}70%,100%{box-shadow:0 0 0 12px transparent}}
 @media (prefers-reduced-motion:reduce){figure.interactivo .int-grip{animation:none}}
 @media print{figure.interactivo .int-grips{display:none}}
+figure.interactivo .int-hint:empty{display:none}
 figure.interactivo .int-hint{position:absolute;left:8px;bottom:6px;font:.72rem var(--sans);color:var(--mut);background:color-mix(in srgb,var(--bg) 80%,transparent);padding:1px 6px;border-radius:4px;pointer-events:none}
 figure.interactivo .int-msg{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;color:var(--mut);background:var(--bg);padding:1em;text-align:center}
 figure.interactivo .int-spin{width:34px;height:34px;border:3px solid var(--bd);border-top-color:var(--acc);border-radius:50%;animation:int-giro .8s linear infinite}
@@ -44,7 +45,8 @@ figure.interactivo .int-vel button{border:0;background:transparent;color:var(--m
 figure.interactivo .int-vel button+button{border-left:1px solid var(--bd)}
 figure.interactivo .int-vel button[aria-pressed=true]{background:var(--acc);color:#fff}
 @media (max-width:520px){figure.interactivo .int-play{flex-wrap:wrap}figure.interactivo .int-scrub{order:5;flex-basis:100%}figure.interactivo .int-time{margin-left:auto}}
-@media (max-width:520px){figure.interactivo .int-hint{display:none}figure.interactivo .int-lab{font-size:.66rem}}
+@media (max-width:520px){figure.interactivo .int-hint:empty{display:none}
+figure.interactivo .int-hint{display:none}figure.interactivo .int-lab{font-size:.66rem}}
 /* Deslizadores */
 figure.interactivo input[type=range]{-webkit-appearance:none;appearance:none;height:22px;background:transparent;cursor:pointer;margin:0;--p:0%}
 figure.interactivo .int-scrub{flex:1 1 120px;min-width:0}

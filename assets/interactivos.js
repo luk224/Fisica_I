@@ -205,7 +205,7 @@
         camera = new THREE.PerspectiveCamera(45, 1.6, 0.1, 200);
         camera.up.set(0, 0, 1); camera.position.set(6, -7, 5);
         controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = false; controls.addEventListener('change', pedir);
+        controls.enableDamping = false; controls.enableZoom = false; controls.enablePan = false; controls.addEventListener('change', pedir);
       }
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       var luz = new THREE.DirectionalLight(0xffffff, 0.6); luz.position.set(4, -3, 8); scene.add(luz);
@@ -405,7 +405,7 @@
             fin: function (i) { if (agr[i]) agr[i].el.classList.remove('on'); },
             cerca: cerca
           };
-          if (!hintAg) { hintAg = true; var h = stage.querySelector('.int-hint'); if (h) h.textContent = 'Arrastra los círculos del dibujo · rueda o pellizco: zoom · doble clic: restablecer'; }
+          if (!hintAg) { hintAg = true; var h = stage.querySelector('.int-hint'); if (h) h.textContent = 'Arrastra los círculos del dibujo' + (params.zoom === true ? ' · rueda o pellizco: zoom · doble clic: restablecer' : ''); renderer.domElement.style.touchAction = 'none'; }
           pedir();
         },
         /* Pone un deslizador (el que devuelve ctx.slider) en un valor y avisa a la escena; el navegador lo ajusta al rango y al paso. */
@@ -418,11 +418,16 @@
       function activarZoom() {
         var cv = renderer.domElement, ptrs = {}, arr = null;
         function mundo(x, y) { var q = frac(x, y); return [camera.left + q[0] * (camera.right - camera.left), camera.top - q[1] * (camera.top - camera.bottom)]; }
-        cv.classList.add('zoom2d');
-        btnReset = document.createElement('button'); btnReset.type = 'button'; btnReset.className = 'int-reset';
-        btnReset.textContent = 'Restablecer vista'; btnReset.style.display = 'none'; stage.appendChild(btnReset);
+        /* Zoom y desplazamiento de la vista: solo si la figura lo pide con data-params {"zoom":true}; las asas siempre se arrastran. */
+        var vistaMovil = params.zoom === true;
+        if (vistaMovil) {
+          cv.classList.add('zoom2d');
+          btnReset = document.createElement('button'); btnReset.type = 'button'; btnReset.className = 'int-reset';
+          btnReset.textContent = 'Restablecer vista'; btnReset.style.display = 'none'; stage.appendChild(btnReset);
+        }
         var ayuda = document.createElement('div'); ayuda.className = 'int-hint';
-        ayuda.textContent = 'Rueda o pellizco: zoom · arrastrar: mover · doble clic: restablecer'; stage.appendChild(ayuda);
+        ayuda.textContent = vistaMovil ? 'Rueda o pellizco: zoom · arrastrar: mover · doble clic: restablecer' : ''; stage.appendChild(ayuda);
+        if (!vistaMovil) cv.style.touchAction = 'pan-y';
         function reset() { z.s = 1; z.px = 0; z.py = 0; aplicarVista(); }
         function zoomEn(fx, fy, f) {
           if (!base) return;
@@ -437,7 +442,7 @@
           z.px -= dx / r.width * base.vw * z.s; z.py += dy / r.height * base.vh * z.s; aplicarVista();
         }
         function frac(x, y) { var r = cv.getBoundingClientRect(); return [(x - r.left) / r.width, (y - r.top) / r.height]; }
-        cv.addEventListener('wheel', function (e) {
+        if (vistaMovil) cv.addEventListener('wheel', function (e) {
           e.preventDefault(); var q = frac(e.clientX, e.clientY);
           zoomEn(q[0], q[1], Math.exp(e.deltaY * (e.deltaMode === 1 ? 0.03 : 0.0015)));
         }, { passive: false });
@@ -449,6 +454,7 @@
             var i = ctx.arrastre.coger(m[0], m[1], 24 * (camera.right - camera.left) / rc.width);
             if (i >= 0) { arr = { id: e.pointerId, i: i }; try { cv.setPointerCapture(e.pointerId); } catch (x) {} return; }
           }
+          if (!vistaMovil) return;
           ptrs[e.pointerId] = { x: e.clientX, y: e.clientY }; try { cv.setPointerCapture(e.pointerId); } catch (x) {}
         });
         cv.addEventListener('pointermove', function (e) {
@@ -464,7 +470,7 @@
         });
         function suelta(e) { delete ptrs[e.pointerId]; if (arr && arr.id === e.pointerId) { if (ctx.arrastre.fin) ctx.arrastre.fin(arr.i); arr = null; } }
         cv.addEventListener('pointerup', suelta); cv.addEventListener('pointercancel', suelta);
-        cv.addEventListener('dblclick', reset); btnReset.addEventListener('click', reset);
+        if (vistaMovil) { cv.addEventListener('dblclick', reset); btnReset.addEventListener('click', reset); }
       }
       new MutationObserver(function () { var p = paleta(); temaCbs.forEach(function (cb) { cb(p); }); pedir(); })
         .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
