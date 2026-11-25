@@ -48,7 +48,7 @@
     var hs = [].slice.call(d.querySelectorAll('main h2[id]'));
     if (toc) hs.forEach(function (h) {
       var a = d.createElement('a'); a.href = '#' + h.id;
-      var c = h.cloneNode(true); c.querySelectorAll('.src').forEach(function (x) { x.remove(); });
+      var c = h.cloneNode(true); c.querySelectorAll('.src').forEach(function (x) { x.remove(); }); c.querySelectorAll('.katex-mathml').forEach(function (x) { x.remove(); });
       var n = c.querySelector('.n'); var num = n ? n.textContent.trim() + ' ' : ''; if (n) n.remove();
       a.textContent = num + c.textContent.replace(/\s+/g, ' ').trim(); toc.appendChild(a);
     });
