@@ -288,9 +288,9 @@ $$\vec F_{A\ \text{sobre}\ B}=-\vec F_{B\ \text{sobre}\ A}\ \ \text{(4.10)}$$
 <tr><td><a href="#e1">E1</a></td><td>Fuerza y aceleración en una dirección</td><td>$\sum F$ en el eje del movimiento $=ma$; peso y normal se cancelan en vertical</td></tr>
 <tr><td><a href="#e4">E4</a></td><td>Cinemática con tiempo → fuerza</td><td>$a=\Delta v/\Delta t$ (tema 2); después $\sum F=ma$; el signo de $a$ da el sentido de $F$</td></tr>
 <tr><td><a href="#e5">E5</a></td><td>Cinemática sin tiempo + DCL antes y después</td><td>$a=v^2/(2\Delta x)$; $F=ma$; tras soltar la pelota solo queda el peso</td></tr>
+<tr><td><a href="#e3">E3</a></td><td>Tercera ley con masas muy distintas</td><td>misma fuerza en los dos cuerpos; $a=F/m$ con la masa de cada uno</td></tr>
 <tr><td><a href="#e7">E7</a></td><td>Ascensor: peso aparente</td><td>DCL con $+y$ hacia la aceleración: $n-w=ma$, $T-mg=ma$</td></tr>
 <tr><td><a href="#e8">E8</a></td><td>Dos cuerpos en contacto</td><td>$a=F/(m_A+m_B)$ con el conjunto; fuerza interna aislando un cuerpo</td></tr>
-<tr><td><a href="#e3">E3</a></td><td>Tercera ley con masas muy distintas</td><td>misma fuerza en los dos cuerpos; $a=F/m$ con la masa de cada uno</td></tr>
 <tr><td><a href="#e9">E9</a></td><td>DCL de dos cuerpos y pares acción-reacción</td><td>un DCL por cuerpo; cada par: una fuerza en cada cuerpo distinto</td></tr>
 </table>
 <details class="sol" id="e1"><summary>E1 — Problema 4.9: masa a partir de fuerza y aceleración <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 4-4, Prob. 4.9">E</span></summary>
@@ -366,6 +366,29 @@ $$\vec F_{A\ \text{sobre}\ B}=-\vec F_{B\ \text{sobre}\ A}\ \ \text{(4.10)}$$
   <div class="recipe"><b>Error típico:</b> dibujar una fuerza hacia delante sobre la pelota <i>después</i> de soltarla (idea aristotélica). Una vez fuera de la mano, la única fuerza es el peso: la velocidad horizontal se mantiene sola por la 1ª ley, sin que nada "siga empujando".</div>
 </details>
 </details>
+<details class="sol" id="e3"><summary>E3 — Problema 4.24: la estudiante y la Tierra, tercera ley aplicada <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 4-7, Prob. 4.24">E</span></summary>
+<p class="enun">Una estudiante de 45 kg salta desde un trampolín, adquiriendo una aceleración hacia abajo (hacia la Tierra) de 9.8 m/s². La masa de la Tierra es $6.0\times10^{24}$ kg. ¿Cuál es la aceleración de la Tierra correspondiente hacia ella?</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>La 3.ª ley da la <i>magnitud</i> de la fuerza que la estudiante ejerce sobre la Tierra (441 N).</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Aplica $a=F/m$ con la masa del cuerpo sobre el que actúa esa fuerza: la de la Tierra.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Peso: $w=m\,g$; tercera ley: $F_{T\to E}=F_{E\to T}$ (sobre cuerpos distintos)</li>
+      <li>Segunda ley para la Tierra: $a_T=\dfrac{F}{m_T}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Fuerza sobre la estudiante</b> (su peso):
+      $$w=45(9.8)=441\ \text{N}$$</li>
+    <li><b>Reacción sobre la Tierra:</b> la misma magnitud, 441 N, en sentido contrario.</li>
+    <li><b>Aceleración de la Tierra:</b>
+      $$a_T=\frac{441}{6.0\times10^{24}}=\mathbf{7.4\times10^{-23}\ m/s^2}$$
+      <span class="por">Las fuerzas son iguales; como $a=F/m$, las aceleraciones están en razón inversa a las masas: el movimiento de la Tierra es imperceptible.</span></li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> usa la 3ª ley solo para obtener la magnitud de la fuerza de reacción; después aplica $a=F/m$ con la masa del cuerpo sobre el que actúa <i>esa</i> fuerza, nunca con la masa del otro cuerpo.</div>
+  <div class="recipe"><b>Error típico:</b> pensar que la Tierra "ejerce más fuerza" por ser más grande (ejerce la misma, por la 3ª ley), o usar la masa de la estudiante para calcular la aceleración de la Tierra.</div>
+</details>
+</details>
 <details class="sol" id="e7"><summary>E7 — Problema 4.8: peso aparente en un ascensor <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 4-3/4-4, Prob. 4.8">E</span></summary>
 <p class="enun">Una persona de peso 625 N está de pie sobre una báscula dentro de un ascensor que acelera hacia arriba a 2.50 m/s². a) ¿Qué marca la báscula? b) Si además lleva un paquete de 3.85 kg colgado de una cuerda vertical, ¿qué tensión hay en la cuerda?</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
@@ -426,29 +449,6 @@ $$\vec F_{A\ \text{sobre}\ B}=-\vec F_{B\ \text{sobre}\ A}\ \ \text{(4.10)}$$
 
   <div class="recipe"><b>Receta:</b> en un sistema de varios cuerpos que se mueven juntos, halla primero la aceleración común tratando el conjunto como un solo cuerpo (masa total); después aísla el cuerpo más simple para hallar la fuerza de contacto interna.</div>
   <div class="recipe"><b>Error típico:</b> creer que la fuerza se "transmite entera" a B ($F_{A\text{ sobre }B}=250$ N en vez de 50 N — parte de la fuerza se usa en acelerar a A), o emparejar el peso de una caja con su propia normal como si fueran acción-reacción.</div>
-</details>
-</details>
-<details class="sol" id="e3"><summary>E3 — Problema 4.24: la estudiante y la Tierra, tercera ley aplicada <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 4-7, Prob. 4.24">E</span></summary>
-<p class="enun">Una estudiante de 45 kg salta desde un trampolín, adquiriendo una aceleración hacia abajo (hacia la Tierra) de 9.8 m/s². La masa de la Tierra es $6.0\times10^{24}$ kg. ¿Cuál es la aceleración de la Tierra correspondiente hacia ella?</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>La 3.ª ley da la <i>magnitud</i> de la fuerza que la estudiante ejerce sobre la Tierra (441 N).</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Aplica $a=F/m$ con la masa del cuerpo sobre el que actúa esa fuerza: la de la Tierra.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Peso: $w=m\,g$; tercera ley: $F_{T\to E}=F_{E\to T}$ (sobre cuerpos distintos)</li>
-      <li>Segunda ley para la Tierra: $a_T=\dfrac{F}{m_T}$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Fuerza sobre la estudiante</b> (su peso):
-      $$w=45(9.8)=441\ \text{N}$$</li>
-    <li><b>Reacción sobre la Tierra:</b> la misma magnitud, 441 N, en sentido contrario.</li>
-    <li><b>Aceleración de la Tierra:</b>
-      $$a_T=\frac{441}{6.0\times10^{24}}=\mathbf{7.4\times10^{-23}\ m/s^2}$$
-      <span class="por">Las fuerzas son iguales; como $a=F/m$, las aceleraciones están en razón inversa a las masas: el movimiento de la Tierra es imperceptible.</span></li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> usa la 3ª ley solo para obtener la magnitud de la fuerza de reacción; después aplica $a=F/m$ con la masa del cuerpo sobre el que actúa <i>esa</i> fuerza, nunca con la masa del otro cuerpo.</div>
-  <div class="recipe"><b>Error típico:</b> pensar que la Tierra "ejerce más fuerza" por ser más grande (ejerce la misma, por la 3ª ley), o usar la masa de la estudiante para calcular la aceleración de la Tierra.</div>
 </details>
 </details>
 <details class="sol" id="e9"><summary>E9 — Problema 4.30: la caja que resbala en la plataforma de una camioneta <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 4-9, Prob. 4.30">E</span></summary>

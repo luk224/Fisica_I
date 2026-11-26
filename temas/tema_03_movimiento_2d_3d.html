@@ -267,45 +267,95 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
 <div class="nivel"><b>🔴 Núcleo: 6 ejercicios, un método por ejercicio</b><span>El problema de examen real (X3) más cinco del solucionario. Derivar y descomponer la aceleración, proyectil con ángulo, lanzamiento horizontal, explosión seguida de caída, aceleración centrípeta y velocidad relativa: si solo haces esto, cubres lo que cae.</span></div>
 <table class="metodos">
 <tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>
-<tr><td><a href="#e1">E1</a></td><td>Posición dada como función del tiempo: ¿acelera, frena o gira?</td><td>Deriva $x(t)$, $y(t)$; $a_\parallel=\vec a\cdot\vec v/v$ y $a_\perp$</td></tr>
-<tr><td><a href="#e4">E4</a></td><td>Proyectil con ángulo desde el suelo (cima, altura, alcance)</td><td>Descompón $v_0$; cima ⇒ $v_y=0$; alcance $=2v_{0x}t_1$ si mismo nivel</td></tr>
-<tr><td><a href="#e3">E3</a></td><td>Lanzamiento horizontal desde una mesa</td><td>$v_{0y}=0$: $t=\sqrt{2h/g}$; $x=v_0t$; recompón $v_x$, $v_y$</td></tr>
-<tr><td><a href="#x3">X3</a> · Feb 2020</td><td>Explosión en el punto más alto y caída de los fragmentos</td><td>«Mismo tiempo» ⇒ $v_{0y}=0$ en los dos; $t=\sqrt{2h/g}$; sentidos opuestos ⇒ suma las distancias</td></tr>
 <tr><td><a href="#e5">E5</a></td><td>Aceleración centrípeta a partir de las revoluciones por segundo</td><td>$T=1/f$; $a_{\text{rad}}=4\pi^2R/T^2$; dividir entre $g$</td></tr>
+<tr><td><a href="#e3">E3</a></td><td>Lanzamiento horizontal desde una mesa</td><td>$v_{0y}=0$: $t=\sqrt{2h/g}$; $x=v_0t$; recompón $v_x$, $v_y$</td></tr>
 <tr><td><a href="#e6">E6</a></td><td>Velocidad relativa en un río, ida y vuelta</td><td>Suma/resta la corriente con su signo en cada tramo; suma tiempos, nunca velocidades</td></tr>
+<tr><td><a href="#e4">E4</a></td><td>Proyectil con ángulo desde el suelo (cima, altura, alcance)</td><td>Descompón $v_0$; cima ⇒ $v_y=0$; alcance $=2v_{0x}t_1$ si mismo nivel</td></tr>
+<tr><td><a href="#e1">E1</a></td><td>Posición dada como función del tiempo: ¿acelera, frena o gira?</td><td>Deriva $x(t)$, $y(t)$; $a_\parallel=\vec a\cdot\vec v/v$ y $a_\perp$</td></tr>
+<tr><td><a href="#x3">X3</a> · Feb 2020</td><td>Explosión en el punto más alto y caída de los fragmentos</td><td>«Mismo tiempo» ⇒ $v_{0y}=0$ en los dos; $t=\sqrt{2h/g}$; sentidos opuestos ⇒ suma las distancias</td></tr>
 </table>
-<details class="sol" id="e1"><summary>E1 — Problema 3.7: aceleración de un ave, ¿acelera o gira? <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-4/3-5, Prob. 3.7">E</span></summary>
-<p class="enun">Las coordenadas de un ave que vuela en el plano $xy$ son $x(t)=\alpha t$ e $y(t)=3.0\ \text{m}-\beta t^2$, con $\alpha=2.4$ m/s y $\beta=1.2$ m/s². a) Dibuje la trayectoria del ave entre $t=0$ y $t=2.0$ s. b) Calcule los vectores velocidad y aceleración del ave en función del tiempo. c) Obtenga el módulo y la dirección de la velocidad y de la aceleración en $t=2.0$ s. d) En ese instante, ¿el ave acelera, frena o su rapidez no cambia? ¿Está girando? Si es así, ¿hacia dónde?</p>
+<details class="sol" id="e5"><summary>E5 — Problema 3.24: aceleración centrípeta de un bailarín <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-14, Prob. 3.24">E</span></summary>
+<p class="enun">Un bailarín de ballet gira sobre un eje vertical a 3.0 revoluciones por segundo. La distancia de su oído interno al eje de giro es de 7.0 cm. Calcula la aceleración centrípeta de su oído interno, y exprésala como múltiplo de $g$.</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Deriva $x(t)$ e $y(t)$ dos veces para obtener $\vec v(t)$ y $\vec a(t)$.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>¿Acelera o frena? Signo de $\vec a\cdot\vec v$ ($a_\parallel$). ¿Gira? Si $a_\perp\neq0$.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>De 3,0 rev/s: $T=1/f$; $a_{rad}=4\pi^2R/T^2$ con $R$ en metros.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Para expresarla en múltiplos de $g$, divide entre 9,80.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
 <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>$\vec v=\dfrac{d\vec r}{dt}$; $\vec a=\dfrac{d\vec v}{dt}$ (derivar cada componente)</li>
-      <li>$a_\parallel=\dfrac{\vec a\cdot\vec v}{v}$; $a_\perp=\sqrt{a^2-a_\parallel^2}$; sentido de giro: $(\vec v\times\vec a)_z=v_xa_y-v_ya_x$</li>
+      <li>Periodo: $T=\dfrac1f$</li>
+      <li>Aceleración centrípeta: $a_{rad}=\dfrac{4\pi^2R}{T^2}$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>a) Trayectoria:</b> de $x=\alpha t$ ⇒ $t=x/\alpha$:
-      $$y=3.0-\frac{\beta}{\alpha^2}x^2$$
-      <span class="por">Parábola: va de $(0;\,3.0)$ m en $t=0$ a $(4.8;\,-1.8)$ m en $t=2.0$ s.</span></li>
-    <li><b>b) Velocidad y aceleración:</b>
-      $$v_x=\alpha=2.4\ \text{m/s},\quad v_y=-2\beta t=-2.4\,t;\qquad a_x=0,\quad a_y=-2\beta=-2.4\ \text{m/s}^2$$</li>
-    <li><b>c) En $t=2.0$ s:</b>
-      $$v_x=2.4,\ v_y=-4.8\ \Rightarrow\ v=\sqrt{2.4^2+4.8^2}=\mathbf{5.37\ m/s},\quad\theta=\arctan\frac{-4.8}{2.4}=\mathbf{-63.4^\circ}$$
-      $$\vec a=(0,\,-2.4)\ \text{m/s}^2\ \ (\text{constante, dirección }-y)$$</li>
-    <li><b>d) ¿Acelera, frena o gira?</b>
-      $$a_\parallel=\frac{(0)(2.4)+(-2.4)(-4.8)}{5.37}=\mathbf{+2.15\ m/s^2}\ \Rightarrow\ \text{acelera}$$
-      $$a_\perp=\sqrt{2.4^2-2.15^2}=1.07\ \text{m/s}^2\ne0\ \Rightarrow\ \text{gira}$$
-      $$(\vec v\times\vec a)_z=(2.4)(-2.4)-(-4.8)(0)=-5.76<0\ \Rightarrow\ \text{gira hacia }-y\ (\text{a su derecha})$$</li>
+    <li><b>Periodo y radio:</b>
+      $$T=\frac{1}{3.0}=0.333\ \text{s},\qquad R=0.070\ \text{m}$$</li>
+    <li><b>Aceleración centrípeta:</b>
+      $$a_{rad}=\frac{4\pi^2(0.070)}{(0.333)^2}=\mathbf{24.9\ m/s^2}$$</li>
+    <li><b>Como múltiplo de $g$:</b>
+      $$\frac{24.9}{9.80}\approx\mathbf{2.5\,g}$$</li>
   </ol>
-  <figure class="fig" data-svg="../assets/figs/t03/trayectoria-del-ave-con-v-y-a-en-t-2-s.svg">
-<div class="figph" role="img" aria-label="Trayectoria del ave con v y a en t = 2 s" style="aspect-ratio:300/290"></div>
-<figcaption>La trayectoria es una parábola. En t = 2.0 s: v = (2.4; −4.8) m/s y a = (0; −2.4) m/s². a∥ > 0 (verde): la rapidez aumenta; a⊥ ≠ 0 (morado): además gira, hacia el lado de a⊥ (a la derecha de v). <span class="src" data-l="P" data-ref="Diagrama propio del problema 3.7">P</span></figcaption>
+  <div class="recipe"><b>Receta:</b> de revoluciones por segundo a periodo, $T=1/f$; aplica directamente $a_{\text{rad}}=4\pi^2R/T^2$ (equivalente a $v^2/R$ pero sin pasar por $v$).</div>
+  <div class="recipe"><b>Error típico:</b> confundir «3.0 rev/s» con el periodo $T$ o con una velocidad angular en rad/s directamente, u olvidar convertir el radio de cm a m.</div>
+</details>
+</details>
+<details class="sol" id="e3"><summary>E3 — Problema 3.9: libro empujado desde una mesa (lanzamiento horizontal) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-6/3-7, Prob. 3.9">E</span></summary>
+<p class="enun">Un libro se desliza fuera de una mesa horizontal con $v_0=1.10$ m/s y golpea el suelo en $t=0.480$ s. Calcula a) la altura de la mesa, b) la distancia horizontal recorrida hasta el impacto, y c) las componentes horizontal y vertical de la velocidad, y la rapidez y el ángulo de la velocidad justo al llegar al suelo.</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Lanzamiento horizontal: $v_{0y}=0$, la caída es como soltar desde el reposo, $h=\tfrac12gt^2$.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>$v_x=v_0$ no cambia (da el alcance) y $v_y=-gt$ al llegar.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Lanzamiento horizontal ($v_{0y}=0$): $h=\tfrac12g\,t^2$; $x=v_0\,t$</li>
+      <li>Al llegar al suelo: $v_x=v_0$; $v_y=-g\,t$; $v=\sqrt{v_x^2+v_y^2}$; $\theta=\arctan\dfrac{|v_y|}{v_x}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Altura de la mesa:</b>
+      $$h=\tfrac12g\,t^2=\tfrac12(9.80)(0.480)^2=\mathbf{1.13\ m}$$</li>
+    <li><b>b) Distancia horizontal:</b>
+      $$x=v_0\,t=1.10(0.480)=\mathbf{0.528\ m}$$</li>
+    <li><b>c) Velocidad al llegar:</b>
+      $$v_x=\mathbf{1.10\ m/s},\qquad v_y=-9.80(0.480)=\mathbf{-4.70\ m/s}$$
+      $$v=\sqrt{1.10^2+4.70^2}=\mathbf{4.83\ m/s},\qquad\theta=\arctan\frac{4.70}{1.10}=\mathbf{76.8^\circ}\ \text{bajo la horizontal}$$
+      <span class="por">El tiempo de caída es el mismo que si se soltara sin empujar: depende solo del eje vertical.</span></li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t03/libro-que-cae-de-una-mesa-con-lanzamiento-horizo.svg">
+<div class="figph" role="img" aria-label="Libro que cae de una mesa con lanzamiento horizontal" style="aspect-ratio:330/190"></div>
+<figcaption>Lanzamiento horizontal: el libro sale a 1.10 m/s, cae 1.13 m en 0.480 s y avanza 0.528 m. La vertical es una caída libre normal; v_x = 1.10 m/s no cambia, y al llegar al suelo v_y = −4.70 m/s (rapidez 4.83 m/s, a 76.8° bajo la horizontal; la flecha azul no está a escala). <span class="src" data-l="P" data-ref="Diagrama propio del problema 3.9">P</span></figcaption>
 </figure>
 
-  <div class="recipe"><b>Receta:</b> deriva $x(t)$ e $y(t)$ dos veces para obtener $\vec v(t)$ y $\vec a(t)$; para saber si el objeto «acelera o frena» mira el signo de $\vec a\cdot\vec v$ (o $a_\parallel$); para saber si «gira» comprueba si $a_\perp\ne0$.</div>
-  <div class="recipe"><b>Error típico:</b> no corregir el cuadrante del $\arctan$, o creer que «acelerar» significa solo cambiar la rapidez y olvidarse de comprobar el giro.</div>
+  <div class="recipe"><b>Receta:</b> en un lanzamiento horizontal, el tiempo de caída depende <b>solo</b> del eje vertical ($t=\sqrt{2h/g}$); la velocidad horizontal nunca cambia y solo sirve para hallar el alcance, $x=v_0t$.</div>
+  <div class="recipe"><b>Error típico:</b> creer que una $v_0$ horizontal mayor hace que el libro tarde más o menos en caer — el tiempo de caída es el mismo que si se soltara sin empujarlo.</div>
+</details>
+</details>
+<details class="sol" id="e6"><summary>E6 — Problema 3.32: remero contra caminante, velocidad relativa en un río <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-16, Prob. 3.32">E</span></summary>
+<p class="enun">Dos muelles, A y B, están situados en un río; B está 1500 m río abajo de A. Dos amigos deben ir de A a B y regresar. Uno rema su bote con rapidez constante de 4.00 km/h relativa al agua; el otro camina por la orilla con rapidez constante de 4.00 km/h. La velocidad del río es 2.80 km/h en la dirección de A a B. ¿Cuánto tardará cada persona en hacer el viaje de ida y vuelta?</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Tramo a favor de la corriente: rapidez respecto a tierra $=v_{bote}+v_{río}$; en contra, $v_{bote}-v_{río}$. Calcula el tiempo de cada tramo.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>No promedies velocidades: suma tiempos.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Velocidad relativa: $v_{bote/tierra}=v_{bote/agua}\pm v_{r\acute io}$ (a favor $+$, en contra $-$)</li>
+      <li>Tiempo de cada tramo: $t=\dfrac dv$; tiempo total = suma de tiempos (no se promedian velocidades)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Remero, río abajo</b> (a favor):
+      $$v=4.00+2.80=6.80\ \text{km/h},\qquad t_1=\frac{1.50}{6.80}=0.221\ \text{h}$$</li>
+    <li><b>Remero, río arriba</b> (en contra):
+      $$v=4.00-2.80=1.20\ \text{km/h},\qquad t_2=\frac{1.50}{1.20}=1.25\ \text{h}$$</li>
+    <li><b>Tiempo total del remero:</b>
+      $$t_1+t_2=\mathbf{1.47\ h}=88.2\ \text{min}$$</li>
+    <li><b>Caminante</b> (3.00 km a 4.00 km/h):
+      $$t=\frac{3.00}{4.00}=\mathbf{0.750\ h}=45.0\ \text{min}$$
+      <span class="por">El remero tarda casi el doble: pierde más tiempo río arriba (1.20 km/h) del que gana río abajo (6.80 km/h). Promediar $(6.80+1.20)/2=4.00$ km/h sería un error.</span></li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t03/remero-y-caminante-entre-los-muelles-a-y-b.svg">
+<div class="figph" role="img" aria-label="Remero y caminante entre los muelles A y B" style="aspect-ratio:320/178"></div>
+<figcaption>El remero suma la corriente río abajo (6.80 km/h) y la resta río arriba (1.20 km/h): tarda 0.221 + 1.25 = 1.47 h. El caminante, siempre a 4.00 km/h, tarda 0.750 h. Las flechas del remero son proporcionales a su velocidad: el tramo lento pesa mucho más que el rápido. <span class="src" data-l="P" data-ref="Diagrama propio del problema 3.32">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> en un problema de ida y vuelta con corriente, suma o resta la velocidad del medio (con su signo) en cada tramo por separado (ec. 3.32), calcula el tiempo de cada tramo y súmalos — nunca promedies las velocidades directamente.</div>
+  <div class="recipe"><b>Error típico:</b> promediar $(6.80+1.20)/2=4.00$ km/h y concluir (incorrectamente) que el remero tarda lo mismo que el caminante.</div>
 </details>
 </details>
 <details class="sol" id="e4"><summary>E4 — Problema 3.16: proyectil lanzado a 60° <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-9, Prob. 3.16">E</span></summary>
@@ -341,34 +391,38 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
   <div class="recipe"><b>Error típico:</b> decir que en el punto más alto «$v=0$» — solo es cero la componente vertical; la horizontal sigue siendo $v_{0x}$.</div>
 </details>
 </details>
-<details class="sol" id="e3"><summary>E3 — Problema 3.9: libro empujado desde una mesa (lanzamiento horizontal) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-6/3-7, Prob. 3.9">E</span></summary>
-<p class="enun">Un libro se desliza fuera de una mesa horizontal con $v_0=1.10$ m/s y golpea el suelo en $t=0.480$ s. Calcula a) la altura de la mesa, b) la distancia horizontal recorrida hasta el impacto, y c) las componentes horizontal y vertical de la velocidad, y la rapidez y el ángulo de la velocidad justo al llegar al suelo.</p>
+<details class="sol" id="e1"><summary>E1 — Problema 3.7: aceleración de un ave, ¿acelera o gira? <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-4/3-5, Prob. 3.7">E</span></summary>
+<p class="enun">Las coordenadas de un ave que vuela en el plano $xy$ son $x(t)=\alpha t$ e $y(t)=3.0\ \text{m}-\beta t^2$, con $\alpha=2.4$ m/s y $\beta=1.2$ m/s². a) Dibuje la trayectoria del ave entre $t=0$ y $t=2.0$ s. b) Calcule los vectores velocidad y aceleración del ave en función del tiempo. c) Obtenga el módulo y la dirección de la velocidad y de la aceleración en $t=2.0$ s. d) En ese instante, ¿el ave acelera, frena o su rapidez no cambia? ¿Está girando? Si es así, ¿hacia dónde?</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Lanzamiento horizontal: $v_{0y}=0$, la caída es como soltar desde el reposo, $h=\tfrac12gt^2$.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>$v_x=v_0$ no cambia (da el alcance) y $v_y=-gt$ al llegar.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>Deriva $x(t)$ e $y(t)$ dos veces para obtener $\vec v(t)$ y $\vec a(t)$.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>¿Acelera o frena? Signo de $\vec a\cdot\vec v$ ($a_\parallel$). ¿Gira? Si $a_\perp\neq0$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
 <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Lanzamiento horizontal ($v_{0y}=0$): $h=\tfrac12g\,t^2$; $x=v_0\,t$</li>
-      <li>Al llegar al suelo: $v_x=v_0$; $v_y=-g\,t$; $v=\sqrt{v_x^2+v_y^2}$; $\theta=\arctan\dfrac{|v_y|}{v_x}$</li>
+      <li>$\vec v=\dfrac{d\vec r}{dt}$; $\vec a=\dfrac{d\vec v}{dt}$ (derivar cada componente)</li>
+      <li>$a_\parallel=\dfrac{\vec a\cdot\vec v}{v}$; $a_\perp=\sqrt{a^2-a_\parallel^2}$; sentido de giro: $(\vec v\times\vec a)_z=v_xa_y-v_ya_x$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>a) Altura de la mesa:</b>
-      $$h=\tfrac12g\,t^2=\tfrac12(9.80)(0.480)^2=\mathbf{1.13\ m}$$</li>
-    <li><b>b) Distancia horizontal:</b>
-      $$x=v_0\,t=1.10(0.480)=\mathbf{0.528\ m}$$</li>
-    <li><b>c) Velocidad al llegar:</b>
-      $$v_x=\mathbf{1.10\ m/s},\qquad v_y=-9.80(0.480)=\mathbf{-4.70\ m/s}$$
-      $$v=\sqrt{1.10^2+4.70^2}=\mathbf{4.83\ m/s},\qquad\theta=\arctan\frac{4.70}{1.10}=\mathbf{76.8^\circ}\ \text{bajo la horizontal}$$
-      <span class="por">El tiempo de caída es el mismo que si se soltara sin empujar: depende solo del eje vertical.</span></li>
+    <li><b>a) Trayectoria:</b> de $x=\alpha t$ ⇒ $t=x/\alpha$:
+      $$y=3.0-\frac{\beta}{\alpha^2}x^2$$
+      <span class="por">Parábola: va de $(0;\,3.0)$ m en $t=0$ a $(4.8;\,-1.8)$ m en $t=2.0$ s.</span></li>
+    <li><b>b) Velocidad y aceleración:</b>
+      $$v_x=\alpha=2.4\ \text{m/s},\quad v_y=-2\beta t=-2.4\,t;\qquad a_x=0,\quad a_y=-2\beta=-2.4\ \text{m/s}^2$$</li>
+    <li><b>c) En $t=2.0$ s:</b>
+      $$v_x=2.4,\ v_y=-4.8\ \Rightarrow\ v=\sqrt{2.4^2+4.8^2}=\mathbf{5.37\ m/s},\quad\theta=\arctan\frac{-4.8}{2.4}=\mathbf{-63.4^\circ}$$
+      $$\vec a=(0,\,-2.4)\ \text{m/s}^2\ \ (\text{constante, dirección }-y)$$</li>
+    <li><b>d) ¿Acelera, frena o gira?</b>
+      $$a_\parallel=\frac{(0)(2.4)+(-2.4)(-4.8)}{5.37}=\mathbf{+2.15\ m/s^2}\ \Rightarrow\ \text{acelera}$$
+      $$a_\perp=\sqrt{2.4^2-2.15^2}=1.07\ \text{m/s}^2\ne0\ \Rightarrow\ \text{gira}$$
+      $$(\vec v\times\vec a)_z=(2.4)(-2.4)-(-4.8)(0)=-5.76<0\ \Rightarrow\ \text{gira hacia }-y\ (\text{a su derecha})$$</li>
   </ol>
-  <figure class="fig" data-svg="../assets/figs/t03/libro-que-cae-de-una-mesa-con-lanzamiento-horizo.svg">
-<div class="figph" role="img" aria-label="Libro que cae de una mesa con lanzamiento horizontal" style="aspect-ratio:330/190"></div>
-<figcaption>Lanzamiento horizontal: el libro sale a 1.10 m/s, cae 1.13 m en 0.480 s y avanza 0.528 m. La vertical es una caída libre normal; v_x = 1.10 m/s no cambia, y al llegar al suelo v_y = −4.70 m/s (rapidez 4.83 m/s, a 76.8° bajo la horizontal; la flecha azul no está a escala). <span class="src" data-l="P" data-ref="Diagrama propio del problema 3.9">P</span></figcaption>
+  <figure class="fig" data-svg="../assets/figs/t03/trayectoria-del-ave-con-v-y-a-en-t-2-s.svg">
+<div class="figph" role="img" aria-label="Trayectoria del ave con v y a en t = 2 s" style="aspect-ratio:300/290"></div>
+<figcaption>La trayectoria es una parábola. En t = 2.0 s: v = (2.4; −4.8) m/s y a = (0; −2.4) m/s². a∥ > 0 (verde): la rapidez aumenta; a⊥ ≠ 0 (morado): además gira, hacia el lado de a⊥ (a la derecha de v). <span class="src" data-l="P" data-ref="Diagrama propio del problema 3.7">P</span></figcaption>
 </figure>
 
-  <div class="recipe"><b>Receta:</b> en un lanzamiento horizontal, el tiempo de caída depende <b>solo</b> del eje vertical ($t=\sqrt{2h/g}$); la velocidad horizontal nunca cambia y solo sirve para hallar el alcance, $x=v_0t$.</div>
-  <div class="recipe"><b>Error típico:</b> creer que una $v_0$ horizontal mayor hace que el libro tarde más o menos en caer — el tiempo de caída es el mismo que si se soltara sin empujarlo.</div>
+  <div class="recipe"><b>Receta:</b> deriva $x(t)$ e $y(t)$ dos veces para obtener $\vec v(t)$ y $\vec a(t)$; para saber si el objeto «acelera o frena» mira el signo de $\vec a\cdot\vec v$ (o $a_\parallel$); para saber si «gira» comprueba si $a_\perp\ne0$.</div>
+  <div class="recipe"><b>Error típico:</b> no corregir el cuadrante del $\arctan$, o creer que «acelerar» significa solo cambiar la rapidez y olvidarse de comprobar el giro.</div>
 </details>
 </details>
 <details class="sol" id="x3"><summary>X3 — Fragmentos de un cohete de fuegos artificiales <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2020 (1ª semana) P-2">X</span></summary>
@@ -410,60 +464,6 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
     <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) velocidades de los fragmentos (1,8) · b) distancia entre los puntos de caída (1,2). Dentro de cada apartado suele valorarse en este orden:</p>
     <ul><li><b>Planteamiento (≈30 %):</b> $\vec P=0$ en la altura máxima; velocidades horizontales y opuestas; dibujo de los dos lanzamientos horizontales.</li><li><b>Ecuaciones (≈40 %):</b> $m_Av_A=m_Bv_B$, $K=860$ J, $t=\sqrt{2h/g}$ y $x=vt$ para cada fragmento.</li><li><b>Resultado y unidades (≈30 %):</b> $v_A=14{,}3$ m/s, $v_B=71{,}5$ m/s y $D=x_A+x_B\approx347$ m, con unidades.</li></ul>
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
-</details>
-</details>
-<details class="sol" id="e5"><summary>E5 — Problema 3.24: aceleración centrípeta de un bailarín <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-14, Prob. 3.24">E</span></summary>
-<p class="enun">Un bailarín de ballet gira sobre un eje vertical a 3.0 revoluciones por segundo. La distancia de su oído interno al eje de giro es de 7.0 cm. Calcula la aceleración centrípeta de su oído interno, y exprésala como múltiplo de $g$.</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>De 3,0 rev/s: $T=1/f$; $a_{rad}=4\pi^2R/T^2$ con $R$ en metros.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Para expresarla en múltiplos de $g$, divide entre 9,80.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Periodo: $T=\dfrac1f$</li>
-      <li>Aceleración centrípeta: $a_{rad}=\dfrac{4\pi^2R}{T^2}$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Periodo y radio:</b>
-      $$T=\frac{1}{3.0}=0.333\ \text{s},\qquad R=0.070\ \text{m}$$</li>
-    <li><b>Aceleración centrípeta:</b>
-      $$a_{rad}=\frac{4\pi^2(0.070)}{(0.333)^2}=\mathbf{24.9\ m/s^2}$$</li>
-    <li><b>Como múltiplo de $g$:</b>
-      $$\frac{24.9}{9.80}\approx\mathbf{2.5\,g}$$</li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> de revoluciones por segundo a periodo, $T=1/f$; aplica directamente $a_{\text{rad}}=4\pi^2R/T^2$ (equivalente a $v^2/R$ pero sin pasar por $v$).</div>
-  <div class="recipe"><b>Error típico:</b> confundir «3.0 rev/s» con el periodo $T$ o con una velocidad angular en rad/s directamente, u olvidar convertir el radio de cm a m.</div>
-</details>
-</details>
-<details class="sol" id="e6"><summary>E6 — Problema 3.32: remero contra caminante, velocidad relativa en un río <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 3-16, Prob. 3.32">E</span></summary>
-<p class="enun">Dos muelles, A y B, están situados en un río; B está 1500 m río abajo de A. Dos amigos deben ir de A a B y regresar. Uno rema su bote con rapidez constante de 4.00 km/h relativa al agua; el otro camina por la orilla con rapidez constante de 4.00 km/h. La velocidad del río es 2.80 km/h en la dirección de A a B. ¿Cuánto tardará cada persona en hacer el viaje de ida y vuelta?</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Tramo a favor de la corriente: rapidez respecto a tierra $=v_{bote}+v_{río}$; en contra, $v_{bote}-v_{río}$. Calcula el tiempo de cada tramo.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>No promedies velocidades: suma tiempos.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Velocidad relativa: $v_{bote/tierra}=v_{bote/agua}\pm v_{r\acute io}$ (a favor $+$, en contra $-$)</li>
-      <li>Tiempo de cada tramo: $t=\dfrac dv$; tiempo total = suma de tiempos (no se promedian velocidades)</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Remero, río abajo</b> (a favor):
-      $$v=4.00+2.80=6.80\ \text{km/h},\qquad t_1=\frac{1.50}{6.80}=0.221\ \text{h}$$</li>
-    <li><b>Remero, río arriba</b> (en contra):
-      $$v=4.00-2.80=1.20\ \text{km/h},\qquad t_2=\frac{1.50}{1.20}=1.25\ \text{h}$$</li>
-    <li><b>Tiempo total del remero:</b>
-      $$t_1+t_2=\mathbf{1.47\ h}=88.2\ \text{min}$$</li>
-    <li><b>Caminante</b> (3.00 km a 4.00 km/h):
-      $$t=\frac{3.00}{4.00}=\mathbf{0.750\ h}=45.0\ \text{min}$$
-      <span class="por">El remero tarda casi el doble: pierde más tiempo río arriba (1.20 km/h) del que gana río abajo (6.80 km/h). Promediar $(6.80+1.20)/2=4.00$ km/h sería un error.</span></li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t03/remero-y-caminante-entre-los-muelles-a-y-b.svg">
-<div class="figph" role="img" aria-label="Remero y caminante entre los muelles A y B" style="aspect-ratio:320/178"></div>
-<figcaption>El remero suma la corriente río abajo (6.80 km/h) y la resta río arriba (1.20 km/h): tarda 0.221 + 1.25 = 1.47 h. El caminante, siempre a 4.00 km/h, tarda 0.750 h. Las flechas del remero son proporcionales a su velocidad: el tramo lento pesa mucho más que el rápido. <span class="src" data-l="P" data-ref="Diagrama propio del problema 3.32">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> en un problema de ida y vuelta con corriente, suma o resta la velocidad del medio (con su signo) en cada tramo por separado (ec. 3.32), calcula el tiempo de cada tramo y súmalos — nunca promedies las velocidades directamente.</div>
-  <div class="recipe"><b>Error típico:</b> promediar $(6.80+1.20)/2=4.00$ km/h y concluir (incorrectamente) que el remero tarda lo mismo que el caminante.</div>
 </details>
 </details>
 <div class="nivel"><b>🟡 Práctica: 1 ejercicio más</b><span>Un proyectil con las componentes de $\vec v_0$ ya dadas: repasa «cima», «vuelve a su nivel» y alcance. Resuélvelo sin dibujo y compáralo con la solución.</span></div>

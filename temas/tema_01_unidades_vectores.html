@@ -334,11 +334,11 @@ $$\vec A\cdot\vec B=AB\cos\phi\quad(1.16)\qquad\vec A\cdot\vec B=A_xB_x+A_yB_y+A
 <table class="metodos">
 <tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>
 <tr><td><a href="#problema-1-10">E1</a></td><td>Conversión de unidades</td><td>Cadena de factores unitarios orientados para cancelar; con cm³ o m², el factor de longitud al cubo o al cuadrado</td></tr>
-<tr><td><a href="#problema-1-14">E2</a></td><td>Cifras significativas</td><td>¿$\times\div$ o $+-$? Contar cifras o mirar decimales; redondear solo al final</td></tr>
+<tr><td><a href="#problema-1-42">E6</a></td><td>Producto escalar y ángulo</td><td>$\vec A\cdot\vec B=A_xB_x+A_yB_y$, módulos con Pitágoras y $\phi=\arccos\dfrac{\vec A\cdot\vec B}{AB}$</td></tr>
 <tr><td><a href="#problema-1-18">E3</a></td><td>Estimación de orden de magnitud</td><td>Estimar lo que falta con números redondos, encadenar factores y dar 1 cifra</td></tr>
 <tr><td><a href="#problema-1-31">E4</a></td><td>Suma y resta de vectores</td><td>Componentes con signo (ángulo llevado a $+x$) → sumar o restar → Pitágoras y arctan con corrección de cuadrante</td></tr>
-<tr><td><a href="#problema-1-42">E6</a></td><td>Producto escalar y ángulo</td><td>$\vec A\cdot\vec B=A_xB_x+A_yB_y$, módulos con Pitágoras y $\phi=\arccos\dfrac{\vec A\cdot\vec B}{AB}$</td></tr>
 <tr><td><a href="#problema-1-46">E8</a></td><td>Producto vectorial (módulo y dirección)</td><td>$AB\sin\phi$ con el ángulo entre ellos; mano derecha para el sentido; $C_z=A_xB_y-A_yB_x$ para comprobar</td></tr>
+<tr><td><a href="#problema-1-14">E2</a></td><td>Cifras significativas</td><td>¿$\times\div$ o $+-$? Contar cifras o mirar decimales; redondear solo al final</td></tr>
 </table>
 <details class="sol" id="problema-1-10"><summary>E1 — Ejercicio 1.10: conversión de unidades (rapidez, aceleración y densidad) <span class="src" data-l="E" data-ref="Solucionario 1-2, Prob. 1.10">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §1.4, p. 6-7; Ejercicio 1.10, p. 28">U p.6-7, 28</span></summary>
 <p class="enun">a) Un coche va a 60 mi/h. ¿A cuántos ft/s equivale? b) La aceleración de la gravedad es 32 ft/s². ¿Cuánto es en m/s²? c) La densidad del agua es 1.0 g/cm³. ¿Cuánto es en kg/m³?</p>
@@ -365,31 +365,28 @@ $$\vec A\cdot\vec B=AB\cos\phi\quad(1.16)\qquad\vec A\cdot\vec B=A_xB_x+A_yB_y+A
   <div class="recipe"><b>Receta:</b> multiplica por factores unitarios orientados para cancelar la unidad que sobra; si la unidad está al cuadrado o al cubo, el factor de conversión también va elevado a esa potencia.</div>
 </details>
 </details>
-<details class="sol" id="problema-1-14"><summary>E2 — Ejercicio 1.14: cifras significativas en un rectángulo <span class="src" data-l="E" data-ref="Solucionario 1-3, Prob. 1.14">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §1.5, tabla 1.2, p. 8; Ejercicio 1.14, p. 28">U p.8, 28</span></summary>
-<p class="enun">Un rectángulo mide 12 mm por 5.98 mm. Con el número correcto de cifras significativas, calcula: a) el área; b) la razón ancho/largo; c) el perímetro; d) la diferencia largo−ancho; e) la razón largo/ancho.</p>
+<details class="sol" id="problema-1-42"><summary>E6 — Ejercicio 1.42: producto escalar y ángulo entre dos vectores <span class="src" data-l="E" data-ref="Solucionario 1-14, Prob. 1.42">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §1.10, ecs. 1.16 y 1.19, pp. 20-21; Ejercicio 1.42, p. 29">U p.20-21, 29</span></summary>
+<p class="enun">Con los mismos $\vec A=4.00\hat\imath+7.00\hat\jmath$ y $\vec B=5.00\hat\imath-2.00\hat\jmath$: a) calcula $\vec A\cdot\vec B$; b) halla el ángulo entre ambos vectores.</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>En productos y cocientes manda el dato con <i>menos cifras significativas</i>; en sumas y restas, el decimal menos preciso.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Perímetro y diferencia son sumas: aplica la regla de los decimales.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>$\vec A\cdot\vec B=A_xB_x+A_yB_y$ (componente con su misma componente) y es un número, no un vector.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>$\cos\phi=\vec A\cdot\vec B/(AB)$; un producto positivo da un ángulo menor que $90^\circ$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
 <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Área: $A=\ell\,w$; perímetro: $P=2(\ell+w)$; razones: $w/\ell$ y $\ell/w$</li>
-      <li>Multiplicar o dividir: tantas cifras significativas como el dato que menos tiene; sumar o restar: la posición decimal menos precisa</li>
+      <li>Producto escalar por componentes: $\vec A\cdot\vec B=A_xB_x+A_yB_y$ (un número)</li>
+      <li>Ángulo entre vectores: $\cos\phi=\dfrac{\vec A\cdot\vec B}{A\,B}$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>a) Área</b> (manda el «12»: 2 cifras):
-      $$A=12\times5.98=71.76\ \to\ \mathbf{72\ mm^2}$$</li>
-    <li><b>b) Razón ancho/largo:</b>
-      $$\frac{5.98}{12}=0.4983\ \to\ \mathbf{0.50}$$</li>
-    <li><b>c) Perímetro</b> (regla de la suma: «12» no tiene decimales):
-      $$P=2(12+5.98)=2(17.98)=35.96\ \to\ \mathbf{36\ mm}$$</li>
-    <li><b>d) Diferencia largo−ancho:</b>
-      $$12-5.98=6.02\ \to\ \mathbf{6\ mm}$$</li>
-    <li><b>e) Razón largo/ancho:</b>
-      $$\frac{12}{5.98}=2.0067\ \to\ \mathbf{2.0}$$</li>
+    <li><b>Módulos:</b>
+      $$A=\sqrt{65}=8.06,\qquad B=\sqrt{29}=5.39$$</li>
+    <li><b>a) Producto escalar:</b>
+      $$\vec A\cdot\vec B=(4.00)(5.00)+(7.00)(-2.00)=20.0-14.0=\mathbf{6.00}$$</li>
+    <li><b>b) Ángulo:</b>
+      $$\cos\phi=\frac{6.00}{(8.06)(5.39)}=0.138\ \Rightarrow\ \phi=\mathbf{82.1^\circ}$$
+      <span class="por">Producto positivo y $\phi<90^\circ$: coherentes entre sí.</span></li>
   </ol>
-  <div class="box warn"><span class="h">Error típico</span><p>Dar el perímetro como «36.0 mm» o «35.96 mm»: el lado de 12 mm solo se conoce hasta el milímetro, así que la suma tampoco puede saberse mejor.</p></div>
-  <div class="recipe"><b>Receta:</b> antes de redondear, identifica si la operación es ×÷ (cuenta cifras significativas) o +− (mira la posición decimal); redondea solo al final.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Multiplicar «en cruz» ($A_xB_y+A_yB_x$) o tomar el signo de $B_y$ como positivo: aquí saldría 43 en vez de 6.00 y un ángulo absurdo. Y olvidar que el resultado es un <b>número</b>, sin $\hat\imath$ ni $\hat\jmath$.</p></div>
+  <div class="recipe"><b>Receta:</b> producto escalar por componentes ($A_xB_x+A_yB_y$, nunca "en cruz"), y despeja el ángulo con $\phi=\arccos(\vec A\cdot\vec B/(AB))$.</div>
 </details>
 </details>
 <details class="sol" id="problema-1-18"><summary>E3 — Ejercicio 1.18: estimación del consumo diario de gasolina <span class="src" data-l="E" data-ref="Solucionario 1-4, Prob. 1.18">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §1.6, p. 10; Ejercicio 1.18, p. 28">U p.10, 28</span></summary>
@@ -449,30 +446,6 @@ $$\vec A\cdot\vec B=AB\cos\phi\quad(1.16)\qquad\vec A\cdot\vec B=A_xB_x+A_yB_y+A
   <div class="recipe"><b>Receta:</b> pasa cada vector a componentes con signo, suma/resta componente a componente, recupera magnitud con Pitágoras y ángulo con arctan corrigiendo el cuadrante según los signos de las componentes.</div>
 </details>
 </details>
-<details class="sol" id="problema-1-42"><summary>E6 — Ejercicio 1.42: producto escalar y ángulo entre dos vectores <span class="src" data-l="E" data-ref="Solucionario 1-14, Prob. 1.42">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §1.10, ecs. 1.16 y 1.19, pp. 20-21; Ejercicio 1.42, p. 29">U p.20-21, 29</span></summary>
-<p class="enun">Con los mismos $\vec A=4.00\hat\imath+7.00\hat\jmath$ y $\vec B=5.00\hat\imath-2.00\hat\jmath$: a) calcula $\vec A\cdot\vec B$; b) halla el ángulo entre ambos vectores.</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>$\vec A\cdot\vec B=A_xB_x+A_yB_y$ (componente con su misma componente) y es un número, no un vector.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>$\cos\phi=\vec A\cdot\vec B/(AB)$; un producto positivo da un ángulo menor que $90^\circ$.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Producto escalar por componentes: $\vec A\cdot\vec B=A_xB_x+A_yB_y$ (un número)</li>
-      <li>Ángulo entre vectores: $\cos\phi=\dfrac{\vec A\cdot\vec B}{A\,B}$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Módulos:</b>
-      $$A=\sqrt{65}=8.06,\qquad B=\sqrt{29}=5.39$$</li>
-    <li><b>a) Producto escalar:</b>
-      $$\vec A\cdot\vec B=(4.00)(5.00)+(7.00)(-2.00)=20.0-14.0=\mathbf{6.00}$$</li>
-    <li><b>b) Ángulo:</b>
-      $$\cos\phi=\frac{6.00}{(8.06)(5.39)}=0.138\ \Rightarrow\ \phi=\mathbf{82.1^\circ}$$
-      <span class="por">Producto positivo y $\phi<90^\circ$: coherentes entre sí.</span></li>
-  </ol>
-  <div class="box warn"><span class="h">Error típico</span><p>Multiplicar «en cruz» ($A_xB_y+A_yB_x$) o tomar el signo de $B_y$ como positivo: aquí saldría 43 en vez de 6.00 y un ángulo absurdo. Y olvidar que el resultado es un <b>número</b>, sin $\hat\imath$ ni $\hat\jmath$.</p></div>
-  <div class="recipe"><b>Receta:</b> producto escalar por componentes ($A_xB_x+A_yB_y$, nunca "en cruz"), y despeja el ángulo con $\phi=\arccos(\vec A\cdot\vec B/(AB))$.</div>
-</details>
-</details>
 <details class="sol" id="problema-1-46"><summary>E8 — Ejercicio 1.46: producto vectorial con la regla de la mano derecha <span class="src" data-l="E" data-ref="Solucionario 1-15, Prob. 1.46">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §1.10, ec. 1.20, fig. 1.30, p. 22; Ejercicio 1.46, p. 29">U p.22, 29</span></summary>
 <p class="enun">$\vec A$ mide 2.80 cm, a 60.0° sobre el eje $+x$. $\vec B$ mide 1.90 cm, a 60.0° bajo el eje $+x$. Calcula: a) $\vec A\times\vec B$ (magnitud y dirección); b) $\vec B\times\vec A$.</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
@@ -504,7 +477,51 @@ $$\vec A\cdot\vec B=AB\cos\phi\quad(1.16)\qquad\vec A\cdot\vec B=A_xB_x+A_yB_y+A
   <div class="recipe"><b>Receta:</b> magnitud $AB\sin\phi$ con $\phi$ el ángulo menor entre los vectores; dirección con la mano derecha, y comprueba el signo con $C_z=A_xB_y-A_yB_x$.</div>
 </details>
 </details>
+<details class="sol" id="problema-1-14"><summary>E2 — Ejercicio 1.14: cifras significativas en un rectángulo <span class="src" data-l="E" data-ref="Solucionario 1-3, Prob. 1.14">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §1.5, tabla 1.2, p. 8; Ejercicio 1.14, p. 28">U p.8, 28</span></summary>
+<p class="enun">Un rectángulo mide 12 mm por 5.98 mm. Con el número correcto de cifras significativas, calcula: a) el área; b) la razón ancho/largo; c) el perímetro; d) la diferencia largo−ancho; e) la razón largo/ancho.</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>En productos y cocientes manda el dato con <i>menos cifras significativas</i>; en sumas y restas, el decimal menos preciso.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Perímetro y diferencia son sumas: aplica la regla de los decimales.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Área: $A=\ell\,w$; perímetro: $P=2(\ell+w)$; razones: $w/\ell$ y $\ell/w$</li>
+      <li>Multiplicar o dividir: tantas cifras significativas como el dato que menos tiene; sumar o restar: la posición decimal menos precisa</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Área</b> (manda el «12»: 2 cifras):
+      $$A=12\times5.98=71.76\ \to\ \mathbf{72\ mm^2}$$</li>
+    <li><b>b) Razón ancho/largo:</b>
+      $$\frac{5.98}{12}=0.4983\ \to\ \mathbf{0.50}$$</li>
+    <li><b>c) Perímetro</b> (regla de la suma: «12» no tiene decimales):
+      $$P=2(12+5.98)=2(17.98)=35.96\ \to\ \mathbf{36\ mm}$$</li>
+    <li><b>d) Diferencia largo−ancho:</b>
+      $$12-5.98=6.02\ \to\ \mathbf{6\ mm}$$</li>
+    <li><b>e) Razón largo/ancho:</b>
+      $$\frac{12}{5.98}=2.0067\ \to\ \mathbf{2.0}$$</li>
+  </ol>
+  <div class="box warn"><span class="h">Error típico</span><p>Dar el perímetro como «36.0 mm» o «35.96 mm»: el lado de 12 mm solo se conoce hasta el milímetro, así que la suma tampoco puede saberse mejor.</p></div>
+  <div class="recipe"><b>Receta:</b> antes de redondear, identifica si la operación es ×÷ (cuenta cifras significativas) o +− (mira la posición decimal); redondea solo al final.</div>
+</details>
+</details>
 <div class="nivel"><b>🟡 Práctica: 3 ejercicios más</b><span>Repiten métodos del núcleo: resta con vectores unitarios y corrección de cuadrante, producto vectorial por componentes, y un cálculo con densidad y conversión de unidades (el radio de un planeta). Antes de leer los pasos, haz el dibujo con ejes y decide en qué cuadrante cae el resultado.</span></div>
+<details class="sol" id="problema-1-44"><summary>E7 — Ejercicio 1.44: producto vectorial por componentes <span class="src" data-l="E" data-ref="Solucionario 1-14, Prob. 1.44">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §1.10, ecs. 1.22-1.25, p. 23; Ejercicio 1.44, p. 29">U p.23, 29</span></summary>
+<p class="enun">Calcula $\vec A\times\vec B$ para $\vec A=4.00\hat\imath+7.00\hat\jmath$ y $\vec B=5.00\hat\imath-2.00\hat\jmath$.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\hat\imath\times\hat\jmath=\hat k$, $\hat\jmath\times\hat\imath=-\hat k$, $\hat\imath\times\hat\imath=\hat\jmath\times\hat\jmath=0$</li>
+      <li>Por componentes (plano $xy$): $C_z=A_xB_y-A_yB_x$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Desarrollo término a término:</b>
+      $$\vec A\times\vec B=(4\hat\imath+7\hat\jmath)\times(5\hat\imath-2\hat\jmath)=4(-2)(\hat\imath\times\hat\jmath)+7(5)(\hat\jmath\times\hat\imath)=-8\hat k-35\hat k=\mathbf{-43.0\,\hat k}$$</li>
+    <li><b>Comprobación con componentes:</b>
+      $$C_z=A_xB_y-A_yB_x=4(-2)-7(5)=-43\ \checkmark$$</li>
+    <li><b>Magnitud:</b>
+      $$|\vec A\times\vec B|=\mathbf{43.0}$$</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> desarrolla el producto término a término usando $\hat\imath\times\hat\jmath=\hat k$, $\hat\jmath\times\hat\imath=-\hat k$; verifica siempre con $C_z=A_xB_y-A_yB_x$.</div>
+</details>
 <details class="sol" id="problema-1-38"><summary>E5 — Ejercicio 1.38: resta con vectores unitarios <span class="src" data-l="E" data-ref="Solucionario 1-12/1-13, Prob. 1.38">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §1.9, ec. 1.14, pp. 18-19; Ejercicio 1.38, p. 29">U p.18-19, 29</span></summary>
 <p class="enun">$\vec A=4.00\hat\imath+7.00\hat\jmath$, $\vec B=5.00\hat\imath-2.00\hat\jmath$. Calcula: a) $|\vec A|$ y $|\vec B|$; b) $\vec A-\vec B$; c) magnitud y ángulo de $\vec A-\vec B$.</p>
   <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
@@ -526,23 +543,6 @@ $$\vec A\cdot\vec B=AB\cos\phi\quad(1.16)\qquad\vec A\cdot\vec B=A_xB_x+A_yB_y+A
 <figcaption>$\vec A=(4,7)$, $\vec B=(5,-2)$ (escala 18 px/unidad). $\vec A-\vec B=(-1,9)$ cae en el 2.º cuadrante (96.3°), por eso hubo que sumar 180° al resultado de la calculadora. $\phi\approx82.1°$ es el ángulo entre ambos (prob. 1.42); el producto vectorial (prob. 1.44) vale $-43.0\,\hat k$: entra en el papel. <span class="src" data-l="P" data-ref="Diagrama propio para los problemas 1.38, 1.42 y 1.44">P</span></figcaption>
 </figure>
   <div class="recipe"><b>Receta:</b> con notación $\hat\imath,\hat\jmath,\hat k$, suma/resta "componente a componente"; recuerda que restar un componente negativo equivale a sumarlo (7.00−(−2.00)=9.00).</div>
-</details>
-<details class="sol" id="problema-1-44"><summary>E7 — Ejercicio 1.44: producto vectorial por componentes <span class="src" data-l="E" data-ref="Solucionario 1-14, Prob. 1.44">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §1.10, ecs. 1.22-1.25, p. 23; Ejercicio 1.44, p. 29">U p.23, 29</span></summary>
-<p class="enun">Calcula $\vec A\times\vec B$ para $\vec A=4.00\hat\imath+7.00\hat\jmath$ y $\vec B=5.00\hat\imath-2.00\hat\jmath$.</p>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>$\hat\imath\times\hat\jmath=\hat k$, $\hat\jmath\times\hat\imath=-\hat k$, $\hat\imath\times\hat\imath=\hat\jmath\times\hat\jmath=0$</li>
-      <li>Por componentes (plano $xy$): $C_z=A_xB_y-A_yB_x$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Desarrollo término a término:</b>
-      $$\vec A\times\vec B=(4\hat\imath+7\hat\jmath)\times(5\hat\imath-2\hat\jmath)=4(-2)(\hat\imath\times\hat\jmath)+7(5)(\hat\jmath\times\hat\imath)=-8\hat k-35\hat k=\mathbf{-43.0\,\hat k}$$</li>
-    <li><b>Comprobación con componentes:</b>
-      $$C_z=A_xB_y-A_yB_x=4(-2)-7(5)=-43\ \checkmark$$</li>
-    <li><b>Magnitud:</b>
-      $$|\vec A\times\vec B|=\mathbf{43.0}$$</li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> desarrolla el producto término a término usando $\hat\imath\times\hat\jmath=\hat k$, $\hat\jmath\times\hat\imath=-\hat k$; verifica siempre con $C_z=A_xB_y-A_yB_x$.</div>
 </details>
 <details class="sol" id="problema-1-51"><summary>E9 — Problema 1.51: densidad y radio de un planeta <span class="src" data-l="E" data-ref="Solucionario 1-16, Prob. 1.51">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §1.4, p. 6-7; Problema 1.51, p. 30">U p.6-7, 30</span></summary>
 <p class="enun">Un planeta tiene 5.5 veces la masa de la Tierra ($m_T=5.97\times10^{24}$ kg) pero la misma densidad que Neptuno (1.76 g/cm³). Calcula su radio y compáralo con el de la Tierra ($r_T=6.37\times10^6$ m).</p>

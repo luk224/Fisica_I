@@ -251,43 +251,14 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 <div class="nivel"><b>🔴 Núcleo: 7 ejercicios, un método por ejercicio</b><span>Los 3 problemas de examen real más cuatro del solucionario. Derivar, elegir ecuación de aceleración constante, frenado en una distancia (con la fuerza), persecución, caída libre e integración por tramos: si solo haces esto, cubres lo que cae.</span></div>
 <table class="metodos">
 <tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>
-<tr><td><a href="#e2">E2</a></td><td>Posición dada como función $x(t)$</td><td>Deriva para $v_x(t)$; «se detiene» ⇒ resuelve $v_x(t)=0$ y descarta $t=0$</td></tr>
 <tr><td><a href="#e4">E4</a></td><td>Aceleración constante con dos incógnitas</td><td>Lista de 5 magnitudes; primero la ecuación sin la otra incógnita (2.14), luego 2.8</td></tr>
-<tr><td><a href="#x2">X2</a> · Feb 2023</td><td>Frenado hasta pararse en una distancia, con fuerza de contacto</td><td>$|a|=v_0^2/2d$, $t=2d/v_0$; $N=m(|a|+g)$ con la 2.ª ley completa</td></tr>
-<tr><td><a href="#x3">X3</a> · Feb 2024</td><td>El mismo frenado con datos pequeños (bala)</td><td>Igual que X2; el peso apenas cuenta, pero se incluye porque dan $g$</td></tr>
-<tr><td><a href="#e5">E5</a></td><td>Persecución de dos móviles</td><td>Mismo origen y reloj, iguala $x_1(t)=x_2(t)$ y descarta $t=0$</td></tr>
 <tr><td><a href="#e6">E6</a></td><td>Caída libre hacia un obstáculo</td><td>$a_y=-g$; sin tiempo, ec. 2.13; el signo de $v_y$ lo decide la física (¿sube o baja?)</td></tr>
+<tr><td><a href="#e2">E2</a></td><td>Posición dada como función $x(t)$</td><td>Deriva para $v_x(t)$; «se detiene» ⇒ resuelve $v_x(t)=0$ y descarta $t=0$</td></tr>
+<tr><td><a href="#e5">E5</a></td><td>Persecución de dos móviles</td><td>Mismo origen y reloj, iguala $x_1(t)=x_2(t)$ y descarta $t=0$</td></tr>
+<tr><td><a href="#x3">X3</a> · Feb 2024</td><td>El mismo frenado con datos pequeños (bala)</td><td>Igual que X2; el peso apenas cuenta, pero se incluye porque dan $g$</td></tr>
+<tr><td><a href="#x2">X2</a> · Feb 2023</td><td>Frenado hasta pararse en una distancia, con fuerza de contacto</td><td>$|a|=v_0^2/2d$, $t=2d/v_0$; $N=m(|a|+g)$ con la 2.ª ley completa</td></tr>
 <tr><td><a href="#x4">X4</a> · Feb 2019</td><td>Aceleración que depende del tiempo, por tramos</td><td>Integra $a\to v\to y$; condiciones iniciales de cada tramo = final del anterior</td></tr>
 </table>
-<details class="sol" id="e2"><summary>E2 — Problema 2.7: velocidad media e instantánea de x(t) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 2-2, Prob. 2.7">E</span></summary>
-<p class="enun">Un automóvil está detenido ante un semáforo. Después viaja en línea recta y su distancia al semáforo es $x(t)=bt^2-ct^3$, con $b=2.40\ \text{m/s}^2$ y $c=0.120\ \text{m/s}^3$. a) Calcula la velocidad media entre $t=0$ y $t=10.0$ s. b) Calcula la velocidad instantánea en $t=0$, $t=5.0$ s y $t=10.0$ s. c) ¿Cuánto tiempo después de arrancar vuelve a estar detenido?</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Velocidad media con dos posiciones: $(x_2-x_1)/\Delta t$. Velocidad instantánea: deriva $x(t)$.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>«Se detiene» significa $v_x(t)=0$ (no $x(t)/t=0$); descarta la solución $t=0$.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>$v_{med-x}=\dfrac{x_2-x_1}{t_2-t_1}$; $v_x=\dfrac{dx}{dt}$; «en reposo» ⇒ $v_x=0$</li>
-      <li>Derivada: $\dfrac{d}{dt}t^n=n\,t^{n-1}$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>a) Velocidad media</b> ($x(0)=0$):
-      $$x(10)=2.40(100)-0.120(1000)=240-120=120\ \text{m},\qquad v_{med}=\frac{120-0}{10}=\mathbf{12.0\ m/s}$$</li>
-    <li><b>b) Velocidad instantánea</b> (derivando):
-      $$v_x(t)=2bt-3ct^2$$
-      $$v_x(0)=\mathbf0,\qquad v_x(5)=2(2.40)(5)-3(0.120)(25)=24.0-9.0=\mathbf{15.0\ m/s}$$
-      $$v_x(10)=2(2.40)(10)-3(0.120)(100)=48.0-36.0=\mathbf{12.0\ m/s}$$</li>
-    <li><b>c) Vuelve a estar detenido</b> ($v_x=0$, descartando $t=0$):
-      $$2bt-3ct^2=0\ \Rightarrow\ t=\frac{2b}{3c}=\frac{2(2.40)}{3(0.120)}=\mathbf{13.3\ s}$$</li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t02/velocidad-del-automovil-v-t.svg">
-<div class="figph" role="img" aria-label="Velocidad del automóvil v(t)" style="aspect-ratio:320/200"></div>
-<figcaption>v(t) = 2bt − 3ct² es una parábola invertida: vale 0 en t = 0, sube hasta 16 m/s (en t = 6.67 s), pasa por 15.0 m/s (5 s) y 12.0 m/s (10 s), y vuelve a 0 en t = 2b/3c = 13.3 s, cuando el coche se detiene. <span class="src" data-l="P" data-ref="Diagrama propio del problema 2.7">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> velocidad media con dos posiciones y ec. 2.2; velocidad instantánea derivando $x(t)$; "se detiene" siempre significa resolver $v_x(t)=0$, no evaluar $x(t)/t$.</div>
-</details>
-</details>
 <details class="sol" id="e4"><summary>E4 — Problema 2.19: hallar v₀ y a sin conocerlas <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 2-6/2-7, Prob. 2.19">E</span></summary>
 <p class="enun">Un antílope con aceleración constante recorre 70.0 m en 6.00 s, y su velocidad al final de ese intervalo es 15.0 m/s. Calcula su velocidad inicial y su aceleración.</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
@@ -317,45 +288,88 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
   <div class="recipe"><b>Error típico:</b> confundir $70.0/6.00=11.7\ \text{m/s}$ (que es $v_{\text{med}}$) con $v_{0x}$ o con $v_x$: son tres cosas distintas.</div>
 </details>
 </details>
-<details class="sol" id="x2"><summary>X2 — Satélite que se estrella <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2023 (1ª semana) P-1">X</span></summary>
-<p class="enun">Un satélite artificial se estrella contra la Tierra. Su masa es de 210 kg y la velocidad de impacto contra la superficie es de 311 km/h. Los restos del satélite penetraron hasta una profundidad de 81 cm. Suponiendo que era constante: a) ¿Cuál fue su aceleración durante el choque? b) ¿Qué fuerza ejerció el suelo sobre el satélite durante el choque? c) ¿Durante cuánto tiempo se ejerció la mencionada fuerza? (Considere $g=9.81$ m/s².)</p>
+<details class="sol" id="e6"><summary>E6 — Problema 2.38: caída libre hacia un techo <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 2-12/2-13, Prob. 2.38">E</span></summary>
+<p class="enun">Se lanza una bola de masilla verticalmente hacia arriba con $v_0=9.50\ \text{m/s}$, hacia un techo situado 3.60 m por encima del punto de lanzamiento. a) Calcula la velocidad de la bola justo al llegar al techo. b) Calcula cuánto tiempo tarda en llegar.</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Pasa 311 km/h a m/s. Sin tiempo: $0=v_0^2+2a\,d$ ⇒ $|a|=v_0^2/(2d)$.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>La fuerza del suelo no es la neta: $N=m(|a|+g)$ en un impacto vertical. El tiempo: $t=2d/v_0$.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>Con $+y$ hacia arriba, $a_y=-g$. Comprueba que la altura máxima, $v_0^2/2g$, supera 3,60 m.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Sin tiempo, usa $v_y^2=v_{0y}^2+2a_y\Delta y$ y toma la raíz positiva (todavía sube).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t02/x6-planteamiento.svg">
-<div class="figph" role="img" aria-label="Planteamiento del satélite que se estrella: esquema y diagrama de cuerpo libre" style="aspect-ratio:360/318"></div>
-<figcaption>Planteamiento: esquema del impacto con los datos y DCL durante el choque (sin resultados). El suelo o el material empuja hacia arriba; el peso, hacia abajo. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
-</figure>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>MRUA hasta parar ($v=0$): $v^2=v_0^2+2a\,d$ ⇒ $|a|=\dfrac{v_0^2}{2d}$; $d=\tfrac12 v_0\,t$ ⇒ $t=\dfrac{2d}{v_0}$</li>
-      <li>Segunda ley (con $+y$ hacia abajo): $m\,g-N=m(-|a|)$ ⇒ $N=m(|a|+g)$</li>
-      <li>$1\ \text{km/h}=1/3.6\ \text{m/s}$</li>
+      <li>Caída libre con $+y$ hacia arriba: $a_y=-g=-9.80$ m/s²</li>
+      <li>$v_y^2=v_{0y}^2+2a_y\,\Delta y$; $v_y=v_{0y}+a_y\,t$; altura máxima $v_0^2/(2g)$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Datos en SI</b> (impacto vertical, $+y$ hacia abajo):
-      $$v_0=\frac{311}{3.6}=86.39\ \text{m/s},\qquad d=0.81\ \text{m}$$</li>
-    <li><b>a) Aceleración:</b>
-      $$|a|=\frac{v_0^2}{2d}=\frac{(86.39)^2}{2(0.81)}=\mathbf{4.61\times10^3\ m/s^2}\ \ (\approx470\,g,\ \text{hacia arriba})$$</li>
-    <li><b>b) Fuerza del suelo</b> ($N$, no la fuerza neta):
-      $$N=m(|a|+g)=210(4607+9.81)=\mathbf{9.69\times10^5\ N}$$
-      <span class="por">La fuerza neta es solo $m|a|=9.67\times10^5$ N; $N$ es algo mayor porque además contrarresta el peso.</span></li>
-    <li><b>c) Tiempo:</b>
-      $$t=\frac{2d}{v_0}=\frac{2(0.81)}{86.39}=\mathbf{1.88\times10^{-2}\ s}\ \ (\approx19\ \text{ms})$$</li>
+    <li><b>¿Llega al techo?</b>
+      $$h_{m\acute ax}=\frac{9.50^2}{2(9.80)}=4.60\ \text{m}>3.60\ \text{m}\ \Rightarrow\ \text{sí, todavía subiendo}$$</li>
+    <li><b>a) Velocidad al llegar</b> (sin tiempo):
+      $$v_y^2=9.50^2+2(-9.80)(3.60)=90.25-70.56=19.69\ \Rightarrow\ v_y=\mathbf{+4.44\ m/s}$$
+      <span class="por">Todavía sube: se toma la raíz positiva.</span></li>
+    <li><b>b) Tiempo:</b>
+      $$t=\frac{v_y-v_{0y}}{a_y}=\frac{4.44-9.50}{-9.80}=\mathbf{0.517\ s}$$</li>
   </ol>
-  <figure class="fig" data-svg="../assets/figs/t02/satelite-frenado-por-el-suelo.svg">
-<div class="figph" role="img" aria-label="Satélite frenado por el suelo" style="aspect-ratio:320/160"></div>
-<figcaption>Frenado en una distancia d: a la izquierda, la entrada a v₀ = 86.4 m/s y la penetración d = 0.81 m hasta pararse (a = v₀²/2d hacia arriba); a la derecha, el DCL del satélite parado en el instante del choque: N (9.69·10⁵ N) hacia arriba y mg (2060 N) hacia abajo; la fuerza neta apunta hacia arriba. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio X2">P</span></figcaption>
+  <figure class="fig" data-svg="../assets/figs/t02/bola-de-masilla-que-sube-hacia-el-techo.svg">
+<div class="figph" role="img" aria-label="Bola de masilla que sube hacia el techo" style="aspect-ratio:320/228"></div>
+<figcaption>La bola sale a 9.50 m/s y llegaría hasta 4.60 m, pero el techo está a 3.60 m: lo golpea todavía subiendo, a 4.44 m/s, tras 0.517 s. Por eso se elige la raíz con v_y > 0 y el instante de subida. <span class="src" data-l="P" data-ref="Diagrama propio del problema 2.38">P</span></figcaption>
 </figure>
 
-  <div class="recipe"><b>Receta:</b> frenado hasta detenerse en una distancia $d$ conocida: primero $|a|=v_0^2/(2d)$ con ec. 2.13; luego el tiempo con $t=2d/v_0$ (ec. 2.14) o con $t=v_0/|a|$ (ec. 2.8). Para la fuerza de contacto en un choque vertical, plantea la 2ª ley completa (incluyendo el peso) para obtener $N$, no confundas $N$ con la fuerza neta $m|a|$. Convierte siempre a SI antes de sustituir.</div>
-  <div class="recipe"><b>Error típico:</b> operar con $v_0$ todavía en km/h, o llamar "fuerza que actúa" a $N=m(|a|+g)$ sin aclarar que es la fuerza del suelo y no la fuerza neta.</div>
+  <div class="recipe"><b>Receta:</b> caída libre = aceleración constante con $a_y=-g$ si $+y$ es hacia arriba (revisa siempre el signo según tu propio criterio de ejes). Sin dato de tiempo, usa la ecuación 2.13 y elige el signo de la raíz cuadrada por sentido físico (¿sigue subiendo o ya ha empezado a bajar?).</div>
+  <div class="recipe"><b>Error típico:</b> usar $a=+9.8\ \text{m/s}^2$ cuando el eje $+y$ apunta hacia arriba, o no comprobar que la altura máxima alcanzable supera la distancia pedida.</div>
+</details>
+</details>
+<details class="sol" id="e2"><summary>E2 — Problema 2.7: velocidad media e instantánea de x(t) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 2-2, Prob. 2.7">E</span></summary>
+<p class="enun">Un automóvil está detenido ante un semáforo. Después viaja en línea recta y su distancia al semáforo es $x(t)=bt^2-ct^3$, con $b=2.40\ \text{m/s}^2$ y $c=0.120\ \text{m/s}^3$. a) Calcula la velocidad media entre $t=0$ y $t=10.0$ s. b) Calcula la velocidad instantánea en $t=0$, $t=5.0$ s y $t=10.0$ s. c) ¿Cuánto tiempo después de arrancar vuelve a estar detenido?</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Velocidad media con dos posiciones: $(x_2-x_1)/\Delta t$. Velocidad instantánea: deriva $x(t)$.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>«Se detiene» significa $v_x(t)=0$ (no $x(t)/t=0$); descarta la solución $t=0$.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$v_{med-x}=\dfrac{x_2-x_1}{t_2-t_1}$; $v_x=\dfrac{dx}{dt}$; «en reposo» ⇒ $v_x=0$</li>
+      <li>Derivada: $\dfrac{d}{dt}t^n=n\,t^{n-1}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Velocidad media</b> ($x(0)=0$):
+      $$x(10)=2.40(100)-0.120(1000)=240-120=120\ \text{m},\qquad v_{med}=\frac{120-0}{10}=\mathbf{12.0\ m/s}$$</li>
+    <li><b>b) Velocidad instantánea</b> (derivando):
+      $$v_x(t)=2bt-3ct^2$$
+      $$v_x(0)=\mathbf0,\qquad v_x(5)=2(2.40)(5)-3(0.120)(25)=24.0-9.0=\mathbf{15.0\ m/s}$$
+      $$v_x(10)=2(2.40)(10)-3(0.120)(100)=48.0-36.0=\mathbf{12.0\ m/s}$$</li>
+    <li><b>c) Vuelve a estar detenido</b> ($v_x=0$, descartando $t=0$):
+      $$2bt-3ct^2=0\ \Rightarrow\ t=\frac{2b}{3c}=\frac{2(2.40)}{3(0.120)}=\mathbf{13.3\ s}$$</li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t02/velocidad-del-automovil-v-t.svg">
+<div class="figph" role="img" aria-label="Velocidad del automóvil v(t)" style="aspect-ratio:320/200"></div>
+<figcaption>v(t) = 2bt − 3ct² es una parábola invertida: vale 0 en t = 0, sube hasta 16 m/s (en t = 6.67 s), pasa por 15.0 m/s (5 s) y 12.0 m/s (10 s), y vuelve a 0 en t = 2b/3c = 13.3 s, cuando el coche se detiene. <span class="src" data-l="P" data-ref="Diagrama propio del problema 2.7">P</span></figcaption>
+</figure>
 
-  <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
-    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) aceleración (1) · b) fuerza del suelo (1) · c) tiempo (1). Dentro de cada apartado suele valorarse en este orden:</p>
-    <ul><li><b>Planteamiento (≈30 %):</b> datos en SI ($311$ km/h $=86{,}4$ m/s), eje y sentido, e impacto supuesto vertical.</li><li><b>Ecuaciones (≈40 %):</b> $|a|=v_0^2/2d$; segunda ley con el peso, $N=m(|a|+g)$; $t=2d/v_0$.</li><li><b>Resultado y unidades (≈30 %):</b> $a=4{,}61\times10^3$ m/s², $N=9{,}69\times10^5$ N y $t=1{,}88\times10^{-2}$ s con unidades.</li></ul>
-    <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
+  <div class="recipe"><b>Receta:</b> velocidad media con dos posiciones y ec. 2.2; velocidad instantánea derivando $x(t)$; "se detiene" siempre significa resolver $v_x(t)=0$, no evaluar $x(t)/t$.</div>
+</details>
+</details>
+<details class="sol" id="e5"><summary>E5 — Problema 2.34: persecución de dos móviles <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 2-11, Prob. 2.34">E</span></summary>
+<p class="enun">En un semáforo, un coche arranca desde el reposo con aceleración constante $a=2.80\ \text{m/s}^2$ justo cuando un camión lo adelanta a velocidad constante $v=20.0\ \text{m/s}$. a) ¿A qué distancia del semáforo el coche alcanza al camión? b) ¿A qué velocidad va el coche en ese instante?</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Escribe $x(t)$ de cada móvil con el mismo origen y reloj e iguálalas; descarta la raíz $t=0$.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>No se alcanzan cuando tienen la misma velocidad: ese es el instante de máxima separación.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Coche (desde el reposo): $x_c=\tfrac12a\,t^2$; camión (velocidad constante): $x_k=v\,t$</li>
+      <li>Alcance: $x_c=x_k$ (descartar la raíz $t=0$); velocidad del coche: $v_c=a\,t$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Posiciones</b> (mismo origen y mismo reloj):
+      $$x_c(t)=\tfrac12(2.80)t^2=1.40\,t^2,\qquad x_k(t)=20.0\,t$$</li>
+    <li><b>Instante del encuentro:</b>
+      $$1.40\,t^2=20.0\,t\ \Rightarrow\ t=\frac{20.0}{1.40}=14.29\ \text{s}$$</li>
+    <li><b>a) Distancia:</b>
+      $$x=20.0(14.29)=\mathbf{286\ m}\quad\Big(\text{comprobación: }\tfrac12(2.80)(14.29)^2=286\ \text{m}\Big)$$</li>
+    <li><b>b) Velocidad del coche:</b>
+      $$v=a\,t=2.80(14.29)=\mathbf{40.0\ m/s}\ \ (\text{el doble que el camión})$$
+      <span class="por">Igual velocidad ocurre en $t=v/a=7.14$ s: es el instante de máxima separación, no el de encuentro.</span></li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> escribe $x(t)$ de cada móvil con el mismo origen y reloj, iguálalas y resuelve para $t$, descartando la raíz $t=0$.</div>
+  <div class="recipe"><b>Error típico:</b> creer que "se alcanzan" cuando tienen la misma velocidad. Eso ocurre en $t=v/a=7.14$ s, que es el instante de <i>máxima separación</i> (mientras el camión va más rápido, se aleja; en cuanto el coche lo supera en velocidad, empieza a acercarse) — no el instante de encuentro.</div>
 </details>
 </details>
 <details class="sol" id="x3"><summary>X3 — Bala que penetra un material <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2024 (1ª semana) P-1">X</span></summary>
@@ -398,59 +412,45 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
-<details class="sol" id="e5"><summary>E5 — Problema 2.34: persecución de dos móviles <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 2-11, Prob. 2.34">E</span></summary>
-<p class="enun">En un semáforo, un coche arranca desde el reposo con aceleración constante $a=2.80\ \text{m/s}^2$ justo cuando un camión lo adelanta a velocidad constante $v=20.0\ \text{m/s}$. a) ¿A qué distancia del semáforo el coche alcanza al camión? b) ¿A qué velocidad va el coche en ese instante?</p>
+<details class="sol" id="x2"><summary>X2 — Satélite que se estrella <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2023 (1ª semana) P-1">X</span></summary>
+<p class="enun">Un satélite artificial se estrella contra la Tierra. Su masa es de 210 kg y la velocidad de impacto contra la superficie es de 311 km/h. Los restos del satélite penetraron hasta una profundidad de 81 cm. Suponiendo que era constante: a) ¿Cuál fue su aceleración durante el choque? b) ¿Qué fuerza ejerció el suelo sobre el satélite durante el choque? c) ¿Durante cuánto tiempo se ejerció la mencionada fuerza? (Considere $g=9.81$ m/s².)</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Escribe $x(t)$ de cada móvil con el mismo origen y reloj e iguálalas; descarta la raíz $t=0$.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>No se alcanzan cuando tienen la misma velocidad: ese es el instante de máxima separación.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>Pasa 311 km/h a m/s. Sin tiempo: $0=v_0^2+2a\,d$ ⇒ $|a|=v_0^2/(2d)$.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>La fuerza del suelo no es la neta: $N=m(|a|+g)$ en un impacto vertical. El tiempo: $t=2d/v_0$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+<figure class="fig" data-svg="../assets/figs/t02/x6-planteamiento.svg">
+<div class="figph" role="img" aria-label="Planteamiento del satélite que se estrella: esquema y diagrama de cuerpo libre" style="aspect-ratio:360/318"></div>
+<figcaption>Planteamiento: esquema del impacto con los datos y DCL durante el choque (sin resultados). El suelo o el material empuja hacia arriba; el peso, hacia abajo. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
+</figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Coche (desde el reposo): $x_c=\tfrac12a\,t^2$; camión (velocidad constante): $x_k=v\,t$</li>
-      <li>Alcance: $x_c=x_k$ (descartar la raíz $t=0$); velocidad del coche: $v_c=a\,t$</li>
+      <li>MRUA hasta parar ($v=0$): $v^2=v_0^2+2a\,d$ ⇒ $|a|=\dfrac{v_0^2}{2d}$; $d=\tfrac12 v_0\,t$ ⇒ $t=\dfrac{2d}{v_0}$</li>
+      <li>Segunda ley (con $+y$ hacia abajo): $m\,g-N=m(-|a|)$ ⇒ $N=m(|a|+g)$</li>
+      <li>$1\ \text{km/h}=1/3.6\ \text{m/s}$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Posiciones</b> (mismo origen y mismo reloj):
-      $$x_c(t)=\tfrac12(2.80)t^2=1.40\,t^2,\qquad x_k(t)=20.0\,t$$</li>
-    <li><b>Instante del encuentro:</b>
-      $$1.40\,t^2=20.0\,t\ \Rightarrow\ t=\frac{20.0}{1.40}=14.29\ \text{s}$$</li>
-    <li><b>a) Distancia:</b>
-      $$x=20.0(14.29)=\mathbf{286\ m}\quad\Big(\text{comprobación: }\tfrac12(2.80)(14.29)^2=286\ \text{m}\Big)$$</li>
-    <li><b>b) Velocidad del coche:</b>
-      $$v=a\,t=2.80(14.29)=\mathbf{40.0\ m/s}\ \ (\text{el doble que el camión})$$
-      <span class="por">Igual velocidad ocurre en $t=v/a=7.14$ s: es el instante de máxima separación, no el de encuentro.</span></li>
+    <li><b>Datos en SI</b> (impacto vertical, $+y$ hacia abajo):
+      $$v_0=\frac{311}{3.6}=86.39\ \text{m/s},\qquad d=0.81\ \text{m}$$</li>
+    <li><b>a) Aceleración:</b>
+      $$|a|=\frac{v_0^2}{2d}=\frac{(86.39)^2}{2(0.81)}=\mathbf{4.61\times10^3\ m/s^2}\ \ (\approx470\,g,\ \text{hacia arriba})$$</li>
+    <li><b>b) Fuerza del suelo</b> ($N$, no la fuerza neta):
+      $$N=m(|a|+g)=210(4607+9.81)=\mathbf{9.69\times10^5\ N}$$
+      <span class="por">La fuerza neta es solo $m|a|=9.67\times10^5$ N; $N$ es algo mayor porque además contrarresta el peso.</span></li>
+    <li><b>c) Tiempo:</b>
+      $$t=\frac{2d}{v_0}=\frac{2(0.81)}{86.39}=\mathbf{1.88\times10^{-2}\ s}\ \ (\approx19\ \text{ms})$$</li>
   </ol>
-  <div class="recipe"><b>Receta:</b> escribe $x(t)$ de cada móvil con el mismo origen y reloj, iguálalas y resuelve para $t$, descartando la raíz $t=0$.</div>
-  <div class="recipe"><b>Error típico:</b> creer que "se alcanzan" cuando tienen la misma velocidad. Eso ocurre en $t=v/a=7.14$ s, que es el instante de <i>máxima separación</i> (mientras el camión va más rápido, se aleja; en cuanto el coche lo supera en velocidad, empieza a acercarse) — no el instante de encuentro.</div>
-</details>
-</details>
-<details class="sol" id="e6"><summary>E6 — Problema 2.38: caída libre hacia un techo <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 2-12/2-13, Prob. 2.38">E</span></summary>
-<p class="enun">Se lanza una bola de masilla verticalmente hacia arriba con $v_0=9.50\ \text{m/s}$, hacia un techo situado 3.60 m por encima del punto de lanzamiento. a) Calcula la velocidad de la bola justo al llegar al techo. b) Calcula cuánto tiempo tarda en llegar.</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Con $+y$ hacia arriba, $a_y=-g$. Comprueba que la altura máxima, $v_0^2/2g$, supera 3,60 m.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Sin tiempo, usa $v_y^2=v_{0y}^2+2a_y\Delta y$ y toma la raíz positiva (todavía sube).</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Caída libre con $+y$ hacia arriba: $a_y=-g=-9.80$ m/s²</li>
-      <li>$v_y^2=v_{0y}^2+2a_y\,\Delta y$; $v_y=v_{0y}+a_y\,t$; altura máxima $v_0^2/(2g)$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>¿Llega al techo?</b>
-      $$h_{m\acute ax}=\frac{9.50^2}{2(9.80)}=4.60\ \text{m}>3.60\ \text{m}\ \Rightarrow\ \text{sí, todavía subiendo}$$</li>
-    <li><b>a) Velocidad al llegar</b> (sin tiempo):
-      $$v_y^2=9.50^2+2(-9.80)(3.60)=90.25-70.56=19.69\ \Rightarrow\ v_y=\mathbf{+4.44\ m/s}$$
-      <span class="por">Todavía sube: se toma la raíz positiva.</span></li>
-    <li><b>b) Tiempo:</b>
-      $$t=\frac{v_y-v_{0y}}{a_y}=\frac{4.44-9.50}{-9.80}=\mathbf{0.517\ s}$$</li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t02/bola-de-masilla-que-sube-hacia-el-techo.svg">
-<div class="figph" role="img" aria-label="Bola de masilla que sube hacia el techo" style="aspect-ratio:320/228"></div>
-<figcaption>La bola sale a 9.50 m/s y llegaría hasta 4.60 m, pero el techo está a 3.60 m: lo golpea todavía subiendo, a 4.44 m/s, tras 0.517 s. Por eso se elige la raíz con v_y > 0 y el instante de subida. <span class="src" data-l="P" data-ref="Diagrama propio del problema 2.38">P</span></figcaption>
+  <figure class="fig" data-svg="../assets/figs/t02/satelite-frenado-por-el-suelo.svg">
+<div class="figph" role="img" aria-label="Satélite frenado por el suelo" style="aspect-ratio:320/160"></div>
+<figcaption>Frenado en una distancia d: a la izquierda, la entrada a v₀ = 86.4 m/s y la penetración d = 0.81 m hasta pararse (a = v₀²/2d hacia arriba); a la derecha, el DCL del satélite parado en el instante del choque: N (9.69·10⁵ N) hacia arriba y mg (2060 N) hacia abajo; la fuerza neta apunta hacia arriba. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio X2">P</span></figcaption>
 </figure>
 
-  <div class="recipe"><b>Receta:</b> caída libre = aceleración constante con $a_y=-g$ si $+y$ es hacia arriba (revisa siempre el signo según tu propio criterio de ejes). Sin dato de tiempo, usa la ecuación 2.13 y elige el signo de la raíz cuadrada por sentido físico (¿sigue subiendo o ya ha empezado a bajar?).</div>
-  <div class="recipe"><b>Error típico:</b> usar $a=+9.8\ \text{m/s}^2$ cuando el eje $+y$ apunta hacia arriba, o no comprobar que la altura máxima alcanzable supera la distancia pedida.</div>
+  <div class="recipe"><b>Receta:</b> frenado hasta detenerse en una distancia $d$ conocida: primero $|a|=v_0^2/(2d)$ con ec. 2.13; luego el tiempo con $t=2d/v_0$ (ec. 2.14) o con $t=v_0/|a|$ (ec. 2.8). Para la fuerza de contacto en un choque vertical, plantea la 2ª ley completa (incluyendo el peso) para obtener $N$, no confundas $N$ con la fuerza neta $m|a|$. Convierte siempre a SI antes de sustituir.</div>
+  <div class="recipe"><b>Error típico:</b> operar con $v_0$ todavía en km/h, o llamar "fuerza que actúa" a $N=m(|a|+g)$ sin aclarar que es la fuerza del suelo y no la fuerza neta.</div>
+
+  <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
+    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) aceleración (1) · b) fuerza del suelo (1) · c) tiempo (1). Dentro de cada apartado suele valorarse en este orden:</p>
+    <ul><li><b>Planteamiento (≈30 %):</b> datos en SI ($311$ km/h $=86{,}4$ m/s), eje y sentido, e impacto supuesto vertical.</li><li><b>Ecuaciones (≈40 %):</b> $|a|=v_0^2/2d$; segunda ley con el peso, $N=m(|a|+g)$; $t=2d/v_0$.</li><li><b>Resultado y unidades (≈30 %):</b> $a=4{,}61\times10^3$ m/s², $N=9{,}69\times10^5$ N y $t=1{,}88\times10^{-2}$ s con unidades.</li></ul>
+    <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
 <details class="sol" id="x4"><summary>X4 — Cohete con aceleración variable por tramos <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2019 (2ª semana) P-1">X</span></summary>

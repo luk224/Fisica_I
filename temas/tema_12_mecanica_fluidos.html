@@ -384,43 +384,42 @@
 <div class="nivel"><b>🔴 Núcleo: 8 ejercicios, un método por ejercicio</b><span>Presión con la profundidad, prensa hidráulica, flotación, fluidos en capas, continuidad, Bernoulli en una tubería, Torricelli con el alcance del chorro y viscosidad. Si solo haces esto, cubres todo lo que se puede pedir del tema.</span></div>
 <table class="metodos">
 <tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>
-<tr><td><a href="#e2">E2</a></td><td>Presión con la profundidad</td><td>Manométrica $=\rho gh$ con $h$ bajo la superficie libre ⇒ $h=p_{man}/(\rho g)$</td></tr>
+<tr><td><a href="#e12">E12</a></td><td>Flujo viscoso</td><td>A caudal fijo $\Delta p\propto L/R^4$ ⇒ cocientes</td></tr>
 <tr><td><a href="#e4">E4</a></td><td>Prensa hidráulica (Pascal)</td><td>$F_2/F_1=A_2/A_1=(D_2/D_1)^2$; mismo trabajo en los dos pistones</td></tr>
-<tr><td><a href="#e5">E5</a></td><td>Flotación con hilo</td><td>DCL $T+B=mg$ ⇒ $V$; flota si $\rho_{cuerpo}\le\rho_{fluido}$</td></tr>
-<tr><td><a href="#e7">E7</a></td><td>Varios fluidos apilados</td><td>$p=p_0+\sum\rho_igh_i$ capa a capa; empuje $=(p_{abajo}-p_{arriba})A$</td></tr>
+<tr><td><a href="#e2">E2</a></td><td>Presión con la profundidad</td><td>Manométrica $=\rho gh$ con $h$ bajo la superficie libre ⇒ $h=p_{man}/(\rho g)$</td></tr>
 <tr><td><a href="#e8">E8</a></td><td>Continuidad y caudal</td><td>$Q=Av$ donde conoces ambos; $v=Q/A$ en cualquier sección; volumen $=Qt$</td></tr>
 <tr><td><a href="#e10">E10</a></td><td>Bernoulli en una tubería</td><td>Continuidad ⇒ $v_2$; Bernoulli ⇒ $p_2$, todas las presiones del mismo tipo</td></tr>
+<tr><td><a href="#e5">E5</a></td><td>Flotación con hilo</td><td>DCL $T+B=mg$ ⇒ $V$; flota si $\rho_{cuerpo}\le\rho_{fluido}$</td></tr>
 <tr><td><a href="#e9">E9</a></td><td>Torricelli + tiro horizontal</td><td>$v=\sqrt{2gh}$ ($h$ bajo la superficie), $Q=A_{or}v$; chorro = tiro horizontal</td></tr>
-<tr><td><a href="#e12">E12</a></td><td>Flujo viscoso</td><td>A caudal fijo $\Delta p\propto L/R^4$ ⇒ cocientes</td></tr>
+<tr><td><a href="#e7">E7</a></td><td>Varios fluidos apilados</td><td>$p=p_0+\sum\rho_igh_i$ capa a capa; empuje $=(p_{abajo}-p_{arriba})A$</td></tr>
 </table>
-<details class="sol" id="e2"><summary>E2 — Problema 12.11: altura mínima de la bolsa de suero <span class="src" data-l="E" data-ref="Solucionario 12-3, Prob. 12.11">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.11, p. 391 y §12.2, ec. 12.6, p. 373">U p.373, 391</span></summary>
-<p class="enun">En la alimentación intravenosa se inserta una aguja en una vena del brazo del paciente y se conecta un tubo entre la aguja y un depósito de fluido (densidad 1050 kg/m³) que está a una altura $h$ sobre el brazo. El depósito está abierto a la atmósfera por arriba. Si la presión manométrica dentro de la vena es de 5980 Pa, ¿qué valor mínimo de $h$ permite que entre fluido en la vena?</p>
+<details class="sol" id="e12"><summary>E12 — Problema 12.50: tubería viscosa, efecto de reducir el radio <span class="src" data-l="E" data-ref="Solucionario 12-13, Prob. 12.50">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.50, p. 393 y §12.6, p. 386">U p.386, 393</span></summary>
+<p class="enun">Se requiere una diferencia de presión de $6{,}00\times10^4$ Pa para mantener una velocidad de flujo de volumen de 0,800 m³/s para un fluido viscoso que fluye a través de una sección de tubo cilíndrico que tiene un radio de 0,210 m. ¿Qué diferencia de presión es necesaria para mantener la misma rapidez de volumen del flujo si el radio de la tubería se reduce a 0,0700 m?</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>En el caso límite el fluido está en reposo: las presiones en la punta de la aguja y en la vena son iguales (hidrostática).</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Compara manométrica con manométrica: $\rho gh=5980$ Pa.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>Con viscosidad no sirve Bernoulli: a caudal fijo, $\Delta p\propto L/R^4$.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Razona con cocientes: $\Delta p_2=\Delta p_1(R_1/R_2)^4$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
 <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Presión a profundidad $h$: $p=p_{atm}+\rho g\,h$ (manométrica: $\rho g h$)</li>
-      <li>Fluido en reposo (caso límite): presiones iguales</li>
+      <li>Flujo viscoso (Poiseuille): a caudal fijo, $\Delta p\propto\dfrac{L}{R^4}$ ⇒ $\Delta p\,R^4=\text{cte}$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Condición.</b> El fluido entra si la presión en la aguja es al menos la de la sangre; en el caso límite están en reposo y las presiones coinciden.</li>
-    <li><b>Presión en la aguja</b> (a profundidad $h$ bajo la superficie del depósito, abierta a la atmósfera):
-      $$p=p_{atm}+\rho g\,h\ \Rightarrow\ p_{man}=\rho g\,h$$</li>
-    <li><b>Igualar manométricas:</b>
-      $$\rho g\,h=5980\ \text{Pa}$$</li>
-    <li><b>Despejar:</b>
-      $$h=\frac{5980}{(1050)(9{,}8)}=\frac{5980}{10\,290}=\mathbf{0{,}581\ m}$$
-      <span class="por">Por eso las bolsas cuelgan de un soporte alto.</span></li>
+    <li><b>Por qué no Bernoulli.</b> Con viscosidad hay fricción interna: hace falta $\Delta p$ solo para mantener el flujo.
+      <span class="por">Mismo tubo (misma $L$), mismo caudal: se razona con cocientes, sin conocer la viscosidad.</span></li>
+    <li><b>Relación:</b>
+      $$\Delta p_2=\Delta p_1\Big(\frac{R_1}{R_2}\Big)^4$$</li>
+    <li><b>Números:</b>
+      $$\frac{R_1}{R_2}=\frac{0{,}210}{0{,}0700}=3\ \Rightarrow\ 3^4=81$$
+      $$\Delta p_2=81(6{,}00\times10^4)=\mathbf{4{,}86\times10^6\ Pa}\ (\approx48\ \text{atm})$$
+      <span class="por">Reducir el radio a un tercio multiplica por 81 la presión necesaria; por eso un estrechamiento de una arteria obliga al corazón a trabajar mucho más.</span></li>
   </ol>
-<figure class="fig" data-svg="../assets/figs/t12/bolsa-de-suero-colgada-0-581-metros-sobre-el-bra.svg">
-<div class="figph" role="img" aria-label="Bolsa de suero colgada 0,581 metros sobre el brazo de un paciente con un tubo hasta la aguja en la vena" style="aspect-ratio:340/225"></div>
-<figcaption>Para que el fluido entre, la presión manométrica en la aguja ($\rho gh$) debe igualar al menos la de la vena (5980 Pa): $h=5980/(1050\cdot9{,}8)=0{,}581$ m sobre el brazo. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.11 de U">P</span></figcaption>
+<figure class="fig" data-svg="../assets/figs/t12/dos-tubos-del-mismo-caudal-uno-de-radio-0-210-me.svg">
+<div class="figph" role="img" aria-label="Dos tubos del mismo caudal: uno de radio 0,210 metros que necesita 6,00×10⁴ pascales y otro de radio 0,0700 metros que necesita 4,86×10⁶ pascales" style="aspect-ratio:340/205"></div>
+<figcaption>Reducir el radio a un tercio multiplica por $3^4=81$ la diferencia de presión necesaria para el mismo caudal (la altura de las barras no está a escala: la segunda es 81 veces mayor). <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.50 de U">P</span></figcaption>
 </figure>
 
-  <div class="recipe"><b>Receta:</b> «¿a qué altura debe estar el depósito para vencer una presión $p$?» ⇒ $h=p_{man}/(\rho g)$.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Sumar $p_{atm}$ a un lado y no al otro (mezclar absoluta y manométrica).</p></div>
+  <div class="recipe"><b>Receta:</b> flujo viscoso en tubo, caudal fijo: $\Delta p\propto L/R^4$ ⇒ razona con cocientes, sin necesidad de conocer la viscosidad.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar $R^2$ (como en la continuidad) en lugar de $R^4$.</p></div>
 </details>
 </details>
 <details class="sol" id="e4"><summary>E4 — Problema 12.23: elevador hidráulico I (relación de diámetros) <span class="src" data-l="E" data-ref="Solucionario 12-6, Prob. 12.23">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.23, p. 392 y §12.2, ec. 12.7, p. 373">U p.373, 392</span></summary>
@@ -452,70 +451,34 @@
   <div class="box warn"><span class="h">Error típico</span><p>Dar 119 (cociente de áreas) como cociente de diámetros.</p></div>
 </details>
 </details>
-<details class="sol" id="e5"><summary>E5 — Problema 12.26: líquido de densidad mínima en el que flota una roca <span class="src" data-l="E" data-ref="Solucionario 12-6 y 12-7, Prob. 12.26">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.26, p. 392 y §12.3, p. 376">U p.376, 392</span></summary>
-<p class="enun">Una roca tiene una masa de 1,80 kg. Cuando la roca se suspende del extremo inferior de una cuerda y se sumerge totalmente en agua, la tensión en la cuerda es de 12,8 N. ¿Cuál es la menor densidad de un líquido en el que la roca va a flotar?</p>
+<details class="sol" id="e2"><summary>E2 — Problema 12.11: altura mínima de la bolsa de suero <span class="src" data-l="E" data-ref="Solucionario 12-3, Prob. 12.11">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.11, p. 391 y §12.2, ec. 12.6, p. 373">U p.373, 391</span></summary>
+<p class="enun">En la alimentación intravenosa se inserta una aguja en una vena del brazo del paciente y se conecta un tubo entre la aguja y un depósito de fluido (densidad 1050 kg/m³) que está a una altura $h$ sobre el brazo. El depósito está abierto a la atmósfera por arriba. Si la presión manométrica dentro de la vena es de 5980 Pa, ¿qué valor mínimo de $h$ permite que entre fluido en la vena?</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Con la roca sumergida y colgada: $T+B=mg$, luego $B=mg-T$ y de ahí el volumen $V=B/(\rho_wg)$.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Un cuerpo flota en un líquido si su densidad media es menor o igual que la del líquido: el mínimo es $\rho_{roca}$.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>En el caso límite el fluido está en reposo: las presiones en la punta de la aguja y en la vena son iguales (hidrostática).</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Compara manométrica con manométrica: $\rho gh=5980$ Pa.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
 <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Equilibrio sumergida: $T+B=mg$</li>
-      <li>Empuje (Arquímedes): $B=\rho_{fluido}\,V\,g$</li>
-      <li>Condición de flotar: $\rho_{liq}\ge\rho_{roca}=m/V$</li>
+      <li>Presión a profundidad $h$: $p=p_{atm}+\rho g\,h$ (manométrica: $\rho g h$)</li>
+      <li>Fluido en reposo (caso límite): presiones iguales</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Empuje en agua:</b>
-      $$B=mg-T=(1{,}80)(9{,}8)-12{,}8=17{,}64-12{,}8=4{,}84\ \text{N}$$</li>
-    <li><b>Volumen de la roca</b> (de $B=\rho_wVg$):
-      $$V=\frac{4{,}84}{(1000)(9{,}8)}=4{,}94\times10^{-4}\ \text{m}^3$$</li>
-    <li><b>Densidad de la roca:</b>
-      $$\rho_{roca}=\frac mV=\frac{1{,}80}{4{,}94\times10^{-4}}=3{,}64\times10^3\ \text{kg/m}^3$$</li>
-    <li><b>Condición de flotar.</b> Sin cuerda, el empuje máximo (totalmente sumergida) debe igualar al menos el peso:
-      $$\rho_{liq}Vg\ge mg\ \Rightarrow\ \rho_{liq,\min}=\rho_{roca}=\mathbf{3{,}64\times10^3\ kg/m^3}$$
-      <span class="por">Un cuerpo flota si y solo si su densidad media es menor o igual que la del líquido.</span></li>
+    <li><b>Condición.</b> El fluido entra si la presión en la aguja es al menos la de la sangre; en el caso límite están en reposo y las presiones coinciden.</li>
+    <li><b>Presión en la aguja</b> (a profundidad $h$ bajo la superficie del depósito, abierta a la atmósfera):
+      $$p=p_{atm}+\rho g\,h\ \Rightarrow\ p_{man}=\rho g\,h$$</li>
+    <li><b>Igualar manométricas:</b>
+      $$\rho g\,h=5980\ \text{Pa}$$</li>
+    <li><b>Despejar:</b>
+      $$h=\frac{5980}{(1050)(9{,}8)}=\frac{5980}{10\,290}=\mathbf{0{,}581\ m}$$
+      <span class="por">Por eso las bolsas cuelgan de un soporte alto.</span></li>
   </ol>
-<figure class="fig" data-svg="../assets/figs/t12/dos-diagramas-de-cuerpo-libre-de-una-roca-de-1-8.svg">
-<div class="figph" role="img" aria-label="Dos diagramas de cuerpo libre de una roca de 1,80 kilogramos: sumergida en agua con tensión 12,8 newtons y empuje 4,84; y en el líquido de densidad mínima donde flota, con empuje igual al peso" style="aspect-ratio:340/262"></div>
-<figcaption>Izquierda: en agua, $T+B=mg$ con $B=17{,}64-12{,}8=4{,}84$ N. Derecha: en el líquido límite el empuje de la roca totalmente sumergida iguala su peso (17,64 N) y $T=0$. Fuerzas a escala. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.26 de U">P</span></figcaption>
+<figure class="fig" data-svg="../assets/figs/t12/bolsa-de-suero-colgada-0-581-metros-sobre-el-bra.svg">
+<div class="figph" role="img" aria-label="Bolsa de suero colgada 0,581 metros sobre el brazo de un paciente con un tubo hasta la aguja en la vena" style="aspect-ratio:340/225"></div>
+<figcaption>Para que el fluido entre, la presión manométrica en la aguja ($\rho gh$) debe igualar al menos la de la vena (5980 Pa): $h=5980/(1050\cdot9{,}8)=0{,}581$ m sobre el brazo. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.11 de U">P</span></figcaption>
 </figure>
 
-  <div class="recipe"><b>Receta:</b> «¿flota?» ⇒ compara densidades. Una pesada en agua con cuerda da el volumen: $V=(mg-T)/(\rho_wg)$.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Usar la tensión (12,8 N) como si fuera el empuje.</p></div>
-</details>
-</details>
-<details class="sol" id="e7"><summary>E7 — Problema 12.33: bloque en la interfase aceite-agua <span class="src" data-l="E" data-ref="Solucionario 12-8 y 12-9, Prob. 12.33">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.33, p. 392 (figura E12.33), §12.2 p. 373 y §12.3 p. 376">U p.373, 376, 392</span></summary>
-<p class="enun">Un bloque cúbico de madera de 10,0 cm por lado flota en la interfase entre aceite y agua con su superficie inferior 1,50 cm bajo la interfase. La densidad del aceite es de 790 kg/m³. a) ¿Qué presión manométrica hay en la superficie superior del bloque? b) ¿Y en la cara inferior? c) ¿Qué masa y densidad tiene el bloque? (En la figura, la capa de aceite mide 10,0 cm de espesor y está abierta al aire: el bloque tiene 8,50 cm en el aceite y 1,50 cm en el agua, y su cara superior está 1,50 cm bajo la superficie del aceite.)</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Cara superior: solo hay aceite encima. Cara inferior: «escalera» de capas, sumando $\rho gh$ de cada fluido con su densidad.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>El empuje es la diferencia de presiones por el área; el equilibrio vertical da la masa.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Presión manométrica por capas: $p=\sum\rho_i\,g\,h_i$</li>
-      <li>Equilibrio vertical del bloque: $(p_{inf}-p_{sup})A=mg$ (el empuje es la diferencia de presiones)</li>
-      <li>$\rho=m/V$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Geometría.</b> La interfase está a 10,0 cm bajo la superficie del aceite; la cara inferior, a 1,50 cm bajo la interfase. La cara superior queda a $10{,}0+1{,}50-10{,}0=1{,}50$ cm bajo la superficie del aceite.</li>
-    <li><b>a) Cara superior</b> (solo aceite encima):
-      $$p_{sup}=\rho_{ac}\,g\,(0{,}0150)=(790)(9{,}8)(0{,}0150)=\mathbf{116\ Pa}$$</li>
-    <li><b>b) Cara inferior</b> (capa a capa, cada una con su densidad):
-      $$p_{inf}=\rho_{ac}g(0{,}100)+\rho_wg(0{,}0150)=774+147=\mathbf{921\ Pa}$$</li>
-    <li><b>c) Masa</b> ($A=0{,}0100$ m²; $p_{atm}$ se cancela):
-      $$\Delta p=921-116=805\ \text{Pa},\qquad m=\frac{\Delta p\,A}{g}=\frac{805(0{,}0100)}{9{,}8}=\mathbf{0{,}821\ kg}$$</li>
-    <li><b>Densidad:</b>
-      $$\rho=\frac mV=\frac{0{,}821}{(0{,}100)^3}=\mathbf{821\ kg/m^3}$$</li>
-    <li><b>Comprobación con Arquímedes</b> (masa de fluido desplazado):
-      $$790(0{,}0100)(0{,}0850)+1000(0{,}0100)(0{,}0150)=0{,}6715+0{,}150=0{,}8215\ \text{kg}=m\ \checkmark$$</li>
-  </ol>
-<figure class="fig" data-svg="../assets/figs/t12/bloque-de-madera-de-10-centimetros-flotando-entr.svg">
-<div class="figph" role="img" aria-label="Bloque de madera de 10 centímetros flotando entre aceite y agua, con 8,5 centímetros en el aceite y 1,5 en el agua, y gráfica de la presión manométrica con la profundidad" style="aspect-ratio:340/195"></div>
-<figcaption>Presión manométrica en el bloque flotante: crece 77,4 Pa/cm en el aceite y 98 Pa/cm en el agua (dos tramos rectos). Cara superior 116 Pa, interfase 774 Pa, cara inferior 921 Pa; $\Delta p=805$ Pa $\Rightarrow m=0{,}821$ kg. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.33 de U (fig. E12.33)">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> varios fluidos apilados: $p=p_0+\sum\rho_igh_i$ capa a capa. Empuje $=(p_{abajo}-p_{arriba})A=$ peso del fluido desplazado (de cada fluido, su parte).</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Usar una sola densidad para toda la profundidad; olvidar que el aceite también desplaza (empuja) y calcular el empuje solo con el agua.</p></div>
+  <div class="recipe"><b>Receta:</b> «¿a qué altura debe estar el depósito para vencer una presión $p$?» ⇒ $h=p_{man}/(\rho g)$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Sumar $p_{atm}$ a un lado y no al otro (mezclar absoluta y manométrica).</p></div>
 </details>
 </details>
 <details class="sol" id="e8"><summary>E8 — Problema 12.38: continuidad en un tubo de sección variable <span class="src" data-l="E" data-ref="Solucionario 12-10, Prob. 12.38">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.38, p. 392 y §12.4, ec. 12.10, p. 380">U p.380, 392</span></summary>
@@ -582,6 +545,38 @@
   <div class="box warn"><span class="h">Error típico</span><p>Equivocarse con el signo del término de altura (el punto más bajo tiene <i>más</i> presión); poner $v_2=v_1/2$ (cociente de diámetros).</p></div>
 </details>
 </details>
+<details class="sol" id="e5"><summary>E5 — Problema 12.26: líquido de densidad mínima en el que flota una roca <span class="src" data-l="E" data-ref="Solucionario 12-6 y 12-7, Prob. 12.26">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.26, p. 392 y §12.3, p. 376">U p.376, 392</span></summary>
+<p class="enun">Una roca tiene una masa de 1,80 kg. Cuando la roca se suspende del extremo inferior de una cuerda y se sumerge totalmente en agua, la tensión en la cuerda es de 12,8 N. ¿Cuál es la menor densidad de un líquido en el que la roca va a flotar?</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Con la roca sumergida y colgada: $T+B=mg$, luego $B=mg-T$ y de ahí el volumen $V=B/(\rho_wg)$.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Un cuerpo flota en un líquido si su densidad media es menor o igual que la del líquido: el mínimo es $\rho_{roca}$.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio sumergida: $T+B=mg$</li>
+      <li>Empuje (Arquímedes): $B=\rho_{fluido}\,V\,g$</li>
+      <li>Condición de flotar: $\rho_{liq}\ge\rho_{roca}=m/V$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Empuje en agua:</b>
+      $$B=mg-T=(1{,}80)(9{,}8)-12{,}8=17{,}64-12{,}8=4{,}84\ \text{N}$$</li>
+    <li><b>Volumen de la roca</b> (de $B=\rho_wVg$):
+      $$V=\frac{4{,}84}{(1000)(9{,}8)}=4{,}94\times10^{-4}\ \text{m}^3$$</li>
+    <li><b>Densidad de la roca:</b>
+      $$\rho_{roca}=\frac mV=\frac{1{,}80}{4{,}94\times10^{-4}}=3{,}64\times10^3\ \text{kg/m}^3$$</li>
+    <li><b>Condición de flotar.</b> Sin cuerda, el empuje máximo (totalmente sumergida) debe igualar al menos el peso:
+      $$\rho_{liq}Vg\ge mg\ \Rightarrow\ \rho_{liq,\min}=\rho_{roca}=\mathbf{3{,}64\times10^3\ kg/m^3}$$
+      <span class="por">Un cuerpo flota si y solo si su densidad media es menor o igual que la del líquido.</span></li>
+  </ol>
+<figure class="fig" data-svg="../assets/figs/t12/dos-diagramas-de-cuerpo-libre-de-una-roca-de-1-8.svg">
+<div class="figph" role="img" aria-label="Dos diagramas de cuerpo libre de una roca de 1,80 kilogramos: sumergida en agua con tensión 12,8 newtons y empuje 4,84; y en el líquido de densidad mínima donde flota, con empuje igual al peso" style="aspect-ratio:340/262"></div>
+<figcaption>Izquierda: en agua, $T+B=mg$ con $B=17{,}64-12{,}8=4{,}84$ N. Derecha: en el líquido límite el empuje de la roca totalmente sumergida iguala su peso (17,64 N) y $T=0$. Fuerzas a escala. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.26 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> «¿flota?» ⇒ compara densidades. Una pesada en agua con cuerda da el volumen: $V=(mg-T)/(\rho_wg)$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar la tensión (12,8 N) como si fuera el empuje.</p></div>
+</details>
+</details>
 <details class="sol" id="e9"><summary>E9 — Problema 12.44: Torricelli, orificio en la pared de un tanque <span class="src" data-l="E" data-ref="Solucionario 12-12, Prob. 12.44">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.44, p. 393 y §12.5, Ejemplo 12.8, pp. 383-384">U pp.383-384, 393</span></summary>
 <p class="enun">Se corta un orificio circular de 6,00 mm de diámetro en el costado de un tanque grande de agua, 14,0 m debajo del nivel del agua en el tanque. El tanque está abierto al aire por arriba. Calcula a) la rapidez de salida del agua y b) el volumen descargado por segundo.</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
@@ -614,36 +609,65 @@
   <div class="box warn"><span class="h">Error típico</span><p>Usar como $h$ la altura del orificio sobre el suelo en vez de la profundidad bajo la superficie; usar el diámetro como radio.</p></div>
 </details>
 </details>
-<details class="sol" id="e12"><summary>E12 — Problema 12.50: tubería viscosa, efecto de reducir el radio <span class="src" data-l="E" data-ref="Solucionario 12-13, Prob. 12.50">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.50, p. 393 y §12.6, p. 386">U p.386, 393</span></summary>
-<p class="enun">Se requiere una diferencia de presión de $6{,}00\times10^4$ Pa para mantener una velocidad de flujo de volumen de 0,800 m³/s para un fluido viscoso que fluye a través de una sección de tubo cilíndrico que tiene un radio de 0,210 m. ¿Qué diferencia de presión es necesaria para mantener la misma rapidez de volumen del flujo si el radio de la tubería se reduce a 0,0700 m?</p>
+<details class="sol" id="e7"><summary>E7 — Problema 12.33: bloque en la interfase aceite-agua <span class="src" data-l="E" data-ref="Solucionario 12-8 y 12-9, Prob. 12.33">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.33, p. 392 (figura E12.33), §12.2 p. 373 y §12.3 p. 376">U p.373, 376, 392</span></summary>
+<p class="enun">Un bloque cúbico de madera de 10,0 cm por lado flota en la interfase entre aceite y agua con su superficie inferior 1,50 cm bajo la interfase. La densidad del aceite es de 790 kg/m³. a) ¿Qué presión manométrica hay en la superficie superior del bloque? b) ¿Y en la cara inferior? c) ¿Qué masa y densidad tiene el bloque? (En la figura, la capa de aceite mide 10,0 cm de espesor y está abierta al aire: el bloque tiene 8,50 cm en el aceite y 1,50 cm en el agua, y su cara superior está 1,50 cm bajo la superficie del aceite.)</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Con viscosidad no sirve Bernoulli: a caudal fijo, $\Delta p\propto L/R^4$.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Razona con cocientes: $\Delta p_2=\Delta p_1(R_1/R_2)^4$.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>Cara superior: solo hay aceite encima. Cara inferior: «escalera» de capas, sumando $\rho gh$ de cada fluido con su densidad.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>El empuje es la diferencia de presiones por el área; el equilibrio vertical da la masa.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
 <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Flujo viscoso (Poiseuille): a caudal fijo, $\Delta p\propto\dfrac{L}{R^4}$ ⇒ $\Delta p\,R^4=\text{cte}$</li>
+      <li>Presión manométrica por capas: $p=\sum\rho_i\,g\,h_i$</li>
+      <li>Equilibrio vertical del bloque: $(p_{inf}-p_{sup})A=mg$ (el empuje es la diferencia de presiones)</li>
+      <li>$\rho=m/V$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Por qué no Bernoulli.</b> Con viscosidad hay fricción interna: hace falta $\Delta p$ solo para mantener el flujo.
-      <span class="por">Mismo tubo (misma $L$), mismo caudal: se razona con cocientes, sin conocer la viscosidad.</span></li>
-    <li><b>Relación:</b>
-      $$\Delta p_2=\Delta p_1\Big(\frac{R_1}{R_2}\Big)^4$$</li>
-    <li><b>Números:</b>
-      $$\frac{R_1}{R_2}=\frac{0{,}210}{0{,}0700}=3\ \Rightarrow\ 3^4=81$$
-      $$\Delta p_2=81(6{,}00\times10^4)=\mathbf{4{,}86\times10^6\ Pa}\ (\approx48\ \text{atm})$$
-      <span class="por">Reducir el radio a un tercio multiplica por 81 la presión necesaria; por eso un estrechamiento de una arteria obliga al corazón a trabajar mucho más.</span></li>
+    <li><b>Geometría.</b> La interfase está a 10,0 cm bajo la superficie del aceite; la cara inferior, a 1,50 cm bajo la interfase. La cara superior queda a $10{,}0+1{,}50-10{,}0=1{,}50$ cm bajo la superficie del aceite.</li>
+    <li><b>a) Cara superior</b> (solo aceite encima):
+      $$p_{sup}=\rho_{ac}\,g\,(0{,}0150)=(790)(9{,}8)(0{,}0150)=\mathbf{116\ Pa}$$</li>
+    <li><b>b) Cara inferior</b> (capa a capa, cada una con su densidad):
+      $$p_{inf}=\rho_{ac}g(0{,}100)+\rho_wg(0{,}0150)=774+147=\mathbf{921\ Pa}$$</li>
+    <li><b>c) Masa</b> ($A=0{,}0100$ m²; $p_{atm}$ se cancela):
+      $$\Delta p=921-116=805\ \text{Pa},\qquad m=\frac{\Delta p\,A}{g}=\frac{805(0{,}0100)}{9{,}8}=\mathbf{0{,}821\ kg}$$</li>
+    <li><b>Densidad:</b>
+      $$\rho=\frac mV=\frac{0{,}821}{(0{,}100)^3}=\mathbf{821\ kg/m^3}$$</li>
+    <li><b>Comprobación con Arquímedes</b> (masa de fluido desplazado):
+      $$790(0{,}0100)(0{,}0850)+1000(0{,}0100)(0{,}0150)=0{,}6715+0{,}150=0{,}8215\ \text{kg}=m\ \checkmark$$</li>
   </ol>
-<figure class="fig" data-svg="../assets/figs/t12/dos-tubos-del-mismo-caudal-uno-de-radio-0-210-me.svg">
-<div class="figph" role="img" aria-label="Dos tubos del mismo caudal: uno de radio 0,210 metros que necesita 6,00×10⁴ pascales y otro de radio 0,0700 metros que necesita 4,86×10⁶ pascales" style="aspect-ratio:340/205"></div>
-<figcaption>Reducir el radio a un tercio multiplica por $3^4=81$ la diferencia de presión necesaria para el mismo caudal (la altura de las barras no está a escala: la segunda es 81 veces mayor). <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.50 de U">P</span></figcaption>
+<figure class="fig" data-svg="../assets/figs/t12/bloque-de-madera-de-10-centimetros-flotando-entr.svg">
+<div class="figph" role="img" aria-label="Bloque de madera de 10 centímetros flotando entre aceite y agua, con 8,5 centímetros en el aceite y 1,5 en el agua, y gráfica de la presión manométrica con la profundidad" style="aspect-ratio:340/195"></div>
+<figcaption>Presión manométrica en el bloque flotante: crece 77,4 Pa/cm en el aceite y 98 Pa/cm en el agua (dos tramos rectos). Cara superior 116 Pa, interfase 774 Pa, cara inferior 921 Pa; $\Delta p=805$ Pa $\Rightarrow m=0{,}821$ kg. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.33 de U (fig. E12.33)">P</span></figcaption>
 </figure>
 
-  <div class="recipe"><b>Receta:</b> flujo viscoso en tubo, caudal fijo: $\Delta p\propto L/R^4$ ⇒ razona con cocientes, sin necesidad de conocer la viscosidad.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Usar $R^2$ (como en la continuidad) en lugar de $R^4$.</p></div>
+  <div class="recipe"><b>Receta:</b> varios fluidos apilados: $p=p_0+\sum\rho_igh_i$ capa a capa. Empuje $=(p_{abajo}-p_{arriba})A=$ peso del fluido desplazado (de cada fluido, su parte).</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar una sola densidad para toda la profundidad; olvidar que el aceite también desplaza (empuja) y calcular el empuje solo con el agua.</p></div>
 </details>
 </details>
 <div class="nivel"><b>🟡 Práctica: 5 ejercicios más</b><span>Repiten métodos del núcleo: densidad de una pieza con un hueco, presión en el pistón de un elevador, densidad de un líquido por pesadas, un tanque presurizado y el problema práctico del libro (tiempo de vaciado de un depósito). Antes de leer los pasos, marca los puntos 1 y 2 y decide si las presiones van absolutas o manométricas.</span></div>
+<details class="sol" id="e11"><summary>E11 — Problema 12.41: tanque sellado con aire a presión <span class="src" data-l="E" data-ref="Solucionario 12-11, Prob. 12.41">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.41, p. 392 y §12.5, Ejemplo 12.8, pp. 383-384">U pp.383-384, 392</span></summary>
+<p class="enun">Un tanque sellado que contiene agua de mar hasta una altura de 11,0 m contiene también aire sobre el agua a una presión manométrica de 3,00 atm. Sale agua del tanque a través de un orificio pequeño en el fondo. ¿Qué tan rápido se está moviendo el agua?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Bernoulli: $p_1+\rho g y_1=p_2+\tfrac12\rho v_2^2$ (con $v_1\approx0$)</li>
+      <li>Forma general: $v_2=\sqrt{\dfrac{2(p_1-p_{atm})}{\rho}+2g\,y_1}$</li>
+      <li>$1\ \text{atm}=1{,}013\times10^5$ Pa</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Puntos.</b> 1 en la superficie del agua ($y_1=11{,}0$ m, $p_1=p_{atm}+3{,}00$ atm); 2 en el chorro a la salida ($y_2=0$, $p_2=p_{atm}$). $v_1\approx0$ (orificio pequeño).</li>
+    <li><b>Términos</b> ($\rho_{mar}=1030$ kg/m³; $3{,}00$ atm $=3{,}04\times10^5$ Pa):
+      $$\frac{2(p_1-p_{atm})}{\rho}=\frac{2(3{,}04\times10^5)}{1030}=590\ \text{m}^2/\text{s}^2,\qquad2g\,y_1=2(9{,}8)(11{,}0)=216\ \text{m}^2/\text{s}^2$$</li>
+    <li><b>Rapidez:</b>
+      $$v_2=\sqrt{590+216}=\sqrt{806}=\mathbf{28{,}4\ m/s}$$
+      <span class="por">Con el tanque abierto, Torricelli daría $\sqrt{216}=14{,}7$ m/s. La sobrepresión equivale a una columna extra de agua de $p_{man}/(\rho g)=30{,}1$ m.</span></li>
+  </ol>
+<figure class="fig" data-svg="../assets/figs/t12/tanque-sellado-con-aire-a-3-atmosferas-manometri.svg">
+<div class="figph" role="img" aria-label="Tanque sellado con aire a 3 atmósferas manométricas sobre 11 metros de agua de mar: el agua sale por el fondo con 28,4 metros por segundo frente a 14,7 si estuviera abierto" style="aspect-ratio:340/175"></div>
+<figcaption>El aire comprimido aporta $2\Delta p/\rho=590$ m²/s² frente a $2gh=216$ m²/s² de la columna: la rapidez sube de 14,7 a 28,4 m/s. Las flechas de velocidad son proporcionales. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.41 de U">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> depósito presurizado: $v=\sqrt{2\,p_{man,superficie}/\rho+2gh}$; la sobrepresión equivale a una columna extra $p_{man}/(\rho g)$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Poner $p_1=3{,}00$ atm absoluta y $p_2=p_{atm}$ (mezclar tipos de presión); olvidar la columna de agua.</p></div>
+</details>
 <details class="sol" id="e1"><summary>E1 — Problema 12.2: cubo con un orificio (densidad y peso original) <span class="src" data-l="E" data-ref="Solucionario 12-1, Prob. 12.2">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.2, p. 390 y §12.1, ec. 12.1, tabla 12.1">U p.370, 390</span></summary>
 <p class="enun">Un cubo de 5,0 cm de lado está hecho de una aleación metálica. Después de perforar de lado a lado un orificio cilíndrico de 2,0 cm de diámetro, perpendicular a una cara, el cubo pesa 6,30 N. a) ¿Cuál es la densidad del metal? b) ¿Cuánto pesaba el cubo antes de taladrarlo?</p>
   <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
@@ -725,30 +749,6 @@
 
   <div class="recipe"><b>Receta:</b> $\rho_L=\rho_w\,\dfrac{w-T_L}{w-T_w}$ (método de la balanza hidrostática).</div>
   <div class="box warn"><span class="h">Error típico</span><p>Dividir las tensiones ($28{,}4/21{,}5$) en lugar de los empujes.</p></div>
-</details>
-<details class="sol" id="e11"><summary>E11 — Problema 12.41: tanque sellado con aire a presión <span class="src" data-l="E" data-ref="Solucionario 12-11, Prob. 12.41">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.41, p. 392 y §12.5, Ejemplo 12.8, pp. 383-384">U pp.383-384, 392</span></summary>
-<p class="enun">Un tanque sellado que contiene agua de mar hasta una altura de 11,0 m contiene también aire sobre el agua a una presión manométrica de 3,00 atm. Sale agua del tanque a través de un orificio pequeño en el fondo. ¿Qué tan rápido se está moviendo el agua?</p>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Bernoulli: $p_1+\rho g y_1=p_2+\tfrac12\rho v_2^2$ (con $v_1\approx0$)</li>
-      <li>Forma general: $v_2=\sqrt{\dfrac{2(p_1-p_{atm})}{\rho}+2g\,y_1}$</li>
-      <li>$1\ \text{atm}=1{,}013\times10^5$ Pa</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Puntos.</b> 1 en la superficie del agua ($y_1=11{,}0$ m, $p_1=p_{atm}+3{,}00$ atm); 2 en el chorro a la salida ($y_2=0$, $p_2=p_{atm}$). $v_1\approx0$ (orificio pequeño).</li>
-    <li><b>Términos</b> ($\rho_{mar}=1030$ kg/m³; $3{,}00$ atm $=3{,}04\times10^5$ Pa):
-      $$\frac{2(p_1-p_{atm})}{\rho}=\frac{2(3{,}04\times10^5)}{1030}=590\ \text{m}^2/\text{s}^2,\qquad2g\,y_1=2(9{,}8)(11{,}0)=216\ \text{m}^2/\text{s}^2$$</li>
-    <li><b>Rapidez:</b>
-      $$v_2=\sqrt{590+216}=\sqrt{806}=\mathbf{28{,}4\ m/s}$$
-      <span class="por">Con el tanque abierto, Torricelli daría $\sqrt{216}=14{,}7$ m/s. La sobrepresión equivale a una columna extra de agua de $p_{man}/(\rho g)=30{,}1$ m.</span></li>
-  </ol>
-<figure class="fig" data-svg="../assets/figs/t12/tanque-sellado-con-aire-a-3-atmosferas-manometri.svg">
-<div class="figph" role="img" aria-label="Tanque sellado con aire a 3 atmósferas manométricas sobre 11 metros de agua de mar: el agua sale por el fondo con 28,4 metros por segundo frente a 14,7 si estuviera abierto" style="aspect-ratio:340/175"></div>
-<figcaption>El aire comprimido aporta $2\Delta p/\rho=590$ m²/s² frente a $2gh=216$ m²/s² de la columna: la rapidez sube de 14,7 a 28,4 m/s. Las flechas de velocidad son proporcionales. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 12.41 de U">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> depósito presurizado: $v=\sqrt{2\,p_{man,superficie}/\rho+2gh}$; la sobrepresión equivale a una columna extra $p_{man}/(\rho g)$.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Poner $p_1=3{,}00$ atm absoluta y $p_2=p_{atm}$ (mezclar tipos de presión); olvidar la columna de agua.</p></div>
 </details>
 <details class="sol" id="epp"><summary>Problema práctico: ¿cuánto tiempo se tarda en vaciar un tanque? <span class="src" data-l="U" data-ref="U Problema práctico del cap. 12, p. 389 y fig. 12.32">U p.389</span> <span class="prio p3">⚪</span> <span class="src" data-l="P" data-ref="Resolución propia del Problema práctico del cap. 12 de U (con comprobación numérica)">P</span></summary>
 <p class="enun">Un gran tanque cilíndrico de diámetro $D$ está abierto al aire libre en la parte superior y contiene agua hasta una altura $H$. Se abre en el fondo un pequeño orificio circular de diámetro $d\ll D$ (figura 12.32). Desprecia los efectos de la viscosidad. a) Encuentra $y$, la altura del agua en el tanque un tiempo $t$ después de abrir el orificio, como función de $t$. b) ¿Cuánto tiempo se tarda en vaciar el tanque por completo? c) Si se duplica la altura inicial $H$, ¿en qué factor aumenta el tiempo de vaciado?</p>

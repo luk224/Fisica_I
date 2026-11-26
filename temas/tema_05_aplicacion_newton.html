@@ -293,14 +293,14 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <table class="metodos">
 <tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>
 <tr><td><a href="#e1">E1</a></td><td>Equilibrio con dos cables</td><td>$\sum F=0$ por ejes; empieza por el eje con una sola incógnita</td></tr>
+<tr><td><a href="#e6">E6</a></td><td>Ángulo de deslizamiento</td><td>«A punto de deslizar» ⇒ $f_s=\mu_sn$ ⇒ $\tan\alpha=\mu_s$</td></tr>
+<tr><td><a href="#e8">E8</a></td><td>Curva peraltada</td><td>Ejes horizontal/vertical; $\tan\beta=v^2/(gR)$</td></tr>
 <tr><td><a href="#e4">E4</a></td><td>Peso aparente en un elevador</td><td>$n=m(g+a_y)$; elige el cuerpo que contiene la incógnita</td></tr>
 <tr><td><a href="#x1">X1</a> · Feb 2022</td><td>Dos bloques en planos sin fricción</td><td>Compara fuerzas motoras, ecuación por cuerpo, suma y cancela $T$</td></tr>
-<tr><td><a href="#e6">E6</a></td><td>Ángulo de deslizamiento</td><td>«A punto de deslizar» ⇒ $f_s=\mu_sn$ ⇒ $\tan\alpha=\mu_s$</td></tr>
 <tr><td><a href="#x2">X2</a> · Feb 2025</td><td>Dos paquetes en rampa con fricción</td><td>¿Tira el cable o se afloja? Aceleración de cada uno suelto</td></tr>
-<tr><td><a href="#x3">X3</a> · Feb 2023</td><td>Fuerza oblicua contra una pared</td><td>La normal sale primero del eje perpendicular; después $f=\mu n$</td></tr>
 <tr><td><a href="#x4">X4</a> · Feb 2020</td><td>Rampa con fricción y polea móvil</td><td>Ligadura $a_B=a_A/2$, fuerza $2T$, sentido antes que fricción</td></tr>
-<tr><td><a href="#e8">E8</a></td><td>Curva peraltada</td><td>Ejes horizontal/vertical; $\tan\beta=v^2/(gR)$</td></tr>
 <tr><td><a href="#x5">X5</a> · Feb 2018</td><td>Cuerpo sobre un cono giratorio</td><td>Eje al centro ($mv^2/r$) y eje perpendicular al giro ($\sum F=0$)</td></tr>
+<tr><td><a href="#x3">X3</a> · Feb 2023</td><td>Fuerza oblicua contra una pared</td><td>La normal sale primero del eje perpendicular; después $f=\mu n$</td></tr>
 </table>
 <details class="sol" id="e1"><summary>E1 — Problema 5.6: bola de demolición con dos cables (equilibrio) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 5-2, Prob. 5.6">E</span></summary>
 <p class="enun">Una bola de demolición de 3620 kg está sujeta por dos cables ligeros de acero. El cable B forma 40° con la vertical y el cable A es horizontal. Calcule a) la tensión $T_B$ y b) la tensión $T_A$.</p>
@@ -325,6 +325,62 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
   </ol>
   <div class="recipe"><b>Receta:</b> en equilibrio con varias cuerdas, empieza por el eje que tenga <b>una sola incógnita</b>.</div>
   <div class="recipe"><b>Error típico:</b> confundir seno y coseno cuando el ángulo se mide desde la vertical (la componente <i>vertical</i> es $T\cos40^\circ$).</div>
+</details>
+</details>
+<details class="sol" id="e6"><summary>E6 — Problema 5.36: ángulo de deslizamiento (umbral de la fricción estática) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 5-20, Prob. 5.36">E</span></summary>
+<p class="enun">Una caja de 25,0 kg con libros descansa sobre una rampa que forma un ángulo $\alpha$ con la horizontal; $\mu_k=0{,}25$ y $\mu_s=0{,}35$. a) Al aumentar $\alpha$, ¿con qué ángulo mínimo empieza la caja a resbalar? b) Con ese ángulo, ¿qué aceleración tiene una vez en movimiento? c) ¿Con qué rapidez se mueve tras deslizar 5,0 m?</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Mientras la caja no resbala está en equilibrio: ¿cuánto valen $n$ y $f_s$ en función de $\alpha$?</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>El umbral es cuando $f_s$ alcanza su máximo $\mu_sn$; ahí desaparece la masa de la ecuación. Una vez en movimiento, la fricción pasa a ser cinética.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t05/caja-a-punto-de-resbalar-en-una-rampa.svg">
+<div class="figph" role="img" aria-label="Caja a punto de resbalar en una rampa" style="aspect-ratio:330/190"></div>
+<figcaption>Caja de 25,0 kg (μ<sub>s</sub> = 0,35, μ<sub>k</sub> = 0,25) en una rampa de ángulo α creciente. A punto de resbalar f<sub>s</sub> = mg sen α = μ<sub>s</sub>mg cos α, de donde tan α = μ<sub>s</sub>. Una vez en movimiento la fricción cinética (57,8 N) es menor que la estática máxima (80,9 N). <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.36, p. 163 / Solucionario 5-20)">P</span></figcaption>
+</figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio en la rampa: $f_s=m\,g\sin\alpha$, $n=m\,g\cos\alpha$; umbral: $f_s=\mu_s\,n$ ⇒ $\tan\alpha=\mu_s$</li>
+      <li>Deslizando: $a=g(\sin\alpha-\mu_k\cos\alpha)$; $v^2=2a\,d$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Ángulo mínimo:</b>
+      $$m\,g\sin\alpha=\mu_sm\,g\cos\alpha\ \Rightarrow\ \tan\alpha=\mu_s=0{,}35\ \Rightarrow\ \alpha=\mathbf{19{,}3^\circ}$$
+      <span class="por">No depende de la masa.</span></li>
+    <li><b>b) Aceleración</b> (ya desliza: fricción cinética, menor):
+      $$a=9{,}80(0{,}3304-0{,}25(0{,}9438))=9{,}80(0{,}3304-0{,}2360)=\mathbf{0{,}925\ m/s^2}$$</li>
+    <li><b>c) Rapidez tras 5,0 m:</b>
+      $$v=\sqrt{2(0{,}925)(5{,}0)}=\mathbf{3{,}0\ m/s}\ \ (3{,}04)$$</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> «a punto de deslizar» ⇔ $f_s=\mu_sn$; en un plano sin otras fuerzas, $\tan\alpha_c=\mu_s$. Una vez en marcha, se pasa a $\mu_k$.</div>
+  <div class="recipe"><b>Error típico:</b> usar $f_s=\mu_sn$ cuando el cuerpo no está en el umbral; seguir usando $\mu_s$ cuando ya desliza.</div>
+</details>
+</details>
+<details class="sol" id="e8"><summary>E8 — Problema 5.49: curva peraltada sin fricción <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 5-26, Prob. 5.49">E</span></summary>
+<p class="enun">Un coche de 1125 kg y un camión de 2250 kg se acercan a una curva de 225 m de radio. a) ¿Con qué ángulo debe peraltarse la curva para que ambos la tomen a 65,0 mi/h sin depender de la fricción? ¿Debe el camión ir más despacio? b) Calcule la fuerza normal sobre cada vehículo a esa velocidad.</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Sin fricción, ¿qué fuerzas actúan sobre el coche? ¿Hacia dónde apunta la aceleración centrípeta?</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Vertical: $n\cos\beta=mg$; horizontal, al centro: $n\sin\beta=mv^2/R$. Divide las dos ecuaciones y la masa desaparece. Pasa mi/h a m/s.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t05/coche-en-una-curva-peraltada-sin-friccion.svg">
+<div class="figph" role="img" aria-label="Coche en una curva peraltada sin fricción" style="aspect-ratio:360/230"></div>
+<figcaption>Curva peraltada sin fricción vista de frente: la normal es perpendicular a la calzada y su componente horizontal n sen β es la que produce la aceleración centrípeta a<sub>rad</sub> = v²/R hacia el centro; n cos β = mg. Para v = 29,06 m/s y R = 225 m: β = 21,0° (el mismo para coche y camión). <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.49, p. 163 / Solucionario 5-26)">P</span></figcaption>
+</figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Curva peraltada (sin fricción): vertical $n\cos\beta=m\,g$; horizontal $n\sin\beta=\dfrac{m\,v^2}{R}$ ⇒ $\tan\beta=\dfrac{v^2}{g\,R}$</li>
+      <li>$1\ \text{mi/h}=0{,}44704$ m/s</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Rapidez:</b>
+      $$65{,}0\ \text{mi/h}=29{,}06\ \text{m/s}$$</li>
+    <li><b>a) Ángulo de peralte:</b>
+      $$\tan\beta=\frac{29{,}06^2}{(9{,}80)(225)}=0{,}383\ \Rightarrow\ \beta=\mathbf{21{,}0^\circ}$$
+      <span class="por">No depende de la masa: ambos a la misma velocidad.</span></li>
+    <li><b>b) Normal en cada vehículo</b> ($n=m\,g/\cos\beta$):
+      $$\text{coche: }n=\frac{1125(9{,}80)}{\cos21{,}0^\circ}=\mathbf{1{,}18\times10^4\ N},\qquad\text{camión: }n=\mathbf{2{,}36\times10^4\ N}$$</li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> peralte ideal: $\tan\beta=v^2/(gR)$; ejes horizontal/vertical, no paralelos a la calzada.</div>
+  <div class="recipe"><b>Error típico:</b> escribir $n=mg\cos\beta$ (eso es en un plano inclinado sin aceleración horizontal; aquí $n=mg/\cos\beta$).</div>
 </details>
 </details>
 <details class="sol" id="e4"><summary>E4 — Problema 5.20: peso aparente en un elevador <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 5-11, Prob. 5.20">E</span></summary>
@@ -399,34 +455,6 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
-<details class="sol" id="e6"><summary>E6 — Problema 5.36: ángulo de deslizamiento (umbral de la fricción estática) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 5-20, Prob. 5.36">E</span></summary>
-<p class="enun">Una caja de 25,0 kg con libros descansa sobre una rampa que forma un ángulo $\alpha$ con la horizontal; $\mu_k=0{,}25$ y $\mu_s=0{,}35$. a) Al aumentar $\alpha$, ¿con qué ángulo mínimo empieza la caja a resbalar? b) Con ese ángulo, ¿qué aceleración tiene una vez en movimiento? c) ¿Con qué rapidez se mueve tras deslizar 5,0 m?</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Mientras la caja no resbala está en equilibrio: ¿cuánto valen $n$ y $f_s$ en función de $\alpha$?</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>El umbral es cuando $f_s$ alcanza su máximo $\mu_sn$; ahí desaparece la masa de la ecuación. Una vez en movimiento, la fricción pasa a ser cinética.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t05/caja-a-punto-de-resbalar-en-una-rampa.svg">
-<div class="figph" role="img" aria-label="Caja a punto de resbalar en una rampa" style="aspect-ratio:330/190"></div>
-<figcaption>Caja de 25,0 kg (μ<sub>s</sub> = 0,35, μ<sub>k</sub> = 0,25) en una rampa de ángulo α creciente. A punto de resbalar f<sub>s</sub> = mg sen α = μ<sub>s</sub>mg cos α, de donde tan α = μ<sub>s</sub>. Una vez en movimiento la fricción cinética (57,8 N) es menor que la estática máxima (80,9 N). <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.36, p. 163 / Solucionario 5-20)">P</span></figcaption>
-</figure>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Equilibrio en la rampa: $f_s=m\,g\sin\alpha$, $n=m\,g\cos\alpha$; umbral: $f_s=\mu_s\,n$ ⇒ $\tan\alpha=\mu_s$</li>
-      <li>Deslizando: $a=g(\sin\alpha-\mu_k\cos\alpha)$; $v^2=2a\,d$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>a) Ángulo mínimo:</b>
-      $$m\,g\sin\alpha=\mu_sm\,g\cos\alpha\ \Rightarrow\ \tan\alpha=\mu_s=0{,}35\ \Rightarrow\ \alpha=\mathbf{19{,}3^\circ}$$
-      <span class="por">No depende de la masa.</span></li>
-    <li><b>b) Aceleración</b> (ya desliza: fricción cinética, menor):
-      $$a=9{,}80(0{,}3304-0{,}25(0{,}9438))=9{,}80(0{,}3304-0{,}2360)=\mathbf{0{,}925\ m/s^2}$$</li>
-    <li><b>c) Rapidez tras 5,0 m:</b>
-      $$v=\sqrt{2(0{,}925)(5{,}0)}=\mathbf{3{,}0\ m/s}\ \ (3{,}04)$$</li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> «a punto de deslizar» ⇔ $f_s=\mu_sn$; en un plano sin otras fuerzas, $\tan\alpha_c=\mu_s$. Una vez en marcha, se pasa a $\mu_k$.</div>
-  <div class="recipe"><b>Error típico:</b> usar $f_s=\mu_sn$ cuando el cuerpo no está en el umbral; seguir usando $\mu_s$ cuando ya desliza.</div>
-</details>
-</details>
 <details class="sol" id="x2"><summary>X2 — Dos paquetes unidos por un cable en una rampa con fricción <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2025 (2ª semana) P-1">X</span></summary>
 <p class="enun">Dos paquetes unidos por un cable sometido a tensión se deslizan por una rampa de $\alpha=16^\circ$ debido a la gravedad. El paquete que va en primer lugar tiene una masa $m_1=5{,}5$ kg y un coeficiente de fricción cinética $\mu_1=0{,}2$. El que va en segundo lugar tiene $m_2=8{,}5$ kg y $\mu_2=0{,}25$. (a) Calcule la aceleración de cada paquete. (b) Determine la tensión en el cable. (c) ¿Qué sucedería si se invierten las posiciones de los paquetes de manera que el de 8,5 kg desciende en primer lugar? Considere $g=9{,}81\ \text{m/s}^2$. (3 puntos.)</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
@@ -468,52 +496,6 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
   <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
     <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) aceleraciones (1,2) · b) tensión (0,8) · c) cable flojo (1,0). Dentro de cada apartado suele valorarse en este orden:</p>
     <ul><li><b>Planteamiento (≈30 %):</b> Suponer cable tenso, ejes a lo largo de la rampa, $n_i=m_ig\cos\alpha$ y $f_i=\mu_in_i$.</li><li><b>Ecuaciones (≈40 %):</b> Una ecuación por paquete, misma $a$, y despeje de $a$ y $T$; en c) la aceleración de cada paquete suelto para ver que el cable se afloja.</li><li><b>Resultado y unidades (≈30 %):</b> $0{,}532\ \text{m/s}^2$, $T=1{,}57$ N y conclusión de c) razonada con números.</li></ul>
-    <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
-</details>
-</details>
-<details class="sol" id="x3"><summary>X3 — Bloque empujado contra una pared (fuerza oblicua, fricción y trabajo) <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2023 (2ª semana) P-1">X</span></summary>
-<p class="enun">Se coloca un bloque de 5 kg contra una pared vertical. Se aplica una fuerza constante $F$ al bloque, con $F=96{,}0$ N y un ángulo de 60,0° con la horizontal. El coeficiente de fricción cinética entre el bloque y la pared es 0,300. Si el bloque está inicialmente en reposo: (a) ¿Cuál será el módulo de su velocidad después de recorrer 0,400 m sobre la pared? (b) ¿Cuál será el trabajo realizado en el desplazamiento? Considere $g=9{,}81\ \text{m/s}^2$. (3 puntos.)</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Descompón $F$ en horizontal y vertical. ¿Qué fuerza horizontal equilibra la pared?</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>La normal sale del eje horizontal: $n=F\cos60^\circ$. Después $f=\mu n$ y $\sum F_y=ma$ da $a$; con $a$ constante, $v^2=2ad$.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t05/x3-planteamiento.svg">
-<div class="figph" role="img" aria-label="Planteamiento: bloque contra la pared con la fuerza oblicua y su diagrama de cuerpo libre" style="aspect-ratio:360/256"></div>
-<figcaption>Planteamiento como en el examen: F oblicua (60° con la horizontal) y DCL con los ejes. La normal de la pared sale de la ecuación horizontal. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
-</figure>
-    <figure class="fig" data-svg="../assets/figs/t05/bloque-empujado-contra-una-pared-vertical.svg">
-<div class="figph" role="img" aria-label="Bloque empujado contra una pared vertical" style="aspect-ratio:350/230"></div>
-<figcaption>Examen Feb. 2023: a la izquierda, el croquis; a la derecha, el DCL del bloque. La normal la pone solo la componente horizontal de F (n = F cos 60° = 48,0 N); en vertical F sen 60° = 83,1 N vence al peso (49,1 N) y a la fricción cinética (14,4 N, hacia abajo porque el bloque sube). <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2023, 2ª sem., P-1; = U prob. 5.75)">P</span></figcaption>
-</figure>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Horizontal ($a_x=0$): $n=F\cos60^\circ$; fricción cinética: $f_k=\mu_k\,n$</li>
-      <li>Vertical ($+y$ arriba): $F\sin60^\circ-m\,g-f_k=m\,a$; cinemática: $v^2=2a\,d$</li>
-      <li>Trabajo: $W=F\,s\cos\phi$; teorema: $W_{tot}=\tfrac12mv^2$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Normal</b> (la pone la componente horizontal de $F$, no el peso):
-      $$n=F\cos60^\circ=96{,}0(0{,}5)=48{,}0\ \text{N}$$</li>
-    <li><b>¿Hacia dónde se mueve?</b>
-      $$F\sin60^\circ=83{,}1\ \text{N}>mg+f_k=63{,}5\ \text{N}\ \Rightarrow\ \text{sube y }f_k\text{ apunta hacia abajo}$$</li>
-    <li><b>Fricción:</b>
-      $$f_k=0{,}300(48{,}0)=14{,}4\ \text{N}$$</li>
-    <li><b>Aceleración:</b>
-      $$a=\frac{83{,}14-49{,}05-14{,}40}{5}=\mathbf{3{,}94\ m/s^2}\ \text{(hacia arriba)}$$</li>
-    <li><b>a) Velocidad</b> (parte del reposo, $d=0{,}400$ m):
-      $$v=\sqrt{2(3{,}938)(0{,}400)}=\mathbf{1{,}77\ m/s}$$</li>
-    <li><b>b) Trabajo</b> (solo cuenta la parte de cada fuerza paralela al desplazamiento, vertical):
-      $$W_F=F\sin60^\circ\,d=83{,}14(0{,}400)=\mathbf{33{,}3\ J}$$
-      $$W_{peso}=-mgd=-19{,}6\ \text{J},\qquad W_f=-f_kd=-5{,}76\ \text{J},\qquad W_n=0$$
-      $$W_{tot}=33{,}26-19{,}62-5{,}76=\mathbf{7{,}88\ J}=\tfrac12mv^2\ \checkmark$$</li>
-  </ol>
-  <p><b>Resultado:</b> $a=3{,}94\ \text{m/s}^2$ (hacia arriba); $v=1{,}77$ m/s; $W_F=33{,}3$ J; trabajo total $7{,}88$ J.</p>
-  <div class="recipe"><b>Receta:</b> cuando una fuerza oblicua aprieta un cuerpo contra una superficie, la normal sale del eje perpendicular a la superficie (aquí el horizontal) y solo después se calcula $f=\mu n$ y la ecuación a lo largo de la superficie.</div>
-  <div class="recipe"><b>Error típico:</b> escribir $n=mg$ o $f_k=\mu_kmg$ (en una pared el peso es paralelo a la superficie); poner $f_k$ hacia arriba sin comprobar hacia dónde se mueve.</div>
-
-  <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
-    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) velocidad (1,8) · b) trabajo (1,2). Dentro de cada apartado suele valorarse en este orden:</p>
-    <ul><li><b>Planteamiento (≈30 %):</b> DCL con $F$ descompuesta; la normal sale del eje horizontal ($n=F\cos60^\circ$) antes de calcular $f=\mu n$.</li><li><b>Ecuaciones (≈40 %):</b> Eje vertical $\sum F_y=ma$ → $a$; después $v^2=2ad$ (o trabajo–energía).</li><li><b>Resultado y unidades (≈30 %):</b> $a=3{,}94\ \text{m/s}^2$, $v=1{,}77$ m/s; $W_F=33{,}3$ J con signo y unidades.</li></ul>
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
@@ -564,34 +546,6 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
-<details class="sol" id="e8"><summary>E8 — Problema 5.49: curva peraltada sin fricción <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 5-26, Prob. 5.49">E</span></summary>
-<p class="enun">Un coche de 1125 kg y un camión de 2250 kg se acercan a una curva de 225 m de radio. a) ¿Con qué ángulo debe peraltarse la curva para que ambos la tomen a 65,0 mi/h sin depender de la fricción? ¿Debe el camión ir más despacio? b) Calcule la fuerza normal sobre cada vehículo a esa velocidad.</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Sin fricción, ¿qué fuerzas actúan sobre el coche? ¿Hacia dónde apunta la aceleración centrípeta?</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Vertical: $n\cos\beta=mg$; horizontal, al centro: $n\sin\beta=mv^2/R$. Divide las dos ecuaciones y la masa desaparece. Pasa mi/h a m/s.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t05/coche-en-una-curva-peraltada-sin-friccion.svg">
-<div class="figph" role="img" aria-label="Coche en una curva peraltada sin fricción" style="aspect-ratio:360/230"></div>
-<figcaption>Curva peraltada sin fricción vista de frente: la normal es perpendicular a la calzada y su componente horizontal n sen β es la que produce la aceleración centrípeta a<sub>rad</sub> = v²/R hacia el centro; n cos β = mg. Para v = 29,06 m/s y R = 225 m: β = 21,0° (el mismo para coche y camión). <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.49, p. 163 / Solucionario 5-26)">P</span></figcaption>
-</figure>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Curva peraltada (sin fricción): vertical $n\cos\beta=m\,g$; horizontal $n\sin\beta=\dfrac{m\,v^2}{R}$ ⇒ $\tan\beta=\dfrac{v^2}{g\,R}$</li>
-      <li>$1\ \text{mi/h}=0{,}44704$ m/s</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Rapidez:</b>
-      $$65{,}0\ \text{mi/h}=29{,}06\ \text{m/s}$$</li>
-    <li><b>a) Ángulo de peralte:</b>
-      $$\tan\beta=\frac{29{,}06^2}{(9{,}80)(225)}=0{,}383\ \Rightarrow\ \beta=\mathbf{21{,}0^\circ}$$
-      <span class="por">No depende de la masa: ambos a la misma velocidad.</span></li>
-    <li><b>b) Normal en cada vehículo</b> ($n=m\,g/\cos\beta$):
-      $$\text{coche: }n=\frac{1125(9{,}80)}{\cos21{,}0^\circ}=\mathbf{1{,}18\times10^4\ N},\qquad\text{camión: }n=\mathbf{2{,}36\times10^4\ N}$$</li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> peralte ideal: $\tan\beta=v^2/(gR)$; ejes horizontal/vertical, no paralelos a la calzada.</div>
-  <div class="recipe"><b>Error típico:</b> escribir $n=mg\cos\beta$ (eso es en un plano inclinado sin aceleración horizontal; aquí $n=mg/\cos\beta$).</div>
-</details>
-</details>
 <details class="sol" id="x5"><summary>X5 — Cuerpo sobre un cono giratorio (movimiento circular) <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2018 (2ª semana) P-2">X</span></summary>
 <p class="enun">Sobre la superficie exterior lisa y sin fricción de un cono de revolución, que gira alrededor de su propio eje con una velocidad angular de 15 r.p.m., está situado un cuerpo A de 2 kg sujeto al vértice del cono por un hilo inextensible y sin masa de 4 m de longitud. Calcular: a) velocidad lineal del cuerpo A respecto a la Tierra; b) reacción de la superficie del cono sobre A; c) tensión del hilo; d) velocidad angular a que debe girar el cono para anular su fuerza de reacción sobre A. (3 puntos.)</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
@@ -637,6 +591,52 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
   <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
     <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) velocidad (0,6) · b) reacción (0,9) · c) tensión (0,9) · d) $\omega_0$ (0,6). Dentro de cada apartado suele valorarse en este orden:</p>
     <ul><li><b>Planteamiento (≈30 %):</b> Radio de giro $r=L\sin\theta$ (no la longitud del hilo), $\omega$ en rad/s, y ejes: uno hacia el centro, otro perpendicular.</li><li><b>Ecuaciones (≈40 %):</b> Radial: $T\sin\theta-n\cos\theta=mv^2/r$; perpendicular: $T\cos\theta+n\sin\theta=mg$; resolver el sistema; en d) imponer $n=0$.</li><li><b>Resultado y unidades (≈30 %):</b> $v=3{,}14$ m/s, $n=1{,}25$ N, $T=21{,}9$ N, $\omega_0=1{,}68$ rad/s, con unidades.</li></ul>
+    <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
+</details>
+</details>
+<details class="sol" id="x3"><summary>X3 — Bloque empujado contra una pared (fuerza oblicua, fricción y trabajo) <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2023 (2ª semana) P-1">X</span></summary>
+<p class="enun">Se coloca un bloque de 5 kg contra una pared vertical. Se aplica una fuerza constante $F$ al bloque, con $F=96{,}0$ N y un ángulo de 60,0° con la horizontal. El coeficiente de fricción cinética entre el bloque y la pared es 0,300. Si el bloque está inicialmente en reposo: (a) ¿Cuál será el módulo de su velocidad después de recorrer 0,400 m sobre la pared? (b) ¿Cuál será el trabajo realizado en el desplazamiento? Considere $g=9{,}81\ \text{m/s}^2$. (3 puntos.)</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Descompón $F$ en horizontal y vertical. ¿Qué fuerza horizontal equilibra la pared?</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>La normal sale del eje horizontal: $n=F\cos60^\circ$. Después $f=\mu n$ y $\sum F_y=ma$ da $a$; con $a$ constante, $v^2=2ad$.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t05/x3-planteamiento.svg">
+<div class="figph" role="img" aria-label="Planteamiento: bloque contra la pared con la fuerza oblicua y su diagrama de cuerpo libre" style="aspect-ratio:360/256"></div>
+<figcaption>Planteamiento como en el examen: F oblicua (60° con la horizontal) y DCL con los ejes. La normal de la pared sale de la ecuación horizontal. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
+</figure>
+    <figure class="fig" data-svg="../assets/figs/t05/bloque-empujado-contra-una-pared-vertical.svg">
+<div class="figph" role="img" aria-label="Bloque empujado contra una pared vertical" style="aspect-ratio:350/230"></div>
+<figcaption>Examen Feb. 2023: a la izquierda, el croquis; a la derecha, el DCL del bloque. La normal la pone solo la componente horizontal de F (n = F cos 60° = 48,0 N); en vertical F sen 60° = 83,1 N vence al peso (49,1 N) y a la fricción cinética (14,4 N, hacia abajo porque el bloque sube). <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2023, 2ª sem., P-1; = U prob. 5.75)">P</span></figcaption>
+</figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Horizontal ($a_x=0$): $n=F\cos60^\circ$; fricción cinética: $f_k=\mu_k\,n$</li>
+      <li>Vertical ($+y$ arriba): $F\sin60^\circ-m\,g-f_k=m\,a$; cinemática: $v^2=2a\,d$</li>
+      <li>Trabajo: $W=F\,s\cos\phi$; teorema: $W_{tot}=\tfrac12mv^2$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Normal</b> (la pone la componente horizontal de $F$, no el peso):
+      $$n=F\cos60^\circ=96{,}0(0{,}5)=48{,}0\ \text{N}$$</li>
+    <li><b>¿Hacia dónde se mueve?</b>
+      $$F\sin60^\circ=83{,}1\ \text{N}>mg+f_k=63{,}5\ \text{N}\ \Rightarrow\ \text{sube y }f_k\text{ apunta hacia abajo}$$</li>
+    <li><b>Fricción:</b>
+      $$f_k=0{,}300(48{,}0)=14{,}4\ \text{N}$$</li>
+    <li><b>Aceleración:</b>
+      $$a=\frac{83{,}14-49{,}05-14{,}40}{5}=\mathbf{3{,}94\ m/s^2}\ \text{(hacia arriba)}$$</li>
+    <li><b>a) Velocidad</b> (parte del reposo, $d=0{,}400$ m):
+      $$v=\sqrt{2(3{,}938)(0{,}400)}=\mathbf{1{,}77\ m/s}$$</li>
+    <li><b>b) Trabajo</b> (solo cuenta la parte de cada fuerza paralela al desplazamiento, vertical):
+      $$W_F=F\sin60^\circ\,d=83{,}14(0{,}400)=\mathbf{33{,}3\ J}$$
+      $$W_{peso}=-mgd=-19{,}6\ \text{J},\qquad W_f=-f_kd=-5{,}76\ \text{J},\qquad W_n=0$$
+      $$W_{tot}=33{,}26-19{,}62-5{,}76=\mathbf{7{,}88\ J}=\tfrac12mv^2\ \checkmark$$</li>
+  </ol>
+  <p><b>Resultado:</b> $a=3{,}94\ \text{m/s}^2$ (hacia arriba); $v=1{,}77$ m/s; $W_F=33{,}3$ J; trabajo total $7{,}88$ J.</p>
+  <div class="recipe"><b>Receta:</b> cuando una fuerza oblicua aprieta un cuerpo contra una superficie, la normal sale del eje perpendicular a la superficie (aquí el horizontal) y solo después se calcula $f=\mu n$ y la ecuación a lo largo de la superficie.</div>
+  <div class="recipe"><b>Error típico:</b> escribir $n=mg$ o $f_k=\mu_kmg$ (en una pared el peso es paralelo a la superficie); poner $f_k$ hacia arriba sin comprobar hacia dónde se mueve.</div>
+
+  <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
+    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) velocidad (1,8) · b) trabajo (1,2). Dentro de cada apartado suele valorarse en este orden:</p>
+    <ul><li><b>Planteamiento (≈30 %):</b> DCL con $F$ descompuesta; la normal sale del eje horizontal ($n=F\cos60^\circ$) antes de calcular $f=\mu n$.</li><li><b>Ecuaciones (≈40 %):</b> Eje vertical $\sum F_y=ma$ → $a$; después $v^2=2ad$ (o trabajo–energía).</li><li><b>Resultado y unidades (≈30 %):</b> $a=3{,}94\ \text{m/s}^2$, $v=1{,}77$ m/s; $W_F=33{,}3$ J con signo y unidades.</li></ul>
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
