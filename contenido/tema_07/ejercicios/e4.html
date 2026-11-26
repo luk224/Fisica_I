@@ -1,13 +1,25 @@
 <p class="enun">Un pez de 3,00 kg cuelga del extremo inferior de un resorte vertical de masa despreciable y $k=900$ N/m. Inicialmente el resorte no está estirado ni comprimido y el pez se suelta desde el reposo. (a) ¿Qué rapidez tiene tras descender 0,0500 m? (b) ¿Cuál es su rapidez máxima durante la bajada?</p>
 {{fig:energia-cinetica-del-pez-en-funcion-de-lo-que-ha}}
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conservación: $K+U_{grav}+U_{el}=\text{cte}$</li>
+      <li>Con $y$ = distancia descendida: $K(y)=mg\,y-\tfrac12k\,y^2$</li>
+      <li>Máximo de $K$: $\dfrac{dK}{dy}=0\ \Rightarrow\ mg=ky$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Solo trabajan el peso y el resorte (conservativos): $K+U_{grav}+U_{el}=\text{cte}$.</li>
-    <li>Sea $y$ la distancia descendida (positiva hacia abajo): $U_{grav}$ baja $mgy$ y el resorte se estira $y$, luego $K(y)=mgy-\tfrac12ky^2$.</li>
-    <li><b>(a)</b> $K(0{,}0500)=(3{,}00)(9{,}8)(0{,}0500)-\tfrac12(900)(0{,}0500)^2=1{,}470-1{,}125=0{,}345$ J $\Rightarrow v=\sqrt{2(0{,}345)/3{,}00}=0{,}480$ m/s.</li>
-    <li><b>(b)</b> $K$ es máxima donde $dK/dy=0$: $mg-ky=0\Rightarrow y^*=mg/k=0{,}0327$ m. Es el punto de equilibrio, donde la fuerza neta es nula y el pez deja de acelerar (equivale a $F=-dU/dy=0$, el mínimo de $U$ total; §7.4-7.5).</li>
-    <li>$K_{max}=mgy^*-\tfrac12ky^{*2}=\dfrac{(mg)^2}{2k}=0{,}480$ J $\Rightarrow v_{max}=0{,}566$ m/s.</li>
-    <li><b>Comprobación:</b> $v_{max}>0{,}480$ m/s del apartado (a), como debe ser; el pez se detiene en $y=2y^*=0{,}0653$ m.</li>
+    <li><b>Energía cinética en función de $y$.</b> Solo trabajan peso y resorte; el peso pierde $mgy$ y el resorte se estira $y$:
+      $$K(y)=mg\,y-\tfrac12k\,y^2$$</li>
+    <li><b>(a) $y=0{,}0500$ m:</b>
+      $$K=(3{,}00)(9{,}8)(0{,}0500)-\tfrac12(900)(0{,}0500)^2=1{,}470-1{,}125=0{,}345\ \text{J}$$
+      $$v=\sqrt{\frac{2(0{,}345)}{3{,}00}}=\mathbf{0{,}480\ m/s}$$</li>
+    <li><b>(b) Rapidez máxima:</b> donde $dK/dy=0$:
+      $$mg-ky^*=0\ \Rightarrow\ y^*=\frac{mg}{k}=\frac{(3{,}00)(9{,}8)}{900}=0{,}0327\ \text{m}$$
+      <span class="por">Es el punto de equilibrio: fuerza neta nula, el pez deja de acelerar (mínimo de $U$ total).</span></li>
+    <li><b>Valor máximo:</b>
+      $$K_{m\acute ax}=mg\,y^*-\tfrac12k\,y^{*2}=\frac{(mg)^2}{2k}=\frac{(29{,}4)^2}{2(900)}=0{,}480\ \text{J}$$
+      $$v_{m\acute ax}=\sqrt{\frac{2(0{,}480)}{3{,}00}}=\mathbf{0{,}566\ m/s}$$
+      <span class="por">Comprobación: $v_{m\acute ax}>0{,}480$ m/s del apartado (a). El pez se detiene en $y=2y^*=0{,}0653$ m.</span></li>
   </ol>
   <p><b>Resultado:</b> (a) 0,480 m/s; (b) 0,566 m/s en $y=0{,}0327$ m.</p>
   <div class="recipe"><b>Receta:</b> para la rapidez máxima, escribe $K$ en función de la posición y deriva: el máximo está donde la fuerza neta es cero (mínimo de $U$ total).</div>

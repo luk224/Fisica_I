@@ -336,13 +336,26 @@
 <figcaption>Bloque de 1,50 kg subiendo por el plano de 30° (X2, g = 9,8 m/s²): perpendicular al plano n = mg cos θ = 12,73 N; a lo largo del plano, la componente del peso mg sen θ = 7,35 N y la fricción f<sub>k</sub> = μ<sub>k</sub>n = 6,37 N frenan el movimiento (flechas no a escala exacta). La fricción usa n = mg cos θ, no mg. <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2022 (2ª semana) P-1">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$K_1+U_1+W_{otras}=K_2+U_2$</li>
+      <li>$K=\tfrac12mv^2$; $U_{grav}=mgy$ con $y=s\sin\theta$</li>
+      <li>Fricción en el plano: $n=mg\cos\theta$, $f_k=\mu_k\,mg\cos\theta$, $W_f=-f_k\,s$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Estados.</b> 1 = A (reposo contra el resorte comprimido): $K_A=0$, $U_A=U_{el,A}$ (la incógnita), $y_A=0$. 2 = B: $v_B=7$ m/s, resorte ya relajado y sin contacto, $y_B=s\sin30^\circ=6{,}0\cdot0{,}5=3{,}0$ m.</li>
-    <li><b>¿Por qué no hace falta saber cuánto se comprimió ni su $k$?</b> Porque la fuerza del resorte es conservativa: todo su trabajo está contenido en $U_{el,A}$ (§7.2). Solo importa la energía total almacenada.</li>
-    <li><b>Fricción.</b> Perpendicular al plano no hay aceleración: $n=mg\cos30^\circ$ y $f_k=\mu_kmg\cos30^\circ$ (no $\mu_kmg$). Actúa durante los 6,0 m completos (también mientras el resorte empuja): $W_{otras}=-\mu_kmg\cos30^\circ\,s$.</li>
-    <li><b>Balance</b> (7.14): $U_{el,A}+W_{otras}=K_B+U_{grav,B}\ \Rightarrow\ U_{el,A}=\tfrac12mv_B^2+mgs\sin\theta+\mu_kmg\cos\theta\,s$.</li>
-    <li>Números ($g=9{,}8$): $K_B=\tfrac12(1{,}50)(7)^2=36{,}75$ J; $U_{grav,B}=(1{,}50)(9{,}8)(3{,}0)=44{,}10$ J; $|W_f|=(0{,}50)(1{,}50)(9{,}8)(0{,}866)(6{,}0)=38{,}19$ J. Suma: $U_{el,A}=36{,}75+44{,}10+38{,}19=119{,}04$ J.</li>
-    <li><b>Lectura física.</b> La energía del resorte se reparte en tres «cuentas»: cinética en B (31 %), potencial gravitatoria (37 %) y energía interna por fricción (32 %).</li>
+    <li><b>Estados.</b> 1 = A (reposo contra el resorte): $K_A=0$, $U_A=U_{el,A}$ (incógnita), $y_A=0$. 2 = B ($s=6{,}0$ m): $v_B=7$ m/s, sin contacto con el resorte:
+      $$y_B=s\sin30^\circ=6{,}0(0{,}5)=3{,}0\ \text{m}$$
+      <span class="por">No hace falta saber cuánto se comprimió ni $k$: la fuerza del resorte es conservativa y todo su trabajo está en $U_{el,A}$.</span></li>
+    <li><b>Fricción</b> (actúa durante los 6,0 m completos):
+      $$n=mg\cos30^\circ,\qquad W_{otras}=-\mu_kmg\cos30^\circ\,s$$</li>
+    <li><b>Balance:</b>
+      $$U_{el,A}+W_{otras}=K_B+U_{grav,B}\ \Rightarrow\ U_{el,A}=\tfrac12mv_B^2+mg\,s\sin\theta+\mu_kmg\cos\theta\,s$$</li>
+    <li><b>Números</b> ($g=9{,}8$):
+      $$K_B=\tfrac12(1{,}50)(7)^2=36{,}75\ \text{J}$$
+      $$U_{grav,B}=(1{,}50)(9{,}8)(3{,}0)=44{,}10\ \text{J}$$
+      $$|W_f|=(0{,}50)(1{,}50)(9{,}8)(0{,}866)(6{,}0)=38{,}19\ \text{J}$$
+      $$U_{el,A}=36{,}75+44{,}10+38{,}19=\mathbf{119{,}04\ J}\approx119\ \text{J}$$
+      <span class="por">La energía del resorte se reparte: cinética 31 %, potencial 37 %, fricción 32 %. Con $g=9{,}81$: 119,1 J.</span></li>
   </ol>
   <p><b>Resultado:</b> $U_{el,A}\approx119$ J (con $g=9{,}81$: 119,1 J).</p>
   <div class="recipe"><b>Receta:</b> «energía del resorte = lo que hay al final + lo que se ha perdido»: $U_{el}=K_2+mg\,s\sin\theta+\mu_kmg\cos\theta\,s$.</div>
@@ -369,12 +382,22 @@
 <figcaption>Examen Sep. 2024 P-1 (g = 9,81 m/s²): 84,8 J en el resorte se convierten en 27,0 J cinéticos, 31,09 J de energía potencial gravitatoria y 26,67 J de energía interna (fricción). <span class="src" data-l="P" data-ref="Diagrama propio del examen Septiembre 2024 P-1">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$K_1+U_1+W_{otras}=K_2+U_2$, con $K=\tfrac12mv^2$ y $U_{grav}=mg\,s\sin\theta$</li>
+      <li>Fricción en la rampa: $f_k=\mu_k\,mg\cos\theta$, $W_f=-f_k\,s$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Estados.</b> 1 = base de la rampa (reposo, muelle comprimido, $y_1=0$). 2 = tras recorrer $s=5$ m: $v_2=6$ m/s, $y_2=s\sin25^\circ$.</li>
-    <li><b>Fuerzas.</b> Peso y muelle van en $U$; la normal ($n=mg\cos25^\circ$) no trabaja; la fricción $f_k=\mu_kmg\cos25^\circ$ es la única «otra» fuerza y actúa a lo largo de los 5 m desde la posición inicial.</li>
-    <li><b>Balance</b> (7.14): $U_{el,1}-\mu_kmg\cos\theta\,s=\tfrac12mv_2^2+mgs\sin\theta$.</li>
-    <li>Números: $\tfrac12mv_2^2=\tfrac12(1{,}5)(36)=27{,}00$ J; $mgs\sin25^\circ=(1{,}5)(9{,}81)(5)(0{,}4226)=31{,}09$ J; $\mu_kmg\cos25^\circ\,s=(0{,}4)(1{,}5)(9{,}81)(0{,}9063)(5)=26{,}67$ J.</li>
-    <li>$U_{el,1}=27{,}00+31{,}09+26{,}67=84{,}77$ J.</li>
+    <li><b>Estados.</b> 1 = base (reposo, muelle comprimido, $y_1=0$); 2 = tras $s=5$ m con $v_2=6$ m/s, $y_2=s\sin25^\circ$.
+      <span class="por">Peso y muelle van en $U$; la normal no trabaja; la fricción es la única «otra» fuerza y actúa los 5 m completos.</span></li>
+    <li><b>Balance:</b>
+      $$U_{el,1}-\mu_kmg\cos\theta\,s=\tfrac12mv_2^2+mg\,s\sin\theta$$</li>
+    <li><b>Números</b> ($g=9{,}81$):
+      $$\tfrac12mv_2^2=\tfrac12(1{,}5)(6)^2=27{,}00\ \text{J}$$
+      $$mg\,s\sin25^\circ=(1{,}5)(9{,}81)(5)(0{,}4226)=31{,}09\ \text{J}$$
+      $$\mu_kmg\cos25^\circ\,s=(0{,}4)(1{,}5)(9{,}81)(0{,}9063)(5)=26{,}67\ \text{J}$$</li>
+    <li><b>Resultado:</b>
+      $$U_{el,1}=27{,}00+31{,}09+26{,}67=\mathbf{84{,}77\ J}\approx84{,}8\ \text{J}$$</li>
   </ol>
   <p><b>Resultado:</b> $U_{el}\approx84{,}8$ J.</p>
   <div class="recipe"><b>Receta:</b> idéntica a X2 (es el mismo problema con otros números): energía cinética final + potencial gravitatoria ganada + energía disipada por la fricción.</div>
@@ -401,14 +424,25 @@
 <figcaption>Examen Feb. 2020 (2ª sem.) P-1: el bloque parte de A (h = 4 m) y comprime 25 cm el resorte. De los 196 J iniciales, 12,5 J quedan en el resorte y 183,5 J se disipan en BC. <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2020 (2ª semana) P-1">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conservación con fuerzas no conservativas: $K_1+U_1+W_{otras}=K_2+U_2$</li>
+      <li>$U_{grav}=mgy$; $U_{el}=\tfrac12kx^2$; $K=\tfrac12mv^2$</li>
+      <li>Fricción cinética (tramo horizontal): $f_k=\mu\,mg$; $W_f=-\mu\,mg\,L$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Cómo leer el enunciado.</b> «El resorte se ha comprimido 25 cm cuando el bloque alcanza D» significa que D es el punto de <b>compresión máxima</b>: allí el bloque se detiene un instante, $v_D=0$. «Choque perfectamente elástico» quiere decir que al tocar el resorte no se pierde energía mecánica: toda la cinética se almacena como $\tfrac12kx^2$. No se da $g$: se usa 9,8 m/s².</li>
-    <li><b>Estados y origen.</b> Estado 1 = A (reposo, $y_A=h=4$ m); estado 2 = D (reposo, $y_D=0$, resorte comprimido $x=0{,}25$ m). Origen de alturas en el tramo horizontal.</li>
-    <li><b>Energías.</b> $K_1=0$, $U_1=mgh$; $K_2=0$, $U_2=\tfrac12kx^2$ ($U_{grav,2}=0$).</li>
-    <li><b>Otras fuerzas.</b> Solo hay fricción en BC (la normal no trabaja en ningún tramo). En el tramo horizontal $n=mg$, así que $f_k=\mu mg$ y $W_{otras}=-\mu mg\,L$ con $L=5$ m. En AB y CD no hay fricción.</li>
-    <li><b>Balance</b> (7.14): $mgh-\mu mgL=\tfrac12kx^2\ \Rightarrow\ \mu=\dfrac{mgh-\tfrac12kx^2}{mgL}=\dfrac hL-\dfrac{kx^2}{2mgL}$.</li>
-    <li>Números: $mgh=5\cdot9{,}8\cdot4=196$ J; $\tfrac12kx^2=\tfrac12\cdot400\cdot0{,}25^2=12{,}5$ J; $mgL=5\cdot9{,}8\cdot5=245$ J. $\mu=\dfrac{196-12{,}5}{245}=\dfrac{183{,}5}{245}=0{,}749$.</li>
-    <li><b>Comprobación.</b> Con $g=9{,}81$ sale lo mismo ($0{,}749$) porque el término dominante $h/L=0{,}8$ no depende de $g$. El valor es alto pero posible: casi toda la energía (183,5 de 196 J) se disipa en BC.</li>
+    <li><b>Cómo leer el enunciado.</b> «El resorte se ha comprimido 25 cm cuando el bloque alcanza D» ⇒ D es la compresión máxima: $v_D=0$. «Choque elástico»: no se pierde energía al tocar el resorte. No dan $g$: se usa 9,8 m/s².
+      <span class="por">Estado 1 = A (reposo, $y_A=h=4$ m); estado 2 = D (reposo, resorte comprimido $x=0{,}25$ m). Origen de alturas en el tramo horizontal.</span></li>
+    <li><b>Energías:</b>
+      $$K_1=0,\quad U_1=mgh;\qquad K_2=0,\quad U_2=\tfrac12kx^2$$</li>
+    <li><b>Fricción</b> (solo en BC, $L=5$ m; la normal no trabaja):
+      $$W_{otras}=-\mu\,mg\,L$$</li>
+    <li><b>Balance:</b>
+      $$mgh-\mu\,mg\,L=\tfrac12kx^2\ \Rightarrow\ \mu=\frac{mgh-\tfrac12kx^2}{mgL}$$</li>
+    <li><b>Números:</b>
+      $$mgh=5(9{,}8)(4)=196\ \text{J},\quad\tfrac12kx^2=\tfrac12(400)(0{,}25)^2=12{,}5\ \text{J},\quad mgL=5(9{,}8)(5)=245\ \text{J}$$
+      $$\mu=\frac{196-12{,}5}{245}=\frac{183{,}5}{245}=\mathbf{0{,}749}$$
+      <span class="por">Con $g=9{,}81$ sale lo mismo (0,749). Casi toda la energía (183,5 de 196 J) se disipa en BC.</span></li>
   </ol>
   <p><b>Resultado:</b> $\mu\approx0{,}75$.</p>
   <div class="recipe"><b>Receta:</b> toma como estado final el de compresión máxima ($v=0$): la energía inicial se reparte en «energía disipada por la fricción» más «energía elástica», $mgh=\mu mgL+\tfrac12kx^2$.</div>
@@ -435,13 +469,21 @@
 <figcaption>Examen Sep. 2023 P-2 (g = 9,80 m/s²): en AB la energía mgR = 10,29 J se reparte entre K<sub>B</sub> = 6,76 J y energía interna 3,53 J (trabajo de la fricción = −3,53 J); en BC los 6,76 J de K<sub>B</sub> se disipan por completo. <span class="src" data-l="P" data-ref="Diagrama propio del examen Septiembre 2023 P-2">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$K_1+U_1+W_{otras}=K_2+U_2$; $K=\tfrac12mv^2$; $U_{grav}=mgy$</li>
+      <li>Fricción horizontal: $f_k=\mu_k\,mg$, $W_f=-\mu_kmg\,s$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Método.</b> En el tramo curvo la normal y la fricción cambian punto a punto: Newton sería muy difícil. Con energía solo necesitamos los extremos de cada tramo (Estrategia 7.1). Se usa B como «bisagra» entre los dos tramos. No se da $g$: se usa 9,80 (con 9,81 los resultados apenas cambian).</li>
-    <li><b>(a) Tramo BC.</b> Estado 1 = B ($v_B=5{,}2$ m/s), estado 2 = C ($v_C=0$), mismo nivel ($U_1=U_2$). Sobre la superficie horizontal $n=mg$, luego $f_k=\mu_kmg$ y $W_{otras}=-\mu_kmg\,s$.</li>
-    <li>Balance $K_B+W_{otras}=K_C$: $\tfrac12mv_B^2-\mu_kmgs=0\Rightarrow\mu_k=\dfrac{v_B^2}{2gs}=\dfrac{(5{,}2)^2}{2(9{,}8)(5)}=\dfrac{27{,}04}{98}=0{,}276$. La masa se cancela.</li>
-    <li><b>(b) Tramo AB.</b> Origen en B: $y_A=R=2{,}1$ m, $y_B=0$; $K_A=0$. La normal no trabaja (es perpendicular a la trayectoria en cada punto); la única «otra» fuerza es la fricción: $W_{otras}=W_f^{AB}$.</li>
-    <li>(7.14): $0+mgR+W_f^{AB}=\tfrac12mv_B^2+0\Rightarrow W_f^{AB}=\tfrac12mv_B^2-mgR=6{,}76-10{,}29=-3{,}53$ J (con $g=9{,}81$: $-3{,}54$ J). $\tfrac12mv_B^2=\tfrac12(0{,}5)(27{,}04)=6{,}76$ J y $mgR=(0{,}5)(9{,}8)(2{,}1)=10{,}29$ J.</li>
-    <li><b>Comprobación de sentido.</b> Sin fricción llegaría a B con $\sqrt{2gR}=6{,}42$ m/s $>5{,}2$ m/s: coherente con que la fricción haya quitado energía. Y en BC la fricción retira los 6,76 J que tenía en B.</li>
+    <li><b>Método.</b> En el tramo curvo la normal y la fricción cambian en cada punto; con energía solo hacen falta los extremos. B sirve de «bisagra». No dan $g$: se usa 9,80.</li>
+    <li><b>(a) Tramo BC</b> ($v_B=5{,}2$ m/s, $v_C=0$, mismo nivel):
+      $$K_B-\mu_kmg\,s=K_C\ \Rightarrow\ \tfrac12mv_B^2=\mu_kmg\,s\ \Rightarrow\ \mu_k=\frac{v_B^2}{2gs}=\frac{(5{,}2)^2}{2(9{,}8)(5)}=\frac{27{,}04}{98}=\mathbf{0{,}276}$$
+      <span class="por">La masa se cancela.</span></li>
+    <li><b>(b) Tramo AB</b> (origen en B: $y_A=R=2{,}1$ m, $y_B=0$; $K_A=0$). La normal no trabaja; la única «otra» fuerza es la fricción:
+      $$0+mgR+W_f^{AB}=\tfrac12mv_B^2+0$$
+      $$\tfrac12mv_B^2=\tfrac12(0{,}5)(27{,}04)=6{,}76\ \text{J},\qquad mgR=(0{,}5)(9{,}8)(2{,}1)=10{,}29\ \text{J}$$
+      $$W_f^{AB}=6{,}76-10{,}29=\mathbf{-3{,}53\ J}$$
+      <span class="por">Con $g=9{,}81$: $-3{,}54$ J. Comprobación: sin fricción llegaría con $\sqrt{2gR}=6{,}42$ m/s $>5{,}2$ m/s, así que la fricción ha quitado energía.</span></li>
   </ol>
   <p><b>Resultado:</b> (a) $\mu_k\approx0{,}28$; (b) $W_f^{AB}\approx-3{,}5$ J.</p>
   <div class="recipe"><b>Receta:</b> si un tramo tiene fricción conocida en forma ($\mu_kmgs$, horizontal) y otro la tiene desconocida (curvo), aplica $K_1+U_1+W_{otras}=K_2+U_2$ por separado en cada tramo, usando el punto común como bisagra; el trabajo desconocido sale por diferencia.</div>
@@ -464,12 +506,25 @@
 <figcaption>De A a B: la normal no trabaja, el peso hace +0,98 J y la fricción −0,22 J, así que K<sub>B</sub> = 0,76 J (v<sub>B</sub> = 2,76 m/s). En B la normal (5,0 N) supera al peso (1,96 N) porque hay aceleración centrípeta hacia arriba. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-3, Prob. 7.9)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Teorema: $W_{tot}=\tfrac12mv_B^2$ (parte del reposo)</li>
+      <li>Trabajo de la gravedad: $W=mg\,R$ (descenso vertical $R$)</li>
+      <li>Segunda ley radial en el fondo: $n-mg=\dfrac{mv_B^2}{R}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>(a)(i)</b> La normal es radial y la velocidad tangente: $W_n=0$.</li>
-    <li><b>(a)(ii)</b> Origen en B: $W_{grav}=U_A-U_B=mgR=(0{,}20)(9{,}8)(0{,}50)=0{,}98$ J (vale para trayectoria curva).</li>
-    <li><b>(b)</b> $W_{tot}=0+0{,}98-0{,}22=0{,}76$ J $=\tfrac12mv_B^2\Rightarrow v_B=\sqrt{2(0{,}76)/0{,}20}=2{,}76$ m/s (sin fricción: $\sqrt{2gR}=3{,}13$ m/s).</li>
-    <li><b>(c)</b> Solo el peso es constante. La normal cambia en módulo y dirección (vale 0 en A, donde la pared es vertical y $v=0$, y es máxima en B); la fricción $f_k=\mu_kn$ cambia con ella y también de dirección.</li>
-    <li><b>(d)</b> En B el movimiento es circular y la aceleración centrípeta apunta hacia arriba, $a_{rad}=v_B^2/R$: $\sum F_y=n-mg=mv_B^2/R\Rightarrow n=m\left(g+\dfrac{v_B^2}{R}\right)=0{,}20\left(9{,}8+\dfrac{7{,}6}{0{,}50}\right)=5{,}0$ N (2,6 veces el peso, 1,96 N).</li>
+    <li><b>(a)(i) Normal:</b> es radial y la velocidad tangente:
+      $$W_n=0$$</li>
+    <li><b>(a)(ii) Gravedad</b> (origen en B):
+      $$W_{grav}=mgR=(0{,}20)(9{,}8)(0{,}50)=0{,}98\ \text{J}$$</li>
+    <li><b>(b) Rapidez en B:</b>
+      $$W_{tot}=0+0{,}98-0{,}22=0{,}76\ \text{J}=\tfrac12mv_B^2\ \Rightarrow\ v_B=\sqrt{\frac{2(0{,}76)}{0{,}20}}=\mathbf{2{,}76\ m/s}$$
+      <span class="por">Sin fricción: $\sqrt{2gR}=3{,}13$ m/s.</span></li>
+    <li><b>(c) Fuerzas constantes:</b> solo el peso.
+      <span class="por">La normal cambia en módulo y dirección (vale 0 en A, máxima en B); la fricción $f_k=\mu_kn$ cambia con ella.</span></li>
+    <li><b>(d) Normal en B.</b> Movimiento circular, aceleración centrípeta hacia arriba, $v_B^2=2W_{tot}/m=7{,}6\ \text{m}^2/\text{s}^2$:
+      $$n-mg=\frac{mv_B^2}{R}\ \Rightarrow\ n=m\Big(g+\frac{v_B^2}{R}\Big)=0{,}20\Big(9{,}8+\frac{7{,}6}{0{,}50}\Big)=\mathbf{5{,}0\ N}$$
+      <span class="por">El peso es 1,96 N: la normal es 2,6 veces el peso.</span></li>
   </ol>
   <p><b>Resultado:</b> (a) 0 J y 0,98 J; (b) 2,76 m/s; (c) solo el peso; (d) $n=5{,}0$ N.</p>
   <div class="recipe"><b>Receta:</b> energía para la rapidez, y luego la segunda ley de Newton en dirección radial para la normal: $n-mg=mv^2/R$ en el fondo.</div>
@@ -487,13 +542,25 @@
 <figcaption>K(y) = mgy − ½ky² con m = 3,00 kg y k = 900 N/m. En y = 0,050 m vale 0,345 J (v = 0,480 m/s); el máximo, 0,480 J (v = 0,566 m/s), está en y = mg/k = 0,0327 m, y el pez se detiene en y = 2mg/k = 0,0653 m. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-25/7-26, Prob. 7.67)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conservación: $K+U_{grav}+U_{el}=\text{cte}$</li>
+      <li>Con $y$ = distancia descendida: $K(y)=mg\,y-\tfrac12k\,y^2$</li>
+      <li>Máximo de $K$: $\dfrac{dK}{dy}=0\ \Rightarrow\ mg=ky$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Solo trabajan el peso y el resorte (conservativos): $K+U_{grav}+U_{el}=\text{cte}$.</li>
-    <li>Sea $y$ la distancia descendida (positiva hacia abajo): $U_{grav}$ baja $mgy$ y el resorte se estira $y$, luego $K(y)=mgy-\tfrac12ky^2$.</li>
-    <li><b>(a)</b> $K(0{,}0500)=(3{,}00)(9{,}8)(0{,}0500)-\tfrac12(900)(0{,}0500)^2=1{,}470-1{,}125=0{,}345$ J $\Rightarrow v=\sqrt{2(0{,}345)/3{,}00}=0{,}480$ m/s.</li>
-    <li><b>(b)</b> $K$ es máxima donde $dK/dy=0$: $mg-ky=0\Rightarrow y^*=mg/k=0{,}0327$ m. Es el punto de equilibrio, donde la fuerza neta es nula y el pez deja de acelerar (equivale a $F=-dU/dy=0$, el mínimo de $U$ total; §7.4-7.5).</li>
-    <li>$K_{max}=mgy^*-\tfrac12ky^{*2}=\dfrac{(mg)^2}{2k}=0{,}480$ J $\Rightarrow v_{max}=0{,}566$ m/s.</li>
-    <li><b>Comprobación:</b> $v_{max}>0{,}480$ m/s del apartado (a), como debe ser; el pez se detiene en $y=2y^*=0{,}0653$ m.</li>
+    <li><b>Energía cinética en función de $y$.</b> Solo trabajan peso y resorte; el peso pierde $mgy$ y el resorte se estira $y$:
+      $$K(y)=mg\,y-\tfrac12k\,y^2$$</li>
+    <li><b>(a) $y=0{,}0500$ m:</b>
+      $$K=(3{,}00)(9{,}8)(0{,}0500)-\tfrac12(900)(0{,}0500)^2=1{,}470-1{,}125=0{,}345\ \text{J}$$
+      $$v=\sqrt{\frac{2(0{,}345)}{3{,}00}}=\mathbf{0{,}480\ m/s}$$</li>
+    <li><b>(b) Rapidez máxima:</b> donde $dK/dy=0$:
+      $$mg-ky^*=0\ \Rightarrow\ y^*=\frac{mg}{k}=\frac{(3{,}00)(9{,}8)}{900}=0{,}0327\ \text{m}$$
+      <span class="por">Es el punto de equilibrio: fuerza neta nula, el pez deja de acelerar (mínimo de $U$ total).</span></li>
+    <li><b>Valor máximo:</b>
+      $$K_{m\acute ax}=mg\,y^*-\tfrac12k\,y^{*2}=\frac{(mg)^2}{2k}=\frac{(29{,}4)^2}{2(900)}=0{,}480\ \text{J}$$
+      $$v_{m\acute ax}=\sqrt{\frac{2(0{,}480)}{3{,}00}}=\mathbf{0{,}566\ m/s}$$
+      <span class="por">Comprobación: $v_{m\acute ax}>0{,}480$ m/s del apartado (a). El pez se detiene en $y=2y^*=0{,}0653$ m.</span></li>
   </ol>
   <p><b>Resultado:</b> (a) 0,480 m/s; (b) 0,566 m/s en $y=0{,}0327$ m.</p>
   <div class="recipe"><b>Receta:</b> para la rapidez máxima, escribe $K$ en función de la posición y deriva: el máximo está donde la fuerza neta es cero (mínimo de $U$ total).</div>
@@ -511,11 +578,24 @@
 <figcaption>K(d) con k = 45,0 N/m, μ<sub>k</sub> = 0,300 y m = 1,60 kg. El máximo (0,693 J, v = 0,931 m/s) ocurre con el resorte aún comprimido 0,105 m, donde kx = f<sub>k</sub>; al separarse (d = 0,280 m) la caja ya ha perdido algo de velocidad (0,447 J, v = 0,747 m/s). <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-25, Prob. 7.65)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\tfrac12mv^2=U_{el,1}-U_{el,2}-\mu_kmg\,d$ ($d$ = distancia recorrida)</li>
+      <li>Fricción: $f_k=\mu_k\,mg$; máximo de $v$ cuando $k\,x=f_k$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Igual que E3: $\tfrac12mv^2=U_{el,1}-U_{el,2}-\mu_kmg\,d$, con $d$ la distancia recorrida.</li>
-    <li><b>(a)</b> $d=0{,}280$ m, $U_{el,2}=0$: $U_{el,1}=\tfrac12(45{,}0)(0{,}280)^2=1{,}764$ J; $W_f=-(0{,}300)(1{,}60)(9{,}8)(0{,}280)=-1{,}317$ J; $K=0{,}447$ J $\Rightarrow v=0{,}747$ m/s.</li>
-    <li><b>(b)</b> En función de $d$: $v^2(d)=\dfrac2m\left[\tfrac12kx_0^2-\tfrac12k(x_0-d)^2-\mu_kmg\,d\right]$. Máximo: $\dfrac{d(v^2)}{dd}=0\Rightarrow k(x_0-d)=\mu_kmg$: la rapidez es máxima cuando la fuerza del resorte iguala a la de fricción (aceleración nula).</li>
-    <li>Compresión en ese punto: $x_0-d=\mu_kmg/k=(0{,}300)(1{,}60)(9{,}8)/45{,}0=0{,}105$ m ($d=0{,}175$ m). Sustituyendo: $v_{max}=0{,}931$ m/s. Después la fricción supera al resorte y la caja frena, por eso se separa a 0,747 m/s.</li>
+    <li><b>(a) Separación del resorte</b> ($d=0{,}280$ m, $U_{el,2}=0$):
+      $$U_{el,1}=\tfrac12(45{,}0)(0{,}280)^2=1{,}764\ \text{J}$$
+      $$W_f=-(0{,}300)(1{,}60)(9{,}8)(0{,}280)=-1{,}317\ \text{J}$$
+      $$K=1{,}764-1{,}317=0{,}447\ \text{J}\ \Rightarrow\ v=\sqrt{\frac{2(0{,}447)}{1{,}60}}=\mathbf{0{,}747\ m/s}$$</li>
+    <li><b>(b) Rapidez máxima.</b> Con $x_0=0{,}280$ m, tras recorrer $d$:
+      $$v^2(d)=\frac2m\Big[\tfrac12kx_0^2-\tfrac12k(x_0-d)^2-\mu_kmg\,d\Big]$$
+      $$\frac{d(v^2)}{dd}=0\ \Rightarrow\ k(x_0-d)=\mu_kmg$$
+      <span class="por">Es máxima cuando la fuerza del resorte iguala a la fricción (aceleración nula).</span></li>
+    <li><b>Compresión en ese punto:</b>
+      $$x_0-d=\frac{\mu_kmg}{k}=\frac{(0{,}300)(1{,}60)(9{,}8)}{45{,}0}=0{,}105\ \text{m}\quad(d=0{,}175\ \text{m})$$
+      $$v_{m\acute ax}=\mathbf{0{,}931\ m/s}$$
+      <span class="por">Después la fricción supera al resorte y la caja frena: por eso se separa a 0,747 m/s.</span></li>
   </ol>
   <p><b>Resultado:</b> (a) 0,747 m/s; (b) 0,931 m/s con el resorte comprimido 0,105 m.</p>
   <div class="recipe"><b>Receta:</b> con fricción, la rapidez máxima no está en la longitud natural del resorte sino donde $kx=f_k$.</div>
@@ -530,11 +610,22 @@
 <figcaption>La caja baja una distancia d medida sobre la rampa, es decir, un desnivel d sen α. La normal es perpendicular al desplazamiento y no trabaja. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-2, Prob. 7.6)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conservación de la energía mecánica: $K_1+U_1=K_2+U_2$</li>
+      <li>$K=\tfrac12Mv^2$; $U=Mgy$ ($+y$ hacia arriba)</li>
+      <li>Bajar $d$ por la rampa = bajar $d\sin\alpha$ en vertical</li>
+    </ul></div>
   <ol class="steps">
-    <li>Fuerzas: peso (conservativo) y normal. La normal es perpendicular al desplazamiento: $W_n=0$ (apartado c). Solo trabaja la gravedad, luego $K_1+U_1=K_2+U_2$ (7.4).</li>
-    <li>Bajar $d$ por la rampa es bajar $d\sin\alpha$ en vertical.</li>
-    <li><b>(a) Cero en la base:</b> $y_1=d\sin\alpha$, $y_2=0$. $0+Mgd\sin\alpha=\tfrac12Mv_2^2+0\Rightarrow v_2=\sqrt{2gd\sin\alpha}$.</li>
-    <li><b>(b) Cero en la cima:</b> $y_1=0$, $y_2=-d\sin\alpha$. $0+0=\tfrac12Mv_2^2-Mgd\sin\alpha\Rightarrow v_2=\sqrt{2gd\sin\alpha}$, el mismo resultado: solo importa $\Delta U$, no el valor absoluto.</li>
+    <li><b>Fuerzas.</b> Peso (conservativo) y normal.
+      <span class="por">La normal es perpendicular al desplazamiento: $W_n=0$ (apartado c). Solo trabaja la gravedad, luego se conserva $K+U$.</span></li>
+    <li><b>(a) Cero en la base:</b> $y_1=d\sin\alpha$, $y_2=0$:
+      $$0+Mgd\sin\alpha=\tfrac12Mv_2^2+0\ \Rightarrow\ v_2=\sqrt{2gd\sin\alpha}$$</li>
+    <li><b>(b) Cero en la cima:</b> $y_1=0$, $y_2=-d\sin\alpha$:
+      $$0+0=\tfrac12Mv_2^2-Mgd\sin\alpha\ \Rightarrow\ v_2=\sqrt{2gd\sin\alpha}$$
+      <span class="por">Mismo resultado: solo importa $\Delta U$, no el origen elegido.</span></li>
+    <li><b>(c) ¿Por qué no interviene la normal?</b>
+      <span class="por">Porque es perpendicular al movimiento ($\phi=90^\circ$) y no hace trabajo.</span></li>
   </ol>
   <p><b>Resultado:</b> $v=\sqrt{2gd\sin\alpha}$, independiente de $M$ y del origen elegido.</p>
   <div class="recipe"><b>Receta:</b> sin fricción, la rapidez tras bajar un desnivel $\Delta h$ partiendo del reposo es siempre $v=\sqrt{2g\Delta h}$, sea cual sea la forma del camino.</div>
@@ -547,11 +638,21 @@
 <figcaption>Sin fricción: ½kx² = ½mv² = mgh. El resorte (k = 400 N/m, comprimido 0,220 m) da 3,11 m/s en el tramo horizontal; el bloque sube 0,494 m de altura, es decir, L = 0,821 m sobre la rampa (esquema no a escala). <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-14, Prob. 7.40)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conservación (sin fricción): $K_1+U_1=K_2+U_2$</li>
+      <li>$U_{el}=\tfrac12kx^2$; $U_{grav}=mgh$; $K=\tfrac12mv^2$</li>
+      <li>Altura en la rampa: $h=L\sin\theta$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Sin fricción: solo trabajan fuerzas conservativas (resorte y peso), $K_1+U_1=K_2+U_2$ (7.12).</li>
-    <li><b>(a)</b> Estado 1: reposo, $U_{el}=\tfrac12kx^2=\tfrac12(400)(0{,}220)^2=9{,}68$ J. Estado 2: resorte relajado, tramo horizontal: $\tfrac12kx^2=\tfrac12mv^2\Rightarrow v=x\sqrt{k/m}=0{,}220\sqrt{200}=3{,}11$ m/s.</li>
-    <li><b>(b)</b> Estado 3: el punto más alto, $v=0$. Toda la energía es gravitatoria: $\tfrac12kx^2=mgh\Rightarrow h=\dfrac{9{,}68}{(2{,}00)(9{,}80)}=0{,}494$ m de altura.</li>
-    <li>Distancia a lo largo de la rampa: $L=h/\sin37{,}0^\circ=\dfrac{9{,}68}{(2{,}00)(9{,}80)(0{,}6018)}=0{,}821$ m.</li>
+    <li><b>(a) Estado 1</b> (reposo, comprimido 0,220 m): 
+      $$U_{el}=\tfrac12kx^2=\tfrac12(400)(0{,}220)^2=9{,}68\ \text{J}$$
+      <b>Estado 2</b> (resorte relajado, tramo horizontal):
+      $$\tfrac12kx^2=\tfrac12mv^2\ \Rightarrow\ v=x\sqrt{\frac km}=0{,}220\sqrt{\frac{400}{2{,}00}}=0{,}220(14{,}14)=\mathbf{3{,}11\ m/s}$$</li>
+    <li><b>(b) Punto más alto</b> ($v=0$): toda la energía es gravitatoria.
+      $$\tfrac12kx^2=mgh\ \Rightarrow\ h=\frac{9{,}68}{(2{,}00)(9{,}80)}=0{,}494\ \text{m}$$</li>
+    <li><b>Distancia sobre la rampa:</b>
+      $$L=\frac{h}{\sin37{,}0^\circ}=\frac{0{,}494}{0{,}6018}=\mathbf{0{,}821\ m}$$</li>
   </ol>
   <p><b>Resultado:</b> (a) 3,11 m/s; (b) sube 0,821 m por la rampa (0,494 m de altura).</p>
   <div class="recipe"><b>Receta:</b> sin fricción, encadena las conversiones: elástica → cinética → gravitatoria, $\tfrac12kx^2=\tfrac12mv^2=mgh$.</div>
@@ -564,11 +665,21 @@
 <figcaption>Tras recorrer 0,0200 m (el resorte pasa de 0,0300 m a 0,0100 m de compresión) la energía elástica inicial se reparte en la que aún guarda el resorte, la energía interna ganada por la fricción y la energía cinética. (Esquema no a escala.) <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-9, Prob. 7.24)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$K_1+U_1+W_{otras}=K_2+U_2$, con $U_{el}=\tfrac12kx^2$</li>
+      <li>Fricción horizontal: $W_f=-\mu_k\,mg\,s$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Fuerzas: el resorte (conservativo, en $U_{el}$); peso y normal (no trabajan en un movimiento horizontal); la fricción (no conservativa, va en $W_{otras}$).</li>
-    <li>$U_1=\tfrac12(840)(0{,}0300)^2=0{,}378$ J; $U_2=\tfrac12(840)(0{,}0100)^2=0{,}0420$ J. Como el bloque está unido, en el estado 2 el resorte aún guarda energía.</li>
-    <li>$n=mg$ y $W_f=-\mu_kmg\,s=-(0{,}40)(2{,}50)(9{,}8)(0{,}0200)=-0{,}196$ J.</li>
-    <li>(7.14): $K_2=U_1+W_f-U_2=0{,}378-0{,}196-0{,}042=0{,}140$ J, y $v_2=\sqrt{2K_2/m}=\sqrt{2(0{,}140)/2{,}50}=0{,}335$ m/s. (Sin fricción serían 0,518 m/s.)</li>
+    <li><b>Fuerzas.</b> El resorte va en $U_{el}$; peso y normal no trabajan en un movimiento horizontal; la fricción va en $W_{otras}$.</li>
+    <li><b>Energías elásticas</b> (el bloque está unido: en 2 el resorte aún guarda energía):
+      $$U_1=\tfrac12(840)(0{,}0300)^2=0{,}378\ \text{J},\qquad U_2=\tfrac12(840)(0{,}0100)^2=0{,}0420\ \text{J}$$</li>
+    <li><b>Fricción</b> ($s=0{,}0200$ m):
+      $$W_f=-\mu_kmg\,s=-(0{,}40)(2{,}50)(9{,}8)(0{,}0200)=-0{,}196\ \text{J}$$</li>
+    <li><b>Balance</b> con $K_1=0$:
+      $$K_2=U_1+W_f-U_2=0{,}378-0{,}196-0{,}042=0{,}140\ \text{J}$$
+      $$v_2=\sqrt{\frac{2K_2}{m}}=\sqrt{\frac{2(0{,}140)}{2{,}50}}=\mathbf{0{,}335\ m/s}$$
+      <span class="por">Sin fricción serían 0,518 m/s.</span></li>
   </ol>
   <p><b>Resultado:</b> $v=0{,}335$ m/s.</p>
   <div class="recipe"><b>Receta:</b> resorte y fricción en horizontal: $\tfrac12mv_2^2=\tfrac12kx_1^2-\tfrac12kx_2^2-\mu_kmg\,s$, con $s=|x_1-x_2|$.</div>
@@ -581,12 +692,25 @@
 <figcaption>A 1,00 m del punto de contacto, el elevador baja a 3,65 m/s pero su aceleración (4,00 m/s²) apunta hacia arriba: está frenando. Positivo hacia arriba; las fuerzas ascendentes (fricción y resorte) superan al peso. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-8/7-9, Prob. 7.22; ejemplo 7.9 de U p. 216)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$K_1+U_1+W_{otras}=K_2+U_2$; $U=mgy+\tfrac12ky^2$ (origen en el contacto)</li>
+      <li>Fricción constante: $W_{otras}=-f\,|y|$</li>
+      <li>Segunda ley: $\sum F=m\,a$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Estados.</b> 1: contacto con el resorte, $y_1=0$, $v_1=4{,}00$ m/s, resorte sin comprimir. 2: $y_2=-1{,}00$ m.</li>
-    <li>$K_1=\tfrac12(2000)(4{,}00)^2=16\,000$ J; $U_1=0$. $W_{otras}=-f|y_2|=-17\,000$ J (la fricción se opone al movimiento hacia abajo). $U_2=mgy_2+\tfrac12ky_2^2=-19\,600+5300=-14\,300$ J.</li>
-    <li>(7.14): $16\,000-17\,000=K_2-14\,300\Rightarrow K_2=13\,300$ J $\Rightarrow v_2=\sqrt{2(13\,300)/2000}=3{,}65$ m/s.</li>
-    <li><b>(b)</b> La energía no da la aceleración: hay que usar Newton en ese instante (positivo hacia arriba): fricción $+17\,000$ N (el ascensor baja, la fricción sube), resorte $+ky=+10\,600$ N, peso $-19\,600$ N. $\sum F=8000$ N $\Rightarrow a=8000/2000=4{,}00$ m/s² hacia arriba.</li>
-    <li>Velocidad hacia abajo y aceleración hacia arriba: el ascensor está <b>frenando</b>.</li>
+    <li><b>Estados.</b> 1: contacto con el resorte, $y_1=0$, $v_1=4{,}00$ m/s. 2: $y_2=-1{,}00$ m.</li>
+    <li><b>Energías:</b>
+      $$K_1=\tfrac12(2000)(4{,}00)^2=16\,000\ \text{J},\qquad U_1=0$$
+      $$W_{otras}=-17\,000(1{,}00)=-17\,000\ \text{J}$$
+      $$U_2=mgy_2+\tfrac12ky_2^2=2000(9{,}8)(-1{,}00)+\tfrac12(1{,}06\times10^4)(1{,}00)^2=-19\,600+5300=-14\,300\ \text{J}$$
+      <span class="por">$U_{grav}$ es negativa por debajo del origen.</span></li>
+    <li><b>(a) Balance:</b>
+      $$16\,000-17\,000=K_2-14\,300\ \Rightarrow\ K_2=13\,300\ \text{J}$$
+      $$v_2=\sqrt{\frac{2(13\,300)}{2000}}=\mathbf{3{,}65\ m/s}$$</li>
+    <li><b>(b) Aceleración.</b> La energía no la da; Newton en ese instante (+ hacia arriba): fricción $+17\,000$ N (sube porque el ascensor baja), resorte $+ky=+10\,600$ N, peso $-19\,600$ N:
+      $$\sum F=17\,000+10\,600-19\,600=8000\ \text{N}\ \Rightarrow\ a=\frac{8000}{2000}=\mathbf{4{,}00\ m/s^2}\ \text{hacia arriba}$$
+      <span class="por">Baja y acelera hacia arriba: está frenando.</span></li>
   </ol>
   <p><b>Resultado:</b> (a) 3,65 m/s; (b) 4,00 m/s² hacia arriba.</p>
   <div class="recipe"><b>Receta:</b> energía para la rapidez en una posición intermedia; Newton (suma de fuerzas en ese instante) para la aceleración.</div>
@@ -619,6 +743,13 @@
 <div class="nivel"><b>📝 Preguntas de teoría (4 puntos)</b><span>Cuatro han caído: «Fuerzas conservativas y no conservativas» en Febrero 2022 (1ª semana) y Febrero 2024 (2ª semana), «Energía potencial gravitacional» en Septiembre 2022 y energía potencial gravitatoria en Febrero 2022 (1ª semana). Son el 40 % del examen.</span></div>
 <details class="sol" id="x5"><summary>X5 — Teoría: «Fuerzas conservativas y no conservativas» (+ hidroeléctrica y caja en rampa) <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="X" data-ref="Examen Febrero 2022 (1ª semana) P-3 Opción 3.1">X</span></summary>
 <p class="enun">Desarrolle el tema 3.1: <i>Fuerzas conservativas y no conservativas</i>. Además responda: 3.1a) En una planta hidroeléctrica, el agua que cae impulsa las turbinas, las cuales, a la vez, impulsan los generadores eléctricos. En comparación con la cantidad de energía potencial gravitacional liberada por el agua que cae, ¿cuánta energía eléctrica se produce?, ¿la misma?, ¿más?, ¿menos? Justifique su respuesta. 3.1b) Una caja se desliza hacia abajo por una rampa, y las fuerzas de gravedad y de fricción realizan trabajo sobre ella. ¿El trabajo realizado por cada una de estas fuerzas puede expresarse en términos del cambio en una función de energía potencial? Para cada fuerza, explique por qué. (4 puntos.) <span class="src" data-l="U" data-ref="3.1a es la Pregunta de repaso «Evalúe su comprensión de la sección 7.3», U p. 221; 3.1b es la pregunta para análisis P7.14, U p. 228">= U p.221 y P7.14</span></p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fuerza conservativa: $W=U_1-U_2=-\Delta U$; $F_x=-dU/dx$</li>
+      <li>Peso: $U=mgy$; resorte: $U=\tfrac12kx^2$</li>
+      <li>Con otras fuerzas: $K_1+U_1+W_{otras}=K_2+U_2$; $\Delta K+\Delta U+\Delta U_{int}=0$</li>
+    </ul></div>
+
   <p><b>Guion para «desarrollar el tema»</b> (casi todo está en la sección 3 y en la 4):</p>
   <ol class="steps">
     <li><b>Idea.</b> Con el peso y el resorte, la conversión entre energía cinética y potencial es reversible (bidireccional): la energía «guardada» se recupera íntegra.</li>
@@ -633,6 +764,13 @@
 </details>
 <details class="sol" id="x6"><summary>X6 — Teoría: «Fuerzas conservativas y no conservativas» + cero de U del resorte y signo de U entre partículas <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="X" data-ref="Examen Febrero 2024 (2ª semana) P-3 Opción A">X</span></summary>
 <p class="enun">P-3: Teoría Opción A. Desarrolle el tema: <i>Fuerzas conservativas y no conservativas</i>. Además, responda: (a) Un estudiante considera que sólo los cambios en la energía potencial son importantes en cualquier problema, por lo que decide tomar la energía potencial elástica de un resorte como cero cuando el resorte está estirado una distancia $x_1$. Entonces, el estudiante decide que $U=\tfrac12k(x-x_1)^2$. ¿Esto es correcto? Explique su respuesta. (b) En un sistema de dos partículas, solemos considerar que la energía potencial de la fuerza entre las partículas se acerca a cero cuando la separación entre ellas se acerca al infinito. En tal caso, explique por qué la energía potencial con una separación no infinita es positiva si las partículas se repelen, y negativa si se atraen. (4 puntos.) <span class="src" data-l="U" data-ref="La cuestión (b) es la pregunta para análisis P7.19 de U, p. 228">(b) = U P7.19</span></p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Resorte: $U=\tfrac12kx^2$, $F_x=-dU/dx=-kx$</li>
+      <li>Fuerza conservativa: $W=-\Delta U$</li>
+      <li>Dos partículas: $U(r)=-W_{\infty\to r}$ con $U(\infty)=0$</li>
+    </ul></div>
+
   <p><b>Desarrollo del tema:</b> el mismo guion de X5 (propiedades de la fuerza conservativa, $F=-dU/dx$, fricción como ejemplo de no conservativa, $\Delta K+\Delta U+\Delta U_{int}=0$).</p>
 <figure class="fig" data-svg="../assets/figs/t07/parabola-del-resorte-real-parabola-desplazada-de.svg">
 <div class="figph" role="img" aria-label="Parábola del resorte real, parábola desplazada del estudiante y parábola correcta con U cero en x1" style="aspect-ratio:340/225"></div>

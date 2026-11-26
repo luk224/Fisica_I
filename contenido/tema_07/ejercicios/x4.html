@@ -2,13 +2,21 @@
 {{fig:x4-planteamiento}}
 {{fig:cuarto-de-circulo-ab-y-tramo-horizontal-bc-con-f}}
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$K_1+U_1+W_{otras}=K_2+U_2$; $K=\tfrac12mv^2$; $U_{grav}=mgy$</li>
+      <li>Fricción horizontal: $f_k=\mu_k\,mg$, $W_f=-\mu_kmg\,s$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Método.</b> En el tramo curvo la normal y la fricción cambian punto a punto: Newton sería muy difícil. Con energía solo necesitamos los extremos de cada tramo (Estrategia 7.1). Se usa B como «bisagra» entre los dos tramos. No se da $g$: se usa 9,80 (con 9,81 los resultados apenas cambian).</li>
-    <li><b>(a) Tramo BC.</b> Estado 1 = B ($v_B=5{,}2$ m/s), estado 2 = C ($v_C=0$), mismo nivel ($U_1=U_2$). Sobre la superficie horizontal $n=mg$, luego $f_k=\mu_kmg$ y $W_{otras}=-\mu_kmg\,s$.</li>
-    <li>Balance $K_B+W_{otras}=K_C$: $\tfrac12mv_B^2-\mu_kmgs=0\Rightarrow\mu_k=\dfrac{v_B^2}{2gs}=\dfrac{(5{,}2)^2}{2(9{,}8)(5)}=\dfrac{27{,}04}{98}=0{,}276$. La masa se cancela.</li>
-    <li><b>(b) Tramo AB.</b> Origen en B: $y_A=R=2{,}1$ m, $y_B=0$; $K_A=0$. La normal no trabaja (es perpendicular a la trayectoria en cada punto); la única «otra» fuerza es la fricción: $W_{otras}=W_f^{AB}$.</li>
-    <li>(7.14): $0+mgR+W_f^{AB}=\tfrac12mv_B^2+0\Rightarrow W_f^{AB}=\tfrac12mv_B^2-mgR=6{,}76-10{,}29=-3{,}53$ J (con $g=9{,}81$: $-3{,}54$ J). $\tfrac12mv_B^2=\tfrac12(0{,}5)(27{,}04)=6{,}76$ J y $mgR=(0{,}5)(9{,}8)(2{,}1)=10{,}29$ J.</li>
-    <li><b>Comprobación de sentido.</b> Sin fricción llegaría a B con $\sqrt{2gR}=6{,}42$ m/s $>5{,}2$ m/s: coherente con que la fricción haya quitado energía. Y en BC la fricción retira los 6,76 J que tenía en B.</li>
+    <li><b>Método.</b> En el tramo curvo la normal y la fricción cambian en cada punto; con energía solo hacen falta los extremos. B sirve de «bisagra». No dan $g$: se usa 9,80.</li>
+    <li><b>(a) Tramo BC</b> ($v_B=5{,}2$ m/s, $v_C=0$, mismo nivel):
+      $$K_B-\mu_kmg\,s=K_C\ \Rightarrow\ \tfrac12mv_B^2=\mu_kmg\,s\ \Rightarrow\ \mu_k=\frac{v_B^2}{2gs}=\frac{(5{,}2)^2}{2(9{,}8)(5)}=\frac{27{,}04}{98}=\mathbf{0{,}276}$$
+      <span class="por">La masa se cancela.</span></li>
+    <li><b>(b) Tramo AB</b> (origen en B: $y_A=R=2{,}1$ m, $y_B=0$; $K_A=0$). La normal no trabaja; la única «otra» fuerza es la fricción:
+      $$0+mgR+W_f^{AB}=\tfrac12mv_B^2+0$$
+      $$\tfrac12mv_B^2=\tfrac12(0{,}5)(27{,}04)=6{,}76\ \text{J},\qquad mgR=(0{,}5)(9{,}8)(2{,}1)=10{,}29\ \text{J}$$
+      $$W_f^{AB}=6{,}76-10{,}29=\mathbf{-3{,}53\ J}$$
+      <span class="por">Con $g=9{,}81$: $-3{,}54$ J. Comprobación: sin fricción llegaría con $\sqrt{2gR}=6{,}42$ m/s $>5{,}2$ m/s, así que la fricción ha quitado energía.</span></li>
   </ol>
   <p><b>Resultado:</b> (a) $\mu_k\approx0{,}28$; (b) $W_f^{AB}\approx-3{,}5$ J.</p>
   <div class="recipe"><b>Receta:</b> si un tramo tiene fricción conocida en forma ($\mu_kmgs$, horizontal) y otro la tiene desconocida (curvo), aplica $K_1+U_1+W_{otras}=K_2+U_2$ por separado en cada tramo, usando el punto común como bisagra; el trabajo desconocido sale por diferencia.</div>

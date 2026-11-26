@@ -1,12 +1,25 @@
 <p class="enun">(a) ¿Qué rapidez tiene el ascensor del ejemplo 7.9 de U (2000 kg, llega a 4,00 m/s a un resorte amortiguador con $k=1{,}06\times10^4$ N/m y un freno de fricción constante de 17 000 N) después de haber bajado 1,00 m desde el contacto con el resorte? (b) ¿Qué aceleración tiene en ese momento?</p>
 {{fig:ascensor-que-ha-bajado-1-00-m-dentro-del-resorte}}
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$K_1+U_1+W_{otras}=K_2+U_2$; $U=mgy+\tfrac12ky^2$ (origen en el contacto)</li>
+      <li>Fricción constante: $W_{otras}=-f\,|y|$</li>
+      <li>Segunda ley: $\sum F=m\,a$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Estados.</b> 1: contacto con el resorte, $y_1=0$, $v_1=4{,}00$ m/s, resorte sin comprimir. 2: $y_2=-1{,}00$ m.</li>
-    <li>$K_1=\tfrac12(2000)(4{,}00)^2=16\,000$ J; $U_1=0$. $W_{otras}=-f|y_2|=-17\,000$ J (la fricción se opone al movimiento hacia abajo). $U_2=mgy_2+\tfrac12ky_2^2=-19\,600+5300=-14\,300$ J.</li>
-    <li>(7.14): $16\,000-17\,000=K_2-14\,300\Rightarrow K_2=13\,300$ J $\Rightarrow v_2=\sqrt{2(13\,300)/2000}=3{,}65$ m/s.</li>
-    <li><b>(b)</b> La energía no da la aceleración: hay que usar Newton en ese instante (positivo hacia arriba): fricción $+17\,000$ N (el ascensor baja, la fricción sube), resorte $+ky=+10\,600$ N, peso $-19\,600$ N. $\sum F=8000$ N $\Rightarrow a=8000/2000=4{,}00$ m/s² hacia arriba.</li>
-    <li>Velocidad hacia abajo y aceleración hacia arriba: el ascensor está <b>frenando</b>.</li>
+    <li><b>Estados.</b> 1: contacto con el resorte, $y_1=0$, $v_1=4{,}00$ m/s. 2: $y_2=-1{,}00$ m.</li>
+    <li><b>Energías:</b>
+      $$K_1=\tfrac12(2000)(4{,}00)^2=16\,000\ \text{J},\qquad U_1=0$$
+      $$W_{otras}=-17\,000(1{,}00)=-17\,000\ \text{J}$$
+      $$U_2=mgy_2+\tfrac12ky_2^2=2000(9{,}8)(-1{,}00)+\tfrac12(1{,}06\times10^4)(1{,}00)^2=-19\,600+5300=-14\,300\ \text{J}$$
+      <span class="por">$U_{grav}$ es negativa por debajo del origen.</span></li>
+    <li><b>(a) Balance:</b>
+      $$16\,000-17\,000=K_2-14\,300\ \Rightarrow\ K_2=13\,300\ \text{J}$$
+      $$v_2=\sqrt{\frac{2(13\,300)}{2000}}=\mathbf{3{,}65\ m/s}$$</li>
+    <li><b>(b) Aceleración.</b> La energía no la da; Newton en ese instante (+ hacia arriba): fricción $+17\,000$ N (sube porque el ascensor baja), resorte $+ky=+10\,600$ N, peso $-19\,600$ N:
+      $$\sum F=17\,000+10\,600-19\,600=8000\ \text{N}\ \Rightarrow\ a=\frac{8000}{2000}=\mathbf{4{,}00\ m/s^2}\ \text{hacia arriba}$$
+      <span class="por">Baja y acelera hacia arriba: está frenando.</span></li>
   </ol>
   <p><b>Resultado:</b> (a) 3,65 m/s; (b) 4,00 m/s² hacia arriba.</p>
   <div class="recipe"><b>Receta:</b> energía para la rapidez en una posición intermedia; Newton (suma de fuerzas en ese instante) para la aceleración.</div>

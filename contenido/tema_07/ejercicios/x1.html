@@ -2,14 +2,25 @@
 {{fig:x1-planteamiento}}
 {{fig:carril-con-tramo-rugoso-bc-y-resorte-al-final-re}}
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conservación con fuerzas no conservativas: $K_1+U_1+W_{otras}=K_2+U_2$</li>
+      <li>$U_{grav}=mgy$; $U_{el}=\tfrac12kx^2$; $K=\tfrac12mv^2$</li>
+      <li>Fricción cinética (tramo horizontal): $f_k=\mu\,mg$; $W_f=-\mu\,mg\,L$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Cómo leer el enunciado.</b> «El resorte se ha comprimido 25 cm cuando el bloque alcanza D» significa que D es el punto de <b>compresión máxima</b>: allí el bloque se detiene un instante, $v_D=0$. «Choque perfectamente elástico» quiere decir que al tocar el resorte no se pierde energía mecánica: toda la cinética se almacena como $\tfrac12kx^2$. No se da $g$: se usa 9,8 m/s².</li>
-    <li><b>Estados y origen.</b> Estado 1 = A (reposo, $y_A=h=4$ m); estado 2 = D (reposo, $y_D=0$, resorte comprimido $x=0{,}25$ m). Origen de alturas en el tramo horizontal.</li>
-    <li><b>Energías.</b> $K_1=0$, $U_1=mgh$; $K_2=0$, $U_2=\tfrac12kx^2$ ($U_{grav,2}=0$).</li>
-    <li><b>Otras fuerzas.</b> Solo hay fricción en BC (la normal no trabaja en ningún tramo). En el tramo horizontal $n=mg$, así que $f_k=\mu mg$ y $W_{otras}=-\mu mg\,L$ con $L=5$ m. En AB y CD no hay fricción.</li>
-    <li><b>Balance</b> (7.14): $mgh-\mu mgL=\tfrac12kx^2\ \Rightarrow\ \mu=\dfrac{mgh-\tfrac12kx^2}{mgL}=\dfrac hL-\dfrac{kx^2}{2mgL}$.</li>
-    <li>Números: $mgh=5\cdot9{,}8\cdot4=196$ J; $\tfrac12kx^2=\tfrac12\cdot400\cdot0{,}25^2=12{,}5$ J; $mgL=5\cdot9{,}8\cdot5=245$ J. $\mu=\dfrac{196-12{,}5}{245}=\dfrac{183{,}5}{245}=0{,}749$.</li>
-    <li><b>Comprobación.</b> Con $g=9{,}81$ sale lo mismo ($0{,}749$) porque el término dominante $h/L=0{,}8$ no depende de $g$. El valor es alto pero posible: casi toda la energía (183,5 de 196 J) se disipa en BC.</li>
+    <li><b>Cómo leer el enunciado.</b> «El resorte se ha comprimido 25 cm cuando el bloque alcanza D» ⇒ D es la compresión máxima: $v_D=0$. «Choque elástico»: no se pierde energía al tocar el resorte. No dan $g$: se usa 9,8 m/s².
+      <span class="por">Estado 1 = A (reposo, $y_A=h=4$ m); estado 2 = D (reposo, resorte comprimido $x=0{,}25$ m). Origen de alturas en el tramo horizontal.</span></li>
+    <li><b>Energías:</b>
+      $$K_1=0,\quad U_1=mgh;\qquad K_2=0,\quad U_2=\tfrac12kx^2$$</li>
+    <li><b>Fricción</b> (solo en BC, $L=5$ m; la normal no trabaja):
+      $$W_{otras}=-\mu\,mg\,L$$</li>
+    <li><b>Balance:</b>
+      $$mgh-\mu\,mg\,L=\tfrac12kx^2\ \Rightarrow\ \mu=\frac{mgh-\tfrac12kx^2}{mgL}$$</li>
+    <li><b>Números:</b>
+      $$mgh=5(9{,}8)(4)=196\ \text{J},\quad\tfrac12kx^2=\tfrac12(400)(0{,}25)^2=12{,}5\ \text{J},\quad mgL=5(9{,}8)(5)=245\ \text{J}$$
+      $$\mu=\frac{196-12{,}5}{245}=\frac{183{,}5}{245}=\mathbf{0{,}749}$$
+      <span class="por">Con $g=9{,}81$ sale lo mismo (0,749). Casi toda la energía (183,5 de 196 J) se disipa en BC.</span></li>
   </ol>
   <p><b>Resultado:</b> $\mu\approx0{,}75$.</p>
   <div class="recipe"><b>Receta:</b> toma como estado final el de compresión máxima ($v=0$): la energía inicial se reparte en «energía disipada por la fricción» más «energía elástica», $mgh=\mu mgL+\tfrac12kx^2$.</div>
