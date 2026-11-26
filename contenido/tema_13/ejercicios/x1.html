@@ -1,16 +1,31 @@
 <p class="enun">Titán, la mayor luna de Saturno, tiene una masa de $1{,}35\times10^{23}$ kg y un radio medio de $2{,}57\times10^{3}$ km. Titán tiene un periodo de giro sobre sí mismo síncrono, esto es, el periodo orbital y de rotación es el mismo como ocurre con nuestra Luna, y su valor es 15 días, 22 horas y 41 minutos. Por otro lado, el planeta Marte tiene una masa de $6{,}42\times10^{23}$ kg, un radio medio de $3{,}39\times10^{3}$ km y su periodo de rotación es 24,6 horas. Conocidos estos datos: (a) Calcular la aceleración de la gravedad en el polo norte de Titán. (b) Calcular la aceleración de la gravedad en el ecuador de Titán. (c) Calcular la aceleración de la gravedad en el polo norte y en el ecuador de Marte. (d) Comentar por qué en un caso las diferencias de gravedad entre el polo norte y el ecuador son apreciables y en el otro no. Considere: $G=6{,}672\times10^{-11}\ \text{m}^3\text{kg}^{-1}\text{s}^{-2}$.</p>
 {{fig:x1-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Gravedad en el polo (esfera): $g_{polo}=g_0=\dfrac{GM}{R^2}$</li>
+      <li>Gravedad en el ecuador (cuerpo que gira): $g_{ec}=g_0-\omega^2R$, con $\omega=\dfrac{2\pi}{T}$</li>
+      <li>Diferencia relativa: $\dfrac{\Delta g}{g_0}=\dfrac{\omega^2R^3}{GM}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Qué se pide de verdad.</b> «Aceleración de la gravedad» en un punto de la superficie de un cuerpo que gira es la aceleración con la que cae un objeto soltado allí, <i>vista desde el cuerpo que gira</i>: $g=w/m$ con $w$ el peso aparente (§7). No es lo mismo que $g_0=GM/R^2$ salvo en los polos.</li>
-    <li><b>Modelo.</b> Titán y Marte son esferas con simetría esférica ⇒ atraen como si toda su masa estuviera en el centro (13.2): $g_0=GM/R^2$ (13.4).</li>
-    <li><b>Polo norte.</b> El objeto está sobre el eje de giro: no describe ningún círculo, su aceleración es nula, y el soporte equilibra todo el peso verdadero: $g_{polo}=g_0=\dfrac{GM}{R^2}$.</li>
-    <li><b>Ecuador.</b> El objeto describe un círculo de radio $R$ con el periodo $T$ del cuerpo: aceleración centrípeta $a_{rad}=\omega^2R=\dfrac{4\pi^2R}{T^2}$ hacia el centro. Segunda ley en la dirección radial: $w_0-F=ma_{rad}$ ⇒ $g_{ec}=g_0-\omega^2R$ (13.27). En el ecuador $\vec w_0$ y $\vec a_{rad}$ son paralelos, así que la resta es escalar.</li>
-    <li><b>Datos en SI</b> (¡km a m, días y horas a s!). Titán: $R=2{,}57\times10^6$ m; $T=15\cdot86\,400+22\cdot3600+41\cdot60=1\,377\,660$ s. Marte: $R=3{,}39\times10^6$ m; $T=24{,}6\cdot3600=88\,560$ s.</li>
-    <li><b>(a) Polo de Titán:</b> $g_0=\dfrac{(6{,}672\times10^{-11})(1{,}35\times10^{23})}{(2{,}57\times10^6)^2}=\mathbf{1{,}364\ m/s^2}$.</li>
-    <li><b>(b) Ecuador de Titán:</b> $\omega=2\pi/T=4{,}561\times10^{-6}$ rad/s ($v=\omega R=11{,}7$ m/s); $\omega^2R=5{,}35\times10^{-5}$ m/s². $g_{ec}=1{,}36371-0{,}00005=\mathbf{1{,}3637\ m/s^2}$: con tres cifras, <b>igual</b> que en el polo (1,36 m/s²); la diferencia es del 0,004 %.</li>
-    <li><b>(c) Marte.</b> Polo: $g_0=\dfrac{(6{,}672\times10^{-11})(6{,}42\times10^{23})}{(3{,}39\times10^6)^2}=\mathbf{3{,}727\ m/s^2}$. Ecuador: $\omega=7{,}095\times10^{-5}$ rad/s ($v=240{,}5$ m/s), $\omega^2R=0{,}01706$ m/s² ⇒ $g_{ec}=3{,}7273-0{,}0171=\mathbf{3{,}710\ m/s^2}$. La diferencia (0,46 %) ya se ve en la tercera cifra: 3,73 frente a 3,71.</li>
-    <li><b>(d) Comentario.</b> La diferencia polo-ecuador es exactamente la aceleración centrípeta del ecuador, $\Delta g=\omega^2R=4\pi^2R/T^2$, que depende del <b>cuadrado</b> de la velocidad de giro. Titán tarda $1\,377\,660/88\,560=15{,}6$ veces más que Marte en dar una vuelta: su $\omega^2$ es unas 242 veces menor, y su radio es algo menor (0,76 veces); en total $\Delta g$ es unas 319 veces menor ($5{,}3\times10^{-5}$ frente a $1{,}7\times10^{-2}$ m/s²). Lo que decide si se «nota» es la fracción $\Delta g/g_0=\omega^2R^3/(GM)$: $3{,}9\times10^{-5}$ en Titán (inapreciable) y $4{,}6\times10^{-3}$ en Marte (apreciable, del orden de la Tierra: $0{,}0339/9{,}8=0{,}35$ %). Titán gira tan despacio porque su rotación está sincronizada con su órbita de casi 16 días alrededor de Saturno.</li>
-    <li><b>Comprobación de órdenes de magnitud.</b> $g_{Marte}=3{,}7$ m/s² coincide con el ejemplo 13.4 de U (mismos $M$ y $R$); Marte gira casi tan rápido como la Tierra pero es más pequeño ⇒ $\Delta g$ algo menor que el terrestre (0,017 frente a 0,034 m/s²) ✓.</li>
+    <li><b>Qué se pide.</b> La «gravedad» en un punto de un cuerpo que gira es la aceleración de caída vista desde el cuerpo: $g=w/m$ (peso aparente). Polo: el objeto está en el eje, no describe círculo ⇒ $g=g_0$. Ecuador: describe un círculo de radio $R$ con el periodo $T$ del cuerpo; $\vec w_0$ y $\vec a_{rad}$ son paralelos y el suelo empuja menos.</li>
+    <li><b>Datos en SI</b> (km → m; días y horas → s):
+      $$\text{Titán: }R=2{,}57\times10^6\ \text{m},\quad T=15(86\,400)+22(3600)+41(60)=1\,377\,660\ \text{s}$$
+      $$\text{Marte: }R=3{,}39\times10^6\ \text{m},\quad T=24{,}6(3600)=88\,560\ \text{s}$$</li>
+    <li><b>(a) Polo de Titán:</b>
+      $$g_0=\frac{GM}{R^2}=\frac{(6{,}672\times10^{-11})(1{,}35\times10^{23})}{(2{,}57\times10^6)^2}=\mathbf{1{,}364\ m/s^2}$$</li>
+    <li><b>(b) Ecuador de Titán</b> (velocidad de giro $v=\omega R=11{,}7$ m/s):
+      $$\omega=\frac{2\pi}{T}=\frac{2\pi}{1\,377\,660}=4{,}561\times10^{-6}\ \text{rad/s},\qquad\omega^2R=(4{,}561\times10^{-6})^2(2{,}57\times10^6)=5{,}35\times10^{-5}\ \text{m/s}^2$$
+      $$g_{ec}=1{,}36371-0{,}00005=\mathbf{1{,}3637\ m/s^2}$$
+      <span class="por">Con tres cifras, igual que en el polo (1,36 m/s²): la diferencia es del 0,004 %.</span></li>
+    <li><b>(c) Marte, polo:</b>
+      $$g_0=\frac{(6{,}672\times10^{-11})(6{,}42\times10^{23})}{(3{,}39\times10^6)^2}=\mathbf{3{,}727\ m/s^2}$$
+      <b>Marte, ecuador:</b>
+      $$\omega=\frac{2\pi}{88\,560}=7{,}095\times10^{-5}\ \text{rad/s},\qquad\omega^2R=(7{,}095\times10^{-5})^2(3{,}39\times10^6)=0{,}01706\ \text{m/s}^2$$
+      $$g_{ec}=3{,}7273-0{,}0171=\mathbf{3{,}710\ m/s^2}$$
+      <span class="por">La diferencia (0,46 %) ya se ve en la tercera cifra: 3,73 frente a 3,71.</span></li>
+    <li><b>(d) Comentario.</b> La diferencia polo-ecuador es la aceleración centrípeta del ecuador, $\Delta g=\omega^2R=4\pi^2R/T^2$, que depende del cuadrado de la velocidad de giro. Lo que decide si se nota es la fracción:
+      $$\text{Titán: }\frac{\Delta g}{g_0}=\frac{5{,}35\times10^{-5}}{1{,}364}=3{,}9\times10^{-5}\ \text{(inapreciable)},\qquad\text{Marte: }\frac{0{,}01706}{3{,}727}=4{,}6\times10^{-3}\ \text{(apreciable)}$$
+      <span class="por">En Marte $v=\omega R=240{,}5$ m/s; el radio de Titán es 0,76 veces el de Marte. Titán tarda 15,6 veces más que Marte en dar una vuelta (su rotación está sincronizada con su órbita de casi 16 días alrededor de Saturno): su $\omega^2$ es unas 242 veces menor y $\Delta g$ unas 319 veces menor ($5{,}3\times10^{-5}$ frente a $1{,}7\times10^{-2}$ m/s²). Marte gira casi tan rápido como la Tierra (0,0339/9,8 = 0,35 %).</span></li>
   </ol>
   {{fig:titan-y-marte-con-su-eje-de-giro-gravedad-en-el-}}
   <div class="recipe"><b>Receta:</b> gravedad en un cuerpo que gira. Polo: $g=GM/R^2$. Ecuador: $g=GM/R^2-4\pi^2R/T^2$. Pasa todo a SI (km → m, días y horas → s) y compara $\omega^2R$ con $g_0$ para decidir si la diferencia se nota.</div>

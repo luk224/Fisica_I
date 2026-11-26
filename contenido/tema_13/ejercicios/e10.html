@@ -1,8 +1,17 @@
 <p class="enun">El planeta enano Plutón tiene una órbita elíptica con un semieje mayor de $5{,}91\times10^{12}$ m y excentricidad de 0,249. a) Calcula el periodo orbital de Plutón. Exprésalo en segundos y en años terrestres. b) Durante la órbita de Plutón alrededor del Sol, ¿cuál es su distancia más cercana y más lejana del Sol?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Tercera ley de Kepler: $T=\dfrac{2\pi\,a^{3/2}}{\sqrt{G\,m_S}}$ (con el semieje mayor $a$)</li>
+      <li>Perihelio y afelio: $r_{m\acute in}=a(1-e)$, $r_{m\acute ax}=a(1+e)$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a) Tercera ley de Kepler</b> (13.17): $T=\dfrac{2\pi a^{3/2}}{\sqrt{Gm_S}}=\dfrac{2\pi(5{,}91\times10^{12})^{3/2}}{\sqrt{(6{,}67\times10^{-11})(1{,}99\times10^{30})}}=\mathbf{7{,}84\times10^9\ s}=7{,}84\times10^9/3{,}156\times10^7=\mathbf{248\ años}$. La excentricidad no interviene.</li>
-    <li><b>b) Perihelio y afelio:</b> el Sol está en un foco, a $ea$ del centro ⇒ $r_{mín}=a(1-e)=5{,}91\times10^{12}(0{,}751)=\mathbf{4{,}44\times10^{12}\ m}$; $r_{máx}=a(1+e)=5{,}91\times10^{12}(1{,}249)=\mathbf{7{,}38\times10^{12}\ m}$. Comprobación: $r_{mín}+r_{máx}=2a$ ✓.</li>
-    <li><b>Interpretación.</b> $r_{máx}/r_{mín}=1{,}66$: mucho más excéntrica que la Tierra ($e=0{,}017$). El periodo coincide con el del Apéndice G (247,9 años) ✓.</li>
+    <li><b>a) Periodo</b> (la excentricidad no interviene):
+      $$T=\frac{2\pi(5{,}91\times10^{12})^{3/2}}{\sqrt{(6{,}67\times10^{-11})(1{,}99\times10^{30})}}=\mathbf{7{,}84\times10^9\ s}$$
+      $$\frac{7{,}84\times10^9}{3{,}156\times10^7}=\mathbf{248\ años}$$</li>
+    <li><b>b) Distancias extremas</b> (el Sol está en un foco):
+      $$r_{m\acute in}=5{,}91\times10^{12}(1-0{,}249)=\mathbf{4{,}44\times10^{12}\ m}$$
+      $$r_{m\acute ax}=5{,}91\times10^{12}(1+0{,}249)=\mathbf{7{,}38\times10^{12}\ m}$$
+      <span class="por">Comprobación: $r_{m\acute in}+r_{m\acute ax}=2a$ ✓; cociente $r_{m\acute ax}/r_{m\acute in}=1{,}66$. El periodo coincide con el del Apéndice G (247,9 años).</span></li>
   </ol>
   {{fig:orbita-de-pluton-con-excentricidad-0-249-sol-en-}}
   <div class="recipe"><b>Receta:</b> elipse: $T$ con la tercera ley usando $a$; distancias extremas $a(1\mp e)$; al revés, $a=(r_p+r_a)/2$ y $e=(r_a-r_p)/(r_a+r_p)$.</div>

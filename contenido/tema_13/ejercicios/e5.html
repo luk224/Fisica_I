@@ -1,9 +1,16 @@
 <p class="enun">Un planeta que orbita una estrella distante tiene un radio de $3{,}24\times10^6$ m. La rapidez de escape de un objeto lanzado desde la superficie de este planeta es de $7{,}65\times10^3$ m/s. ¿Cuál es la aceleración debida a la gravedad en la superficie del planeta?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Escape: $\tfrac12mv^2=\dfrac{GMm}{R}\ \Rightarrow\ GM=\tfrac12Rv^2$</li>
+      <li>Gravedad superficial: $g=\dfrac{GM}{R^2}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Dos ecuaciones, una incógnita auxiliar ($M$).</b> Escape: $\tfrac12mv^2-\dfrac{GMm}{R}=0$ ⇒ $GM=\tfrac12Rv^2$. Gravedad superficial: $g=\dfrac{GM}{R^2}$.</li>
-    <li><b>Eliminar $GM$</b> (no hace falta conocer $G$ ni $M$ por separado): $g=\dfrac{\tfrac12Rv^2}{R^2}=\dfrac{v^2}{2R}$.</li>
-    <li><b>Número:</b> $g=\dfrac{(7{,}65\times10^3)^2}{2(3{,}24\times10^6)}=\mathbf{9{,}03\ m/s^2}$ (parecida a la terrestre: razonable para un planeta rocoso).</li>
-    <li><b>Extra:</b> $M=\dfrac{Rv^2}{2G}=1{,}42\times10^{24}$ kg.</li>
+    <li><b>Eliminar $GM$</b> (no hace falta conocer $G$ ni $M$ por separado):
+      $$g=\frac{\tfrac12Rv^2}{R^2}=\frac{v^2}{2R}$$</li>
+    <li><b>Número:</b>
+      $$g=\frac{(7{,}65\times10^3)^2}{2(3{,}24\times10^6)}=\frac{5{,}852\times10^7}{6{,}48\times10^6}=\mathbf{9{,}03\ m/s^2}$$</li>
+    <li><b>Extra:</b>
+      $$M=\frac{Rv^2}{2G}=1{,}42\times10^{24}\ \text{kg}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> $v_{esc}^2=2gR$: conocidos dos de $\{v_{esc},g,R\}$, sale el tercero sin pasar por $G$ ni $M$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Calcular primero $M$ con muchos decimales y arrastrar errores, o confundir $v^2/(2R)$ con $v^2/R$.</p></div>

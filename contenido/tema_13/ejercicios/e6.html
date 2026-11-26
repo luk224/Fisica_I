@@ -1,10 +1,19 @@
 <p class="enun">Un martillo de masa $m$ se deja caer del reposo desde una altura $h$ arriba de la superficie terrestre, no necesariamente pequeña en comparación con el radio $R_T$ de la Tierra. Despreciando la resistencia del aire, deduce una expresión para la rapidez $v$ del martillo cuando llega a la superficie terrestre. Tu expresión deberá incluir $h$, $R_T$ y $m_T$.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conservación de la energía (solo gravedad): $K_1+U_1=K_2+U_2$</li>
+      <li>$U=-\dfrac{G\,m_T\,m}{r}$, con $r$ medido desde el <b>centro</b></li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Por qué no vale $v=\sqrt{2gh}$:</b> supone $g$ constante; si $h$ no es pequeña, $g$ disminuye con la altura ⇒ hay que usar $U=-Gm_Tm/r$.</li>
-    <li><b>Conservación de la energía</b> (solo trabaja la gravedad): punto 1, $r_1=R_T+h$, $K_1=0$; punto 2, $r_2=R_T$, $K_2=\tfrac12mv^2$.</li>
-    <li>$0-\dfrac{Gm_Tm}{R_T+h}=\tfrac12mv^2-\dfrac{Gm_Tm}{R_T}$ ⇒ $v^2=2Gm_T\left(\dfrac1{R_T}-\dfrac1{R_T+h}\right)=\dfrac{2Gm_Th}{R_T(R_T+h)}$.</li>
-    <li><b>Resultado:</b> $v=\sqrt{\dfrac{2Gm_Th}{R_T(R_T+h)}}$.</li>
-    <li><b>Comprobaciones de límites.</b> $h\ll R_T$ ⇒ $v^2\approx2(Gm_T/R_T^2)h=2gh$ ✓ (con $h=1$ km las dos fórmulas difieren en menos del 0,01 %). $h\to\infty$ ⇒ $v\to\sqrt{2Gm_T/R_T}=1{,}12\times10^4$ m/s, la rapidez de escape (es el proceso inverso de escapar). Con $h=R_T$: $v=\sqrt{Gm_T/R_T}=7{,}91$ km/s, mientras que $\sqrt{2gh}$ daría 11,2 km/s (¡un 41 % más!).</li>
+    <li><b>Por qué no vale $v=\sqrt{2gh}$.</b> Supone $g$ constante; si $h$ no es pequeña, $g$ disminuye con la altura.</li>
+    <li><b>Estados:</b>
+      $$\text{1: }r_1=R_T+h,\ K_1=0;\qquad\text{2: }r_2=R_T,\ K_2=\tfrac12mv^2$$</li>
+    <li><b>Energía:</b>
+      $$0-\frac{Gm_Tm}{R_T+h}=\tfrac12mv^2-\frac{Gm_Tm}{R_T}\ \Rightarrow\ v^2=2Gm_T\Big(\frac1{R_T}-\frac1{R_T+h}\Big)=\frac{2Gm_T\,h}{R_T(R_T+h)}$$</li>
+    <li><b>Resultado:</b>
+      $$v=\sqrt{\frac{2\,G\,m_T\,h}{R_T\,(R_T+h)}}$$</li>
+    <li><b>Límites.</b>
+      <span class="por">$h\ll R_T$: $v^2\approx2(Gm_T/R_T^2)h=2gh$ ✓. $h\to\infty$: $v\to\sqrt{2Gm_T/R_T}=1{,}12\times10^4$ m/s (rapidez de escape). Con $h=R_T$: $v=\sqrt{Gm_T/R_T}=7{,}91$ km/s, mientras que $\sqrt{2gh}$ daría 11,2 km/s (¡un 41 % más!).</span></li>
   </ol>
   {{fig:rapidez-de-impacto-de-un-martillo-soltado-desde-}}
   <div class="recipe"><b>Receta:</b> caídas o lanzamientos con alturas comparables al radio: $K_1-\dfrac{GMm}{r_1}=K_2-\dfrac{GMm}{r_2}$ con $r$ medido desde el <b>centro</b>.</div>
