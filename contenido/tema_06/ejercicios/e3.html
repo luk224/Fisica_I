@@ -1,11 +1,21 @@
 <p class="enun">Un automóvil viaja por un camino horizontal con rapidez $v_0$ cuando los frenos se bloquean y las llantas se deslizan. (a) Use el teorema trabajo-energía para calcular la distancia mínima en que puede detenerse en términos de $v_0$, $g$ y $\mu_k$. (b) ¿En qué factor cambiaría la distancia mínima si i. se duplicara $\mu_k$, ii. se duplicara $v_0$, iii. se duplicaran ambas?</p>
 {{fig:distancia-de-frenado-frente-a-la-rapidez-inicial}}
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Teorema trabajo-energía: $W_{tot}=K_2-K_1$, $K=\tfrac12mv^2$</li>
+      <li>Fricción cinética: $f_k=\mu_k\,mg$; trabajo: $W=-f_k\,s$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Solo trabaja la fricción (peso y normal son perpendiculares): $W_{tot}=-\mu_kmg\,s$.</li>
-    <li>$K_1=\tfrac12mv_0^2$, $K_2=0$: $-\mu_kmgs=-\tfrac12mv_0^2\Rightarrow\boxed{s=\dfrac{v_0^2}{2\mu_kg}}$. La masa se cancela: un camión y un coche con las mismas ruedas frenan en la misma distancia.</li>
-    <li><b>(b)</b> $s\propto v_0^2/\mu_k$: i. $\mu_k\times2\Rightarrow s/2$; ii. $v_0\times2\Rightarrow4s$; iii. ambos $\Rightarrow4/2=\mathbf{2s}$.</li>
-    <li>Ejemplo (propio): $v_0=25$ m/s (90 km/h), $\mu_k=0{,}8$: $s=39{,}9$ m; a 50 m/s, 159 m.</li>
+    <li><b>Trabajo.</b> Solo trabaja la fricción (peso y normal son perpendiculares al desplazamiento):
+      $$W_{tot}=-\mu_k\,m\,g\,s$$</li>
+    <li><b>(a) Teorema</b> con $K_1=\tfrac12mv_0^2$, $K_2=0$:
+      $$-\mu_kmg\,s=0-\tfrac12mv_0^2\ \Rightarrow\ \boxed{s=\frac{v_0^2}{2\,\mu_k\,g}}$$
+      <span class="por">La masa se cancela: un camión y un coche con las mismas ruedas frenan en la misma distancia.</span></li>
+    <li><b>(b) Factores</b> ($s\propto v_0^2/\mu_k$):
+      $$\text{i. }\mu_k\to2\mu_k:\ s\to\frac{s}{2}\qquad\text{ii. }v_0\to2v_0:\ s\to2^2s=4s\qquad\text{iii. ambos: }\ \frac{2^2}{2}\,s=\mathbf{2s}$$</li>
+    <li><b>Ejemplo propio</b> ($v_0=25$ m/s, $\mu_k=0{,}8$):
+      $$s=\frac{25^2}{2(0{,}8)(9{,}8)}=39{,}9\ \text{m};\qquad v_0=50\ \text{m/s}:\ s=159\ \text{m}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> problemas de «hasta que se detiene»: $K_1=\sum|W_{resistentes}|$.</div>
   <div class="recipe"><b>Error típico:</b> pensar que duplicar la velocidad duplica la distancia (va con el cuadrado).</div>

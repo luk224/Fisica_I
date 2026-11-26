@@ -292,18 +292,29 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 </figure>
 
   <p>La dinámica (normal, fricción, aceleración) se resolvió en el <a href="tema_05_aplicacion_newton.html">tema 5</a>; aquí el enfoque de energía. $F$ apunta hacia la pared y hacia arriba; el bloque sube.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo de cada fuerza: $W=F\,s\cos\phi$ ($\phi$ = ángulo entre la fuerza y el desplazamiento)</li>
+      <li>Fricción cinética: $f_k=\mu_k\,n$</li>
+      <li>Trabajo total: $W_{tot}=\sum W_i$ y teorema $W_{tot}=\tfrac12mv_2^2-\tfrac12mv_1^2$</li>
+    </ul></div>
+  <p>La dinámica se resolvió en el <a href="tema_05_aplicacion_newton.html">tema 5</a>; aquí, energía. $\vec F$ apunta hacia la pared y hacia arriba; el bloque sube $s=0{,}400$ m.</p>
   <ol class="steps">
-    <li><b>Normal y fricción</b> (necesarias para el trabajo de la fricción): horizontalmente $a_x=0$, luego $n=F\cos60^\circ=48{,}0$ N y $f_k=\mu_kn=14{,}4$ N.</li>
-    <li><b>Trabajo de cada fuerza</b> (desplazamiento 0,400 m hacia arriba):
-      <ul>
-        <li>$W_F=Fs\cos30^\circ=(96{,}0)(0{,}400)(0{,}866)=+33{,}3$ J. El ángulo entre $\vec F$ y $\vec s$ es $30^\circ$ (la fuerza está a $60^\circ$ de la horizontal, pero el desplazamiento es vertical); la componente horizontal no trabaja.</li>
-        <li>$W_{peso}=-mgs=-(5)(9{,}81)(0{,}400)=-19{,}6$ J ($\phi=180^\circ$).</li>
-        <li>$W_f=-f_ks=-(14{,}4)(0{,}400)=-5{,}76$ J.</li>
-        <li>$W_n=0$ ($\phi=90^\circ$).</li>
-      </ul></li>
-    <li><b>Trabajo total:</b> $W_{tot}=33{,}26-19{,}62-5{,}76=+7{,}88$ J (positivo: el bloque acelera).</li>
-    <li><b>(a) Teorema:</b> $\tfrac12mv_2^2-0=W_{tot}\Rightarrow v_2=\sqrt{2(7{,}875)/5}=\mathbf{1{,}77\ m/s}$. Coincide con la vía dinámica ($a=3{,}94$ m/s², $v=\sqrt{2as}$), la comprobación que recomienda U (Ej. 6.3).</li>
-    <li><b>(b) «El trabajo realizado»:</b> el enunciado no precisa la fuerza; lo natural es el trabajo de $\vec F$, <b>33,3 J</b>; conviene dar también el trabajo total, 7,88 J $=\Delta K$, con el desglose.</li>
+    <li><b>Normal y fricción.</b> En horizontal no hay aceleración:
+      $$n=F\cos60^\circ=96{,}0(0{,}5)=48{,}0\ \text{N},\qquad f_k=\mu_kn=0{,}300(48{,}0)=14{,}4\ \text{N}$$</li>
+    <li><b>Trabajo de $\vec F$</b> (el desplazamiento es vertical: ángulo $30^\circ$ con $\vec F$):
+      $$W_F=F\,s\cos30^\circ=96{,}0(0{,}400)(0{,}866)=+33{,}3\ \text{J}$$
+      <span class="por">$\vec F$ está a 60° de la horizontal, pero el desplazamiento es vertical: el ángulo entre ambos es 30°. La componente horizontal no trabaja.</span></li>
+    <li><b>Trabajo del peso</b> ($\phi=180^\circ$):
+      $$W_{peso}=-mgs=-(5)(9{,}81)(0{,}400)=-19{,}6\ \text{J}$$</li>
+    <li><b>Fricción y normal:</b>
+      $$W_f=-f_ks=-(14{,}4)(0{,}400)=-5{,}76\ \text{J},\qquad W_n=0\ (\phi=90^\circ)$$</li>
+    <li><b>Trabajo total:</b>
+      $$W_{tot}=33{,}26-19{,}62-5{,}76=+7{,}88\ \text{J}$$
+      <span class="por">Positivo: el bloque acelera. Comprobación por dinámica: $a=3{,}94$ m/s² y $v=\sqrt{2as}$ da lo mismo.</span></li>
+    <li><b>(a) Teorema</b> con $v_1=0$:
+      $$\tfrac12mv_2^2=W_{tot}\ \Rightarrow\ v_2=\sqrt{\frac{2W_{tot}}{m}}=\sqrt{\frac{2(7{,}875)}{5}}=\mathbf{1{,}77\ m/s}$$</li>
+    <li><b>(b) Trabajo realizado.</b> El enunciado no precisa la fuerza; lo natural es el de $\vec F$: <b>33,3 J</b>. Conviene dar también el total, 7,88 J $=\Delta K$, con el desglose.</li>
   </ol>
   <p><b>Resultado:</b> $v=1{,}77$ m/s; $W_F=33{,}3$ J; $W_{peso}=-19{,}6$ J; $W_f=-5{,}76$ J; $W_n=0$; $W_{tot}=7{,}88$ J. (Con $g=9{,}80$: $v=1{,}78$ m/s.)</p>
   <div class="recipe"><b>Receta:</b> «parte del reposo, recorre $d$, ¿$v$?» con fuerzas constantes: lista de fuerzas, $W_i=F_is\cos\phi_i$, suma, $v=\sqrt{2W_{tot}/m}$.</div>
@@ -331,12 +342,28 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 </figure>
 
   <p>Recordatorio del tema 5: A baja por el plano y B sube; por la ligadura de la polea móvil $s_B=s_A/2$ y $v_B=v_A/2$.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Teorema trabajo-energía del sistema: $W_{tot}=\sum K_2-\sum K_1$</li>
+      <li>Ligadura de la polea móvil: $s_B=s_A/2$, $v_B=v_A/2$</li>
+      <li>Trabajos: peso en plano inclinado $W=m g\sin\theta\,s$; fricción $W=-\mu\,m g\cos\theta\,s$</li>
+    </ul></div>
+  <p>Recordatorio del tema 5: A baja por el plano ($m_A=1{,}5$ kg, $30^\circ$, $\mu=0{,}1$) y B ($m_B=1$ kg) sube; $g=9{,}80$.</p>
   <ol class="steps">
-    <li><b>Teorema en cada cuerpo</b> (cada uno es una partícula) y suma. Sobre A (1 m plano abajo): $W_{peso,A}=m_Ag\sin30^\circ(1)=+7{,}35$ J; $W_f=-\mu m_Ag\cos30^\circ(1)=-1{,}27$ J; $W_{T,A}=-T(1)$.</li>
-    <li>Sobre B (0,50 m hacia arriba): $W_{peso,B}=-m_Bg(0{,}50)=-4{,}90$ J; la polea móvil tira de B con $2T$: $W_{2T}=+2T(0{,}50)=+T(1)$.</li>
-    <li><b>Al sumar, los trabajos de la tensión se cancelan</b> ($-T+T=0$): con cuerda ideal y poleas sin masa ni fricción la cuerda solo transmite energía de un cuerpo al otro. (Con $T=5{,}07$ N: $-5{,}07$ J y $+5{,}07$ J.) Por eso no hace falta calcular $T$.</li>
-    <li>$W_{tot}=7{,}35-1{,}27-4{,}90=1{,}18$ J $=\tfrac12m_Av_A^2+\tfrac12m_B(v_A/2)^2=\tfrac12(1{,}5+0{,}25)v_A^2$.</li>
-    <li>$v_A=\sqrt{2(1{,}177)/1{,}75}=\mathbf{1{,}16\ m/s}$ ($v_B=0{,}580$ m/s), igual que por dinámica en el tema 5.</li>
+    <li><b>Trabajos sobre A</b> (1 m plano abajo):
+      $$W_{peso,A}=m_Ag\sin30^\circ(1)=1{,}5(9{,}80)(0{,}5)=+7{,}35\ \text{J}$$
+      $$W_f=-\mu\,m_Ag\cos30^\circ(1)=-0{,}1(1{,}5)(9{,}80)(0{,}866)=-1{,}27\ \text{J}$$</li>
+    <li><b>Trabajo del peso de B</b> (sube $0{,}50$ m):
+      $$W_{peso,B}=-m_Bg(0{,}50)=-(1)(9{,}80)(0{,}50)=-4{,}90\ \text{J}$$</li>
+    <li><b>Tensiones.</b> Sobre A: $-T(1)$; sobre B (la polea móvil tira con $2T$): $+2T(0{,}50)=+T(1)$.
+      $$-T(1)+2T(0{,}50)=0$$
+      <span class="por">Se cancelan (con $T=5{,}07$ N serían $-5{,}07$ J y $+5{,}07$ J): con cuerda y poleas ideales la cuerda solo pasa energía de un cuerpo al otro. Por eso no hace falta calcular $T$.</span></li>
+    <li><b>Trabajo total:</b>
+      $$W_{tot}=7{,}35-1{,}27-4{,}90=1{,}18\ \text{J}$$</li>
+    <li><b>Energía cinética final</b> con $v_B=v_A/2$:
+      $$K=\tfrac12m_Av_A^2+\tfrac12m_B\Big(\frac{v_A}{2}\Big)^2=\tfrac12(1{,}5+0{,}25)\,v_A^2=0{,}875\,v_A^2$$</li>
+    <li><b>Teorema</b> ($K_1=0$):
+      $$1{,}18=0{,}875\,v_A^2\ \Rightarrow\ v_A=\sqrt{\frac{2(1{,}177)}{1{,}75}}=\mathbf{1{,}16\ m/s}\qquad(v_B=0{,}580\ \text{m/s})$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> en sistemas unidos por cuerdas ideales, suma el teorema de todos los cuerpos: las tensiones no aparecen y basta la ligadura entre velocidades.</div>
   <div class="recipe"><b>Error típico:</b> poner $K=\tfrac12(m_A+m_B)v_A^2$ (B va a la mitad de velocidad); contar el trabajo de la tensión solo sobre uno de los cuerpos.</div>
@@ -363,12 +390,26 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 </figure>
 
   <p>Este problema ya está resuelto por cinemática en el <a href="tema_02_movimiento_rectilineo.html">tema 2</a>. Aquí, <b>el mismo por trabajo-energía</b>: nos dan distancia y rapideces, no tiempos (Estrategia 6.1).</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Energía cinética: $K=\tfrac12mv^2$</li>
+      <li>Trabajo de una fuerza constante: $W=F\,s\cos\phi$</li>
+      <li>Teorema trabajo-energía: $W_{tot}=K_2-K_1$</li>
+      <li>Segunda ley: $\sum F=m\,a$; velocidad media (a constante): $\bar v=\dfrac{v_1+v_2}{2}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Energías.</b> $m=0{,}010$ kg, $v_1=100$ m/s, $v_2=0$: $K_1=\tfrac12(0{,}010)(100)^2=50{,}0$ J; $K_2=0$.</li>
-    <li><b>Trabajos</b> (la bala cae en vertical sobre el material): el peso va a favor del desplazamiento, $W_{peso}=+mgd=(0{,}010)(9{,}81)(2)=+0{,}196$ J; la fuerza del material $F$ va en contra, $W_F=-Fd$.</li>
-    <li><b>Teorema.</b> $mgd-Fd=0-K_1$, luego $F=\dfrac{K_1}{d}+mg=25{,}0+0{,}098=\mathbf{25{,}1\ N}$. (Si se desprecia el peso, $F=K_1/d=25{,}0$ N; el peso es solo el 0,4 %.) <b>(b)</b></li>
-    <li><b>(a) Deceleración.</b> Por la segunda ley, $a=(F-mg)/m=K_1/(md)=v_1^2/(2d)=\mathbf{2{,}50\times10^3\ m/s^2}$ (hacia arriba; igual que con la ec. 2.13, U p.47).</li>
-    <li><b>(c) Tiempo.</b> El teorema no da tiempos; con aceleración constante la velocidad media es $(v_1+0)/2$, luego $t=2d/v_1=\mathbf{0{,}040\ s}$.</li>
+    <li><b>Energías</b> ($m=0{,}010$ kg, $v_1=100$ m/s, $v_2=0$):
+      $$K_1=\tfrac12(0{,}010)(100)^2=50{,}0\ \text{J},\qquad K_2=0$$</li>
+    <li><b>Trabajos</b> (la bala cae vertical, $d=2$ m):
+      $$W_{peso}=+mgd=(0{,}010)(9{,}81)(2)=+0{,}196\ \text{J}\qquad W_F=-F\,d$$
+      <span class="por">El peso va a favor del desplazamiento (+); la fuerza del material, en contra (−).</span></li>
+    <li><b>(b) Teorema</b> $W_{tot}=K_2-K_1$:
+      $$mgd-Fd=0-K_1\ \Rightarrow\ F=\frac{K_1}{d}+mg=\frac{50{,}0}{2}+0{,}098=\mathbf{25{,}1\ N}$$
+      <span class="por">Sin el peso saldría 25,0 N: el peso es solo el 0,4 %.</span></li>
+    <li><b>(a) Deceleración</b> (segunda ley, eje hacia arriba):
+      $$F-mg=m\,a\ \Rightarrow\ a=\frac{F-mg}{m}=\frac{25{,}098-0{,}098}{0{,}010}=\mathbf{2{,}50\times10^3\ m/s^2}\ \text{(hacia arriba)}$$</li>
+    <li><b>(c) Tiempo.</b> El teorema no da tiempos; con $a$ constante la velocidad media es $(v_1+0)/2$:
+      $$t=\frac{d}{\bar v}=\frac{2d}{v_1}=\frac{2(2)}{100}=\mathbf{0{,}040\ s}$$</li>
   </ol>
   <p><b>Resultado:</b> $a=2{,}50\times10^3$ m/s²; $F=25{,}1$ N (25,0 N sin el peso); $t=0{,}040$ s.</p>
   <div class="recipe"><b>Receta:</b> «fuerza media que frena un cuerpo en una distancia $d$»: $F\,d=K_1$ (más el trabajo del peso si el movimiento es vertical), como en el martinete del Ej. 6.4.</div>
@@ -396,12 +437,26 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 </figure>
 
   <p>Resuelto por cinemática en el <a href="tema_02_movimiento_rectilineo.html">tema 2</a>; ahora por trabajo-energía, suponiendo la penetración vertical (lo que da sentido a $g$).</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Energía cinética: $K=\tfrac12mv^2$; teorema: $W_{tot}=K_2-K_1$</li>
+      <li>Trabajo: $W=F\,s\cos\phi$; peso: $mg$</li>
+      <li>Segunda ley: $\sum F=m\,a$</li>
+      <li>Tiempo con $a$ constante: $t=\dfrac{2d}{v_1}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Datos.</b> $v_1=311/3{,}6=86{,}4$ m/s; $d=0{,}81$ m; $v_2=0$. $K_1=\tfrac12(210)(86{,}39)^2=7{,}84\times10^5$ J; $K_2=0$.</li>
-    <li><b>Trabajos.</b> El peso ($mg=2060$ N) va a favor del desplazamiento: $W_{peso}=+mgd=+1669$ J. La fuerza del suelo $F$, hacia arriba, va en contra: $W_F=-Fd$.</li>
-    <li><b>(b) Teorema.</b> $mgd-Fd=-K_1\Rightarrow F=mg+K_1/d=2060+9{,}67\times10^5=\mathbf{9{,}69\times10^5\ N}$ (unas 470 veces el peso).</li>
-    <li><b>(a)</b> $a=(F-mg)/m=v_1^2/(2d)=\mathbf{4{,}61\times10^3\ m/s^2}$ hacia arriba (unas 470 g).</li>
-    <li><b>(c)</b> $t=2d/v_1=\mathbf{0{,}0188\ s}$.</li>
+    <li><b>Datos en SI:</b>
+      $$v_1=\frac{311}{3{,}6}=86{,}4\ \text{m/s},\quad d=0{,}81\ \text{m},\quad v_2=0,\quad mg=210(9{,}81)=2060\ \text{N}$$
+      $$K_1=\tfrac12(210)(86{,}39)^2=7{,}84\times10^5\ \text{J},\qquad K_2=0$$</li>
+    <li><b>Trabajos</b> (penetración vertical):
+      $$W_{peso}=+mgd=2060(0{,}81)=+1669\ \text{J},\qquad W_F=-F\,d$$</li>
+    <li><b>(b) Teorema:</b>
+      $$mgd-Fd=-K_1\ \Rightarrow\ F=mg+\frac{K_1}{d}=2060+\frac{7{,}836\times10^5}{0{,}81}=\mathbf{9{,}69\times10^5\ N}$$
+      <span class="por">Unas 470 veces su peso.</span></li>
+    <li><b>(a) Aceleración:</b>
+      $$a=\frac{F-mg}{m}=\frac{v_1^2}{2d}=\frac{(86{,}39)^2}{2(0{,}81)}=\mathbf{4{,}61\times10^3\ m/s^2}\ \text{(hacia arriba)}$$</li>
+    <li><b>(c) Tiempo:</b>
+      $$t=\frac{2d}{v_1}=\frac{2(0{,}81)}{86{,}39}=\mathbf{0{,}0188\ s}$$</li>
   </ol>
   <p><b>Resultado:</b> $a=4{,}61\times10^3$ m/s²; $F=9{,}69\times10^5$ N; $t=0{,}0188$ s.</p>
   <div class="recipe"><b>Receta:</b> igual que X5: $(F-mg)\,d=K_1$ para un impacto vertical.</div>
@@ -428,13 +483,27 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 <figcaption>Examen Sep. 2023, P-2: la partícula baja de A (reposo) a B (5,2 m/s) por el arco y se detiene en C tras 5 m. En AB el peso aporta +mgR = +10,30 J y la fricción (desconocida punto a punto) resulta −3,54 J por diferencia; en BC la fricción quita los 6,76 J de K<sub>B</sub>. (Flechas no a escala.) <span class="src" data-l="P" data-ref="Diagrama propio (examen Sep. 2023, P-2)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Teorema trabajo-energía: $W_{tot}=K_2-K_1$, con $K=\tfrac12mv^2$</li>
+      <li>Fricción cinética: $f_k=\mu_k\,n$ ($n=mg$ en el tramo horizontal)</li>
+      <li>Trabajo del peso: $W=m\,g\,h$ ($h$ = descenso vertical)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>(a) Tramo BC</b> (fuerzas constantes, camino recto). Peso y normal son perpendiculares al desplazamiento ($W=0$); $n=mg$ y la fricción cinética $f_k=\mu_kmg$ va en contra: $W_f=-\mu_kmg\,s$.</li>
-    <li>Teorema entre B y C ($K_B=\tfrac12mv_B^2$, $K_C=0$): $-\mu_kmg\,s=0-\tfrac12mv_B^2\Rightarrow\mu_k=\dfrac{v_B^2}{2gs}=\dfrac{(5{,}2)^2}{2(9{,}81)(5)}=\mathbf{0{,}276}$. La masa se cancela; con $g=9{,}80$ sale también 0,276.</li>
-    <li><b>(b) Tramo AB</b> (curvo). Aquí la fricción es desconocida y varía de un punto a otro (la normal ya no es $mg$ y cambia en cada punto), pero <b>no hace falta conocerla</b>: el teorema vale en trayectorias curvas (U p.187-188) y permite obtener $W_f$ <i>por diferencia</i>.</li>
-    <li><b>Trabajo del peso en el arco.</b> Solo depende del descenso vertical, que es $R$ (como en el Ej. 6.8, donde subir una altura $h$ daba $-mgh$): $W_{peso}=+mgR=(0{,}5)(9{,}81)(2{,}1)=+10{,}30$ J. No es $mg$ por la longitud del arco. La normal es perpendicular a la trayectoria en cada punto: $W_n=0$.</li>
-    <li><b>Teorema entre A y B</b> ($K_A=0$): $W_{peso}+W_f=K_B$, luego $W_f=\tfrac12(0{,}5)(5{,}2)^2-10{,}30=6{,}76-10{,}30=\mathbf{-3{,}54\ J}$ (con $g=9{,}80$: $-3{,}53$ J).</li>
-    <li><b>Comprobación.</b> Sin fricción llegaría a B con $v=\sqrt{2gR}=6{,}42$ m/s, mayor que 5,2 m/s: la fricción tiene que quitar energía ($W_f<0$). Y en BC la fricción retira los 6,76 J que tenía la partícula en B.</li>
+    <li><b>(a) Tramo BC</b> (recto). Peso y normal son perpendiculares al desplazamiento ($W=0$); la fricción va en contra:
+      $$n=mg,\qquad W_f=-\mu_k\,m\,g\,s$$</li>
+    <li><b>Teorema entre B y C</b> ($v_B=5{,}2$ m/s, $v_C=0$, $s=5$ m):
+      $$-\mu_kmg\,s=0-\tfrac12mv_B^2\ \Rightarrow\ \mu_k=\frac{v_B^2}{2g\,s}=\frac{(5{,}2)^2}{2(9{,}81)(5)}=\frac{27{,}04}{98{,}1}=\mathbf{0{,}276}$$
+      <span class="por">La masa se cancela.</span></li>
+    <li><b>(b) Tramo AB</b> (curvo). La fricción es desconocida y variable, pero no hace falta: se obtiene $W_f$ por diferencia con el teorema.
+      <span class="por">El teorema vale en trayectorias curvas.</span></li>
+    <li><b>Trabajo del peso</b> (solo cuenta el descenso vertical, $R$):
+      $$W_{peso}=mgR=(0{,}5)(9{,}81)(2{,}1)=+10{,}30\ \text{J},\qquad W_n=0$$
+      <span class="por">No es $mg$ por la longitud del arco. La normal es perpendicular a la trayectoria en cada punto.</span></li>
+    <li><b>Teorema entre A y B</b> ($K_A=0$):
+      $$W_{peso}+W_f=K_B=\tfrac12(0{,}5)(5{,}2)^2=6{,}76\ \text{J}$$
+      $$W_f=6{,}76-10{,}30=\mathbf{-3{,}54\ J}$$
+      <span class="por">Con $g=9{,}80$ saldría $-3{,}53$ J. Sin fricción llegaría con $v=\sqrt{2gR}=6{,}42$ m/s, mayor que 5,2 m/s: la fricción tiene que quitar energía.</span></li>
   </ol>
   <p><b>Resultado:</b> $\mu_k=0{,}276$; $W_f(A\to B)=-3{,}54$ J.</p>
   <div class="recipe"><b>Receta:</b> cuando una fuerza no se puede calcular directamente (fricción en una curva), su trabajo se obtiene por diferencia: $W_{desconocida}=\Delta K-\sum W_{conocidas}$.</div>
@@ -458,10 +527,33 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 <figcaption>Gráfica del ejercicio 6.43: el área sobre el eje (0-3 m) vale +4,0 J y el área bajo el eje (4-6 m) vale −1,0 J. El trabajo es el área con signo, y con el teorema trabajo-energía (coche de 2,0 kg desde el reposo) salen las rapideces 2,00; 2,00 y 1,73 m/s. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-13/6-14; Ejercicios 6.43 y 6.44)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo con fuerza variable: $W=\int F_x\,dx$ = área con signo bajo la curva $F_x$–$x$</li>
+      <li>Teorema: $W_{tot}=\tfrac12mv_2^2-\tfrac12mv_1^2$, de donde $v=\sqrt{2W/m}$ si $v_1=0$</li>
+      <li>Áreas: triángulo $\tfrac12 b\,h$; rectángulo $b\,h$</li>
+    </ul></div>
+  <p>La gráfica (U p.197): $F_x$ crece linealmente de 0 en $x=0$ a 2 N en $x=2$ m; vale 2 N hasta $x=3$; cae a 0 y vale 0 entre 3 y 4 m; baja linealmente de 0 en $x=4$ a $-1$ N en $x=6$; vuelve a 0 y sigue en 0 hasta 7 m.</p>
+  <figure class="fig" data-svg="../assets/figs/t06/fuerza-variable-f-x-x-con-areas-con-signo.svg">
+<div class="figph" role="img" aria-label="Fuerza variable F_x(x) con áreas con signo" style="aspect-ratio:340/220"></div>
+<figcaption>Gráfica del ejercicio 6.43: el área sobre el eje (0-3 m) vale +4,0 J y el área bajo el eje (4-6 m) vale −1,0 J. El trabajo es el área con signo, y con el teorema trabajo-energía (coche de 2,0 kg desde el reposo) salen las rapideces 2,00; 2,00 y 1,73 m/s. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-13/6-14; Ejercicios 6.43 y 6.44)">P</span></figcaption>
+</figure>
   <ol class="steps">
-    <li>$W=\int F_x\,dx$ es el <b>área con signo</b> bajo la curva (6.7): por encima del eje cuenta positiva si $x$ aumenta; si $x$ disminuye, el signo se invierte.</li>
-    <li><b>6.43.</b> (a) triángulo $\tfrac12(2)(2)$ + rectángulo $(1)(2)$ = <b>+4,0 J</b>. (b) $F_x=0$: <b>0</b>. (c) triángulo bajo el eje $\tfrac12(2)(-1)=$ <b>−1,0 J</b> (fuerza opuesta al movimiento). (d) suma: <b>+3,0 J</b>. (e) de 7 a 3 m: fuerza hacia $-x$ y desplazamiento hacia $-x$, $+1{,}0$ J; de 3 a 2 m: fuerza $+2$ N y desplazamiento $-1$ m, $-2{,}0$ J; total <b>−1,0 J</b>.</li>
-    <li><b>6.44.</b> $v=\sqrt{2W/m}$ con $K_1=0$: (a) $\sqrt{2(4)/2}=\mathbf{2{,}00\ m/s}$; (b) igual, <b>2,00 m/s</b> (de 3 a 4 m no hay fuerza); (c) $\sqrt{2(3)/2}=\mathbf{1{,}73\ m/s}$ (de 4 a 6 m la fuerza frena).</li>
+    <li><b>6.43 (a) De 0 a 3,0 m:</b> triángulo + rectángulo.
+      $$W=\tfrac12(2)(2)+(1)(2)=2+2=\mathbf{+4{,}0\ J}$$</li>
+    <li><b>(b) De 3,0 a 4,0 m:</b> $F_x=0$:
+      $$W=\mathbf{0}$$</li>
+    <li><b>(c) De 4,0 a 7,0 m:</b> triángulo bajo el eje (fuerza opuesta al movimiento):
+      $$W=\tfrac12(2)(-1)=\mathbf{-1{,}0\ J}$$</li>
+    <li><b>(d) De 0 a 7,0 m:</b> suma:
+      $$W=4{,}0+0-1{,}0=\mathbf{+3{,}0\ J}$$</li>
+    <li><b>(e) De 7,0 a 2,0 m</b> (se mueve hacia $-x$: cada área cambia de signo). De 7 a 3 m: la fuerza solo es distinta de cero entre 4 y 6 m, con $F_x<0$ y desplazamiento hacia $-x$:
+      $$W_{7\to3}=+1{,}0\ \text{J},\qquad W_{3\to2}=(2\ \text{N})(-1\ \text{m})=-2{,}0\ \text{J}$$
+      $$W=1{,}0-2{,}0=\mathbf{-1{,}0\ J}$$</li>
+    <li><b>6.44 Rapidez</b> ($v_1=0$, $m=2{,}0$ kg):
+      $$\text{(a) }x=3{,}0:\ v=\sqrt{\frac{2(4)}{2}}=\mathbf{2{,}00\ m/s}\qquad\text{(b) }x=4{,}0:\ v=\mathbf{2{,}00\ m/s}$$
+      $$\text{(c) }x=7{,}0:\ v=\sqrt{\frac{2(3)}{2}}=\mathbf{1{,}73\ m/s}$$
+      <span class="por">(b) igual que (a): de 3 a 4 m no hay fuerza. En (c) de 4 a 6 m la fuerza frena.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> gráfica $F$–$x$: trabajo = área con signo; después $v=\sqrt{v_1^2+2W/m}$.</div>
   <div class="recipe"><b>Error típico:</b> sumar las áreas en valor absoluto; olvidar que al recorrer el eje hacia atrás cambia el signo.</div>
@@ -478,10 +570,18 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 <figcaption>Arriba: el bloque comprime el resorte hasta pararse (X = 0,600 m). Abajo: la fuerza del resorte crece como kX hasta 300 N; el área del triángulo (90 J) es el trabajo que frena al bloque y coincide con su energía cinética inicial ½·5,00·6,00² = 90 J. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-24, Prob. 6.79)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo del resorte al comprimir: $W_{res}=-\tfrac12kX^2$</li>
+      <li>Teorema: $W_{tot}=K_2-K_1$, $K=\tfrac12mv^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Mientras comprime, la única fuerza que trabaja es la del resorte, que se opone al movimiento: $W_{res}=-\tfrac12kX^2$ (el negativo de 6.10; «Cuidado» p.185).</li>
-    <li>En la compresión máxima el bloque se detiene, $K_2=0$: $-\tfrac12kX^2=0-\tfrac12mv_0^2\Rightarrow X=v_0\sqrt{m/k}=6{,}00\sqrt{5/500}=\mathbf{0{,}600\ m}$.</li>
-    <li><b>(b)</b> $v_0=X\sqrt{k/m}=0{,}150\sqrt{100}=\mathbf{1{,}50\ m/s}$.</li>
+    <li><b>Planteamiento.</b> Sin fricción, solo trabaja el resorte, que se opone al movimiento. En la compresión máxima el bloque se detiene: $K_2=0$.
+      <span class="por">La fuerza del resorte varía con $x$: no sirve la cinemática de aceleración constante.</span></li>
+    <li><b>(a) Teorema:</b>
+      $$-\tfrac12kX^2=0-\tfrac12mv_0^2\ \Rightarrow\ X=v_0\sqrt{\frac mk}=6{,}00\sqrt{\frac{5{,}00}{500}}=6{,}00(0{,}100)=\mathbf{0{,}600\ m}$$</li>
+    <li><b>(b) Velocidad máxima</b> para $X=0{,}150$ m:
+      $$v_0=X\sqrt{\frac km}=0{,}150\sqrt{\frac{500}{5{,}00}}=0{,}150(10{,}0)=\mathbf{1{,}50\ m/s}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> sin fricción, «compresión máxima»: $\tfrac12kX^2=\tfrac12mv_0^2$.</div>
   <div class="recipe"><b>Error típico:</b> usar cinemática de aceleración constante (la fuerza del resorte varía con $x$).</div>
@@ -489,6 +589,11 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 </details>
 <details class="sol" id="x10"><summary>X10 — Cuestión: constante de fuerza de cada mitad de un resorte <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2025 (1ª semana) P-4 Opción B (a)">X</span></summary>
 <p class="enun">Si un resorte uniforme se corta a la mitad, ¿qué constante de fuerza tendrá cada mitad? (Primera parte de una cuestión de la Opción B; es literalmente el ejercicio 6.46(a) de U, p.197.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ley de Hooke: $F=k\,x$</li>
+    </ul></div>
+
 <figure class="fig" data-svg="../assets/figs/t06/resorte-cortado-por-la-mitad.svg">
 <div class="figph" role="img" aria-label="Resorte cortado por la mitad" style="aspect-ratio:360/160"></div>
 <figcaption>Un resorte cortado a la mitad se estira la mitad con la misma fuerza: cada mitad tiene el doble de constante de fuerza (más rígida). <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2025, 1ª sem., P-4 Opción B (a))">P</span></figcaption>
@@ -503,6 +608,13 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 </details>
 <details class="sol" id="x2"><summary>X2 — Cuestión: ¿por qué no cambia la rapidez en un movimiento circular uniforme? <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Septiembre 2022 P-3 (a)">X</span></summary>
 <p class="enun">Una partícula en movimiento circular uniforme sufre siempre la acción de una fuerza neta, ¿por qué no cambia el módulo de la velocidad de la partícula? Justifique su respuesta. (Convocatoria de Septiembre 2022.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo elemental: $dW=\vec F\cdot d\vec l$; potencia $P=\vec F\cdot\vec v$</li>
+      <li>Teorema: $W_{tot}=\Delta K=\Delta(\tfrac12mv^2)$</li>
+      <li>Fuerza centrípeta en un MCU: $\sum F=mv^2/R$</li>
+    </ul></div>
+
   <ol class="steps">
     <li>La fuerza neta en un MCU es la centrípeta, dirigida al centro ($\sum F=mv^2/R$, U ec. 5.16, p.151); la velocidad es tangente a la trayectoria. Forman $\phi=90^\circ$ en todo instante.</li>
     <li>Potencia de la fuerza neta: $P=\vec F\cdot\vec v=Fv\cos90^\circ=0$ (ec. 6.19); o, por tramo, $dW=\vec F\cdot d\vec l=0$ (6.14).</li>
@@ -517,6 +629,12 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 </details>
 <details class="sol" id="x3"><summary>X3 — Cuestión: trabajo de la gravedad sobre un planeta en órbita circular y elíptica <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2023 (2ª semana) P-4 Opción B (a)(b)">X</span></summary>
 <p class="enun">(a) Un planeta se mueve con velocidad constante en una órbita circular alrededor de su estrella. ¿Cuál es el trabajo neto que ejerce su estrella sobre el planeta al describir una órbita completa? Razone la respuesta. (b) En el caso anterior si la órbita fuera elíptica en lugar de circular, la velocidad no podría ser constante en cada momento. ¿Cuál es el trabajo neto que ejerce su estrella sobre el planeta al describir una órbita completa? ¿Qué diferencia habría en relación con el caso de la órbita circular? Razone la respuesta. (Tema principal: gravitación, tema 13.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo: $W=\int\vec F\cdot d\vec l$</li>
+      <li>Teorema: $W_{tot}=K_2-K_1$</li>
+    </ul></div>
+
   <ol class="steps">
     <li><b>(a)</b> La fuerza gravitatoria apunta al centro y la velocidad es tangente: $\vec F\cdot d\vec l=0$ en cada punto, así que $W=0$ en la órbita completa <b>y en cualquier trozo de ella</b> (como en X2; cf. «Evalúe su comprensión 6.3», U p.189).</li>
     <li><b>(b)</b> En una elipse la fuerza (hacia la estrella) <b>no</b> es perpendicular a la velocidad, salvo en el perihelio y el afelio. Al acercarse, $\phi<90^\circ$: trabajo positivo y el planeta acelera; al alejarse, $\phi>90^\circ$: trabajo negativo y frena (figura de X2, panel derecho).</li>
@@ -528,6 +646,11 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 </details>
 <details class="sol" id="x4"><summary>X4 — Cuestión: trabajo para ir de la playa de la Malvarrosa a la Barceloneta <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Septiembre 2022 P-4 Opción B (b)">X</span></summary>
 <p class="enun">Explique cuál sería el trabajo resultante para ir desde la playa de la Malvarrosa en Valencia a la Barceloneta en Barcelona. No considere la acción de fuerzas no conservativas. (Convocatoria de Septiembre 2022; tema principal: gravitación, tema 13.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo del peso: $W=-mg\,(y_2-y_1)$ (no depende del camino)</li>
+    </ul></div>
+
   <ol class="steps">
     <li>Sin fuerzas no conservativas, la única fuerza que trabaja es el peso (la normal del suelo es perpendicular al desplazamiento, $W=0$).</li>
     <li>El trabajo del peso solo depende de la diferencia de altura entre los extremos, $W_{peso}=-mg(y_2-y_1)$, sea cual sea el camino (lo vimos para un arco en el Ej. 6.8, U p.189; se demuestra en general en U §7.1, p.204).</li>
@@ -537,6 +660,12 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 </details>
 <details class="sol" id="x9"><summary>X9 — Cuestión: masa de agua que bombea una máquina por ciclo (trabajo <i>mgh</i>) <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Septiembre 2022 P-2 (e)">X</span></summary>
 <p class="enun">¿Qué masa de agua puede bombear esta máquina desde un pozo de 20 m de profundidad por cada ciclo? Considere $g=9{,}81$ m/s². (Apartado (e) de un problema de una máquina de Carnot que absorbe 400 J por ciclo con eficiencia térmica del 23 %; convocatoria de Septiembre 2022; tema principal 20.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Eficiencia térmica: $e=W/Q_H$</li>
+      <li>Trabajo para subir a rapidez constante: $W=mg\,h$</li>
+    </ul></div>
+
   <ol class="steps">
     <li>Trabajo útil por ciclo: es la definición de eficiencia térmica, $e=W/Q_H$ (U §20.2, ec. 20.4, p.650; tema 20): $W=eQ_H=0{,}23\times400=92$ J.</li>
     <li>Subir agua a rapidez constante exige hacer un trabajo $W=mgh$ contra la gravedad (como la corredora del Ej. 6.10, U p.191): el teorema da $W_{motor}+W_{peso}=\Delta K=0$ con $W_{peso}=-mgh$.</li>
@@ -555,11 +684,23 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 <figcaption>A rapidez constante la tensión del cable iguala el peso total de la cabina cargada, F = Mg; la potencia que debe dar el motor es P = Fv = Mgv. Con P = 40 hp = 29,8 kW sale M = 2436 kg, es decir, 28 pasajeros de 65,0 kg además de la cabina de 600 kg. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-17/6-18, Prob. 6.58)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Potencia media: $P=W/\Delta t$; a rapidez constante, $W=M\,g\,h$</li>
+      <li>Potencia instantánea: $P=F\,v$</li>
+      <li>$1\ \text{hp}=746$ W</li>
+    </ul></div>
   <ol class="steps">
-    <li>Potencia disponible: $P=40\times746=2{,}984\times10^4$ W (1 hp = 746 W, U p.190).</li>
-    <li><b>Vía 1</b> (potencia media, 6.15): a rapidez constante el trabajo del motor en 16,0 s es $P\,\Delta t=Mgh$ (como en el Ej. 6.10): $M=\dfrac{P\Delta t}{gh}=\dfrac{(2{,}984\times10^4)(16{,}0)}{(9{,}80)(20{,}0)}=2436$ kg.</li>
-    <li><b>Vía 2</b> (6.18): $v=20{,}0/16{,}0=1{,}25$ m/s y $P=Fv=Mgv$ da la misma $M$.</li>
-    <li>Pasajeros: $(2436-600)/65{,}0=28{,}2$, luego <b>28 pasajeros</b>; se redondea hacia abajo (29 superarían la potencia).</li>
+    <li><b>Potencia disponible:</b>
+      $$P=40\times746=2{,}984\times10^4\ \text{W}$$</li>
+    <li><b>Masa máxima</b> (rapidez constante: el trabajo del motor en 16,0 s es $P\,\Delta t=Mgh$):
+      $$M=\frac{P\,\Delta t}{g\,h}=\frac{(2{,}984\times10^4)(16{,}0)}{(9{,}80)(20{,}0)}=2436\ \text{kg}$$
+      <span class="por">Vía 2: $v=20{,}0/16{,}0=1{,}25$ m/s y $P=Mgv$ da la misma $M$.</span></li>
+    <li><b>Pasajeros:</b>
+      $$\frac{2436-600}{65{,}0}=28{,}2\ \Rightarrow\ \mathbf{28\ pasajeros}$$
+      <span class="por">Se redondea hacia abajo: 29 superarían la potencia.</span></li>
+    <li><b>Complemento 6.55</b> (tándem, 165 N a 9,00 m/s):
+      $$P=F\,v=(165)(9{,}00)=1485\ \text{W}\ \Rightarrow\ \frac{1485}{2}=\mathbf{742{,}5\ W}\approx1{,}00\ \text{hp por ciclista}$$</li>
   </ol>
   <p><b>Complemento 6.55.</b> Un equipo de dos personas en una bicicleta tándem debe superar una fuerza de 165 N a 9,00 m/s: $P=Fv=(165)(9{,}00)=1485$ W en total; <b>742,5 W ≈ 1,00 hp por ciclista</b>.</p>
   <div class="recipe"><b>Receta:</b> a rapidez constante, potencia necesaria = (fuerza a vencer) × (rapidez); si piden «cuántos», divide lo disponible entre lo que cuesta cada unidad.</div>
@@ -574,11 +715,22 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 <figcaption>Solo la componente paralela al desplazamiento, T cos 35° = 1106 N, hace trabajo: W = (1106 N)(5000 m) = 5,53·10⁶ J. La componente vertical T sen 35° no trabaja. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-1, Prob. 6.2)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo de una fuerza constante: $W=T\,s\cos\phi$ ($\phi$ = ángulo entre la fuerza y el desplazamiento)</li>
+    </ul></div>
   <ol class="steps">
-    <li>Fuerza constante, camino recto: $W=Ts\cos\phi$ (6.2), con $s=5{,}00\times10^3$ m.</li>
-    <li><b>(a)</b> $\phi=0^\circ$: $W=(1350)(5000)=\mathbf{6{,}75\times10^6\ J}$. $\phi=35^\circ$: $W=6{,}75\times10^6\cos35^\circ=\mathbf{5{,}53\times10^6\ J}$ (solo trabaja $T\cos35^\circ=1106$ N).</li>
-    <li><b>(b)</b> Por la tercera ley el cable tira del camión hacia atrás con la misma tensión: $\phi=180^\circ$ y $W=\mathbf{-6{,}75\times10^6\ J}$ en el primer caso; en el segundo, con el cable a $35^\circ$ sobre el camión, la fuerza sobre el camión apunta hacia atrás y hacia abajo y el ángulo con el desplazamiento es $\phi=145^\circ$: $W=6{,}75\times10^6\cos145^\circ=\mathbf{-5{,}53\times10^6\ J}$ (Solucionario 6-1). El motor del camión aporta la energía; el cable solo la transmite.</li>
-    <li><b>(c)</b> El peso es vertical y el desplazamiento horizontal: $\phi=90^\circ$, $W=\mathbf{0}$.</li>
+    <li><b>(a) Cable horizontal</b> ($\phi=0^\circ$, $s=5{,}00\times10^3$ m):
+      $$W=(1350)(5000)\cos0^\circ=\mathbf{6{,}75\times10^6\ J}$$</li>
+    <li><b>(a) Cable a $35^\circ$</b> ($\phi=35^\circ$):
+      $$W=(1350)(5000)\cos35^\circ=6{,}75\times10^6(0{,}819)=\mathbf{5{,}53\times10^6\ J}$$
+      <span class="por">Solo trabaja la componente $T\cos35^\circ=1106$ N, la paralela al desplazamiento.</span></li>
+    <li><b>(b) Sobre el camión.</b> Por la tercera ley el cable tira del camión hacia atrás con la misma tensión.
+      $$\text{horizontal: }\phi=180^\circ\ \Rightarrow\ W=(1350)(5000)\cos180^\circ=\mathbf{-6{,}75\times10^6\ J}$$
+      $$\text{a }35^\circ:\ \phi=145^\circ\ \Rightarrow\ W=6{,}75\times10^6\cos145^\circ=\mathbf{-5{,}53\times10^6\ J}$$
+      <span class="por">El motor del camión aporta la energía; el cable solo la transmite.</span></li>
+    <li><b>(c) Gravedad sobre el automóvil:</b> el peso es vertical y el desplazamiento horizontal, $\phi=90^\circ$:
+      $$W=mg\,s\cos90^\circ=\mathbf{0}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> identifica el ángulo <i>entre la fuerza y el desplazamiento</i> (no con la horizontal ni con el plano) y aplica $Fs\cos\phi$.</div>
   <div class="recipe"><b>Error típico:</b> usar seno en vez de coseno; creer que la tensión hace el mismo trabajo, con el mismo signo, sobre los dos cuerpos.</div>
@@ -590,13 +742,28 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 <figcaption>Maleta de 20,0 kg subiendo 3,80 m por una rampa de 32° con F = 160 N paralela a la rampa y μ<sub>k</sub> = 0,300. La suma de los cinco trabajos (+23,8 J) es la energía cinética final; de ahí v = 1,54 m/s. (Flechas a escala 0,4 px/N.) <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-18/6-19, Prob. 6.63)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo: $W=F\,s\cos\phi$</li>
+      <li>Peso: $w=mg$; perpendicular a la rampa: $n=mg\cos\theta$</li>
+      <li>Fricción cinética: $f_k=\mu_k\,n$</li>
+      <li>Teorema: $W_{tot}=\tfrac12mv_2^2-\tfrac12mv_1^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>(a)</b> $\vec F$ es paralela a $\vec s$ ($\phi=0^\circ$): $W_F=(160)(3{,}80)=\mathbf{608\ J}$.</li>
-    <li><b>(b)</b> El ángulo entre $\vec w$ (vertical, abajo) y $\vec s$ (32° sobre la horizontal) es $122^\circ$: $W_w=(196)(3{,}80)\cos122^\circ=\mathbf{-395\ J}$. Equivale a que solo trabaja $w\sin32^\circ=103{,}9$ N, opuesta: $-(103{,}9)(3{,}80)=-mgh$ con $h=3{,}80\sin32^\circ=2{,}01$ m.</li>
-    <li><b>(c)</b> La normal es perpendicular a $\vec s$: $W_n=\mathbf{0}$.</li>
-    <li><b>(d)</b> Eje perpendicular, $a_y=0$: $n=w\cos32^\circ=166{,}2$ N; $f_k=0{,}300\,n=49{,}9$ N; $W_f=-(49{,}87)(3{,}80)=\mathbf{-189\ J}$.</li>
-    <li><b>(e)</b> $W_{tot}=608-394{,}7+0-189{,}5=\mathbf{23{,}8\ J}$.</li>
-    <li><b>(f)</b> $\tfrac12(20{,}0)v_2^2=23{,}8\Rightarrow v_2=\mathbf{1{,}54\ m/s}$.</li>
+    <li><b>(a) Trabajo de $\vec F$</b> (paralela al desplazamiento, $\phi=0^\circ$):
+      $$W_F=F\,s=(160)(3{,}80)=\mathbf{608\ J}$$</li>
+    <li><b>(b) Trabajo de la gravedad.</b> $w=mg=20{,}0(9{,}80)=196$ N. El ángulo entre el peso (vertical, abajo) y el desplazamiento (32° sobre la horizontal) es $122^\circ$:
+      $$W_w=(196)(3{,}80)\cos122^\circ=745{,}0(-0{,}530)=\mathbf{-395\ J}$$
+      <span class="por">Solo trabaja la componente $w\sin32^\circ=103{,}9$ N, opuesta al desplazamiento; equivale a $-mgh$ con $h=3{,}80\sin32^\circ=2{,}01$ m (solo cuenta la altura ganada).</span></li>
+    <li><b>(c) Normal:</b> perpendicular al desplazamiento:
+      $$W_n=0$$</li>
+    <li><b>(d) Fricción.</b> Perpendicular a la rampa $a_y=0$:
+      $$n=mg\cos32^\circ=196(0{,}848)=166{,}2\ \text{N},\qquad f_k=0{,}300(166{,}2)=49{,}9\ \text{N}$$
+      $$W_f=-f_k\,s=-(49{,}87)(3{,}80)=\mathbf{-189\ J}$$</li>
+    <li><b>(e) Trabajo total:</b>
+      $$W_{tot}=608-394{,}7+0-189{,}5=\mathbf{23{,}8\ J}$$</li>
+    <li><b>(f) Rapidez</b> ($v_1=0$):
+      $$\tfrac12(20{,}0)\,v_2^2=23{,}8\ \Rightarrow\ v_2=\sqrt{\frac{2(23{,}8)}{20{,}0}}=\mathbf{1{,}54\ m/s}$$</li>
   </ol>
     <div class="recipe"><b>Receta:</b> en un plano inclinado, subiendo: $W_{peso}=-mg\,s\sin\theta$, $W_n=0$, $W_f=-\mu_kmg\cos\theta\,s$; súmalos con el de la fuerza aplicada.</div>
   <div class="recipe"><b>Error típico:</b> $f_k=\mu_kmg$ (en el plano $n=mg\cos\theta$); signo positivo para el peso al subir.</div>
@@ -608,11 +775,21 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 <figcaption>La distancia mínima de frenado crece con el cuadrado de la rapidez: al doblar v₀ de 25 a 50 m/s, s se multiplica por 4 (39,9 m → 159 m con μ<sub>k</sub> = 0,8). <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-10, Ejercicio 6.31)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Teorema trabajo-energía: $W_{tot}=K_2-K_1$, $K=\tfrac12mv^2$</li>
+      <li>Fricción cinética: $f_k=\mu_k\,mg$; trabajo: $W=-f_k\,s$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Solo trabaja la fricción (peso y normal son perpendiculares): $W_{tot}=-\mu_kmg\,s$.</li>
-    <li>$K_1=\tfrac12mv_0^2$, $K_2=0$: $-\mu_kmgs=-\tfrac12mv_0^2\Rightarrow\boxed{s=\dfrac{v_0^2}{2\mu_kg}}$. La masa se cancela: un camión y un coche con las mismas ruedas frenan en la misma distancia.</li>
-    <li><b>(b)</b> $s\propto v_0^2/\mu_k$: i. $\mu_k\times2\Rightarrow s/2$; ii. $v_0\times2\Rightarrow4s$; iii. ambos $\Rightarrow4/2=\mathbf{2s}$.</li>
-    <li>Ejemplo (propio): $v_0=25$ m/s (90 km/h), $\mu_k=0{,}8$: $s=39{,}9$ m; a 50 m/s, 159 m.</li>
+    <li><b>Trabajo.</b> Solo trabaja la fricción (peso y normal son perpendiculares al desplazamiento):
+      $$W_{tot}=-\mu_k\,m\,g\,s$$</li>
+    <li><b>(a) Teorema</b> con $K_1=\tfrac12mv_0^2$, $K_2=0$:
+      $$-\mu_kmg\,s=0-\tfrac12mv_0^2\ \Rightarrow\ \boxed{s=\frac{v_0^2}{2\,\mu_k\,g}}$$
+      <span class="por">La masa se cancela: un camión y un coche con las mismas ruedas frenan en la misma distancia.</span></li>
+    <li><b>(b) Factores</b> ($s\propto v_0^2/\mu_k$):
+      $$\text{i. }\mu_k\to2\mu_k:\ s\to\frac{s}{2}\qquad\text{ii. }v_0\to2v_0:\ s\to2^2s=4s\qquad\text{iii. ambos: }\ \frac{2^2}{2}\,s=\mathbf{2s}$$</li>
+    <li><b>Ejemplo propio</b> ($v_0=25$ m/s, $\mu_k=0{,}8$):
+      $$s=\frac{25^2}{2(0{,}8)(9{,}8)}=39{,}9\ \text{m};\qquad v_0=50\ \text{m/s}:\ s=159\ \text{m}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> problemas de «hasta que se detiene»: $K_1=\sum|W_{resistentes}|$.</div>
   <div class="recipe"><b>Error típico:</b> pensar que duplicar la velocidad duplica la distancia (va con el cuadrado).</div>
@@ -624,10 +801,20 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 <figcaption>El trabajo para deformar el resorte es el área del triángulo: ½·(3 cm)·(800 N) = 12,0 J al estirar 3 cm, y ½·(4 cm)·(1067 N) = 21,3 J al comprimir 4 cm. En ambos casos el trabajo es positivo (fuerza y desplazamiento tienen el mismo signo). <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-10/6-11, Ejercicio 6.34)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ley de Hooke: $F=k\,x$</li>
+      <li>Trabajo para deformar un resorte desde $x=0$ hasta $X$: $W=\tfrac12kX^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>(a)</b> Trabajo sobre el resorte desde $x=0$ hasta $X$ (6.9): $W=\tfrac12kX^2\Rightarrow k=2W/X^2=2(12{,}0)/(0{,}0300)^2=\mathbf{2{,}67\times10^4\ N/m}$.</li>
-    <li><b>(b)</b> Hooke (6.8): $F=kX=(2{,}667\times10^4)(0{,}0300)=\mathbf{800\ N}$. (Comprobación: fuerza media $F/2=400$ N por 0,03 m son 12 J.)</li>
-    <li><b>(c)</b> Al comprimir, $x=-0{,}0400$ m, pero la fórmula vale igual (U p.185): $W=\tfrac12k(0{,}0400)^2=\mathbf{21{,}3\ J}$ y $|F|=k(0{,}0400)=\mathbf{1{,}07\times10^3\ N}$.</li>
+    <li><b>(a) Constante</b> ($W=12{,}0$ J, $X=0{,}0300$ m):
+      $$k=\frac{2W}{X^2}=\frac{2(12{,}0)}{(0{,}0300)^2}=\frac{24{,}0}{9{,}00\times10^{-4}}=\mathbf{2{,}67\times10^4\ N/m}$$</li>
+    <li><b>(b) Fuerza para estirar 3,00 cm:</b>
+      $$F=kX=(2{,}667\times10^4)(0{,}0300)=\mathbf{800\ N}$$
+      <span class="por">Comprobación: fuerza media $F/2=400$ N por 0,0300 m = 12 J ✓.</span></li>
+    <li><b>(c) Comprimir 4,00 cm</b> ($x=-0{,}0400$ m; la fórmula vale igual):
+      $$W=\tfrac12k(0{,}0400)^2=\tfrac12(2{,}667\times10^4)(1{,}60\times10^{-3})=\mathbf{21{,}3\ J}$$
+      $$|F|=k(0{,}0400)=(2{,}667\times10^4)(0{,}0400)=\mathbf{1{,}07\times10^3\ N}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> fuerza proporcional a $x$, trabajo proporcional a $x^2$: deformar el doble cuesta el cuádruple.</div>
   <div class="recipe"><b>Error típico:</b> $W=kX^2$ (falta el ½, que viene del área del triángulo); $W=FX$ con la fuerza final.</div>
@@ -639,10 +826,18 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 <figcaption>F(x) = 18,0 N − (0,530 N/m)x: el trabajo en los 14,0 m es el área del trapecio, igual a la fuerza media (14,3 N) por la distancia: 200 J. Con K₁ = 0, v = √(2W/m) = 8,17 m/s. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-16, Ejercicio 6.49)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo con fuerza variable: $W=\int_{x_1}^{x_2}F(x)\,dx$</li>
+      <li>Teorema: $W_{tot}=\tfrac12mv_2^2-\tfrac12mv_1^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li>La fuerza depende de $x$: no hay aceleración constante, así que ni la ec. 2.13 ni $W=Fs$; hay que integrar (6.7).</li>
-    <li>$W=\int_0^{14}(18{,}0-0{,}530x)\,dx=18{,}0(14)-\tfrac{0{,}530}{2}(14)^2=252{,}0-51{,}9=\mathbf{200\ J}$. (Comprobación: $F$ es lineal, luego $W$ = fuerza media por distancia = $\tfrac12(18{,}0+10{,}58)(14)=200{,}1$ J.)</li>
-    <li>Peso y normal no trabajan; $K_1=0$: $v=\sqrt{2W/m}=\sqrt{2(200{,}1)/6{,}00}=\mathbf{8{,}17\ m/s}$.</li>
+    <li><b>Por qué integrar.</b> $F$ depende de $x$: no hay aceleración constante, así que no sirven $W=Fs$ ni las fórmulas de MRUA.</li>
+    <li><b>Trabajo:</b>
+      $$W=\int_0^{14}(18{,}0-0{,}530\,x)\,dx=18{,}0(14)-\frac{0{,}530}{2}(14)^2=252{,}0-51{,}9=\mathbf{200\ J}$$
+      <span class="por">Comprobación: $F$ es lineal, luego $W$ = fuerza media × distancia $=\tfrac12(18{,}0+10{,}58)(14)=200{,}1$ J ($F(14)=18{,}0-0{,}530(14)=10{,}58$ N).</span></li>
+    <li><b>Rapidez</b> (peso y normal no trabajan; $K_1=0$):
+      $$v=\sqrt{\frac{2W}{m}}=\sqrt{\frac{2(200{,}1)}{6{,}00}}=\mathbf{8{,}17\ m/s}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> si $F=F(x)$: $W=\int F\,dx$ y luego el teorema.</div>
   <div class="recipe"><b>Error típico:</b> usar $W=F(14)\cdot14$ o $F(0)\cdot14$.</div>
@@ -654,12 +849,23 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 <figcaption>Arriba: el libro, soltado con el resorte comprimido 0,25 m, recorre d = 1,06 m hasta pararse. Abajo: el área positiva del resorte (+7,81 J) y el área negativa de la fricción (−7,81 J) se anulan, porque K₁ = K₂ = 0. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-23, Prob. 6.75)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo del resorte (de $x_1$ a relajado): $W_{res}=+\tfrac12kx_1^2$</li>
+      <li>Fricción cinética: $f_k=\mu_k\,mg$; $W_f=-f_k\,d$</li>
+      <li>Teorema: $W_{tot}=K_2-K_1=0$ (de reposo a reposo)</li>
+    </ul></div>
   <ol class="steps">
-    <li>Puntos: 1 = suelta (reposo), 2 = se detiene (reposo): $W_{tot}=0$.</li>
-    <li>Trabajo del resorte sobre el libro al pasar de 0,250 m comprimido a relajado (empuja a favor del movimiento): $W_{res}=+\tfrac12kx_1^2=+7{,}81$ J. Después el libro se separa del resorte (de masa despreciable) y este ya no trabaja. Hay que comprobar que llega a separarse: sí, porque $d$ resulta mayor que 0,250 m.</li>
-    <li>La fricción actúa en <b>todo</b> el recorrido $d$: $W_f=-\mu_kmg\,d$ con $\mu_kmg=7{,}35$ N.</li>
-    <li>$\tfrac12kx_1^2-\mu_kmg\,d=0\Rightarrow d=\dfrac{kx_1^2}{2\mu_kmg}=\dfrac{(250)(0{,}250)^2}{2(0{,}30)(2{,}50)(9{,}80)}=\mathbf{1{,}06\ m}$ desde la posición inicial.</li>
-    <li>(Extra, propio) La rapidez máxima se alcanza cuando la fuerza neta es cero: $kx=\mu_kmg\Rightarrow x=0{,}0294$ m (tras recorrer 0,221 m), con $v_{máx}=2{,}21$ m/s.</li>
+    <li><b>Puntos:</b> 1 = se suelta (reposo), 2 = se detiene (reposo) ⇒ $W_{tot}=0$.</li>
+    <li><b>Trabajo del resorte</b> (empuja a favor del movimiento hasta quedar relajado; después el libro se separa):
+      $$W_{res}=\tfrac12kx_1^2=\tfrac12(250)(0{,}250)^2=+7{,}81\ \text{J}$$</li>
+    <li><b>Fricción</b> (actúa en <b>todo</b> el recorrido $d$):
+      $$f_k=\mu_kmg=0{,}30(2{,}50)(9{,}80)=7{,}35\ \text{N},\qquad W_f=-7{,}35\,d$$</li>
+    <li><b>Teorema:</b>
+      $$7{,}81-7{,}35\,d=0\ \Rightarrow\ d=\frac{kx_1^2}{2\mu_kmg}=\frac{(250)(0{,}250)^2}{2(0{,}30)(2{,}50)(9{,}80)}=\mathbf{1{,}06\ m}$$
+      <span class="por">Desde la posición inicial. Comprobamos que $d>0{,}250$ m: el libro sí se separa del resorte.</span></li>
+    <li><b>Extra (rapidez máxima).</b> Es máxima cuando la fuerza neta es cero:
+      $$kx=\mu_kmg\ \Rightarrow\ x=\frac{7{,}35}{250}=0{,}0294\ \text{m}\ \ (\text{tras }0{,}221\ \text{m}),\qquad v_{m\acute ax}=2{,}21\ \text{m/s}$$</li>
   </ol>
     <div class="recipe"><b>Receta:</b> resorte + fricción, de reposo a reposo: $\tfrac12kx^2=\mu_kmg\,d$ (si el cuerpo se separa del resorte).</div>
   <div class="recipe"><b>Error típico:</b> aplicar la fricción solo después de dejar el resorte (actúa desde el principio); medir $d$ desde donde el resorte queda relajado.</div>
@@ -671,10 +877,23 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 <figcaption>Cuando el resorte está comprimido 0,800 m el bloque aún se mueve hacia la pared (v = 2,39 m/s) pero la fuerza neta apunta hacia fuera: se está frenando (a = 9,42 m/s² alejándose de la pared). Flechas a escala 0,45 px/N. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 6-24, Prob. 6.77)">P</span></figcaption>
 </figure>
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo del resorte al comprimir: $W_{res}=-\tfrac12kx^2$; fuerza: $F_{res}=kx$</li>
+      <li>Fricción cinética: $f_k=\mu_k\,mg$; $W_f=-f_k\,x$</li>
+      <li>Teorema: $W_{tot}=\tfrac12mv^2-0$; segunda ley: $\sum F=m\,a$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>(a)</b> Trabajos en los 0,800 m hacia la pared (el bloque parte del reposo con el resorte relajado): $W_F=+(82{,}0)(0{,}800)=+65{,}6$ J; $W_{res}=-\tfrac12(130)(0{,}800)^2=-41{,}6$ J; $W_f=-(0{,}400)(4{,}00)(9{,}80)(0{,}800)=-12{,}5$ J. $W_{tot}=11{,}5$ J.</li>
-    <li>$v=\sqrt{2(11{,}46)/4{,}00}=\mathbf{2{,}39\ m/s}$ hacia la pared.</li>
-    <li><b>(b)</b> Segunda ley en ese instante (+ hacia la pared): $82{,}0-15{,}7-104{,}0=4{,}00\,a\Rightarrow a=\mathbf{-9{,}42\ m/s^2}$: 9,42 m/s² <b>alejándose de la pared</b> (el bloque se está frenando).</li>
+    <li><b>(a) Trabajos</b> en los 0,800 m hacia la pared (parte del reposo, resorte relajado):
+      $$W_F=(82{,}0)(0{,}800)=+65{,}6\ \text{J}$$
+      $$W_{res}=-\tfrac12(130)(0{,}800)^2=-41{,}6\ \text{J}$$
+      $$f_k=\mu_kmg=0{,}400(4{,}00)(9{,}80)=15{,}7\ \text{N}\ \Rightarrow\ W_f=-(15{,}68)(0{,}800)=-12{,}5\ \text{J}$$
+      $$W_{tot}=65{,}6-41{,}6-12{,}5=11{,}5\ \text{J}$$</li>
+    <li><b>Velocidad</b> (teorema con $K_1=0$):
+      $$v=\sqrt{\frac{2W_{tot}}{m}}=\sqrt{\frac{2(11{,}46)}{4{,}00}}=\mathbf{2{,}39\ m/s}\ \text{hacia la pared}$$</li>
+    <li><b>(b) Aceleración</b> en ese instante (+ hacia la pared). Fuerza del resorte: $kx=130(0{,}800)=104{,}0$ N, la fricción $15{,}7$ N se opone al movimiento (hacia fuera):
+      $$82{,}0-15{,}7-104{,}0=4{,}00\,a\ \Rightarrow\ a=\mathbf{-9{,}42\ m/s^2}$$
+      <span class="por">9,42 m/s² <b>alejándose de la pared</b>: el bloque se está frenando, aunque $\vec F$ apunte hacia la pared.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> el teorema da la rapidez en un punto; la aceleración en ese instante sale de la segunda ley con la fuerza del resorte $kx$ en ese $x$.</div>
   <div class="recipe"><b>Error típico:</b> creer que la aceleración apunta hacia la pared porque $\vec F$ apunta hacia ella.</div>
@@ -699,6 +918,14 @@ $$P=F_\parallel v\ \text{(6.18)}\qquad P=\vec F\cdot\vec v\ \text{(6.19)}$$
 <div class="nivel"><b>📝 Pregunta de teoría (4 puntos)</b><span>Ha caído tal cual en Febrero 2023 (1ª semana): es el 40 % del examen.</span></div>
 <details class="sol" id="x1"><summary>X1 — Teoría: «Energía cinética y el teorema trabajo-energía» (+ dos cuestiones) <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="X" data-ref="Examen Febrero 2023 (1ª semana) P-3 Opción A">X</span></summary>
 <p class="enun">Desarrolle el tema: <i>Energía cinética y el teorema trabajo-energía</i>. Además, responda a las siguientes cuestiones: (a) ¿Podría ser negativo el trabajo total efectuado sobre un objeto durante un desplazamiento? Razone la respuesta. (b) Si el trabajo total es negativo, su valor absoluto podría ser mayor que el valor de la energía cinética inicial del objeto. Razone la respuesta. (4 puntos.) <span class="src" data-l="U" data-ref="Las cuestiones (a) y (b) son literalmente la Pregunta para análisis P6.12 de U, p. 194">= U P6.12</span></p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo de una fuerza constante: $W=F\,s\cos\phi=\vec F\cdot\vec s$</li>
+      <li>Energía cinética: $K=\tfrac12mv^2$ ($K\ge0$)</li>
+      <li>Teorema trabajo-energía: $W_{tot}=K_2-K_1$</li>
+      <li>Fuerza variable: $W=\int F_x\,dx$</li>
+    </ul></div>
+
   <p><b>Guion para «desarrollar el tema»</b> (en este orden gana puntos; casi todo está en las secciones 1-3 de arriba):</p>
   <ol class="steps">
     <li><b>Por qué hace falta.</b> Con leyes de Newton y fuerzas constantes basta la cinemática; si la fuerza varía con la posición o la trayectoria es curva no. Trabajo y energía relacionan rapideces en dos posiciones sin pasar por el tiempo (U p.172-173).</li>

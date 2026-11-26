@@ -1,11 +1,23 @@
 <p class="enun">6.58. Un elevador sin pasajeros tiene masa de 600 kg y está diseñado para subir con rapidez constante una distancia vertical de 20,0 m (5 pisos) en 16,0 s; es impulsado por un motor capaz de suministrar 40 hp al elevador. ¿Cuántos pasajeros como máximo pueden subir? Suponga una masa de 65,0 kg por pasajero.</p>
 {{fig:ascensor-que-sube-con-rapidez-constante-la-poten}}
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Potencia media: $P=W/\Delta t$; a rapidez constante, $W=M\,g\,h$</li>
+      <li>Potencia instantánea: $P=F\,v$</li>
+      <li>$1\ \text{hp}=746$ W</li>
+    </ul></div>
   <ol class="steps">
-    <li>Potencia disponible: $P=40\times746=2{,}984\times10^4$ W (1 hp = 746 W, U p.190).</li>
-    <li><b>Vía 1</b> (potencia media, 6.15): a rapidez constante el trabajo del motor en 16,0 s es $P\,\Delta t=Mgh$ (como en el Ej. 6.10): $M=\dfrac{P\Delta t}{gh}=\dfrac{(2{,}984\times10^4)(16{,}0)}{(9{,}80)(20{,}0)}=2436$ kg.</li>
-    <li><b>Vía 2</b> (6.18): $v=20{,}0/16{,}0=1{,}25$ m/s y $P=Fv=Mgv$ da la misma $M$.</li>
-    <li>Pasajeros: $(2436-600)/65{,}0=28{,}2$, luego <b>28 pasajeros</b>; se redondea hacia abajo (29 superarían la potencia).</li>
+    <li><b>Potencia disponible:</b>
+      $$P=40\times746=2{,}984\times10^4\ \text{W}$$</li>
+    <li><b>Masa máxima</b> (rapidez constante: el trabajo del motor en 16,0 s es $P\,\Delta t=Mgh$):
+      $$M=\frac{P\,\Delta t}{g\,h}=\frac{(2{,}984\times10^4)(16{,}0)}{(9{,}80)(20{,}0)}=2436\ \text{kg}$$
+      <span class="por">Vía 2: $v=20{,}0/16{,}0=1{,}25$ m/s y $P=Mgv$ da la misma $M$.</span></li>
+    <li><b>Pasajeros:</b>
+      $$\frac{2436-600}{65{,}0}=28{,}2\ \Rightarrow\ \mathbf{28\ pasajeros}$$
+      <span class="por">Se redondea hacia abajo: 29 superarían la potencia.</span></li>
+    <li><b>Complemento 6.55</b> (tándem, 165 N a 9,00 m/s):
+      $$P=F\,v=(165)(9{,}00)=1485\ \text{W}\ \Rightarrow\ \frac{1485}{2}=\mathbf{742{,}5\ W}\approx1{,}00\ \text{hp por ciclista}$$</li>
   </ol>
   <p><b>Complemento 6.55.</b> Un equipo de dos personas en una bicicleta tándem debe superar una fuerza de 165 N a 9,00 m/s: $P=Fv=(165)(9{,}00)=1485$ W en total; <b>742,5 W ≈ 1,00 hp por ciclista</b>.</p>
   <div class="recipe"><b>Receta:</b> a rapidez constante, potencia necesaria = (fuerza a vencer) × (rapidez); si piden «cuántos», divide lo disponible entre lo que cuesta cada unidad.</div>

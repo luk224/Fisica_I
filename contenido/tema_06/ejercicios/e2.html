@@ -1,13 +1,28 @@
 <p class="enun">Un transportador de equipaje jala una maleta de 20,0 kg para subirla por una rampa inclinada 32,0° con una fuerza $\vec F$ de 160 N paralela a la rampa. El coeficiente de fricción cinética es $\mu_k=0{,}300$. Si la maleta viaja 3,80 m en la rampa, calcule el trabajo sobre ella (a) por $\vec F$; (b) por la gravedad; (c) por la normal; (d) por la fricción; (e) el trabajo total; (f) si la rapidez es cero en la base, ¿qué rapidez tiene tras subir 3,80 m?</p>
 {{fig:maleta-subida-por-una-rampa-de-32-fuerzas-y-trab}}
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo: $W=F\,s\cos\phi$</li>
+      <li>Peso: $w=mg$; perpendicular a la rampa: $n=mg\cos\theta$</li>
+      <li>Fricción cinética: $f_k=\mu_k\,n$</li>
+      <li>Teorema: $W_{tot}=\tfrac12mv_2^2-\tfrac12mv_1^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>(a)</b> $\vec F$ es paralela a $\vec s$ ($\phi=0^\circ$): $W_F=(160)(3{,}80)=\mathbf{608\ J}$.</li>
-    <li><b>(b)</b> El ángulo entre $\vec w$ (vertical, abajo) y $\vec s$ (32° sobre la horizontal) es $122^\circ$: $W_w=(196)(3{,}80)\cos122^\circ=\mathbf{-395\ J}$. Equivale a que solo trabaja $w\sin32^\circ=103{,}9$ N, opuesta: $-(103{,}9)(3{,}80)=-mgh$ con $h=3{,}80\sin32^\circ=2{,}01$ m.</li>
-    <li><b>(c)</b> La normal es perpendicular a $\vec s$: $W_n=\mathbf{0}$.</li>
-    <li><b>(d)</b> Eje perpendicular, $a_y=0$: $n=w\cos32^\circ=166{,}2$ N; $f_k=0{,}300\,n=49{,}9$ N; $W_f=-(49{,}87)(3{,}80)=\mathbf{-189\ J}$.</li>
-    <li><b>(e)</b> $W_{tot}=608-394{,}7+0-189{,}5=\mathbf{23{,}8\ J}$.</li>
-    <li><b>(f)</b> $\tfrac12(20{,}0)v_2^2=23{,}8\Rightarrow v_2=\mathbf{1{,}54\ m/s}$.</li>
+    <li><b>(a) Trabajo de $\vec F$</b> (paralela al desplazamiento, $\phi=0^\circ$):
+      $$W_F=F\,s=(160)(3{,}80)=\mathbf{608\ J}$$</li>
+    <li><b>(b) Trabajo de la gravedad.</b> $w=mg=20{,}0(9{,}80)=196$ N. El ángulo entre el peso (vertical, abajo) y el desplazamiento (32° sobre la horizontal) es $122^\circ$:
+      $$W_w=(196)(3{,}80)\cos122^\circ=745{,}0(-0{,}530)=\mathbf{-395\ J}$$
+      <span class="por">Solo trabaja la componente $w\sin32^\circ=103{,}9$ N, opuesta al desplazamiento; equivale a $-mgh$ con $h=3{,}80\sin32^\circ=2{,}01$ m (solo cuenta la altura ganada).</span></li>
+    <li><b>(c) Normal:</b> perpendicular al desplazamiento:
+      $$W_n=0$$</li>
+    <li><b>(d) Fricción.</b> Perpendicular a la rampa $a_y=0$:
+      $$n=mg\cos32^\circ=196(0{,}848)=166{,}2\ \text{N},\qquad f_k=0{,}300(166{,}2)=49{,}9\ \text{N}$$
+      $$W_f=-f_k\,s=-(49{,}87)(3{,}80)=\mathbf{-189\ J}$$</li>
+    <li><b>(e) Trabajo total:</b>
+      $$W_{tot}=608-394{,}7+0-189{,}5=\mathbf{23{,}8\ J}$$</li>
+    <li><b>(f) Rapidez</b> ($v_1=0$):
+      $$\tfrac12(20{,}0)\,v_2^2=23{,}8\ \Rightarrow\ v_2=\sqrt{\frac{2(23{,}8)}{20{,}0}}=\mathbf{1{,}54\ m/s}$$</li>
   </ol>
     <div class="recipe"><b>Receta:</b> en un plano inclinado, subiendo: $W_{peso}=-mg\,s\sin\theta$, $W_n=0$, $W_f=-\mu_kmg\cos\theta\,s$; súmalos con el de la fuerza aplicada.</div>
   <div class="recipe"><b>Error típico:</b> $f_k=\mu_kmg$ (en el plano $n=mg\cos\theta$); signo positivo para el peso al subir.</div>

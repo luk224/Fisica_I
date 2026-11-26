@@ -3,18 +3,29 @@
 {{fig:bloque-contra-una-pared-fuerzas-desplazamiento-y}}
 
   <p>La dinámica (normal, fricción, aceleración) se resolvió en el <a href="tema_05_aplicacion_newton.html">tema 5</a>; aquí el enfoque de energía. $F$ apunta hacia la pared y hacia arriba; el bloque sube.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo de cada fuerza: $W=F\,s\cos\phi$ ($\phi$ = ángulo entre la fuerza y el desplazamiento)</li>
+      <li>Fricción cinética: $f_k=\mu_k\,n$</li>
+      <li>Trabajo total: $W_{tot}=\sum W_i$ y teorema $W_{tot}=\tfrac12mv_2^2-\tfrac12mv_1^2$</li>
+    </ul></div>
+  <p>La dinámica se resolvió en el <a href="tema_05_aplicacion_newton.html">tema 5</a>; aquí, energía. $\vec F$ apunta hacia la pared y hacia arriba; el bloque sube $s=0{,}400$ m.</p>
   <ol class="steps">
-    <li><b>Normal y fricción</b> (necesarias para el trabajo de la fricción): horizontalmente $a_x=0$, luego $n=F\cos60^\circ=48{,}0$ N y $f_k=\mu_kn=14{,}4$ N.</li>
-    <li><b>Trabajo de cada fuerza</b> (desplazamiento 0,400 m hacia arriba):
-      <ul>
-        <li>$W_F=Fs\cos30^\circ=(96{,}0)(0{,}400)(0{,}866)=+33{,}3$ J. El ángulo entre $\vec F$ y $\vec s$ es $30^\circ$ (la fuerza está a $60^\circ$ de la horizontal, pero el desplazamiento es vertical); la componente horizontal no trabaja.</li>
-        <li>$W_{peso}=-mgs=-(5)(9{,}81)(0{,}400)=-19{,}6$ J ($\phi=180^\circ$).</li>
-        <li>$W_f=-f_ks=-(14{,}4)(0{,}400)=-5{,}76$ J.</li>
-        <li>$W_n=0$ ($\phi=90^\circ$).</li>
-      </ul></li>
-    <li><b>Trabajo total:</b> $W_{tot}=33{,}26-19{,}62-5{,}76=+7{,}88$ J (positivo: el bloque acelera).</li>
-    <li><b>(a) Teorema:</b> $\tfrac12mv_2^2-0=W_{tot}\Rightarrow v_2=\sqrt{2(7{,}875)/5}=\mathbf{1{,}77\ m/s}$. Coincide con la vía dinámica ($a=3{,}94$ m/s², $v=\sqrt{2as}$), la comprobación que recomienda U (Ej. 6.3).</li>
-    <li><b>(b) «El trabajo realizado»:</b> el enunciado no precisa la fuerza; lo natural es el trabajo de $\vec F$, <b>33,3 J</b>; conviene dar también el trabajo total, 7,88 J $=\Delta K$, con el desglose.</li>
+    <li><b>Normal y fricción.</b> En horizontal no hay aceleración:
+      $$n=F\cos60^\circ=96{,}0(0{,}5)=48{,}0\ \text{N},\qquad f_k=\mu_kn=0{,}300(48{,}0)=14{,}4\ \text{N}$$</li>
+    <li><b>Trabajo de $\vec F$</b> (el desplazamiento es vertical: ángulo $30^\circ$ con $\vec F$):
+      $$W_F=F\,s\cos30^\circ=96{,}0(0{,}400)(0{,}866)=+33{,}3\ \text{J}$$
+      <span class="por">$\vec F$ está a 60° de la horizontal, pero el desplazamiento es vertical: el ángulo entre ambos es 30°. La componente horizontal no trabaja.</span></li>
+    <li><b>Trabajo del peso</b> ($\phi=180^\circ$):
+      $$W_{peso}=-mgs=-(5)(9{,}81)(0{,}400)=-19{,}6\ \text{J}$$</li>
+    <li><b>Fricción y normal:</b>
+      $$W_f=-f_ks=-(14{,}4)(0{,}400)=-5{,}76\ \text{J},\qquad W_n=0\ (\phi=90^\circ)$$</li>
+    <li><b>Trabajo total:</b>
+      $$W_{tot}=33{,}26-19{,}62-5{,}76=+7{,}88\ \text{J}$$
+      <span class="por">Positivo: el bloque acelera. Comprobación por dinámica: $a=3{,}94$ m/s² y $v=\sqrt{2as}$ da lo mismo.</span></li>
+    <li><b>(a) Teorema</b> con $v_1=0$:
+      $$\tfrac12mv_2^2=W_{tot}\ \Rightarrow\ v_2=\sqrt{\frac{2W_{tot}}{m}}=\sqrt{\frac{2(7{,}875)}{5}}=\mathbf{1{,}77\ m/s}$$</li>
+    <li><b>(b) Trabajo realizado.</b> El enunciado no precisa la fuerza; lo natural es el de $\vec F$: <b>33,3 J</b>. Conviene dar también el total, 7,88 J $=\Delta K$, con el desglose.</li>
   </ol>
   <p><b>Resultado:</b> $v=1{,}77$ m/s; $W_F=33{,}3$ J; $W_{peso}=-19{,}6$ J; $W_f=-5{,}76$ J; $W_n=0$; $W_{tot}=7{,}88$ J. (Con $g=9{,}80$: $v=1{,}78$ m/s.)</p>
   <div class="recipe"><b>Receta:</b> «parte del reposo, recorre $d$, ¿$v$?» con fuerzas constantes: lista de fuerzas, $W_i=F_is\cos\phi_i$, suma, $v=\sqrt{2W_{tot}/m}$.</div>

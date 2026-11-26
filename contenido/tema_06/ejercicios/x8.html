@@ -3,12 +3,28 @@
 {{fig:balance-de-trabajos-en-el-sistema-a-b-con-polea-}}
 
   <p>Recordatorio del tema 5: A baja por el plano y B sube; por la ligadura de la polea móvil $s_B=s_A/2$ y $v_B=v_A/2$.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Teorema trabajo-energía del sistema: $W_{tot}=\sum K_2-\sum K_1$</li>
+      <li>Ligadura de la polea móvil: $s_B=s_A/2$, $v_B=v_A/2$</li>
+      <li>Trabajos: peso en plano inclinado $W=m g\sin\theta\,s$; fricción $W=-\mu\,m g\cos\theta\,s$</li>
+    </ul></div>
+  <p>Recordatorio del tema 5: A baja por el plano ($m_A=1{,}5$ kg, $30^\circ$, $\mu=0{,}1$) y B ($m_B=1$ kg) sube; $g=9{,}80$.</p>
   <ol class="steps">
-    <li><b>Teorema en cada cuerpo</b> (cada uno es una partícula) y suma. Sobre A (1 m plano abajo): $W_{peso,A}=m_Ag\sin30^\circ(1)=+7{,}35$ J; $W_f=-\mu m_Ag\cos30^\circ(1)=-1{,}27$ J; $W_{T,A}=-T(1)$.</li>
-    <li>Sobre B (0,50 m hacia arriba): $W_{peso,B}=-m_Bg(0{,}50)=-4{,}90$ J; la polea móvil tira de B con $2T$: $W_{2T}=+2T(0{,}50)=+T(1)$.</li>
-    <li><b>Al sumar, los trabajos de la tensión se cancelan</b> ($-T+T=0$): con cuerda ideal y poleas sin masa ni fricción la cuerda solo transmite energía de un cuerpo al otro. (Con $T=5{,}07$ N: $-5{,}07$ J y $+5{,}07$ J.) Por eso no hace falta calcular $T$.</li>
-    <li>$W_{tot}=7{,}35-1{,}27-4{,}90=1{,}18$ J $=\tfrac12m_Av_A^2+\tfrac12m_B(v_A/2)^2=\tfrac12(1{,}5+0{,}25)v_A^2$.</li>
-    <li>$v_A=\sqrt{2(1{,}177)/1{,}75}=\mathbf{1{,}16\ m/s}$ ($v_B=0{,}580$ m/s), igual que por dinámica en el tema 5.</li>
+    <li><b>Trabajos sobre A</b> (1 m plano abajo):
+      $$W_{peso,A}=m_Ag\sin30^\circ(1)=1{,}5(9{,}80)(0{,}5)=+7{,}35\ \text{J}$$
+      $$W_f=-\mu\,m_Ag\cos30^\circ(1)=-0{,}1(1{,}5)(9{,}80)(0{,}866)=-1{,}27\ \text{J}$$</li>
+    <li><b>Trabajo del peso de B</b> (sube $0{,}50$ m):
+      $$W_{peso,B}=-m_Bg(0{,}50)=-(1)(9{,}80)(0{,}50)=-4{,}90\ \text{J}$$</li>
+    <li><b>Tensiones.</b> Sobre A: $-T(1)$; sobre B (la polea móvil tira con $2T$): $+2T(0{,}50)=+T(1)$.
+      $$-T(1)+2T(0{,}50)=0$$
+      <span class="por">Se cancelan (con $T=5{,}07$ N serían $-5{,}07$ J y $+5{,}07$ J): con cuerda y poleas ideales la cuerda solo pasa energía de un cuerpo al otro. Por eso no hace falta calcular $T$.</span></li>
+    <li><b>Trabajo total:</b>
+      $$W_{tot}=7{,}35-1{,}27-4{,}90=1{,}18\ \text{J}$$</li>
+    <li><b>Energía cinética final</b> con $v_B=v_A/2$:
+      $$K=\tfrac12m_Av_A^2+\tfrac12m_B\Big(\frac{v_A}{2}\Big)^2=\tfrac12(1{,}5+0{,}25)\,v_A^2=0{,}875\,v_A^2$$</li>
+    <li><b>Teorema</b> ($K_1=0$):
+      $$1{,}18=0{,}875\,v_A^2\ \Rightarrow\ v_A=\sqrt{\frac{2(1{,}177)}{1{,}75}}=\mathbf{1{,}16\ m/s}\qquad(v_B=0{,}580\ \text{m/s})$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> en sistemas unidos por cuerdas ideales, suma el teorema de todos los cuerpos: las tensiones no aparecen y basta la ligadura entre velocidades.</div>
   <div class="recipe"><b>Error típico:</b> poner $K=\tfrac12(m_A+m_B)v_A^2$ (B va a la mitad de velocidad); contar el trabajo de la tensión solo sobre uno de los cuerpos.</div>

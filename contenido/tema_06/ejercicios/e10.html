@@ -1,10 +1,23 @@
 <p class="enun">Un extremo de un resorte horizontal ($k=130{,}0$ N/m) se une a una pared vertical. Un bloque de 4,00 kg sobre el suelo se coloca contra el resorte; $\mu_k=0{,}400$. Se aplica una fuerza constante $\vec F$ de magnitud 82,0 N hacia la pared. En el momento en que el resorte se comprime 80,0 cm, ¿cuáles son (a) la velocidad del bloque y (b) la magnitud y dirección de su aceleración?</p>
 {{fig:bloque-empujado-contra-un-resorte-con-friccion-f}}
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo del resorte al comprimir: $W_{res}=-\tfrac12kx^2$; fuerza: $F_{res}=kx$</li>
+      <li>Fricción cinética: $f_k=\mu_k\,mg$; $W_f=-f_k\,x$</li>
+      <li>Teorema: $W_{tot}=\tfrac12mv^2-0$; segunda ley: $\sum F=m\,a$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>(a)</b> Trabajos en los 0,800 m hacia la pared (el bloque parte del reposo con el resorte relajado): $W_F=+(82{,}0)(0{,}800)=+65{,}6$ J; $W_{res}=-\tfrac12(130)(0{,}800)^2=-41{,}6$ J; $W_f=-(0{,}400)(4{,}00)(9{,}80)(0{,}800)=-12{,}5$ J. $W_{tot}=11{,}5$ J.</li>
-    <li>$v=\sqrt{2(11{,}46)/4{,}00}=\mathbf{2{,}39\ m/s}$ hacia la pared.</li>
-    <li><b>(b)</b> Segunda ley en ese instante (+ hacia la pared): $82{,}0-15{,}7-104{,}0=4{,}00\,a\Rightarrow a=\mathbf{-9{,}42\ m/s^2}$: 9,42 m/s² <b>alejándose de la pared</b> (el bloque se está frenando).</li>
+    <li><b>(a) Trabajos</b> en los 0,800 m hacia la pared (parte del reposo, resorte relajado):
+      $$W_F=(82{,}0)(0{,}800)=+65{,}6\ \text{J}$$
+      $$W_{res}=-\tfrac12(130)(0{,}800)^2=-41{,}6\ \text{J}$$
+      $$f_k=\mu_kmg=0{,}400(4{,}00)(9{,}80)=15{,}7\ \text{N}\ \Rightarrow\ W_f=-(15{,}68)(0{,}800)=-12{,}5\ \text{J}$$
+      $$W_{tot}=65{,}6-41{,}6-12{,}5=11{,}5\ \text{J}$$</li>
+    <li><b>Velocidad</b> (teorema con $K_1=0$):
+      $$v=\sqrt{\frac{2W_{tot}}{m}}=\sqrt{\frac{2(11{,}46)}{4{,}00}}=\mathbf{2{,}39\ m/s}\ \text{hacia la pared}$$</li>
+    <li><b>(b) Aceleración</b> en ese instante (+ hacia la pared). Fuerza del resorte: $kx=130(0{,}800)=104{,}0$ N, la fricción $15{,}7$ N se opone al movimiento (hacia fuera):
+      $$82{,}0-15{,}7-104{,}0=4{,}00\,a\ \Rightarrow\ a=\mathbf{-9{,}42\ m/s^2}$$
+      <span class="por">9,42 m/s² <b>alejándose de la pared</b>: el bloque se está frenando, aunque $\vec F$ apunte hacia la pared.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> el teorema da la rapidez en un punto; la aceleración en ese instante sale de la segunda ley con la fuerza del resorte $kx$ en ese $x$.</div>
   <div class="recipe"><b>Error típico:</b> creer que la aceleración apunta hacia la pared porque $\vec F$ apunta hacia ella.</div>

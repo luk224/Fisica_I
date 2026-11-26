@@ -1,11 +1,22 @@
 <p class="enun">Un camión de remolque jala de un automóvil 5,00 km por una carretera horizontal usando un cable cuya tensión es de 1350 N. (a) ¿Cuánto trabajo realiza el cable sobre el automóvil si jala de él horizontalmente? ¿Y si se jala a 35,0° sobre la horizontal? (b) ¿Cuánto trabajo realiza el cable sobre el camión en ambos casos? (c) ¿Cuánto trabajo efectúa la gravedad sobre el automóvil?</p>
 {{fig:cable-que-tira-de-un-coche-con-un-angulo-de-35}}
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo de una fuerza constante: $W=T\,s\cos\phi$ ($\phi$ = ángulo entre la fuerza y el desplazamiento)</li>
+    </ul></div>
   <ol class="steps">
-    <li>Fuerza constante, camino recto: $W=Ts\cos\phi$ (6.2), con $s=5{,}00\times10^3$ m.</li>
-    <li><b>(a)</b> $\phi=0^\circ$: $W=(1350)(5000)=\mathbf{6{,}75\times10^6\ J}$. $\phi=35^\circ$: $W=6{,}75\times10^6\cos35^\circ=\mathbf{5{,}53\times10^6\ J}$ (solo trabaja $T\cos35^\circ=1106$ N).</li>
-    <li><b>(b)</b> Por la tercera ley el cable tira del camión hacia atrás con la misma tensión: $\phi=180^\circ$ y $W=\mathbf{-6{,}75\times10^6\ J}$ en el primer caso; en el segundo, con el cable a $35^\circ$ sobre el camión, la fuerza sobre el camión apunta hacia atrás y hacia abajo y el ángulo con el desplazamiento es $\phi=145^\circ$: $W=6{,}75\times10^6\cos145^\circ=\mathbf{-5{,}53\times10^6\ J}$ (Solucionario 6-1). El motor del camión aporta la energía; el cable solo la transmite.</li>
-    <li><b>(c)</b> El peso es vertical y el desplazamiento horizontal: $\phi=90^\circ$, $W=\mathbf{0}$.</li>
+    <li><b>(a) Cable horizontal</b> ($\phi=0^\circ$, $s=5{,}00\times10^3$ m):
+      $$W=(1350)(5000)\cos0^\circ=\mathbf{6{,}75\times10^6\ J}$$</li>
+    <li><b>(a) Cable a $35^\circ$</b> ($\phi=35^\circ$):
+      $$W=(1350)(5000)\cos35^\circ=6{,}75\times10^6(0{,}819)=\mathbf{5{,}53\times10^6\ J}$$
+      <span class="por">Solo trabaja la componente $T\cos35^\circ=1106$ N, la paralela al desplazamiento.</span></li>
+    <li><b>(b) Sobre el camión.</b> Por la tercera ley el cable tira del camión hacia atrás con la misma tensión.
+      $$\text{horizontal: }\phi=180^\circ\ \Rightarrow\ W=(1350)(5000)\cos180^\circ=\mathbf{-6{,}75\times10^6\ J}$$
+      $$\text{a }35^\circ:\ \phi=145^\circ\ \Rightarrow\ W=6{,}75\times10^6\cos145^\circ=\mathbf{-5{,}53\times10^6\ J}$$
+      <span class="por">El motor del camión aporta la energía; el cable solo la transmite.</span></li>
+    <li><b>(c) Gravedad sobre el automóvil:</b> el peso es vertical y el desplazamiento horizontal, $\phi=90^\circ$:
+      $$W=mg\,s\cos90^\circ=\mathbf{0}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> identifica el ángulo <i>entre la fuerza y el desplazamiento</i> (no con la horizontal ni con el plano) y aplica $Fs\cos\phi$.</div>
   <div class="recipe"><b>Error típico:</b> usar seno en vez de coseno; creer que la tensión hace el mismo trabajo, con el mismo signo, sobre los dos cuerpos.</div>

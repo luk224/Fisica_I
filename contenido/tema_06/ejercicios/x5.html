@@ -3,12 +3,26 @@
 {{fig:bala-que-penetra-2-m-en-un-material-balance-de-t}}
 
   <p>Este problema ya está resuelto por cinemática en el <a href="tema_02_movimiento_rectilineo.html">tema 2</a>. Aquí, <b>el mismo por trabajo-energía</b>: nos dan distancia y rapideces, no tiempos (Estrategia 6.1).</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Energía cinética: $K=\tfrac12mv^2$</li>
+      <li>Trabajo de una fuerza constante: $W=F\,s\cos\phi$</li>
+      <li>Teorema trabajo-energía: $W_{tot}=K_2-K_1$</li>
+      <li>Segunda ley: $\sum F=m\,a$; velocidad media (a constante): $\bar v=\dfrac{v_1+v_2}{2}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Energías.</b> $m=0{,}010$ kg, $v_1=100$ m/s, $v_2=0$: $K_1=\tfrac12(0{,}010)(100)^2=50{,}0$ J; $K_2=0$.</li>
-    <li><b>Trabajos</b> (la bala cae en vertical sobre el material): el peso va a favor del desplazamiento, $W_{peso}=+mgd=(0{,}010)(9{,}81)(2)=+0{,}196$ J; la fuerza del material $F$ va en contra, $W_F=-Fd$.</li>
-    <li><b>Teorema.</b> $mgd-Fd=0-K_1$, luego $F=\dfrac{K_1}{d}+mg=25{,}0+0{,}098=\mathbf{25{,}1\ N}$. (Si se desprecia el peso, $F=K_1/d=25{,}0$ N; el peso es solo el 0,4 %.) <b>(b)</b></li>
-    <li><b>(a) Deceleración.</b> Por la segunda ley, $a=(F-mg)/m=K_1/(md)=v_1^2/(2d)=\mathbf{2{,}50\times10^3\ m/s^2}$ (hacia arriba; igual que con la ec. 2.13, U p.47).</li>
-    <li><b>(c) Tiempo.</b> El teorema no da tiempos; con aceleración constante la velocidad media es $(v_1+0)/2$, luego $t=2d/v_1=\mathbf{0{,}040\ s}$.</li>
+    <li><b>Energías</b> ($m=0{,}010$ kg, $v_1=100$ m/s, $v_2=0$):
+      $$K_1=\tfrac12(0{,}010)(100)^2=50{,}0\ \text{J},\qquad K_2=0$$</li>
+    <li><b>Trabajos</b> (la bala cae vertical, $d=2$ m):
+      $$W_{peso}=+mgd=(0{,}010)(9{,}81)(2)=+0{,}196\ \text{J}\qquad W_F=-F\,d$$
+      <span class="por">El peso va a favor del desplazamiento (+); la fuerza del material, en contra (−).</span></li>
+    <li><b>(b) Teorema</b> $W_{tot}=K_2-K_1$:
+      $$mgd-Fd=0-K_1\ \Rightarrow\ F=\frac{K_1}{d}+mg=\frac{50{,}0}{2}+0{,}098=\mathbf{25{,}1\ N}$$
+      <span class="por">Sin el peso saldría 25,0 N: el peso es solo el 0,4 %.</span></li>
+    <li><b>(a) Deceleración</b> (segunda ley, eje hacia arriba):
+      $$F-mg=m\,a\ \Rightarrow\ a=\frac{F-mg}{m}=\frac{25{,}098-0{,}098}{0{,}010}=\mathbf{2{,}50\times10^3\ m/s^2}\ \text{(hacia arriba)}$$</li>
+    <li><b>(c) Tiempo.</b> El teorema no da tiempos; con $a$ constante la velocidad media es $(v_1+0)/2$:
+      $$t=\frac{d}{\bar v}=\frac{2d}{v_1}=\frac{2(2)}{100}=\mathbf{0{,}040\ s}$$</li>
   </ol>
   <p><b>Resultado:</b> $a=2{,}50\times10^3$ m/s²; $F=25{,}1$ N (25,0 N sin el peso); $t=0{,}040$ s.</p>
   <div class="recipe"><b>Receta:</b> «fuerza media que frena un cuerpo en una distancia $d$»: $F\,d=K_1$ (más el trabajo del peso si el movimiento es vertical), como en el martinete del Ej. 6.4.</div>

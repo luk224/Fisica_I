@@ -1,12 +1,23 @@
 <p class="enun">Un libro de 2,50 kg se empuja contra un resorte horizontal de masa despreciable y constante 250 N/m, comprimiéndolo 0,250 m. Al soltarse, el libro se desliza sobre una mesa horizontal con $\mu_k=0{,}30$. Use el teorema trabajo-energía para hallar qué distancia recorre desde su posición inicial hasta detenerse.</p>
 {{fig:libro-lanzado-por-un-resorte-con-friccion-areas-}}
 
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo del resorte (de $x_1$ a relajado): $W_{res}=+\tfrac12kx_1^2$</li>
+      <li>Fricción cinética: $f_k=\mu_k\,mg$; $W_f=-f_k\,d$</li>
+      <li>Teorema: $W_{tot}=K_2-K_1=0$ (de reposo a reposo)</li>
+    </ul></div>
   <ol class="steps">
-    <li>Puntos: 1 = suelta (reposo), 2 = se detiene (reposo): $W_{tot}=0$.</li>
-    <li>Trabajo del resorte sobre el libro al pasar de 0,250 m comprimido a relajado (empuja a favor del movimiento): $W_{res}=+\tfrac12kx_1^2=+7{,}81$ J. Después el libro se separa del resorte (de masa despreciable) y este ya no trabaja. Hay que comprobar que llega a separarse: sí, porque $d$ resulta mayor que 0,250 m.</li>
-    <li>La fricción actúa en <b>todo</b> el recorrido $d$: $W_f=-\mu_kmg\,d$ con $\mu_kmg=7{,}35$ N.</li>
-    <li>$\tfrac12kx_1^2-\mu_kmg\,d=0\Rightarrow d=\dfrac{kx_1^2}{2\mu_kmg}=\dfrac{(250)(0{,}250)^2}{2(0{,}30)(2{,}50)(9{,}80)}=\mathbf{1{,}06\ m}$ desde la posición inicial.</li>
-    <li>(Extra, propio) La rapidez máxima se alcanza cuando la fuerza neta es cero: $kx=\mu_kmg\Rightarrow x=0{,}0294$ m (tras recorrer 0,221 m), con $v_{máx}=2{,}21$ m/s.</li>
+    <li><b>Puntos:</b> 1 = se suelta (reposo), 2 = se detiene (reposo) ⇒ $W_{tot}=0$.</li>
+    <li><b>Trabajo del resorte</b> (empuja a favor del movimiento hasta quedar relajado; después el libro se separa):
+      $$W_{res}=\tfrac12kx_1^2=\tfrac12(250)(0{,}250)^2=+7{,}81\ \text{J}$$</li>
+    <li><b>Fricción</b> (actúa en <b>todo</b> el recorrido $d$):
+      $$f_k=\mu_kmg=0{,}30(2{,}50)(9{,}80)=7{,}35\ \text{N},\qquad W_f=-7{,}35\,d$$</li>
+    <li><b>Teorema:</b>
+      $$7{,}81-7{,}35\,d=0\ \Rightarrow\ d=\frac{kx_1^2}{2\mu_kmg}=\frac{(250)(0{,}250)^2}{2(0{,}30)(2{,}50)(9{,}80)}=\mathbf{1{,}06\ m}$$
+      <span class="por">Desde la posición inicial. Comprobamos que $d>0{,}250$ m: el libro sí se separa del resorte.</span></li>
+    <li><b>Extra (rapidez máxima).</b> Es máxima cuando la fuerza neta es cero:
+      $$kx=\mu_kmg\ \Rightarrow\ x=\frac{7{,}35}{250}=0{,}0294\ \text{m}\ \ (\text{tras }0{,}221\ \text{m}),\qquad v_{m\acute ax}=2{,}21\ \text{m/s}$$</li>
   </ol>
     <div class="recipe"><b>Receta:</b> resorte + fricción, de reposo a reposo: $\tfrac12kx^2=\mu_kmg\,d$ (si el cuerpo se separa del resorte).</div>
   <div class="recipe"><b>Error típico:</b> aplicar la fricción solo después de dejar el resorte (actúa desde el principio); medir $d$ desde donde el resorte queda relajado.</div>
