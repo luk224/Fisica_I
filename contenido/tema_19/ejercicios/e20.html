@@ -1,7 +1,16 @@
 <p class="enun">En un partido de baloncesto, un balón se comprime al 80,0 % de su volumen original al botar. El aire (aproximadamente N₂) está a 20,0 °C y 2,00 atm, y el diámetro interior del balón es 23,9 cm. a) ¿Qué temperatura tiene el aire en la compresión máxima? (Suponga una compresión adiabática de gas ideal.) b) ¿Cuánto cambia su energía interna entre el estado inicial y el de máxima compresión?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Adiabática (N₂, $\gamma=1{,}40$): $T_2=T_1\Big(\dfrac{V_1}{V_2}\Big)^{\gamma-1}$</li>
+      <li>$n=\dfrac{p_1V_1}{RT_1}$; $\Delta U=n\,C_V\,\Delta T$ ($C_V=20{,}76$ J/(mol·K))</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> N₂ ⇒ $\gamma=1{,}40$. $T_2=T_1(V_1/V_2)^{\gamma-1}=293{,}15\cdot(1{,}25)^{0{,}40}=\mathbf{320{,}5\ K\ (47{,}4\ ^\circ C)}$.</li>
-    <li><b>b)</b> $V_1=\frac43\pi(0{,}1195)^3=7{,}15\times10^{-3}$ m³; $n=\dfrac{p_1V_1}{RT_1}=\dfrac{2{,}026\times10^5\cdot7{,}15\times10^{-3}}{8{,}314\cdot293{,}15}=0{,}594$ mol.</li>
-    <li>$\Delta U=nC_V\Delta T=0{,}594\cdot20{,}76\cdot27{,}4\approx\mathbf{338\ J}$ (positivo: el trabajo del suelo sobre el aire se queda como energía interna, $Q=0$).</li>
+    <li><b>a) Temperatura en la compresión máxima</b> ($V_1/V_2=1/0{,}800=1{,}25$):
+      $$T_2=293{,}15\,(1{,}25)^{0{,}40}=\mathbf{320{,}5\ K}\ (47{,}4\ ^\circ\text{C})$$</li>
+    <li><b>b) Moles</b> (radio $=0{,}1195$ m):
+      $$V_1=\tfrac43\pi(0{,}1195)^3=7{,}15\times10^{-3}\ \text{m}^3,\qquad n=\frac{(2{,}026\times10^5)(7{,}15\times10^{-3})}{(8{,}314)(293{,}15)}=0{,}594\ \text{mol}$$</li>
+    <li><b>Energía interna:</b>
+      $$\Delta U=nC_V\Delta T=0{,}594(20{,}76)(27{,}4)\approx\mathbf{338\ J}$$
+      <span class="por">Positivo: el trabajo del suelo sobre el aire se queda como energía interna ($Q=0$).</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> adiabática: $T_2$ con $TV^{\gamma-1}$; $n$ con $pV=nRT$; $\Delta U=nC_V\Delta T$. <b>Error típico:</b> usar el diámetro como radio; olvidar pasar 2 atm a Pa.</div>

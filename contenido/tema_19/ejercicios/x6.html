@@ -1,12 +1,27 @@
 <p class="enun"><b>Examen Febrero 2023 (2ª semana) P-2 (3 puntos).</b> Una máquina térmica opera según el ciclo de la figura siendo la sustancia de trabajo 3 moles de un gas monoatómico con comportamiento ideal, que alcanza una temperatura máxima de 300 °C, y se sabe que el proceso BC es isotérmico. La presión en los estados A y C es de $1\times10^5$ Pa, y en el estado B, de $4\times10^5$ Pa. Calcular: (a) El calor entrante en el gas y el cedido por el gas en cada ciclo. (b) El trabajo que efectúa la máquina en cada ciclo. (c) La eficiencia que tiene la máquina y compárela con la máxima eficiencia posible que puede lograrse con los depósitos caliente y frío que se usan en este ciclo. Considere: $T(\text{K})=T(^\circ\text{C})+273{,}15$; $R=8{,}31$ J mol⁻¹ K⁻¹. (Figura: A→B vertical hacia arriba, BC curva isoterma bajando a la derecha hasta C y C→A horizontal hacia la izquierda.)</p>
 {{fig:x6-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$pV=nRT$; monoatómico: $C_V=\tfrac32R$, $C_p=\tfrac52R$; $\Delta U=nC_V\Delta T$</li>
+      <li>Isócora: $Q=nC_V\Delta T$; isoterma: $Q=W=nRT\ln\dfrac{V_2}{V_1}$; isóbara: $Q=nC_p\Delta T$, $W=p\Delta V$</li>
+      <li>$e=\dfrac{W}{Q_H}$; Carnot: $e_C=1-\dfrac{T_C}{T_H}$ (kelvin)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>¿Dónde está $T_{max}$?</b> A→B a volumen constante con $p$ que se multiplica por 4 ⇒ $T$ sube; B→C isoterma; C→A a $p$ constante con $V$ que disminuye ⇒ $T$ baja. Luego $T_B=T_C=573{,}15$ K y $T_A$ es la mínima.</li>
-    <li><b>Estados.</b> Isócora: $T_A=T_B\dfrac{p_A}{p_B}=\mathbf{143{,}29\ K}$. $V_A=V_B=\dfrac{nRT_B}{p_B}=\dfrac{3\cdot8{,}31\cdot573{,}15}{4\times10^5}=\mathbf{0{,}03572\ m^3}$. Isoterma con $p_C=p_A$: $V_C=V_B\dfrac{p_B}{p_C}=4V_B=\mathbf{0{,}14289\ m^3}$.</li>
-    <li><b>Calores</b> ($C_V=\frac32R$, $C_p=\frac52R$): <br>A→B: $W=0$, $Q_{AB}=\Delta U=nC_V(T_B-T_A)=3\cdot\frac32\cdot8{,}31\cdot429{,}86=\mathbf{+16\,075\ J}$. <br>B→C: $\Delta U=0$, $Q_{BC}=W_{BC}=nRT_B\ln\frac{V_C}{V_B}=3\cdot8{,}31\cdot573{,}15\ln4=\mathbf{+19\,808\ J}$. <br>C→A: $Q_{CA}=nC_p(T_A-T_C)=\mathbf{-26\,791\ J}$; $W_{CA}=p_A(V_A-V_C)=-10\,717$ J; $\Delta U_{CA}=-16\,075$ J.</li>
-    <li><b>(a)</b> Calor entrante $Q_H=16\,075+19\,808=\mathbf{35\,883\ J}$; cedido $|Q_C|=\mathbf{26\,791\ J}$.</li>
-    <li><b>(b)</b> $W=Q_H-|Q_C|=\mathbf{9092\ J}$ por ciclo. Comprobación por tramos: $0+19\,808-10\,717=9092$ J ✓.</li>
-    <li><b>(c)</b> $e=W/Q_H=\mathbf{0{,}253\ (25{,}3\ \%)}$. Máxima posible entre los mismos depósitos (Carnot, 20.14): $e_C=1-\dfrac{143{,}29}{573{,}15}=1-\dfrac{p_A}{p_B}=\mathbf{0{,}75\ (75\ \%)}$. La máquina alcanza un tercio del máximo.</li>
+    <li><b>Temperaturas.</b> A→B ($V$ cte, $p\times4$) sube $T$; B→C isoterma; C→A ($p$ cte, $V$ baja) baja $T$. Luego $T_B=T_C=573{,}15$ K y $T_A$ es la mínima:
+      $$T_A=T_B\frac{p_A}{p_B}=\mathbf{143{,}29\ K}$$</li>
+    <li><b>Volúmenes:</b>
+      $$V_A=V_B=\frac{nRT_B}{p_B}=\frac{3(8{,}31)(573{,}15)}{4\times10^5}=\mathbf{0{,}03572\ m^3},\qquad V_C=V_B\frac{p_B}{p_C}=4V_B=\mathbf{0{,}14289\ m^3}$$</li>
+    <li><b>Calores:</b>
+      $$Q_{AB}=nC_V(T_B-T_A)=3\cdot\tfrac32(8{,}31)(429{,}86)=\mathbf{+16\,075\ J}\quad(W=0)$$
+      $$Q_{BC}=W_{BC}=nRT_B\ln4=3(8{,}31)(573{,}15)\ln4=\mathbf{+19\,808\ J}$$
+      $$Q_{CA}=nC_p(T_A-T_C)=\mathbf{-26\,791\ J},\quad W_{CA}=p_A(V_A-V_C)=-10\,717\ \text{J}$$</li>
+    <li><b>(a) Calor entrante y cedido:</b>
+      $$Q_H=16\,075+19\,808=\mathbf{35\,883\ J},\qquad|Q_C|=\mathbf{26\,791\ J}$$</li>
+    <li><b>(b) Trabajo por ciclo:</b>
+      $$W=Q_H-|Q_C|=\mathbf{9092\ J}\quad(\text{comprobación: }0+19\,808-10\,717=9092\ \text{J}\ \checkmark)$$</li>
+    <li><b>(c) Eficiencias:</b>
+      $$e=\frac{W}{Q_H}=\frac{9092}{35\,883}=\mathbf{0{,}253}\ (25{,}3\ \%),\qquad e_C=1-\frac{143{,}29}{573{,}15}=\mathbf{0{,}75}\ (75\ \%)$$
+      <span class="por">La máquina alcanza un tercio del máximo posible.</span></li>
   </ol>
   {{fig:ciclo-de-la-maquina-termica-del-examen-isocora-d}}
 

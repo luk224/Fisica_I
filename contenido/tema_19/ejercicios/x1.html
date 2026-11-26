@@ -1,11 +1,22 @@
 <p class="enun"><b>Examen Febrero 2024 (2ª semana) P-2 (3 puntos).</b> Un sistema termodinámico se lleva del estado $a$ al estado $c$ de la figura siguiendo la trayectoria $abc$, el trabajo $W$ efectuado por el sistema es de 450 J. Por la trayectoria $adc$ el trabajo es $W=120$ J. Las energías internas de los cuatro estados que se ilustran en la figura son $U_a=150$ J, $U_b=240$ J, $U_c=680$ J y $U_d=330$ J. Calcule el flujo de calor $Q$ para cada uno de los cuatro procesos: $ab$, $bc$, $ad$, $dc$. En cada proceso, ¿el sistema absorbe o desprende calor? (La figura es un rectángulo en el diagrama $pV$: $a$ abajo a la izquierda, $b$ encima de $a$, $c$ arriba a la derecha y $d$ abajo a la derecha; $ab$ y $dc$ verticales, $bc$ y $ad$ horizontales.) Este ejercicio coincide con el problema 19.38 de U.</p>
 {{fig:x1-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Primera ley: $Q=\Delta U+W$, con $\Delta U=U_{final}-U_{inicial}$ (función de estado)</li>
+      <li>Tramo vertical ($V$ constante): $W=0$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Qué herramienta.</b> No se dice que la sustancia sea un gas ideal: solo vale lo general. Usamos la <b>primera ley</b> $Q=\Delta U+W$ (19.5) con $\Delta U=U_{final}-U_{inicial}$ (función de estado).</li>
-    <li><b>Trabajo de cada tramo leyendo la figura.</b> Un tramo vertical ($V$ constante) no hace trabajo: $W_{ab}=0$, así que todo el trabajo de $abc$ está en $bc$: $W_{bc}=450$ J. Igualmente $W_{dc}=0$ y $W_{ad}=120$ J.</li>
-    <li><b>Cambios de energía interna:</b> $\Delta U_{ab}=240-150=90$ J; $\Delta U_{bc}=680-240=440$ J; $\Delta U_{ad}=330-150=180$ J; $\Delta U_{dc}=680-330=350$ J.</li>
-    <li><b>Calores</b> ($Q=\Delta U+W$): $Q_{ab}=90+0=\mathbf{+90\ J}$; $Q_{bc}=440+450=\mathbf{+890\ J}$; $Q_{ad}=180+120=\mathbf{+300\ J}$; $Q_{dc}=350+0=\mathbf{+350\ J}$. Los cuatro son positivos: <b>en todos el sistema absorbe calor</b>.</li>
-    <li><b>Comprobación.</b> $\Delta U_{ac}=530$ J por los dos caminos: $Q_{abc}-W_{abc}=980-450=530$ ✓; $Q_{adc}-W_{adc}=650-120=530$ ✓. $Q$ y $W$ cambian con el camino; $\Delta U$ no.</li>
+    <li><b>Trabajo de cada tramo</b> (en $ab$ y $dc$ no cambia el volumen):
+      $$W_{ab}=0,\quad W_{bc}=450\ \text{J},\quad W_{ad}=120\ \text{J},\quad W_{dc}=0$$</li>
+    <li><b>Cambios de energía interna:</b>
+      $$\Delta U_{ab}=240-150=90\ \text{J},\ \ \Delta U_{bc}=680-240=440\ \text{J},\ \ \Delta U_{ad}=330-150=180\ \text{J},\ \ \Delta U_{dc}=680-330=350\ \text{J}$$</li>
+    <li><b>Calores</b> ($Q=\Delta U+W$):
+      $$Q_{ab}=90+0=\mathbf{+90\ J},\qquad Q_{bc}=440+450=\mathbf{+890\ J}$$
+      $$Q_{ad}=180+120=\mathbf{+300\ J},\qquad Q_{dc}=350+0=\mathbf{+350\ J}$$
+      <span class="por">Los cuatro son positivos: en todos el sistema absorbe calor.</span></li>
+    <li><b>Comprobación:</b> $\Delta U_{ac}=530$ J por los dos caminos:
+      $$Q_{abc}-W_{abc}=980-450=530\ \checkmark,\qquad Q_{adc}-W_{adc}=650-120=530\ \checkmark$$
+      <span class="por">$Q$ y $W$ cambian con el camino; $\Delta U$ no.</span></li>
   </ol>
   {{fig:rectangulo-abcd-en-el-diagrama-pv-con-las-energi}}
 
