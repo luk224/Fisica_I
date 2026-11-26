@@ -20,6 +20,14 @@ def num_de(p):
 
 
 class Contenido(unittest.TestCase):
+    def test_sin_punto_medio_dentro_de_text(self):
+        """«·» dentro de \\text{} no lo entiende KaTeX (sale «\\cdotp» en rojo): usar \\text{kg}\\cdot\\text{m}."""
+        malos = []
+        for f in CONTENIDO.rglob('*'):
+            if f.suffix in ('.html', '.json') and re.search(r'\\+text\{[^{}]*\u00b7', f.read_text(encoding='utf8')):
+                malos.append(str(f.relative_to(CONTENIDO)))
+        self.assertFalse(malos, f'«·» dentro de \\text{{}}: {malos}')
+
     def test_hay_temas(self):
         self.assertTrue(TEMAS_DATOS, 'no hay ningún contenido/tema_NN/tema.json')
 
