@@ -414,12 +414,19 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>«Coinciden» significa $T_F=T_C=T$: impón esa igualdad en la relación entre escalas y despeja.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>La fórmula con el $+32$ o el $+273{,}15$ es para <i>valores</i>; para intervalos solo vale el factor 9/5.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> «Coinciden» significa que marcan <b>el mismo número</b> $T$. Se impone $T_F=T_C=T$ en la relación entre escalas y se despeja.</li>
-    <li><b>a)</b> Con (17.1): $T=\tfrac95T+32^\circ\Rightarrow-\tfrac45T=32^\circ\Rightarrow T=\mathbf{-40^\circ}$: $-40$ °C $=-40$ °F.</li>
-    <li><b>b)</b> Se pasa de °F a K encadenando (17.2) y (17.3): $T_K=\tfrac59(T_F-32^\circ)+273{,}15$. Con $T_K=T_F=T$: $T=\tfrac59(T-32)+273{,}15\Rightarrow\tfrac49T=273{,}15-17{,}78=255{,}37\Rightarrow T=\mathbf{574{,}6\approx575}$: 575 °F $=$ 575 K.</li>
-    <li><b>Celsius y Kelvin no coinciden nunca</b>: difieren siempre en 273,15 (mismo tamaño de grado, distinto cero).</li>
-    <li><b>Conversión directa (problema 17.1, misma página del solucionario).</b> $T_F=\tfrac95T_C+32$: $-62{,}8$ °C $\to\mathbf{-81{,}0}$ °F; 56,7 °C $\to\mathbf{134{,}1}$ °F; 31,1 °C $\to\mathbf{88{,}0}$ °F.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$T_F=\tfrac95T_C+32$; $T_K=T_C+273{,}15$ ⇒ $T_K=\tfrac59(T_F-32)+273{,}15$</li>
+      <li>Intervalos: $1\ \text{C}^\circ=1\ \text{K}=1{,}8\ \text{F}^\circ$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Fahrenheit y Celsius</b> («coinciden» ⇒ mismo número $T$):
+      $$T=\tfrac95T+32\ \Rightarrow\ -\tfrac45T=32\ \Rightarrow\ T=\mathbf{-40^\circ}\quad(-40\ ^\circ\text{C}=-40\ ^\circ\text{F})$$</li>
+    <li><b>b) Fahrenheit y Kelvin:</b>
+      $$T=\tfrac59(T-32)+273{,}15\ \Rightarrow\ \tfrac49T=273{,}15-17{,}78=255{,}37\ \Rightarrow\ T=574{,}6\approx\mathbf{575}\quad(575\ ^\circ\text{F}=575\ \text{K})$$
+      <span class="por">Celsius y Kelvin no coinciden nunca: difieren siempre en 273,15.</span></li>
+    <li><b>Conversión directa (17.1):</b>
+      $$-62{,}8\ ^\circ\text{C}\to\mathbf{-81{,}0}\ ^\circ\text{F},\qquad56{,}7\ ^\circ\text{C}\to\mathbf{134{,}1}\ ^\circ\text{F},\qquad31{,}1\ ^\circ\text{C}\to\mathbf{88{,}0}\ ^\circ\text{F}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/rectas-tf-9-5-tc-32-y-tf-tc-se-cortan-en-40.svg">
 <div class="figph" role="img" aria-label="Rectas TF = 9/5 TC + 32 y TF = TC: se cortan en −40" style="aspect-ratio:340/240"></div>
@@ -439,11 +446,19 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>A volumen constante la presión es lineal en $T$: calcula la pendiente con los dos puntos y extrapola a $p=0$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>El cociente $p_2/p_1=T_2/T_1$ solo vale con kelvin.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea</b> (fig. 17.5-17.6). A volumen constante, la presión de un gas crece linealmente con la temperatura; extrapolando la recta hasta $p=0$ se obtiene el cero absoluto.</li>
-    <li><b>a) Pendiente.</b> $\gamma=\dfrac{\Delta p}{\Delta T}=\dfrac{6{,}50\times10^4-4{,}80\times10^4}{100-0{,}01}=170{,}0$ Pa/C°.</li>
-    <li><b>Recta y corte.</b> $p=p_1+\gamma(T-T_1)$; con $p=0$: $T=T_1-\dfrac{p_1}{\gamma}=0{,}01-\dfrac{4{,}80\times10^4}{170{,}0}=\mathbf{-282\ °C}$.</li>
-    <li><b>b)</b> La ecuación (17.4), $p_2/p_1=T_2/T_1$, exige <b>temperaturas en kelvin</b>: $p_\text{triple}=6{,}50\times10^4\cdot\dfrac{273{,}16}{373{,}15}=\mathbf{4{,}76\times10^4\ Pa}$. El valor medido ($4{,}80\times10^4$ Pa) es distinto: <b>este gas no obedece exactamente (17.4)</b>; por eso su extrapolación da $-282$ °C y no $-273{,}15$ °C. La ecuación (17.4) solo es exacta para gases de muy baja densidad.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Recta $p(T)$ a volumen constante: $\gamma=\dfrac{\Delta p}{\Delta T}$; $p=p_1+\gamma(T-T_1)$</li>
+      <li>Gas ideal a $V$ constante: $\dfrac{p_2}{p_1}=\dfrac{T_2}{T_1}$ (solo con kelvin)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Pendiente:</b>
+      $$\gamma=\frac{6{,}50\times10^4-4{,}80\times10^4}{100-0{,}01}=170{,}0\ \text{Pa/C}^\circ$$</li>
+    <li><b>Corte con $p=0$:</b>
+      $$T=T_1-\frac{p_1}{\gamma}=0{,}01-\frac{4{,}80\times10^4}{170{,}0}=\mathbf{-282\ ^\circ C}$$</li>
+    <li><b>b) Gas ideal</b> (temperaturas en kelvin):
+      $$p_{triple}=6{,}50\times10^4\cdot\frac{273{,}16}{373{,}15}=\mathbf{4{,}76\times10^4\ Pa}$$
+      <span class="por">El valor medido (4,80×10⁴ Pa) es distinto: este gas no obedece exactamente (17.4); por eso la extrapolación da −282 °C y no −273,15 °C. La ecuación solo es exacta para gases de muy baja densidad.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/dos-medidas-del-termometro-de-gas-recta-p-t-extr.svg">
 <div class="figph" role="img" aria-label="Dos medidas del termómetro de gas: recta p(T) extrapolada hasta p = 0 en −282 °C, algo por debajo de −273,15 °C" style="aspect-ratio:340/230"></div>
@@ -459,11 +474,16 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>El diámetro es una longitud: $L=L_0(1+\alpha\Delta T)$ con $L_0$ el valor conocido.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$\Delta T=T_{buscada}-T_{conocida}$ (ojo con el signo).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> El diámetro es una longitud: se dilata según (17.7), $L=L_0(1+\alpha\Delta T)$, con $\alpha_{Al}=2{,}4\times10^{-5}$ K$^{-1}$.</li>
-    <li><b>Estado de referencia.</b> Se conoce el diámetro a $-78{,}0$ °C (4,500 mm); se busca a 23,0 °C. Tomando $L_0=4{,}500$ mm a $-78{,}0$ °C: $\Delta T=23{,}0-(-78{,}0)=101$ C°.</li>
-    <li><b>Cálculo.</b> $d=4{,}500\,[1+(2{,}4\times10^{-5})(101)]=\mathbf{4{,}511\ mm}$.</li>
-    <li><b>Lectura.</b> Al volver a temperatura ambiente el remache intenta crecer 0,011 mm dentro del orificio: queda muy apretado (eso se busca).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Dilatación lineal: $L=L_0\,(1+\alpha\,\Delta T)$; aluminio: $\alpha=2{,}4\times10^{-5}\ \text{K}^{-1}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Referencia:</b> se conoce el diámetro a $-78{,}0$ °C (4,500 mm) y se busca a 23,0 °C:
+      $$\Delta T=23{,}0-(-78{,}0)=101\ \text{C}^\circ$$</li>
+    <li><b>Diámetro del remache:</b>
+      $$d=4{,}500\,\big[1+(2{,}4\times10^{-5})(101)\big]=4{,}500(1{,}002424)=\mathbf{4{,}511\ mm}$$
+      <span class="por">Al volver a temperatura ambiente, el remache intenta crecer 0,011 mm dentro del orificio: queda muy apretado.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/remache-de-aluminio-frio-que-entra-justo-en-el-o.svg">
 <div class="figph" role="img" aria-label="Remache de aluminio frío que entra justo en el orificio y el mismo remache a 23 °C, algo más ancho que el orificio" style="aspect-ratio:340/194"></div>
@@ -479,12 +499,19 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>Se dilatan el mercurio <i>y</i> el hueco del matraz; lo que se derrama es la diferencia.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$\Delta V_{Hg}-\Delta V_{vidrio}=8{,}95$ cm³; despeja $\beta_{vidrio}$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> Se dilatan <b>los dos</b>: el mercurio y el hueco del matraz (un hueco se dilata como si fuera del mismo material). Lo que se derrama es la <b>diferencia</b>: $\Delta V_{Hg}-\Delta V_\text{vidrio}=8{,}95$ cm³.</li>
-    <li><b>Mercurio</b> (17.8): $\Delta V_{Hg}=\beta_{Hg}V_0\Delta T=(18{,}0\times10^{-5})(1000{,}00)(55{,}0)=9{,}90$ cm³.</li>
-    <li><b>Vidrio:</b> $\Delta V_\text{vidrio}=9{,}90-8{,}95=0{,}95$ cm³.</li>
-    <li><b>Coeficiente:</b> $\beta_\text{vidrio}=\dfrac{\Delta V_\text{vidrio}}{V_0\Delta T}=\dfrac{0{,}95}{(1000{,}00)(55{,}0)}=\mathbf{1{,}7\times10^{-5}\ K^{-1}}$, dentro del intervalo de la tabla 17.2 (1,2 a $2{,}7\times10^{-5}$).</li>
-    <li><b>Comprobación.</b> $\beta_{Hg}\gg\beta_\text{vidrio}$: por eso se derrama (mismo mecanismo que el ejemplo 17.3).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Dilatación volumétrica: $\Delta V=\beta\,V_0\,\Delta T$</li>
+      <li>Derrame = $\Delta V_{Hg}-\Delta V_{vidrio}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Mercurio</b> (se dilata, y el hueco del matraz también):
+      $$\Delta V_{Hg}=(18{,}0\times10^{-5})(1000{,}00)(55{,}0)=9{,}90\ \text{cm}^3$$</li>
+    <li><b>Vidrio:</b>
+      $$\Delta V_{vidrio}=9{,}90-8{,}95=0{,}95\ \text{cm}^3$$</li>
+    <li><b>Coeficiente del vidrio:</b>
+      $$\beta_{vidrio}=\frac{\Delta V_{vidrio}}{V_0\,\Delta T}=\frac{0{,}95}{(1000{,}00)(55{,}0)}=\mathbf{1{,}7\times10^{-5}\ K^{-1}}$$
+      <span class="por">Dentro del intervalo de la tabla 17.2 (1,2 a 2,7×10⁻⁵).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/dilatacion-de-la-capacidad-del-matraz-0-95-cm-y-.svg">
 <div class="figph" role="img" aria-label="Dilatación de la capacidad del matraz (0,95 cm³) y del mercurio (9,90 cm³): la diferencia, 8,95 cm³, se derrama" style="aspect-ratio:340/198"></div>
@@ -500,10 +527,17 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>Si el riel puede dilatarse, $\Delta L=\alpha L_0\Delta T$: ese es el hueco.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Si no puede, el esfuerzo anula la dilatación: $F/A=-Y\alpha\Delta T$ (no depende de la longitud).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a) Dilatación libre.</b> $\Delta T=33{,}0-(-9{,}0)=42{,}0$ C°; $\Delta L=\alpha L_0\Delta T=(1{,}2\times10^{-5})(12{,}0)(42{,}0)=6{,}0\times10^{-3}$ m $=\mathbf{6{,}0\ mm}$. Ese es el hueco que hay que dejar.</li>
-    <li><b>b) Dilatación impedida.</b> Si no hay hueco, el riel no puede alargarse: los rieles vecinos lo <b>comprimen</b> lo justo para anular la dilatación. La deformación por fuerza, $\Delta L/L_0=F/(AY)$, debe cancelar la térmica, $\alpha\Delta T$: $$\frac FA=-Y\alpha\Delta T\ (17.12)=-(2{,}0\times10^{11})(1{,}2\times10^{-5})(42{,}0)=\mathbf{-1{,}0\times10^{8}\ Pa}.$$ El signo $-$ indica <b>compresión</b>.</li>
-    <li><b>Evaluación.</b> Una deformación térmica de solo 0,05 % produce un esfuerzo de 100 MPa, del orden del límite elástico de un acero común: el riel se pandearía. Cambios pequeños de longitud, esfuerzos enormes.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Dilatación libre: $\Delta L=\alpha\,L_0\,\Delta T$; acero: $\alpha=1{,}2\times10^{-5}\ \text{K}^{-1}$</li>
+      <li>Dilatación impedida: $\dfrac{F}{A}=-Y\,\alpha\,\Delta T$; acero: $Y=2{,}0\times10^{11}$ Pa</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Hueco necesario:</b>
+      $$\Delta T=33{,}0-(-9{,}0)=42{,}0\ \text{C}^\circ,\qquad\Delta L=(1{,}2\times10^{-5})(12{,}0)(42{,}0)=6{,}0\times10^{-3}\ \text{m}=\mathbf{6{,}0\ mm}$$</li>
+    <li><b>b) Rieles en contacto</b> (la deformación por fuerza debe cancelar la térmica):
+      $$\frac FA=-Y\alpha\Delta T=-(2{,}0\times10^{11})(1{,}2\times10^{-5})(42{,}0)=\mathbf{-1{,}0\times10^{8}\ Pa}$$
+      <span class="por">El signo menos indica compresión. Una deformación térmica de solo 0,05 % da 100 MPa, del orden del límite elástico de un acero común: el riel se pandearía.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/dos-rieles-de-acero-en-invierno-con-un-hueco-de-.svg">
 <div class="figph" role="img" aria-label="Dos rieles de acero: en invierno con un hueco de 6,0 mm y en verano sin hueco, comprimidos con un esfuerzo de 1,0e8 Pa" style="aspect-ratio:340/192"></div>
@@ -520,12 +554,18 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>La energía cinética del martillo que se transforma en calor es el 60 % de $\tfrac12mv^2$ en cada golpe.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$\Delta T=Q/(mc)$ con la masa del <i>clavo</i> en kg.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> La energía mecánica que «desaparece» en el golpe se convierte en energía interna; aquí se pide tratarla como un calor $Q$ que entra en el clavo.</li>
-    <li><b>Energía de un golpe:</b> $K=\tfrac12mv^2=\tfrac12(1{,}80)(7{,}80)^2=54{,}8$ J.</li>
-    <li><b>Al clavo, en 10 golpes:</b> $Q=10\cdot0{,}60\cdot54{,}8=329$ J.</li>
-    <li><b>Subida de temperatura:</b> $\Delta T=\dfrac{Q}{mc}=\dfrac{329}{(8{,}00\times10^{-3})(910)}=\mathbf{45{,}1\ C^\circ}$.</li>
-    <li><b>Evaluación.</b> Un clavo recién clavado quema al tacto: coherente.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Energía cinética: $K=\tfrac12mv^2$</li>
+      <li>$Q=m\,c\,\Delta T$ ⇒ $\Delta T=\dfrac{Q}{m\,c}$; aluminio $c=910$ J/(kg·K)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Energía de un golpe:</b>
+      $$K=\tfrac12(1{,}80)(7{,}80)^2=54{,}8\ \text{J}$$</li>
+    <li><b>Calor que recibe el clavo en 10 golpes</b> (60 %):
+      $$Q=10(0{,}60)(54{,}8)=329\ \text{J}$$</li>
+    <li><b>Aumento de temperatura:</b>
+      $$\Delta T=\frac{Q}{m\,c}=\frac{329}{(8{,}00\times10^{-3})(910)}=\mathbf{45{,}1\ C^\circ}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/cadena-de-calculo-energia-cinetica-de-un-golpe-f.svg">
 <div class="figph" role="img" aria-label="Cadena de cálculo: energía cinética de un golpe, fracción que pasa al clavo, diez golpes y aumento de temperatura" style="aspect-ratio:340/196"></div>
@@ -541,10 +581,15 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>$Q=mc\Delta T$ con el intervalo $\Delta T$ (no la temperatura final en kelvin).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Potencia $=Q/t$ con $P$ en J/s.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a)</b> $Q=mc\Delta T=(0{,}320)(4190)(60{,}0)=\mathbf{8{,}04\times10^4\ J}$.</li>
-    <li><b>b)</b> Potencia $=$ energía/tiempo, $P=Q/t$, y 200 W $=200$ J/s $\Rightarrow$ $t=Q/P=8{,}04\times10^4/200=\mathbf{402\ s\approx6{,}7\ min}$.</li>
-    <li><b>Evaluación.</b> Es lo que tarda un hervidor pequeño: razonable.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$Q=m\,c\,\Delta T$; potencia: $P=\dfrac{Q}{t}$ (1 W = 1 J/s)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Calor:</b>
+      $$Q=(0{,}320)(4190)(60{,}0)=\mathbf{8{,}04\times10^4\ J}$$</li>
+    <li><b>b) Tiempo:</b>
+      $$t=\frac{Q}{P}=\frac{8{,}04\times10^4}{200}=\mathbf{402\ s}\approx6{,}7\ \text{min}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/temperatura-del-agua-en-la-taza-frente-al-tiempo.svg">
 <div class="figph" role="img" aria-label="Temperatura del agua en la taza frente al tiempo con un calentador de 200 W: de 20 °C a 80 °C en 402 s" style="aspect-ratio:340/200"></div>
@@ -560,12 +605,20 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>Calorimetría sin cambios de fase: $\sum m_ic_i(T_f-T_i)=0$ con cada $\Delta T$ con su signo; el metal parte de 100 °C.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Si el vaso también absorbe calor, el metal cedió más de lo atribuido al agua.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea</b> (calorimetría, Estrategia 17.2). Sistema aislado: $\sum Q=0$, con cada $Q=mc\,(T_f-T_i)$ <b>con su signo</b>. Haber estado en agua hirviendo $\Rightarrow$ el metal empieza a 100 °C.</li>
-    <li><b>Planteamiento:</b> $Q_w+Q_m=0$: $(1{,}00)(4190)(22{,}0-20{,}0)+(0{,}500)\,c_m\,(22{,}0-100)=0$.</li>
-    <li><b>Despeje:</b> $c_m=\dfrac{(1{,}00)(4190)(2{,}0)}{(0{,}500)(78{,}0)}=\mathbf{215\ J/(kg\cdot K)}$.</li>
-    <li><b>b)</b> Para almacenar energía térmica es mejor <b>el agua</b>: por kilogramo y por grado guarda $4190/215\approx19$ veces más.</li>
-    <li><b>c)</b> Si el vaso también absorbe calor, el metal cedió <b>más</b> calor del atribuido al agua; el $c_m$ verdadero es <b>mayor</b> y el calculado resulta <b>demasiado pequeño</b>.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Calorimetría (sistema aislado): $\sum Q=0$, con $Q=m\,c\,(T_f-T_i)$ con su signo</li>
+      <li>Agua: $c=4190$ J/(kg·K)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Planteamiento</b> (el metal parte de 100 °C):
+      $$Q_w+Q_m=0:\qquad(1{,}00)(4190)(22{,}0-20{,}0)+(0{,}500)\,c_m\,(22{,}0-100)=0$$</li>
+    <li><b>a) Calor específico:</b>
+      $$c_m=\frac{(1{,}00)(4190)(2{,}0)}{(0{,}500)(78{,}0)}=\frac{8380}{39{,}0}=\mathbf{215\ J/(kg\cdot K)}$$</li>
+    <li><b>b) ¿Qué almacena mejor la energía?</b>
+      <span class="por">El agua: por kilogramo y por grado guarda $4190/215\approx19$ veces más.</span></li>
+    <li><b>c) Si el vaso absorbiera calor:</b>
+      <span class="por">El metal habría cedido más calor del atribuido al agua: el $c_m$ verdadero sería mayor y el calculado resulta demasiado pequeño.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/el-metal-baja-de-100-c-a-22-0-c-y-el-agua-sube-d.svg">
 <div class="figph" role="img" aria-label="El metal baja de 100 °C a 22,0 °C y el agua sube de 20,0 a 22,0 °C: los calores se compensan" style="aspect-ratio:340/210"></div>
@@ -581,14 +634,24 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>Cuatro tramos: calentar el hielo, fundirlo a 0 °C, calentar el agua y vaporizarla a 100 °C. En un cambio de fase la temperatura no varía: $Q=mL$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Usa el $c$ de cada fase y suma; para calorías divide entre 4,186 y para Btu entre 1055.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea</b> (fig. 17.20). El proceso tiene <b>cuatro tramos</b>: mientras cambia la temperatura, $Q=mc\Delta T$ (con el $c$ de la fase en que está); en cada cambio de fase la temperatura no varía y $Q=+mL$.</li>
-    <li><b>Hielo $-10\to0$ °C:</b> $Q_1=(0{,}0180)(2100)(10{,}0)=378$ J.</li>
-    <li><b>Fusión a 0 °C:</b> $Q_2=(0{,}0180)(3{,}34\times10^5)=6012$ J.</li>
-    <li><b>Agua $0\to100$ °C:</b> $Q_3=(0{,}0180)(4190)(100)=7542$ J.</li>
-    <li><b>Vaporización a 100 °C:</b> $Q_4=(0{,}0180)(2{,}256\times10^6)=40\,608$ J.</li>
-    <li><b>Total:</b> $Q=\mathbf{5{,}45\times10^4\ J}=5{,}45\times10^4/4{,}186=\mathbf{1{,}30\times10^4\ cal}=5{,}45\times10^4/1055=\mathbf{51{,}7\ Btu}$.</li>
-    <li><b>Evaluación.</b> La vaporización sola es el 74 % del total: los cambios de fase dominan.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Cambio de temperatura: $Q=m\,c\,\Delta T$ (hielo $c=2100$, agua $c=4190$ J/(kg·K))</li>
+      <li>Cambio de fase: $Q=m\,L$ ($L_f=3{,}34\times10^5$, $L_v=2{,}256\times10^6$ J/kg)</li>
+      <li>$1\ \text{cal}=4{,}186$ J; $1\ \text{Btu}=1055$ J</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Hielo $-10\to0$ °C:</b>
+      $$Q_1=(0{,}0180)(2100)(10{,}0)=378\ \text{J}$$</li>
+    <li><b>Fusión a 0 °C:</b>
+      $$Q_2=(0{,}0180)(3{,}34\times10^5)=6012\ \text{J}$$</li>
+    <li><b>Agua $0\to100$ °C:</b>
+      $$Q_3=(0{,}0180)(4190)(100)=7542\ \text{J}$$</li>
+    <li><b>Vaporización a 100 °C:</b>
+      $$Q_4=(0{,}0180)(2{,}256\times10^6)=40\,608\ \text{J}$$</li>
+    <li><b>Total:</b>
+      $$Q=378+6012+7542+40\,608=\mathbf{5{,}45\times10^4\ J}=\frac{5{,}45\times10^4}{4{,}186}=\mathbf{1{,}30\times10^4\ cal}=\frac{5{,}45\times10^4}{1055}=\mathbf{51{,}7\ Btu}$$
+      <span class="por">La vaporización sola es el 74 % del total: los cambios de fase dominan.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/curva-t-frente-a-q-acumulado-de-18-0-g-de-hielo-.svg">
 <div class="figph" role="img" aria-label="Curva T frente a Q acumulado de 18,0 g de hielo a −10 °C hasta vapor a 100 °C: cuatro tramos de 0,378; 6,01; 7,54 y 40,6 kJ" style="aspect-ratio:340/216"></div>
@@ -605,12 +668,22 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>Antes de plantear $\sum Q=0$, compara presupuestos: calor que puede ceder el agua hasta 0 °C y calor que necesita el hielo para fundirse entero.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Si no alcanza, coexisten hielo y agua: $T_f=0$ °C y la incógnita es la masa fundida.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea: comparar «presupuestos».</b> Antes de plantear $\sum Q=0$ con una $T$ desconocida, se calcula lo máximo que puede dar el agua sin congelarse y lo que necesita el hielo para fundirse entero.</li>
-    <li><b>Lo que puede ceder el agua al bajar a 0 °C:</b> $(1{,}50)(4190)(28{,}0)=1{,}76\times10^5$ J.</li>
-    <li><b>Lo que necesita el hielo para fundirse entero:</b> calentarse a 0 °C, $(0{,}600)(2100)(22{,}0)=2{,}77\times10^4$ J, más fundirse, $(0{,}600)(3{,}34\times10^5)=2{,}00\times10^5$ J: total $2{,}28\times10^5$ J.</li>
-    <li><b>a)</b> $2{,}28\times10^5&gt;1{,}76\times10^5$: <b>no se funde todo</b>. (Si se hubiera supuesto que sí, saldría $T=-5{,}9$ °C, imposible con agua líquida: la hipótesis queda refutada.)</li>
-    <li><b>b)</b> Coexisten hielo y agua $\Rightarrow T_f=\mathbf{0\ °C}$. Masa fundida: $1{,}76\times10^5=2{,}77\times10^4+m(3{,}34\times10^5)\Rightarrow m=0{,}444$ kg. <b>Quedan 0,156 kg de hielo</b>.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$Q=m\,c\,\Delta T$ (hielo $c=2100$, agua $c=4190$ J/(kg·K)); fusión $Q=m\,L_f$, $L_f=3{,}34\times10^5$ J/kg</li>
+      <li>Comparar «presupuestos»: calor que puede ceder el agua hasta 0 °C frente al que necesita el hielo para fundirse</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Calor que puede ceder el agua al bajar a 0 °C:</b>
+      $$Q_{agua}=(1{,}50)(4190)(28{,}0)=1{,}76\times10^5\ \text{J}$$</li>
+    <li><b>Calor que necesita el hielo para fundirse entero</b> (calentarse a 0 °C y fundirse):
+      $$Q_{hielo}=(0{,}600)(2100)(22{,}0)+(0{,}600)(3{,}34\times10^5)=2{,}77\times10^4+2{,}00\times10^5=2{,}28\times10^5\ \text{J}$$</li>
+    <li><b>a) ¿Se funde todo?</b>
+      $$2{,}28\times10^5\gt1{,}76\times10^5\ \Rightarrow\ \text{no se funde todo}$$
+      <span class="por">Si se hubiera supuesto que sí, saldría $T=-5{,}9$ °C, imposible con agua líquida: la hipótesis queda refutada.</span></li>
+    <li><b>b) Estado final:</b> coexisten hielo y agua ⇒ $T_f=\mathbf{0\ ^\circ C}$. Masa fundida:
+      $$1{,}76\times10^5=2{,}77\times10^4+m(3{,}34\times10^5)\ \Rightarrow\ m=0{,}444\ \text{kg}$$
+      $$\text{Queda hielo: }0{,}600-0{,}444=\mathbf{0{,}156\ kg}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/el-agua-puede-ceder-176-kj-al-enfriarse-hasta-0-.svg">
 <div class="figph" role="img" aria-label="El agua puede ceder 176 kJ al enfriarse hasta 0 °C pero el hielo necesita 228 kJ para fundirse del todo: no se derrite todo" style="aspect-ratio:340/176"></div>
@@ -627,11 +700,19 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>En estado estable pasa el mismo $H$ por toda la varilla: $T$ baja linealmente con $x$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$H=kA\,\Delta T/L$ con el área en m² ($1$ cm² $=10^{-4}$ m²).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> En estado estable no se acumula calor en ningún trozo: <b>la misma $H$ atraviesa toda la varilla</b>. Con $k$ y $A$ constantes, eso exige que $T$ baje <b>linealmente</b> con $x$.</li>
-    <li><b>a)</b> Gradiente $=\dfrac{T_H-T_C}{L}=\dfrac{100{,}0}{0{,}450}=\mathbf{222\ K/m}$.</li>
-    <li><b>b)</b> (17.21): $H=kA\cdot\text{gradiente}=(385)(1{,}25\times10^{-4})(222)=\mathbf{10{,}7\ W}$.</li>
-    <li><b>c)</b> Aplicando (17.21) solo al primer tramo de 0,120 m: $100-T=\dfrac{HL_1}{kA}=26{,}7$ C° $\Rightarrow T=\mathbf{73{,}3\ °C}$. (Equivale a $T=100-222\cdot0{,}120$: la recta.)</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Gradiente: $\dfrac{T_H-T_C}{L}$; corriente: $H=k\,A\,\dfrac{T_H-T_C}{L}$ (igual en toda sección)</li>
+      <li>$T(x)=T_H-\dfrac{(T_H-T_C)\,x}{L}$; cobre $k=385$ W/(m·K); $1\ \text{cm}^2=10^{-4}\ \text{m}^2$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Gradiente:</b>
+      $$\frac{T_H-T_C}{L}=\frac{100{,}0}{0{,}450}=\mathbf{222\ K/m}$$</li>
+    <li><b>b) Corriente de calor:</b>
+      $$H=kA\cdot222=(385)(1{,}25\times10^{-4})(222)=\mathbf{10{,}7\ W}$$</li>
+    <li><b>c) Temperatura a 12,0 cm del extremo caliente:</b>
+      $$T=100{,}0-222(0{,}120)=\mathbf{73{,}3\ ^\circ C}$$
+      <span class="por">Equivale a $100-HL_1/(kA)=100-26{,}7$.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/temperatura-frente-a-la-posicion-en-una-varilla-.svg">
 <div class="figph" role="img" aria-label="Temperatura frente a la posición en una varilla de cobre de 45 cm entre 100 °C y 0 °C: recta con pendiente −222 K/m; a 12 cm hay 73,3 °C" style="aspect-ratio:340/200"></div>
@@ -647,12 +728,19 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>Dos capas en serie: la misma $H/A$ atraviesa las dos: $k_1(T-T_1)/L_1=k_2(T_2-T)/L_2$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>También $H/A=\Delta T_{total}/\sum R_i$ con $R=L/k$; se suman resistencias, no conductividades.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> Mismo esquema que 17.56: dos capas en serie, misma $H$ (y misma $H/A$, pues el área es común).</li>
-    <li><b>a)</b> $\dfrac{0{,}080\,(T-(-10{,}0))}{0{,}030}=\dfrac{0{,}027\,(19{,}0-T)}{0{,}022}\Rightarrow2{,}667(T+10)=1{,}227(19-T)\Rightarrow T=\mathbf{-0{,}86\ °C}$.</li>
-    <li><b>b)</b> Con la madera: $H/A=0{,}080\,(-0{,}86+10{,}0)/0{,}030=\mathbf{24\ W/m^2}$; con el poliestireno sale lo mismo (comprobación).</li>
-    <li><b>Con resistencias</b> (17.23-17.24): $R=0{,}030/0{,}080+0{,}022/0{,}027=0{,}375+0{,}815=1{,}19$ m²·K/W $\Rightarrow H/A=29{,}0/1{,}19=24{,}4$ W/m² ✓.</li>
-    <li><b>Evaluación.</b> Casi toda la caída de temperatura (19,9 de 29 C°) está en el poliestireno, que es la capa de mayor $R$ aunque sea más delgada.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Capas en serie: misma $\dfrac HA$; $\dfrac HA=\dfrac{k\,\Delta T}{L}$</li>
+      <li>Resistencia: $R=\dfrac Lk$; $\dfrac HA=\dfrac{\Delta T_{total}}{\sum R_i}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Temperatura en la unión</b> (madera: $k=0{,}080$, $L=0{,}030$; poliestireno: $k=0{,}027$, $L=0{,}022$):
+      $$\frac{0{,}080\,(T+10{,}0)}{0{,}030}=\frac{0{,}027\,(19{,}0-T)}{0{,}022}\ \Rightarrow\ 2{,}667(T+10)=1{,}227(19-T)\ \Rightarrow\ T=\mathbf{-0{,}86\ ^\circ C}$$</li>
+    <li><b>b) Flujo de calor por m²:</b>
+      $$\frac HA=\frac{0{,}080\,(-0{,}86+10{,}0)}{0{,}030}=\mathbf{24\ W/m^2}$$</li>
+    <li><b>Con resistencias:</b>
+      $$R=\frac{0{,}030}{0{,}080}+\frac{0{,}022}{0{,}027}=0{,}375+0{,}815=1{,}19\ \text{m}^2\text{K/W}\ \Rightarrow\ \frac HA=\frac{29{,}0}{1{,}19}=24{,}4\ \text{W/m}^2\ \checkmark$$
+      <span class="por">Casi toda la caída (19,9 de 29 C°) está en el poliestireno: es la capa de mayor $R$.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/pared-de-madera-y-poliestireno-con-el-perfil-de-.svg">
 <div class="figph" role="img" aria-label="Pared de madera y poliestireno con el perfil de temperatura: −10,0 °C fuera, −0,86 °C en la unión y 19,0 °C dentro; casi toda la caída ocurre en el poliestireno" style="aspect-ratio:340/214"></div>
@@ -668,11 +756,19 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>En la unión no se acumula energía: $H_{Cu}=H_{lat}+H_{ac}$ (las dos salidas están en paralelo).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Con el área común cancelada, despeja la temperatura $T_0$ de la unión.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> Ahora <b>no</b> es una serie: el calor que llega por el cobre se <b>reparte</b> entre latón y acero (en paralelo entre la unión y 0 °C). En la unión no se acumula energía: $H_{Cu}=H_\text{lat}+H_\text{ac}$.</li>
-    <li><b>Ecuación</b> (área común cancelada): $\dfrac{385}{0{,}130}(100-T_0)=\dfrac{109}{0{,}180}T_0+\dfrac{50{,}2}{0{,}240}T_0\Rightarrow T_0=\dfrac{2962\cdot100}{2962+605{,}6+209{,}2}=\mathbf{78{,}4\ °C}$.</li>
-    <li><b>b)</b> $H_{Cu}=\dfrac{385\,(2{,}00\times10^{-4})(21{,}6)}{0{,}130}=\mathbf{12{,}8\ W}$; $H_\text{lat}=\dfrac{109\,(2{,}00\times10^{-4})(78{,}4)}{0{,}180}=\mathbf{9{,}50\ W}$; $H_\text{ac}=\dfrac{50{,}2\,(2{,}00\times10^{-4})(78{,}4)}{0{,}240}=\mathbf{3{,}28\ W}$.</li>
-    <li><b>Comprobación.</b> $9{,}50+3{,}28=12{,}78\approx12{,}8$ W ✓.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Nudo: $H_{Cu}=H_{lat}+H_{ac}$ (no se acumula energía)</li>
+      <li>Cada barra: $H=\dfrac{k\,A\,\Delta T}{L}$; $k_{Cu}=385$, $k_{lat}=109$, $k_{ac}=50{,}2$ W/(m·K)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Temperatura de la unión</b> (el área común se cancela):
+      $$\frac{385}{0{,}130}(100-T_0)=\frac{109}{0{,}180}\,T_0+\frac{50{,}2}{0{,}240}\,T_0$$
+      $$2962(100-T_0)=605{,}6\,T_0+209{,}2\,T_0\ \Rightarrow\ T_0=\frac{2962\cdot100}{2962+605{,}6+209{,}2}=\mathbf{78{,}4\ ^\circ C}$$</li>
+    <li><b>b) Corrientes</b> ($A=2{,}00\times10^{-4}$ m²):
+      $$H_{Cu}=\frac{385(2{,}00\times10^{-4})(21{,}6)}{0{,}130}=\mathbf{12{,}8\ W},\qquad H_{lat}=\frac{109(2{,}00\times10^{-4})(78{,}4)}{0{,}180}=\mathbf{9{,}50\ W}$$
+      $$H_{ac}=\frac{50{,}2(2{,}00\times10^{-4})(78{,}4)}{0{,}240}=\mathbf{3{,}28\ W}$$
+      <span class="por">Comprobación: $9{,}50+3{,}28=12{,}78\approx12{,}8$ W ✓.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/union-en-y-de-cobre-laton-y-acero-por-el-cobre-l.svg">
 <div class="figph" role="img" aria-label="Unión en Y de cobre, latón y acero: por el cobre llegan 12,8 W y se reparten en 9,50 W por el latón y 3,28 W por el acero" style="aspect-ratio:340/220"></div>
@@ -688,12 +784,18 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>Todo el calor que atraviesa la base evapora agua a 100 °C: $H=mL_v/t$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Luego $\Delta T=HL/(kA)$ y $T_H=100+\Delta T$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> Todo el calor que atraviesa la base (conducción) se gasta en evaporar agua a 100 °C (cambio de fase): se calcula $H$ a partir de la evaporación y se despeja $T_H$ de (17.21).</li>
-    <li><b>Calor y corriente.</b> $Q=mL_v=(0{,}390)(2{,}256\times10^6)=8{,}80\times10^5$ J en 180 s $\Rightarrow H=4{,}89\times10^3$ W.</li>
-    <li><b>Diferencia de temperatura en la base:</b> $T_H-T_C=\dfrac{HL}{kA}=\dfrac{(4{,}89\times10^3)(8{,}50\times10^{-3})}{(50{,}2)(0{,}150)}=5{,}52$ C°.</li>
-    <li><b>Resultado:</b> $T_H=100{,}0+5{,}52=\mathbf{105{,}5\ °C}$.</li>
-    <li><b>Evaluación.</b> Basta una diferencia de 5,5 C° a través del acero para conducir casi 5 kW: el metal conduce bien y la base es fina.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Evaporación: $Q=m\,L_v$ ($L_v=2{,}256\times10^6$ J/kg); $H=\dfrac Qt$</li>
+      <li>Conducción: $H=\dfrac{k\,A\,(T_H-T_C)}{L}$; acero $k=50{,}2$ W/(m·K)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Calor y corriente</b> (todo el calor que atraviesa la base evapora agua a 100 °C):
+      $$Q=(0{,}390)(2{,}256\times10^6)=8{,}80\times10^5\ \text{J},\qquad H=\frac{8{,}80\times10^5}{180}=4{,}89\times10^3\ \text{W}$$</li>
+    <li><b>Diferencia de temperatura en la base:</b>
+      $$T_H-T_C=\frac{H\,L}{k\,A}=\frac{(4{,}89\times10^3)(8{,}50\times10^{-3})}{(50{,}2)(0{,}150)}=5{,}52\ \text{C}^\circ$$</li>
+    <li><b>Temperatura de la superficie inferior:</b>
+      $$T_H=100{,}0+5{,}52=\mathbf{105{,}5\ ^\circ C}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/corte-de-una-olla-la-estufa-a-105-5-c-la-base-de.svg">
 <div class="figph" role="img" aria-label="Corte de una olla: la estufa a 105,5 °C, la base de acero de 8,50 mm y el agua hirviendo a 100 °C; la corriente de calor es 4,89 kW" style="aspect-ratio:340/190"></div>
@@ -709,12 +811,19 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <details class="mas pista"><summary>Pista 1</summary><p>Pasa a kelvin y calcula el área real de la esfera a partir del volumen.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Pérdida neta: $H=Ae\sigma(T^4-T_s^4)$, no la cuarta potencia de la diferencia.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> La olla emite según (17.25) y absorbe del entorno; la pérdida neta es (17.26), $H_\text{neta}=Ae\sigma(T^4-T_s^4)$, con <b>temperaturas en kelvin</b>. Se supone pared delgada, de modo que su superficie está a la temperatura del café.</li>
-    <li><b>Área a partir del volumen.</b> $V=\tfrac43\pi R^3=7{,}5\times10^{-4}$ m³ $\Rightarrow R=0{,}0564$ m $\Rightarrow A=4\pi R^2=0{,}0399$ m².</li>
-    <li><b>Temperaturas:</b> $T=95+273=368$ K, $T_s=20+273=293$ K.</li>
-    <li><b>Cálculo:</b> $H_\text{neta}=(0{,}0399)(0{,}60)(5{,}67\times10^{-8})(368^4-293^4)=\mathbf{15\ W}$.</li>
-    <li><b>Evaluación.</b> Pequeño frente a lo que emite la olla sola ($Ae\sigma T^4=25$ W): el entorno devuelve buena parte.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Radiación neta: $H_{neta}=A\,e\,\sigma\,(T^4-T_s^4)$, con $T$ en kelvin, $\sigma=5{,}67\times10^{-8}$ W/(m²·K⁴)</li>
+      <li>Esfera: $V=\tfrac43\pi R^3$, $A=4\pi R^2$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Área a partir del volumen</b> ($V=0{,}75\ \text{L}=7{,}5\times10^{-4}$ m³):
+      $$R=\Big(\frac{3V}{4\pi}\Big)^{1/3}=0{,}0564\ \text{m},\qquad A=4\pi R^2=0{,}0399\ \text{m}^2$$</li>
+    <li><b>Temperaturas en kelvin:</b>
+      $$T=95+273=368\ \text{K},\qquad T_s=20+273=293\ \text{K}$$</li>
+    <li><b>Pérdida neta:</b>
+      $$H_{neta}=(0{,}0399)(0{,}60)(5{,}67\times10^{-8})\big(368^4-293^4\big)=\mathbf{15\ W}$$
+      <span class="por">La olla sola emitiría $Ae\sigma T^4=25$ W: el entorno devuelve buena parte. Usar la diferencia de cuartas potencias, no $(T-T_s)^4$.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/olla-esferica-a-368-k-en-un-entorno-a-293-k-emit.svg">
 <div class="figph" role="img" aria-label="Olla esférica a 368 K en un entorno a 293 K: emite unos 25 W, absorbe unos 10 W y pierde 15 W netos" style="aspect-ratio:340/186"></div>
@@ -727,12 +836,19 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <div class="nivel"><b>🟡 Práctica: 9 ejercicios más</b><span>Repiten métodos del Núcleo en otras situaciones: la tetera con agua, el calorímetro con hielo y plomo, la curva de calentamiento a potencia constante, el vapor que no se condensa entero, la barra latón-cobre que funde hielo, la ventana doble, la barra de tres tramos, la emisividad de una esfera y el problema práctico de U (radiación + conducción + fusión en serie). Antes de leer los pasos, decide: ¿escalas, dilatación, calorimetría, conducción o radiación?</span></div>
 <details class="sol" id="p1723"><summary>Problema 17.23 — La tetera y el agua <span class="src" data-l="E" data-ref="Solucionario 17-5, Prob. 17.23">E 17-5</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 17.23, p. 575; §17.5, ec. 17.13, p. 557; tabla 17.3, p. 559">U p.575, 557</span></summary>
 <p class="enun">Una tetera de aluminio de 1,10 kg que contiene 1,80 kg de agua se coloca sobre la estufa. Si no se transfiere calor al entorno, ¿cuánto calor debe agregarse para elevar la temperatura de 20,0 a 85,0 °C?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$Q=m\,c\,\Delta T$; aluminio $c=910$ J/(kg·K); agua $c=4190$ J/(kg·K)</li>
+      <li>Varios cuerpos con el mismo $\Delta T$: $Q=\big(\sum m_ic_i\big)\Delta T$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Se calientan <b>dos cuerpos</b> (tetera y agua) con el mismo $\Delta T=65{,}0$ C°; cada uno absorbe $Q=mc\Delta T$ (17.13) y el total es la suma.</li>
-    <li><b>Tetera:</b> $Q_{Al}=(1{,}10)(910)(65{,}0)=6{,}51\times10^4$ J.</li>
-    <li><b>Agua:</b> $Q_w=(1{,}80)(4190)(65{,}0)=4{,}90\times10^5$ J.</li>
-    <li><b>Total:</b> $Q=\mathbf{5{,}55\times10^5\ J}$.</li>
-    <li><b>Evaluación.</b> El agua se lleva el 88 % aunque su masa no sea mucho mayor: su calor específico es 4,6 veces el del aluminio.</li>
+    <li><b>Cambio de temperatura:</b>
+      $$\Delta T=85{,}0-20{,}0=65{,}0\ \text{C}^\circ$$</li>
+    <li><b>Tetera y agua:</b>
+      $$Q_{Al}=(1{,}10)(910)(65{,}0)=6{,}51\times10^4\ \text{J},\qquad Q_w=(1{,}80)(4190)(65{,}0)=4{,}90\times10^5\ \text{J}$$</li>
+    <li><b>Total:</b>
+      $$Q=6{,}51\times10^4+4{,}90\times10^5=\mathbf{5{,}55\times10^5\ J}$$
+      <span class="por">El agua se lleva el 88 %: su calor específico es 4,6 veces el del aluminio.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/calor-que-absorbe-la-tetera-de-aluminio-65-1-kj-.svg">
 <div class="figph" role="img" aria-label="Calor que absorbe la tetera de aluminio (65,1 kJ) y el agua (490 kJ): total 555 kJ" style="aspect-ratio:340/148"></div>
@@ -743,12 +859,22 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 </details>
 <details class="sol" id="p1738"><summary>Problema 17.38 — Calorímetro con hielo y plomo caliente <span class="src" data-l="E" data-ref="Solucionario 17-8, Prob. 17.38">E 17-8</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 17.38, p. 576; §17.6, Estrategia 17.2 y ejemplo 17.8, p. 563">U p.576, 563</span></summary>
 <p class="enun">Un calorímetro de cobre con masa de 0,100 kg contiene 0,160 kg de agua y 0,0180 kg de hielo en equilibrio térmico a presión atmosférica. Si se introducen 0,750 kg de plomo a 255 °C, ¿cuál es la temperatura final? Suponga que no hay pérdida de calor a los alrededores. ($c_{Pb}=130$ J/(kg·K))</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\sum Q=0$; $Q=m\,c\,\Delta T$; fusión: $Q=m\,L_f$, $L_f=3{,}34\times10^5$ J/kg</li>
+      <li>$c_{Cu}=390$, $c_w=4190$, $c_{Pb}=130$ J/(kg·K)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Estado inicial.</b> Agua y hielo en equilibrio a 1 atm $\Rightarrow$ todo (lata, agua, hielo) está a <b>0 °C</b>.</li>
-    <li><b>Hipótesis</b> (Estrategia 17.2). Suponemos que <b>todo el hielo se funde</b> y que la temperatura final $T$ está entre 0 y 100 °C; al final se comprueba.</li>
-    <li><b>Calor de cada parte</b> (con $T$ en °C): lata $Q_c=(0{,}100)(390)T=39{,}0\,T$; agua $Q_w=(0{,}160)(4190)T=670{,}4\,T$; hielo (se funde y el agua resultante sube a $T$) $Q_i=(0{,}0180)(3{,}34\times10^5)+(0{,}0180)(4190)T=6012+75{,}4\,T$; plomo $Q_{Pb}=(0{,}750)(130)(T-255)=97{,}5\,T-24\,863$.</li>
-    <li><b>$\sum Q=0$:</b> $882{,}3\,T=24\,863-6012=18\,851\Rightarrow T=\mathbf{21{,}4\ °C}$.</li>
-    <li><b>Comprobación.</b> $T&gt;0$ °C: la hipótesis era correcta (todo el hielo se funde).</li>
+    <li><b>Estado inicial:</b> agua y hielo en equilibrio ⇒ todo a 0 °C.
+      <span class="por">Hipótesis: todo el hielo se funde y $0\lt T\lt100$ °C; se comprueba al final.</span></li>
+    <li><b>Calor de cada parte</b> ($T$ en °C):
+      $$Q_{lata}=(0{,}100)(390)\,T=39{,}0\,T$$
+      $$Q_{agua}=(0{,}160)(4190)\,T=670{,}4\,T$$
+      $$Q_{hielo}=(0{,}0180)(3{,}34\times10^5)+(0{,}0180)(4190)\,T=6012+75{,}4\,T$$
+      $$Q_{Pb}=(0{,}750)(130)(T-255)=97{,}5\,T-24\,863$$</li>
+    <li><b>$\sum Q=0$:</b>
+      $$882{,}3\,T=24\,863-6012=18\,851\ \Rightarrow\ T=\mathbf{21{,}4\ ^\circ C}$$
+      <span class="por">$T\gt0$ °C: la hipótesis era correcta (todo el hielo se funde).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/balance-de-calor-el-plomo-cede-22-8-kj-lo-recibe.svg">
 <div class="figph" role="img" aria-label="Balance de calor: el plomo cede 22,8 kJ; lo reciben la lata (0,83), el agua (14,3), la fusión del hielo (6,0) y el agua del hielo (1,6)" style="aspect-ratio:340/156"></div>
@@ -759,12 +885,20 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 </details>
 <details class="sol" id="p1746"><summary>Problema 17.46 — Curva de calentamiento a potencia constante <span class="src" data-l="E" data-ref="Solucionario 17-10, Prob. 17.46">E 17-10</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 17.46, p. 576; §17.6, ec. 17.20, fig. 17.20, pp. 560-561">U p.576, 560</span></summary>
 <p class="enun">Un recipiente abierto de masa despreciable contiene 0,550 kg de hielo a $-15{,}0$ °C. Se suministra calor a una tasa constante de 800,0 J/min durante 500,0 min. a) ¿Después de cuántos minutos comienza a fundirse el hielo? b) ¿Cuántos minutos después de iniciado el calentamiento la temperatura comienza a elevarse por encima de 0,0 °C? c) Dibuja la curva de temperatura en función del tiempo.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Potencia constante: $t=\dfrac{Q}{P}$, con $P=800{,}0$ J/min</li>
+      <li>Tramos: $Q=m\,c\,\Delta T$ y $Q=m\,L_f$; pendiente de cada recta: $\dfrac{dT}{dt}=\dfrac{P}{m\,c}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Con potencia constante, el tiempo es proporcional al calor: $t=Q/P$. La gráfica $T(t)$ tiene la forma de la fig. 17.20.</li>
-    <li><b>a)</b> Calentar el hielo hasta 0 °C: $Q_1=(0{,}550)(2100)(15{,}0)=1{,}73\times10^4$ J $\Rightarrow t_1=1{,}73\times10^4/800=\mathbf{21{,}7\ min}$.</li>
-    <li><b>b)</b> Fundirlo todo: $Q_2=(0{,}550)(3{,}34\times10^5)=1{,}84\times10^5$ J $\Rightarrow229{,}6$ min más. La temperatura empieza a subir de 0 °C a los $21{,}7+229{,}6=\mathbf{251\ min}$.</li>
-    <li><b>c) Resto del intervalo.</b> Quedan $500-251{,}3=248{,}7$ min, es decir $1{,}99\times10^5$ J para el agua: $\Delta T=1{,}99\times10^5/[(0{,}550)(4190)]=86{,}3$ C° $\Rightarrow$ a los 500 min el agua está a <b>86,3 °C</b> (no llega a hervir). La gráfica: recta de $-15$ a 0 °C en 21,7 min; meseta en 0 °C hasta 251 min; recta de 0 a 86,3 °C hasta 500 min.</li>
-    <li><b>Pendientes.</b> En sólido $dT/dt=P/(mc_i)=0{,}69$ C°/min; en líquido $P/(mc_w)=0{,}35$ C°/min: la recta del agua es la mitad de empinada porque $c_w\approx2c_i$.</li>
+    <li><b>a) Hasta que empieza a fundirse</b> (hielo $-15\to0$ °C):
+      $$Q_1=(0{,}550)(2100)(15{,}0)=1{,}73\times10^4\ \text{J}\ \Rightarrow\ t_1=\frac{1{,}73\times10^4}{800}=\mathbf{21{,}7\ min}$$</li>
+    <li><b>b) Hasta que sube de 0 °C</b> (fundirlo todo):
+      $$Q_2=(0{,}550)(3{,}34\times10^5)=1{,}84\times10^5\ \text{J}\ \Rightarrow\ \frac{1{,}84\times10^5}{800}=229{,}6\ \text{min más}$$
+      $$t=21{,}7+229{,}6=\mathbf{251\ min}$$</li>
+    <li><b>c) Resto del intervalo</b> ($500-251{,}3=248{,}7$ min ⇒ $1{,}99\times10^5$ J al agua):
+      $$\Delta T=\frac{1{,}99\times10^5}{(0{,}550)(4190)}=86{,}3\ \text{C}^\circ\ \Rightarrow\ \mathbf{86{,}3\ ^\circ C}\ \text{a los 500 min (no hierve)}$$
+      <span class="por">Gráfica: recta de −15 a 0 °C en 21,7 min; meseta a 0 °C hasta 251 min; recta de 0 a 86,3 °C hasta 500 min. Pendientes: hielo $P/(mc_i)=0{,}69$ C°/min; agua $0{,}35$ C°/min (la mitad, porque $c_w\approx2c_i$).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/temperatura-frente-al-tiempo-con-potencia-consta.svg">
 <div class="figph" role="img" aria-label="Temperatura frente al tiempo con potencia constante: hielo hasta 0 °C a los 21,7 min, meseta hasta los 251 min y agua que llega a 86,3 °C a los 500 min" style="aspect-ratio:340/210"></div>
@@ -775,10 +909,21 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 </details>
 <details class="sol" id="p1797"><summary>Problema 17.97 — Vapor que no se condensa entero <span class="src" data-l="E" data-ref="Solucionario 17-24, Prob. 17.97">E 17-24</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema 17.97, p. 580; §17.6, ec. 17.20, pp. 560-564">U p.580, 560-564</span></summary>
 <p class="enun">En un recipiente de masa despreciable, 0,0400 kg de vapor de agua a 100 °C y presión atmosférica se agregan a 0,200 kg de agua a 50,0 °C. a) Si no se transfiere calor al entorno, ¿qué temperatura final alcanzará el sistema? b) A la temperatura final, ¿cuántos kilogramos hay de vapor y cuántos de agua líquida?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Condensación: $Q=m\,L_v$, $L_v=2{,}256\times10^6$ J/kg; $Q=m\,c\,\Delta T$ (agua $c=4190$)</li>
+      <li>Presupuestos: calor de condensación total frente al que puede absorber el agua hasta 100 °C</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Presupuestos</b> (como en 17.93). Si se condensa <b>todo</b> el vapor libera $mL_v=(0{,}0400)(2{,}256\times10^6)=9{,}02\times10^4$ J. El agua, para llegar a 100 °C, solo puede absorber $(0{,}200)(4190)(50{,}0)=4{,}19\times10^4$ J.</li>
-    <li><b>a)</b> El vapor tiene más calor que dar del que el agua puede aceptar sin hervir $\Rightarrow$ no se condensa todo y <b>$T_f=100$ °C</b>. (La hipótesis «todo líquido» daría 148 °C, imposible para agua líquida a 1 atm.)</li>
-    <li><b>b)</b> Vapor condensado: $m=4{,}19\times10^4/2{,}256\times10^6=0{,}0186$ kg. Quedan <b>0,0214 kg de vapor</b> y $0{,}200+0{,}0186=$ <b>0,219 kg de agua líquida</b>.</li>
+    <li><b>Presupuestos:</b>
+      $$\text{vapor, condensación completa: }(0{,}0400)(2{,}256\times10^6)=9{,}02\times10^4\ \text{J}$$
+      $$\text{agua, de 50 a 100 °C: }(0{,}200)(4190)(50{,}0)=4{,}19\times10^4\ \text{J}$$</li>
+    <li><b>a) Temperatura final:</b> el vapor tiene más calor que dar del que el agua puede aceptar sin hervir ⇒ no se condensa todo:
+      $$T_f=\mathbf{100\ ^\circ C}$$
+      <span class="por">La hipótesis «todo líquido» daría 148 °C, imposible para agua líquida a 1 atm.</span></li>
+    <li><b>b) Composición:</b> vapor condensado
+      $$m=\frac{4{,}19\times10^4}{2{,}256\times10^6}=0{,}0186\ \text{kg}$$
+      $$\text{Vapor: }0{,}0400-0{,}0186=\mathbf{0{,}0214\ kg},\qquad\text{agua: }0{,}200+0{,}0186=\mathbf{0{,}219\ kg}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/calor-liberado-por-la-condensacion-completa-del-.svg">
 <div class="figph" role="img" aria-label="Calor liberado por la condensación completa del vapor (90,2 kJ) frente a lo que el agua puede absorber hasta 100 °C (41,9 kJ)" style="aspect-ratio:340/166"></div>
@@ -789,12 +934,19 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 </details>
 <details class="sol" id="p1756"><summary>Problema 17.56 — Barra latón-cobre que funde hielo <span class="src" data-l="E" data-ref="Solucionario 17-12, Prob. 17.56">E 17-12</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 17.56, p. 577; §17.7, Estrategia 17.3 y ejemplo 17.12, pp. 566-567; §17.6, ec. 17.20">U p.577, 566-567</span></summary>
 <p class="enun">Dos barras, una de latón y otra de cobre, están unidas extremo con extremo. El latón mide 0,300 m y el cobre, 0,800 m. Cada segmento tiene sección de 0,00500 m². El extremo libre del latón está en agua hirviendo y el del cobre en una mezcla de hielo y agua, ambos a presión normal. Los lados están aislados. a) ¿Cuál es la temperatura del punto de unión? b) ¿Qué masa de hielo se funde en 5,00 min por el calor conducido por la varilla compuesta?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conducción: $H=\dfrac{k\,A\,\Delta T}{L}$; en serie y estado estable, la misma $H$ en las dos barras</li>
+      <li>Fusión: $Q=m\,L_f$; $Q=H\,t$; $k_{lat\acute on}=109$, $k_{Cu}=385$ W/(m·K)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea</b> (Estrategia 17.3). En serie y en estado estable la corriente es la <b>misma</b> en las dos barras; la unión está a una $T$ intermedia desconocida.</li>
-    <li><b>a)</b> $H_\text{latón}=H_{Cu}$: $\dfrac{109\,(100-T)}{0{,}300}=\dfrac{385\,(T-0)}{0{,}800}\Rightarrow363{,}3(100-T)=481{,}3\,T\Rightarrow T=\mathbf{43{,}0\ °C}$.</li>
-    <li><b>b) Corriente:</b> $H=\dfrac{(109)(0{,}00500)(100-43{,}0)}{0{,}300}=103{,}5$ W. En 300 s: $Q=Ht=3{,}11\times10^4$ J.</li>
-    <li><b>Hielo fundido.</b> La mezcla está a 0 °C: todo el calor que llega funde hielo, $Q=mL_f\Rightarrow m=3{,}11\times10^4/3{,}34\times10^5=\mathbf{0{,}0930\ kg=93{,}0\ g}$.</li>
-    <li><b>Evaluación.</b> La unión no está a 50 °C: la caída de temperatura es mayor donde la «resistencia» $L/k$ es mayor (latón: $0{,}300/109=2{,}75\times10^{-3}$; cobre: $0{,}800/385=2{,}08\times10^{-3}$ m²·K/W).</li>
+    <li><b>a) Temperatura de la unión</b> ($H_{lat\acute on}=H_{Cu}$):
+      $$\frac{109\,(100-T)}{0{,}300}=\frac{385\,(T-0)}{0{,}800}\ \Rightarrow\ 363{,}3(100-T)=481{,}3\,T\ \Rightarrow\ T=\mathbf{43{,}0\ ^\circ C}$$</li>
+    <li><b>b) Corriente y calor en 300 s:</b>
+      $$H=\frac{(109)(0{,}00500)(100-43{,}0)}{0{,}300}=103{,}5\ \text{W},\qquad Q=Ht=(103{,}5)(300)=3{,}11\times10^4\ \text{J}$$</li>
+    <li><b>Hielo fundido</b> (la mezcla está a 0 °C: todo el calor funde hielo):
+      $$m=\frac{Q}{L_f}=\frac{3{,}11\times10^4}{3{,}34\times10^5}=\mathbf{0{,}0930\ kg}=93{,}0\ \text{g}$$
+      <span class="por">La unión no está a 50 °C: la caída es mayor donde $L/k$ es mayor (latón $2{,}75\times10^{-3}$; cobre $2{,}08\times10^{-3}$ m²·K/W).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/barra-compuesta-laton-cobre-con-perfil-de-temper.svg">
 <div class="figph" role="img" aria-label="Barra compuesta latón-cobre con perfil de temperatura: 100 °C, 43,0 °C en la unión y 0 °C; el latón (mayor resistencia por metro) tiene la pendiente más fuerte" style="aspect-ratio:340/214"></div>
@@ -805,13 +957,19 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 </details>
 <details class="sol" id="p17101"><summary>Problema 17.101 — Ventana sencilla frente a doble acristalamiento <span class="src" data-l="E" data-ref="Solucionario 17-25, Prob. 17.101">E 17-25</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema 17.101, p. 580; §17.7, ec. 17.23-17.24, p. 566; p. 568 (película superficial)">U p.580, 566</span></summary>
 <p class="enun">Calcula el cociente entre las tasas de pérdida de calor a través de una ventana de un solo vidrio de 0,15 m² y de una ventana de doble vidrio de la misma área. Cada vidrio tiene 4,2 mm de espesor, y el espacio entre los dos vidrios de la ventana doble es de 7,0 mm. El vidrio tiene $k=0{,}80$ W/(m·K). Las películas de aire en las superficies interior y exterior de ambas ventanas tienen una resistencia térmica combinada de 0,15 m²·K/W.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Resistencia térmica (por m²): $R=\dfrac Lk$; en serie se suman; $H=\dfrac{A\,\Delta T}{R_{total}}$</li>
+      <li>Cociente con igual $A$ y $\Delta T$: $\dfrac{H_s}{H_d}=\dfrac{R_d}{R_s}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Las capas (película de aire, vidrio, cámara de aire, vidrio, película) están en serie: <b>las resistencias se suman</b> y $H=A\Delta T/R_\text{total}$ (17.23). Con la misma $A$ y $\Delta T$, $H_s/H_d=R_d/R_s$.</li>
-    <li><b>Vidrio:</b> $R_v=L/k=4{,}2\times10^{-3}/0{,}80=5{,}25\times10^{-3}$ m²·K/W.</li>
-    <li><b>Cámara de aire</b> (aire inmóvil, $k=0{,}024$): $R_a=7{,}0\times10^{-3}/0{,}024=0{,}292$ m²·K/W.</li>
-    <li><b>Sencilla:</b> $R_s=R_v+0{,}15=0{,}155$. <b>Doble:</b> $R_d=2R_v+R_a+0{,}15=0{,}452$ m²·K/W.</li>
-    <li><b>Cociente:</b> $H_s/H_d=0{,}452/0{,}155=\mathbf{2{,}9}$.</li>
-    <li><b>Lectura.</b> El vidrio aporta poquísimo aislamiento; lo que aísla son las películas de aire y, sobre todo, <b>la cámara de aire inmóvil</b>.</li>
+    <li><b>Resistencias:</b>
+      $$R_{vidrio}=\frac{4{,}2\times10^{-3}}{0{,}80}=5{,}25\times10^{-3}\ \text{m}^2\text{K/W},\qquad R_{aire}=\frac{7{,}0\times10^{-3}}{0{,}024}=0{,}292\ \text{m}^2\text{K/W}$$</li>
+    <li><b>Ventana sencilla y doble</b> (con las películas, 0,15):
+      $$R_s=5{,}25\times10^{-3}+0{,}15=0{,}155,\qquad R_d=2(5{,}25\times10^{-3})+0{,}292+0{,}15=0{,}452\ \text{m}^2\text{K/W}$$</li>
+    <li><b>Cociente:</b>
+      $$\frac{H_s}{H_d}=\frac{0{,}452}{0{,}155}=\mathbf{2{,}9}$$
+      <span class="por">El vidrio aporta poquísimo aislamiento: aíslan las películas de aire y, sobre todo, la cámara de aire inmóvil.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/resistencias-termicas-en-serie-de-una-ventana-se.svg">
 <div class="figph" role="img" aria-label="Resistencias térmicas en serie de una ventana sencilla (0,155) y una doble (0,452 m²·K/W): la cámara de aire inmóvil es lo que aísla" style="aspect-ratio:340/164"></div>
@@ -822,12 +980,22 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 </details>
 <details class="sol" id="p17103"><summary>Problema 17.103 — Barra de tres tramos <span class="src" data-l="E" data-ref="Solucionario 17-26, Prob. 17.103">E 17-26</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema 17.103, p. 580; §17.7, ec. 17.21 y 17.23-17.24, Estrategia 17.3, pp. 565-567">U p.580, 565-567</span></summary>
 <p class="enun">Una barra de latón de 12,0 cm, una de cobre de 18,0 cm y una de aluminio de 24,0 cm, todas con sección de 2,30 cm², se sueldan para formar una barra de 54,0 cm, con la de cobre en la parte media. El extremo libre del latón se mantiene a 100,0 °C y el del aluminio a 0,0 °C. No hay pérdida de calor por los costados y se ha establecido una corriente de calor estable. Determina a) la temperatura $T_1$ en la unión latón-cobre; b) la temperatura $T_2$ en la unión cobre-aluminio; c) la corriente de calor en el aluminio.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Tramos en serie: misma $H$; $R_i=\dfrac{L_i}{k_i}$; $\dfrac HA=\dfrac{\Delta T_{total}}{\sum R_i}$; salto en cada tramo $\Delta T_i=\dfrac HA\,R_i$</li>
+      <li>$k_{lat}=109$, $k_{Cu}=385$, $k_{Al}=205$ W/(m·K)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Tres tramos en serie $\Rightarrow$ la misma $H$ en los tres. Dos incógnitas ($T_1$, $T_2$) y dos ecuaciones ($H_\text{lat}=H_{Cu}$, $H_\text{lat}=H_{Al}$); el área común se cancela.</li>
-    <li><b>Ecuaciones:</b> $\dfrac{109(100-T_1)}{0{,}120}=\dfrac{385(T_1-T_2)}{0{,}180}=\dfrac{205\,T_2}{0{,}240}$.</li>
-    <li><b>Atajo con resistencias.</b> $R_i=L_i/k_i$: latón $1{,}101\times10^{-3}$, cobre $4{,}68\times10^{-4}$, aluminio $1{,}171\times10^{-3}$ m²·K/W; total $2{,}739\times10^{-3}$. $H/A=100/2{,}739\times10^{-3}=3{,}65\times10^4$ W/m².</li>
-    <li><b>a)</b> $T_1=100-(H/A)R_\text{lat}=\mathbf{59{,}8\ °C}$. <b>b)</b> $T_2=T_1-(H/A)R_{Cu}=\mathbf{42{,}7\ °C}$.</li>
-    <li><b>c)</b> $H=(H/A)\,A=(3{,}65\times10^4)(2{,}30\times10^{-4})=\mathbf{8{,}40\ W}$ (con el aluminio: $205\cdot2{,}30\times10^{-4}\cdot42{,}7/0{,}240=8{,}40$ W ✓; con el cobre también 8,40 W).</li>
+    <li><b>Resistencias:</b>
+      $$R_{lat}=\frac{0{,}120}{109}=1{,}101\times10^{-3},\quad R_{Cu}=\frac{0{,}180}{385}=4{,}68\times10^{-4},\quad R_{Al}=\frac{0{,}240}{205}=1{,}171\times10^{-3}\ \text{m}^2\text{K/W}$$
+      $$R_{total}=2{,}739\times10^{-3},\qquad\frac HA=\frac{100}{2{,}739\times10^{-3}}=3{,}65\times10^4\ \text{W/m}^2$$</li>
+    <li><b>a) Unión latón-cobre:</b>
+      $$T_1=100-\frac HA\,R_{lat}=100-(3{,}65\times10^4)(1{,}101\times10^{-3})=\mathbf{59{,}8\ ^\circ C}$$</li>
+    <li><b>b) Unión cobre-aluminio:</b>
+      $$T_2=T_1-\frac HA\,R_{Cu}=59{,}8-(3{,}65\times10^4)(4{,}68\times10^{-4})=\mathbf{42{,}7\ ^\circ C}$$</li>
+    <li><b>c) Corriente en el aluminio</b> ($A=2{,}30\times10^{-4}$ m²):
+      $$H=\frac HA\,A=(3{,}65\times10^4)(2{,}30\times10^{-4})=\mathbf{8{,}40\ W}$$
+      <span class="por">Comprobación con el aluminio: $205(2{,}30\times10^{-4})(42{,}7)/0{,}240=8{,}40$ W ✓.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/barra-de-tres-tramos-laton-cobre-y-aluminio-con-.svg">
 <div class="figph" role="img" aria-label="Barra de tres tramos latón, cobre y aluminio con temperaturas 100, 59,8, 42,7 y 0 °C en los extremos y las uniones; la pendiente es más suave en el cobre" style="aspect-ratio:340/214"></div>
@@ -838,12 +1006,20 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 </details>
 <details class="sol" id="p17108"><summary>Problema 17.108 — Emisividad de una esfera y la trampa del $2^4$ <span class="src" data-l="E" data-ref="Solucionario 17-28, Prob. 17.108">E 17-28</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema 17.108, p. 581; §17.7, ec. 17.25-17.26, pp. 569-570">U p.581, 569-570</span></summary>
 <p class="enun">Una esfera metálica de 3,20 cm de radio está suspendida en una caja metálica grande cuyas paredes interiores se mantienen a 30,0 °C. Un calentador eléctrico pequeño junto a la esfera le suministra calor a razón de 0,660 J/s para mantenerla a 41,0 °C constantes. a) ¿Cuál es la emisividad de la esfera? b) ¿Qué potencia se requiere para mantenerla a 82,0 °C? ¿Cuál es el cociente de la potencia a 82,0 °C respecto a la de 41,0 °C? ¿Cómo se compara con $2^4$? Explica.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Estado estacionario: potencia del calentador $=H_{neta}=A\,e\,\sigma\,(T^4-T_s^4)$ ($T$ en kelvin)</li>
+      <li>Esfera: $A=4\pi R^2$; $\sigma=5{,}67\times10^{-8}$ W/(m²·K⁴)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Temperatura constante $\Rightarrow$ el calentador repone exactamente la pérdida neta por radiación: $P=H_\text{neta}=Ae\sigma(T^4-T_s^4)$.</li>
-    <li><b>Datos en kelvin:</b> $T=314$ K, $T_s=303$ K; $A=4\pi(0{,}0320)^2=0{,}01287$ m².</li>
-    <li><b>a)</b> $e=\dfrac{0{,}660}{(0{,}01287)(5{,}67\times10^{-8})(314^4-303^4)}=\mathbf{0{,}700}$.</li>
-    <li><b>b)</b> A $T=82{,}0$ °C $=355$ K: $P=(0{,}01287)(0{,}700)(5{,}67\times10^{-8})(355^4-303^4)=\mathbf{3{,}81\ W}$. Cociente $3{,}81/0{,}660=\mathbf{5{,}77}$.</li>
-    <li><b>¿Por qué no 16?</b> «Doblar» de 41 a 82 °C <b>no dobla la temperatura absoluta</b> (355/314 = 1,13), y además la pérdida neta depende de $T^4-T_s^4$, no de $T^4$. El factor $2^4=16$ solo saldría si se doblara la temperatura <b>en kelvin</b> y el entorno estuviera a 0 K.</li>
+    <li><b>Datos en kelvin y área:</b>
+      $$T=314\ \text{K},\quad T_s=303\ \text{K},\quad A=4\pi(0{,}0320)^2=0{,}01287\ \text{m}^2$$</li>
+    <li><b>a) Emisividad:</b>
+      $$e=\frac{0{,}660}{(0{,}01287)(5{,}67\times10^{-8})(314^4-303^4)}=\mathbf{0{,}700}$$</li>
+    <li><b>b) A 82,0 °C = 355 K:</b>
+      $$P=(0{,}01287)(0{,}700)(5{,}67\times10^{-8})(355^4-303^4)=\mathbf{3{,}81\ W},\qquad\frac{3{,}81}{0{,}660}=\mathbf{5{,}77}$$</li>
+    <li><b>¿Por qué no $2^4=16$?</b>
+      <span class="por">«Doblar» de 41 a 82 °C no dobla la temperatura absoluta ($355/314=1{,}13$), y la pérdida neta depende de $T^4-T_s^4$, no de $T^4$. El factor 16 solo saldría doblando la temperatura en kelvin con el entorno a 0 K.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/potencia-necesaria-para-mantener-una-esfera-a-te.svg">
 <div class="figph" role="img" aria-label="Potencia necesaria para mantener una esfera a temperatura T en un entorno a 303 K: 0,660 W a 314 K y 3,81 W a 355 K" style="aspect-ratio:340/210"></div>
@@ -854,12 +1030,22 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 </details>
 <details class="sol" id="pp"><summary>Problema práctico — Flujo de calor en estado estable: radiación y conducción <span class="src" data-l="U" data-ref="U Problema práctico, enunciado p. 573; resultados p. 583">U p.573, 583</span> <span class="prio p2">🟡</span> <span class="src" data-l="P" data-ref="Desarrollo propio del problema práctico de U, p. 573 (verificado con sympy); solución de U en p. 583">P</span></summary>
 <p class="enun">Uno de los extremos de una varilla de cobre sólida cilíndrica de 0,200 m de largo y de 0,0250 m de radio se inserta en un bloque grande de hidrógeno sólido a su temperatura de fusión, 13,84 K. El otro extremo se ennegrece y se expone a la radiación térmica de las paredes que lo rodean a 500,0 K. Los lados de la varilla están aislados, por lo que no se pierde ni se gana energía excepto en los extremos. a) Cuando se alcanza el equilibrio, ¿cuál es la temperatura del extremo ennegrecido? La conductividad térmica del cobre cerca de 20 K es 1670 W/(m·K). b) ¿Con qué rapidez (en kg/h) se funde el hidrógeno sólido? ($L_f=58{,}6\times10^3$ J/kg, tabla 17.4)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Radiación neta que entra (extremo negro, $e=1$): $H=A\,\sigma\,(500^4-T^4)$</li>
+      <li>Conducción: $H=\dfrac{k\,A\,(T-13{,}84)}{L}$; fusión: $\dfrac{dm}{dt}=\dfrac{H}{L_f}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> En estado estable no se acumula energía en la varilla: <b>la corriente neta de radiación que entra por el extremo ennegrecido es igual a la corriente de conducción</b> por la varilla, y esa misma corriente funde el hidrógeno.</li>
-    <li><b>Planteamiento.</b> Extremo ennegrecido $\Rightarrow e=1$; área del extremo $A=\pi(0{,}0250)^2=1{,}96\times10^{-3}$ m² (la misma para radiación y conducción: se cancela). Con $T$ la temperatura del extremo: $$A\sigma(500^4-T^4)=kA\,\frac{T-13{,}84}{0{,}200}$$ (izquierda: radiación neta que entra; derecha: conducción).</li>
-    <li><b>Resolver.</b> Es una ecuación de cuarto grado; como el cobre conduce muy bien, $T$ será solo un poco mayor que 13,84 K y $T^4\ll500^4$. Aproximación: $\sigma\,500^4=3544$ W/m² $=8350\,(T-13{,}84)\Rightarrow T-13{,}84=0{,}424$ K. Resolviendo la ecuación completa: <b>$T=14{,}26$ K</b> (el término $T^4$ es despreciable).</li>
-    <li><b>b) Corriente:</b> $H=A\sigma(500^4-T^4)=6{,}96$ W. <b>Fusión</b> del hidrógeno: $\dfrac{dm}{dt}=\dfrac H{L_f}=1{,}19\times10^{-4}$ kg/s $=\mathbf{0{,}427\ kg/h}$.</li>
-    <li><b>Evaluación.</b> El extremo está solo 0,42 K por encima de 13,84 K. Si el radio se duplicara, $A$ se cuadruplica en ambos lados: $T$ no cambia (el área se cancela) y la fusión es 4 veces más rápida (1,71 kg/h).</li>
+    <li><b>Idea.</b> En estado estable la radiación neta que entra por el extremo ennegrecido es igual a la corriente de conducción, y esa misma corriente funde el hidrógeno. El área $A=\pi(0{,}0250)^2=1{,}96\times10^{-3}$ m² se cancela:
+      $$\sigma\,(500^4-T^4)=k\,\frac{T-13{,}84}{L}$$</li>
+    <li><b>a) Resolver.</b> Como el cobre conduce muy bien, $T$ es solo un poco mayor que 13,84 K y $T^4\ll500^4$:
+      $$\sigma\,500^4=3544\ \text{W/m}^2=\frac{1670}{0{,}200}(T-13{,}84)=8350\,(T-13{,}84)\ \Rightarrow\ T-13{,}84=0{,}424\ \text{K}$$
+      $$T=\mathbf{14{,}26\ K}$$
+      <span class="por">La ecuación completa (cuarto grado) da lo mismo: el término $T^4$ es despreciable.</span></li>
+    <li><b>b) Corriente y fusión:</b>
+      $$H=A\sigma(500^4-T^4)=(1{,}96\times10^{-3})(3544)=6{,}96\ \text{W}$$
+      $$\frac{dm}{dt}=\frac{6{,}96}{58{,}6\times10^3}=1{,}19\times10^{-4}\ \text{kg/s}=\mathbf{0{,}427\ kg/h}$$
+      <span class="por">Si el radio se duplicara, $A$ se cuadruplica en ambos lados: $T$ no cambia y la fusión es 4 veces más rápida (1,71 kg/h).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t17/varilla-de-cobre-entre-las-paredes-a-500-k-que-i.svg">
 <div class="figph" role="img" aria-label="Varilla de cobre entre las paredes a 500 K (que irradian a su extremo ennegrecido) y un bloque de hidrógeno sólido a 13,84 K" style="aspect-ratio:340/192"></div>
@@ -888,6 +1074,11 @@ $$H_\text{neta}=A\,e\,\sigma\,(T^4-T_s^4)\qquad(17.26)$$
 <div class="nivel" id="teoria-t17"><b>📝 Preguntas de teoría (4 puntos)</b><span>Es lo único que ha caído del tema, tres veces y siempre «Mecanismos de transferencia de calor» (Febrero 2022, 2024 y 2025, 2ª semana). La de Febrero 2025 (X1) está aquí entera: desarrollo modelo, las dos cuestiones resueltas y práctica de cuestiones del mismo estilo. Las otras dos piden la misma teoría (solo consta su resumen en el índice). Al final, un guion propio por si te toca otro apartado del capítulo.</span></div>
 <details class="sol" id="x1"><summary>X1 — Teoría: «Mecanismos de transferencia de calor» + dos cuestiones <span class="src" data-l="X" data-ref="Examen Febrero 2025 (2ª semana) P-4">X</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §17.5, p. 556; §17.7, pp. 565-571">U p.556, 565-571</span></summary>
 <p class="enun"><b>Examen Febrero 2025 (2ª semana), P-4, Teoría Opción B (4 puntos).</b> Desarrolle el tema: <b>Mecanismos de transferencia de calor</b>. Además, responda a las siguientes cuestiones: (a) Para hornear una patata en menos tiempo ésta se atraviesa con un clavo grande. ¿Por qué? ¿Sería mejor usar un clavo de aluminio o uno de acero? ¿Por qué? (b) Cuando hay escasez de energía, algunos medios recomiendan mantener las casas a temperatura constante día y noche para ahorrar combustible. El argumento es que, al apagar la calefacción de noche, las paredes, los techos y otras áreas se enfrían y deberán volver a calentarse a la mañana siguiente. Así, al mantener la temperatura constante, esas partes de la casa no se enfriarán y no tendrán que volver a calentarse. ¿Tiene sentido este argumento? ¿Realmente se ahorrará energía siguiendo ese consejo?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conducción: $H=\dfrac{dQ}{dt}=\dfrac{k\,A\,(T_H-T_C)}{L}$; resistencia térmica $R=\dfrac Lk$ (en serie se suman las $R$)</li>
+      <li>Convección: empírica, $H\propto A\,(\Delta T)^{5/4}$; radiación: $H=A\,e\,\sigma\,T^4$, neta $H=A\,e\,\sigma\,(T^4-T_s^4)$ ($T$ en kelvin)</li>
+    </ul></div>
   <h4>Desarrollo modelo del tema (en negrita lo que no puede faltar)</h4>
   <ol class="steps">
     <li><b>Qué es el calor.</b> <b>Calor es la energía que se transfiere exclusivamente por una diferencia de temperatura</b>; fluye espontáneamente del cuerpo más caliente al más frío hasta que se alcanza el <b>equilibrio térmico</b> (misma temperatura, ley cero). Un cuerpo <i>no contiene</i> calor: tiene temperatura y energía interna; el calor es energía <i>en tránsito</i>. La rapidez de transferencia es la <b>corriente de calor</b> $H=dQ/dt$, en watts. <b>Hay tres mecanismos: conducción, convección y radiación.</b></li>

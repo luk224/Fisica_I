@@ -1,9 +1,14 @@
 <p class="enun">Los remaches de aluminio para construcción de aviones se fabrican un poco más grandes que sus orificios y se enfrían con «hielo seco» (CO$_2$ sólido) antes de insertarse. Si el diámetro de un orificio es de 4,500 mm, ¿qué diámetro debe tener un remache a 23,0 °C para que su diámetro sea igual al del orificio cuando se enfría a $-78{,}0$ °C, la temperatura del hielo seco? Suponga que el coeficiente de expansión es constante, con el valor de la tabla 17.1.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Dilatación lineal: $L=L_0\,(1+\alpha\,\Delta T)$; aluminio: $\alpha=2{,}4\times10^{-5}\ \text{K}^{-1}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> El diámetro es una longitud: se dilata según (17.7), $L=L_0(1+\alpha\Delta T)$, con $\alpha_{Al}=2{,}4\times10^{-5}$ K$^{-1}$.</li>
-    <li><b>Estado de referencia.</b> Se conoce el diámetro a $-78{,}0$ °C (4,500 mm); se busca a 23,0 °C. Tomando $L_0=4{,}500$ mm a $-78{,}0$ °C: $\Delta T=23{,}0-(-78{,}0)=101$ C°.</li>
-    <li><b>Cálculo.</b> $d=4{,}500\,[1+(2{,}4\times10^{-5})(101)]=\mathbf{4{,}511\ mm}$.</li>
-    <li><b>Lectura.</b> Al volver a temperatura ambiente el remache intenta crecer 0,011 mm dentro del orificio: queda muy apretado (eso se busca).</li>
+    <li><b>Referencia:</b> se conoce el diámetro a $-78{,}0$ °C (4,500 mm) y se busca a 23,0 °C:
+      $$\Delta T=23{,}0-(-78{,}0)=101\ \text{C}^\circ$$</li>
+    <li><b>Diámetro del remache:</b>
+      $$d=4{,}500\,\big[1+(2{,}4\times10^{-5})(101)\big]=4{,}500(1{,}002424)=\mathbf{4{,}511\ mm}$$
+      <span class="por">Al volver a temperatura ambiente, el remache intenta crecer 0,011 mm dentro del orificio: queda muy apretado.</span></li>
   </ol>
   {{fig:remache-de-aluminio-frio-que-entra-justo-en-el-o}}
   <div class="recipe"><b>Receta:</b> cualquier dimensión lineal (longitud, diámetro, lado) cumple $L=L_0(1+\alpha\Delta T)$; elige como $L_0$ el valor conocido y $\Delta T=T_\text{buscada}-T_\text{conocida}$.</div>

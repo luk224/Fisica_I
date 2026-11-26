@@ -1,8 +1,15 @@
 <p class="enun">Los rieles de acero para un tren se tienden en segmentos de 12,0 m de longitud, colocados extremo con extremo en un día de invierno en que la temperatura es de $-9{,}0$ °C. a) ¿Cuánto espacio debe dejarse entre rieles adyacentes para que apenas se toquen en verano, cuando la temperatura suba a 33,0 °C? b) Si los rieles se tienden en contacto, ¿a qué esfuerzo se someterán un día de verano a 33,0 °C?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Dilatación libre: $\Delta L=\alpha\,L_0\,\Delta T$; acero: $\alpha=1{,}2\times10^{-5}\ \text{K}^{-1}$</li>
+      <li>Dilatación impedida: $\dfrac{F}{A}=-Y\,\alpha\,\Delta T$; acero: $Y=2{,}0\times10^{11}$ Pa</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a) Dilatación libre.</b> $\Delta T=33{,}0-(-9{,}0)=42{,}0$ C°; $\Delta L=\alpha L_0\Delta T=(1{,}2\times10^{-5})(12{,}0)(42{,}0)=6{,}0\times10^{-3}$ m $=\mathbf{6{,}0\ mm}$. Ese es el hueco que hay que dejar.</li>
-    <li><b>b) Dilatación impedida.</b> Si no hay hueco, el riel no puede alargarse: los rieles vecinos lo <b>comprimen</b> lo justo para anular la dilatación. La deformación por fuerza, $\Delta L/L_0=F/(AY)$, debe cancelar la térmica, $\alpha\Delta T$: $$\frac FA=-Y\alpha\Delta T\ (17.12)=-(2{,}0\times10^{11})(1{,}2\times10^{-5})(42{,}0)=\mathbf{-1{,}0\times10^{8}\ Pa}.$$ El signo $-$ indica <b>compresión</b>.</li>
-    <li><b>Evaluación.</b> Una deformación térmica de solo 0,05 % produce un esfuerzo de 100 MPa, del orden del límite elástico de un acero común: el riel se pandearía. Cambios pequeños de longitud, esfuerzos enormes.</li>
+    <li><b>a) Hueco necesario:</b>
+      $$\Delta T=33{,}0-(-9{,}0)=42{,}0\ \text{C}^\circ,\qquad\Delta L=(1{,}2\times10^{-5})(12{,}0)(42{,}0)=6{,}0\times10^{-3}\ \text{m}=\mathbf{6{,}0\ mm}$$</li>
+    <li><b>b) Rieles en contacto</b> (la deformación por fuerza debe cancelar la térmica):
+      $$\frac FA=-Y\alpha\Delta T=-(2{,}0\times10^{11})(1{,}2\times10^{-5})(42{,}0)=\mathbf{-1{,}0\times10^{8}\ Pa}$$
+      <span class="por">El signo menos indica compresión. Una deformación térmica de solo 0,05 % da 100 MPa, del orden del límite elástico de un acero común: el riel se pandearía.</span></li>
   </ol>
   {{fig:dos-rieles-de-acero-en-invierno-con-un-hueco-de-}}
   <p><b>Pruébalo en el interactivo de §4:</b> acero, $L_0=12$ m, de $-9$ a $33$ °C; con hueco 0 sale $-1{,}0\times10^8$ Pa y con hueco 6,0 mm casi nada.</p>

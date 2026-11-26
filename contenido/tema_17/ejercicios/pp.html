@@ -1,10 +1,20 @@
 <p class="enun">Uno de los extremos de una varilla de cobre sólida cilíndrica de 0,200 m de largo y de 0,0250 m de radio se inserta en un bloque grande de hidrógeno sólido a su temperatura de fusión, 13,84 K. El otro extremo se ennegrece y se expone a la radiación térmica de las paredes que lo rodean a 500,0 K. Los lados de la varilla están aislados, por lo que no se pierde ni se gana energía excepto en los extremos. a) Cuando se alcanza el equilibrio, ¿cuál es la temperatura del extremo ennegrecido? La conductividad térmica del cobre cerca de 20 K es 1670 W/(m·K). b) ¿Con qué rapidez (en kg/h) se funde el hidrógeno sólido? ($L_f=58{,}6\times10^3$ J/kg, tabla 17.4)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Radiación neta que entra (extremo negro, $e=1$): $H=A\,\sigma\,(500^4-T^4)$</li>
+      <li>Conducción: $H=\dfrac{k\,A\,(T-13{,}84)}{L}$; fusión: $\dfrac{dm}{dt}=\dfrac{H}{L_f}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> En estado estable no se acumula energía en la varilla: <b>la corriente neta de radiación que entra por el extremo ennegrecido es igual a la corriente de conducción</b> por la varilla, y esa misma corriente funde el hidrógeno.</li>
-    <li><b>Planteamiento.</b> Extremo ennegrecido $\Rightarrow e=1$; área del extremo $A=\pi(0{,}0250)^2=1{,}96\times10^{-3}$ m² (la misma para radiación y conducción: se cancela). Con $T$ la temperatura del extremo: $$A\sigma(500^4-T^4)=kA\,\frac{T-13{,}84}{0{,}200}$$ (izquierda: radiación neta que entra; derecha: conducción).</li>
-    <li><b>Resolver.</b> Es una ecuación de cuarto grado; como el cobre conduce muy bien, $T$ será solo un poco mayor que 13,84 K y $T^4\ll500^4$. Aproximación: $\sigma\,500^4=3544$ W/m² $=8350\,(T-13{,}84)\Rightarrow T-13{,}84=0{,}424$ K. Resolviendo la ecuación completa: <b>$T=14{,}26$ K</b> (el término $T^4$ es despreciable).</li>
-    <li><b>b) Corriente:</b> $H=A\sigma(500^4-T^4)=6{,}96$ W. <b>Fusión</b> del hidrógeno: $\dfrac{dm}{dt}=\dfrac H{L_f}=1{,}19\times10^{-4}$ kg/s $=\mathbf{0{,}427\ kg/h}$.</li>
-    <li><b>Evaluación.</b> El extremo está solo 0,42 K por encima de 13,84 K. Si el radio se duplicara, $A$ se cuadruplica en ambos lados: $T$ no cambia (el área se cancela) y la fusión es 4 veces más rápida (1,71 kg/h).</li>
+    <li><b>Idea.</b> En estado estable la radiación neta que entra por el extremo ennegrecido es igual a la corriente de conducción, y esa misma corriente funde el hidrógeno. El área $A=\pi(0{,}0250)^2=1{,}96\times10^{-3}$ m² se cancela:
+      $$\sigma\,(500^4-T^4)=k\,\frac{T-13{,}84}{L}$$</li>
+    <li><b>a) Resolver.</b> Como el cobre conduce muy bien, $T$ es solo un poco mayor que 13,84 K y $T^4\ll500^4$:
+      $$\sigma\,500^4=3544\ \text{W/m}^2=\frac{1670}{0{,}200}(T-13{,}84)=8350\,(T-13{,}84)\ \Rightarrow\ T-13{,}84=0{,}424\ \text{K}$$
+      $$T=\mathbf{14{,}26\ K}$$
+      <span class="por">La ecuación completa (cuarto grado) da lo mismo: el término $T^4$ es despreciable.</span></li>
+    <li><b>b) Corriente y fusión:</b>
+      $$H=A\sigma(500^4-T^4)=(1{,}96\times10^{-3})(3544)=6{,}96\ \text{W}$$
+      $$\frac{dm}{dt}=\frac{6{,}96}{58{,}6\times10^3}=1{,}19\times10^{-4}\ \text{kg/s}=\mathbf{0{,}427\ kg/h}$$
+      <span class="por">Si el radio se duplicara, $A$ se cuadruplica en ambos lados: $T$ no cambia y la fusión es 4 veces más rápida (1,71 kg/h).</span></li>
   </ol>
   {{fig:varilla-de-cobre-entre-las-paredes-a-500-k-que-i}}
   <div class="recipe"><b>Receta:</b> mecanismos en serie en estado estable: escribe una $H$ por mecanismo y <b>iguálalas</b>; la $H$ común alimenta el cambio de fase ($dm/dt=H/L$).</div>

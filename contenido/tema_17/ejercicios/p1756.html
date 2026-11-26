@@ -1,10 +1,17 @@
 <p class="enun">Dos barras, una de latón y otra de cobre, están unidas extremo con extremo. El latón mide 0,300 m y el cobre, 0,800 m. Cada segmento tiene sección de 0,00500 m². El extremo libre del latón está en agua hirviendo y el del cobre en una mezcla de hielo y agua, ambos a presión normal. Los lados están aislados. a) ¿Cuál es la temperatura del punto de unión? b) ¿Qué masa de hielo se funde en 5,00 min por el calor conducido por la varilla compuesta?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conducción: $H=\dfrac{k\,A\,\Delta T}{L}$; en serie y estado estable, la misma $H$ en las dos barras</li>
+      <li>Fusión: $Q=m\,L_f$; $Q=H\,t$; $k_{lat\acute on}=109$, $k_{Cu}=385$ W/(m·K)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea</b> (Estrategia 17.3). En serie y en estado estable la corriente es la <b>misma</b> en las dos barras; la unión está a una $T$ intermedia desconocida.</li>
-    <li><b>a)</b> $H_\text{latón}=H_{Cu}$: $\dfrac{109\,(100-T)}{0{,}300}=\dfrac{385\,(T-0)}{0{,}800}\Rightarrow363{,}3(100-T)=481{,}3\,T\Rightarrow T=\mathbf{43{,}0\ °C}$.</li>
-    <li><b>b) Corriente:</b> $H=\dfrac{(109)(0{,}00500)(100-43{,}0)}{0{,}300}=103{,}5$ W. En 300 s: $Q=Ht=3{,}11\times10^4$ J.</li>
-    <li><b>Hielo fundido.</b> La mezcla está a 0 °C: todo el calor que llega funde hielo, $Q=mL_f\Rightarrow m=3{,}11\times10^4/3{,}34\times10^5=\mathbf{0{,}0930\ kg=93{,}0\ g}$.</li>
-    <li><b>Evaluación.</b> La unión no está a 50 °C: la caída de temperatura es mayor donde la «resistencia» $L/k$ es mayor (latón: $0{,}300/109=2{,}75\times10^{-3}$; cobre: $0{,}800/385=2{,}08\times10^{-3}$ m²·K/W).</li>
+    <li><b>a) Temperatura de la unión</b> ($H_{lat\acute on}=H_{Cu}$):
+      $$\frac{109\,(100-T)}{0{,}300}=\frac{385\,(T-0)}{0{,}800}\ \Rightarrow\ 363{,}3(100-T)=481{,}3\,T\ \Rightarrow\ T=\mathbf{43{,}0\ ^\circ C}$$</li>
+    <li><b>b) Corriente y calor en 300 s:</b>
+      $$H=\frac{(109)(0{,}00500)(100-43{,}0)}{0{,}300}=103{,}5\ \text{W},\qquad Q=Ht=(103{,}5)(300)=3{,}11\times10^4\ \text{J}$$</li>
+    <li><b>Hielo fundido</b> (la mezcla está a 0 °C: todo el calor funde hielo):
+      $$m=\frac{Q}{L_f}=\frac{3{,}11\times10^4}{3{,}34\times10^5}=\mathbf{0{,}0930\ kg}=93{,}0\ \text{g}$$
+      <span class="por">La unión no está a 50 °C: la caída es mayor donde $L/k$ es mayor (latón $2{,}75\times10^{-3}$; cobre $2{,}08\times10^{-3}$ m²·K/W).</span></li>
   </ol>
   {{fig:barra-compuesta-laton-cobre-con-perfil-de-temper}}
   <div class="recipe"><b>Receta:</b> barras en serie: iguala las $H$ para hallar la temperatura de la unión; después usa cualquiera de ellas para $H$ y $Q=Ht$.</div>

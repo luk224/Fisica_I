@@ -1,10 +1,17 @@
 <p class="enun">Una olla esférica contiene 0,75 L de café caliente (en esencia, agua) a 95 °C. La olla tiene una emisividad de 0,60 y los alrededores están a 20,0 °C. Para el café, calcula la tasa de pérdida de calor por radiación.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Radiación neta: $H_{neta}=A\,e\,\sigma\,(T^4-T_s^4)$, con $T$ en kelvin, $\sigma=5{,}67\times10^{-8}$ W/(m²·K⁴)</li>
+      <li>Esfera: $V=\tfrac43\pi R^3$, $A=4\pi R^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> La olla emite según (17.25) y absorbe del entorno; la pérdida neta es (17.26), $H_\text{neta}=Ae\sigma(T^4-T_s^4)$, con <b>temperaturas en kelvin</b>. Se supone pared delgada, de modo que su superficie está a la temperatura del café.</li>
-    <li><b>Área a partir del volumen.</b> $V=\tfrac43\pi R^3=7{,}5\times10^{-4}$ m³ $\Rightarrow R=0{,}0564$ m $\Rightarrow A=4\pi R^2=0{,}0399$ m².</li>
-    <li><b>Temperaturas:</b> $T=95+273=368$ K, $T_s=20+273=293$ K.</li>
-    <li><b>Cálculo:</b> $H_\text{neta}=(0{,}0399)(0{,}60)(5{,}67\times10^{-8})(368^4-293^4)=\mathbf{15\ W}$.</li>
-    <li><b>Evaluación.</b> Pequeño frente a lo que emite la olla sola ($Ae\sigma T^4=25$ W): el entorno devuelve buena parte.</li>
+    <li><b>Área a partir del volumen</b> ($V=0{,}75\ \text{L}=7{,}5\times10^{-4}$ m³):
+      $$R=\Big(\frac{3V}{4\pi}\Big)^{1/3}=0{,}0564\ \text{m},\qquad A=4\pi R^2=0{,}0399\ \text{m}^2$$</li>
+    <li><b>Temperaturas en kelvin:</b>
+      $$T=95+273=368\ \text{K},\qquad T_s=20+273=293\ \text{K}$$</li>
+    <li><b>Pérdida neta:</b>
+      $$H_{neta}=(0{,}0399)(0{,}60)(5{,}67\times10^{-8})\big(368^4-293^4\big)=\mathbf{15\ W}$$
+      <span class="por">La olla sola emitiría $Ae\sigma T^4=25$ W: el entorno devuelve buena parte. Usar la diferencia de cuartas potencias, no $(T-T_s)^4$.</span></li>
   </ol>
   {{fig:olla-esferica-a-368-k-en-un-entorno-a-293-k-emit}}
   <div class="recipe"><b>Receta:</b> radiación: pasa a kelvin, calcula el área real que emite y usa la <b>diferencia de cuartas potencias</b> (no la cuarta potencia de la diferencia).</div>

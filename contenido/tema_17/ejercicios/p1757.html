@@ -1,9 +1,17 @@
 <p class="enun">Supón que la varilla de la figura 17.24a es de cobre, tiene 45,0 cm de longitud y área de sección de 1,25 cm². Sea $T_H=100{,}0$ °C y $T_C=0{,}0$ °C. En el estado estable final, calcula: a) el gradiente de temperatura a lo largo de la varilla, b) la corriente de calor y c) la temperatura de la varilla a 12,0 cm de su extremo izquierdo.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Gradiente: $\dfrac{T_H-T_C}{L}$; corriente: $H=k\,A\,\dfrac{T_H-T_C}{L}$ (igual en toda sección)</li>
+      <li>$T(x)=T_H-\dfrac{(T_H-T_C)\,x}{L}$; cobre $k=385$ W/(m·K); $1\ \text{cm}^2=10^{-4}\ \text{m}^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> En estado estable no se acumula calor en ningún trozo: <b>la misma $H$ atraviesa toda la varilla</b>. Con $k$ y $A$ constantes, eso exige que $T$ baje <b>linealmente</b> con $x$.</li>
-    <li><b>a)</b> Gradiente $=\dfrac{T_H-T_C}{L}=\dfrac{100{,}0}{0{,}450}=\mathbf{222\ K/m}$.</li>
-    <li><b>b)</b> (17.21): $H=kA\cdot\text{gradiente}=(385)(1{,}25\times10^{-4})(222)=\mathbf{10{,}7\ W}$.</li>
-    <li><b>c)</b> Aplicando (17.21) solo al primer tramo de 0,120 m: $100-T=\dfrac{HL_1}{kA}=26{,}7$ C° $\Rightarrow T=\mathbf{73{,}3\ °C}$. (Equivale a $T=100-222\cdot0{,}120$: la recta.)</li>
+    <li><b>a) Gradiente:</b>
+      $$\frac{T_H-T_C}{L}=\frac{100{,}0}{0{,}450}=\mathbf{222\ K/m}$$</li>
+    <li><b>b) Corriente de calor:</b>
+      $$H=kA\cdot222=(385)(1{,}25\times10^{-4})(222)=\mathbf{10{,}7\ W}$$</li>
+    <li><b>c) Temperatura a 12,0 cm del extremo caliente:</b>
+      $$T=100{,}0-222(0{,}120)=\mathbf{73{,}3\ ^\circ C}$$
+      <span class="por">Equivale a $100-HL_1/(kA)=100-26{,}7$.</span></li>
   </ol>
   {{fig:temperatura-frente-a-la-posicion-en-una-varilla-}}
   <div class="recipe"><b>Receta:</b> varilla homogénea en estado estable: $T(x)=T_H-(T_H-T_C)\,x/L$ y $H=kA(T_H-T_C)/L$, igual en cualquier sección.</div>

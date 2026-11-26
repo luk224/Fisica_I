@@ -1,10 +1,17 @@
 <p class="enun">Un carpintero construye una pared exterior con una capa externa de madera de 3,0 cm de espesor ($k=0{,}080$ W/(m·K)) y una capa interna de espuma de poliestireno de 2,2 cm ($k=0{,}027$ W/(m·K)). La temperatura de la superficie interior es de 19,0 °C y la exterior, $-10{,}0$ °C. a) Calcula la temperatura en la unión entre la madera y la espuma. b) Calcula la rapidez de flujo de calor por metro cuadrado a través de la pared.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Capas en serie: misma $\dfrac HA$; $\dfrac HA=\dfrac{k\,\Delta T}{L}$</li>
+      <li>Resistencia: $R=\dfrac Lk$; $\dfrac HA=\dfrac{\Delta T_{total}}{\sum R_i}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Mismo esquema que 17.56: dos capas en serie, misma $H$ (y misma $H/A$, pues el área es común).</li>
-    <li><b>a)</b> $\dfrac{0{,}080\,(T-(-10{,}0))}{0{,}030}=\dfrac{0{,}027\,(19{,}0-T)}{0{,}022}\Rightarrow2{,}667(T+10)=1{,}227(19-T)\Rightarrow T=\mathbf{-0{,}86\ °C}$.</li>
-    <li><b>b)</b> Con la madera: $H/A=0{,}080\,(-0{,}86+10{,}0)/0{,}030=\mathbf{24\ W/m^2}$; con el poliestireno sale lo mismo (comprobación).</li>
-    <li><b>Con resistencias</b> (17.23-17.24): $R=0{,}030/0{,}080+0{,}022/0{,}027=0{,}375+0{,}815=1{,}19$ m²·K/W $\Rightarrow H/A=29{,}0/1{,}19=24{,}4$ W/m² ✓.</li>
-    <li><b>Evaluación.</b> Casi toda la caída de temperatura (19,9 de 29 C°) está en el poliestireno, que es la capa de mayor $R$ aunque sea más delgada.</li>
+    <li><b>a) Temperatura en la unión</b> (madera: $k=0{,}080$, $L=0{,}030$; poliestireno: $k=0{,}027$, $L=0{,}022$):
+      $$\frac{0{,}080\,(T+10{,}0)}{0{,}030}=\frac{0{,}027\,(19{,}0-T)}{0{,}022}\ \Rightarrow\ 2{,}667(T+10)=1{,}227(19-T)\ \Rightarrow\ T=\mathbf{-0{,}86\ ^\circ C}$$</li>
+    <li><b>b) Flujo de calor por m²:</b>
+      $$\frac HA=\frac{0{,}080\,(-0{,}86+10{,}0)}{0{,}030}=\mathbf{24\ W/m^2}$$</li>
+    <li><b>Con resistencias:</b>
+      $$R=\frac{0{,}030}{0{,}080}+\frac{0{,}022}{0{,}027}=0{,}375+0{,}815=1{,}19\ \text{m}^2\text{K/W}\ \Rightarrow\ \frac HA=\frac{29{,}0}{1{,}19}=24{,}4\ \text{W/m}^2\ \checkmark$$
+      <span class="por">Casi toda la caída (19,9 de 29 C°) está en el poliestireno: es la capa de mayor $R$.</span></li>
   </ol>
   {{fig:pared-de-madera-y-poliestireno-con-el-perfil-de-}}
   <div class="recipe"><b>Receta:</b> capas en serie: $H/A=\Delta T_\text{total}/\sum R_i$ y la caída en cada capa es $(H/A)\,R_i$.</div>

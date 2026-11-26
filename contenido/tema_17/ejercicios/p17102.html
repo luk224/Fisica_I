@@ -1,9 +1,17 @@
 <p class="enun">Se sueldan varillas de cobre, latón y acero para formar una Y. El área de sección de cada varilla es de 2,00 cm². El extremo libre de la de cobre se mantiene a 100,0 °C y los extremos libres de las de latón y acero, a 0,0 °C. No hay pérdida de calor por los costados. Longitudes: cobre, 13,0 cm; latón, 18,0 cm; acero, 24,0 cm. a) ¿Qué temperatura tiene el punto de unión? b) Calcula la corriente de calor en cada varilla.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Nudo: $H_{Cu}=H_{lat}+H_{ac}$ (no se acumula energía)</li>
+      <li>Cada barra: $H=\dfrac{k\,A\,\Delta T}{L}$; $k_{Cu}=385$, $k_{lat}=109$, $k_{ac}=50{,}2$ W/(m·K)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Ahora <b>no</b> es una serie: el calor que llega por el cobre se <b>reparte</b> entre latón y acero (en paralelo entre la unión y 0 °C). En la unión no se acumula energía: $H_{Cu}=H_\text{lat}+H_\text{ac}$.</li>
-    <li><b>Ecuación</b> (área común cancelada): $\dfrac{385}{0{,}130}(100-T_0)=\dfrac{109}{0{,}180}T_0+\dfrac{50{,}2}{0{,}240}T_0\Rightarrow T_0=\dfrac{2962\cdot100}{2962+605{,}6+209{,}2}=\mathbf{78{,}4\ °C}$.</li>
-    <li><b>b)</b> $H_{Cu}=\dfrac{385\,(2{,}00\times10^{-4})(21{,}6)}{0{,}130}=\mathbf{12{,}8\ W}$; $H_\text{lat}=\dfrac{109\,(2{,}00\times10^{-4})(78{,}4)}{0{,}180}=\mathbf{9{,}50\ W}$; $H_\text{ac}=\dfrac{50{,}2\,(2{,}00\times10^{-4})(78{,}4)}{0{,}240}=\mathbf{3{,}28\ W}$.</li>
-    <li><b>Comprobación.</b> $9{,}50+3{,}28=12{,}78\approx12{,}8$ W ✓.</li>
+    <li><b>a) Temperatura de la unión</b> (el área común se cancela):
+      $$\frac{385}{0{,}130}(100-T_0)=\frac{109}{0{,}180}\,T_0+\frac{50{,}2}{0{,}240}\,T_0$$
+      $$2962(100-T_0)=605{,}6\,T_0+209{,}2\,T_0\ \Rightarrow\ T_0=\frac{2962\cdot100}{2962+605{,}6+209{,}2}=\mathbf{78{,}4\ ^\circ C}$$</li>
+    <li><b>b) Corrientes</b> ($A=2{,}00\times10^{-4}$ m²):
+      $$H_{Cu}=\frac{385(2{,}00\times10^{-4})(21{,}6)}{0{,}130}=\mathbf{12{,}8\ W},\qquad H_{lat}=\frac{109(2{,}00\times10^{-4})(78{,}4)}{0{,}180}=\mathbf{9{,}50\ W}$$
+      $$H_{ac}=\frac{50{,}2(2{,}00\times10^{-4})(78{,}4)}{0{,}240}=\mathbf{3{,}28\ W}$$
+      <span class="por">Comprobación: $9{,}50+3{,}28=12{,}78\approx12{,}8$ W ✓.</span></li>
   </ol>
   {{fig:union-en-y-de-cobre-laton-y-acero-por-el-cobre-l}}
   <div class="recipe"><b>Receta:</b> uniones de varias barras: en cada nudo, $\sum H_\text{entra}=\sum H_\text{sale}$ (como la ley de nudos), y en cada barra $H=kA\Delta T/L$.</div>

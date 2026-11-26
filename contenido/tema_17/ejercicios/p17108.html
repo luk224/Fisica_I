@@ -1,10 +1,18 @@
 <p class="enun">Una esfera metálica de 3,20 cm de radio está suspendida en una caja metálica grande cuyas paredes interiores se mantienen a 30,0 °C. Un calentador eléctrico pequeño junto a la esfera le suministra calor a razón de 0,660 J/s para mantenerla a 41,0 °C constantes. a) ¿Cuál es la emisividad de la esfera? b) ¿Qué potencia se requiere para mantenerla a 82,0 °C? ¿Cuál es el cociente de la potencia a 82,0 °C respecto a la de 41,0 °C? ¿Cómo se compara con $2^4$? Explica.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Estado estacionario: potencia del calentador $=H_{neta}=A\,e\,\sigma\,(T^4-T_s^4)$ ($T$ en kelvin)</li>
+      <li>Esfera: $A=4\pi R^2$; $\sigma=5{,}67\times10^{-8}$ W/(m²·K⁴)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Temperatura constante $\Rightarrow$ el calentador repone exactamente la pérdida neta por radiación: $P=H_\text{neta}=Ae\sigma(T^4-T_s^4)$.</li>
-    <li><b>Datos en kelvin:</b> $T=314$ K, $T_s=303$ K; $A=4\pi(0{,}0320)^2=0{,}01287$ m².</li>
-    <li><b>a)</b> $e=\dfrac{0{,}660}{(0{,}01287)(5{,}67\times10^{-8})(314^4-303^4)}=\mathbf{0{,}700}$.</li>
-    <li><b>b)</b> A $T=82{,}0$ °C $=355$ K: $P=(0{,}01287)(0{,}700)(5{,}67\times10^{-8})(355^4-303^4)=\mathbf{3{,}81\ W}$. Cociente $3{,}81/0{,}660=\mathbf{5{,}77}$.</li>
-    <li><b>¿Por qué no 16?</b> «Doblar» de 41 a 82 °C <b>no dobla la temperatura absoluta</b> (355/314 = 1,13), y además la pérdida neta depende de $T^4-T_s^4$, no de $T^4$. El factor $2^4=16$ solo saldría si se doblara la temperatura <b>en kelvin</b> y el entorno estuviera a 0 K.</li>
+    <li><b>Datos en kelvin y área:</b>
+      $$T=314\ \text{K},\quad T_s=303\ \text{K},\quad A=4\pi(0{,}0320)^2=0{,}01287\ \text{m}^2$$</li>
+    <li><b>a) Emisividad:</b>
+      $$e=\frac{0{,}660}{(0{,}01287)(5{,}67\times10^{-8})(314^4-303^4)}=\mathbf{0{,}700}$$</li>
+    <li><b>b) A 82,0 °C = 355 K:</b>
+      $$P=(0{,}01287)(0{,}700)(5{,}67\times10^{-8})(355^4-303^4)=\mathbf{3{,}81\ W},\qquad\frac{3{,}81}{0{,}660}=\mathbf{5{,}77}$$</li>
+    <li><b>¿Por qué no $2^4=16$?</b>
+      <span class="por">«Doblar» de 41 a 82 °C no dobla la temperatura absoluta ($355/314=1{,}13$), y la pérdida neta depende de $T^4-T_s^4$, no de $T^4$. El factor 16 solo saldría doblando la temperatura en kelvin con el entorno a 0 K.</span></li>
   </ol>
   {{fig:potencia-necesaria-para-mantener-una-esfera-a-te}}
   <div class="recipe"><b>Receta:</b> estado estacionario con radiación: potencia suministrada $=H_\text{neta}$; nunca razones por proporciones con °C.</div>
