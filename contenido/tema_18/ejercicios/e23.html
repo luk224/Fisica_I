@@ -1,11 +1,19 @@
 <p class="enun">Durante una inmersión de prueba en 1939 antes de ser aceptado por la Marina de Estados Unidos, el submarino Squalus se hundió en un punto donde la profundidad del agua era de 73,0 m. La temperatura en la superficie era de 27,0 °C, y en el fondo, 7,0 °C. La densidad del agua de mar es de 1030 kg/m³. a) Se usó una campana de inmersión con forma de cilindro circular de 2,30 m de altura, abierto abajo y cerrado arriba, para rescatar a 33 tripulantes atrapados en el Squalus. Al bajar la campana al fondo, ¿a qué altura subió el agua dentro de la campana? (Sugerencia: puede despreciarse la relativamente pequeña variación en la presión del agua entre el fondo de la campana y la superficie del agua dentro de la campana.) b) ¿Con qué presión manométrica debió haberse suministrado aire comprimido a la campana en el fondo para expulsar de ella toda el agua?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Gas atrapado: $\dfrac{p_1V_1}{T_1}=\dfrac{p_2V_2}{T_2}$, con $V=A\,h$ ⇒ $h_2=h_1\dfrac{p_1}{p_2}\dfrac{T_2}{T_1}$</li>
+      <li>Presión a profundidad $y$: $p=p_{atm}+\rho g\,y$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> El aire atrapado en la campana es una cantidad fija de gas ideal ⇒ (18.6). Al ser un cilindro de sección constante $A$, $V=Ah$: la altura de la columna de aire hace el papel del volumen.</li>
-    <li><b>Estado 1 (superficie):</b> $p_1=1{,}013\times10^5$ Pa, $h_1=2{,}30$ m, $T_1=300{,}15$ K.</li>
-    <li><b>Estado 2 (fondo):</b> presión hidrostática (12.6) a 73,0 m (sugerencia: la misma en toda la campana): $p_2=p_{atm}+\rho gy=1{,}013\times10^5+1030\cdot9{,}80\cdot73{,}0=8{,}38\times10^5$ Pa; $T_2=280{,}15$ K.</li>
-    <li><b>Columna de aire:</b> $h_2=h_1\dfrac{p_1}{p_2}\dfrac{T_2}{T_1}=2{,}30\cdot\dfrac{1{,}013\times10^5}{8{,}38\times10^5}\cdot\dfrac{280{,}15}{300{,}15}=0{,}259$ m.</li>
-    <li><b>a) El agua sube</b> $2{,}30-0{,}26=\mathbf{2{,}04\ m}$ dentro de la campana.</li>
-    <li><b>b)</b> Para expulsar toda el agua, el aire tiene que estar a la presión del agua en el borde inferior, $p_2=p_{atm}+\rho gy$; su presión manométrica es $\rho gy=1030\cdot9{,}80\cdot73{,}0=\mathbf{7{,}37\times10^5\ Pa}$ (≈ 7,3 atm).</li>
+    <li><b>Estados:</b>
+      $$\text{1 (superficie): }p_1=1{,}013\times10^5\ \text{Pa},\ h_1=2{,}30\ \text{m},\ T_1=300{,}15\ \text{K}$$
+      $$\text{2 (fondo): }p_2=1{,}013\times10^5+(1030)(9{,}80)(73{,}0)=8{,}38\times10^5\ \text{Pa},\ T_2=280{,}15\ \text{K}$$</li>
+    <li><b>a) Columna de aire:</b>
+      $$h_2=2{,}30\cdot\frac{1{,}013\times10^5}{8{,}38\times10^5}\cdot\frac{280{,}15}{300{,}15}=0{,}259\ \text{m}$$
+      $$\text{el agua sube }2{,}30-0{,}26=\mathbf{2{,}04\ m}$$</li>
+    <li><b>b) Presión manométrica para expulsar toda el agua</b> (igual a la del agua en el borde inferior):
+      $$\rho g\,y=(1030)(9{,}80)(73{,}0)=\mathbf{7{,}37\times10^5\ Pa}\ \ (\approx7{,}3\ \text{atm})$$
+      <span class="por">No olvidar $p_{atm}$ en la presión absoluta del fondo ni la corrección de temperatura.</span></li>
   </ol>
   {{fig:campana-de-inmersion-cilindrica-de-2-30-metros-d}}
 

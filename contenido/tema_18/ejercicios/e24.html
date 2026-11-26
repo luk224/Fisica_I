@@ -1,11 +1,20 @@
 <p class="enun">Un tanque grande de agua tiene una manguera conectada (figura P18.59). El tanque está sellado por arriba y tiene aire comprimido entre la superficie del agua y la tapa. Cuando la altura del agua $h$ es de 3,50 m, la presión absoluta $p$ del aire comprimido es de $4{,}20\times10^5$ Pa. Suponga que ese aire se expande a temperatura constante, y considere que la presión atmosférica es $1{,}00\times10^5$ Pa. a) ¿Con qué rapidez sale agua por la manguera cuando $h=3{,}50$ m? b) Al salir agua del tanque, $h$ disminuye. Calcule la rapidez de flujo para $h=3{,}00$ m y $h=2{,}00$ m. c) ¿En qué valor de $h$ se detiene el flujo? (Figura P18.59: tanque de 4,00 m de alto; la salida de la manguera está a 1,00 m sobre el fondo.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Bernoulli (tanque grande, $v_1\approx0$, salida al aire): $v_2=\sqrt{\dfrac{2}{\rho}(p-p_{atm})+2g\,(h-1{,}00)}$</li>
+      <li>Boyle (aire a $T$ constante, columna de aire $4{,}00-h$): $p=\dfrac{2{,}10\times10^5}{4{,}00-h}$ Pa</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Bernoulli</b> (12.17) entre la superficie del agua (1) y la salida de la manguera (2): $p_1+\rho gy_1+\tfrac12\rho v_1^2=p_2+\rho gy_2+\tfrac12\rho v_2^2$. Tanque grande ⇒ $v_1\approx0$; salida al aire ⇒ $p_2=p_{atm}$; $y_1-y_2=h-1{,}00$ m. Queda $v_2=\sqrt{\dfrac{2}{\rho}(p-p_{atm})+2g(h-1{,}00)}$.</li>
-    <li><b>a)</b> $h=3{,}50$ m, $p=4{,}20\times10^5$ Pa: $v_2=\sqrt{640+49}=\mathbf{26{,}2\ m/s}$.</li>
-    <li><b>Presión del aire al bajar el agua</b> (gas ideal a $T$ constante, Boyle): la columna de aire mide $4{,}00-h$ y $V=A(4{,}00-h)$: $p=p_0\dfrac{4{,}00-3{,}50}{4{,}00-h}=\dfrac{2{,}10\times10^5\ \text{Pa}\cdot\text{m}}{4{,}00-h}$.</li>
-    <li><b>b)</b> $h=3{,}00$ m: $p=2{,}10\times10^5$ Pa, $v_2=\mathbf{16{,}1\ m/s}$. $h=2{,}00$ m: $p=1{,}05\times10^5$ Pa, $v_2=\mathbf{5{,}44\ m/s}$.</li>
-    <li><b>c) El flujo se detiene</b> cuando $v_2=0$: $\dfrac{2{,}10\times10^5}{4{,}00-h}-1{,}00\times10^5=-1000\cdot9{,}80\,(h-1{,}00)$. Multiplicando por $(4{,}00-h)$ y ordenando: $9{,}80h^2-149h+229{,}2=0$ (en unidades de kPa y m), con raíces $h=1{,}74$ m y $h=13{,}5$ m. La segunda supera la altura del tanque ⇒ <b>$h=1{,}74$ m</b>.</li>
-    <li><b>Comprobación:</b> a $h=1{,}74$ m el aire está a $p=9{,}28\times10^4$ Pa (por debajo de la atmosférica) y el agua sobre la salida aporta $\rho g(0{,}74)=7{,}2\times10^3$ Pa: total $1{,}00\times10^5$ Pa $=p_{atm}$ ✓.</li>
+    <li><b>a) $h=3{,}50$ m</b> ($p=4{,}20\times10^5$ Pa):
+      $$v_2=\sqrt{\frac{2(4{,}20\times10^5-1{,}00\times10^5)}{1000}+2(9{,}80)(2{,}50)}=\sqrt{640+49}=\mathbf{26{,}2\ m/s}$$</li>
+    <li><b>Presión del aire al bajar el agua</b> (columna de aire $4{,}00-h$, $p_0(4{,}00-3{,}50)=p(4{,}00-h)$):
+      $$p=\frac{(4{,}20\times10^5)(0{,}50)}{4{,}00-h}=\frac{2{,}10\times10^5}{4{,}00-h}$$</li>
+    <li><b>b) $h=3{,}00$ m</b> ($p=2{,}10\times10^5$ Pa) y <b>$h=2{,}00$ m</b> ($p=1{,}05\times10^5$ Pa):
+      $$v_2=\sqrt{\frac{2(1{,}10\times10^5)}{1000}+2(9{,}80)(2{,}00)}=\mathbf{16{,}1\ m/s},\qquad v_2=\sqrt{\frac{2(5000)}{1000}+2(9{,}80)(1{,}00)}=\mathbf{5{,}44\ m/s}$$</li>
+    <li><b>c) Se detiene</b> ($v_2=0$):
+      $$\frac{2{,}10\times10^5}{4{,}00-h}-1{,}00\times10^5=-1000(9{,}80)(h-1{,}00)\ \Rightarrow\ 9{,}80\,h^2-149\,h+229{,}2=0$$
+      (en kPa y m); raíces $h=1{,}74$ m y $h=13{,}5$ m. La segunda supera la altura del tanque ⇒ $\mathbf{h=1{,}74\ m}$.
+      <span class="por">Comprobación: el aire está a $9{,}28\times10^4$ Pa y el agua sobre la salida aporta $\rho g(0{,}74)=7{,}2\times10^3$ Pa: total $1{,}00\times10^5$ Pa $=p_{atm}$ ✓.</span></li>
   </ol>
   {{fig:tanque-cerrado-de-4-00-metros-de-altura-con-agua}}
 

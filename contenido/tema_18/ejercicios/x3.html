@@ -1,13 +1,27 @@
 <p class="enun"><b>Examen Febrero 2025 (2ª semana), P-2 (3 puntos).</b> En un ciclo termodinámico se opera un gas ideal monoatómico. El gas se somete a un proceso isóbaro entre los estados $a$ y $b$ para pasar posteriormente por un proceso isócoro entre los estados $b$ y $c$, cerrándose el ciclo a través de un proceso que puede ser representado como una línea recta en un diagrama presión-volumen, $pV$. Se conoce que $p_a=4\times10^5$ Pa, $p_c=2\times10^5$ Pa, $V_a=0{,}55$ m³ y $V_b=0{,}82$ m³. Conocidos estos datos: (a) dibuje el ciclo termodinámico descrito en un diagrama $pV$; (b) calcule el calor intercambiado, el trabajo realizado y la variación de energía interna en cada proceso del ciclo y para el ciclo completo; (c) determine la eficiencia del ciclo. Considere $C_V=3R/2$, $C_p=5R/2$ y $R=8{,}314$ J mol$^{-1}$K$^{-1}$.</p>
 {{fig:x3-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Monoatómico: $\Delta U=nC_V\Delta T=\tfrac32\Delta(pV)$; $C_p=\tfrac52R$</li>
+      <li>Trabajo = área bajo la curva en el diagrama $pV$; $Q=\Delta U+W$</li>
+      <li>Ciclo: $\Delta U=0$, $W=\sum Q$; eficiencia $e=\dfrac{W}{Q_H}$ ($Q_H$ = todo el calor que entra)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Estados.</b> $a$: (0,55 m³; $4\times10^5$ Pa). Isóbara ⇒ $b$: (0,82; $4\times10^5$). Isócora ⇒ $c$: (0,82; $2\times10^5$). La recta une $c$ con $a$.</li>
-    <li><b>No se da $n$ y no hace falta.</b> Por (18.3), $nT=pV/R$; lo único que necesitamos es $\Delta U=nC_V\Delta T=\tfrac32\Delta(pV)$ (monoatómico). Productos $pV$: $a$: 220 000 J; $b$: 328 000 J; $c$: 164 000 J. Por tanto $T_b&gt;T_a&gt;T_c$ ($T_b/T_a=1{,}49$; $T_c/T_a=0{,}745$).</li>
-    <li><b>(b) Tramo $a\to b$ (isóbaro):</b> $W=p(V_b-V_a)=4\times10^5\cdot0{,}27=\mathbf{108\,000\ J}$; $\Delta U=\tfrac32(328\,000-220\,000)=\mathbf{162\,000\ J}$; $Q=\Delta U+W=\mathbf{270\,000\ J}$ ($=\tfrac52p\Delta V$).</li>
-    <li><b>Tramo $b\to c$ (isócoro):</b> $W=0$; $\Delta U=Q=\tfrac32(164\,000-328\,000)=\mathbf{-246\,000\ J}$.</li>
-    <li><b>Tramo $c\to a$ (recta):</b> el trabajo es el área bajo la recta (un trapecio), negativa porque el volumen disminuye: $W=\dfrac{p_c+p_a}{2}(V_a-V_c)=3\times10^5\cdot(-0{,}27)=\mathbf{-81\,000\ J}$; $\Delta U=\tfrac32(220\,000-164\,000)=\mathbf{84\,000\ J}$; $Q=\Delta U+W=\mathbf{+3000\ J}$.</li>
-    <li><b>Ciclo completo:</b> $\Delta U=0$ ✓; $W=108\,000-81\,000=\mathbf{27\,000\ J}$ (el área del triángulo, $\tfrac12\cdot0{,}27\cdot2\times10^5$); $Q_{neto}=270\,000-246\,000+3000=27\,000$ J $=W$ ✓.</li>
-    <li><b>(c) Eficiencia</b> $e=W/Q_H$, con $Q_H$ <b>todo el calor que entra</b>. Cuidado con la recta: a lo largo de ella el calor cambia de signo. Con $p(V)$ la recta de pendiente $-7{,}41\times10^5$ Pa/m³, $dQ=dU+p\,dV=\left(\tfrac52p+\tfrac32V\,\tfrac{dp}{dV}\right)dV$ se anula en $V^*=0{,}681$ m³. De $c$ a $V^*$ <b>entra</b> 28 521 J y de $V^*$ a $a$ <b>sale</b> 25 521 J (neto $+3000$ J). Entonces $Q_H=270\,000+28\,521=298\,521$ J y $e=\dfrac{27\,000}{298\,521}=\mathbf{0{,}090\ (9{,}0\ \%)}$. Si se toma solo el neto del tramo ($Q_H=273\,000$ J) sale 9,9 %, que sobrestima la eficiencia; en el examen conviene indicar al menos que la recta tiene una parte con calor entrante y otra saliente.</li>
+    <li><b>Estados:</b> $a$ (0,55 m³; $4\times10^5$ Pa); $b$ (0,82; $4\times10^5$) tras la isóbara; $c$ (0,82; $2\times10^5$) tras la isócora. La recta une $c$ con $a$.
+      <span class="por">No hace falta $n$: trabajamos con $pV$; así $T_b/T_a=1{,}49$ y $T_c/T_a=0{,}745$.</span>
+      $$(pV)_a=220\,000\ \text{J},\quad(pV)_b=328\,000\ \text{J},\quad(pV)_c=164\,000\ \text{J}$$</li>
+    <li><b>(b) Tramo $a\to b$ (isóbara):</b>
+      $$W=p(V_b-V_a)=4\times10^5(0{,}27)=\mathbf{108\,000\ J},\quad\Delta U=\tfrac32(328\,000-220\,000)=\mathbf{162\,000\ J},\quad Q=\mathbf{270\,000\ J}$$</li>
+    <li><b>Tramo $b\to c$ (isócora):</b>
+      $$W=0,\qquad\Delta U=Q=\tfrac32(164\,000-328\,000)=\mathbf{-246\,000\ J}$$</li>
+    <li><b>Tramo $c\to a$ (recta):</b> trabajo = área del trapecio, negativa porque $V$ disminuye:
+      $$W=\frac{p_c+p_a}{2}(V_a-V_c)=3\times10^5(-0{,}27)=\mathbf{-81\,000\ J},\quad\Delta U=\tfrac32(220\,000-164\,000)=\mathbf{84\,000\ J},\quad Q=\mathbf{+3000\ J}$$</li>
+    <li><b>Ciclo completo:</b>
+      $$\Delta U=0\ \checkmark,\qquad W=108\,000-81\,000=\mathbf{27\,000\ J},\qquad Q_{neto}=270\,000-246\,000+3000=27\,000\ \text{J}$$
+      <span class="por">$W$ es el área del triángulo: $\tfrac12(0{,}27)(2\times10^5)=27\,000$ J.</span></li>
+    <li><b>(c) Eficiencia.</b> La recta tiene pendiente $-7{,}41\times10^5$ Pa/m³ y en ella el calor cambia de signo: $dQ=\big(\tfrac52p+\tfrac32V\tfrac{dp}{dV}\big)dV$ se anula en $V^*=0{,}681$ m³. De $c$ a $V^*$ entra 28 521 J y de $V^*$ a $a$ sale 25 521 J (neto $+3000$ J):
+      $$Q_H=270\,000+28\,521=298\,521\ \text{J},\qquad e=\frac{27\,000}{298\,521}=\mathbf{0{,}090}\ (9{,}0\ \%)$$
+      <span class="por">Si se toma solo el neto del tramo ($Q_H=273\,000$ J) sale 9,9 %, que sobrestima la eficiencia.</span></li>
   </ol>
   {{fig:diagrama-pv-del-ciclo-triangular-isobara-de-a-a-}}
 

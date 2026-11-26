@@ -1,11 +1,19 @@
 <p class="enun">Un cilindro de 1,00 m de altura con diámetro interior de 0,120 m contiene gas propano (masa molar 44,1 g/mol) que se usará en una parrillada. Inicialmente, el tanque se llena hasta que la presión manométrica es de $1{,}30\times10^6$ Pa y la temperatura es 22,0 °C. La temperatura del gas se mantiene constante mientras el tanque se vacía parcialmente hasta que la presión manométrica es de $3{,}40\times10^5$ Pa. Calcule la masa de propano utilizada.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$p_{abs}=p_{man}+p_{atm}$; $pV=\dfrac mM\,RT$ ⇒ a $V$, $T$ fijos: $m\propto p_{abs}$</li>
+      <li>Volumen del cilindro: $V=\pi r^2h$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Ahora <b>$n$ cambia</b> (sale gas), así que no vale (18.6) con $n$ fijo. Con $V$, $T$ y $M$ constantes, $pV=\tfrac{m}{M}RT$ dice que $m\propto p$ (absoluta).</li>
-    <li><b>Presiones absolutas</b> ($p=p_{man}+p_{atm}$): $p_1=1{,}30\times10^6+1{,}013\times10^5=1{,}401\times10^6$ Pa; $p_2=3{,}40\times10^5+1{,}013\times10^5=4{,}413\times10^5$ Pa.</li>
-    <li><b>Volumen:</b> $V=\pi r^2h=\pi(0{,}060)^2(1{,}00)=0{,}01131$ m³; $T=295{,}15$ K.</li>
-    <li><b>Masa inicial:</b> $m_1=\dfrac{p_1VM}{RT}=\dfrac{1{,}401\times10^6\cdot0{,}01131\cdot0{,}0441}{8{,}314\cdot295{,}15}=\mathbf{0{,}2848\ kg}$.</li>
-    <li><b>Masa final:</b> $m_2=m_1\dfrac{p_2}{p_1}=\mathbf{0{,}0897\ kg}$.</li>
-    <li><b>Usada:</b> $m_1-m_2=\mathbf{0{,}195\ kg}$.</li>
+    <li><b>Presiones absolutas:</b>
+      $$p_1=1{,}30\times10^6+1{,}013\times10^5=1{,}401\times10^6\ \text{Pa},\qquad p_2=3{,}40\times10^5+1{,}013\times10^5=4{,}413\times10^5\ \text{Pa}$$</li>
+    <li><b>Volumen y temperatura:</b>
+      $$V=\pi(0{,}060)^2(1{,}00)=0{,}01131\ \text{m}^3,\qquad T=295{,}15\ \text{K}$$</li>
+    <li><b>Masa inicial:</b>
+      $$m_1=\frac{p_1VM}{RT}=\frac{(1{,}401\times10^6)(0{,}01131)(0{,}0441)}{(8{,}314)(295{,}15)}=\mathbf{0{,}2848\ kg}$$</li>
+    <li><b>Masa final y usada:</b>
+      $$m_2=m_1\frac{p_2}{p_1}=0{,}0897\ \text{kg},\qquad m_1-m_2=\mathbf{0{,}195\ kg}$$
+      <span class="por">Con presiones manométricas ($3{,}40/13{,}0$) saldría 0,210 kg: error.</span></li>
   </ol>
   {{fig:barra-con-la-masa-inicial-de-propano-0-285-kilog}}
 

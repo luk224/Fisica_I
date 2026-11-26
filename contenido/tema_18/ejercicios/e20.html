@@ -1,9 +1,15 @@
 <p class="enun">Un globo de aire caliente permanece suspendido porque el aire caliente a presión atmosférica es menos denso que el aire frío a la misma presión. Si el volumen del globo es 500,0 m³ y el aire circundante está a 15,0 °C, ¿cuál debe ser la temperatura del aire en el globo para levantar una carga total de 290 kg (además de la masa de aire caliente)? La densidad del aire a 15,0 °C y a presión atmosférica es 1,23 kg/m³.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Empuje: $B=\rho_{fr\acute io}\,V\,g$; equilibrio: $B=m_{carga}\,g+\rho_{cal}\,V\,g$</li>
+      <li>Densidad de un gas: $\rho=\dfrac{pM}{RT}$ ⇒ misma $p$ y gas: $\rho\,T=\text{cte}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Fuerzas sobre el globo</b> (equilibrio): empuje hacia arriba $B=\rho_{frío}Vg$ (Arquímedes, U p. 376); hacia abajo, el peso de la carga $290g$ y el peso del aire caliente $\rho_{cal}Vg$.</li>
-    <li><b>Equilibrio:</b> $\rho_{frío}Vg=290g+\rho_{cal}Vg\Rightarrow\rho_{cal}=\rho_{frío}-\dfrac{290}{V}=1{,}23-0{,}58=0{,}65$ kg/m³.</li>
-    <li><b>Densidad y temperatura</b> (18.5): $\rho=pM/RT$; misma $p$ y $M$ dentro y fuera ⇒ $\rho T=$ cte ⇒ $T_{cal}=T_{frío}\dfrac{\rho_{frío}}{\rho_{cal}}$.</li>
-    <li><b>Cálculo:</b> $T_{cal}=288{,}15\cdot\dfrac{1{,}23}{0{,}65}=\mathbf{545\ K=272\ ^\circ C}$.</li>
+    <li><b>Equilibrio</b> (empuje hacia arriba; hacia abajo, la carga y el aire caliente):
+      $$\rho_{fr\acute io}Vg=290\,g+\rho_{cal}Vg\ \Rightarrow\ \rho_{cal}=\rho_{fr\acute io}-\frac{290}{V}=1{,}23-0{,}58=0{,}65\ \text{kg/m}^3$$</li>
+    <li><b>Temperatura</b> ($\rho T$ constante):
+      $$T_{cal}=T_{fr\acute io}\frac{\rho_{fr\acute io}}{\rho_{cal}}=288{,}15\cdot\frac{1{,}23}{0{,}65}=\mathbf{545\ K}=272\ ^\circ\text{C}$$
+      <span class="por">Si se olvida el peso del propio aire caliente, saldría $\rho_{cal}=0$.</span></li>
   </ol>
   {{fig:diagrama-de-fuerzas-del-globo-de-aire-caliente-e}}
 

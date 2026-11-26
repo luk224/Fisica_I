@@ -1,10 +1,17 @@
 <p class="enun">Con las suposiciones del ejemplo 18.4 (sección 18.1), ¿a qué altura sobre el nivel del mar la presión del aire es el 90 % de la presión en el nivel del mar?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Atmósfera isoterma: $p=p_0\,e^{-M g\,y/(R T)}$; altura de escala $H=\dfrac{RT}{Mg}$</li>
+      <li>$T=273{,}15$ K, $g=9{,}80$ m/s², $M=0{,}0288$ kg/mol</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Suposiciones del ejemplo 18.4:</b> $T=0$ °C $=273{,}15$ K y $g=9{,}80$ m/s² en toda la atmósfera, composición constante ($M=28{,}8$ g/mol): $p=p_0e^{-Mgy/RT}$.</li>
-    <li><b>Plantear:</b> $0{,}90\,p_0=p_0e^{-Mgy/RT}\Rightarrow\ln0{,}90=-\dfrac{Mg}{RT}\,y$.</li>
-    <li><b>Despejar:</b> $y=-\dfrac{RT}{Mg}\ln0{,}90$. La «altura de escala» es $\dfrac{RT}{Mg}=\dfrac{8{,}314\cdot273{,}15}{0{,}0288\cdot9{,}80}=8046$ m.</li>
-    <li><b>Resultado:</b> $y=8046\cdot0{,}1054=\mathbf{848\ m\approx850\ m}$.</li>
-    <li><b>Lectura.</b> Basta subir unos 850 m (una ciudad de meseta) para perder un 10 % de presión.</li>
+    <li><b>Plantear:</b>
+      $$0{,}90\,p_0=p_0\,e^{-y/H}\ \Rightarrow\ \ln0{,}90=-\frac{y}{H}\ \Rightarrow\ y=-H\ln0{,}90$$</li>
+    <li><b>Altura de escala:</b>
+      $$H=\frac{RT}{Mg}=\frac{(8{,}314)(273{,}15)}{(0{,}0288)(9{,}80)}=8046\ \text{m}$$</li>
+    <li><b>Altura:</b>
+      $$y=8046(0{,}1054)=\mathbf{848\ m}\approx850\ \text{m}$$
+      <span class="por">Basta subir unos 850 m para perder un 10 % de presión. Cuidado con el signo: $\ln0{,}90<0$.</span></li>
   </ol>
   {{fig:presion-relativa-del-aire-frente-a-la-altura-ent}}
 
