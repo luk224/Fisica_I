@@ -1,10 +1,24 @@
 <p class="enun">Una escalera uniforme de 5,0 m de longitud que pesa 160 N descansa contra una pared vertical sin fricción con su base a 3,0 m de la pared. El coeficiente de fricción estática entre la base y el suelo es 0,40. Un hombre de 740 N sube lentamente. a) ¿Qué fuerza de fricción máxima puede ejercer el suelo en la base? b) ¿Cuál es la fricción cuando el hombre ha subido 1,0 m a lo largo de la escalera? c) ¿Hasta dónde puede subir antes de que la escalera resbale?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\sum F_x=0$, $\sum F_y=0$, $\sum\tau=0$ (torcas respecto a la base)</li>
+      <li>Fricción estática máxima: $f_{s,\text{máx}}=\mu_s\,n_2$</li>
+      <li>Geometría 3-4-5: altura $4{,}0$ m; un punto a distancia $s$ a lo largo de la escalera está a $\tfrac35 s$ en horizontal de la base</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Geometría.</b> Escalera 5,0 m, base a 3,0 m ⇒ apoyo en la pared a $\sqrt{5^2-3^2}=4{,}0$ m (triángulo 3-4-5). Un punto a distancia $s$ a lo largo de la escalera está a $\tfrac35s$ en horizontal de la base.</li>
-    <li><b>DCL.</b> Pared lisa: solo $n_1$ horizontal. Suelo: $n_2$ vertical y fricción $f_s$ hacia la pared. Pesos: 160 N en el centro (1,5 m en horizontal) y 740 N del hombre.</li>
-    <li><b>a) Fricción máxima.</b> $\sum F_y=n_2-160-740=0$ ⇒ $n_2=900$ N <b>sea cual sea la posición del hombre</b>. $f_{s,\text{máx}}=\mu_sn_2=0{,}40\cdot900=\mathbf{360\ N}$.</li>
-    <li><b>b) Hombre a 1,0 m.</b> Torcas respecto a la base (elimina $n_2$ y $f_s$): $n_1(4{,}0)=160(1{,}5)+740(\tfrac35\cdot1{,}0)=240+444=684$ N·m ⇒ $n_1=171$ N. $\sum F_x=f_s-n_1=0$ ⇒ $f_s=\mathbf{171\ N}$, menor que 360 N: no resbala.</li>
-    <li><b>c) Hasta dónde.</b> Al subir crece la torca del hombre, luego $n_1$ y la fricción necesaria. En general $f_s=n_1=60+111\,s$ (N). Resbala cuando $f_s=360$ N: $360(4{,}0)=160(1{,}5)+740\cdot\tfrac35\,s$ ⇒ $s=\dfrac{1440-240}{444}=\mathbf{2{,}7\ m}$ a lo largo de la escalera (algo más de la mitad).</li>
+    <li><b>Geometría:</b>
+      $$\text{altura}=\sqrt{5{,}0^2-3{,}0^2}=4{,}0\ \text{m}$$
+      <span class="por">Pared lisa: solo $n_1$ horizontal. Suelo: $n_2$ vertical y fricción $f_s$ hacia la pared. Pesos: 160 N en el centro (1,5 m en horizontal) y 740 N del hombre.</span></li>
+    <li><b>a) Fricción máxima.</b> Vertical:
+      $$n_2-160-740=0\ \Rightarrow\ n_2=900\ \text{N}\ \ (\text{sea cual sea la posición del hombre})$$
+      $$f_{s,\text{máx}}=\mu_sn_2=0{,}40(900)=\mathbf{360\ N}$$</li>
+    <li><b>b) Hombre a 1,0 m.</b> Torcas respecto a la base (elimina $n_2$ y $f_s$):
+      $$n_1(4{,}0)=160(1{,}5)+740\Big(\tfrac35\cdot1{,}0\Big)=240+444=684\ \text{N·m}\ \Rightarrow\ n_1=171\ \text{N}$$
+      Horizontal:
+      $$f_s-n_1=0\ \Rightarrow\ f_s=\mathbf{171\ N}\lt360\ \text{N}\ \text{(no resbala)}$$</li>
+    <li><b>c) Hasta dónde puede subir.</b> Resbala cuando $f_s=n_1=360$ N:
+      $$360(4{,}0)=160(1{,}5)+740\cdot\frac35\,s\ \Rightarrow\ 1440=240+444\,s\ \Rightarrow\ s=\frac{1200}{444}=\mathbf{2{,}7\ m}$$
+      <span class="por">A lo largo de la escalera (algo más de la mitad). En general $f_s=n_1=60+111\,s$ (N).</span></li>
   </ol>
   {{fig:grafica-de-la-friccion-necesaria-f-s-frente-a-la}}
 

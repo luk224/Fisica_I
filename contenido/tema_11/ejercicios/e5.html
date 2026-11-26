@@ -1,11 +1,24 @@
 <p class="enun">Una viga uniforme de 8,0 m y 1150 kg está unida por una bisagra a la pared y sostenida por un cable delgado sujeto a 2,0 m del extremo libre (figura P11.46). La viga está a 30,0° sobre la horizontal y el cable forma 40,0° con la viga. a) Dibuja el diagrama de cuerpo libre. b) Calcula la tensión del cable. c) ¿Con qué fuerza empuja la viga contra la pared?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\sum\tau=0$ respecto a la bisagra; $\sum F_x=0$; $\sum F_y=0$</li>
+      <li>Torca: $\tau=r\,F\sin\varphi$ ($\varphi$ = ángulo entre $\vec r$ y $\vec F$)</li>
+      <li>Peso: $w=mg$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Ángulos.</b> El cable vuelve hacia la pared formando 40,0° con la viga; respecto a la horizontal forma $40{,}0^\circ-30{,}0^\circ=10{,}0^\circ$ subiendo hacia la pared. Así $\vec T$ tiene componente horizontal $T\cos10{,}0^\circ$ (hacia la pared) y vertical $T\,\mathrm{sen}\,10{,}0^\circ$ (hacia arriba).</li>
-    <li><b>a) DCL.</b> Peso $w=1150\cdot9{,}8=1{,}127\times10^4$ N en el centro (4,0 m de la bisagra a lo largo de la viga); $T$ en el punto a $8{,}0-2{,}0=6{,}0$ m de la bisagra; bisagra con $H_h$ y $H_v$.</li>
-    <li><b>b) Torcas respecto a la bisagra</b> (elimina $H_h$ y $H_v$). Brazo de palanca $=r\,\mathrm{sen}\,\varphi$ (10.2): para $T$, $r=6{,}0$ m y el ángulo entre viga y cable es 40,0° ⇒ $6{,}0\,\mathrm{sen}\,40{,}0^\circ=3{,}86$ m. Para el peso (vertical), el brazo es la distancia horizontal $4{,}0\cos30{,}0^\circ=3{,}46$ m. $$T=\frac{w\,(4{,}0)\cos30{,}0^\circ}{(6{,}0)\,\mathrm{sen}\,40{,}0^\circ}=\mathbf{1{,}01\times10^4\ N}.$$</li>
-    <li><b>c) Empuje contra la pared.</b> $\sum F_x=H_h-T\cos10{,}0^\circ=0$ ⇒ $H_h=\mathbf{9{,}97\times10^3\ N}$: la pared empuja la viga hacia fuera con esa fuerza y, por la tercera ley, la viga empuja la pared con $9{,}97\times10^3$ N ($\approx1{,}0\times10^4$ N).</li>
-    <li><b>Ampliación ($H_v$).</b> $\sum F_y=H_v+T\,\mathrm{sen}\,10{,}0^\circ-w=0$ ⇒ $H_v=1{,}127\times10^4-1758=9{,}51\times10^3$ N hacia arriba. La bisagra soporta casi todo el peso porque el cable es casi horizontal.</li>
-    <li><b>Comprobación.</b> $T&lt;w$ porque el brazo de $T$ (3,86 m) es mayor que el de $w$ (3,46 m).</li>
+    <li><b>Ángulo del cable con la horizontal:</b>
+      $$40{,}0^\circ-30{,}0^\circ=10{,}0^\circ$$
+      <span class="por">$\vec T$ tiene componente horizontal $T\cos10^\circ$ (hacia la pared) y vertical $T\sin10^\circ$ (hacia arriba).</span></li>
+    <li><b>a) DCL.</b> Peso $w=1150(9{,}8)=1{,}127\times10^4$ N en el centro (a 4,0 m de la bisagra a lo largo de la viga); $T$ en el punto a $8{,}0-2{,}0=6{,}0$ m; bisagra con $H_h$ y $H_v$.</li>
+    <li><b>b) Torcas respecto a la bisagra.</b> Para $T$: $r=6{,}0$ m con 40,0° entre viga y cable; para el peso (vertical): brazo horizontal $4{,}0\cos30{,}0^\circ$.
+      $$T(6{,}0)\sin40{,}0^\circ=w(4{,}0)\cos30{,}0^\circ$$
+      $$T=\frac{1{,}127\times10^4(3{,}464)}{6{,}0(0{,}6428)}=\frac{3{,}904\times10^4}{3{,}857}=\mathbf{1{,}01\times10^4\ N}$$
+      <span class="por">$T\lt w$ porque el brazo de $T$ (3,86 m) es mayor que el de $w$ (3,46 m).</span></li>
+    <li><b>c) Empuje contra la pared</b> (horizontal):
+      $$H_h-T\cos10{,}0^\circ=0\ \Rightarrow\ H_h=1{,}012\times10^4(0{,}985)=\mathbf{9{,}97\times10^3\ N}$$
+      <span class="por">Por la tercera ley, la viga empuja la pared con $9{,}97\times10^3$ N ($\approx1{,}0\times10^4$ N).</span></li>
+    <li><b>Ampliación ($H_v$):</b>
+      $$H_v+T\sin10{,}0^\circ-w=0\ \Rightarrow\ H_v=1{,}127\times10^4-1758=9{,}51\times10^3\ \text{N hacia arriba}$$</li>
   </ol>
   {{fig:viga-de-8-0-m-y-1150-kg-inclinada-30-grados-sobr}}
 

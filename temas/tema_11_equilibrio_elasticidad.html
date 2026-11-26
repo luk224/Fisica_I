@@ -314,10 +314,17 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Un cuerpo apoyado en un solo punto está en equilibrio si ese punto está bajo el centro de gravedad (con $g$ uniforme, el centro de masa).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Sustituye la barra por una partícula en su centro y calcula $x_{cm}=\sum m_ix_i/\sum m_i$; no olvides la masa de $x=0$ en el denominador.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> Un cuerpo apoyado en un solo punto está en equilibrio si ese punto está bajo el cg (la torca del peso respecto al apoyo es entonces cero). Con $g$ uniforme, cg = cm: basta calcular $x_{cm}$.</li>
-    <li><b>Sustituir la barra uniforme por una partícula</b> de 0,120 kg en su centro ($x=0{,}250$ m). Origen en el extremo izquierdo.</li>
-    <li><b>Ecuación (11.3):</b> $x_{cm}=\dfrac{(0{,}120)(0{,}250)+(0{,}055)(0)+(0{,}110)(0{,}500)}{0{,}120+0{,}055+0{,}110}=\dfrac{0{,}085}{0{,}285}=0{,}298$ m.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Centro de gravedad (= centro de masa con $g$ uniforme): $x_{cm}=\dfrac{\sum m_i\,x_i}{\sum m_i}$</li>
+      <li>Una barra uniforme equivale a una partícula en su centro</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Idea.</b> Con un solo apoyo hay equilibrio si el apoyo está bajo el cg (la torca del peso respecto a él es cero). Basta calcular $x_{cm}$.</li>
+    <li><b>Posiciones</b> (origen en el extremo izquierdo): barra 0,120 kg en el centro, $x=0{,}250$ m; masa 0,055 kg en $x=0$; masa 0,110 kg en $x=0{,}500$ m.</li>
+    <li><b>Centro de masa:</b>
+      $$x_{cm}=\frac{(0{,}120)(0{,}250)+(0{,}055)(0)+(0{,}110)(0{,}500)}{0{,}120+0{,}055+0{,}110}=\frac{0{,}030+0+0{,}055}{0{,}285}=\frac{0{,}085}{0{,}285}=0{,}298\ \text{m}$$
+      <span class="por">La masa en $x=0$ no suma en el numerador, pero sí en el denominador.</span></li>
     <li><b>Resultado:</b> el apoyo va a <b>29,8 cm</b> del extremo izquierdo: un poco a la derecha del centro, porque la masa de la derecha es mayor.</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t11/barra-de-50-cm-con-una-masa-de-0-055-kg-en-el-ex.svg">
@@ -335,12 +342,23 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Tres incógnitas ($T$, $H_h$, $H_v$): elige la bisagra como punto de las torcas, así las fuerzas de la bisagra desaparecen.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$T\cos\theta$ no da torca (su recta pasa por la bisagra); la componente que sí cuenta es $T\sin\theta$. Luego $\sum F_x=0$ y $\sum F_y=0$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Geometría del cable.</b> Triángulo 3-4-5: el ángulo $\theta$ del cable con la viga cumple $\mathrm{sen}\,\theta=3/5=0{,}600$, $\cos\theta=4/5=0{,}800$.</li>
-    <li><b>DCL de la viga.</b> Peso 190 N en el centro (2,00 m de la bisagra); carga 300 N en el extremo (4,00 m); tensión $T$ en el extremo, hacia el punto de la pared: componentes $T\cos\theta$ (hacia la pared) y $T\,\mathrm{sen}\,\theta$ (hacia arriba); bisagra con $H_h$ y $H_v$ (dirección desconocida). Tres incógnitas: $T$, $H_h$, $H_v$.</li>
-    <li><b>a) Torcas respecto a la bisagra</b> ($H_h$ y $H_v$ no dan torca; $T\cos\theta$ tampoco, su recta es la propia viga): $T\,\mathrm{sen}\,\theta\,(4{,}00)-190(2{,}00)-300(4{,}00)=0$ ⇒ $T=\dfrac{380+1200}{4{,}00\cdot0{,}600}=\mathbf{658\ N}$.</li>
-    <li><b>b) Fuerzas:</b> $\sum F_x=H_h-T\cos\theta=0$ ⇒ $H_h=658\cdot0{,}800=\mathbf{527\ N}$ (la pared empuja la viga hacia fuera: el cable tira de ella hacia la pared). $\sum F_y=H_v+T\,\mathrm{sen}\,\theta-190-300=0$ ⇒ $H_v=490-395=\mathbf{95\ N}$ hacia arriba.</li>
-    <li><b>Comprobación con otro punto.</b> Respecto al extremo libre: $-H_v(4{,}00)+190(2{,}00)=0$ ⇒ $H_v=95$ N ✓. Respecto al punto de la pared donde se ata el cable: $H_h(3{,}00)-190(2{,}00)-300(4{,}00)=0$ ⇒ $H_h=527$ N ✓.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\sum\tau=0$ respecto a la bisagra; $\sum F_x=0$; $\sum F_y=0$</li>
+      <li>Torca: $\tau=F_\perp\cdot r$ (solo cuenta la componente perpendicular a la viga)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Geometría del cable</b> (triángulo 3-4-5; $\theta$ = ángulo del cable con la viga):
+      $$\sin\theta=\frac35=0{,}600,\qquad\cos\theta=\frac45=0{,}800$$</li>
+    <li><b>DCL.</b> Peso 190 N a 2,00 m de la bisagra; carga 300 N a 4,00 m; tensión $T$ en el extremo, con componentes $T\cos\theta$ (hacia la pared) y $T\sin\theta$ (hacia arriba); bisagra con $H_h$ y $H_v$.</li>
+    <li><b>a) Torcas respecto a la bisagra</b> ($H_h$, $H_v$ y $T\cos\theta$ no dan torca):
+      $$T\sin\theta\,(4{,}00)-190(2{,}00)-300(4{,}00)=0$$
+      $$T=\frac{380+1200}{4{,}00(0{,}600)}=\frac{1580}{2{,}40}=\mathbf{658\ N}$$</li>
+    <li><b>b) Fuerzas.</b> Horizontal:
+      $$H_h-T\cos\theta=0\ \Rightarrow\ H_h=658(0{,}800)=\mathbf{527\ N}$$
+      Vertical:
+      $$H_v+T\sin\theta-190-300=0\ \Rightarrow\ H_v=490-395=\mathbf{95\ N}\ \text{hacia arriba}$$</li>
+    <li><b>Comprobación con otro punto.</b> Respecto al extremo libre: $-H_v(4{,}00)+190(2{,}00)=0\Rightarrow H_v=95$ N ✓. Respecto al punto de la pared donde se ata el cable: $H_h(3{,}00)-190(2{,}00)-300(4{,}00)=0\Rightarrow H_h=527$ N ✓.</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t11/viga-horizontal-de-4-00-m-con-bisagra-en-la-pare.svg">
 <div class="figph" role="img" aria-label="Viga horizontal de 4,00 m con bisagra en la pared, cable de 5,00 m al punto de la pared 3,00 m más arriba, peso de la viga 190 N y carga de 300 N en el extremo; fuerzas T = 658 N, H horizontal 527 N y H vertical 95 N" style="aspect-ratio:340/205"></div>
@@ -357,12 +375,26 @@
 <details class="mas pista"><summary>Pista 1</summary><p>La pared es lisa: solo $n_1$ horizontal. $\sum F_y=0$ da $n_2$ sin depender de dónde esté el hombre.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Torcas respecto a la base; el brazo del hombre es la distancia <i>horizontal</i>, $\tfrac35s$. Resbala cuando $f_s=n_1$ alcanza $\mu_sn_2$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Geometría.</b> Escalera 5,0 m, base a 3,0 m ⇒ apoyo en la pared a $\sqrt{5^2-3^2}=4{,}0$ m (triángulo 3-4-5). Un punto a distancia $s$ a lo largo de la escalera está a $\tfrac35s$ en horizontal de la base.</li>
-    <li><b>DCL.</b> Pared lisa: solo $n_1$ horizontal. Suelo: $n_2$ vertical y fricción $f_s$ hacia la pared. Pesos: 160 N en el centro (1,5 m en horizontal) y 740 N del hombre.</li>
-    <li><b>a) Fricción máxima.</b> $\sum F_y=n_2-160-740=0$ ⇒ $n_2=900$ N <b>sea cual sea la posición del hombre</b>. $f_{s,\text{máx}}=\mu_sn_2=0{,}40\cdot900=\mathbf{360\ N}$.</li>
-    <li><b>b) Hombre a 1,0 m.</b> Torcas respecto a la base (elimina $n_2$ y $f_s$): $n_1(4{,}0)=160(1{,}5)+740(\tfrac35\cdot1{,}0)=240+444=684$ N·m ⇒ $n_1=171$ N. $\sum F_x=f_s-n_1=0$ ⇒ $f_s=\mathbf{171\ N}$, menor que 360 N: no resbala.</li>
-    <li><b>c) Hasta dónde.</b> Al subir crece la torca del hombre, luego $n_1$ y la fricción necesaria. En general $f_s=n_1=60+111\,s$ (N). Resbala cuando $f_s=360$ N: $360(4{,}0)=160(1{,}5)+740\cdot\tfrac35\,s$ ⇒ $s=\dfrac{1440-240}{444}=\mathbf{2{,}7\ m}$ a lo largo de la escalera (algo más de la mitad).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\sum F_x=0$, $\sum F_y=0$, $\sum\tau=0$ (torcas respecto a la base)</li>
+      <li>Fricción estática máxima: $f_{s,\text{máx}}=\mu_s\,n_2$</li>
+      <li>Geometría 3-4-5: altura $4{,}0$ m; un punto a distancia $s$ a lo largo de la escalera está a $\tfrac35 s$ en horizontal de la base</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Geometría:</b>
+      $$\text{altura}=\sqrt{5{,}0^2-3{,}0^2}=4{,}0\ \text{m}$$
+      <span class="por">Pared lisa: solo $n_1$ horizontal. Suelo: $n_2$ vertical y fricción $f_s$ hacia la pared. Pesos: 160 N en el centro (1,5 m en horizontal) y 740 N del hombre.</span></li>
+    <li><b>a) Fricción máxima.</b> Vertical:
+      $$n_2-160-740=0\ \Rightarrow\ n_2=900\ \text{N}\ \ (\text{sea cual sea la posición del hombre})$$
+      $$f_{s,\text{máx}}=\mu_sn_2=0{,}40(900)=\mathbf{360\ N}$$</li>
+    <li><b>b) Hombre a 1,0 m.</b> Torcas respecto a la base (elimina $n_2$ y $f_s$):
+      $$n_1(4{,}0)=160(1{,}5)+740\Big(\tfrac35\cdot1{,}0\Big)=240+444=684\ \text{N·m}\ \Rightarrow\ n_1=171\ \text{N}$$
+      Horizontal:
+      $$f_s-n_1=0\ \Rightarrow\ f_s=\mathbf{171\ N}\lt360\ \text{N}\ \text{(no resbala)}$$</li>
+    <li><b>c) Hasta dónde puede subir.</b> Resbala cuando $f_s=n_1=360$ N:
+      $$360(4{,}0)=160(1{,}5)+740\cdot\frac35\,s\ \Rightarrow\ 1440=240+444\,s\ \Rightarrow\ s=\frac{1200}{444}=\mathbf{2{,}7\ m}$$
+      <span class="por">A lo largo de la escalera (algo más de la mitad). En general $f_s=n_1=60+111\,s$ (N).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t11/grafica-de-la-friccion-necesaria-f-s-frente-a-la.svg">
 <div class="figph" role="img" aria-label="Gráfica de la fricción necesaria f_s frente a la posición s del hombre en la escalera: recta de 60 N a 615 N que corta el límite de 360 N en s = 2,7 m" style="aspect-ratio:340/215"></div>
@@ -379,12 +411,21 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Las dos varillas están en serie: soportan la misma fuerza de 4000 N, no la mitad cada una.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Esfuerzo $=F/A$ con $A=\pi d^2/4$; deformación $=$ esfuerzo$/Y$ y alargamiento $=$ deformación $\times\,l_0$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Misma fuerza en las dos.</b> Si cortas imaginariamente el conjunto por cualquier sección y aplicas $\sum F=0$ al trozo, la fuerza interna es 4000 N en toda la longitud: ambas soportan $F_\perp=4000$ N (están «en serie»).</li>
-    <li><b>Área y esfuerzo.</b> $A=\pi d^2/4=\pi(0{,}0150)^2/4=1{,}767\times10^{-4}\ \text{m}^2$. Esfuerzo (11.8): $F_\perp/A=2{,}26\times10^{7}$ Pa, igual en las dos.</li>
-    <li><b>a) Deformación</b> $=\text{esfuerzo}/Y$. Tabla 11.1: acero $Y=2{,}0\times10^{11}$ Pa, cobre $1{,}1\times10^{11}$ Pa. Acero: $2{,}26\times10^7/2{,}0\times10^{11}=\mathbf{1{,}1\times10^{-4}}$; cobre: $2{,}26\times10^7/1{,}1\times10^{11}=\mathbf{2{,}1\times10^{-4}}$.</li>
-    <li><b>b) Alargamiento</b> $=\text{deformación}\times l_0$. Acero: $\mathbf{8{,}5\times10^{-5}\ m}$ (0,085 mm); cobre: $\mathbf{1{,}5\times10^{-4}\ m}$ (0,15 mm). Alargamiento total 0,24 mm.</li>
-    <li><b>Interpretación.</b> Mismo esfuerzo, distinto material: se estira más el de menor $Y$ (el cobre).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Esfuerzo de tensión: $\dfrac{F_\perp}{A}$; área circular: $A=\dfrac{\pi d^2}{4}$</li>
+      <li>Módulo de Young: $Y=\dfrac{F_\perp/A}{\Delta l/l_0}$ ⇒ deformación $=\dfrac{\text{esfuerzo}}{Y}$; alargamiento $\Delta l=\text{deformación}\times l_0$</li>
+      <li>Tabla 11.1: acero $Y=2{,}0\times10^{11}$ Pa; cobre $Y=1{,}1\times10^{11}$ Pa</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Misma fuerza en las dos</b> (en serie): cortando el conjunto por cualquier sección y aplicando $\sum F=0$, la fuerza interna es 4000 N en toda su longitud.</li>
+    <li><b>Área y esfuerzo:</b>
+      $$A=\frac{\pi(0{,}0150)^2}{4}=1{,}767\times10^{-4}\ \text{m}^2,\qquad\frac{F_\perp}{A}=\frac{4000}{1{,}767\times10^{-4}}=2{,}26\times10^{7}\ \text{Pa}$$</li>
+    <li><b>a) Deformación:</b>
+      $$\text{acero: }\frac{2{,}26\times10^{7}}{2{,}0\times10^{11}}=\mathbf{1{,}1\times10^{-4}},\qquad\text{cobre: }\frac{2{,}26\times10^{7}}{1{,}1\times10^{11}}=\mathbf{2{,}1\times10^{-4}}$$</li>
+    <li><b>b) Alargamiento</b> ($l_0=0{,}750$ m):
+      $$\text{acero: }(1{,}13\times10^{-4})(0{,}750)=\mathbf{8{,}5\times10^{-5}\ m},\qquad\text{cobre: }(2{,}06\times10^{-4})(0{,}750)=\mathbf{1{,}5\times10^{-4}\ m}$$
+      <span class="por">Total 0,24 mm. Mismo esfuerzo, distinto material: se estira más el de menor $Y$ (el cobre).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t11/rectas-esfuerzo-deformacion-del-acero-y-del-cobr.svg">
 <div class="figph" role="img" aria-label="Rectas esfuerzo-deformación del acero y del cobre: con el mismo esfuerzo de 2,26×10⁷ Pa el acero se deforma 1,1×10⁻⁴ y el cobre 2,1×10⁻⁴" style="aspect-ratio:340/215"></div>
@@ -401,12 +442,22 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Las fuerzas son paralelas a las caras: esfuerzo de <i>corte</i>, con el módulo de corte $S$ (no $Y$).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>El área es la de la cara paralela a la fuerza: lado por espesor; deformación $=x/h$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Por qué es corte.</b> Las fuerzas son <b>paralelas</b> a las caras sobre las que actúan: esfuerzo de corte $F_\parallel/A$ (11.15). Las cuatro fuerzas se equilibran por pares (fuerzas y torcas), así que la placa no se mueve: solo se deforma (el cuadrado pasa a rombo).</li>
-    <li><b>Área.</b> La cara lateral: lado × espesor $=0{,}100\cdot0{,}00500=5{,}00\times10^{-4}\ \text{m}^2$ (no la cara de $10\times10$ cm). La dimensión perpendicular al desplazamiento es $h=0{,}100$ m.</li>
-    <li><b>Esfuerzo.</b> $F_\parallel/A=9{,}0\times10^5/5{,}00\times10^{-4}=1{,}8\times10^{9}$ Pa.</li>
-    <li><b>a) Deformación por corte</b> $=\text{esfuerzo}/S$ (de 11.17), acero $S=7{,}5\times10^{10}$ Pa: $1{,}8\times10^9/7{,}5\times10^{10}=\mathbf{2{,}4\times10^{-2}}$.</li>
-    <li><b>b) Desplazamiento.</b> Deformación $=x/h$ (11.16) ⇒ $x=0{,}024\cdot0{,}100=2{,}4\times10^{-3}$ m $=\mathbf{0{,}24\ cm}$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Esfuerzo de corte: $\dfrac{F_\parallel}{A}$ ($A$ = cara paralela a la fuerza)</li>
+      <li>Módulo de corte: $S=\dfrac{F_\parallel/A}{x/h}$ ⇒ deformación por corte $=\dfrac xh=\dfrac{F_\parallel}{A\,S}$</li>
+      <li>Acero: $S=7{,}5\times10^{10}$ Pa</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Por qué es corte.</b> Las fuerzas son paralelas a las caras sobre las que actúan; se equilibran por pares: la placa no se mueve, solo se deforma (el cuadrado pasa a rombo).</li>
+    <li><b>Área</b> (cara lateral: lado × espesor; $h=0{,}100$ m es la dimensión perpendicular al desplazamiento):
+      $$A=(0{,}100)(0{,}00500)=5{,}00\times10^{-4}\ \text{m}^2$$</li>
+    <li><b>Esfuerzo:</b>
+      $$\frac{F_\parallel}{A}=\frac{9{,}0\times10^5}{5{,}00\times10^{-4}}=1{,}8\times10^{9}\ \text{Pa}$$</li>
+    <li><b>a) Deformación por corte:</b>
+      $$\frac xh=\frac{1{,}8\times10^{9}}{7{,}5\times10^{10}}=\mathbf{2{,}4\times10^{-2}}$$</li>
+    <li><b>b) Desplazamiento:</b>
+      $$x=0{,}024(0{,}100)=2{,}4\times10^{-3}\ \text{m}=\mathbf{0{,}24\ cm}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t11/placa-cuadrada-de-acero-de-10-0-cm-de-lado-con-u.svg">
 <div class="figph" role="img" aria-label="Placa cuadrada de acero de 10,0 cm de lado con una fuerza tangente de 9,0×10⁵ N en cada uno de sus cuatro lados; el cuadrado se deforma en un rombo y el desplazamiento es x = 0,24 cm" style="aspect-ratio:340/195"></div>
@@ -423,11 +474,24 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Presión igual en todas direcciones: esfuerzo volumétrico con $\Delta p=p-p_0$ y $\Delta V/V_0=-k\,\Delta p$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Pasa $k$ de atm$^{-1}$ a Pa$^{-1}$ antes de multiplicar; la densidad sale con la misma masa y el nuevo volumen.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Tipo de esfuerzo.</b> El agua presiona por igual en todas direcciones: esfuerzo <b>volumétrico</b>. El esfuerzo es el <i>aumento</i> de presión: $\Delta p=1{,}16\times10^8-1{,}0\times10^5=1{,}159\times10^8$ Pa.</li>
-    <li><b>Módulo.</b> Tabla 11.2: $k=46{,}4\times10^{-6}\ \text{atm}^{-1}$. En Pa$^{-1}$ (1 atm $=1{,}013\times10^5$ Pa): $k=4{,}58\times10^{-10}\ \text{Pa}^{-1}$, y $B=1/k\approx2{,}2\times10^{9}$ Pa (11.14).</li>
-    <li><b>a) Cambio de volumen</b> (de 11.13): $\Delta V=-k\,\Delta p\,V_0=-(4{,}58\times10^{-10})(1{,}159\times10^8)(1{,}00)\approx\mathbf{-0{,}053\ m^3}$: el volumen disminuye un 5,3 %.</li>
-    <li><b>b) Densidad.</b> La masa no cambia: los $1{,}03\times10^3$ kg que ocupaban 1,00 m³ ocupan ahora $1{,}00-0{,}053=0{,}947$ m³. $\rho=1{,}03\times10^3/0{,}947=\mathbf{1{,}09\times10^3\ kg/m^3}$ (un 5,6 % mayor).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Esfuerzo volumétrico: $\Delta p$ (aumento de presión)</li>
+      <li>Compresibilidad: $\dfrac{\Delta V}{V_0}=-k\,\Delta p$, con $k=1/B$</li>
+      <li>Densidad: $\rho=\dfrac mV$ (misma masa)</li>
+      <li>$1\ \text{atm}=1{,}013\times10^5$ Pa; agua: $k=46{,}4\times10^{-6}\ \text{atm}^{-1}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Esfuerzo</b> (el agua presiona por igual en todas direcciones; cuenta el <i>aumento</i> de presión):
+      $$\Delta p=1{,}16\times10^8-1{,}0\times10^5=1{,}159\times10^8\ \text{Pa}$$</li>
+    <li><b>$k$ en Pa$^{-1}$:</b>
+      $$k=\frac{46{,}4\times10^{-6}}{1{,}013\times10^5}=4{,}58\times10^{-10}\ \text{Pa}^{-1}\quad\Big(B=\frac1k\approx2{,}2\times10^{9}\ \text{Pa}\Big)$$</li>
+    <li><b>a) Cambio de volumen:</b>
+      $$\Delta V=-k\,\Delta p\,V_0=-(4{,}58\times10^{-10})(1{,}159\times10^{8})(1{,}00)\approx\mathbf{-0{,}053\ m^3}$$
+      <span class="por">El volumen disminuye un 5,3 %.</span></li>
+    <li><b>b) Densidad</b> (la masa no cambia: $1{,}03\times10^3$ kg ahora ocupan $1{,}00-0{,}053=0{,}947$ m³):
+      $$\rho=\frac{1{,}03\times10^3}{0{,}947}=\mathbf{1{,}09\times10^3\ kg/m^3}$$
+      <span class="por">Un 5,6 % mayor que en la superficie.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t11/barras-de-igual-masa-de-agua-1-000-m-en-la-super.svg">
 <div class="figph" role="img" aria-label="Barras de igual masa de agua: 1,000 m³ en la superficie y 0,947 m³ en el fondo del abismo Challenger" style="aspect-ratio:340/166"></div>
@@ -444,12 +508,21 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Equilibrio (torcas respecto al punto del peso): $T_B/T_A=x/(L-x)$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Igual esfuerzo: $T_B/T_A=A_B/A_A$. Igual deformación: $T_B/T_A=A_BY_B/(A_AY_A)$. Iguala y despeja $x$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Plan.</b> Une las dos partes del tema: el equilibrio de la varilla relaciona las tensiones $T_A$ y $T_B$ con la posición $x$ del peso; la elasticidad traduce «igual esfuerzo» o «igual deformación» en una relación entre $T_A$ y $T_B$.</li>
-    <li><b>Equilibrio.</b> Peso $w$ a distancia $x$ de A. Torcas respecto al punto C del peso (así $w$ no aparece): $T_B(1{,}05-x)-T_A\,x=0$ ⇒ $\dfrac{T_B}{T_A}=\dfrac{x}{1{,}05-x}$. (Además $T_A+T_B=w$.)</li>
-    <li><b>a) Esfuerzos iguales</b> (11.8): $T_A/A_A=T_B/A_B$ ⇒ $T_B=\dfrac{4{,}00}{2{,}00}T_A=2T_A$. Entonces $2(1{,}05-x)=x$ ⇒ $x=\mathbf{0{,}70\ m}$ desde A ($T_A=w/3$, $T_B=2w/3$).</li>
-    <li><b>b) Deformaciones iguales.</b> Deformación $=\dfrac{T}{AY}$ (de 11.10): $\dfrac{T_A}{A_AY_A}=\dfrac{T_B}{A_BY_B}$ ⇒ $T_B=\dfrac{A_BY_B}{A_AY_A}T_A=\dfrac{(4{,}00)(1{,}20)}{(2{,}00)(1{,}80)}T_A=\dfrac43T_A$. Entonces $\tfrac43(1{,}05-x)=x$ ⇒ $x=\mathbf{0{,}60\ m}$ desde A ($T_A=3w/7$, $T_B=4w/7$).</li>
-    <li><b>Interpretación.</b> B es más grueso: para el mismo esfuerzo necesita el doble de tensión, así que el peso se acerca a B. Pero B es más «blando» (menor $Y$), lo que compensa en parte su mayor área en la deformación: el punto se acerca al centro (0,525 m). Como los alambres miden lo mismo, igual deformación = igual alargamiento ⇒ la varilla baja sin inclinarse.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio de la varilla: $\sum\tau=0$ (respecto al punto del peso) y $T_A+T_B=w$</li>
+      <li>Esfuerzo: $\dfrac{T}{A}$; deformación: $\dfrac{T}{A\,Y}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Equilibrio.</b> Peso $w$ a distancia $x$ de A. Torcas respecto al punto del peso (así $w$ no aparece):
+      $$T_B(1{,}05-x)-T_A\,x=0\ \Rightarrow\ \frac{T_B}{T_A}=\frac{x}{1{,}05-x}$$</li>
+    <li><b>a) Esfuerzos iguales:</b>
+      $$\frac{T_A}{A_A}=\frac{T_B}{A_B}\ \Rightarrow\ T_B=\frac{4{,}00}{2{,}00}\,T_A=2\,T_A$$
+      $$2(1{,}05-x)=x\ \Rightarrow\ x=\mathbf{0{,}70\ m}\ \text{desde A}\quad(T_A=\tfrac w3,\ T_B=\tfrac{2w}3)$$</li>
+    <li><b>b) Deformaciones iguales:</b>
+      $$\frac{T_A}{A_AY_A}=\frac{T_B}{A_BY_B}\ \Rightarrow\ T_B=\frac{A_BY_B}{A_AY_A}T_A=\frac{(4{,}00)(1{,}20)}{(2{,}00)(1{,}80)}T_A=\tfrac43\,T_A$$
+      $$\tfrac43(1{,}05-x)=x\ \Rightarrow\ x=\frac{1{,}40}{7/3}=\mathbf{0{,}60\ m}\ \text{desde A}\quad(T_A=\tfrac{3w}7,\ T_B=\tfrac{4w}7)$$
+      <span class="por">B es más grueso (más tensión para el mismo esfuerzo), pero más blando (menor $Y$): el punto se acerca al centro (0,525 m). Con alambres iguales en longitud, igual deformación = igual alargamiento: la varilla baja sin inclinarse.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t11/varilla-de-1-05-m-sostenida-por-un-alambre-a-fin.svg">
 <div class="figph" role="img" aria-label="Varilla de 1,05 m sostenida por un alambre A fino a la izquierda y otro B grueso a la derecha; el peso w se cuelga a 0,70 m de A para esfuerzos iguales o a 0,60 m para deformaciones iguales" style="aspect-ratio:340/200"></div>
@@ -463,11 +536,21 @@
 <div class="nivel"><b>🟡 Práctica: 3 ejercicios más</b><span>Repiten métodos del núcleo: una tabla con dos apoyos, una viga inclinada y el problema práctico del libro (pivote, cable y compresión de un tramo). Antes de leer los pasos, dibuja el diagrama de cuerpo libre y marca dónde actúa cada fuerza.</span></div>
 <details class="sol" id="e2"><summary>E2 — Ejercicio 11.6: tabla llevada por dos personas <span class="src" data-l="E" data-ref="Solucionario 11-2, Ej. 11.6">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §11.3, ec. 11.6, p. 343; Ejercicio 11.6, p. 357">U p.343, 357</span></summary>
 <p class="enun">Dos personas llevan una tabla uniforme de madera de 3,00 m de longitud que pesa 160 N. Si una persona aplica una fuerza hacia arriba de 60 N en un extremo, ¿en qué punto sostiene la tabla la otra persona?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio de fuerzas: $\sum F_y=0$</li>
+      <li>Equilibrio de torcas: $\sum\tau_z=0$ (respecto a cualquier punto); $\tau=F\cdot\text{brazo}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>DCL.</b> Fuerzas verticales: $F_1=60$ N en el extremo izquierdo ($x=0$), el peso $w=160$ N en el centro ($x=1{,}50$ m) y $F_2$ a una distancia $x$ (ambas desconocidas). Dos incógnitas ⇒ $\sum F_y=0$ y $\sum\tau_z=0$.</li>
-    <li><b>Fuerzas:</b> $F_1+F_2-w=0$ ⇒ $F_2=160-60=\mathbf{100\ N}$.</li>
-    <li><b>Torcas respecto al extremo izquierdo</b> (ahí $F_1$ no da torca), antihorario $+$: $F_2\,x-w(1{,}50)=0$ ⇒ $x=\dfrac{160\cdot1{,}50}{100}=\mathbf{2{,}40\ m}$ del extremo de la primera persona.</li>
-    <li><b>Comprobación respecto al centro:</b> $F_1(1{,}50)-F_2(2{,}40-1{,}50)=90-90=0$ ✓. La persona más cercana al cg hace más fuerza.</li>
+    <li><b>DCL.</b> Fuerzas verticales: $F_1=60$ N en el extremo izquierdo ($x=0$), peso $w=160$ N en el centro ($x=1{,}50$ m) y $F_2$ a una distancia $x$ (ambas desconocidas).</li>
+    <li><b>Fuerzas:</b>
+      $$F_1+F_2-w=0\ \Rightarrow\ F_2=160-60=\mathbf{100\ N}$$</li>
+    <li><b>Torcas respecto al extremo izquierdo</b> (ahí $F_1$ no da torca; antihorario $+$):
+      $$F_2\,x-w(1{,}50)=0\ \Rightarrow\ x=\frac{160(1{,}50)}{100}=\mathbf{2{,}40\ m}$$
+      <span class="por">Del extremo de la primera persona.</span></li>
+    <li><b>Comprobación respecto al centro:</b>
+      $$F_1(1{,}50)-F_2(2{,}40-1{,}50)=90-90=0\ \checkmark$$
+      <span class="por">La persona más cercana al cg hace más fuerza.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t11/tabla-de-3-00-m-y-160-n-sostenida-por-dos-person.svg">
 <div class="figph" role="img" aria-label="Tabla de 3,00 m y 160 N sostenida por dos personas: 60 N en el extremo izquierdo y 100 N a 2,40 m de ese extremo" style="aspect-ratio:340/180"></div>
@@ -479,13 +562,26 @@
 </details>
 <details class="sol" id="e5"><summary>E5 — Problema 11.46: viga inclinada sostenida por cable y bisagra <span class="src" data-l="E" data-ref="Solucionario 11-19, Prob. 11.46">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §11.3, ec. 11.6, p. 343 y §10.1, ec. 10.2, p. 305; Problema 11.46, p. 361">U p.343, 361</span></summary>
 <p class="enun">Una viga uniforme de 8,0 m y 1150 kg está unida por una bisagra a la pared y sostenida por un cable delgado sujeto a 2,0 m del extremo libre (figura P11.46). La viga está a 30,0° sobre la horizontal y el cable forma 40,0° con la viga. a) Dibuja el diagrama de cuerpo libre. b) Calcula la tensión del cable. c) ¿Con qué fuerza empuja la viga contra la pared?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\sum\tau=0$ respecto a la bisagra; $\sum F_x=0$; $\sum F_y=0$</li>
+      <li>Torca: $\tau=r\,F\sin\varphi$ ($\varphi$ = ángulo entre $\vec r$ y $\vec F$)</li>
+      <li>Peso: $w=mg$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Ángulos.</b> El cable vuelve hacia la pared formando 40,0° con la viga; respecto a la horizontal forma $40{,}0^\circ-30{,}0^\circ=10{,}0^\circ$ subiendo hacia la pared. Así $\vec T$ tiene componente horizontal $T\cos10{,}0^\circ$ (hacia la pared) y vertical $T\,\mathrm{sen}\,10{,}0^\circ$ (hacia arriba).</li>
-    <li><b>a) DCL.</b> Peso $w=1150\cdot9{,}8=1{,}127\times10^4$ N en el centro (4,0 m de la bisagra a lo largo de la viga); $T$ en el punto a $8{,}0-2{,}0=6{,}0$ m de la bisagra; bisagra con $H_h$ y $H_v$.</li>
-    <li><b>b) Torcas respecto a la bisagra</b> (elimina $H_h$ y $H_v$). Brazo de palanca $=r\,\mathrm{sen}\,\varphi$ (10.2): para $T$, $r=6{,}0$ m y el ángulo entre viga y cable es 40,0° ⇒ $6{,}0\,\mathrm{sen}\,40{,}0^\circ=3{,}86$ m. Para el peso (vertical), el brazo es la distancia horizontal $4{,}0\cos30{,}0^\circ=3{,}46$ m. $$T=\frac{w\,(4{,}0)\cos30{,}0^\circ}{(6{,}0)\,\mathrm{sen}\,40{,}0^\circ}=\mathbf{1{,}01\times10^4\ N}.$$</li>
-    <li><b>c) Empuje contra la pared.</b> $\sum F_x=H_h-T\cos10{,}0^\circ=0$ ⇒ $H_h=\mathbf{9{,}97\times10^3\ N}$: la pared empuja la viga hacia fuera con esa fuerza y, por la tercera ley, la viga empuja la pared con $9{,}97\times10^3$ N ($\approx1{,}0\times10^4$ N).</li>
-    <li><b>Ampliación ($H_v$).</b> $\sum F_y=H_v+T\,\mathrm{sen}\,10{,}0^\circ-w=0$ ⇒ $H_v=1{,}127\times10^4-1758=9{,}51\times10^3$ N hacia arriba. La bisagra soporta casi todo el peso porque el cable es casi horizontal.</li>
-    <li><b>Comprobación.</b> $T&lt;w$ porque el brazo de $T$ (3,86 m) es mayor que el de $w$ (3,46 m).</li>
+    <li><b>Ángulo del cable con la horizontal:</b>
+      $$40{,}0^\circ-30{,}0^\circ=10{,}0^\circ$$
+      <span class="por">$\vec T$ tiene componente horizontal $T\cos10^\circ$ (hacia la pared) y vertical $T\sin10^\circ$ (hacia arriba).</span></li>
+    <li><b>a) DCL.</b> Peso $w=1150(9{,}8)=1{,}127\times10^4$ N en el centro (a 4,0 m de la bisagra a lo largo de la viga); $T$ en el punto a $8{,}0-2{,}0=6{,}0$ m; bisagra con $H_h$ y $H_v$.</li>
+    <li><b>b) Torcas respecto a la bisagra.</b> Para $T$: $r=6{,}0$ m con 40,0° entre viga y cable; para el peso (vertical): brazo horizontal $4{,}0\cos30{,}0^\circ$.
+      $$T(6{,}0)\sin40{,}0^\circ=w(4{,}0)\cos30{,}0^\circ$$
+      $$T=\frac{1{,}127\times10^4(3{,}464)}{6{,}0(0{,}6428)}=\frac{3{,}904\times10^4}{3{,}857}=\mathbf{1{,}01\times10^4\ N}$$
+      <span class="por">$T\lt w$ porque el brazo de $T$ (3,86 m) es mayor que el de $w$ (3,46 m).</span></li>
+    <li><b>c) Empuje contra la pared</b> (horizontal):
+      $$H_h-T\cos10{,}0^\circ=0\ \Rightarrow\ H_h=1{,}012\times10^4(0{,}985)=\mathbf{9{,}97\times10^3\ N}$$
+      <span class="por">Por la tercera ley, la viga empuja la pared con $9{,}97\times10^3$ N ($\approx1{,}0\times10^4$ N).</span></li>
+    <li><b>Ampliación ($H_v$):</b>
+      $$H_v+T\sin10{,}0^\circ-w=0\ \Rightarrow\ H_v=1{,}127\times10^4-1758=9{,}51\times10^3\ \text{N hacia arriba}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t11/viga-de-8-0-m-y-1150-kg-inclinada-30-grados-sobr.svg">
 <div class="figph" role="img" aria-label="Viga de 8,0 m y 1150 kg inclinada 30 grados sobre la horizontal, con bisagra en la pared y un cable atado a 6,0 m de la bisagra que forma 40 grados con la viga; tensión 1,01×10⁴ N y fuerzas de la bisagra" style="aspect-ratio:340/205"></div>
@@ -497,16 +593,29 @@
 </details>
 <details class="sol" id="prac"><summary>Problema práctico de U: «En equilibrio y bajo esfuerzo» (varilla de cobre con pivote y cable) <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema práctico del capítulo 11, p. 355 y fig. 11.21">U p.355</span></summary>
 <p class="enun">Una varilla sólida horizontal y uniforme de cobre, de longitud inicial $l_0$, área transversal $A$, módulo de Young $Y$, módulo volumétrico $B$, módulo de corte $S$ y masa $m$, está sostenida por un pivote sin fricción en su extremo derecho y por un cable a una distancia $l_0/4$ del extremo izquierdo. El pivote y el cable ejercen sus fuerzas de manera uniforme sobre la sección transversal. El cable forma un ángulo $\theta$ con la varilla y la comprime. a) Calcula la tensión del cable. b) Calcula la magnitud y dirección de la fuerza del pivote; compárala con la tensión y compara su ángulo con $\theta$. c) Determina el cambio de longitud de la varilla (pequeño frente a $l_0$). d) ¿En qué factor aumentaría el resultado de c) si la varilla fuera dos veces más larga con la misma sección?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio: $\sum F_x=0$, $\sum F_y=0$, $\sum\tau=0$ (respecto al pivote)</li>
+      <li>Deformación por tensión/compresión: $\Delta l=\dfrac{F_\perp\,l}{A\,Y}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>DCL.</b> Eje $x$ a lo largo de la varilla hacia la pared, $y$ hacia arriba, origen en el extremo izquierdo. Fuerzas: peso $mg$ en el centro ($x=l_0/2$); tensión $T$ en $x=l_0/4$, con componentes $(T\cos\theta,\,T\,\mathrm{sen}\,\theta)$; fuerza del pivote $(P_x,P_y)$ en $x=l_0$, de dirección desconocida. Incógnitas $T,P_x,P_y$ ⇒ las tres ecuaciones (11.6).</li>
-    <li><b>a) Torcas respecto al pivote</b> (elimina $P_x$ y $P_y$). $T\cos\theta$ está sobre la recta de la varilla: torca cero. Brazos: $T\,\mathrm{sen}\,\theta$ a $\tfrac34l_0$ del pivote; $mg$ a $\tfrac12l_0$: $T\,\mathrm{sen}\,\theta\cdot\tfrac34l_0=mg\cdot\tfrac12l_0$ ⇒ $$T=\frac{2mg}{3\,\mathrm{sen}\,\theta}.$$</li>
-    <li><b>b) Fuerzas.</b> $\sum F_x=T\cos\theta+P_x=0$ ⇒ $P_x=-\dfrac{2mg}{3\tan\theta}$ (el pivote empuja <i>alejándose de la pared</i>: el cable aprieta la varilla contra él). $\sum F_y=T\,\mathrm{sen}\,\theta+P_y-mg=0$ ⇒ $P_y=\dfrac{mg}{3}$ (hacia arriba).</li>
-    <li><b>Módulo y ángulo.</b> $P=\dfrac{mg}{3}\sqrt{\dfrac{4}{\tan^2\theta}+1}$, y el ángulo $\phi$ sobre la horizontal cumple $\tan\phi=P_y/|P_x|=\tfrac12\tan\theta$.</li>
-    <li><b>Comparación.</b> $T=\dfrac{mg}{3}\sqrt{\dfrac{4}{\tan^2\theta}+4}$: como $1&lt;4$, <b>$P&lt;T$</b> (de hecho $P/T=\sqrt{1-\tfrac34\mathrm{sen}^2\theta}$), y como $\tan\phi=\tfrac12\tan\theta$, <b>$\phi&lt;\theta$</b>. Interpretación: el cable soporta $\tfrac23$ del peso y el pivote $\tfrac13$, lógico porque el cable está más cerca del centro de la varilla ($\tfrac14l_0$ frente a $\tfrac12l_0$).</li>
-    <li><b>c) ¿Qué tramo se comprime?</b> Las fuerzas horizontales son $T\cos\theta$ (en $x=l_0/4$, hacia la pared) y $P_x$ (en $x=l_0$, hacia fuera): comprimen solo el tramo <b>entre el cable y el pivote</b>, de longitud $\tfrac34l_0$; el cuarto izquierdo no soporta fuerza axial (su extremo está libre). La fuerza de compresión es $F_\perp=T\cos\theta=\dfrac{2mg}{3\tan\theta}$.</li>
-    <li><b>Acortamiento</b> (11.10 en compresión): $$|\Delta l|=\frac{F_\perp\,(\tfrac34l_0)}{A\,Y}=\frac{mg\,l_0}{2\,A\,Y\tan\theta}.$$ Solo interviene $Y$: $B$ y $S$ son datos que no hacen falta (el esfuerzo es de compresión lineal, no volumétrico ni de corte).</li>
-    <li><b>d) Varilla del doble de larga, misma sección.</b> La masa también se duplica ($m\to2m$) y $l_0\to2l_0$ (mismo $\theta$). Como $|\Delta l|\propto m\,l_0$, aumenta en un factor <b>4</b>.</li>
-    <li><b>Comprobación numérica</b> (para $m=1$ kg, $\theta=30^\circ$): $T=13{,}1$ N, $P_x=-11{,}3$ N, $P_y=3{,}27$ N, $P=11{,}8$ N $&lt;T$, $\phi=16{,}1^\circ&lt;30^\circ$.</li>
+    <li><b>DCL.</b> Eje $x$ a lo largo de la varilla hacia la pared, $y$ hacia arriba, origen en el extremo izquierdo. Fuerzas: peso $mg$ en $x=l_0/2$; tensión $T$ en $x=l_0/4$ con componentes $(T\cos\theta,\ T\sin\theta)$; pivote $(P_x,P_y)$ en $x=l_0$.</li>
+    <li><b>a) Torcas respecto al pivote</b> ($P_x$, $P_y$ y $T\cos\theta$ no dan torca; $T\sin\theta$ a $\tfrac34l_0$, $mg$ a $\tfrac12l_0$):
+      $$T\sin\theta\cdot\tfrac34l_0=mg\cdot\tfrac12l_0\ \Rightarrow\ T=\frac{2mg}{3\sin\theta}$$</li>
+    <li><b>b) Fuerzas.</b> Horizontal y vertical:
+      $$T\cos\theta+P_x=0\ \Rightarrow\ P_x=-\frac{2mg}{3\tan\theta}$$
+      $$T\sin\theta+P_y-mg=0\ \Rightarrow\ P_y=\frac{mg}{3}$$
+      <span class="por">$P_x\lt0$: el pivote empuja alejándose de la pared (el cable aprieta la varilla contra él).</span></li>
+    <li><b>Módulo y ángulo del pivote:</b>
+      $$P=\frac{mg}{3}\sqrt{\frac{4}{\tan^2\theta}+1},\qquad\tan\phi=\frac{P_y}{|P_x|}=\tfrac12\tan\theta$$
+      $$T=\frac{mg}{3}\sqrt{\frac{4}{\tan^2\theta}+4}\ \Rightarrow\ \mathbf{P\lt T},\qquad\mathbf{\phi\lt\theta}$$
+      <span class="por">El cable soporta $\tfrac23$ del peso y el pivote $\tfrac13$: el cable está más cerca del centro de la varilla.</span></li>
+    <li><b>c) ¿Qué tramo se comprime?</b> $T\cos\theta$ (en $x=l_0/4$) y $P_x$ (en $x=l_0$) comprimen solo el tramo entre el cable y el pivote, de longitud $\tfrac34l_0$:
+      $$F_\perp=T\cos\theta=\frac{2mg}{3\tan\theta}$$
+      $$|\Delta l|=\frac{F_\perp(\tfrac34l_0)}{A\,Y}=\frac{mg\,l_0}{2\,A\,Y\tan\theta}$$
+      <span class="por">Solo interviene $Y$: $B$ y $S$ no hacen falta (esfuerzo lineal, no volumétrico ni de corte).</span></li>
+    <li><b>d) Doble de larga, misma sección.</b> También se duplica la masa: $m\to2m$, $l_0\to2l_0$. Como $|\Delta l|\propto m\,l_0$, el cambio es un factor <b>4</b>.</li>
+    <li><b>Comprobación numérica</b> ($m=1$ kg, $\theta=30^\circ$): $T=13{,}1$ N, $P_x=-11{,}3$ N, $P_y=3{,}27$ N, $P=11{,}8$ N $\lt T$, $\phi=16{,}1^\circ\lt30^\circ$.</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t11/varilla-horizontal-de-cobre-con-un-pivote-en-el-.svg">
 <div class="figph" role="img" aria-label="Varilla horizontal de cobre con un pivote en el extremo derecho junto a la pared y un cable a l0/4 del extremo izquierdo que forma 30 grados con la varilla; fuerzas T, mg y P para 1 kg" style="aspect-ratio:340/226"></div>

@@ -1,14 +1,27 @@
 <p class="enun">Una varilla sólida horizontal y uniforme de cobre, de longitud inicial $l_0$, área transversal $A$, módulo de Young $Y$, módulo volumétrico $B$, módulo de corte $S$ y masa $m$, está sostenida por un pivote sin fricción en su extremo derecho y por un cable a una distancia $l_0/4$ del extremo izquierdo. El pivote y el cable ejercen sus fuerzas de manera uniforme sobre la sección transversal. El cable forma un ángulo $\theta$ con la varilla y la comprime. a) Calcula la tensión del cable. b) Calcula la magnitud y dirección de la fuerza del pivote; compárala con la tensión y compara su ángulo con $\theta$. c) Determina el cambio de longitud de la varilla (pequeño frente a $l_0$). d) ¿En qué factor aumentaría el resultado de c) si la varilla fuera dos veces más larga con la misma sección?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio: $\sum F_x=0$, $\sum F_y=0$, $\sum\tau=0$ (respecto al pivote)</li>
+      <li>Deformación por tensión/compresión: $\Delta l=\dfrac{F_\perp\,l}{A\,Y}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>DCL.</b> Eje $x$ a lo largo de la varilla hacia la pared, $y$ hacia arriba, origen en el extremo izquierdo. Fuerzas: peso $mg$ en el centro ($x=l_0/2$); tensión $T$ en $x=l_0/4$, con componentes $(T\cos\theta,\,T\,\mathrm{sen}\,\theta)$; fuerza del pivote $(P_x,P_y)$ en $x=l_0$, de dirección desconocida. Incógnitas $T,P_x,P_y$ ⇒ las tres ecuaciones (11.6).</li>
-    <li><b>a) Torcas respecto al pivote</b> (elimina $P_x$ y $P_y$). $T\cos\theta$ está sobre la recta de la varilla: torca cero. Brazos: $T\,\mathrm{sen}\,\theta$ a $\tfrac34l_0$ del pivote; $mg$ a $\tfrac12l_0$: $T\,\mathrm{sen}\,\theta\cdot\tfrac34l_0=mg\cdot\tfrac12l_0$ ⇒ $$T=\frac{2mg}{3\,\mathrm{sen}\,\theta}.$$</li>
-    <li><b>b) Fuerzas.</b> $\sum F_x=T\cos\theta+P_x=0$ ⇒ $P_x=-\dfrac{2mg}{3\tan\theta}$ (el pivote empuja <i>alejándose de la pared</i>: el cable aprieta la varilla contra él). $\sum F_y=T\,\mathrm{sen}\,\theta+P_y-mg=0$ ⇒ $P_y=\dfrac{mg}{3}$ (hacia arriba).</li>
-    <li><b>Módulo y ángulo.</b> $P=\dfrac{mg}{3}\sqrt{\dfrac{4}{\tan^2\theta}+1}$, y el ángulo $\phi$ sobre la horizontal cumple $\tan\phi=P_y/|P_x|=\tfrac12\tan\theta$.</li>
-    <li><b>Comparación.</b> $T=\dfrac{mg}{3}\sqrt{\dfrac{4}{\tan^2\theta}+4}$: como $1&lt;4$, <b>$P&lt;T$</b> (de hecho $P/T=\sqrt{1-\tfrac34\mathrm{sen}^2\theta}$), y como $\tan\phi=\tfrac12\tan\theta$, <b>$\phi&lt;\theta$</b>. Interpretación: el cable soporta $\tfrac23$ del peso y el pivote $\tfrac13$, lógico porque el cable está más cerca del centro de la varilla ($\tfrac14l_0$ frente a $\tfrac12l_0$).</li>
-    <li><b>c) ¿Qué tramo se comprime?</b> Las fuerzas horizontales son $T\cos\theta$ (en $x=l_0/4$, hacia la pared) y $P_x$ (en $x=l_0$, hacia fuera): comprimen solo el tramo <b>entre el cable y el pivote</b>, de longitud $\tfrac34l_0$; el cuarto izquierdo no soporta fuerza axial (su extremo está libre). La fuerza de compresión es $F_\perp=T\cos\theta=\dfrac{2mg}{3\tan\theta}$.</li>
-    <li><b>Acortamiento</b> (11.10 en compresión): $$|\Delta l|=\frac{F_\perp\,(\tfrac34l_0)}{A\,Y}=\frac{mg\,l_0}{2\,A\,Y\tan\theta}.$$ Solo interviene $Y$: $B$ y $S$ son datos que no hacen falta (el esfuerzo es de compresión lineal, no volumétrico ni de corte).</li>
-    <li><b>d) Varilla del doble de larga, misma sección.</b> La masa también se duplica ($m\to2m$) y $l_0\to2l_0$ (mismo $\theta$). Como $|\Delta l|\propto m\,l_0$, aumenta en un factor <b>4</b>.</li>
-    <li><b>Comprobación numérica</b> (para $m=1$ kg, $\theta=30^\circ$): $T=13{,}1$ N, $P_x=-11{,}3$ N, $P_y=3{,}27$ N, $P=11{,}8$ N $&lt;T$, $\phi=16{,}1^\circ&lt;30^\circ$.</li>
+    <li><b>DCL.</b> Eje $x$ a lo largo de la varilla hacia la pared, $y$ hacia arriba, origen en el extremo izquierdo. Fuerzas: peso $mg$ en $x=l_0/2$; tensión $T$ en $x=l_0/4$ con componentes $(T\cos\theta,\ T\sin\theta)$; pivote $(P_x,P_y)$ en $x=l_0$.</li>
+    <li><b>a) Torcas respecto al pivote</b> ($P_x$, $P_y$ y $T\cos\theta$ no dan torca; $T\sin\theta$ a $\tfrac34l_0$, $mg$ a $\tfrac12l_0$):
+      $$T\sin\theta\cdot\tfrac34l_0=mg\cdot\tfrac12l_0\ \Rightarrow\ T=\frac{2mg}{3\sin\theta}$$</li>
+    <li><b>b) Fuerzas.</b> Horizontal y vertical:
+      $$T\cos\theta+P_x=0\ \Rightarrow\ P_x=-\frac{2mg}{3\tan\theta}$$
+      $$T\sin\theta+P_y-mg=0\ \Rightarrow\ P_y=\frac{mg}{3}$$
+      <span class="por">$P_x\lt0$: el pivote empuja alejándose de la pared (el cable aprieta la varilla contra él).</span></li>
+    <li><b>Módulo y ángulo del pivote:</b>
+      $$P=\frac{mg}{3}\sqrt{\frac{4}{\tan^2\theta}+1},\qquad\tan\phi=\frac{P_y}{|P_x|}=\tfrac12\tan\theta$$
+      $$T=\frac{mg}{3}\sqrt{\frac{4}{\tan^2\theta}+4}\ \Rightarrow\ \mathbf{P\lt T},\qquad\mathbf{\phi\lt\theta}$$
+      <span class="por">El cable soporta $\tfrac23$ del peso y el pivote $\tfrac13$: el cable está más cerca del centro de la varilla.</span></li>
+    <li><b>c) ¿Qué tramo se comprime?</b> $T\cos\theta$ (en $x=l_0/4$) y $P_x$ (en $x=l_0$) comprimen solo el tramo entre el cable y el pivote, de longitud $\tfrac34l_0$:
+      $$F_\perp=T\cos\theta=\frac{2mg}{3\tan\theta}$$
+      $$|\Delta l|=\frac{F_\perp(\tfrac34l_0)}{A\,Y}=\frac{mg\,l_0}{2\,A\,Y\tan\theta}$$
+      <span class="por">Solo interviene $Y$: $B$ y $S$ no hacen falta (esfuerzo lineal, no volumétrico ni de corte).</span></li>
+    <li><b>d) Doble de larga, misma sección.</b> También se duplica la masa: $m\to2m$, $l_0\to2l_0$. Como $|\Delta l|\propto m\,l_0$, el cambio es un factor <b>4</b>.</li>
+    <li><b>Comprobación numérica</b> ($m=1$ kg, $\theta=30^\circ$): $T=13{,}1$ N, $P_x=-11{,}3$ N, $P_y=3{,}27$ N, $P=11{,}8$ N $\lt T$, $\phi=16{,}1^\circ\lt30^\circ$.</li>
   </ol>
   {{fig:varilla-horizontal-de-cobre-con-un-pivote-en-el-}}
 

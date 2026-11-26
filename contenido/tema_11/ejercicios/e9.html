@@ -1,10 +1,19 @@
 <p class="enun">Una varilla de 1,05 m de longitud y peso despreciable está sostenida en sus extremos por alambres A y B de igual longitud. El área transversal de A es 2,00 mm² y la de B, 4,00 mm². El módulo de Young de A es $1{,}80\times10^{11}$ Pa; el de B, $1{,}20\times10^{11}$ Pa. ¿En qué punto de la varilla debe colgarse un peso $w$ para producir a) esfuerzos iguales en A y B? b) ¿Y deformaciones iguales?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio de la varilla: $\sum\tau=0$ (respecto al punto del peso) y $T_A+T_B=w$</li>
+      <li>Esfuerzo: $\dfrac{T}{A}$; deformación: $\dfrac{T}{A\,Y}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Plan.</b> Une las dos partes del tema: el equilibrio de la varilla relaciona las tensiones $T_A$ y $T_B$ con la posición $x$ del peso; la elasticidad traduce «igual esfuerzo» o «igual deformación» en una relación entre $T_A$ y $T_B$.</li>
-    <li><b>Equilibrio.</b> Peso $w$ a distancia $x$ de A. Torcas respecto al punto C del peso (así $w$ no aparece): $T_B(1{,}05-x)-T_A\,x=0$ ⇒ $\dfrac{T_B}{T_A}=\dfrac{x}{1{,}05-x}$. (Además $T_A+T_B=w$.)</li>
-    <li><b>a) Esfuerzos iguales</b> (11.8): $T_A/A_A=T_B/A_B$ ⇒ $T_B=\dfrac{4{,}00}{2{,}00}T_A=2T_A$. Entonces $2(1{,}05-x)=x$ ⇒ $x=\mathbf{0{,}70\ m}$ desde A ($T_A=w/3$, $T_B=2w/3$).</li>
-    <li><b>b) Deformaciones iguales.</b> Deformación $=\dfrac{T}{AY}$ (de 11.10): $\dfrac{T_A}{A_AY_A}=\dfrac{T_B}{A_BY_B}$ ⇒ $T_B=\dfrac{A_BY_B}{A_AY_A}T_A=\dfrac{(4{,}00)(1{,}20)}{(2{,}00)(1{,}80)}T_A=\dfrac43T_A$. Entonces $\tfrac43(1{,}05-x)=x$ ⇒ $x=\mathbf{0{,}60\ m}$ desde A ($T_A=3w/7$, $T_B=4w/7$).</li>
-    <li><b>Interpretación.</b> B es más grueso: para el mismo esfuerzo necesita el doble de tensión, así que el peso se acerca a B. Pero B es más «blando» (menor $Y$), lo que compensa en parte su mayor área en la deformación: el punto se acerca al centro (0,525 m). Como los alambres miden lo mismo, igual deformación = igual alargamiento ⇒ la varilla baja sin inclinarse.</li>
+    <li><b>Equilibrio.</b> Peso $w$ a distancia $x$ de A. Torcas respecto al punto del peso (así $w$ no aparece):
+      $$T_B(1{,}05-x)-T_A\,x=0\ \Rightarrow\ \frac{T_B}{T_A}=\frac{x}{1{,}05-x}$$</li>
+    <li><b>a) Esfuerzos iguales:</b>
+      $$\frac{T_A}{A_A}=\frac{T_B}{A_B}\ \Rightarrow\ T_B=\frac{4{,}00}{2{,}00}\,T_A=2\,T_A$$
+      $$2(1{,}05-x)=x\ \Rightarrow\ x=\mathbf{0{,}70\ m}\ \text{desde A}\quad(T_A=\tfrac w3,\ T_B=\tfrac{2w}3)$$</li>
+    <li><b>b) Deformaciones iguales:</b>
+      $$\frac{T_A}{A_AY_A}=\frac{T_B}{A_BY_B}\ \Rightarrow\ T_B=\frac{A_BY_B}{A_AY_A}T_A=\frac{(4{,}00)(1{,}20)}{(2{,}00)(1{,}80)}T_A=\tfrac43\,T_A$$
+      $$\tfrac43(1{,}05-x)=x\ \Rightarrow\ x=\frac{1{,}40}{7/3}=\mathbf{0{,}60\ m}\ \text{desde A}\quad(T_A=\tfrac{3w}7,\ T_B=\tfrac{4w}7)$$
+      <span class="por">B es más grueso (más tensión para el mismo esfuerzo), pero más blando (menor $Y$): el punto se acerca al centro (0,525 m). Con alambres iguales en longitud, igual deformación = igual alargamiento: la varilla baja sin inclinarse.</span></li>
   </ol>
   {{fig:varilla-de-1-05-m-sostenida-por-un-alambre-a-fin}}
 
