@@ -1,11 +1,23 @@
 <p class="enun">Ciertas ondas transversales en una cuerda tienen rapidez 8,00 m/s, amplitud 0,0700 m y longitud de onda 0,320 m. Viajan en la dirección $-x$ y en $t=0$ el extremo $x=0$ tiene su desplazamiento máximo hacia arriba. a) Calcula frecuencia, periodo y número de onda. b) Escribe una función de onda. c) Calcula el desplazamiento de la partícula en $x=0{,}360$ m en $t=0{,}150$ s. d) ¿Cuánto tiempo debe pasar después de $t=0{,}150$ s para que esa partícula vuelva a tener su desplazamiento máximo hacia arriba?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$f=\dfrac v\lambda$; $T=\dfrac1f$; $k=\dfrac{2\pi}{\lambda}$; $\omega=2\pi f$</li>
+      <li>Onda hacia $-x$: $y=A\cos(kx+\omega t)=A\cos2\pi\Big(\dfrac x\lambda+\dfrac tT\Big)$</li>
+      <li>Velocidad de la partícula: $v_y=\dfrac{\partial y}{\partial t}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> $f=v/\lambda=8{,}00/0{,}320=\mathbf{25{,}0\ Hz}$ (15.1); $T=1/f=\mathbf{0{,}0400\ s}$; $k=2\pi/\lambda=\mathbf{19{,}6\ rad/m}$ (15.5); además $\omega=2\pi f=157$ rad/s.</li>
-    <li><b>b) Elegir la forma.</b> Hacia $-x$ ⇒ fase $kx+\omega t$ (15.8): para seguir una cresta (fase constante) al crecer $t$ debe disminuir $x$. En $x=0$: $y(0,t)=A\cos\omega t$, que en $t=0$ vale $+A$ ✓. Por tanto $$y(x,t)=(0{,}0700\ \text{m})\cos[(19{,}6\ \text{rad/m})x+(157\ \text{rad/s})t]=A\cos2\pi\left(\frac x{0{,}320\ \text{m}}+\frac t{0{,}0400\ \text{s}}\right).$$</li>
-    <li><b>c)</b> La forma con $\lambda$ y $T$ evita redondeos: fase $=2\pi(0{,}360/0{,}320+0{,}150/0{,}0400)=2\pi(1{,}125+3{,}75)=2\pi(4{,}875)$. Como el coseno tiene periodo $2\pi$ solo importa la parte fraccionaria: $\cos(2\pi\cdot0{,}875)=\cos315^\circ=0{,}707$ ⇒ $y=\mathbf{+0{,}0495\ m=4{,}95\ cm}$.</li>
-    <li><b>d) ¿Sube o baja?</b> $v_y=\partial y/\partial t=-A\omega\sin(\text{fase})=-(0{,}0700)(157)\sin315^\circ=+7{,}78$ m/s $>0$: está <b>subiendo</b> hacia el máximo.</li>
-    <li>El máximo exige fase $=2\pi n$: $x/\lambda+t/T=n\Rightarrow t=T(n-1{,}125)$. Para $n=5$: $t=0{,}0400(3{,}875)=0{,}155$ s (el primero posterior a 0,150 s; $n=4$ da 0,115 s, anterior). $\Delta t=\mathbf{0{,}0050\ s=5{,}0\ ms}$.</li>
-    <li><b>Comprobación.</b> Le faltaba $1-0{,}875=0{,}125$ ciclo ⇒ $\Delta t=T/8=0{,}005$ s ✓ (está a $45^\circ$ del máximo, subiendo).</li>
+    <li><b>a) Frecuencia, periodo, número de onda:</b>
+      $$f=\frac{8{,}00}{0{,}320}=\mathbf{25{,}0\ Hz},\quad T=\frac{1}{25{,}0}=\mathbf{0{,}0400\ s},\quad k=\frac{2\pi}{0{,}320}=\mathbf{19{,}6\ rad/m}\quad(\omega=157\ \text{rad/s})$$</li>
+    <li><b>b) Función de onda.</b> Hacia $-x$ ⇒ fase $kx+\omega t$. En $x=0$: $y(0,t)=A\cos\omega t$, que en $t=0$ vale $+A$ ✓:
+      $$y(x,t)=(0{,}0700\ \text{m})\cos\big[(19{,}6\ \text{rad/m})\,x+(157\ \text{rad/s})\,t\big]=A\cos2\pi\Big(\frac{x}{0{,}320}+\frac{t}{0{,}0400}\Big)$$</li>
+    <li><b>c) Desplazamiento</b> en $x=0{,}360$ m, $t=0{,}150$ s (la forma con $\lambda$ y $T$ evita redondeos):
+      $$\text{fase}=2\pi\Big(\frac{0{,}360}{0{,}320}+\frac{0{,}150}{0{,}0400}\Big)=2\pi(1{,}125+3{,}75)=2\pi(4{,}875)$$
+      $$y=0{,}0700\cos(2\pi\cdot0{,}875)=0{,}0700\cos315^\circ=\mathbf{+0{,}0495\ m}=4{,}95\ \text{cm}$$</li>
+    <li><b>d) ¿Sube o baja?</b>
+      $$v_y=-A\omega\sin(315^\circ)=-(0{,}0700)(157)(-0{,}707)=+7{,}78\ \text{m/s}>0\ \ (\text{sube})$$
+      El máximo exige fase $=2\pi n$: $t=T(n-1{,}125)$; el primero posterior a 0,150 s es $n=5$: $t=0{,}0400(3{,}875)=0{,}155$ s.
+      $$\Delta t=0{,}155-0{,}150=\mathbf{0{,}0050\ s}=5{,}0\ \text{ms}$$
+      <span class="por">Comprobación: le faltaba $1-0{,}875=0{,}125$ ciclo ⇒ $T/8=0{,}005$ s ✓.</span></li>
   </ol>
   {{fig:grafica-del-desplazamiento-y-en-cm-de-la-particu}}
 

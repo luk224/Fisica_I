@@ -1,10 +1,16 @@
 <p class="enun">Cuando despega un avión a reacción produce un sonido de intensidad 10,0 W/m² a 30,0 m de distancia. Prefieres el sonido tranquilo de una conversación normal, 1,0 μW/m². Supón que el avión se comporta como una fuente puntual. a) ¿Cuál es la distancia mínima a la pista a la que podrías vivir para conservar la paz? b) ¿Qué intensidad percibe un amigo que vive al doble de esa distancia? c) ¿Qué potencia sonora produce el avión al despegar?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fuente puntual: $I=\dfrac{P}{4\pi r^2}$ ⇒ $I_1\,r_1^2=I_2\,r_2^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Una fuente puntual reparte su potencia $P$ uniformemente sobre esferas de área $4\pi r^2$; sin pérdidas, $P$ atraviesa todas las esferas ⇒ $I=P/4\pi r^2$ y $I_1r_1^2=I_2r_2^2$ (15.26).</li>
-    <li><b>a)</b> $r_2=r_1\sqrt{I_1/I_2}=30{,}0\sqrt{10{,}0/(1{,}0\times10^{-6})}=30{,}0\times3162=9{,}5\times10^4$ m ≈ <b>95 km</b>.</li>
-    <li><b>b)</b> $r_3=2r_2$ ⇒ $I_3=I_2(r_2/r_3)^2=I_2/4=\mathbf{0{,}25\ \mu W/m^2}$.</li>
-    <li><b>c)</b> $P=4\pi r_1^2I_1=4\pi(30{,}0)^2(10{,}0)=\mathbf{1{,}1\times10^5\ W}$.</li>
-    <li><b>Comentario.</b> 95 km es enorme porque la intensidad cae solo como $1/r^2$; en la realidad la absorción del aire y los obstáculos la reducen mucho antes.</li>
+    <li><b>a) Distancia mínima</b> ($I_2=1{,}0\times10^{-6}$ W/m²):
+      $$r_2=r_1\sqrt{\frac{I_1}{I_2}}=30{,}0\sqrt{\frac{10{,}0}{1{,}0\times10^{-6}}}=30{,}0(3162)=9{,}5\times10^4\ \text{m}\approx\mathbf{95\ km}$$</li>
+    <li><b>b) Al doble de distancia:</b>
+      $$I_3=I_2\Big(\frac{r_2}{2r_2}\Big)^2=\frac{I_2}{4}=\mathbf{0{,}25\ \mu W/m^2}$$</li>
+    <li><b>c) Potencia sonora:</b>
+      $$P=4\pi r_1^2I_1=4\pi(30{,}0)^2(10{,}0)=\mathbf{1{,}1\times10^5\ W}$$
+      <span class="por">95 km es enorme porque $I$ cae solo como $1/r^2$; en la realidad la absorción del aire y los obstáculos la reducen mucho antes.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> fuente puntual: $I\propto1/r^2$; razones de distancias = raíz de razones de intensidades.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Hacer $I\propto1/r$, o tomar $r_2/r_1=I_1/I_2$ sin la raíz.</p></div>

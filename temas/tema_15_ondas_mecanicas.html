@@ -302,13 +302,25 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Hacia $-x$ la fase es $kx+\omega t$ (para seguir una cresta, al crecer $t$ debe disminuir $x$).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>En $x=0$, $t=0$ hay un máximo: coseno sin fase inicial. Usa $2\pi(x/\lambda+t/T)$ para no arrastrar redondeos.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a)</b> $f=v/\lambda=8{,}00/0{,}320=\mathbf{25{,}0\ Hz}$ (15.1); $T=1/f=\mathbf{0{,}0400\ s}$; $k=2\pi/\lambda=\mathbf{19{,}6\ rad/m}$ (15.5); además $\omega=2\pi f=157$ rad/s.</li>
-    <li><b>b) Elegir la forma.</b> Hacia $-x$ ⇒ fase $kx+\omega t$ (15.8): para seguir una cresta (fase constante) al crecer $t$ debe disminuir $x$. En $x=0$: $y(0,t)=A\cos\omega t$, que en $t=0$ vale $+A$ ✓. Por tanto $$y(x,t)=(0{,}0700\ \text{m})\cos[(19{,}6\ \text{rad/m})x+(157\ \text{rad/s})t]=A\cos2\pi\left(\frac x{0{,}320\ \text{m}}+\frac t{0{,}0400\ \text{s}}\right).$$</li>
-    <li><b>c)</b> La forma con $\lambda$ y $T$ evita redondeos: fase $=2\pi(0{,}360/0{,}320+0{,}150/0{,}0400)=2\pi(1{,}125+3{,}75)=2\pi(4{,}875)$. Como el coseno tiene periodo $2\pi$ solo importa la parte fraccionaria: $\cos(2\pi\cdot0{,}875)=\cos315^\circ=0{,}707$ ⇒ $y=\mathbf{+0{,}0495\ m=4{,}95\ cm}$.</li>
-    <li><b>d) ¿Sube o baja?</b> $v_y=\partial y/\partial t=-A\omega\sin(\text{fase})=-(0{,}0700)(157)\sin315^\circ=+7{,}78$ m/s $>0$: está <b>subiendo</b> hacia el máximo.</li>
-    <li>El máximo exige fase $=2\pi n$: $x/\lambda+t/T=n\Rightarrow t=T(n-1{,}125)$. Para $n=5$: $t=0{,}0400(3{,}875)=0{,}155$ s (el primero posterior a 0,150 s; $n=4$ da 0,115 s, anterior). $\Delta t=\mathbf{0{,}0050\ s=5{,}0\ ms}$.</li>
-    <li><b>Comprobación.</b> Le faltaba $1-0{,}875=0{,}125$ ciclo ⇒ $\Delta t=T/8=0{,}005$ s ✓ (está a $45^\circ$ del máximo, subiendo).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$f=\dfrac v\lambda$; $T=\dfrac1f$; $k=\dfrac{2\pi}{\lambda}$; $\omega=2\pi f$</li>
+      <li>Onda hacia $-x$: $y=A\cos(kx+\omega t)=A\cos2\pi\Big(\dfrac x\lambda+\dfrac tT\Big)$</li>
+      <li>Velocidad de la partícula: $v_y=\dfrac{\partial y}{\partial t}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Frecuencia, periodo, número de onda:</b>
+      $$f=\frac{8{,}00}{0{,}320}=\mathbf{25{,}0\ Hz},\quad T=\frac{1}{25{,}0}=\mathbf{0{,}0400\ s},\quad k=\frac{2\pi}{0{,}320}=\mathbf{19{,}6\ rad/m}\quad(\omega=157\ \text{rad/s})$$</li>
+    <li><b>b) Función de onda.</b> Hacia $-x$ ⇒ fase $kx+\omega t$. En $x=0$: $y(0,t)=A\cos\omega t$, que en $t=0$ vale $+A$ ✓:
+      $$y(x,t)=(0{,}0700\ \text{m})\cos\big[(19{,}6\ \text{rad/m})\,x+(157\ \text{rad/s})\,t\big]=A\cos2\pi\Big(\frac{x}{0{,}320}+\frac{t}{0{,}0400}\Big)$$</li>
+    <li><b>c) Desplazamiento</b> en $x=0{,}360$ m, $t=0{,}150$ s (la forma con $\lambda$ y $T$ evita redondeos):
+      $$\text{fase}=2\pi\Big(\frac{0{,}360}{0{,}320}+\frac{0{,}150}{0{,}0400}\Big)=2\pi(1{,}125+3{,}75)=2\pi(4{,}875)$$
+      $$y=0{,}0700\cos(2\pi\cdot0{,}875)=0{,}0700\cos315^\circ=\mathbf{+0{,}0495\ m}=4{,}95\ \text{cm}$$</li>
+    <li><b>d) ¿Sube o baja?</b>
+      $$v_y=-A\omega\sin(315^\circ)=-(0{,}0700)(157)(-0{,}707)=+7{,}78\ \text{m/s}>0\ \ (\text{sube})$$
+      El máximo exige fase $=2\pi n$: $t=T(n-1{,}125)$; el primero posterior a 0,150 s es $n=5$: $t=0{,}0400(3{,}875)=0{,}155$ s.
+      $$\Delta t=0{,}155-0{,}150=\mathbf{0{,}0050\ s}=5{,}0\ \text{ms}$$
+      <span class="por">Comprobación: le faltaba $1-0{,}875=0{,}125$ ciclo ⇒ $T/8=0{,}005$ s ✓.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t15/grafica-del-desplazamiento-y-en-cm-de-la-particu.svg">
 <div class="figph" role="img" aria-label="Gráfica del desplazamiento y en cm de la partícula en x igual a 0,360 m entre 0,11 y 0,20 segundos: a 0,150 s vale 4,95 cm y está subiendo; el siguiente máximo de 7,00 cm llega a 0,155 s, 5,0 ms después" style="aspect-ratio:340/210"></div>
@@ -325,12 +337,21 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Compara con $A\cos(kx+\omega t)$: de ahí salen $A$, $k$ y $\omega$; luego $f=\omega/2\pi$ (no $\omega$ en Hz), $\lambda=2\pi/k$ y $v=\omega/k$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Con la masa y la longitud, $\mu$; entonces $F=\mu v^2$ y $P_{med}=\tfrac12\sqrt{\mu F}\,\omega^2A^2$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>Comparando con $A\cos(kx+\omega t)$: <b>a)</b> $A=\mathbf{2{,}30\ mm}$; $k=6{,}98$ rad/m; $\omega=742$ rad/s.</li>
-    <li><b>b)</b> $f=\omega/2\pi=\mathbf{118\ Hz}$. <b>c)</b> $\lambda=2\pi/k=\mathbf{0{,}900\ m}$. <b>d)</b> $v=\omega/k=\mathbf{106\ m/s}$ (o $\lambda f$).</li>
-    <li><b>e)</b> Fase $kx+\omega t$ ⇒ viaja hacia <b>$-x$</b> (15.8).</li>
-    <li><b>f)</b> $\mu=0{,}00338/1{,}35=2{,}50\times10^{-3}$ kg/m ⇒ $F=\mu v^2=(2{,}50\times10^{-3})(106{,}3)^2=\mathbf{28{,}3\ N}$.</li>
-    <li><b>g)</b> $P_{med}=\tfrac12\sqrt{\mu F}\,\omega^2A^2=\tfrac12\sqrt{(2{,}504\times10^{-3})(28{,}3)}\,(742)^2(2{,}30\times10^{-3})^2=\mathbf{0{,}388\ W}\approx0{,}39$ W.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Onda $A\cos(kx+\omega t)$ (hacia $-x$): $f=\dfrac\omega{2\pi}$, $\lambda=\dfrac{2\pi}{k}$, $v=\dfrac\omega k$</li>
+      <li>$\mu=\dfrac mL$; $F=\mu v^2$; $P_{med}=\tfrac12\sqrt{\mu F}\,\omega^2A^2$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Lectura:</b>
+      $$A=\mathbf{2{,}30\ mm},\qquad k=6{,}98\ \text{rad/m},\qquad\omega=742\ \text{rad/s}$$</li>
+    <li><b>b), c), d):</b>
+      $$f=\frac{742}{2\pi}=\mathbf{118\ Hz},\qquad\lambda=\frac{2\pi}{6{,}98}=\mathbf{0{,}900\ m},\qquad v=\frac{742}{6{,}98}=\mathbf{106\ m/s}$$</li>
+    <li><b>e) Sentido:</b> fase $kx+\omega t$ ⇒ viaja hacia <b>$-x$</b>.</li>
+    <li><b>f) Tensión:</b>
+      $$\mu=\frac{0{,}00338}{1{,}35}=2{,}50\times10^{-3}\ \text{kg/m},\qquad F=\mu v^2=(2{,}50\times10^{-3})(106{,}3)^2=\mathbf{28{,}3\ N}$$</li>
+    <li><b>g) Potencia media:</b>
+      $$P_{med}=\tfrac12\sqrt{(2{,}504\times10^{-3})(28{,}3)}\,(742)^2(2{,}30\times10^{-3})^2=\mathbf{0{,}388\ W}\approx0{,}39\ \text{W}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> lectura de $y(x,t)$ $\to$ $A,k,\omega$ $\to$ $f,\lambda,v$ $\to$ (con $\mu$) $F$ $\to$ $P_{med}$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Leer $f=742$ Hz (es $\omega$ en rad/s).</p></div>
@@ -342,11 +363,20 @@
 <details class="mas pista"><summary>Pista 1</summary><p>La masa cuelga en equilibrio: la tensión es $F=mg$ (la misma a ambos lados de la polea).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$v=\sqrt{F/\mu}$; la frecuencia la impone el diapasón, así que $\lambda=v/f$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Tensión.</b> La masa cuelga en equilibrio ⇒ la cuerda tira de ella con $F=mg$ (1.ª ley; polea ideal, la tensión es la misma a ambos lados): $F=(1{,}50)(9{,}80)=14{,}7$ N.</li>
-    <li><b>a)</b> $v=\sqrt{F/\mu}=\sqrt{14{,}7/0{,}0480}=\mathbf{17{,}5\ m/s}$ (15.14).</li>
-    <li><b>b)</b> La frecuencia la impone el diapasón: $\lambda=v/f=17{,}5/120=\mathbf{0{,}146\ m}$.</li>
-    <li><b>c)</b> $F=29{,}4$ N (doble) ⇒ $v\propto\sqrt F$ se multiplica por $\sqrt2$: <b>24,7 m/s</b>; $f$ sigue siendo 120 Hz ⇒ $\lambda$ también ×$\sqrt2$: <b>0,206 m</b>.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Tensión (masa colgando en equilibrio): $F=m\,g$</li>
+      <li>$v=\sqrt{F/\mu}$; $\lambda=\dfrac vf$ ($f$ la impone el diapasón)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Tensión:</b>
+      $$F=(1{,}50)(9{,}80)=14{,}7\ \text{N}$$</li>
+    <li><b>a) Rapidez:</b>
+      $$v=\sqrt{\frac{14{,}7}{0{,}0480}}=\mathbf{17{,}5\ m/s}$$</li>
+    <li><b>b) Longitud de onda:</b>
+      $$\lambda=\frac vf=\frac{17{,}5}{120}=\mathbf{0{,}146\ m}$$</li>
+    <li><b>c) Masa 3,00 kg:</b> $F=29{,}4$ N (doble) ⇒ $v$ se multiplica por $\sqrt2$; $f$ sigue siendo 120 Hz:
+      $$v=\sqrt{\frac{29{,}4}{0{,}0480}}=\mathbf{24{,}7\ m/s},\qquad\lambda=\frac{24{,}7}{120}=\mathbf{0{,}206\ m}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t15/diapason-que-hace-vibrar-una-cuerda-horizontal-q.svg">
 <div class="figph" role="img" aria-label="Diapasón que hace vibrar una cuerda horizontal que pasa por una polea y sostiene una masa de 1,50 kilogramos; la tensión es el peso de la masa, 14,7 newtons" style="aspect-ratio:340/165"></div>
@@ -363,13 +393,23 @@
 <details class="mas pista"><summary>Pista 1</summary><p>En cada punto la tensión sostiene la masa colgada más la cuerda que hay <i>por debajo</i> de ese punto.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Calcula $\mu$ con el peso de la cuerda y luego $v=\sqrt{F/\mu}$ punto a punto; la raíz no es lineal.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea clave.</b> Ahora la cuerda es pesada: en cada punto la tensión sostiene <b>la masa colgada más el trozo de cuerda que hay por debajo</b> de ese punto (DCL del trozo inferior en equilibrio). La tensión aumenta hacia arriba ⇒ $v$ también.</li>
-    <li>$\mu=\dfrac{29{,}4/9{,}80}{6{,}00}=\dfrac{3{,}00}{6{,}00}=0{,}500$ kg/m.</li>
-    <li><b>a) Abajo:</b> solo la masa: $F=(0{,}500)(9{,}80)=4{,}90$ N ⇒ $v=\sqrt{4{,}90/0{,}500}=\mathbf{3{,}13\ m/s}$.</li>
-    <li><b>b) En medio:</b> masa + media cuerda: $F=4{,}90+14{,}7=19{,}6$ N ⇒ $v=\sqrt{19{,}6/0{,}5}=\mathbf{6{,}26\ m/s}$.</li>
-    <li><b>c) Arriba:</b> masa + cuerda entera: $F=4{,}90+29{,}4=34{,}3$ N ⇒ $v=\mathbf{8{,}28\ m/s}$.</li>
-    <li><b>d)</b> $F$ crece <b>linealmente</b> con la longitud de cuerda que cuelga ⇒ en el centro $F=(4{,}90+34{,}3)/2=19{,}6$ N: <b>sí</b> es el promedio. Pero $v=\sqrt{F/\mu}$ no es lineal en $F$: $(3{,}13+8{,}28)/2=5{,}71$ m/s $\neq6{,}26$ m/s: <b>no</b> (la raíz es cóncava, el valor central supera al promedio).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Tensión en un punto = peso de todo lo que cuelga por debajo</li>
+      <li>$\mu=\dfrac mL$; $v=\sqrt{F/\mu}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Densidad lineal:</b>
+      $$\mu=\frac{29{,}4/9{,}80}{6{,}00}=\frac{3{,}00}{6{,}00}=0{,}500\ \text{kg/m}$$</li>
+    <li><b>a) Abajo</b> (solo la masa):
+      $$F=(0{,}500)(9{,}80)=4{,}90\ \text{N}\ \Rightarrow\ v=\sqrt{\frac{4{,}90}{0{,}500}}=\mathbf{3{,}13\ m/s}$$</li>
+    <li><b>b) En medio</b> (masa + media cuerda, 14,7 N):
+      $$F=4{,}90+14{,}7=19{,}6\ \text{N}\ \Rightarrow\ v=\sqrt{\frac{19{,}6}{0{,}500}}=\mathbf{6{,}26\ m/s}$$</li>
+    <li><b>c) Arriba</b> (masa + cuerda entera):
+      $$F=4{,}90+29{,}4=34{,}3\ \text{N}\ \Rightarrow\ v=\sqrt{\frac{34{,}3}{0{,}500}}=\mathbf{8{,}28\ m/s}$$</li>
+    <li><b>d) ¿Promedios?</b>
+      $$\text{tensión: }\frac{4{,}90+34{,}3}{2}=19{,}6\ \text{N}\ \ \text{(sí)},\qquad\text{rapidez: }\frac{3{,}13+8{,}28}{2}=5{,}71\ne6{,}26\ \text{m/s}\ \ \text{(no)}$$
+      <span class="por">$F$ crece linealmente con la cuerda que cuelga, pero $v=\sqrt{F/\mu}$ no es lineal en $F$: la raíz es cóncava, el valor central supera al promedio.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t15/cuerda-vertical-de-6-00-metros-que-pesa-29-4-new.svg">
 <div class="figph" role="img" aria-label="Cuerda vertical de 6,00 metros que pesa 29,4 newtons colgada del techo con una masa de 0,500 kilogramos abajo; las flechas de tensión crecen hacia arriba: 4,90, 19,6 y 34,3 newtons" style="aspect-ratio:340/195"></div>
@@ -386,12 +426,18 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Fuente puntual: $I=P/4\pi r^2$, luego $I_1r_1^2=I_2r_2^2$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>La relación de distancias es la <i>raíz</i> de la relación de intensidades.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> Una fuente puntual reparte su potencia $P$ uniformemente sobre esferas de área $4\pi r^2$; sin pérdidas, $P$ atraviesa todas las esferas ⇒ $I=P/4\pi r^2$ y $I_1r_1^2=I_2r_2^2$ (15.26).</li>
-    <li><b>a)</b> $r_2=r_1\sqrt{I_1/I_2}=30{,}0\sqrt{10{,}0/(1{,}0\times10^{-6})}=30{,}0\times3162=9{,}5\times10^4$ m ≈ <b>95 km</b>.</li>
-    <li><b>b)</b> $r_3=2r_2$ ⇒ $I_3=I_2(r_2/r_3)^2=I_2/4=\mathbf{0{,}25\ \mu W/m^2}$.</li>
-    <li><b>c)</b> $P=4\pi r_1^2I_1=4\pi(30{,}0)^2(10{,}0)=\mathbf{1{,}1\times10^5\ W}$.</li>
-    <li><b>Comentario.</b> 95 km es enorme porque la intensidad cae solo como $1/r^2$; en la realidad la absorción del aire y los obstáculos la reducen mucho antes.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fuente puntual: $I=\dfrac{P}{4\pi r^2}$ ⇒ $I_1\,r_1^2=I_2\,r_2^2$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Distancia mínima</b> ($I_2=1{,}0\times10^{-6}$ W/m²):
+      $$r_2=r_1\sqrt{\frac{I_1}{I_2}}=30{,}0\sqrt{\frac{10{,}0}{1{,}0\times10^{-6}}}=30{,}0(3162)=9{,}5\times10^4\ \text{m}\approx\mathbf{95\ km}$$</li>
+    <li><b>b) Al doble de distancia:</b>
+      $$I_3=I_2\Big(\frac{r_2}{2r_2}\Big)^2=\frac{I_2}{4}=\mathbf{0{,}25\ \mu W/m^2}$$</li>
+    <li><b>c) Potencia sonora:</b>
+      $$P=4\pi r_1^2I_1=4\pi(30{,}0)^2(10{,}0)=\mathbf{1{,}1\times10^5\ W}$$
+      <span class="por">95 km es enorme porque $I$ cae solo como $1/r^2$; en la realidad la absorción del aire y los obstáculos la reducen mucho antes.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> fuente puntual: $I\propto1/r^2$; razones de distancias = raíz de razones de intensidades.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Hacer $I\propto1/r$, o tomar $r_2/r_1=I_1/I_2$ sin la raíz.</p></div>
@@ -403,14 +449,22 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Principio de superposición: cada pulso avanza $vt$ sin deformarse y el desplazamiento es la suma punto a punto.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Dibuja las bases en cada instante; donde las pendientes son opuestas se compensan y donde coinciden se suman.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Ejes.</b> $x$ en cm; pulso izquierdo con vértice en $x=-1$ y base $[-2,0]$, hacia $+x$; pulso derecho con vértice en $x=2$ y base $[1,3]$, hacia $-x$. El punto medio es $x=0{,}5$.</li>
-    <li><b>Principio de superposición</b> (15.27): cada pulso avanza como si el otro no existiera y el desplazamiento de la cuerda es la <b>suma algebraica</b>. En cada instante el pulso izquierdo ocupa $[-2+2t,\,2t]$ y el derecho $[1-2t,\,3-2t]$.</li>
-    <li><b>$t=0{,}250$ s.</b> Cada uno avanzó 0,50 cm: bases $[-1{,}5;\,0{,}5]$ y $[0{,}5;\,2{,}5]$: <b>se tocan</b> en $x=0{,}5$; aún no se solapan ⇒ dos triángulos que comparten un punto.</li>
-    <li><b>$t=0{,}500$ s.</b> Bases $[-1;1]$ y $[0;2]$, solape $[0;1]$: ahí el izquierdo <b>baja</b> ($y=1-x$) y el derecho <b>sube</b> ($y=x$) ⇒ suma $=1$ cm constante. Forma: <b>trapecio</b> (sube de $x=-1$ a $0$, meseta de 1,00 cm entre 0 y 1, baja de 1 a 2).</li>
-    <li><b>$t=0{,}750$ s.</b> Ambos sobre $[-0{,}5;1{,}5]$, vértices coincidentes en $x=0{,}5$ ⇒ <b>triángulo de altura 2,00 cm</b> y base 2,00 cm (interferencia constructiva total).</li>
-    <li><b>$t=1{,}000$ s.</b> Simétrico de $t=0{,}5$: de nuevo el trapecio de altura 1,00 cm sobre $[-1;2]$.</li>
-    <li><b>$t=1{,}250$ s.</b> Se tocan en $x=0{,}5$ y se separan; <b>cada pulso conserva su forma original</b> tras cruzarse.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Superposición: $y=y_1+y_2$ (suma algebraica punto a punto)</li>
+      <li>Posición de cada pulso: izquierdo $[-2+2t,\ 2t]$ (hacia $+x$); derecho $[1-2t,\ 3-2t]$ (hacia $-x$) ($x$ en cm, $t$ en s, $v=2{,}00$ cm/s)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Ejes.</b> $x$ en cm; pulso izquierdo con vértice en $x=-1$ y base $[-2,0]$; pulso derecho con vértice en $x=2$ y base $[1,3]$. El punto medio es $x=0{,}5$. Cada pulso avanza $vt=2t$.</li>
+    <li><b>$t=0{,}250$ s.</b> Avanzó 0,50 cm cada uno: bases $[-1{,}5;\,0{,}5]$ y $[0{,}5;\,2{,}5]$ ⇒ <b>se tocan</b> en $x=0{,}5$; dos triángulos que comparten un punto.</li>
+    <li><b>$t=0{,}500$ s.</b> Bases $[-1;1]$ y $[0;2]$, solape $[0;1]$:
+      $$y=(1-x)+x=1\ \text{cm}\ \ (\text{izquierdo baja, derecho sube})$$
+      <b>Trapecio:</b> sube de $x=-1$ a 0, meseta de 1,00 cm entre 0 y 1, baja de 1 a 2.</li>
+    <li><b>$t=0{,}750$ s.</b> Ambos sobre $[-0{,}5;\,1{,}5]$ con vértices coincidentes en $x=0{,}5$:
+      $$y_{m\acute ax}=1{,}00+1{,}00=2{,}00\ \text{cm}$$
+      <b>Triángulo de altura 2,00 cm</b> y base 2,00 cm (interferencia constructiva total).</li>
+    <li><b>$t=1{,}000$ s.</b> Simétrico de $t=0{,}5$: el trapecio de altura 1,00 cm sobre $[-1;2]$.</li>
+    <li><b>$t=1{,}250$ s.</b> Se tocan en $x=0{,}5$ y se separan; <b>cada pulso conserva su forma</b> tras cruzarse.</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t15/cinco-fotos-de-la-cuerda-con-dos-pulsos-triangul.svg">
 <div class="figph" role="img" aria-label="Cinco fotos de la cuerda con dos pulsos triangulares que se cruzan, a 0,25, 0,50, 0,75, 1,00 y 1,25 segundos: se tocan, forman un trapecio de 1 centímetro, un triángulo de 2 centímetros de altura, de nuevo un trapecio y se separan sin deformarse" style="aspect-ratio:340/338"></div>
@@ -427,11 +481,22 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Nodos y antinodos están separados $\lambda/2$; un nodo y un antinodo vecinos, $\lambda/4$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>La amplitud en el antinodo es $2A$ (la de cada onda viajera es la mitad). Cada punto hace un MAS: no confundas $v_{onda}=\lambda/T$ con la rapidez transversal.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a)</b> Nodos y antinodos alternan, ambos separados $\lambda/2$ (15.29) ⇒ nodos adyacentes: <b>15,0 cm</b>.</li>
-    <li><b>b)</b> $\lambda/2=15{,}0$ cm ⇒ $\lambda=\mathbf{30{,}0\ cm}$ (la estacionaria y las viajeras tienen la misma $k$ y $\omega$). La amplitud en el antinodo es $A_{OE}=2A$ (15.28) ⇒ $A=0{,}850/2=\mathbf{0{,}425\ cm}$. $v=\lambda/T=0{,}300/0{,}0750=\mathbf{4{,}00\ m/s}$.</li>
-    <li><b>c)</b> En el antinodo $y=A_{OE}\sin\omega t$ (MAS) ⇒ $v_y=A_{OE}\omega\cos\omega t$; $\omega=2\pi/T=83{,}8$ rad/s ⇒ $v_{y,máx}=A_{OE}\omega=(0{,}00850)(83{,}8)=\mathbf{0{,}712\ m/s}$ (al pasar por $y=0$) y $v_{y,mín}=\mathbf0$ (en los extremos de su oscilación).</li>
-    <li><b>d)</b> Nodo–antinodo más cercano: $\lambda/4=\mathbf{7{,}50\ cm}$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Onda estacionaria: N–N = A–A = $\lambda/2$; N–A = $\lambda/4$; $A_{OE}=2A_{viajera}$</li>
+      <li>$v=\dfrac{\lambda}{T}$; $\omega=\dfrac{2\pi}{T}$; en un antinodo (MAS): $v_{y,m\acute ax}=\omega A_{OE}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Nodos adyacentes:</b> nodos y antinodos alternan, ambos a $\lambda/2$ ⇒ <b>15,0 cm</b>.</li>
+    <li><b>b) Ondas viajeras:</b>
+      $$\frac\lambda2=15{,}0\ \text{cm}\ \Rightarrow\ \lambda=\mathbf{30{,}0\ cm},\qquad A=\frac{A_{OE}}{2}=\frac{0{,}850}{2}=\mathbf{0{,}425\ cm}$$
+      $$v=\frac\lambda T=\frac{0{,}300}{0{,}0750}=\mathbf{4{,}00\ m/s}$$</li>
+    <li><b>c) Rapideces transversales en un antinodo:</b>
+      $$\omega=\frac{2\pi}{T}=83{,}8\ \text{rad/s},\qquad v_{y,m\acute ax}=A_{OE}\,\omega=(0{,}00850)(83{,}8)=\mathbf{0{,}712\ m/s}$$
+      $$v_{y,m\acute in}=\mathbf0\ \ (\text{en los extremos de su oscilación})$$</li>
+    <li><b>d) Nodo–antinodo más cercano:</b>
+      $$\frac\lambda4=\mathbf{7{,}50\ cm}$$
+      <span class="por">No confundir la rapidez de la onda (4,00 m/s) con la transversal de un punto (0,712 m/s).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t15/onda-estacionaria-con-nodos-en-0-15-30-y-45-cent.svg">
 <div class="figph" role="img" aria-label="Onda estacionaria con nodos en 0, 15, 30 y 45 centímetros y antinodos en 7,5, 22,5 y 37,5 centímetros; entre nodos hay 15,0 centímetros, entre nodo y antinodo 7,50 centímetros y la longitud de onda es 30,0 centímetros" style="aspect-ratio:340/205"></div>
@@ -448,13 +513,21 @@
 <details class="mas pista"><summary>Pista 1</summary><p>La cuerda y el aire vibran con la <i>misma frecuencia</i>; las longitudes de onda son distintas.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Segundo sobretono = tercer armónico ($n=3$): $\lambda=2L/3$ en la cuerda; luego $v=f\lambda$ y $F=\mu v^2$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Puente entre cuerda y aire: la frecuencia.</b> La cuerda empuja el aire al mismo ritmo ⇒ $f_{sonido}=f_{cuerda}$; las longitudes de onda <b>no</b> coinciden (rapideces distintas).</li>
-    <li>$f=v_{aire}/\lambda_{aire}=344/0{,}765=449{,}7$ Hz.</li>
-    <li><b>Segundo sobretono = tercer armónico</b> ($n=3$): $\lambda_3=2L/3=0{,}500$ m en la cuerda.</li>
-    <li>$v_{cuerda}=f\lambda_3=(449{,}7)(0{,}500)=224{,}8$ m/s.</li>
-    <li><b>a)</b> $\mu=8{,}75\times10^{-3}/0{,}750=1{,}167\times10^{-2}$ kg/m ⇒ $F=\mu v^2=\mathbf{590\ N}$.</li>
-    <li><b>b)</b> $f_1=f_3/3=\mathbf{150\ Hz}$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>La $f$ de la cuerda es la del sonido: $f=\dfrac{v_{aire}}{\lambda_{aire}}$</li>
+      <li>Cuerda fija: $\lambda_n=\dfrac{2L}{n}$; segundo sobretono = $n=3$; $f_n=n\,f_1$</li>
+      <li>$v_{cuerda}=f\lambda_n$; $F=\mu v^2$; $\mu=\dfrac mL$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Frecuencia del sonido</b> (la cuerda empuja el aire al mismo ritmo):
+      $$f=\frac{344}{0{,}765}=449{,}7\ \text{Hz}$$</li>
+    <li><b>En la cuerda</b> (segundo sobretono = tercer armónico):
+      $$\lambda_3=\frac{2L}{3}=\frac{2(0{,}750)}{3}=0{,}500\ \text{m},\qquad v_{cuerda}=f\lambda_3=(449{,}7)(0{,}500)=224{,}8\ \text{m/s}$$</li>
+    <li><b>a) Tensión:</b>
+      $$\mu=\frac{8{,}75\times10^{-3}}{0{,}750}=1{,}167\times10^{-2}\ \text{kg/m},\qquad F=\mu v^2=(1{,}167\times10^{-2})(224{,}8)^2=\mathbf{590\ N}$$</li>
+    <li><b>b) Fundamental:</b>
+      $$f_1=\frac{f_3}{3}=\frac{449{,}7}{3}=\mathbf{150\ Hz}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t15/arriba-la-cuerda-en-su-tercer-armonico-con-longi.svg">
 <div class="figph" role="img" aria-label="Arriba la cuerda en su tercer armónico con longitud de onda 0,500 metros; abajo el sonido que emite, con la misma frecuencia pero longitud de onda 0,765 metros, porque el sonido va más rápido en el aire" style="aspect-ratio:340/222"></div>
@@ -471,12 +544,20 @@
 <details class="mas pista"><summary>Pista 1</summary><p>El dedo solo acorta la parte que vibra: $F$, $\mu$ y $v$ no cambian, luego $f_1L=$ cte.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Bajar de 440 Hz exigiría alargar la cuerda: no es posible con un dedo.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Lo que no cambia.</b> El dedo solo acorta la parte que vibra; $F$ y $\mu$ son las mismas ⇒ <b>$v$ es la misma</b>.</li>
-    <li>Con $L=0{,}600$ m, fundamental $\lambda=2L=1{,}20$ m ⇒ $v=f\lambda=(440)(1{,}20)=528$ m/s.</li>
-    <li><b>a)</b> Para 587 Hz: $\lambda=528/587=0{,}900$ m ⇒ $L'=\lambda/2=0{,}450$ m. La parte vibrante va del puente al dedo ⇒ <b>$x=45{,}0$ cm</b>.</li>
-    <li><b>b)</b> Para 392 Hz: $L''=v/2f=528/(2\cdot392)=0{,}673$ m $>0{,}600$ m. El dedo solo puede <b>acortar</b> la cuerda (subir $f$); bajar de 440 Hz exigiría alargarla ⇒ <b>no es posible</b>.</li>
-    <li>Equivalente rápido: $f_1\propto1/L\Rightarrow L'=L\cdot440/587=0{,}450$ m.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fundamental: $\lambda=2L$; $v=f\lambda$</li>
+      <li>Misma cuerda y tensión ⇒ misma $v$: $f_1\,L=\text{cte}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Rapidez en la cuerda</b> (el dedo solo acorta la parte que vibra; $F$ y $\mu$ no cambian):
+      $$v=f\lambda=(440)(2\cdot0{,}600)=528\ \text{m/s}$$</li>
+    <li><b>a) Para 587 Hz:</b>
+      $$\lambda=\frac{528}{587}=0{,}900\ \text{m}\ \Rightarrow\ L'=\frac\lambda2=0{,}450\ \text{m}\ \Rightarrow\ \mathbf{x=45{,}0\ cm}$$
+      <span class="por">La parte vibrante va del puente al dedo. Rápido: $L'=L\cdot\dfrac{440}{587}=0{,}450$ m.</span></li>
+    <li><b>b) Para 392 Hz:</b>
+      $$L''=\frac{v}{2f}=\frac{528}{2(392)}=0{,}673\ \text{m}>0{,}600\ \text{m}$$
+      <span class="por">El dedo solo puede acortar la cuerda (subir $f$); bajar de 440 Hz exigiría alargarla ⇒ no es posible sin reafinar.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t15/dos-dibujos-de-una-cuerda-de-60-centimetros-libr.svg">
 <div class="figph" role="img" aria-label="Dos dibujos de una cuerda de 60 centímetros: libre vibra en su fundamental a 440 hercios; con un dedo a 45 centímetros del puente solo vibra esa parte y suena a 587 hercios" style="aspect-ratio:340/240"></div>
@@ -493,10 +574,18 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Todas las frecuencias son $f_n=nf_1$: dos consecutivas se diferencian en $f_1$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Con $f_1=780-624$ y $\lambda_1=2L$ obtienes $v$ y $F=\mu v^2$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> Todas las frecuencias de onda estacionaria son $f_n=nf_1$ (15.33). Dos consecutivas son $nf_1$ y $(n+1)f_1$.</li>
-    <li><b>a)</b> Restando: $f_1=780-624=\mathbf{156\ Hz}$. (Equivalente: $(n+1)/n=780/624=1{,}25\Rightarrow n=4$; $f_1=624/4=156$ Hz ✓; y en efecto 624 no es la fundamental.) $\lambda_1=2L=\mathbf{1{,}60\ m}$.</li>
-    <li><b>b)</b> $v=f_1\lambda_1=249{,}6$ m/s ⇒ $F=\mu v^2=(7{,}50\times10^{-3})(249{,}6)^2=\mathbf{467\ N}$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Armónicos: $f_n=n\,f_1$; consecutivos: $f_{n+1}-f_n=f_1$</li>
+      <li>$\lambda_1=2L$; $v=f_1\lambda_1$; $F=\mu v^2$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Fundamental:</b>
+      $$f_1=780-624=\mathbf{156\ Hz}$$
+      <span class="por">Comprobación: $780/624=1{,}25=(n+1)/n\Rightarrow n=4$; $f_1=624/4=156$ Hz ✓ (624 no es la fundamental).</span>
+      $$\lambda_1=2L=\mathbf{1{,}60\ m}$$</li>
+    <li><b>b) Tensión:</b>
+      $$v=f_1\lambda_1=(156)(1{,}60)=249{,}6\ \text{m/s},\qquad F=\mu v^2=(7{,}50\times10^{-3})(249{,}6)^2=\mathbf{467\ N}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t15/recta-de-frecuencias-con-los-armonicos-multiplos.svg">
 <div class="figph" role="img" aria-label="Recta de frecuencias con los armónicos múltiplos de 156 hercios: 156, 312, 468, 624 y 780; los dos armónicos consecutivos medidos, 624 y 780, están separados 156 hercios que es la fundamental" style="aspect-ratio:340/140"></div>
@@ -513,13 +602,20 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Hay dos rapideces: la de la onda ($v=\sqrt{F/\mu}$, constante) y la de un punto de la cuerda (9,00 m/s, un MAS).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>El punto medio es el antinodo del modo fundamental: $v_{máx}=\omega A$ con $\omega=2\pi f_1$ y $a_{máx}=\omega^2A$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Dos rapideces distintas.</b> $v=\sqrt{F/\mu}$ es la rapidez <b>de la onda</b> (constante); 9,00 m/s es la rapidez <b>de un punto</b> de la cuerda, que hace un MAS.</li>
-    <li>$\mu=0{,}00300/2{,}20=1{,}364\times10^{-3}$ kg/m ⇒ $v=\sqrt{330/1{,}364\times10^{-3}}=492$ m/s.</li>
-    <li>Fundamental: $\lambda_1=2L=4{,}40$ m ⇒ $f_1=v/2L=111{,}8$ Hz ⇒ $\omega=2\pi f_1=702$ rad/s.</li>
-    <li>El punto medio es el <b>antinodo</b> del fundamental ⇒ hace un MAS de amplitud $A_{OE}$ con $v_{máx}=\omega A_{OE}$.</li>
-    <li><b>a)</b> $A_{OE}=v_{máx}/\omega=9{,}00/702{,}5=\mathbf{1{,}28\ cm}$.</li>
-    <li><b>b)</b> $a_{máx}=\omega^2A_{OE}=\omega\,v_{máx}=(702{,}5)(9{,}00)=\mathbf{6{,}32\times10^3\ m/s^2}$ (≈ 645 $g$: por eso podemos despreciar la gravedad en la cuerda).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Rapidez de la onda: $v=\sqrt{F/\mu}$; fundamental: $f_1=\dfrac{v}{2L}$, $\omega=2\pi f_1$</li>
+      <li>Antinodo (MAS): $v_{y,m\acute ax}=\omega A_{OE}$; $a_{y,m\acute ax}=\omega^2A_{OE}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Dos rapideces distintas.</b> $v=\sqrt{F/\mu}$ es la rapidez de la onda; 9,00 m/s es la rapidez de un punto de la cuerda (MAS).</li>
+    <li><b>Rapidez de la onda y frecuencia:</b>
+      $$\mu=\frac{0{,}00300}{2{,}20}=1{,}364\times10^{-3}\ \text{kg/m},\qquad v=\sqrt{\frac{330}{1{,}364\times10^{-3}}}=492\ \text{m/s}$$
+      $$f_1=\frac{v}{2L}=\frac{492}{4{,}40}=111{,}8\ \text{Hz},\qquad\omega=2\pi f_1=702\ \text{rad/s}$$</li>
+    <li><b>a) Amplitud en el antinodo</b> (el punto medio es el antinodo del fundamental):
+      $$A_{OE}=\frac{v_{m\acute ax}}{\omega}=\frac{9{,}00}{702{,}5}=\mathbf{1{,}28\ cm}$$</li>
+    <li><b>b) Aceleración máxima:</b>
+      $$a_{m\acute ax}=\omega\,v_{m\acute ax}=(702{,}5)(9{,}00)=\mathbf{6{,}32\times10^3\ m/s^2}\ \ (\approx645\,g)$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> punto de una onda estacionaria = MAS: $v_{máx}=\omega A_{local}$, $a_{máx}=\omega^2A_{local}$, con $\omega$ del modo ($f_n=nv/2L$).</div>
   <div class="box warn"><span class="h">Error típico</span><p>Igualar 9,00 m/s a la rapidez de la onda.</p></div>
@@ -528,45 +624,76 @@
 <div class="nivel"><b>🟡 Práctica: 8 ejercicios más</b><span>Repiten métodos del Núcleo en otras situaciones: $\lambda=v/f$ de un sonido, la tensión necesaria, dos funciones de onda más (una con el $\pi$ fuera del corchete), la potencia de una cuerda de piano, el armónico audible más alto, un ajuste fino de la tensión y, para quien quiera nota, la cuerda que gira (tensión variable e integral). Antes de leer los pasos, decide: ¿cinemática, $v=\sqrt{F/\mu}$, energía o modos normales?</span></div>
 <details class="sol" id="e151"><summary>Problema 15.1 — Longitud de onda y periodo de un sonido <span class="src" data-l="E" data-ref="Solucionario 15-1, Prob. 15.1">E 15-1</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 15.1, p. 497; §15.2, ec. 15.1, p. 471">U p.497, 471</span></summary>
 <p class="enun">La rapidez del sonido en el aire a 20 °C es 344 m/s. a) Calcula la longitud de onda de una onda sonora de 784 Hz (nota sol de un piano) y cuántos milisegundos dura cada vibración. b) Calcula la longitud de onda de una onda sonora una octava más alta (frecuencia doble).</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$v=\lambda f$; $T=\dfrac1f$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> En una onda periódica, en un periodo $T$ la cresta avanza exactamente una $\lambda$ ⇒ $v=\lambda/T=\lambda f$ (15.1). Conocidas $v$ y $f$ sale $\lambda$.</li>
-    <li><b>a)</b> $\lambda=\dfrac vf=\dfrac{344}{784}=\mathbf{0{,}439\ m}$. La duración de una vibración es el periodo: $T=1/f=1/784=1{,}28\times10^{-3}$ s $=\mathbf{1{,}28\ ms}$.</li>
-    <li><b>b)</b> La misma $v$ (la fija el medio, no la frecuencia), $f'=1568$ Hz ⇒ $\lambda'=344/1568=\mathbf{0{,}219\ m}=\lambda/2$.</li>
+    <li><b>a) Longitud de onda y periodo:</b>
+      $$\lambda=\frac vf=\frac{344}{784}=\mathbf{0{,}439\ m},\qquad T=\frac1f=\frac1{784}=1{,}28\times10^{-3}\ \text{s}=\mathbf{1{,}28\ ms}$$</li>
+    <li><b>b) Una octava más alta</b> ($f'=1568$ Hz; la misma $v$, que la fija el medio):
+      $$\lambda'=\frac{344}{1568}=\mathbf{0{,}219\ m}=\frac\lambda2$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> $v$ la fija el medio; $f$, la fuente; $\lambda=v/f$ es la consecuencia.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Pensar que al doblar $f$ se dobla $v$.</p></div>
 </details>
 <details class="sol" id="e1516"><summary>Problema 15.16 — Tensión necesaria <span class="src" data-l="E" data-ref="Solucionario 15-6, Prob. 15.16">E 15-6</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 15.16, p. 498; §15.4, ec. 15.14, p. 480">U p.498, 480</span></summary>
 <p class="enun">¿Con qué tensión debe estirarse una cuerda de 2,50 m de longitud y masa 0,120 kg para que ondas transversales de frecuencia 40,0 Hz tengan una longitud de onda de 0,750 m?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\mu=\dfrac mL$; $v=\lambda f$; $v=\sqrt{F/\mu}$ ⇒ $F=\mu v^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li>$\mu=m/L=0{,}120/2{,}50=0{,}0480$ kg/m (masa por unidad de longitud, cuerda uniforme).</li>
-    <li>$v=\lambda f=(0{,}750)(40{,}0)=30{,}0$ m/s (15.1).</li>
-    <li>De $v=\sqrt{F/\mu}$ (15.14): $F=\mu v^2=(0{,}0480)(30{,}0)^2=\mathbf{43{,}2\ N}$.</li>
+    <li><b>Masa por unidad de longitud:</b>
+      $$\mu=\frac{0{,}120}{2{,}50}=0{,}0480\ \text{kg/m}$$</li>
+    <li><b>Rapidez de la onda:</b>
+      $$v=\lambda f=(0{,}750)(40{,}0)=30{,}0\ \text{m/s}$$</li>
+    <li><b>Tensión:</b>
+      $$F=\mu v^2=(0{,}0480)(30{,}0)^2=\mathbf{43{,}2\ N}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> «cinemática» ($v=\lambda f$) + «dinámica» ($v=\sqrt{F/\mu}$) se igualan por $v$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Usar la masa total $m$ en lugar de $\mu$.</p></div>
 </details>
 <details class="sol" id="e1518"><summary>Problema 15.18 — Leer una función de onda y obtener la tensión <span class="src" data-l="E" data-ref="Solucionario 15-7, Prob. 15.18">E 15-7</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 15.18, p. 498; §15.3-15.4, ec. 15.6-15.7, 15.14, pp. 474-480">U p.498, 474-480</span></summary>
 <p class="enun">Una cuerda de 1,50 m que pesa 0,0125 N está atada al techo por su extremo superior; el inferior sostiene un peso $W$. Desprecia la variación de la tensión a lo largo de la cuerda debida a su propio peso. Al dar un leve pulso, las ondas que suben por ella obedecen $y(x,t)=(8{,}50\ \text{mm})\cos(172\ \text{rad/m}\ x-4830\ \text{rad/s}\ t)$. Supón que la tensión es constante e igual a $W$. a) ¿Cuánto tarda un pulso en recorrer toda la cuerda? b) ¿Cuál es el peso $W$? c) ¿Cuántas longitudes de onda hay en la cuerda en cualquier instante? d) ¿Cuál es la ecuación de las ondas que bajan por la cuerda?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Onda hacia $+x$: $y=A\cos(kx-\omega t)$; hacia $-x$: $y=A\cos(kx+\omega t)$</li>
+      <li>$v=\dfrac\omega k$; $\lambda=\dfrac{2\pi}{k}$; $v=\sqrt{F/\mu}$ ⇒ $F=\mu v^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Lectura.</b> Comparando con $A\cos(kx-\omega t)$ (15.7): $A=8{,}50$ mm, $k=172$ rad/m, $\omega=4830$ rad/s. Como la onda «sube» y es de la forma $kx-\omega t$ (hacia $+x$), el eje $x$ apunta <b>hacia arriba</b>.</li>
-    <li><b>a)</b> $v=\omega/k=4830/172=28{,}1$ m/s (15.6); $t=L/v=1{,}50/28{,}08=\mathbf{0{,}0534\ s=53{,}4\ ms}$.</li>
-    <li><b>b)</b> Masa de la cuerda $m=0{,}0125/9{,}80=1{,}28\times10^{-3}$ kg ⇒ $\mu=m/L=8{,}50\times10^{-4}$ kg/m. Con $F=W$ y $v=\sqrt{F/\mu}$: $W=\mu v^2=(8{,}50\times10^{-4})(28{,}08)^2=\mathbf{0{,}670\ N}$. (Comprobación de la hipótesis: $W=0{,}670$ N $\gg$ peso de la cuerda 0,0125 N, ≈2 %: despreciar el peso propio es razonable.)</li>
-    <li><b>c)</b> $\lambda=2\pi/k=0{,}0365$ m ⇒ $N=L/\lambda=1{,}50/0{,}0365=\mathbf{41{,}1}$ longitudes de onda.</li>
-    <li><b>d)</b> Misma $A$, $k$, $\omega$ (mismo medio y misma fuente), sentido $-x$ (hacia abajo) ⇒ $y=(8{,}50\ \text{mm})\cos(172x+4830t)$ (15.8).</li>
+    <li><b>Lectura:</b>
+      $$A=8{,}50\ \text{mm},\quad k=172\ \text{rad/m},\quad\omega=4830\ \text{rad/s},\quad v=\frac\omega k=\frac{4830}{172}=28{,}1\ \text{m/s}$$</li>
+    <li><b>a) Tiempo en recorrer la cuerda:</b>
+      $$t=\frac Lv=\frac{1{,}50}{28{,}08}=\mathbf{0{,}0534\ s}=53{,}4\ \text{ms}$$</li>
+    <li><b>b) Peso $W$:</b>
+      $$m=\frac{0{,}0125}{9{,}80}=1{,}28\times10^{-3}\ \text{kg},\qquad\mu=\frac mL=8{,}50\times10^{-4}\ \text{kg/m}$$
+      $$W=F=\mu v^2=(8{,}50\times10^{-4})(28{,}08)^2=\mathbf{0{,}670\ N}$$
+      <span class="por">Comprobación: $W\gg0{,}0125$ N (peso de la cuerda, ≈2 %): despreciarlo es razonable.</span></li>
+    <li><b>c) Longitudes de onda en la cuerda:</b>
+      $$\lambda=\frac{2\pi}{k}=0{,}0365\ \text{m},\qquad N=\frac L\lambda=\frac{1{,}50}{0{,}0365}=\mathbf{41{,}1}$$</li>
+    <li><b>d) Ondas que bajan</b> (mismos $A$, $k$, $\omega$; sentido $-x$):
+      $$y(x,t)=(8{,}50\ \text{mm})\cos\big(172\,x+4830\,t\big)$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> de $y=A\cos(kx\mp\omega t)$ se leen $A,k,\omega$; $v=\omega/k$; y con $v=\sqrt{F/\mu}$ se pasa a la dinámica ($F$ o $\mu$).</div>
   <div class="box warn"><span class="h">Error típico</span><p>Tomar $v=k/\omega$ o confundir $k$ con $\lambda$.</p></div>
 </details>
 <details class="sol" id="e1548"><summary>Problema 15.48 — Onda con $\pi$ factorizado: amplitud, $\lambda$, $v$, $F$ y potencia <span class="src" data-l="E" data-ref="Solucionario 15-17, Prob. 15.48">E 15-17</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 15.48, p. 500; §15.3-15.5, ec. 15.7, 15.14, 15.25, pp. 474-483">U p.500, 474-483</span></summary>
 <p class="enun">El desplazamiento transversal de una onda en una cuerda es $y(x,t)=(0{,}750\ \text{cm})\cos\pi[(0{,}400\ \text{cm}^{-1})x+(250\ \text{s}^{-1})t]$. a) Calcula amplitud, periodo, frecuencia, longitud de onda y rapidez de propagación. b) Dibuja la forma de la cuerda en $t=0$, $0{,}0005$ s y $0{,}0010$ s. c) ¿La onda viaja hacia $+x$ o $-x$? d) La masa por unidad de longitud es 0,0500 kg/m: calcula la tensión. e) Determina la potencia media.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Forma $\pi[\dots]$: $k=0{,}400\pi\ \text{rad/cm}$, $\omega=250\pi\ \text{rad/s}$</li>
+      <li>$\lambda=\dfrac{2\pi}{k}$; $f=\dfrac{\omega}{2\pi}$; $v=\lambda f$; $F=\mu v^2$; $P_{med}=\tfrac12\sqrt{\mu F}\,\omega^2A^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Meter el $\pi$ dentro:</b> $k=0{,}400\pi$ rad/cm $=40{,}0\pi$ rad/m; $\omega=250\pi$ rad/s $=785$ rad/s.</li>
-    <li><b>a)</b> $A=\mathbf{0{,}750\ cm}$; $\lambda=2\pi/k=2/0{,}400=\mathbf{5{,}00\ cm}$; $f=\omega/2\pi=\mathbf{125\ Hz}$; $T=\mathbf{8{,}00\ ms}$; $v=\lambda f=\mathbf{6{,}25\ m/s}$.</li>
-    <li><b>b)</b> En $t=0$: $y=0{,}750\cos(0{,}400\pi x)$ (cm), con cresta en $x=0$ y en $5{,}00$ cm y valle en $2{,}50$ cm. Cada $0{,}0005$ s la forma se desplaza $v\Delta t=0{,}3125$ cm hacia $-x$ sin cambiar: las crestas pasan de $x=5$ cm a $4{,}69$ cm y a $4{,}38$ cm. Valores en $x=0$: $y=0{,}750;\ 0{,}693;\ 0{,}530$ cm.</li>
-    <li><b>c)</b> Fase $kx+\omega t$: para mantenerla constante, al crecer $t$ disminuye $x$ ⇒ <b>hacia $-x$</b> (lo confirma b).</li>
-    <li><b>d)</b> $F=\mu v^2=(0{,}0500)(6{,}25)^2=\mathbf{1{,}95\ N}$.</li>
-    <li><b>e)</b> $P_{med}=\tfrac12\sqrt{\mu F}\,\omega^2A^2=\tfrac12\sqrt{(0{,}0500)(1{,}953)}\,(785{,}4)^2(7{,}50\times10^{-3})^2=\mathbf{5{,}42\ W}$.</li>
+    <li><b>a) Magnitudes</b> ($k=40{,}0\pi$ rad/m):
+      $$A=\mathbf{0{,}750\ cm},\quad\lambda=\frac{2\pi}{0{,}400\pi}=\mathbf{5{,}00\ cm},\quad f=\frac{250\pi}{2\pi}=\mathbf{125\ Hz},\quad T=\mathbf{8{,}00\ ms},\quad v=\lambda f=\mathbf{6{,}25\ m/s}$$</li>
+    <li><b>b) Forma de la cuerda.</b> En $t=0$: $y=0{,}750\cos(0{,}400\pi x)$ cm (cresta en $x=0$ y $5{,}00$ cm, valle en $2{,}50$ cm). Cada $0{,}0005$ s la forma se desplaza $v\,\Delta t=0{,}3125$ cm hacia $-x$: las crestas pasan de $x=5$ cm a $4{,}69$ cm y a $4{,}38$ cm. Valores en $x=0$: $y=0{,}750;\ 0{,}693;\ 0{,}530$ cm.</li>
+    <li><b>c) Sentido:</b> fase $kx+\omega t$ ⇒ hacia <b>$-x$</b> (lo confirma b).</li>
+    <li><b>d) Tensión:</b>
+      $$F=\mu v^2=(0{,}0500)(6{,}25)^2=\mathbf{1{,}95\ N}$$</li>
+    <li><b>e) Potencia media</b> ($\omega=785{,}4$ rad/s, $A=7{,}50\times10^{-3}$ m):
+      $$P_{med}=\tfrac12\sqrt{(0{,}0500)(1{,}953)}\,(785{,}4)^2(7{,}50\times10^{-3})^2=\mathbf{5{,}42\ W}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t15/tres-fotos-de-una-onda-sinusoidal-en-t-igual-a-0.svg">
 <div class="figph" role="img" aria-label="Tres fotos de una onda sinusoidal en t igual a 0, 0,5 milisegundos y 1,0 milisegundos: cada foto es la anterior desplazada 0,3125 centímetros hacia la izquierda, es decir en sentido menos x" style="aspect-ratio:340/215"></div>
@@ -578,43 +705,76 @@
 </details>
 <details class="sol" id="e1522"><summary>Problema 15.22 — Potencia media en una cuerda de piano <span class="src" data-l="E" data-ref="Solucionario 15-8, Prob. 15.22">E 15-8</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 15.22, p. 498; §15.5, ec. 15.25, pp. 482-483">U p.498, 482-483</span></summary>
 <p class="enun">La cuerda de un piano, de masa 3,00 g y longitud 80,0 cm, se estira con una tensión de 25,0 N. Una onda de frecuencia 120,0 Hz y amplitud 1,6 mm viaja por la cuerda. a) Calcula la potencia media que transporta. b) ¿Qué sucede con la potencia media si la amplitud se reduce a la mitad?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Potencia media: $P_{med}=\tfrac12\sqrt{\mu F}\;\omega^2A^2$</li>
+      <li>$\mu=\dfrac mL$; $\omega=2\pi f$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Por qué hay potencia.</b> Cada trozo de cuerda tira del siguiente (tensión) y este se mueve transversalmente ⇒ realiza trabajo sobre él: la energía avanza con la onda.</li>
-    <li>$\mu=3{,}00\times10^{-3}/0{,}800=3{,}75\times10^{-3}$ kg/m; $\omega=2\pi(120{,}0)=754$ rad/s.</li>
-    <li><b>a)</b> (15.25): $P_{med}=\tfrac12\sqrt{\mu F}\,\omega^2A^2=\tfrac12\sqrt{(3{,}75\times10^{-3})(25{,}0)}\,(754)^2(1{,}6\times10^{-3})^2=\mathbf{0{,}22\ W}$ (0,223 W).</li>
-    <li><b>b)</b> $P_{med}\propto A^2$ ⇒ con $A/2$, $P_{med}/4=\mathbf{0{,}056\ W}$.</li>
+    <li><b>Datos en SI:</b>
+      $$\mu=\frac{3{,}00\times10^{-3}}{0{,}800}=3{,}75\times10^{-3}\ \text{kg/m},\qquad\omega=2\pi(120{,}0)=754\ \text{rad/s}$$</li>
+    <li><b>a) Potencia media:</b>
+      $$P_{med}=\tfrac12\sqrt{(3{,}75\times10^{-3})(25{,}0)}\,(754)^2(1{,}6\times10^{-3})^2=\tfrac12(0{,}306)(5{,}685\times10^5)(2{,}56\times10^{-6})=\mathbf{0{,}22\ W}$$</li>
+    <li><b>b) Amplitud a la mitad:</b>
+      $$P_{med}\propto A^2\ \Rightarrow\ P_{med}'=\frac{0{,}223}{4}=\mathbf{0{,}056\ W}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> $P_{med}=\tfrac12\sqrt{\mu F}\,\omega^2A^2$: cuadrática en $\omega$ y en $A$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Olvidar el ½ (eso es $P_{máx}$, 15.24) o usar $f$ en lugar de $\omega$.</p></div>
 </details>
 <details class="sol" id="e1540"><summary>Problema 15.40 — Fundamental de una cuerda de piano y armónico audible más alto <span class="src" data-l="E" data-ref="Solucionario 15-14, Prob. 15.40">E 15-14</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U Ejercicio 15.40, p. 500; §15.8, ec. 15.33 y 15.35, pp. 491-493">U p.500, 491-493</span></summary>
 <p class="enun">Un afinador estira la cuerda de acero de un piano con una tensión de 800 N. La cuerda mide 0,400 m y tiene una masa de 3,00 g. a) Calcula la frecuencia de su modo fundamental. b) Determina el número del armónico más alto que podría oír una persona que percibe hasta 10 000 Hz.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$v=\sqrt{F/\mu}=\sqrt{FL/m}$; $f_1=\dfrac{v}{2L}$; $f_n=n\,f_1$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> $\mu=m/L=7{,}50\times10^{-3}$ kg/m ⇒ $v=\sqrt{F/\mu}=\sqrt{FL/m}=\sqrt{800\cdot0{,}400/0{,}00300}=327$ m/s. Fundamental: $\lambda_1=2L$ ⇒ $f_1=v/2L=326{,}6/0{,}800=\mathbf{408\ Hz}$ (15.35).</li>
-    <li><b>b)</b> $f_n=nf_1\le10\,000\Rightarrow n\le10\,000/408{,}2=24{,}5\Rightarrow$ <b>$n=24$</b> ($f_{24}=9{,}80$ kHz; $f_{25}=10{,}2$ kHz ya no se oye). El sonido emitido tiene las mismas frecuencias que la cuerda.</li>
+    <li><b>a) Fundamental</b> ($\mu=m/L=7{,}50\times10^{-3}$ kg/m):
+      $$v=\sqrt{\frac{FL}{m}}=\sqrt{\frac{800(0{,}400)}{0{,}00300}}=327\ \text{m/s},\qquad f_1=\frac{v}{2L}=\frac{326{,}6}{0{,}800}=\mathbf{408\ Hz}$$</li>
+    <li><b>b) Armónico más alto audible:</b>
+      $$n\le\frac{10\,000}{408{,}2}=24{,}5\ \Rightarrow\ \mathbf{n=24}$$
+      <span class="por">$f_{24}=9{,}80$ kHz; $f_{25}=10{,}2$ kHz ya no se oye. No se redondea hacia arriba.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> $f_1=\frac1{2L}\sqrt{F/\mu}$; armónico máximo = parte entera de $f_{lím}/f_1$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Redondear $n$ hacia arriba (25).</p></div>
 </details>
 <details class="sol" id="e1547"><summary>Problema 15.47 — Cuerda de guitarra: rapidez, ajuste fino y sonido emitido <span class="src" data-l="E" data-ref="Solucionario 15-16 y 15-17, Prob. 15.47">E 15-16</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 15.47, p. 500; §15.8, ec. 15.35, p. 493">U p.500, 493</span></summary>
 <p class="enun">Una de las cuerdas de 63,5 cm de una guitarra se afina para producir la nota si (B3, 245 Hz) vibrando en su modo fundamental. a) Calcula la rapidez de las ondas transversales en la cuerda. b) Si la tensión aumenta un 1,0 %, ¿cuál será la nueva frecuencia fundamental? c) Si la rapidez del sonido en el aire es 344 m/s, calcula la frecuencia y la longitud de onda de la onda sonora producida por la cuerda en el si (B3). Compáralas con las de la onda estacionaria en la cuerda.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$f_1=\dfrac{v}{2L}$ ⇒ $v=2L\,f_1$; $f_1\propto\sqrt F$</li>
+      <li>Sonido: $f_{aire}=f_{cuerda}$; $\lambda_{aire}=\dfrac{v_{aire}}{f}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> $f_1=v/2L\Rightarrow v=2Lf_1=2(0{,}635)(245)=\mathbf{311\ m/s}$.</li>
-    <li><b>b)</b> $f_1\propto v\propto\sqrt F\Rightarrow f_1'=245\sqrt{1{,}010}=\mathbf{246\ Hz}$ (246,2: un 1 % más de tensión sube $f$ solo ≈0,5 %).</li>
-    <li><b>c)</b> Frecuencia del sonido $=\mathbf{245\ Hz}$; $\lambda_{aire}=344/245=\mathbf{1{,}40\ m}$. En la cuerda: misma $f$ y $\lambda_1=2L=1{,}27$ m. Las $\lambda$ difieren en la razón de rapideces ($344/311$).</li>
+    <li><b>a) Rapidez en la cuerda:</b>
+      $$v=2L\,f_1=2(0{,}635)(245)=\mathbf{311\ m/s}$$</li>
+    <li><b>b) Tensión +1,0 %:</b>
+      $$f_1'=245\sqrt{1{,}010}=\mathbf{246\ Hz}\ \ (246{,}2)$$
+      <span class="por">Un 1 % más de tensión sube $f$ solo ≈0,5 %.</span></li>
+    <li><b>c) Sonido en el aire:</b>
+      $$f=\mathbf{245\ Hz},\qquad\lambda_{aire}=\frac{344}{245}=\mathbf{1{,}40\ m}$$
+      <span class="por">En la cuerda: misma $f$ y $\lambda_1=2L=1{,}27$ m; las longitudes de onda difieren en la razón de rapideces (344/311).</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> cambios pequeños: $\Delta f/f\approx\tfrac12\,\Delta F/F$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Responder $245\times1{,}01=247$ Hz (proporcionalidad lineal con $F$).</p></div>
 </details>
 <details class="sol" id="e19p"><summary>Problema práctico de U — Ondas transversales en una cuerda que gira <span class="src" data-l="P" data-ref="Resolución propia del problema práctico de U, comprobada con sympy">P</span> <span class="prio p3">⚪</span> <span class="src" data-l="U" data-ref="U Problema práctico, p. 496; §5.4 pp. 150-151; §8.5 pp. 254-255; §15.4 p. 480">U p.496</span></summary>
 <p class="enun">Una cuerda uniforme de longitud $L$ y masa $m$ se sujeta por un extremo y se hace girar en un círculo horizontal con velocidad angular $\omega$. Desprecia la gravedad. a) En un punto a distancia $r$ del extremo fijo, ¿cuál es la tensión $F$? b) ¿Cuál es la rapidez de las ondas transversales en ese punto? c) Calcula el tiempo que tarda una onda transversal en ir de un extremo de la cuerda al otro. (Esta $\omega$ es la de giro de la cuerda, no la de la onda.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Segunda ley para el centro de masa del trozo exterior: $F=m_{trozo}\,\omega^2\,r_{cm}$</li>
+      <li>Rapidez de la onda: $v=\sqrt{F/\mu}$, $\mu=m/L$</li>
+      <li>Tiempo de recorrido: $t=\displaystyle\int\frac{dr}{v}$; $\displaystyle\int\frac{dr}{\sqrt{L^2-r^2}}=\arcsin\frac rL$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Qué esperar.</b> La tensión en $r$ debe proporcionar la fuerza centrípeta de <b>todo lo que hay más afuera</b>; cuanto más cerca del eje, más masa hay fuera ⇒ $F$ máxima en $r=0$ y nula en el extremo libre $r=L$. Igual para $v=\sqrt{F/\mu}$.</li>
-    <li><b>DCL del trozo exterior</b> (de $r$ a $L$). Única fuerza horizontal: la tensión $F(r)$, dirigida hacia el eje. Su masa es $m(L-r)/L$ y su centro de masa está en $(L+r)/2$, con aceleración centrípeta $\omega^2(L+r)/2$. La segunda ley para el centro de masa: $$F(r)=\frac{m(L-r)}{L}\,\omega^2\frac{L+r}{2}=\boxed{\frac{m\omega^2}{2L}(L^2-r^2)}.$$ Comprobación: $F(L)=0$ ✓; $F(0)=m\omega^2L/2$ (toda la masa con su centro en $L/2$) ✓.</li>
-    <li><b>Comprobación con un elemento.</b> Trozo $dr$ de masa $dm=(m/L)\,dr$: $F(r)-F(r+dr)=dm\,\omega^2r\Rightarrow dF/dr=-\frac mL\omega^2r$; integrando con $F(L)=0$ sale la misma expresión.</li>
-    <li><b>b)</b> $\mu=m/L$ ⇒ $v(r)=\sqrt{F/\mu}=\boxed{\omega\sqrt{\dfrac{L^2-r^2}{2}}}$ (15.14). No depende de $m$. Máxima en el eje, $\omega L/\sqrt2$, y nula en el extremo.</li>
-    <li><b>c)</b> $v=dr/dt\Rightarrow dt=dr/v$. Como $v$ cambia de punto a punto, se suma (integra): $$t=\int_0^L\frac{dr}{\omega\sqrt{(L^2-r^2)/2}}=\frac{\sqrt2}{\omega}\int_0^L\frac{dr}{\sqrt{L^2-r^2}}=\frac{\sqrt2}{\omega}\Big[\arcsin\frac rL\Big]_0^L=\boxed{\frac{\pi}{\sqrt2\,\omega}}.$$ La integral converge aunque $v\to0$ en $r=L$.</li>
-    <li><b>Evaluación.</b> Unidades: $[\omega]^{-1}$ = s ✓. Notable: $t$ <b>no depende de $L$</b> ni de $m$: una cuerda más larga es también más rápida (mayor tensión) en la misma proporción. Ejemplo: a 2 vueltas/s, $\omega=12{,}6$ rad/s ⇒ $t=0{,}177$ s.</li>
+    <li><b>a) Tensión.</b> La tensión en $r$ da la fuerza centrípeta del trozo exterior (de $r$ a $L$): masa $m(L-r)/L$, centro de masa en $(L+r)/2$:
+      $$F(r)=\frac{m(L-r)}{L}\,\omega^2\,\frac{L+r}{2}=\boxed{\frac{m\omega^2}{2L}\big(L^2-r^2\big)}$$
+      <span class="por">Comprobación: $F(L)=0$ ✓ y $F(0)=m\omega^2L/2$ (toda la masa con su cm en $L/2$) ✓. Con un elemento: $dF/dr=-\tfrac mL\omega^2r$, e integrando con $F(L)=0$ sale lo mismo.</span></li>
+    <li><b>b) Rapidez</b> ($\mu=m/L$):
+      $$v(r)=\sqrt{\frac{F}{\mu}}=\boxed{\omega\sqrt{\frac{L^2-r^2}{2}}}$$
+      <span class="por">No depende de $m$. Máxima en el eje, $\omega L/\sqrt2$; nula en el extremo libre.</span></li>
+    <li><b>c) Tiempo</b> ($dt=dr/v$, $v$ cambia de punto a punto):
+      $$t=\int_0^L\frac{dr}{\omega\sqrt{(L^2-r^2)/2}}=\frac{\sqrt2}{\omega}\Big[\arcsin\frac rL\Big]_0^L=\frac{\sqrt2}{\omega}\cdot\frac\pi2=\boxed{\frac{\pi}{\sqrt2\,\omega}}$$
+      <span class="por">La integral converge aunque $v\to0$ en $r=L$. $t$ no depende de $L$ ni de $m$: una cuerda más larga es también más rápida. Ejemplo: a 2 vueltas/s, $\omega=12{,}6$ rad/s ⇒ $t=0{,}177$ s.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t15/vista-desde-arriba-de-una-cuerda-de-longitud-l-q.svg">
 <div class="figph" role="img" aria-label="Vista desde arriba de una cuerda de longitud L que gira con velocidad angular omega; debajo, gráfica de la tensión F y de la rapidez de onda v en función de r partido por L, ambas máximas en el eje y nulas en el extremo libre" style="aspect-ratio:340/276"></div>
@@ -644,6 +804,12 @@
 <div class="nivel" id="teoria-t15"><b>📝 Preguntas de teoría (4 puntos)</b><span>Es lo único de este tema que ha caído: «Ondas estacionarias en una cuerda» (Febrero 2019, 1ª semana: X1). Primero la pregunta real con su respuesta modelo, después dos cuestiones cortas propias del estilo de las que acompañan a la teoría desde 2022 (C1, C2) y un guion por si te toca otro apartado del capítulo.</span></div>
 <details class="sol" id="x1"><summary>X1 — Teoría: «Ondas estacionarias en una cuerda» <span class="src" data-l="X" data-ref="Examen Febrero 2019 (1ª semana) P-3 Teoría Opción 3.1">X</span> <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="U" data-ref="U §15.6-15.8, ec. 15.14, 15.27-15.35, pp. 485-494">U p.485-494</span></summary>
 <p class="enun">Pregunta de teoría (4 puntos), a elegir entre dos opciones. Opción 3.1: <b>«Ondas estacionarias en una cuerda»</b>. (El enunciado del examen es solo el título; la otra opción era «Momento angular. Conservación».)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Onda viajera: $y=A\cos(kx\mp\omega t)$; $v=\lambda f=\dfrac\omega k=\sqrt{F/\mu}$</li>
+      <li>Estacionaria (cuerda fija en $x=0$): $y=(A_{OE}\sin kx)\sin\omega t$, $A_{OE}=2A$; nodos: $x=\dfrac{m\lambda}{2}$</li>
+      <li>Modos normales: $L=\dfrac{n\lambda_n}{2}$; $f_n=n\dfrac{v}{2L}=n\,f_1$; $f_1=\dfrac{1}{2L}\sqrt{F/\mu}$</li>
+    </ul></div>
   <p>Esquema de respuesta modelo (aproximadamente una cara). Lo que <b>no puede faltar</b> está en negrita; las figuras son las de §7 y §8.</p>
   <ol class="steps">
     <li><b>Punto de partida: la onda viajera sinusoidal.</b> Una perturbación se propaga por una cuerda tensa con rapidez <b>$v=\sqrt{F/\mu}$</b> (15.14), que depende solo del medio. Si es sinusoidal: <b>$y(x,t)=A\cos(kx-\omega t)$</b> hacia $+x$ y $A\cos(kx+\omega t)$ hacia $-x$, con $k=2\pi/\lambda$, $\omega=2\pi f$ y <b>$v=\lambda f=\omega/k$</b> (15.1, 15.6).</li>
@@ -662,6 +828,11 @@
 </details>
 <details class="sol" id="c1"><summary>Cuestión corta C1 (propia): cuadruplicar la tensión <span class="prio p1">🔴</span> <span class="src" data-l="P" data-ref="Cuestión corta propia, estilo examen; NO es de examen. Teoría: U §15.4 y §15.8, ec. 15.14 y 15.35">P</span></summary>
 <p class="enun">Una cuerda de guitarra fija en ambos extremos vibra en su modo fundamental. a) Si se cuadruplica la tensión, ¿qué les ocurre a la frecuencia fundamental y a la longitud de onda del modo fundamental? b) ¿Y a la longitud de onda del sonido que emite en el aire?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Cuerda fija en ambos extremos: $\lambda_n=\dfrac{2L}{n}$; $f_n=\dfrac{v}{\lambda_n}=n\dfrac{v}{2L}$</li>
+      <li>Rapidez en la cuerda: $v=\sqrt{F/\mu}$; en el aire: $\lambda_{aire}=\dfrac{v_{aire}}{f}$</li>
+    </ul></div>
   <ol class="steps">
     <li><b>a)</b> $\lambda_1=2L$ depende <b>solo de la geometría</b>: <b>no cambia</b>. $v=\sqrt{F/\mu}$ se <b>duplica</b> ($\sqrt4=2$) ⇒ $f_1=v/2L$ <b>se duplica</b> (sube una octava) (15.35).</li>
     <li><b>b)</b> El sonido tiene la frecuencia de la cuerda, que ahora es el doble; su rapidez en el aire (344 m/s) no cambia ⇒ $\lambda_{aire}=v_{aire}/f$ <b>se reduce a la mitad</b>.</li>
@@ -670,6 +841,10 @@
 </details>
 <details class="sol" id="c2"><summary>Cuestión corta C2 (propia): un dedo en $L/3$ <span class="prio p1">🔴</span> <span class="src" data-l="P" data-ref="Cuestión corta propia, estilo examen; NO es de examen. Teoría: U §15.8, ec. 15.29-15.30, pp. 491-494">P</span></summary>
 <p class="enun">Si se toca ligeramente una cuerda tensa (fija en ambos extremos) en el punto $x=L/3$ mientras se la excita, ¿qué armónicos pueden sonar? ¿Cuál es la frecuencia más baja?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Nodos del modo $n$: $x=\dfrac{m\,L}{n}$, $m=0,1,\dots,n$; frecuencias $f_n=n\,f_1$</li>
+    </ul></div>
   <ol class="steps">
     <li>El dedo impone un <b>nodo</b> en $x=L/3$. En el modo $n$ los nodos están en $x=mL/n$ ($m=0,1,\dots,n$), porque $L=n\lambda_n/2$ y los nodos distan $\lambda_n/2$ (15.29-15.30).</li>
     <li>Debe existir un $m$ con $m/n=1/3\Rightarrow n=3m$: <b>solo pueden sonar $n=3,6,9,\dots$</b> La más baja es $f_3=3f_1$.</li>
