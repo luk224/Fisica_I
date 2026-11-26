@@ -1,12 +1,24 @@
 <p class="enun">Dos esferas sólidas uniformes, cada una de masa $M=0{,}800$ kg y radio $R=0{,}0800$ m, están unidas por una varilla corta y ligera que pasa por un diámetro de cada una, y reposan sobre una mesa horizontal. Un resorte de constante $k=160$ N/m tiene un extremo fijo a una pared y el otro unido a un anillo sin fricción que rodea la varilla en el centro de masa de las esferas (a mitad de camino entre sus centros). Se tira de las esferas alejándolas de la pared, estirando el resorte, y se sueltan. Hay fricción suficiente para que rueden sin resbalar. Demuestra que el movimiento del centro de masa es armónico simple y calcula su periodo.</p>
   <p>Mismo método que el problema práctico del Núcleo, con esferas en lugar de cilindros.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Traslación: $\sum F_x=2M\,a_{cm}$; rotación de cada esfera: $f_s\,R=I\alpha$, $I=\tfrac25MR^2$</li>
+      <li>Rodar sin resbalar: $a_{cm}=R\alpha$</li>
+      <li>MAS: $a=-\omega^2x$; $T=\dfrac{2\pi}{\omega}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Ecuaciones.</b> Para <b>cada</b> esfera, rotación alrededor de su centro: solo la fricción $f_s$ del suelo hace torca, $f_sR=I\alpha=\tfrac25MR^2\alpha$ (tabla 9.2); rodar sin resbalar $a_{cm}=R\alpha$ ⇒ $f_s=\tfrac25Ma_{cm}$ (en módulo, opuesta a la fuerza del resorte).</li>
-    <li><b>Traslación del sistema</b> (masa $2M$): $-kx+2f_s=2Ma_{cm}$ con $f_s$ en sentido opuesto a $a_{cm}$ ⇒ $-kx-\tfrac45Ma_{cm}=2Ma_{cm}$.</li>
-    <li><b>Despeja.</b> $\tfrac{14}{5}Ma_{cm}=-kx$ ⇒ $a_{cm}=-\dfrac{5k}{14M}x$: forma $a=-\omega^2x$ ⇒ <b>MAS</b> con $\omega=\sqrt{\dfrac{5k}{14M}}=\sqrt{\dfrac{5(160)}{14(0{,}800)}}=8{,}45$ rad/s.</li>
-    <li><b>Periodo.</b> $T=2\pi\sqrt{\dfrac{14M}{5k}}=2\pi\sqrt{\dfrac{14(0{,}800)}{5(160)}}=$ <b>0,743 s</b>.</li>
-    <li><b>Por energía (comprobación).</b> Masa efectiva $2\left(M+\dfrac{I}{R^2}\right)=2\cdot\tfrac75M=\tfrac{14}{5}M$ ⇒ $\omega^2=k/(\tfrac{14}{5}M)$ ✓. Sin fricción (sin giro) sería $T_0=2\pi\sqrt{2M/k}=0{,}628$ s: rodando, el periodo es $\sqrt{7/5}=1{,}18$ veces mayor (menos que el 1,22 de los cilindros, porque una esfera maciza tiene menor $I/MR^2$).</li>
-    <li><b>Notas.</b> $R$ no interviene en el resultado. La fricción es estática y no trabaja: la energía mecánica se conserva y la amplitud no decae.</li>
+    <li><b>Rotación de cada esfera</b> (solo la fricción hace torca):
+      $$f_s\,R=\tfrac25MR^2\,\alpha=\tfrac25MR^2\frac{a_{cm}}{R}\ \Rightarrow\ f_s=\tfrac25M\,a_{cm}$$</li>
+    <li><b>Traslación del sistema</b> (masa $2M$; las dos fricciones se oponen a $a_{cm}$):
+      $$-kx-2f_s=2M\,a_{cm}\ \Rightarrow\ -kx-\tfrac45M\,a_{cm}=2M\,a_{cm}$$</li>
+    <li><b>Despejar:</b>
+      $$\tfrac{14}{5}M\,a_{cm}=-kx\ \Rightarrow\ a_{cm}=-\frac{5k}{14M}\,x$$
+      <span class="por">Forma $a=-\omega^2x$ ⇒ el centro de masa describe un MAS.</span></li>
+    <li><b>Frecuencia y periodo:</b>
+      $$\omega=\sqrt{\frac{5k}{14M}}=\sqrt{\frac{5(160)}{14(0{,}800)}}=8{,}45\ \text{rad/s}$$
+      $$T=2\pi\sqrt{\frac{14M}{5k}}=2\pi\sqrt{\frac{14(0{,}800)}{5(160)}}=\mathbf{0{,}743\ s}$$</li>
+    <li><b>Comprobación por energía.</b> Masa efectiva $2\big(M+\tfrac{I}{R^2}\big)=\tfrac{14}{5}M$ ✓.
+      <span class="por">Sin giro sería $T_0=2\pi\sqrt{2M/k}=0{,}628$ s: rodando, el periodo es $\sqrt{7/5}=1{,}18$ veces mayor. $R$ no interviene; la fricción es estática y no trabaja.</span></li>
   </ol>
   {{fig:masa-efectiva-de-un-oscilador-que-rueda-1-4-m-pa}}
   <div class="recipe"><b>Receta:</b> oscilador rodante: $T=2\pi\sqrt{M_{ef}/k}$ con $M_{ef}=\sum(M+I_{cm}/R^2)$; para esfera maciza $\tfrac75M$, cilindro macizo $\tfrac32M$, aro $2M$.</div>

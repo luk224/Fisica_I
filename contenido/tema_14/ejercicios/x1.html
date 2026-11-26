@@ -1,17 +1,35 @@
 <p class="enun">Un resorte con masa despreciable y constante elástica $k=500$ N/m cuelga verticalmente y de su extremo inferior cuelga una bandeja de 0,5 kg. Se deja caer sobre la bandeja una masa deformable de 1 kg desde una altura de 0,5 m. Suponiendo que el impacto de la masa sobre la bandeja es perfectamente inelástico y que el sistema queda en movimiento armónico simple vertical, calcula: a) la velocidad de la bandeja y la masa justo después del impacto; b) la amplitud del movimiento posterior; c) el periodo de ese movimiento. (3 puntos)</p>
 {{fig:x3-planteamiento}}
   <p>Este mismo ejercicio está resuelto en el <a href="tema_08_momento_colisiones.html#x3">tema 8 (X3)</a> con la energía del resorte y de la gravedad; aquí lo hacemos con las <b>herramientas de este tema</b> (equilibrio desplazado, $\omega$, $A$ de las condiciones iniciales), que es más corto y es lo que el enunciado sugiere ("queda en MAS"). Los resultados coinciden.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Caída libre: $v_0=\sqrt{2gh}$; choque totalmente inelástico: $m\,v_0=(m+M)\,V$</li>
+      <li>MAS vertical: $\omega=\sqrt{\dfrac{k}{m+M}}$, $T=2\pi\sqrt{\dfrac{m+M}{k}}$</li>
+      <li>Nuevo equilibrio desplazado: $x_0=\dfrac{m\,g}{k}$ (masa añadida)</li>
+      <li>Amplitud: $A=\sqrt{x_0^2+\dfrac{v_{0x}^2}{\omega^2}}$; fase: $\phi=\arctan\Big(-\dfrac{v_{0x}}{\omega\,x_0}\Big)$</li>
+    </ul></div>
+  <p>Este ejercicio está resuelto en el <a href="tema_08_momento_colisiones.html#x3">tema 8 (X3)</a> con la energía; aquí con las herramientas del MAS. Los resultados coinciden.</p>
   <ol class="steps">
-    <li><b>Tres etapas, tres leyes.</b> (i) Caída libre de $m$ → cinemática; (ii) choque instantáneo → solo se conserva la cantidad de movimiento; (iii) después, MAS del conjunto. No se puede usar la energía <i>a través</i> del choque: un choque totalmente inelástico pierde energía cinética.</li>
-    <li><b>Caída libre.</b> $v_0^2=2gh$ ⇒ $v_0=\sqrt{2(9{,}8)(0{,}5)}=3{,}13$ m/s hacia abajo.</li>
-    <li><b>a) Choque.</b> Dura tan poco que el impulso del peso y del resorte es despreciable frente al de las fuerzas internas ⇒ $P_y$ se conserva: $m\,v_0=(m+M)V$ ⇒ $V=\dfrac{1\cdot3{,}13}{1{,}5}=$ <b>2,09 m/s hacia abajo</b>.</li>
-    <li><b>¿Dónde está el nuevo equilibrio?</b> La gravedad solo <i>desplaza</i> el equilibrio (§4.1). Antes del choque la bandeja sola estaba en equilibrio con estiramiento $Mg/k$; el conjunto lo tendrá en $(m+M)g/k$. El nuevo equilibrio está más abajo, a $mg/k=\dfrac{1\cdot9{,}8}{500}=0{,}0196$ m.</li>
-    <li><b>Condiciones iniciales del MAS</b> ($t=0$ justo tras el choque, $+x$ hacia arriba, $x$ medida desde el <i>nuevo</i> equilibrio): $x_0=+0{,}0196$ m (el choque ocurre <b>por encima</b> del nuevo equilibrio) y $v_{0x}=-2{,}09$ m/s.</li>
-    <li><b>Frecuencia angular.</b> $\omega=\sqrt{\dfrac{k}{m+M}}=\sqrt{\dfrac{500}{1{,}5}}=18{,}26$ rad/s. La masa que oscila es la del <b>conjunto</b>.</li>
-    <li><b>b) Amplitud</b> (14.19): $A=\sqrt{x_0^2+\dfrac{v_{0x}^2}{\omega^2}}=\sqrt{0{,}0196^2+\left(\dfrac{2{,}087}{18{,}26}\right)^2}=\sqrt{0{,}0196^2+0{,}1143^2}=$ <b>0,116 m</b>.</li>
-    <li><b>c) Periodo</b> (14.12): $T=2\pi\sqrt{\dfrac{m+M}{k}}=2\pi\sqrt{\dfrac{1{,}5}{500}}=$ <b>0,344 s</b>. No depende de $g$ ni de $A$.</li>
-    <li><b>(Ampliación) Ecuación completa.</b> $\phi=\arctan\!\left(-\dfrac{v_{0x}}{\omega x_0}\right)=\arctan(5{,}83)=1{,}40$ rad (80,3°), cuadrante correcto porque $x_0\gt0$. Así $x(t)=(0{,}116\ \text{m})\cos[(18{,}26\ \text{rad/s})t+1{,}40]$; el punto más bajo se alcanza cuando $\omega t+\phi=\pi$, en $t=0{,}095$ s.</li>
-    <li><b>Comprobación.</b> Si se olvida que el choque ocurre fuera del nuevo equilibrio, sale $A=V/\omega=0{,}114$ m (error del 2 %): pequeño aquí, pero es un error de planteamiento. $a_{máx}=\omega^2A=38{,}7$ m/s² $\gt g$: si la masa no estuviera pegada, se separaría en la parte alta.</li>
+    <li><b>Tres etapas.</b> Caída libre ⇒ cinemática; choque instantáneo ⇒ solo se conserva la cantidad de movimiento; después, MAS del conjunto. Datos: $k=500$ N/m, $M=0{,}5$ kg, $m=1$ kg, $h=0{,}5$ m.
+      <span class="por">No se puede usar la energía a través del choque: pierde energía cinética.</span></li>
+    <li><b>Caída libre:</b>
+      $$v_0=\sqrt{2gh}=\sqrt{2(9{,}8)(0{,}5)}=3{,}13\ \text{m/s hacia abajo}$$</li>
+    <li><b>a) Choque</b> (el impulso del peso y del resorte es despreciable):
+      $$m\,v_0=(m+M)\,V\ \Rightarrow\ V=\frac{1(3{,}13)}{1{,}5}=\mathbf{2{,}09\ m/s}\ \text{hacia abajo}$$</li>
+    <li><b>Nuevo equilibrio.</b> La gravedad solo desplaza el equilibrio: el del conjunto está más abajo, a
+      $$\frac{m\,g}{k}=\frac{1(9{,}8)}{500}=0{,}0196\ \text{m}$$
+      <span class="por">Condiciones iniciales ($+x$ hacia arriba, $x$ desde el nuevo equilibrio): $x_0=+0{,}0196$ m (el choque ocurre por encima) y $v_{0x}=-2{,}09$ m/s.</span></li>
+    <li><b>Frecuencia angular</b> (oscila el conjunto):
+      $$\omega=\sqrt{\frac{k}{m+M}}=\sqrt{\frac{500}{1{,}5}}=18{,}26\ \text{rad/s}$$</li>
+    <li><b>b) Amplitud:</b>
+      $$A=\sqrt{x_0^2+\frac{v_{0x}^2}{\omega^2}}=\sqrt{0{,}0196^2+\Big(\frac{2{,}087}{18{,}26}\Big)^2}=\sqrt{0{,}0196^2+0{,}1143^2}=\mathbf{0{,}116\ m}$$</li>
+    <li><b>c) Periodo:</b>
+      $$T=2\pi\sqrt{\frac{m+M}{k}}=2\pi\sqrt{\frac{1{,}5}{500}}=\mathbf{0{,}344\ s}$$
+      <span class="por">No depende de $g$ ni de $A$.</span></li>
+    <li><b>Ampliación (ecuación completa):</b>
+      $$\phi=\arctan\Big(\frac{2{,}087}{(18{,}26)(0{,}0196)}\Big)=\arctan(5{,}83)=1{,}40\ \text{rad}\ (80{,}3^\circ)$$
+      $$x(t)=(0{,}116\ \text{m})\cos\big[(18{,}26\ \text{rad/s})\,t+1{,}40\big]$$
+      <span class="por">El punto más bajo se alcanza cuando $\omega t+\phi=\pi$, en $t=0{,}095$ s. Si se olvida que el choque ocurre fuera del nuevo equilibrio, sale $A=V/\omega=0{,}114$ m (error del 2 %). $a_{m\acute ax}=\omega^2A=38{,}7$ m/s² $>g$: si la masa no estuviera pegada, se separaría arriba.</span></li>
   </ol>
   {{fig:niveles-del-resorte-en-el-ejercicio-x1-nuevo-equ}}
   {{fig:grafica-de-x-t-tras-el-choque-11-6-cm-de-amplitu}}

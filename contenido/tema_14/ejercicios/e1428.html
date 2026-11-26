@@ -1,11 +1,20 @@
 <p class="enun">Un oscilador armónico tiene frecuencia angular $\omega$ y amplitud $A$. a) Calcula la magnitud del desplazamiento y de la velocidad cuando la energía potencial elástica es igual a la cinética (con $U=0$ en el equilibrio). b) ¿Cuántas veces sucede eso en cada ciclo? ¿Cada cuánto tiempo? c) Cuando el desplazamiento es $A/2$, ¿qué fracción de la energía total es cinética y qué fracción potencial?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Energía total: $E=\tfrac12kA^2=K+U$; $U=\tfrac12kx^2$</li>
+      <li>$\dfrac UE=\Big(\dfrac xA\Big)^2$, $\ \dfrac KE=1-\Big(\dfrac xA\Big)^2$; $v_{m\acute ax}=\omega A$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a) Posición.</b> $U+K=E$ y $U=K$ ⇒ $2U=E$: $2\cdot\tfrac12kx^2=\tfrac12kA^2$ ⇒ $|x|=$ <b>$A/\sqrt2\approx0{,}707A$</b>.</li>
-    <li><b>a) Velocidad.</b> También $2K=E$: $mv^2=\tfrac12kA^2$ ⇒ $|v|=\sqrt{k/m}\,A/\sqrt2=$ <b>$\omega A/\sqrt2$</b> (es decir, $v_{máx}/\sqrt2$).</li>
-    <li><b>b) Cuántas veces.</b> En un ciclo $x$ va de $A$ a 0, a $-A$, a 0 y vuelve a $A$: pasa por $+A/\sqrt2$ dos veces y por $-A/\sqrt2$ dos veces ⇒ <b>4 veces por ciclo</b>.</li>
-    <li><b>b) Cada cuánto.</b> Con $x=A\cos\omega t$: $\cos\omega t=\pm1/\sqrt2$ ⇒ $\omega t=\pi/4,\ 3\pi/4,\ 5\pi/4,\ 7\pi/4$: separados $\pi/2$ ⇒ $\Delta t=\dfrac{\pi}{2\omega}=$ <b>$T/4$</b>. Están equiespaciados en el tiempo (no en $x$), como se ve en el círculo de referencia: son los cuatro ángulos a 45° de los ejes.</li>
-    <li><b>c)</b> $U=\tfrac12k(A/2)^2=\tfrac14\cdot\tfrac12kA^2$ ⇒ <b>$U=E/4$, $K=3E/4$</b> (como en el ejemplo 14.4).</li>
-    <li><b>Por qué $U=K$ no ocurre en $A/2$.</b> $U$ es cuadrática en $x$: a mitad de camino solo hay un cuarto de energía potencial.</li>
+    <li><b>a) Posición</b> ($U=K$ ⇒ $2U=E$):
+      $$2\cdot\tfrac12kx^2=\tfrac12kA^2\ \Rightarrow\ |x|=\frac{A}{\sqrt2}\approx\mathbf{0{,}707\,A}$$</li>
+    <li><b>a) Velocidad</b> ($2K=E$):
+      $$m\,v^2=\tfrac12kA^2\ \Rightarrow\ |v|=\sqrt{\frac km}\frac{A}{\sqrt2}=\mathbf{\frac{\omega A}{\sqrt2}}\ \ (=v_{m\acute ax}/\sqrt2)$$</li>
+    <li><b>b) Cuántas veces.</b> En un ciclo $x$ pasa por $+A/\sqrt2$ dos veces y por $-A/\sqrt2$ dos veces: <b>4 veces por ciclo</b>.</li>
+    <li><b>b) Cada cuánto</b> ($x=A\cos\omega t$):
+      $$\cos\omega t=\pm\frac1{\sqrt2}\ \Rightarrow\ \omega t=\frac\pi4,\ \frac{3\pi}4,\ \frac{5\pi}4,\ \frac{7\pi}4\ \Rightarrow\ \Delta t=\frac{\pi}{2\omega}=\mathbf{\frac T4}$$</li>
+    <li><b>c) $x=A/2$:</b>
+      $$U=\tfrac12k\Big(\frac A2\Big)^2=\tfrac14E\ \Rightarrow\ \mathbf{U=\frac E4},\quad\mathbf{K=\frac{3E}{4}}$$
+      <span class="por">$U$ es cuadrática en $x$: a mitad de camino solo hay un cuarto de la energía potencial.</span></li>
   </ol>
   {{fig:energias-cinetica-y-potencial-en-funcion-del-tie}}
   <div class="recipe"><b>Receta:</b> fracciones de energía en el MAS: $U/E=(x/A)^2$ y $K/E=1-(x/A)^2$.</div>

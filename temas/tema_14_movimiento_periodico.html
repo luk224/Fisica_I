@@ -348,12 +348,20 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <details class="mas pista"><summary>Pista 1</summary><p>El periodo $T=2\pi\sqrt{m/k}$ no depende de $g$: mide masa (inercia). Para el mismo resorte, $m\propto T^2$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$m_{tot}=42{,}5\,(2{,}54/1{,}30)^2$ y resta la masa de la silla.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Por qué funciona en ingravidez.</b> Una balanza mide peso, que en órbita «desaparece» (ingravidez aparente). El periodo $T=2\pi\sqrt{m/k}$ (14.12) <b>no depende de $g$</b>: depende de la masa (la inercia). Así se mide masa sin gravedad.</li>
-    <li><b>Calibrar el resorte con la silla vacía.</b> $k=\dfrac{4\pi^2m}{T^2}=\dfrac{4\pi^2(42{,}5)}{(1{,}30)^2}=993$ N/m.</li>
-    <li><b>Con el astronauta.</b> $m_{tot}=\dfrac{T^2k}{4\pi^2}=\dfrac{(2{,}54)^2(993)}{4\pi^2}=162$ kg.</li>
-    <li><b>Resta la silla.</b> $m_{astr}=162-42{,}5=$ <b>120 kg</b> (con más decimales, 119,7 kg: el astronauta lleva traje).</li>
-    <li><b>Atajo sin calcular $k$.</b> Para el mismo resorte $m\propto T^2$: $m_{astr}=42{,}5\left[\left(\dfrac{2{,}54}{1{,}30}\right)^2-1\right]=119{,}7$ kg.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Periodo: $T=2\pi\sqrt{\dfrac mk}$ (no depende de $g$) ⇒ $k=\dfrac{4\pi^2m}{T^2}$</li>
+      <li>Mismo resorte: $m\propto T^2$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Por qué funciona en ingravidez.</b> Una balanza mide peso; el periodo depende de la masa (inercia), no de $g$.</li>
+    <li><b>Constante del resorte</b> (silla vacía):
+      $$k=\frac{4\pi^2m}{T^2}=\frac{4\pi^2(42{,}5)}{(1{,}30)^2}=993\ \text{N/m}$$</li>
+    <li><b>Masa total</b> (con astronauta):
+      $$m_{tot}=\frac{T^2k}{4\pi^2}=\frac{(2{,}54)^2(993)}{4\pi^2}=162\ \text{kg}$$</li>
+    <li><b>Masa del astronauta:</b>
+      $$m_{astr}=162-42{,}5=\mathbf{120\ kg}\ \ (119{,}7\ \text{kg})$$
+      <span class="por">Atajo sin $k$: $m_{astr}=42{,}5\big[(2{,}54/1{,}30)^2-1\big]=119{,}7$ kg.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/dos-oscilaciones-del-mismo-resorte-con-periodos-.svg">
 <div class="figph" role="img" aria-label="Dos oscilaciones del mismo resorte con periodos 1,30 s (silla vacía) y 2,54 s (silla con astronauta)" style="aspect-ratio:340/235"></div>
@@ -369,13 +377,24 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <details class="mas pista"><summary>Pista 1</summary><p>$\omega=\sqrt{k/m}$; amplitud de (14.19): $A=\sqrt{x_0^2+v_0^2/\omega^2}$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>La fase: $\phi=\arctan(-v_{0x}/\omega x_0)$ revisando el cuadrante; comprueba $x(0)$ y $v(0)$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>$\omega$</b> igual que antes: $\omega=12{,}25$ rad/s.</li>
-    <li><b>a)</b> (14.19): $A=\sqrt{0{,}200^2+\dfrac{(-4{,}00)^2}{12{,}25^2}}=\sqrt{0{,}0400+0{,}1067}=$ <b>0,383 m</b>. Mayor que 0,200 m porque además de estar desplazado el bloque se mueve.</li>
-    <li><b>b)</b> (14.18): $\phi=\arctan\!\left(-\dfrac{-4{,}00}{(12{,}25)(0{,}200)}\right)=\arctan(1{,}633)=$ <b>1,02 rad = 58,5°</b>.</li>
-    <li><b>Comprueba el cuadrante.</b> $x_0\gt0$ ⇒ $\cos\phi\gt0$; $v_{0x}\lt0$ ⇒ $\sin\phi\gt0$ ⇒ primer cuadrante ✓ (si hubiera salido en otro, se sumaría $\pi$).</li>
-    <li><b>c)</b> $x=(0{,}383\ \text{m})\cos[(12{,}2\ \text{rad/s})t+1{,}02\ \text{rad}]$.</li>
-    <li><b>Comprobación (Estrategia 14.1).</b> $x(0)=0{,}383\cos1{,}02=0{,}200$ m ✓; $v_x(0)=-12{,}25(0{,}383)\sin1{,}02=-4{,}00$ m/s ✓.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\omega=\sqrt{k/m}$; $A=\sqrt{x_0^2+\dfrac{v_{0x}^2}{\omega^2}}$; $\phi=\arctan\Big(-\dfrac{v_{0x}}{\omega\,x_0}\Big)$ (revisar el cuadrante)</li>
+      <li>Comprobación: $x(0)=A\cos\phi$, $v_x(0)=-\omega A\sin\phi$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Datos:</b>
+      $$\omega=12{,}25\ \text{rad/s},\qquad x_0=+0{,}200\ \text{m},\quad v_{0x}=-4{,}00\ \text{m/s}$$</li>
+    <li><b>a) Amplitud:</b>
+      $$A=\sqrt{0{,}200^2+\frac{(-4{,}00)^2}{12{,}25^2}}=\sqrt{0{,}0400+0{,}1067}=\mathbf{0{,}383\ m}$$
+      <span class="por">Mayor que 0,200 m porque, además de estar desplazado, el bloque se mueve.</span></li>
+    <li><b>b) Fase:</b>
+      $$\phi=\arctan\Big(-\frac{-4{,}00}{(12{,}25)(0{,}200)}\Big)=\arctan(1{,}633)=\mathbf{1{,}02\ rad}\ (58{,}5^\circ)$$
+      <span class="por">Cuadrante: $x_0>0$ ⇒ $\cos\phi>0$; $v_{0x}<0$ ⇒ $\sin\phi>0$: primer cuadrante ✓.</span></li>
+    <li><b>c) Posición:</b>
+      $$x=(0{,}383\ \text{m})\cos\big[(12{,}2\ \text{rad/s})\,t+1{,}02\ \text{rad}\big]$$</li>
+    <li><b>Comprobación:</b>
+      $$x(0)=0{,}383\cos1{,}02=0{,}200\ \text{m}\ \checkmark,\qquad v_x(0)=-12{,}25(0{,}383)\sin1{,}02=-4{,}00\ \text{m/s}\ \checkmark$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/grafica-de-x-t-0-383-cos-12-2-t-1-02-parte-de-0-.svg">
 <div class="figph" role="img" aria-label="Gráfica de x(t) = 0,383 cos(12,2 t + 1,02): parte de 0,200 m con velocidad negativa" style="aspect-ratio:340/205"></div>
@@ -391,13 +410,24 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <details class="mas pista"><summary>Pista 1</summary><p>Conoces $x$ y $v$ en un instante, no el tiempo: usa la energía, $E=\tfrac12mv^2+\tfrac12kx^2$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>En el extremo toda es potencial ($A=\sqrt{2E/k}$) y en el equilibrio toda es cinética ($v_{máx}=\sqrt{2E/m}$). Pasa g y cm a kg y m.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Por qué energía.</b> Conoces $x$ y $v$ en un instante, no en un tiempo concreto: la energía relaciona posición y velocidad sin el tiempo (Estrategia 14.2). Sin fricción y con resorte ideal, $E$ se conserva (14.21).</li>
-    <li><b>Energía total.</b> $E=\tfrac12(0{,}175)(0{,}815)^2+\tfrac12(155)(0{,}0300)^2=0{,}0581+0{,}0698=0{,}128$ J.</li>
-    <li><b>a)</b> En el extremo toda la energía es potencial: $\tfrac12kA^2=E$ ⇒ $A=\sqrt{2E/k}=$ <b>0,0406 m = 4,06 cm</b>.</li>
-    <li><b>b)</b> En el equilibrio toda es cinética: $\tfrac12mv_{máx}^2=E$ ⇒ $v_{máx}=\sqrt{2E/m}=$ <b>1,21 m/s</b>.</li>
-    <li><b>c)</b> $\omega=\sqrt{k/m}=\sqrt{155/0{,}175}=$ <b>29,8 rad/s</b>. Comprobación: $v_{máx}=\omega A=29{,}76\times0{,}0406=1{,}21$ m/s ✓.</li>
-    <li><b>Observación.</b> $A$ y $v_{máx}$ dependen de la energía; $\omega$ no (solo de $k$ y $m$).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Energía: $E=\tfrac12mv^2+\tfrac12kx^2$ (constante)</li>
+      <li>Extremo: $\tfrac12kA^2=E$; equilibrio: $\tfrac12mv_{m\acute ax}^2=E$</li>
+      <li>$\omega=\sqrt{k/m}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Datos en SI:</b>
+      $$m=0{,}175\ \text{kg},\quad k=155\ \text{N/m},\quad v=0{,}815\ \text{m/s},\quad x=0{,}0300\ \text{m}$$</li>
+    <li><b>Energía total:</b>
+      $$E=\tfrac12(0{,}175)(0{,}815)^2+\tfrac12(155)(0{,}0300)^2=0{,}0581+0{,}0698=0{,}128\ \text{J}$$</li>
+    <li><b>a) Amplitud:</b>
+      $$A=\sqrt{\frac{2E}{k}}=\sqrt{\frac{2(0{,}128)}{155}}=\mathbf{0{,}0406\ m}\ (4{,}06\ \text{cm})$$</li>
+    <li><b>b) Rapidez máxima:</b>
+      $$v_{m\acute ax}=\sqrt{\frac{2E}{m}}=\sqrt{\frac{2(0{,}128)}{0{,}175}}=\mathbf{1{,}21\ m/s}$$</li>
+    <li><b>c) Frecuencia angular:</b>
+      $$\omega=\sqrt{\frac km}=\sqrt{\frac{155}{0{,}175}}=\mathbf{29{,}8\ rad/s}$$
+      <span class="por">Comprobación: $v_{m\acute ax}=\omega A=29{,}76(0{,}0406)=1{,}21$ m/s ✓.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/diagrama-de-energia-del-deslizador-parabola-u-re.svg">
 <div class="figph" role="img" aria-label="Diagrama de energía del deslizador: parábola U, recta E=0,128 J y puntos de retorno en ±4,06 cm" style="aspect-ratio:340/215"></div>
@@ -413,13 +443,22 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <details class="mas pista"><summary>Pista 1</summary><p>$U=K$ y $U+K=E$ implican $U=E/2$; recuerda que $U=\tfrac12kx^2$ es cuadrática en $x$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>En el círculo de referencia son los cuatro ángulos a $45^\circ$ de los ejes: están equiespaciados en el tiempo.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a) Posición.</b> $U+K=E$ y $U=K$ ⇒ $2U=E$: $2\cdot\tfrac12kx^2=\tfrac12kA^2$ ⇒ $|x|=$ <b>$A/\sqrt2\approx0{,}707A$</b>.</li>
-    <li><b>a) Velocidad.</b> También $2K=E$: $mv^2=\tfrac12kA^2$ ⇒ $|v|=\sqrt{k/m}\,A/\sqrt2=$ <b>$\omega A/\sqrt2$</b> (es decir, $v_{máx}/\sqrt2$).</li>
-    <li><b>b) Cuántas veces.</b> En un ciclo $x$ va de $A$ a 0, a $-A$, a 0 y vuelve a $A$: pasa por $+A/\sqrt2$ dos veces y por $-A/\sqrt2$ dos veces ⇒ <b>4 veces por ciclo</b>.</li>
-    <li><b>b) Cada cuánto.</b> Con $x=A\cos\omega t$: $\cos\omega t=\pm1/\sqrt2$ ⇒ $\omega t=\pi/4,\ 3\pi/4,\ 5\pi/4,\ 7\pi/4$: separados $\pi/2$ ⇒ $\Delta t=\dfrac{\pi}{2\omega}=$ <b>$T/4$</b>. Están equiespaciados en el tiempo (no en $x$), como se ve en el círculo de referencia: son los cuatro ángulos a 45° de los ejes.</li>
-    <li><b>c)</b> $U=\tfrac12k(A/2)^2=\tfrac14\cdot\tfrac12kA^2$ ⇒ <b>$U=E/4$, $K=3E/4$</b> (como en el ejemplo 14.4).</li>
-    <li><b>Por qué $U=K$ no ocurre en $A/2$.</b> $U$ es cuadrática en $x$: a mitad de camino solo hay un cuarto de energía potencial.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Energía total: $E=\tfrac12kA^2=K+U$; $U=\tfrac12kx^2$</li>
+      <li>$\dfrac UE=\Big(\dfrac xA\Big)^2$, $\ \dfrac KE=1-\Big(\dfrac xA\Big)^2$; $v_{m\acute ax}=\omega A$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Posición</b> ($U=K$ ⇒ $2U=E$):
+      $$2\cdot\tfrac12kx^2=\tfrac12kA^2\ \Rightarrow\ |x|=\frac{A}{\sqrt2}\approx\mathbf{0{,}707\,A}$$</li>
+    <li><b>a) Velocidad</b> ($2K=E$):
+      $$m\,v^2=\tfrac12kA^2\ \Rightarrow\ |v|=\sqrt{\frac km}\frac{A}{\sqrt2}=\mathbf{\frac{\omega A}{\sqrt2}}\ \ (=v_{m\acute ax}/\sqrt2)$$</li>
+    <li><b>b) Cuántas veces.</b> En un ciclo $x$ pasa por $+A/\sqrt2$ dos veces y por $-A/\sqrt2$ dos veces: <b>4 veces por ciclo</b>.</li>
+    <li><b>b) Cada cuánto</b> ($x=A\cos\omega t$):
+      $$\cos\omega t=\pm\frac1{\sqrt2}\ \Rightarrow\ \omega t=\frac\pi4,\ \frac{3\pi}4,\ \frac{5\pi}4,\ \frac{7\pi}4\ \Rightarrow\ \Delta t=\frac{\pi}{2\omega}=\mathbf{\frac T4}$$</li>
+    <li><b>c) $x=A/2$:</b>
+      $$U=\tfrac12k\Big(\frac A2\Big)^2=\tfrac14E\ \Rightarrow\ \mathbf{U=\frac E4},\quad\mathbf{K=\frac{3E}{4}}$$
+      <span class="por">$U$ es cuadrática en $x$: a mitad de camino solo hay un cuarto de la energía potencial.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/energias-cinetica-y-potencial-en-funcion-del-tie.svg">
 <div class="figph" role="img" aria-label="Energías cinética y potencial en función del tiempo: se cruzan en E/2 cuatro veces por periodo, cada T/4" style="aspect-ratio:340/215"></div>
@@ -435,12 +474,22 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <details class="mas pista"><summary>Pista 1</summary><p>$k=F/\Delta l$ y $m=k\,(T/2\pi)^2$. Elige $t=0$ en el paso por el equilibrio hacia abajo y deduce la fase.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>La fuerza <i>neta</i> es $-kx$; la del resorte es $mg-kx$ (hacia arriba positivo).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a)</b> $k=F/\Delta l=40{,}0/0{,}250=160$ N/m. De (14.12): $m=k\left(\dfrac{T}{2\pi}\right)^2=160\left(\dfrac{1{,}00}{2\pi}\right)^2=$ <b>4,05 kg</b>.</li>
-    <li><b>b) Elige el origen de tiempos.</b> $t=0$ cuando pasa por el equilibrio hacia abajo; con $+x$ hacia arriba: $x_0=0$, $v_{0x}\lt0$ ⇒ $\phi=+\pi/2$ (como en 14.13) ⇒ $x=-A\sin\omega t$, $v_x=-A\omega\cos\omega t$, con $\omega=2\pi$ rad/s.</li>
-    <li><b>b) Sustituye $t=0{,}35$ s</b> ($=0{,}35\,T$): $x=-0{,}050\sin(0{,}70\pi)=$ <b>−0,0405 m</b> (4,0 cm <b>por debajo</b> del equilibrio); $v_x=-0{,}050(2\pi)\cos(0{,}70\pi)=+0{,}185$ m/s ⇒ <b>se mueve hacia arriba</b>.</li>
-    <li><b>b) Por qué tiene sentido.</b> En $T/4=0{,}25$ s llega al punto más bajo; a 0,35 s ya ha rebotado y sube, pero aún no ha llegado al equilibrio (lo haría en $T/2=0{,}50$ s).</li>
-    <li><b>c) Fuerza del resorte, no la neta.</b> La neta es $-kx$; el resorte además equilibra el peso: $F_{res}-mg=-kx$ ⇒ $F_{res}=mg-kx=(4{,}05)(9{,}80)-160(-0{,}030)=39{,}7+4{,}8=$ <b>44,5 N hacia arriba</b>. (Que suba o baje no importa: la fuerza del resorte solo depende de la posición.)</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$k=\dfrac{F}{\Delta l}$; $m=k\Big(\dfrac{T}{2\pi}\Big)^2$</li>
+      <li>Desde el equilibrio ($+x$ hacia arriba): $x=-A\sin\omega t$, $v_x=-A\omega\cos\omega t$ (pasa por el equilibrio hacia abajo en $t=0$)</li>
+      <li>Fuerza neta: $-kx$; fuerza <b>del resorte</b>: $F_{res}=mg-kx$ (hacia arriba +)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Masa:</b>
+      $$k=\frac{40{,}0}{0{,}250}=160\ \text{N/m},\qquad m=160\Big(\frac{1{,}00}{2\pi}\Big)^2=\mathbf{4{,}05\ kg}$$</li>
+    <li><b>b) Origen de tiempos:</b> $t=0$ al pasar por el equilibrio hacia abajo ⇒ $\phi=+\pi/2$, $\omega=2\pi$ rad/s. En $t=0{,}35$ s ($=0{,}35\,T$):
+      $$x=-0{,}050\sin(0{,}70\pi)=\mathbf{-0{,}0405\ m}\quad(4{,}0\ \text{cm por debajo})$$
+      $$v_x=-0{,}050(2\pi)\cos(0{,}70\pi)=+0{,}185\ \text{m/s}\ \Rightarrow\ \text{se mueve hacia arriba}$$
+      <span class="por">En $T/4=0{,}25$ s llega al punto más bajo; a 0,35 s ya sube, pero aún no llega al equilibrio (lo haría en 0,50 s).</span></li>
+    <li><b>c) Fuerza del resorte</b> ($x=-0{,}030$ m; no la neta):
+      $$F_{res}=mg-kx=(4{,}05)(9{,}80)-160(-0{,}030)=39{,}7+4{,}8=\mathbf{44{,}5\ N}\ \text{hacia arriba}$$
+      <span class="por">Que suba o baje no importa: la fuerza del resorte solo depende de la posición.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/grafica-de-x-t-5-0-sen-2-t-cm-con-el-punto-t-0-3.svg">
 <div class="figph" role="img" aria-label="Gráfica de x(t) = −5,0 sen(2π t) cm con el punto t = 0,35 s señalado" style="aspect-ratio:340/205"></div>
@@ -465,17 +514,35 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <figcaption>Planteamiento como en el examen: los tres momentos (caída, choque inelástico, MAS posterior) con los datos y el DCL del sistema (sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
   <p>Este mismo ejercicio está resuelto en el <a href="tema_08_momento_colisiones.html#x3">tema 8 (X3)</a> con la energía del resorte y de la gravedad; aquí lo hacemos con las <b>herramientas de este tema</b> (equilibrio desplazado, $\omega$, $A$ de las condiciones iniciales), que es más corto y es lo que el enunciado sugiere ("queda en MAS"). Los resultados coinciden.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Caída libre: $v_0=\sqrt{2gh}$; choque totalmente inelástico: $m\,v_0=(m+M)\,V$</li>
+      <li>MAS vertical: $\omega=\sqrt{\dfrac{k}{m+M}}$, $T=2\pi\sqrt{\dfrac{m+M}{k}}$</li>
+      <li>Nuevo equilibrio desplazado: $x_0=\dfrac{m\,g}{k}$ (masa añadida)</li>
+      <li>Amplitud: $A=\sqrt{x_0^2+\dfrac{v_{0x}^2}{\omega^2}}$; fase: $\phi=\arctan\Big(-\dfrac{v_{0x}}{\omega\,x_0}\Big)$</li>
+    </ul></div>
+  <p>Este ejercicio está resuelto en el <a href="tema_08_momento_colisiones.html#x3">tema 8 (X3)</a> con la energía; aquí con las herramientas del MAS. Los resultados coinciden.</p>
   <ol class="steps">
-    <li><b>Tres etapas, tres leyes.</b> (i) Caída libre de $m$ → cinemática; (ii) choque instantáneo → solo se conserva la cantidad de movimiento; (iii) después, MAS del conjunto. No se puede usar la energía <i>a través</i> del choque: un choque totalmente inelástico pierde energía cinética.</li>
-    <li><b>Caída libre.</b> $v_0^2=2gh$ ⇒ $v_0=\sqrt{2(9{,}8)(0{,}5)}=3{,}13$ m/s hacia abajo.</li>
-    <li><b>a) Choque.</b> Dura tan poco que el impulso del peso y del resorte es despreciable frente al de las fuerzas internas ⇒ $P_y$ se conserva: $m\,v_0=(m+M)V$ ⇒ $V=\dfrac{1\cdot3{,}13}{1{,}5}=$ <b>2,09 m/s hacia abajo</b>.</li>
-    <li><b>¿Dónde está el nuevo equilibrio?</b> La gravedad solo <i>desplaza</i> el equilibrio (§4.1). Antes del choque la bandeja sola estaba en equilibrio con estiramiento $Mg/k$; el conjunto lo tendrá en $(m+M)g/k$. El nuevo equilibrio está más abajo, a $mg/k=\dfrac{1\cdot9{,}8}{500}=0{,}0196$ m.</li>
-    <li><b>Condiciones iniciales del MAS</b> ($t=0$ justo tras el choque, $+x$ hacia arriba, $x$ medida desde el <i>nuevo</i> equilibrio): $x_0=+0{,}0196$ m (el choque ocurre <b>por encima</b> del nuevo equilibrio) y $v_{0x}=-2{,}09$ m/s.</li>
-    <li><b>Frecuencia angular.</b> $\omega=\sqrt{\dfrac{k}{m+M}}=\sqrt{\dfrac{500}{1{,}5}}=18{,}26$ rad/s. La masa que oscila es la del <b>conjunto</b>.</li>
-    <li><b>b) Amplitud</b> (14.19): $A=\sqrt{x_0^2+\dfrac{v_{0x}^2}{\omega^2}}=\sqrt{0{,}0196^2+\left(\dfrac{2{,}087}{18{,}26}\right)^2}=\sqrt{0{,}0196^2+0{,}1143^2}=$ <b>0,116 m</b>.</li>
-    <li><b>c) Periodo</b> (14.12): $T=2\pi\sqrt{\dfrac{m+M}{k}}=2\pi\sqrt{\dfrac{1{,}5}{500}}=$ <b>0,344 s</b>. No depende de $g$ ni de $A$.</li>
-    <li><b>(Ampliación) Ecuación completa.</b> $\phi=\arctan\!\left(-\dfrac{v_{0x}}{\omega x_0}\right)=\arctan(5{,}83)=1{,}40$ rad (80,3°), cuadrante correcto porque $x_0\gt0$. Así $x(t)=(0{,}116\ \text{m})\cos[(18{,}26\ \text{rad/s})t+1{,}40]$; el punto más bajo se alcanza cuando $\omega t+\phi=\pi$, en $t=0{,}095$ s.</li>
-    <li><b>Comprobación.</b> Si se olvida que el choque ocurre fuera del nuevo equilibrio, sale $A=V/\omega=0{,}114$ m (error del 2 %): pequeño aquí, pero es un error de planteamiento. $a_{máx}=\omega^2A=38{,}7$ m/s² $\gt g$: si la masa no estuviera pegada, se separaría en la parte alta.</li>
+    <li><b>Tres etapas.</b> Caída libre ⇒ cinemática; choque instantáneo ⇒ solo se conserva la cantidad de movimiento; después, MAS del conjunto. Datos: $k=500$ N/m, $M=0{,}5$ kg, $m=1$ kg, $h=0{,}5$ m.
+      <span class="por">No se puede usar la energía a través del choque: pierde energía cinética.</span></li>
+    <li><b>Caída libre:</b>
+      $$v_0=\sqrt{2gh}=\sqrt{2(9{,}8)(0{,}5)}=3{,}13\ \text{m/s hacia abajo}$$</li>
+    <li><b>a) Choque</b> (el impulso del peso y del resorte es despreciable):
+      $$m\,v_0=(m+M)\,V\ \Rightarrow\ V=\frac{1(3{,}13)}{1{,}5}=\mathbf{2{,}09\ m/s}\ \text{hacia abajo}$$</li>
+    <li><b>Nuevo equilibrio.</b> La gravedad solo desplaza el equilibrio: el del conjunto está más abajo, a
+      $$\frac{m\,g}{k}=\frac{1(9{,}8)}{500}=0{,}0196\ \text{m}$$
+      <span class="por">Condiciones iniciales ($+x$ hacia arriba, $x$ desde el nuevo equilibrio): $x_0=+0{,}0196$ m (el choque ocurre por encima) y $v_{0x}=-2{,}09$ m/s.</span></li>
+    <li><b>Frecuencia angular</b> (oscila el conjunto):
+      $$\omega=\sqrt{\frac{k}{m+M}}=\sqrt{\frac{500}{1{,}5}}=18{,}26\ \text{rad/s}$$</li>
+    <li><b>b) Amplitud:</b>
+      $$A=\sqrt{x_0^2+\frac{v_{0x}^2}{\omega^2}}=\sqrt{0{,}0196^2+\Big(\frac{2{,}087}{18{,}26}\Big)^2}=\sqrt{0{,}0196^2+0{,}1143^2}=\mathbf{0{,}116\ m}$$</li>
+    <li><b>c) Periodo:</b>
+      $$T=2\pi\sqrt{\frac{m+M}{k}}=2\pi\sqrt{\frac{1{,}5}{500}}=\mathbf{0{,}344\ s}$$
+      <span class="por">No depende de $g$ ni de $A$.</span></li>
+    <li><b>Ampliación (ecuación completa):</b>
+      $$\phi=\arctan\Big(\frac{2{,}087}{(18{,}26)(0{,}0196)}\Big)=\arctan(5{,}83)=1{,}40\ \text{rad}\ (80{,}3^\circ)$$
+      $$x(t)=(0{,}116\ \text{m})\cos\big[(18{,}26\ \text{rad/s})\,t+1{,}40\big]$$
+      <span class="por">El punto más bajo se alcanza cuando $\omega t+\phi=\pi$, en $t=0{,}095$ s. Si se olvida que el choque ocurre fuera del nuevo equilibrio, sale $A=V/\omega=0{,}114$ m (error del 2 %). $a_{m\acute ax}=\omega^2A=38{,}7$ m/s² $>g$: si la masa no estuviera pegada, se separaría arriba.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/niveles-del-resorte-en-el-ejercicio-x1-nuevo-equ.svg">
 <div class="figph" role="img" aria-label="Niveles del resorte en el ejercicio X1: nuevo equilibrio, punto del choque y punto más bajo" style="aspect-ratio:340/212"></div>
@@ -501,13 +568,21 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <details class="mas pista"><summary>Pista 1</summary><p>Lee el periodo entre dos máximos consecutivos y la amplitud como la altura del máximo.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$L=g\,(T/2\pi)^2$; la masa de la lenteja no interviene (se cancela).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a) Periodo.</b> Tiempo entre dos máximos consecutivos: $T=$ <b>1,60 s</b>. (Mejor leer de máximo a máximo que de cero a cero: es más preciso.)</li>
-    <li><b>a) Frecuencias.</b> $f=1/T=$ <b>0,625 Hz</b>; $\omega=2\pi f=$ <b>3,93 rad/s</b> (14.1-14.2).</li>
-    <li><b>a) Amplitud.</b> Ángulo máximo: $\Theta=$ <b>6°</b> (0,105 rad). Es pequeño ⇒ vale el péndulo simple ($\sin\theta\approx\theta$).</li>
-    <li><b>b)</b> $T=2\pi\sqrt{L/g}$ (14.34) ⇒ $L=g\left(\dfrac{T}{2\pi}\right)^2=9{,}80\left(\dfrac{1{,}60}{2\pi}\right)^2=$ <b>0,635 m</b>.</li>
-    <li><b>c) No.</b> El periodo (y toda la gráfica) no depende de la masa de la lenteja: la masa aparece a la vez en el peso (fuerza de restitución) y en la inercia y se cancela.</li>
-    <li><b>Extra.</b> La amplitud no disminuye en 3 s ⇒ amortiguamiento despreciable.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$f=\dfrac1T$; $\omega=2\pi f$</li>
+      <li>Péndulo simple: $T=2\pi\sqrt{L/g}$ ⇒ $L=g\Big(\dfrac{T}{2\pi}\Big)^2$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Periodo</b> (entre dos máximos consecutivos):
+      $$T=\mathbf{1{,}60\ s}$$
+      <b>Frecuencias:</b>
+      $$f=\frac1T=\frac{1}{1{,}60}=\mathbf{0{,}625\ Hz},\qquad\omega=2\pi f=\mathbf{3{,}93\ rad/s}$$
+      <b>Amplitud:</b> el máximo de la gráfica, $\Theta=\mathbf{6^\circ}$ (0,105 rad): pequeño ⇒ vale el péndulo simple.</li>
+    <li><b>b) Longitud:</b>
+      $$L=g\Big(\frac{T}{2\pi}\Big)^2=9{,}80\Big(\frac{1{,}60}{2\pi}\Big)^2=\mathbf{0{,}635\ m}$$</li>
+    <li><b>c) ¿Masa de la lenteja?</b> <b>No</b>:
+      <span class="por">El periodo no depende de la masa: aparece a la vez en el peso (fuerza de restitución) y en la inercia, y se cancela. La amplitud no disminuye en 3 s ⇒ amortiguamiento despreciable.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/grafica-del-angulo-en-funcion-del-tiempo-de-un-p.svg">
 <div class="figph" role="img" aria-label="Gráfica del ángulo θ en función del tiempo de un péndulo: periodo 1,60 s y amplitud 6°" style="aspect-ratio:340/205"></div>
@@ -523,11 +598,17 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <details class="mas pista"><summary>Pista 1</summary><p>Un cuerpo rígido que oscila en torno a un eje que no pasa por su cg es un péndulo físico: $T=2\pi\sqrt{I/mgd}$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$T=120/100$ s (periodo de <i>una</i> oscilación); despeja $I=mgd\,(T/2\pi)^2$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Modelo.</b> Cuerpo rígido que oscila alrededor de un eje que no pasa por su centro de gravedad ⇒ <b>péndulo físico</b>: $T=2\pi\sqrt{I/mgd}$ (14.39), con $d$ la distancia pivote-cg e $I$ respecto al pivote. U cita precisamente este método para medir momentos de inercia.</li>
-    <li><b>Periodo.</b> Contar muchas oscilaciones reduce el error del cronómetro: $T=120/100=1{,}20$ s.</li>
-    <li><b>Despeja.</b> $I=mgd\left(\dfrac{T}{2\pi}\right)^2=(1{,}80)(9{,}80)(0{,}200)\left(\dfrac{1{,}20}{2\pi}\right)^2=$ <b>0,129 kg·m²</b>.</li>
-    <li><b>Orden de magnitud.</b> Si fuera una varilla uniforme con el cg a 0,200 m, mediría 0,400 m e $I=\tfrac13ml^2=0{,}096$ kg·m². La biela real tiene $I$ un 34 % mayor: tiene mucha masa en el extremo grande (la cabeza), lejos del pivote.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Péndulo físico: $T=2\pi\sqrt{\dfrac{I}{m\,g\,d}}$ ⇒ $I=m\,g\,d\Big(\dfrac{T}{2\pi}\Big)^2$ ($d$ = distancia pivote-cg)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Modelo.</b> Cuerpo rígido que oscila alrededor de un eje que no pasa por su cg ⇒ péndulo físico, con $I$ respecto al pivote.</li>
+    <li><b>Periodo</b> (contar muchas oscilaciones reduce el error del cronómetro):
+      $$T=\frac{120}{100}=1{,}20\ \text{s}$$</li>
+    <li><b>Momento de inercia:</b>
+      $$I=(1{,}80)(9{,}80)(0{,}200)\Big(\frac{1{,}20}{2\pi}\Big)^2=3{,}528(0{,}03647)=\mathbf{0{,}129\ kg\cdot m^2}$$
+      <span class="por">Orden de magnitud: una varilla uniforme de 0,400 m daría $\tfrac13ml^2=0{,}096$ kg·m²; la biela tiene un 34 % más, porque su masa está muy lejos del pivote (cabeza grande).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/biela-colgada-de-un-cuchillo-pendulo-fisico-con-.svg">
 <div class="figph" role="img" aria-label="Biela colgada de un cuchillo: péndulo físico con el centro de gravedad a 0,200 m del pivote" style="aspect-ratio:340/190"></div>
@@ -543,11 +624,19 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <details class="mas pista"><summary>Pista 1</summary><p>En cada extremo $v=0$ y toda la energía es potencial: $E=\tfrac12kA^2$ con la amplitud de ese ciclo. La masa no hace falta.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Pasa $k$ de N/cm a N/m; $\Delta E$ es la diferencia de energías, no de amplitudes.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Unidades.</b> $k=2{,}5$ N/cm $=250$ N/m.</li>
-    <li><b>Por qué basta la amplitud.</b> En cada extremo $v=0$ y toda la energía mecánica es potencial: $E=\tfrac12kA^2$ (14.21). Si $A$ disminuye, $E$ disminuye. La masa no hace falta.</li>
-    <li><b>a)</b> $E_1=\tfrac12(250)(0{,}060)^2=0{,}450$ J; $E_2=\tfrac12(250)(0{,}035)^2=0{,}153$ J ⇒ $\Delta E=$ <b>0,30 J</b> (0,297 J), dos tercios de la energía inicial.</li>
-    <li><b>b)</b> Hay fuerzas disipativas que el modelo ideal ignora: la resistencia del aire sobre el objeto y la fricción interna del propio resorte al deformarse (y, en menor medida, la del colchón de aire). Hacen trabajo negativo, $dE/dt=-bv_x^2$ (14.45), y la energía mecánica se convierte en <b>energía interna (térmica)</b> del aire, del resorte y del objeto.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Energía mecánica en un extremo ($v=0$): $E=\tfrac12kA^2$</li>
+      <li>$1\ \text{N/cm}=100\ \text{N/m}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Unidades:</b>
+      $$k=2{,}5\ \text{N/cm}=250\ \text{N/m}$$</li>
+    <li><b>a) Energías</b> (basta la amplitud; la masa no hace falta):
+      $$E_1=\tfrac12(250)(0{,}060)^2=0{,}450\ \text{J},\qquad E_2=\tfrac12(250)(0{,}035)^2=0{,}153\ \text{J}$$
+      $$\Delta E=0{,}450-0{,}153=\mathbf{0{,}30\ J}\ \ (0{,}297\ \text{J, dos tercios del total})$$</li>
+    <li><b>b) ¿Adónde va?</b>
+      <span class="por">Hay fuerzas disipativas que el modelo ideal ignora: resistencia del aire y fricción interna del resorte (y del colchón de aire). Hacen trabajo negativo, $dE/dt=-b\,v_x^2$, y la energía mecánica se convierte en energía interna (térmica) del aire, del resorte y del objeto.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/oscilacion-amortiguada-con-la-amplitud-bajando-d.svg">
 <div class="figph" role="img" aria-label="Oscilación amortiguada con la amplitud bajando de 6,0 cm a 3,5 cm en ocho ciclos" style="aspect-ratio:340/215"></div>
@@ -563,11 +652,17 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <details class="mas pista"><summary>Pista 1</summary><p>Masa en un resorte de constante efectiva $k+k_{sup}$: $f\propto\sqrt{k}$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Para cambios pequeños, $\Delta f/f\approx\tfrac12\Delta k/k$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Modelo.</b> Masa en un resorte con constante efectiva $k+k_\mathrm{sup}$; la masa no cambia. $f=\dfrac1{2\pi}\sqrt{k/m}$ (14.11).</li>
-    <li><b>Cociente</b> (la masa y el $2\pi$ se cancelan): $\dfrac{f}{f_0}=\sqrt{\dfrac{k+k_\mathrm{sup}}{k}}=\sqrt{\dfrac{1005}{1000}}=1{,}0025$.</li>
-    <li><b>Porcentaje.</b> $\dfrac{\Delta f}{f_0}=\sqrt{1{,}005}-1=2{,}5\times10^{-3}=$ <b>0,25 %</b> ⇒ la opción más próxima es la <b>b) 0,2 %</b>.</li>
-    <li><b>Regla rápida.</b> Para cambios pequeños, $\dfrac{\Delta f}{f}\approx\dfrac12\dfrac{\Delta k}{k}=\tfrac12(0{,}5\ \%)=0{,}25\ \%$: como $f\propto\sqrt k$, el cambio relativo de $f$ es la mitad del de $k$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Frecuencia: $f=\dfrac1{2\pi}\sqrt{\dfrac{k_{ef}}{m}}$, con $k_{ef}=k+k_{sup}$</li>
+      <li>Cambios pequeños: $\dfrac{\Delta f}{f}\approx\dfrac12\dfrac{\Delta k}{k}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Cociente</b> (la masa y el $2\pi$ se cancelan):
+      $$\frac{f}{f_0}=\sqrt{\frac{k+k_{sup}}{k}}=\sqrt{\frac{1005}{1000}}=1{,}0025$$</li>
+    <li><b>Cambio relativo:</b>
+      $$\frac{\Delta f}{f_0}=\sqrt{1{,}005}-1=2{,}5\times10^{-3}=\mathbf{0{,}25\ \%}\ \Rightarrow\ \text{opción b) }0{,}2\ \%$$
+      <span class="por">Regla rápida: como $f\propto\sqrt k$, el cambio relativo de $f$ es la mitad del de $k$: $\tfrac12(0{,}5\ \%)=0{,}25\ \%$.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/cociente-de-frecuencias-f-f-en-funcion-de-la-con.svg">
 <div class="figph" role="img" aria-label="Cociente de frecuencias f/f₀ en función de la constante de fuerza de la superficie: casi una recta de pendiente 1/2k" style="aspect-ratio:340/215"></div>
@@ -580,16 +675,27 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <details class="sol" id="pp"><summary>Problema práctico — Dos cilindros que ruedan unidos a un resorte <span class="src" data-l="U" data-ref="U Problema práctico «Oscilar y rodar», p. 458">U p.458</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §9.4 tabla 9.2, p. 286; §10.3, pp. 311-313; §14.2, pp. 436-438">U p.286, 311-313, 436-438</span></summary>
 <p class="enun">Dos cilindros sólidos uniformes, de radio $R$ y masa total $M$, están conectados a lo largo de su eje común mediante una varilla corta y ligera, y descansan sobre una mesa horizontal (figura 14.29). Un anillo sin fricción en el centro de la varilla está unido a un resorte con constante de fuerza $k$; el otro extremo del resorte está fijo. Se tira de los cilindros hacia la izquierda una distancia $x$, estirando el resorte, y luego se suelta el sistema a partir del reposo. Debido a la fricción entre la mesa y los cilindros, estos últimos ruedan sin resbalar conforme oscilan. Demuestra que el movimiento del centro de masa de los cilindros es armónico simple y encuentra su periodo.</p>
   <figure class="bookfig"><img src="../assets/img/fig_u_14_29_rodar.png" alt="Dos cilindros de radio R y masa total M unidos por su eje a un resorte de constante k, sobre una mesa horizontal; se desplazan una distancia x hacia la izquierda" loading="lazy"><figcaption>Figura 14.29 de U. <span class="src" data-l="U" data-ref="U fig. 14.29, p. 458">U p.458</span></figcaption></figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Traslación del cm: $\sum F_x=M\,a_{cm}$; rotación: $\sum\tau_z=I_{cm}\,\alpha$</li>
+      <li>Dos cilindros macizos: $I_{cm}=\tfrac12MR^2$; rodar sin resbalar: $a_{cm}=R\,\alpha$</li>
+      <li>MAS: $a_{cm}=-\omega^2x$ ⇒ $T=\dfrac{2\pi}{\omega}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Qué hay que demostrar.</b> Que la aceleración del centro de masa cumple $a_{cm,x}=-\omega^2x$ con $\omega$ constante (14.4): proporcional y opuesta al desplazamiento. Entonces $T=2\pi/\omega$.</li>
-    <li><b>Ecuaciones.</b> El cuerpo se traslada <i>y</i> gira. Traslación del CM: $\sum F_x=Ma_{cm,x}$ (10.12). Rotación alrededor del eje por el CM: $\sum\tau_z=I_{cm}\alpha_z$ (10.13). Rodar sin resbalar: $a_{cm}=R\alpha$ (derivada de 10.11). Los dos cilindros macizos juntos tienen $I_{cm}=\tfrac12MR^2$ (tabla 9.2; la varilla es ligera).</li>
-    <li><b>Fuerzas horizontales.</b> $x$ es la posición del CM desde el equilibrio (resorte sin estirar), $+x$ hacia el resorte. El <b>resorte</b> actúa en el anillo, sobre el eje: $-kx$ y <b>no hace torca</b> respecto al CM (brazo nulo). La <b>fricción estática</b> $f$ actúa en el contacto con la mesa, a distancia $R$ del eje: es la <i>única</i> que hace girar los cilindros. Peso y normal se anulan y no hacen torca.</li>
-    <li><b>Traslación:</b> $-kx+f=Ma_{cm}$ (el signo de $f$ lo dirá el álgebra).</li>
-    <li><b>Rotación</b> (con $a_{cm}=R\alpha$ para avanzar hacia $+x$): una fricción dirigida hacia $+x$ produce una torca opuesta al giro, $-fR=\tfrac12MR^2\alpha$ ⇒ $f=-\tfrac12Ma_{cm}$.</li>
-    <li><b>Combinar:</b> $-kx-\tfrac12Ma_{cm}=Ma_{cm}$ ⇒ $\tfrac32Ma_{cm}=-kx$ ⇒ $\boldsymbol{a_{cm}=-\dfrac{2k}{3M}\,x}$. Es de la forma $a=-\omega^2x$ con $\omega^2=\dfrac{2k}{3M}$ constante: <b>el centro de masa describe un MAS</b>. (De paso $f=+\tfrac13kx$: la fricción vale un tercio de la fuerza del resorte y se le opone.)</li>
-    <li><b>Periodo:</b> $T=\dfrac{2\pi}{\omega}=\boldsymbol{2\pi\sqrt{\dfrac{3M}{2k}}}$ (coincide con la respuesta de U, p. 467).</li>
-    <li><b>Evaluar.</b> Sin fricción no habría torca, los cilindros resbalarían sin girar y oscilarían como un bloque, $T_0=2\pi\sqrt{M/k}$. Rodando el periodo es mayor en $\sqrt{3/2}=1{,}22$: la misma fuerza del resorte debe acelerar la traslación <b>y</b> la rotación; es como si la masa fuera $M+I/R^2=\tfrac32M$.</li>
-    <li><b>Comprobación por energía.</b> $E=\tfrac12Mv^2+\tfrac12I\omega_{rot}^2+\tfrac12kx^2=\tfrac12\left(\tfrac32M\right)v^2+\tfrac12kx^2$: forma de (14.21) con $m\to\tfrac32M$ ⇒ $\omega=\sqrt{2k/3M}$. La fricción estática no trabaja (no hay deslizamiento), por eso se conserva $E$.</li>
+    <li><b>Fuerzas horizontales</b> ($x$ = posición del cm desde el equilibrio, $+x$ hacia el resorte): el resorte actúa sobre el eje, $-kx$, y no hace torca respecto al cm. La fricción estática $f$, a distancia $R$, es la única que hace girar los cilindros.</li>
+    <li><b>Traslación:</b>
+      $$-kx+f=M\,a_{cm}\qquad(1)$$</li>
+    <li><b>Rotación</b> (una fricción hacia $+x$ da torca opuesta al giro):
+      $$-f\,R=\tfrac12MR^2\,\alpha=\tfrac12MR^2\frac{a_{cm}}{R}\ \Rightarrow\ f=-\tfrac12M\,a_{cm}\qquad(2)$$</li>
+    <li><b>Combinar</b> (2) en (1):
+      $$-kx-\tfrac12M\,a_{cm}=M\,a_{cm}\ \Rightarrow\ \tfrac32M\,a_{cm}=-kx\ \Rightarrow\ \boldsymbol{a_{cm}=-\frac{2k}{3M}\,x}$$
+      <span class="por">Forma $a=-\omega^2x$ con $\omega^2=\dfrac{2k}{3M}$ constante: el cm describe un MAS. De paso, $f=\tfrac13kx$: un tercio de la fuerza del resorte, oponiéndose.</span></li>
+    <li><b>Periodo:</b>
+      $$T=\frac{2\pi}{\omega}=\boldsymbol{2\pi\sqrt{\frac{3M}{2k}}}$$
+      <span class="por">Sin fricción sería $T_0=2\pi\sqrt{M/k}$; rodando es $\sqrt{3/2}=1{,}22$ veces mayor: la misma fuerza acelera traslación y rotación (masa efectiva $M+I/R^2=\tfrac32M$).</span></li>
+    <li><b>Comprobación por energía:</b>
+      $$E=\tfrac12\Big(\tfrac32M\Big)v^2+\tfrac12kx^2\ \Rightarrow\ \omega=\sqrt{\frac{2k}{3M}}\ \checkmark$$
+      <span class="por">La fricción estática no trabaja, por eso se conserva $E$.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/cilindros-que-ruedan-sin-resbalar-unidos-a-un-re.svg">
 <div class="figph" role="img" aria-label="Cilindros que ruedan sin resbalar unidos a un resorte: fuerza del resorte en el eje y fricción estática en el contacto" style="aspect-ratio:340/216"></div>
@@ -601,12 +707,23 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <div class="nivel"><b>🟡 Práctica: 7 ejercicios más</b><span>Repiten métodos del Núcleo en otras situaciones: la fase cuando sale del equilibrio, dos resortes verticales con su $k=mg/\Delta l$, la masilla que cae sobre un oscilador, la báscula del carnicero (gemela de X1), la campana con su longitud equivalente y dos esferas que ruedan. Antes de leer los pasos, decide: ¿cinemática con $x(t)$, energía, o choque y después MAS?</span></div>
 <details class="sol" id="e1413"><summary>Problema 14.13 — Amplitud y fase si el bloque sale del equilibrio <span class="src" data-l="E" data-ref="Solucionario 14-3 y 14-4, Prob. 14.13">E 14-3</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 14.13, p. 460; §14.2, ec. 14.10, 14.13, 14.14, 14.17-14.19, pp. 438-441">U p.460, 438-441</span></summary>
 <p class="enun">Un bloque de 2,00 kg que resbala sin fricción está unido a un resorte ideal de constante 300 N/m. En $t=0$ el resorte no está ni estirado ni comprimido y el bloque se mueve en la dirección negativa a 12,0 m/s. Calcula a) la amplitud y b) el ángulo de fase. c) Escribe la posición en función del tiempo.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\omega=\sqrt{\dfrac km}$; $x(t)=A\cos(\omega t+\phi)$; $v_x(t)=-\omega A\sin(\omega t+\phi)$</li>
+      <li>Amplitud: $A=\sqrt{x_0^2+\dfrac{v_{0x}^2}{\omega^2}}$</li>
+      <li>Fase: $x_0=A\cos\phi$ y $v_{0x}=-\omega A\sin\phi$ (usar ambas)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Datos del MAS.</b> $\omega=\sqrt{k/m}=\sqrt{300/2{,}00}=12{,}25$ rad/s. Condiciones iniciales: $x_0=0$ (resorte sin deformar = equilibrio), $v_{0x}=-12{,}0$ m/s.</li>
-    <li><b>a)</b> (14.19): $A=\sqrt{x_0^2+v_{0x}^2/\omega^2}=\dfrac{|v_{0x}|}{\omega}=\dfrac{12{,}0}{12{,}25}=$ <b>0,980 m</b>. (Es $v_{máx}=\omega A$ al revés: en el equilibrio la rapidez es máxima.)</li>
-    <li><b>b) Cuidado con (14.18).</b> $\phi=\arctan(-v_{0x}/\omega x_0)$ da $\arctan(\pm\infty)$: no sirve directamente. Se usan las dos condiciones por separado: $x_0=A\cos\phi=0$ ⇒ $\phi=\pm\pi/2$; $v_{0x}=-\omega A\sin\phi\lt0$ ⇒ $\sin\phi\gt0$ ⇒ <b>$\phi=+\pi/2$ rad</b>.</li>
-    <li><b>c)</b> $x=(0{,}980\ \text{m})\cos[(12{,}2\ \text{rad/s})t+\pi/2]=$ <b>$-(0{,}980\ \text{m})\sin[(12{,}2\ \text{rad/s})t]$</b>.</li>
-    <li><b>Comprobación.</b> En $t=0$, $x=0$; justo después $x\lt0$ (se mueve hacia la izquierda) ✓.</li>
+    <li><b>Datos:</b>
+      $$\omega=\sqrt{\frac{300}{2{,}00}}=12{,}25\ \text{rad/s},\qquad x_0=0\ (\text{equilibrio}),\quad v_{0x}=-12{,}0\ \text{m/s}$$</li>
+    <li><b>a) Amplitud:</b>
+      $$A=\sqrt{0+\frac{(-12{,}0)^2}{12{,}25^2}}=\frac{12{,}0}{12{,}25}=\mathbf{0{,}980\ m}$$
+      <span class="por">En el equilibrio la rapidez es máxima: $v_{m\acute ax}=\omega A$.</span></li>
+    <li><b>b) Fase.</b> $\arctan(-v_{0x}/\omega x_0)$ no sirve ($x_0=0$); se usan las dos condiciones:
+      $$x_0=A\cos\phi=0\ \Rightarrow\ \phi=\pm\frac\pi2;\qquad v_{0x}=-\omega A\sin\phi<0\ \Rightarrow\ \sin\phi>0\ \Rightarrow\ \boxed{\phi=+\frac\pi2\ \text{rad}}$$</li>
+    <li><b>c) Posición:</b>
+      $$x=(0{,}980\ \text{m})\cos\Big[(12{,}2\ \text{rad/s})\,t+\frac\pi2\Big]=-(0{,}980\ \text{m})\sin\big[(12{,}2\ \text{rad/s})\,t\big]$$
+      <span class="por">Comprobación: en $t=0$, $x=0$; justo después $x<0$ (se mueve hacia la izquierda) ✓.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/grafica-de-x-t-0-980-sen-12-2-t-parte-del-equili.svg">
 <div class="figph" role="img" aria-label="Gráfica de x(t) = −0,980 sen(12,2 t): parte del equilibrio moviéndose hacia −x" style="aspect-ratio:340/205"></div>
@@ -617,11 +734,20 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 </details>
 <details class="sol" id="e1438"><summary>Problema 14.38 — Un pescado colgado de un resorte <span class="src" data-l="E" data-ref="Solucionario 14-11, Prob. 14.38">E 14-11</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 14.38, p. 461; §14.2 p. 438; §14.3 p. 443; §14.4 p. 446">U p.461, 446</span></summary>
 <p class="enun">Un pescador cuelga un pescado de 65,0 kg de un resorte ideal de masa despreciable; el pescado estira el resorte 0,180 m. a) Calcula la constante de fuerza. Ahora se tira del pescado 5,00 cm hacia abajo y se suelta. b) ¿Qué periodo de oscilación tiene? c) ¿Qué rapidez máxima alcanzará?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio colgado: $k\,\Delta l=m\,g$</li>
+      <li>Periodo: $T=2\pi\sqrt{m/k}$</li>
+      <li>Rapidez máxima: $v_{m\acute ax}=\omega A=\dfrac{2\pi A}{T}$ ($A$ = desplazamiento desde el que se suelta en reposo)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a) Equilibrio.</b> Colgado en reposo, $\sum F_y=0$: la fuerza del resorte equilibra el peso (§4.1): $k=\dfrac{mg}{\Delta l}=\dfrac{(65{,}0)(9{,}80)}{0{,}180}=$ <b>3,54×10³ N/m</b>.</li>
-    <li><b>El MAS vertical es como el horizontal.</b> Medida desde el equilibrio, la fuerza neta es $-kx$ ⇒ $\omega=\sqrt{k/m}$; el peso solo fija dónde está el centro de la oscilación.</li>
-    <li><b>b)</b> $T=2\pi\sqrt{\dfrac mk}=2\pi\sqrt{\dfrac{65{,}0}{3539}}=$ <b>0,852 s</b>. (Dato curioso: $T=2\pi\sqrt{\Delta l/g}$; solo depende del estiramiento estático.)</li>
-    <li><b>c)</b> Se suelta en reposo a 5,00 cm del equilibrio ⇒ $A=0{,}0500$ m. $v_{máx}=\omega A=\dfrac{2\pi A}{T}=\dfrac{2\pi(0{,}0500)}{0{,}8515}=$ <b>0,369 m/s</b> (14.23), al pasar por el equilibrio.</li>
+    <li><b>a) Constante</b> (equilibrio: el resorte equilibra el peso):
+      $$k=\frac{m\,g}{\Delta l}=\frac{(65{,}0)(9{,}80)}{0{,}180}=\mathbf{3{,}54\times10^3\ N/m}$$</li>
+    <li><b>b) Periodo</b> (medida desde el equilibrio, la fuerza neta es $-kx$; el peso solo fija el centro):
+      $$T=2\pi\sqrt{\frac mk}=2\pi\sqrt{\frac{65{,}0}{3539}}=\mathbf{0{,}852\ s}$$</li>
+    <li><b>c) Rapidez máxima</b> ($A=0{,}0500$ m):
+      $$v_{m\acute ax}=\frac{2\pi A}{T}=\frac{2\pi(0{,}0500)}{0{,}8515}=\mathbf{0{,}369\ m/s}$$
+      <span class="por">Se alcanza al pasar por el equilibrio. La amplitud es 0,0500 m, no 0,180 + 0,050.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/resorte-sin-carga-con-el-pescado-en-equilibrio-e.svg">
 <div class="figph" role="img" aria-label="Resorte sin carga, con el pescado en equilibrio (estirado 18,0 cm) y soltado 5,00 cm más abajo" style="aspect-ratio:340/187"></div>
@@ -632,12 +758,19 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 </details>
 <details class="sol" id="e1466"><summary>Problema 14.66 — Periodo de un coche vacío <span class="src" data-l="E" data-ref="Solucionario 14-18, Prob. 14.66">E 14-18</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 14.66, p. 463; §14.2 p. 438; §14.4 pp. 446-447 (Ej. 14.6)">U p.463, 438, 447</span></summary>
 <p class="enun">Cuatro pasajeros, con una masa combinada de 250 kg, comprimen 4,00 cm los resortes de un automóvil con amortiguadores muy gastados al subirse a él. Modela el auto y a los pasajeros como un solo cuerpo sobre un único resorte ideal. Si el automóvil cargado tiene un periodo de vibración de 1,92 s, ¿qué periodo tiene cuando está vacío?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Constante: $k=\dfrac{m_{pas}\,g}{\Delta x}$</li>
+      <li>Periodo: $T=2\pi\sqrt{m/k}$ ⇒ $m=\Big(\dfrac{T}{2\pi}\Big)^2k$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Constante del resorte con el dato de los pasajeros.</b> Su peso añadido comprime 4,00 cm más: $k=\dfrac{(250)(9{,}80)}{0{,}0400}=6{,}125\times10^4$ N/m (como en el ejemplo 14.6).</li>
-    <li><b>Masa del coche ($M$, incógnita) con el periodo cargado.</b> $T_L=2\pi\sqrt{\dfrac{M+250}{k}}$ ⇒ $M=\left(\dfrac{T_L}{2\pi}\right)^2k-250=\left(\dfrac{1{,}92}{2\pi}\right)^2(6{,}125\times10^4)-250=5{,}47\times10^3$ kg.</li>
-    <li><b>Periodo vacío.</b> $T_E=2\pi\sqrt{\dfrac Mk}=2\pi\sqrt{\dfrac{5469}{61\,250}}=$ <b>1,88 s</b>.</li>
-    <li><b>Atajo.</b> $T_E^2=T_L^2-4\pi^2\dfrac{250}{k}=T_L^2-\dfrac{4\pi^2\,\Delta x}{g}$ ⇒ $T_E=\sqrt{1{,}92^2-4\pi^2(0{,}0400)/9{,}80}=1{,}88$ s.</li>
-    <li><b>Sentido físico.</b> Menos masa ⇒ periodo algo menor. Una masa de 5,5 t es la de un vehículo muy pesado: es la consecuencia del modelo (un solo resorte) con estos datos.</li>
+    <li><b>Constante del resorte</b> (el peso de los pasajeros comprime 4,00 cm):
+      $$k=\frac{(250)(9{,}80)}{0{,}0400}=6{,}125\times10^4\ \text{N/m}$$</li>
+    <li><b>Masa del coche $M$</b> (periodo cargado, 1,92 s):
+      $$M+250=\Big(\frac{T_L}{2\pi}\Big)^2k=\Big(\frac{1{,}92}{2\pi}\Big)^2(6{,}125\times10^4)=5{,}72\times10^3\ \text{kg}\ \Rightarrow\ M=5{,}47\times10^3\ \text{kg}$$</li>
+    <li><b>Periodo vacío:</b>
+      $$T_E=2\pi\sqrt{\frac Mk}=2\pi\sqrt{\frac{5469}{61\,250}}=\mathbf{1{,}88\ s}$$
+      <span class="por">Atajo: $T_E=\sqrt{T_L^2-4\pi^2\Delta x/g}=\sqrt{1{,}92^2-4\pi^2(0{,}0400)/9{,}80}=1{,}88$ s. Menos masa ⇒ periodo algo menor.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/automovil-modelado-como-un-bloque-sobre-un-resor.svg">
 <div class="figph" role="img" aria-label="Automóvil modelado como un bloque sobre un resorte: vacío y con 250 kg de pasajeros, 4,00 cm más abajo" style="aspect-ratio:340/194"></div>
@@ -648,11 +781,20 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 </details>
 <details class="sol" id="e1431"><summary>Problema 14.31 — Masilla que cae sobre un oscilador: amplitud mitad <span class="src" data-l="E" data-ref="Solucionario 14-9, Prob. 14.31">E 14-9</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 14.31, p. 461; §14.3, Ej. 14.5, pp. 442-445; §8.3 p. 248">U p.461, 445, 248</span></summary>
 <p class="enun">En la situación del apartado a) del ejemplo 14.5 (masilla de masa $m$ que cae sobre un bloque $M$ cuando pasa por el equilibrio y se queda pegada), ¿qué masa $m$ debe tener la masilla para que la amplitud tras el choque sea la mitad de la original? Con ese valor, ¿qué fracción de la energía mecánica original se convierte en energía térmica?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>En el equilibrio: $v_1=A_1\sqrt{k/M}$</li>
+      <li>Choque (cantidad de movimiento): $M\,v_1=(M+m)\,v_2$</li>
+      <li>Energía del MAS: $E=\tfrac12kA^2=\tfrac12(M+m)v_2^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Resultado del ejemplo 14.5, y de dónde sale.</b> En el equilibrio toda la energía es cinética, $v_1=A_1\sqrt{k/M}$. El choque conserva la cantidad de movimiento horizontal: $Mv_1=(M+m)v_2$. Justo después sigue en $x=0$, así que $\tfrac12kA_2^2=\tfrac12(M+m)v_2^2=\dfrac{M}{M+m}\cdot\tfrac12kA_1^2$ ⇒ $A_2=A_1\sqrt{\dfrac{M}{M+m}}$.</li>
-    <li><b>Impón $A_2=A_1/2$.</b> $\tfrac14=\dfrac{M}{M+m}$ ⇒ <b>$m=3M$</b>.</li>
-    <li><b>Energía.</b> $E\propto A^2$ ⇒ $E_2=\tfrac14E_1$ ⇒ <b>se pierden $\tfrac34$ de la energía mecánica</b>, que se convierten en energía térmica al deformarse y rozar la masilla contra el bloque.</li>
-    <li><b>Comprobación con el choque.</b> En un choque totalmente inelástico con un cuerpo en reposo, $K_2/K_1=M/(M+m)=1/4$ ✓ (U p. 248).</li>
+    <li><b>Amplitud tras el choque</b> (justo después sigue en $x=0$):
+      $$\tfrac12kA_2^2=\tfrac12(M+m)v_2^2=\frac{M}{M+m}\cdot\tfrac12kA_1^2\ \Rightarrow\ A_2=A_1\sqrt{\frac{M}{M+m}}$$</li>
+    <li><b>Imponer $A_2=A_1/2$:</b>
+      $$\frac14=\frac{M}{M+m}\ \Rightarrow\ M+m=4M\ \Rightarrow\ \boxed{m=3M}$$</li>
+    <li><b>Energía perdida</b> ($E\propto A^2$):
+      $$E_2=\tfrac14E_1\ \Rightarrow\ \text{se pierden }\mathbf{\tfrac34}\text{ de la energía mecánica}$$
+      <span class="por">Se convierten en energía térmica. Comprobación: en un choque totalmente inelástico con un cuerpo en reposo, $K_2/K_1=M/(M+m)=1/4$ ✓.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/oscilacion-antes-y-despues-de-que-la-masilla-de-.svg">
 <div class="figph" role="img" aria-label="Oscilación antes y después de que la masilla de masa 3M caiga sobre el bloque en x=0: amplitud la mitad y periodo doble" style="aspect-ratio:340/205"></div>
@@ -664,13 +806,25 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <details class="sol" id="e1479"><summary>Problema 14.79 — La báscula del carnicero <span class="src" data-l="E" data-ref="Solucionario 14-23 y 14-24, Prob. 14.79">E 14-23</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 14.79, p. 464; §2.4 p. 47; §8.3 p. 248; §14.2 pp. 438-441; §14.4 p. 446">U p.464, 446</span></summary>
 <p class="enun">Un resorte de masa despreciable y $k=400$ N/m cuelga verticalmente; de su extremo cuelga una bandeja de 0,200 kg. Un carnicero deja caer un filete de 2,2 kg sobre la bandeja desde 0,40 m de altura. El choque es totalmente inelástico y el sistema queda en MAS vertical. Calcula a) la rapidez de la bandeja y el filete justo después del choque; b) la amplitud del movimiento posterior; c) su periodo.</p>
   <p>Es el «gemelo de libro» del examen X1: mismo esquema, otros números.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Caída libre: $v_1=\sqrt{2gh}$; choque inelástico: $m\,v_1=(m+M)\,v_2$</li>
+      <li>Nuevo equilibrio: $x_0=\dfrac{m\,g}{k}$ (solo el filete); $\omega^2=\dfrac{k}{m+M}$</li>
+      <li>$A=\sqrt{x_0^2+\dfrac{v_2^2}{\omega^2}}$; $T=2\pi\sqrt{\dfrac{m+M}{k}}$</li>
+    </ul></div>
+  <p>Es el «gemelo de libro» del examen X1: mismo esquema, otros números.</p>
   <ol class="steps">
-    <li><b>Caída.</b> $v_1=\sqrt{2gh}=\sqrt{2(9{,}80)(0{,}40)}=2{,}80$ m/s.</li>
-    <li><b>a) Choque.</b> $P_y$ se conserva: $v_2=\dfrac{2{,}2}{2{,}2+0{,}200}(2{,}80)=$ <b>2,57 m/s</b> hacia abajo.</li>
-    <li><b>Nuevo equilibrio.</b> El filete estira el resorte $d=\dfrac{m_{filete}\,g}{k}=\dfrac{(2{,}2)(9{,}80)}{400}=0{,}0539$ m más: justo tras el choque el conjunto está <b>0,0539 m por encima</b> del nuevo equilibrio, bajando a 2,57 m/s.</li>
-    <li><b>b) Amplitud.</b> $\tfrac12m_{tot}v_2^2+\tfrac12kx_0^2=\tfrac12kA^2$ ⇒ $A=\sqrt{x_0^2+\dfrac{m_{tot}v_2^2}{k}}=\sqrt{0{,}0539^2+\dfrac{2{,}4(2{,}567)^2}{400}}=$ <b>0,206 m ≈ 0,21 m</b>.</li>
-    <li><b>c)</b> $T=2\pi\sqrt{m_{tot}/k}=2\pi\sqrt{2{,}4/400}=$ <b>0,487 s ≈ 0,49 s</b>.</li>
-    <li><b>Comprobación energética.</b> El choque totalmente inelástico conserva $P_y$ pero no $K$: de 8,6 J quedan 7,9 J ($K_2/K_1=m/(m+M)=0{,}917$, <span class="src" data-l="U" data-ref="U §8.3, p. 248">U p.248</span>).</li>
+    <li><b>Caída del filete:</b>
+      $$v_1=\sqrt{2(9{,}80)(0{,}40)}=2{,}80\ \text{m/s}$$</li>
+    <li><b>a) Choque</b> ($P_y$ se conserva):
+      $$v_2=\frac{2{,}2}{2{,}2+0{,}200}(2{,}80)=\mathbf{2{,}57\ m/s}\ \text{hacia abajo}$$</li>
+    <li><b>Nuevo equilibrio</b> (solo el filete lo desplaza; la bandeja ya estaba en equilibrio):
+      $$x_0=\frac{(2{,}2)(9{,}80)}{400}=0{,}0539\ \text{m por encima del nuevo equilibrio}$$</li>
+    <li><b>b) Amplitud</b> ($m_{tot}=2{,}4$ kg):
+      $$A=\sqrt{x_0^2+\frac{m_{tot}v_2^2}{k}}=\sqrt{0{,}0539^2+\frac{2{,}4(2{,}567)^2}{400}}=\sqrt{0{,}00291+0{,}03954}=\mathbf{0{,}206\ m}\approx0{,}21\ \text{m}$$</li>
+    <li><b>c) Periodo:</b>
+      $$T=2\pi\sqrt{\frac{2{,}4}{400}}=\mathbf{0{,}487\ s}\approx0{,}49\ \text{s}$$
+      <span class="por">El choque conserva $P_y$ pero no $K$: de 8,6 J quedan 7,9 J ($K_2/K_1=0{,}917$).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/niveles-del-resorte-en-la-bascula-de-carnicero-c.svg">
 <div class="figph" role="img" aria-label="Niveles del resorte en la báscula de carnicero: choque, nuevo equilibrio y punto más bajo" style="aspect-ratio:340/168"></div>
@@ -681,13 +835,19 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 </details>
 <details class="sol" id="e1486"><summary>Problema 14.86 — La campana que suena en silencio <span class="src" data-l="E" data-ref="Solucionario 14-27, Prob. 14.86">E 14-27</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema 14.86, p. 465; §14.5 p. 450; §14.6 pp. 451-452">U p.465, 450-452</span></summary>
 <p class="enun">Una campana de 34,0 kg cuelga de una viga y puede oscilar con fricción despreciable. Su centro de masa está 0,60 m por debajo del pivote y su momento de inercia respecto a un eje por el pivote es 18,0 kg·m². El badajo es pequeño, de 1,8 kg, y cuelga del extremo de una varilla delgada de longitud $L$ y masa despreciable cuyo otro extremo está sujeto al interior de la campana, de modo que oscila libremente sobre el mismo eje. ¿Qué longitud $L$ debe tener la varilla para que la campana suene en silencio, es decir, para que el periodo de oscilación de la campana sea igual al del badajo?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Péndulo físico: $T=2\pi\sqrt{\dfrac{I}{m\,g\,d}}$</li>
+      <li>Péndulo simple: $T=2\pi\sqrt{\dfrac Lg}$</li>
+      <li>Igualando: $L=\dfrac{I}{m\,d}$</li>
+    </ul></div>
   <ol class="steps">
     <li><b>Por qué «en silencio».</b> Si campana y badajo oscilan con el mismo periodo y parten juntos, se mueven a la par y el badajo nunca golpea.</li>
-    <li><b>Campana = péndulo físico</b> (14.39): $T=2\pi\sqrt{\dfrac{I}{mgd}}=2\pi\sqrt{\dfrac{18{,}0}{(34{,}0)(9{,}80)(0{,}60)}}=1{,}885$ s.</li>
-    <li><b>Badajo = péndulo simple</b> (masa pequeña al final de una varilla sin masa, 14.34): $T=2\pi\sqrt{L/g}$.</li>
-    <li><b>Iguala.</b> $L=g\left(\dfrac{T}{2\pi}\right)^2=9{,}80\left(\dfrac{1{,}885}{2\pi}\right)^2=$ <b>0,88 m</b>.</li>
-    <li><b>Atajo elegante.</b> Igualando $\sqrt{L/g}=\sqrt{I/mgd}$ ⇒ $L=\dfrac{I}{md}=\dfrac{18{,}0}{(34{,}0)(0{,}60)}=0{,}882$ m: no hace falta $g$ ni la masa del badajo. $I/(md)$ es la «longitud equivalente» del péndulo físico.</li>
-    <li><b>Comprobación.</b> Si el cm estuviera en el centro geométrico, la campana mediría 1,20 m: el badajo (0,88 m) queda dentro ✓.</li>
+    <li><b>Campana</b> (péndulo físico):
+      $$T=2\pi\sqrt{\frac{18{,}0}{(34{,}0)(9{,}80)(0{,}60)}}=2\pi\sqrt{0{,}0900}=1{,}885\ \text{s}$$</li>
+    <li><b>Badajo</b> (péndulo simple) con el mismo periodo:
+      $$L=g\Big(\frac{T}{2\pi}\Big)^2=9{,}80\Big(\frac{1{,}885}{2\pi}\Big)^2=\mathbf{0{,}88\ m}$$
+      <span class="por">Atajo: $\sqrt{L/g}=\sqrt{I/mgd}\Rightarrow L=\dfrac{I}{md}=\dfrac{18{,}0}{(34{,}0)(0{,}60)}=0{,}882$ m; no hace falta $g$ ni la masa del badajo.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/la-campana-que-suena-en-silencio-la-campana-pend.svg">
 <div class="figph" role="img" aria-label="La campana que suena en silencio: la campana (péndulo físico) y el badajo (péndulo simple) cuelgan del mismo eje y tienen el mismo periodo" style="aspect-ratio:340/198"></div>
@@ -699,13 +859,25 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 <details class="sol" id="e1484"><summary>Problema 14.84 — Dos esferas que ruedan unidas a un resorte <span class="src" data-l="E" data-ref="Solucionario 14-26, Prob. 14.84">E 14-26</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema 14.84, p. 465; §9.4 p. 286; §10.3 pp. 311-313; §14.2 pp. 436-438">U p.465, 286, 311-313</span></summary>
 <p class="enun">Dos esferas sólidas uniformes, cada una de masa $M=0{,}800$ kg y radio $R=0{,}0800$ m, están unidas por una varilla corta y ligera que pasa por un diámetro de cada una, y reposan sobre una mesa horizontal. Un resorte de constante $k=160$ N/m tiene un extremo fijo a una pared y el otro unido a un anillo sin fricción que rodea la varilla en el centro de masa de las esferas (a mitad de camino entre sus centros). Se tira de las esferas alejándolas de la pared, estirando el resorte, y se sueltan. Hay fricción suficiente para que rueden sin resbalar. Demuestra que el movimiento del centro de masa es armónico simple y calcula su periodo.</p>
   <p>Mismo método que el problema práctico del Núcleo, con esferas en lugar de cilindros.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Traslación: $\sum F_x=2M\,a_{cm}$; rotación de cada esfera: $f_s\,R=I\alpha$, $I=\tfrac25MR^2$</li>
+      <li>Rodar sin resbalar: $a_{cm}=R\alpha$</li>
+      <li>MAS: $a=-\omega^2x$; $T=\dfrac{2\pi}{\omega}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Ecuaciones.</b> Para <b>cada</b> esfera, rotación alrededor de su centro: solo la fricción $f_s$ del suelo hace torca, $f_sR=I\alpha=\tfrac25MR^2\alpha$ (tabla 9.2); rodar sin resbalar $a_{cm}=R\alpha$ ⇒ $f_s=\tfrac25Ma_{cm}$ (en módulo, opuesta a la fuerza del resorte).</li>
-    <li><b>Traslación del sistema</b> (masa $2M$): $-kx+2f_s=2Ma_{cm}$ con $f_s$ en sentido opuesto a $a_{cm}$ ⇒ $-kx-\tfrac45Ma_{cm}=2Ma_{cm}$.</li>
-    <li><b>Despeja.</b> $\tfrac{14}{5}Ma_{cm}=-kx$ ⇒ $a_{cm}=-\dfrac{5k}{14M}x$: forma $a=-\omega^2x$ ⇒ <b>MAS</b> con $\omega=\sqrt{\dfrac{5k}{14M}}=\sqrt{\dfrac{5(160)}{14(0{,}800)}}=8{,}45$ rad/s.</li>
-    <li><b>Periodo.</b> $T=2\pi\sqrt{\dfrac{14M}{5k}}=2\pi\sqrt{\dfrac{14(0{,}800)}{5(160)}}=$ <b>0,743 s</b>.</li>
-    <li><b>Por energía (comprobación).</b> Masa efectiva $2\left(M+\dfrac{I}{R^2}\right)=2\cdot\tfrac75M=\tfrac{14}{5}M$ ⇒ $\omega^2=k/(\tfrac{14}{5}M)$ ✓. Sin fricción (sin giro) sería $T_0=2\pi\sqrt{2M/k}=0{,}628$ s: rodando, el periodo es $\sqrt{7/5}=1{,}18$ veces mayor (menos que el 1,22 de los cilindros, porque una esfera maciza tiene menor $I/MR^2$).</li>
-    <li><b>Notas.</b> $R$ no interviene en el resultado. La fricción es estática y no trabaja: la energía mecánica se conserva y la amplitud no decae.</li>
+    <li><b>Rotación de cada esfera</b> (solo la fricción hace torca):
+      $$f_s\,R=\tfrac25MR^2\,\alpha=\tfrac25MR^2\frac{a_{cm}}{R}\ \Rightarrow\ f_s=\tfrac25M\,a_{cm}$$</li>
+    <li><b>Traslación del sistema</b> (masa $2M$; las dos fricciones se oponen a $a_{cm}$):
+      $$-kx-2f_s=2M\,a_{cm}\ \Rightarrow\ -kx-\tfrac45M\,a_{cm}=2M\,a_{cm}$$</li>
+    <li><b>Despejar:</b>
+      $$\tfrac{14}{5}M\,a_{cm}=-kx\ \Rightarrow\ a_{cm}=-\frac{5k}{14M}\,x$$
+      <span class="por">Forma $a=-\omega^2x$ ⇒ el centro de masa describe un MAS.</span></li>
+    <li><b>Frecuencia y periodo:</b>
+      $$\omega=\sqrt{\frac{5k}{14M}}=\sqrt{\frac{5(160)}{14(0{,}800)}}=8{,}45\ \text{rad/s}$$
+      $$T=2\pi\sqrt{\frac{14M}{5k}}=2\pi\sqrt{\frac{14(0{,}800)}{5(160)}}=\mathbf{0{,}743\ s}$$</li>
+    <li><b>Comprobación por energía.</b> Masa efectiva $2\big(M+\tfrac{I}{R^2}\big)=\tfrac{14}{5}M$ ✓.
+      <span class="por">Sin giro sería $T_0=2\pi\sqrt{2M/k}=0{,}628$ s: rodando, el periodo es $\sqrt{7/5}=1{,}18$ veces mayor. $R$ no interviene; la fricción es estática y no trabaja.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t14/masa-efectiva-de-un-oscilador-que-rueda-1-4-m-pa.svg">
 <div class="figph" role="img" aria-label="Masa efectiva de un oscilador que rueda: 1,4 M para una esfera maciza, 1,5 M para un cilindro, 2 M para un aro" style="aspect-ratio:340/218"></div>
@@ -748,31 +920,67 @@ $$x=A\cos(\omega t+\phi)\qquad v_x=-\omega A\sin(\omega t+\phi)\qquad a_x=-\omeg
 </details>
 <details class="sol" id="x2"><summary>X2 — Teoría: «Energía del movimiento armónico simple» <span class="src" data-l="X" data-ref="Examen Febrero 2018 (1ª semana) P-3 Teoría Opción 3.2">X</span> <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="U" data-ref="U §14.3, pp. 442-445">U p.442-445</span></summary>
 <p class="enun">Desarrolle el tema: <i>Energía del movimiento armónico simple.</i> (4 puntos; sin cuestiones asociadas)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fuerza de restitución: $F_x=-k\,x$; ecuación: $a_x=-\dfrac km\,x$</li>
+      <li>Posición: $x(t)=A\cos(\omega t+\phi)$; $\omega=\sqrt{k/m}$, $T=2\pi/\omega$, $f=1/T$</li>
+      <li>Energía: $E=\tfrac12kA^2=\tfrac12mv^2+\tfrac12kx^2$; $v(x)=\pm\sqrt{\tfrac km(A^2-x^2)}$</li>
+    </ul></div>
   <p><b>Qué contestar:</b> usa el <a href="#dm-mas">desarrollo modelo</a> resumiendo los puntos 1-3 en pocas líneas (definición de MAS, $\omega=\sqrt{k/m}$, $x(t)$) y desarrollando a fondo los puntos 5-8: $E=\tfrac12kA^2$ constante, $K$ y $U$ en función de $x$ y de $t$, $v(x)$, diagrama de energía y casos de aplicación.</p>
   <div class="recipe"><b>Receta:</b> definición → ecuación del movimiento → energía conservada $E=\tfrac12kA^2$ → reparto $K/U$ → gráfica $U(x)$ con la recta $E$ → fórmulas $v(x)$ y $v_{máx}$.</div>
 </details>
 <details class="sol" id="x3"><summary>X3 — Teoría: «Energía del movimiento armónico simple» <span class="src" data-l="X" data-ref="Examen Febrero 2019 (2ª semana) P-3 Teoría Opción 3.1">X</span> <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="U" data-ref="U §14.3, pp. 442-445">U p.442-445</span></summary>
 <p class="enun">Desarrolle el tema: <i>Energía del movimiento armónico simple.</i> (4 puntos; sin cuestiones asociadas)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fuerza de restitución: $F_x=-k\,x$; ecuación: $a_x=-\dfrac km\,x$</li>
+      <li>Posición: $x(t)=A\cos(\omega t+\phi)$; $\omega=\sqrt{k/m}$, $T=2\pi/\omega$, $f=1/T$</li>
+      <li>Energía: $E=\tfrac12kA^2=\tfrac12mv^2+\tfrac12kx^2$; $v(x)=\pm\sqrt{\tfrac km(A^2-x^2)}$</li>
+    </ul></div>
   <p><b>Qué contestar:</b> igual que X2: el <a href="#dm-mas">desarrollo modelo</a>, con la energía como protagonista. Si te sobra espacio, añade el ejemplo 14.4 (energías en $x=A/2$: $U=E/4$, $K=3E/4$) y la comparación con el resorte vertical.</p>
   <div class="recipe"><b>Receta:</b> la misma que X2.</div>
 </details>
 <details class="sol" id="x4"><summary>X4 — Teoría: «Energía del movimiento armónico simple» <span class="src" data-l="X" data-ref="Examen Febrero 2020 (1ª semana) P-3 Teoría Opción 3.1">X</span> <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="U" data-ref="U §14.3, pp. 442-445">U p.442-445</span></summary>
 <p class="enun">Desarrolle el tema: <i>Energía del movimiento armónico simple.</i> (4 puntos; sin cuestiones asociadas)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fuerza de restitución: $F_x=-k\,x$; ecuación: $a_x=-\dfrac km\,x$</li>
+      <li>Posición: $x(t)=A\cos(\omega t+\phi)$; $\omega=\sqrt{k/m}$, $T=2\pi/\omega$, $f=1/T$</li>
+      <li>Energía: $E=\tfrac12kA^2=\tfrac12mv^2+\tfrac12kx^2$; $v(x)=\pm\sqrt{\tfrac km(A^2-x^2)}$</li>
+    </ul></div>
   <p><b>Qué contestar:</b> igual que X2 y X3. Con tres convocatorias idénticas (2018, 2019 y esta) conviene dominar el desarrollo modelo: es, con diferencia, la pregunta de teoría más repetida.</p>
   <div class="recipe"><b>Receta:</b> la misma que X2.</div>
 </details>
 <details class="sol" id="x5"><summary>X5 — Teoría: «Movimiento armónico simple» <span class="src" data-l="X" data-ref="Examen Febrero 2020 (2ª semana) P-3 Teoría Opción 3.2">X</span> <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="U" data-ref="U §14.1-14.2, pp. 434-442">U p.434-442</span></summary>
 <p class="enun">Desarrolle el tema: <i>Movimiento armónico simple.</i> (4 puntos; sin cuestiones asociadas)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fuerza de restitución: $F_x=-k\,x$; ecuación: $a_x=-\dfrac km\,x$</li>
+      <li>Posición: $x(t)=A\cos(\omega t+\phi)$; $\omega=\sqrt{k/m}$, $T=2\pi/\omega$, $f=1/T$</li>
+      <li>Energía: $E=\tfrac12kA^2=\tfrac12mv^2+\tfrac12kx^2$; $v(x)=\pm\sqrt{\tfrac km(A^2-x^2)}$</li>
+    </ul></div>
   <p><b>Qué contestar:</b> el <a href="#dm-mas">desarrollo modelo</a>, pero ahora desarrollando a fondo los puntos 1-4 (magnitudes, definición con $F_x=-kx$, ecuación $a_x=-(k/m)x$, círculo de referencia, $x(t)$, $v(t)$, $a(t)$, $\omega$, $T$, $f$, $A$ y $\phi$ con las condiciones iniciales y los ejemplos: resorte vertical, péndulo) y resumiendo la energía en el punto 5.</p>
   <div class="recipe"><b>Receta:</b> fuerza de restitución → ecuación diferencial → solución coseno (con el círculo de referencia) → $\omega$, $T$, $f$ → $A$ y $\phi$ de las condiciones iniciales → ejemplos y energía.</div>
 </details>
 <details class="sol" id="x6"><summary>X6 — Teoría: «El movimiento armónico simple. Energía del M.A.S.» <span class="src" data-l="X" data-ref="Examen Septiembre 2019 (Reserva) P-3 Teoría Opción 3.1">X</span> <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="U" data-ref="U §14.1-14.3, pp. 434-445">U p.434-445</span></summary>
 <p class="enun">Desarrolle, a elegir, sólo uno de los dos temas siguientes (4 puntos): 3.1 El movimiento armónico simple. Energía del M.A.S. — 3.2 Transformación de Galileo. (Aquí se resuelve la opción 3.1; sin cuestiones asociadas.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fuerza de restitución: $F_x=-k\,x$; ecuación: $a_x=-\dfrac km\,x$</li>
+      <li>Posición: $x(t)=A\cos(\omega t+\phi)$; $\omega=\sqrt{k/m}$, $T=2\pi/\omega$, $f=1/T$</li>
+      <li>Energía: $E=\tfrac12kA^2=\tfrac12mv^2+\tfrac12kx^2$; $v(x)=\pm\sqrt{\tfrac km(A^2-x^2)}$</li>
+    </ul></div>
   <p><b>Qué contestar:</b> este enunciado pide <b>las dos cosas</b>: usa el <a href="#dm-mas">desarrollo modelo</a> completo (puntos 1-9), repartiendo la cara a partes iguales entre «el MAS» (definición, ecuaciones, $\omega$, $A$, $\phi$) y «su energía» ($E=\tfrac12kA^2$, $K$-$U$, $v(x)$ y el diagrama de energía).</p>
   <div class="recipe"><b>Receta:</b> el desarrollo modelo entero; ni más de media cara de cinemática ni menos de media de energía.</div>
 </details>
 <details class="sol" id="x7"><summary>X7 — Teoría: «Energía en el MAS» + (a) resorte cortado por la mitad, (b) reloj de péndulo en una montaña <span class="src" data-l="X" data-ref="Examen Febrero 2025 (1ª semana) P-4 Teoría Opción B">X</span> <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="U" data-ref="U §14.2 p. 438 (14.11); §14.5 p. 450 (14.34); §13.2 p. 403; U P14.5 y P14.13, p. 459">U p.438, 450, 459</span></summary>
 <p class="enun">Desarrolle el tema: <i>Energía en el movimiento armónico simple (MAS).</i> Además, responda a las siguientes cuestiones: (a) Si un resorte uniforme se corta a la mitad, ¿qué constante de fuerza tendrá cada mitad? Justifique su respuesta. ¿Cómo diferiría la frecuencia del MAS usando la mitad del resorte en comparación con la frecuencia producida usando la misma masa y el resorte completo? (b) Si un reloj de péndulo se sube a la cima de una montaña, ¿se adelanta o se atrasa? Suponga que marca la hora correcta a menor altitud. Explique su respuesta. (4 puntos)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Resorte cortado: misma fuerza $F$, estiramiento $\Delta l/2$ ⇒ $k'=2k$; $f=\dfrac1{2\pi}\sqrt{k/m}$</li>
+      <li>Péndulo: $T=2\pi\sqrt{L/g}$; $g=\dfrac{Gm_T}{r^2}$</li>
+      <li>Energía del MAS: $E=\tfrac12kA^2$</li>
+    </ul></div>
   <p><b>Tema:</b> usa el <a href="#dm-mas">desarrollo modelo</a> (con la energía como protagonista).</p>
   <p><b>Cuestión (a).</b></p>
   <ol class="steps">

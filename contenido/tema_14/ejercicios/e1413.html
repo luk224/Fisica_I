@@ -1,10 +1,21 @@
 <p class="enun">Un bloque de 2,00 kg que resbala sin fricción está unido a un resorte ideal de constante 300 N/m. En $t=0$ el resorte no está ni estirado ni comprimido y el bloque se mueve en la dirección negativa a 12,0 m/s. Calcula a) la amplitud y b) el ángulo de fase. c) Escribe la posición en función del tiempo.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\omega=\sqrt{\dfrac km}$; $x(t)=A\cos(\omega t+\phi)$; $v_x(t)=-\omega A\sin(\omega t+\phi)$</li>
+      <li>Amplitud: $A=\sqrt{x_0^2+\dfrac{v_{0x}^2}{\omega^2}}$</li>
+      <li>Fase: $x_0=A\cos\phi$ y $v_{0x}=-\omega A\sin\phi$ (usar ambas)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Datos del MAS.</b> $\omega=\sqrt{k/m}=\sqrt{300/2{,}00}=12{,}25$ rad/s. Condiciones iniciales: $x_0=0$ (resorte sin deformar = equilibrio), $v_{0x}=-12{,}0$ m/s.</li>
-    <li><b>a)</b> (14.19): $A=\sqrt{x_0^2+v_{0x}^2/\omega^2}=\dfrac{|v_{0x}|}{\omega}=\dfrac{12{,}0}{12{,}25}=$ <b>0,980 m</b>. (Es $v_{máx}=\omega A$ al revés: en el equilibrio la rapidez es máxima.)</li>
-    <li><b>b) Cuidado con (14.18).</b> $\phi=\arctan(-v_{0x}/\omega x_0)$ da $\arctan(\pm\infty)$: no sirve directamente. Se usan las dos condiciones por separado: $x_0=A\cos\phi=0$ ⇒ $\phi=\pm\pi/2$; $v_{0x}=-\omega A\sin\phi\lt0$ ⇒ $\sin\phi\gt0$ ⇒ <b>$\phi=+\pi/2$ rad</b>.</li>
-    <li><b>c)</b> $x=(0{,}980\ \text{m})\cos[(12{,}2\ \text{rad/s})t+\pi/2]=$ <b>$-(0{,}980\ \text{m})\sin[(12{,}2\ \text{rad/s})t]$</b>.</li>
-    <li><b>Comprobación.</b> En $t=0$, $x=0$; justo después $x\lt0$ (se mueve hacia la izquierda) ✓.</li>
+    <li><b>Datos:</b>
+      $$\omega=\sqrt{\frac{300}{2{,}00}}=12{,}25\ \text{rad/s},\qquad x_0=0\ (\text{equilibrio}),\quad v_{0x}=-12{,}0\ \text{m/s}$$</li>
+    <li><b>a) Amplitud:</b>
+      $$A=\sqrt{0+\frac{(-12{,}0)^2}{12{,}25^2}}=\frac{12{,}0}{12{,}25}=\mathbf{0{,}980\ m}$$
+      <span class="por">En el equilibrio la rapidez es máxima: $v_{m\acute ax}=\omega A$.</span></li>
+    <li><b>b) Fase.</b> $\arctan(-v_{0x}/\omega x_0)$ no sirve ($x_0=0$); se usan las dos condiciones:
+      $$x_0=A\cos\phi=0\ \Rightarrow\ \phi=\pm\frac\pi2;\qquad v_{0x}=-\omega A\sin\phi<0\ \Rightarrow\ \sin\phi>0\ \Rightarrow\ \boxed{\phi=+\frac\pi2\ \text{rad}}$$</li>
+    <li><b>c) Posición:</b>
+      $$x=(0{,}980\ \text{m})\cos\Big[(12{,}2\ \text{rad/s})\,t+\frac\pi2\Big]=-(0{,}980\ \text{m})\sin\big[(12{,}2\ \text{rad/s})\,t\big]$$
+      <span class="por">Comprobación: en $t=0$, $x=0$; justo después $x<0$ (se mueve hacia la izquierda) ✓.</span></li>
   </ol>
   {{fig:grafica-de-x-t-0-980-sen-12-2-t-parte-del-equili}}
   <div class="recipe"><b>Receta:</b> para la fase usa siempre las dos condiciones: el signo de $\cos\phi$ lo da $x_0$ y el de $\sin\phi$ lo da $-v_{0x}$; la arcotangente sola puede confundir de cuadrante.</div>

@@ -1,10 +1,17 @@
 <p class="enun">Cuatro pasajeros, con una masa combinada de 250 kg, comprimen 4,00 cm los resortes de un automóvil con amortiguadores muy gastados al subirse a él. Modela el auto y a los pasajeros como un solo cuerpo sobre un único resorte ideal. Si el automóvil cargado tiene un periodo de vibración de 1,92 s, ¿qué periodo tiene cuando está vacío?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Constante: $k=\dfrac{m_{pas}\,g}{\Delta x}$</li>
+      <li>Periodo: $T=2\pi\sqrt{m/k}$ ⇒ $m=\Big(\dfrac{T}{2\pi}\Big)^2k$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Constante del resorte con el dato de los pasajeros.</b> Su peso añadido comprime 4,00 cm más: $k=\dfrac{(250)(9{,}80)}{0{,}0400}=6{,}125\times10^4$ N/m (como en el ejemplo 14.6).</li>
-    <li><b>Masa del coche ($M$, incógnita) con el periodo cargado.</b> $T_L=2\pi\sqrt{\dfrac{M+250}{k}}$ ⇒ $M=\left(\dfrac{T_L}{2\pi}\right)^2k-250=\left(\dfrac{1{,}92}{2\pi}\right)^2(6{,}125\times10^4)-250=5{,}47\times10^3$ kg.</li>
-    <li><b>Periodo vacío.</b> $T_E=2\pi\sqrt{\dfrac Mk}=2\pi\sqrt{\dfrac{5469}{61\,250}}=$ <b>1,88 s</b>.</li>
-    <li><b>Atajo.</b> $T_E^2=T_L^2-4\pi^2\dfrac{250}{k}=T_L^2-\dfrac{4\pi^2\,\Delta x}{g}$ ⇒ $T_E=\sqrt{1{,}92^2-4\pi^2(0{,}0400)/9{,}80}=1{,}88$ s.</li>
-    <li><b>Sentido físico.</b> Menos masa ⇒ periodo algo menor. Una masa de 5,5 t es la de un vehículo muy pesado: es la consecuencia del modelo (un solo resorte) con estos datos.</li>
+    <li><b>Constante del resorte</b> (el peso de los pasajeros comprime 4,00 cm):
+      $$k=\frac{(250)(9{,}80)}{0{,}0400}=6{,}125\times10^4\ \text{N/m}$$</li>
+    <li><b>Masa del coche $M$</b> (periodo cargado, 1,92 s):
+      $$M+250=\Big(\frac{T_L}{2\pi}\Big)^2k=\Big(\frac{1{,}92}{2\pi}\Big)^2(6{,}125\times10^4)=5{,}72\times10^3\ \text{kg}\ \Rightarrow\ M=5{,}47\times10^3\ \text{kg}$$</li>
+    <li><b>Periodo vacío:</b>
+      $$T_E=2\pi\sqrt{\frac Mk}=2\pi\sqrt{\frac{5469}{61\,250}}=\mathbf{1{,}88\ s}$$
+      <span class="por">Atajo: $T_E=\sqrt{T_L^2-4\pi^2\Delta x/g}=\sqrt{1{,}92^2-4\pi^2(0{,}0400)/9{,}80}=1{,}88$ s. Menos masa ⇒ periodo algo menor.</span></li>
   </ol>
   {{fig:automovil-modelado-como-un-bloque-sobre-un-resor}}
   <div class="recipe"><b>Receta:</b> si te dan cuánto baja el sistema al añadir una masa conocida, eso da $k$; el periodo con carga da la masa total; resta.</div>

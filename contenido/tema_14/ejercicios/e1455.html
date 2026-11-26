@@ -1,9 +1,15 @@
 <p class="enun">Una biela de motor de 1,80 kg pivota sobre el filo de un cuchillo horizontal (figura E14.55 de U). Su centro de gravedad está a 0,200 m del pivote. Con oscilaciones de pequeña amplitud hace 100 oscilaciones completas en 120 s. Calcula el momento de inercia de la biela respecto al eje de rotación que pasa por el pivote.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Péndulo físico: $T=2\pi\sqrt{\dfrac{I}{m\,g\,d}}$ ⇒ $I=m\,g\,d\Big(\dfrac{T}{2\pi}\Big)^2$ ($d$ = distancia pivote-cg)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Modelo.</b> Cuerpo rígido que oscila alrededor de un eje que no pasa por su centro de gravedad ⇒ <b>péndulo físico</b>: $T=2\pi\sqrt{I/mgd}$ (14.39), con $d$ la distancia pivote-cg e $I$ respecto al pivote. U cita precisamente este método para medir momentos de inercia.</li>
-    <li><b>Periodo.</b> Contar muchas oscilaciones reduce el error del cronómetro: $T=120/100=1{,}20$ s.</li>
-    <li><b>Despeja.</b> $I=mgd\left(\dfrac{T}{2\pi}\right)^2=(1{,}80)(9{,}80)(0{,}200)\left(\dfrac{1{,}20}{2\pi}\right)^2=$ <b>0,129 kg·m²</b>.</li>
-    <li><b>Orden de magnitud.</b> Si fuera una varilla uniforme con el cg a 0,200 m, mediría 0,400 m e $I=\tfrac13ml^2=0{,}096$ kg·m². La biela real tiene $I$ un 34 % mayor: tiene mucha masa en el extremo grande (la cabeza), lejos del pivote.</li>
+    <li><b>Modelo.</b> Cuerpo rígido que oscila alrededor de un eje que no pasa por su cg ⇒ péndulo físico, con $I$ respecto al pivote.</li>
+    <li><b>Periodo</b> (contar muchas oscilaciones reduce el error del cronómetro):
+      $$T=\frac{120}{100}=1{,}20\ \text{s}$$</li>
+    <li><b>Momento de inercia:</b>
+      $$I=(1{,}80)(9{,}80)(0{,}200)\Big(\frac{1{,}20}{2\pi}\Big)^2=3{,}528(0{,}03647)=\mathbf{0{,}129\ kg\cdot m^2}$$
+      <span class="por">Orden de magnitud: una varilla uniforme de 0,400 m daría $\tfrac13ml^2=0{,}096$ kg·m²; la biela tiene un 34 % más, porque su masa está muy lejos del pivote (cabeza grande).</span></li>
   </ol>
   {{fig:biela-colgada-de-un-cuchillo-pendulo-fisico-con-}}
   <div class="recipe"><b>Receta:</b> medir $I$ de una pieza irregular: cuélgala de un eje, mide $T$ (muchas oscilaciones), $m$ y $d$ ⇒ $I=mgd\,T^2/4\pi^2$.</div>
