@@ -1,10 +1,17 @@
 <p class="enun">Un tanque sellado que contiene agua de mar hasta una altura de 11,0 m contiene también aire sobre el agua a una presión manométrica de 3,00 atm. Sale agua del tanque a través de un orificio pequeño en el fondo. ¿Qué tan rápido se está moviendo el agua?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Bernoulli: $p_1+\rho g y_1=p_2+\tfrac12\rho v_2^2$ (con $v_1\approx0$)</li>
+      <li>Forma general: $v_2=\sqrt{\dfrac{2(p_1-p_{atm})}{\rho}+2g\,y_1}$</li>
+      <li>$1\ \text{atm}=1{,}013\times10^5$ Pa</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Puntos.</b> 1 en la superficie del agua ($y_1=11{,}0$ m, $p_1=p_{atm}+3{,}00$ atm); 2 en el chorro a la salida ($y_2=0$, $p_2=p_{atm}$).</li>
-    <li><b>$v_1\approx0$</b> por continuidad (orificio pequeño frente al tanque).</li>
-    <li><b>Bernoulli:</b> $p_1+\rho gy_1=p_2+\tfrac12\rho v_2^2\Rightarrow v_2=\sqrt{\dfrac{2(p_1-p_{atm})}{\rho}+2gy_1}$ (la forma general del ejemplo 12.8).</li>
-    <li><b>Números</b> ($\rho_{mar}=1030$ kg/m³, $3{,}00\ \text{atm}=3{,}04\times10^5$ Pa): $\dfrac{2(3{,}04\times10^5)}{1030}=590$ m²/s² y $2(9{,}8)(11{,}0)=216$ m²/s² ⇒ $v_2=\sqrt{806}=28{,}4$ m/s.</li>
-    <li><b>Comparación:</b> con el tanque abierto ($\Delta p=0$), Torricelli daría $\sqrt{216}=14{,}7$ m/s: la sobrepresión del aire aporta casi tres veces más que la columna de agua. Equivale a una columna extra de agua de altura $p_{man}/(\rho g)=30{,}1$ m.</li>
+    <li><b>Puntos.</b> 1 en la superficie del agua ($y_1=11{,}0$ m, $p_1=p_{atm}+3{,}00$ atm); 2 en el chorro a la salida ($y_2=0$, $p_2=p_{atm}$). $v_1\approx0$ (orificio pequeño).</li>
+    <li><b>Términos</b> ($\rho_{mar}=1030$ kg/m³; $3{,}00$ atm $=3{,}04\times10^5$ Pa):
+      $$\frac{2(p_1-p_{atm})}{\rho}=\frac{2(3{,}04\times10^5)}{1030}=590\ \text{m}^2/\text{s}^2,\qquad2g\,y_1=2(9{,}8)(11{,}0)=216\ \text{m}^2/\text{s}^2$$</li>
+    <li><b>Rapidez:</b>
+      $$v_2=\sqrt{590+216}=\sqrt{806}=\mathbf{28{,}4\ m/s}$$
+      <span class="por">Con el tanque abierto, Torricelli daría $\sqrt{216}=14{,}7$ m/s. La sobrepresión equivale a una columna extra de agua de $p_{man}/(\rho g)=30{,}1$ m.</span></li>
   </ol>
 {{fig:tanque-sellado-con-aire-a-3-atmosferas-manometri}}
 

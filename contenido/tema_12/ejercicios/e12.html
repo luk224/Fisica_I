@@ -1,9 +1,17 @@
 <p class="enun">Se requiere una diferencia de presión de $6{,}00\times10^4$ Pa para mantener una velocidad de flujo de volumen de 0,800 m³/s para un fluido viscoso que fluye a través de una sección de tubo cilíndrico que tiene un radio de 0,210 m. ¿Qué diferencia de presión es necesaria para mantener la misma rapidez de volumen del flujo si el radio de la tubería se reduce a 0,0700 m?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Flujo viscoso (Poiseuille): a caudal fijo, $\Delta p\propto\dfrac{L}{R^4}$ ⇒ $\Delta p\,R^4=\text{cte}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Por qué no Bernoulli.</b> Con viscosidad hay fricción interna: hace falta una diferencia de presión solo para mantener el flujo aunque la velocidad media no cambie. U da la ley de escala: a caudal fijo, $\Delta p\propto L/R^4$.</li>
-    <li><b>Mismo tubo, misma longitud, mismo caudal</b> ⇒ $\Delta p\,R^4=$ cte ⇒ $\Delta p_2=\Delta p_1\left(\dfrac{R_1}{R_2}\right)^4$.</li>
-    <li><b>Números:</b> $R_1/R_2=0{,}210/0{,}0700=3\Rightarrow3^4=81$ ⇒ $\Delta p_2=81\cdot6{,}00\times10^4=4{,}86\times10^6$ Pa ($\approx48$ atm).</li>
-    <li><b>Sentido físico:</b> reducir el radio a un tercio multiplica por 81 la presión necesaria (reducirlo a la mitad: ×16). Por eso un pequeño estrechamiento de una arteria obliga al corazón a trabajar mucho más.</li>
+    <li><b>Por qué no Bernoulli.</b> Con viscosidad hay fricción interna: hace falta $\Delta p$ solo para mantener el flujo.
+      <span class="por">Mismo tubo (misma $L$), mismo caudal: se razona con cocientes, sin conocer la viscosidad.</span></li>
+    <li><b>Relación:</b>
+      $$\Delta p_2=\Delta p_1\Big(\frac{R_1}{R_2}\Big)^4$$</li>
+    <li><b>Números:</b>
+      $$\frac{R_1}{R_2}=\frac{0{,}210}{0{,}0700}=3\ \Rightarrow\ 3^4=81$$
+      $$\Delta p_2=81(6{,}00\times10^4)=\mathbf{4{,}86\times10^6\ Pa}\ (\approx48\ \text{atm})$$
+      <span class="por">Reducir el radio a un tercio multiplica por 81 la presión necesaria; por eso un estrechamiento de una arteria obliga al corazón a trabajar mucho más.</span></li>
   </ol>
 {{fig:dos-tubos-del-mismo-caudal-uno-de-radio-0-210-me}}
 

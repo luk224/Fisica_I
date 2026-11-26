@@ -399,12 +399,20 @@
 <details class="mas pista"><summary>Pista 1</summary><p>En el caso límite el fluido está en reposo: las presiones en la punta de la aguja y en la vena son iguales (hidrostática).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Compara manométrica con manométrica: $\rho gh=5980$ Pa.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Condición física.</b> El fluido entra si la presión en la punta de la aguja es al menos la de la sangre; en el caso límite el fluido está en reposo y las dos presiones son iguales ⇒ basta la hidrostática.</li>
-    <li><b>Presión en la aguja (12.6).</b> La superficie del depósito está a $p_{atm}$; la aguja está a una profundidad $h$ bajo ella: $p=p_{atm}+\rho gh$, es decir, manométrica $=\rho gh$.</li>
-    <li><b>Igualar manométricas</b> (comparamos lo mismo con lo mismo): $\rho gh=5980$ Pa.</li>
-    <li><b>Despejar:</b> $h=\dfrac{5980}{(1050)(9{,}8)}=0{,}581$ m.</li>
-    <li><b>Sentido:</b> por eso las bolsas cuelgan de un soporte alto, a más de medio metro sobre el brazo.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Presión a profundidad $h$: $p=p_{atm}+\rho g\,h$ (manométrica: $\rho g h$)</li>
+      <li>Fluido en reposo (caso límite): presiones iguales</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Condición.</b> El fluido entra si la presión en la aguja es al menos la de la sangre; en el caso límite están en reposo y las presiones coinciden.</li>
+    <li><b>Presión en la aguja</b> (a profundidad $h$ bajo la superficie del depósito, abierta a la atmósfera):
+      $$p=p_{atm}+\rho g\,h\ \Rightarrow\ p_{man}=\rho g\,h$$</li>
+    <li><b>Igualar manométricas:</b>
+      $$\rho g\,h=5980\ \text{Pa}$$</li>
+    <li><b>Despejar:</b>
+      $$h=\frac{5980}{(1050)(9{,}8)}=\frac{5980}{10\,290}=\mathbf{0{,}581\ m}$$
+      <span class="por">Por eso las bolsas cuelgan de un soporte alto.</span></li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/bolsa-de-suero-colgada-0-581-metros-sobre-el-bra.svg">
 <div class="figph" role="img" aria-label="Bolsa de suero colgada 0,581 metros sobre el brazo de un paciente con un tubo hasta la aguja en la vena" style="aspect-ratio:340/225"></div>
@@ -421,12 +429,19 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Pascal: la presión es la misma en los dos pistones, $F_1/A_1=F_2/A_2$; la fuerza que hay que equilibrar es $F_2=mg$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$A=\pi D^2/4$: el cociente de áreas es el <i>cuadrado</i> del cociente de diámetros.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Ley de Pascal.</b> La presión se transmite igual a todo el fluido y los dos pistones están a la misma altura: $p=F_1/A_1=F_2/A_2$ (12.7).</li>
-    <li><b>Fuerza necesaria:</b> $F_2=mg=(1520)(9{,}8)=1{,}49\times10^4$ N.</li>
-    <li><b>Cociente de áreas:</b> $\dfrac{A_2}{A_1}=\dfrac{F_2}{F_1}=\dfrac{1{,}49\times10^4}{125}=119$.</li>
-    <li><b>A diámetros:</b> $A=\pi D^2/4\Rightarrow A_2/A_1=(D_2/D_1)^2$ ⇒ $\dfrac{D_2}{D_1}=\sqrt{119}=10{,}9$.</li>
-    <li><b>Comprobación con energía:</b> el trabajo es el mismo en los dos pistones: para subir el auto 1 cm hay que bajar el pistón pequeño 119 cm. La prensa multiplica la <i>fuerza</i>, no el trabajo.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ley de Pascal (pistones a la misma altura): $\dfrac{F_1}{A_1}=\dfrac{F_2}{A_2}$</li>
+      <li>$A=\dfrac{\pi D^2}{4}$ ⇒ $\dfrac{A_2}{A_1}=\Big(\dfrac{D_2}{D_1}\Big)^2$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Fuerza que debe levantar el pistón grande:</b>
+      $$F_2=mg=(1520)(9{,}8)=1{,}49\times10^4\ \text{N}$$</li>
+    <li><b>Cociente de áreas</b> (Pascal):
+      $$\frac{A_2}{A_1}=\frac{F_2}{F_1}=\frac{1{,}49\times10^4}{125}=119$$</li>
+    <li><b>Cociente de diámetros:</b>
+      $$\frac{D_2}{D_1}=\sqrt{\frac{A_2}{A_1}}=\sqrt{119}=\mathbf{10{,}9}$$
+      <span class="por">Comprobación con energía: el trabajo es el mismo en los dos pistones; para subir el auto 1 cm hay que bajar el pistón pequeño 119 cm. La prensa multiplica la fuerza, no el trabajo.</span></li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/elevador-hidraulico-con-un-piston-pequeno-donde-.svg">
 <div class="figph" role="img" aria-label="Elevador hidráulico con un pistón pequeño donde se aplica 125 newtons y un pistón grande de diámetro 10,9 veces mayor que levanta el auto" style="aspect-ratio:340/202"></div>
@@ -443,12 +458,22 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Con la roca sumergida y colgada: $T+B=mg$, luego $B=mg-T$ y de ahí el volumen $V=B/(\rho_wg)$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Un cuerpo flota en un líquido si su densidad media es menor o igual que la del líquido: el mínimo es $\rho_{roca}$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Paso 1: volumen de la roca, a partir del agua.</b> Equilibrio sumergida: $T+B=mg\Rightarrow B=mg-T=17{,}64-12{,}8=4{,}84$ N. Con Arquímedes $B=\rho_wVg\Rightarrow V=\dfrac{4{,}84}{(1000)(9{,}8)}=4{,}94\times10^{-4}$ m³.</li>
-    <li><b>Densidad de la roca:</b> $\rho_{roca}=m/V=1{,}80/(4{,}94\times10^{-4})=3{,}64\times10^3$ kg/m³.</li>
-    <li><b>Paso 2: condición de flotar.</b> Sin cuerda, el empuje máximo (cuerpo totalmente sumergido) debe igualar al menos su peso: $\rho_{liq}Vg\ge mg\Rightarrow\rho_{liq}\ge m/V=\rho_{roca}$.</li>
-    <li><b>Resultado:</b> $\rho_{liq,min}=\rho_{roca}=\rho_w\dfrac{mg}{mg-T}=\dfrac{(1000)(17{,}64)}{17{,}64-12{,}8}=3{,}64\times10^3$ kg/m³. Con un líquido más denso (por ejemplo, mercurio, $13{,}6\times10^3$) la roca flotaría con parte fuera.</li>
-    <li><b>Idea clave:</b> un cuerpo flota en un líquido si y solo si su densidad media es menor o igual que la del líquido.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio sumergida: $T+B=mg$</li>
+      <li>Empuje (Arquímedes): $B=\rho_{fluido}\,V\,g$</li>
+      <li>Condición de flotar: $\rho_{liq}\ge\rho_{roca}=m/V$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Empuje en agua:</b>
+      $$B=mg-T=(1{,}80)(9{,}8)-12{,}8=17{,}64-12{,}8=4{,}84\ \text{N}$$</li>
+    <li><b>Volumen de la roca</b> (de $B=\rho_wVg$):
+      $$V=\frac{4{,}84}{(1000)(9{,}8)}=4{,}94\times10^{-4}\ \text{m}^3$$</li>
+    <li><b>Densidad de la roca:</b>
+      $$\rho_{roca}=\frac mV=\frac{1{,}80}{4{,}94\times10^{-4}}=3{,}64\times10^3\ \text{kg/m}^3$$</li>
+    <li><b>Condición de flotar.</b> Sin cuerda, el empuje máximo (totalmente sumergida) debe igualar al menos el peso:
+      $$\rho_{liq}Vg\ge mg\ \Rightarrow\ \rho_{liq,\min}=\rho_{roca}=\mathbf{3{,}64\times10^3\ kg/m^3}$$
+      <span class="por">Un cuerpo flota si y solo si su densidad media es menor o igual que la del líquido.</span></li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/dos-diagramas-de-cuerpo-libre-de-una-roca-de-1-8.svg">
 <div class="figph" role="img" aria-label="Dos diagramas de cuerpo libre de una roca de 1,80 kilogramos: sumergida en agua con tensión 12,8 newtons y empuje 4,84; y en el líquido de densidad mínima donde flota, con empuje igual al peso" style="aspect-ratio:340/262"></div>
@@ -465,13 +490,24 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Cara superior: solo hay aceite encima. Cara inferior: «escalera» de capas, sumando $\rho gh$ de cada fluido con su densidad.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>El empuje es la diferencia de presiones por el área; el equilibrio vertical da la masa.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Geometría.</b> La interfase está a 10,0 cm bajo la superficie del aceite y la cara inferior a 1,50 cm bajo la interfase ⇒ la cara superior queda a $10{,}0+1{,}50-10{,}0=1{,}50$ cm bajo la superficie del aceite.</li>
-    <li><b>a) Cara superior</b> (solo aceite encima, ec. 12.6): $p_{man}=\rho_{ac}g(0{,}0150)=(790)(9{,}8)(0{,}0150)=116$ Pa.</li>
-    <li><b>b) Cara inferior: «escalera» de capas.</b> Se baja capa a capa sumando el $\rho gh$ de cada fluido, con su propia densidad: $p_{man}=\rho_{ac}g(0{,}100)+\rho_wg(0{,}0150)=774+147=921$ Pa.</li>
-    <li><b>c) Equilibrio del bloque.</b> Las caras laterales se compensan dos a dos. Verticalmente $p_bA-p_tA-mg=0$; la diferencia de absolutas es igual a la de manométricas ($p_{atm}$ se cancela): $\Delta p=921-116=805$ Pa. Con $A=0{,}0100$ m²: $m=\dfrac{805\cdot0{,}0100}{9{,}8}=0{,}821$ kg.</li>
-    <li><b>Densidad:</b> $\rho=\dfrac mV=\dfrac{0{,}821}{(0{,}100)^3}=821$ kg/m³.</li>
-    <li><b>Comprobación con Arquímedes:</b> masa de fluido desplazado $=790(0{,}0100)(0{,}0850)+1000(0{,}0100)(0{,}0150)=0{,}6715+0{,}150=0{,}8215$ kg $=m$. La diferencia de presiones entre caras <i>es</i> el empuje: dos caminos, el mismo resultado.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Presión manométrica por capas: $p=\sum\rho_i\,g\,h_i$</li>
+      <li>Equilibrio vertical del bloque: $(p_{inf}-p_{sup})A=mg$ (el empuje es la diferencia de presiones)</li>
+      <li>$\rho=m/V$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Geometría.</b> La interfase está a 10,0 cm bajo la superficie del aceite; la cara inferior, a 1,50 cm bajo la interfase. La cara superior queda a $10{,}0+1{,}50-10{,}0=1{,}50$ cm bajo la superficie del aceite.</li>
+    <li><b>a) Cara superior</b> (solo aceite encima):
+      $$p_{sup}=\rho_{ac}\,g\,(0{,}0150)=(790)(9{,}8)(0{,}0150)=\mathbf{116\ Pa}$$</li>
+    <li><b>b) Cara inferior</b> (capa a capa, cada una con su densidad):
+      $$p_{inf}=\rho_{ac}g(0{,}100)+\rho_wg(0{,}0150)=774+147=\mathbf{921\ Pa}$$</li>
+    <li><b>c) Masa</b> ($A=0{,}0100$ m²; $p_{atm}$ se cancela):
+      $$\Delta p=921-116=805\ \text{Pa},\qquad m=\frac{\Delta p\,A}{g}=\frac{805(0{,}0100)}{9{,}8}=\mathbf{0{,}821\ kg}$$</li>
+    <li><b>Densidad:</b>
+      $$\rho=\frac mV=\frac{0{,}821}{(0{,}100)^3}=\mathbf{821\ kg/m^3}$$</li>
+    <li><b>Comprobación con Arquímedes</b> (masa de fluido desplazado):
+      $$790(0{,}0100)(0{,}0850)+1000(0{,}0100)(0{,}0150)=0{,}6715+0{,}150=0{,}8215\ \text{kg}=m\ \checkmark$$</li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/bloque-de-madera-de-10-centimetros-flotando-entr.svg">
 <div class="figph" role="img" aria-label="Bloque de madera de 10 centímetros flotando entre aceite y agua, con 8,5 centímetros en el aceite y 1,5 en el agua, y gráfica de la presión manométrica con la profundidad" style="aspect-ratio:340/195"></div>
@@ -488,12 +524,23 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Continuidad: el caudal $Q=A_1v_1$ es el mismo en todas las secciones del tubo.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>En cualquier sección $v=Q/A$; el volumen en un tiempo $t$ es $Qt$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Por qué continuidad.</b> El agua es incompresible y el tubo está lleno: lo que entra por una sección en un tiempo $dt$ sale por cualquier otra ⇒ $A_1v_1=A_2v_2$ (12.10).</li>
-    <li><b>Caudal:</b> $Q=A_1v_1=(0{,}070)(3{,}50)=0{,}245$ m³/s, el mismo en todo el tubo (12.11).</li>
-    <li><b>a)</b> $v=Q/A=0{,}245/0{,}105=2{,}33$ m/s (sección mayor ⇒ más lento).</li>
-    <li><b>b)</b> $v=0{,}245/0{,}047=5{,}21$ m/s (sección menor ⇒ más rápido).</li>
-    <li><b>c)</b> El caudal es el mismo también en la salida: $V=Qt=(0{,}245)(3600)=882$ m³ $\approx8{,}8\times10^2$ m³.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Continuidad (fluido incompresible): $A_1v_1=A_2v_2=Q$</li>
+      <li>Volumen en un tiempo $t$: $V=Q\,t$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Caudal</b> (el mismo en todo el tubo):
+      $$Q=A_1v_1=(0{,}070)(3{,}50)=0{,}245\ \text{m}^3/\text{s}$$</li>
+    <li><b>a) Sección 0,105 m²:</b>
+      $$v=\frac QA=\frac{0{,}245}{0{,}105}=\mathbf{2{,}33\ m/s}$$
+      <span class="por">Sección mayor ⇒ más lento.</span></li>
+    <li><b>b) Sección 0,047 m²:</b>
+      $$v=\frac{0{,}245}{0{,}047}=\mathbf{5{,}21\ m/s}$$
+      <span class="por">Sección menor ⇒ más rápido.</span></li>
+    <li><b>c) Volumen descargado en una hora:</b>
+      $$V=Q\,t=(0{,}245)(3600)=882\ \text{m}^3\approx\mathbf{8{,}8\times10^2\ m^3}$$
+      <span class="por">No hace falta el área de salida: el caudal es único.</span></li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/tubo-con-tres-secciones-de-area-0-105-0-070-y-0-.svg">
 <div class="figph" role="img" aria-label="Tubo con tres secciones de área 0,105, 0,070 y 0,047 metros cuadrados con velocidades 2,33, 3,50 y 5,21 metros por segundo" style="aspect-ratio:340/160"></div>
@@ -510,12 +557,21 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Continuidad con diámetro doble: el área es cuádruple, luego $v_2=v_1/4$ (no $v_1/2$).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Bernoulli con presiones manométricas: $p_2=p_1+\tfrac12\rho(v_1^2-v_2^2)+\rho g(y_1-y_2)$; el punto más bajo tiene más presión.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Continuidad.</b> Diámetro doble ⇒ área cuádruple ⇒ $v_2=v_1/4=0{,}750$ m/s.</li>
-    <li><b>Bernoulli (12.17)</b> con $y_1-y_2=11{,}0$ m. Se pueden usar presiones manométricas en los dos puntos, porque $p_{atm}$ aparece a ambos lados y se cancela: $p_2=p_1+\tfrac12\rho(v_1^2-v_2^2)+\rho g(y_1-y_2)$.</li>
-    <li><b>Términos.</b> Cinético: $\tfrac12(1000)(9-0{,}5625)=4{,}22\times10^3$ Pa. Altura: $(1000)(9{,}8)(11{,}0)=1{,}078\times10^5$ Pa.</li>
-    <li><b>Resultado:</b> $p_2=5{,}00\times10^4+4{,}22\times10^3+1{,}078\times10^5=1{,}62\times10^5$ Pa (manométrica).</li>
-    <li><b>Sentido:</b> bajar y frenar hacen <i>subir</i> la presión; los dos términos suman. El de altura domina (≈ 26 veces el cinético).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Continuidad: $A_1v_1=A_2v_2$, con $A\propto D^2$</li>
+      <li>Bernoulli: $p_2=p_1+\tfrac12\rho(v_1^2-v_2^2)+\rho g(y_1-y_2)$ (presiones manométricas en ambos puntos)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Continuidad.</b> Diámetro doble ⇒ área cuádruple:
+      $$v_2=\frac{v_1}{4}=0{,}750\ \text{m/s}$$</li>
+    <li><b>Término cinético:</b>
+      $$\tfrac12\rho(v_1^2-v_2^2)=\tfrac12(1000)(9{,}00-0{,}5625)=4{,}22\times10^3\ \text{Pa}$$</li>
+    <li><b>Término de altura</b> ($y_1-y_2=11{,}0$ m):
+      $$\rho g(y_1-y_2)=(1000)(9{,}8)(11{,}0)=1{,}078\times10^5\ \text{Pa}$$</li>
+    <li><b>Presión en el punto 2:</b>
+      $$p_2=5{,}00\times10^4+4{,}22\times10^3+1{,}078\times10^5=\mathbf{1{,}62\times10^5\ Pa}\ \text{(manométrica)}$$
+      <span class="por">Bajar y frenar hacen subir la presión; el término de altura domina (≈ 26 veces el cinético).</span></li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/tuberia-que-desciende-11-metros-y-duplica-su-dia.svg">
 <div class="figph" role="img" aria-label="Tubería que desciende 11 metros y duplica su diámetro: la velocidad pasa de 3,00 a 0,750 metros por segundo y la presión manométrica de 5,00×10⁴ a 1,62×10⁵ pascales" style="aspect-ratio:340/205"></div>
@@ -532,13 +588,22 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Bernoulli entre la superficie y el chorro (ambos a $p_{atm}$); con tanque grande, $v_1\approx0$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$h$ es la profundidad bajo la superficie, no la altura del orificio sobre el suelo.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Bernoulli entre la superficie (1) y el chorro justo fuera del orificio (2).</b> Ambos a $p_{atm}$ (superficie abierta; chorro libre en el aire) ⇒ las presiones se cancelan.</li>
-    <li><b>Tanque grande:</b> por continuidad $v_1=(A_2/A_1)v_2\approx0$ (el nivel baja muy despacio).</li>
-    <li><b>Queda</b> $\rho gh=\tfrac12\rho v_2^2\Rightarrow v_2=\sqrt{2gh}$ (teorema de Torricelli): la misma rapidez que en caída libre desde la altura $h$.</li>
-    <li><b>a)</b> $v=\sqrt{2(9{,}8)(14{,}0)}=16{,}6$ m/s.</li>
-    <li><b>b)</b> $A=\pi d^2/4=\pi(6{,}00\times10^{-3})^2/4=2{,}83\times10^{-5}$ m² ⇒ $Q=Av=4{,}68\times10^{-4}$ m³/s $=0{,}468$ L/s.</li>
-    <li><b>Ampliación (alcance del chorro).</b> Si el tanque está lleno hasta $H=15{,}0$ m, el orificio queda a $y_0=15{,}0-14{,}0=1{,}0$ m del suelo; el chorro sale horizontal y cae como un tiro horizontal: $x=v\sqrt{2y_0/g}=16{,}57\sqrt{2(1{,}0)/9{,}8}=7{,}48$ m desde la pared.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Bernoulli: $p_1+\rho g y_1+\tfrac12\rho v_1^2=p_2+\rho g y_2+\tfrac12\rho v_2^2$</li>
+      <li>Torricelli: $v=\sqrt{2gh}$ ($h$ = profundidad bajo la superficie)</li>
+      <li>Caudal: $Q=A\,v$; $A=\dfrac{\pi d^2}{4}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Bernoulli entre la superficie (1) y el chorro (2).</b> Ambos a $p_{atm}$: las presiones se cancelan. Tanque grande: $v_1\approx0$.
+      $$\rho g h=\tfrac12\rho v_2^2\ \Rightarrow\ v_2=\sqrt{2gh}$$</li>
+    <li><b>a) Rapidez:</b>
+      $$v=\sqrt{2(9{,}8)(14{,}0)}=\mathbf{16{,}6\ m/s}$$</li>
+    <li><b>b) Caudal:</b>
+      $$A=\frac{\pi(6{,}00\times10^{-3})^2}{4}=2{,}83\times10^{-5}\ \text{m}^2$$
+      $$Q=A\,v=(2{,}83\times10^{-5})(16{,}57)=\mathbf{4{,}68\times10^{-4}\ m^3/s}=0{,}468\ \text{L/s}$$</li>
+    <li><b>Ampliación (alcance).</b> Con el tanque lleno hasta $H=15{,}0$ m, el orificio está a $y_0=1{,}0$ m del suelo; el chorro sale horizontal:
+      $$x=v\sqrt{\frac{2y_0}{g}}=16{,}57\sqrt{\frac{2(1{,}0)}{9{,}8}}=7{,}48\ \text{m}$$</li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/tanque-de-agua-con-un-orificio-de-6-milimetros-a.svg">
 <div class="figph" role="img" aria-label="Tanque de agua con un orificio de 6 milímetros a 14 metros bajo la superficie y chorro con rapidez de salida 16,6 metros por segundo" style="aspect-ratio:340/225"></div>
@@ -555,11 +620,19 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Con viscosidad no sirve Bernoulli: a caudal fijo, $\Delta p\propto L/R^4$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Razona con cocientes: $\Delta p_2=\Delta p_1(R_1/R_2)^4$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Por qué no Bernoulli.</b> Con viscosidad hay fricción interna: hace falta una diferencia de presión solo para mantener el flujo aunque la velocidad media no cambie. U da la ley de escala: a caudal fijo, $\Delta p\propto L/R^4$.</li>
-    <li><b>Mismo tubo, misma longitud, mismo caudal</b> ⇒ $\Delta p\,R^4=$ cte ⇒ $\Delta p_2=\Delta p_1\left(\dfrac{R_1}{R_2}\right)^4$.</li>
-    <li><b>Números:</b> $R_1/R_2=0{,}210/0{,}0700=3\Rightarrow3^4=81$ ⇒ $\Delta p_2=81\cdot6{,}00\times10^4=4{,}86\times10^6$ Pa ($\approx48$ atm).</li>
-    <li><b>Sentido físico:</b> reducir el radio a un tercio multiplica por 81 la presión necesaria (reducirlo a la mitad: ×16). Por eso un pequeño estrechamiento de una arteria obliga al corazón a trabajar mucho más.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Flujo viscoso (Poiseuille): a caudal fijo, $\Delta p\propto\dfrac{L}{R^4}$ ⇒ $\Delta p\,R^4=\text{cte}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Por qué no Bernoulli.</b> Con viscosidad hay fricción interna: hace falta $\Delta p$ solo para mantener el flujo.
+      <span class="por">Mismo tubo (misma $L$), mismo caudal: se razona con cocientes, sin conocer la viscosidad.</span></li>
+    <li><b>Relación:</b>
+      $$\Delta p_2=\Delta p_1\Big(\frac{R_1}{R_2}\Big)^4$$</li>
+    <li><b>Números:</b>
+      $$\frac{R_1}{R_2}=\frac{0{,}210}{0{,}0700}=3\ \Rightarrow\ 3^4=81$$
+      $$\Delta p_2=81(6{,}00\times10^4)=\mathbf{4{,}86\times10^6\ Pa}\ (\approx48\ \text{atm})$$
+      <span class="por">Reducir el radio a un tercio multiplica por 81 la presión necesaria; por eso un estrechamiento de una arteria obliga al corazón a trabajar mucho más.</span></li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/dos-tubos-del-mismo-caudal-uno-de-radio-0-210-me.svg">
 <div class="figph" role="img" aria-label="Dos tubos del mismo caudal: uno de radio 0,210 metros que necesita 6,00×10⁴ pascales y otro de radio 0,0700 metros que necesita 4,86×10⁶ pascales" style="aspect-ratio:340/205"></div>
@@ -573,13 +646,23 @@
 <div class="nivel"><b>🟡 Práctica: 5 ejercicios más</b><span>Repiten métodos del núcleo: densidad de una pieza con un hueco, presión en el pistón de un elevador, densidad de un líquido por pesadas, un tanque presurizado y el problema práctico del libro (tiempo de vaciado de un depósito). Antes de leer los pasos, marca los puntos 1 y 2 y decide si las presiones van absolutas o manométricas.</span></div>
 <details class="sol" id="e1"><summary>E1 — Problema 12.2: cubo con un orificio (densidad y peso original) <span class="src" data-l="E" data-ref="Solucionario 12-1, Prob. 12.2">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.2, p. 390 y §12.1, ec. 12.1, tabla 12.1">U p.370, 390</span></summary>
 <p class="enun">Un cubo de 5,0 cm de lado está hecho de una aleación metálica. Después de perforar de lado a lado un orificio cilíndrico de 2,0 cm de diámetro, perpendicular a una cara, el cubo pesa 6,30 N. a) ¿Cuál es la densidad del metal? b) ¿Cuánto pesaba el cubo antes de taladrarlo?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Densidad: $\rho=\dfrac mV$; peso: $w=mg$</li>
+      <li>Volumen del cubo: $L^3$; del cilindro del orificio: $\pi r^2L$</li>
+      <li>$1\ \text{cm}^3=10^{-6}\ \text{m}^3$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Qué objeto conocemos.</b> Los 6,30 N son el peso del cubo <i>ya agujereado</i>; su volumen es el del cubo menos el del cilindro hueco (radio 1,0 cm, longitud igual al lado porque atraviesa el cubo).</li>
-    <li><b>Volumen de metal:</b> $V=L^3-\pi r^2L=125-\pi(1{,}0)^2(5{,}0)=125-15{,}7=109\ \text{cm}^3=1{,}09\times10^{-4}$ m³ (1 cm³ $=10^{-6}$ m³).</li>
-    <li><b>Masa:</b> de $w=mg$, $m=6{,}30/9{,}8=0{,}643$ kg.</li>
-    <li><b>a) Densidad (12.1):</b> $\rho=m/V=0{,}643/(1{,}09\times10^{-4})=5{,}9\times10^3$ kg/m³. Razonable: entre el aluminio ($2{,}7\times10^3$) y el hierro ($7{,}8\times10^3$), según la tabla 12.1.</li>
-    <li><b>b) Cubo macizo:</b> mismo metal, misma densidad: $m_0=\rho L^3=(5{,}9\times10^3)(1{,}25\times10^{-4})=0{,}735$ kg ⇒ $w_0=m_0g=7{,}2$ N.</li>
-    <li><b>Atajo:</b> el agujero quita $\pi r^2L/L^3=12{,}6\,\%$ del volumen ⇒ $w_0=6{,}30/(1-0{,}126)=7{,}2$ N.</li>
+    <li><b>Volumen de metal</b> (los 6,30 N son del cubo ya agujereado; el orificio, de radio 1,0 cm, atraviesa los 5,0 cm):
+      $$V=L^3-\pi r^2L=125-\pi(1{,}0)^2(5{,}0)=125-15{,}7=109\ \text{cm}^3=1{,}09\times10^{-4}\ \text{m}^3$$</li>
+    <li><b>Masa:</b>
+      $$m=\frac wg=\frac{6{,}30}{9{,}8}=0{,}643\ \text{kg}$$</li>
+    <li><b>a) Densidad:</b>
+      $$\rho=\frac mV=\frac{0{,}643}{1{,}09\times10^{-4}}=\mathbf{5{,}9\times10^3\ kg/m^3}$$
+      <span class="por">Razonable: entre el aluminio (2,7×10³) y el hierro (7,8×10³).</span></li>
+    <li><b>b) Cubo macizo</b> (mismo metal, misma densidad):
+      $$m_0=\rho\,L^3=(5{,}9\times10^3)(1{,}25\times10^{-4})=0{,}735\ \text{kg}\ \Rightarrow\ w_0=m_0g=\mathbf{7{,}2\ N}$$
+      <span class="por">Atajo: el agujero quita $\pi r^2L/L^3=12{,}6\ \%$ del volumen ⇒ $w_0=6{,}30/(1-0{,}126)=7{,}2$ N.</span></li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/cubo-de-5-centimetros-de-lado-con-un-orificio-ci.svg">
 <div class="figph" role="img" aria-label="Cubo de 5 centímetros de lado con un orificio cilíndrico de 2 centímetros de diámetro que lo atraviesa" style="aspect-ratio:340/190"></div>
@@ -591,13 +674,23 @@
 </details>
 <details class="sol" id="e3"><summary>E3 — Problema 12.24: elevador hidráulico II (presión necesaria) <span class="src" data-l="E" data-ref="Solucionario 12-6, Prob. 12.24">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.24, p. 392 y §12.2, p. 371">U p.371, 392</span></summary>
 <p class="enun">El pistón del elevador hidráulico para autos tiene 0,30 m de diámetro. ¿Qué presión manométrica, en pascales y en atmósferas, se requiere para levantar un auto de 1200 kg?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio del pistón: $\sum F_y=0$</li>
+      <li>Presión: $p=F/A$; área del pistón: $A=\pi r^2$</li>
+      <li>$1\ \text{atm}=1{,}013\times10^5$ Pa</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>DCL del pistón con el auto encima, en equilibrio.</b> Hacia arriba, la fuerza del aceite $pA$ (presión absoluta). Hacia abajo, el peso $mg$ y la fuerza del aire de encima, $p_{atm}A$.</li>
-    <li><b>$\sum F_y=0$:</b> $pA-p_{atm}A-mg=0\ \Rightarrow\ p-p_{atm}=\dfrac{mg}{A}$. <b>La atmósfera se cancela sola</b> y queda exactamente la manométrica.</li>
-    <li><b>Área</b> (radio = mitad del diámetro): $A=\pi(0{,}15)^2=0{,}0707$ m².</li>
-    <li><b>Número:</b> $p_{man}=\dfrac{(1200)(9{,}8)}{0{,}0707}=1{,}66\times10^5$ Pa $\approx1{,}7\times10^5$ Pa.</li>
-    <li><b>En atmósferas:</b> $\dfrac{1{,}66\times10^5}{1{,}013\times10^5}=1{,}64$ atm ($\approx1{,}6$ atm).</li>
-    <li><b>Evaluar:</b> cuanto mayor es el diámetro del pistón, menor es la presión manométrica necesaria.</li>
+    <li><b>Equilibrio del pistón con el auto encima.</b> Hacia arriba: la fuerza del aceite $pA$; hacia abajo: el peso $mg$ y la fuerza del aire $p_{atm}A$.
+      $$pA-p_{atm}A-mg=0\ \Rightarrow\ p-p_{atm}=\frac{mg}{A}$$
+      <span class="por">La atmósfera se cancela sola y queda justo la presión manométrica.</span></li>
+    <li><b>Área</b> (radio = mitad del diámetro):
+      $$A=\pi(0{,}15)^2=0{,}0707\ \text{m}^2$$</li>
+    <li><b>Presión manométrica:</b>
+      $$p_{man}=\frac{(1200)(9{,}8)}{0{,}0707}=\mathbf{1{,}66\times10^5\ Pa}$$</li>
+    <li><b>En atmósferas:</b>
+      $$\frac{1{,}66\times10^5}{1{,}013\times10^5}=\mathbf{1{,}64\ atm}$$
+      <span class="por">Cuanto mayor es el diámetro del pistón, menor es la presión necesaria.</span></li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/piston-del-elevador-con-el-automovil-encima-y-su.svg">
 <div class="figph" role="img" aria-label="Pistón del elevador con el automóvil encima y su diagrama de cuerpo libre: fuerza del aceite hacia arriba igual al peso más la fuerza del aire" style="aspect-ratio:340/190"></div>
@@ -609,12 +702,21 @@
 </details>
 <details class="sol" id="e6"><summary>E6 — Problema 12.35: densidad de un líquido desconocido por pesadas <span class="src" data-l="E" data-ref="Solucionario 12-9 y 12-10, Prob. 12.35">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.35, p. 392 y §12.3, p. 376">U p.376, 392</span></summary>
 <p class="enun">Una roca cuelga de un hilo ligero. Cuando está en el aire, la tensión en el hilo es de 39,2 N. Cuando está totalmente sumergida en agua, la tensión es de 28,4 N. Cuando está totalmente sumergida en un líquido desconocido, la tensión es de 21,5 N. Determina la densidad del líquido desconocido.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Empuje = peso en aire − tensión sumergida: $B=w-T$</li>
+      <li>Arquímedes: $B=\rho_{fluido}\,V\,g$ (mismo $V$ en los dos líquidos)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Por qué tres pesadas bastan.</b> La diferencia «aire − sumergido» es el empuje. El volumen de la roca es el mismo en ambos líquidos, así que los empujes están en la proporción de las densidades.</li>
-    <li><b>Empuje en agua:</b> $B_w=39{,}2-28{,}4=10{,}8$ N ⇒ $V=B_w/(\rho_wg)=1{,}10\times10^{-3}$ m³.</li>
-    <li><b>Empuje en el líquido:</b> $B_L=39{,}2-21{,}5=17{,}7$ N $=\rho_LVg$.</li>
-    <li><b>Cociente (sin calcular $V$):</b> $\dfrac{\rho_L}{\rho_w}=\dfrac{B_L}{B_w}=\dfrac{17{,}7}{10{,}8}=1{,}64\Rightarrow\rho_L=1{,}64\times10^3$ kg/m³.</li>
-    <li><b>Extra:</b> densidad de la roca, $\rho_{roca}=\rho_w\dfrac{39{,}2}{10{,}8}=3{,}63\times10^3$ kg/m³.</li>
+    <li><b>Empuje en agua:</b>
+      $$B_w=39{,}2-28{,}4=10{,}8\ \text{N}$$</li>
+    <li><b>Empuje en el líquido desconocido:</b>
+      $$B_L=39{,}2-21{,}5=17{,}7\ \text{N}$$</li>
+    <li><b>Cociente</b> (el volumen es el mismo y se cancela):
+      $$\frac{B_L}{B_w}=\frac{\rho_LVg}{\rho_wVg}=\frac{\rho_L}{\rho_w}=\frac{17{,}7}{10{,}8}=1{,}64$$
+      $$\rho_L=1{,}64\times10^3\ \text{kg/m}^3$$</li>
+    <li><b>Extra:</b> volumen y densidad de la roca:
+      $$V=\frac{B_w}{\rho_wg}=\frac{10{,}8}{(1000)(9{,}8)}=1{,}10\times10^{-3}\ \text{m}^3,\qquad\rho_{roca}=\rho_w\frac{39{,}2}{10{,}8}=3{,}63\times10^3\ \text{kg/m}^3$$</li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/tres-dinamometros-que-sostienen-la-misma-roca-en.svg">
 <div class="figph" role="img" aria-label="Tres dinamómetros que sostienen la misma roca en el aire (39,2 newtons), en agua (28,4 newtons) y en un líquido desconocido (21,5 newtons)" style="aspect-ratio:340/235"></div>
@@ -626,12 +728,19 @@
 </details>
 <details class="sol" id="e11"><summary>E11 — Problema 12.41: tanque sellado con aire a presión <span class="src" data-l="E" data-ref="Solucionario 12-11, Prob. 12.41">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 12.41, p. 392 y §12.5, Ejemplo 12.8, pp. 383-384">U pp.383-384, 392</span></summary>
 <p class="enun">Un tanque sellado que contiene agua de mar hasta una altura de 11,0 m contiene también aire sobre el agua a una presión manométrica de 3,00 atm. Sale agua del tanque a través de un orificio pequeño en el fondo. ¿Qué tan rápido se está moviendo el agua?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Bernoulli: $p_1+\rho g y_1=p_2+\tfrac12\rho v_2^2$ (con $v_1\approx0$)</li>
+      <li>Forma general: $v_2=\sqrt{\dfrac{2(p_1-p_{atm})}{\rho}+2g\,y_1}$</li>
+      <li>$1\ \text{atm}=1{,}013\times10^5$ Pa</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Puntos.</b> 1 en la superficie del agua ($y_1=11{,}0$ m, $p_1=p_{atm}+3{,}00$ atm); 2 en el chorro a la salida ($y_2=0$, $p_2=p_{atm}$).</li>
-    <li><b>$v_1\approx0$</b> por continuidad (orificio pequeño frente al tanque).</li>
-    <li><b>Bernoulli:</b> $p_1+\rho gy_1=p_2+\tfrac12\rho v_2^2\Rightarrow v_2=\sqrt{\dfrac{2(p_1-p_{atm})}{\rho}+2gy_1}$ (la forma general del ejemplo 12.8).</li>
-    <li><b>Números</b> ($\rho_{mar}=1030$ kg/m³, $3{,}00\ \text{atm}=3{,}04\times10^5$ Pa): $\dfrac{2(3{,}04\times10^5)}{1030}=590$ m²/s² y $2(9{,}8)(11{,}0)=216$ m²/s² ⇒ $v_2=\sqrt{806}=28{,}4$ m/s.</li>
-    <li><b>Comparación:</b> con el tanque abierto ($\Delta p=0$), Torricelli daría $\sqrt{216}=14{,}7$ m/s: la sobrepresión del aire aporta casi tres veces más que la columna de agua. Equivale a una columna extra de agua de altura $p_{man}/(\rho g)=30{,}1$ m.</li>
+    <li><b>Puntos.</b> 1 en la superficie del agua ($y_1=11{,}0$ m, $p_1=p_{atm}+3{,}00$ atm); 2 en el chorro a la salida ($y_2=0$, $p_2=p_{atm}$). $v_1\approx0$ (orificio pequeño).</li>
+    <li><b>Términos</b> ($\rho_{mar}=1030$ kg/m³; $3{,}00$ atm $=3{,}04\times10^5$ Pa):
+      $$\frac{2(p_1-p_{atm})}{\rho}=\frac{2(3{,}04\times10^5)}{1030}=590\ \text{m}^2/\text{s}^2,\qquad2g\,y_1=2(9{,}8)(11{,}0)=216\ \text{m}^2/\text{s}^2$$</li>
+    <li><b>Rapidez:</b>
+      $$v_2=\sqrt{590+216}=\sqrt{806}=\mathbf{28{,}4\ m/s}$$
+      <span class="por">Con el tanque abierto, Torricelli daría $\sqrt{216}=14{,}7$ m/s. La sobrepresión equivale a una columna extra de agua de $p_{man}/(\rho g)=30{,}1$ m.</span></li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/tanque-sellado-con-aire-a-3-atmosferas-manometri.svg">
 <div class="figph" role="img" aria-label="Tanque sellado con aire a 3 atmósferas manométricas sobre 11 metros de agua de mar: el agua sale por el fondo con 28,4 metros por segundo frente a 14,7 si estuviera abierto" style="aspect-ratio:340/175"></div>
@@ -643,14 +752,25 @@
 </details>
 <details class="sol" id="epp"><summary>Problema práctico: ¿cuánto tiempo se tarda en vaciar un tanque? <span class="src" data-l="U" data-ref="U Problema práctico del cap. 12, p. 389 y fig. 12.32">U p.389</span> <span class="prio p3">⚪</span> <span class="src" data-l="P" data-ref="Resolución propia del Problema práctico del cap. 12 de U (con comprobación numérica)">P</span></summary>
 <p class="enun">Un gran tanque cilíndrico de diámetro $D$ está abierto al aire libre en la parte superior y contiene agua hasta una altura $H$. Se abre en el fondo un pequeño orificio circular de diámetro $d\ll D$ (figura 12.32). Desprecia los efectos de la viscosidad. a) Encuentra $y$, la altura del agua en el tanque un tiempo $t$ después de abrir el orificio, como función de $t$. b) ¿Cuánto tiempo se tarda en vaciar el tanque por completo? c) Si se duplica la altura inicial $H$, ¿en qué factor aumenta el tiempo de vaciado?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Torricelli: $v=\sqrt{2g\,y}$ ($y$ = altura del agua sobre el orificio)</li>
+      <li>Caudal de salida: $Q=\dfrac{\pi d^2}{4}\,v$; volumen del tanque: $V=\dfrac{\pi D^2}{4}\,y$</li>
+      <li>Conservación del volumen: $-\dfrac{\pi D^2}{4}\dfrac{dy}{dt}=Q$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Rapidez de salida.</b> Con el nivel a una altura $y$ sobre el orificio, Torricelli: $v=\sqrt{2gy}$ (el nivel baja despacio, $v_1\approx0$).</li>
-    <li><b>Caudal que sale y ritmo de bajada.</b> Sale $Q=\dfrac{\pi d^2}{4}\sqrt{2gy}$; el volumen del tanque baja a razón $-\dfrac{\pi D^2}{4}\dfrac{dy}{dt}$. Igualando (conservación del volumen): $\dfrac{dy}{dt}=-\left(\dfrac dD\right)^2\sqrt{2g\,y}$.</li>
-    <li><b>a) Integrar</b> (variables separables, $y=H$ en $t=0$): $\dfrac{dy}{\sqrt y}=-\left(\dfrac dD\right)^2\sqrt{2g}\,dt$ ⇒ $2\sqrt y=2\sqrt H-\left(\dfrac dD\right)^2\sqrt{2g}\,t$ ⇒ $$y(t)=\left[\sqrt H-\left(\dfrac dD\right)^2\sqrt{\dfrac g2}\;t\right]^2$$</li>
-    <li><b>b) Vaciado:</b> $y=0$ ⇒ $\;t_{vac}=\left(\dfrac Dd\right)^2\sqrt{\dfrac{2H}{g}}$ (en la gráfica de abajo, $\tau=t_{vac}$; es decir, $y=H(1-t/t_{vac})^2$).</li>
-    <li><b>c) Doble altura:</b> $t_{vac}\propto\sqrt H$ ⇒ el tiempo se multiplica por $\sqrt2\approx1{,}41$ (no por 2: al principio sale más rápido).</li>
-    <li><b>Ejemplo numérico:</b> $D=2{,}00$ m, $d=2{,}00$ cm, $H=0{,}800$ m: $t_{vac}=(100)^2\sqrt{2(0{,}800)/9{,}8}=4{,}04\times10^3$ s $=67{,}3$ min.</li>
-    <li><b>Evaluar:</b> $dy/dt\lt0$ siempre y tiende a 0 al vaciarse (el chorro pierde fuerza), de modo que la gráfica $y(t)$ es una parábola que llega tangente al eje.</li>
+    <li><b>Ecuación del vaciado.</b> Lo que sale es lo que baja el nivel:
+      $$\frac{\pi D^2}{4}\left(-\frac{dy}{dt}\right)=\frac{\pi d^2}{4}\sqrt{2g\,y}\ \Rightarrow\ \frac{dy}{dt}=-\Big(\frac dD\Big)^2\sqrt{2g}\,\sqrt y$$</li>
+    <li><b>a) Integrar</b> (variables separables, $y=H$ en $t=0$):
+      $$\frac{dy}{\sqrt y}=-\Big(\frac dD\Big)^2\sqrt{2g}\,dt\ \Rightarrow\ 2\sqrt y-2\sqrt H=-\Big(\frac dD\Big)^2\sqrt{2g}\;t$$
+      $$y(t)=\left[\sqrt H-\Big(\frac dD\Big)^2\sqrt{\frac g2}\;t\right]^2$$</li>
+    <li><b>b) Vaciado</b> ($y=0$):
+      $$t_{vac}=\Big(\frac Dd\Big)^2\sqrt{\frac{2H}{g}}\qquad\text{es decir, }y=H\Big(1-\frac{t}{t_{vac}}\Big)^2$$</li>
+    <li><b>c) Doble altura:</b>
+      $$t_{vac}\propto\sqrt H\ \Rightarrow\ \frac{t'}{t}=\sqrt2\approx\mathbf{1{,}41}$$
+      <span class="por">No por 2: al principio sale más rápido.</span></li>
+    <li><b>Ejemplo numérico</b> ($D=2{,}00$ m, $d=2{,}00$ cm, $H=0{,}800$ m):
+      $$t_{vac}=(100)^2\sqrt{\frac{2(0{,}800)}{9{,}8}}=4{,}04\times10^3\ \text{s}=67{,}3\ \text{min}$$</li>
   </ol>
 <figure class="fig" data-svg="../assets/figs/t12/grafica-de-la-altura-del-agua-en-el-tanque-en-fu.svg">
 <div class="figph" role="img" aria-label="Gráfica de la altura del agua en el tanque en función del tiempo: parábola decreciente que llega a cero en el tiempo de vaciado" style="aspect-ratio:340/220"></div>

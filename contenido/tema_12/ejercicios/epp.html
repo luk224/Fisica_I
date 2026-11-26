@@ -1,12 +1,23 @@
 <p class="enun">Un gran tanque cilíndrico de diámetro $D$ está abierto al aire libre en la parte superior y contiene agua hasta una altura $H$. Se abre en el fondo un pequeño orificio circular de diámetro $d\ll D$ (figura 12.32). Desprecia los efectos de la viscosidad. a) Encuentra $y$, la altura del agua en el tanque un tiempo $t$ después de abrir el orificio, como función de $t$. b) ¿Cuánto tiempo se tarda en vaciar el tanque por completo? c) Si se duplica la altura inicial $H$, ¿en qué factor aumenta el tiempo de vaciado?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Torricelli: $v=\sqrt{2g\,y}$ ($y$ = altura del agua sobre el orificio)</li>
+      <li>Caudal de salida: $Q=\dfrac{\pi d^2}{4}\,v$; volumen del tanque: $V=\dfrac{\pi D^2}{4}\,y$</li>
+      <li>Conservación del volumen: $-\dfrac{\pi D^2}{4}\dfrac{dy}{dt}=Q$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Rapidez de salida.</b> Con el nivel a una altura $y$ sobre el orificio, Torricelli: $v=\sqrt{2gy}$ (el nivel baja despacio, $v_1\approx0$).</li>
-    <li><b>Caudal que sale y ritmo de bajada.</b> Sale $Q=\dfrac{\pi d^2}{4}\sqrt{2gy}$; el volumen del tanque baja a razón $-\dfrac{\pi D^2}{4}\dfrac{dy}{dt}$. Igualando (conservación del volumen): $\dfrac{dy}{dt}=-\left(\dfrac dD\right)^2\sqrt{2g\,y}$.</li>
-    <li><b>a) Integrar</b> (variables separables, $y=H$ en $t=0$): $\dfrac{dy}{\sqrt y}=-\left(\dfrac dD\right)^2\sqrt{2g}\,dt$ ⇒ $2\sqrt y=2\sqrt H-\left(\dfrac dD\right)^2\sqrt{2g}\,t$ ⇒ $$y(t)=\left[\sqrt H-\left(\dfrac dD\right)^2\sqrt{\dfrac g2}\;t\right]^2$$</li>
-    <li><b>b) Vaciado:</b> $y=0$ ⇒ $\;t_{vac}=\left(\dfrac Dd\right)^2\sqrt{\dfrac{2H}{g}}$ (en la gráfica de abajo, $\tau=t_{vac}$; es decir, $y=H(1-t/t_{vac})^2$).</li>
-    <li><b>c) Doble altura:</b> $t_{vac}\propto\sqrt H$ ⇒ el tiempo se multiplica por $\sqrt2\approx1{,}41$ (no por 2: al principio sale más rápido).</li>
-    <li><b>Ejemplo numérico:</b> $D=2{,}00$ m, $d=2{,}00$ cm, $H=0{,}800$ m: $t_{vac}=(100)^2\sqrt{2(0{,}800)/9{,}8}=4{,}04\times10^3$ s $=67{,}3$ min.</li>
-    <li><b>Evaluar:</b> $dy/dt\lt0$ siempre y tiende a 0 al vaciarse (el chorro pierde fuerza), de modo que la gráfica $y(t)$ es una parábola que llega tangente al eje.</li>
+    <li><b>Ecuación del vaciado.</b> Lo que sale es lo que baja el nivel:
+      $$\frac{\pi D^2}{4}\left(-\frac{dy}{dt}\right)=\frac{\pi d^2}{4}\sqrt{2g\,y}\ \Rightarrow\ \frac{dy}{dt}=-\Big(\frac dD\Big)^2\sqrt{2g}\,\sqrt y$$</li>
+    <li><b>a) Integrar</b> (variables separables, $y=H$ en $t=0$):
+      $$\frac{dy}{\sqrt y}=-\Big(\frac dD\Big)^2\sqrt{2g}\,dt\ \Rightarrow\ 2\sqrt y-2\sqrt H=-\Big(\frac dD\Big)^2\sqrt{2g}\;t$$
+      $$y(t)=\left[\sqrt H-\Big(\frac dD\Big)^2\sqrt{\frac g2}\;t\right]^2$$</li>
+    <li><b>b) Vaciado</b> ($y=0$):
+      $$t_{vac}=\Big(\frac Dd\Big)^2\sqrt{\frac{2H}{g}}\qquad\text{es decir, }y=H\Big(1-\frac{t}{t_{vac}}\Big)^2$$</li>
+    <li><b>c) Doble altura:</b>
+      $$t_{vac}\propto\sqrt H\ \Rightarrow\ \frac{t'}{t}=\sqrt2\approx\mathbf{1{,}41}$$
+      <span class="por">No por 2: al principio sale más rápido.</span></li>
+    <li><b>Ejemplo numérico</b> ($D=2{,}00$ m, $d=2{,}00$ cm, $H=0{,}800$ m):
+      $$t_{vac}=(100)^2\sqrt{\frac{2(0{,}800)}{9{,}8}}=4{,}04\times10^3\ \text{s}=67{,}3\ \text{min}$$</li>
   </ol>
 {{fig:grafica-de-la-altura-del-agua-en-el-tanque-en-fu}}
 

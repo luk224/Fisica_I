@@ -1,10 +1,21 @@
 <p class="enun">Fluye agua por un tubo de sección transversal variable, llenándolo en todos sus puntos. En el punto 1, el área transversal del tubo es de 0,070 m², y la rapidez del fluido es de 3,50 m/s. ¿Qué rapidez tiene el fluido en puntos donde el área transversal es a) 0,105 m²? b) ¿0,047 m²? c) Calcula el volumen de agua descargada del extremo abierto del tubo en una hora.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Continuidad (fluido incompresible): $A_1v_1=A_2v_2=Q$</li>
+      <li>Volumen en un tiempo $t$: $V=Q\,t$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Por qué continuidad.</b> El agua es incompresible y el tubo está lleno: lo que entra por una sección en un tiempo $dt$ sale por cualquier otra ⇒ $A_1v_1=A_2v_2$ (12.10).</li>
-    <li><b>Caudal:</b> $Q=A_1v_1=(0{,}070)(3{,}50)=0{,}245$ m³/s, el mismo en todo el tubo (12.11).</li>
-    <li><b>a)</b> $v=Q/A=0{,}245/0{,}105=2{,}33$ m/s (sección mayor ⇒ más lento).</li>
-    <li><b>b)</b> $v=0{,}245/0{,}047=5{,}21$ m/s (sección menor ⇒ más rápido).</li>
-    <li><b>c)</b> El caudal es el mismo también en la salida: $V=Qt=(0{,}245)(3600)=882$ m³ $\approx8{,}8\times10^2$ m³.</li>
+    <li><b>Caudal</b> (el mismo en todo el tubo):
+      $$Q=A_1v_1=(0{,}070)(3{,}50)=0{,}245\ \text{m}^3/\text{s}$$</li>
+    <li><b>a) Sección 0,105 m²:</b>
+      $$v=\frac QA=\frac{0{,}245}{0{,}105}=\mathbf{2{,}33\ m/s}$$
+      <span class="por">Sección mayor ⇒ más lento.</span></li>
+    <li><b>b) Sección 0,047 m²:</b>
+      $$v=\frac{0{,}245}{0{,}047}=\mathbf{5{,}21\ m/s}$$
+      <span class="por">Sección menor ⇒ más rápido.</span></li>
+    <li><b>c) Volumen descargado en una hora:</b>
+      $$V=Q\,t=(0{,}245)(3600)=882\ \text{m}^3\approx\mathbf{8{,}8\times10^2\ m^3}$$
+      <span class="por">No hace falta el área de salida: el caudal es único.</span></li>
   </ol>
 {{fig:tubo-con-tres-secciones-de-area-0-105-0-070-y-0-}}
 
