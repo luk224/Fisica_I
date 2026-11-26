@@ -1,10 +1,19 @@
 <p class="enun">Dos muelles, A y B, están situados en un río; B está 1500 m río abajo de A. Dos amigos deben ir de A a B y regresar. Uno rema su bote con rapidez constante de 4.00 km/h relativa al agua; el otro camina por la orilla con rapidez constante de 4.00 km/h. La velocidad del río es 2.80 km/h en la dirección de A a B. ¿Cuánto tardará cada persona en hacer el viaje de ida y vuelta?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Velocidad relativa: $v_{bote/tierra}=v_{bote/agua}\pm v_{r\acute io}$ (a favor $+$, en contra $-$)</li>
+      <li>Tiempo de cada tramo: $t=\dfrac dv$; tiempo total = suma de tiempos (no se promedian velocidades)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Remero, tramo río abajo</b> (a favor de la corriente): con la ec. 3.32, $v=4.00+2.80=6.80$ km/h respecto a tierra. Tiempo: $t_1=1.50/6.80=0.221$ h.</li>
-    <li><b>Remero, tramo río arriba</b> (en contra): $v=4.00-2.80=1.20$ km/h. Tiempo: $t_2=1.50/1.20=1.25$ h.</li>
-    <li>Tiempo total del remero: $t_1+t_2=1.47$ h $=88.2$ min.</li>
-    <li><b>Caminante:</b> siempre a 4.00 km/h en tierra firme, sin corriente que le afecte. Recorre $2\times1.50=3.00$ km en total: $t=3.00/4.00=0.750$ h $=45.0$ min.</li>
-    <li>El remero tarda casi el doble. No es una compensación simétrica: pasa mucho más tiempo en el tramo lento (río arriba, a solo 1.20 km/h) del que gana en el tramo rápido (río abajo, a 6.80 km/h) — el tiempo perdido a baja velocidad pesa más que el tiempo ganado a alta velocidad.</li>
+    <li><b>Remero, río abajo</b> (a favor):
+      $$v=4.00+2.80=6.80\ \text{km/h},\qquad t_1=\frac{1.50}{6.80}=0.221\ \text{h}$$</li>
+    <li><b>Remero, río arriba</b> (en contra):
+      $$v=4.00-2.80=1.20\ \text{km/h},\qquad t_2=\frac{1.50}{1.20}=1.25\ \text{h}$$</li>
+    <li><b>Tiempo total del remero:</b>
+      $$t_1+t_2=\mathbf{1.47\ h}=88.2\ \text{min}$$</li>
+    <li><b>Caminante</b> (3.00 km a 4.00 km/h):
+      $$t=\frac{3.00}{4.00}=\mathbf{0.750\ h}=45.0\ \text{min}$$
+      <span class="por">El remero tarda casi el doble: pierde más tiempo río arriba (1.20 km/h) del que gana río abajo (6.80 km/h). Promediar $(6.80+1.20)/2=4.00$ km/h sería un error.</span></li>
   </ol>
   {{fig:remero-y-caminante-entre-los-muelles-a-y-b}}
 

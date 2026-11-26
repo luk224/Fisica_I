@@ -1,9 +1,19 @@
 <p class="enun">En un semáforo, un coche arranca desde el reposo con aceleración constante $a=2.80\ \text{m/s}^2$ justo cuando un camión lo adelanta a velocidad constante $v=20.0\ \text{m/s}$. a) ¿A qué distancia del semáforo el coche alcanza al camión? b) ¿A qué velocidad va el coche en ese instante?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Coche (desde el reposo): $x_c=\tfrac12a\,t^2$; camión (velocidad constante): $x_k=v\,t$</li>
+      <li>Alcance: $x_c=x_k$ (descartar la raíz $t=0$); velocidad del coche: $v_c=a\,t$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Mismo origen y mismo reloj para ambos: $x_{\text{coche}}(t)=\tfrac12(2.80)t^2$; $x_{\text{camión}}(t)=20.0t$.</li>
-    <li>Se encuentran cuando $x_{\text{coche}}=x_{\text{camión}}$: $1.40t^2=20.0t \Rightarrow t(1.40t-20.0)=0$. Descartando la raíz trivial $t=0$ (el instante de partida, no de encuentro): $t=20.0/1.40=14.29\ \text{s}$.</li>
-    <li>a) Distancia: $x=20.0\times14.29=286\ \text{m}$ (comprobación con la fórmula del coche: $\tfrac12(2.80)(14.29)^2=286$ m, coincide).</li>
-    <li>b) Velocidad del coche en ese instante: $v=2.80\times14.29=40.0\ \text{m/s}$ — el doble de la del camión.</li>
+    <li><b>Posiciones</b> (mismo origen y mismo reloj):
+      $$x_c(t)=\tfrac12(2.80)t^2=1.40\,t^2,\qquad x_k(t)=20.0\,t$$</li>
+    <li><b>Instante del encuentro:</b>
+      $$1.40\,t^2=20.0\,t\ \Rightarrow\ t=\frac{20.0}{1.40}=14.29\ \text{s}$$</li>
+    <li><b>a) Distancia:</b>
+      $$x=20.0(14.29)=\mathbf{286\ m}\quad\Big(\text{comprobación: }\tfrac12(2.80)(14.29)^2=286\ \text{m}\Big)$$</li>
+    <li><b>b) Velocidad del coche:</b>
+      $$v=a\,t=2.80(14.29)=\mathbf{40.0\ m/s}\ \ (\text{el doble que el camión})$$
+      <span class="por">Igual velocidad ocurre en $t=v/a=7.14$ s: es el instante de máxima separación, no el de encuentro.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> escribe $x(t)$ de cada móvil con el mismo origen y reloj, iguálalas y resuelve para $t$, descartando la raíz $t=0$.</div>
   <div class="recipe"><b>Error típico:</b> creer que "se alcanzan" cuando tienen la misma velocidad. Eso ocurre en $t=v/a=7.14$ s, que es el instante de <i>máxima separación</i> (mientras el camión va más rápido, se aleja; en cuanto el coche lo supera en velocidad, empieza a acercarse) — no el instante de encuentro.</div>

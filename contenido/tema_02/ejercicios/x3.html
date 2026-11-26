@@ -1,10 +1,20 @@
 <p class="enun">Para probar una protección antibalas, se dispara una bala de 10 g de masa contra una pieza de un nuevo material que se encuentra en el suelo, de forma que la trayectoria de la bala es perpendicular sobre el material (es decir, vertical hacia abajo). La bala queda incrustada en el material penetrando 2 m de profundidad. Si se disparó a 100 m/s y se supone que la aceleración al incrustarse es constante: a) el valor de la deceleración; b) ¿qué fuerza ejerció el material sobre la bala para frenarla? c) ¿qué tiempo tardó la bala hasta pararse? (Considere $g=9.81$ m/s².)</p>
 {{fig:x5-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>MRUA hasta parar: $|a|=\dfrac{v_0^2}{2d}$; $t=\dfrac{2d}{v_0}$ (comprobación: $t=v_0/|a|$)</li>
+      <li>Segunda ley ($+x$ hacia abajo, en el avance): $m\,g-F=m(-|a|)$ ⇒ $F=m(g+|a|)$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Tomo $+x$ en el sentido de avance de la bala (hacia abajo). $v_0=100$ m/s, $v=0$, $d=2$ m, $m=0.010$ kg.</li>
-    <li>a) Con la ecuación 2.13 ($v=0$ al final): $|a|=\dfrac{v_0^2}{2d}=\dfrac{100^2}{2(2)}=2500\ \text{m/s}^2$ (unas 255 veces $g$).</li>
-    <li>b) La bala cae verticalmente, así que el peso ayuda a frenarla desde el punto de vista de las fuerzas: sobre ella actúan su peso $mg$ (a favor del avance, $+x$) y la fuerza del material $F$ (en contra, $-x$). 2ª ley: $mg-F=m(-|a|) \Rightarrow F=m(g+|a|)=0.010\times(2500+9.81)=25.1\ \text{N}$, hacia arriba (frenando a la bala). Si se despreciara el peso saldría 25.0 N — solo un 0.4% menos, pero como el enunciado da $g$, lo correcto es incluirlo.</li>
-    <li>c) Con la ecuación 2.14: $t=\dfrac{2d}{v_0}=\dfrac{2(2)}{100}=0.040\ \text{s}$ (se comprueba también con ec. 2.8: $t=v_0/|a|=100/2500=0.040$ s, coincide).</li>
+    <li><b>Datos:</b>
+      $$v_0=100\ \text{m/s},\quad v=0,\quad d=2\ \text{m},\quad m=0.010\ \text{kg}$$</li>
+    <li><b>a) Deceleración:</b>
+      $$|a|=\frac{v_0^2}{2d}=\frac{100^2}{2(2)}=\mathbf{2500\ m/s^2}\ \ (\approx255\,g)$$</li>
+    <li><b>b) Fuerza del material</b> (el peso va a favor del avance, $F$ en contra):
+      $$F=m(g+|a|)=0.010(2500+9.81)=\mathbf{25.1\ N}$$
+      <span class="por">Sin el peso saldría 25.0 N (0.4 % menos); como el enunciado da $g$, se incluye.</span></li>
+    <li><b>c) Tiempo:</b>
+      $$t=\frac{2d}{v_0}=\frac{2(2)}{100}=\mathbf{0.040\ s}\quad\Big(t=\frac{v_0}{|a|}=\frac{100}{2500}=0.040\ \text{s}\ \checkmark\Big)$$</li>
   </ol>
   {{fig:bala-frenada-por-el-material}}
 

@@ -265,10 +265,20 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 <details class="mas pista"><summary>Pista 1</summary><p>Velocidad media con dos posiciones: $(x_2-x_1)/\Delta t$. Velocidad instantánea: deriva $x(t)$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>«Se detiene» significa $v_x(t)=0$ (no $x(t)/t=0$); descarta la solución $t=0$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>a) $x(0)=0$; $x(10)=2.40(100)-0.120(1000)=240-120=120\ \text{m}$. $v_{\text{med}}=(120-0)/10=12.0\ \text{m/s}$.</li>
-    <li>b) Derivando: $v_x(t)=2bt-3ct^2$. $v_x(0)=0$; $v_x(5)=2(2.40)(5)-3(0.120)(25)=24.0-9.0=15.0\ \text{m/s}$; $v_x(10)=2(2.40)(10)-3(0.120)(100)=48.0-36.0=12.0\ \text{m/s}$.</li>
-    <li>c) "En reposo" significa $v_x=0$: $2bt-3ct^2=0 \Rightarrow t(2b-3ct)=0$. Descartando $t=0$: $t=\dfrac{2b}{3c}=\dfrac{2(2.40)}{3(0.120)}=13.3\ \text{s}$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$v_{med-x}=\dfrac{x_2-x_1}{t_2-t_1}$; $v_x=\dfrac{dx}{dt}$; «en reposo» ⇒ $v_x=0$</li>
+      <li>Derivada: $\dfrac{d}{dt}t^n=n\,t^{n-1}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Velocidad media</b> ($x(0)=0$):
+      $$x(10)=2.40(100)-0.120(1000)=240-120=120\ \text{m},\qquad v_{med}=\frac{120-0}{10}=\mathbf{12.0\ m/s}$$</li>
+    <li><b>b) Velocidad instantánea</b> (derivando):
+      $$v_x(t)=2bt-3ct^2$$
+      $$v_x(0)=\mathbf0,\qquad v_x(5)=2(2.40)(5)-3(0.120)(25)=24.0-9.0=\mathbf{15.0\ m/s}$$
+      $$v_x(10)=2(2.40)(10)-3(0.120)(100)=48.0-36.0=\mathbf{12.0\ m/s}$$</li>
+    <li><b>c) Vuelve a estar detenido</b> ($v_x=0$, descartando $t=0$):
+      $$2bt-3ct^2=0\ \Rightarrow\ t=\frac{2b}{3c}=\frac{2(2.40)}{3(0.120)}=\mathbf{13.3\ s}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t02/velocidad-del-automovil-v-t.svg">
 <div class="figph" role="img" aria-label="Velocidad del automóvil v(t)" style="aspect-ratio:320/200"></div>
@@ -284,10 +294,19 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 <details class="mas pista"><summary>Pista 1</summary><p>Lista las cinco magnitudes de la tabla 2.4 e identifica cuál no interviene: aquí, la aceleración.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>La ecuación $x-x_0=\tfrac12(v_{0x}+v_x)t$ da $v_{0x}$ y después $a_x=(v_x-v_{0x})/t$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>Datos conocidos: $x-x_0=70.0$ m, $t=6.00$ s, $v_x=15.0$ m/s; incógnitas: $v_{0x}$ y $a_x$.</li>
-    <li>Como no interviene $a_x$, usamos la ecuación 2.14: $x-x_0=\tfrac12(v_{0x}+v_x)t \Rightarrow v_{0x}=\dfrac{2(x-x_0)}{t}-v_x=\dfrac{2(70.0)}{6.00}-15.0=23.33-15.0=8.33\ \text{m/s}$.</li>
-    <li>Ahora con la ecuación 2.8: $a_x=\dfrac{v_x-v_{0x}}{t}=\dfrac{15.0-8.33}{6.00}=1.11\ \text{m/s}^2$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$a$ constante: $x-x_0=\tfrac12(v_{0x}+v_x)\,t$ (no contiene $a_x$)</li>
+      <li>$v_x=v_{0x}+a_x\,t$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Datos:</b>
+      $$x-x_0=70.0\ \text{m},\quad t=6.00\ \text{s},\quad v_x=15.0\ \text{m/s};\quad\text{incógnitas: }v_{0x},\ a_x$$</li>
+    <li><b>Velocidad inicial</b> (ecuación sin $a_x$):
+      $$v_{0x}=\frac{2(x-x_0)}{t}-v_x=\frac{2(70.0)}{6.00}-15.0=23.33-15.0=\mathbf{8.33\ m/s}$$</li>
+    <li><b>Aceleración:</b>
+      $$a_x=\frac{v_x-v_{0x}}{t}=\frac{15.0-8.33}{6.00}=\mathbf{1.11\ m/s^2}$$
+      <span class="por">$70.0/6.00=11.7$ m/s es la velocidad media, no $v_{0x}$ ni $v_x$.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t02/v-t-del-antilope-con-area-igual-a-70-m.svg">
 <div class="figph" role="img" aria-label="v-t del antílope con área igual a 70 m" style="aspect-ratio:320/190"></div>
@@ -308,11 +327,22 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 <div class="figph" role="img" aria-label="Planteamiento del satélite que se estrella: esquema y diagrama de cuerpo libre" style="aspect-ratio:360/318"></div>
 <figcaption>Planteamiento: esquema del impacto con los datos y DCL durante el choque (sin resultados). El suelo o el material empuja hacia arriba; el peso, hacia abajo. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>MRUA hasta parar ($v=0$): $v^2=v_0^2+2a\,d$ ⇒ $|a|=\dfrac{v_0^2}{2d}$; $d=\tfrac12 v_0\,t$ ⇒ $t=\dfrac{2d}{v_0}$</li>
+      <li>Segunda ley (con $+y$ hacia abajo): $m\,g-N=m(-|a|)$ ⇒ $N=m(|a|+g)$</li>
+      <li>$1\ \text{km/h}=1/3.6\ \text{m/s}$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Convertimos a SI: $v_0=311/3.6=86.39\ \text{m/s}$, $d=0.81$ m. Tomo $+y$ hacia abajo (sentido de la caída), y supongo impacto vertical (el dato de $g$ y "profundidad" lo sugieren).</li>
-    <li>a) Como no conocemos el tiempo, usamos la ecuación 2.13 con $v=0$ al final: $0=v_0^2+2a\,d \Rightarrow |a|=\dfrac{v_0^2}{2d}=\dfrac{86.39^2}{2(0.81)}=4.61\times10^3\ \text{m/s}^2$ (unas 470 veces $g$), dirigida hacia arriba (frenando la caída).</li>
-    <li>b) La pregunta es por la fuerza <b>del suelo</b> $N$, no por la fuerza neta. Sobre el satélite actúan su peso $mg$ (hacia abajo, $+y$) y $N$ (hacia arriba, $-y$). 2ª ley: $mg-N=m(-|a|) \Rightarrow N=m(|a|+g)=210\times(4607+9.81)=9.69\times10^5\ \text{N}$, hacia arriba. (La fuerza <i>neta</i> que produce la deceleración es solo $m|a|=9.67\times10^5$ N; $N$ es mayor porque además tiene que contrarrestar el peso.)</li>
-    <li>c) Con la ecuación 2.14 (no involucra $a$): $d=\tfrac12(v_0+0)t \Rightarrow t=\dfrac{2d}{v_0}=\dfrac{2(0.81)}{86.39}=1.88\times10^{-2}\ \text{s}$ (≈19 ms).</li>
+    <li><b>Datos en SI</b> (impacto vertical, $+y$ hacia abajo):
+      $$v_0=\frac{311}{3.6}=86.39\ \text{m/s},\qquad d=0.81\ \text{m}$$</li>
+    <li><b>a) Aceleración:</b>
+      $$|a|=\frac{v_0^2}{2d}=\frac{(86.39)^2}{2(0.81)}=\mathbf{4.61\times10^3\ m/s^2}\ \ (\approx470\,g,\ \text{hacia arriba})$$</li>
+    <li><b>b) Fuerza del suelo</b> ($N$, no la fuerza neta):
+      $$N=m(|a|+g)=210(4607+9.81)=\mathbf{9.69\times10^5\ N}$$
+      <span class="por">La fuerza neta es solo $m|a|=9.67\times10^5$ N; $N$ es algo mayor porque además contrarresta el peso.</span></li>
+    <li><b>c) Tiempo:</b>
+      $$t=\frac{2d}{v_0}=\frac{2(0.81)}{86.39}=\mathbf{1.88\times10^{-2}\ s}\ \ (\approx19\ \text{ms})$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t02/satelite-frenado-por-el-suelo.svg">
 <div class="figph" role="img" aria-label="Satélite frenado por el suelo" style="aspect-ratio:320/160"></div>
@@ -338,11 +368,21 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 <div class="figph" role="img" aria-label="Planteamiento de la bala que penetra el material: esquema y diagrama de cuerpo libre" style="aspect-ratio:360/318"></div>
 <figcaption>Planteamiento: esquema del impacto con los datos y DCL durante el choque (sin resultados). El suelo o el material empuja hacia arriba; el peso, hacia abajo. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>MRUA hasta parar: $|a|=\dfrac{v_0^2}{2d}$; $t=\dfrac{2d}{v_0}$ (comprobación: $t=v_0/|a|$)</li>
+      <li>Segunda ley ($+x$ hacia abajo, en el avance): $m\,g-F=m(-|a|)$ ⇒ $F=m(g+|a|)$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Tomo $+x$ en el sentido de avance de la bala (hacia abajo). $v_0=100$ m/s, $v=0$, $d=2$ m, $m=0.010$ kg.</li>
-    <li>a) Con la ecuación 2.13 ($v=0$ al final): $|a|=\dfrac{v_0^2}{2d}=\dfrac{100^2}{2(2)}=2500\ \text{m/s}^2$ (unas 255 veces $g$).</li>
-    <li>b) La bala cae verticalmente, así que el peso ayuda a frenarla desde el punto de vista de las fuerzas: sobre ella actúan su peso $mg$ (a favor del avance, $+x$) y la fuerza del material $F$ (en contra, $-x$). 2ª ley: $mg-F=m(-|a|) \Rightarrow F=m(g+|a|)=0.010\times(2500+9.81)=25.1\ \text{N}$, hacia arriba (frenando a la bala). Si se despreciara el peso saldría 25.0 N — solo un 0.4% menos, pero como el enunciado da $g$, lo correcto es incluirlo.</li>
-    <li>c) Con la ecuación 2.14: $t=\dfrac{2d}{v_0}=\dfrac{2(2)}{100}=0.040\ \text{s}$ (se comprueba también con ec. 2.8: $t=v_0/|a|=100/2500=0.040$ s, coincide).</li>
+    <li><b>Datos:</b>
+      $$v_0=100\ \text{m/s},\quad v=0,\quad d=2\ \text{m},\quad m=0.010\ \text{kg}$$</li>
+    <li><b>a) Deceleración:</b>
+      $$|a|=\frac{v_0^2}{2d}=\frac{100^2}{2(2)}=\mathbf{2500\ m/s^2}\ \ (\approx255\,g)$$</li>
+    <li><b>b) Fuerza del material</b> (el peso va a favor del avance, $F$ en contra):
+      $$F=m(g+|a|)=0.010(2500+9.81)=\mathbf{25.1\ N}$$
+      <span class="por">Sin el peso saldría 25.0 N (0.4 % menos); como el enunciado da $g$, se incluye.</span></li>
+    <li><b>c) Tiempo:</b>
+      $$t=\frac{2d}{v_0}=\frac{2(2)}{100}=\mathbf{0.040\ s}\quad\Big(t=\frac{v_0}{|a|}=\frac{100}{2500}=0.040\ \text{s}\ \checkmark\Big)$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t02/bala-frenada-por-el-material.svg">
 <div class="figph" role="img" aria-label="Bala frenada por el material" style="aspect-ratio:320/160"></div>
@@ -364,11 +404,21 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 <details class="mas pista"><summary>Pista 1</summary><p>Escribe $x(t)$ de cada móvil con el mismo origen y reloj e iguálalas; descarta la raíz $t=0$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>No se alcanzan cuando tienen la misma velocidad: ese es el instante de máxima separación.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>Mismo origen y mismo reloj para ambos: $x_{\text{coche}}(t)=\tfrac12(2.80)t^2$; $x_{\text{camión}}(t)=20.0t$.</li>
-    <li>Se encuentran cuando $x_{\text{coche}}=x_{\text{camión}}$: $1.40t^2=20.0t \Rightarrow t(1.40t-20.0)=0$. Descartando la raíz trivial $t=0$ (el instante de partida, no de encuentro): $t=20.0/1.40=14.29\ \text{s}$.</li>
-    <li>a) Distancia: $x=20.0\times14.29=286\ \text{m}$ (comprobación con la fórmula del coche: $\tfrac12(2.80)(14.29)^2=286$ m, coincide).</li>
-    <li>b) Velocidad del coche en ese instante: $v=2.80\times14.29=40.0\ \text{m/s}$ — el doble de la del camión.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Coche (desde el reposo): $x_c=\tfrac12a\,t^2$; camión (velocidad constante): $x_k=v\,t$</li>
+      <li>Alcance: $x_c=x_k$ (descartar la raíz $t=0$); velocidad del coche: $v_c=a\,t$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Posiciones</b> (mismo origen y mismo reloj):
+      $$x_c(t)=\tfrac12(2.80)t^2=1.40\,t^2,\qquad x_k(t)=20.0\,t$$</li>
+    <li><b>Instante del encuentro:</b>
+      $$1.40\,t^2=20.0\,t\ \Rightarrow\ t=\frac{20.0}{1.40}=14.29\ \text{s}$$</li>
+    <li><b>a) Distancia:</b>
+      $$x=20.0(14.29)=\mathbf{286\ m}\quad\Big(\text{comprobación: }\tfrac12(2.80)(14.29)^2=286\ \text{m}\Big)$$</li>
+    <li><b>b) Velocidad del coche:</b>
+      $$v=a\,t=2.80(14.29)=\mathbf{40.0\ m/s}\ \ (\text{el doble que el camión})$$
+      <span class="por">Igual velocidad ocurre en $t=v/a=7.14$ s: es el instante de máxima separación, no el de encuentro.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> escribe $x(t)$ de cada móvil con el mismo origen y reloj, iguálalas y resuelve para $t$, descartando la raíz $t=0$.</div>
   <div class="recipe"><b>Error típico:</b> creer que "se alcanzan" cuando tienen la misma velocidad. Eso ocurre en $t=v/a=7.14$ s, que es el instante de <i>máxima separación</i> (mientras el camión va más rápido, se aleja; en cuanto el coche lo supera en velocidad, empieza a acercarse) — no el instante de encuentro.</div>
@@ -380,10 +430,19 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 <details class="mas pista"><summary>Pista 1</summary><p>Con $+y$ hacia arriba, $a_y=-g$. Comprueba que la altura máxima, $v_0^2/2g$, supera 3,60 m.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Sin tiempo, usa $v_y^2=v_{0y}^2+2a_y\Delta y$ y toma la raíz positiva (todavía sube).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>Tomamos $+y$ hacia arriba, así que $a_y=-g=-9.80\ \text{m/s}^2$. Primero comprobamos que la bola llega: la altura máxima posible es $v_0^2/(2g)=9.50^2/(2\times9.80)=4.60\ \text{m}>3.60\ \text{m}$, así que sí alcanza el techo, todavía subiendo.</li>
-    <li>a) Como no tenemos el tiempo, usamos la ecuación 2.13: $v_y^2=v_{0y}^2+2a_y\Delta y = 9.50^2+2(-9.80)(3.60)=90.25-70.56=19.69 \Rightarrow |v_y|=4.44\ \text{m/s}$. Como todavía está subiendo (no ha llegado a la altura máxima), se toma $v_y=+4.44\ \text{m/s}$.</li>
-    <li>b) Con la ecuación 2.8: $t=\dfrac{v_y-v_{0y}}{a_y}=\dfrac{4.44-9.50}{-9.80}=0.517\ \text{s}$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Caída libre con $+y$ hacia arriba: $a_y=-g=-9.80$ m/s²</li>
+      <li>$v_y^2=v_{0y}^2+2a_y\,\Delta y$; $v_y=v_{0y}+a_y\,t$; altura máxima $v_0^2/(2g)$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>¿Llega al techo?</b>
+      $$h_{m\acute ax}=\frac{9.50^2}{2(9.80)}=4.60\ \text{m}>3.60\ \text{m}\ \Rightarrow\ \text{sí, todavía subiendo}$$</li>
+    <li><b>a) Velocidad al llegar</b> (sin tiempo):
+      $$v_y^2=9.50^2+2(-9.80)(3.60)=90.25-70.56=19.69\ \Rightarrow\ v_y=\mathbf{+4.44\ m/s}$$
+      <span class="por">Todavía sube: se toma la raíz positiva.</span></li>
+    <li><b>b) Tiempo:</b>
+      $$t=\frac{v_y-v_{0y}}{a_y}=\frac{4.44-9.50}{-9.80}=\mathbf{0.517\ s}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t02/bola-de-masilla-que-sube-hacia-el-techo.svg">
 <div class="figph" role="img" aria-label="Bola de masilla que sube hacia el techo" style="aspect-ratio:320/228"></div>
@@ -404,12 +463,24 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 <div class="figph" role="img" aria-label="Planteamiento del cohete: dos tramos con su diagrama de cuerpo libre" style="aspect-ratio:360/472"></div>
 <figcaption>Planteamiento como en el examen: tramos de empuje y DCL de cada uno (sin resultados). F₁ = k₁M y F₂ = k₂M; el peso es Mg(t) con g decreciente. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Segunda ley con $F=kM$: $M\,a=kM-Mg(t)$ ⇒ $a(t)=k-g_0+k_3\,t$ (la masa se cancela)</li>
+      <li>$v=\int a\,dt$; $y=\int v\,dt$; en el cambio de tramo, $v$ e $y$ son continuas</li>
+    </ul></div>
   <ol class="steps">
-    <li>Por la 2ª ley de Newton, $F-Mg(t)=Ma(t)$; como $F=kM$, la masa se cancela y queda $a(t)=k-g(t)=k-g_0+k_3t$: la aceleración no es constante, hay que integrar (ec. 2.17-2.18), no usar las ecuaciones de la sección 2.4.</li>
-    <li><b>Tramo 1 (0-10 s):</b> $a_1(t)=k_1-g_0+k_3t = 10+0.1t\ \text{m/s}^2$. Integrando desde $v(0)=0,\ y(0)=0$: $v_1(t)=10t+0.05t^2$; $y_1(t)=5t^2+t^3/60$.</li>
-    <li>En $t=10$ s: $v_1(10)=100+5=105\ \text{m/s}$; $y_1(10)=500+1000/60=516.7\ \text{m}$.</li>
-    <li><b>Tramo 2 (10-60 s):</b> $a_2(t)=k_2-g_0+k_3t = 5+0.1t\ \text{m/s}^2$, con condiciones iniciales <b>heredadas del final del tramo 1</b> por continuidad: $v(10)=105$, $y(10)=516.7$. Integrando: $v_2(t)=105+\int_{10}^t(5+0.1t')dt' = 50+5t+0.05t^2$ (constante ajustada para que $v_2(10)=105$); $y_2(t)=t^3/60+2.5t^2+50t-250$ (constante ajustada para que $y_2(10)=516.7$).</li>
-    <li>En $t=60$ s: $v_2(60)=50+300+180=530\ \text{m/s}$; $y_2(60)=216000/60+9000+3000-250=3600+9000+3000-250=15\,350\ \text{m}\approx15.4$ km.</li>
+    <li><b>Tramo 1</b> (0-10 s; $k_1=20$):
+      $$a_1(t)=20-10+0.1\,t=10+0.1\,t,\qquad v_1(t)=10\,t+0.05\,t^2,\qquad y_1(t)=5\,t^2+\frac{t^3}{60}$$</li>
+    <li><b>Valores en $t=10$ s:</b>
+      $$v_1(10)=100+5=105\ \text{m/s},\qquad y_1(10)=500+\frac{1000}{60}=516.7\ \text{m}$$</li>
+    <li><b>Tramo 2</b> (10-60 s; $k_2=15$), con las condiciones iniciales heredadas:
+      $$a_2(t)=15-10+0.1\,t=5+0.1\,t$$
+      $$v_2(t)=105+\int_{10}^{t}(5+0.1\,t')\,dt'=50+5\,t+0.05\,t^2$$
+      $$y_2(t)=\frac{t^3}{60}+2.5\,t^2+50\,t-250$$
+      <span class="por">Las constantes se ajustan para que $v_2(10)=105$ e $y_2(10)=516.7$.</span></li>
+    <li><b>En $t=60$ s:</b>
+      $$v_2(60)=50+300+180=530\ \text{m/s}$$
+      $$y_2(60)=\frac{216\,000}{60}+9000+3000-250=3600+9000+3000-250=\mathbf{15\,350\ m}\approx15.4\ \text{km}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t02/aceleracion-del-cohete-por-tramos.svg">
 <div class="figph" role="img" aria-label="Aceleración del cohete por tramos" style="aspect-ratio:320/200"></div>
@@ -428,21 +499,38 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 <div class="nivel"><b>🟡 Práctica: 2 ejercicios más</b><span>Repasan las definiciones con números: velocidad media frente a rapidez media en un viaje de ida y vuelta, y aceleración media tramo a tramo a partir de una tabla de velocidades. Antes de leer los pasos, dibuja el eje y decide los signos.</span></div>
 <details class="sol" id="e1"><summary>E1 — Problema 2.5: velocidad media frente a rapidez media <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 2-2, Prob. 2.5">E</span></summary>
 <p class="enun">Caminas 60.0 m hacia el este en 28.0 s y luego 40.0 m hacia el oeste en 36.0 s, en línea recta. Calcula a) la velocidad media y b) la rapidez media de todo el recorrido.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Velocidad media: $v_{med-x}=\dfrac{\Delta x}{\Delta t}$ (con signo)</li>
+      <li>Rapidez media: $\dfrac{\text{distancia total recorrida}}{\Delta t}$ (siempre positiva)</li>
+    </ul></div>
   <ol class="steps">
-    <li>Tomando el este como $+x$: desplazamiento neto $\Delta x = +60.0-40.0 = +20.0$ m; tiempo total $\Delta t = 28.0+36.0=64.0$ s.</li>
-    <li>a) $v_{\text{med-}x} = 20.0/64.0 = +0.312\ \text{m/s}$ (hacia el este).</li>
-    <li>b) Distancia total recorrida (sin cancelar ida y vuelta) $=60.0+40.0=100\ \text{m}$; rapidez media $=100/64.0=1.56\ \text{m/s}$.</li>
+    <li><b>Desplazamiento y tiempo</b> (este = $+x$):
+      $$\Delta x=+60.0-40.0=+20.0\ \text{m},\qquad\Delta t=28.0+36.0=64.0\ \text{s}$$</li>
+    <li><b>a) Velocidad media:</b>
+      $$v_{med-x}=\frac{20.0}{64.0}=\mathbf{+0.312\ m/s}\ \text{(hacia el este)}$$</li>
+    <li><b>b) Rapidez media</b> (distancia total, sin cancelar ida y vuelta):
+      $$\frac{60.0+40.0}{64.0}=\mathbf{1.56\ m/s}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> velocidad media = (posición final − posición inicial)/tiempo, con signo; rapidez media = distancia total recorrida/tiempo, siempre positiva. No son lo mismo salvo que el movimiento sea todo en una sola dirección.</div>
 </details>
 <details class="sol" id="e3"><summary>E3 — Problema 2.13: aceleración media entre tramos <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 2-4, Prob. 2.13">E</span></summary>
 <p class="enun">Los datos de prueba de un Bugatti Veyron Super Sport dan su rapidez en cuatro instantes: $t=0$ (arranque, $v=0$), $t=2.1$ s ($v=60$ mph), $t=20.0$ s ($v=200$ mph) y $t=53$ s ($v=253$ mph). Calcula la aceleración media en cada uno de los tres tramos que separan esos cuatro instantes.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Aceleración media: $a_{med-x}=\dfrac{\Delta v_x}{\Delta t}$ (cada tramo por separado)</li>
+      <li>$1\ \text{mph}=0.44704\ \text{m/s}$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Convertimos todas las velocidades a m/s ($\times0.44704$): $60\to26.82$, $200\to89.41$, $253\to113.10\ \text{m/s}$.</li>
-    <li>Tramo 1 (0 a 2.1 s): $a_{\text{med}}=(26.82-0)/2.1=12.8\ \text{m/s}^2$.</li>
-    <li>Tramo 2 (2.1 a 20.0 s): $a_{\text{med}}=(89.41-26.82)/(20.0-2.1)=62.59/17.9=3.50\ \text{m/s}^2$.</li>
-    <li>Tramo 3 (20.0 a 53 s): $a_{\text{med}}=(113.10-89.41)/(53-20.0)=23.69/33=0.718\ \text{m/s}^2$.</li>
-    <li>La aceleración media va decreciendo tramo a tramo: en una gráfica $v_x$-$t$, la curva se va "aplanando" — la aceleración no es constante en todo el ensayo.</li>
+    <li><b>Velocidades en m/s:</b>
+      $$60\to26.82,\qquad200\to89.41,\qquad253\to113.10\ \text{m/s}$$</li>
+    <li><b>Tramo 1</b> (0 a 2.1 s):
+      $$a_{med}=\frac{26.82-0}{2.1}=\mathbf{12.8\ m/s^2}$$</li>
+    <li><b>Tramo 2</b> (2.1 a 20.0 s):
+      $$a_{med}=\frac{89.41-26.82}{20.0-2.1}=\frac{62.59}{17.9}=\mathbf{3.50\ m/s^2}$$</li>
+    <li><b>Tramo 3</b> (20.0 a 53 s):
+      $$a_{med}=\frac{113.10-89.41}{53-20.0}=\frac{23.69}{33}=\mathbf{0.718\ m/s^2}$$
+      <span class="por">La aceleración media va decreciendo: la gráfica $v_x$-$t$ se va «aplanando».</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t02/velocidad-del-bugatti-en-cuatro-instantes.svg">
 <div class="figph" role="img" aria-label="Velocidad del Bugatti en cuatro instantes" style="aspect-ratio:320/200"></div>
@@ -471,6 +559,11 @@ $$v_x = v_{0x} + \int_0^t a_x\,dt' \quad\text{(2.17)}\qquad x = x_0 + \int_0^t v
 <div class="nivel" id="teoria-t02"><b>📝 Pregunta de teoría (4 puntos)</b><span>Ha caído tal cual en Febrero 2024 (1ª semana): es el 40 % del examen.</span></div>
 <details class="sol" id="x1"><summary>X1 — Teoría: «Velocidad instantánea» (+ dos cuestiones) <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="X" data-ref="Examen Febrero 2024 (1ª semana) P-3 Opción A">X</span></summary>
 <p class="enun">Desarrolla el tema "Velocidad instantánea" y responde: (a) ¿Puede un cuerpo tener velocidad media nula en un intervalo pero aceleración media no nula? ¿Y velocidad instantánea nula pero aceleración instantánea no nula? (b) ¿En qué condiciones la velocidad media en un intervalo coincide con alguna velocidad instantánea dentro de ese intervalo?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Velocidad media: $v_{med-x}=\dfrac{\Delta x}{\Delta t}$; instantánea: $v_x=\dfrac{dx}{dt}$; aceleración: $a_x=\dfrac{dv_x}{dt}$</li>
+      <li>Teorema del valor medio: existe un instante con $v_x=v_{med-x}$; con $a$ constante, $v_{med-x}=\tfrac12(v_{0x}+v_x)$</li>
+    </ul></div>
   <ol class="steps">
     <li><b>Motivación.</b> La velocidad media (ec. 2.2) resume todo un intervalo de tiempo en un solo número, pero no dice nada sobre lo que pasó "en un instante" dentro de ese intervalo: un coche puede tener velocidad media 0 en una hora si sale y vuelve al mismo sitio, aunque haya ido a 120 km/h por el camino.</li>
     <li><b>Definición.</b> La velocidad instantánea se define como el límite de la velocidad media cuando el intervalo de tiempo tiende a cero: $v_x=\lim_{\Delta t\to0}\Delta x/\Delta t = dx/dt$ (ec. 2.3). Es la derivada de la posición respecto al tiempo.</li>

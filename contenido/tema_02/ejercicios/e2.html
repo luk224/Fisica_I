@@ -1,8 +1,18 @@
 <p class="enun">Un automóvil está detenido ante un semáforo. Después viaja en línea recta y su distancia al semáforo es $x(t)=bt^2-ct^3$, con $b=2.40\ \text{m/s}^2$ y $c=0.120\ \text{m/s}^3$. a) Calcula la velocidad media entre $t=0$ y $t=10.0$ s. b) Calcula la velocidad instantánea en $t=0$, $t=5.0$ s y $t=10.0$ s. c) ¿Cuánto tiempo después de arrancar vuelve a estar detenido?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$v_{med-x}=\dfrac{x_2-x_1}{t_2-t_1}$; $v_x=\dfrac{dx}{dt}$; «en reposo» ⇒ $v_x=0$</li>
+      <li>Derivada: $\dfrac{d}{dt}t^n=n\,t^{n-1}$</li>
+    </ul></div>
   <ol class="steps">
-    <li>a) $x(0)=0$; $x(10)=2.40(100)-0.120(1000)=240-120=120\ \text{m}$. $v_{\text{med}}=(120-0)/10=12.0\ \text{m/s}$.</li>
-    <li>b) Derivando: $v_x(t)=2bt-3ct^2$. $v_x(0)=0$; $v_x(5)=2(2.40)(5)-3(0.120)(25)=24.0-9.0=15.0\ \text{m/s}$; $v_x(10)=2(2.40)(10)-3(0.120)(100)=48.0-36.0=12.0\ \text{m/s}$.</li>
-    <li>c) "En reposo" significa $v_x=0$: $2bt-3ct^2=0 \Rightarrow t(2b-3ct)=0$. Descartando $t=0$: $t=\dfrac{2b}{3c}=\dfrac{2(2.40)}{3(0.120)}=13.3\ \text{s}$.</li>
+    <li><b>a) Velocidad media</b> ($x(0)=0$):
+      $$x(10)=2.40(100)-0.120(1000)=240-120=120\ \text{m},\qquad v_{med}=\frac{120-0}{10}=\mathbf{12.0\ m/s}$$</li>
+    <li><b>b) Velocidad instantánea</b> (derivando):
+      $$v_x(t)=2bt-3ct^2$$
+      $$v_x(0)=\mathbf0,\qquad v_x(5)=2(2.40)(5)-3(0.120)(25)=24.0-9.0=\mathbf{15.0\ m/s}$$
+      $$v_x(10)=2(2.40)(10)-3(0.120)(100)=48.0-36.0=\mathbf{12.0\ m/s}$$</li>
+    <li><b>c) Vuelve a estar detenido</b> ($v_x=0$, descartando $t=0$):
+      $$2bt-3ct^2=0\ \Rightarrow\ t=\frac{2b}{3c}=\frac{2(2.40)}{3(0.120)}=\mathbf{13.3\ s}$$</li>
   </ol>
   {{fig:velocidad-del-automovil-v-t}}
 

@@ -1,11 +1,23 @@
 <p class="enun">Un cohete se lanza verticalmente. La aceleración de la gravedad efectiva decrece con el tiempo, $g(t)=g_0-k_3t$ con $g_0=10\ \text{m/s}^2$ y $k_3=0.1\ \text{m/s}^3$. Durante los primeros 10 s el motor ejerce una fuerza $F_1=k_1M$ (con $k_1=20\ \text{m/s}^2$); de $t=10$ s a $t=60$ s, una fuerza menor $F_2=k_2M$ (con $k_2=15\ \text{m/s}^2$). Calcula la altura alcanzada tras 60 s de ascenso.</p>
 {{fig:x4-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Segunda ley con $F=kM$: $M\,a=kM-Mg(t)$ ⇒ $a(t)=k-g_0+k_3\,t$ (la masa se cancela)</li>
+      <li>$v=\int a\,dt$; $y=\int v\,dt$; en el cambio de tramo, $v$ e $y$ son continuas</li>
+    </ul></div>
   <ol class="steps">
-    <li>Por la 2ª ley de Newton, $F-Mg(t)=Ma(t)$; como $F=kM$, la masa se cancela y queda $a(t)=k-g(t)=k-g_0+k_3t$: la aceleración no es constante, hay que integrar (ec. 2.17-2.18), no usar las ecuaciones de la sección 2.4.</li>
-    <li><b>Tramo 1 (0-10 s):</b> $a_1(t)=k_1-g_0+k_3t = 10+0.1t\ \text{m/s}^2$. Integrando desde $v(0)=0,\ y(0)=0$: $v_1(t)=10t+0.05t^2$; $y_1(t)=5t^2+t^3/60$.</li>
-    <li>En $t=10$ s: $v_1(10)=100+5=105\ \text{m/s}$; $y_1(10)=500+1000/60=516.7\ \text{m}$.</li>
-    <li><b>Tramo 2 (10-60 s):</b> $a_2(t)=k_2-g_0+k_3t = 5+0.1t\ \text{m/s}^2$, con condiciones iniciales <b>heredadas del final del tramo 1</b> por continuidad: $v(10)=105$, $y(10)=516.7$. Integrando: $v_2(t)=105+\int_{10}^t(5+0.1t')dt' = 50+5t+0.05t^2$ (constante ajustada para que $v_2(10)=105$); $y_2(t)=t^3/60+2.5t^2+50t-250$ (constante ajustada para que $y_2(10)=516.7$).</li>
-    <li>En $t=60$ s: $v_2(60)=50+300+180=530\ \text{m/s}$; $y_2(60)=216000/60+9000+3000-250=3600+9000+3000-250=15\,350\ \text{m}\approx15.4$ km.</li>
+    <li><b>Tramo 1</b> (0-10 s; $k_1=20$):
+      $$a_1(t)=20-10+0.1\,t=10+0.1\,t,\qquad v_1(t)=10\,t+0.05\,t^2,\qquad y_1(t)=5\,t^2+\frac{t^3}{60}$$</li>
+    <li><b>Valores en $t=10$ s:</b>
+      $$v_1(10)=100+5=105\ \text{m/s},\qquad y_1(10)=500+\frac{1000}{60}=516.7\ \text{m}$$</li>
+    <li><b>Tramo 2</b> (10-60 s; $k_2=15$), con las condiciones iniciales heredadas:
+      $$a_2(t)=15-10+0.1\,t=5+0.1\,t$$
+      $$v_2(t)=105+\int_{10}^{t}(5+0.1\,t')\,dt'=50+5\,t+0.05\,t^2$$
+      $$y_2(t)=\frac{t^3}{60}+2.5\,t^2+50\,t-250$$
+      <span class="por">Las constantes se ajustan para que $v_2(10)=105$ e $y_2(10)=516.7$.</span></li>
+    <li><b>En $t=60$ s:</b>
+      $$v_2(60)=50+300+180=530\ \text{m/s}$$
+      $$y_2(60)=\frac{216\,000}{60}+9000+3000-250=3600+9000+3000-250=\mathbf{15\,350\ m}\approx15.4\ \text{km}$$</li>
   </ol>
   {{fig:aceleracion-del-cohete-por-tramos}}
 

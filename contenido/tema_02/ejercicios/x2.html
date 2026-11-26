@@ -1,10 +1,21 @@
 <p class="enun">Un satélite artificial se estrella contra la Tierra. Su masa es de 210 kg y la velocidad de impacto contra la superficie es de 311 km/h. Los restos del satélite penetraron hasta una profundidad de 81 cm. Suponiendo que era constante: a) ¿Cuál fue su aceleración durante el choque? b) ¿Qué fuerza ejerció el suelo sobre el satélite durante el choque? c) ¿Durante cuánto tiempo se ejerció la mencionada fuerza? (Considere $g=9.81$ m/s².)</p>
 {{fig:x6-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>MRUA hasta parar ($v=0$): $v^2=v_0^2+2a\,d$ ⇒ $|a|=\dfrac{v_0^2}{2d}$; $d=\tfrac12 v_0\,t$ ⇒ $t=\dfrac{2d}{v_0}$</li>
+      <li>Segunda ley (con $+y$ hacia abajo): $m\,g-N=m(-|a|)$ ⇒ $N=m(|a|+g)$</li>
+      <li>$1\ \text{km/h}=1/3.6\ \text{m/s}$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Convertimos a SI: $v_0=311/3.6=86.39\ \text{m/s}$, $d=0.81$ m. Tomo $+y$ hacia abajo (sentido de la caída), y supongo impacto vertical (el dato de $g$ y "profundidad" lo sugieren).</li>
-    <li>a) Como no conocemos el tiempo, usamos la ecuación 2.13 con $v=0$ al final: $0=v_0^2+2a\,d \Rightarrow |a|=\dfrac{v_0^2}{2d}=\dfrac{86.39^2}{2(0.81)}=4.61\times10^3\ \text{m/s}^2$ (unas 470 veces $g$), dirigida hacia arriba (frenando la caída).</li>
-    <li>b) La pregunta es por la fuerza <b>del suelo</b> $N$, no por la fuerza neta. Sobre el satélite actúan su peso $mg$ (hacia abajo, $+y$) y $N$ (hacia arriba, $-y$). 2ª ley: $mg-N=m(-|a|) \Rightarrow N=m(|a|+g)=210\times(4607+9.81)=9.69\times10^5\ \text{N}$, hacia arriba. (La fuerza <i>neta</i> que produce la deceleración es solo $m|a|=9.67\times10^5$ N; $N$ es mayor porque además tiene que contrarrestar el peso.)</li>
-    <li>c) Con la ecuación 2.14 (no involucra $a$): $d=\tfrac12(v_0+0)t \Rightarrow t=\dfrac{2d}{v_0}=\dfrac{2(0.81)}{86.39}=1.88\times10^{-2}\ \text{s}$ (≈19 ms).</li>
+    <li><b>Datos en SI</b> (impacto vertical, $+y$ hacia abajo):
+      $$v_0=\frac{311}{3.6}=86.39\ \text{m/s},\qquad d=0.81\ \text{m}$$</li>
+    <li><b>a) Aceleración:</b>
+      $$|a|=\frac{v_0^2}{2d}=\frac{(86.39)^2}{2(0.81)}=\mathbf{4.61\times10^3\ m/s^2}\ \ (\approx470\,g,\ \text{hacia arriba})$$</li>
+    <li><b>b) Fuerza del suelo</b> ($N$, no la fuerza neta):
+      $$N=m(|a|+g)=210(4607+9.81)=\mathbf{9.69\times10^5\ N}$$
+      <span class="por">La fuerza neta es solo $m|a|=9.67\times10^5$ N; $N$ es algo mayor porque además contrarresta el peso.</span></li>
+    <li><b>c) Tiempo:</b>
+      $$t=\frac{2d}{v_0}=\frac{2(0.81)}{86.39}=\mathbf{1.88\times10^{-2}\ s}\ \ (\approx19\ \text{ms})$$</li>
   </ol>
   {{fig:satelite-frenado-por-el-suelo}}
 

@@ -280,11 +280,24 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
 <details class="mas pista"><summary>Pista 1</summary><p>Deriva $x(t)$ e $y(t)$ dos veces para obtener $\vec v(t)$ y $\vec a(t)$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>¿Acelera o frena? Signo de $\vec a\cdot\vec v$ ($a_\parallel$). ¿Gira? Si $a_\perp\neq0$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>a) Eliminando $t=x/\alpha$ y sustituyendo en $y$, la trayectoria es la parábola $y=3.0-(\beta/\alpha^2)x^2$: parte de $(0;\,3.0)$ m en $t=0$ y baja hasta $(4.8;\,-1.8)$ m en $t=2.0$ s.</li>
-    <li>b) Derivando componente a componente (sección 3.1): $v_x=\alpha=2.4$ m/s (constante), $v_y=-2\beta t=-2.4t$. Derivando otra vez: $a_x=0$, $a_y=-2\beta=-2.4\ \text{m/s}^2$ (constante) — es formalmente idéntico a un proyectil, con $x$ uniforme e $y$ acelerada.</li>
-    <li>c) En $t=2.0$ s: $v_x=2.4$, $v_y=-4.8$ m/s, así que $v=\sqrt{2.4^2+4.8^2}=5.37$ m/s, con dirección $\theta=\arctan(-4.8/2.4)=-63.4°$ (por debajo del eje $x$). La aceleración es $\vec a=(0,-2.4)$ m/s², constante en todo instante, dirección $-y$.</li>
-    <li>d) Descomponemos $\vec a$ en paralela/perpendicular a $\vec v$ (sección 3.2): $a_\parallel=\dfrac{\vec a\cdot\vec v}{v}=\dfrac{0(2.4)+(-2.4)(-4.8)}{5.37}=+2.15\ \text{m/s}^2$. Como es positiva, el ave está <b>acelerando</b> (aumentando su rapidez) en ese instante. Además, $a_\perp=\sqrt{a^2-a_\parallel^2}=\sqrt{2.4^2-2.15^2}=1.07\ \text{m/s}^2\ne0$, así que también está <b>girando</b>. La componente $z$ de $\vec v\times\vec a$, $v_xa_y-v_ya_x=(2.4)(-2.4)-(-4.8)(0)=-5.76<0$, indica que gira hacia $-y$ (a la derecha de su dirección de avance).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\vec v=\dfrac{d\vec r}{dt}$; $\vec a=\dfrac{d\vec v}{dt}$ (derivar cada componente)</li>
+      <li>$a_\parallel=\dfrac{\vec a\cdot\vec v}{v}$; $a_\perp=\sqrt{a^2-a_\parallel^2}$; sentido de giro: $(\vec v\times\vec a)_z=v_xa_y-v_ya_x$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Trayectoria:</b> de $x=\alpha t$ ⇒ $t=x/\alpha$:
+      $$y=3.0-\frac{\beta}{\alpha^2}x^2$$
+      <span class="por">Parábola: va de $(0;\,3.0)$ m en $t=0$ a $(4.8;\,-1.8)$ m en $t=2.0$ s.</span></li>
+    <li><b>b) Velocidad y aceleración:</b>
+      $$v_x=\alpha=2.4\ \text{m/s},\quad v_y=-2\beta t=-2.4\,t;\qquad a_x=0,\quad a_y=-2\beta=-2.4\ \text{m/s}^2$$</li>
+    <li><b>c) En $t=2.0$ s:</b>
+      $$v_x=2.4,\ v_y=-4.8\ \Rightarrow\ v=\sqrt{2.4^2+4.8^2}=\mathbf{5.37\ m/s},\quad\theta=\arctan\frac{-4.8}{2.4}=\mathbf{-63.4^\circ}$$
+      $$\vec a=(0,\,-2.4)\ \text{m/s}^2\ \ (\text{constante, dirección }-y)$$</li>
+    <li><b>d) ¿Acelera, frena o gira?</b>
+      $$a_\parallel=\frac{(0)(2.4)+(-2.4)(-4.8)}{5.37}=\mathbf{+2.15\ m/s^2}\ \Rightarrow\ \text{acelera}$$
+      $$a_\perp=\sqrt{2.4^2-2.15^2}=1.07\ \text{m/s}^2\ne0\ \Rightarrow\ \text{gira}$$
+      $$(\vec v\times\vec a)_z=(2.4)(-2.4)-(-4.8)(0)=-5.76<0\ \Rightarrow\ \text{gira hacia }-y\ (\text{a su derecha})$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t03/trayectoria-del-ave-con-v-y-a-en-t-2-s.svg">
 <div class="figph" role="img" aria-label="Trayectoria del ave con v y a en t = 2 s" style="aspect-ratio:300/290"></div>
@@ -301,12 +314,23 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
 <details class="mas pista"><summary>Pista 1</summary><p>Descompón $v_0$ primero y resuelve cada eje por separado.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>En la cima $v_y=0$ (no $v$) y $a=-g$ sigue actuando; el alcance sale por simetría (misma altura de salida y llegada).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>a) $v_{0x}=40.0\cos60°=20.0$ m/s; $v_{0y}=40.0\sin60°=34.6$ m/s.</li>
-    <li>b) $t_1=v_{0y}/g=34.6/9.80=3.53$ s.</li>
-    <li>c) $h=v_{0y}^2/(2g)=34.6^2/(2\times9.80)=61.2$ m.</li>
-    <li>d) Salida y llegada a la misma altura, así que $R=v_0^2\sin(2\times60°)/g=40.0^2\sin120°/9.80=141$ m (coincide con $2v_{0x}t_1=2\times20.0\times3.53=141$ m).</li>
-    <li>e) En la cima, $v_x=20.0$ m/s (nunca cambia) y $v_y=0$ (por definición de «punto más alto»); la aceleración sigue siendo $\vec a=(0,-9.80)\ \text{m/s}^2$, exactamente igual que en cualquier otro instante del vuelo.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$v_{0x}=v_0\cos\alpha$; $v_{0y}=v_0\sin\alpha$; $t_1=\dfrac{v_{0y}}{g}$; $h=\dfrac{v_{0y}^2}{2g}$</li>
+      <li>Alcance (misma altura): $R=\dfrac{v_0^2\sin2\alpha}{g}=2\,v_{0x}\,t_1$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Componentes:</b>
+      $$v_{0x}=40.0\cos60^\circ=\mathbf{20.0\ m/s},\qquad v_{0y}=40.0\sin60^\circ=\mathbf{34.6\ m/s}$$</li>
+    <li><b>b) Tiempo hasta el punto más alto:</b>
+      $$t_1=\frac{34.6}{9.80}=\mathbf{3.53\ s}$$</li>
+    <li><b>c) Altura máxima:</b>
+      $$h=\frac{34.6^2}{2(9.80)}=\mathbf{61.2\ m}$$</li>
+    <li><b>d) Alcance:</b>
+      $$R=\frac{40.0^2\sin120^\circ}{9.80}=\mathbf{141\ m}\quad(=2(20.0)(3.53)=141\ \text{m}\ \checkmark)$$</li>
+    <li><b>e) En la cima:</b>
+      $$v_x=\mathbf{20.0\ m/s},\quad v_y=\mathbf0;\qquad\vec a=(0,\,-9.80)\ \text{m/s}^2$$
+      <span class="por">La aceleración sigue siendo $-g$ en todo el vuelo; solo la componente vertical de la velocidad se anula.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t03/proyectil-lanzado-a-60-grados.svg">
 <div class="figph" role="img" aria-label="Proyectil lanzado a 60 grados" style="aspect-ratio:320/165"></div>
@@ -323,10 +347,20 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
 <details class="mas pista"><summary>Pista 1</summary><p>Lanzamiento horizontal: $v_{0y}=0$, la caída es como soltar desde el reposo, $h=\tfrac12gt^2$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$v_x=v_0$ no cambia (da el alcance) y $v_y=-gt$ al llegar.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>Es un lanzamiento horizontal: $v_{0y}=0$, así que la caída vertical es idéntica a una caída libre desde el reposo. a) $h=\tfrac12gt^2=\tfrac12(9.80)(0.480)^2=1.13$ m.</li>
-    <li>b) Como $v_x=v_0=1.10$ m/s es constante, $x=v_0t=1.10\times0.480=0.528$ m.</li>
-    <li>c) $v_x$ no cambia: $v_x=1.10$ m/s. $v_y=-gt=-9.80\times0.480=-4.70$ m/s. Rapidez $v=\sqrt{1.10^2+4.70^2}=4.83$ m/s, con ángulo $\arctan(4.70/1.10)=76.8°$ bajo la horizontal.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Lanzamiento horizontal ($v_{0y}=0$): $h=\tfrac12g\,t^2$; $x=v_0\,t$</li>
+      <li>Al llegar al suelo: $v_x=v_0$; $v_y=-g\,t$; $v=\sqrt{v_x^2+v_y^2}$; $\theta=\arctan\dfrac{|v_y|}{v_x}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Altura de la mesa:</b>
+      $$h=\tfrac12g\,t^2=\tfrac12(9.80)(0.480)^2=\mathbf{1.13\ m}$$</li>
+    <li><b>b) Distancia horizontal:</b>
+      $$x=v_0\,t=1.10(0.480)=\mathbf{0.528\ m}$$</li>
+    <li><b>c) Velocidad al llegar:</b>
+      $$v_x=\mathbf{1.10\ m/s},\qquad v_y=-9.80(0.480)=\mathbf{-4.70\ m/s}$$
+      $$v=\sqrt{1.10^2+4.70^2}=\mathbf{4.83\ m/s},\qquad\theta=\arctan\frac{4.70}{1.10}=\mathbf{76.8^\circ}\ \text{bajo la horizontal}$$
+      <span class="por">El tiempo de caída es el mismo que si se soltara sin empujar: depende solo del eje vertical.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t03/libro-que-cae-de-una-mesa-con-lanzamiento-horizo.svg">
 <div class="figph" role="img" aria-label="Libro que cae de una mesa con lanzamiento horizontal" style="aspect-ratio:330/190"></div>
@@ -347,12 +381,22 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
 <div class="figph" role="img" aria-label="Planteamiento: cohete de fuegos artificiales que estalla en dos fragmentos horizontales" style="aspect-ratio:360/300"></div>
 <figcaption>Planteamiento como en el examen: esquema con los datos de la explosión y la trayectoria de cada fragmento (sin resultados). Las velocidades son horizontales y opuestas porque p total antes era cero. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Explosión desde el reposo: $m_Av_A=m_Bv_B$ (tema 8); conservación vertical: $(m_A+m_B)\,v_{0y}=0$</li>
+      <li>Lanzamiento horizontal: $t=\sqrt{\dfrac{2h}{g}}$; alcance $x=v\,t$</li>
+    </ul></div>
   <ol class="steps">
-    <li>El apartado a) es del tema 8 (colisiones/explosiones): se resuelve con conservación de la cantidad de movimiento total (nula antes de estallar, porque el cohete estaba momentáneamente parado en su punto más alto) junto con la energía cinética liberada; el resultado, $v_A=14.3$ m/s y $v_B=71.5$ m/s, se toma aquí como dato de partida para centrarnos en el apartado b), que sí es de este tema.</li>
-    <li><b>Por qué las velocidades de salida son horizontales.</b> Conservar la cantidad de movimiento vertical solo dice que $m_Av_{Ay}+m_Bv_{By}=0$ — por sí sola, esa ecuación permitiría que un fragmento saliera hacia arriba y el otro hacia abajo, no obliga a que ninguno de los dos sea cero. El dato que cierra el argumento es el del enunciado: <b>los dos caen al suelo al mismo tiempo</b>. Como ambos parten de la misma altura $h=80$ m, y el tiempo de caída de un proyectil depende solo de $v_{0y}$ y $h$ (no de la velocidad horizontal), «mismo tiempo de caída» obliga a que los dos tengan la <b>misma</b> $v_{0y}$. Llamando $v_{0y}$ a ese valor común, la conservación vertical queda $m_Av_{0y}+m_Bv_{0y}=(m_A+m_B)v_{0y}=0$, y como $m_A+m_B\ne0$, forzosamente $v_{0y}=0$ para los dos. Solo entonces sus velocidades de salida son puramente <b>horizontales</b>, en sentidos opuestos (para que la componente horizontal, también nula al principio, se conserve).</li>
-    <li>Con $v_{0y}=0$ para los dos, cada fragmento cae como un <b>lanzamiento horizontal</b> (sección 3.3) desde $h=80$ m: $t=\sqrt{2h/g}=\sqrt{2(80)/9.80}=4.04$ s — el mismo tiempo para ambos, como ya exigía el enunciado.</li>
-    <li>Distancia horizontal de cada uno (sin redondear las velocidades intermedias, $v_A=14.31$, $v_B=71.55$ m/s): $x_A=v_At=14.31\times4.04=57.8$ m; $x_B=v_Bt=71.55\times4.04=289.1$ m.</li>
-    <li>Como los fragmentos salen en <b>sentidos opuestos</b>, la separación entre los dos puntos de caída es la <b>suma</b> de ambas distancias: $D=x_A+x_B=57.8+289.1\approx347$ m.</li>
+    <li><b>Dato del apartado a)</b> (tema 8): $v_A=14.3$ m/s y $v_B=71.5$ m/s (con $m_Av_A=m_Bv_B=20.0$ kg·m/s).</li>
+    <li><b>Por qué las velocidades de salida son horizontales.</b> Los dos caen a la vez desde la misma altura ⇒ tienen la misma $v_{0y}$. La conservación vertical da:
+      $$m_Av_{0y}+m_Bv_{0y}=(m_A+m_B)\,v_{0y}=0\ \Rightarrow\ v_{0y}=0$$
+      <span class="por">Solo entonces las velocidades son horizontales y en sentidos opuestos.</span></li>
+    <li><b>Tiempo de caída</b> (lanzamiento horizontal desde $h=80$ m; el mismo para ambos):
+      $$t=\sqrt{\frac{2(80)}{9.80}}=4.04\ \text{s}$$</li>
+    <li><b>Distancias horizontales</b> (sin redondear: $v_A=14.31$, $v_B=71.55$ m/s):
+      $$x_A=14.31(4.04)=57.8\ \text{m},\qquad x_B=71.55(4.04)=289.1\ \text{m}$$</li>
+    <li><b>Separación</b> (sentidos opuestos ⇒ se suman):
+      $$D=x_A+x_B=57.8+289.1\approx\mathbf{347\ m}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t03/fragmentos-que-salen-horizontales-en-sentidos-op.svg">
 <div class="figph" role="img" aria-label="Fragmentos que salen horizontales en sentidos opuestos" style="aspect-ratio:320/150"></div>
@@ -374,10 +418,18 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
 <details class="mas pista"><summary>Pista 1</summary><p>De 3,0 rev/s: $T=1/f$; $a_{rad}=4\pi^2R/T^2$ con $R$ en metros.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Para expresarla en múltiplos de $g$, divide entre 9,80.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>Frecuencia $f=3.0$ rev/s, así que el periodo es $T=1/f=0.333$ s. Radio $R=0.070$ m.</li>
-    <li>Con la ec. 3.29: $a_{\text{rad}}=4\pi^2R/T^2=4\pi^2(0.070)/(0.333)^2=24.9\ \text{m/s}^2$.</li>
-    <li>Como múltiplo de $g$: $24.9/9.80\approx2.5\,g$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Periodo: $T=\dfrac1f$</li>
+      <li>Aceleración centrípeta: $a_{rad}=\dfrac{4\pi^2R}{T^2}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Periodo y radio:</b>
+      $$T=\frac{1}{3.0}=0.333\ \text{s},\qquad R=0.070\ \text{m}$$</li>
+    <li><b>Aceleración centrípeta:</b>
+      $$a_{rad}=\frac{4\pi^2(0.070)}{(0.333)^2}=\mathbf{24.9\ m/s^2}$$</li>
+    <li><b>Como múltiplo de $g$:</b>
+      $$\frac{24.9}{9.80}\approx\mathbf{2.5\,g}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> de revoluciones por segundo a periodo, $T=1/f$; aplica directamente $a_{\text{rad}}=4\pi^2R/T^2$ (equivalente a $v^2/R$ pero sin pasar por $v$).</div>
   <div class="recipe"><b>Error típico:</b> confundir «3.0 rev/s» con el periodo $T$ o con una velocidad angular en rad/s directamente, u olvidar convertir el radio de cm a m.</div>
@@ -389,12 +441,21 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
 <details class="mas pista"><summary>Pista 1</summary><p>Tramo a favor de la corriente: rapidez respecto a tierra $=v_{bote}+v_{río}$; en contra, $v_{bote}-v_{río}$. Calcula el tiempo de cada tramo.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>No promedies velocidades: suma tiempos.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Remero, tramo río abajo</b> (a favor de la corriente): con la ec. 3.32, $v=4.00+2.80=6.80$ km/h respecto a tierra. Tiempo: $t_1=1.50/6.80=0.221$ h.</li>
-    <li><b>Remero, tramo río arriba</b> (en contra): $v=4.00-2.80=1.20$ km/h. Tiempo: $t_2=1.50/1.20=1.25$ h.</li>
-    <li>Tiempo total del remero: $t_1+t_2=1.47$ h $=88.2$ min.</li>
-    <li><b>Caminante:</b> siempre a 4.00 km/h en tierra firme, sin corriente que le afecte. Recorre $2\times1.50=3.00$ km en total: $t=3.00/4.00=0.750$ h $=45.0$ min.</li>
-    <li>El remero tarda casi el doble. No es una compensación simétrica: pasa mucho más tiempo en el tramo lento (río arriba, a solo 1.20 km/h) del que gana en el tramo rápido (río abajo, a 6.80 km/h) — el tiempo perdido a baja velocidad pesa más que el tiempo ganado a alta velocidad.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Velocidad relativa: $v_{bote/tierra}=v_{bote/agua}\pm v_{r\acute io}$ (a favor $+$, en contra $-$)</li>
+      <li>Tiempo de cada tramo: $t=\dfrac dv$; tiempo total = suma de tiempos (no se promedian velocidades)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Remero, río abajo</b> (a favor):
+      $$v=4.00+2.80=6.80\ \text{km/h},\qquad t_1=\frac{1.50}{6.80}=0.221\ \text{h}$$</li>
+    <li><b>Remero, río arriba</b> (en contra):
+      $$v=4.00-2.80=1.20\ \text{km/h},\qquad t_2=\frac{1.50}{1.20}=1.25\ \text{h}$$</li>
+    <li><b>Tiempo total del remero:</b>
+      $$t_1+t_2=\mathbf{1.47\ h}=88.2\ \text{min}$$</li>
+    <li><b>Caminante</b> (3.00 km a 4.00 km/h):
+      $$t=\frac{3.00}{4.00}=\mathbf{0.750\ h}=45.0\ \text{min}$$
+      <span class="por">El remero tarda casi el doble: pierde más tiempo río arriba (1.20 km/h) del que gana río abajo (6.80 km/h). Promediar $(6.80+1.20)/2=4.00$ km/h sería un error.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t03/remero-y-caminante-entre-los-muelles-a-y-b.svg">
 <div class="figph" role="img" aria-label="Remero y caminante entre los muelles A y B" style="aspect-ratio:320/178"></div>
@@ -408,11 +469,20 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
 <div class="nivel"><b>🟡 Práctica: 1 ejercicio más</b><span>Un proyectil con las componentes de $\vec v_0$ ya dadas: repasa «cima», «vuelve a su nivel» y alcance. Resuélvelo sin dibujo y compáralo con la solución.</span></div>
 <details class="sol" id="e2"><summary>E2 — Problema 3.12: mariscal de campo (proyectil clásico) <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 3-7/3-8, Prob. 3.12">E</span></summary>
 <p class="enun">Un mariscal de campo novato lanza un balón con una componente de velocidad inicial hacia arriba de 12.0 m/s y una componente horizontal de 20.0 m/s. Desprecie la resistencia del aire. a) ¿Cuánto tarda el balón en llegar al punto más alto de la trayectoria? b) ¿A qué altura está ese punto? c) ¿Cuánto tiempo pasa, desde el lanzamiento, hasta que el balón vuelve a su nivel original? ¿Cómo se compara con el de a)? d) ¿Qué distancia horizontal recorre en ese tiempo?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Punto más alto: $v_y=0$ ⇒ $t_1=\dfrac{v_{0y}}{g}$; altura: $h=\dfrac{v_{0y}^2}{2g}$</li>
+      <li>Vuelta al nivel de salida: $t=2t_1$; alcance: $R=v_{0x}\,t$ ($v_x$ constante)</li>
+    </ul></div>
   <ol class="steps">
-    <li>a) «Punto más alto» = $v_y=0$: con la ec. 3.22, $0=v_{0y}-gt_1 \Rightarrow t_1=v_{0y}/g=12.0/9.80=1.22$ s.</li>
-    <li>b) Altura máxima: $h=v_{0y}^2/(2g)=12.0^2/(2\times9.80)=7.35$ m.</li>
-    <li>c) Al volver a su nivel original se cumple $y=0$; por la simetría de la parábola (subida y bajada duran lo mismo cuando se llega a la misma altura de salida), ese instante es el doble del tiempo de subida: $t=2t_1=2.45$ s — el doble que en a).</li>
-    <li>d) Alcance horizontal en ese tiempo: como $v_x$ es constante, $R=v_{0x}\,t=20.0\times2.45=49.0$ m.</li>
+    <li><b>a) Tiempo hasta el punto más alto:</b>
+      $$t_1=\frac{v_{0y}}{g}=\frac{12.0}{9.80}=\mathbf{1.22\ s}$$</li>
+    <li><b>b) Altura máxima:</b>
+      $$h=\frac{v_{0y}^2}{2g}=\frac{12.0^2}{2(9.80)}=\mathbf{7.35\ m}$$</li>
+    <li><b>c) Vuelta al nivel original</b> (simetría de la parábola):
+      $$t=2t_1=\mathbf{2.45\ s}\ \ (\text{el doble que en a})$$</li>
+    <li><b>d) Distancia horizontal:</b>
+      $$R=v_{0x}\,t=20.0(2.45)=\mathbf{49.0\ m}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> «punto más alto» siempre es $v_y=0$ (ec. 3.22); «vuelve a su altura original» es $y=y_0$, y si sale y llega a la misma altura ese tiempo total es el doble del tiempo de subida (simetría); el alcance sale de multiplicar $v_{0x}$ (constante) por el tiempo total de vuelo.</div>
   <div class="recipe"><b>Error típico:</b> usar $v_0$ total en vez de $v_{0y}$ para la altura máxima, o pensar que la aceleración se anula en la cima (sigue siendo $-g$ en todo momento).</div>
@@ -437,6 +507,11 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
 <div class="nivel" id="teoria-t03"><b>📝 Preguntas de teoría (4 puntos)</b><span>Han caído tal cual en Febrero 2023 (2ª semana) y Febrero 2025 (1ª semana): es el 40 % del examen. Estudia las dos y el guion de otras posibles.</span></div>
 <details class="sol" id="x1"><summary>X1 — Teoría: Movimiento de proyectiles <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="X" data-ref="Examen Febrero 2023 (2ª semana) P-3 Opción A">X</span></summary>
 <p class="enun">Desarrolle el tema: <i>Movimiento de proyectiles</i>. Además, responda a las siguientes cuestiones: (a) Un tirador olímpico dispara una bala horizontalmente con su pistola errando el tiro su objetivo, al mismo tiempo deja caer otra bala desde la altura del cañón de la pistola. Si no hay resistencia del aire, ¿qué bala llegará primero al suelo? Explique su respuesta. (b) Un pájaro que vuela en línea recta con altitud y módulo de velocidad constantes deja caer una semilla de su pico. Si se ignora la resistencia del aire, ¿qué trayectoria de la semilla observaría el pájaro? ¿Y una persona situada en el suelo?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Proyectil: $x=x_0+v_{0x}\,t$; $y=y_0+v_{0y}\,t-\tfrac12g\,t^2$; $v_{0x}=v_0\cos\alpha_0$, $v_{0y}=v_0\sin\alpha_0$</li>
+      <li>Altura máxima: $h=\dfrac{v_0^2\sin^2\alpha_0}{2g}$; alcance (misma altura): $R=\dfrac{v_0^2\sin2\alpha_0}{g}$; velocidad relativa: $\vec v_{A/B}=\vec v_{A/T}-\vec v_{B/T}$</li>
+    </ul></div>
   <ol class="steps">
     <li><b>El modelo.</b> Un proyectil es un cuerpo que se mueve libremente bajo la gravedad, con $a_x=0$, $a_y=-g$, despreciando la resistencia del aire y la curvatura terrestre (sección 3.3).</li>
     <li><b>La idea central.</b> Los movimientos horizontal y vertical son completamente independientes y solo están conectados por compartir el mismo instante $t$: $x=x_0+v_{0x}t$ (velocidad constante) e $y=y_0+v_{0y}t-\tfrac12gt^2$ (caída libre), con $v_{0x}=v_0\cos\alpha_0$, $v_{0y}=v_0\sin\alpha_0$ (ecs. 3.18-3.20).</li>
@@ -460,6 +535,11 @@ $$v_{P/A,x}=v_{P/B,x}+v_{B/A,x}\quad v_{A/B,x}=-v_{B/A,x}\qquad \vec v_{P/A}=\ve
 </details>
 <details class="sol" id="x2"><summary>X2 — Teoría: Movimiento en círculo <span class="prio p1">🔴 examen real (teoría)</span> <span class="src" data-l="X" data-ref="Examen Febrero 2025 (1ª semana) P-3 Opción A">X</span></summary>
 <p class="enun">Desarrolle el tema: <i>Movimiento en círculo</i>. Además, responda a las siguientes cuestiones: (a) En un movimiento circular uniforme, ¿Cómo varía la aceleración radial cuando la velocidad tangencial aumenta cinco veces? Y ¿Cómo varía la aceleración radial si el radio de curvatura se reduce a un tercio de su valor inicial? (b) ¿Cuánto vale la velocidad tangencial media en un giro completo de un movimiento circular uniforme? Razone la respuesta.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Aceleración radial: $a_{rad}=\dfrac{v^2}{R}=\dfrac{4\pi^2R}{T^2}$; $v=\dfrac{2\pi R}{T}$</li>
+      <li>Velocidad media vectorial: $\vec v_{med}=\dfrac{\Delta\vec r}{\Delta t}$; rapidez media: $\dfrac{\text{distancia}}{\Delta t}$</li>
+    </ul></div>
   <ol class="steps">
     <li><b>Idea de partida.</b> En cualquier trayectoria curva hay aceleración aunque la rapidez sea constante, porque la <i>dirección</i> de $\vec v$ cambia (sección 3.2). El movimiento circular uniforme (MCU) es el caso particular con rapidez constante en un círculo.</li>
     <li><b>Dirección de la aceleración en el MCU.</b> Es puramente radial (perpendicular a $\vec v$), siempre apuntando hacia el centro — de ahí el nombre «centrípeta».</li>
