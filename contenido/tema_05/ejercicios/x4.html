@@ -2,13 +2,27 @@
   {{fig:x4-planteamiento}}
   <p>La figura del examen (plano inclinado de 30°): A sobre el plano; la cuerda sube paralela al plano hasta una polea <b>fija</b> en el vértice, baja vertical, rodea por debajo una polea <b>móvil</b> de la que cuelga B, y sube hasta un soporte fijo en el techo. g no está indicada: se usa 9,80.</p>
   {{fig:plano-inclinado-con-polea-fija-y-polea-movil}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ligadura de la polea móvil: $s_B=\dfrac{s_A}{2}$ ⇒ $a_B=\dfrac{a_A}{2}$; fuerza sobre la polea móvil y B: $2T$</li>
+      <li>A (plano abajo): $m_Ag\sin30^\circ-\mu\,m_Ag\cos30^\circ-T=m_Aa_A$</li>
+      <li>Polea móvil y B (arriba): $2T-m_Bg=m_B\,a_B=m_B\,\dfrac{a_A}{2}$</li>
+    </ul></div>
+  <p>Figura del examen: plano de 30°; A sobre el plano; la cuerda sube paralela al plano hasta una polea fija en el vértice, baja vertical, rodea por debajo una polea móvil de la que cuelga B, y sube a un soporte fijo en el techo. $g=9{,}80$.</p>
   <ol class="steps">
-    <li><b>Ligadura de la polea móvil.</b> La longitud de cuerda es constante. Si A recorre una distancia $s$ por el plano, esa longitud se reparte entre los <i>dos</i> tramos que sostienen la polea móvil, de modo que ésta (y B) se mueve $s/2$: $s_B=s_A/2\Rightarrow a_B=a_A/2$. Además cada tramo tira de la polea con $T$, así que sobre la polea y B actúa <b>$2T$</b>. (Explicación propia de la ligadura; la idea de cuerda inextensible es la de U Ej. 5.12 p. 141.)</li>
-    <li><b>¿Hacia dónde se mueve?</b> (hay que saberlo antes de orientar la fricción). Para sostener B en reposo bastaría $T=m_Bg/2=4{,}90$ N. La componente del peso de A a lo largo del plano es $m_Ag\sin30^\circ=7{,}35$ N y la fricción estática máxima es $\mu_sm_Ag\cos30^\circ=1{,}27$ N (ec. 5.4). Como $7{,}35>4{,}90+1{,}27=6{,}17$ N, <b>A baja por el plano y B sube</b>. ¡Contraintuitivo!: la polea móvil «multiplica por dos» la fuerza del lado de A.</li>
-    <li><b>Segunda ley.</b> A ($x$ plano abajo; la fricción cinética apunta plano arriba): $m_Ag\sin30^\circ-\mu\,m_Ag\cos30^\circ-T=m_Aa_A$. Polea móvil y B ($+y$ hacia arriba): $2T-m_Bg=m_Ba_B=m_B\,a_A/2$.</li>
-    <li><b>(a) Resolver</b> (de la segunda, $T=\tfrac12m_B(g+a_A/2)$, y se sustituye en la primera): $$a_A=\frac{g\,[\,2m_A(\sin30^\circ-\mu\cos30^\circ)-m_B\,]}{2m_A+m_B/2}=\frac{9{,}80\,(1{,}2402-1)}{3{,}5}$$ es decir $a_A=\mathbf{0{,}673\ m/s^2}$ (plano abajo), y $a_B=a_A/2=\mathbf{0{,}336\ m/s^2}$ (hacia arriba).</li>
-    <li><b>(b) Tensiones:</b> en la cuerda principal (A–polea fija–polea móvil–techo), $T=m_A[g(\sin30^\circ-\mu\cos30^\circ)-a_A]=1{,}5(4{,}051-0{,}673)=\mathbf{5{,}07\ N}$; el tirante entre la polea móvil y B soporta $2T=\mathbf{10{,}1\ N}$ (la polea no tiene masa).</li>
-    <li><b>(c)</b> Con $a_A$ constante desde el reposo: $v_A=\sqrt{2a_A(1\ \text{m})}=\mathbf{1{,}16\ m/s}$.</li>
+    <li><b>¿Hacia dónde se mueve?</b> Para sostener B bastaría $T=m_Bg/2=4{,}90$ N; la componente del peso de A es $m_Ag\sin30^\circ=7{,}35$ N y la fricción máxima es $\mu\,m_Ag\cos30^\circ=1{,}27$ N:
+      $$7{,}35>4{,}90+1{,}27=6{,}17\ \text{N}\ \Rightarrow\ \text{A baja y B sube}$$
+      <span class="por">La polea móvil «multiplica por dos» la fuerza del lado de A.</span></li>
+    <li><b>Segunda ley:</b>
+      $$m_Ag\sin30^\circ-\mu\,m_Ag\cos30^\circ-T=m_Aa_A\qquad(1)$$
+      $$2T-m_Bg=m_B\frac{a_A}{2}\ \Rightarrow\ T=\tfrac12m_B\Big(g+\frac{a_A}{2}\Big)\qquad(2)$$</li>
+    <li><b>a) Aceleraciones</b> (sustituir (2) en (1)):
+      $$a_A=\frac{g\,[\,2m_A(\sin30^\circ-\mu\cos30^\circ)-m_B\,]}{2m_A+m_B/2}=\frac{9{,}80\,(1{,}2402-1)}{3{,}5}=\mathbf{0{,}673\ m/s^2}\ \text{(plano abajo)}$$
+      $$a_B=\frac{a_A}{2}=\mathbf{0{,}336\ m/s^2}\ \text{(hacia arriba)}$$</li>
+    <li><b>b) Tensiones:</b>
+      $$T=m_A[g(\sin30^\circ-\mu\cos30^\circ)-a_A]=1{,}5(4{,}051-0{,}673)=\mathbf{5{,}07\ N},\qquad2T=\mathbf{10{,}1\ N}\ \text{(tirante de B)}$$</li>
+    <li><b>c) Velocidad de A tras 1 m:</b>
+      $$v_A=\sqrt{2a_A(1\ \text{m})}=\sqrt{2(0{,}673)}=\mathbf{1{,}16\ m/s}$$</li>
   </ol>
   <p><b>Resultado:</b> $a_A=0{,}673\ \text{m/s}^2$ (baja), $a_B=0{,}336\ \text{m/s}^2$ (sube); $T=5{,}07$ N y $10{,}1$ N en el tirante de B; $v_A=1{,}16$ m/s. (Con $g=9{,}81$: $0{,}673$; $0{,}337$; $5{,}07$ N; $1{,}16$ m/s.)</p>
   <div class="recipe"><b>Receta:</b> con una polea móvil escribe primero la ligadura geométrica ($a_B=a_A/2$ y fuerza $2T$ sobre la polea); después decide el sentido comparando fuerzas en la situación de equilibrio estático y solo entonces orienta la fricción.</div>

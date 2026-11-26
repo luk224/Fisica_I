@@ -1,13 +1,27 @@
 <p class="enun">Se coloca un bloque de 5 kg contra una pared vertical. Se aplica una fuerza constante $F$ al bloque, con $F=96{,}0$ N y un ángulo de 60,0° con la horizontal. El coeficiente de fricción cinética entre el bloque y la pared es 0,300. Si el bloque está inicialmente en reposo: (a) ¿Cuál será el módulo de su velocidad después de recorrer 0,400 m sobre la pared? (b) ¿Cuál será el trabajo realizado en el desplazamiento? Considere $g=9{,}81\ \text{m/s}^2$. (3 puntos.)</p>
   {{fig:x3-planteamiento}}
     {{fig:bloque-empujado-contra-una-pared-vertical}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Horizontal ($a_x=0$): $n=F\cos60^\circ$; fricción cinética: $f_k=\mu_k\,n$</li>
+      <li>Vertical ($+y$ arriba): $F\sin60^\circ-m\,g-f_k=m\,a$; cinemática: $v^2=2a\,d$</li>
+      <li>Trabajo: $W=F\,s\cos\phi$; teorema: $W_{tot}=\tfrac12mv^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Eje horizontal</b> ($+x$ alejándose de la pared; no hay movimiento horizontal, $a_x=0$): $n-F\cos60^\circ=0\Rightarrow n=48{,}0$ N. La normal aquí <b>no</b> es $mg$: la pone la componente horizontal de $F$. En una pared vertical el peso es paralelo a la superficie y no la aprieta.</li>
-    <li><b>¿Hacia dónde se mueve?</b> (hace falta para orientar $f_k$). $F\sin60^\circ=83{,}1$ N es mayor que $mg=49{,}05$ N y que $mg+f_k=63{,}5$ N, luego el bloque <b>sube</b> y la fricción cinética apunta <b>hacia abajo</b>.</li>
-    <li><b>Fricción:</b> $f_k=\mu_kn=0{,}300(48{,}0)=14{,}4$ N.</li>
-    <li><b>Eje vertical</b> ($+y$ hacia arriba): $F\sin60^\circ-mg-f_k=ma\Rightarrow a=\dfrac{83{,}14-49{,}05-14{,}40}{5}=\mathbf{3{,}94\ m/s^2}$ hacia arriba.</li>
-    <li><b>(a) Cinemática</b> con $a$ constante desde el reposo: $v^2=2ad\Rightarrow v=\sqrt{2(3{,}938)(0{,}400)}=\mathbf{1{,}77\ m/s}$.</li>
-    <li><b>(b) Trabajo</b> (adelanto del tema 6: $W=Fs\cos\phi$, U ec. 6.2 p. 174). El enunciado no dice «de qué fuerza»; conviene dar las dos cosas. Solo trabaja la parte de cada fuerza paralela al desplazamiento (vertical): <br>• $W_F=F\sin60^\circ\,d=83{,}14(0{,}400)=\mathbf{33{,}3\ J}$ (la componente horizontal es perpendicular al desplazamiento: trabajo 0). <br>• $W_{peso}=-mgd=-19{,}6$ J; $W_{f}=-f_kd=-5{,}76$ J; $W_n=0$. <br>• Trabajo total $=33{,}26-19{,}62-5{,}76=\mathbf{7{,}88\ J}=\tfrac12mv^2$ ✓ (comprueba el apartado (a) por energía).</li>
+    <li><b>Normal</b> (la pone la componente horizontal de $F$, no el peso):
+      $$n=F\cos60^\circ=96{,}0(0{,}5)=48{,}0\ \text{N}$$</li>
+    <li><b>¿Hacia dónde se mueve?</b>
+      $$F\sin60^\circ=83{,}1\ \text{N}>mg+f_k=63{,}5\ \text{N}\ \Rightarrow\ \text{sube y }f_k\text{ apunta hacia abajo}$$</li>
+    <li><b>Fricción:</b>
+      $$f_k=0{,}300(48{,}0)=14{,}4\ \text{N}$$</li>
+    <li><b>Aceleración:</b>
+      $$a=\frac{83{,}14-49{,}05-14{,}40}{5}=\mathbf{3{,}94\ m/s^2}\ \text{(hacia arriba)}$$</li>
+    <li><b>a) Velocidad</b> (parte del reposo, $d=0{,}400$ m):
+      $$v=\sqrt{2(3{,}938)(0{,}400)}=\mathbf{1{,}77\ m/s}$$</li>
+    <li><b>b) Trabajo</b> (solo cuenta la parte de cada fuerza paralela al desplazamiento, vertical):
+      $$W_F=F\sin60^\circ\,d=83{,}14(0{,}400)=\mathbf{33{,}3\ J}$$
+      $$W_{peso}=-mgd=-19{,}6\ \text{J},\qquad W_f=-f_kd=-5{,}76\ \text{J},\qquad W_n=0$$
+      $$W_{tot}=33{,}26-19{,}62-5{,}76=\mathbf{7{,}88\ J}=\tfrac12mv^2\ \checkmark$$</li>
   </ol>
   <p><b>Resultado:</b> $a=3{,}94\ \text{m/s}^2$ (hacia arriba); $v=1{,}77$ m/s; $W_F=33{,}3$ J; trabajo total $7{,}88$ J.</p>
   <div class="recipe"><b>Receta:</b> cuando una fuerza oblicua aprieta un cuerpo contra una superficie, la normal sale del eje perpendicular a la superficie (aquí el horizontal) y solo después se calcula $f=\mu n$ y la ecuación a lo largo de la superficie.</div>

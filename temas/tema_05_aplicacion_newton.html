@@ -312,9 +312,16 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <div class="figph" role="img" aria-label="Bola de demolición en equilibrio" style="aspect-ratio:330/220"></div>
 <figcaption>Bola de 3620 kg en equilibrio: el cable A es horizontal y el cable B forma 40° con la vertical. Vertical: T<sub>B</sub> cos 40° = mg; horizontal: T<sub>A</sub> = T<sub>B</sub> sen 40°. (Escala 2 px por kN; la componente vertical de T<sub>B</sub>, discontinua, iguala al peso.) <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.6, p. 160 / Solucionario 5-2)">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio: $\sum F_x=0$, $\sum F_y=0$; peso: $w=m\,g$</li>
+      <li>Ángulo desde la vertical: componente vertical $T_B\cos40^\circ$, horizontal $T_B\sin40^\circ$</li>
+    </ul></div>
   <ol class="steps">
-    <li>La bola no acelera: equilibrio (ec. 5.1). Eje vertical primero, porque solo $T_B$ tiene componente vertical (una incógnita): $T_B\cos40^\circ=mg\Rightarrow T_B=\dfrac{3620(9{,}80)}{\cos40^\circ}=\mathbf{4{,}63\times10^4\ N}$.</li>
-    <li>Eje horizontal: $T_A=T_B\sin40^\circ=mg\tan40^\circ=\mathbf{2{,}98\times10^4\ N}$.</li>
+    <li><b>a) Eje vertical</b> (solo $T_B$ tiene componente vertical):
+      $$T_B\cos40^\circ=m\,g\ \Rightarrow\ T_B=\frac{3620(9{,}80)}{\cos40^\circ}=\mathbf{4{,}63\times10^4\ N}$$</li>
+    <li><b>b) Eje horizontal:</b>
+      $$T_A=T_B\sin40^\circ=m\,g\tan40^\circ=\mathbf{2{,}98\times10^4\ N}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> en equilibrio con varias cuerdas, empieza por el eje que tenga <b>una sola incógnita</b>.</div>
   <div class="recipe"><b>Error típico:</b> confundir seno y coseno cuando el ángulo se mide desde la vertical (la componente <i>vertical</i> es $T\cos40^\circ$).</div>
@@ -330,12 +337,22 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <div class="figph" role="img" aria-label="Estudiante en una báscula dentro de un elevador" style="aspect-ratio:340/255"></div>
 <figcaption>Al arrancar, la báscula marca n = 450 N &lt; 550 N: la aceleración es hacia abajo (a = −1,78 m/s²). Izquierda, DCL del sistema completo (850 kg): T − W = m a. Derecha, DCL del estudiante: n − w = m a. Escalas distintas en cada DCL. <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.20, p. 161 / Solucionario 5-11)">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>La báscula marca la normal: $n-m\,g=m\,a$ ⇒ $a=\dfrac{n-w}{m}$ ($+$ hacia arriba); $m=\dfrac wg$</li>
+      <li>Sistema completo (850 kg): $T=m_{tot}\,(g+a)$</li>
+    </ul></div>
   <ol class="steps">
-    <li>La báscula mide la normal $n$, no el peso (ejemplo 5.9). Masa del estudiante: $m=550/9{,}80=56{,}1$ kg.</li>
-    <li><b>a)</b> $n-mg=ma\Rightarrow a=\dfrac{450-550}{56{,}1}=\mathbf{-1{,}78\ m/s^2}$: hacia abajo (baja acelerando o sube frenando).</li>
-    <li><b>b)</b> $a=\dfrac{670-550}{56{,}1}=\mathbf{+2{,}14\ m/s^2}$ (hacia arriba).</li>
-    <li><b>c)</b> $n=0\Rightarrow a=-g$: caída libre. Sí, hay motivo para preocuparse (el cable se ha roto o está suelto).</li>
-    <li><b>d)</b> Sistema completo (850 kg): $T-m_{tot}g=m_{tot}a\Rightarrow T=m_{tot}(g+a)$. En a): $850(9{,}80-1{,}78)=\mathbf{6{,}82\times10^3\ N}$. En c): $\mathbf{T=0}$. (En b) sería $1{,}01\times10^4$ N; el peso total es 8330 N.)</li>
+    <li><b>Masa del estudiante:</b>
+      $$m=\frac{550}{9{,}80}=56{,}1\ \text{kg}$$</li>
+    <li><b>a) Báscula 450 N:</b>
+      $$a=\frac{450-550}{56{,}1}=\mathbf{-1{,}78\ m/s^2}\ \ (\text{hacia abajo})$$</li>
+    <li><b>b) Báscula 670 N:</b>
+      $$a=\frac{670-550}{56{,}1}=\mathbf{+2{,}14\ m/s^2}\ \ (\text{hacia arriba})$$</li>
+    <li><b>c) Báscula 0:</b> $a=-g$: caída libre; sí hay motivo para preocuparse (el cable se ha roto o está suelto).</li>
+    <li><b>d) Tensión del cable:</b>
+      $$\text{a): }T=850(9{,}80-1{,}78)=\mathbf{6{,}82\times10^3\ N},\qquad\text{c): }\mathbf{T=0}$$
+      <span class="por">En b) sería $1{,}01\times10^4$ N; el peso total es 8330 N.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> peso aparente = normal = $m(g+a_y)$; elige el cuerpo cuya ecuación contenga la incógnita (el estudiante para $a$, el sistema completo para $T$).</div>
   <div class="recipe"><b>Error típico:</b> igualar la lectura de la báscula con el peso; olvidar el signo de $a$.</div>
@@ -355,12 +372,22 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <div class="figph" role="img" aria-label="Dos bloques en una cuña de dos planos inclinados" style="aspect-ratio:360/205"></div>
 <figcaption>Examen Feb. 2022: m<sub>1</sub> = 80 kg (plano de 25°) y m<sub>2</sub> = 20 kg (plano de 60°) unidos por una cuerda sobre la polea del vértice. m<sub>1</sub>g sen 25° = 331 N frente a m<sub>2</sub>g sen 60° = 170 N: m<sub>1</sub> baja, m<sub>2</sub> sube, con a = 1,62 m/s² y T = 202 N. (Flechas de fuerza a escala 0,1 px/N, salvo T, orientativa.) <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2022, 2ª sem., P-2)">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Componente del peso a lo largo de un plano: $m\,g\sin\alpha$; normal: $n=m\,g\cos\alpha$</li>
+      <li>Segunda ley a lo largo de cada plano ($+x$ en el sentido del movimiento): $m_1g\sin\alpha_1-T=m_1a$; $T-m_2g\sin\alpha_2=m_2a$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>¿Hacia dónde?</b> Sin fricción, a lo largo de cada plano compiten solo las componentes del peso (la tensión es igual en los dos lados y las normales son perpendiculares a los planos). Comparamos: $m_1g\sin25^\circ=80(9{,}80)(0{,}4226)=331{,}3$ N frente a $m_2g\sin60^\circ=20(9{,}80)(0{,}8660)=169{,}7$ N. Gana $m_1$: <b>$m_1$ baja por su plano y $m_2$ sube por el suyo</b> (aunque el plano de $m_2$ sea más empinado, su masa es cuatro veces menor).</li>
-    <li><b>Ejes y signos coherentes.</b> Como la cuerda es inextensible, los dos bloques tienen aceleraciones de la misma magnitud $a$ (ver ejemplo 5.12). Para cada bloque tomamos $x$ paralelo a su plano y positivo en el sentido de su movimiento: bloque 1, cuesta abajo; bloque 2, cuesta arriba.</li>
-    <li><b>Segunda ley a lo largo de cada plano:</b> $m_1g\sin25^\circ-T=m_1a$ y $T-m_2g\sin60^\circ=m_2a$. (Perpendicularmente $n_i=m_ig\cos\alpha_i$: no hace falta, no hay fricción.)</li>
-    <li><b>(b) Sumando</b> las dos ecuaciones se cancela $T$: $$a=\frac{m_1\sin25^\circ-m_2\sin60^\circ}{m_1+m_2}\,g=\frac{331{,}3-169{,}7}{100}=\mathbf{1{,}62\ m/s^2}.$$</li>
-    <li><b>(c) Tensión</b> (de la ecuación del bloque 2): $T=m_2(a+g\sin60^\circ)=20(1{,}616+8{,}487)=\mathbf{202\ N}$. Comprobación con el bloque 1: $m_1(g\sin25^\circ-a)=80(4{,}142-1{,}616)=202$ N ✓.</li>
+    <li><b>a) ¿Hacia dónde?</b> Sin fricción, compiten las componentes del peso a lo largo de cada plano:
+      $$m_1g\sin25^\circ=80(9{,}80)(0{,}4226)=331{,}3\ \text{N},\qquad m_2g\sin60^\circ=20(9{,}80)(0{,}8660)=169{,}7\ \text{N}$$
+      <span class="por">Gana $m_1$: baja por su plano y $m_2$ sube por el suyo (aunque su plano sea más empinado, tiene cuatro veces menos masa).</span></li>
+    <li><b>Segunda ley</b> (cuerda inextensible: misma $a$ en los dos):
+      $$m_1g\sin25^\circ-T=m_1a\qquad(1)\qquad\qquad T-m_2g\sin60^\circ=m_2a\qquad(2)$$</li>
+    <li><b>b) Aceleración</b> (sumando (1) y (2) se cancela $T$):
+      $$a=\frac{331{,}3-169{,}7}{80+20}=\mathbf{1{,}62\ m/s^2}$$</li>
+    <li><b>c) Tensión</b> (de (2)):
+      $$T=m_2(a+g\sin60^\circ)=20(1{,}616+8{,}487)=\mathbf{202\ N}$$
+      <span class="por">Comprobación con (1): $T=80(4{,}142-1{,}616)=202$ N ✓.</span></li>
   </ol>
   <p><b>Resultado:</b> $m_1$ desciende; $a=1{,}62\ \text{m/s}^2$; $T=202$ N (con $g=9{,}81$: $1{,}618\ \text{m/s}^2$ y $202{,}3$ N).</p>
   <div class="recipe"><b>Receta:</b> compara primero las fuerzas «motoras» a lo largo de la cuerda para decidir el sentido; luego pon $+x$ en el sentido del movimiento de cada cuerpo, escribe $\sum F=ma$ para cada uno y suma las ecuaciones: la tensión se cancela. La tensión sale de sustituir $a$ en cualquiera de las dos.</div>
@@ -382,11 +409,19 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <div class="figph" role="img" aria-label="Caja a punto de resbalar en una rampa" style="aspect-ratio:330/190"></div>
 <figcaption>Caja de 25,0 kg (μ<sub>s</sub> = 0,35, μ<sub>k</sub> = 0,25) en una rampa de ángulo α creciente. A punto de resbalar f<sub>s</sub> = mg sen α = μ<sub>s</sub>mg cos α, de donde tan α = μ<sub>s</sub>. Una vez en movimiento la fricción cinética (57,8 N) es menor que la estática máxima (80,9 N). <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.36, p. 163 / Solucionario 5-20)">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio en la rampa: $f_s=m\,g\sin\alpha$, $n=m\,g\cos\alpha$; umbral: $f_s=\mu_s\,n$ ⇒ $\tan\alpha=\mu_s$</li>
+      <li>Deslizando: $a=g(\sin\alpha-\mu_k\cos\alpha)$; $v^2=2a\,d$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Antes de deslizar, equilibrio: $f_s=mg\sin\alpha$ y $n=mg\cos\alpha$; aguanta mientras $f_s\le\mu_sn$ (ec. 5.4).</li>
-    <li><b>a)</b> Umbral: $mg\sin\alpha=\mu_smg\cos\alpha\Rightarrow\tan\alpha=\mu_s\Rightarrow\alpha=\arctan0{,}35=\mathbf{19{,}3^\circ}$ (no depende de la masa).</li>
-    <li><b>b)</b> Una vez deslizando la fricción es cinética (menor): $a=g(\sin\alpha-\mu_k\cos\alpha)=9{,}80(0{,}3304-0{,}2360)=\mathbf{0{,}925\ m/s^2}$ (el solucionario redondea 0,92).</li>
-    <li><b>c)</b> $v^2=2ad\Rightarrow v=\sqrt{2(0{,}925)(5{,}0)}=\mathbf{3{,}0\ m/s}$ (3,04).</li>
+    <li><b>a) Ángulo mínimo:</b>
+      $$m\,g\sin\alpha=\mu_sm\,g\cos\alpha\ \Rightarrow\ \tan\alpha=\mu_s=0{,}35\ \Rightarrow\ \alpha=\mathbf{19{,}3^\circ}$$
+      <span class="por">No depende de la masa.</span></li>
+    <li><b>b) Aceleración</b> (ya desliza: fricción cinética, menor):
+      $$a=9{,}80(0{,}3304-0{,}25(0{,}9438))=9{,}80(0{,}3304-0{,}2360)=\mathbf{0{,}925\ m/s^2}$$</li>
+    <li><b>c) Rapidez tras 5,0 m:</b>
+      $$v=\sqrt{2(0{,}925)(5{,}0)}=\mathbf{3{,}0\ m/s}\ \ (3{,}04)$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> «a punto de deslizar» ⇔ $f_s=\mu_sn$; en un plano sin otras fuerzas, $\tan\alpha_c=\mu_s$. Una vez en marcha, se pasa a $\mu_k$.</div>
   <div class="recipe"><b>Error típico:</b> usar $f_s=\mu_sn$ cuando el cuerpo no está en el umbral; seguir usando $\mu_s$ cuando ya desliza.</div>
@@ -406,13 +441,25 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <div class="figph" role="img" aria-label="Dos paquetes unidos por un cable en una rampa" style="aspect-ratio:360/190"></div>
 <figcaption>Examen Feb. 2025: dos paquetes unidos por un cable bajan por una rampa de 16°. A lo largo de la rampa actúan m g sen α (cuesta abajo), la fricción cinética f<sub>k</sub> = μ m g cos α (cuesta arriba) y la tensión T, que tira hacia atrás del paquete delantero y hacia delante del trasero. Escala de fuerzas 3 px/N; T = 1,57 N no está a escala. <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2025, 2ª sem., P-1)">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Aceleración de un paquete suelto en una rampa con fricción: $a=g(\sin\alpha-\mu_k\cos\alpha)$</li>
+      <li>Normal: $n=m\,g\cos\alpha$; fricción cinética: $f_k=\mu_k\,n$ (rampa arriba)</li>
+      <li>Segunda ley a lo largo de la rampa: $m_1g\sin\alpha-f_{k1}-T=m_1a$; $m_2g\sin\alpha-f_{k2}+T=m_2a$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>¿Está tenso el cable?</b> Un cable solo tira. Calculamos cuánto aceleraría cada paquete <i>suelto</i> (ejemplo 5.17): $a=g(\sin\alpha-\mu_k\cos\alpha)$. Paquete 1: $9{,}81(0{,}2756-0{,}2\cdot0{,}9613)=0{,}818\ \text{m/s}^2$. Paquete 2: $9{,}81(0{,}2756-0{,}25\cdot0{,}9613)=0{,}347\ \text{m/s}^2$. El de delante acelera <i>más</i> que el de atrás: se separaría, luego el cable <b>se tensa</b> y los dos se mueven juntos con la misma $a$.</li>
-    <li><b>Ejes</b> ($x$ rampa abajo, $y$ perpendicular) y <b>normales:</b> $n_i=m_ig\cos\alpha$ (no hay aceleración perpendicular), de modo que $f_{k1}=\mu_1n_1=10{,}37$ N y $f_{k2}=\mu_2n_2=20{,}04$ N, ambas rampa arriba.</li>
-    <li><b>Segunda ley a lo largo de la rampa</b> (misma $a$; $T$ tira hacia atrás del paquete 1 y hacia delante del 2): $m_1g\sin\alpha-f_{k1}-T=m_1a$ y $m_2g\sin\alpha-f_{k2}+T=m_2a$.</li>
-    <li><b>(a)</b> Sumando se cancela $T$: $$a=g\sin\alpha-\frac{(\mu_1m_1+\mu_2m_2)\,g\cos\alpha}{m_1+m_2}=\mathbf{0{,}532\ m/s^2}$$ para <b>los dos</b>, rampa abajo.</li>
-    <li><b>(b)</b> Del paquete 1: $T=m_1[g(\sin\alpha-\mu_1\cos\alpha)-a]=5{,}5(0{,}818-0{,}532)=\mathbf{1{,}57\ N}$. Forma compacta: $T=\dfrac{m_1m_2\,g\cos\alpha\,(\mu_2-\mu_1)}{m_1+m_2}$, positiva porque $\mu_2>\mu_1$.</li>
-    <li><b>(c) Posiciones invertidas</b> (el de 8,5 kg, con $\mu=0{,}25$, delante). Las mismas ecuaciones darían $T=-1{,}57$ N: imposible para un cable. Físicamente, sueltos, el de delante (8,5 kg) acelera $0{,}347\ \text{m/s}^2$ y el de detrás (5,5 kg) $0{,}818\ \text{m/s}^2$: el de detrás se acerca. El <b>cable queda flojo ($T=0$)</b> y cada paquete baja con su propia aceleración <i>hasta que el de 5,5 kg alcanza y choca con el de 8,5 kg</i>; a partir de ahí, si siguen en contacto, el de detrás empuja al de delante (fuerza de contacto de 1,57 N) y bajan juntos con $0{,}532\ \text{m/s}^2$. (Deslizan en todos los casos, porque $\tan16^\circ=0{,}287>0{,}25$.)</li>
+    <li><b>¿Está tenso el cable?</b> Aceleración de cada paquete suelto ($\sin16^\circ=0{,}2756$, $\cos16^\circ=0{,}9613$):
+      $$a_1=9{,}81(0{,}2756-0{,}2(0{,}9613))=0{,}818\ \text{m/s}^2,\qquad a_2=9{,}81(0{,}2756-0{,}25(0{,}9613))=0{,}347\ \text{m/s}^2$$
+      <span class="por">El de delante acelera más: se separaría ⇒ el cable se tensa y los dos se mueven juntos con la misma $a$.</span></li>
+    <li><b>Fricciones</b> ($x$ rampa abajo; $n_i=m_ig\cos\alpha$):
+      $$f_{k1}=0{,}2(5{,}5)(9{,}81)(0{,}9613)=10{,}37\ \text{N},\qquad f_{k2}=0{,}25(8{,}5)(9{,}81)(0{,}9613)=20{,}04\ \text{N}$$</li>
+    <li><b>a) Aceleración común</b> (sumando las dos ecuaciones, $T$ se cancela):
+      $$a=g\sin\alpha-\frac{(\mu_1m_1+\mu_2m_2)\,g\cos\alpha}{m_1+m_2}=2{,}704-\frac{30{,}41}{14{,}0}=\mathbf{0{,}532\ m/s^2}\ \ (\text{los dos, rampa abajo})$$</li>
+    <li><b>b) Tensión</b> (del paquete 1):
+      $$T=m_1[g(\sin\alpha-\mu_1\cos\alpha)-a]=5{,}5(0{,}818-0{,}532)=\mathbf{1{,}57\ N}$$
+      <span class="por">Forma compacta: $T=\dfrac{m_1m_2\,g\cos\alpha\,(\mu_2-\mu_1)}{m_1+m_2}$, positiva porque $\mu_2>\mu_1$.</span></li>
+    <li><b>c) Posiciones invertidas</b> (8,5 kg delante): las mismas ecuaciones darían $T=-1{,}57$ N: imposible para un cable.
+      <span class="por">Sueltos, el de delante (8,5 kg) acelera $0{,}347$ m/s² y el de detrás (5,5 kg) $0{,}818$ m/s²: el de detrás se acerca. El cable queda flojo ($T=0$) y cada paquete baja con su aceleración hasta que chocan; luego, en contacto, bajan juntos con $0{,}532$ m/s² (fuerza de contacto 1,57 N). Deslizan en todos los casos porque $\tan16^\circ=0{,}287>0{,}25$.</span></li>
   </ol>
   <p><b>Resultado:</b> (a) $0{,}532\ \text{m/s}^2$ ambos; (b) $T=1{,}57$ N; (c) cable flojo, $0{,}347$ y $0{,}818\ \text{m/s}^2$ hasta el choque, luego juntos con $0{,}532\ \text{m/s}^2$.</p>
   <div class="recipe"><b>Receta:</b> en cuerpos encadenados calcula la aceleración que tendría cada uno suelto; si el de delante iría más deprisa, el cable tira ($T>0$) y se resuelve como sistema con la misma $a$; si no, el cable se afloja y cada uno va por su cuenta. Un $T$ negativo no es una respuesta: hay que interpretarlo.</div>
@@ -438,13 +485,27 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <div class="figph" role="img" aria-label="Bloque empujado contra una pared vertical" style="aspect-ratio:350/230"></div>
 <figcaption>Examen Feb. 2023: a la izquierda, el croquis; a la derecha, el DCL del bloque. La normal la pone solo la componente horizontal de F (n = F cos 60° = 48,0 N); en vertical F sen 60° = 83,1 N vence al peso (49,1 N) y a la fricción cinética (14,4 N, hacia abajo porque el bloque sube). <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2023, 2ª sem., P-1; = U prob. 5.75)">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Horizontal ($a_x=0$): $n=F\cos60^\circ$; fricción cinética: $f_k=\mu_k\,n$</li>
+      <li>Vertical ($+y$ arriba): $F\sin60^\circ-m\,g-f_k=m\,a$; cinemática: $v^2=2a\,d$</li>
+      <li>Trabajo: $W=F\,s\cos\phi$; teorema: $W_{tot}=\tfrac12mv^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Eje horizontal</b> ($+x$ alejándose de la pared; no hay movimiento horizontal, $a_x=0$): $n-F\cos60^\circ=0\Rightarrow n=48{,}0$ N. La normal aquí <b>no</b> es $mg$: la pone la componente horizontal de $F$. En una pared vertical el peso es paralelo a la superficie y no la aprieta.</li>
-    <li><b>¿Hacia dónde se mueve?</b> (hace falta para orientar $f_k$). $F\sin60^\circ=83{,}1$ N es mayor que $mg=49{,}05$ N y que $mg+f_k=63{,}5$ N, luego el bloque <b>sube</b> y la fricción cinética apunta <b>hacia abajo</b>.</li>
-    <li><b>Fricción:</b> $f_k=\mu_kn=0{,}300(48{,}0)=14{,}4$ N.</li>
-    <li><b>Eje vertical</b> ($+y$ hacia arriba): $F\sin60^\circ-mg-f_k=ma\Rightarrow a=\dfrac{83{,}14-49{,}05-14{,}40}{5}=\mathbf{3{,}94\ m/s^2}$ hacia arriba.</li>
-    <li><b>(a) Cinemática</b> con $a$ constante desde el reposo: $v^2=2ad\Rightarrow v=\sqrt{2(3{,}938)(0{,}400)}=\mathbf{1{,}77\ m/s}$.</li>
-    <li><b>(b) Trabajo</b> (adelanto del tema 6: $W=Fs\cos\phi$, U ec. 6.2 p. 174). El enunciado no dice «de qué fuerza»; conviene dar las dos cosas. Solo trabaja la parte de cada fuerza paralela al desplazamiento (vertical): <br>• $W_F=F\sin60^\circ\,d=83{,}14(0{,}400)=\mathbf{33{,}3\ J}$ (la componente horizontal es perpendicular al desplazamiento: trabajo 0). <br>• $W_{peso}=-mgd=-19{,}6$ J; $W_{f}=-f_kd=-5{,}76$ J; $W_n=0$. <br>• Trabajo total $=33{,}26-19{,}62-5{,}76=\mathbf{7{,}88\ J}=\tfrac12mv^2$ ✓ (comprueba el apartado (a) por energía).</li>
+    <li><b>Normal</b> (la pone la componente horizontal de $F$, no el peso):
+      $$n=F\cos60^\circ=96{,}0(0{,}5)=48{,}0\ \text{N}$$</li>
+    <li><b>¿Hacia dónde se mueve?</b>
+      $$F\sin60^\circ=83{,}1\ \text{N}>mg+f_k=63{,}5\ \text{N}\ \Rightarrow\ \text{sube y }f_k\text{ apunta hacia abajo}$$</li>
+    <li><b>Fricción:</b>
+      $$f_k=0{,}300(48{,}0)=14{,}4\ \text{N}$$</li>
+    <li><b>Aceleración:</b>
+      $$a=\frac{83{,}14-49{,}05-14{,}40}{5}=\mathbf{3{,}94\ m/s^2}\ \text{(hacia arriba)}$$</li>
+    <li><b>a) Velocidad</b> (parte del reposo, $d=0{,}400$ m):
+      $$v=\sqrt{2(3{,}938)(0{,}400)}=\mathbf{1{,}77\ m/s}$$</li>
+    <li><b>b) Trabajo</b> (solo cuenta la parte de cada fuerza paralela al desplazamiento, vertical):
+      $$W_F=F\sin60^\circ\,d=83{,}14(0{,}400)=\mathbf{33{,}3\ J}$$
+      $$W_{peso}=-mgd=-19{,}6\ \text{J},\qquad W_f=-f_kd=-5{,}76\ \text{J},\qquad W_n=0$$
+      $$W_{tot}=33{,}26-19{,}62-5{,}76=\mathbf{7{,}88\ J}=\tfrac12mv^2\ \checkmark$$</li>
   </ol>
   <p><b>Resultado:</b> $a=3{,}94\ \text{m/s}^2$ (hacia arriba); $v=1{,}77$ m/s; $W_F=33{,}3$ J; trabajo total $7{,}88$ J.</p>
   <div class="recipe"><b>Receta:</b> cuando una fuerza oblicua aprieta un cuerpo contra una superficie, la normal sale del eje perpendicular a la superficie (aquí el horizontal) y solo después se calcula $f=\mu n$ y la ecuación a lo largo de la superficie.</div>
@@ -471,13 +532,27 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <div class="figph" role="img" aria-label="Plano inclinado con polea fija y polea móvil" style="aspect-ratio:360/235"></div>
 <figcaption>Examen Feb. 2020: A (1,5 kg) sobre el plano de 30°; la cuerda pasa por la polea fija del vértice, rodea la polea móvil de la que cuelga B (1 kg) y termina atada al techo. Dos tramos sostienen la polea móvil (fuerza 2T) y, por la ligadura de la cuerda, a<sub>B</sub> = a<sub>A</sub>/2. Resultados: a<sub>A</sub> = 0,673 m/s² (A baja), a<sub>B</sub> = 0,336 m/s² (B sube), T = 5,07 N. (Longitudes de flecha no proporcionales.) <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2020, 1ª sem., P-1)">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ligadura de la polea móvil: $s_B=\dfrac{s_A}{2}$ ⇒ $a_B=\dfrac{a_A}{2}$; fuerza sobre la polea móvil y B: $2T$</li>
+      <li>A (plano abajo): $m_Ag\sin30^\circ-\mu\,m_Ag\cos30^\circ-T=m_Aa_A$</li>
+      <li>Polea móvil y B (arriba): $2T-m_Bg=m_B\,a_B=m_B\,\dfrac{a_A}{2}$</li>
+    </ul></div>
+  <p>Figura del examen: plano de 30°; A sobre el plano; la cuerda sube paralela al plano hasta una polea fija en el vértice, baja vertical, rodea por debajo una polea móvil de la que cuelga B, y sube a un soporte fijo en el techo. $g=9{,}80$.</p>
   <ol class="steps">
-    <li><b>Ligadura de la polea móvil.</b> La longitud de cuerda es constante. Si A recorre una distancia $s$ por el plano, esa longitud se reparte entre los <i>dos</i> tramos que sostienen la polea móvil, de modo que ésta (y B) se mueve $s/2$: $s_B=s_A/2\Rightarrow a_B=a_A/2$. Además cada tramo tira de la polea con $T$, así que sobre la polea y B actúa <b>$2T$</b>. (Explicación propia de la ligadura; la idea de cuerda inextensible es la de U Ej. 5.12 p. 141.)</li>
-    <li><b>¿Hacia dónde se mueve?</b> (hay que saberlo antes de orientar la fricción). Para sostener B en reposo bastaría $T=m_Bg/2=4{,}90$ N. La componente del peso de A a lo largo del plano es $m_Ag\sin30^\circ=7{,}35$ N y la fricción estática máxima es $\mu_sm_Ag\cos30^\circ=1{,}27$ N (ec. 5.4). Como $7{,}35>4{,}90+1{,}27=6{,}17$ N, <b>A baja por el plano y B sube</b>. ¡Contraintuitivo!: la polea móvil «multiplica por dos» la fuerza del lado de A.</li>
-    <li><b>Segunda ley.</b> A ($x$ plano abajo; la fricción cinética apunta plano arriba): $m_Ag\sin30^\circ-\mu\,m_Ag\cos30^\circ-T=m_Aa_A$. Polea móvil y B ($+y$ hacia arriba): $2T-m_Bg=m_Ba_B=m_B\,a_A/2$.</li>
-    <li><b>(a) Resolver</b> (de la segunda, $T=\tfrac12m_B(g+a_A/2)$, y se sustituye en la primera): $$a_A=\frac{g\,[\,2m_A(\sin30^\circ-\mu\cos30^\circ)-m_B\,]}{2m_A+m_B/2}=\frac{9{,}80\,(1{,}2402-1)}{3{,}5}$$ es decir $a_A=\mathbf{0{,}673\ m/s^2}$ (plano abajo), y $a_B=a_A/2=\mathbf{0{,}336\ m/s^2}$ (hacia arriba).</li>
-    <li><b>(b) Tensiones:</b> en la cuerda principal (A–polea fija–polea móvil–techo), $T=m_A[g(\sin30^\circ-\mu\cos30^\circ)-a_A]=1{,}5(4{,}051-0{,}673)=\mathbf{5{,}07\ N}$; el tirante entre la polea móvil y B soporta $2T=\mathbf{10{,}1\ N}$ (la polea no tiene masa).</li>
-    <li><b>(c)</b> Con $a_A$ constante desde el reposo: $v_A=\sqrt{2a_A(1\ \text{m})}=\mathbf{1{,}16\ m/s}$.</li>
+    <li><b>¿Hacia dónde se mueve?</b> Para sostener B bastaría $T=m_Bg/2=4{,}90$ N; la componente del peso de A es $m_Ag\sin30^\circ=7{,}35$ N y la fricción máxima es $\mu\,m_Ag\cos30^\circ=1{,}27$ N:
+      $$7{,}35>4{,}90+1{,}27=6{,}17\ \text{N}\ \Rightarrow\ \text{A baja y B sube}$$
+      <span class="por">La polea móvil «multiplica por dos» la fuerza del lado de A.</span></li>
+    <li><b>Segunda ley:</b>
+      $$m_Ag\sin30^\circ-\mu\,m_Ag\cos30^\circ-T=m_Aa_A\qquad(1)$$
+      $$2T-m_Bg=m_B\frac{a_A}{2}\ \Rightarrow\ T=\tfrac12m_B\Big(g+\frac{a_A}{2}\Big)\qquad(2)$$</li>
+    <li><b>a) Aceleraciones</b> (sustituir (2) en (1)):
+      $$a_A=\frac{g\,[\,2m_A(\sin30^\circ-\mu\cos30^\circ)-m_B\,]}{2m_A+m_B/2}=\frac{9{,}80\,(1{,}2402-1)}{3{,}5}=\mathbf{0{,}673\ m/s^2}\ \text{(plano abajo)}$$
+      $$a_B=\frac{a_A}{2}=\mathbf{0{,}336\ m/s^2}\ \text{(hacia arriba)}$$</li>
+    <li><b>b) Tensiones:</b>
+      $$T=m_A[g(\sin30^\circ-\mu\cos30^\circ)-a_A]=1{,}5(4{,}051-0{,}673)=\mathbf{5{,}07\ N},\qquad2T=\mathbf{10{,}1\ N}\ \text{(tirante de B)}$$</li>
+    <li><b>c) Velocidad de A tras 1 m:</b>
+      $$v_A=\sqrt{2a_A(1\ \text{m})}=\sqrt{2(0{,}673)}=\mathbf{1{,}16\ m/s}$$</li>
   </ol>
   <p><b>Resultado:</b> $a_A=0{,}673\ \text{m/s}^2$ (baja), $a_B=0{,}336\ \text{m/s}^2$ (sube); $T=5{,}07$ N y $10{,}1$ N en el tirante de B; $v_A=1{,}16$ m/s. (Con $g=9{,}81$: $0{,}673$; $0{,}337$; $5{,}07$ N; $1{,}16$ m/s.)</p>
   <div class="recipe"><b>Receta:</b> con una polea móvil escribe primero la ligadura geométrica ($a_B=a_A/2$ y fuerza $2T$ sobre la polea); después decide el sentido comparando fuerzas en la situación de equilibrio estático y solo entonces orienta la fricción.</div>
@@ -499,10 +574,19 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <div class="figph" role="img" aria-label="Coche en una curva peraltada sin fricción" style="aspect-ratio:360/230"></div>
 <figcaption>Curva peraltada sin fricción vista de frente: la normal es perpendicular a la calzada y su componente horizontal n sen β es la que produce la aceleración centrípeta a<sub>rad</sub> = v²/R hacia el centro; n cos β = mg. Para v = 29,06 m/s y R = 225 m: β = 21,0° (el mismo para coche y camión). <span class="src" data-l="P" data-ref="Diagrama propio (U problema 5.49, p. 163 / Solucionario 5-26)">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Curva peraltada (sin fricción): vertical $n\cos\beta=m\,g$; horizontal $n\sin\beta=\dfrac{m\,v^2}{R}$ ⇒ $\tan\beta=\dfrac{v^2}{g\,R}$</li>
+      <li>$1\ \text{mi/h}=0{,}44704$ m/s</li>
+    </ul></div>
   <ol class="steps">
-    <li>65,0 mi/h = 29,06 m/s.</li>
-    <li>Vertical: $n\cos\beta=mg$; horizontal (hacia el centro): $n\sin\beta=mv^2/R$. Dividiendo: $\tan\beta=\dfrac{v^2}{gR}=\dfrac{29{,}06^2}{(9{,}80)(225)}\Rightarrow\beta=\mathbf{21{,}0^\circ}$. No depende de la masa: ambos a la misma velocidad.</li>
-    <li><b>b)</b> $n=mg/\cos\beta$: coche $\mathbf{1{,}18\times10^4\ N}$; camión $\mathbf{2{,}36\times10^4\ N}$.</li>
+    <li><b>Rapidez:</b>
+      $$65{,}0\ \text{mi/h}=29{,}06\ \text{m/s}$$</li>
+    <li><b>a) Ángulo de peralte:</b>
+      $$\tan\beta=\frac{29{,}06^2}{(9{,}80)(225)}=0{,}383\ \Rightarrow\ \beta=\mathbf{21{,}0^\circ}$$
+      <span class="por">No depende de la masa: ambos a la misma velocidad.</span></li>
+    <li><b>b) Normal en cada vehículo</b> ($n=m\,g/\cos\beta$):
+      $$\text{coche: }n=\frac{1125(9{,}80)}{\cos21{,}0^\circ}=\mathbf{1{,}18\times10^4\ N},\qquad\text{camión: }n=\mathbf{2{,}36\times10^4\ N}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> peralte ideal: $\tan\beta=v^2/(gR)$; ejes horizontal/vertical, no paralelos a la calzada.</div>
   <div class="recipe"><b>Error típico:</b> escribir $n=mg\cos\beta$ (eso es en un plano inclinado sin aceleración horizontal; aquí $n=mg/\cos\beta$).</div>
@@ -523,13 +607,28 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <div class="figph" role="img" aria-label="Cuerpo sobre un cono giratorio" style="aspect-ratio:360/250"></div>
 <figcaption>Examen Feb. 2018: sección del cono (semiángulo 30°) que gira con ω = 15 rpm. El cuerpo A describe un círculo horizontal de radio r = L sen 30° = 2,00 m: la aceleración (a<sub>rad</sub>) es horizontal, hacia el eje; sobre A actúan mg, la tensión T (a lo largo del hilo) y la normal n (perpendicular a la superficie, hacia fuera). Longitudes a escala 2,2 px/N salvo n (1,25 N), exagerada. <span class="src" data-l="P" data-ref="Diagrama propio (examen Feb. 2018, 2ª sem., P-2)">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Radio de giro: $r=L\sin30^\circ$; $\omega=\text{rpm}\cdot\dfrac{2\pi}{60}$; $v=\omega\,r$; $a_{rad}=\omega^2r$</li>
+      <li>Ejes: $x$ horizontal hacia el eje (centrípeta) e $y$ vertical</li>
+      <li>$T\sin30^\circ-n\cos30^\circ=m\omega^2r$; $\ T\cos30^\circ+n\sin30^\circ-m\,g=0$</li>
+    </ul></div>
+  <p>Figura del examen: cono de eje vertical y vértice arriba; 30° es el ángulo entre el eje y la generatriz. $g=9{,}80$.</p>
   <ol class="steps">
-    <li><b>Radio de giro</b> (geometría): A describe un círculo horizontal, así que su radio es la proyección horizontal del hilo: $r=L\sin30^\circ=4(0{,}5)=2{,}00$ m. No es $L$. Además $\omega=15\ \text{rpm}=15\cdot\frac{2\pi}{60}=\frac{\pi}{2}=1{,}571$ rad/s.</li>
-    <li><b>(a)</b> Periodo $T_{per}=60/15=4{,}00$ s, luego $v=\dfrac{2\pi r}{T_{per}}=\dfrac{2\pi(2{,}00)}{4{,}00}=\mathbf{3{,}14\ m/s}$ (ec. 5.14) y $a_{rad}=\dfrac{4\pi^2r}{T_{per}^2}=4{,}93\ \text{m/s}^2$ (ec. 5.15). (Es lo mismo que $v=\omega r$ y $a_{rad}=\omega^2r$; la relación con $\omega$ se verá en el tema 9.)</li>
-    <li><b>DCL y ejes.</b> Peso $mg$ (abajo); tensión $T$ a lo largo del hilo hacia el vértice (componentes $T\sin30^\circ$ hacia el eje y $T\cos30^\circ$ hacia arriba); normal $n$ perpendicular a la generatriz, hacia fuera (componentes $n\cos30^\circ$ alejándose del eje y $n\sin30^\circ$ hacia arriba). Ejes: $x$ horizontal hacia el eje (la aceleración centrípeta va ahí) e $y$ vertical.</li>
-    <li><b>Segunda ley</b> (ec. 5.16 en $x$, equilibrio en $y$): $T\sin30^\circ-n\cos30^\circ=m\omega^2r$ y $T\cos30^\circ+n\sin30^\circ-mg=0$.</li>
-    <li><b>Resolver</b> (multiplica la primera por $\sin30^\circ$ y la segunda por $\cos30^\circ$ y suma; después al revés y resta): $T=mg\cos30^\circ+m\omega^2r\sin30^\circ$, $\ n=mg\sin30^\circ-m\omega^2r\cos30^\circ$. <br>• <b>(b)</b> $n=9{,}80-9{,}87(0{,}866)=\mathbf{1{,}25\ N}$, perpendicular a la superficie y hacia fuera. Es positiva ⇒ el cuerpo sigue apoyado (comprobación obligada). <br>• <b>(c)</b> $T=16{,}97+4{,}93=\mathbf{21{,}9\ N}$.</li>
-    <li><b>(d) $n=0$:</b> A deja de apretar el cono y es un péndulo cónico (ejemplo 5.20): $T\sin\beta=m\omega^2r$ y $T\cos\beta=mg$, con $\beta=30^\circ$ (ángulo del hilo con la vertical). Dividiendo, $\omega^2=\dfrac{g\tan\beta}{r}=\dfrac{g}{L\cos\beta}\Rightarrow\omega_0=\mathbf{1{,}68\ rad/s}\approx\mathbf{16{,}1\ rpm}$. Para giros mayores A se separa de la superficie y el ángulo del hilo crece.</li>
+    <li><b>Radio de giro</b> (proyección horizontal del hilo, no $L$) y $\omega$:
+      $$r=L\sin30^\circ=4(0{,}5)=2{,}00\ \text{m},\qquad\omega=15\cdot\frac{2\pi}{60}=\frac\pi2=1{,}571\ \text{rad/s}$$</li>
+    <li><b>a) Velocidad lineal:</b>
+      $$v=\omega\,r=1{,}571(2{,}00)=\mathbf{3{,}14\ m/s},\qquad a_{rad}=\omega^2r=4{,}93\ \text{m/s}^2$$</li>
+    <li><b>DCL.</b> Peso $mg$ (abajo); tensión $T$ a lo largo del hilo hacia el vértice (componentes $T\sin30^\circ$ hacia el eje, $T\cos30^\circ$ hacia arriba); normal $n$ perpendicular a la generatriz, hacia fuera (componentes $n\cos30^\circ$ alejándose del eje, $n\sin30^\circ$ hacia arriba).</li>
+    <li><b>Resolver</b> el sistema de las dos ecuaciones:
+      $$T=m\,g\cos30^\circ+m\omega^2r\sin30^\circ,\qquad n=m\,g\sin30^\circ-m\omega^2r\cos30^\circ$$</li>
+    <li><b>b) Reacción del cono:</b>
+      $$n=2(9{,}80)(0{,}5)-2(1{,}571)^2(2{,}00)(0{,}866)=9{,}80-8{,}55\approx\mathbf{1{,}25\ N}$$
+      <span class="por">Positiva ⇒ el cuerpo sigue apoyado (comprobación obligada). Perpendicular a la superficie y hacia fuera.</span></li>
+    <li><b>c) Tensión del hilo:</b>
+      $$T=2(9{,}80)(0{,}866)+2(4{,}93)(0{,}5)=16{,}97+4{,}93=\mathbf{21{,}9\ N}$$</li>
+    <li><b>d) $n=0$</b> (péndulo cónico, ángulo del hilo con la vertical $\beta=30^\circ$):
+      $$T\sin\beta=m\omega^2r,\quad T\cos\beta=m\,g\ \Rightarrow\ \omega_0^2=\frac{g\tan\beta}{r}=\frac{g}{L\cos\beta}\ \Rightarrow\ \omega_0=\mathbf{1{,}68\ rad/s}\approx\mathbf{16{,}1\ rpm}$$</li>
   </ol>
   <p><b>Resultado:</b> $v=3{,}14$ m/s; $n=1{,}25$ N (con $g=9{,}81$: $1{,}26$ N); $T=21{,}9$ N; $\omega_0=1{,}68$ rad/s ≈ 16,1 rpm.</p>
   <div class="recipe"><b>Receta:</b> en movimiento circular, un eje apunta al centro (ahí $\sum F=mv^2/r$) y otro es perpendicular al plano del giro (ahí $\sum F=0$); descompón cada fuerza en <i>esos</i> ejes, no en los de la superficie.</div>
@@ -544,50 +643,88 @@ $$a_{rad}=\frac{v^2}{R}=\omega^2R,\qquad \boxed{\ \sum F_{rad}=m\frac{v^2}{R}\ }
 <div class="nivel"><b>🟡 Práctica: 5 ejercicios más del solucionario</b><span>Repiten métodos del núcleo con otros datos. Aquí van sin dibujo: haz tú el cuerpo libre antes de leer los pasos.</span></div>
 <details class="sol" id="e2"><summary>E2 — Problema 5.8: coche sostenido por un cable en una rampa lisa <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 5-3, Prob. 5.8">E</span></summary>
 <p class="enun">En una rampa sin fricción que sube 25,0° sobre la horizontal, un coche de 1130 kg se mantiene en reposo con un cable ligero que forma 31,0° por encima de la superficie de la rampa. a) Dibuje el DCL. b) ¿Qué tensión tiene el cable? c) ¿Con qué fuerza empuja la rampa al coche?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ejes inclinados ($x$ rampa arriba, $y$ perpendicular): peso: $-w\sin25^\circ$ en $x$, $-w\cos25^\circ$ en $y$</li>
+      <li>Equilibrio: $T\cos31^\circ-w\sin25^\circ=0$; $\ n+T\sin31^\circ-w\cos25^\circ=0$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Ejes inclinados ($x$ rampa arriba, $y$ perpendicular): así la normal solo está en $y$ y el peso es la única fuerza que hay que descomponer ($-w\sin25^\circ$ en $x$, $-w\cos25^\circ$ en $y$); el cable tiene $T\cos31^\circ$ en $x$ y $T\sin31^\circ$ en $y$.</li>
-    <li>$x$: $T\cos31^\circ-w\sin25^\circ=0\Rightarrow T=\dfrac{1130(9{,}80)\sin25^\circ}{\cos31^\circ}=\mathbf{5460\ N}$.</li>
-    <li>$y$: $n+T\sin31^\circ-w\cos25^\circ=0\Rightarrow n=10\,036-2812=\mathbf{7220\ N}$, menor que $w\cos25^\circ$ porque el cable «levanta» parte del coche.</li>
+    <li><b>b) Tensión del cable</b> (eje $x$):
+      $$T=\frac{w\sin25^\circ}{\cos31^\circ}=\frac{1130(9{,}80)\sin25^\circ}{\cos31^\circ}=\mathbf{5460\ N}$$</li>
+    <li><b>c) Fuerza de la rampa</b> (eje $y$):
+      $$n=w\cos25^\circ-T\sin31^\circ=10\,036-2812=\mathbf{7220\ N}$$
+      <span class="por">Menor que $w\cos25^\circ$ porque el cable «levanta» parte del coche.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> en planos inclinados, ejes paralelo y perpendicular al plano; el peso da $w\sin\alpha$ (paralela) y $w\cos\alpha$ (perpendicular).</div>
 </details>
 <details class="sol" id="e3"><summary>E3 — Problema 5.15: máquina de Atwood <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 5-8, Prob. 5.15">E</span></summary>
 <p class="enun">Una carga de ladrillos de 15,0 kg cuelga de un extremo de una cuerda que pasa por una polea pequeña sin fricción; en el otro extremo hay un contrapeso de 28,0 kg. Se suelta desde el reposo. a) DCL de cada cuerpo. b) Aceleración (hacia arriba) de los ladrillos. c) Tensión de la cuerda; compárela con el peso de ladrillos y contrapeso.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ladrillos (suben): $T-m_1g=m_1a$; contrapeso (baja): $m_2g-T=m_2a$</li>
+      <li>Atwood: $a=\dfrac{m_2-m_1}{m_1+m_2}\,g$; $T=m_1(g+a)$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Cuerda y polea ideales: misma $T$ en los dos extremos; cuerda inextensible: misma magnitud de aceleración $a$ (ejemplo 5.12). Para cada cuerpo, $+y$ en el sentido de su aceleración (ladrillos arriba, contrapeso abajo).</li>
-    <li>Ladrillos: $T-m_1g=m_1a$. Contrapeso: $m_2g-T=m_2a$.</li>
-    <li>Sumando: $a=\dfrac{m_2-m_1}{m_1+m_2}\,g=\dfrac{13{,}0}{43{,}0}(9{,}80)=\mathbf{2{,}96\ m/s^2}$.</li>
-    <li>$T=m_1(g+a)=15{,}0(12{,}76)=\mathbf{191\ N}$; comprobación con el otro: $m_2(g-a)=28{,}0(6{,}84)=191$ N ✓. Comparación: $T=1{,}30\,w_1$ (mayor que el peso de los ladrillos, que suben) y $T=0{,}698\,w_2$ (menor que el del contrapeso, que baja).</li>
+    <li><b>b) Aceleración</b> (sumando las dos ecuaciones, $T$ se cancela):
+      $$a=\frac{28{,}0-15{,}0}{15{,}0+28{,}0}(9{,}80)=\frac{13{,}0}{43{,}0}(9{,}80)=\mathbf{2{,}96\ m/s^2}$$</li>
+    <li><b>c) Tensión:</b>
+      $$T=m_1(g+a)=15{,}0(9{,}80+2{,}96)=\mathbf{191\ N}$$
+      <span class="por">Comprobación: $m_2(g-a)=28{,}0(6{,}84)=191$ N ✓. $T=1{,}30\,w_1$ (los ladrillos suben) y $T=0{,}698\,w_2$ (el contrapeso baja). Casos límite: $m_1=m_2\Rightarrow a=0$; $m_1=0\Rightarrow a=g$.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> Atwood: $a=\dfrac{m_2-m_1}{m_1+m_2}g$ y $T$ siempre entre los dos pesos. Comprueba casos límite: $m_1=m_2\Rightarrow a=0$; $m_1=0\Rightarrow a=g$.</div>
 </details>
 <details class="sol" id="e5"><summary>E5 — Problema 5.31: caja empujada en una rampa con fricción <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 5-17, Prob. 5.31">E</span></summary>
 <p class="enun">Una caja de 10,0 kg se mueve sobre una rampa inclinada 55,0° con $\mu_k=0{,}300$. Calcule su aceleración si se la empuja con una fuerza constante $F=120{,}0$ N paralela a la rampa: a) hacia abajo (la caja baja); b) hacia arriba (la caja sube).</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Perpendicular a la rampa: $n=m\,g\cos55^\circ$; fricción cinética: $f_k=\mu_k\,n$ (opuesta a la velocidad)</li>
+      <li>Segunda ley a lo largo de la rampa; peso paralelo: $m\,g\sin55^\circ$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Perpendicular a la rampa (no hay aceleración): $n=mg\cos55^\circ=56{,}2$ N, luego $f_k=\mu_kn=\mathbf{16{,}9\ N}$, igual en los dos casos (ec. 5.3). Componente del peso a lo largo de la rampa: $mg\sin55^\circ=80{,}3$ N.</li>
-    <li><b>a)</b> $+x$ rampa abajo (la fricción apunta rampa arriba): $F+mg\sin55^\circ-f_k=ma\Rightarrow a=\dfrac{120+80{,}3-16{,}9}{10{,}0}=\mathbf{18{,}3\ m/s^2}$.</li>
-    <li><b>b)</b> $+x$ rampa arriba (la fricción apunta rampa abajo): $F-mg\sin55^\circ-f_k=ma\Rightarrow a=\dfrac{120-80{,}3-16{,}9}{10{,}0}=\mathbf{2{,}29\ m/s^2}$.</li>
+    <li><b>Normal y fricción</b> (iguales en los dos casos):
+      $$n=10{,}0(9{,}80)\cos55^\circ=56{,}2\ \text{N},\qquad f_k=0{,}300(56{,}2)=\mathbf{16{,}9\ N},\qquad m\,g\sin55^\circ=80{,}3\ \text{N}$$</li>
+    <li><b>a) Empujada hacia abajo</b> ($+x$ rampa abajo; la fricción apunta rampa arriba):
+      $$F+m\,g\sin55^\circ-f_k=m\,a\ \Rightarrow\ a=\frac{120+80{,}3-16{,}9}{10{,}0}=\mathbf{18{,}3\ m/s^2}$$</li>
+    <li><b>b) Empujada hacia arriba</b> ($+x$ rampa arriba; la fricción apunta rampa abajo):
+      $$F-m\,g\sin55^\circ-f_k=m\,a\ \Rightarrow\ a=\frac{120-80{,}3-16{,}9}{10{,}0}=\mathbf{2{,}29\ m/s^2}$$
+      <span class="por">La fricción cambia de sentido al invertir el movimiento, pero su módulo $\mu_kn$ no.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> la fricción cinética se opone a la velocidad relativa: cambia de sentido al invertir el movimiento, pero su módulo $\mu_kn$ no.</div>
 </details>
 <details class="sol" id="e7"><summary>E7 — Problema 5.38: tirón oblicuo con fricción (la normal cambia) <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 5-21, Prob. 5.38">E</span></summary>
 <p class="enun">Una caja de masa $m$ se arrastra por un suelo horizontal (coeficiente de fricción cinética $\mu_k$) mediante una cuerda de la que se tira con una fuerza $F$ a un ángulo $\theta$ sobre la horizontal. a) Obtenga una expresión de $F$ para mover la caja con rapidez constante, en función de $m$, $\mu_k$, $\theta$ y $g$. b) Aplíquela a un paciente de 90 kg arrastrado con $\theta=25^\circ$ y $\mu_k=0{,}35$.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Rapidez constante: $a=0$; vertical: $n+F\sin\theta-m\,g=0$</li>
+      <li>Horizontal: $F\cos\theta-\mu_k\,n=0$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Rapidez constante ⇒ $a=0$ (equilibrio, ec. 5.1).</li>
-    <li>Vertical: $n+F\sin\theta-mg=0\Rightarrow n=mg-F\sin\theta$ (la cuerda «aligera» la caja).</li>
-    <li>Horizontal: $F\cos\theta-\mu_k(mg-F\sin\theta)=0\Rightarrow F=\dfrac{\mu_kmg}{\cos\theta+\mu_k\sin\theta}$.</li>
-    <li><b>b)</b> $F=\dfrac{0{,}35(90)(9{,}80)}{\cos25^\circ+0{,}35\sin25^\circ}=\mathbf{293\ N}$ (el solucionario da 290 N a dos cifras). Tirando en horizontal haría falta $\mu_kmg=309$ N: inclinar la cuerda ahorra fuerza.</li>
+    <li><b>Normal</b> (la cuerda «aligera» la caja):
+      $$n=m\,g-F\sin\theta$$</li>
+    <li><b>a) Fuerza necesaria:</b>
+      $$F\cos\theta-\mu_k(m\,g-F\sin\theta)=0\ \Rightarrow\ F=\frac{\mu_k\,m\,g}{\cos\theta+\mu_k\sin\theta}$$</li>
+    <li><b>b) Paciente</b> ($m=90$ kg, $\theta=25^\circ$, $\mu_k=0{,}35$):
+      $$F=\frac{0{,}35(90)(9{,}80)}{\cos25^\circ+0{,}35\sin25^\circ}=\frac{308{,}7}{0{,}9063+0{,}1479}=\mathbf{293\ N}$$
+      <span class="por">Tirando en horizontal haría falta $\mu_kmg=309$ N: inclinar la cuerda ahorra fuerza.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> con una fuerza oblicua, la normal <b>siempre</b> se obtiene de la ecuación perpendicular a la superficie antes de calcular la fricción.</div>
 </details>
 <details class="sol" id="e9"><summary>E9 — Problema 5.50: «columpio gigante» (péndulo cónico) <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 5-26, Prob. 5.50">E</span></summary>
 <p class="enun">El «columpio gigante» de una feria tiene un eje vertical central con brazos horizontales en lo alto. Cada brazo sostiene un asiento colgado de un cable de 5,00 m sujeto al brazo a 3,00 m del eje. a) Calcule el tiempo de una revolución si el cable forma 30,0° con la vertical. b) ¿Depende el ángulo del peso del pasajero para una velocidad de giro dada?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Radio real de giro: $R=3{,}00+L\sin\beta$</li>
+      <li>Péndulo cónico: $F\cos\beta=m\,g$; $F\sin\beta=\dfrac{m\,v^2}{R}$ ⇒ $v=\sqrt{g\,R\tan\beta}$; periodo $T=\dfrac{2\pi R}{v}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Radio del giro:</b> el asiento está a $R=3{,}00+5{,}00\sin30^\circ=\mathbf{5{,}50\ m}$ del eje (no 5,00 ni 2,50 m).</li>
-    <li>Vertical (sin aceleración): $F\cos30^\circ=mg$. Horizontal (ec. 5.16): $F\sin30^\circ=mv^2/R$.</li>
-    <li>Dividiendo: $\tan30^\circ=\dfrac{v^2}{gR}\Rightarrow v=\sqrt{gR\tan30^\circ}=\sqrt{(9{,}80)(5{,}50)(0{,}5774)}=\mathbf{5{,}58\ m/s}$.</li>
-    <li><b>a)</b> Periodo: $T_{per}=\dfrac{2\pi R}{v}=\dfrac{2\pi(5{,}50)}{5{,}58}=\mathbf{6{,}19\ s}$.</li>
-    <li><b>b)</b> La masa se cancela al dividir: el ángulo no depende del peso del pasajero.</li>
+    <li><b>Radio del giro:</b>
+      $$R=3{,}00+5{,}00\sin30^\circ=\mathbf{5{,}50\ m}$$</li>
+    <li><b>Rapidez</b> (dividiendo las dos ecuaciones):
+      $$v=\sqrt{g\,R\tan30^\circ}=\sqrt{(9{,}80)(5{,}50)(0{,}5774)}=\mathbf{5{,}58\ m/s}$$</li>
+    <li><b>a) Tiempo de una revolución:</b>
+      $$T=\frac{2\pi R}{v}=\frac{2\pi(5{,}50)}{5{,}58}=\mathbf{6{,}19\ s}$$</li>
+    <li><b>b) ¿Depende del peso?</b>
+      <span class="por">No: la masa se cancela al dividir las dos ecuaciones.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> péndulo cónico: vertical $F\cos\beta=mg$, horizontal $F\sin\beta=mv^2/R$ ⇒ $\tan\beta=v^2/(gR)$; cuidado con el <b>radio real</b> de giro.</div>
 </details>

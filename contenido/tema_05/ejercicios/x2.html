@@ -1,13 +1,25 @@
 <p class="enun">Dos paquetes unidos por un cable sometido a tensión se deslizan por una rampa de $\alpha=16^\circ$ debido a la gravedad. El paquete que va en primer lugar tiene una masa $m_1=5{,}5$ kg y un coeficiente de fricción cinética $\mu_1=0{,}2$. El que va en segundo lugar tiene $m_2=8{,}5$ kg y $\mu_2=0{,}25$. (a) Calcule la aceleración de cada paquete. (b) Determine la tensión en el cable. (c) ¿Qué sucedería si se invierten las posiciones de los paquetes de manera que el de 8,5 kg desciende en primer lugar? Considere $g=9{,}81\ \text{m/s}^2$. (3 puntos.)</p>
   {{fig:x2-planteamiento}}
   {{fig:dos-paquetes-unidos-por-un-cable-en-una-rampa}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Aceleración de un paquete suelto en una rampa con fricción: $a=g(\sin\alpha-\mu_k\cos\alpha)$</li>
+      <li>Normal: $n=m\,g\cos\alpha$; fricción cinética: $f_k=\mu_k\,n$ (rampa arriba)</li>
+      <li>Segunda ley a lo largo de la rampa: $m_1g\sin\alpha-f_{k1}-T=m_1a$; $m_2g\sin\alpha-f_{k2}+T=m_2a$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>¿Está tenso el cable?</b> Un cable solo tira. Calculamos cuánto aceleraría cada paquete <i>suelto</i> (ejemplo 5.17): $a=g(\sin\alpha-\mu_k\cos\alpha)$. Paquete 1: $9{,}81(0{,}2756-0{,}2\cdot0{,}9613)=0{,}818\ \text{m/s}^2$. Paquete 2: $9{,}81(0{,}2756-0{,}25\cdot0{,}9613)=0{,}347\ \text{m/s}^2$. El de delante acelera <i>más</i> que el de atrás: se separaría, luego el cable <b>se tensa</b> y los dos se mueven juntos con la misma $a$.</li>
-    <li><b>Ejes</b> ($x$ rampa abajo, $y$ perpendicular) y <b>normales:</b> $n_i=m_ig\cos\alpha$ (no hay aceleración perpendicular), de modo que $f_{k1}=\mu_1n_1=10{,}37$ N y $f_{k2}=\mu_2n_2=20{,}04$ N, ambas rampa arriba.</li>
-    <li><b>Segunda ley a lo largo de la rampa</b> (misma $a$; $T$ tira hacia atrás del paquete 1 y hacia delante del 2): $m_1g\sin\alpha-f_{k1}-T=m_1a$ y $m_2g\sin\alpha-f_{k2}+T=m_2a$.</li>
-    <li><b>(a)</b> Sumando se cancela $T$: $$a=g\sin\alpha-\frac{(\mu_1m_1+\mu_2m_2)\,g\cos\alpha}{m_1+m_2}=\mathbf{0{,}532\ m/s^2}$$ para <b>los dos</b>, rampa abajo.</li>
-    <li><b>(b)</b> Del paquete 1: $T=m_1[g(\sin\alpha-\mu_1\cos\alpha)-a]=5{,}5(0{,}818-0{,}532)=\mathbf{1{,}57\ N}$. Forma compacta: $T=\dfrac{m_1m_2\,g\cos\alpha\,(\mu_2-\mu_1)}{m_1+m_2}$, positiva porque $\mu_2>\mu_1$.</li>
-    <li><b>(c) Posiciones invertidas</b> (el de 8,5 kg, con $\mu=0{,}25$, delante). Las mismas ecuaciones darían $T=-1{,}57$ N: imposible para un cable. Físicamente, sueltos, el de delante (8,5 kg) acelera $0{,}347\ \text{m/s}^2$ y el de detrás (5,5 kg) $0{,}818\ \text{m/s}^2$: el de detrás se acerca. El <b>cable queda flojo ($T=0$)</b> y cada paquete baja con su propia aceleración <i>hasta que el de 5,5 kg alcanza y choca con el de 8,5 kg</i>; a partir de ahí, si siguen en contacto, el de detrás empuja al de delante (fuerza de contacto de 1,57 N) y bajan juntos con $0{,}532\ \text{m/s}^2$. (Deslizan en todos los casos, porque $\tan16^\circ=0{,}287>0{,}25$.)</li>
+    <li><b>¿Está tenso el cable?</b> Aceleración de cada paquete suelto ($\sin16^\circ=0{,}2756$, $\cos16^\circ=0{,}9613$):
+      $$a_1=9{,}81(0{,}2756-0{,}2(0{,}9613))=0{,}818\ \text{m/s}^2,\qquad a_2=9{,}81(0{,}2756-0{,}25(0{,}9613))=0{,}347\ \text{m/s}^2$$
+      <span class="por">El de delante acelera más: se separaría ⇒ el cable se tensa y los dos se mueven juntos con la misma $a$.</span></li>
+    <li><b>Fricciones</b> ($x$ rampa abajo; $n_i=m_ig\cos\alpha$):
+      $$f_{k1}=0{,}2(5{,}5)(9{,}81)(0{,}9613)=10{,}37\ \text{N},\qquad f_{k2}=0{,}25(8{,}5)(9{,}81)(0{,}9613)=20{,}04\ \text{N}$$</li>
+    <li><b>a) Aceleración común</b> (sumando las dos ecuaciones, $T$ se cancela):
+      $$a=g\sin\alpha-\frac{(\mu_1m_1+\mu_2m_2)\,g\cos\alpha}{m_1+m_2}=2{,}704-\frac{30{,}41}{14{,}0}=\mathbf{0{,}532\ m/s^2}\ \ (\text{los dos, rampa abajo})$$</li>
+    <li><b>b) Tensión</b> (del paquete 1):
+      $$T=m_1[g(\sin\alpha-\mu_1\cos\alpha)-a]=5{,}5(0{,}818-0{,}532)=\mathbf{1{,}57\ N}$$
+      <span class="por">Forma compacta: $T=\dfrac{m_1m_2\,g\cos\alpha\,(\mu_2-\mu_1)}{m_1+m_2}$, positiva porque $\mu_2>\mu_1$.</span></li>
+    <li><b>c) Posiciones invertidas</b> (8,5 kg delante): las mismas ecuaciones darían $T=-1{,}57$ N: imposible para un cable.
+      <span class="por">Sueltos, el de delante (8,5 kg) acelera $0{,}347$ m/s² y el de detrás (5,5 kg) $0{,}818$ m/s²: el de detrás se acerca. El cable queda flojo ($T=0$) y cada paquete baja con su aceleración hasta que chocan; luego, en contacto, bajan juntos con $0{,}532$ m/s² (fuerza de contacto 1,57 N). Deslizan en todos los casos porque $\tan16^\circ=0{,}287>0{,}25$.</span></li>
   </ol>
   <p><b>Resultado:</b> (a) $0{,}532\ \text{m/s}^2$ ambos; (b) $T=1{,}57$ N; (c) cable flojo, $0{,}347$ y $0{,}818\ \text{m/s}^2$ hasta el choque, luego juntos con $0{,}532\ \text{m/s}^2$.</p>
   <div class="recipe"><b>Receta:</b> en cuerpos encadenados calcula la aceleración que tendría cada uno suelto; si el de delante iría más deprisa, el cable tira ($T>0$) y se resuelve como sistema con la misma $a$; si no, el cable se afloja y cada uno va por su cuenta. Un $T$ negativo no es una respuesta: hay que interpretarlo.</div>

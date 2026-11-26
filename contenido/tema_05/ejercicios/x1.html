@@ -1,12 +1,22 @@
 <p class="enun">Dos bloques de masas $m_1=80$ kg y $m_2=20$ kg, unidos por una cuerda que pasa por una polea sin fricción, descansan en los dos planos inclinados de una cuña (25° con la horizontal el de $m_1$, 60° el de $m_2$). a) Indicar hacia dónde se moverá el sistema. b) Calcular la aceleración del sistema. c) Calcular la tensión de la cuerda. No hay fricción entre los bloques y las superficies. (3 puntos.)</p>
   {{fig:x1-planteamiento}}
   {{fig:dos-bloques-en-una-cuna-de-dos-planos-inclinados}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Componente del peso a lo largo de un plano: $m\,g\sin\alpha$; normal: $n=m\,g\cos\alpha$</li>
+      <li>Segunda ley a lo largo de cada plano ($+x$ en el sentido del movimiento): $m_1g\sin\alpha_1-T=m_1a$; $T-m_2g\sin\alpha_2=m_2a$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>¿Hacia dónde?</b> Sin fricción, a lo largo de cada plano compiten solo las componentes del peso (la tensión es igual en los dos lados y las normales son perpendiculares a los planos). Comparamos: $m_1g\sin25^\circ=80(9{,}80)(0{,}4226)=331{,}3$ N frente a $m_2g\sin60^\circ=20(9{,}80)(0{,}8660)=169{,}7$ N. Gana $m_1$: <b>$m_1$ baja por su plano y $m_2$ sube por el suyo</b> (aunque el plano de $m_2$ sea más empinado, su masa es cuatro veces menor).</li>
-    <li><b>Ejes y signos coherentes.</b> Como la cuerda es inextensible, los dos bloques tienen aceleraciones de la misma magnitud $a$ (ver ejemplo 5.12). Para cada bloque tomamos $x$ paralelo a su plano y positivo en el sentido de su movimiento: bloque 1, cuesta abajo; bloque 2, cuesta arriba.</li>
-    <li><b>Segunda ley a lo largo de cada plano:</b> $m_1g\sin25^\circ-T=m_1a$ y $T-m_2g\sin60^\circ=m_2a$. (Perpendicularmente $n_i=m_ig\cos\alpha_i$: no hace falta, no hay fricción.)</li>
-    <li><b>(b) Sumando</b> las dos ecuaciones se cancela $T$: $$a=\frac{m_1\sin25^\circ-m_2\sin60^\circ}{m_1+m_2}\,g=\frac{331{,}3-169{,}7}{100}=\mathbf{1{,}62\ m/s^2}.$$</li>
-    <li><b>(c) Tensión</b> (de la ecuación del bloque 2): $T=m_2(a+g\sin60^\circ)=20(1{,}616+8{,}487)=\mathbf{202\ N}$. Comprobación con el bloque 1: $m_1(g\sin25^\circ-a)=80(4{,}142-1{,}616)=202$ N ✓.</li>
+    <li><b>a) ¿Hacia dónde?</b> Sin fricción, compiten las componentes del peso a lo largo de cada plano:
+      $$m_1g\sin25^\circ=80(9{,}80)(0{,}4226)=331{,}3\ \text{N},\qquad m_2g\sin60^\circ=20(9{,}80)(0{,}8660)=169{,}7\ \text{N}$$
+      <span class="por">Gana $m_1$: baja por su plano y $m_2$ sube por el suyo (aunque su plano sea más empinado, tiene cuatro veces menos masa).</span></li>
+    <li><b>Segunda ley</b> (cuerda inextensible: misma $a$ en los dos):
+      $$m_1g\sin25^\circ-T=m_1a\qquad(1)\qquad\qquad T-m_2g\sin60^\circ=m_2a\qquad(2)$$</li>
+    <li><b>b) Aceleración</b> (sumando (1) y (2) se cancela $T$):
+      $$a=\frac{331{,}3-169{,}7}{80+20}=\mathbf{1{,}62\ m/s^2}$$</li>
+    <li><b>c) Tensión</b> (de (2)):
+      $$T=m_2(a+g\sin60^\circ)=20(1{,}616+8{,}487)=\mathbf{202\ N}$$
+      <span class="por">Comprobación con (1): $T=80(4{,}142-1{,}616)=202$ N ✓.</span></li>
   </ol>
   <p><b>Resultado:</b> $m_1$ desciende; $a=1{,}62\ \text{m/s}^2$; $T=202$ N (con $g=9{,}81$: $1{,}618\ \text{m/s}^2$ y $202{,}3$ N).</p>
   <div class="recipe"><b>Receta:</b> compara primero las fuerzas «motoras» a lo largo de la cuerda para decidir el sentido; luego pon $+x$ en el sentido del movimiento de cada cuerpo, escribe $\sum F=ma$ para cada uno y suma las ecuaciones: la tensión se cancela. La tensión sale de sustituir $a$ en cualquiera de las dos.</div>
