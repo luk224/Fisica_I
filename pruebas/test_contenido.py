@@ -28,6 +28,14 @@ class Contenido(unittest.TestCase):
                 malos.append(str(f.relative_to(CONTENIDO)))
         self.assertFalse(malos, f'«·» dentro de \\text{{}}: {malos}')
 
+    def test_sin_acentos_latex_dentro_de_text(self):
+        """\\acute, \\tilde o \\' dentro de \\text{} dan error en KaTeX: escribir la letra acentuada (á, é, ñ…)."""
+        malos = []
+        for f in CONTENIDO.rglob('*'):
+            if f.suffix in ('.html', '.json') and re.search(r"\\+text\{[^{}]*(\\+acute|\\+tilde|\\+~|\\+')", f.read_text(encoding='utf8')):
+                malos.append(str(f.relative_to(CONTENIDO)))
+        self.assertFalse(malos, f'acentos LaTeX dentro de \\text{{}}: {malos}')
+
     def test_hay_temas(self):
         self.assertTrue(TEMAS_DATOS, 'no hay ningún contenido/tema_NN/tema.json')
 
