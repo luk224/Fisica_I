@@ -1,8 +1,15 @@
 <p class="enun">Un refrigerador de Carnot opera entre dos depósitos de calor a temperaturas de 320 K y 270 K. a) Si en cada ciclo el refrigerador recibe 415 J de calor del depósito a 270 K, ¿cuántos joules de energía calorífica cede al depósito a 320 K? b) Si el refrigerador realiza 165 ciclos/min, ¿qué potencia de entrada se requiere para operarlo? c) Calcule el coeficiente de rendimiento del refrigerador.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Carnot: $|Q_H|=Q_C\dfrac{T_H}{T_C}$; $|W|=|Q_H|-Q_C$; $K=\dfrac{Q_C}{|W|}=\dfrac{T_C}{T_H-T_C}$; $P=|W|\cdot(\text{ciclos/s})$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> (20.13): $Q_H=-Q_C\dfrac{T_H}{T_C}=-415\cdot\dfrac{320}{270}=\mathbf{-492\ J}$.</li>
-    <li><b>b)</b> $|W|=|Q_H|-|Q_C|=77$ J por ciclo; $P=\dfrac{165\cdot77}{60\ \text{s}}=\mathbf{211\ W}$.</li>
-    <li><b>c)</b> $K=\dfrac{415}{77}=\mathbf{5{,}4}$; con (20.15): $\frac{270}{320-270}=5{,}4$ ✓.</li>
+    <li><b>a) Calor cedido:</b>
+      $$|Q_H|=415\cdot\frac{320}{270}=\mathbf{492\ J}$$</li>
+    <li><b>b) Potencia</b> (165 ciclos/min):
+      $$|W|=492-415=77\ \text{J},\qquad P=\frac{165\cdot77}{60\ \text{s}}=\mathbf{211\ W}$$</li>
+    <li><b>c) Coeficiente de rendimiento:</b>
+      $$K=\frac{415}{77}=\mathbf{5{,}4}\qquad\Big(\frac{270}{320-270}=5{,}4\ \checkmark\Big)$$</li>
   </ol>
   {{fig:diagrama-de-flujo-de-energia-del-refrigerador-de-3}}
   <div class="recipe"><b>Receta:</b> refrigerador de Carnot: $K=T_C/(T_H-T_C)$ y $|Q_H|=|Q_C|\,T_H/T_C$; potencia = $|W|$ por ciclo × ciclos por segundo. <b>Error típico:</b> olvidar pasar ciclos/min a ciclos/s.</div>

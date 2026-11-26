@@ -1,10 +1,20 @@
 <p class="enun"><b>Examen Febrero 2019 (2ª semana) P-2 (3 puntos).</b> A una masa de aire de 1 kg que se encuentra inicialmente a una temperatura de 15 °C y una presión de 1 atm se le hace describir el siguiente ciclo: a) una compresión adiabática hasta una presión de 30 atm. b) un calentamiento a presión constante suministrando 300 Kcal. c) una expansión adiabática hasta alcanzar el volumen inicial y d) una transformación isocora hasta llegar a las condiciones iniciales. Se pide calcular la presión, el volumen y la temperatura al final de cada una de las transformaciones así como el rendimiento del ciclo. Considérese: $c_p=0{,}25$ cal/g °C; $\gamma=1{,}4$; 1 cal = 4,18 J.</p>
 {{fig:x9-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Calor solo en los tramos no adiabáticos: $Q_{23}=m\,c_p\,\Delta T$ (isóbara); $Q_{41}=m\,c_V\,(T_1-T_4)$ (isócora), $c_V=c_p/\gamma$</li>
+      <li>Rendimiento: $e=1-\dfrac{|Q_{sale}|}{Q_{entra}}=1-\dfrac1\gamma\dfrac{T_4-T_1}{T_3-T_2}$; Carnot: $e_C=1-\dfrac{T_{m\acute in}}{T_{m\acute ax}}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Estados</b> (tema 19): $T_1=288{,}15$ K; $T_2=288{,}15\cdot30^{2/7}=761{,}5$ K; $T_3=T_2+\dfrac{Q_{23}}{mc_p}=1961{,}5$ K; $T_4=1083{,}7$ K ($p_4=3{,}76$ atm). $V_1=V_4=0{,}849$ m³, $V_2=0{,}0748$ m³, $V_3=0{,}1927$ m³.</li>
-    <li><b>Calor que entra y que sale.</b> Solo hay intercambio en los tramos no adiabáticos: entra $Q_{23}=300$ kcal $=1{,}254\times10^6$ J (isóbara); sale $Q_{41}=mc_V(T_1-T_4)=-5{,}94\times10^5$ J (isócora).</li>
-    <li><b>Rendimiento</b> (20.4): $e=1-\dfrac{|Q_{41}|}{Q_{23}}=1-\dfrac1\gamma\dfrac{T_4-T_1}{T_3-T_2}=\mathbf{0{,}526\ (52{,}6\,\%)}$; $W=6{,}60\times10^5$ J por ciclo.</li>
-    <li><b>Comparación con Carnot</b> (entre la $T$ máxima y la mínima del ciclo): $e_C=1-\dfrac{288{,}15}{1961{,}5}=85{,}3\,\%$. Es el ciclo Diesel de U §20.3 (calor a $p$ constante, cesión a $V$ constante); su rendimiento queda por debajo del de Carnot, como exige la segunda ley.</li>
+    <li><b>Estados</b> (detalle en el tema 19; $V_1=V_4=0{,}849$ m³, $V_2=0{,}0748$ m³, $V_3=0{,}1927$ m³):
+      $$T_1=288{,}15\ \text{K},\quad T_2=761{,}5\ \text{K},\quad T_3=1961{,}5\ \text{K},\quad T_4=1083{,}7\ \text{K}\ (p_4=3{,}76\ \text{atm})$$</li>
+    <li><b>Calor que entra y que sale:</b>
+      $$Q_{23}=300\ \text{kcal}=1{,}254\times10^6\ \text{J},\qquad Q_{41}=m\,c_V(T_1-T_4)=-5{,}94\times10^5\ \text{J}$$</li>
+    <li><b>Rendimiento:</b>
+      $$e=1-\frac{5{,}94\times10^5}{1{,}254\times10^6}=\mathbf{0{,}526}\ (52{,}6\ \%),\qquad W=6{,}60\times10^5\ \text{J}$$</li>
+    <li><b>Comparación con Carnot:</b>
+      $$e_C=1-\frac{288{,}15}{1961{,}5}=85{,}3\ \%$$
+      <span class="por">Es el ciclo Diesel de U §20.3; su rendimiento queda por debajo del de Carnot, como exige la segunda ley.</span></li>
   </ol>
   {{fig:ciclo-de-1-kg-de-aire-con-dos-adiabaticas-una-is}}
   {{fig:eficiencia-real-frente-a-carnot-eficiencia-del-c-4}}

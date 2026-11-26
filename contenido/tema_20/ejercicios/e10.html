@@ -1,8 +1,16 @@
 <p class="enun">Una máquina térmica de Carnot utiliza un depósito caliente que consiste en una gran cantidad de agua en ebullición y un depósito frío que consiste en una tina grande llena de hielo y agua. En 5 minutos de operación, el calor expulsado por la máquina derrite 0,0400 kg de hielo. En ese tiempo, ¿cuánto trabajo $W$ efectúa la máquina?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fusión: $|Q_C|=m\,L_f$; Carnot: $Q_H=|Q_C|\dfrac{T_H}{T_C}$; $W=Q_H-|Q_C|$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Calor cedido al foco frío</b> = calor que funde el hielo: $Q_C=-mL_f=-0{,}0400\cdot3{,}34\times10^5=-1{,}336\times10^4$ J.</li>
-    <li><b>Calor tomado del caliente</b> (20.13): $Q_H=-Q_C\dfrac{T_H}{T_C}=1{,}336\times10^4\cdot\dfrac{373{,}15}{273{,}15}=1{,}825\times10^4$ J.</li>
-    <li><b>Trabajo:</b> $W=Q_H+Q_C=\mathbf{4{,}89\times10^3\ J}$. (El dato de 5 minutos solo serviría para la potencia, 16 W.)</li>
+    <li><b>Calor cedido al foco frío</b> (el que funde el hielo):
+      $$|Q_C|=0{,}0400(3{,}34\times10^5)=1{,}336\times10^4\ \text{J}$$</li>
+    <li><b>Calor tomado del foco caliente</b> ($T_H=373{,}15$ K, $T_C=273{,}15$ K):
+      $$Q_H=|Q_C|\frac{T_H}{T_C}=1{,}336\times10^4\cdot\frac{373{,}15}{273{,}15}=1{,}825\times10^4\ \text{J}$$</li>
+    <li><b>Trabajo:</b>
+      $$W=Q_H-|Q_C|=\mathbf{4{,}89\times10^3\ J}$$
+      <span class="por">El dato de 5 minutos solo serviría para la potencia (16 W).</span></li>
   </ol>
   {{fig:diagrama-de-flujo-de-energia-de-la-maquina-de-ca-3}}
   <div class="recipe"><b>Receta:</b> un depósito de agua-hielo o agua hirviendo es un foco ideal: su temperatura no cambia y el calor se mide por la masa que cambia de fase. <b>Error típico:</b> usar $Q_C$ positivo para una máquina.</div>

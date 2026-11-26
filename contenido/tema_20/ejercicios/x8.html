@@ -1,10 +1,20 @@
 <p class="enun"><b>Examen Febrero 2025 (2ª semana) P-2 (3 puntos).</b> En un ciclo termodinámico se opera un gas ideal monoatómico. El gas se somete a un proceso isóbaro entre los estados $a$ y $b$ para pasar posteriormente por un proceso isócoro entre los estados $b$ y $c$, cerrándose el ciclo a través de un proceso que puede ser representado como una línea recta en un diagrama presión, volumen, pV. Se conoce que $p_a=4\times10^5$ Pa, $p_c=2\times10^5$ Pa, $V_a=0{,}55$ m³ y $V_b=0{,}82$ m³. […] (a) Dibuje el ciclo termodinámico descrito en un diagrama pV. (b) Calcule el calor intercambiado, el trabajo realizado y la variación de energía interna en cada proceso del ciclo. (c) Determine la eficiencia del ciclo. Considere: $C_v=3R/2$ y $C_p=5R/2$ y $R=8{,}314$ J mol⁻¹K⁻¹.</p>
 {{fig:x8-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Monoatómico: $\Delta U=\tfrac32\Delta(pV)$; $Q=\Delta U+W$; $W$ = área bajo cada tramo</li>
+      <li>$e=\dfrac{W}{Q_H}$ ($Q_H$ = todo el calor que entra); Carnot: $e_C=1-\dfrac{T_{m\acute in}}{T_{m\acute ax}}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Tabla de la primera ley</b> (tema 19): $ab$: $Q=+270\,000$ J, $W=+108\,000$ J; $bc$: $Q=-246\,000$ J, $W=0$; $ca$ (recta): $W=-81\,000$ J, $\Delta U=+84\,000$ J, $Q=+3000$ J neto. $W_{ciclo}=27\,000$ J (área del triángulo).</li>
-    <li><b>$Q_H$ es todo el calor que entra.</b> En la recta el calor cambia de signo: con $p(V)=p_c+s(V-V_b)$, $s=-7{,}41\times10^5$ Pa/m³, $dQ=dU+p\,dV=\left(\tfrac52p+\tfrac32sV\right)dV$ (19.7), que se anula en $V^*=0{,}681$ m³. De $c$ a $V^*$ entran <b>28 521 J</b>; de $V^*$ a $a$ salen 25 521 J.</li>
-    <li><b>(c)</b> $Q_H=270\,000+28\,521=298\,521$ J ⇒ $e=\dfrac{27\,000}{298\,521}=\mathbf{9{,}0\,\%}$. (Con el neto de la recta, $Q_H=273\,000$ J, saldría 9,9 %.)</li>
-    <li><b>Comparación con Carnot</b> (no se pide, pero ayuda): $T_{max}$ en $b$ ($pV=328\,000$ J) y $T_{min}$ en $c$ ($pV=164\,000$ J): $e_C=1-\frac{164\,000}{328\,000}=50\,\%$. El ciclo triangular es muy poco eficiente.</li>
+    <li><b>Tabla de la primera ley</b> (tema 19):
+      $$ab:\ Q=+270\,000,\ W=+108\,000;\qquad bc:\ Q=-246\,000,\ W=0;\qquad ca:\ W=-81\,000,\ \Delta U=+84\,000,\ Q=+3000\ \text{J}$$
+      $$W_{ciclo}=27\,000\ \text{J}\ \ (\text{área del triángulo})$$</li>
+    <li><b>$Q_H$ es todo el calor que entra.</b> En la recta el calor cambia de signo: $dQ=\big(\tfrac52p+\tfrac32sV\big)dV$ con $s=-7{,}41\times10^5$ Pa/m³ se anula en $V^*=0{,}681$ m³. De $c$ a $V^*$ entran <b>28 521 J</b>; de $V^*$ a $a$ salen 25 521 J.</li>
+    <li><b>(c) Eficiencia:</b>
+      $$Q_H=270\,000+28\,521=298\,521\ \text{J}\ \Rightarrow\ e=\frac{27\,000}{298\,521}=\mathbf{0{,}090}\ (9{,}0\ \%)$$
+      <span class="por">Con el neto de la recta ($Q_H=273\,000$ J) saldría 9,9 %.</span></li>
+    <li><b>Comparación con Carnot</b> (no se pide): $T_{m\acute ax}$ en $b$ ($pV=328\,000$ J) y $T_{m\acute in}$ en $c$ ($pV=164\,000$ J):
+      $$e_C=1-\frac{164\,000}{328\,000}=50\ \%$$</li>
   </ol>
   {{fig:ciclo-triangular-isobara-isocora-y-recta-con-el-}}
   {{fig:eficiencia-real-frente-a-carnot-eficiencia-del-c-3}}

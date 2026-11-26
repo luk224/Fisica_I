@@ -1,11 +1,21 @@
 <p class="enun">Como un ingeniero mecánico en ciernes, le piden diseñar una máquina de Carnot que use como sustancia de trabajo 2,00 moles de un gas ideal monoatómico y que opere con un depósito caliente a 500 °C. La máquina debe levantar 2,00 m una masa de 15,0 kg en cada ciclo, empleando un suministro de calor de 500 J. El gas en la cámara de la máquina puede tener un volumen mínimo de 5,00 L durante el ciclo. a) Dibuje un diagrama pV para este ciclo, indicando dónde entra calor en el gas y dónde sale de él. b) ¿A qué temperatura debe estar el depósito frío? c) Calcule la eficiencia térmica de la máquina. d) ¿Cuánta energía térmica gasta esta máquina en cada ciclo? e) Calcule la presión máxima que tendrá que resistir la cámara de gas.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo por ciclo = energía potencial ganada: $W=m\,g\,\Delta y$</li>
+      <li>Carnot: $|Q_C|=Q_H-W$; $T_C=T_H\dfrac{|Q_C|}{Q_H}$; $e=\dfrac{W}{Q_H}$; $p_{m\acute ax}=\dfrac{nRT_H}{V_{m\acute in}}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> Fig. 20.13: entra calor en la expansión isoterma a 773 K ($a\to b$) y sale en la compresión isoterma a $T_C$ ($c\to d$).</li>
-    <li><b>Trabajo por ciclo</b> = energía potencial ganada: $W=mg\Delta y=15{,}0\cdot9{,}80\cdot2{,}00=294$ J.</li>
-    <li><b>b)</b> $|Q_C|=Q_H-W=500-294=206$ J; (20.13): $T_C=T_H\dfrac{|Q_C|}{Q_H}=773{,}15\cdot\dfrac{206}{500}=\mathbf{318{,}5\ K\approx45\ °C}$.</li>
-    <li><b>c)</b> $e=\dfrac{294}{500}=\mathbf{58{,}8\,\%}$ ($=1-T_C/T_H$).</li>
-    <li><b>d)</b> Calor «desechado» por ciclo: <b>206 J</b> (se cede al foco frío).</li>
-    <li><b>e)</b> La presión máxima está en $a$ (volumen mínimo y temperatura máxima): $p_a=\dfrac{nRT_H}{V_a}=\dfrac{2{,}00\cdot8{,}314\cdot773{,}15}{5{,}00\times10^{-3}}=\mathbf{2{,}57\times10^6\ Pa}$ (≈ 25 atm).</li>
+    <li><b>a) Diagrama:</b> como en la fig. 20.13: entra calor en la expansión isoterma a 773 K y sale en la compresión isoterma a $T_C$.</li>
+    <li><b>Trabajo por ciclo:</b>
+      $$W=m\,g\,\Delta y=15{,}0(9{,}80)(2{,}00)=294\ \text{J}$$</li>
+    <li><b>b) Temperatura del depósito frío:</b>
+      $$|Q_C|=500-294=206\ \text{J},\qquad T_C=773{,}15\cdot\frac{206}{500}=\mathbf{318{,}5\ K}\approx45\ ^\circ\text{C}$$</li>
+    <li><b>c) Eficiencia:</b>
+      $$e=\frac{294}{500}=\mathbf{58{,}8\ \%}\qquad(=1-T_C/T_H)$$</li>
+    <li><b>d) Calor desechado por ciclo:</b>
+      $$\mathbf{206\ J}$$</li>
+    <li><b>e) Presión máxima</b> (volumen mínimo sobre la isoterma caliente):
+      $$p_a=\frac{nRT_H}{V_a}=\frac{2{,}00(8{,}314)(773{,}15)}{5{,}00\times10^{-3}}=\mathbf{2{,}57\times10^6\ Pa}\ (\approx25\ \text{atm})$$</li>
   </ol>
   {{fig:diagrama-de-flujo-de-energia-de-la-maquina-de-ca-4}}
   <div class="recipe"><b>Receta:</b> diseño de Carnot: $W$ del enunciado mecánico → $|Q_C|$ por la primera ley → $T_C$ por (20.13) → $p_{max}$ en el vértice de menor volumen sobre la isoterma caliente. <b>Error típico:</b> buscar la presión máxima en el foco frío.</div>

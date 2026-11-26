@@ -1,15 +1,44 @@
 <p class="enun"><b>Examen Febrero 2020 (2ª semana) P-2 (3 puntos).</b> Un sistema de frío que sigue un ciclo de Carnot funciona con 18 moles de un gas ideal monoatómico, realizando ciclos de 2 s. Las temperaturas de los focos son 450 K y 150 K y consume una potencia de 60 kW. Se pide: a) dibujar el ciclo en un diagrama p-V especificando las transformaciones que se realizan; b) calcular la eficiencia; c) calcular el calor intercambiado en cada etapa y la relación entre los volúmenes en la compresión isotérmica; d) calcular la variación de entropía del gas en cada transformación y en el ciclo; e) sabiendo que después de la expansión isoterma el volumen del gas es 0,5 m³, calcular la presión y el volumen después de la compresión adiabática.</p>
 {{fig:x1-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Refrigerador: $K=\dfrac{|Q_C|}{|W|}$; Carnot: $K=\dfrac{T_C}{T_H-T_C}$; primera ley del ciclo: $|Q_H|=|Q_C|+|W|$</li>
+      <li>Trabajo por ciclo: $|W|=P\,t$; isoterma: $Q=W=nRT\ln\dfrac{V_2}{V_1}$; adiabática: $Q=0$, $W=-nC_V\Delta T$</li>
+      <li>Entropía: isoterma reversible $\Delta S=\dfrac QT$; adiabática reversible $\Delta S=0$; adiabática: $T\,V^{\gamma-1}=\text{cte}$ ($\gamma=\tfrac53$)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Qué es cada cosa.</b> «Sistema de frío» = refrigerador: con trabajo de fuera saca calor $Q_C$ del foco frío ($T_C=150$ K) y entrega $|Q_H|$ al caliente ($T_H=450$ K). Es de Carnot: el ciclo de U fig. 20.13 recorrido <b>al revés</b> (antihorario): $a\to d$ expansión adiabática ($T_H\to T_C$), $d\to c$ <b>expansión isoterma a $T_C$</b> (absorbe $Q_C$), $c\to b$ compresión adiabática ($T_C\to T_H$), $b\to a$ <b>compresión isoterma a $T_H$</b> (cede $Q_H$).</li>
-    <li><b>a) Diagrama $pV$.</b> Dos hipérbolas $pV=$ cte (isotermas, 450 K arriba y 150 K abajo) unidas por dos adiabáticas más empinadas; recorrido <b>antihorario</b> ⇒ $W_{neto}&lt;0$ (el gas recibe trabajo).</li>
-    <li><b>b) «Eficiencia» de un refrigerador = coeficiente de rendimiento $K$</b> (20.9). En Carnot solo depende de las temperaturas (20.15): $K=\dfrac{T_C}{T_H-T_C}=\dfrac{150}{300}=\mathbf{0{,}50}$. (Por cada julio de trabajo se sacan 0,5 J del frío: con una diferencia tan grande, un refrigerador rinde poco.)</li>
-    <li><b>c) Calores.</b> Trabajo por ciclo = potencia × duración: $|W|=60\,000\cdot2=1{,}2\times10^5$ J ($W=-1{,}2\times10^5$ J). De $K=|Q_C|/|W|$: $Q_C=0{,}5\cdot1{,}2\times10^5=\mathbf{+6{,}0\times10^4\ J}$ (entra en $d\to c$). Primera ley del ciclo (20.8): $|Q_H|=|Q_C|+|W|=1{,}8\times10^5$ J ⇒ $Q_H=\mathbf{-1{,}8\times10^5\ J}$ (sale en $b\to a$). Comprobación (20.13): $Q_C/Q_H=-150/450=-1/3$ ✓. En las dos adiabáticas $Q=0$.</li>
-    <li><b>Trabajo por etapa</b> (para la tabla): isotermas $W=Q$; adiabáticas $W=-nC_V\Delta T$: $W_{cb}=-18\cdot\frac32\cdot8{,}314\cdot300=-6{,}73\times10^4$ J y $W_{ad}=+6{,}73\times10^4$ J (se cancelan). Suma: $60-180=-120$ kJ ✓.</li>
-    <li><b>Relación de volúmenes en la compresión isoterma</b> ($b\to a$, a 450 K): $|Q_H|=nRT_H\ln\dfrac{V_b}{V_a}$ ⇒ $\ln\dfrac{V_b}{V_a}=\dfrac{1{,}8\times10^5}{18\cdot8{,}314\cdot450}=2{,}673$ ⇒ $\dfrac{V_b}{V_a}=\mathbf{14{,}5}$ (el volumen se reduce a 0,069 del inicial). La expansión isoterma a 150 K tiene la misma razón: $\ln\frac{V_c}{V_d}=\frac{6\times10^4}{18\cdot8{,}314\cdot150}=2{,}673$, como exige $\frac{V_b}{V_a}=\frac{V_c}{V_d}$.</li>
-    <li><b>d) Entropía del gas.</b> Isotermas reversibles (20.18): $\Delta S_{dc}=\dfrac{Q_C}{T_C}=\dfrac{6\times10^4}{150}=\mathbf{+400\ J/K}$; $\Delta S_{ba}=\dfrac{Q_H}{T_H}=\dfrac{-1{,}8\times10^5}{450}=\mathbf{-400\ J/K}$. Adiabáticas reversibles: <b>$\Delta S=0$</b>. <b>Ciclo: $\Delta S=0$</b> (20.20)-(20.21): $S$ es función de estado y el gas vuelve al estado inicial. (Los focos cambian $-400$ y $+400$ J/K: el universo tampoco cambia, porque Carnot es reversible.)</li>
-    <li><b>e) Tras la compresión adiabática.</b> «Después de la expansión isoterma» es el estado $c$: $V_c=0{,}5$ m³, $T_c=150$ K, $p_c=\dfrac{nRT_C}{V_c}=\dfrac{18\cdot8{,}314\cdot150}{0{,}5}=4{,}49\times10^4$ Pa. La compresión $c\to b$ lleva el gas a $T_H$; con $TV^{\gamma-1}=$ cte ($\gamma=5/3$, $\gamma-1=2/3$): $V_b=V_c\left(\dfrac{T_C}{T_H}\right)^{3/2}=0{,}5\cdot\left(\tfrac13\right)^{3/2}=\mathbf{0{,}0962\ m^3}$; $p_b=\dfrac{nRT_H}{V_b}=\mathbf{7{,}0\times10^5\ Pa}$ (≈ 6,9 atm). Comprobación con $pV^\gamma$: $p_c(V_c/V_b)^{5/3}=7{,}00\times10^5$ Pa ✓. Otros vértices (para la figura): $V_a=6{,}64\times10^{-3}$ m³, $p_a=1{,}01\times10^7$ Pa; $V_d=0{,}0345$ m³, $p_d=6{,}50\times10^5$ Pa.</li>
+    <li><b>Qué es el ciclo.</b> Sistema de frío = refrigerador de Carnot: el ciclo de U fig. 20.13 recorrido al revés (antihorario): $a\to d$ expansión adiabática ($T_H\to T_C$), $d\to c$ expansión isoterma a $T_C$ (absorbe $Q_C$), $c\to b$ compresión adiabática, $b\to a$ compresión isoterma a $T_H$ (cede $Q_H$).</li>
+    <li><b>a) Diagrama $pV$:</b> dos isotermas (450 K arriba, 150 K abajo) unidas por dos adiabáticas más empinadas, recorridas en sentido antihorario ($W_{neto}<0$).</li>
+    <li><b>b) Eficiencia</b> (de un refrigerador: coeficiente de rendimiento):
+      $$K=\frac{T_C}{T_H-T_C}=\frac{150}{450-150}=\mathbf{0{,}50}$$</li>
+    <li><b>c) Calores.</b> Trabajo por ciclo:
+      $$|W|=P\,t=(60\,000)(2)=1{,}2\times10^5\ \text{J}$$
+      $$Q_C=K|W|=0{,}5(1{,}2\times10^5)=\mathbf{+6{,}0\times10^4\ J}\ (\text{entra en }d\to c)$$
+      $$|Q_H|=|Q_C|+|W|=1{,}8\times10^5\ \text{J}\ \Rightarrow\ Q_H=\mathbf{-1{,}8\times10^5\ J}\ (\text{sale en }b\to a)$$
+      <span class="por">Comprobación: $Q_C/Q_H=-150/450=-1/3$ ✓. En las adiabáticas $Q=0$.</span></li>
+    <li><b>Trabajo por etapa:</b>
+      $$W_{cb}=-nC_V\Delta T=-18\cdot\tfrac32(8{,}314)(300)=-6{,}73\times10^4\ \text{J},\qquad W_{ad}=+6{,}73\times10^4\ \text{J}$$
+      <span class="por">Se cancelan; suma del ciclo: $60-180=-120$ kJ ✓.</span></li>
+    <li><b>Relación de volúmenes en la compresión isoterma</b> ($b\to a$, 450 K):
+      $$|Q_H|=nRT_H\ln\frac{V_b}{V_a}\ \Rightarrow\ \ln\frac{V_b}{V_a}=\frac{1{,}8\times10^5}{18(8{,}314)(450)}=2{,}673\ \Rightarrow\ \frac{V_b}{V_a}=\mathbf{14{,}5}$$
+      <span class="por">La expansión isoterma a 150 K tiene la misma razón: $\ln\frac{V_c}{V_d}=\frac{6\times10^4}{18(8{,}314)(150)}=2{,}673$. En la compresión isoterma el volumen se reduce a $V_a/V_b=0{,}069$ del inicial.</span></li>
+    <li><b>d) Entropía del gas:</b>
+      $$\Delta S_{dc}=\frac{Q_C}{T_C}=\frac{6\times10^4}{150}=\mathbf{+400\ J/K},\qquad\Delta S_{ba}=\frac{Q_H}{T_H}=\frac{-1{,}8\times10^5}{450}=\mathbf{-400\ J/K}$$
+      $$\Delta S_{adiab\acute aticas}=\mathbf{0},\qquad\Delta S_{ciclo}=\mathbf{0}$$
+      <span class="por">$S$ es función de estado y el gas vuelve al estado inicial.</span></li>
+    <li><b>e) Tras la compresión adiabática.</b> «Después de la expansión isoterma» es el estado $c$: $V_c=0{,}5$ m³, $T_c=150$ K:
+      $$p_c=\frac{nRT_C}{V_c}=\frac{18(8{,}314)(150)}{0{,}5}=4{,}49\times10^4\ \text{Pa}$$
+      $$V_b=V_c\Big(\frac{T_C}{T_H}\Big)^{3/2}=0{,}5\Big(\tfrac13\Big)^{3/2}=\mathbf{0{,}0962\ m^3},\qquad p_b=\frac{nRT_H}{V_b}=\mathbf{7{,}0\times10^5\ Pa}\ (\approx6{,}9\ \text{atm})$$
+      <span class="por">Comprobación con $pV^\gamma$: $p_c(V_c/V_b)^{5/3}=7{,}00\times10^5$ Pa ✓. Otros vértices: $V_a=6{,}64\times10^{-3}$ m³, $p_a=1{,}01\times10^7$ Pa; $V_d=0{,}0345$ m³, $p_d=6{,}50\times10^5$ Pa.</span></li>
   </ol>
+  <table>
+    <tr><th>Etapa</th><th>Proceso</th><th>$Q$ (kJ)</th><th>$W$ (kJ)</th><th>$\Delta U$ (kJ)</th><th>$\Delta S_{gas}$ (J/K)</th></tr>
+    <tr><td>$a\to d$</td><td>expansión adiabática 450 → 150 K</td><td>0</td><td>+67,3</td><td>−67,3</td><td>0</td></tr>
+    <tr><td>$d\to c$</td><td>expansión isoterma 150 K</td><td><b>+60</b></td><td>+60</td><td>0</td><td>+400</td></tr>
+    <tr><td>$c\to b$</td><td>compresión adiabática 150 → 450 K</td><td>0</td><td>−67,3</td><td>+67,3</td><td>0</td></tr>
+    <tr><td>$b\to a$</td><td>compresión isoterma 450 K</td><td><b>−180</b></td><td>−180</td><td>0</td><td>−400</td></tr>
+    <tr><td>Ciclo</td><td></td><td>−120</td><td>−120</td><td>0</td><td>0</td></tr>
+  </table>
   <table>
     <tr><th>Etapa</th><th>Proceso</th><th>$Q$ (kJ)</th><th>$W$ (kJ)</th><th>$\Delta U$ (kJ)</th><th>$\Delta S_{gas}$ (J/K)</th></tr>
     <tr><td>$a\to d$</td><td>expansión adiabática 450 → 150 K</td><td>0</td><td>+67,3</td><td>−67,3</td><td>0</td></tr>

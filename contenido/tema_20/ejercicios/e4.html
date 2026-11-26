@@ -1,6 +1,12 @@
 <p class="enun">a) Calcule la eficiencia teórica de una máquina con ciclo Otto que tiene $\gamma=1{,}40$ y $r=9{,}50$. b) Si este motor consume 10 000 J de calor de la quema de su combustible, ¿cuánto calor desecha hacia el aire exterior?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ciclo Otto: $e=1-\dfrac{1}{r^{\gamma-1}}$; $|Q_C|=(1-e)\,Q_H$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> Ciclo Otto ideal (20.6): $e=1-\dfrac{1}{r^{\gamma-1}}=1-\dfrac{1}{9{,}50^{0{,}40}}=\mathbf{0{,}594\ (59{,}4\,\%)}$. Solo depende de la razón de compresión.</li>
-    <li><b>b)</b> $|Q_C|=(1-e)Q_H=0{,}406\cdot10\,000=\mathbf{4060\ J}$ (y $W=5940$ J).</li>
+    <li><b>a) Eficiencia:</b>
+      $$e=1-\frac{1}{9{,}50^{0{,}40}}=\mathbf{0{,}594}\ (59{,}4\ \%)$$</li>
+    <li><b>b) Calor desechado</b> ($Q_H=10\,000$ J):
+      $$|Q_C|=(1-0{,}594)(10\,000)=\mathbf{4060\ J}\quad(W=5940\ \text{J})$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> Otto: $e=1-r^{1-\gamma}$; $|Q_C|=(1-e)Q_H$. <b>Error típico:</b> usar $r^\gamma$ en vez de $r^{\gamma-1}$.</div>

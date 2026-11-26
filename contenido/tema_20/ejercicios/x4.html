@@ -1,13 +1,23 @@
 <p class="enun"><b>Examen Septiembre 2019 (Original) P-2 (3 puntos).</b> Un cilindro térmicamente aislado, cerrado por ambos extremos, está provisto de un pistón conductor sin rozamiento, que lo divide en dos partes. Inicialmente se sujeta al pistón en el centro del cilindro de forma que este está dividido en dos partes iguales, quedando a un lado un litro de aire a 300 K y a 2 atmósferas y al otro, un litro de aire a 300 K y a 1 atmósfera. Se abandona el pistón asimismo, alcanzándose el equilibrio de presión y temperatura en una nueva posición. Calcúlese la presión y la temperatura finales así como la variación de entropía ΔS.</p>
 {{fig:x4-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Sistema aislado: $\Delta U_{total}=0$; gas ideal: $U$ solo depende de $T$</li>
+      <li>$S$ es función de estado: se calcula por un camino reversible con los mismos extremos; isoterma: $\Delta S=nR\ln\dfrac{V_f}{V_i}=\dfrac{pV}{T}\ln\dfrac{V_f}{V_i}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Sistema aislado</b> (gases + pistón, cilindro rígido y aislado): $Q=0$, $W=0$ ⇒ $\Delta U_{total}=0$. Gas ideal ⇒ $U$ solo depende de $T$; los dos gases empiezan a 300 K y el pistón conductor iguala temperaturas ⇒ <b>$T_f=300$ K</b>.</li>
-    <li><b>Presión final.</b> Moles $n_1=p_1V/RT$, $n_2=p_2V/RT$ ($n_1=2n_2$). Con volumen total 2 L: $p_f=\dfrac{(n_1+n_2)RT}{2V}=\dfrac{p_1+p_2}{2}=\mathbf{1{,}5\ atm}$ $(1{,}52\times10^5$ Pa). Volúmenes finales: $V_1'=\frac{n_1RT}{p_f}=\frac43$ L, $V_2'=\frac23$ L.</li>
-    <li><b>Por qué no vale $\Delta S=Q/T=0$.</b> El proceso es <b>irreversible</b> (el pistón se suelta con una diferencia finita de presión, oscila y se frena por la disipación interna). (20.19) solo vale en procesos reversibles; como $S$ es <b>función de estado</b>, se inventa un camino reversible con los mismos extremos (como en el ej. 20.8).</li>
-    <li><b>Camino reversible elegido.</b> Cada gas pasa de (300 K, $V$) a (300 K, $V'$): una expansión o compresión <b>isoterma reversible</b> con $\Delta S=\dfrac{Q}{T}=nR\ln\dfrac{V'}{V}$. Escribiendo $nR=pV/T$:
-      $\Delta S_1=\dfrac{p_1V}{T}\ln\dfrac43=\dfrac{2\cdot1{,}013\times10^5\cdot10^{-3}}{300}\ln\dfrac43=+0{,}1943$ J/K (el gas a 2 atm se expande);
-      $\Delta S_2=\dfrac{p_2V}{T}\ln\dfrac23=-0{,}1369$ J/K (el gas a 1 atm se comprime).</li>
-    <li><b>Total:</b> $\Delta S=\mathbf{+0{,}057\ J/K}>0$. Es lo que exige el principio de aumento de entropía para un proceso irreversible en un sistema aislado: el sistema no volverá solo a la posición central del pistón.</li>
+    <li><b>Temperatura final:</b> sistema aislado ($Q=W=0$) y pistón conductor:
+      $$T_f=\mathbf{300\ K}$$</li>
+    <li><b>Presión y volúmenes finales</b> ($n_1=2n_2$, volumen total 2 L):
+      $$p_f=\frac{(n_1+n_2)RT}{2V}=\frac{p_1+p_2}{2}=\mathbf{1{,}5\ atm}\ (1{,}52\times10^5\ \text{Pa}),\qquad V_1'=\tfrac43\ \text{L},\ V_2'=\tfrac23\ \text{L}$$</li>
+    <li><b>Por qué no $\Delta S=Q/T=0$.</b>
+      <span class="por">El proceso es irreversible; $Q/T$ solo vale en procesos reversibles. Como $S$ es función de estado, se calcula por un camino reversible con los mismos extremos: una isoterma para cada gas.</span></li>
+    <li><b>Entropía de cada gas:</b>
+      $$\Delta S_1=\frac{p_1V}{T}\ln\frac43=\frac{2(1{,}013\times10^5)(10^{-3})}{300}\ln\frac43=+0{,}1943\ \text{J/K}$$
+      $$\Delta S_2=\frac{p_2V}{T}\ln\frac23=-0{,}1369\ \text{J/K}$$</li>
+    <li><b>Total:</b>
+      $$\Delta S=\mathbf{+0{,}057\ J/K}>0$$
+      <span class="por">Lo que exige el aumento de entropía para un proceso irreversible en un sistema aislado.</span></li>
   </ol>
   {{fig:cilindro-aislado-con-un-piston-conductor-antes-y}}
   <div class="recipe"><b>Receta:</b> entropía en un proceso irreversible: identifica estados inicial y final de cada parte, elige para cada una un camino reversible cómodo (aquí isotermo, $nR\ln\frac{V_f}{V_i}$) y suma; si el sistema está aislado, el resultado debe salir $>0$. <b>Error típico:</b> decir $\Delta S=0$ «porque $Q=0$»; sumar los $\ln$ con las presiones intercambiadas; trabajar con $T$ en °C.</div>

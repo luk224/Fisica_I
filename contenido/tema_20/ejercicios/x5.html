@@ -1,11 +1,23 @@
 <p class="enun"><b>Examen Febrero 2019 (1ª semana) P-1 (3 puntos).</b> Sea un mol de gas monoatómico ($\gamma=5/3$) que describe un ciclo ABCA en el diagrama PV. En el estado inicial A, ocupa un volumen de 0,5 l y se encuentra a una presión de 1 atm. El gas pasa al estado B expandiéndose a presión constante hasta alcanzar un volumen cuatro veces mayor. A continuación sufre una transformación a volumen constante hasta alcanzar una presión un cuarto de la inicial, llegando al estado C y posteriormente vuelve al estado inicial. Se pide calcular: a) la temperatura en estos tres estados; b) el trabajo, calor, variación de la energía interna y la entropía en cada proceso, y c) el rendimiento del ciclo.</p>
 {{fig:x5-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Entropía de gas ideal por tramo: isóbara $nC_p\ln\dfrac{T_2}{T_1}$; isócora $nC_V\ln\dfrac{T_2}{T_1}$; isoterma $nR\ln\dfrac{V_2}{V_1}$; adiabática reversible 0</li>
+      <li>$T=\dfrac{pV}{nR}$; $e=\dfrac{W}{Q_H}$ ($Q_H$ = calor que entra)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Estados y temperaturas</b> ($T=pV/nR$): A (0,5 L; 1 atm) <b>$T_A=6{,}09$ K</b>; B (2 L; 1 atm) <b>$T_B=4T_A=24{,}4$ K</b>; C (2 L; 0,25 atm) <b>$T_C=T_A=6{,}09$ K</b>. El enunciado no dice cómo vuelve el gas a A; como $p_CV_C=p_AV_A$, C y A están en la misma isoterma, y se toma $C\to A$ <b>isotermo</b> (hipótesis que hay que escribir en el examen).</li>
-    <li><b>b) Primera ley</b> (detalle en el tema 19): AB $W=151{,}95$ J, $\Delta U=227{,}9$ J, $Q=+379{,}9$ J; BC $W=0$, $Q=\Delta U=-227{,}9$ J; CA $\Delta U=0$, $Q=W=-70{,}2$ J.</li>
-    <li><b>b) Entropía de cada proceso</b> (20.19), con $dQ$ según el tipo de proceso: A→B isóbaro, $dQ=nC_p\,dT$: $\Delta S_{AB}=nC_p\ln\dfrac{T_B}{T_A}=\frac52R\ln4=\mathbf{+28{,}8\ J/K}$. B→C isócoro, $dQ=nC_V\,dT$: $\Delta S_{BC}=nC_V\ln\dfrac{T_C}{T_B}=\frac32R\ln\frac14=\mathbf{-17{,}3\ J/K}$. C→A isotermo (20.18): $\Delta S_{CA}=\dfrac{Q_{CA}}{T_A}=nR\ln\dfrac{V_A}{V_C}=R\ln\frac14=\mathbf{-11{,}5\ J/K}$. <b>Ciclo: $28{,}8-17{,}3-11{,}5=0$</b> ✓ (20.21).</li>
-    <li><b>c) Rendimiento.</b> $W=151{,}95-70{,}2=81{,}7$ J; $Q_H$ = calor que entra = solo $Q_{AB}$: $e=\dfrac{81{,}7}{379{,}9}=\mathbf{0{,}215\ (21{,}5\,\%)}$. Con los mismos extremos de temperatura, Carnot daría $1-\frac{6{,}09}{24{,}4}=75\,\%$.</li>
-    <li><b>Por qué no se usa $\Delta S=Q/T$ en AB y BC.</b> Esa fórmula solo vale a $T$ constante; en AB y BC la temperatura cambia y hay que integrar.</li>
+    <li><b>Estados y temperaturas</b> (A: 0,5 L, 1 atm; B: 2 L, 1 atm; C: 2 L, 0,25 atm):
+      $$T_A=\mathbf{6{,}09\ K},\qquad T_B=4T_A=\mathbf{24{,}4\ K},\qquad T_C=T_A=\mathbf{6{,}09\ K}$$
+      <span class="por">$p_CV_C=p_AV_A$: C y A están en la misma isoterma; se toma $C\to A$ isoterma (hipótesis que hay que escribir).</span></li>
+    <li><b>b) Primera ley</b> (detalle en el tema 19):
+      $$AB:\ W=151{,}95\ \text{J},\ \Delta U=227{,}9\ \text{J},\ Q=+379{,}9\ \text{J};\quad BC:\ W=0,\ Q=\Delta U=-227{,}9\ \text{J};\quad CA:\ \Delta U=0,\ Q=W=-70{,}2\ \text{J}$$</li>
+    <li><b>Entropía de cada proceso:</b>
+      $$\Delta S_{AB}=\tfrac52R\ln4=\mathbf{+28{,}8\ J/K},\quad\Delta S_{BC}=\tfrac32R\ln\tfrac14=\mathbf{-17{,}3\ J/K},\quad\Delta S_{CA}=R\ln\tfrac14=\mathbf{-11{,}5\ J/K}$$
+      $$\Delta S_{ciclo}=28{,}8-17{,}3-11{,}5=0\ \checkmark$$
+      <span class="por">No se usa $Q/T$ en AB y BC: esa fórmula solo vale a $T$ constante.</span></li>
+    <li><b>c) Rendimiento</b> ($Q_H=Q_{AB}$):
+      $$e=\frac{81{,}7}{379{,}9}=\mathbf{0{,}215}\ (21{,}5\ \%)$$
+      <span class="por">Con los mismos extremos de temperatura, Carnot daría $1-\frac{6{,}09}{24{,}4}=75\ \%$.</span></li>
   </ol>
   {{fig:ciclo-abca-con-la-variacion-de-entropia-de-cada-}}
   {{fig:eficiencia-real-frente-a-carnot-eficiencia-del-c}}

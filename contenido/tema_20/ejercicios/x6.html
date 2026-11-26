@@ -1,13 +1,24 @@
 <p class="enun"><b>Examen Febrero 2023 (2ª semana) P-2 (3 puntos).</b> Una máquina térmica opera según el ciclo de la figura siendo la sustancia de trabajo 3 moles de un gas monoatómico con comportamiento ideal, que alcanza una temperatura máxima de 300 °C, y se sabe que el proceso BC es isotérmico. La presión en los estados A y C es de $1\times10^5$ Pa, y en el estado B, de $4\times10^5$ Pa. Calcular: (a) El calor entrante en el gas y el cedido por el gas en cada ciclo. (b) El trabajo que efectúa la máquina en cada ciclo. (c) La eficiencia que tiene la máquina y compárela con la máxima eficiencia posible que puede lograrse con los depósitos caliente y frío que se usan en este ciclo. Considere: T (K) = T (°C) + 273,15; R = 8,31 J mol⁻¹ K⁻¹. (Figura: A→B vertical hacia arriba, B→C isoterma hacia la derecha, C→A horizontal hacia la izquierda.)</p>
 {{fig:x6-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Monoatómico: $C_V=\tfrac32R$, $C_p=\tfrac52R$; isócora $Q=nC_V\Delta T$; isoterma $Q=W=nRT\ln\dfrac{V_2}{V_1}$; isóbara $Q=nC_p\Delta T$</li>
+      <li>$e=\dfrac{W}{Q_H}$; Carnot entre la $T$ máxima y la mínima del ciclo: $e_C=1-\dfrac{T_C}{T_H}$ (kelvin)</li>
+      <li>Entropía: isócora $nC_V\ln\dfrac{T_2}{T_1}$; isoterma $nR\ln\dfrac{V_2}{V_1}$; isóbara $nC_p\ln\dfrac{T_2}{T_1}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Temperaturas.</b> $T_B=T_C=573{,}15$ K (máxima: la isócora A→B multiplica $p$ por 4); $T_A=573{,}15\cdot\frac14=\mathbf{143{,}29\ K}$ (mínima). $V_A=V_B=0{,}0357$ m³, $V_C=4V_B=0{,}1429$ m³.</li>
-    <li><b>(a)</b> $Q_{AB}=nC_V(T_B-T_A)=\mathbf{+16\,075\ J}$; $Q_{BC}=nRT_B\ln4=\mathbf{+19\,808\ J}$; $Q_{CA}=nC_p(T_A-T_C)=\mathbf{-26\,791\ J}$. Entra $Q_H=35\,883$ J; sale $|Q_C|=26\,791$ J.</li>
-    <li><b>(b)</b> $W=Q_H-|Q_C|=\mathbf{9092\ J}$ por ciclo.</li>
-    <li><b>(c) Eficiencia</b> $e=\dfrac{W}{Q_H}=\dfrac{9092}{35\,883}=\mathbf{25{,}3\,\%}$.</li>
-    <li><b>Máxima posible con esos depósitos.</b> El depósito caliente tiene que estar al menos a la temperatura más alta del gas (573,15 K) y el frío como mucho a la más baja (143,29 K), porque el calor solo fluye espontáneamente de caliente a frío. Ninguna máquina entre esas temperaturas supera a la de Carnot: $e_{Carnot}=1-\dfrac{143{,}29}{573{,}15}=\mathbf{75\,\%}$. Esta máquina consigue un tercio del máximo.</li>
-    <li><b>Por qué es menor (lectura de la segunda ley).</b> El gas recibe calor en A→B mientras su temperatura sube de 143 a 573 K: si el foco caliente está a 573 K, ese calor pasa con una diferencia finita de temperatura, que es irreversible; lo mismo al ceder calor en C→A. Carnot solo intercambia calor en isotermas a la temperatura de cada foco.</li>
-    <li><b>Entropía del gas (comprobación):</b> $\Delta S_{AB}=nC_V\ln4=+51{,}84$; $\Delta S_{BC}=nR\ln4=+34{,}56$; $\Delta S_{CA}=nC_p\ln\frac14=-86{,}40$ J/K; suma 0 ✓.</li>
+    <li><b>Temperaturas y volúmenes:</b>
+      $$T_B=T_C=573{,}15\ \text{K},\quad T_A=573{,}15\cdot\tfrac14=\mathbf{143{,}29\ K},\quad V_A=V_B=0{,}0357\ \text{m}^3,\quad V_C=4V_B=0{,}1429\ \text{m}^3$$</li>
+    <li><b>(a) Calores:</b>
+      $$Q_{AB}=\mathbf{+16\,075\ J},\qquad Q_{BC}=\mathbf{+19\,808\ J},\qquad Q_{CA}=\mathbf{-26\,791\ J}$$
+      $$Q_H=35\,883\ \text{J}\ \text{(entra)},\qquad|Q_C|=26\,791\ \text{J}\ \text{(sale)}$$</li>
+    <li><b>(b) Trabajo por ciclo:</b>
+      $$W=Q_H-|Q_C|=\mathbf{9092\ J}$$</li>
+    <li><b>(c) Eficiencia y comparación con Carnot</b> (el foco caliente a 573,15 K y el frío a 143,29 K):
+      $$e=\frac{9092}{35\,883}=\mathbf{0{,}253}\ (25{,}3\ \%),\qquad e_C=1-\frac{143{,}29}{573{,}15}=\mathbf{0{,}75}\ (75\ \%)$$
+      <span class="por">Un tercio del máximo: el gas recibe calor mientras su temperatura sube de 143 a 573 K (diferencias finitas de temperatura: irreversible); Carnot solo intercambia calor en isotermas.</span></li>
+    <li><b>Entropía del gas</b> (comprobación):
+      $$\Delta S_{AB}=nC_V\ln4=+51{,}84,\quad\Delta S_{BC}=nR\ln4=+34{,}56,\quad\Delta S_{CA}=nC_p\ln\tfrac14=-86{,}40\ \text{J/K}\ \ (\text{suma }0\ \checkmark)$$</li>
   </ol>
   {{fig:ciclo-isocora-isoterma-isobara-con-3-mol-a-b-y-c}}
   {{fig:eficiencia-real-frente-a-carnot-eficiencia-de-la}}

@@ -377,10 +377,16 @@
 <details class="mas pista"><summary>Pista 1</summary><p>En un ciclo $\Delta U=0$: $W=|Q_H|-|Q_C|$, luego $Q_H=W+|Q_C|$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Eficiencia $e=W/Q_H$ (el calor que se <i>suministra</i>, no el cedido).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Ciclo ⇒ $\Delta U=0$</b> y $W=Q_H+Q_C=|Q_H|-|Q_C|$ (20.2).</li>
-    <li><b>a)</b> $Q_H=W+|Q_C|=2200+4300=\mathbf{6500\ J}$.</li>
-    <li><b>b)</b> $e=\dfrac{W}{Q_H}=\dfrac{2200}{6500}=\mathbf{0{,}34\ (34\,\%)}$ (20.4).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ciclo: $W=|Q_H|-|Q_C|$ ⇒ $Q_H=W+|Q_C|$</li>
+      <li>Eficiencia: $e=\dfrac{W}{Q_H}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Calor suministrado:</b>
+      $$Q_H=W+|Q_C|=2200+4300=\mathbf{6500\ J}$$</li>
+    <li><b>b) Eficiencia:</b>
+      $$e=\frac{W}{Q_H}=\frac{2200}{6500}=\mathbf{0{,}34}\ (34\ \%)$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/diagrama-de-flujo-de-energia-del-motor-diesel-de.svg">
 <div class="figph" role="img" aria-label="Diagrama de flujo de energía del motor diésel del problema 20.1." style="aspect-ratio:340/215"></div>
@@ -395,9 +401,16 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Refrigerador: $K=|Q_C|/|W|$, luego $|W|=Q_C/K$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Primera ley del ciclo: $|Q_H|=|Q_C|+|W|$ (al exterior va también el trabajo).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a)</b> De (20.9): $|W|=\dfrac{Q_C}{K}=\dfrac{3{,}10\times10^4}{2{,}10}=\mathbf{1{,}48\times10^4\ J}$ ($W=-1{,}48\times10^4$ J: se suministra).</li>
-    <li><b>b)</b> Primera ley del ciclo: $W=Q_C+Q_H$ ⇒ $Q_H=-1{,}48\times10^4-3{,}10\times10^4=\mathbf{-4{,}58\times10^4\ J}$ (negativo: sale hacia el depósito caliente). Equivale a (20.8): $|Q_H|=|Q_C|+|W|$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Refrigerador: $K=\dfrac{Q_C}{|W|}$; primera ley del ciclo: $|Q_H|=Q_C+|W|$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Trabajo por ciclo:</b>
+      $$|W|=\frac{Q_C}{K}=\frac{3{,}10\times10^4}{2{,}10}=\mathbf{1{,}48\times10^4\ J}$$</li>
+    <li><b>b) Calor al depósito caliente:</b>
+      $$|Q_H|=Q_C+|W|=3{,}10\times10^4+1{,}48\times10^4=\mathbf{4{,}58\times10^4\ J}$$
+      <span class="por">Al exterior va también el trabajo del compresor.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/diagrama-de-flujo-de-energia-del-refrigerador-co.svg">
 <div class="figph" role="img" aria-label="Diagrama de flujo de energía del refrigerador con K=2,10 del problema 20.9." style="aspect-ratio:340/215"></div>
@@ -412,9 +425,15 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Ciclo Otto ideal: $e=1-1/r^{\gamma-1}$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$|Q_C|=(1-e)Q_H$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a)</b> Ciclo Otto ideal (20.6): $e=1-\dfrac{1}{r^{\gamma-1}}=1-\dfrac{1}{9{,}50^{0{,}40}}=\mathbf{0{,}594\ (59{,}4\,\%)}$. Solo depende de la razón de compresión.</li>
-    <li><b>b)</b> $|Q_C|=(1-e)Q_H=0{,}406\cdot10\,000=\mathbf{4060\ J}$ (y $W=5940$ J).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ciclo Otto: $e=1-\dfrac{1}{r^{\gamma-1}}$; $|Q_C|=(1-e)\,Q_H$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Eficiencia:</b>
+      $$e=1-\frac{1}{9{,}50^{0{,}40}}=\mathbf{0{,}594}\ (59{,}4\ \%)$$</li>
+    <li><b>b) Calor desechado</b> ($Q_H=10\,000$ J):
+      $$|Q_C|=(1-0{,}594)(10\,000)=\mathbf{4060\ J}\quad(W=5940\ \text{J})$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> Otto: $e=1-r^{1-\gamma}$; $|Q_C|=(1-e)Q_H$. <b>Error típico:</b> usar $r^\gamma$ en vez de $r^{\gamma-1}$.</div>
 </details>
@@ -425,10 +444,17 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Carnot: $|Q_C|/|Q_H|=T_C/T_H$ con kelvin.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Luego $W=Q_H-|Q_C|$ y $e=W/Q_H=1-T_C/T_H$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a)</b> Carnot (20.13): $Q_C=-Q_H\dfrac{T_C}{T_H}=-6450\cdot\dfrac{300}{520}=\mathbf{-3{,}72\times10^3\ J}$.</li>
-    <li><b>b)</b> $W=Q_H+Q_C=\mathbf{2{,}73\times10^3\ J}$.</li>
-    <li><b>c)</b> $e=\dfrac{W}{Q_H}=\mathbf{0{,}423\ (42{,}3\,\%)}$; comprobación (20.14): $1-\frac{300}{520}=0{,}423$ ✓.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Carnot: $\dfrac{|Q_C|}{|Q_H|}=\dfrac{T_C}{T_H}$; $W=|Q_H|-|Q_C|$; $e=1-\dfrac{T_C}{T_H}$ (kelvin)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Calor cedido:</b>
+      $$|Q_C|=6450\cdot\frac{300}{520}=\mathbf{3{,}72\times10^3\ J}$$</li>
+    <li><b>b) Trabajo:</b>
+      $$W=6450-3721=\mathbf{2{,}73\times10^3\ J}$$</li>
+    <li><b>c) Eficiencia:</b>
+      $$e=\frac{W}{Q_H}=\mathbf{0{,}423}\ (42{,}3\ \%)\qquad\Big(1-\frac{300}{520}=0{,}423\ \checkmark\Big)$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/diagrama-de-flujo-de-energia-de-la-maquina-de-ca.svg">
 <div class="figph" role="img" aria-label="Diagrama de flujo de energía de la máquina de Carnot del problema 20.12 (520 K y 300 K)." style="aspect-ratio:340/215"></div>
@@ -443,10 +469,17 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Refrigerador de Carnot: $|Q_H|=|Q_C|\,T_H/T_C$ y $K=T_C/(T_H-T_C)$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Potencia = trabajo por ciclo $\times$ ciclos por <i>segundo</i> (pasa los ciclos/min).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a)</b> (20.13): $Q_H=-Q_C\dfrac{T_H}{T_C}=-415\cdot\dfrac{320}{270}=\mathbf{-492\ J}$.</li>
-    <li><b>b)</b> $|W|=|Q_H|-|Q_C|=77$ J por ciclo; $P=\dfrac{165\cdot77}{60\ \text{s}}=\mathbf{211\ W}$.</li>
-    <li><b>c)</b> $K=\dfrac{415}{77}=\mathbf{5{,}4}$; con (20.15): $\frac{270}{320-270}=5{,}4$ ✓.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Carnot: $|Q_H|=Q_C\dfrac{T_H}{T_C}$; $|W|=|Q_H|-Q_C$; $K=\dfrac{Q_C}{|W|}=\dfrac{T_C}{T_H-T_C}$; $P=|W|\cdot(\text{ciclos/s})$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Calor cedido:</b>
+      $$|Q_H|=415\cdot\frac{320}{270}=\mathbf{492\ J}$$</li>
+    <li><b>b) Potencia</b> (165 ciclos/min):
+      $$|W|=492-415=77\ \text{J},\qquad P=\frac{165\cdot77}{60\ \text{s}}=\mathbf{211\ W}$$</li>
+    <li><b>c) Coeficiente de rendimiento:</b>
+      $$K=\frac{415}{77}=\mathbf{5{,}4}\qquad\Big(\frac{270}{320-270}=5{,}4\ \checkmark\Big)$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/diagrama-de-flujo-de-energia-del-refrigerador-de-3.svg">
 <div class="figph" role="img" aria-label="Diagrama de flujo de energía del refrigerador de Carnot del problema 20.17 (valores por ciclo)." style="aspect-ratio:340/215"></div>
@@ -461,10 +494,19 @@
 <details class="mas pista"><summary>Pista 1</summary><p>El calor extraído del agua es el del cambio de fase: $Q_C=mL_f$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Carnot con kelvin: $|Q_H|=Q_C\,T_H/T_C$ y $W=Q_C+Q_H$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Calor sacado del agua</b> (cambio de fase, $Q=mL_f$): $Q_C=+mL_f=85{,}0\cdot3{,}34\times10^5=2{,}84\times10^7$ J (entra en la sustancia de trabajo).</li>
-    <li><b>a)</b> $|Q_H|=Q_C\dfrac{T_H}{T_C}=2{,}84\times10^7\cdot\dfrac{297{,}15}{273{,}15}=\mathbf{3{,}09\times10^7\ J}$.</li>
-    <li><b>b)</b> $W=Q_C+Q_H=\mathbf{-2{,}5\times10^6\ J}$ (hay que suministrar 2,5 MJ). $K=\frac{273{,}15}{24}=11{,}4$: con solo 24 K de diferencia el refrigerador ideal rinde mucho.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Calor del cambio de fase: $Q=m\,L_f$, $L_f=3{,}34\times10^5$ J/kg</li>
+      <li>Refrigerador de Carnot: $|Q_H|=Q_C\dfrac{T_H}{T_C}$; $|W|=|Q_H|-Q_C$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Calor extraído del agua:</b>
+      $$Q_C=mL_f=85{,}0(3{,}34\times10^5)=2{,}84\times10^7\ \text{J}$$</li>
+    <li><b>a) Calor descargado a la habitación:</b>
+      $$|Q_H|=Q_C\frac{T_H}{T_C}=2{,}84\times10^7\cdot\frac{297{,}15}{273{,}15}=\mathbf{3{,}09\times10^7\ J}$$</li>
+    <li><b>b) Energía suministrada:</b>
+      $$|W|=|Q_H|-Q_C=\mathbf{2{,}5\times10^6\ J}$$
+      <span class="por">$K=273{,}15/24=11{,}4$: con solo 24 K de diferencia el refrigerador ideal rinde mucho.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/diagrama-de-flujo-de-energia-de-la-maquina-de-hi.svg">
 <div class="figph" role="img" aria-label="Diagrama de flujo de energía de la máquina de hielo (refrigerador de Carnot) del problema 20.14." style="aspect-ratio:340/215"></div>
@@ -484,23 +526,39 @@
 <figcaption>Planteamiento como en el examen: diagrama pV con los estados, los procesos y los datos conocidos (esquema sin escala; sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
   <div class="box tip"><span class="h">Datos que hay que suponer (y escribirlo en el examen)</span><p>El enunciado no da ni la cantidad ni el tipo de gas. Hipótesis (hay que declararla en el examen): <b>1 mol de gas ideal diatómico ($\gamma=1{,}4$)</b>. Numeración: $1\to2$ expansión isoterma a $T_H=T_1$, $2\to3$ expansión adiabática, $3\to4$ compresión isoterma a $T_C$, $4\to1$ compresión adiabática (la de U fig. 20.13 con números); los datos son coherentes con esto ($p_2&lt;p_1$, $V_3>V_2$). Al final se dan también los resultados con gas monoatómico.</p></div>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Isoterma: $p_1V_1=p_2V_2$; $Q=W=nRT\ln\dfrac{V_2}{V_1}$; adiabática: $T\,V^{\gamma-1}=\text{cte}$, $Q=0$, $W=n\,C_V\,(T_{ini}-T_{fin})$</li>
+      <li>Carnot: $\dfrac{V_2}{V_1}=\dfrac{V_3}{V_4}$; $e=\dfrac WQ_H=1-\dfrac{T_C}{T_H}$; potencia $P=W\cdot(\text{ciclos/s})$</li>
+      <li>Hipótesis: 1 mol de gas diatómico, $\gamma=1{,}4$, $C_V=\tfrac52R$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Estado 1.</b> $p_1=\dfrac{nRT_1}{V_1}=\dfrac{8{,}314\cdot500}{5\times10^{-3}}=8{,}31\times10^5$ Pa $=8{,}21$ atm.</li>
-    <li><b>Estado 2</b> (misma isoterma, $p_1V_1=p_2V_2$): $V_2=\dfrac{p_1V_1}{p_2}=\dfrac{4157\ \text{J}}{4\cdot1{,}013\times10^5}=\mathbf{10{,}26\ L}$; $T_2=500$ K.</li>
-    <li><b>Estado 3</b> (adiabática $2\to3$, $TV^{\gamma-1}$ cte): $T_3=T_C=500\left(\dfrac{10{,}26}{20}\right)^{0{,}4}=\mathbf{382{,}8\ K}$; $p_3=\dfrac{nRT_3}{V_3}=1{,}59\times10^5$ Pa $(1{,}57$ atm).</li>
-    <li><b>Estado 4.</b> En Carnot $\dfrac{V_2}{V_1}=\dfrac{V_3}{V_4}$ ⇒ $V_4=\dfrac{V_1V_3}{V_2}=\mathbf{9{,}75\ L}$; $p_4=3{,}27\times10^5$ Pa $(3{,}22$ atm).</li>
-    <li><b>a) Calor y trabajo por transición</b> ((20.10)-(20.11); adiabáticas $W=nC_V(T_{ini}-T_{fin})$, $C_V=\frac52R$):
-      <ul>
-        <li>$1\to2$ isoterma 500 K: $Q_{12}=W_{12}=nRT_1\ln\dfrac{V_2}{V_1}=4157\ln2{,}052=\mathbf{+2988\ J}$ (entra).</li>
-        <li>$2\to3$ adiabática: $Q=0$; $W_{23}=nC_V(T_1-T_3)=\frac52\cdot8{,}314\cdot117{,}2=\mathbf{+2435\ J}$.</li>
-        <li>$3\to4$ isoterma 382,8 K: $Q_{34}=W_{34}=nRT_3\ln\dfrac{V_4}{V_3}=-nRT_3\ln\dfrac{V_2}{V_1}=\mathbf{-2288\ J}$ (sale).</li>
-        <li>$4\to1$ adiabática: $Q=0$; $W_{41}=\mathbf{-2435\ J}$.</li>
-      </ul></li>
-    <li><b>b) Rendimiento.</b> $W=2988-2288=\mathbf{700\ J}$ por ciclo; $e=\dfrac{W}{Q_H}=\dfrac{700}{2988}=\mathbf{0{,}234\ (23{,}4\,\%)}$. Coincide con $e=1-\dfrac{T_C}{T_H}=1-\dfrac{382{,}8}{500}$ (20.14), como debe en Carnot.</li>
-    <li><b>c) Potencia.</b> $P=\dfrac{W}{t}=700\ \text{J}\cdot30\ \text{s}^{-1}=\mathbf{2{,}1\times10^4\ W=21\ kW}$.</li>
-    <li><b>Comprobación con entropía:</b> $\dfrac{Q_{12}}{T_1}=+5{,}98$ J/K y $\dfrac{Q_{34}}{T_3}=-5{,}98$ J/K: suma 0 (20.20).</li>
-    <li><b>Si el gas fuese monoatómico ($\gamma=5/3$):</b> los estados 1, 2 y 4 y $Q_{12}=2988$ J no cambian; $T_3=320{,}4$ K, $p_3=1{,}31$ atm, $W_{23}=-W_{41}=2240$ J, $Q_{34}=-1915$ J, $W=1073$ J, $e=35{,}9\,\%$, $P=32{,}2$ kW.</li>
+    <li><b>Estado 1:</b>
+      $$p_1=\frac{nRT_1}{V_1}=\frac{(8{,}314)(500)}{5\times10^{-3}}=8{,}31\times10^5\ \text{Pa}=8{,}21\ \text{atm}$$</li>
+    <li><b>Estado 2</b> (misma isoterma):
+      $$V_2=\frac{p_1V_1}{p_2}=\frac{4157}{4(1{,}013\times10^5)}=\mathbf{10{,}26\ L},\qquad T_2=500\ \text{K}$$</li>
+    <li><b>Estado 3</b> (adiabática $2\to3$):
+      $$T_3=T_C=500\Big(\frac{10{,}26}{20}\Big)^{0{,}4}=\mathbf{382{,}8\ K},\qquad p_3=\frac{nRT_3}{V_3}=1{,}59\times10^5\ \text{Pa}\ (1{,}57\ \text{atm})$$</li>
+    <li><b>Estado 4</b> (Carnot: $V_2/V_1=V_3/V_4$):
+      $$V_4=\frac{V_1V_3}{V_2}=\mathbf{9{,}75\ L},\qquad p_4=3{,}27\times10^5\ \text{Pa}\ (3{,}22\ \text{atm})$$</li>
+    <li><b>a) Calor y trabajo por transición:</b>
+      $$1\to2\ (\text{isoterma 500 K}):\quad Q_{12}=W_{12}=nRT_1\ln\frac{V_2}{V_1}=4157\ln2{,}052=\mathbf{+2988\ J}\ \text{(entra)}$$
+      $$2\to3\ (\text{adiab.}):\quad Q=0,\quad W_{23}=nC_V(T_1-T_3)=\tfrac52(8{,}314)(117{,}2)=\mathbf{+2435\ J}$$
+      $$3\to4\ (\text{isoterma 382,8 K}):\quad Q_{34}=W_{34}=-nRT_3\ln\frac{V_2}{V_1}=\mathbf{-2288\ J}\ \text{(sale)}$$
+      $$4\to1\ (\text{adiab.}):\quad Q=0,\quad W_{41}=\mathbf{-2435\ J}$$</li>
+    <li><b>b) Rendimiento:</b>
+      $$W=2988-2288=\mathbf{700\ J},\qquad e=\frac{700}{2988}=\mathbf{0{,}234}\ (23{,}4\ \%)=1-\frac{382{,}8}{500}\ \checkmark$$</li>
+    <li><b>c) Potencia:</b>
+      $$P=700\ \text{J}\cdot30\ \text{s}^{-1}=\mathbf{2{,}1\times10^4\ W}=21\ \text{kW}$$
+      <span class="por">Comprobación con entropía: $Q_{12}/T_1=+5{,}98$ J/K y $Q_{34}/T_3=-5{,}98$ J/K: suman 0. Con gas monoatómico ($\gamma=5/3$): $T_3=320{,}4$ K, $p_3=1{,}31$ atm, $W_{23}=-W_{41}=2240$ J, $Q_{34}=-1915$ J, $W=1073$ J, $e=35{,}9\ \%$, $P=32{,}2$ kW.</span></li>
   </ol>
+  <table>
+    <tr><th>Estado</th><th>$V$ (L)</th><th>$p$ (atm)</th><th>$T$ (K)</th></tr>
+    <tr><td>1</td><td>5,00</td><td>8,21</td><td>500</td></tr>
+    <tr><td>2</td><td>10,26</td><td>4,00</td><td>500</td></tr>
+    <tr><td>3</td><td>20,00</td><td>1,57</td><td>382,8</td></tr>
+    <tr><td>4</td><td>9,75</td><td>3,22</td><td>382,8</td></tr>
+  </table>
   <table>
     <tr><th>Estado</th><th>$V$ (L)</th><th>$p$ (atm)</th><th>$T$ (K)</th></tr>
     <tr><td>1</td><td>5,00</td><td>8,21</td><td>500</td></tr>
@@ -530,16 +588,45 @@
 <div class="figph" role="img" aria-label="Planteamiento: refrigerador de Carnot con dos isotermas y dos adiabáticas en un diagrama pV" style="aspect-ratio:360/380"></div>
 <figcaption>Planteamiento como en el examen: diagrama pV con los estados, los procesos y los datos conocidos (esquema sin escala; sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Refrigerador: $K=\dfrac{|Q_C|}{|W|}$; Carnot: $K=\dfrac{T_C}{T_H-T_C}$; primera ley del ciclo: $|Q_H|=|Q_C|+|W|$</li>
+      <li>Trabajo por ciclo: $|W|=P\,t$; isoterma: $Q=W=nRT\ln\dfrac{V_2}{V_1}$; adiabática: $Q=0$, $W=-nC_V\Delta T$</li>
+      <li>Entropía: isoterma reversible $\Delta S=\dfrac QT$; adiabática reversible $\Delta S=0$; adiabática: $T\,V^{\gamma-1}=\text{cte}$ ($\gamma=\tfrac53$)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Qué es cada cosa.</b> «Sistema de frío» = refrigerador: con trabajo de fuera saca calor $Q_C$ del foco frío ($T_C=150$ K) y entrega $|Q_H|$ al caliente ($T_H=450$ K). Es de Carnot: el ciclo de U fig. 20.13 recorrido <b>al revés</b> (antihorario): $a\to d$ expansión adiabática ($T_H\to T_C$), $d\to c$ <b>expansión isoterma a $T_C$</b> (absorbe $Q_C$), $c\to b$ compresión adiabática ($T_C\to T_H$), $b\to a$ <b>compresión isoterma a $T_H$</b> (cede $Q_H$).</li>
-    <li><b>a) Diagrama $pV$.</b> Dos hipérbolas $pV=$ cte (isotermas, 450 K arriba y 150 K abajo) unidas por dos adiabáticas más empinadas; recorrido <b>antihorario</b> ⇒ $W_{neto}&lt;0$ (el gas recibe trabajo).</li>
-    <li><b>b) «Eficiencia» de un refrigerador = coeficiente de rendimiento $K$</b> (20.9). En Carnot solo depende de las temperaturas (20.15): $K=\dfrac{T_C}{T_H-T_C}=\dfrac{150}{300}=\mathbf{0{,}50}$. (Por cada julio de trabajo se sacan 0,5 J del frío: con una diferencia tan grande, un refrigerador rinde poco.)</li>
-    <li><b>c) Calores.</b> Trabajo por ciclo = potencia × duración: $|W|=60\,000\cdot2=1{,}2\times10^5$ J ($W=-1{,}2\times10^5$ J). De $K=|Q_C|/|W|$: $Q_C=0{,}5\cdot1{,}2\times10^5=\mathbf{+6{,}0\times10^4\ J}$ (entra en $d\to c$). Primera ley del ciclo (20.8): $|Q_H|=|Q_C|+|W|=1{,}8\times10^5$ J ⇒ $Q_H=\mathbf{-1{,}8\times10^5\ J}$ (sale en $b\to a$). Comprobación (20.13): $Q_C/Q_H=-150/450=-1/3$ ✓. En las dos adiabáticas $Q=0$.</li>
-    <li><b>Trabajo por etapa</b> (para la tabla): isotermas $W=Q$; adiabáticas $W=-nC_V\Delta T$: $W_{cb}=-18\cdot\frac32\cdot8{,}314\cdot300=-6{,}73\times10^4$ J y $W_{ad}=+6{,}73\times10^4$ J (se cancelan). Suma: $60-180=-120$ kJ ✓.</li>
-    <li><b>Relación de volúmenes en la compresión isoterma</b> ($b\to a$, a 450 K): $|Q_H|=nRT_H\ln\dfrac{V_b}{V_a}$ ⇒ $\ln\dfrac{V_b}{V_a}=\dfrac{1{,}8\times10^5}{18\cdot8{,}314\cdot450}=2{,}673$ ⇒ $\dfrac{V_b}{V_a}=\mathbf{14{,}5}$ (el volumen se reduce a 0,069 del inicial). La expansión isoterma a 150 K tiene la misma razón: $\ln\frac{V_c}{V_d}=\frac{6\times10^4}{18\cdot8{,}314\cdot150}=2{,}673$, como exige $\frac{V_b}{V_a}=\frac{V_c}{V_d}$.</li>
-    <li><b>d) Entropía del gas.</b> Isotermas reversibles (20.18): $\Delta S_{dc}=\dfrac{Q_C}{T_C}=\dfrac{6\times10^4}{150}=\mathbf{+400\ J/K}$; $\Delta S_{ba}=\dfrac{Q_H}{T_H}=\dfrac{-1{,}8\times10^5}{450}=\mathbf{-400\ J/K}$. Adiabáticas reversibles: <b>$\Delta S=0$</b>. <b>Ciclo: $\Delta S=0$</b> (20.20)-(20.21): $S$ es función de estado y el gas vuelve al estado inicial. (Los focos cambian $-400$ y $+400$ J/K: el universo tampoco cambia, porque Carnot es reversible.)</li>
-    <li><b>e) Tras la compresión adiabática.</b> «Después de la expansión isoterma» es el estado $c$: $V_c=0{,}5$ m³, $T_c=150$ K, $p_c=\dfrac{nRT_C}{V_c}=\dfrac{18\cdot8{,}314\cdot150}{0{,}5}=4{,}49\times10^4$ Pa. La compresión $c\to b$ lleva el gas a $T_H$; con $TV^{\gamma-1}=$ cte ($\gamma=5/3$, $\gamma-1=2/3$): $V_b=V_c\left(\dfrac{T_C}{T_H}\right)^{3/2}=0{,}5\cdot\left(\tfrac13\right)^{3/2}=\mathbf{0{,}0962\ m^3}$; $p_b=\dfrac{nRT_H}{V_b}=\mathbf{7{,}0\times10^5\ Pa}$ (≈ 6,9 atm). Comprobación con $pV^\gamma$: $p_c(V_c/V_b)^{5/3}=7{,}00\times10^5$ Pa ✓. Otros vértices (para la figura): $V_a=6{,}64\times10^{-3}$ m³, $p_a=1{,}01\times10^7$ Pa; $V_d=0{,}0345$ m³, $p_d=6{,}50\times10^5$ Pa.</li>
+    <li><b>Qué es el ciclo.</b> Sistema de frío = refrigerador de Carnot: el ciclo de U fig. 20.13 recorrido al revés (antihorario): $a\to d$ expansión adiabática ($T_H\to T_C$), $d\to c$ expansión isoterma a $T_C$ (absorbe $Q_C$), $c\to b$ compresión adiabática, $b\to a$ compresión isoterma a $T_H$ (cede $Q_H$).</li>
+    <li><b>a) Diagrama $pV$:</b> dos isotermas (450 K arriba, 150 K abajo) unidas por dos adiabáticas más empinadas, recorridas en sentido antihorario ($W_{neto}<0$).</li>
+    <li><b>b) Eficiencia</b> (de un refrigerador: coeficiente de rendimiento):
+      $$K=\frac{T_C}{T_H-T_C}=\frac{150}{450-150}=\mathbf{0{,}50}$$</li>
+    <li><b>c) Calores.</b> Trabajo por ciclo:
+      $$|W|=P\,t=(60\,000)(2)=1{,}2\times10^5\ \text{J}$$
+      $$Q_C=K|W|=0{,}5(1{,}2\times10^5)=\mathbf{+6{,}0\times10^4\ J}\ (\text{entra en }d\to c)$$
+      $$|Q_H|=|Q_C|+|W|=1{,}8\times10^5\ \text{J}\ \Rightarrow\ Q_H=\mathbf{-1{,}8\times10^5\ J}\ (\text{sale en }b\to a)$$
+      <span class="por">Comprobación: $Q_C/Q_H=-150/450=-1/3$ ✓. En las adiabáticas $Q=0$.</span></li>
+    <li><b>Trabajo por etapa:</b>
+      $$W_{cb}=-nC_V\Delta T=-18\cdot\tfrac32(8{,}314)(300)=-6{,}73\times10^4\ \text{J},\qquad W_{ad}=+6{,}73\times10^4\ \text{J}$$
+      <span class="por">Se cancelan; suma del ciclo: $60-180=-120$ kJ ✓.</span></li>
+    <li><b>Relación de volúmenes en la compresión isoterma</b> ($b\to a$, 450 K):
+      $$|Q_H|=nRT_H\ln\frac{V_b}{V_a}\ \Rightarrow\ \ln\frac{V_b}{V_a}=\frac{1{,}8\times10^5}{18(8{,}314)(450)}=2{,}673\ \Rightarrow\ \frac{V_b}{V_a}=\mathbf{14{,}5}$$
+      <span class="por">La expansión isoterma a 150 K tiene la misma razón: $\ln\frac{V_c}{V_d}=\frac{6\times10^4}{18(8{,}314)(150)}=2{,}673$. En la compresión isoterma el volumen se reduce a $V_a/V_b=0{,}069$ del inicial.</span></li>
+    <li><b>d) Entropía del gas:</b>
+      $$\Delta S_{dc}=\frac{Q_C}{T_C}=\frac{6\times10^4}{150}=\mathbf{+400\ J/K},\qquad\Delta S_{ba}=\frac{Q_H}{T_H}=\frac{-1{,}8\times10^5}{450}=\mathbf{-400\ J/K}$$
+      $$\Delta S_{adiab\acute aticas}=\mathbf{0},\qquad\Delta S_{ciclo}=\mathbf{0}$$
+      <span class="por">$S$ es función de estado y el gas vuelve al estado inicial.</span></li>
+    <li><b>e) Tras la compresión adiabática.</b> «Después de la expansión isoterma» es el estado $c$: $V_c=0{,}5$ m³, $T_c=150$ K:
+      $$p_c=\frac{nRT_C}{V_c}=\frac{18(8{,}314)(150)}{0{,}5}=4{,}49\times10^4\ \text{Pa}$$
+      $$V_b=V_c\Big(\frac{T_C}{T_H}\Big)^{3/2}=0{,}5\Big(\tfrac13\Big)^{3/2}=\mathbf{0{,}0962\ m^3},\qquad p_b=\frac{nRT_H}{V_b}=\mathbf{7{,}0\times10^5\ Pa}\ (\approx6{,}9\ \text{atm})$$
+      <span class="por">Comprobación con $pV^\gamma$: $p_c(V_c/V_b)^{5/3}=7{,}00\times10^5$ Pa ✓. Otros vértices: $V_a=6{,}64\times10^{-3}$ m³, $p_a=1{,}01\times10^7$ Pa; $V_d=0{,}0345$ m³, $p_d=6{,}50\times10^5$ Pa.</span></li>
   </ol>
+  <table>
+    <tr><th>Etapa</th><th>Proceso</th><th>$Q$ (kJ)</th><th>$W$ (kJ)</th><th>$\Delta U$ (kJ)</th><th>$\Delta S_{gas}$ (J/K)</th></tr>
+    <tr><td>$a\to d$</td><td>expansión adiabática 450 → 150 K</td><td>0</td><td>+67,3</td><td>−67,3</td><td>0</td></tr>
+    <tr><td>$d\to c$</td><td>expansión isoterma 150 K</td><td><b>+60</b></td><td>+60</td><td>0</td><td>+400</td></tr>
+    <tr><td>$c\to b$</td><td>compresión adiabática 150 → 450 K</td><td>0</td><td>−67,3</td><td>+67,3</td><td>0</td></tr>
+    <tr><td>$b\to a$</td><td>compresión isoterma 450 K</td><td><b>−180</b></td><td>−180</td><td>0</td><td>−400</td></tr>
+    <tr><td>Ciclo</td><td></td><td>−120</td><td>−120</td><td>0</td><td>0</td></tr>
+  </table>
   <table>
     <tr><th>Etapa</th><th>Proceso</th><th>$Q$ (kJ)</th><th>$W$ (kJ)</th><th>$\Delta U$ (kJ)</th><th>$\Delta S_{gas}$ (J/K)</th></tr>
     <tr><td>$a\to d$</td><td>expansión adiabática 450 → 150 K</td><td>0</td><td>+67,3</td><td>−67,3</td><td>0</td></tr>
@@ -570,10 +657,17 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Isotermo de gas ideal: $\Delta U=0$, luego $Q=W$; «trabajo sobre el gas» significa $W<0$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Reversible a $T$ constante: $\Delta S=Q/T$ con $T$ en kelvin.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Isotermo de gas ideal</b> ⇒ $\Delta U=0$ ⇒ $Q=W=-1850$ J («trabajo sobre el gas» ⇒ $W&lt;0$).</li>
-    <li><b>Reversible a $T$ constante</b> ⇒ (20.18): $\Delta S=\dfrac{Q}{T}=\dfrac{-1850}{293{,}15}=\mathbf{-6{,}31\ J/K}$.</li>
-    <li><b>¿Viola la segunda ley?</b> No: el gas no está aislado; el entorno recibe +1850 J a 293 K y su entropía sube $+6{,}31$ J/K (total 0, proceso reversible).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Isoterma de gas ideal: $\Delta U=0$ ⇒ $Q=W$</li>
+      <li>Reversible a $T$ constante: $\Delta S=\dfrac{Q}{T}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Calor</b> («trabajo sobre el gas» ⇒ $W=-1850$ J):
+      $$Q=W=-1850\ \text{J}$$</li>
+    <li><b>Entropía del gas:</b>
+      $$\Delta S=\frac{Q}{T}=\frac{-1850}{293{,}15}=\mathbf{-6{,}31\ J/K}$$
+      <span class="por">No viola la segunda ley: el entorno recibe +1850 J a 293 K y su entropía sube $+6{,}31$ J/K (total 0, proceso reversible).</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> isotermo reversible: $\Delta S=Q/T$ con $Q=W$. <b>Error típico:</b> dar $\Delta S$ positivo; usar 20 °C.</div>
 </details>
@@ -584,11 +678,20 @@
 <details class="mas pista"><summary>Pista 1</summary><p>El hielo funde a temperatura constante: $\Delta S=Q/T$ con $Q=mL_f$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>La fuente (gran masa) pierde ese calor a su temperatura: el total debe salir positivo.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Calor de fusión:</b> $Q=mL_f=0{,}350\cdot3{,}34\times10^5=1{,}169\times10^5$ J.</li>
-    <li><b>a)</b> El hielo funde a $T$ constante (273,15 K) ⇒ (20.18): $\Delta S_{agua}=\dfrac{1{,}169\times10^5}{273{,}15}=\mathbf{+428\ J/K}$.</li>
-    <li><b>b)</b> La fuente es tan grande que su $T$ no cambia (298,15 K) y pierde ese calor: $\Delta S_{fuente}=\dfrac{-1{,}169\times10^5}{298{,}15}=\mathbf{-392\ J/K}$.</li>
-    <li><b>c)</b> $\Delta S_{total}=\mathbf{+36\ J/K}>0$: el calor ha pasado con una diferencia finita de temperatura (proceso irreversible, fig. 20.1a).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fusión: $Q=m\,L_f$; a $T$ constante: $\Delta S=\dfrac{Q}{T}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Calor de fusión:</b>
+      $$Q=0{,}350(3{,}34\times10^5)=1{,}169\times10^5\ \text{J}$$</li>
+    <li><b>a) Entropía del agua</b> (funde a 273,15 K):
+      $$\Delta S_{agua}=\frac{1{,}169\times10^5}{273{,}15}=\mathbf{+428\ J/K}$$</li>
+    <li><b>b) Entropía de la fuente</b> (298,15 K, no cambia; pierde $Q$):
+      $$\Delta S_{fuente}=\frac{-1{,}169\times10^5}{298{,}15}=\mathbf{-392\ J/K}$$</li>
+    <li><b>c) Total:</b>
+      $$\Delta S_{total}=428-392=\mathbf{+36\ J/K}>0$$
+      <span class="por">El calor pasa con una diferencia finita de temperatura: irreversible.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/variacion-de-entropia-problema-20-21-el-hielo-ga.svg">
 <div class="figph" role="img" aria-label="Variación de entropía: Problema 20.21: el hielo gana 428 J/K, la fuente pierde 392 J/K y el total es +36 J/K." style="aspect-ratio:340/215"></div>
@@ -603,10 +706,18 @@
 <details class="mas pista"><summary>Pista 1</summary><p>El agua cambia de temperatura: $\Delta S=mc\ln(T_2/T_1)$ (integrando $dQ/T$).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>El aire recibe el calor a temperatura constante: $\Delta S=Q/T$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a)</b> La temperatura del agua cambia ⇒ hay que integrar, (20.19) con $dQ=mc\,dT$ (ej. 20.6): $\Delta S_{agua}=mc\ln\dfrac{T_2}{T_1}=0{,}250\cdot4190\cdot\ln\dfrac{293{,}15}{358{,}15}=\mathbf{-210\ J/K}$.</li>
-    <li><b>b)</b> Calor que pasa al aire: $|Q|=mc|\Delta T|=0{,}250\cdot4190\cdot65=6{,}81\times10^4$ J, a 293,15 K constante: $\Delta S_{aire}=+\dfrac{6{,}81\times10^4}{293{,}15}=\mathbf{+232\ J/K}$.</li>
-    <li><b>Total:</b> $-210+232=\mathbf{+22\ J/K}>0$ (enfriamiento espontáneo, irreversible).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Cuerpo que cambia de temperatura: $\Delta S=m\,c\ln\dfrac{T_2}{T_1}$</li>
+      <li>Entorno a $T$ constante: $\Delta S=\dfrac{Q}{T}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Entropía del té:</b>
+      $$\Delta S_{agua}=0{,}250(4190)\ln\frac{293{,}15}{358{,}15}=\mathbf{-210\ J/K}$$</li>
+    <li><b>b) Entropía del aire</b> (recibe $|Q|=0{,}250(4190)(65)=6{,}81\times10^4$ J a 293,15 K):
+      $$\Delta S_{aire}=\frac{6{,}81\times10^4}{293{,}15}=\mathbf{+232\ J/K}$$</li>
+    <li><b>Total:</b>
+      $$-210+232=\mathbf{+22\ J/K}>0\quad(\text{enfriamiento espont\acute aneo, irreversible})$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/variacion-de-entropia-problema-20-24-el-te-pierd.svg">
 <div class="figph" role="img" aria-label="Variación de entropía: Problema 20.24: el té pierde 210 J/K, el aire gana 232 J/K; total +22 J/K." style="aspect-ratio:340/215"></div>
@@ -621,10 +732,16 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Expansión libre: $Q=0$, $W=0$, $\Delta U=0$, pero es irreversible: no vale $\Delta S=Q/T=0$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Camino reversible con los mismos extremos: isoterma, $\Delta S=nR\ln(V_2/V_1)$ (litros y m³ en el cociente, en las mismas unidades).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Expansión libre</b> (ej. 20.8): $Q=0$, $W=0$, $\Delta U=0$ ⇒ gas ideal a $T$ constante. Pero no es reversible, así que <b>no</b> se puede decir $\Delta S=Q/T=0$.</li>
-    <li><b>Camino reversible con los mismos extremos:</b> isoterma de 2,40 L a 425 m³ ⇒ $\Delta S=nR\ln\dfrac{V_2}{V_1}$.</li>
-    <li>$\Delta S=0{,}100\cdot8{,}314\cdot\ln\dfrac{425}{2{,}40\times10^{-3}}=0{,}8314\cdot12{,}08=\mathbf{+10{,}0\ J/K}$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Expansión libre de gas ideal: $Q=W=\Delta U=0$ ($T$ constante), pero irreversible</li>
+      <li>Camino reversible equivalente (isoterma): $\Delta S=nR\ln\dfrac{V_2}{V_1}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Idea.</b>
+      <span class="por">No se puede decir $\Delta S=Q/T=0$: el proceso no es reversible. Se calcula por una isoterma reversible entre los mismos estados.</span></li>
+    <li><b>Entropía:</b>
+      $$\Delta S=nR\ln\frac{V_2}{V_1}=0{,}100(8{,}314)\ln\frac{425}{2{,}40\times10^{-3}}=0{,}8314(12{,}08)=\mathbf{+10{,}0\ J/K}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/expansion-libre-del-aire-del-globo-de-2-40-litro.svg">
 <div class="figph" role="img" aria-label="Expansión libre del aire del globo de 2,40 litros a 425 metros cúbicos y camino isotermo reversible equivalente" style="aspect-ratio:340/215"></div>
@@ -643,14 +760,24 @@
 <div class="figph" role="img" aria-label="Planteamiento: cilindro aislado con un pistón conductor que se libera, antes y después" style="aspect-ratio:360/290"></div>
 <figcaption>Planteamiento como en el examen: esquema del cilindro antes y después con los datos y las condiciones de equilibrio (sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Sistema aislado: $\Delta U_{total}=0$; gas ideal: $U$ solo depende de $T$</li>
+      <li>$S$ es función de estado: se calcula por un camino reversible con los mismos extremos; isoterma: $\Delta S=nR\ln\dfrac{V_f}{V_i}=\dfrac{pV}{T}\ln\dfrac{V_f}{V_i}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Sistema aislado</b> (gases + pistón, cilindro rígido y aislado): $Q=0$, $W=0$ ⇒ $\Delta U_{total}=0$. Gas ideal ⇒ $U$ solo depende de $T$; los dos gases empiezan a 300 K y el pistón conductor iguala temperaturas ⇒ <b>$T_f=300$ K</b>.</li>
-    <li><b>Presión final.</b> Moles $n_1=p_1V/RT$, $n_2=p_2V/RT$ ($n_1=2n_2$). Con volumen total 2 L: $p_f=\dfrac{(n_1+n_2)RT}{2V}=\dfrac{p_1+p_2}{2}=\mathbf{1{,}5\ atm}$ $(1{,}52\times10^5$ Pa). Volúmenes finales: $V_1'=\frac{n_1RT}{p_f}=\frac43$ L, $V_2'=\frac23$ L.</li>
-    <li><b>Por qué no vale $\Delta S=Q/T=0$.</b> El proceso es <b>irreversible</b> (el pistón se suelta con una diferencia finita de presión, oscila y se frena por la disipación interna). (20.19) solo vale en procesos reversibles; como $S$ es <b>función de estado</b>, se inventa un camino reversible con los mismos extremos (como en el ej. 20.8).</li>
-    <li><b>Camino reversible elegido.</b> Cada gas pasa de (300 K, $V$) a (300 K, $V'$): una expansión o compresión <b>isoterma reversible</b> con $\Delta S=\dfrac{Q}{T}=nR\ln\dfrac{V'}{V}$. Escribiendo $nR=pV/T$:
-      $\Delta S_1=\dfrac{p_1V}{T}\ln\dfrac43=\dfrac{2\cdot1{,}013\times10^5\cdot10^{-3}}{300}\ln\dfrac43=+0{,}1943$ J/K (el gas a 2 atm se expande);
-      $\Delta S_2=\dfrac{p_2V}{T}\ln\dfrac23=-0{,}1369$ J/K (el gas a 1 atm se comprime).</li>
-    <li><b>Total:</b> $\Delta S=\mathbf{+0{,}057\ J/K}>0$. Es lo que exige el principio de aumento de entropía para un proceso irreversible en un sistema aislado: el sistema no volverá solo a la posición central del pistón.</li>
+    <li><b>Temperatura final:</b> sistema aislado ($Q=W=0$) y pistón conductor:
+      $$T_f=\mathbf{300\ K}$$</li>
+    <li><b>Presión y volúmenes finales</b> ($n_1=2n_2$, volumen total 2 L):
+      $$p_f=\frac{(n_1+n_2)RT}{2V}=\frac{p_1+p_2}{2}=\mathbf{1{,}5\ atm}\ (1{,}52\times10^5\ \text{Pa}),\qquad V_1'=\tfrac43\ \text{L},\ V_2'=\tfrac23\ \text{L}$$</li>
+    <li><b>Por qué no $\Delta S=Q/T=0$.</b>
+      <span class="por">El proceso es irreversible; $Q/T$ solo vale en procesos reversibles. Como $S$ es función de estado, se calcula por un camino reversible con los mismos extremos: una isoterma para cada gas.</span></li>
+    <li><b>Entropía de cada gas:</b>
+      $$\Delta S_1=\frac{p_1V}{T}\ln\frac43=\frac{2(1{,}013\times10^5)(10^{-3})}{300}\ln\frac43=+0{,}1943\ \text{J/K}$$
+      $$\Delta S_2=\frac{p_2V}{T}\ln\frac23=-0{,}1369\ \text{J/K}$$</li>
+    <li><b>Total:</b>
+      $$\Delta S=\mathbf{+0{,}057\ J/K}>0$$
+      <span class="por">Lo que exige el aumento de entropía para un proceso irreversible en un sistema aislado.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/cilindro-aislado-con-un-piston-conductor-antes-y.svg">
 <div class="figph" role="img" aria-label="Cilindro aislado con un pistón conductor: antes y después de soltarlo" style="aspect-ratio:340/215"></div>
@@ -674,14 +801,23 @@
 <div class="figph" role="img" aria-label="Planteamiento: ciclo de refrigeración con isoterma ab, isócora bc e isóbara ca en un diagrama pV" style="aspect-ratio:360/348"></div>
 <figcaption>Planteamiento como en el examen: diagrama pV con los estados, los procesos y los datos conocidos (esquema sin escala; sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Diatómico: $\Delta U=\tfrac52\Delta(pV)$, $C_p=\tfrac72R$; isoterma: $Q=W=p_aV_a\ln\dfrac{V_b}{V_a}$; isóbara: $Q=\tfrac72p\,\Delta V$</li>
+      <li>Refrigerador: $K=\dfrac{|Q_C|}{|W|}$, $|Q_H|=|Q_C|+|W|$ ($Q_C$ = calor que absorbe la sustancia en el ciclo)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Estados.</b> $T_a=\dfrac{p_aV_a}{nR}=\dfrac{2100}{8{,}314}=\mathbf{252{,}6\ K}$. Isoterma ⇒ $p_b=\dfrac{p_aV_a}{V_b}=\mathbf{21\ kPa}$, $T_b=252{,}6$ K. Isócora hasta la presión de $a$ (porque $c\to a$ es isóbaro): $V_c=0{,}1$ m³, $p_c=70$ kPa, $T_c=\dfrac{7000}{8{,}314}=\mathbf{842{,}0\ K}$.</li>
-    <li><b>a) Diagrama.</b> $a$ (0,03; 70) baja por la hipérbola hasta $b$ (0,1; 21), sube vertical a $c$ (0,1; 70) y vuelve horizontal a $a$. El sentido es <b>antihorario</b>: el trabajo neto es negativo (área encerrada), como un refrigerador.</li>
-    <li><b>Calor de cada tramo</b> (primera ley, tema 19): $a\to b$ isoterma: $Q_{ab}=W_{ab}=nRT_a\ln\frac{V_b}{V_a}=2100\ln\frac{10}{3}=\mathbf{+2528\ J}$ (entra). $b\to c$ isócora: $W=0$, $Q_{bc}=nC_V(T_c-T_b)=\frac52(7000-2100)=\mathbf{+12\,250\ J}$ (entra). $c\to a$ isóbara: $Q_{ca}=nC_p(T_a-T_c)=\frac72p_a(V_a-V_c)=\mathbf{-17\,150\ J}$ (sale); $W_{ca}=p_a(V_a-V_c)=-4900$ J.</li>
-    <li><b>Trabajo neto.</b> $W=Q_{neto}=2528+12\,250-17\,150=\mathbf{-2372\ J}$ (se suministran 2372 J por ciclo). Comprobación: $W_{ab}+W_{bc}+W_{ca}=2528+0-4900$ ✓.</li>
-    <li><b>b) Coeficiente de rendimiento</b> (20.9): $K=\dfrac{|Q_C|}{|W|}$, con $Q_C$ = todo el calor que <b>absorbe</b> la sustancia en el ciclo $=2528+12\,250=14\,778$ J; $|Q_H|=17\,150$ J $=|Q_C|+|W|$ ✓ (20.8). $K=\dfrac{14\,778}{2372}=\mathbf{6{,}23}$.</li>
-    <li><b>Comprobación con entropía:</b> $\Delta S_{ab}=R\ln\frac{10}{3}=+10{,}01$; $\Delta S_{bc}=C_V\ln\frac{T_c}{T_b}=+25{,}02$; $\Delta S_{ca}=C_p\ln\frac{T_a}{T_c}=-35{,}03$ J/K. Suma 0 ✓.</li>
-    <li><b>Observación (no se pide).</b> No tiene sentido comparar este $K$ con el de Carnot entre $T_{min}=252{,}6$ K y $T_{max}=842$ K ($K_C=0{,}43$): aquí el gas absorbe calor también a temperaturas altas (en $b\to c$ sube hasta 842 K), no solo de un foco frío a 252,6 K. La cota (20.15) es para un refrigerador que toma calor de un foco a $T_C$ y lo cede a uno a $T_H$.</li>
+    <li><b>Estados:</b>
+      $$T_a=\frac{2100}{8{,}314}=\mathbf{252{,}6\ K},\quad p_b=\frac{p_aV_a}{V_b}=\mathbf{21\ kPa},\quad V_c=0{,}1\ \text{m}^3,\ p_c=70\ \text{kPa},\ T_c=\mathbf{842{,}0\ K}$$</li>
+    <li><b>a) Diagrama:</b> $a$ (0,03; 70) baja por la hipérbola a $b$ (0,1; 21), sube vertical a $c$ (0,1; 70) y vuelve horizontal a $a$: sentido antihorario ⇒ $W_{neto}<0$ (refrigerador).</li>
+    <li><b>Calor de cada tramo:</b>
+      $$Q_{ab}=2100\ln\tfrac{10}{3}=\mathbf{+2528\ J},\quad Q_{bc}=\tfrac52(7000-2100)=\mathbf{+12\,250\ J},\quad Q_{ca}=\tfrac72(2100-7000)=\mathbf{-17\,150\ J}$$
+      $$W_{ca}=p_a(V_a-V_c)=-4900\ \text{J}$$</li>
+    <li><b>Trabajo neto:</b>
+      $$W=2528+12\,250-17\,150=\mathbf{-2372\ J}\ \ (\text{comprobación: }2528+0-4900)$$</li>
+    <li><b>b) Coeficiente de rendimiento:</b>
+      $$Q_C=2528+12\,250=14\,778\ \text{J},\qquad K=\frac{14\,778}{2372}=\mathbf{6{,}23}\quad(|Q_H|=17\,150=|Q_C|+|W|\ \checkmark)$$
+      <span class="por">Comprobación con entropía: $R\ln\frac{10}{3}=+10{,}01$; $C_V\ln\frac{T_c}{T_b}=+25{,}02$; $C_p\ln\frac{T_a}{T_c}=-35{,}03$ J/K; suma 0 ✓. No se compara con el $K$ de Carnot ($K_C=0{,}43$ entre 252,6 K y 842 K): el gas absorbe calor también a temperaturas altas (hasta 842 K).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/ciclo-de-refrigeracion-a-b-c-en-sentido-antihora.svg">
 <div class="figph" role="img" aria-label="Ciclo de refrigeración a b c en sentido antihorario con los calores de cada tramo" style="aspect-ratio:340/215"></div>
@@ -705,12 +841,24 @@
 <div class="figph" role="img" aria-label="Planteamiento: ciclo ABCA de un mol de gas monoatómico en un diagrama pV" style="aspect-ratio:360/364"></div>
 <figcaption>Planteamiento como en el examen: diagrama pV con los estados, los procesos y los datos conocidos (esquema sin escala; sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Entropía de gas ideal por tramo: isóbara $nC_p\ln\dfrac{T_2}{T_1}$; isócora $nC_V\ln\dfrac{T_2}{T_1}$; isoterma $nR\ln\dfrac{V_2}{V_1}$; adiabática reversible 0</li>
+      <li>$T=\dfrac{pV}{nR}$; $e=\dfrac{W}{Q_H}$ ($Q_H$ = calor que entra)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Estados y temperaturas</b> ($T=pV/nR$): A (0,5 L; 1 atm) <b>$T_A=6{,}09$ K</b>; B (2 L; 1 atm) <b>$T_B=4T_A=24{,}4$ K</b>; C (2 L; 0,25 atm) <b>$T_C=T_A=6{,}09$ K</b>. El enunciado no dice cómo vuelve el gas a A; como $p_CV_C=p_AV_A$, C y A están en la misma isoterma, y se toma $C\to A$ <b>isotermo</b> (hipótesis que hay que escribir en el examen).</li>
-    <li><b>b) Primera ley</b> (detalle en el tema 19): AB $W=151{,}95$ J, $\Delta U=227{,}9$ J, $Q=+379{,}9$ J; BC $W=0$, $Q=\Delta U=-227{,}9$ J; CA $\Delta U=0$, $Q=W=-70{,}2$ J.</li>
-    <li><b>b) Entropía de cada proceso</b> (20.19), con $dQ$ según el tipo de proceso: A→B isóbaro, $dQ=nC_p\,dT$: $\Delta S_{AB}=nC_p\ln\dfrac{T_B}{T_A}=\frac52R\ln4=\mathbf{+28{,}8\ J/K}$. B→C isócoro, $dQ=nC_V\,dT$: $\Delta S_{BC}=nC_V\ln\dfrac{T_C}{T_B}=\frac32R\ln\frac14=\mathbf{-17{,}3\ J/K}$. C→A isotermo (20.18): $\Delta S_{CA}=\dfrac{Q_{CA}}{T_A}=nR\ln\dfrac{V_A}{V_C}=R\ln\frac14=\mathbf{-11{,}5\ J/K}$. <b>Ciclo: $28{,}8-17{,}3-11{,}5=0$</b> ✓ (20.21).</li>
-    <li><b>c) Rendimiento.</b> $W=151{,}95-70{,}2=81{,}7$ J; $Q_H$ = calor que entra = solo $Q_{AB}$: $e=\dfrac{81{,}7}{379{,}9}=\mathbf{0{,}215\ (21{,}5\,\%)}$. Con los mismos extremos de temperatura, Carnot daría $1-\frac{6{,}09}{24{,}4}=75\,\%$.</li>
-    <li><b>Por qué no se usa $\Delta S=Q/T$ en AB y BC.</b> Esa fórmula solo vale a $T$ constante; en AB y BC la temperatura cambia y hay que integrar.</li>
+    <li><b>Estados y temperaturas</b> (A: 0,5 L, 1 atm; B: 2 L, 1 atm; C: 2 L, 0,25 atm):
+      $$T_A=\mathbf{6{,}09\ K},\qquad T_B=4T_A=\mathbf{24{,}4\ K},\qquad T_C=T_A=\mathbf{6{,}09\ K}$$
+      <span class="por">$p_CV_C=p_AV_A$: C y A están en la misma isoterma; se toma $C\to A$ isoterma (hipótesis que hay que escribir).</span></li>
+    <li><b>b) Primera ley</b> (detalle en el tema 19):
+      $$AB:\ W=151{,}95\ \text{J},\ \Delta U=227{,}9\ \text{J},\ Q=+379{,}9\ \text{J};\quad BC:\ W=0,\ Q=\Delta U=-227{,}9\ \text{J};\quad CA:\ \Delta U=0,\ Q=W=-70{,}2\ \text{J}$$</li>
+    <li><b>Entropía de cada proceso:</b>
+      $$\Delta S_{AB}=\tfrac52R\ln4=\mathbf{+28{,}8\ J/K},\quad\Delta S_{BC}=\tfrac32R\ln\tfrac14=\mathbf{-17{,}3\ J/K},\quad\Delta S_{CA}=R\ln\tfrac14=\mathbf{-11{,}5\ J/K}$$
+      $$\Delta S_{ciclo}=28{,}8-17{,}3-11{,}5=0\ \checkmark$$
+      <span class="por">No se usa $Q/T$ en AB y BC: esa fórmula solo vale a $T$ constante.</span></li>
+    <li><b>c) Rendimiento</b> ($Q_H=Q_{AB}$):
+      $$e=\frac{81{,}7}{379{,}9}=\mathbf{0{,}215}\ (21{,}5\ \%)$$
+      <span class="por">Con los mismos extremos de temperatura, Carnot daría $1-\frac{6{,}09}{24{,}4}=75\ \%$.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/ciclo-abca-con-la-variacion-de-entropia-de-cada-.svg">
 <div class="figph" role="img" aria-label="Ciclo ABCA con la variación de entropía de cada proceso" style="aspect-ratio:340/215"></div>
@@ -738,14 +886,25 @@
 <div class="figph" role="img" aria-label="Planteamiento: ciclo de 3 mol con isócora AB, isoterma BC e isóbara CA" style="aspect-ratio:360/348"></div>
 <figcaption>Planteamiento como en el examen: diagrama pV con los estados, los procesos y los datos conocidos (esquema sin escala; sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Monoatómico: $C_V=\tfrac32R$, $C_p=\tfrac52R$; isócora $Q=nC_V\Delta T$; isoterma $Q=W=nRT\ln\dfrac{V_2}{V_1}$; isóbara $Q=nC_p\Delta T$</li>
+      <li>$e=\dfrac{W}{Q_H}$; Carnot entre la $T$ máxima y la mínima del ciclo: $e_C=1-\dfrac{T_C}{T_H}$ (kelvin)</li>
+      <li>Entropía: isócora $nC_V\ln\dfrac{T_2}{T_1}$; isoterma $nR\ln\dfrac{V_2}{V_1}$; isóbara $nC_p\ln\dfrac{T_2}{T_1}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Temperaturas.</b> $T_B=T_C=573{,}15$ K (máxima: la isócora A→B multiplica $p$ por 4); $T_A=573{,}15\cdot\frac14=\mathbf{143{,}29\ K}$ (mínima). $V_A=V_B=0{,}0357$ m³, $V_C=4V_B=0{,}1429$ m³.</li>
-    <li><b>(a)</b> $Q_{AB}=nC_V(T_B-T_A)=\mathbf{+16\,075\ J}$; $Q_{BC}=nRT_B\ln4=\mathbf{+19\,808\ J}$; $Q_{CA}=nC_p(T_A-T_C)=\mathbf{-26\,791\ J}$. Entra $Q_H=35\,883$ J; sale $|Q_C|=26\,791$ J.</li>
-    <li><b>(b)</b> $W=Q_H-|Q_C|=\mathbf{9092\ J}$ por ciclo.</li>
-    <li><b>(c) Eficiencia</b> $e=\dfrac{W}{Q_H}=\dfrac{9092}{35\,883}=\mathbf{25{,}3\,\%}$.</li>
-    <li><b>Máxima posible con esos depósitos.</b> El depósito caliente tiene que estar al menos a la temperatura más alta del gas (573,15 K) y el frío como mucho a la más baja (143,29 K), porque el calor solo fluye espontáneamente de caliente a frío. Ninguna máquina entre esas temperaturas supera a la de Carnot: $e_{Carnot}=1-\dfrac{143{,}29}{573{,}15}=\mathbf{75\,\%}$. Esta máquina consigue un tercio del máximo.</li>
-    <li><b>Por qué es menor (lectura de la segunda ley).</b> El gas recibe calor en A→B mientras su temperatura sube de 143 a 573 K: si el foco caliente está a 573 K, ese calor pasa con una diferencia finita de temperatura, que es irreversible; lo mismo al ceder calor en C→A. Carnot solo intercambia calor en isotermas a la temperatura de cada foco.</li>
-    <li><b>Entropía del gas (comprobación):</b> $\Delta S_{AB}=nC_V\ln4=+51{,}84$; $\Delta S_{BC}=nR\ln4=+34{,}56$; $\Delta S_{CA}=nC_p\ln\frac14=-86{,}40$ J/K; suma 0 ✓.</li>
+    <li><b>Temperaturas y volúmenes:</b>
+      $$T_B=T_C=573{,}15\ \text{K},\quad T_A=573{,}15\cdot\tfrac14=\mathbf{143{,}29\ K},\quad V_A=V_B=0{,}0357\ \text{m}^3,\quad V_C=4V_B=0{,}1429\ \text{m}^3$$</li>
+    <li><b>(a) Calores:</b>
+      $$Q_{AB}=\mathbf{+16\,075\ J},\qquad Q_{BC}=\mathbf{+19\,808\ J},\qquad Q_{CA}=\mathbf{-26\,791\ J}$$
+      $$Q_H=35\,883\ \text{J}\ \text{(entra)},\qquad|Q_C|=26\,791\ \text{J}\ \text{(sale)}$$</li>
+    <li><b>(b) Trabajo por ciclo:</b>
+      $$W=Q_H-|Q_C|=\mathbf{9092\ J}$$</li>
+    <li><b>(c) Eficiencia y comparación con Carnot</b> (el foco caliente a 573,15 K y el frío a 143,29 K):
+      $$e=\frac{9092}{35\,883}=\mathbf{0{,}253}\ (25{,}3\ \%),\qquad e_C=1-\frac{143{,}29}{573{,}15}=\mathbf{0{,}75}\ (75\ \%)$$
+      <span class="por">Un tercio del máximo: el gas recibe calor mientras su temperatura sube de 143 a 573 K (diferencias finitas de temperatura: irreversible); Carnot solo intercambia calor en isotermas.</span></li>
+    <li><b>Entropía del gas</b> (comprobación):
+      $$\Delta S_{AB}=nC_V\ln4=+51{,}84,\quad\Delta S_{BC}=nR\ln4=+34{,}56,\quad\Delta S_{CA}=nC_p\ln\tfrac14=-86{,}40\ \text{J/K}\ \ (\text{suma }0\ \checkmark)$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/ciclo-isocora-isoterma-isobara-con-3-mol-a-b-y-c.svg">
 <div class="figph" role="img" aria-label="Ciclo isócora isoterma isóbara con 3 mol: A, B y C" style="aspect-ratio:340/215"></div>
@@ -773,13 +932,21 @@
 <div class="figph" role="img" aria-label="Planteamiento: ciclo de helio con isócora, isoterma e isóbara en un diagrama pV" style="aspect-ratio:360/348"></div>
 <figcaption>Planteamiento como en el examen: diagrama pV con los estados, los procesos y los datos conocidos (esquema sin escala; sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Helio: $C_V=\tfrac32R$, $C_p=\tfrac52R$; $T_a=T_b\dfrac{p_a}{p_b}$; $e=\dfrac{W}{Q_H}$; Carnot: $e_C=1-\dfrac{T_C}{T_H}$</li>
+    </ul></div>
   <ol class="steps">
-    <li>$T_b=T_c=573{,}2$ K; $T_a=573{,}2\cdot\frac{1{,}5}{4}=\mathbf{214{,}95\ K}$; $V_a=V_b=0{,}01787$ m³; $V_c=0{,}04766$ m³. Helio: monoatómico, $C_V=\frac32R$, $C_p=\frac52R$.</li>
-    <li><b>(a)</b> Vertical $a\to b$ hacia arriba, isoterma $b\to c$, horizontal $c\to a$: sentido horario ⇒ máquina.</li>
-    <li><b>(b)</b> $Q_{ab}=+6702$ J, $Q_{bc}=+7011$ J ⇒ entrada $Q_H=\mathbf{13\,713\ J}$; $Q_{ca}=\mathbf{-11\,169\ J}$ (salida).</li>
-    <li><b>(c)</b> $W=13\,713-11\,169=\mathbf{2544\ J}$.</li>
-    <li><b>(d)</b> $e=\dfrac{2544}{13\,713}=\mathbf{18{,}5\,\%}$. «La máquina que pudiera obtener la máxima eficiencia» entre la fuente caliente (573,2 K) y la fría (214,95 K) es la de <b>Carnot</b>: $e_C=1-\dfrac{214{,}95}{573{,}2}=1-\dfrac{p_a}{p_b}=\mathbf{62{,}5\,\%}$. El ciclo rinde 0,30 veces el máximo, porque intercambia calor con diferencias finitas de temperatura (isócora e isóbara).</li>
-    <li><b>Entropía del gas (comprobación):</b> $+18{,}35$ ($ab$), $+12{,}23$ ($bc$), $-30{,}58$ ($ca$) J/K; suma 0 ✓.</li>
+    <li><b>Estados:</b>
+      $$T_b=T_c=573{,}2\ \text{K},\quad T_a=573{,}2\cdot\frac{1{,}5}{4}=\mathbf{214{,}95\ K},\quad V_a=V_b=0{,}01787\ \text{m}^3,\quad V_c=0{,}04766\ \text{m}^3$$</li>
+    <li><b>(a) Diagrama:</b> vertical $a\to b$, isoterma $b\to c$, horizontal $c\to a$: sentido horario ⇒ máquina.</li>
+    <li><b>(b) Calores:</b>
+      $$Q_{ab}=+6702\ \text{J},\quad Q_{bc}=+7011\ \text{J}\ \Rightarrow\ Q_H=\mathbf{13\,713\ J},\qquad Q_{ca}=\mathbf{-11\,169\ J}$$</li>
+    <li><b>(c) Trabajo:</b>
+      $$W=13\,713-11\,169=\mathbf{2544\ J}$$</li>
+    <li><b>(d) Eficiencia frente a la máxima</b> (Carnot entre 573,2 K y 214,95 K):
+      $$e=\frac{2544}{13\,713}=\mathbf{18{,}5\ \%},\qquad e_C=1-\frac{214{,}95}{573{,}2}=1-\frac{p_a}{p_b}=\mathbf{62{,}5\ \%}$$
+      <span class="por">El ciclo rinde 0,30 veces el máximo: intercambia calor con diferencias finitas de temperatura. Entropía del gas: $+18{,}35$ ($ab$), $+12{,}23$ ($bc$), $-30{,}58$ ($ca$) J/K; suma 0 ✓.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/ciclo-con-1-5-mol-de-helio-a-b-y-c.svg">
 <div class="figph" role="img" aria-label="Ciclo con 1,5 mol de helio: a, b y c" style="aspect-ratio:340/215"></div>
@@ -807,11 +974,21 @@
 <div class="figph" role="img" aria-label="Planteamiento: ciclo con isóbara ab, isócora bc y recta ca en un diagrama pV" style="aspect-ratio:360/348"></div>
 <figcaption>Planteamiento como en el examen: diagrama pV con los estados, los procesos y los datos conocidos (esquema sin escala; sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Monoatómico: $\Delta U=\tfrac32\Delta(pV)$; $Q=\Delta U+W$; $W$ = área bajo cada tramo</li>
+      <li>$e=\dfrac{W}{Q_H}$ ($Q_H$ = todo el calor que entra); Carnot: $e_C=1-\dfrac{T_{m\acute in}}{T_{m\acute ax}}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Tabla de la primera ley</b> (tema 19): $ab$: $Q=+270\,000$ J, $W=+108\,000$ J; $bc$: $Q=-246\,000$ J, $W=0$; $ca$ (recta): $W=-81\,000$ J, $\Delta U=+84\,000$ J, $Q=+3000$ J neto. $W_{ciclo}=27\,000$ J (área del triángulo).</li>
-    <li><b>$Q_H$ es todo el calor que entra.</b> En la recta el calor cambia de signo: con $p(V)=p_c+s(V-V_b)$, $s=-7{,}41\times10^5$ Pa/m³, $dQ=dU+p\,dV=\left(\tfrac52p+\tfrac32sV\right)dV$ (19.7), que se anula en $V^*=0{,}681$ m³. De $c$ a $V^*$ entran <b>28 521 J</b>; de $V^*$ a $a$ salen 25 521 J.</li>
-    <li><b>(c)</b> $Q_H=270\,000+28\,521=298\,521$ J ⇒ $e=\dfrac{27\,000}{298\,521}=\mathbf{9{,}0\,\%}$. (Con el neto de la recta, $Q_H=273\,000$ J, saldría 9,9 %.)</li>
-    <li><b>Comparación con Carnot</b> (no se pide, pero ayuda): $T_{max}$ en $b$ ($pV=328\,000$ J) y $T_{min}$ en $c$ ($pV=164\,000$ J): $e_C=1-\frac{164\,000}{328\,000}=50\,\%$. El ciclo triangular es muy poco eficiente.</li>
+    <li><b>Tabla de la primera ley</b> (tema 19):
+      $$ab:\ Q=+270\,000,\ W=+108\,000;\qquad bc:\ Q=-246\,000,\ W=0;\qquad ca:\ W=-81\,000,\ \Delta U=+84\,000,\ Q=+3000\ \text{J}$$
+      $$W_{ciclo}=27\,000\ \text{J}\ \ (\text{área del triángulo})$$</li>
+    <li><b>$Q_H$ es todo el calor que entra.</b> En la recta el calor cambia de signo: $dQ=\big(\tfrac52p+\tfrac32sV\big)dV$ con $s=-7{,}41\times10^5$ Pa/m³ se anula en $V^*=0{,}681$ m³. De $c$ a $V^*$ entran <b>28 521 J</b>; de $V^*$ a $a$ salen 25 521 J.</li>
+    <li><b>(c) Eficiencia:</b>
+      $$Q_H=270\,000+28\,521=298\,521\ \text{J}\ \Rightarrow\ e=\frac{27\,000}{298\,521}=\mathbf{0{,}090}\ (9{,}0\ \%)$$
+      <span class="por">Con el neto de la recta ($Q_H=273\,000$ J) saldría 9,9 %.</span></li>
+    <li><b>Comparación con Carnot</b> (no se pide): $T_{m\acute ax}$ en $b$ ($pV=328\,000$ J) y $T_{m\acute in}$ en $c$ ($pV=164\,000$ J):
+      $$e_C=1-\frac{164\,000}{328\,000}=50\ \%$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/ciclo-triangular-isobara-isocora-y-recta-con-el-.svg">
 <div class="figph" role="img" aria-label="Ciclo triangular isóbara isócora y recta, con el punto V asterisco donde el calor cambia de signo" style="aspect-ratio:340/215"></div>
@@ -839,11 +1016,21 @@
 <div class="figph" role="img" aria-label="Planteamiento: ciclo de aire con dos adiabáticas, una isóbara y una isócora en un diagrama pV" style="aspect-ratio:360/380"></div>
 <figcaption>Planteamiento como en el examen: diagrama pV con los estados, los procesos y los datos conocidos (esquema sin escala; sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Calor solo en los tramos no adiabáticos: $Q_{23}=m\,c_p\,\Delta T$ (isóbara); $Q_{41}=m\,c_V\,(T_1-T_4)$ (isócora), $c_V=c_p/\gamma$</li>
+      <li>Rendimiento: $e=1-\dfrac{|Q_{sale}|}{Q_{entra}}=1-\dfrac1\gamma\dfrac{T_4-T_1}{T_3-T_2}$; Carnot: $e_C=1-\dfrac{T_{m\acute in}}{T_{m\acute ax}}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Estados</b> (tema 19): $T_1=288{,}15$ K; $T_2=288{,}15\cdot30^{2/7}=761{,}5$ K; $T_3=T_2+\dfrac{Q_{23}}{mc_p}=1961{,}5$ K; $T_4=1083{,}7$ K ($p_4=3{,}76$ atm). $V_1=V_4=0{,}849$ m³, $V_2=0{,}0748$ m³, $V_3=0{,}1927$ m³.</li>
-    <li><b>Calor que entra y que sale.</b> Solo hay intercambio en los tramos no adiabáticos: entra $Q_{23}=300$ kcal $=1{,}254\times10^6$ J (isóbara); sale $Q_{41}=mc_V(T_1-T_4)=-5{,}94\times10^5$ J (isócora).</li>
-    <li><b>Rendimiento</b> (20.4): $e=1-\dfrac{|Q_{41}|}{Q_{23}}=1-\dfrac1\gamma\dfrac{T_4-T_1}{T_3-T_2}=\mathbf{0{,}526\ (52{,}6\,\%)}$; $W=6{,}60\times10^5$ J por ciclo.</li>
-    <li><b>Comparación con Carnot</b> (entre la $T$ máxima y la mínima del ciclo): $e_C=1-\dfrac{288{,}15}{1961{,}5}=85{,}3\,\%$. Es el ciclo Diesel de U §20.3 (calor a $p$ constante, cesión a $V$ constante); su rendimiento queda por debajo del de Carnot, como exige la segunda ley.</li>
+    <li><b>Estados</b> (detalle en el tema 19; $V_1=V_4=0{,}849$ m³, $V_2=0{,}0748$ m³, $V_3=0{,}1927$ m³):
+      $$T_1=288{,}15\ \text{K},\quad T_2=761{,}5\ \text{K},\quad T_3=1961{,}5\ \text{K},\quad T_4=1083{,}7\ \text{K}\ (p_4=3{,}76\ \text{atm})$$</li>
+    <li><b>Calor que entra y que sale:</b>
+      $$Q_{23}=300\ \text{kcal}=1{,}254\times10^6\ \text{J},\qquad Q_{41}=m\,c_V(T_1-T_4)=-5{,}94\times10^5\ \text{J}$$</li>
+    <li><b>Rendimiento:</b>
+      $$e=1-\frac{5{,}94\times10^5}{1{,}254\times10^6}=\mathbf{0{,}526}\ (52{,}6\ \%),\qquad W=6{,}60\times10^5\ \text{J}$$</li>
+    <li><b>Comparación con Carnot:</b>
+      $$e_C=1-\frac{288{,}15}{1961{,}5}=85{,}3\ \%$$
+      <span class="por">Es el ciclo Diesel de U §20.3; su rendimiento queda por debajo del de Carnot, como exige la segunda ley.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/ciclo-de-1-kg-de-aire-con-dos-adiabaticas-una-is.svg">
 <div class="figph" role="img" aria-label="Ciclo de 1 kg de aire con dos adiabáticas, una isóbara y una isócora" style="aspect-ratio:340/215"></div>
@@ -864,9 +1051,16 @@
 <div class="nivel"><b>🟡 Práctica: 15 ejercicios más</b><span>Repiten métodos del Núcleo en otras situaciones: otro motor, más ciclos Otto (uno completo con los estados), Carnot al revés (despejar $T_H$), un foco de agua y hielo, diseñar una máquina de Carnot, las entropías de los focos, la mezcla de agua en la bañera, el hielo frío en agua caliente (problema práctico), la central de energía oceánica y tres ciclos del libro (con una adiabática, con una isoterma y con una recta). Antes de leer los pasos, decide: ¿máquina o refrigerador?, ¿qué calores entran?, ¿la $T$ es constante?</span></div>
 <details class="sol" id="e2"><summary>E2 — Problema 20.2: Motor de avión <span class="src" data-l="E" data-ref="Solucionario 20-1, Prob. 20.2">E 20-1</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 20.2, p. 677">U p.677</span></summary>
 <p class="enun">Un motor de avión recibe 9000 J de calor y cede 6400 J cada ciclo. a) Calcule el trabajo mecánico efectuado por el motor en un ciclo. b) Calcule la eficiencia térmica del motor.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$W=|Q_H|-|Q_C|$; $e=\dfrac{W}{Q_H}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> $W=|Q_H|-|Q_C|=9000-6400=\mathbf{2600\ J}$.</li>
-    <li><b>b)</b> $e=\dfrac{2600}{9000}=\mathbf{0{,}29\ (29\,\%)}$. Los otros 6400 J son calor «perdido» que la segunda ley obliga a ceder.</li>
+    <li><b>a) Trabajo:</b>
+      $$W=9000-6400=\mathbf{2600\ J}$$</li>
+    <li><b>b) Eficiencia:</b>
+      $$e=\frac{2600}{9000}=\mathbf{0{,}29}\ (29\ \%)$$
+      <span class="por">Los otros 6400 J son calor «perdido» que la segunda ley obliga a ceder.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/diagrama-de-flujo-de-energia-del-motor-de-avion-.svg">
 <div class="figph" role="img" aria-label="Diagrama de flujo de energía del motor de avión del problema 20.2." style="aspect-ratio:340/215"></div>
@@ -876,19 +1070,39 @@
 </details>
 <details class="sol" id="e5"><summary>E5 — Problema 20.7: Subir la razón de compresión <span class="src" data-l="E" data-ref="Solucionario 20-2, Prob. 20.7">E 20-2</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 20.7, p. 677">U p.677</span></summary>
 <p class="enun">El ciclo Otto de un motor Mercedes Benz SLK230 tiene una razón de compresión de 8,8. a) ¿Cuál es la eficiencia ideal del motor? Use $\gamma=1{,}40$. b) El motor de un Dodge Viper GT2 tiene una razón de compresión un poco arriba de 9,6. ¿Qué aumento en la eficiencia ideal resulta de este aumento en la razón de compresión?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ciclo Otto: $e=1-r^{1-\gamma}$, $\gamma=1{,}40$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> $e=1-8{,}8^{-0{,}40}=\mathbf{0{,}581\ (58\,\%)}$.</li>
-    <li><b>b)</b> $e=1-9{,}6^{-0{,}40}=0{,}595$: aumento de <b>1,4 puntos porcentuales</b>. Aumentar $r$ mejora poco, y está limitado por la preignición (detonación) de la mezcla.</li>
+    <li><b>a) Razón 8,8:</b>
+      $$e=1-8{,}8^{-0{,}40}=\mathbf{0{,}581}\ (58\ \%)$$</li>
+    <li><b>b) Razón 9,6:</b>
+      $$e=1-9{,}6^{-0{,}40}=0{,}595\ \Rightarrow\ \text{aumento de }\mathbf{1{,}4\ \text{puntos porcentuales}}$$
+      <span class="por">Aumentar $r$ mejora poco y está limitado por la preignición de la mezcla.</span></li>
   </ol>
   <div class="recipe"><b>Receta / error típico:</b> los de E4.</div>
 </details>
 <details class="sol" id="e24"><summary>E24 — Problema 20.49: Motor Otto de un Passat <span class="src" data-l="E" data-ref="Solucionario 20-19 y 20-20, Prob. 20.49">E 20-19 y 20-20</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema 20.49, p. 680">U p.680</span></summary>
 <p class="enun">Un Volkswagen Passat tiene un motor de ciclo Otto de seis cilindros con razón de compresión $r=10{,}6$. El diámetro de cada cilindro, llamado barreno del motor, es de 82,5 mm. La distancia que el pistón se mueve durante la compresión en la figura 20.5, la carrera del motor, es de 86,4 mm. La presión inicial de la mezcla aire-combustible (en el punto $a$ de la figura 20.6) es de $8{,}50\times10^4$ Pa, y la temperatura inicial es de 300 K (la del aire exterior). Suponga que, en cada ciclo, se agregan 200 J de calor a cada cilindro al quemarse la gasolina y que el gas tiene $C_V=20{,}5$ J/mol·K y $\gamma=1{,}40$. a) Calcule el trabajo total que realiza cada cilindro del motor en un ciclo y el calor disipado cuando el gas se enfría a la temperatura del aire exterior. b) Calcule el volumen de la mezcla aire-combustible en el punto $a$ del ciclo. c) Calcule la presión, el volumen y la temperatura del gas en los puntos $b$, $c$ y $d$ del ciclo. Dibuje un diagrama pV que muestre los valores numéricos de $p$, $V$ y $T$ para cada uno de los cuatro estados. d) Compare la eficiencia de este motor con la de una máquina de Carnot que opera entre las mismas temperaturas máxima y mínima.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Otto: $e=1-r^{1-\gamma}$; $|Q_C|=(1-e)Q_H$; $W=Q_H-|Q_C|$</li>
+      <li>Adiabáticas: $T_b=T_a\,r^{\gamma-1}$; $T_d=T_c\,r^{1-\gamma}$; combustión (isócora): $T_c=T_b+\dfrac{Q_H}{nC_V}$</li>
+      <li>$pV=nRT$; carrera: $A\,l=(r-1)\,V_{m\acute in}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> (20.6): $e=1-10{,}6^{-0{,}4}=0{,}611$; $Q_C=-(1-e)Q_H=\mathbf{-78\ J}$; $W=Q_H+Q_C=\mathbf{122\ J}$ por cilindro y ciclo.</li>
-    <li><b>b)</b> La carrera barre $A\,l=(r-1)V$ con $V$ el volumen mínimo: $V=\dfrac{0{,}0864\cdot\pi(0{,}04125)^2}{9{,}6}=4{,}81\times10^{-5}$ m³ ⇒ $V_a=rV=\mathbf{5{,}10\times10^{-4}\ m^3}$.</li>
-    <li><b>c)</b> $a\to b$ adiabática: $T_b=T_ar^{\gamma-1}=\mathbf{771\ K}$, $p_b=p_a\,r\,\frac{T_b}{T_a}=\mathbf{2{,}32\times10^6\ Pa}$, $V_b=4{,}81\times10^{-5}$ m³. Moles $n=\frac{p_aV_a}{RT_a}=0{,}01738$. $b\to c$ isócora con $Q_H=200$ J: $T_c=T_b+\frac{Q_H}{nC_V}=\mathbf{1333\ K}$, $p_c=p_b\frac{T_c}{T_b}=\mathbf{4{,}00\times10^6\ Pa}$. $c\to d$ adiabática: $T_d=T_c/r^{\gamma-1}=\mathbf{518\ K}$, $V_d=V_a$, $p_d=\mathbf{1{,}47\times10^5\ Pa}$. Comprobación: $Q_{da}=nC_V(T_a-T_d)=-78$ J ✓.</li>
-    <li><b>d)</b> $e_{Otto}=61{,}1\,\%$; Carnot entre 1333 K y 300 K: $1-\frac{300}{1333}=\mathbf{77{,}5\,\%}>61{,}1\,\%$, como exige la segunda ley.</li>
+    <li><b>a) Trabajo y calor disipado por cilindro:</b>
+      $$e=1-10{,}6^{-0{,}4}=0{,}611,\qquad Q_C=-(1-e)(200)=\mathbf{-78\ J},\qquad W=200-78=\mathbf{122\ J}$$</li>
+    <li><b>b) Volumen en $a$:</b>
+      $$V_{m\acute in}=\frac{(0{,}0864)\,\pi(0{,}04125)^2}{9{,}6}=4{,}81\times10^{-5}\ \text{m}^3,\qquad V_a=rV_{m\acute in}=\mathbf{5{,}10\times10^{-4}\ m^3}$$</li>
+    <li><b>c) Estados:</b>
+      $$b:\ T_b=300(10{,}6)^{0{,}4}=\mathbf{771\ K},\ p_b=p_a\,r\frac{T_b}{T_a}=\mathbf{2{,}32\times10^6\ Pa},\ V_b=4{,}81\times10^{-5}\ \text{m}^3$$
+      $$n=\frac{p_aV_a}{RT_a}=0{,}01738\ \text{mol},\qquad c:\ T_c=T_b+\frac{200}{nC_V}=\mathbf{1333\ K},\ p_c=p_b\frac{T_c}{T_b}=\mathbf{4{,}00\times10^6\ Pa}$$
+      $$d:\ T_d=\frac{T_c}{r^{0{,}4}}=\mathbf{518\ K},\ V_d=V_a,\ p_d=\mathbf{1{,}47\times10^5\ Pa}$$
+      <span class="por">Comprobación: $Q_{da}=nC_V(T_a-T_d)=-78$ J ✓.</span></li>
+    <li><b>d) Frente a Carnot</b> (entre 1333 K y 300 K):
+      $$e_{Otto}=61{,}1\ \%,\qquad e_C=1-\frac{300}{1333}=\mathbf{77{,}5\ \%}>61{,}1\ \%$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/ciclo-otto-del-motor-passat-con-los-valores-nume.svg">
 <div class="figph" role="img" aria-label="Ciclo Otto del motor Passat con los valores numéricos de cada estado" style="aspect-ratio:340/215"></div>
@@ -898,9 +1112,16 @@
 </details>
 <details class="sol" id="e7"><summary>E7 — Problema 20.15: Temperatura de la fuente de una máquina de Carnot <span class="src" data-l="E" data-ref="Solucionario 20-5, Prob. 20.15">E 20-5</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 20.15, p. 677">U p.677</span></summary>
 <p class="enun">Una máquina de Carnot tiene una eficiencia del 66 % y realiza $2{,}5\times10^4$ J de trabajo en cada ciclo. a) ¿Cuánto calor extrae la máquina de su fuente de calor en cada ciclo? b) Suponga que la máquina expulsa calor a temperatura ambiente (20,0 °C). ¿Cuál es la temperatura de su fuente de calor?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$e=\dfrac{W}{Q_H}$; Carnot: $e=1-\dfrac{T_C}{T_H}$ ⇒ $T_H=\dfrac{T_C}{1-e}$ (kelvin)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> $Q_H=\dfrac{W}{e}=\dfrac{2{,}5\times10^4}{0{,}66}=\mathbf{3{,}8\times10^4\ J}$.</li>
-    <li><b>b)</b> $e=1-\dfrac{T_C}{T_H}$ ⇒ $T_H=\dfrac{T_C}{1-e}=\dfrac{293{,}15}{0{,}34}=\mathbf{862\ K\approx589\ °C}$. (Equivalente: $Q_C=W-Q_H=-1{,}29\times10^4$ J y $T_H=-T_CQ_H/Q_C$.)</li>
+    <li><b>a) Calor de la fuente:</b>
+      $$Q_H=\frac{W}{e}=\frac{2{,}5\times10^4}{0{,}66}=\mathbf{3{,}8\times10^4\ J}$$</li>
+    <li><b>b) Temperatura de la fuente:</b>
+      $$T_H=\frac{T_C}{1-e}=\frac{293{,}15}{0{,}34}=\mathbf{862\ K}\approx589\ ^\circ\text{C}$$
+      <span class="por">Equivalente: $Q_C=W-Q_H=-1{,}29\times10^4$ J y $T_H=T_CQ_H/|Q_C|$.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/diagrama-de-flujo-de-energia-de-la-maquina-de-ca-2.svg">
 <div class="figph" role="img" aria-label="Diagrama de flujo de energía de la máquina de Carnot del problema 20.15 (e=66 %)." style="aspect-ratio:340/215"></div>
@@ -910,10 +1131,18 @@
 </details>
 <details class="sol" id="e10"><summary>E10 — Problema 20.18: Máquina de Carnot entre agua hirviendo y hielo <span class="src" data-l="E" data-ref="Solucionario 20-6, Prob. 20.18">E 20-6</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 20.18, p. 677">U p.677</span></summary>
 <p class="enun">Una máquina térmica de Carnot utiliza un depósito caliente que consiste en una gran cantidad de agua en ebullición y un depósito frío que consiste en una tina grande llena de hielo y agua. En 5 minutos de operación, el calor expulsado por la máquina derrite 0,0400 kg de hielo. En ese tiempo, ¿cuánto trabajo $W$ efectúa la máquina?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fusión: $|Q_C|=m\,L_f$; Carnot: $Q_H=|Q_C|\dfrac{T_H}{T_C}$; $W=Q_H-|Q_C|$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Calor cedido al foco frío</b> = calor que funde el hielo: $Q_C=-mL_f=-0{,}0400\cdot3{,}34\times10^5=-1{,}336\times10^4$ J.</li>
-    <li><b>Calor tomado del caliente</b> (20.13): $Q_H=-Q_C\dfrac{T_H}{T_C}=1{,}336\times10^4\cdot\dfrac{373{,}15}{273{,}15}=1{,}825\times10^4$ J.</li>
-    <li><b>Trabajo:</b> $W=Q_H+Q_C=\mathbf{4{,}89\times10^3\ J}$. (El dato de 5 minutos solo serviría para la potencia, 16 W.)</li>
+    <li><b>Calor cedido al foco frío</b> (el que funde el hielo):
+      $$|Q_C|=0{,}0400(3{,}34\times10^5)=1{,}336\times10^4\ \text{J}$$</li>
+    <li><b>Calor tomado del foco caliente</b> ($T_H=373{,}15$ K, $T_C=273{,}15$ K):
+      $$Q_H=|Q_C|\frac{T_H}{T_C}=1{,}336\times10^4\cdot\frac{373{,}15}{273{,}15}=1{,}825\times10^4\ \text{J}$$</li>
+    <li><b>Trabajo:</b>
+      $$W=Q_H-|Q_C|=\mathbf{4{,}89\times10^3\ J}$$
+      <span class="por">El dato de 5 minutos solo serviría para la potencia (16 W).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/diagrama-de-flujo-de-energia-de-la-maquina-de-ca-3.svg">
 <div class="figph" role="img" aria-label="Diagrama de flujo de energía de la máquina de Carnot del problema 20.18: el calor cedido funde 0,0400 kg de hielo." style="aspect-ratio:340/215"></div>
@@ -923,13 +1152,23 @@
 </details>
 <details class="sol" id="e11"><summary>E11 — Problema 20.40: Diseñar una máquina de Carnot <span class="src" data-l="E" data-ref="Solucionario 20-14 y 20-15, Prob. 20.40">E 20-14 y 20-15</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema 20.40, p. 679">U p.679</span></summary>
 <p class="enun">Como un ingeniero mecánico en ciernes, le piden diseñar una máquina de Carnot que use como sustancia de trabajo 2,00 moles de un gas ideal monoatómico y que opere con un depósito caliente a 500 °C. La máquina debe levantar 2,00 m una masa de 15,0 kg en cada ciclo, empleando un suministro de calor de 500 J. El gas en la cámara de la máquina puede tener un volumen mínimo de 5,00 L durante el ciclo. a) Dibuje un diagrama pV para este ciclo, indicando dónde entra calor en el gas y dónde sale de él. b) ¿A qué temperatura debe estar el depósito frío? c) Calcule la eficiencia térmica de la máquina. d) ¿Cuánta energía térmica gasta esta máquina en cada ciclo? e) Calcule la presión máxima que tendrá que resistir la cámara de gas.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Trabajo por ciclo = energía potencial ganada: $W=m\,g\,\Delta y$</li>
+      <li>Carnot: $|Q_C|=Q_H-W$; $T_C=T_H\dfrac{|Q_C|}{Q_H}$; $e=\dfrac{W}{Q_H}$; $p_{m\acute ax}=\dfrac{nRT_H}{V_{m\acute in}}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> Fig. 20.13: entra calor en la expansión isoterma a 773 K ($a\to b$) y sale en la compresión isoterma a $T_C$ ($c\to d$).</li>
-    <li><b>Trabajo por ciclo</b> = energía potencial ganada: $W=mg\Delta y=15{,}0\cdot9{,}80\cdot2{,}00=294$ J.</li>
-    <li><b>b)</b> $|Q_C|=Q_H-W=500-294=206$ J; (20.13): $T_C=T_H\dfrac{|Q_C|}{Q_H}=773{,}15\cdot\dfrac{206}{500}=\mathbf{318{,}5\ K\approx45\ °C}$.</li>
-    <li><b>c)</b> $e=\dfrac{294}{500}=\mathbf{58{,}8\,\%}$ ($=1-T_C/T_H$).</li>
-    <li><b>d)</b> Calor «desechado» por ciclo: <b>206 J</b> (se cede al foco frío).</li>
-    <li><b>e)</b> La presión máxima está en $a$ (volumen mínimo y temperatura máxima): $p_a=\dfrac{nRT_H}{V_a}=\dfrac{2{,}00\cdot8{,}314\cdot773{,}15}{5{,}00\times10^{-3}}=\mathbf{2{,}57\times10^6\ Pa}$ (≈ 25 atm).</li>
+    <li><b>a) Diagrama:</b> como en la fig. 20.13: entra calor en la expansión isoterma a 773 K y sale en la compresión isoterma a $T_C$.</li>
+    <li><b>Trabajo por ciclo:</b>
+      $$W=m\,g\,\Delta y=15{,}0(9{,}80)(2{,}00)=294\ \text{J}$$</li>
+    <li><b>b) Temperatura del depósito frío:</b>
+      $$|Q_C|=500-294=206\ \text{J},\qquad T_C=773{,}15\cdot\frac{206}{500}=\mathbf{318{,}5\ K}\approx45\ ^\circ\text{C}$$</li>
+    <li><b>c) Eficiencia:</b>
+      $$e=\frac{294}{500}=\mathbf{58{,}8\ \%}\qquad(=1-T_C/T_H)$$</li>
+    <li><b>d) Calor desechado por ciclo:</b>
+      $$\mathbf{206\ J}$$</li>
+    <li><b>e) Presión máxima</b> (volumen mínimo sobre la isoterma caliente):
+      $$p_a=\frac{nRT_H}{V_a}=\frac{2{,}00(8{,}314)(773{,}15)}{5{,}00\times10^{-3}}=\mathbf{2{,}57\times10^6\ Pa}\ (\approx25\ \text{atm})$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/diagrama-de-flujo-de-energia-de-la-maquina-de-ca-4.svg">
 <div class="figph" role="img" aria-label="Diagrama de flujo de energía de la máquina de Carnot del problema 20.40." style="aspect-ratio:340/215"></div>
@@ -939,18 +1178,36 @@
 </details>
 <details class="sol" id="e19"><summary>E19 — Problema 20.61: Entropías de los dos focos en Carnot <span class="src" data-l="E" data-ref="Solucionario 20-24, Prob. 20.61">E 20-24</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema de transición 20.61, p. 681">U p.681</span></summary>
 <p class="enun">Compare el cambio de entropía del agua más caliente con la del agua más fría durante un ciclo de la máquina térmica, suponiendo un ciclo ideal de Carnot. a) La entropía no cambia durante un ciclo en ningún caso. b) La entropía de ambas aumenta, pero la entropía del agua más fría aumenta más porque su temperatura inicial es menor. c) La entropía del agua más caliente disminuye mucho más de lo que aumenta la entropía del agua más fría, debido a que parte del calor retirado del agua caliente se aprovecha como trabajo realizado por la máquina. d) La entropía del agua caliente disminuye en la misma cantidad que aumenta la entropía del agua más fría.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Focos a $T$ constante: $\Delta S=\dfrac{Q}{T}$</li>
+      <li>Carnot (reversible): $\dfrac{|Q_H|}{T_H}=\dfrac{|Q_C|}{T_C}$ ⇒ $\Delta S_{universo}=0$</li>
+    </ul></div>
   <ol class="steps">
-    <li>Focos grandes ⇒ $T$ constantes ⇒ $\Delta S=Q/T$. El agua caliente pierde $|Q_H|$: $\Delta S_{cal}=-|Q_H|/T_H$; la fría gana $|Q_C|$: $\Delta S_{fr}=+|Q_C|/T_C$.</li>
-    <li>En Carnot (20.13): $|Q_C|/T_C=|Q_H|/T_H$ ⇒ <b>iguales y opuestos</b> ⇒ <b>d)</b>. Aunque sale menos calor del que entra, se cede a una temperatura más baja, y el cociente es el mismo (c es falsa por eso).</li>
+    <li><b>Entropías de los focos:</b>
+      $$\Delta S_{cal}=-\frac{|Q_H|}{T_H},\qquad\Delta S_{fr}=+\frac{|Q_C|}{T_C}$$</li>
+    <li><b>En Carnot</b> $|Q_C|/T_C=|Q_H|/T_H$: son iguales y opuestas ⇒ <b>opción d)</b>.
+      <span class="por">Sale menos calor del que entra, pero se cede a una temperatura más baja y el cociente es el mismo (por eso c) es falsa).</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> Carnot = reversible ⇒ $\Delta S_{universo}=0$ ⇒ $\frac{|Q_H|}{T_H}=\frac{|Q_C|}{T_C}$ (20.20). <b>Error típico:</b> elegir c) pensando solo en las cantidades de calor.</div>
 </details>
 <details class="sol" id="e16"><summary>E16 — Problema 20.22: Mezclar agua hirviendo con el baño <span class="src" data-l="E" data-ref="Solucionario 20-7, Prob. 20.22">E 20-7</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 20.22, p. 678">U p.678</span></summary>
 <p class="enun">Usted llena la tina con 195 kg de agua a 30,0 °C e intenta calentarla más vertiendo 5,00 kg de agua que alcanzó la ebullición en una estufa. a) ¿Se trata de un proceso reversible o irreversible? Utilice un razonamiento de física para explicar el hecho. b) Calcule la temperatura final del agua para el baño. c) Calcule el cambio neto de entropía del sistema (agua del baño + agua en ebullición), suponiendo que no hay intercambio de calor con el aire o con la tina misma.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Calorimetría: $\sum m\,c\,(T-T_i)=0$</li>
+      <li>Entropía de cada parte: $\Delta S=m\,c\ln\dfrac{T_f}{T_i}$ (kelvin)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a) Irreversible:</b> el calor pasa entre aguas con una diferencia finita de temperatura (70 K); nunca se ha visto que el agua tibia se separe sola en caliente y fría.</li>
-    <li><b>b) Calorimetría</b> (tema 17): $195\,c(T-30)+5\,c(T-100)=0$ ⇒ $T=\dfrac{195\cdot30+5\cdot100}{200}=\mathbf{31{,}75\ °C}$ (304,90 K).</li>
-    <li><b>c)</b> Cada parte cambia de temperatura ⇒ $mc\ln\frac{T_2}{T_1}$ (como en el ej. 20.10): $\Delta S_{\text{baño}}=195\cdot4190\ln\dfrac{304{,}90}{303{,}15}=+4703$ J/K; $\Delta S_{hirviendo}=5\cdot4190\ln\dfrac{304{,}90}{373{,}15}=-4232$ J/K. <b>Total: $+471$ J/K</b> $>0$, coherente con a).</li>
+    <li><b>a) ¿Reversible?</b> <b>Irreversible</b>:
+      <span class="por">El calor pasa entre aguas con una diferencia finita de temperatura (70 K); nunca se ha visto que el agua tibia se separe sola en caliente y fría.</span></li>
+    <li><b>b) Temperatura final:</b>
+      $$195\,c\,(T-30)+5\,c\,(T-100)=0\ \Rightarrow\ T=\frac{195(30)+5(100)}{200}=\mathbf{31{,}75\ ^\circ C}\ (304{,}90\ \text{K})$$</li>
+    <li><b>c) Entropía:</b>
+      $$\Delta S_{ba\tilde no}=195(4190)\ln\frac{304{,}90}{303{,}15}=+4703\ \text{J/K}$$
+      $$\Delta S_{hirviendo}=5(4190)\ln\frac{304{,}90}{373{,}15}=-4232\ \text{J/K}$$
+      $$\Delta S_{total}=\mathbf{+471\ J/K}>0$$
+      <span class="por">Se restan números grandes: llevar 4 cifras.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/variacion-de-entropia-problema-20-22-el-bano-gan.svg">
 <div class="figph" role="img" aria-label="Variación de entropía: Problema 20.22: el baño gana 4703 J/K, el agua hirviendo pierde 4232 J/K; total +471 J/K." style="aspect-ratio:340/215"></div>
@@ -960,37 +1217,68 @@
 </details>
 <details class="sol" id="pp"><summary>Problema práctico — Cambios de entropía: hielo frío en agua caliente <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema práctico, Cambios de entropía: hielo frío en agua caliente, p. 675">U p.675</span></summary>
 <p class="enun">Un recipiente aislado de masa despreciable contiene 0,600 kg de agua a 45,0 °C. Se coloca un cubo de hielo de 0,0500 kg a −15,0 °C en el agua. a) Calcule la temperatura final del agua una vez que el hielo se haya fundido. b) Calcule el cambio en la entropía del sistema. (Datos de U: $c_{agua}=4190$ J/(kg·K), $c_{hielo}=2100$ J/(kg·K), $L_f=3{,}34\times10^5$ J/kg.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Calorimetría (aislado): $\sum Q=0$; $Q=m\,c\,\Delta T$; fusión $Q=m\,L_f$</li>
+      <li>Entropía: $\Delta S=m\,c\ln\dfrac{T_2}{T_1}$ (cambio de temperatura); $\Delta S=\dfrac{m\,L}{T}$ (cambio de fase)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a) Temperatura final</b> (calorimetría, tema 17; sistema aislado: $\sum Q=0$). El agua caliente pierde $0{,}600\cdot4190\,(45-T)$; el hielo gana: calentarse a 0 °C ($0{,}0500\cdot2100\cdot15=1575$ J), fundirse ($0{,}0500\cdot3{,}34\times10^5=16\,700$ J) y calentarse el agua resultante de 0 a $T$ ($0{,}0500\cdot4190\,T$). Igualando: $113\,130-2514\,T=18\,275+209{,}5\,T$ ⇒ $T=\mathbf{34{,}8\ °C}$ (307,98 K). Se funde todo el hielo (el agua aún cede mucho calor).</li>
-    <li><b>b) Entropía por tramos</b> (proceso irreversible: cada parte con un camino reversible, (20.18) y (20.19)): hielo de 258,15 K a 273,15 K: $0{,}0500\cdot2100\ln\frac{273{,}15}{258{,}15}=+5{,}93$ J/K; fusión: $\frac{16\,700}{273{,}15}=+61{,}14$ J/K; agua del hielo de 273,15 K a 307,98 K: $0{,}0500\cdot4190\ln\frac{307{,}98}{273{,}15}=+25{,}14$ J/K; agua caliente de 318,15 K a 307,98 K: $0{,}600\cdot4190\ln\frac{307{,}98}{318{,}15}=-81{,}69$ J/K.</li>
-    <li><b>Total:</b> $5{,}93+61{,}14+25{,}14-81{,}69=\mathbf{+10{,}5\ J/K}$.</li>
-    <li><b>Evaluar:</b> el hielo y su agua ganan entropía (se calientan y se funden); el agua caliente pierde (se enfría); el total es positivo, como en todo proceso irreversible en un sistema aislado.</li>
+    <li><b>a) Temperatura final</b> ($\sum Q=0$; el agua cede; el hielo se calienta a 0 °C con $0{,}0500(2100)(15)=1575$ J, se funde y su agua se calienta):
+      $$0{,}600(4190)(45-T)=0{,}0500(2100)(15)+0{,}0500(3{,}34\times10^5)+0{,}0500(4190)\,T$$
+      $$113\,130-2514\,T=18\,275+209{,}5\,T\ \Rightarrow\ T=\mathbf{34{,}8\ ^\circ C}\ (307{,}98\ \text{K})$$
+      <span class="por">Se funde todo el hielo (el agua aún cede mucho calor).</span></li>
+    <li><b>b) Entropía por tramos</b> (camino reversible para cada parte):
+      $$\text{hielo }258{,}15\to273{,}15\ \text{K: }0{,}0500(2100)\ln\frac{273{,}15}{258{,}15}=+5{,}93\ \text{J/K}$$
+      $$\text{fusión: }\frac{16\,700}{273{,}15}=+61{,}14\ \text{J/K}$$
+      $$\text{agua del hielo }273{,}15\to307{,}98\ \text{K: }0{,}0500(4190)\ln\frac{307{,}98}{273{,}15}=+25{,}14\ \text{J/K}$$
+      $$\text{agua caliente }318{,}15\to307{,}98\ \text{K: }0{,}600(4190)\ln\frac{307{,}98}{318{,}15}=-81{,}69\ \text{J/K}$$</li>
+    <li><b>Total:</b>
+      $$\Delta S=5{,}93+61{,}14+25{,}14-81{,}69=\mathbf{+10{,}5\ J/K}$$
+      <span class="por">Positivo, como en todo proceso irreversible en un sistema aislado.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> mezcla con cambio de fase: temperatura final por calorimetría (incluye $mL$), $\Delta S$ por tramos ($mc\ln$ y $\pm mL/T$), suma $>0$. <b>Error típico:</b> olvidar el calor de calentar el hielo o el de la fusión; poner la fusión en °C.</div>
 </details>
 <details class="sol" id="e17"><summary>E17 — Problema 20.59: Energía del mar, profundidad del agua fría <span class="src" data-l="E" data-ref="Solucionario 20-24, Prob. 20.59">E 20-24</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema de transición 20.59, p. 681">U p.681</span></summary>
 <p class="enun">La conversión de la energía térmica oceánica usa la diferencia de temperatura entre el agua caliente de la superficie de los océanos tropicales y el agua fría de las profundidades para operar una máquina térmica (la gráfica da la temperatura frente a la profundidad). Si la central eléctrica utiliza un ciclo de Carnot y la eficiencia teórica deseada es del 6,5 %, ¿desde qué profundidad se debe traer el agua fría? a) 100 m; b) 400 m; c) 800 m; d) mayor profundidad que 1000 m.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Carnot: $e=1-\dfrac{T_C}{T_H}$ ⇒ $T_C=T_H(1-e)$ (kelvin)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Foco caliente:</b> agua superficial, unos 27 °C ≈ 300 K (gráfica y texto de U).</li>
-    <li><b>Despejar $T_C$</b> de (20.14): $T_C=T_H(1-e)=300\cdot0{,}935=280{,}5$ K $\approx\mathbf{7{,}4\ °C}$.</li>
-    <li><b>Leer la gráfica:</b> ≈ 7,5 °C se alcanza hacia los <b>400 m</b> ⇒ respuesta <b>b)</b>.</li>
+    <li><b>Foco caliente:</b> agua superficial ≈ 27 °C ≈ 300 K.</li>
+    <li><b>Temperatura fría necesaria:</b>
+      $$T_C=T_H(1-e)=300(0{,}935)=280{,}5\ \text{K}\approx\mathbf{7{,}4\ ^\circ C}$$</li>
+    <li><b>Gráfica:</b> ≈ 7,5 °C se alcanza hacia los 400 m ⇒ respuesta <b>b)</b>.</li>
   </ol>
   <figure class="bookfig"><img src="../assets/img/fig_u_20_59_mar.png" alt="Gráfica de la temperatura del agua del mar tropical en función de la profundidad de 0 a 1000 metros" loading="lazy"><figcaption>Temperatura del agua en los océanos tropicales frente a la profundidad: unos 7,5 °C a ≈ 400 m. <span class="src" data-l="U" data-ref="U Problemas de transición, Energía del mar, p. 681">U p.681</span></figcaption></figure>
   <div class="recipe"><b>Receta:</b> con una eficiencia de Carnot dada: $T_C=T_H(1-e)$. <b>Error típico:</b> hacer $T_C=27\cdot0{,}935$ °C.</div>
 </details>
 <details class="sol" id="e18"><summary>E18 — Problema 20.60: Entropía del amoníaco por segundo <span class="src" data-l="E" data-ref="Solucionario 20-24, Prob. 20.60">E 20-24</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema de transición 20.60, p. 681">U p.681</span></summary>
 <p class="enun">¿Cuál es el cambio en la entropía del amoníaco evaporado por segundo en la central eléctrica de 10 MW, suponiendo una eficiencia de Carnot ideal del 6,5 %? a) $+6\times10^6$ J/K por segundo; b) $+5\times10^5$ J/K por segundo; c) $+1\times10^5$ J/K por segundo; d) 0.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$e=\dfrac{W/t}{Q_H/t}$; a $T$ fija: $\dfrac{\Delta S}{t}=\dfrac{Q_H/t}{T}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Calor absorbido por segundo:</b> $\dfrac{Q_H}{t}=\dfrac{W/t}{e}=\dfrac{10\ \text{MW}}{0{,}065}=1{,}54\times10^8$ W.</li>
-    <li>El amoníaco se evapora a la temperatura del agua superficial (300 K, isotermo) ⇒ (20.18): $\dfrac{\Delta S}{t}=\dfrac{1{,}54\times10^8}{300}=\mathbf{5{,}1\times10^5\ J/K}$ por segundo ⇒ <b>b)</b>.</li>
+    <li><b>Calor absorbido por segundo:</b>
+      $$\frac{Q_H}{t}=\frac{10\ \text{MW}}{0{,}065}=1{,}54\times10^8\ \text{W}$$</li>
+    <li><b>Entropía por segundo</b> (el amoníaco se evapora a 300 K, isotermo):
+      $$\frac{\Delta S}{t}=\frac{1{,}54\times10^8}{300}=\mathbf{5{,}1\times10^5\ J/K}\ \text{por segundo}\ \Rightarrow\ \text{opci\acute on b)}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> entropía en un cambio de fase a $T$ fija: $Q/T$, aquí por unidad de tiempo. <b>Error típico:</b> dividir la potencia útil (10 MW) entre $T$.</div>
 </details>
 <details class="sol" id="e20"><summary>E20 — Problema 20.62: Eficiencia real de la central <span class="src" data-l="E" data-ref="Solucionario 20-25, Prob. 20.62">E 20-25</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema de transición 20.62, p. 681">U p.681</span></summary>
 <p class="enun">Si la planta propuesta se construye y produce 10 MW, pero la tasa a la que el calor residual es expulsado al agua fría es de 165 MW, ¿cuál es la eficiencia real de la planta? a) 5,7 %; b) 6,1 %; c) 6,5 %; d) 16,5 %.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Potencias: $P_H=P_W+P_C$; $e=\dfrac{P_W}{P_H}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Primera ley por segundo:</b> $\dfrac{Q_H}{t}=\dfrac{W}{t}+\dfrac{|Q_C|}{t}=10+165=175$ MW.</li>
-    <li>$e=\dfrac{W/t}{Q_H/t}=\dfrac{10}{175}=\mathbf{5{,}7\,\%}$ ⇒ <b>a)</b>, menor que el 6,5 % de Carnot, como debe ser.</li>
+    <li><b>Calor tomado por segundo:</b>
+      $$P_H=P_W+P_C=10+165=175\ \text{MW}$$</li>
+    <li><b>Eficiencia real:</b>
+      $$e=\frac{10}{175}=\mathbf{5{,}7\ \%}\ \Rightarrow\ \text{opci\acute on a)}$$
+      <span class="por">Menor que el 6,5 % de Carnot, como debe ser. No es $10/165$ (6,1 %).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/diagrama-de-flujo-de-energia-de-la-central-ocean.svg">
 <div class="figph" role="img" aria-label="Diagrama de flujo de energía de la central oceánica del problema 20.62 (potencias)." style="aspect-ratio:340/215"></div>
@@ -1000,12 +1288,26 @@
 </details>
 <details class="sol" id="e21"><summary>E21 — Problema 20.36: Ciclo isócoro-adiabático-isóbaro con gas diatómico <span class="src" data-l="E" data-ref="Solucionario 20-11 y 20-12, Prob. 20.36">E 20-11 y 20-12</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 20.36, p. 678">U p.678</span></summary>
 <p class="enun">Una máquina térmica usa como sustancia de trabajo 0,350 moles de un gas diatómico ideal que efectúa el ciclo que se muestra en el diagrama pV de la figura P20.36. El proceso 1→2 es a volumen constante, de 2→3 es adiabático, y de 3→1 es a presión constante de 1,00 atm. Para este gas, $\gamma=1{,}40$. a) Calcule la presión y el volumen en los puntos 1, 2 y 3. b) Calcule $Q$, $W$ y $\Delta U$ para cada uno de los tres procesos. c) Calcule el trabajo neto efectuado por el gas en el ciclo. d) Calcule el flujo neto de calor de la máquina en un ciclo. e) Determine la eficiencia térmica de la máquina y compárela con la de una máquina de Carnot que opera entre las mismas temperaturas mínima y máxima $T_1$ y $T_2$. (Figura: $T_1=300$ K, $T_2=600$ K, $T_3=492$ K.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$C_V=\dfrac{R}{\gamma-1}$, $C_p=C_V+R$; $V=\dfrac{nRT}{p}$</li>
+      <li>Isócora: $Q=nC_V\Delta T$; adiabática: $Q=0$, $W=-nC_V\Delta T$; isóbara: $W=nR\Delta T$, $Q=nC_p\Delta T$</li>
+      <li>$e=\dfrac{W}{Q_H}$; Carnot: $1-\dfrac{T_{m\acute in}}{T_{m\acute ax}}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Capacidades</b> de $\gamma$ (19.18): $C_V=\dfrac{R}{\gamma-1}=20{,}79$ J/(mol·K), $C_p=29{,}10$ J/(mol·K).</li>
-    <li><b>a) Estados.</b> 1: $p_1=1{,}013\times10^5$ Pa, $V_1=\dfrac{nRT_1}{p_1}=\mathbf{8{,}62\times10^{-3}\ m^3}$. 2: $V_2=V_1$, $p_2=p_1\frac{T_2}{T_1}=\mathbf{2{,}03\times10^5\ Pa}$. 3: $p_3=p_1$, $V_3=V_1\frac{T_3}{T_1}=\mathbf{14{,}1\times10^{-3}\ m^3}$. ($T_3=492$ K es lo que da la adiabática: $600\cdot(1/2)^{0{,}4/1{,}4}=492{,}2$ K.)</li>
-    <li><b>b)</b> 1→2 isócoro: $W=0$, $Q=\Delta U=nC_V(T_2-T_1)=\mathbf{+2183\ J}$. 2→3 adiabático: $Q=0$, $\Delta U=nC_V(T_3-T_2)=\mathbf{-786\ J}$, $W=+786$ J. 3→1 isóbaro: $W=nR(T_1-T_3)=\mathbf{-559\ J}$, $Q=nC_p(T_1-T_3)=\mathbf{-1955\ J}$, $\Delta U=-1397$ J.</li>
-    <li><b>c)</b> $W_{neto}=0+786-559=\mathbf{227\ J}$. <b>d)</b> $Q_{neto}=2183-1955=\mathbf{227\ J}$ ✓ ($\Delta U_{ciclo}=2183-786-1397=0$).</li>
-    <li><b>e)</b> Solo entra calor en 1→2: $e=\dfrac{227}{2183}=\mathbf{10{,}4\,\%}$. Carnot entre 300 K y 600 K: <b>50 %</b>. (Con $T_3=492{,}2$ K sin redondear: $W=225$ J, $e=10{,}3\,\%$.)</li>
+    <li><b>Capacidades:</b>
+      $$C_V=\frac{8{,}314}{0{,}40}=20{,}79\ \text{J/(mol}\cdot\text{K)},\qquad C_p=29{,}10\ \text{J/(mol}\cdot\text{K)}$$</li>
+    <li><b>a) Estados</b> ($T_1=300$ K, $T_2=600$ K; la adiabática da $T_3=600(1/2)^{0{,}4/1{,}4}=492{,}2$ K):
+      $$V_1=\frac{nRT_1}{p_1}=\frac{0{,}350(8{,}314)(300)}{1{,}013\times10^5}=\mathbf{8{,}62\times10^{-3}\ m^3}$$
+      $$p_2=p_1\frac{T_2}{T_1}=\mathbf{2{,}03\times10^5\ Pa},\ V_2=V_1;\qquad p_3=p_1,\ V_3=V_1\frac{T_3}{T_1}=\mathbf{14{,}1\times10^{-3}\ m^3}$$</li>
+    <li><b>b) Procesos:</b>
+      $$1\to2:\ W=0,\ Q=\Delta U=nC_V(T_2-T_1)=\mathbf{+2183\ J}$$
+      $$2\to3:\ Q=0,\ \Delta U=nC_V(T_3-T_2)=\mathbf{-786\ J},\ W=+786\ \text{J}$$
+      $$3\to1:\ W=nR(T_1-T_3)=\mathbf{-559\ J},\ Q=nC_p(T_1-T_3)=\mathbf{-1955\ J},\ \Delta U=-1397\ \text{J}$$</li>
+    <li><b>c) y d) Trabajo y calor netos:</b>
+      $$W_{neto}=0+786-559=\mathbf{227\ J},\qquad Q_{neto}=2183-1955=\mathbf{227\ J}\ \checkmark$$</li>
+    <li><b>e) Eficiencia</b> (solo entra calor en 1→2):
+      $$e=\frac{227}{2183}=\mathbf{10{,}4\ \%},\qquad e_C=1-\frac{300}{600}=\mathbf{50\ \%}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/ciclo-isocora-adiabatica-isobara-con-gas-diatomi.svg">
 <div class="figph" role="img" aria-label="Ciclo isócora adiabática isóbara con gas diatómico" style="aspect-ratio:340/215"></div>
@@ -1015,11 +1317,22 @@
 </details>
 <details class="sol" id="e22"><summary>E22 — Problema 20.41: Máquina con isócora, isoterma e isóbara (2 mol de helio) <span class="src" data-l="E" data-ref="Solucionario 20-15, Prob. 20.41">E 20-15</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema 20.41, p. 679">U p.679</span></summary>
 <p class="enun">Una máquina térmica opera empleando el ciclo de la figura P20.41. La sustancia de trabajo es de 2,00 moles de helio gaseoso, que alcanza una temperatura máxima de 327 °C. Suponga que el helio se puede tratar como gas ideal. El proceso bc es isotérmico. La presión en los estados a y c es de $1{,}00\times10^5$ Pa, y en el estado b, de $3{,}00\times10^5$ Pa. a) ¿Cuánto calor entra en el gas y cuánto sale del gas en cada ciclo? b) ¿Cuánto trabajo efectúa la máquina en cada ciclo y qué eficiencia tiene? c) Compare la eficiencia de esta máquina con la máxima eficiencia posible que puede lograrse con los depósitos caliente y frío que se usan en este ciclo. (Figura: $a\to b$ vertical, $b\to c$ isoterma, $c\to a$ horizontal.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Helio: $C_V=\tfrac32R$, $C_p=\tfrac52R$; isócora $Q=nC_V\Delta T$; isoterma $Q=nRT\ln\dfrac{V_2}{V_1}$; isóbara $Q=nC_p\Delta T$</li>
+      <li>$e=\dfrac{W}{Q_H}$; Carnot: $1-\dfrac{T_{m\acute in}}{T_{m\acute ax}}$</li>
+    </ul></div>
   <ol class="steps">
-    <li>$T_b=T_c=600{,}15$ K (máxima); $T_a=T_b\frac{p_a}{p_b}=200{,}05$ K (isócora $a\to b$); $V_a=V_b=\frac{nRT_b}{p_b}=0{,}0333$ m³; isoterma $b\to c$ con $p_c=p_b/3$ ⇒ $V_c=3V_b=0{,}0998$ m³.</li>
-    <li><b>a)</b> $Q_{ab}=nC_V(T_b-T_a)=\mathbf{+9980\ J}$; $Q_{bc}=nRT_b\ln3=\mathbf{+10\,964\ J}$ ⇒ entra <b>$2{,}09\times10^4$ J</b>; $Q_{ca}=nC_p(T_a-T_c)=\mathbf{-16\,633\ J}$ (sale).</li>
-    <li><b>b)</b> $W=20\,944-16\,633=\mathbf{4{,}31\times10^3\ J}$; $e=\dfrac{4311}{20\,944}=\mathbf{21\,\%}$.</li>
-    <li><b>c)</b> $e_C=1-\dfrac{200}{600}=\mathbf{67\,\%}$: la máquina da algo menos de un tercio del máximo.</li>
+    <li><b>Estados:</b>
+      $$T_b=T_c=600{,}15\ \text{K},\quad T_a=T_b\frac{p_a}{p_b}=200{,}05\ \text{K},\quad V_a=V_b=\frac{nRT_b}{p_b}=0{,}0333\ \text{m}^3,\quad V_c=3V_b=0{,}0998\ \text{m}^3$$</li>
+    <li><b>a) Calores:</b>
+      $$Q_{ab}=nC_V(T_b-T_a)=\mathbf{+9980\ J},\qquad Q_{bc}=nRT_b\ln3=\mathbf{+10\,964\ J}\ \Rightarrow\ Q_H=\mathbf{2{,}09\times10^4\ J}$$
+      $$Q_{ca}=nC_p(T_a-T_c)=\mathbf{-16\,633\ J}\ \text{(sale)}$$</li>
+    <li><b>b) Trabajo y eficiencia:</b>
+      $$W=20\,944-16\,633=\mathbf{4{,}31\times10^3\ J},\qquad e=\frac{4311}{20\,944}=\mathbf{21\ \%}$$</li>
+    <li><b>c) Frente a Carnot:</b>
+      $$e_C=1-\frac{200}{600}=\mathbf{67\ \%}$$
+      <span class="por">La máquina da algo menos de un tercio del máximo.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/ciclo-de-2-mol-de-helio-a-b-y-c.svg">
 <div class="figph" role="img" aria-label="Ciclo de 2 mol de helio: a, b y c" style="aspect-ratio:340/215"></div>
@@ -1029,11 +1342,23 @@
 </details>
 <details class="sol" id="e23"><summary>E23 — Problema 20.46: Ciclo con una recta <span class="src" data-l="E" data-ref="Solucionario 20-17 y 20-18, Prob. 20.46">E 20-17 y 20-18</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Problema 20.46, p. 680">U p.680</span></summary>
 <p class="enun">Un gas ideal monoatómico realiza el ciclo de la figura P20.46 en el sentido que se indica. La trayectoria del proceso $c\to a$ es una recta en el diagrama pV. a) Calcule $Q$, $W$ y $\Delta U$ para cada proceso: $a\to b$, $b\to c$ y $c\to a$. b) Calcule $Q$, $W$ y $\Delta U$ para un ciclo completo. c) Determine la eficiencia del ciclo. (Figura: $a$ (0,500 m³; $3{,}00\times10^5$ Pa), $b$ (0,800 m³; $3{,}00\times10^5$ Pa), $c$ (0,800 m³; $1{,}00\times10^5$ Pa).)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Monoatómico: $\Delta U=\tfrac32\Delta(pV)$; $Q=\Delta U+W$; $W$ = área bajo cada tramo</li>
+      <li>$e=\dfrac{W}{Q_H}$ ($Q_H$ = todo el calor que entra); Carnot: $1-\dfrac{T_{m\acute in}}{T_{m\acute ax}}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Sin $n$:</b> $\Delta U=\frac32\Delta(pV)$; $pV$: $a$ 150 000 J, $b$ 240 000 J, $c$ 80 000 J.</li>
-    <li><b>a)</b> $a\to b$ isóbaro: $W=p\Delta V=\mathbf{+90\,000\ J}$, $\Delta U=\mathbf{+135\,000\ J}$, $Q=\mathbf{+225\,000\ J}$. $b\to c$ isócoro: $W=0$, $Q=\Delta U=\mathbf{-240\,000\ J}$. $c\to a$ recta: $W=-\frac12(3+1)\times10^5\cdot0{,}300=\mathbf{-60\,000\ J}$, $\Delta U=\mathbf{+105\,000\ J}$, $Q=\mathbf{+45\,000\ J}$ (neto).</li>
-    <li><b>b)</b> Ciclo: $W=Q=\mathbf{+30\,000\ J}$ (área del triángulo, horario), $\Delta U=0$.</li>
-    <li><b>c) Calor que entra.</b> En la recta $dQ=\left(\frac52p+\frac32sV\right)dV$ con $s=-6{,}67\times10^5$ Pa/m³: cambia de signo en $V^*=0{,}594$ m³. De $c$ a $V^*$ entran 56 719 J; de $V^*$ a $a$ salen 11 719 J. $Q_H=225\,000+56\,719=281\,719$ J ⇒ $e=\dfrac{30\,000}{281\,719}=\mathbf{10{,}6\,\%}$. (Si se toma el neto de la recta, $Q_H=270\,000$ J y $e=11{,}1\,\%$.) Carnot entre $T_{max}$ ($b$) y $T_{min}$ ($c$): $1-\frac{80\,000}{240\,000}=67\,\%$.</li>
+    <li><b>Productos $pV$:</b>
+      $$a:\ 150\,000\ \text{J},\qquad b:\ 240\,000\ \text{J},\qquad c:\ 80\,000\ \text{J}$$</li>
+    <li><b>a) Procesos:</b>
+      $$a\to b:\ W=p\Delta V=\mathbf{+90\,000\ J},\ \Delta U=\mathbf{+135\,000\ J},\ Q=\mathbf{+225\,000\ J}$$
+      $$b\to c:\ W=0,\ Q=\Delta U=\mathbf{-240\,000\ J}$$
+      $$c\to a\ (\text{recta}):\ W=-\tfrac12(3+1)\times10^5(0{,}300)=\mathbf{-60\,000\ J},\ \Delta U=\mathbf{+105\,000\ J},\ Q=\mathbf{+45\,000\ J}$$</li>
+    <li><b>b) Ciclo:</b>
+      $$W=Q=\mathbf{+30\,000\ J}\ \ (\text{área del tri\acute angulo, horario}),\qquad\Delta U=0$$</li>
+    <li><b>c) Eficiencia.</b> En la recta (pendiente $s=-6{,}67\times10^5$ Pa/m³) el calor cambia de signo en $V^*=0{,}594$ m³: de $c$ a $V^*$ entran 56 719 J y de $V^*$ a $a$ salen 11 719 J.
+      $$Q_H=225\,000+56\,719=281\,719\ \text{J}\ \Rightarrow\ e=\frac{30\,000}{281\,719}=\mathbf{10{,}6\ \%}$$
+      <span class="por">Con el neto de la recta ($Q_H=270\,000$ J) saldría 11,1 %. Carnot entre $b$ y $c$: $1-\frac{80\,000}{240\,000}=67\ \%$.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t20/ciclo-triangular-isobara-isocora-y-recta-con-el--2.svg">
 <div class="figph" role="img" aria-label="Ciclo triangular isóbara isócora y recta, con el punto V asterisco donde el calor cambia de signo" style="aspect-ratio:340/215"></div>
@@ -1061,6 +1386,11 @@
 <div class="nivel" id="teoria"><b>📝 Preguntas de teoría (4 puntos)</b><span>La pregunta de teoría ha sido <b>tres veces</b> de este tema: «Procesos reversibles e irreversibles. Ciclo de Carnot» (Febrero 2018, 2ª semana, P-3 opción 3.2), «Irreversibilidad de los procesos térmicos. Procesos reversibles e irreversibles» (Septiembre 2019, Original, P-3 opción 3.2) y «La segunda ley de la termodinámica» con dos cuestiones (Septiembre 2024, P-4 opción B). Abajo, los guiones de una respuesta completa (≈ 1,5-2 caras) y las dos cuestiones de 2024 resueltas.</span></div>
 <details class="sol" id="t1"><summary>T1 — «Procesos reversibles e irreversibles. Ciclo de Carnot» e «Irreversibilidad de los procesos térmicos» <span class="src" data-l="X" data-ref="Examen Febrero 2018 (2ª semana) P-3 Opción 3.2">X</span> <span class="src" data-l="X" data-ref="Examen Septiembre 2019 (Original) P-3 Opción 3.2">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §20.1, §20.5-20.7, pp. 647-648, 656-663, 668-670">U p.647-670</span></summary>
 <p class="enun"><b>Examen Febrero 2018 (2ª semana) P-3, Opción 3.2 (4 puntos):</b> «Procesos reversibles e irreversibles. Ciclo de Carnot.» <b>Examen Septiembre 2019 (Original) P-3, Opción 3.2 (4 puntos):</b> «Irreversibilidad de los procesos térmicos. Procesos reversibles e irreversibles.» (Solo el título; sin cuestiones cortas.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Carnot: $\dfrac{|Q_C|}{|Q_H|}=\dfrac{T_C}{T_H}$; $e_C=1-\dfrac{T_C}{T_H}$; refrigerador de Carnot: $K=\dfrac{T_C}{T_H-T_C}$ ($T$ en kelvin)</li>
+      <li>Entropía: $\dfrac{Q_H}{T_H}+\dfrac{Q_C}{T_C}=0$ en Carnot ($\Delta S_{universo}=0$); $\Delta S_{universo}>0$ si hay irreversibilidad</li>
+    </ul></div>
   <p><b>Esquema de la respuesta ideal.</b></p>
   <ol class="steps">
     <li><b>Dirección de los procesos</b> (U p. 647): los procesos naturales van en un sentido (calor de caliente a frío, frenado por rozamiento, expansión libre, mezcla). El inverso no violaría la primera ley: lo prohíbe la segunda.</li>
@@ -1079,6 +1409,11 @@
 </details>
 <details class="sol" id="t2"><summary>T2 — «La segunda ley de la termodinámica» + Sol-Tierra y flujo de calor de frío a caliente <span class="src" data-l="X" data-ref="Examen Septiembre 2024 P-4 Opción B">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §20.1-20.8, pp. 647-673; P20.19 y P20.20, p. 676">U p.647-676</span></summary>
 <p class="enun"><b>Examen Septiembre 2024 P-4, Opción B (4 puntos).</b> Desarrolle el tema: La segunda ley de la termodinámica. Además, responda a las siguientes cuestiones: (a) ¿La Tierra y el Sol están en equilibrio térmico? ¿Hay cambios de entropía asociados a la transmisión de energía del Sol a la Tierra? ¿La radiación es diferente de otros modos de transferencia de calor con respecto a los cambios de entropía? Explique su razonamiento. (b) Suponga que usted pone un objeto caliente en contacto térmico con un objeto frío y observa (para su sorpresa) que el calor fluye del objeto frío al objeto caliente, haciendo al frío más frío y al caliente más caliente. ¿Este proceso viola necesariamente la primera ley de termodinámica? ¿Y la segunda ley de la termodinámica? Explique su razonamiento.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Máquina: $e=\dfrac{W}{Q_H}=1-\dfrac{|Q_C|}{|Q_H|}$; refrigerador: $K=\dfrac{|Q_C|}{|W|}$</li>
+      <li>Entropía: $\Delta S=\displaystyle\int\dfrac{dQ}{T}$; foco a $T$ constante: $\Delta S=\dfrac QT$; $\Delta S_{total}\ge0$</li>
+    </ul></div>
   <p><b>Esquema del tema (≈ 1,5 caras).</b></p>
   <ol class="steps">
     <li><b>Procesos irreversibles y dirección preferente</b> (U pp. 647-648).</li>

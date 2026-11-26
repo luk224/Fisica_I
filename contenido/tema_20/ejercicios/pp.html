@@ -1,8 +1,21 @@
 <p class="enun">Un recipiente aislado de masa despreciable contiene 0,600 kg de agua a 45,0 °C. Se coloca un cubo de hielo de 0,0500 kg a −15,0 °C en el agua. a) Calcule la temperatura final del agua una vez que el hielo se haya fundido. b) Calcule el cambio en la entropía del sistema. (Datos de U: $c_{agua}=4190$ J/(kg·K), $c_{hielo}=2100$ J/(kg·K), $L_f=3{,}34\times10^5$ J/kg.)</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Calorimetría (aislado): $\sum Q=0$; $Q=m\,c\,\Delta T$; fusión $Q=m\,L_f$</li>
+      <li>Entropía: $\Delta S=m\,c\ln\dfrac{T_2}{T_1}$ (cambio de temperatura); $\Delta S=\dfrac{m\,L}{T}$ (cambio de fase)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a) Temperatura final</b> (calorimetría, tema 17; sistema aislado: $\sum Q=0$). El agua caliente pierde $0{,}600\cdot4190\,(45-T)$; el hielo gana: calentarse a 0 °C ($0{,}0500\cdot2100\cdot15=1575$ J), fundirse ($0{,}0500\cdot3{,}34\times10^5=16\,700$ J) y calentarse el agua resultante de 0 a $T$ ($0{,}0500\cdot4190\,T$). Igualando: $113\,130-2514\,T=18\,275+209{,}5\,T$ ⇒ $T=\mathbf{34{,}8\ °C}$ (307,98 K). Se funde todo el hielo (el agua aún cede mucho calor).</li>
-    <li><b>b) Entropía por tramos</b> (proceso irreversible: cada parte con un camino reversible, (20.18) y (20.19)): hielo de 258,15 K a 273,15 K: $0{,}0500\cdot2100\ln\frac{273{,}15}{258{,}15}=+5{,}93$ J/K; fusión: $\frac{16\,700}{273{,}15}=+61{,}14$ J/K; agua del hielo de 273,15 K a 307,98 K: $0{,}0500\cdot4190\ln\frac{307{,}98}{273{,}15}=+25{,}14$ J/K; agua caliente de 318,15 K a 307,98 K: $0{,}600\cdot4190\ln\frac{307{,}98}{318{,}15}=-81{,}69$ J/K.</li>
-    <li><b>Total:</b> $5{,}93+61{,}14+25{,}14-81{,}69=\mathbf{+10{,}5\ J/K}$.</li>
-    <li><b>Evaluar:</b> el hielo y su agua ganan entropía (se calientan y se funden); el agua caliente pierde (se enfría); el total es positivo, como en todo proceso irreversible en un sistema aislado.</li>
+    <li><b>a) Temperatura final</b> ($\sum Q=0$; el agua cede; el hielo se calienta a 0 °C con $0{,}0500(2100)(15)=1575$ J, se funde y su agua se calienta):
+      $$0{,}600(4190)(45-T)=0{,}0500(2100)(15)+0{,}0500(3{,}34\times10^5)+0{,}0500(4190)\,T$$
+      $$113\,130-2514\,T=18\,275+209{,}5\,T\ \Rightarrow\ T=\mathbf{34{,}8\ ^\circ C}\ (307{,}98\ \text{K})$$
+      <span class="por">Se funde todo el hielo (el agua aún cede mucho calor).</span></li>
+    <li><b>b) Entropía por tramos</b> (camino reversible para cada parte):
+      $$\text{hielo }258{,}15\to273{,}15\ \text{K: }0{,}0500(2100)\ln\frac{273{,}15}{258{,}15}=+5{,}93\ \text{J/K}$$
+      $$\text{fusión: }\frac{16\,700}{273{,}15}=+61{,}14\ \text{J/K}$$
+      $$\text{agua del hielo }273{,}15\to307{,}98\ \text{K: }0{,}0500(4190)\ln\frac{307{,}98}{273{,}15}=+25{,}14\ \text{J/K}$$
+      $$\text{agua caliente }318{,}15\to307{,}98\ \text{K: }0{,}600(4190)\ln\frac{307{,}98}{318{,}15}=-81{,}69\ \text{J/K}$$</li>
+    <li><b>Total:</b>
+      $$\Delta S=5{,}93+61{,}14+25{,}14-81{,}69=\mathbf{+10{,}5\ J/K}$$
+      <span class="por">Positivo, como en todo proceso irreversible en un sistema aislado.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> mezcla con cambio de fase: temperatura final por calorimetría (incluye $mL$), $\Delta S$ por tramos ($mc\ln$ y $\pm mL/T$), suma $>0$. <b>Error típico:</b> olvidar el calor de calentar el hielo o el de la fusión; poner la fusión en °C.</div>

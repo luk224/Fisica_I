@@ -1,8 +1,14 @@
 <p class="enun">Un solitario globo de una fiesta con un volumen de 2,40 L y que contiene 0,100 moles de aire se deja a la deriva en la Estación Espacial Internacional, temporalmente inhabitada y despresurizada. La luz solar que pasa por una ventanilla incide sobre el globo y hace que estalle provocando que el aire en su interior experimente una expansión libre en la estación vacía, cuyo volumen total es de 425 m³. Calcule el cambio de entropía del aire durante la expansión.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Expansión libre de gas ideal: $Q=W=\Delta U=0$ ($T$ constante), pero irreversible</li>
+      <li>Camino reversible equivalente (isoterma): $\Delta S=nR\ln\dfrac{V_2}{V_1}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Expansión libre</b> (ej. 20.8): $Q=0$, $W=0$, $\Delta U=0$ ⇒ gas ideal a $T$ constante. Pero no es reversible, así que <b>no</b> se puede decir $\Delta S=Q/T=0$.</li>
-    <li><b>Camino reversible con los mismos extremos:</b> isoterma de 2,40 L a 425 m³ ⇒ $\Delta S=nR\ln\dfrac{V_2}{V_1}$.</li>
-    <li>$\Delta S=0{,}100\cdot8{,}314\cdot\ln\dfrac{425}{2{,}40\times10^{-3}}=0{,}8314\cdot12{,}08=\mathbf{+10{,}0\ J/K}$.</li>
+    <li><b>Idea.</b>
+      <span class="por">No se puede decir $\Delta S=Q/T=0$: el proceso no es reversible. Se calcula por una isoterma reversible entre los mismos estados.</span></li>
+    <li><b>Entropía:</b>
+      $$\Delta S=nR\ln\frac{V_2}{V_1}=0{,}100(8{,}314)\ln\frac{425}{2{,}40\times10^{-3}}=0{,}8314(12{,}08)=\mathbf{+10{,}0\ J/K}$$</li>
   </ol>
   {{fig:expansion-libre-del-aire-del-globo-de-2-40-litro}}
   <div class="recipe"><b>Receta:</b> expansión libre de gas ideal: $\Delta S=nR\ln(V_2/V_1)$ (no hace falta $T$). <b>Error típico:</b> $\Delta S=0$ «porque no hay calor»; no pasar litros a m³ en el cociente.</div>
