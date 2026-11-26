@@ -1,16 +1,38 @@
 <p class="enun">Un cilindro macizo de distribución de masa uniforme de 490 kg y un radio de 0,25 m sube girando sin deslizar por una rampa inclinada 35° sobre la horizontal y de 6,5 m de largo. La fuerza que consigue que esto sea así se aplica de forma paralela a la superficie sin realizar ningún momento sobre el cilindro. El coeficiente de fricción estática entre la rampa y el cilindro es 0,12. Determine: (a) la magnitud máxima de la fuerza que permite que el cilindro ruede sin deslizar mientras sube; (b) si el cilindro comienza desde el reposo en la parte inferior, rodando sin deslizar, el tiempo mínimo que necesita para alcanzar la parte superior. Considere $g=9{,}81$ m/s².</p>
 {{fig:x3-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Traslación a lo largo de la rampa: $\sum F_x=m\,a_{cm}$; perpendicular: $n=mg\cos\theta$</li>
+      <li>Rotación respecto al cm: $\sum\tau_{cm}=I_{cm}\,\alpha$, con $I_{cm}=\tfrac12mR^2$ (cilindro macizo)</li>
+      <li>Rodar sin deslizar: $a_{cm}=R\,\alpha$</li>
+      <li>Fricción estática: $f\le\mu_s\,n$</li>
+      <li>MRUA desde el reposo: $L=\tfrac12a\,t^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>«Sin realizar ningún momento».</b> $F$ se aplica en el eje del cilindro, paralela a la rampa y hacia arriba: su recta pasa por el cm y <b>no da torca</b> respecto a él. El peso y la normal tampoco. La única torca posible es la de la <b>fricción</b>.</li>
-    <li><b>Sentido de la fricción (paso clave).</b> El cilindro parte del reposo y sube cada vez más rápido: su $\omega$ debe aumentar en el sentido de «rodar hacia arriba». Solo la fricción lo logra, y para ello debe apuntar <b>rampa abajo</b> (una fuerza rampa abajo en el contacto hace girar el cilindro como al subir rodando). Es decir, la fricción se opone al deslizamiento que habría sin ella, no «al movimiento».</li>
-    <li><b>Ecuaciones</b> (eje $x$ rampa arriba): perpendicular, $n=mg\cos\theta$; traslación, $F-mg\sin\theta-f=ma_{cm}$; rotación, $fR=\tfrac12mR^2\alpha$ con $\alpha=a_{cm}/R$ ⇒ $f=\tfrac12ma_{cm}$.</li>
-    <li><b>Resolver en función de $F$.</b> $F-mg\sin\theta=\tfrac32ma_{cm}$ ⇒ $a_{cm}=\dfrac{2(F-mg\sin\theta)}{3m}$ y $f=\dfrac{F-mg\sin\theta}{3}$.</li>
-    <li><b>(a) Condición de no deslizar:</b> $f\le\mu_sn$ ⇒ $\dfrac{F-mg\sin\theta}{3}\le\mu_smg\cos\theta$ ⇒
-    $$F_{máx}=mg(\sin\theta+3\mu_s\cos\theta)=490\cdot9{,}81\,(0{,}5736+3\cdot0{,}12\cdot0{,}8192)\approx\mathbf{4{,}17\times10^3\ N}$$
-    Además, para que suba hace falta $F>mg\sin\theta=2757$ N: rango útil $2757\ \text{N}&lt;F\le4175$ N.</li>
-    <li><b>(b) Tiempo mínimo</b> = mayor aceleración = $F=F_{máx}$, es decir, fricción en su máximo, $f_{máx}=\mu_smg\cos\theta=473$ N. Entonces $a_{máx}=2f_{máx}/m=2\mu_sg\cos\theta=2(0{,}12)(9{,}81)\cos35^\circ=1{,}93$ m/s² (¡no depende de la masa!).</li>
-    <li><b>Cinemática</b> (aceleración constante desde el reposo): $L=\tfrac12a_{máx}t^2$ ⇒ $t_{mín}=\sqrt{2L/a_{máx}}=\sqrt{13/1{,}929}=\mathbf{2{,}60\ s}$.</li>
-    <li><b>Comprobaciones.</b> Al final $v=at=5{,}01$ m/s y $\omega=v/R=20{,}0$ rad/s. Si $\mu_s\to0$, $F_{máx}\to mg\sin\theta$ (sin fricción no podría acelerar rodando) ✓. Un rodillo de acero de 0,25 m de radio y 490 kg mide unos 0,3 m de largo: dato razonable. La masa solo interviene en (a); el tiempo de (b) no depende de $m$ ni de $R$.</li>
+    <li><b>Qué fuerza da torca.</b> $F$ va en el eje, paralela a la rampa; el peso actúa en el cm; la normal pasa por el cm.
+      <span class="por">Ninguna de las tres da torca respecto al cm. La única es la fricción: es ella la que hace girar al cilindro.</span></li>
+    <li><b>Sentido de la fricción.</b> Eje $x$ rampa arriba; $f$ apunta <b>rampa abajo</b>.
+      <span class="por">El cilindro tiene que aumentar su giro «rodando hacia arriba», y una fuerza en el contacto dirigida rampa abajo es la que produce ese giro. La fricción no se opone «al movimiento» sino al deslizamiento que habría sin ella.</span></li>
+    <li><b>Perpendicular a la rampa:</b>
+      $$n=mg\cos\theta$$</li>
+    <li><b>Traslación</b> (rampa arriba):
+      $$F-mg\sin\theta-f=m\,a_{cm}\qquad(1)$$</li>
+    <li><b>Rotación respecto al cm</b> con $\alpha=a_{cm}/R$:
+      $$f\,R=\tfrac12mR^2\,\frac{a_{cm}}{R}\ \Rightarrow\ f=\tfrac12m\,a_{cm}\qquad(2)$$</li>
+    <li><b>Resolver en función de $F$.</b> (2) en (1):
+      $$F-mg\sin\theta=\tfrac32m\,a_{cm}\ \Rightarrow\ a_{cm}=\frac{2(F-mg\sin\theta)}{3m},\qquad f=\frac{F-mg\sin\theta}{3}$$</li>
+    <li><b>(a) Condición de no deslizar:</b>
+      $$f\le\mu_s\,n\ \Rightarrow\ \frac{F-mg\sin\theta}{3}\le\mu_s\,mg\cos\theta\ \Rightarrow\ F_{m\acute ax}=mg\,(\sin\theta+3\mu_s\cos\theta)$$
+      $$F_{m\acute ax}=490(9{,}81)\,[\sin35^\circ+3(0{,}12)\cos35^\circ]=4806{,}9\,(0{,}5736+0{,}2949)\approx\mathbf{4{,}17\times10^{3}\ N}$$
+      <span class="por">Para que suba hace falta además $F>mg\sin\theta=2757$ N.</span></li>
+    <li><b>(b) Tiempo mínimo ⇒ aceleración máxima ⇒ $F=F_{m\acute ax}$ ⇒ $f=\mu_sn$:</b>
+      $$f_{m\acute ax}=\mu_s\,mg\cos\theta=0{,}12(4806{,}9)(0{,}8192)=472{,}5\ \text{N}$$
+      $$a_{m\acute ax}=\frac{2f_{m\acute ax}}{m}=2\mu_sg\cos\theta=2(0{,}12)(9{,}81)(0{,}8192)=1{,}93\ \text{m/s}^2$$
+      <span class="por">De (2): $a_{cm}=2f/m$. La masa se simplifica. ($f_{m\acute ax}\approx473$ N.)</span></li>
+    <li><b>Cinemática</b> (aceleración constante, parte del reposo):
+      $$L=\tfrac12a_{m\acute ax}\,t^2\ \Rightarrow\ t_{m\acute in}=\sqrt{\frac{2L}{a_{m\acute ax}}}=\sqrt{\frac{2(6{,}5)}{1{,}929}}=\sqrt{6{,}74}=\mathbf{2{,}60\ s}$$</li>
+    <li><b>Comprobación</b> al llegar arriba:
+      $$v=a_{m\acute ax}\,t=1{,}929(2{,}60)=5{,}01\ \text{m/s},\qquad\omega=\frac vR=\frac{5{,}01}{0{,}25}=20{,}0\ \text{rad/s}$$</li>
   </ol>
   {{fig:cilindro-que-sube-rodando-por-una-rampa-de-35-gr}}
   <p><b>Resultado:</b> (a) $F_{máx}=mg(\sin35^\circ+3\mu_s\cos35^\circ)\approx4{,}17$ kN; (b) $t_{mín}=\sqrt{L/(\mu_sg\cos35^\circ)}=2{,}60$ s.</p>

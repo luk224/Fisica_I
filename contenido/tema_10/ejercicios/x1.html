@@ -1,15 +1,44 @@
 <p class="enun">Se deja caer un cilindro sólido de masa $m$ y radio $r$ por una superficie inclinada que forma un ángulo de 50° con la horizontal. (a) Calcular el valor mínimo del coeficiente de fricción estática entre la superficie del cilindro y la de la rampa para que ruede sin deslizamiento. (b) Calcular la aceleración lineal del primer cilindro si cae rodando como en el apartado anterior, sabiendo que su masa es 1 kg y su radio 0,5 m. (c) ¿Qué pasaría si en lugar de un cilindro macizo fuera uno hueco con la misma masa concentrada en la superficie y el coeficiente de fricción calculado en (a)? ¿Rodaría también sin deslizamiento? Considere $g=9{,}81$ m/s², $I_{cilindro}=\tfrac12mr^2$, $I_{hueco}=mr^2$.</p>
 {{fig:x1-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Traslación del cm: $\sum F_x=m\,a_{cm}$</li>
+      <li>Rotación respecto al cm: $\sum\tau_{cm}=I_{cm}\,\alpha$</li>
+      <li>Rodar sin deslizar: $a_{cm}=r\,\alpha$</li>
+      <li>Momentos de inercia: cilindro macizo $I=\tfrac12mr^2$; cilindro hueco $I=mr^2$</li>
+      <li>Fricción estática: $f\le\mu_s\,n$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Qué tipo de problema es.</b> El cilindro se traslada (baja) y a la vez gira: caso «eje móvil» de §10.3. Dos ecuaciones, una para el cm (10.12) y otra para el giro respecto al cm (10.13), más la ligadura $a_{cm}=r\alpha$. Es el ejemplo 10.7 (bola de bolos) con otro $I$.</li>
-    <li><b>DCL y sentido de la fricción.</b> Peso $mg$ (en el cm), normal $n$ (recta por el cm) y fricción estática $f$ en el contacto, paralela a la rampa. Respecto al cm, el peso y la normal no dan torca; solo $f$ puede hacer girar el cilindro. Para que gane giro en el sentido de bajar rodando, $f$ apunta <b>rampa arriba</b>. Eje $x$ rampa abajo.</li>
-    <li><b>Perpendicular a la rampa</b> (no hay movimiento): $n=mg\cos\theta$.</li>
-    <li><b>Traslación:</b> $mg\sin\theta-f=ma_{cm}$. <b>Rotación respecto al cm:</b> $fr=I_{cm}\alpha=\tfrac12mr^2\alpha$.</li>
-    <li><b>Ligadura:</b> $\alpha=a_{cm}/r$ ⇒ $f=\tfrac12ma_{cm}$. Sustituyendo: $mg\sin\theta=\tfrac32ma_{cm}$ ⇒ $a_{cm}=\tfrac23g\sin\theta$ y $f=\tfrac13mg\sin\theta$.</li>
-    <li><b>(a)</b> La fricción estática solo puede llegar hasta $\mu_sn$: $f\le\mu_sn$ ⇒ $\tfrac13mg\sin\theta\le\mu_smg\cos\theta$ ⇒ $\mu_s\ge\tfrac13\tan\theta=\tfrac13\tan50^\circ=\mathbf{0{,}397}$. No depende de $m$ ni de $r$.</li>
-    <li><b>(b)</b> $a_{cm}=\tfrac23(9{,}81)\sin50^\circ=\mathbf{5{,}01\ m/s^2}$. (Los datos $m=1$ kg y $r=0{,}5$ m solo hacen falta para $\alpha=a_{cm}/r=10{,}0$ rad/s², $f=2{,}50$ N y $n=6{,}31$ N.)</li>
-    <li><b>(c) Cilindro hueco.</b> Se repite con $I=mr^2$: $f=ma_{cm}$ y $mg\sin\theta=2ma_{cm}$ ⇒ $a_{cm}=\tfrac12g\sin\theta$, $f=\tfrac12mg\sin\theta$, que exige $\mu_s\ge\tfrac12\tan50^\circ=0{,}596$. Como el coeficiente disponible es $0{,}397&lt;0{,}596$, <b>no rueda sin deslizar: resbala</b>. Con más $I$ hace falta más torca (más fricción) para dar la misma $\alpha$; en números, necesitaría $f=3{,}76$ N y el máximo es $\mu_sn=2{,}50$ N.</li>
-    <li><b>(c) ampliación.</b> Suponiendo $\mu_k\approx\mu_s=0{,}397$, resbalaría con $f=\mu_kmg\cos\theta$: $a_{cm}=g(\sin\theta-\mu_k\cos\theta)=5{,}01$ m/s² y $\alpha=\mu_kg\cos\theta/r=5{,}01$ rad/s²; como $r\alpha=2{,}50$ m/s² $&lt;a_{cm}$, el punto de contacto se desliza rampa abajo.</li>
+    <li><b>Dibujo y ejes.</b> Eje $x$ rampa abajo, eje $y$ perpendicular a la rampa. Fuerzas: peso $mg$, normal $n$ y fricción $f$ rampa arriba.
+      <span class="por">$f$ es la única fuerza con torca respecto al cm (peso y normal pasan por él). Rampa arriba, porque frena el punto de contacto y así hace girar al cilindro.</span></li>
+    <li><b>Perpendicular a la rampa</b> (no hay movimiento en $y$):
+      $$n-mg\cos\theta=0\ \Rightarrow\ n=mg\cos\theta$$
+      <span class="por">Necesitamos $n$ para el límite de la fricción, $f\le\mu_sn$.</span></li>
+    <li><b>Traslación a lo largo de la rampa:</b>
+      $$mg\sin\theta-f=m\,a_{cm}\qquad(1)$$</li>
+    <li><b>Rotación respecto al cm</b> (macizo, $I=\tfrac12mr^2$):
+      $$f\,r=\tfrac12mr^2\,\alpha\qquad(2)$$
+      <span class="por">El brazo de $f$ es $r$ (actúa en el borde, tangente).</span></li>
+    <li><b>Ligadura</b> $\alpha=a_{cm}/r$ en (2):
+      $$f\,r=\tfrac12mr^2\,\frac{a_{cm}}{r}\ \Rightarrow\ f=\tfrac12m\,a_{cm}\qquad(3)$$
+      <span class="por">Así $\alpha$ desaparece y quedan solo $f$ y $a_{cm}$ como incógnitas.</span></li>
+    <li><b>Sustituir (3) en (1):</b>
+      $$mg\sin\theta-\tfrac12m\,a_{cm}=m\,a_{cm}\ \Rightarrow\ mg\sin\theta=\tfrac32m\,a_{cm}\ \Rightarrow\ a_{cm}=\tfrac23\,g\sin\theta$$
+      $$f=\tfrac12m\left(\tfrac23g\sin\theta\right)=\tfrac13\,mg\sin\theta$$
+      <span class="por">La masa se simplifica: todos los cilindros macizos bajan igual.</span></li>
+    <li><b>(a) $\mu_s$ mínimo.</b> La fricción necesaria no puede superar el máximo:
+      $$f\le\mu_sn\ \Rightarrow\ \tfrac13mg\sin\theta\le\mu_s\,mg\cos\theta\ \Rightarrow\ \mu_s\ge\tfrac13\tan\theta=\tfrac13\tan50^\circ=\tfrac13(1{,}192)=\mathbf{0{,}397}$$
+      <span class="por">$\mu_sn$ es el <i>máximo</i> que puede dar la fricción estática; en rodadura vale solo lo necesario ($\tfrac13mg\sin\theta$), no $\mu_sn$.</span></li>
+    <li><b>(b) Aceleración</b> con $g=9{,}81$ m/s²:
+      $$a_{cm}=\tfrac23(9{,}81)\sin50^\circ=\tfrac23(9{,}81)(0{,}766)=\mathbf{5{,}01\ m/s^2}$$
+      <span class="por">$m=1$ kg y $r=0{,}5$ m no hacen falta para $a_{cm}$; solo darían $\alpha=a_{cm}/r=10{,}0$ rad/s², $f=\tfrac12(1)(5{,}01)=2{,}50$ N y $n=1(9{,}81)\cos50^\circ=6{,}31$ N.</span></li>
+    <li><b>(c) Cilindro hueco</b> ($I=mr^2$). Repetimos (2) y (3):
+      $$f\,r=mr^2\frac{a_{cm}}{r}\ \Rightarrow\ f=m\,a_{cm}$$
+      $$(1):\ mg\sin\theta-m\,a_{cm}=m\,a_{cm}\ \Rightarrow\ a_{cm}=\tfrac12g\sin\theta=3{,}76\ \text{m/s}^2,\qquad f=\tfrac12mg\sin\theta=3{,}76\ \text{N}$$
+      <span class="por">Más $I$ cuesta más girarlo, así que hace falta más torca, es decir, más fricción.</span></li>
+    <li><b>(c) ¿Rueda sin deslizar?</b> Comparamos la fricción necesaria con la máxima disponible, con $\mu_s=0{,}397$ del apartado (a):
+      $$\mu_s^{\,nec}=\tfrac12\tan50^\circ=0{,}596>0{,}397\qquad\Big(f=3{,}76\ \text{N}>\mu_sn=0{,}397\cdot6{,}31=2{,}50\ \text{N}\Big)$$
+      <span class="por">La fricción disponible no alcanza: <b>no rueda sin deslizar, resbala</b>. Si resbala, $f=\mu_kmg\cos\theta$ (con $\mu_k\approx0{,}397$) y $r\alpha=2{,}50\lt a_{cm}=5{,}01$ m/s²: el punto de contacto se desliza rampa abajo.</span></li>
   </ol>
   {{fig:cilindro-macizo-en-una-rampa-de-50-grados-con-el}}
   <p><b>Resultado:</b> (a) $\mu_{s,min}=\tfrac13\tan50^\circ=0{,}397$; (b) $a_{cm}=\tfrac23g\sin50^\circ=5{,}01$ m/s²; (c) no: el hueco necesita $\mu_s\ge0{,}596$ y resbala.</p>

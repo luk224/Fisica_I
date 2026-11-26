@@ -1,14 +1,31 @@
 <p class="enun">Sea un cilindro de masa $m=30$ kg y radio $R=600$ mm que se puede mover en un plano horizontal con rozamiento $\mu=0{,}3$. Si, partiendo del reposo, se le aplica una fuerza $F=t^2/2$ (siendo $t$ el tiempo) en el centro del cilindro, se pide calcular: (a) el tiempo al cabo del cual el cilindro empieza a deslizar; (b) la aceleración de cualquier punto del centro del cilindro cuando empieza a deslizar; (c) la aceleración del centro de masas y la aceleración angular del cilindro a los 4 segundos de aplicar la fuerza.</p>
 {{fig:x4-planteamiento}}
   <p><b>Supuestos:</b> cilindro macizo homogéneo ($I=\tfrac12mR^2$); $F$ en newtons y $t$ en segundos; $\mu_s=\mu_k=0{,}3$; $g=9{,}8$ m/s²; «puntos del centro» = puntos del eje del cilindro, que se mueven como el cm.</p>
+  <p><b>Supuestos:</b> cilindro macizo ($I=\tfrac12mR^2$); $F$ en N y $t$ en s; $\mu_s=\mu_k=0{,}3$; $g=9{,}8$ m/s²; «puntos del centro» = puntos del eje, que se mueven como el cm.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Traslación: $F-f=m\,a_{cm}$ (horizontal); vertical: $n=mg$</li>
+      <li>Rotación respecto al cm: $f\,R=I_{cm}\,\alpha$, con $I_{cm}=\tfrac12mR^2$</li>
+      <li>Rodadura: $a_{cm}=R\,\alpha$</li>
+      <li>Límite de la fricción estática: $f\le\mu_s\,n$; si desliza, $f=\mu_k\,n$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Al principio $F$ es pequeña y el cilindro <b>rueda sin deslizar</b>: la fricción estática hace lo necesario. Como $F$ crece con el tiempo, la fricción necesaria crece hasta superar $\mu_smg$: en ese instante empieza a deslizar.</li>
-    <li><b>Fuerzas.</b> $F$ (horizontal, en el eje: sin torca), $mg$, $n=mg$ y la fricción $f$ en el contacto. $F$ empuja el cm hacia delante; para que el cilindro gire acelerando en el sentido de rodar hacia delante, $f$ debe apuntar <b>hacia atrás</b>.</li>
-    <li><b>Ecuaciones en rodadura:</b> $F-f=ma_{cm}$; $fR=\tfrac12mR^2\alpha$; $a_{cm}=R\alpha$ ⇒ $f=\tfrac12ma_{cm}$ ⇒ $a_{cm}=\dfrac{2F}{3m}$ y $f=\dfrac F3=\dfrac{t^2}{6}$.</li>
-    <li><b>(a) Inicio del deslizamiento:</b> $f=\mu_smg$ ⇒ $F=3\mu_smg=3(0{,}3)(30)(9{,}8)=264{,}6$ N ⇒ $t^2/2=264{,}6$ ⇒ $t=\sqrt{529{,}2}=\mathbf{23{,}0\ s}$.</li>
-    <li><b>(b) En ese instante:</b> $a_{cm}=\dfrac{2F}{3m}=\dfrac{2(264{,}6)}{90}=\mathbf{5{,}88\ m/s^2}=2\mu g$ y $\alpha=a_{cm}/R=9{,}80$ rad/s². Justo después, ya deslizando con $\mu_k=0{,}3$, $a_{cm}=(F-\mu_kmg)/m=5{,}88$ m/s² y $\alpha=2\mu_kg/R=9{,}80$ rad/s²: los valores son continuos en el instante de la transición. Después, $a_{cm}$ sigue creciendo con $F$ y $\alpha$ se queda constante: $R\alpha&lt;a_{cm}$, desliza.</li>
-    <li><b>(c) A los 4 s</b> (todavía rueda, porque $4\ \text{s}&lt;23$ s): $F=4^2/2=8$ N, $a_{cm}=\dfrac{2\cdot8}{3\cdot30}=\mathbf{0{,}178\ m/s^2}$ y $\alpha=a_{cm}/R=\mathbf{0{,}296\ rad/s^2}$. La fricción necesaria es $f=F/3=2{,}67$ N $\ll\mu_smg=88{,}2$ N ✓.</li>
-    <li><b>Nota.</b> Un punto de la periferia tiene además una aceleración centrípeta $\omega^2R$ (§9.3), que depende de la velocidad acumulada; por eso la pregunta (b) se refiere a los puntos del eje.</li>
+    <li><b>Idea.</b> Al principio $F$ es pequeña y el cilindro rueda sin deslizar. $F$ crece con $t$, la fricción necesaria también, y cuando llega a $\mu_smg$ empieza el deslizamiento.
+      <span class="por">Se resuelve primero «como si rodara» y se comprueba hasta cuándo es cierto.</span></li>
+    <li><b>Fuerzas.</b> $F$ en el eje (sin torca), $mg$, $n$ y la fricción $f$ hacia <b>atrás</b>.
+      <span class="por">Solo $f$ da torca; para girar acelerando hacia delante tiene que apuntar hacia atrás.</span></li>
+    <li><b>Ecuaciones con rodadura:</b>
+      $$F-f=m\,a_{cm}\qquad(1)\qquad\qquad f\,R=\tfrac12mR^2\frac{a_{cm}}{R}\ \Rightarrow\ f=\tfrac12m\,a_{cm}\qquad(2)$$
+      $$(2)\text{ en }(1):\ F=\tfrac32m\,a_{cm}\ \Rightarrow\ a_{cm}=\frac{2F}{3m},\qquad f=\frac F3=\frac{t^2}{6}$$</li>
+    <li><b>(a) Empieza a deslizar</b> cuando $f=\mu_s\,n=\mu_s\,mg$:
+      $$\frac F3=\mu_smg\ \Rightarrow\ F=3\mu_smg=3(0{,}3)(30)(9{,}8)=264{,}6\ \text{N}$$
+      $$\frac{t^2}{2}=264{,}6\ \Rightarrow\ t=\sqrt{529{,}2}=\mathbf{23{,}0\ s}$$</li>
+    <li><b>(b) Aceleración en ese instante</b> (aún rueda):
+      $$a_{cm}=\frac{2F}{3m}=\frac{2(264{,}6)}{3(30)}=\frac{529{,}2}{90}=\mathbf{5{,}88\ m/s^2}\qquad\Big(\alpha=\frac{a_{cm}}{R}=\frac{5{,}88}{0{,}6}=9{,}80\ \text{rad/s}^2\Big)$$
+      <span class="por">Justo después, con $\mu_k=0{,}3$: $a_{cm}=(F-\mu_kmg)/m=(264{,}6-88{,}2)/30=5{,}88$ m/s². El mismo valor: la transición es continua.</span></li>
+    <li><b>(c) A los 4 s.</b> Comprobamos primero que aún rueda: $4\ \text{s}<23\ \text{s}$ ✓.
+      $$F=\frac{4^2}{2}=8\ \text{N}\ \Rightarrow\ a_{cm}=\frac{2(8)}{3(30)}=\mathbf{0{,}178\ m/s^2},\qquad\alpha=\frac{0{,}178}{0{,}6}=\mathbf{0{,}296\ rad/s^2}$$
+      <span class="por">Fricción necesaria: $f=F/3=2{,}67$ N, mucho menor que $\mu_smg=88{,}2$ N: rueda sin problema.</span></li>
   </ol>
   {{fig:grafica-de-la-friccion-necesaria-para-rodar-sin-}}
   <p><b>Resultado:</b> (a) $t=\sqrt{6\mu mg}=23{,}0$ s; (b) $a_{cm}=2\mu g=5{,}88$ m/s² (y $\alpha=9{,}80$ rad/s²); (c) $a_{cm}=0{,}178$ m/s², $\alpha=0{,}296$ rad/s² (con $g=9{,}81$: 23,0 s y 5,89 m/s²).</p>

@@ -1,11 +1,23 @@
 <p class="enun">Un bloque pequeño de 0,130 kg se ata a una cuerda que pasa por un orificio en una superficie horizontal sin fricción. El bloque gira en un círculo de 0,800 m de radio alrededor del orificio, con rapidez tangencial de 4,00 m/s. Se tira lentamente de la cuerda desde abajo, acortando el radio. La resistencia a la ruptura de la cuerda es de 30,0 N. ¿Qué radio tendrá el círculo cuando la cuerda se rompa?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Momento angular de una partícula: $L=m\,v\,r$ (movimiento circular, $v\perp r$)</li>
+      <li>Conservación: $L$ constante si $\sum\vec\tau=0$ respecto al orificio</li>
+      <li>Segunda ley en la dirección radial: $T=\dfrac{m\,v^2}{r}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>¿Se conserva $L$ respecto al orificio?</b> La tensión apunta siempre al orificio (radial): $\vec r\times\vec T=0$. El peso y la normal son verticales y se anulan. Torca neta nula ⇒ $L=mvr$ constante (10.25, $l=r$).</li>
-    <li><b>$L$ inicial:</b> $L=mv_1r_1=(0{,}130)(4{,}00)(0{,}800)=0{,}416$ kg·m²/s.</li>
-    <li><b>Tensión en función de $r$.</b> La tensión es la fuerza centrípeta: $T=mv^2/r$. Con $v=L/(mr)$: $T=\dfrac{L^2}{mr^3}$. Al reducir $r$, $T$ crece como $1/r^3$.</li>
-    <li><b>Rotura:</b> $T=30{,}0$ N ⇒ $r^3=\dfrac{L^2}{mT_{máx}}=\dfrac{(0{,}416)^2}{(0{,}130)(30{,}0)}$ ⇒ $r=\mathbf{0{,}354}$ m.</li>
-    <li><b>Comprobación.</b> $v=L/(mr)=9{,}04$ m/s y $mv^2/r=30{,}0$ N ✓. La tensión inicial era 2,6 N.</li>
-    <li><b>Energía.</b> $K$ pasa de 1,04 J a 5,31 J: no se conserva; el aumento es el trabajo de la mano que tira de la cuerda (la fuerza tiene componente a lo largo del desplazamiento radial hacia dentro).</li>
+    <li><b>¿Se conserva $L$ respecto al orificio?</b>
+      <span class="por">La tensión apunta siempre al orificio ($\vec r\times\vec T=0$); peso y normal son verticales y se anulan. Torca neta nula ⇒ $L=mvr$ constante.</span></li>
+    <li><b>$L$ inicial:</b>
+      $$L=m\,v_1\,r_1=(0{,}130)(4{,}00)(0{,}800)=0{,}416\ \text{kg·m}^2/\text{s}$$</li>
+    <li><b>Tensión en función de $r$.</b> De $L=mvr$: $v=\dfrac{L}{mr}$. Entonces
+      $$T=\frac{m\,v^2}{r}=\frac{m}{r}\cdot\frac{L^2}{m^2r^2}=\frac{L^2}{m\,r^3}$$
+      <span class="por">Al acortar la cuerda, $T$ crece como $1/r^3$. Al principio era $T=mv_1^2/r_1=0{,}130(4{,}00)^2/0{,}800=2{,}6$ N.</span></li>
+    <li><b>Rotura</b> ($T=30{,}0$ N):
+      $$r^3=\frac{L^2}{m\,T_{m\acute ax}}=\frac{(0{,}416)^2}{(0{,}130)(30{,}0)}=\frac{0{,}1731}{3{,}90}=0{,}04437\ \Rightarrow\ r=\mathbf{0{,}354\ m}$$</li>
+    <li><b>Comprobación:</b>
+      $$v=\frac{L}{mr}=\frac{0{,}416}{(0{,}130)(0{,}354)}=9{,}04\ \text{m/s},\qquad T=\frac{m v^2}{r}=\frac{(0{,}130)(9{,}04)^2}{0{,}354}=30{,}0\ \text{N}\ \checkmark$$
+      <span class="por">$K$ pasa de 1,04 J a 5,31 J: no se conserva; el aumento es el trabajo de la mano que tira de la cuerda.</span></li>
   </ol>
   {{fig:bloque-girando-alrededor-de-un-orificio-con-dos-}}
   <div class="recipe"><b>Receta:</b> fuerza central (siempre hacia un punto) ⇒ $L=mvr$ constante respecto a ese punto. Combínalo con la segunda ley en la dirección radial ($T=mv^2/r$) y elimina $v$.</div>

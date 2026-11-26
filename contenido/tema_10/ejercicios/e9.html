@@ -1,10 +1,24 @@
 <p class="enun">Un hombre de 55 kg corre alrededor del borde de una tornamesa horizontal montada en un eje vertical sin fricción que pasa por su centro. La velocidad del corredor respecto a la Tierra tiene magnitud 2,8 m/s. La tornamesa gira en la dirección opuesta con velocidad angular de magnitud 0,20 rad/s respecto a la Tierra. Su radio es 3,0 m y su momento de inercia respecto al eje es 80 kg·m². Calcule la velocidad angular final del sistema si el corredor se detiene respecto a la tornamesa (puede considerarse una partícula).</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conservación del momento angular (eje sin fricción): $L_{inicial}=L_{final}$</li>
+      <li>Corredor (partícula en el borde): $L=m\,R\,v$</li>
+      <li>Tornamesa: $L=I\,\omega$ (con signo según el sentido)</li>
+      <li>Al final juntos: $I_{tot}=I+mR^2$, $L=I_{tot}\,\omega_2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Sistema y conservación.</b> Hombre + tornamesa. Eje sin fricción y vertical; peso y normales verticales ⇒ sin torca externa respecto al eje ⇒ $L_z$ se conserva. Al pararse el corredor, las fuerzas pies-plataforma son internas.</li>
-    <li><b>Signos.</b> Sentido $+$ = el del corredor. Corredor: $L_h=+mRv=(55)(3{,}0)(2{,}8)=462$ kg·m²/s. Tornamesa (sentido contrario): $L_t=-I\omega_1=-(80)(0{,}20)=-16$ kg·m²/s. <b>$L$ inicial total:</b> $446$ kg·m²/s.</li>
-    <li><b>Final.</b> Se mueven juntos: $I_{tot}=I+mR^2=80+55(3{,}0)^2=575$ kg·m² y $L=I_{tot}\omega_2$.</li>
-    <li><b>Resultado.</b> $\omega_2=446/575=\mathbf{0{,}776}$ rad/s <b>en el sentido en que corría el hombre</b>: la tornamesa invierte su giro, porque el corredor tenía mucho más momento angular que ella.</li>
-    <li><b>Energía.</b> $K$ pasa de 217 J a 173 J: se pierden 44 J (como en un choque inelástico: el corredor «frena» contra la plataforma).</li>
+    <li><b>Conservación.</b> Sistema = hombre + tornamesa.
+      <span class="por">El eje es vertical y sin fricción; peso y normales son verticales: sin torca externa respecto al eje. Al pararse el corredor, las fuerzas pies-plataforma son internas.</span></li>
+    <li><b>$L$ inicial</b> (sentido $+$ = el del corredor):
+      $$L_h=m\,R\,v=(55)(3{,}0)(2{,}8)=462\ \text{kg·m}^2/\text{s}$$
+      $$L_t=-I\,\omega_1=-(80)(0{,}20)=-16\ \text{kg·m}^2/\text{s}$$
+      $$L_{inicial}=462-16=446\ \text{kg·m}^2/\text{s}$$
+      <span class="por">La tornamesa gira al revés: signo negativo.</span></li>
+    <li><b>Momento de inercia final</b> (el hombre ya va con la plataforma):
+      $$I_{tot}=I+mR^2=80+55(3{,}0)^2=80+495=575\ \text{kg·m}^2$$</li>
+    <li><b>Conservación:</b>
+      $$446=575\,\omega_2\ \Rightarrow\ \omega_2=\frac{446}{575}=\mathbf{0{,}776\ rad/s}\ \text{en el sentido del corredor}$$
+      <span class="por">El corredor tenía mucho más $L$ que la tornamesa, así que ésta invierte su giro. Energía: pasa de 217 J a 173 J (se pierden 44 J, como en un choque inelástico).</span></li>
   </ol>
   {{fig:plataforma-giratoria-con-un-corredor-en-el-borde}}
   <div class="recipe"><b>Receta:</b> partícula + plataforma con eje libre: suma algebraica de $mRv$ (partícula) e $I\omega$ (plataforma) con un sentido positivo elegido; si al final van juntos, $\omega=L/(I+mR^2)$.</div>

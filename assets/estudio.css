@@ -102,3 +102,9 @@ details.pasos>summary{color:var(--fg)}
 .pr-mod{margin:2.2em 0 .2em;font:600 12.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
 .pr-tema .ir{font:14px var(--sans);margin:.2em 0 .6em}
 @media print{.drill{display:none!important}}
+/* Resolución estilo examen: fórmulas arriba, un paso = cuenta + «por qué» */
+.formulas ul{margin:.2em 0;padding-left:1.1em}.formulas li{margin:.25em 0}
+.formulas .nota{font:.85rem var(--sans);color:var(--mut)}
+ol.steps>li>.por{display:block;font:.9rem/1.4 var(--sans);color:var(--mut);border-left:3px solid var(--acc);padding-left:.6em;margin:.15em 0 .3em}
+ol.steps>li>.por::before{content:"Por qué: ";font-weight:700;color:var(--acc)}
+ol.steps>li .katex-display{margin:.4em 0}

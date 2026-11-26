@@ -1,13 +1,38 @@
 <p class="enun">Una varilla de longitud $L$ y masa $M$ puede rotar libremente alrededor de un pivote situado en su extremo superior A. Una bala de masa $m$ y velocidad $v$ golpea la varilla a una distancia «$a$» de su extremo A y se incrusta en ella. (a) Calcular el momento angular del sistema con respecto a A inmediatamente después de que la bala choque con la varilla. (b) Determinar la cantidad de movimiento del sistema inmediatamente antes y después del choque explicando la respuesta. (c) ¿Cuál es la cantidad de calor que se desprende de la colisión? <i>(El apartado (a) es de este tema; (b) y (c) son de choques, tema 8, y se resuelven aquí porque se entienden con lo mismo.)</i></p>
 {{fig:x6-planteamiento}}
   <p><b>Supuestos:</b> la varilla cuelga vertical y en reposo; la bala llega horizontal, perpendicular a la varilla.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Momento angular de una partícula: $L=m\,v\,l$ ($l$ = distancia perpendicular del pivote a la recta de $\vec v$)</li>
+      <li>Sólido con eje fijo: $L=I\,\omega$; varilla por un extremo: $I=\tfrac13ML^2$; masa puntual: $I=ma^2$</li>
+      <li>Conservación: $L_{antes}=L_{despu\acute es}$ (sin torca externa respecto al pivote)</li>
+      <li>Cantidad de movimiento: $p=m\,v$; velocidad de un punto que gira: $v=\omega\,r$</li>
+      <li>Energía cinética: $K=\tfrac12mv^2$ y $K=\tfrac12I\omega^2=\dfrac{L^2}{2I}$; calor = energía cinética perdida: $Q=K_i-K_f$</li>
+    </ul></div>
+  <p><b>Supuestos:</b> la varilla cuelga vertical y en reposo; la bala llega horizontal, perpendicular a la varilla.</p>
   <ol class="steps">
-    <li><b>Qué se conserva.</b> En el choque (muy breve) el pivote ejerce una fuerza impulsiva desconocida, pero aplicada <b>en A</b>: torca nula respecto a A. El peso no da torca apreciable (la varilla es vertical y el choque es instantáneo). Luego $L_A$ se conserva (§10.6).</li>
-    <li><b>(a) Antes del choque</b> solo se mueve la bala: $L_A=mv\,l$ con $l=a$ (distancia perpendicular de A a la recta de $\vec v$, 10.25). Por conservación, <b>justo después</b>: $L_A=mva$ (perpendicular al plano del movimiento, por la regla de la mano derecha).</li>
-    <li><b>Velocidad angular después.</b> $I_A=\tfrac13ML^2+ma^2$ (varilla por un extremo, tabla 9.2, más la bala puntual a distancia $a$) ⇒ $\omega=\dfrac{mva}{\tfrac13ML^2+ma^2}=\dfrac{3mva}{ML^2+3ma^2}$.</li>
-    <li><b>(b) Cantidad de movimiento.</b> Antes: $p=mv$. Después: $P=Mv_{cm,varilla}+mv_{bala}=\left(M\tfrac L2+ma\right)\omega$. En general <b>no coinciden</b>: el pivote da un impulso horizontal. Solo si $a=\tfrac23L$ (el «centro de percusión») coinciden y el pivote no da impulso (se comprueba igualando $P=mv$: sale $a=2L/3$, independiente de $m$).</li>
-    <li><b>(c) Calor.</b> Choque perfectamente inelástico (la bala se queda): se pierde energía cinética. $Q=K_i-K_f=\tfrac12mv^2-\dfrac{L_A^2}{2I_A}=\dfrac12mv^2\,\dfrac{\tfrac13ML^2}{\tfrac13ML^2+ma^2}=\dfrac{ML^2\,mv^2}{2(ML^2+3ma^2)}$.</li>
-    <li><b>Ejemplo numérico de control</b> ($m=10$ g, $v=300$ m/s, $M=2$ kg, $L=1$ m, $a=0{,}75$ m): $L_A=2{,}25$ kg·m²/s, $I_A=0{,}6723$ kg·m², $\omega=3{,}35$ rad/s, $p$ pasa de 3,00 a 3,37 kg·m/s y $Q=446$ J de los 450 J iniciales.</li>
+    <li><b>Qué se conserva.</b> En el choque el pivote da una fuerza impulsiva desconocida, pero aplicada <b>en A</b>.
+      <span class="por">Su torca respecto a A es cero, y el peso no da torca apreciable en un choque instantáneo. Luego $L_A$ se conserva. La cantidad de movimiento $p$ no (el pivote la cambia) y $K$ tampoco (el choque es inelástico).</span></li>
+    <li><b>(a) Antes del choque</b> solo se mueve la bala, y $l=a$:
+      $$L_A^{antes}=m\,v\,a$$
+      <b>Justo después</b> (conservación):
+      $$L_A^{despu\acute es}=\mathbf{m\,v\,a}$$
+      <span class="por">Dirección perpendicular al plano del movimiento (regla de la mano derecha).</span></li>
+    <li><b>Velocidad angular después.</b> Inercia del sistema respecto a A (varilla + bala incrustada):
+      $$I_A=\tfrac13ML^2+ma^2$$
+      $$L_A=I_A\,\omega\ \Rightarrow\ \omega=\frac{m\,v\,a}{\tfrac13ML^2+ma^2}=\frac{3\,m\,v\,a}{ML^2+3\,m\,a^2}$$</li>
+    <li><b>(b) Cantidad de movimiento.</b> Antes:
+      $$p_{antes}=m\,v$$
+      Después: el cm de la varilla va a $v=\omega\tfrac L2$ y la bala a $v=\omega a$:
+      $$p_{despu\acute es}=M\,\omega\frac L2+m\,\omega\,a=\Big(\tfrac12ML+ma\Big)\omega$$
+      <span class="por">En general $p_{antes}\ne p_{despu\acute es}$: el pivote ejerce un impulso horizontal. Solo coinciden si $a=\tfrac23L$ (centro de percusión): ahí el pivote no da impulso.</span></li>
+    <li><b>(c) Calor desprendido</b> (choque perfectamente inelástico: la energía cinética perdida):
+      $$K_i=\tfrac12mv^2,\qquad K_f=\tfrac12I_A\omega^2=\frac{L_A^2}{2I_A}=\frac{(mva)^2}{2I_A}$$
+      $$Q=K_i-K_f=\tfrac12mv^2\left(1-\frac{ma^2}{\tfrac13ML^2+ma^2}\right)=\frac{M L^2\,m\,v^2}{2\,(ML^2+3\,m\,a^2)}$$</li>
+    <li><b>Control numérico</b> ($m=10$ g, $v=300$ m/s, $M=2$ kg, $L=1$ m, $a=0{,}75$ m):
+      $$L_A=0{,}01(300)(0{,}75)=2{,}25,\qquad I_A=\tfrac13(2)(1)^2+0{,}01(0{,}75)^2=0{,}6723$$
+      $$\omega=\frac{2{,}25}{0{,}6723}=3{,}35\ \text{rad/s},\qquad p:\ 3{,}00\to(1+0{,}0075)(3{,}347)=3{,}37\ \text{kg·m/s}$$
+      $$Q=450-\frac{2{,}25^2}{2(0{,}6723)}=450-3{,}77=446\ \text{J}$$</li>
   </ol>
   {{fig:varilla-vertical-que-cuelga-de-un-pivote-a-y-es-}}
   <p><b>Resultado:</b> (a) $L_A=mva$ (y $\omega=\dfrac{3mva}{ML^2+3ma^2}$); (b) $p_{antes}=mv$, $p_{después}=(\tfrac12ML+ma)\omega$, distintos salvo $a=\tfrac23L$; (c) $Q=\dfrac{ML^2\,mv^2}{2(ML^2+3ma^2)}$.</p>

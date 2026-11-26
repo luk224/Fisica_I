@@ -1,9 +1,24 @@
 <p class="enun">Una bola de billar (esfera sólida de masa $m$ y radio $R$) está en reposo sobre una mesa. Se le da un golpe horizontal de magnitud $F$ a una altura $h$ por encima de su centro, con una duración $\Delta t$. a) ¿Qué valor de $h$ hace que ruede sin resbalar desde el principio? b) Si $h=0$, ¿qué velocidad tendrá el centro cuando por fin ruede sin resbalar?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Impulso: $J=F\,\Delta t=m\,v_0$ (traslación) y $J\,h=I\,\omega_0$ (rotación respecto al cm)</li>
+      <li>Esfera maciza: $I=\tfrac25mR^2$</li>
+      <li>Rodadura: $v=R\,\omega$</li>
+      <li>$L$ respecto a un punto de la mesa: $L=m\,v\,R+I\,\omega$ (conservación si la fricción no da torca respecto a él)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Impulso y momento angular (del impulso).</b> El golpe es tan breve que la fricción no influye en él. Impulso $J=F\Delta t$: $mv_0=J$ (teorema impulso-cantidad de movimiento). Su versión rotacional: la torca del golpe respecto al cm es $Fh$, así que $I\omega_0=Jh$, con $I=\tfrac25mR^2$. Es decir, $v_0=J/m$ y $\omega_0=Jh/I$ (la relación entre torca y momento angular es la misma que entre fuerza y momento lineal).</li>
-    <li><b>a) Rodadura inmediata:</b> $v_0=R\omega_0$ ⇒ $\dfrac Jm=\dfrac{RJh}{\tfrac25mR^2}$ ⇒ $\boxed{h=\tfrac25R}$ sobre el centro (equivale a $\tfrac75R$ medido desde la mesa).</li>
-    <li><b>b) $h=0$:</b> la bola sale deslizando sin girar ($\omega_0=0$). Mientras desliza actúa fricción cinética en el contacto $f=\mu_kmg$, que la frena y la hace girar. Respecto a un <b>punto fijo de la mesa sobre la recta de contacto</b> (la que recorre el punto de apoyo) la torca de la fricción es cero (su recta de acción es esa misma recta), y la del peso y la normal se anulan, así que $L$ respecto a ese punto se conserva: $mv_0R=mvR+\tfrac25mR^2\dfrac vR$ ⇒ $v_0=\tfrac75v$ ⇒ $\boxed{v_{cm}=\tfrac57v_0}$.</li>
-    <li><b>Tiempo hasta rodar</b> (aceleración de frenado $\mu_kg$): $t=\dfrac{v_0-v}{\mu_kg}=\dfrac{2v_0}{7\mu_kg}$.</li>
+    <li><b>Efecto del golpe.</b> El golpe es tan breve que la fricción no influye en él.
+      $$m\,v_0=J\ \Rightarrow\ v_0=\frac Jm,\qquad I\,\omega_0=J\,h\ \Rightarrow\ \omega_0=\frac{J\,h}{\tfrac25mR^2}$$
+      <span class="por">La torca del golpe respecto al cm es $Fh$; el impulso angular es $Jh$.</span></li>
+    <li><b>a) Rodadura inmediata:</b> $v_0=R\,\omega_0$:
+      $$\frac Jm=R\,\frac{J\,h}{\tfrac25mR^2}\ \Rightarrow\ \tfrac25R^2=R\,h\ \Rightarrow\ \boxed{h=\tfrac25R}\ \text{sobre el centro}$$
+      <span class="por">Equivale a $\tfrac75R$ medido desde la mesa.</span></li>
+    <li><b>b) $h=0$.</b> Sale deslizando sin girar ($\omega_0=0$). La fricción cinética la frena y la hace girar hasta que rueda ($v=R\omega$).
+      <span class="por">Respecto a un punto fijo de la mesa sobre la recta de contacto, la fricción no da torca (su recta de acción pasa por él) y peso y normal se anulan: $L$ se conserva.</span></li>
+    <li><b>Conservación de $L$:</b>
+      $$m\,v_0R=m\,v\,R+\tfrac25mR^2\,\frac vR=\tfrac75\,m\,v\,R\ \Rightarrow\ \boxed{v_{cm}=\tfrac57\,v_0}$$</li>
+    <li><b>Tiempo hasta rodar</b> (frenado $\mu_kg$):
+      $$t=\frac{v_0-v}{\mu_kg}=\frac{v_0-\tfrac57v_0}{\mu_kg}=\frac{2\,v_0}{7\,\mu_kg}$$</li>
   </ol>
   {{fig:bola-de-billar-golpeada-horizontalmente-a-una-al}}
   <div class="recipe"><b>Receta:</b> golpe horizontal a altura $h$: $v_0=J/m$ y $\omega_0=Jh/I$. Para rodar al instante, $v_0=R\omega_0$. Si desliza, usa $L$ respecto al punto de contacto (la fricción no da torca respecto a él) para saltarte la fuerza de fricción.</div>

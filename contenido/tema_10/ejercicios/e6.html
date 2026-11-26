@@ -1,13 +1,28 @@
 <p class="enun">Una piedra de afilar de 50,0 kg es un disco sólido de 0,520 m de diámetro. Se empuja un hacha contra el borde con una fuerza normal de 160 N. El coeficiente de fricción cinética entre la piedra y el hacha es 0,60, y hay una torca de fricción constante de 6,50 N·m entre el eje de la piedra y sus cojinetes. a) ¿Qué fuerza debe aplicarse tangencialmente al extremo de una manivela de 0,500 m para llevar la piedra del reposo a 120 rev/min en 9,00 s? b) Una vez a 120 rev/min, ¿qué fuerza tangencial mantendría la rapidez angular constante? c) ¿Cuánto tarda la piedra en detenerse si solo actúa la fricción del eje y gira a 120 rev/min?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Disco macizo: $I=\tfrac12MR^2$</li>
+      <li>Rotación con eje fijo: $\sum\tau=I\,\alpha$ (torcas motrices $-$ resistentes)</li>
+      <li>Fricción cinética: $f=\mu_k\,n$; torca de una fuerza tangente: $\tau=F\,r$</li>
+      <li>Cinemática angular (α constante): $\omega=\omega_0+\alpha t$</li>
+      <li>Unidades: $1\ \text{rev/min}=2\pi/60\ \text{rad/s}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Unidades.</b> $\omega=120\ \tfrac{\text{rev}}{\text{min}}\cdot\tfrac{2\pi\ \text{rad}}{1\ \text{rev}}\cdot\tfrac{1\ \text{min}}{60\ \text{s}}=4\pi=12{,}57$ rad/s (rad/s obligatorio en $\tau=I\alpha$).</li>
-    <li><b>Momento de inercia</b> (radio = 0,260 m): $I=\tfrac12MR^2=\tfrac12(50{,}0)(0{,}260)^2=1{,}69$ kg·m².</li>
-    <li><b>Aceleración angular</b> ($\alpha$ constante): $\alpha=\omega/t=4\pi/9{,}00=1{,}396$ rad/s². <b>Torca neta necesaria:</b> $\tau_{neta}=I\alpha=2{,}36$ N·m.</li>
-    <li><b>Torcas que se oponen.</b> (i) Fricción del hacha: $f=\mu_kn=0{,}60\cdot160=96$ N tangente al borde ⇒ $fR=96\cdot0{,}260=24{,}96$ N·m. (ii) Eje: 6,50 N·m.</li>
-    <li><b>a) Balance de torcas</b> (sentido positivo = el del giro): $F(0{,}500)-24{,}96-6{,}50=2{,}36$ ⇒ $F=\dfrac{2{,}36+6{,}50+24{,}96}{0{,}500}=\mathbf{67{,}6}$ N.</li>
-    <li><b>b) Velocidad constante</b> ⇒ $\alpha=0$ ⇒ $\sum\tau=0$: $F'=\dfrac{6{,}50+24{,}96}{0{,}500}=\mathbf{62{,}9}$ N.</li>
-    <li><b>c) Frenado solo por el eje:</b> $\alpha=-6{,}50/1{,}69=-3{,}85$ rad/s² ⇒ $t=\omega_0/|\alpha|=12{,}57/3{,}85=\mathbf{3{,}27}$ s (da unas 3,3 vueltas hasta pararse).</li>
-  </ol>
+    <li><b>Unidades</b> (radio $R=0{,}520/2=0{,}260$ m):
+      $$\omega=120\ \frac{\text{rev}}{\text{min}}\cdot\frac{2\pi\ \text{rad}}{1\ \text{rev}}\cdot\frac{1\ \text{min}}{60\ \text{s}}=4\pi=12{,}57\ \text{rad/s}$$</li>
+    <li><b>Momento de inercia:</b>
+      $$I=\tfrac12MR^2=\tfrac12(50{,}0)(0{,}260)^2=1{,}69\ \text{kg·m}^2$$</li>
+    <li><b>Torca neta necesaria</b> para pasar de 0 a 12,57 rad/s en 9,00 s:
+      $$\alpha=\frac{\omega}{t}=\frac{12{,}57}{9{,}00}=1{,}396\ \text{rad/s}^2\ \Rightarrow\ \tau_{neta}=I\alpha=1{,}69(1{,}396)=2{,}36\ \text{N·m}$$</li>
+    <li><b>Torcas resistentes.</b> Hacha: $f=\mu_kn=0{,}60(160)=96{,}0$ N, tangente al borde:
+      $$\tau_{hacha}=f\,R=96{,}0(0{,}260)=24{,}96\ \text{N·m},\qquad\tau_{eje}=6{,}50\ \text{N·m}$$</li>
+    <li><b>a) Fuerza en la manivela</b> (sentido positivo = el del giro):
+      $$F(0{,}500)-24{,}96-6{,}50=2{,}36\ \Rightarrow\ F=\frac{2{,}36+6{,}50+24{,}96}{0{,}500}=\mathbf{67{,}6\ N}$$</li>
+    <li><b>b) $\omega$ constante</b> ⇒ $\alpha=0$ ⇒ $\sum\tau=0$:
+      $$F'(0{,}500)-24{,}96-6{,}50=0\ \Rightarrow\ F'=\frac{31{,}46}{0{,}500}=\mathbf{62{,}9\ N}$$</li>
+    <li><b>c) Solo frena el eje</b> ($\tau=-6{,}50$ N·m):
+      $$\alpha=\frac{-6{,}50}{1{,}69}=-3{,}85\ \text{rad/s}^2\ \Rightarrow\ t=\frac{\omega_0}{|\alpha|}=\frac{12{,}57}{3{,}85}=\mathbf{3{,}27\ s}$$</li>
+    </ol>
   {{fig:piedra-de-afilar-con-una-manivela-de-0-5-metros-}}
   <div class="recipe"><b>Receta:</b> varias torcas en un eje fijo: $\sum\tau=(\text{motrices})-(\text{resistentes})=I\alpha$; convierte rpm a rad/s y despeja. Si piden «mantener $\omega$ constante», $\sum\tau=0$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Usar el diámetro como radio; dejar $\omega$ en rev/min; olvidar alguna torca resistente; usar el brazo del borde (0,26 m) para la fuerza de la manivela (0,50 m).</p></div>

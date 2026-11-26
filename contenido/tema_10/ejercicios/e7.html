@@ -1,9 +1,19 @@
 <p class="enun">Un yoyo consiste en dos discos uniformes, cada uno de masa $m$ y radio $R$, conectados por un eje ligero de radio $b$. Una cuerda delgada y ligera se enrolla varias veces en el eje y luego se mantiene fija mientras el yoyo se libera del reposo y cae al desenrollarse el hilo. Calcule las aceleraciones lineal y angular del yoyo y la tensión en la cuerda.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Traslación: $2mg-T=2m\,a$ (masa total $2m$)</li>
+      <li>Rotación respecto al cm: $T\,b=I_{cm}\,\alpha$, con $I_{cm}=2\cdot\tfrac12mR^2=mR^2$</li>
+      <li>Ligadura (cuerda fija): $a=b\,\alpha$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Datos.</b> Masa total $2m$; $I_{cm}=2\cdot\tfrac12mR^2=mR^2$; brazo de la tensión $b$.</li>
-    <li><b>Traslación</b> (eje hacia abajo): $2mg-T=2ma$. <b>Rotación:</b> $Tb=I_{cm}\alpha=mR^2\alpha$. <b>Ligadura:</b> $a=b\alpha$ ⇒ $T=mR^2a/b^2$.</li>
-    <li><b>Resolver:</b> $2mg=a\left(2m+\dfrac{mR^2}{b^2}\right)$ ⇒ $a=\dfrac{2b^2g}{2b^2+R^2}=\dfrac{g}{1+R^2/(2b^2)}$; $\alpha=\dfrac ab=\dfrac{2bg}{2b^2+R^2}$; $T=2m(g-a)=\dfrac{2mgR^2}{2b^2+R^2}=\dfrac{2mg}{1+2(b/R)^2}$.</li>
-    <li><b>Casos límite.</b> $b\to0$: $a\to0$ y $T\to2mg$ (el yoyo «se queda girando»). $b\to R$: $a\to\tfrac23g$, el valor del cilindro macizo del ejemplo 10.6 ✓. Con los datos de X2 ($R=40$ mm, $b=25$ mm) da $a=g/2{,}28=4{,}30$ m/s² ✓.</li>
+    <li><b>Ecuaciones</b> (eje hacia abajo):
+      $$2mg-T=2m\,a\qquad(1)\qquad\qquad T\,b=mR^2\,\alpha=mR^2\frac{a}{b}\ \Rightarrow\ T=\frac{mR^2\,a}{b^2}\qquad(2)$$</li>
+    <li><b>Aceleración lineal</b> (2) en (1):
+      $$2mg=a\left(2m+\frac{mR^2}{b^2}\right)\ \Rightarrow\ a=\frac{2\,b^2\,g}{2b^2+R^2}$$</li>
+    <li><b>Aceleración angular y tensión:</b>
+      $$\alpha=\frac ab=\frac{2\,b\,g}{2b^2+R^2},\qquad T=2m(g-a)=\frac{2\,m\,g\,R^2}{2b^2+R^2}$$</li>
+    <li><b>Casos límite.</b>
+      <span class="por">$b\to0$: $a\to0$ y $T\to2mg$ (se queda girando). $b\to R$: $a\to\tfrac23g$, el cilindro macizo del ejemplo 10.6 ✓. Con los datos de X2 ($R=40$ mm, $b=25$ mm): $a=g/2{,}28=4{,}30$ m/s² ✓.</span></li>
   </ol>
   {{fig:grafica-de-la-aceleracion-del-yoyo-en-unidades-d}}
   <div class="recipe"><b>Receta:</b> es X2 en símbolos; compara siempre con los casos límite.</div>
