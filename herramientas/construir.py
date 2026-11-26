@@ -26,6 +26,7 @@ def main():
     correr(H / 'construir_busqueda.py')
     correr(H / 'exportar_anki.py')
     correr(H / 'generar_cambios.py')
+    correr(H / 'icono.py')
     if '--probar' in sys.argv:
         correr(RAIZ / 'pruebas' / 'ejecutar.py', '--rapido')
 
