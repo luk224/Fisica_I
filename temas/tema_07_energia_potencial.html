@@ -308,63 +308,160 @@
 <div class="nivel"><b>🔴 Núcleo: 7 ejercicios, un método por ejercicio</b><span>Los 4 problemas de examen real más tres del solucionario. Si solo haces esto, ya cubres los problemas que caen.</span></div>
 <table class="metodos">
 <tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>
-<tr><td><a href="#x2">X2</a> · Feb 2022</td><td>Resorte que lanza un bloque por una rampa con fricción</td><td>$U_{el}=K_2+mgs\sin\theta+\mu_kmg\cos\theta\,s$: lo que queda + altura ganada + lo disipado</td></tr>
-<tr><td><a href="#x3">X3</a> · Sep 2024</td><td>El mismo problema con otros datos ($g=9{,}81$)</td><td>Idéntico a X2: la fricción actúa en todo el recorrido, desde la posición inicial</td></tr>
-<tr><td><a href="#x1">X1</a> · Feb 2020</td><td>Carril con tramo rugoso y resorte: ¿$\mu$?</td><td>Estado final = compresión máxima ($v=0$): $mgh=\mu mgL+\tfrac12kx^2$</td></tr>
 <tr><td><a href="#x4">X4</a> · Sep 2023</td><td>Cuarto de círculo con fricción + tramo recto</td><td>Balance por tramos con bisagra en B; $\mu_k=v^2/(2gs)$ y la fricción del arco por diferencia</td></tr>
 <tr><td><a href="#e6">E6</a></td><td>Normal en el fondo de una curva</td><td>Energía para $v$; luego Newton radial: $n-mg=mv^2/R$</td></tr>
-<tr><td><a href="#e4">E4</a></td><td>Rapidez máxima con resorte vertical</td><td>$K(y)=mgy-\tfrac12ky^2$, $dK/dy=0\Rightarrow ky=mg$ (fuerza neta nula)</td></tr>
 <tr><td><a href="#e5">E5</a></td><td>Rapidez máxima con resorte y fricción</td><td>El máximo no está en la longitud natural, sino donde $kx=f_k$</td></tr>
+<tr><td><a href="#e4">E4</a></td><td>Rapidez máxima con resorte vertical</td><td>$K(y)=mgy-\tfrac12ky^2$, $dK/dy=0\Rightarrow ky=mg$ (fuerza neta nula)</td></tr>
+<tr><td><a href="#x3">X3</a> · Sep 2024</td><td>El mismo problema con otros datos ($g=9{,}81$)</td><td>Idéntico a X2: la fricción actúa en todo el recorrido, desde la posición inicial</td></tr>
+<tr><td><a href="#x1">X1</a> · Feb 2020</td><td>Carril con tramo rugoso y resorte: ¿$\mu$?</td><td>Estado final = compresión máxima ($v=0$): $mgh=\mu mgL+\tfrac12kx^2$</td></tr>
+<tr><td><a href="#x2">X2</a> · Feb 2022</td><td>Resorte que lanza un bloque por una rampa con fricción</td><td>$U_{el}=K_2+mgs\sin\theta+\mu_kmg\cos\theta\,s$: lo que queda + altura ganada + lo disipado</td></tr>
 </table>
-<details class="sol" id="x2"><summary>X2 — Bloque lanzado por un resorte en un plano inclinado de 30° con fricción <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2022 (2ª semana) P-1">X</span></summary>
-<p class="enun">Un bloque sólido de 1,50 kg de masa se coloca contra un resorte comprimido en la base de un plano inclinado de pendiente 30° (punto A). Al soltarse el resorte, el bloque sube por el plano. En el punto B, a 6,0 m pendiente arriba de A, el bloque tiene una velocidad de 7 m/s dirigida pendiente arriba y ya no está en contacto con el resorte. El coeficiente de fricción cinética entre el bloque y la superficie del plano es $\mu_k=0{,}50$. La masa del resorte es despreciable. Calcule la energía potencial almacenada inicialmente en el resorte. (3 puntos.) <span class="src" data-l="E" data-ref="Solucionario 7-28 Prob. 7.73">= E 7.73</span></p>
+<details class="sol" id="x4"><summary>X4 — Cuarto de círculo con fricción y tramo horizontal: μ<sub>k</sub> y trabajo de la fricción <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Septiembre 2023 P-2">X</span></summary>
+<p class="enun">Una partícula de masa 0,5 kg que se encuentra en reposo se suelta desde una posición A, que forma un cuarto de círculo de radio $R=2{,}1$ m según se muestra en la figura, deslizándose hasta llegar al punto B con una velocidad de 5,2 m/s. A partir de este punto, la partícula se desplaza sobre una superficie horizontal hasta el punto C situado a 5 m, donde se detiene. Calcular (a) el coeficiente de fricción cinética de la superficie horizontal y (b) el trabajo de la fuerza de rozamiento sobre la partícula al deslizarse desde el punto A al B. (3 puntos.)</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Elige los estados: 1 = A (reposo, resorte comprimido) y 2 = B. ¿Cuánto vale la altura ganada si recorre 6,0 m a 30°?</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>La fricción en el plano es $\mu_kmg\cos30^\circ$ (no $\mu_kmg$) y actúa en los 6,0 m completos; despeja $U_{el,A}$ de $U_{el,A}+W_{otras}=K_B+U_{grav,B}$.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>Usa B como «bisagra»: primero el tramo BC (fricción conocida), luego el tramo AB (curvo, fricción desconocida).</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>En AB la normal no trabaja y $W_f$ sale por diferencia: $mgR+W_f=\tfrac12mv_B^2$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t07/x2-planteamiento.svg">
-<div class="figph" role="img" aria-label="Planteamiento: bloque lanzado por un resorte en un plano inclinado de 30°" style="aspect-ratio:360/346"></div>
-<figcaption>Planteamiento como en el examen: esquema con los datos y DCL del bloque durante la subida (sin resultados). La fricción apunta pendiente abajo; la normal, perpendicular al plano. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
+<figure class="fig" data-svg="../assets/figs/t07/x4-planteamiento.svg">
+<div class="figph" role="img" aria-label="Planteamiento: cuarto de círculo con tramo horizontal y diagramas de cuerpo libre" style="aspect-ratio:360/392"></div>
+<figcaption>Planteamiento como en el examen: esquema con los datos y DCL en el tramo recto y en un punto del arco (sin resultados). En el arco la normal apunta al centro; la fricción, contra el movimiento. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
-<figure class="fig" data-svg="../assets/figs/t07/bloque-lanzado-por-un-resorte-por-un-plano-incli.svg">
-<div class="figph" role="img" aria-label="Bloque lanzado por un resorte por un plano inclinado con fricción y reparto de la energía inicial del resorte" style="aspect-ratio:360/262"></div>
-<figcaption>Examen Feb. 2022 (2ª sem.) P-1 = E 7.73: la energía del resorte (119 J) se reparte en cinética en B (36,75 J), potencial gravitatoria (44,10 J) y energía interna ganada por la fricción (38,19 J). <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2022 (2ª semana) P-1 y del problema 7.73">P</span></figcaption>
-</figure>
-
-<figure class="fig" data-svg="../assets/figs/t07/diagrama-de-cuerpo-libre-del-bloque-que-sube-por.svg">
-<div class="figph" role="img" aria-label="Diagrama de cuerpo libre del bloque que sube por el plano inclinado de 30 grados con fricción" style="aspect-ratio:360/205"></div>
-<figcaption>Bloque de 1,50 kg subiendo por el plano de 30° (X2, g = 9,8 m/s²): perpendicular al plano n = mg cos θ = 12,73 N; a lo largo del plano, la componente del peso mg sen θ = 7,35 N y la fricción f<sub>k</sub> = μ<sub>k</sub>n = 6,37 N frenan el movimiento (flechas no a escala exacta). La fricción usa n = mg cos θ, no mg. <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2022 (2ª semana) P-1">P</span></figcaption>
+<figure class="fig" data-svg="../assets/figs/t07/cuarto-de-circulo-ab-y-tramo-horizontal-bc-con-f.svg">
+<div class="figph" role="img" aria-label="Cuarto de círculo AB y tramo horizontal BC con fricción: reparto de energía en cada tramo" style="aspect-ratio:360/322"></div>
+<figcaption>Examen Sep. 2023 P-2 (g = 9,80 m/s²): en AB la energía mgR = 10,29 J se reparte entre K<sub>B</sub> = 6,76 J y energía interna 3,53 J (trabajo de la fricción = −3,53 J); en BC los 6,76 J de K<sub>B</sub> se disipan por completo. <span class="src" data-l="P" data-ref="Diagrama propio del examen Septiembre 2023 P-2">P</span></figcaption>
 </figure>
 
   <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>$K_1+U_1+W_{otras}=K_2+U_2$</li>
-      <li>$K=\tfrac12mv^2$; $U_{grav}=mgy$ con $y=s\sin\theta$</li>
-      <li>Fricción en el plano: $n=mg\cos\theta$, $f_k=\mu_k\,mg\cos\theta$, $W_f=-f_k\,s$</li>
+      <li>$K_1+U_1+W_{otras}=K_2+U_2$; $K=\tfrac12mv^2$; $U_{grav}=mgy$</li>
+      <li>Fricción horizontal: $f_k=\mu_k\,mg$, $W_f=-\mu_kmg\,s$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Estados.</b> 1 = A (reposo contra el resorte): $K_A=0$, $U_A=U_{el,A}$ (incógnita), $y_A=0$. 2 = B ($s=6{,}0$ m): $v_B=7$ m/s, sin contacto con el resorte:
-      $$y_B=s\sin30^\circ=6{,}0(0{,}5)=3{,}0\ \text{m}$$
-      <span class="por">No hace falta saber cuánto se comprimió ni $k$: la fuerza del resorte es conservativa y todo su trabajo está en $U_{el,A}$.</span></li>
-    <li><b>Fricción</b> (actúa durante los 6,0 m completos):
-      $$n=mg\cos30^\circ,\qquad W_{otras}=-\mu_kmg\cos30^\circ\,s$$</li>
-    <li><b>Balance:</b>
-      $$U_{el,A}+W_{otras}=K_B+U_{grav,B}\ \Rightarrow\ U_{el,A}=\tfrac12mv_B^2+mg\,s\sin\theta+\mu_kmg\cos\theta\,s$$</li>
-    <li><b>Números</b> ($g=9{,}8$):
-      $$K_B=\tfrac12(1{,}50)(7)^2=36{,}75\ \text{J}$$
-      $$U_{grav,B}=(1{,}50)(9{,}8)(3{,}0)=44{,}10\ \text{J}$$
-      $$|W_f|=(0{,}50)(1{,}50)(9{,}8)(0{,}866)(6{,}0)=38{,}19\ \text{J}$$
-      $$U_{el,A}=36{,}75+44{,}10+38{,}19=\mathbf{119{,}04\ J}\approx119\ \text{J}$$
-      <span class="por">La energía del resorte se reparte: cinética 31 %, potencial 37 %, fricción 32 %. Con $g=9{,}81$: 119,1 J.</span></li>
+    <li><b>Método.</b> En el tramo curvo la normal y la fricción cambian en cada punto; con energía solo hacen falta los extremos. B sirve de «bisagra». No dan $g$: se usa 9,80.</li>
+    <li><b>(a) Tramo BC</b> ($v_B=5{,}2$ m/s, $v_C=0$, mismo nivel):
+      $$K_B-\mu_kmg\,s=K_C\ \Rightarrow\ \tfrac12mv_B^2=\mu_kmg\,s\ \Rightarrow\ \mu_k=\frac{v_B^2}{2gs}=\frac{(5{,}2)^2}{2(9{,}8)(5)}=\frac{27{,}04}{98}=\mathbf{0{,}276}$$
+      <span class="por">La masa se cancela.</span></li>
+    <li><b>(b) Tramo AB</b> (origen en B: $y_A=R=2{,}1$ m, $y_B=0$; $K_A=0$). La normal no trabaja; la única «otra» fuerza es la fricción:
+      $$0+mgR+W_f^{AB}=\tfrac12mv_B^2+0$$
+      $$\tfrac12mv_B^2=\tfrac12(0{,}5)(27{,}04)=6{,}76\ \text{J},\qquad mgR=(0{,}5)(9{,}8)(2{,}1)=10{,}29\ \text{J}$$
+      $$W_f^{AB}=6{,}76-10{,}29=\mathbf{-3{,}53\ J}$$
+      <span class="por">Con $g=9{,}81$: $-3{,}54$ J. Comprobación: sin fricción llegaría con $\sqrt{2gR}=6{,}42$ m/s $>5{,}2$ m/s, así que la fricción ha quitado energía.</span></li>
   </ol>
-  <p><b>Resultado:</b> $U_{el,A}\approx119$ J (con $g=9{,}81$: 119,1 J).</p>
-  <div class="recipe"><b>Receta:</b> «energía del resorte = lo que hay al final + lo que se ha perdido»: $U_{el}=K_2+mg\,s\sin\theta+\mu_kmg\cos\theta\,s$.</div>
-  <div class="recipe"><b>Error típico:</b> usar $n=mg$ en vez de $mg\cos\theta$ en el plano inclinado, o escribir $mgs$ en lugar de $mgs\sin\theta$ (la altura ganada es $s\sin\theta$, no la distancia recorrida).</div>
+  <p><b>Resultado:</b> (a) $\mu_k\approx0{,}28$; (b) $W_f^{AB}\approx-3{,}5$ J.</p>
+  <div class="recipe"><b>Receta:</b> si un tramo tiene fricción conocida en forma ($\mu_kmgs$, horizontal) y otro la tiene desconocida (curvo), aplica $K_1+U_1+W_{otras}=K_2+U_2$ por separado en cada tramo, usando el punto común como bisagra; el trabajo desconocido sale por diferencia.</div>
+  <div class="recipe"><b>Error típico:</b> escribir $W_f^{AB}=-\mu_kmg\cdot(\pi R/2)$ con el $\mu_k$ del apartado (a): en la curva la normal no vale $mg$ ni la superficie es la misma. El trabajo de fricción en AB solo sale del balance de energía.</div>
 
   <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
-    <p>Reparto orientativo (el enunciado solo fija 3 puntos): una sola pregunta: energía almacenada en el resorte. Dentro de cada apartado suele valorarse en este orden:</p>
-    <ul><li><b>Planteamiento (≈30 %):</b> dibujo del plano con los puntos A y B, la altura $y_B=s\sin30^\circ$ y las fuerzas (peso, normal, fricción).</li><li><b>Ecuaciones (≈40 %):</b> balance $U_{el,A}+W_{otras}=K_B+U_{grav,B}$ con $n=mg\cos30^\circ$ y $W_{otras}=-\mu_kmg\cos30^\circ\,s$.</li><li><b>Resultado y unidades (≈30 %):</b> $U_{el,A}\approx119$ J con unidades; un reparto razonable entre cinética, potencial y fricción confirma el resultado.</li></ul>
+    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) $\mu_k$ (1,5) · b) trabajo de la fricción en AB (1,5). Dentro de cada apartado suele valorarse en este orden:</p>
+    <ul><li><b>Planteamiento (≈30 %):</b> esquema A→B→C, bisagra en B y qué fuerzas trabajan en cada tramo.</li><li><b>Ecuaciones (≈40 %):</b> tramo BC: $\tfrac12mv_B^2=\mu_kmgs$; tramo AB: $mgR+W_f=\tfrac12mv_B^2$.</li><li><b>Resultado y unidades (≈30 %):</b> $\mu_k\approx0{,}28$ y $W_f^{AB}\approx-3{,}5$ J (con signo negativo).</li></ul>
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
+</details>
+</details>
+<details class="sol" id="e6"><summary>E6 — Problema 7.9: piedra en un cuenco con fricción (energía + Newton) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 7-3 Prob. 7.9">E</span></summary>
+<p class="enun">Una piedra pequeña de 0,20 kg se suelta desde el reposo en el punto A, en el borde de un cuenco hemisférico de radio $R=0{,}50$ m. Desliza (no rueda) y la fricción realiza un trabajo de 0,22 J en módulo al ir de A al fondo B. (a) Entre A y B, ¿qué trabajo realizan (i) la normal y (ii) la gravedad? (b) ¿Qué rapidez tiene en B? (c) ¿Cuáles de las tres fuerzas son constantes? (d) ¿Cuánto vale la normal en B?</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Para $v_B$ basta la energía: trabajo del peso $mgR$, de la normal 0 y de la fricción $-0{,}22$ J.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Para la normal en B usa la segunda ley en dirección radial: $n-mg=mv_B^2/R$ (hay aceleración centrípeta).</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t07/piedra-que-baja-por-un-cuenco-con-friccion-traba.svg">
+<div class="figph" role="img" aria-label="Piedra que baja por un cuenco con fricción: trabajos y fuerzas en el punto B" style="aspect-ratio:360/138"></div>
+<figcaption>De A a B: la normal no trabaja, el peso hace +0,98 J y la fricción −0,22 J, así que K<sub>B</sub> = 0,76 J (v<sub>B</sub> = 2,76 m/s). En B la normal (5,0 N) supera al peso (1,96 N) porque hay aceleración centrípeta hacia arriba. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-3, Prob. 7.9)">P</span></figcaption>
+</figure>
+
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Teorema: $W_{tot}=\tfrac12mv_B^2$ (parte del reposo)</li>
+      <li>Trabajo de la gravedad: $W=mg\,R$ (descenso vertical $R$)</li>
+      <li>Segunda ley radial en el fondo: $n-mg=\dfrac{mv_B^2}{R}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>(a)(i) Normal:</b> es radial y la velocidad tangente:
+      $$W_n=0$$</li>
+    <li><b>(a)(ii) Gravedad</b> (origen en B):
+      $$W_{grav}=mgR=(0{,}20)(9{,}8)(0{,}50)=0{,}98\ \text{J}$$</li>
+    <li><b>(b) Rapidez en B:</b>
+      $$W_{tot}=0+0{,}98-0{,}22=0{,}76\ \text{J}=\tfrac12mv_B^2\ \Rightarrow\ v_B=\sqrt{\frac{2(0{,}76)}{0{,}20}}=\mathbf{2{,}76\ m/s}$$
+      <span class="por">Sin fricción: $\sqrt{2gR}=3{,}13$ m/s.</span></li>
+    <li><b>(c) Fuerzas constantes:</b> solo el peso.
+      <span class="por">La normal cambia en módulo y dirección (vale 0 en A, máxima en B); la fricción $f_k=\mu_kn$ cambia con ella.</span></li>
+    <li><b>(d) Normal en B.</b> Movimiento circular, aceleración centrípeta hacia arriba, $v_B^2=2W_{tot}/m=7{,}6\ \text{m}^2/\text{s}^2$:
+      $$n-mg=\frac{mv_B^2}{R}\ \Rightarrow\ n=m\Big(g+\frac{v_B^2}{R}\Big)=0{,}20\Big(9{,}8+\frac{7{,}6}{0{,}50}\Big)=\mathbf{5{,}0\ N}$$
+      <span class="por">El peso es 1,96 N: la normal es 2,6 veces el peso.</span></li>
+  </ol>
+  <p><b>Resultado:</b> (a) 0 J y 0,98 J; (b) 2,76 m/s; (c) solo el peso; (d) $n=5{,}0$ N.</p>
+  <div class="recipe"><b>Receta:</b> energía para la rapidez, y luego la segunda ley de Newton en dirección radial para la normal: $n-mg=mv^2/R$ en el fondo.</div>
+  <div class="recipe"><b>Error típico:</b> poner $n=mg$ en el fondo (olvidar la aceleración centrípeta), o redondear $v_B$ antes de elevarla al cuadrado: usa $v_B^2=2W_{tot}/m=7{,}6\ \text{m}^2/\text{s}^2$ exacto.</div>
+</details>
+</details>
+<details class="sol" id="e5"><summary>E5 — Problema 7.65: caja contra un resorte con fricción (rapidez máxima) <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 7-25 Prob. 7.65">E</span></summary>
+<p class="enun">En un sistema de manejo de paquetes, una caja de 1,60 kg se coloca contra un resorte ligero comprimido 0,280 m, con $k=45{,}0$ N/m. Se suelta desde el reposo y se mueve sobre una superficie horizontal con $\mu_k=0{,}300$. Tras recorrer 0,280 m el resorte alcanza su longitud natural y la caja se separa. (a) ¿Qué rapidez tiene al separarse? (b) ¿Cuál es su rapidez máxima durante el movimiento?</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Escribe la energía en función de la distancia recorrida $d$: $\tfrac12mv^2=\tfrac12kx_0^2-\tfrac12k(x_0-d)^2-\mu_kmg\,d$.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>La rapidez es máxima cuando $kx=\mu_kmg$ (aceleración nula), no en la longitud natural.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t07/energia-cinetica-de-la-caja-frente-a-la-distanci.svg">
+<div class="figph" role="img" aria-label="Energía cinética de la caja frente a la distancia recorrida: el máximo no está en la longitud natural del resorte" style="aspect-ratio:340/215"></div>
+<figcaption>K(d) con k = 45,0 N/m, μ<sub>k</sub> = 0,300 y m = 1,60 kg. El máximo (0,693 J, v = 0,931 m/s) ocurre con el resorte aún comprimido 0,105 m, donde kx = f<sub>k</sub>; al separarse (d = 0,280 m) la caja ya ha perdido algo de velocidad (0,447 J, v = 0,747 m/s). <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-25, Prob. 7.65)">P</span></figcaption>
+</figure>
+
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\tfrac12mv^2=U_{el,1}-U_{el,2}-\mu_kmg\,d$ ($d$ = distancia recorrida)</li>
+      <li>Fricción: $f_k=\mu_k\,mg$; máximo de $v$ cuando $k\,x=f_k$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>(a) Separación del resorte</b> ($d=0{,}280$ m, $U_{el,2}=0$):
+      $$U_{el,1}=\tfrac12(45{,}0)(0{,}280)^2=1{,}764\ \text{J}$$
+      $$W_f=-(0{,}300)(1{,}60)(9{,}8)(0{,}280)=-1{,}317\ \text{J}$$
+      $$K=1{,}764-1{,}317=0{,}447\ \text{J}\ \Rightarrow\ v=\sqrt{\frac{2(0{,}447)}{1{,}60}}=\mathbf{0{,}747\ m/s}$$</li>
+    <li><b>(b) Rapidez máxima.</b> Con $x_0=0{,}280$ m, tras recorrer $d$:
+      $$v^2(d)=\frac2m\Big[\tfrac12kx_0^2-\tfrac12k(x_0-d)^2-\mu_kmg\,d\Big]$$
+      $$\frac{d(v^2)}{dd}=0\ \Rightarrow\ k(x_0-d)=\mu_kmg$$
+      <span class="por">Es máxima cuando la fuerza del resorte iguala a la fricción (aceleración nula).</span></li>
+    <li><b>Compresión en ese punto:</b>
+      $$x_0-d=\frac{\mu_kmg}{k}=\frac{(0{,}300)(1{,}60)(9{,}8)}{45{,}0}=0{,}105\ \text{m}\quad(d=0{,}175\ \text{m})$$
+      $$v_{m\acute ax}=\mathbf{0{,}931\ m/s}$$
+      <span class="por">Después la fricción supera al resorte y la caja frena: por eso se separa a 0,747 m/s.</span></li>
+  </ol>
+  <p><b>Resultado:</b> (a) 0,747 m/s; (b) 0,931 m/s con el resorte comprimido 0,105 m.</p>
+  <div class="recipe"><b>Receta:</b> con fricción, la rapidez máxima no está en la longitud natural del resorte sino donde $kx=f_k$.</div>
+  <div class="recipe"><b>Error típico:</b> suponer que la rapidez máxima es la de separación del resorte, como en el caso sin fricción.</div>
+</details>
+</details>
+<details class="sol" id="e4"><summary>E4 — Problema 7.67: pez colgado de un resorte vertical (rapidez máxima) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 7-25/7-26 Prob. 7.67">E</span></summary>
+<p class="enun">Un pez de 3,00 kg cuelga del extremo inferior de un resorte vertical de masa despreciable y $k=900$ N/m. Inicialmente el resorte no está estirado ni comprimido y el pez se suelta desde el reposo. (a) ¿Qué rapidez tiene tras descender 0,0500 m? (b) ¿Cuál es su rapidez máxima durante la bajada?</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Con $y$ = distancia descendida, $K(y)=mgy-\tfrac12ky^2$ (peso y resorte, ambos conservativos).</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>La rapidez máxima está donde $dK/dy=0$, es decir, donde la fuerza neta es cero: $y^*=mg/k$.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t07/energia-cinetica-del-pez-en-funcion-de-lo-que-ha.svg">
+<div class="figph" role="img" aria-label="Energía cinética del pez en función de lo que ha descendido: máximo donde la fuerza neta es cero" style="aspect-ratio:340/215"></div>
+<figcaption>K(y) = mgy − ½ky² con m = 3,00 kg y k = 900 N/m. En y = 0,050 m vale 0,345 J (v = 0,480 m/s); el máximo, 0,480 J (v = 0,566 m/s), está en y = mg/k = 0,0327 m, y el pez se detiene en y = 2mg/k = 0,0653 m. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-25/7-26, Prob. 7.67)">P</span></figcaption>
+</figure>
+
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conservación: $K+U_{grav}+U_{el}=\text{cte}$</li>
+      <li>Con $y$ = distancia descendida: $K(y)=mg\,y-\tfrac12k\,y^2$</li>
+      <li>Máximo de $K$: $\dfrac{dK}{dy}=0\ \Rightarrow\ mg=ky$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Energía cinética en función de $y$.</b> Solo trabajan peso y resorte; el peso pierde $mgy$ y el resorte se estira $y$:
+      $$K(y)=mg\,y-\tfrac12k\,y^2$$</li>
+    <li><b>(a) $y=0{,}0500$ m:</b>
+      $$K=(3{,}00)(9{,}8)(0{,}0500)-\tfrac12(900)(0{,}0500)^2=1{,}470-1{,}125=0{,}345\ \text{J}$$
+      $$v=\sqrt{\frac{2(0{,}345)}{3{,}00}}=\mathbf{0{,}480\ m/s}$$</li>
+    <li><b>(b) Rapidez máxima:</b> donde $dK/dy=0$:
+      $$mg-ky^*=0\ \Rightarrow\ y^*=\frac{mg}{k}=\frac{(3{,}00)(9{,}8)}{900}=0{,}0327\ \text{m}$$
+      <span class="por">Es el punto de equilibrio: fuerza neta nula, el pez deja de acelerar (mínimo de $U$ total).</span></li>
+    <li><b>Valor máximo:</b>
+      $$K_{m\acute ax}=mg\,y^*-\tfrac12k\,y^{*2}=\frac{(mg)^2}{2k}=\frac{(29{,}4)^2}{2(900)}=0{,}480\ \text{J}$$
+      $$v_{m\acute ax}=\sqrt{\frac{2(0{,}480)}{3{,}00}}=\mathbf{0{,}566\ m/s}$$
+      <span class="por">Comprobación: $v_{m\acute ax}>0{,}480$ m/s del apartado (a). El pez se detiene en $y=2y^*=0{,}0653$ m.</span></li>
+  </ol>
+  <p><b>Resultado:</b> (a) 0,480 m/s; (b) 0,566 m/s en $y=0{,}0327$ m.</p>
+  <div class="recipe"><b>Receta:</b> para la rapidez máxima, escribe $K$ en función de la posición y deriva: el máximo está donde la fuerza neta es cero (mínimo de $U$ total).</div>
+  <div class="recipe"><b>Error típico:</b> creer que la rapidez máxima está en el punto más bajo (allí $v=0$).</div>
 </details>
 </details>
 <details class="sol" id="x3"><summary>X3 — Mismo planteamiento con rampa de 25° (g = 9,81) <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Septiembre 2024 P-1">X</span></summary>
@@ -454,152 +551,55 @@
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
-<details class="sol" id="x4"><summary>X4 — Cuarto de círculo con fricción y tramo horizontal: μ<sub>k</sub> y trabajo de la fricción <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Septiembre 2023 P-2">X</span></summary>
-<p class="enun">Una partícula de masa 0,5 kg que se encuentra en reposo se suelta desde una posición A, que forma un cuarto de círculo de radio $R=2{,}1$ m según se muestra en la figura, deslizándose hasta llegar al punto B con una velocidad de 5,2 m/s. A partir de este punto, la partícula se desplaza sobre una superficie horizontal hasta el punto C situado a 5 m, donde se detiene. Calcular (a) el coeficiente de fricción cinética de la superficie horizontal y (b) el trabajo de la fuerza de rozamiento sobre la partícula al deslizarse desde el punto A al B. (3 puntos.)</p>
+<details class="sol" id="x2"><summary>X2 — Bloque lanzado por un resorte en un plano inclinado de 30° con fricción <span class="prio p1">🔴 examen real</span> <span class="src" data-l="X" data-ref="Examen Febrero 2022 (2ª semana) P-1">X</span></summary>
+<p class="enun">Un bloque sólido de 1,50 kg de masa se coloca contra un resorte comprimido en la base de un plano inclinado de pendiente 30° (punto A). Al soltarse el resorte, el bloque sube por el plano. En el punto B, a 6,0 m pendiente arriba de A, el bloque tiene una velocidad de 7 m/s dirigida pendiente arriba y ya no está en contacto con el resorte. El coeficiente de fricción cinética entre el bloque y la superficie del plano es $\mu_k=0{,}50$. La masa del resorte es despreciable. Calcule la energía potencial almacenada inicialmente en el resorte. (3 puntos.) <span class="src" data-l="E" data-ref="Solucionario 7-28 Prob. 7.73">= E 7.73</span></p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Usa B como «bisagra»: primero el tramo BC (fricción conocida), luego el tramo AB (curvo, fricción desconocida).</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>En AB la normal no trabaja y $W_f$ sale por diferencia: $mgR+W_f=\tfrac12mv_B^2$.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>Elige los estados: 1 = A (reposo, resorte comprimido) y 2 = B. ¿Cuánto vale la altura ganada si recorre 6,0 m a 30°?</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>La fricción en el plano es $\mu_kmg\cos30^\circ$ (no $\mu_kmg$) y actúa en los 6,0 m completos; despeja $U_{el,A}$ de $U_{el,A}+W_{otras}=K_B+U_{grav,B}$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t07/x4-planteamiento.svg">
-<div class="figph" role="img" aria-label="Planteamiento: cuarto de círculo con tramo horizontal y diagramas de cuerpo libre" style="aspect-ratio:360/392"></div>
-<figcaption>Planteamiento como en el examen: esquema con los datos y DCL en el tramo recto y en un punto del arco (sin resultados). En el arco la normal apunta al centro; la fricción, contra el movimiento. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
+<figure class="fig" data-svg="../assets/figs/t07/x2-planteamiento.svg">
+<div class="figph" role="img" aria-label="Planteamiento: bloque lanzado por un resorte en un plano inclinado de 30°" style="aspect-ratio:360/346"></div>
+<figcaption>Planteamiento como en el examen: esquema con los datos y DCL del bloque durante la subida (sin resultados). La fricción apunta pendiente abajo; la normal, perpendicular al plano. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
 </figure>
-<figure class="fig" data-svg="../assets/figs/t07/cuarto-de-circulo-ab-y-tramo-horizontal-bc-con-f.svg">
-<div class="figph" role="img" aria-label="Cuarto de círculo AB y tramo horizontal BC con fricción: reparto de energía en cada tramo" style="aspect-ratio:360/322"></div>
-<figcaption>Examen Sep. 2023 P-2 (g = 9,80 m/s²): en AB la energía mgR = 10,29 J se reparte entre K<sub>B</sub> = 6,76 J y energía interna 3,53 J (trabajo de la fricción = −3,53 J); en BC los 6,76 J de K<sub>B</sub> se disipan por completo. <span class="src" data-l="P" data-ref="Diagrama propio del examen Septiembre 2023 P-2">P</span></figcaption>
+<figure class="fig" data-svg="../assets/figs/t07/bloque-lanzado-por-un-resorte-por-un-plano-incli.svg">
+<div class="figph" role="img" aria-label="Bloque lanzado por un resorte por un plano inclinado con fricción y reparto de la energía inicial del resorte" style="aspect-ratio:360/262"></div>
+<figcaption>Examen Feb. 2022 (2ª sem.) P-1 = E 7.73: la energía del resorte (119 J) se reparte en cinética en B (36,75 J), potencial gravitatoria (44,10 J) y energía interna ganada por la fricción (38,19 J). <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2022 (2ª semana) P-1 y del problema 7.73">P</span></figcaption>
+</figure>
+
+<figure class="fig" data-svg="../assets/figs/t07/diagrama-de-cuerpo-libre-del-bloque-que-sube-por.svg">
+<div class="figph" role="img" aria-label="Diagrama de cuerpo libre del bloque que sube por el plano inclinado de 30 grados con fricción" style="aspect-ratio:360/205"></div>
+<figcaption>Bloque de 1,50 kg subiendo por el plano de 30° (X2, g = 9,8 m/s²): perpendicular al plano n = mg cos θ = 12,73 N; a lo largo del plano, la componente del peso mg sen θ = 7,35 N y la fricción f<sub>k</sub> = μ<sub>k</sub>n = 6,37 N frenan el movimiento (flechas no a escala exacta). La fricción usa n = mg cos θ, no mg. <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2022 (2ª semana) P-1">P</span></figcaption>
 </figure>
 
   <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>$K_1+U_1+W_{otras}=K_2+U_2$; $K=\tfrac12mv^2$; $U_{grav}=mgy$</li>
-      <li>Fricción horizontal: $f_k=\mu_k\,mg$, $W_f=-\mu_kmg\,s$</li>
+      <li>$K_1+U_1+W_{otras}=K_2+U_2$</li>
+      <li>$K=\tfrac12mv^2$; $U_{grav}=mgy$ con $y=s\sin\theta$</li>
+      <li>Fricción en el plano: $n=mg\cos\theta$, $f_k=\mu_k\,mg\cos\theta$, $W_f=-f_k\,s$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Método.</b> En el tramo curvo la normal y la fricción cambian en cada punto; con energía solo hacen falta los extremos. B sirve de «bisagra». No dan $g$: se usa 9,80.</li>
-    <li><b>(a) Tramo BC</b> ($v_B=5{,}2$ m/s, $v_C=0$, mismo nivel):
-      $$K_B-\mu_kmg\,s=K_C\ \Rightarrow\ \tfrac12mv_B^2=\mu_kmg\,s\ \Rightarrow\ \mu_k=\frac{v_B^2}{2gs}=\frac{(5{,}2)^2}{2(9{,}8)(5)}=\frac{27{,}04}{98}=\mathbf{0{,}276}$$
-      <span class="por">La masa se cancela.</span></li>
-    <li><b>(b) Tramo AB</b> (origen en B: $y_A=R=2{,}1$ m, $y_B=0$; $K_A=0$). La normal no trabaja; la única «otra» fuerza es la fricción:
-      $$0+mgR+W_f^{AB}=\tfrac12mv_B^2+0$$
-      $$\tfrac12mv_B^2=\tfrac12(0{,}5)(27{,}04)=6{,}76\ \text{J},\qquad mgR=(0{,}5)(9{,}8)(2{,}1)=10{,}29\ \text{J}$$
-      $$W_f^{AB}=6{,}76-10{,}29=\mathbf{-3{,}53\ J}$$
-      <span class="por">Con $g=9{,}81$: $-3{,}54$ J. Comprobación: sin fricción llegaría con $\sqrt{2gR}=6{,}42$ m/s $>5{,}2$ m/s, así que la fricción ha quitado energía.</span></li>
+    <li><b>Estados.</b> 1 = A (reposo contra el resorte): $K_A=0$, $U_A=U_{el,A}$ (incógnita), $y_A=0$. 2 = B ($s=6{,}0$ m): $v_B=7$ m/s, sin contacto con el resorte:
+      $$y_B=s\sin30^\circ=6{,}0(0{,}5)=3{,}0\ \text{m}$$
+      <span class="por">No hace falta saber cuánto se comprimió ni $k$: la fuerza del resorte es conservativa y todo su trabajo está en $U_{el,A}$.</span></li>
+    <li><b>Fricción</b> (actúa durante los 6,0 m completos):
+      $$n=mg\cos30^\circ,\qquad W_{otras}=-\mu_kmg\cos30^\circ\,s$$</li>
+    <li><b>Balance:</b>
+      $$U_{el,A}+W_{otras}=K_B+U_{grav,B}\ \Rightarrow\ U_{el,A}=\tfrac12mv_B^2+mg\,s\sin\theta+\mu_kmg\cos\theta\,s$$</li>
+    <li><b>Números</b> ($g=9{,}8$):
+      $$K_B=\tfrac12(1{,}50)(7)^2=36{,}75\ \text{J}$$
+      $$U_{grav,B}=(1{,}50)(9{,}8)(3{,}0)=44{,}10\ \text{J}$$
+      $$|W_f|=(0{,}50)(1{,}50)(9{,}8)(0{,}866)(6{,}0)=38{,}19\ \text{J}$$
+      $$U_{el,A}=36{,}75+44{,}10+38{,}19=\mathbf{119{,}04\ J}\approx119\ \text{J}$$
+      <span class="por">La energía del resorte se reparte: cinética 31 %, potencial 37 %, fricción 32 %. Con $g=9{,}81$: 119,1 J.</span></li>
   </ol>
-  <p><b>Resultado:</b> (a) $\mu_k\approx0{,}28$; (b) $W_f^{AB}\approx-3{,}5$ J.</p>
-  <div class="recipe"><b>Receta:</b> si un tramo tiene fricción conocida en forma ($\mu_kmgs$, horizontal) y otro la tiene desconocida (curvo), aplica $K_1+U_1+W_{otras}=K_2+U_2$ por separado en cada tramo, usando el punto común como bisagra; el trabajo desconocido sale por diferencia.</div>
-  <div class="recipe"><b>Error típico:</b> escribir $W_f^{AB}=-\mu_kmg\cdot(\pi R/2)$ con el $\mu_k$ del apartado (a): en la curva la normal no vale $mg$ ni la superficie es la misma. El trabajo de fricción en AB solo sale del balance de energía.</div>
+  <p><b>Resultado:</b> $U_{el,A}\approx119$ J (con $g=9{,}81$: 119,1 J).</p>
+  <div class="recipe"><b>Receta:</b> «energía del resorte = lo que hay al final + lo que se ha perdido»: $U_{el}=K_2+mg\,s\sin\theta+\mu_kmg\cos\theta\,s$.</div>
+  <div class="recipe"><b>Error típico:</b> usar $n=mg$ en vez de $mg\cos\theta$ en el plano inclinado, o escribir $mgs$ en lugar de $mgs\sin\theta$ (la altura ganada es $s\sin\theta$, no la distancia recorrida).</div>
 
   <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
-    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) $\mu_k$ (1,5) · b) trabajo de la fricción en AB (1,5). Dentro de cada apartado suele valorarse en este orden:</p>
-    <ul><li><b>Planteamiento (≈30 %):</b> esquema A→B→C, bisagra en B y qué fuerzas trabajan en cada tramo.</li><li><b>Ecuaciones (≈40 %):</b> tramo BC: $\tfrac12mv_B^2=\mu_kmgs$; tramo AB: $mgR+W_f=\tfrac12mv_B^2$.</li><li><b>Resultado y unidades (≈30 %):</b> $\mu_k\approx0{,}28$ y $W_f^{AB}\approx-3{,}5$ J (con signo negativo).</li></ul>
+    <p>Reparto orientativo (el enunciado solo fija 3 puntos): una sola pregunta: energía almacenada en el resorte. Dentro de cada apartado suele valorarse en este orden:</p>
+    <ul><li><b>Planteamiento (≈30 %):</b> dibujo del plano con los puntos A y B, la altura $y_B=s\sin30^\circ$ y las fuerzas (peso, normal, fricción).</li><li><b>Ecuaciones (≈40 %):</b> balance $U_{el,A}+W_{otras}=K_B+U_{grav,B}$ con $n=mg\cos30^\circ$ y $W_{otras}=-\mu_kmg\cos30^\circ\,s$.</li><li><b>Resultado y unidades (≈30 %):</b> $U_{el,A}\approx119$ J con unidades; un reparto razonable entre cinética, potencial y fricción confirma el resultado.</li></ul>
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
-</details>
-</details>
-<details class="sol" id="e6"><summary>E6 — Problema 7.9: piedra en un cuenco con fricción (energía + Newton) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 7-3 Prob. 7.9">E</span></summary>
-<p class="enun">Una piedra pequeña de 0,20 kg se suelta desde el reposo en el punto A, en el borde de un cuenco hemisférico de radio $R=0{,}50$ m. Desliza (no rueda) y la fricción realiza un trabajo de 0,22 J en módulo al ir de A al fondo B. (a) Entre A y B, ¿qué trabajo realizan (i) la normal y (ii) la gravedad? (b) ¿Qué rapidez tiene en B? (c) ¿Cuáles de las tres fuerzas son constantes? (d) ¿Cuánto vale la normal en B?</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Para $v_B$ basta la energía: trabajo del peso $mgR$, de la normal 0 y de la fricción $-0{,}22$ J.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Para la normal en B usa la segunda ley en dirección radial: $n-mg=mv_B^2/R$ (hay aceleración centrípeta).</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t07/piedra-que-baja-por-un-cuenco-con-friccion-traba.svg">
-<div class="figph" role="img" aria-label="Piedra que baja por un cuenco con fricción: trabajos y fuerzas en el punto B" style="aspect-ratio:360/138"></div>
-<figcaption>De A a B: la normal no trabaja, el peso hace +0,98 J y la fricción −0,22 J, así que K<sub>B</sub> = 0,76 J (v<sub>B</sub> = 2,76 m/s). En B la normal (5,0 N) supera al peso (1,96 N) porque hay aceleración centrípeta hacia arriba. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-3, Prob. 7.9)">P</span></figcaption>
-</figure>
-
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Teorema: $W_{tot}=\tfrac12mv_B^2$ (parte del reposo)</li>
-      <li>Trabajo de la gravedad: $W=mg\,R$ (descenso vertical $R$)</li>
-      <li>Segunda ley radial en el fondo: $n-mg=\dfrac{mv_B^2}{R}$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>(a)(i) Normal:</b> es radial y la velocidad tangente:
-      $$W_n=0$$</li>
-    <li><b>(a)(ii) Gravedad</b> (origen en B):
-      $$W_{grav}=mgR=(0{,}20)(9{,}8)(0{,}50)=0{,}98\ \text{J}$$</li>
-    <li><b>(b) Rapidez en B:</b>
-      $$W_{tot}=0+0{,}98-0{,}22=0{,}76\ \text{J}=\tfrac12mv_B^2\ \Rightarrow\ v_B=\sqrt{\frac{2(0{,}76)}{0{,}20}}=\mathbf{2{,}76\ m/s}$$
-      <span class="por">Sin fricción: $\sqrt{2gR}=3{,}13$ m/s.</span></li>
-    <li><b>(c) Fuerzas constantes:</b> solo el peso.
-      <span class="por">La normal cambia en módulo y dirección (vale 0 en A, máxima en B); la fricción $f_k=\mu_kn$ cambia con ella.</span></li>
-    <li><b>(d) Normal en B.</b> Movimiento circular, aceleración centrípeta hacia arriba, $v_B^2=2W_{tot}/m=7{,}6\ \text{m}^2/\text{s}^2$:
-      $$n-mg=\frac{mv_B^2}{R}\ \Rightarrow\ n=m\Big(g+\frac{v_B^2}{R}\Big)=0{,}20\Big(9{,}8+\frac{7{,}6}{0{,}50}\Big)=\mathbf{5{,}0\ N}$$
-      <span class="por">El peso es 1,96 N: la normal es 2,6 veces el peso.</span></li>
-  </ol>
-  <p><b>Resultado:</b> (a) 0 J y 0,98 J; (b) 2,76 m/s; (c) solo el peso; (d) $n=5{,}0$ N.</p>
-  <div class="recipe"><b>Receta:</b> energía para la rapidez, y luego la segunda ley de Newton en dirección radial para la normal: $n-mg=mv^2/R$ en el fondo.</div>
-  <div class="recipe"><b>Error típico:</b> poner $n=mg$ en el fondo (olvidar la aceleración centrípeta), o redondear $v_B$ antes de elevarla al cuadrado: usa $v_B^2=2W_{tot}/m=7{,}6\ \text{m}^2/\text{s}^2$ exacto.</div>
-</details>
-</details>
-<details class="sol" id="e4"><summary>E4 — Problema 7.67: pez colgado de un resorte vertical (rapidez máxima) <span class="prio p1">🔴</span> <span class="src" data-l="E" data-ref="Solucionario 7-25/7-26 Prob. 7.67">E</span></summary>
-<p class="enun">Un pez de 3,00 kg cuelga del extremo inferior de un resorte vertical de masa despreciable y $k=900$ N/m. Inicialmente el resorte no está estirado ni comprimido y el pez se suelta desde el reposo. (a) ¿Qué rapidez tiene tras descender 0,0500 m? (b) ¿Cuál es su rapidez máxima durante la bajada?</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Con $y$ = distancia descendida, $K(y)=mgy-\tfrac12ky^2$ (peso y resorte, ambos conservativos).</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>La rapidez máxima está donde $dK/dy=0$, es decir, donde la fuerza neta es cero: $y^*=mg/k$.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t07/energia-cinetica-del-pez-en-funcion-de-lo-que-ha.svg">
-<div class="figph" role="img" aria-label="Energía cinética del pez en función de lo que ha descendido: máximo donde la fuerza neta es cero" style="aspect-ratio:340/215"></div>
-<figcaption>K(y) = mgy − ½ky² con m = 3,00 kg y k = 900 N/m. En y = 0,050 m vale 0,345 J (v = 0,480 m/s); el máximo, 0,480 J (v = 0,566 m/s), está en y = mg/k = 0,0327 m, y el pez se detiene en y = 2mg/k = 0,0653 m. <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-25/7-26, Prob. 7.67)">P</span></figcaption>
-</figure>
-
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Conservación: $K+U_{grav}+U_{el}=\text{cte}$</li>
-      <li>Con $y$ = distancia descendida: $K(y)=mg\,y-\tfrac12k\,y^2$</li>
-      <li>Máximo de $K$: $\dfrac{dK}{dy}=0\ \Rightarrow\ mg=ky$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Energía cinética en función de $y$.</b> Solo trabajan peso y resorte; el peso pierde $mgy$ y el resorte se estira $y$:
-      $$K(y)=mg\,y-\tfrac12k\,y^2$$</li>
-    <li><b>(a) $y=0{,}0500$ m:</b>
-      $$K=(3{,}00)(9{,}8)(0{,}0500)-\tfrac12(900)(0{,}0500)^2=1{,}470-1{,}125=0{,}345\ \text{J}$$
-      $$v=\sqrt{\frac{2(0{,}345)}{3{,}00}}=\mathbf{0{,}480\ m/s}$$</li>
-    <li><b>(b) Rapidez máxima:</b> donde $dK/dy=0$:
-      $$mg-ky^*=0\ \Rightarrow\ y^*=\frac{mg}{k}=\frac{(3{,}00)(9{,}8)}{900}=0{,}0327\ \text{m}$$
-      <span class="por">Es el punto de equilibrio: fuerza neta nula, el pez deja de acelerar (mínimo de $U$ total).</span></li>
-    <li><b>Valor máximo:</b>
-      $$K_{m\acute ax}=mg\,y^*-\tfrac12k\,y^{*2}=\frac{(mg)^2}{2k}=\frac{(29{,}4)^2}{2(900)}=0{,}480\ \text{J}$$
-      $$v_{m\acute ax}=\sqrt{\frac{2(0{,}480)}{3{,}00}}=\mathbf{0{,}566\ m/s}$$
-      <span class="por">Comprobación: $v_{m\acute ax}>0{,}480$ m/s del apartado (a). El pez se detiene en $y=2y^*=0{,}0653$ m.</span></li>
-  </ol>
-  <p><b>Resultado:</b> (a) 0,480 m/s; (b) 0,566 m/s en $y=0{,}0327$ m.</p>
-  <div class="recipe"><b>Receta:</b> para la rapidez máxima, escribe $K$ en función de la posición y deriva: el máximo está donde la fuerza neta es cero (mínimo de $U$ total).</div>
-  <div class="recipe"><b>Error típico:</b> creer que la rapidez máxima está en el punto más bajo (allí $v=0$).</div>
-</details>
-</details>
-<details class="sol" id="e5"><summary>E5 — Problema 7.65: caja contra un resorte con fricción (rapidez máxima) <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 7-25 Prob. 7.65">E</span></summary>
-<p class="enun">En un sistema de manejo de paquetes, una caja de 1,60 kg se coloca contra un resorte ligero comprimido 0,280 m, con $k=45{,}0$ N/m. Se suelta desde el reposo y se mueve sobre una superficie horizontal con $\mu_k=0{,}300$. Tras recorrer 0,280 m el resorte alcanza su longitud natural y la caja se separa. (a) ¿Qué rapidez tiene al separarse? (b) ¿Cuál es su rapidez máxima durante el movimiento?</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Escribe la energía en función de la distancia recorrida $d$: $\tfrac12mv^2=\tfrac12kx_0^2-\tfrac12k(x_0-d)^2-\mu_kmg\,d$.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>La rapidez es máxima cuando $kx=\mu_kmg$ (aceleración nula), no en la longitud natural.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t07/energia-cinetica-de-la-caja-frente-a-la-distanci.svg">
-<div class="figph" role="img" aria-label="Energía cinética de la caja frente a la distancia recorrida: el máximo no está en la longitud natural del resorte" style="aspect-ratio:340/215"></div>
-<figcaption>K(d) con k = 45,0 N/m, μ<sub>k</sub> = 0,300 y m = 1,60 kg. El máximo (0,693 J, v = 0,931 m/s) ocurre con el resorte aún comprimido 0,105 m, donde kx = f<sub>k</sub>; al separarse (d = 0,280 m) la caja ya ha perdido algo de velocidad (0,447 J, v = 0,747 m/s). <span class="src" data-l="P" data-ref="Diagrama propio (Solucionario 7-25, Prob. 7.65)">P</span></figcaption>
-</figure>
-
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>$\tfrac12mv^2=U_{el,1}-U_{el,2}-\mu_kmg\,d$ ($d$ = distancia recorrida)</li>
-      <li>Fricción: $f_k=\mu_k\,mg$; máximo de $v$ cuando $k\,x=f_k$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>(a) Separación del resorte</b> ($d=0{,}280$ m, $U_{el,2}=0$):
-      $$U_{el,1}=\tfrac12(45{,}0)(0{,}280)^2=1{,}764\ \text{J}$$
-      $$W_f=-(0{,}300)(1{,}60)(9{,}8)(0{,}280)=-1{,}317\ \text{J}$$
-      $$K=1{,}764-1{,}317=0{,}447\ \text{J}\ \Rightarrow\ v=\sqrt{\frac{2(0{,}447)}{1{,}60}}=\mathbf{0{,}747\ m/s}$$</li>
-    <li><b>(b) Rapidez máxima.</b> Con $x_0=0{,}280$ m, tras recorrer $d$:
-      $$v^2(d)=\frac2m\Big[\tfrac12kx_0^2-\tfrac12k(x_0-d)^2-\mu_kmg\,d\Big]$$
-      $$\frac{d(v^2)}{dd}=0\ \Rightarrow\ k(x_0-d)=\mu_kmg$$
-      <span class="por">Es máxima cuando la fuerza del resorte iguala a la fricción (aceleración nula).</span></li>
-    <li><b>Compresión en ese punto:</b>
-      $$x_0-d=\frac{\mu_kmg}{k}=\frac{(0{,}300)(1{,}60)(9{,}8)}{45{,}0}=0{,}105\ \text{m}\quad(d=0{,}175\ \text{m})$$
-      $$v_{m\acute ax}=\mathbf{0{,}931\ m/s}$$
-      <span class="por">Después la fricción supera al resorte y la caja frena: por eso se separa a 0,747 m/s.</span></li>
-  </ol>
-  <p><b>Resultado:</b> (a) 0,747 m/s; (b) 0,931 m/s con el resorte comprimido 0,105 m.</p>
-  <div class="recipe"><b>Receta:</b> con fricción, la rapidez máxima no está en la longitud natural del resorte sino donde $kx=f_k$.</div>
-  <div class="recipe"><b>Error típico:</b> suponer que la rapidez máxima es la de separación del resorte, como en el caso sin fricción.</div>
 </details>
 </details>
 <div class="nivel"><b>🟡 Práctica: 5 ejercicios más del solucionario</b><span>Repiten métodos del núcleo con otros datos. Antes de leer los pasos, escribe tú los dos estados, $U$ en cada uno y $W_{otras}$.</span></div>

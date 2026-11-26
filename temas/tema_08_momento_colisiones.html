@@ -347,62 +347,76 @@
 <div class="nivel"><b>🔴 Núcleo: 8 ejercicios, un método por ejercicio</b><span>Los 5 problemas de examen real más tres del solucionario. Si solo haces esto, ya cubres los problemas que caen.</span></div>
 <table class="metodos">
 <tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>
-<tr><td><a href="#x1">X1</a> · Feb 2018</td><td>Choque en el plano: uno sale en otra dirección</td><td>Una ecuación de $P$ por componente; $K$ solo para medir lo perdido</td></tr>
-<tr><td><a href="#x2">X2</a> · Feb 2020</td><td>Explosión en el punto más alto</td><td>$m_Av_A=m_Bv_B$ + energía liberada; después, cada fragmento es un proyectil</td></tr>
-<tr><td><a href="#x3">X3</a> · Feb 2022</td><td>Cae, choca (queda pegada) y oscila</td><td>Energía → $P$ en el choque → energía o MAS respecto al <i>nuevo</i> equilibrio</td></tr>
-<tr><td><a href="#x4">X4</a> · Feb 2019</td><td>Cohete con empuje dado y gravedad variable</td><td>$M\,dv/dt=F-Mg$; integrar por tramos empalmando $v$ e $y$</td></tr>
-<tr><td><a href="#x9">X9</a> · Sep 2019</td><td>Bala que se incrusta en una varilla con pivote</td><td>Se conserva $L$ respecto al pivote, no $P$; $K_2=L^2/2I$</td></tr>
-<tr><td><a href="#e1">E1</a></td><td>Choque elástico frontal con los dos en movimiento</td><td>$P$ + velocidad relativa invertida: sistema lineal 2×2</td></tr>
 <tr><td><a href="#e3">E3</a></td><td>Bala que se incrusta y comprime un resorte (o sube: péndulo balístico)</td><td>Hacia atrás: energía después del choque da $V$; $P$ en el choque da $v_1$</td></tr>
 <tr><td><a href="#e6">E6</a></td><td>Persona que camina sobre una canoa</td><td>CM fijo: $\sum m_i\Delta x_i=0$ respecto al agua</td></tr>
+<tr><td><a href="#x2">X2</a> · Feb 2020</td><td>Explosión en el punto más alto</td><td>$m_Av_A=m_Bv_B$ + energía liberada; después, cada fragmento es un proyectil</td></tr>
+<tr><td><a href="#e1">E1</a></td><td>Choque elástico frontal con los dos en movimiento</td><td>$P$ + velocidad relativa invertida: sistema lineal 2×2</td></tr>
+<tr><td><a href="#x1">X1</a> · Feb 2018</td><td>Choque en el plano: uno sale en otra dirección</td><td>Una ecuación de $P$ por componente; $K$ solo para medir lo perdido</td></tr>
+<tr><td><a href="#x4">X4</a> · Feb 2019</td><td>Cohete con empuje dado y gravedad variable</td><td>$M\,dv/dt=F-Mg$; integrar por tramos empalmando $v$ e $y$</td></tr>
+<tr><td><a href="#x9">X9</a> · Sep 2019</td><td>Bala que se incrusta en una varilla con pivote</td><td>Se conserva $L$ respecto al pivote, no $P$; $K_2=L^2/2I$</td></tr>
+<tr><td><a href="#x3">X3</a> · Feb 2022</td><td>Cae, choca (queda pegada) y oscila</td><td>Energía → $P$ en el choque → energía o MAS respecto al <i>nuevo</i> equilibrio</td></tr>
 </table>
-<details class="sol" id="x1"><summary>X1 — Choque de un átomo de helio con una molécula de oxígeno en reposo <span class="src" data-l="X" data-ref="Examen Febrero 2018 (2ª semana) P-1">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244 y §8.3, p. 247">U p.243-244, 247</span></summary>
-<p class="enun">Un átomo de helio de masa $m_1=4$ u choca con una velocidad de 1200 m/s, en la dirección del eje $x$, con una molécula de oxígeno de masa $m_2=32$ u que se encuentra inicialmente en reposo. Como consecuencia del choque, el helio se mueve en la dirección del eje $y$, en sentido positivo, con una cuarta parte de la energía cinética que tenía antes del choque. Calcular: a) la velocidad que adquiere la molécula de oxígeno; b) la fracción de energía cinética total que se pierde en el choque. (3 puntos.)</p>
+<details class="sol" id="e3"><summary>E3 — Problema 8.79: bala que se incrusta en un bloque unido a un resorte <span class="src" data-l="E" data-ref="Solucionario 8-29 Prob. 8.79">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.3, p. 248 (ec. 8.16), ejemplo 8.8, p. 249 y §7.2, p. 214">U p.214, 248-249</span></summary>
+<p class="enun">Una bala de rifle de 8,00 g golpea y se incrusta en un bloque de 0,992 kg que descansa sobre una superficie horizontal sin fricción, sujeto a un resorte. El impacto comprime el resorte 15,0 cm. La calibración del resorte indica que se requiere una fuerza de 0,750 N para comprimirlo 0,250 cm. a) Calcule la magnitud de la velocidad del bloque inmediatamente después del impacto. b) ¿Qué rapidez tenía inicialmente la bala?</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Sistema {He + O₂}: solo fuerzas internas, luego se conserva $\vec P$ <i>por componentes</i>. ¿Qué rapidez tiene el helio si su $K$ se reduce a la cuarta parte?</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Una ecuación por componente ($x$ e $y$) para $\vec v_2'$; la energía se usa después, solo para ver cuánto se perdió.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>Razona hacia atrás: del resorte comprimido sale $V$ por energía y de $V$ la rapidez de la bala por cantidad de movimiento.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>$k=F/x$ con $x$ en metros; no igualen la energía de la bala a $\tfrac12kx^2$ (el choque disipa casi todo).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t08/x1-planteamiento.svg">
-<div class="figph" role="img" aria-label="Planteamiento: choque en el plano de un átomo de helio con una molécula de oxígeno en reposo" style="aspect-ratio:360/330"></div>
-<figcaption>Planteamiento como en el examen: esquema antes y después con los datos y las ecuaciones de conservación por ejes (sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
-</figure>
-<figure class="fig" data-svg="../assets/figs/t08/triangulo-de-cantidad-de-movimiento-del-choque-h.svg">
-<div class="figph" role="img" aria-label="Triángulo de cantidad de movimiento del choque helio-oxígeno" style="aspect-ratio:360/200"></div>
-<figcaption>Examen Feb. 2018 (2ª sem.) P-1: la cantidad de movimiento inicial del helio (4800 u·m/s en x) se reparte entre el helio final (2400 en +y) y el oxígeno (4800 en +x y −2400 en y). <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2018 (2ª semana) P-1">P</span></figcaption>
+<figure class="fig" data-svg="../assets/figs/t08/energia-cinetica-de-la-bala-y-energia-final-alma.svg">
+<div class="figph" role="img" aria-label="Energía cinética de la bala y energía final almacenada en el resorte" style="aspect-ratio:360/154"></div>
+<figcaption>Problema 8.79: la bala (8,00 g a 325 m/s) tiene 422 J; tras incrustarse, el conjunto solo conserva 3,38 J, que acaban en el resorte comprimido 15,0 cm. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.79 (U p. 269)">P</span></figcaption>
 </figure>
   <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Conservación de la cantidad de movimiento (vectorial, por componentes): $\vec P_{antes}=\vec P_{despu\acute es}$</li>
-      <li>Energía cinética: $K=\tfrac12mv^2$</li>
-      <li>Fracción de energía perdida: $\dfrac{K_0-K_f}{K_0}$</li>
+      <li>Ley de Hooke: $k=F/x$</li>
+      <li>Energía tras el choque: $\tfrac12MV^2=\tfrac12kx^2$</li>
+      <li>Choque totalmente inelástico: $m\,v_1=M\,V$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Sistema y ley.</b> Sistema = {He + O₂}; solo actúan fuerzas internas ⇒ se conserva $\vec P$ componente a componente. La energía cinética no tiene por qué conservarse (no dicen «elástico»).
-      <span class="por">Las masas solo entran en cocientes: se pueden dejar en u.</span></li>
-    <li><b>Velocidad final del helio.</b> $K_1'=K_1/4$:
-      $$\tfrac12m_1v_1'^2=\tfrac14\cdot\tfrac12m_1v_1^2\ \Rightarrow\ v_1'=\frac{v_1}{2}=600\ \text{m/s},\qquad\vec v_1'=(0,\ 600)\ \text{m/s}$$
-      <span class="por">Un cuarto de energía es la mitad de rapidez, no un cuarto.</span></li>
-    <li><b>Componente $x$</b> (el O₂ parte del reposo):
-      $$m_1v_1=0+m_2v_{2x}'\ \Rightarrow\ v_{2x}'=\frac{4(1200)}{32}=150\ \text{m/s}$$</li>
-    <li><b>Componente $y$</b> (antes no había cantidad de movimiento en $y$):
-      $$0=m_1(600)+m_2v_{2y}'\ \Rightarrow\ v_{2y}'=-\frac{4(600)}{32}=-75\ \text{m/s}$$</li>
-    <li><b>(a) Velocidad del O₂:</b>
-      $$\vec v_2'=(150\,\hat\imath-75\,\hat\jmath)\ \text{m/s},\qquad|\vec v_2'|=\sqrt{150^2+75^2}=167{,}7\approx\mathbf{168\ m/s}$$
-      $$\theta=\arctan\frac{75}{150}=26{,}6^\circ\ \text{por debajo del eje }+x$$</li>
-    <li><b>(b) Energías</b> (en u·m²/s²):
-      $$K_0=\tfrac12(4)(1200)^2=2{,}88\times10^6,\qquad K_1'=\frac{K_0}{4}=0{,}72\times10^6$$
-      $$K_2'=\tfrac12(32)(150^2+75^2)=0{,}45\times10^6,\qquad K_f=1{,}17\times10^6$$
-      $$\frac{K_0-K_f}{K_0}=\frac{2{,}88-1{,}17}{2{,}88}=\frac{19}{32}=\mathbf{0{,}594}\ \to\ 59{,}4\ \%\ \text{perdido}$$
-      <span class="por">Choque inelástico. En julios (1 u $=1{,}66\times10^{-27}$ kg): $K_0=4{,}78\times10^{-21}$ J y se pierden $2{,}84\times10^{-21}$ J.</span></li>
+    <li><b>Constante del resorte:</b>
+      $$k=\frac{F}{x}=\frac{0{,}750}{0{,}00250}=300\ \text{N/m}$$</li>
+    <li><b>(a) Velocidad tras el choque</b> (razonamos hacia atrás: conocemos el final). Masa total $M=0{,}992+0{,}008=1{,}000$ kg:
+      $$V=x\sqrt{\frac kM}=0{,}150\sqrt{\frac{300}{1{,}000}}=0{,}150(17{,}32)=\mathbf{2{,}60\ m/s}$$</li>
+    <li><b>(b) Velocidad de la bala</b> (el choque conserva $P$):
+      $$v_1=\frac{M\,V}{m}=\frac{1{,}000(2{,}598)}{0{,}00800}=\mathbf{325\ m/s}$$</li>
+    <li><b>Balance:</b> $K$ de la bala $=\tfrac12(0{,}008)(325)^2=422$ J; energía en el resorte $=\tfrac12(300)(0{,}150)^2=3{,}38$ J.
+      <span class="por">Más del 99 % se disipa en el choque: por eso no se puede igualar $\tfrac12mv_1^2$ a $\tfrac12kx^2$.</span></li>
   </ol>
-  <p><b>Resultado:</b> a) $\vec v_2'=(150\,\hat\imath-75\,\hat\jmath)$ m/s (168 m/s a 26,6° bajo el eje $x$); b) $19/32\approx59\ \%$.</p>
-  <div class="recipe"><b>Receta:</b> choque en 2D: dibuja antes/después con ejes, escribe una ecuación de conservación por componente y usa la energía solo si dicen «elástico»; si no, calcúlala después para ver cuánto se perdió.</div>
-  <div class="recipe"><b>Error típico:</b> sumar módulos ($4\cdot1200=4\cdot600+32\,v_2'$) en lugar de componentes; imponer conservación de la energía cinética (aquí no se cumple); o creer que $K/4$ significa $v/4$.</div>
-
-  <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
-    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) velocidad del O₂ (1,8) · b) fracción de energía perdida (1,2). Dentro de cada apartado suele valorarse en este orden:</p>
-    <ul><li><b>Planteamiento (≈30 %):</b> esquema antes/después con ejes, cálculo de $v_1'=v_1/2$ y qué se conserva (solo $\vec P$).</li><li><b>Ecuaciones (≈40 %):</b> una ecuación de conservación por componente y $\Delta K/K_0$.</li><li><b>Resultado y unidades (≈30 %):</b> $\vec v_2'=(150,-75)$ m/s (168 m/s) y 59 % de energía perdida, con unidades.</li></ul>
-    <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
+  <p><b>Resultado:</b> $V=2{,}60$ m/s; $v_1=325$ m/s.</p>
+  <div class="recipe"><b>Receta:</b> péndulo o resorte balístico: del dato final se obtiene $V$ por energía, y de $V$ la velocidad del proyectil por cantidad de movimiento.</div>
+  <div class="recipe"><b>Error típico:</b> igualar la energía de la bala a la del resorte (daría unos 29 m/s), o no pasar 0,250 cm y 15,0 cm a metros.</div>
+</details>
+</details>
+<details class="sol" id="e6"><summary>E6 — Problema 8.92: mujer que camina en una canoa <span class="src" data-l="E" data-ref="Solucionario 8-34 Prob. 8.92">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.5, pp. 255-256 (ecs. 8.29 y 8.32; ejemplo 8.14)">U p.255-256</span></summary>
+<p class="enun">Una mujer de 45,0 kg está de pie en una canoa de 60,0 kg y 5,00 m de longitud. Camina desde un punto a 1,00 m de un extremo hasta un punto a 1,00 m del otro extremo (es decir, 3,00 m respecto a la canoa). Si se ignora la resistencia del agua, ¿qué distancia se mueve la canoa?</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Sin fuerza horizontal externa y desde el reposo, el centro de masa del sistema no se mueve.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Mide los desplazamientos respecto al agua: la mujer avanza $3{,}00-\Delta x_{canoa}$, no 3,00 m.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t08/una-mujer-camina-por-una-canoa-y-la-canoa-se-des.svg">
+<div class="figph" role="img" aria-label="Una mujer camina por una canoa y la canoa se desplaza en sentido contrario, con el centro de masa del sistema fijo" style="aspect-ratio:360/222"></div>
+<figcaption>Problema 8.92: el centro de masa del sistema (línea discontinua) no se mueve; la canoa retrocede 1,29 m y la mujer avanza 1,71 m respecto al agua. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.92 (U p. 270)">P</span></figcaption>
+</figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Centro de masa: $x_{cm}=\dfrac{\sum m_ix_i}{\sum m_i}$</li>
+      <li>Sin fuerza horizontal externa y partiendo del reposo, $x_{cm}$ no cambia: $\sum m_i\,\Delta x_i=0$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Ley.</b> Se conserva $P_x$ y todo parte del reposo ⇒ $v_{cm}=0$.
+      <span class="por">La posición horizontal del centro de masa no cambia. Las posiciones se miden respecto al agua.</span></li>
+    <li><b>Coordenadas</b> (origen en el extremo izquierdo inicial de la canoa):
+      $$\text{inicio: mujer }x=1{,}00\ \text{m},\ \ \text{centro de la canoa }x=2{,}50\ \text{m}$$
+      $$\text{final: extremo izquierdo en }x_c\ \Rightarrow\ \text{mujer }x_c+4{,}00,\ \ \text{canoa }x_c+2{,}50$$</li>
+    <li><b>Centro de masa inicial = final:</b>
+      $$45{,}0(1{,}00)+60{,}0(2{,}50)=45{,}0(x_c+4{,}00)+60{,}0(x_c+2{,}50)$$
+      $$195=105\,x_c+330\ \Rightarrow\ x_c=\frac{195-330}{105}=-1{,}29\ \text{m}$$</li>
+    <li><b>Resultado:</b> la canoa se mueve <b>1,29 m en sentido contrario</b> a la marcha de la mujer.
+      <span class="por">Ella avanza respecto al agua $3{,}00-1{,}29=1{,}71$ m. Comprobación: $45{,}0(1{,}71)=60{,}0(1{,}29)=77{,}1$ kg·m.</span></li>
+  </ol>
+  <p><b>Resultado:</b> la canoa se mueve 1,29 m (hacia atrás respecto a la mujer).</p>
+  <div class="recipe"><b>Receta:</b> sistema aislado que parte del reposo: $\sum m_i\,\Delta x_i=0$ con desplazamientos medidos respecto al suelo (o al agua), no respecto al objeto móvil.</div>
+  <div class="recipe"><b>Error típico:</b> usar los 3,00 m como desplazamiento de la mujer respecto al agua (darían 2,25 m para la canoa).</div>
 </details>
 </details>
 <details class="sol" id="x2"><summary>X2 — Cohete de fuegos artificiales que estalla en dos fragmentos (= problema 8.97 de U) <span class="src" data-l="X" data-ref="Examen Febrero 2020 (1ª semana) P-2">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244; §8.3, p. 248 y §3.3 (tema 3)">U p.243-244, 248</span></summary>
@@ -450,56 +464,92 @@
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
-<details class="sol" id="x3"><summary>X3 — Masa que cae sobre una bandeja colgada de un resorte: choque perfectamente inelástico y movimiento armónico <span class="src" data-l="X" data-ref="Examen Febrero 2022 (1ª semana) P-1">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §7.1, p. 205; §7.2, pp. 213-215; §8.3, p. 248; §14.2, p. 438 y §14.4, p. 446">U p.205, 213-215, 248</span></summary>
-<p class="enun">Un resorte de masa despreciable y constante elástica $k=500$ N/m cuelga verticalmente y de su extremo inferior cuelga una bandeja de 0,5 kg. Se deja caer sobre la bandeja una masa deformable de 1 kg desde una altura de 0,5 m. Suponiendo que el impacto de la masa sobre la bandeja es perfectamente inelástico y que el sistema queda en movimiento armónico simple vertical, calcula: a) la velocidad de la bandeja y la masa justo después del impacto; b) la amplitud del movimiento posterior; c) el periodo de ese movimiento. (3 puntos.)</p>
+<details class="sol" id="e1"><summary>E1 — Problema 8.48: choque elástico frontal de dos canicas <span class="src" data-l="E" data-ref="Solucionario 8-17 Prob. 8.48">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.4, p. 252 (ec. 8.27) y ejemplo 8.10, p. 253">U p.252-253</span></summary>
+<p class="enun">Una canica de 10,0 g se desliza hacia la izquierda a 0,400 m/s sobre una acera horizontal helada (sin fricción) y tiene un choque elástico de frente con una canica de 30,0 g que se desliza hacia la derecha a 0,200 m/s. a) Determine la velocidad (módulo y sentido) de cada canica después del choque. b) Calcule el cambio de cantidad de movimiento de cada canica y compárelos. c) Calcule el cambio de energía cinética de cada canica y compárelos.</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Tres etapas, tres leyes: caída libre (energía), choque (cantidad de movimiento) y oscilación (energía con resorte, o MAS).</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>La amplitud se mide desde la <i>nueva posición de equilibrio</i>: $A=\sqrt{x_0^2+(V/\omega)^2}$ con $x_0=mg/k$.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>Con la canica B en movimiento no valen las fórmulas de «B en reposo»: usa $P$ y la velocidad relativa invertida.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Toma $+x$ a la derecha: la canica A va hacia la izquierda, $v_{A1}=-0{,}400$ m/s.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t08/x3-planteamiento.svg">
-<div class="figph" role="img" aria-label="Planteamiento: masa que cae sobre una bandeja colgada de un resorte, en tres momentos y con el DCL" style="aspect-ratio:360/440"></div>
-<figcaption>Planteamiento como en el examen: los tres momentos (caída, choque inelástico, MAS posterior) con los datos y el DCL del sistema (sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
-</figure>
-<figure class="fig" data-svg="../assets/figs/t08/niveles-de-la-bandeja-colgada-del-resorte-longit.svg">
-<div class="figph" role="img" aria-label="Niveles de la bandeja colgada del resorte: longitud natural, choque, nuevo equilibrio y puntos extremos del movimiento" style="aspect-ratio:360/236"></div>
-<figcaption>Examen Feb. 2022 (1ª sem.) P-1: estiramientos del resorte medidos hacia abajo. Esquema con los niveles ordenados pero sin escala. <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2022 (1ª semana) P-1">P</span></figcaption>
+<figure class="fig" data-svg="../assets/figs/t08/dos-canicas-antes-y-despues-de-un-choque-elastic.svg">
+<div class="figph" role="img" aria-label="Dos canicas, antes y después de un choque elástico frontal" style="aspect-ratio:360/206"></div>
+<figcaption>Problema 8.48: la canica ligera (A) sale hacia la derecha a 0,500 m/s y la pesada (B) hacia la izquierda a 0,100 m/s. Flechas a escala. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.48 (U p. 266)">P</span></figcaption>
 </figure>
   <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Caída libre (energía): $mgh=\tfrac12mv_0^2$</li>
-      <li>Choque totalmente inelástico: $m\,v_0=(m+M)\,V$</li>
-      <li>Energía con resorte vertical: $\tfrac12(m+M)V^2+(m+M)g\,d=\tfrac12k\big[(y_0+d)^2-y_0^2\big]$</li>
-      <li>Equilibrio del resorte: $y_e=\dfrac{(\text{masa})\,g}{k}$; MAS: $T=2\pi\sqrt{\dfrac{m+M}{k}}$, $\omega=\sqrt{\dfrac{k}{m+M}}$</li>
+      <li>Conservación de la cantidad de movimiento: $m_Av_{A1}+m_Bv_{B1}=m_Av_{A2}+m_Bv_{B2}$</li>
+      <li>Choque elástico: la velocidad relativa invierte el sentido, $v_{B2}-v_{A2}=-(v_{B1}-v_{A1})$</li>
+      <li>$\Delta p=m(v_2-v_1)$; $\Delta K=\tfrac12m(v_2^2-v_1^2)$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Tres etapas, tres leyes.</b> Caída libre ⇒ energía; choque instantáneo ⇒ cantidad de movimiento; oscilación posterior ⇒ energía (o MAS). Datos: $k=500$ N/m, $M=0{,}5$ kg, $m=1$ kg, $h=0{,}5$ m, $g=9{,}8$.
-      <span class="por">No se puede usar la energía a través del choque: en un choque totalmente inelástico se pierde energía cinética.</span></li>
-    <li><b>Caída libre:</b>
-      $$mgh=\tfrac12mv_0^2\ \Rightarrow\ v_0=\sqrt{2gh}=\sqrt{2(9{,}8)(0{,}5)}=3{,}13\ \text{m/s}$$</li>
-    <li><b>(a) Choque</b> (el resorte y el peso tienen impulso despreciable en ese instante):
-      $$mv_0=(m+M)V\ \Rightarrow\ V=\frac{1(3{,}13)}{1{,}5}=\mathbf{2{,}09\ m/s}\ \text{hacia abajo}$$
-      <span class="por">Se pierden $\tfrac12mv_0^2-\tfrac12(m+M)V^2=4{,}90-3{,}27=1{,}63$ J en deformar la masa.</span></li>
-    <li><b>Equilibrios del resorte:</b>
-      $$y_0=\frac{Mg}{k}=\frac{0{,}5(9{,}8)}{500}=0{,}0098\ \text{m},\qquad y_e=\frac{(m+M)g}{k}=\frac{1{,}5(9{,}8)}{500}=0{,}0294\ \text{m}$$
-      $$x_0=y_e-y_0=\frac{mg}{k}=0{,}0196\ \text{m por encima del nuevo equilibrio}$$
-      <span class="por">Tras el choque el sistema está en $y_0$ (no en el nuevo equilibrio), por eso la amplitud no es solo lo que baja.</span></li>
-    <li><b>(b) Amplitud por energía.</b> $d$ = lo que baja desde el impacto hasta el punto más bajo ($v=0$):
-      $$\tfrac12(1{,}5)(2{,}09)^2+(1{,}5)(9{,}8)\,d=\tfrac12(500)\big[(0{,}0098+d)^2-0{,}0098^2\big]$$
-      $$3{,}267+14{,}7\,d=250\,d^2+4{,}9\,d\ \Rightarrow\ 250\,d^2-9{,}8\,d-3{,}267=0\ \Rightarrow\ d=0{,}1356\ \text{m}$$
-      $$A=(y_0+d)-y_e=0{,}1454-0{,}0294=\mathbf{0{,}116\ m}$$</li>
-    <li><b>Comprobación con MAS</b> (medida desde el nuevo equilibrio):
-      $$\omega=\sqrt{\frac{500}{1{,}5}}=18{,}26\ \text{rad/s},\qquad A=\sqrt{x_0^2+(V/\omega)^2}=\sqrt{0{,}0196^2+0{,}1143^2}=0{,}116\ \text{m}\ \checkmark$$</li>
-    <li><b>(c) Periodo</b> (oscila la masa total):
-      $$T=2\pi\sqrt{\frac{m+M}{k}}=2\pi\sqrt{\frac{1{,}5}{500}}=\mathbf{0{,}344\ s}$$
-      <span class="por">$T$ no depende de $g$ ni de la amplitud.</span></li>
+    <li><b>Datos</b> ($+x$ hacia la derecha):
+      $$m_A=0{,}010\ \text{kg},\ v_{A1}=-0{,}400\ \text{m/s};\qquad m_B=0{,}030\ \text{kg},\ v_{B1}=+0{,}200\ \text{m/s}$$</li>
+    <li><b>Cantidad de movimiento:</b>
+      $$0{,}010(-0{,}400)+0{,}030(0{,}200)=0{,}010\,v_{A2}+0{,}030\,v_{B2}\ \Rightarrow\ v_{A2}+3\,v_{B2}=0{,}200\qquad(1)$$</li>
+    <li><b>Velocidad relativa</b> (B no está en reposo: no valen las fórmulas de «B en reposo»):
+      $$v_{B2}-v_{A2}=-\big(0{,}200-(-0{,}400)\big)=-0{,}600\qquad(2)$$</li>
+    <li><b>(a) Resolver.</b> De (2): $v_{A2}=v_{B2}+0{,}600$. Sustituyendo en (1):
+      $$v_{B2}+0{,}600+3v_{B2}=0{,}200\ \Rightarrow\ 4v_{B2}=-0{,}400\ \Rightarrow\ \mathbf{v_{B2}=-0{,}100\ m/s}$$
+      $$v_{A2}=v_{B2}+0{,}600=\mathbf{+0{,}500\ m/s}$$
+      <span class="por">La de 10,0 g sale hacia la derecha a 0,500 m/s; la de 30,0 g, hacia la izquierda a 0,100 m/s.</span></li>
+    <li><b>(b) Cambio de cantidad de movimiento:</b>
+      $$\Delta p_A=0{,}010(0{,}500+0{,}400)=+9{,}0\times10^{-3},\qquad\Delta p_B=0{,}030(-0{,}100-0{,}200)=-9{,}0\times10^{-3}\ \text{kg}\cdot\text{m/s}$$
+      <span class="por">Iguales y opuestos (tercera ley).</span></li>
+    <li><b>(c) Cambio de energía cinética:</b>
+      $$\Delta K_A=\tfrac12(0{,}010)(0{,}500^2-0{,}400^2)=+4{,}5\times10^{-4}\ \text{J}$$
+      $$\Delta K_B=\tfrac12(0{,}030)(0{,}100^2-0{,}200^2)=-4{,}5\times10^{-4}\ \text{J}$$
+      <span class="por">Iguales y opuestos: $K$ total no cambia (choque elástico).</span></li>
   </ol>
-  <p><b>Resultado:</b> a) $V=2{,}09$ m/s (hacia abajo); b) $A=0{,}116$ m; c) $T=0{,}344$ s. (Con $g=9{,}81$ salen las mismas cifras.)</p>
-  <div class="recipe"><b>Receta:</b> «cae–choca–oscila»: energía hasta el choque, cantidad de movimiento en el choque, energía (o MAS respecto al <i>nuevo</i> equilibrio) después. La amplitud se mide desde el equilibrio del conjunto, no desde donde ocurre el choque.</div>
-  <div class="recipe"><b>Error típico:</b> (1) usar la energía a través del choque ($mgh=\tfrac12(m+M)V^2$); (2) tomar como amplitud $V/\omega=0{,}114$ m, olvidando que el choque ocurre fuera del nuevo equilibrio; (3) usar solo $M$ o solo $m$ en el periodo.</div>
+  <p><b>Resultado:</b> 10,0 g $\to$ $+0{,}500$ m/s; 30,0 g $\to$ $-0{,}100$ m/s; $\Delta p=\pm9{,}0\times10^{-3}$ kg·m/s; $\Delta K=\pm4{,}5\times10^{-4}$ J. Puedes verlo en el primer interactivo de la sección 4.</p>
+  <div class="recipe"><b>Receta:</b> choque elástico 1D con los dos cuerpos en movimiento: cantidad de movimiento + velocidad relativa invertida $\Rightarrow$ sistema lineal 2×2.</div>
+  <div class="recipe"><b>Error típico:</b> aplicar las fórmulas de «B en reposo» cuando B se mueve, o perder los signos de las velocidades iniciales.</div>
+</details>
+</details>
+<details class="sol" id="x1"><summary>X1 — Choque de un átomo de helio con una molécula de oxígeno en reposo <span class="src" data-l="X" data-ref="Examen Febrero 2018 (2ª semana) P-1">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244 y §8.3, p. 247">U p.243-244, 247</span></summary>
+<p class="enun">Un átomo de helio de masa $m_1=4$ u choca con una velocidad de 1200 m/s, en la dirección del eje $x$, con una molécula de oxígeno de masa $m_2=32$ u que se encuentra inicialmente en reposo. Como consecuencia del choque, el helio se mueve en la dirección del eje $y$, en sentido positivo, con una cuarta parte de la energía cinética que tenía antes del choque. Calcular: a) la velocidad que adquiere la molécula de oxígeno; b) la fracción de energía cinética total que se pierde en el choque. (3 puntos.)</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Sistema {He + O₂}: solo fuerzas internas, luego se conserva $\vec P$ <i>por componentes</i>. ¿Qué rapidez tiene el helio si su $K$ se reduce a la cuarta parte?</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Una ecuación por componente ($x$ e $y$) para $\vec v_2'$; la energía se usa después, solo para ver cuánto se perdió.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t08/x1-planteamiento.svg">
+<div class="figph" role="img" aria-label="Planteamiento: choque en el plano de un átomo de helio con una molécula de oxígeno en reposo" style="aspect-ratio:360/330"></div>
+<figcaption>Planteamiento como en el examen: esquema antes y después con los datos y las ecuaciones de conservación por ejes (sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
+</figure>
+<figure class="fig" data-svg="../assets/figs/t08/triangulo-de-cantidad-de-movimiento-del-choque-h.svg">
+<div class="figph" role="img" aria-label="Triángulo de cantidad de movimiento del choque helio-oxígeno" style="aspect-ratio:360/200"></div>
+<figcaption>Examen Feb. 2018 (2ª sem.) P-1: la cantidad de movimiento inicial del helio (4800 u·m/s en x) se reparte entre el helio final (2400 en +y) y el oxígeno (4800 en +x y −2400 en y). <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2018 (2ª semana) P-1">P</span></figcaption>
+</figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conservación de la cantidad de movimiento (vectorial, por componentes): $\vec P_{antes}=\vec P_{despu\acute es}$</li>
+      <li>Energía cinética: $K=\tfrac12mv^2$</li>
+      <li>Fracción de energía perdida: $\dfrac{K_0-K_f}{K_0}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Sistema y ley.</b> Sistema = {He + O₂}; solo actúan fuerzas internas ⇒ se conserva $\vec P$ componente a componente. La energía cinética no tiene por qué conservarse (no dicen «elástico»).
+      <span class="por">Las masas solo entran en cocientes: se pueden dejar en u.</span></li>
+    <li><b>Velocidad final del helio.</b> $K_1'=K_1/4$:
+      $$\tfrac12m_1v_1'^2=\tfrac14\cdot\tfrac12m_1v_1^2\ \Rightarrow\ v_1'=\frac{v_1}{2}=600\ \text{m/s},\qquad\vec v_1'=(0,\ 600)\ \text{m/s}$$
+      <span class="por">Un cuarto de energía es la mitad de rapidez, no un cuarto.</span></li>
+    <li><b>Componente $x$</b> (el O₂ parte del reposo):
+      $$m_1v_1=0+m_2v_{2x}'\ \Rightarrow\ v_{2x}'=\frac{4(1200)}{32}=150\ \text{m/s}$$</li>
+    <li><b>Componente $y$</b> (antes no había cantidad de movimiento en $y$):
+      $$0=m_1(600)+m_2v_{2y}'\ \Rightarrow\ v_{2y}'=-\frac{4(600)}{32}=-75\ \text{m/s}$$</li>
+    <li><b>(a) Velocidad del O₂:</b>
+      $$\vec v_2'=(150\,\hat\imath-75\,\hat\jmath)\ \text{m/s},\qquad|\vec v_2'|=\sqrt{150^2+75^2}=167{,}7\approx\mathbf{168\ m/s}$$
+      $$\theta=\arctan\frac{75}{150}=26{,}6^\circ\ \text{por debajo del eje }+x$$</li>
+    <li><b>(b) Energías</b> (en u·m²/s²):
+      $$K_0=\tfrac12(4)(1200)^2=2{,}88\times10^6,\qquad K_1'=\frac{K_0}{4}=0{,}72\times10^6$$
+      $$K_2'=\tfrac12(32)(150^2+75^2)=0{,}45\times10^6,\qquad K_f=1{,}17\times10^6$$
+      $$\frac{K_0-K_f}{K_0}=\frac{2{,}88-1{,}17}{2{,}88}=\frac{19}{32}=\mathbf{0{,}594}\ \to\ 59{,}4\ \%\ \text{perdido}$$
+      <span class="por">Choque inelástico. En julios (1 u $=1{,}66\times10^{-27}$ kg): $K_0=4{,}78\times10^{-21}$ J y se pierden $2{,}84\times10^{-21}$ J.</span></li>
+  </ol>
+  <p><b>Resultado:</b> a) $\vec v_2'=(150\,\hat\imath-75\,\hat\jmath)$ m/s (168 m/s a 26,6° bajo el eje $x$); b) $19/32\approx59\ \%$.</p>
+  <div class="recipe"><b>Receta:</b> choque en 2D: dibuja antes/después con ejes, escribe una ecuación de conservación por componente y usa la energía solo si dicen «elástico»; si no, calcúlala después para ver cuánto se perdió.</div>
+  <div class="recipe"><b>Error típico:</b> sumar módulos ($4\cdot1200=4\cdot600+32\,v_2'$) en lugar de componentes; imponer conservación de la energía cinética (aquí no se cumple); o creer que $K/4$ significa $v/4$.</div>
 
   <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
-    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) velocidad tras el impacto (1) · b) amplitud (1,3) · c) periodo (0,7). Dentro de cada apartado suele valorarse en este orden:</p>
-    <ul><li><b>Planteamiento (≈30 %):</b> separar las tres etapas (caída, choque, oscilación) y decir qué ley se usa en cada una.</li><li><b>Ecuaciones (≈40 %):</b> $v_0=\sqrt{2gh}$; $mv_0=(m+M)V$; $A$ por energía o por $A=\sqrt{x_0^2+(V/\omega)^2}$; $T=2\pi\sqrt{(m+M)/k}$.</li><li><b>Resultado y unidades (≈30 %):</b> $V=2{,}09$ m/s, $A=0{,}116$ m y $T=0{,}344$ s con unidades.</li></ul>
+    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) velocidad del O₂ (1,8) · b) fracción de energía perdida (1,2). Dentro de cada apartado suele valorarse en este orden:</p>
+    <ul><li><b>Planteamiento (≈30 %):</b> esquema antes/después con ejes, cálculo de $v_1'=v_1/2$ y qué se conserva (solo $\vec P$).</li><li><b>Ecuaciones (≈40 %):</b> una ecuación de conservación por componente y $\Delta K/K_0$.</li><li><b>Resultado y unidades (≈30 %):</b> $\vec v_2'=(150,-75)$ m/s (168 m/s) y 59 % de energía perdida, con unidades.</li></ul>
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
@@ -606,110 +656,106 @@
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
-<details class="sol" id="e1"><summary>E1 — Problema 8.48: choque elástico frontal de dos canicas <span class="src" data-l="E" data-ref="Solucionario 8-17 Prob. 8.48">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.4, p. 252 (ec. 8.27) y ejemplo 8.10, p. 253">U p.252-253</span></summary>
-<p class="enun">Una canica de 10,0 g se desliza hacia la izquierda a 0,400 m/s sobre una acera horizontal helada (sin fricción) y tiene un choque elástico de frente con una canica de 30,0 g que se desliza hacia la derecha a 0,200 m/s. a) Determine la velocidad (módulo y sentido) de cada canica después del choque. b) Calcule el cambio de cantidad de movimiento de cada canica y compárelos. c) Calcule el cambio de energía cinética de cada canica y compárelos.</p>
+<details class="sol" id="x3"><summary>X3 — Masa que cae sobre una bandeja colgada de un resorte: choque perfectamente inelástico y movimiento armónico <span class="src" data-l="X" data-ref="Examen Febrero 2022 (1ª semana) P-1">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §7.1, p. 205; §7.2, pp. 213-215; §8.3, p. 248; §14.2, p. 438 y §14.4, p. 446">U p.205, 213-215, 248</span></summary>
+<p class="enun">Un resorte de masa despreciable y constante elástica $k=500$ N/m cuelga verticalmente y de su extremo inferior cuelga una bandeja de 0,5 kg. Se deja caer sobre la bandeja una masa deformable de 1 kg desde una altura de 0,5 m. Suponiendo que el impacto de la masa sobre la bandeja es perfectamente inelástico y que el sistema queda en movimiento armónico simple vertical, calcula: a) la velocidad de la bandeja y la masa justo después del impacto; b) la amplitud del movimiento posterior; c) el periodo de ese movimiento. (3 puntos.)</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Con la canica B en movimiento no valen las fórmulas de «B en reposo»: usa $P$ y la velocidad relativa invertida.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Toma $+x$ a la derecha: la canica A va hacia la izquierda, $v_{A1}=-0{,}400$ m/s.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>Tres etapas, tres leyes: caída libre (energía), choque (cantidad de movimiento) y oscilación (energía con resorte, o MAS).</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>La amplitud se mide desde la <i>nueva posición de equilibrio</i>: $A=\sqrt{x_0^2+(V/\omega)^2}$ con $x_0=mg/k$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t08/dos-canicas-antes-y-despues-de-un-choque-elastic.svg">
-<div class="figph" role="img" aria-label="Dos canicas, antes y después de un choque elástico frontal" style="aspect-ratio:360/206"></div>
-<figcaption>Problema 8.48: la canica ligera (A) sale hacia la derecha a 0,500 m/s y la pesada (B) hacia la izquierda a 0,100 m/s. Flechas a escala. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.48 (U p. 266)">P</span></figcaption>
+<figure class="fig" data-svg="../assets/figs/t08/x3-planteamiento.svg">
+<div class="figph" role="img" aria-label="Planteamiento: masa que cae sobre una bandeja colgada de un resorte, en tres momentos y con el DCL" style="aspect-ratio:360/440"></div>
+<figcaption>Planteamiento como en el examen: los tres momentos (caída, choque inelástico, MAS posterior) con los datos y el DCL del sistema (sin resultados). <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
+</figure>
+<figure class="fig" data-svg="../assets/figs/t08/niveles-de-la-bandeja-colgada-del-resorte-longit.svg">
+<div class="figph" role="img" aria-label="Niveles de la bandeja colgada del resorte: longitud natural, choque, nuevo equilibrio y puntos extremos del movimiento" style="aspect-ratio:360/236"></div>
+<figcaption>Examen Feb. 2022 (1ª sem.) P-1: estiramientos del resorte medidos hacia abajo. Esquema con los niveles ordenados pero sin escala. <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2022 (1ª semana) P-1">P</span></figcaption>
 </figure>
   <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Conservación de la cantidad de movimiento: $m_Av_{A1}+m_Bv_{B1}=m_Av_{A2}+m_Bv_{B2}$</li>
-      <li>Choque elástico: la velocidad relativa invierte el sentido, $v_{B2}-v_{A2}=-(v_{B1}-v_{A1})$</li>
-      <li>$\Delta p=m(v_2-v_1)$; $\Delta K=\tfrac12m(v_2^2-v_1^2)$</li>
+      <li>Caída libre (energía): $mgh=\tfrac12mv_0^2$</li>
+      <li>Choque totalmente inelástico: $m\,v_0=(m+M)\,V$</li>
+      <li>Energía con resorte vertical: $\tfrac12(m+M)V^2+(m+M)g\,d=\tfrac12k\big[(y_0+d)^2-y_0^2\big]$</li>
+      <li>Equilibrio del resorte: $y_e=\dfrac{(\text{masa})\,g}{k}$; MAS: $T=2\pi\sqrt{\dfrac{m+M}{k}}$, $\omega=\sqrt{\dfrac{k}{m+M}}$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Datos</b> ($+x$ hacia la derecha):
-      $$m_A=0{,}010\ \text{kg},\ v_{A1}=-0{,}400\ \text{m/s};\qquad m_B=0{,}030\ \text{kg},\ v_{B1}=+0{,}200\ \text{m/s}$$</li>
-    <li><b>Cantidad de movimiento:</b>
-      $$0{,}010(-0{,}400)+0{,}030(0{,}200)=0{,}010\,v_{A2}+0{,}030\,v_{B2}\ \Rightarrow\ v_{A2}+3\,v_{B2}=0{,}200\qquad(1)$$</li>
-    <li><b>Velocidad relativa</b> (B no está en reposo: no valen las fórmulas de «B en reposo»):
-      $$v_{B2}-v_{A2}=-\big(0{,}200-(-0{,}400)\big)=-0{,}600\qquad(2)$$</li>
-    <li><b>(a) Resolver.</b> De (2): $v_{A2}=v_{B2}+0{,}600$. Sustituyendo en (1):
-      $$v_{B2}+0{,}600+3v_{B2}=0{,}200\ \Rightarrow\ 4v_{B2}=-0{,}400\ \Rightarrow\ \mathbf{v_{B2}=-0{,}100\ m/s}$$
-      $$v_{A2}=v_{B2}+0{,}600=\mathbf{+0{,}500\ m/s}$$
-      <span class="por">La de 10,0 g sale hacia la derecha a 0,500 m/s; la de 30,0 g, hacia la izquierda a 0,100 m/s.</span></li>
-    <li><b>(b) Cambio de cantidad de movimiento:</b>
-      $$\Delta p_A=0{,}010(0{,}500+0{,}400)=+9{,}0\times10^{-3},\qquad\Delta p_B=0{,}030(-0{,}100-0{,}200)=-9{,}0\times10^{-3}\ \text{kg}\cdot\text{m/s}$$
-      <span class="por">Iguales y opuestos (tercera ley).</span></li>
-    <li><b>(c) Cambio de energía cinética:</b>
-      $$\Delta K_A=\tfrac12(0{,}010)(0{,}500^2-0{,}400^2)=+4{,}5\times10^{-4}\ \text{J}$$
-      $$\Delta K_B=\tfrac12(0{,}030)(0{,}100^2-0{,}200^2)=-4{,}5\times10^{-4}\ \text{J}$$
-      <span class="por">Iguales y opuestos: $K$ total no cambia (choque elástico).</span></li>
+    <li><b>Tres etapas, tres leyes.</b> Caída libre ⇒ energía; choque instantáneo ⇒ cantidad de movimiento; oscilación posterior ⇒ energía (o MAS). Datos: $k=500$ N/m, $M=0{,}5$ kg, $m=1$ kg, $h=0{,}5$ m, $g=9{,}8$.
+      <span class="por">No se puede usar la energía a través del choque: en un choque totalmente inelástico se pierde energía cinética.</span></li>
+    <li><b>Caída libre:</b>
+      $$mgh=\tfrac12mv_0^2\ \Rightarrow\ v_0=\sqrt{2gh}=\sqrt{2(9{,}8)(0{,}5)}=3{,}13\ \text{m/s}$$</li>
+    <li><b>(a) Choque</b> (el resorte y el peso tienen impulso despreciable en ese instante):
+      $$mv_0=(m+M)V\ \Rightarrow\ V=\frac{1(3{,}13)}{1{,}5}=\mathbf{2{,}09\ m/s}\ \text{hacia abajo}$$
+      <span class="por">Se pierden $\tfrac12mv_0^2-\tfrac12(m+M)V^2=4{,}90-3{,}27=1{,}63$ J en deformar la masa.</span></li>
+    <li><b>Equilibrios del resorte:</b>
+      $$y_0=\frac{Mg}{k}=\frac{0{,}5(9{,}8)}{500}=0{,}0098\ \text{m},\qquad y_e=\frac{(m+M)g}{k}=\frac{1{,}5(9{,}8)}{500}=0{,}0294\ \text{m}$$
+      $$x_0=y_e-y_0=\frac{mg}{k}=0{,}0196\ \text{m por encima del nuevo equilibrio}$$
+      <span class="por">Tras el choque el sistema está en $y_0$ (no en el nuevo equilibrio), por eso la amplitud no es solo lo que baja.</span></li>
+    <li><b>(b) Amplitud por energía.</b> $d$ = lo que baja desde el impacto hasta el punto más bajo ($v=0$):
+      $$\tfrac12(1{,}5)(2{,}09)^2+(1{,}5)(9{,}8)\,d=\tfrac12(500)\big[(0{,}0098+d)^2-0{,}0098^2\big]$$
+      $$3{,}267+14{,}7\,d=250\,d^2+4{,}9\,d\ \Rightarrow\ 250\,d^2-9{,}8\,d-3{,}267=0\ \Rightarrow\ d=0{,}1356\ \text{m}$$
+      $$A=(y_0+d)-y_e=0{,}1454-0{,}0294=\mathbf{0{,}116\ m}$$</li>
+    <li><b>Comprobación con MAS</b> (medida desde el nuevo equilibrio):
+      $$\omega=\sqrt{\frac{500}{1{,}5}}=18{,}26\ \text{rad/s},\qquad A=\sqrt{x_0^2+(V/\omega)^2}=\sqrt{0{,}0196^2+0{,}1143^2}=0{,}116\ \text{m}\ \checkmark$$</li>
+    <li><b>(c) Periodo</b> (oscila la masa total):
+      $$T=2\pi\sqrt{\frac{m+M}{k}}=2\pi\sqrt{\frac{1{,}5}{500}}=\mathbf{0{,}344\ s}$$
+      <span class="por">$T$ no depende de $g$ ni de la amplitud.</span></li>
   </ol>
-  <p><b>Resultado:</b> 10,0 g $\to$ $+0{,}500$ m/s; 30,0 g $\to$ $-0{,}100$ m/s; $\Delta p=\pm9{,}0\times10^{-3}$ kg·m/s; $\Delta K=\pm4{,}5\times10^{-4}$ J. Puedes verlo en el primer interactivo de la sección 4.</p>
-  <div class="recipe"><b>Receta:</b> choque elástico 1D con los dos cuerpos en movimiento: cantidad de movimiento + velocidad relativa invertida $\Rightarrow$ sistema lineal 2×2.</div>
-  <div class="recipe"><b>Error típico:</b> aplicar las fórmulas de «B en reposo» cuando B se mueve, o perder los signos de las velocidades iniciales.</div>
-</details>
-</details>
-<details class="sol" id="e3"><summary>E3 — Problema 8.79: bala que se incrusta en un bloque unido a un resorte <span class="src" data-l="E" data-ref="Solucionario 8-29 Prob. 8.79">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.3, p. 248 (ec. 8.16), ejemplo 8.8, p. 249 y §7.2, p. 214">U p.214, 248-249</span></summary>
-<p class="enun">Una bala de rifle de 8,00 g golpea y se incrusta en un bloque de 0,992 kg que descansa sobre una superficie horizontal sin fricción, sujeto a un resorte. El impacto comprime el resorte 15,0 cm. La calibración del resorte indica que se requiere una fuerza de 0,750 N para comprimirlo 0,250 cm. a) Calcule la magnitud de la velocidad del bloque inmediatamente después del impacto. b) ¿Qué rapidez tenía inicialmente la bala?</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Razona hacia atrás: del resorte comprimido sale $V$ por energía y de $V$ la rapidez de la bala por cantidad de movimiento.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>$k=F/x$ con $x$ en metros; no igualen la energía de la bala a $\tfrac12kx^2$ (el choque disipa casi todo).</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t08/energia-cinetica-de-la-bala-y-energia-final-alma.svg">
-<div class="figph" role="img" aria-label="Energía cinética de la bala y energía final almacenada en el resorte" style="aspect-ratio:360/154"></div>
-<figcaption>Problema 8.79: la bala (8,00 g a 325 m/s) tiene 422 J; tras incrustarse, el conjunto solo conserva 3,38 J, que acaban en el resorte comprimido 15,0 cm. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.79 (U p. 269)">P</span></figcaption>
-</figure>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Ley de Hooke: $k=F/x$</li>
-      <li>Energía tras el choque: $\tfrac12MV^2=\tfrac12kx^2$</li>
-      <li>Choque totalmente inelástico: $m\,v_1=M\,V$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Constante del resorte:</b>
-      $$k=\frac{F}{x}=\frac{0{,}750}{0{,}00250}=300\ \text{N/m}$$</li>
-    <li><b>(a) Velocidad tras el choque</b> (razonamos hacia atrás: conocemos el final). Masa total $M=0{,}992+0{,}008=1{,}000$ kg:
-      $$V=x\sqrt{\frac kM}=0{,}150\sqrt{\frac{300}{1{,}000}}=0{,}150(17{,}32)=\mathbf{2{,}60\ m/s}$$</li>
-    <li><b>(b) Velocidad de la bala</b> (el choque conserva $P$):
-      $$v_1=\frac{M\,V}{m}=\frac{1{,}000(2{,}598)}{0{,}00800}=\mathbf{325\ m/s}$$</li>
-    <li><b>Balance:</b> $K$ de la bala $=\tfrac12(0{,}008)(325)^2=422$ J; energía en el resorte $=\tfrac12(300)(0{,}150)^2=3{,}38$ J.
-      <span class="por">Más del 99 % se disipa en el choque: por eso no se puede igualar $\tfrac12mv_1^2$ a $\tfrac12kx^2$.</span></li>
-  </ol>
-  <p><b>Resultado:</b> $V=2{,}60$ m/s; $v_1=325$ m/s.</p>
-  <div class="recipe"><b>Receta:</b> péndulo o resorte balístico: del dato final se obtiene $V$ por energía, y de $V$ la velocidad del proyectil por cantidad de movimiento.</div>
-  <div class="recipe"><b>Error típico:</b> igualar la energía de la bala a la del resorte (daría unos 29 m/s), o no pasar 0,250 cm y 15,0 cm a metros.</div>
-</details>
-</details>
-<details class="sol" id="e6"><summary>E6 — Problema 8.92: mujer que camina en una canoa <span class="src" data-l="E" data-ref="Solucionario 8-34 Prob. 8.92">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §8.5, pp. 255-256 (ecs. 8.29 y 8.32; ejemplo 8.14)">U p.255-256</span></summary>
-<p class="enun">Una mujer de 45,0 kg está de pie en una canoa de 60,0 kg y 5,00 m de longitud. Camina desde un punto a 1,00 m de un extremo hasta un punto a 1,00 m del otro extremo (es decir, 3,00 m respecto a la canoa). Si se ignora la resistencia del agua, ¿qué distancia se mueve la canoa?</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Sin fuerza horizontal externa y desde el reposo, el centro de masa del sistema no se mueve.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Mide los desplazamientos respecto al agua: la mujer avanza $3{,}00-\Delta x_{canoa}$, no 3,00 m.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t08/una-mujer-camina-por-una-canoa-y-la-canoa-se-des.svg">
-<div class="figph" role="img" aria-label="Una mujer camina por una canoa y la canoa se desplaza en sentido contrario, con el centro de masa del sistema fijo" style="aspect-ratio:360/222"></div>
-<figcaption>Problema 8.92: el centro de masa del sistema (línea discontinua) no se mueve; la canoa retrocede 1,29 m y la mujer avanza 1,71 m respecto al agua. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.92 (U p. 270)">P</span></figcaption>
-</figure>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Centro de masa: $x_{cm}=\dfrac{\sum m_ix_i}{\sum m_i}$</li>
-      <li>Sin fuerza horizontal externa y partiendo del reposo, $x_{cm}$ no cambia: $\sum m_i\,\Delta x_i=0$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Ley.</b> Se conserva $P_x$ y todo parte del reposo ⇒ $v_{cm}=0$.
-      <span class="por">La posición horizontal del centro de masa no cambia. Las posiciones se miden respecto al agua.</span></li>
-    <li><b>Coordenadas</b> (origen en el extremo izquierdo inicial de la canoa):
-      $$\text{inicio: mujer }x=1{,}00\ \text{m},\ \ \text{centro de la canoa }x=2{,}50\ \text{m}$$
-      $$\text{final: extremo izquierdo en }x_c\ \Rightarrow\ \text{mujer }x_c+4{,}00,\ \ \text{canoa }x_c+2{,}50$$</li>
-    <li><b>Centro de masa inicial = final:</b>
-      $$45{,}0(1{,}00)+60{,}0(2{,}50)=45{,}0(x_c+4{,}00)+60{,}0(x_c+2{,}50)$$
-      $$195=105\,x_c+330\ \Rightarrow\ x_c=\frac{195-330}{105}=-1{,}29\ \text{m}$$</li>
-    <li><b>Resultado:</b> la canoa se mueve <b>1,29 m en sentido contrario</b> a la marcha de la mujer.
-      <span class="por">Ella avanza respecto al agua $3{,}00-1{,}29=1{,}71$ m. Comprobación: $45{,}0(1{,}71)=60{,}0(1{,}29)=77{,}1$ kg·m.</span></li>
-  </ol>
-  <p><b>Resultado:</b> la canoa se mueve 1,29 m (hacia atrás respecto a la mujer).</p>
-  <div class="recipe"><b>Receta:</b> sistema aislado que parte del reposo: $\sum m_i\,\Delta x_i=0$ con desplazamientos medidos respecto al suelo (o al agua), no respecto al objeto móvil.</div>
-  <div class="recipe"><b>Error típico:</b> usar los 3,00 m como desplazamiento de la mujer respecto al agua (darían 2,25 m para la canoa).</div>
+  <p><b>Resultado:</b> a) $V=2{,}09$ m/s (hacia abajo); b) $A=0{,}116$ m; c) $T=0{,}344$ s. (Con $g=9{,}81$ salen las mismas cifras.)</p>
+  <div class="recipe"><b>Receta:</b> «cae–choca–oscila»: energía hasta el choque, cantidad de movimiento en el choque, energía (o MAS respecto al <i>nuevo</i> equilibrio) después. La amplitud se mide desde el equilibrio del conjunto, no desde donde ocurre el choque.</div>
+  <div class="recipe"><b>Error típico:</b> (1) usar la energía a través del choque ($mgh=\tfrac12(m+M)V^2$); (2) tomar como amplitud $V/\omega=0{,}114$ m, olvidando que el choque ocurre fuera del nuevo equilibrio; (3) usar solo $M$ o solo $m$ en el periodo.</div>
+
+  <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
+    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) velocidad tras el impacto (1) · b) amplitud (1,3) · c) periodo (0,7). Dentro de cada apartado suele valorarse en este orden:</p>
+    <ul><li><b>Planteamiento (≈30 %):</b> separar las tres etapas (caída, choque, oscilación) y decir qué ley se usa en cada una.</li><li><b>Ecuaciones (≈40 %):</b> $v_0=\sqrt{2gh}$; $mv_0=(m+M)V$; $A$ por energía o por $A=\sqrt{x_0^2+(V/\omega)^2}$; $T=2\pi\sqrt{(m+M)/k}$.</li><li><b>Resultado y unidades (≈30 %):</b> $V=2{,}09$ m/s, $A=0{,}116$ m y $T=0{,}344$ s con unidades.</li></ul>
+    <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
 <div class="nivel"><b>🟡 Práctica: 5 ejercicios más del solucionario</b><span>Repiten métodos del núcleo con otros datos. Antes de leer los pasos, dibuja tú el «antes» y el «después» con ejes y escribe $\sum mv_x$ en cada uno.</span></div>
+<details class="sol" id="e7"><summary>E7 — Problema 8.95: obús en reposo que explota <span class="src" data-l="E" data-ref="Solucionario 8-35 Prob. 8.95">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244">U p.243-244</span></summary>
+<p class="enun">Un obús en reposo de 7,0 kg explota y se divide en dos fragmentos, uno de 2,0 kg y otro de 5,0 kg. Si el fragmento más pesado gana 100 J de energía cinética en la explosión, ¿cuánta energía cinética gana el más ligero?</p>
+<figure class="fig" data-svg="../assets/figs/t08/explosion-de-un-obus-en-reposo-en-dos-fragmentos.svg">
+<div class="figph" role="img" aria-label="Explosión de un obús en reposo en dos fragmentos con la misma cantidad de movimiento y distinta energía" style="aspect-ratio:360/198"></div>
+<figcaption>Problema 8.95: tras estallar en reposo, los fragmentos tienen |p| igual; el ligero (2,0 kg) se lleva 250 J y el pesado (5,0 kg), 100 J. Las flechas de velocidad tienen escalas distintas para caber. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.95 (U p. 270)">P</span></figcaption>
+</figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Explosión desde el reposo: $\vec P=0$ ⇒ mismo módulo $p$ en ambos fragmentos</li>
+      <li>$K=\dfrac{p^2}{2m}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Cantidad de movimiento.</b> Parte del reposo ⇒ los fragmentos tienen igual $p$ y sentidos opuestos.</li>
+    <li><b>Cociente de energías</b> (mismo $p$):
+      $$\frac{K_{2\,\text{kg}}}{K_{5\,\text{kg}}}=\frac{p^2/(2\cdot2{,}0)}{p^2/(2\cdot5{,}0)}=\frac{5{,}0}{2{,}0}=2{,}5$$</li>
+    <li><b>Energía del ligero:</b>
+      $$K_{2\,\text{kg}}=2{,}5(100)=\mathbf{250\ J}$$
+      <span class="por">Energía repartida en proporción inversa a las masas. Los 100 J son del fragmento pesado.</span></li>
+  </ol>
+  <div class="recipe"><b>Receta:</b> en una explosión desde el reposo, la energía se reparte en proporción <b>inversa</b> a las masas.</div>
+  <div class="recipe"><b>Error típico:</b> asignar los 100 J al fragmento de 2,0 kg (el enunciado se los da al más pesado) o suponer que ambos tienen igual energía.</div>
+</details>
+<details class="sol" id="e2"><summary>E2 — Problema 8.44: piedra que golpea un bloque unido a un resorte <span class="src" data-l="E" data-ref="Solucionario 8-15 Prob. 8.44">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244 y §7.2, p. 214">U p.214, 243-244</span></summary>
+<p class="enun">Un bloque de 15,0 kg está sujeto a un resorte horizontal muy ligero de constante 500,0 N/m y reposa sobre una mesa horizontal sin fricción. De repente lo golpea una piedra de 3,00 kg que viaja horizontalmente a 8,00 m/s hacia la derecha y que rebota horizontalmente a 2,00 m/s hacia la izquierda. Calcule la compresión máxima del resorte después del choque.</p>
+<figure class="fig" data-svg="../assets/figs/t08/piedra-que-golpea-un-bloque-unido-a-un-resorte-t.svg">
+<div class="figph" role="img" aria-label="Piedra que golpea un bloque unido a un resorte, tres instantes" style="aspect-ratio:360/246"></div>
+<figcaption>Problema 8.44: durante el choque se conserva la cantidad de movimiento (el bloque sale a 2,00 m/s); después el bloque comprime el resorte 0,346 m. Esquema: la longitud del resorte no está a escala. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.44 (U p. 266)">P</span></figcaption>
+</figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conservación de $P_x$ en el choque: $m_pv_{p1}=m_pv_{p2}+m_bv_b$</li>
+      <li>Energía con resorte: $\tfrac12m_bv_b^2=\tfrac12kx^2$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Dos etapas:</b> el choque (instantáneo) ⇒ cantidad de movimiento; después el bloque comprime el resorte ⇒ energía.
+      <span class="por">Nunca energía a través del choque: es inelástico.</span></li>
+    <li><b>Choque</b> ($+x$ a la derecha; la piedra rebota a la izquierda, $-2{,}00$ m/s):
+      $$(3{,}00)(8{,}00)=(3{,}00)(-2{,}00)+(15{,}0)\,v_b\ \Rightarrow\ v_b=\frac{24{,}0+6{,}00}{15{,}0}=2{,}00\ \text{m/s}$$</li>
+    <li><b>Compresión máxima</b> ($v=0$):
+      $$\tfrac12m_bv_b^2=\tfrac12kx^2\ \Rightarrow\ x=v_b\sqrt{\frac{m_b}{k}}=2{,}00\sqrt{\frac{15{,}0}{500{,}0}}=2{,}00(0{,}1732)=\mathbf{0{,}346\ m}$$</li>
+    <li><b>Comprobación:</b> $K$ antes $=\tfrac12(3)(8)^2=96$ J; después $\tfrac12(3)(2)^2+\tfrac12(15)(2)^2=6+30=36$ J. Inelástico.</li>
+  </ol>
+  <p><b>Resultado:</b> $v_b=2{,}00$ m/s; compresión máxima $0{,}346$ m.</p>
+  <div class="recipe"><b>Receta:</b> «choque + resorte»: $P$ en el choque, energía después. Nunca energía a través del choque.</div>
+  <div class="recipe"><b>Error típico:</b> poner $+2{,}00$ m/s a la piedra que rebota (daría $v_b=1{,}20$ m/s), o escribir $\tfrac12(3)(8)^2=\tfrac12kx^2$.</div>
+</details>
 <details class="sol" id="e4"><summary>E4 — Problema 8.41: choque de dos vehículos en un cruce (2D, quedan unidos) <span class="src" data-l="E" data-ref="Solucionario 8-13/8-14 Prob. 8.41">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.2, p. 244; §8.3, p. 248 (ec. 8.16) y ejemplo 8.9, p. 250">U p.244, 248, 250</span></summary>
 <p class="enun">En un cruce, un automóvil subcompacto de 950 kg que viaja al este choca con una camioneta pickup de 1900 kg que viaja al norte y no respetó el semáforo. Los vehículos quedan unidos después del choque y se deslizan a 16,0 m/s en dirección 24,0° al este del norte. Calcule la rapidez de cada vehículo antes del choque. Las fuerzas de fricción con el pavimento (mojado) son despreciables.</p>
 <figure class="fig" data-svg="../assets/figs/t08/triangulo-rectangulo-de-cantidades-de-movimiento.svg">
@@ -736,51 +782,30 @@
   <div class="recipe"><b>Receta:</b> choque totalmente inelástico en 2D: una ecuación por eje; cada cuerpo solo aporta en el eje por el que se movía.</div>
   <div class="recipe"><b>Error típico:</b> tomar el ángulo desde el eje $x$ (intercambiar seno y coseno) o sumar las magnitudes de las cantidades de movimiento.</div>
 </details>
-<details class="sol" id="e2"><summary>E2 — Problema 8.44: piedra que golpea un bloque unido a un resorte <span class="src" data-l="E" data-ref="Solucionario 8-15 Prob. 8.44">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244 y §7.2, p. 214">U p.214, 243-244</span></summary>
-<p class="enun">Un bloque de 15,0 kg está sujeto a un resorte horizontal muy ligero de constante 500,0 N/m y reposa sobre una mesa horizontal sin fricción. De repente lo golpea una piedra de 3,00 kg que viaja horizontalmente a 8,00 m/s hacia la derecha y que rebota horizontalmente a 2,00 m/s hacia la izquierda. Calcule la compresión máxima del resorte después del choque.</p>
-<figure class="fig" data-svg="../assets/figs/t08/piedra-que-golpea-un-bloque-unido-a-un-resorte-t.svg">
-<div class="figph" role="img" aria-label="Piedra que golpea un bloque unido a un resorte, tres instantes" style="aspect-ratio:360/246"></div>
-<figcaption>Problema 8.44: durante el choque se conserva la cantidad de movimiento (el bloque sale a 2,00 m/s); después el bloque comprime el resorte 0,346 m. Esquema: la longitud del resorte no está a escala. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.44 (U p. 266)">P</span></figcaption>
-</figure>
+<details class="sol" id="e5"><summary>E5 — Problema 8.61: unidad de maniobras de un astronauta (empuje de un cohete) <span class="src" data-l="E" data-ref="Solucionario 8-21/8-22 Prob. 8.61">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.6, p. 259 (ecs. 8.38-8.39) y ejemplo 8.15, p. 260">U p.259-260</span></summary>
+<p class="enun">Un astronauta de 70 kg flota en el espacio con una unidad de maniobras tripulada (MMU) de 110 kg y experimenta una aceleración de 0,029 m/s² al disparar uno de sus impulsores. a) Si la rapidez del gas N₂ que escapa, relativa al astronauta, es de 490 m/s, ¿cuánto gas se gasta en 5,0 s? b) ¿Qué empuje tiene el impulsor?</p>
   <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Conservación de $P_x$ en el choque: $m_pv_{p1}=m_pv_{p2}+m_bv_b$</li>
-      <li>Energía con resorte: $\tfrac12m_bv_b^2=\tfrac12kx^2$</li>
+      <li>Aceleración de un cohete: $a=-\dfrac{v_{esc}}{m}\dfrac{dm}{dt}$</li>
+      <li>Empuje: $F=-v_{esc}\dfrac{dm}{dt}=m\,a$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Dos etapas:</b> el choque (instantáneo) ⇒ cantidad de movimiento; después el bloque comprime el resorte ⇒ energía.
-      <span class="por">Nunca energía a través del choque: es inelástico.</span></li>
-    <li><b>Choque</b> ($+x$ a la derecha; la piedra rebota a la izquierda, $-2{,}00$ m/s):
-      $$(3{,}00)(8{,}00)=(3{,}00)(-2{,}00)+(15{,}0)\,v_b\ \Rightarrow\ v_b=\frac{24{,}0+6{,}00}{15{,}0}=2{,}00\ \text{m/s}$$</li>
-    <li><b>Compresión máxima</b> ($v=0$):
-      $$\tfrac12m_bv_b^2=\tfrac12kx^2\ \Rightarrow\ x=v_b\sqrt{\frac{m_b}{k}}=2{,}00\sqrt{\frac{15{,}0}{500{,}0}}=2{,}00(0{,}1732)=\mathbf{0{,}346\ m}$$</li>
-    <li><b>Comprobación:</b> $K$ antes $=\tfrac12(3)(8)^2=96$ J; después $\tfrac12(3)(2)^2+\tfrac12(15)(2)^2=6+30=36$ J. Inelástico.</li>
+    <li><b>Masa que se acelera:</b> astronauta + MMU:
+      $$m=70+110=180\ \text{kg}$$
+      <span class="por">En 5 s la masa apenas cambia (se comprueba al final): $m$ y $dm/dt$ constantes.</span></li>
+    <li><b>(a) Ritmo de gasto:</b>
+      $$\frac{dm}{dt}=-\frac{m\,a}{v_{esc}}=-\frac{180(0{,}029)}{490}=-0{,}0107\ \text{kg/s}$$
+      <span class="por">Negativo: la masa disminuye.</span></li>
+    <li><b>Gas gastado en 5,0 s:</b>
+      $$0{,}0107(5{,}0)=\mathbf{0{,}053\ kg}\ \ (53\ \text{g})$$
+      <span class="por">Despreciable frente a 180 kg: justifica el paso 1.</span></li>
+    <li><b>(b) Empuje</b> (la fuerza neta sobre el conjunto):
+      $$F=m\,a=180(0{,}029)=\mathbf{5{,}22\ N}$$
+      <span class="por">Comprobación: $F=-v_{esc}\,dm/dt=490(0{,}01065)=5{,}22$ N.</span></li>
   </ol>
-  <p><b>Resultado:</b> $v_b=2{,}00$ m/s; compresión máxima $0{,}346$ m.</p>
-  <div class="recipe"><b>Receta:</b> «choque + resorte»: $P$ en el choque, energía después. Nunca energía a través del choque.</div>
-  <div class="recipe"><b>Error típico:</b> poner $+2{,}00$ m/s a la piedra que rebota (daría $v_b=1{,}20$ m/s), o escribir $\tfrac12(3)(8)^2=\tfrac12kx^2$.</div>
-</details>
-<details class="sol" id="e7"><summary>E7 — Problema 8.95: obús en reposo que explota <span class="src" data-l="E" data-ref="Solucionario 8-35 Prob. 8.95">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.2, pp. 243-244">U p.243-244</span></summary>
-<p class="enun">Un obús en reposo de 7,0 kg explota y se divide en dos fragmentos, uno de 2,0 kg y otro de 5,0 kg. Si el fragmento más pesado gana 100 J de energía cinética en la explosión, ¿cuánta energía cinética gana el más ligero?</p>
-<figure class="fig" data-svg="../assets/figs/t08/explosion-de-un-obus-en-reposo-en-dos-fragmentos.svg">
-<div class="figph" role="img" aria-label="Explosión de un obús en reposo en dos fragmentos con la misma cantidad de movimiento y distinta energía" style="aspect-ratio:360/198"></div>
-<figcaption>Problema 8.95: tras estallar en reposo, los fragmentos tienen |p| igual; el ligero (2,0 kg) se lleva 250 J y el pesado (5,0 kg), 100 J. Las flechas de velocidad tienen escalas distintas para caber. <span class="src" data-l="P" data-ref="Diagrama propio del problema 8.95 (U p. 270)">P</span></figcaption>
-</figure>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Explosión desde el reposo: $\vec P=0$ ⇒ mismo módulo $p$ en ambos fragmentos</li>
-      <li>$K=\dfrac{p^2}{2m}$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Cantidad de movimiento.</b> Parte del reposo ⇒ los fragmentos tienen igual $p$ y sentidos opuestos.</li>
-    <li><b>Cociente de energías</b> (mismo $p$):
-      $$\frac{K_{2\,\text{kg}}}{K_{5\,\text{kg}}}=\frac{p^2/(2\cdot2{,}0)}{p^2/(2\cdot5{,}0)}=\frac{5{,}0}{2{,}0}=2{,}5$$</li>
-    <li><b>Energía del ligero:</b>
-      $$K_{2\,\text{kg}}=2{,}5(100)=\mathbf{250\ J}$$
-      <span class="por">Energía repartida en proporción inversa a las masas. Los 100 J son del fragmento pesado.</span></li>
-  </ol>
-  <div class="recipe"><b>Receta:</b> en una explosión desde el reposo, la energía se reparte en proporción <b>inversa</b> a las masas.</div>
-  <div class="recipe"><b>Error típico:</b> asignar los 100 J al fragmento de 2,0 kg (el enunciado se los da al más pesado) o suponer que ambos tienen igual energía.</div>
+  <p><b>Resultado:</b> a) $0{,}053$ kg de N₂; b) $F=5{,}22$ N.</p>
+  <div class="recipe"><b>Receta:</b> $F=ma=-v_{esc}\,dm/dt$: conocidas dos de las tres magnitudes ($a$, $v_{esc}$, $dm/dt$) se obtiene la tercera.</div>
+  <div class="recipe"><b>Error típico:</b> usar solo la masa del astronauta (70 kg) o solo la de la MMU, o redondear $dm/dt$ antes de calcular $F$ (conviene $F=ma$ directamente).</div>
 </details>
 <details class="sol" id="e9"><summary>E9 — Problema 8.98: obús que estalla en su punto más alto <span class="src" data-l="E" data-ref="Solucionario 8-36 Prob. 8.98">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.2, p. 244 y §8.5, p. 257 (ec. 8.34); §3.3 (tema 3)">U p.244, 257</span></summary>
 <p class="enun">Un obús de 12,0 kg se dispara con un ángulo de 55,0° sobre la horizontal con rapidez inicial de 150 m/s. En el punto más alto de la trayectoria estalla en dos fragmentos, uno con tres veces más masa que el otro. Los dos fragmentos llegan al suelo al mismo tiempo. Despreciando la resistencia del aire: si el fragmento más pesado cae en el punto desde el que se lanzó el obús, ¿dónde cae el más ligero y cuánta energía se libera en la explosión?</p>
@@ -815,31 +840,6 @@
   <p><b>Resultado:</b> el ligero cae a $8{,}63$ km del punto de lanzamiento; energía liberada $5{,}33\times10^5$ J. Se ve en el interactivo de la sección 5 (valores iniciales).</p>
   <div class="recipe"><b>Receta:</b> explosión en el vértice de una parábola: velocidades horizontales, conservación de $P_x$ y, para el punto de caída, el atajo del centro de masa: $\sum m_ix_i=MR$.</div>
   <div class="recipe"><b>Error típico:</b> dar la distancia desde el punto de explosión (7,55 km) en lugar de desde el lanzamiento, o suponer que el pesado queda en reposo (caería en vertical, a 1079 m).</div>
-</details>
-<details class="sol" id="e5"><summary>E5 — Problema 8.61: unidad de maniobras de un astronauta (empuje de un cohete) <span class="src" data-l="E" data-ref="Solucionario 8-21/8-22 Prob. 8.61">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §8.6, p. 259 (ecs. 8.38-8.39) y ejemplo 8.15, p. 260">U p.259-260</span></summary>
-<p class="enun">Un astronauta de 70 kg flota en el espacio con una unidad de maniobras tripulada (MMU) de 110 kg y experimenta una aceleración de 0,029 m/s² al disparar uno de sus impulsores. a) Si la rapidez del gas N₂ que escapa, relativa al astronauta, es de 490 m/s, ¿cuánto gas se gasta en 5,0 s? b) ¿Qué empuje tiene el impulsor?</p>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Aceleración de un cohete: $a=-\dfrac{v_{esc}}{m}\dfrac{dm}{dt}$</li>
-      <li>Empuje: $F=-v_{esc}\dfrac{dm}{dt}=m\,a$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Masa que se acelera:</b> astronauta + MMU:
-      $$m=70+110=180\ \text{kg}$$
-      <span class="por">En 5 s la masa apenas cambia (se comprueba al final): $m$ y $dm/dt$ constantes.</span></li>
-    <li><b>(a) Ritmo de gasto:</b>
-      $$\frac{dm}{dt}=-\frac{m\,a}{v_{esc}}=-\frac{180(0{,}029)}{490}=-0{,}0107\ \text{kg/s}$$
-      <span class="por">Negativo: la masa disminuye.</span></li>
-    <li><b>Gas gastado en 5,0 s:</b>
-      $$0{,}0107(5{,}0)=\mathbf{0{,}053\ kg}\ \ (53\ \text{g})$$
-      <span class="por">Despreciable frente a 180 kg: justifica el paso 1.</span></li>
-    <li><b>(b) Empuje</b> (la fuerza neta sobre el conjunto):
-      $$F=m\,a=180(0{,}029)=\mathbf{5{,}22\ N}$$
-      <span class="por">Comprobación: $F=-v_{esc}\,dm/dt=490(0{,}01065)=5{,}22$ N.</span></li>
-  </ol>
-  <p><b>Resultado:</b> a) $0{,}053$ kg de N₂; b) $F=5{,}22$ N.</p>
-  <div class="recipe"><b>Receta:</b> $F=ma=-v_{esc}\,dm/dt$: conocidas dos de las tres magnitudes ($a$, $v_{esc}$, $dm/dt$) se obtiene la tercera.</div>
-  <div class="recipe"><b>Error típico:</b> usar solo la masa del astronauta (70 kg) o solo la de la MMU, o redondear $dm/dt$ antes de calcular $F$ (conviene $F=ma$ directamente).</div>
 </details>
 <div class="nivel"><b>🔎 Encuentra el error</b><span>Cuatro soluciones con un fallo típico. Localiza dónde se rompe antes de abrir la respuesta: es la mejor forma de que no te pase en el examen.</span></div>
 <details class="mas"><summary>1. Choque inelástico y energía <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>

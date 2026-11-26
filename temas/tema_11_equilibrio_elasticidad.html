@@ -301,12 +301,12 @@
 <table class="metodos">
 <tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>
 <tr><td><a href="#e1">E1</a></td><td>Centro de gravedad de piezas</td><td>Cada pieza uniforme = partícula en su centro; $x_{cg}=\sum m_ix_i/\sum m_i$; apoyo bajo el cg</td></tr>
-<tr><td><a href="#e3">E3</a></td><td>Viga con bisagra y cable</td><td>Torcas en la bisagra ⇒ $T$; $\sum F_x$, $\sum F_y$ ⇒ las dos componentes de la bisagra; comprobar con otro punto</td></tr>
-<tr><td><a href="#e4">E4</a></td><td>Escalera con fricción: posición límite</td><td>$n_2=$ suma de pesos; torcas en la base con brazos horizontales ⇒ $f_s=n_1$; resbala cuando $f_s=\mu_sn_2$</td></tr>
 <tr><td><a href="#e6">E6</a></td><td>Tensión: alargamiento con $Y$</td><td>$\Delta l=F_\perp l_0/(AY)$, $A=\pi d^2/4$ en m²; en serie, misma fuerza en cada tramo</td></tr>
+<tr><td><a href="#e9">E9</a></td><td>Equilibrio + elasticidad</td><td>Equilibrio ⇒ $T_B/T_A=x/(L-x)$; condición elástica ⇒ otra razón $T_B/T_A$; igualar y despejar $x$</td></tr>
+<tr><td><a href="#e3">E3</a></td><td>Viga con bisagra y cable</td><td>Torcas en la bisagra ⇒ $T$; $\sum F_x$, $\sum F_y$ ⇒ las dos componentes de la bisagra; comprobar con otro punto</td></tr>
 <tr><td><a href="#e7">E7</a></td><td>Corte con $S$</td><td>$x/h=F_\parallel/(AS)$ con $A$ el área de la cara paralela a la fuerza</td></tr>
 <tr><td><a href="#e8">E8</a></td><td>Compresión volumétrica con $B$ o $k$</td><td>$\Delta V/V_0=-k\,\Delta p$ con $k$ en Pa$^{-1}$; misma masa ⇒ nueva densidad</td></tr>
-<tr><td><a href="#e9">E9</a></td><td>Equilibrio + elasticidad</td><td>Equilibrio ⇒ $T_B/T_A=x/(L-x)$; condición elástica ⇒ otra razón $T_B/T_A$; igualar y despejar $x$</td></tr>
+<tr><td><a href="#e4">E4</a></td><td>Escalera con fricción: posición límite</td><td>$n_2=$ suma de pesos; torcas en la base con brazos horizontales ⇒ $f_s=n_1$; resbala cuando $f_s=\mu_sn_2$</td></tr>
 </table>
 <details class="sol" id="e1"><summary>E1 — Ejercicio 11.1: barra con dos masas, ¿dónde se pone el apoyo? <span class="src" data-l="E" data-ref="Solucionario 11-1, Ej. 11.1">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §11.2, ecs. 11.3-11.4, pp. 341-342; Ejercicio 11.1, p. 357">U p.341-342, 357</span></summary>
 <p class="enun">Una barra uniforme de 50,0 cm de longitud y 0,120 kg tiene adherida una masa pequeña de 0,055 kg en su extremo izquierdo y otra de 0,110 kg en el derecho. Las masas se consideran puntuales. Se quiere equilibrar el sistema horizontalmente sobre un apoyo colocado justo bajo su centro de gravedad. ¿A qué distancia del extremo izquierdo debe colocarse?</p>
@@ -334,6 +334,68 @@
 
   <div class="recipe"><b>Receta:</b> cada pieza uniforme = una partícula en su centro; $x_{cm}=\sum m_ix_i/\sum m_i$; el apoyo único va bajo el cm.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Olvidar en el denominador la masa situada en $x=0$ (no suma en el numerador, pero sí en la masa total).</p></div>
+</details>
+</details>
+<details class="sol" id="e6"><summary>E6 — Ejercicio 11.26: varillas de acero y de cobre en serie <span class="src" data-l="E" data-ref="Solucionario 11-13, Ej. 11.26">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §11.4, ecs. 11.8-11.10, pp. 348-350; tabla 11.1, p. 349; Ejercicio 11.26, p. 359">U p.348-350, 359</span></summary>
+<p class="enun">Dos varillas circulares, una de acero y otra de cobre, se unen por los extremos. Cada una mide 0,750 m de longitud y 1,50 cm de diámetro. El conjunto se somete a una fuerza de tensión de 4000 N. Para cada varilla, determina a) la deformación y b) el alargamiento.</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Las dos varillas están en serie: soportan la misma fuerza de 4000 N, no la mitad cada una.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Esfuerzo $=F/A$ con $A=\pi d^2/4$; deformación $=$ esfuerzo$/Y$ y alargamiento $=$ deformación $\times\,l_0$.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Esfuerzo de tensión: $\dfrac{F_\perp}{A}$; área circular: $A=\dfrac{\pi d^2}{4}$</li>
+      <li>Módulo de Young: $Y=\dfrac{F_\perp/A}{\Delta l/l_0}$ ⇒ deformación $=\dfrac{\text{esfuerzo}}{Y}$; alargamiento $\Delta l=\text{deformación}\times l_0$</li>
+      <li>Tabla 11.1: acero $Y=2{,}0\times10^{11}$ Pa; cobre $Y=1{,}1\times10^{11}$ Pa</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Misma fuerza en las dos</b> (en serie): cortando el conjunto por cualquier sección y aplicando $\sum F=0$, la fuerza interna es 4000 N en toda su longitud.</li>
+    <li><b>Área y esfuerzo:</b>
+      $$A=\frac{\pi(0{,}0150)^2}{4}=1{,}767\times10^{-4}\ \text{m}^2,\qquad\frac{F_\perp}{A}=\frac{4000}{1{,}767\times10^{-4}}=2{,}26\times10^{7}\ \text{Pa}$$</li>
+    <li><b>a) Deformación:</b>
+      $$\text{acero: }\frac{2{,}26\times10^{7}}{2{,}0\times10^{11}}=\mathbf{1{,}1\times10^{-4}},\qquad\text{cobre: }\frac{2{,}26\times10^{7}}{1{,}1\times10^{11}}=\mathbf{2{,}1\times10^{-4}}$$</li>
+    <li><b>b) Alargamiento</b> ($l_0=0{,}750$ m):
+      $$\text{acero: }(1{,}13\times10^{-4})(0{,}750)=\mathbf{8{,}5\times10^{-5}\ m},\qquad\text{cobre: }(2{,}06\times10^{-4})(0{,}750)=\mathbf{1{,}5\times10^{-4}\ m}$$
+      <span class="por">Total 0,24 mm. Mismo esfuerzo, distinto material: se estira más el de menor $Y$ (el cobre).</span></li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t11/rectas-esfuerzo-deformacion-del-acero-y-del-cobr.svg">
+<div class="figph" role="img" aria-label="Rectas esfuerzo-deformación del acero y del cobre: con el mismo esfuerzo de 2,26×10⁷ Pa el acero se deforma 1,1×10⁻⁴ y el cobre 2,1×10⁻⁴" style="aspect-ratio:340/215"></div>
+<figcaption>La pendiente de cada recta es $Y$ (acero $2{,}0\times10^{11}$ Pa, cobre $1{,}1\times10^{11}$ Pa). Con el mismo esfuerzo, el material de menor $Y$ se deforma más. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 11.26">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> en serie, misma fuerza ⇒ mismo esfuerzo si la sección es igual; deformación = esfuerzo/$Y$ de cada material; los alargamientos se suman.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Repartir la fuerza (2000 N a cada una) como si estuvieran en paralelo; usar el diámetro como radio en $A$.</p></div>
+</details>
+</details>
+<details class="sol" id="e9"><summary>E9 — Problema 11.83: varilla colgada de dos alambres distintos <span class="src" data-l="E" data-ref="Solucionario 11-38, Prob. 11.83">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §11.3, p. 343 y §11.4, ecs. 11.8-11.10, pp. 348-349; Problema 11.83, p. 366">U p.343-349, 366</span></summary>
+<p class="enun">Una varilla de 1,05 m de longitud y peso despreciable está sostenida en sus extremos por alambres A y B de igual longitud. El área transversal de A es 2,00 mm² y la de B, 4,00 mm². El módulo de Young de A es $1{,}80\times10^{11}$ Pa; el de B, $1{,}20\times10^{11}$ Pa. ¿En qué punto de la varilla debe colgarse un peso $w$ para producir a) esfuerzos iguales en A y B? b) ¿Y deformaciones iguales?</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Equilibrio (torcas respecto al punto del peso): $T_B/T_A=x/(L-x)$.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Igual esfuerzo: $T_B/T_A=A_B/A_A$. Igual deformación: $T_B/T_A=A_BY_B/(A_AY_A)$. Iguala y despeja $x$.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Equilibrio de la varilla: $\sum\tau=0$ (respecto al punto del peso) y $T_A+T_B=w$</li>
+      <li>Esfuerzo: $\dfrac{T}{A}$; deformación: $\dfrac{T}{A\,Y}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Equilibrio.</b> Peso $w$ a distancia $x$ de A. Torcas respecto al punto del peso (así $w$ no aparece):
+      $$T_B(1{,}05-x)-T_A\,x=0\ \Rightarrow\ \frac{T_B}{T_A}=\frac{x}{1{,}05-x}$$</li>
+    <li><b>a) Esfuerzos iguales:</b>
+      $$\frac{T_A}{A_A}=\frac{T_B}{A_B}\ \Rightarrow\ T_B=\frac{4{,}00}{2{,}00}\,T_A=2\,T_A$$
+      $$2(1{,}05-x)=x\ \Rightarrow\ x=\mathbf{0{,}70\ m}\ \text{desde A}\quad(T_A=\tfrac w3,\ T_B=\tfrac{2w}3)$$</li>
+    <li><b>b) Deformaciones iguales:</b>
+      $$\frac{T_A}{A_AY_A}=\frac{T_B}{A_BY_B}\ \Rightarrow\ T_B=\frac{A_BY_B}{A_AY_A}T_A=\frac{(4{,}00)(1{,}20)}{(2{,}00)(1{,}80)}T_A=\tfrac43\,T_A$$
+      $$\tfrac43(1{,}05-x)=x\ \Rightarrow\ x=\frac{1{,}40}{7/3}=\mathbf{0{,}60\ m}\ \text{desde A}\quad(T_A=\tfrac{3w}7,\ T_B=\tfrac{4w}7)$$
+      <span class="por">B es más grueso (más tensión para el mismo esfuerzo), pero más blando (menor $Y$): el punto se acerca al centro (0,525 m). Con alambres iguales en longitud, igual deformación = igual alargamiento: la varilla baja sin inclinarse.</span></li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t11/varilla-de-1-05-m-sostenida-por-un-alambre-a-fin.svg">
+<div class="figph" role="img" aria-label="Varilla de 1,05 m sostenida por un alambre A fino a la izquierda y otro B grueso a la derecha; el peso w se cuelga a 0,70 m de A para esfuerzos iguales o a 0,60 m para deformaciones iguales" style="aspect-ratio:340/200"></div>
+<figcaption>Dos posiciones para colgar $w$: con esfuerzos iguales $T_B=2T_A$ ($x=0{,}70$ m); con deformaciones iguales $T_B=\tfrac43T_A$ ($x=0{,}60$ m). Distancias medidas desde A. <span class="src" data-l="P" data-ref="Diagrama propio del problema 11.83">P</span></figcaption>
+</figure>
+
+  <div class="recipe"><b>Receta:</b> equilibrio ⇒ $T_B/T_A=x/(L-x)$; condición elástica ⇒ $T_B/T_A$ ($=A_B/A_A$ para igual esfuerzo; $=A_BY_B/(A_AY_A)$ para igual deformación); igualar y despejar $x$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Confundir esfuerzo (no depende de $Y$) con deformación (sí depende); tomar torcas respecto a A y olvidar que entonces aparece $w$ como incógnita adicional (se resuelve igual, con una ecuación más).</p></div>
 </details>
 </details>
 <details class="sol" id="e3"><summary>E3 — Ejercicio 11.14: viga horizontal con cable y bisagra <span class="src" data-l="E" data-ref="Solucionario 11-7, Ej. 11.14">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §11.3, ec. 11.6, p. 343 y §10.1, ec. 10.2, p. 305; Ejercicio 11.14, p. 358">U p.343, 358</span></summary>
@@ -367,73 +429,6 @@
 
   <div class="recipe"><b>Receta (viga + cable + bisagra):</b> (1) torcas respecto a la bisagra ⇒ $T$; (2) $\sum F_x$ ⇒ $H_h$; (3) $\sum F_y$ ⇒ $H_v$; (4) comprueba con torcas en el extremo libre.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Suponer que la bisagra solo empuja a lo largo de la viga ($H_v=0$) o poner $T\cos\theta$ en la torca (su brazo de palanca es cero).</p></div>
-</details>
-</details>
-<details class="sol" id="e4"><summary>E4 — Ejercicio 11.10: escalera con fricción en el suelo, ¿hasta dónde puede subir el hombre? <span class="src" data-l="E" data-ref="Solucionario 11-4, Ej. 11.10">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §11.3, Ejemplo 11.3, pp. 343-345; fricción estática ec. 5.4, p. 144; Ejercicio 11.10, p. 357">U p.343-345, 357</span></summary>
-<p class="enun">Una escalera uniforme de 5,0 m de longitud que pesa 160 N descansa contra una pared vertical sin fricción con su base a 3,0 m de la pared. El coeficiente de fricción estática entre la base y el suelo es 0,40. Un hombre de 740 N sube lentamente. a) ¿Qué fuerza de fricción máxima puede ejercer el suelo en la base? b) ¿Cuál es la fricción cuando el hombre ha subido 1,0 m a lo largo de la escalera? c) ¿Hasta dónde puede subir antes de que la escalera resbale?</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>La pared es lisa: solo $n_1$ horizontal. $\sum F_y=0$ da $n_2$ sin depender de dónde esté el hombre.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Torcas respecto a la base; el brazo del hombre es la distancia <i>horizontal</i>, $\tfrac35s$. Resbala cuando $f_s=n_1$ alcanza $\mu_sn_2$.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>$\sum F_x=0$, $\sum F_y=0$, $\sum\tau=0$ (torcas respecto a la base)</li>
-      <li>Fricción estática máxima: $f_{s,\text{máx}}=\mu_s\,n_2$</li>
-      <li>Geometría 3-4-5: altura $4{,}0$ m; un punto a distancia $s$ a lo largo de la escalera está a $\tfrac35 s$ en horizontal de la base</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Geometría:</b>
-      $$\text{altura}=\sqrt{5{,}0^2-3{,}0^2}=4{,}0\ \text{m}$$
-      <span class="por">Pared lisa: solo $n_1$ horizontal. Suelo: $n_2$ vertical y fricción $f_s$ hacia la pared. Pesos: 160 N en el centro (1,5 m en horizontal) y 740 N del hombre.</span></li>
-    <li><b>a) Fricción máxima.</b> Vertical:
-      $$n_2-160-740=0\ \Rightarrow\ n_2=900\ \text{N}\ \ (\text{sea cual sea la posición del hombre})$$
-      $$f_{s,\text{máx}}=\mu_sn_2=0{,}40(900)=\mathbf{360\ N}$$</li>
-    <li><b>b) Hombre a 1,0 m.</b> Torcas respecto a la base (elimina $n_2$ y $f_s$):
-      $$n_1(4{,}0)=160(1{,}5)+740\Big(\tfrac35\cdot1{,}0\Big)=240+444=684\ \text{N}\cdot\text{m}\ \Rightarrow\ n_1=171\ \text{N}$$
-      Horizontal:
-      $$f_s-n_1=0\ \Rightarrow\ f_s=\mathbf{171\ N}\lt360\ \text{N}\ \text{(no resbala)}$$</li>
-    <li><b>c) Hasta dónde puede subir.</b> Resbala cuando $f_s=n_1=360$ N:
-      $$360(4{,}0)=160(1{,}5)+740\cdot\frac35\,s\ \Rightarrow\ 1440=240+444\,s\ \Rightarrow\ s=\frac{1200}{444}=\mathbf{2{,}7\ m}$$
-      <span class="por">A lo largo de la escalera (algo más de la mitad). En general $f_s=n_1=60+111\,s$ (N).</span></li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t11/grafica-de-la-friccion-necesaria-f-s-frente-a-la.svg">
-<div class="figph" role="img" aria-label="Gráfica de la fricción necesaria f_s frente a la posición s del hombre en la escalera: recta de 60 N a 615 N que corta el límite de 360 N en s = 2,7 m" style="aspect-ratio:340/215"></div>
-<figcaption>Fricción necesaria $f_s=n_1=60+111\,s$ (N). Corta al máximo $\mu_sn_2=360$ N en $s=2{,}7$ m: ahí empieza a resbalar. A 1,0 m hace falta 171 N. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 11.10">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> toma la posición del hombre como incógnita: la normal del suelo no cambia; el deslizamiento empieza cuando la fricción necesaria ($=n_1$) alcanza $\mu_sn_2$. Puedes comprobarlo con el interactivo de §3.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Usar 1,0 m como brazo de palanca del hombre (es la distancia a lo largo de la escalera; el brazo es la horizontal, 0,6 m); pensar que la normal del suelo crece al subir.</p></div>
-</details>
-</details>
-<details class="sol" id="e6"><summary>E6 — Ejercicio 11.26: varillas de acero y de cobre en serie <span class="src" data-l="E" data-ref="Solucionario 11-13, Ej. 11.26">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §11.4, ecs. 11.8-11.10, pp. 348-350; tabla 11.1, p. 349; Ejercicio 11.26, p. 359">U p.348-350, 359</span></summary>
-<p class="enun">Dos varillas circulares, una de acero y otra de cobre, se unen por los extremos. Cada una mide 0,750 m de longitud y 1,50 cm de diámetro. El conjunto se somete a una fuerza de tensión de 4000 N. Para cada varilla, determina a) la deformación y b) el alargamiento.</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Las dos varillas están en serie: soportan la misma fuerza de 4000 N, no la mitad cada una.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Esfuerzo $=F/A$ con $A=\pi d^2/4$; deformación $=$ esfuerzo$/Y$ y alargamiento $=$ deformación $\times\,l_0$.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Esfuerzo de tensión: $\dfrac{F_\perp}{A}$; área circular: $A=\dfrac{\pi d^2}{4}$</li>
-      <li>Módulo de Young: $Y=\dfrac{F_\perp/A}{\Delta l/l_0}$ ⇒ deformación $=\dfrac{\text{esfuerzo}}{Y}$; alargamiento $\Delta l=\text{deformación}\times l_0$</li>
-      <li>Tabla 11.1: acero $Y=2{,}0\times10^{11}$ Pa; cobre $Y=1{,}1\times10^{11}$ Pa</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Misma fuerza en las dos</b> (en serie): cortando el conjunto por cualquier sección y aplicando $\sum F=0$, la fuerza interna es 4000 N en toda su longitud.</li>
-    <li><b>Área y esfuerzo:</b>
-      $$A=\frac{\pi(0{,}0150)^2}{4}=1{,}767\times10^{-4}\ \text{m}^2,\qquad\frac{F_\perp}{A}=\frac{4000}{1{,}767\times10^{-4}}=2{,}26\times10^{7}\ \text{Pa}$$</li>
-    <li><b>a) Deformación:</b>
-      $$\text{acero: }\frac{2{,}26\times10^{7}}{2{,}0\times10^{11}}=\mathbf{1{,}1\times10^{-4}},\qquad\text{cobre: }\frac{2{,}26\times10^{7}}{1{,}1\times10^{11}}=\mathbf{2{,}1\times10^{-4}}$$</li>
-    <li><b>b) Alargamiento</b> ($l_0=0{,}750$ m):
-      $$\text{acero: }(1{,}13\times10^{-4})(0{,}750)=\mathbf{8{,}5\times10^{-5}\ m},\qquad\text{cobre: }(2{,}06\times10^{-4})(0{,}750)=\mathbf{1{,}5\times10^{-4}\ m}$$
-      <span class="por">Total 0,24 mm. Mismo esfuerzo, distinto material: se estira más el de menor $Y$ (el cobre).</span></li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t11/rectas-esfuerzo-deformacion-del-acero-y-del-cobr.svg">
-<div class="figph" role="img" aria-label="Rectas esfuerzo-deformación del acero y del cobre: con el mismo esfuerzo de 2,26×10⁷ Pa el acero se deforma 1,1×10⁻⁴ y el cobre 2,1×10⁻⁴" style="aspect-ratio:340/215"></div>
-<figcaption>La pendiente de cada recta es $Y$ (acero $2{,}0\times10^{11}$ Pa, cobre $1{,}1\times10^{11}$ Pa). Con el mismo esfuerzo, el material de menor $Y$ se deforma más. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 11.26">P</span></figcaption>
-</figure>
-
-  <div class="recipe"><b>Receta:</b> en serie, misma fuerza ⇒ mismo esfuerzo si la sección es igual; deformación = esfuerzo/$Y$ de cada material; los alargamientos se suman.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Repartir la fuerza (2000 N a cada una) como si estuvieran en paralelo; usar el diámetro como radio en $A$.</p></div>
 </details>
 </details>
 <details class="sol" id="e7"><summary>E7 — Ejercicio 11.36: placa de acero sometida a corte <span class="src" data-l="E" data-ref="Solucionario 11-16, Ej. 11.36">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §11.4, ecs. 11.15-11.17, p. 352; tabla 11.1, p. 349; Ejercicio 11.36, p. 360">U p.352, 360</span></summary>
@@ -502,35 +497,40 @@
   <div class="box warn"><span class="h">Error típico</span><p>Mezclar $k$ en atm$^{-1}$ con $\Delta p$ en Pa; olvidar el signo (el volumen disminuye); calcular la nueva densidad con el signo cambiado.</p></div>
 </details>
 </details>
-<details class="sol" id="e9"><summary>E9 — Problema 11.83: varilla colgada de dos alambres distintos <span class="src" data-l="E" data-ref="Solucionario 11-38, Prob. 11.83">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §11.3, p. 343 y §11.4, ecs. 11.8-11.10, pp. 348-349; Problema 11.83, p. 366">U p.343-349, 366</span></summary>
-<p class="enun">Una varilla de 1,05 m de longitud y peso despreciable está sostenida en sus extremos por alambres A y B de igual longitud. El área transversal de A es 2,00 mm² y la de B, 4,00 mm². El módulo de Young de A es $1{,}80\times10^{11}$ Pa; el de B, $1{,}20\times10^{11}$ Pa. ¿En qué punto de la varilla debe colgarse un peso $w$ para producir a) esfuerzos iguales en A y B? b) ¿Y deformaciones iguales?</p>
+<details class="sol" id="e4"><summary>E4 — Ejercicio 11.10: escalera con fricción en el suelo, ¿hasta dónde puede subir el hombre? <span class="src" data-l="E" data-ref="Solucionario 11-4, Ej. 11.10">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §11.3, Ejemplo 11.3, pp. 343-345; fricción estática ec. 5.4, p. 144; Ejercicio 11.10, p. 357">U p.343-345, 357</span></summary>
+<p class="enun">Una escalera uniforme de 5,0 m de longitud que pesa 160 N descansa contra una pared vertical sin fricción con su base a 3,0 m de la pared. El coeficiente de fricción estática entre la base y el suelo es 0,40. Un hombre de 740 N sube lentamente. a) ¿Qué fuerza de fricción máxima puede ejercer el suelo en la base? b) ¿Cuál es la fricción cuando el hombre ha subido 1,0 m a lo largo de la escalera? c) ¿Hasta dónde puede subir antes de que la escalera resbale?</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Equilibrio (torcas respecto al punto del peso): $T_B/T_A=x/(L-x)$.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Igual esfuerzo: $T_B/T_A=A_B/A_A$. Igual deformación: $T_B/T_A=A_BY_B/(A_AY_A)$. Iguala y despeja $x$.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>La pared es lisa: solo $n_1$ horizontal. $\sum F_y=0$ da $n_2$ sin depender de dónde esté el hombre.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Torcas respecto a la base; el brazo del hombre es la distancia <i>horizontal</i>, $\tfrac35s$. Resbala cuando $f_s=n_1$ alcanza $\mu_sn_2$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
 <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Equilibrio de la varilla: $\sum\tau=0$ (respecto al punto del peso) y $T_A+T_B=w$</li>
-      <li>Esfuerzo: $\dfrac{T}{A}$; deformación: $\dfrac{T}{A\,Y}$</li>
+      <li>$\sum F_x=0$, $\sum F_y=0$, $\sum\tau=0$ (torcas respecto a la base)</li>
+      <li>Fricción estática máxima: $f_{s,\text{máx}}=\mu_s\,n_2$</li>
+      <li>Geometría 3-4-5: altura $4{,}0$ m; un punto a distancia $s$ a lo largo de la escalera está a $\tfrac35 s$ en horizontal de la base</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Equilibrio.</b> Peso $w$ a distancia $x$ de A. Torcas respecto al punto del peso (así $w$ no aparece):
-      $$T_B(1{,}05-x)-T_A\,x=0\ \Rightarrow\ \frac{T_B}{T_A}=\frac{x}{1{,}05-x}$$</li>
-    <li><b>a) Esfuerzos iguales:</b>
-      $$\frac{T_A}{A_A}=\frac{T_B}{A_B}\ \Rightarrow\ T_B=\frac{4{,}00}{2{,}00}\,T_A=2\,T_A$$
-      $$2(1{,}05-x)=x\ \Rightarrow\ x=\mathbf{0{,}70\ m}\ \text{desde A}\quad(T_A=\tfrac w3,\ T_B=\tfrac{2w}3)$$</li>
-    <li><b>b) Deformaciones iguales:</b>
-      $$\frac{T_A}{A_AY_A}=\frac{T_B}{A_BY_B}\ \Rightarrow\ T_B=\frac{A_BY_B}{A_AY_A}T_A=\frac{(4{,}00)(1{,}20)}{(2{,}00)(1{,}80)}T_A=\tfrac43\,T_A$$
-      $$\tfrac43(1{,}05-x)=x\ \Rightarrow\ x=\frac{1{,}40}{7/3}=\mathbf{0{,}60\ m}\ \text{desde A}\quad(T_A=\tfrac{3w}7,\ T_B=\tfrac{4w}7)$$
-      <span class="por">B es más grueso (más tensión para el mismo esfuerzo), pero más blando (menor $Y$): el punto se acerca al centro (0,525 m). Con alambres iguales en longitud, igual deformación = igual alargamiento: la varilla baja sin inclinarse.</span></li>
+    <li><b>Geometría:</b>
+      $$\text{altura}=\sqrt{5{,}0^2-3{,}0^2}=4{,}0\ \text{m}$$
+      <span class="por">Pared lisa: solo $n_1$ horizontal. Suelo: $n_2$ vertical y fricción $f_s$ hacia la pared. Pesos: 160 N en el centro (1,5 m en horizontal) y 740 N del hombre.</span></li>
+    <li><b>a) Fricción máxima.</b> Vertical:
+      $$n_2-160-740=0\ \Rightarrow\ n_2=900\ \text{N}\ \ (\text{sea cual sea la posición del hombre})$$
+      $$f_{s,\text{máx}}=\mu_sn_2=0{,}40(900)=\mathbf{360\ N}$$</li>
+    <li><b>b) Hombre a 1,0 m.</b> Torcas respecto a la base (elimina $n_2$ y $f_s$):
+      $$n_1(4{,}0)=160(1{,}5)+740\Big(\tfrac35\cdot1{,}0\Big)=240+444=684\ \text{N}\cdot\text{m}\ \Rightarrow\ n_1=171\ \text{N}$$
+      Horizontal:
+      $$f_s-n_1=0\ \Rightarrow\ f_s=\mathbf{171\ N}\lt360\ \text{N}\ \text{(no resbala)}$$</li>
+    <li><b>c) Hasta dónde puede subir.</b> Resbala cuando $f_s=n_1=360$ N:
+      $$360(4{,}0)=160(1{,}5)+740\cdot\frac35\,s\ \Rightarrow\ 1440=240+444\,s\ \Rightarrow\ s=\frac{1200}{444}=\mathbf{2{,}7\ m}$$
+      <span class="por">A lo largo de la escalera (algo más de la mitad). En general $f_s=n_1=60+111\,s$ (N).</span></li>
   </ol>
-  <figure class="fig" data-svg="../assets/figs/t11/varilla-de-1-05-m-sostenida-por-un-alambre-a-fin.svg">
-<div class="figph" role="img" aria-label="Varilla de 1,05 m sostenida por un alambre A fino a la izquierda y otro B grueso a la derecha; el peso w se cuelga a 0,70 m de A para esfuerzos iguales o a 0,60 m para deformaciones iguales" style="aspect-ratio:340/200"></div>
-<figcaption>Dos posiciones para colgar $w$: con esfuerzos iguales $T_B=2T_A$ ($x=0{,}70$ m); con deformaciones iguales $T_B=\tfrac43T_A$ ($x=0{,}60$ m). Distancias medidas desde A. <span class="src" data-l="P" data-ref="Diagrama propio del problema 11.83">P</span></figcaption>
+  <figure class="fig" data-svg="../assets/figs/t11/grafica-de-la-friccion-necesaria-f-s-frente-a-la.svg">
+<div class="figph" role="img" aria-label="Gráfica de la fricción necesaria f_s frente a la posición s del hombre en la escalera: recta de 60 N a 615 N que corta el límite de 360 N en s = 2,7 m" style="aspect-ratio:340/215"></div>
+<figcaption>Fricción necesaria $f_s=n_1=60+111\,s$ (N). Corta al máximo $\mu_sn_2=360$ N en $s=2{,}7$ m: ahí empieza a resbalar. A 1,0 m hace falta 171 N. <span class="src" data-l="P" data-ref="Diagrama propio del ejercicio 11.10">P</span></figcaption>
 </figure>
 
-  <div class="recipe"><b>Receta:</b> equilibrio ⇒ $T_B/T_A=x/(L-x)$; condición elástica ⇒ $T_B/T_A$ ($=A_B/A_A$ para igual esfuerzo; $=A_BY_B/(A_AY_A)$ para igual deformación); igualar y despejar $x$.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Confundir esfuerzo (no depende de $Y$) con deformación (sí depende); tomar torcas respecto a A y olvidar que entonces aparece $w$ como incógnita adicional (se resuelve igual, con una ecuación más).</p></div>
+  <div class="recipe"><b>Receta:</b> toma la posición del hombre como incógnita: la normal del suelo no cambia; el deslizamiento empieza cuando la fricción necesaria ($=n_1$) alcanza $\mu_sn_2$. Puedes comprobarlo con el interactivo de §3.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar 1,0 m como brazo de palanca del hombre (es la distancia a lo largo de la escalera; el brazo es la horizontal, 0,6 m); pensar que la normal del suelo crece al subir.</p></div>
 </details>
 </details>
 <div class="nivel"><b>🟡 Práctica: 3 ejercicios más</b><span>Repiten métodos del núcleo: una tabla con dos apoyos, una viga inclinada y el problema práctico del libro (pivote, cable y compresión de un tramo). Antes de leer los pasos, dibuja el diagrama de cuerpo libre y marca dónde actúa cada fuerza.</span></div>

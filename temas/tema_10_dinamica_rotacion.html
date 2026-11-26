@@ -325,17 +325,51 @@
 <div class="nivel"><b>🔴 Núcleo: 10 ejercicios, un método por ejercicio</b><span>Los 6 problemas de examen real más cuatro del solucionario (torca, eje fijo, energía con cuerda y fuerza central). Si solo haces esto, ya cubres los problemas que caen.</span></div>
 <table class="metodos">
 <tr><th>Ejercicio</th><th>Qué tipo es</th><th>Método que te llevas</th></tr>
+<tr><td><a href="#e8">E8</a></td><td>Partícula atada a una cuerda que se acorta por un orificio</td><td>Fuerza central ⇒ $L=mvr$ cte; con $T=mv^2/r$ ⇒ $T=L^2/mr^3$</td></tr>
 <tr><td><a href="#e1">E1</a></td><td>Torca de una fuerza respecto a un punto</td><td>Brazo de palanca $l=r\sin\phi$; signo por el sentido de giro; recta por O ⇒ $\tau=0$</td></tr>
-<tr><td><a href="#e3">E3</a></td><td>Rueda con eje fijo y cuerda</td><td>$\alpha=\tau/I$, $a=R\alpha$; la fuerza del eje sale de $\sum\vec F=0$</td></tr>
 <tr><td><a href="#e4">E4</a></td><td>Cilindro que cae desenrollando una cuerda</td><td>Energía: $Mgd=\tfrac12Mv^2(1+I/MR^2)$, $R$ donde está la cuerda</td></tr>
-<tr><td><a href="#x2">X2</a> · Feb 2018</td><td>Yoyó con la cuerda en un eje de radio $b$</td><td>$Mg-T=Ma$, $Tb=I\alpha$, $a=b\alpha$ ⇒ $a=g/(1+I/Mb^2)$</td></tr>
-<tr><td><a href="#x1">X1</a> · Feb 2023</td><td>Cilindro que rueda por una rampa; ¿y si es hueco?</td><td>$a=g\sin\beta/(1+c)$, $\mu_{min}=\tfrac{c}{1+c}\tan\beta$; si $f$ necesaria $\gt\mu_sn$, resbala</td></tr>
-<tr><td><a href="#x3">X3</a> · Feb 2025</td><td>Cilindro que sube rodando tirado desde su eje</td><td>La fricción da la torca (rampa abajo); $F_{máx}$ con $f=\mu_sn$; tiempo mínimo con $a_{máx}$</td></tr>
+<tr><td><a href="#e3">E3</a></td><td>Rueda con eje fijo y cuerda</td><td>$\alpha=\tau/I$, $a=R\alpha$; la fuerza del eje sale de $\sum\vec F=0$</td></tr>
 <tr><td><a href="#x4">X4</a> · Feb 2019</td><td>Fuerza variable en el centro: ¿cuándo desliza?</td><td>Resuelve como si rodara ⇒ $f(F)$; iguala a $\mu_sn$; después, fricción cinética</td></tr>
 <tr><td><a href="#x5">X5</a> · Feb 2024</td><td>Acróbata que salta del extremo de una barra con eje</td><td>$L$ respecto al eje: $mvr=I\omega$; $K$ no se conserva, $\vec p$ tampoco</td></tr>
 <tr><td><a href="#x6">X6</a> · Sep 2019</td><td>Bala que se incrusta en una varilla con pivote</td><td>$L$ respecto al pivote: $mva=(I_v+ma^2)\omega$; $Q=K_1-L^2/2I$</td></tr>
-<tr><td><a href="#e8">E8</a></td><td>Partícula atada a una cuerda que se acorta por un orificio</td><td>Fuerza central ⇒ $L=mvr$ cte; con $T=mv^2/r$ ⇒ $T=L^2/mr^3$</td></tr>
+<tr><td><a href="#x3">X3</a> · Feb 2025</td><td>Cilindro que sube rodando tirado desde su eje</td><td>La fricción da la torca (rampa abajo); $F_{máx}$ con $f=\mu_sn$; tiempo mínimo con $a_{máx}$</td></tr>
+<tr><td><a href="#x1">X1</a> · Feb 2023</td><td>Cilindro que rueda por una rampa; ¿y si es hueco?</td><td>$a=g\sin\beta/(1+c)$, $\mu_{min}=\tfrac{c}{1+c}\tan\beta$; si $f$ necesaria $\gt\mu_sn$, resbala</td></tr>
+<tr><td><a href="#x2">X2</a> · Feb 2018</td><td>Yoyó con la cuerda en un eje de radio $b$</td><td>$Mg-T=Ma$, $Tb=I\alpha$, $a=b\alpha$ ⇒ $a=g/(1+I/Mb^2)$</td></tr>
 </table>
+<details class="sol" id="e8"><summary>E8 — Problema 10.86: bloque en una mesa sin fricción cuya cuerda se acorta <span class="src" data-l="E" data-ref="Solucionario 10-36, Prob. 10.86">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §10.5-10.6, ecs. 10.25 y 10.29-10.30, pp. 317-322; §3.4, pp. 83-84; Problema 10.86, p. 336">U p.317-322, 336</span></summary>
+<p class="enun">Un bloque pequeño de 0,130 kg se ata a una cuerda que pasa por un orificio en una superficie horizontal sin fricción. El bloque gira en un círculo de 0,800 m de radio alrededor del orificio, con rapidez tangencial de 4,00 m/s. Se tira lentamente de la cuerda desde abajo, acortando el radio. La resistencia a la ruptura de la cuerda es de 30,0 N. ¿Qué radio tendrá el círculo cuando la cuerda se rompa?</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>La tensión es radial: sin torca respecto al orificio, luego $L=mvr$ es constante.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>$T=mv^2/r$ con $v=L/mr$ da $T=L^2/(mr^3)$: iguala a 30,0 N y despeja $r$.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Momento angular de una partícula: $L=m\,v\,r$ (movimiento circular, $v\perp r$)</li>
+      <li>Conservación: $L$ constante si $\sum\vec\tau=0$ respecto al orificio</li>
+      <li>Segunda ley en la dirección radial: $T=\dfrac{m\,v^2}{r}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>¿Se conserva $L$ respecto al orificio?</b>
+      <span class="por">La tensión apunta siempre al orificio ($\vec r\times\vec T=0$); peso y normal son verticales y se anulan. Torca neta nula ⇒ $L=mvr$ constante.</span></li>
+    <li><b>$L$ inicial:</b>
+      $$L=m\,v_1\,r_1=(0{,}130)(4{,}00)(0{,}800)=0{,}416\ \text{kg}\cdot\text{m}^2/\text{s}$$</li>
+    <li><b>Tensión en función de $r$.</b> De $L=mvr$: $v=\dfrac{L}{mr}$. Entonces
+      $$T=\frac{m\,v^2}{r}=\frac{m}{r}\cdot\frac{L^2}{m^2r^2}=\frac{L^2}{m\,r^3}$$
+      <span class="por">Al acortar la cuerda, $T$ crece como $1/r^3$. Al principio era $T=mv_1^2/r_1=0{,}130(4{,}00)^2/0{,}800=2{,}6$ N.</span></li>
+    <li><b>Rotura</b> ($T=30{,}0$ N):
+      $$r^3=\frac{L^2}{m\,T_{m\acute ax}}=\frac{(0{,}416)^2}{(0{,}130)(30{,}0)}=\frac{0{,}1731}{3{,}90}=0{,}04437\ \Rightarrow\ r=\mathbf{0{,}354\ m}$$</li>
+    <li><b>Comprobación:</b>
+      $$v=\frac{L}{mr}=\frac{0{,}416}{(0{,}130)(0{,}354)}=9{,}04\ \text{m/s},\qquad T=\frac{m v^2}{r}=\frac{(0{,}130)(9{,}04)^2}{0{,}354}=30{,}0\ \text{N}\ \checkmark$$
+      <span class="por">$K$ pasa de 1,04 J a 5,31 J: no se conserva; el aumento es el trabajo de la mano que tira de la cuerda.</span></li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t10/bloque-girando-alrededor-de-un-orificio-con-dos-.svg">
+<div class="figph" role="img" aria-label="Bloque girando alrededor de un orificio con dos radios, 0,8 metros y 0,354 metros, y sus velocidades" style="aspect-ratio:360/200"></div>
+<figcaption>Problema 10.86: al acortar la cuerda, $L=mvr$ se conserva y la rapidez crece como $1/r$; la tensión crece como $1/r^3$ hasta romper la cuerda a 30,0 N. <span class="src" data-l="P" data-ref="Diagrama propio del problema 10.86 (Solucionario 10-36)">P</span></figcaption>
+</figure>
+  <div class="recipe"><b>Receta:</b> fuerza central (siempre hacia un punto) ⇒ $L=mvr$ constante respecto a ese punto. Combínalo con la segunda ley en la dirección radial ($T=mv^2/r$) y elimina $v$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Conservar la energía cinética (o la rapidez) en lugar de $L$; usar $T=mv_1^2/r$ con la velocidad inicial.</p></div>
+</details>
+</details>
 <details class="sol" id="e1"><summary>E1 — Problema 10.1: torca de una fuerza sobre una varilla <span class="src" data-l="E" data-ref="Solucionario 10-1, Prob. 10.1">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §10.1, ecs. 10.1-10.2, pp. 304-305; Ejercicio 10.1, p. 329">U p.304-305, 329</span></summary>
 <p class="enun">Calcule la torca (magnitud y dirección) alrededor del punto O debida a la fuerza $\vec F$ en cada una de las seis situaciones de la figura E10.1. En todos los casos, la fuerza y la varilla están en el plano de la página, la varilla mide 4,00 m y $F=10{,}0$ N. (Varilla horizontal con O en el extremo izquierdo: a) $\vec F$ en el extremo derecho, perpendicular a la varilla; b) en el extremo, a 120° con la varilla; c) en el extremo, a 30°; d) aplicada a 2,00 m de O, a 60° con la varilla y hacia abajo; e) aplicada en O, a 60°; f) en el extremo derecho, dirigida a lo largo de la varilla hacia O.)</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
@@ -371,44 +405,6 @@
   <p><b>Resultado:</b> 40,0; 34,6; 20,0; $-17{,}3$ (horaria); 0; 0 N·m. Brazos de palanca: 4; 3,46; 2; 1,73; 0; 0 m.</p>
   <div class="recipe"><b>Receta:</b> torca = fuerza × distancia <i>perpendicular</i> de O a la recta de acción. Si esa recta pasa por O (fuerza aplicada en O o dirigida hacia O), la torca es cero. Signo: ¿gira como las agujas del reloj ($-$) o al revés ($+$)?</div>
   <div class="box warn"><span class="h">Error típico</span><p>Usar $\cos\phi$ en lugar de $\sin\phi$; usar en d) la longitud total de la varilla; olvidar el sentido de giro.</p></div>
-</details>
-</details>
-<details class="sol" id="e3"><summary>E3 — Problema 10.10: cuerda enrollada en una rueda con eje fijo <span class="src" data-l="E" data-ref="Solucionario 10-4/10-5, Prob. 10.10">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §10.2, ecs. 10.7 y ejemplo 10.2, pp. 306-308; §9.3, p. 281; Ejercicio 10.10, p. 329">U p.306-308, 329</span></summary>
-<p class="enun">Una cuerda se enrolla en el borde de una rueda sólida uniforme de 0,250 m de radio y 9,20 kg. Se tira de la cuerda con una fuerza horizontal constante de 40,0 N hacia la derecha, retirándola tangencialmente; la rueda está montada con cojinetes sin fricción en un eje horizontal que pasa por su centro. a) Calcule la aceleración angular de la rueda y la aceleración de la parte de la cuerda ya retirada. b) Determine la magnitud y la dirección de la fuerza que ejerce el eje sobre la rueda. c) ¿Cuál de las respuestas a) y b) cambiaría si el tirón fuera hacia arriba en vez de horizontal, y por qué?</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Torca del tirón: $\tau=PR$ (tangente al borde); con $I=\tfrac12MR^2$, $\alpha=\tau/I$ y $a=R\alpha$.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>La fuerza del eje sale de $\sum\vec F=0$ (el centro de la rueda no se mueve), no de las torcas.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Disco macizo: $I=\tfrac12MR^2$</li>
-      <li>Torca de una fuerza tangente: $\tau=P\,R$</li>
-      <li>Rotación con eje fijo: $\sum\tau=I\,\alpha$</li>
-      <li>Cuerda que no resbala: $a_{cuerda}=R\,\alpha$</li>
-      <li>El cm está quieto: $\sum\vec F=0$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Momento de inercia:</b>
-      $$I=\tfrac12MR^2=\tfrac12(9{,}20)(0{,}250)^2=0{,}2875\ \text{kg}\cdot\text{m}^2$$</li>
-    <li><b>a) Torca.</b>
-      $$\tau=P\,R=(40{,}0)(0{,}250)=10{,}0\ \text{N}\cdot\text{m}$$
-      <span class="por">El tirón es tangente al borde: brazo $R$. El peso y la fuerza del eje actúan en el eje: torca nula.</span></li>
-    <li><b>Aceleración angular y de la cuerda:</b>
-      $$\alpha=\frac{\tau}{I}=\frac{10{,}0}{0{,}2875}=\mathbf{34{,}8\ rad/s^2},\qquad a=R\,\alpha=(0{,}250)(34{,}8)=\mathbf{8{,}70\ m/s^2}$$</li>
-    <li><b>b) Fuerza del eje</b> $\vec F$. El centro no se mueve ⇒ $\sum\vec F=0$. Peso: $Mg=9{,}20(9{,}81)=90{,}2$ N.
-      $$F_x+40{,}0=0\ \Rightarrow\ F_x=-40{,}0\ \text{N}\qquad F_y-90{,}2=0\ \Rightarrow\ F_y=+90{,}2\ \text{N}$$
-      $$|\vec F|=\sqrt{40{,}0^2+90{,}2^2}=\mathbf{98{,}6\ N}$$
-      $$\theta=\arctan\frac{90{,}2}{40{,}0}=\mathbf{66{,}1^\circ}\ \text{sobre la horizontal, hacia la izquierda}$$
-      <span class="por">La fuerza del eje se obtiene de las fuerzas, no de las torcas.</span></li>
-    <li><b>c) Tirón vertical hacia arriba.</b> La cuerda sigue tangente (mismo brazo): $\tau=PR$ no cambia ⇒ <b>a) no cambia</b>. Pero
-      $$F+P=Mg\ \Rightarrow\ F=90{,}2-40{,}0=50{,}2\ \text{N hacia arriba}\ \Rightarrow\ \textbf{b) sí cambia}$$</li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t10/rueda-con-eje-fijo-y-una-cuerda-tirada-horizonta.svg">
-<div class="figph" role="img" aria-label="Rueda con eje fijo y una cuerda tirada horizontalmente en su borde, con el peso y la fuerza del eje" style="aspect-ratio:360/204"></div>
-<figcaption>Problema 10.10: la cuerda da la torca $PR$; el peso y la fuerza del eje pasan por el eje (torca nula), y la fuerza del eje equilibra a $P$ y al peso. (Longitudes proporcionales.) <span class="src" data-l="P" data-ref="Diagrama propio del problema 10.10 (Solucionario 10-4/10-5)">P</span></figcaption>
-</figure>
-  <div class="recipe"><b>Receta:</b> rueda con eje fijo: torcas solo de las fuerzas que no pasan por el eje ⇒ $\alpha=\tau/I$, $a_{cuerda}=R\alpha$. La fuerza del eje sale de $\sum\vec F=0$ (el cm está quieto), no de las torcas.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Pensar que la fuerza del eje es solo el peso; usar $I=MR^2$; dar $a=P/M$ (eso valdría si la rueda se trasladara sin eje).</p></div>
 </details>
 </details>
 <details class="sol" id="e4"><summary>E4 — Problema 10.25: cilindro hueco que cae desenrollando una cuerda <span class="src" data-l="E" data-ref="Solucionario 10-12, Prob. 10.25">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.8, 10.11 y ejemplo 10.4, pp. 310-312; Tabla 9.2, p. 286; Ejercicio 10.25, p. 330">U p.310-312, 330</span></summary>
@@ -447,192 +443,42 @@
   <div class="box warn"><span class="h">Error típico</span><p>Usar $I=MR^2$ (pared delgada) o $\tfrac12MR^2$ (macizo) para un hueco grueso; poner $\omega=v/R_1$ (la cuerda está en el radio exterior); mezclar cm y m.</p></div>
 </details>
 </details>
-<details class="sol" id="x2"><summary>X2 — Yoyó de dos discos con la cuerda fija <span class="src" data-l="X" data-ref="Examen Febrero 2018 (1ª semana) P-1">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.12-10.13 y ejemplos 10.4 y 10.6, pp. 312-314; Tabla 9.2, p. 286">U p.312-314</span></summary>
-<p class="enun">Un cuerpo formado por dos discos macizos y homogéneos de radio 40 mm unidos por un cilindro de masa despreciable y radio 25 mm, similar a un yoyó, tiene una masa total de 100 g. Se enrolla una cuerda de longitud 1 m al cilindro interior. Si el extremo de la cuerda se mantiene fijo y el cuerpo parte del reposo, calcular: (a) la aceleración angular del cuerpo; (b) la aceleración lineal de su centro de masas; (c) la velocidad del centro de masas en el instante en que se ha desenrollado completamente el hilo.</p>
+<details class="sol" id="e3"><summary>E3 — Problema 10.10: cuerda enrollada en una rueda con eje fijo <span class="src" data-l="E" data-ref="Solucionario 10-4/10-5, Prob. 10.10">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §10.2, ecs. 10.7 y ejemplo 10.2, pp. 306-308; §9.3, p. 281; Ejercicio 10.10, p. 329">U p.306-308, 329</span></summary>
+<p class="enun">Una cuerda se enrolla en el borde de una rueda sólida uniforme de 0,250 m de radio y 9,20 kg. Se tira de la cuerda con una fuerza horizontal constante de 40,0 N hacia la derecha, retirándola tangencialmente; la rueda está montada con cojinetes sin fricción en un eje horizontal que pasa por su centro. a) Calcule la aceleración angular de la rueda y la aceleración de la parte de la cuerda ya retirada. b) Determine la magnitud y la dirección de la fuerza que ejerce el eje sobre la rueda. c) ¿Cuál de las respuestas a) y b) cambiaría si el tirón fuera hacia arriba en vez de horizontal, y por qué?</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>$I_{cm}$ usa el radio de los discos ($R$), pero el brazo de la tensión es el del eje ($b$).</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Ecuaciones: $Mg-T=Ma$, $Tb=I_{cm}\alpha$ y ligadura $a=b\alpha$; la velocidad tras bajar 1 m sale de $v^2=2a\,\Delta y$.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>Torca del tirón: $\tau=PR$ (tangente al borde); con $I=\tfrac12MR^2$, $\alpha=\tau/I$ y $a=R\alpha$.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>La fuerza del eje sale de $\sum\vec F=0$ (el centro de la rueda no se mueve), no de las torcas.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t10/x2-planteamiento.svg">
-<div class="figph" role="img" aria-label="Planteamiento: yoyó de dos discos con la cuerda fija, con su diagrama de cuerpo libre" style="aspect-ratio:360/556"></div>
-<figcaption>Planteamiento como en el examen: esquema con los datos y DCL del yoyó (sin resultados). La tensión actúa en el borde del eje interior, a distancia r del centro. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
-</figure>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Disco macizo: $I_d=\tfrac12m_dR^2$ (el yoyó tiene dos discos; el eje no pesa)</li>
-      <li>Traslación: $\sum F_y=M\,a_{cm}$</li>
-      <li>Rotación respecto al cm: $\sum\tau_{cm}=I_{cm}\,\alpha$</li>
-      <li>Ligadura (cuerda fija): $a_{cm}=b\,\alpha$</li>
-      <li>MRUA desde el reposo: $v^2=2\,a\,\Delta y$</li>
+      <li>Disco macizo: $I=\tfrac12MR^2$</li>
+      <li>Torca de una fuerza tangente: $\tau=P\,R$</li>
+      <li>Rotación con eje fijo: $\sum\tau=I\,\alpha$</li>
+      <li>Cuerda que no resbala: $a_{cuerda}=R\,\alpha$</li>
+      <li>El cm está quieto: $\sum\vec F=0$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Datos en SI</b> ($g=9{,}8$ m/s²):
-      $$M=0{,}100\ \text{kg}\ (m_d=0{,}050\ \text{kg\ cada\ disco}),\quad R=0{,}040\ \text{m},\quad b=0{,}025\ \text{m},\quad L=1\ \text{m}$$
-      <span class="por">$R$ es el radio de los discos (donde está la masa) y $b$ el del eje (donde sale la cuerda): no se confunden.</span></li>
-    <li><b>Momento de inercia</b> de los dos discos:
-      $$I_{cm}=2\cdot\tfrac12m_dR^2=(0{,}050)(0{,}040)^2=8{,}0\times10^{-5}\ \text{kg}\cdot\text{m}^2$$
-      <span class="por">En $I$ entra $R$.</span></li>
-    <li><b>Fuerzas</b> (eje $y$ hacia abajo): peso $Mg$ en el cm y tensión $T$ hacia arriba.
-      <span class="por">La cuerda está fija y sube vertical: $T$ actúa a distancia $b$ del eje, así que su brazo es $b$.</span></li>
-    <li><b>Traslación:</b>
-      $$Mg-T=M\,a_{cm}\qquad(1)$$</li>
-    <li><b>Rotación respecto al cm</b> (solo $T$ da torca):
-      $$T\,b=I_{cm}\,\alpha\qquad(2)$$</li>
-    <li><b>Ligadura:</b>
-      $$a_{cm}=b\,\alpha\ \Rightarrow\ \alpha=\frac{a_{cm}}{b}\qquad(3)$$
-      <span class="por">El punto de la cuerda en contacto con el eje está instantáneamente en reposo (cuerda fija), igual que el punto de contacto de una rueda.</span></li>
-    <li><b>Despejar $T$</b> de (2) con (3), y sustituir en (1):
-      $$T=\frac{I_{cm}\,a_{cm}}{b^2}\ \Rightarrow\ Mg-\frac{I_{cm}a_{cm}}{b^2}=M\,a_{cm}\ \Rightarrow\ a_{cm}=\frac{g}{1+\dfrac{I_{cm}}{Mb^2}}$$
-      $$\frac{I_{cm}}{Mb^2}=\frac{8{,}0\times10^{-5}}{0{,}100\,(0{,}025)^2}=\frac{8{,}0\times10^{-5}}{6{,}25\times10^{-5}}=1{,}28$$</li>
-    <li><b>(b) Aceleración del cm:</b>
-      $$a_{cm}=\frac{9{,}8}{1+1{,}28}=\frac{9{,}8}{2{,}28}=\mathbf{4{,}30\ m/s^2}\ \text{(hacia abajo)}$$
-      <span class="por">Menor que $g$: parte de la energía se invierte en girar.</span></li>
-    <li><b>(a) Aceleración angular</b> (de 3):
-      $$\alpha=\frac{a_{cm}}{b}=\frac{4{,}298}{0{,}025}=\mathbf{172\ rad/s^2}$$</li>
-    <li><b>(c) Velocidad al terminar de desenrollarse.</b> Todas las fuerzas son constantes ⇒ $a_{cm}$ constante ⇒ MRUA. El cm baja $\Delta y=L=1$ m:
-      $$v^2=2\,a_{cm}\,\Delta y=2(4{,}298)(1)\ \Rightarrow\ v=\sqrt{8{,}596}=\mathbf{2{,}93\ m/s}$$
-      <span class="por">Se desenrollan 1 m de cuerda: el yoyó baja 1 m.</span></li>
-    <li><b>Comprobación por energía</b> (la tensión no trabaja, su punto de aplicación está en reposo):
-      $$MgL=\tfrac12Mv^2+\tfrac12I_{cm}\frac{v^2}{b^2}\ \Rightarrow\ v=\sqrt{\frac{2gL}{1+I_{cm}/(Mb^2)}}=\sqrt{\frac{19{,}6}{2{,}28}}=2{,}93\ \text{m/s}\ \checkmark$$</li>
-    <li><b>Datos extra</b> (no pedidos):
-      $$T=M(g-a_{cm})=0{,}100(9{,}8-4{,}298)=0{,}550\ \text{N}$$
-      $$t=\sqrt{\frac{2L}{a_{cm}}}=\sqrt{\frac{2}{4{,}298}}=0{,}68\ \text{s}$$
-      $$\omega_f=\frac{v}{b}=\frac{2{,}93}{0{,}025}=117\ \text{rad/s}$$</li>
+    <li><b>Momento de inercia:</b>
+      $$I=\tfrac12MR^2=\tfrac12(9{,}20)(0{,}250)^2=0{,}2875\ \text{kg}\cdot\text{m}^2$$</li>
+    <li><b>a) Torca.</b>
+      $$\tau=P\,R=(40{,}0)(0{,}250)=10{,}0\ \text{N}\cdot\text{m}$$
+      <span class="por">El tirón es tangente al borde: brazo $R$. El peso y la fuerza del eje actúan en el eje: torca nula.</span></li>
+    <li><b>Aceleración angular y de la cuerda:</b>
+      $$\alpha=\frac{\tau}{I}=\frac{10{,}0}{0{,}2875}=\mathbf{34{,}8\ rad/s^2},\qquad a=R\,\alpha=(0{,}250)(34{,}8)=\mathbf{8{,}70\ m/s^2}$$</li>
+    <li><b>b) Fuerza del eje</b> $\vec F$. El centro no se mueve ⇒ $\sum\vec F=0$. Peso: $Mg=9{,}20(9{,}81)=90{,}2$ N.
+      $$F_x+40{,}0=0\ \Rightarrow\ F_x=-40{,}0\ \text{N}\qquad F_y-90{,}2=0\ \Rightarrow\ F_y=+90{,}2\ \text{N}$$
+      $$|\vec F|=\sqrt{40{,}0^2+90{,}2^2}=\mathbf{98{,}6\ N}$$
+      $$\theta=\arctan\frac{90{,}2}{40{,}0}=\mathbf{66{,}1^\circ}\ \text{sobre la horizontal, hacia la izquierda}$$
+      <span class="por">La fuerza del eje se obtiene de las fuerzas, no de las torcas.</span></li>
+    <li><b>c) Tirón vertical hacia arriba.</b> La cuerda sigue tangente (mismo brazo): $\tau=PR$ no cambia ⇒ <b>a) no cambia</b>. Pero
+      $$F+P=Mg\ \Rightarrow\ F=90{,}2-40{,}0=50{,}2\ \text{N hacia arriba}\ \Rightarrow\ \textbf{b) sí cambia}$$</li>
   </ol>
-  <figure class="fig" data-svg="../assets/figs/t10/yoyo-de-dos-discos-de-40-milimetros-de-radio-con.svg">
-<div class="figph" role="img" aria-label="Yoyó de dos discos de 40 milímetros de radio con la cuerda sobre un eje de 25 milímetros, con la tensión y el peso" style="aspect-ratio:360/258"></div>
-<figcaption>Examen 2018: el yoyó baja con $a_{cm}=g/(1+I/Mb^2)=4{,}30$ m/s², bastante menos que $g$ porque parte de la energía se gasta en girar. (Fuerzas con longitudes proporcionales.) <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2018 (1ª semana) P-1">P</span></figcaption>
+  <figure class="fig" data-svg="../assets/figs/t10/rueda-con-eje-fijo-y-una-cuerda-tirada-horizonta.svg">
+<div class="figph" role="img" aria-label="Rueda con eje fijo y una cuerda tirada horizontalmente en su borde, con el peso y la fuerza del eje" style="aspect-ratio:360/204"></div>
+<figcaption>Problema 10.10: la cuerda da la torca $PR$; el peso y la fuerza del eje pasan por el eje (torca nula), y la fuerza del eje equilibra a $P$ y al peso. (Longitudes proporcionales.) <span class="src" data-l="P" data-ref="Diagrama propio del problema 10.10 (Solucionario 10-4/10-5)">P</span></figcaption>
 </figure>
-  <p><b>Resultado:</b> (a) $\alpha=172$ rad/s²; (b) $a_{cm}=4{,}30$ m/s²; (c) $v_{cm}=2{,}93$ m/s (con $g=9{,}81$ salen los mismos valores a 3 cifras).</p>
-  <div class="recipe"><b>Receta:</b> yoyó o carrete con la cuerda fija: $\sum F=Ma$, $\sum\tau_{cm}=I\alpha$ con el brazo $b$ del punto donde sale la cuerda, y $a=b\alpha$ ⇒ $a=\dfrac{g}{1+I_{cm}/(Mb^2)}$. Para la velocidad tras bajar $h$: energía con $\omega=v/b$.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Usar $R$ en la ligadura ($a=R\alpha$) o $b$ en el momento de inercia; contar mal la masa de cada disco (50 g, no 100 g); creer que el yoyó cae con $g$.</p></div>
-
-  <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
-    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) $\alpha$ (1) · b) $a_{cm}$ (1) · c) velocidad (1). Dentro de cada apartado suele valorarse en este orden:</p>
-    <ul><li><b>Planteamiento (≈30 %):</b> dibujo del yoyó con $R$, $b$, el peso, la tensión y la ligadura $a=b\alpha$.</li><li><b>Ecuaciones (≈40 %):</b> $I_{cm}=2\cdot\tfrac12m_dR^2$, $Mg-T=Ma$, $Tb=I\alpha$ y $v=\sqrt{2a\,\Delta y}$ (comprobación por energía).</li><li><b>Resultado y unidades (≈30 %):</b> $\alpha=172$ rad/s², $a_{cm}=4{,}30$ m/s² y $v=2{,}93$ m/s con unidades.</li></ul>
-    <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
-</details>
-</details>
-<details class="sol" id="x1"><summary>X1 — Cilindro macizo (y hueco) que baja rodando por una rampa de 50° <span class="src" data-l="X" data-ref="Examen Febrero 2023 (1ª semana) P-2">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.11-10.13 y ejemplo 10.7, pp. 311-314; Tabla 9.2, p. 286">U p.311-314</span></summary>
-<p class="enun">Se deja caer un cilindro sólido de masa $m$ y radio $r$ por una superficie inclinada que forma un ángulo de 50° con la horizontal. (a) Calcular el valor mínimo del coeficiente de fricción estática entre la superficie del cilindro y la de la rampa para que ruede sin deslizamiento. (b) Calcular la aceleración lineal del primer cilindro si cae rodando como en el apartado anterior, sabiendo que su masa es 1 kg y su radio 0,5 m. (c) ¿Qué pasaría si en lugar de un cilindro macizo fuera uno hueco con la misma masa concentrada en la superficie y el coeficiente de fricción calculado en (a)? ¿Rodaría también sin deslizamiento? Considere $g=9{,}81$ m/s², $I_{cilindro}=\tfrac12mr^2$, $I_{hueco}=mr^2$.</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>Dos ecuaciones: $mg\sin\theta-f=ma_{cm}$ y $fr=I_{cm}\alpha$, con $a_{cm}=r\alpha$; la fricción apunta rampa arriba.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>No deslizar exige $f\le\mu_sn$ con $n=mg\cos\theta$; para el cilindro hueco solo cambia $I$.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t10/x1-planteamiento.svg">
-<div class="figph" role="img" aria-label="Planteamiento: cilindro que baja rodando por una rampa de 50°, con su diagrama de cuerpo libre" style="aspect-ratio:360/504"></div>
-<figcaption>Planteamiento como en el examen: esquema con los datos y DCL del cilindro (sin resultados). La fuerza de fricción se aplica en el punto de contacto y es la que produce el giro. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
-</figure>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Traslación del cm: $\sum F_x=m\,a_{cm}$</li>
-      <li>Rotación respecto al cm: $\sum\tau_{cm}=I_{cm}\,\alpha$</li>
-      <li>Rodar sin deslizar: $a_{cm}=r\,\alpha$</li>
-      <li>Momentos de inercia: cilindro macizo $I=\tfrac12mr^2$; cilindro hueco $I=mr^2$</li>
-      <li>Fricción estática: $f\le\mu_s\,n$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Dibujo y ejes.</b> Eje $x$ rampa abajo, eje $y$ perpendicular a la rampa. Fuerzas: peso $mg$, normal $n$ y fricción $f$ rampa arriba.
-      <span class="por">$f$ es la única fuerza con torca respecto al cm (peso y normal pasan por él). Rampa arriba, porque frena el punto de contacto y así hace girar al cilindro.</span></li>
-    <li><b>Perpendicular a la rampa</b> (no hay movimiento en $y$):
-      $$n-mg\cos\theta=0\ \Rightarrow\ n=mg\cos\theta$$
-      <span class="por">Necesitamos $n$ para el límite de la fricción, $f\le\mu_sn$.</span></li>
-    <li><b>Traslación a lo largo de la rampa:</b>
-      $$mg\sin\theta-f=m\,a_{cm}\qquad(1)$$</li>
-    <li><b>Rotación respecto al cm</b> (macizo, $I=\tfrac12mr^2$):
-      $$f\,r=\tfrac12mr^2\,\alpha\qquad(2)$$
-      <span class="por">El brazo de $f$ es $r$ (actúa en el borde, tangente).</span></li>
-    <li><b>Ligadura</b> $\alpha=a_{cm}/r$ en (2):
-      $$f\,r=\tfrac12mr^2\,\frac{a_{cm}}{r}\ \Rightarrow\ f=\tfrac12m\,a_{cm}\qquad(3)$$
-      <span class="por">Así $\alpha$ desaparece y quedan solo $f$ y $a_{cm}$ como incógnitas.</span></li>
-    <li><b>Sustituir (3) en (1):</b>
-      $$mg\sin\theta-\tfrac12m\,a_{cm}=m\,a_{cm}\ \Rightarrow\ mg\sin\theta=\tfrac32m\,a_{cm}\ \Rightarrow\ a_{cm}=\tfrac23\,g\sin\theta$$
-      $$f=\tfrac12m\left(\tfrac23g\sin\theta\right)=\tfrac13\,mg\sin\theta$$
-      <span class="por">La masa se simplifica: todos los cilindros macizos bajan igual.</span></li>
-    <li><b>(a) $\mu_s$ mínimo.</b> La fricción necesaria no puede superar el máximo:
-      $$f\le\mu_sn\ \Rightarrow\ \tfrac13mg\sin\theta\le\mu_s\,mg\cos\theta\ \Rightarrow\ \mu_s\ge\tfrac13\tan\theta=\tfrac13\tan50^\circ=\tfrac13(1{,}192)=\mathbf{0{,}397}$$
-      <span class="por">$\mu_sn$ es el <i>máximo</i> que puede dar la fricción estática; en rodadura vale solo lo necesario ($\tfrac13mg\sin\theta$), no $\mu_sn$.</span></li>
-    <li><b>(b) Aceleración</b> con $g=9{,}81$ m/s²:
-      $$a_{cm}=\tfrac23(9{,}81)\sin50^\circ=\tfrac23(9{,}81)(0{,}766)=\mathbf{5{,}01\ m/s^2}$$
-      <span class="por">$m=1$ kg y $r=0{,}5$ m no hacen falta para $a_{cm}$; solo darían $\alpha=a_{cm}/r=10{,}0$ rad/s², $f=\tfrac12(1)(5{,}01)=2{,}50$ N y $n=1(9{,}81)\cos50^\circ=6{,}31$ N.</span></li>
-    <li><b>(c) Cilindro hueco</b> ($I=mr^2$). Repetimos (2) y (3):
-      $$f\,r=mr^2\frac{a_{cm}}{r}\ \Rightarrow\ f=m\,a_{cm}$$
-      $$(1):\ mg\sin\theta-m\,a_{cm}=m\,a_{cm}\ \Rightarrow\ a_{cm}=\tfrac12g\sin\theta=3{,}76\ \text{m/s}^2,\qquad f=\tfrac12mg\sin\theta=3{,}76\ \text{N}$$
-      <span class="por">Más $I$ cuesta más girarlo, así que hace falta más torca, es decir, más fricción.</span></li>
-    <li><b>(c) ¿Rueda sin deslizar?</b> Comparamos la fricción necesaria con la máxima disponible, con $\mu_s=0{,}397$ del apartado (a):
-      $$\mu_s^{\,nec}=\tfrac12\tan50^\circ=0{,}596>0{,}397\qquad\Big(f=3{,}76\ \text{N}>\mu_sn=0{,}397\cdot6{,}31=2{,}50\ \text{N}\Big)$$
-      <span class="por">La fricción disponible no alcanza: <b>no rueda sin deslizar, resbala</b>. Si resbala, $f=\mu_kmg\cos\theta$ (con $\mu_k\approx0{,}397$) y $r\alpha=2{,}50\lt a_{cm}=5{,}01$ m/s²: el punto de contacto se desliza rampa abajo.</span></li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t10/cilindro-macizo-en-una-rampa-de-50-grados-con-el.svg">
-<div class="figph" role="img" aria-label="Cilindro macizo en una rampa de 50 grados con el peso, la normal y la fricción hacia arriba, y comparación con la fricción que necesitaría el cilindro hueco" style="aspect-ratio:360/232"></div>
-<figcaption>Examen 2023: el macizo rueda con justo $\mu_s=\tfrac13\tan50^\circ=0{,}397$ ($f=2{,}50$ N); el hueco necesita $f=3{,}76$ N, más que el máximo disponible: resbala. (Fuerzas con longitudes proporcionales a su valor.) <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2023 (1ª semana) P-2">P</span></figcaption>
-</figure>
-  <p><b>Resultado:</b> (a) $\mu_{s,min}=\tfrac13\tan50^\circ=0{,}397$; (b) $a_{cm}=\tfrac23g\sin50^\circ=5{,}01$ m/s²; (c) no: el hueco necesita $\mu_s\ge0{,}596$ y resbala.</p>
-  <div class="recipe"><b>Receta:</b> cuerpo que rueda por una rampa: DCL → $\sum F=ma_{cm}$ a lo largo de la rampa, $\sum\tau_{cm}=I_{cm}\alpha$ (solo la fricción da torca), $a_{cm}=R\alpha$. Con $I=cMR^2$: $a_{cm}=\dfrac{g\sin\theta}{1+c}$, $f=\dfrac{c}{1+c}Mg\sin\theta$, $\mu_{s,min}=\dfrac{c}{1+c}\tan\theta$.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Poner $f=\mu_sn$ desde el principio (la fricción estática vale lo que haga falta; $\mu_sn$ es solo su <i>máximo</i>); dibujar la fricción rampa abajo; olvidar que el hueco, al tener más $I$, necesita <i>más</i> fricción.</p></div>
-
-  <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
-    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) $\mu_s$ mínimo (1) · b) aceleración (1) · c) cilindro hueco (1). Dentro de cada apartado suele valorarse en este orden:</p>
-    <ul><li><b>Planteamiento (≈30 %):</b> DCL con el peso en el cm, la normal y la fricción rampa arriba; ejes y ligadura $a_{cm}=r\alpha$.</li><li><b>Ecuaciones (≈40 %):</b> $mg\sin\theta-f=ma_{cm}$, $fr=\tfrac12mr^2\alpha$, $f\le\mu_smg\cos\theta$; repetir con $I=mr^2$ para el hueco.</li><li><b>Resultado y unidades (≈30 %):</b> $\mu_s\ge0{,}397$, $a_{cm}=5{,}01$ m/s² y conclusión razonada de que el hueco resbala ($\mu_s\ge0{,}596$).</li></ul>
-    <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
-</details>
-</details>
-<details class="sol" id="x3"><summary>X3 — Cilindro que sube rodando una rampa de 35° tirado por una fuerza <span class="src" data-l="X" data-ref="Examen Febrero 2025 (1ª semana) P-1">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.11-10.13, pp. 311-314; §5.3, ec. 5.4, p. 144; §2.4, p. 47">U p.311-314</span></summary>
-<p class="enun">Un cilindro macizo de distribución de masa uniforme de 490 kg y un radio de 0,25 m sube girando sin deslizar por una rampa inclinada 35° sobre la horizontal y de 6,5 m de largo. La fuerza que consigue que esto sea así se aplica de forma paralela a la superficie sin realizar ningún momento sobre el cilindro. El coeficiente de fricción estática entre la rampa y el cilindro es 0,12. Determine: (a) la magnitud máxima de la fuerza que permite que el cilindro ruede sin deslizar mientras sube; (b) si el cilindro comienza desde el reposo en la parte inferior, rodando sin deslizar, el tiempo mínimo que necesita para alcanzar la parte superior. Considere $g=9{,}81$ m/s².</p>
-<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>$F$ pasa por el eje: no da torca; solo la fricción hace girar. Para acelerar rodando hacia arriba, la fricción apunta rampa <i>abajo</i>.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>Fuerza máxima $\Leftrightarrow$ $f=\mu_sn$ $\Leftrightarrow$ aceleración máxima $\Leftrightarrow$ tiempo mínimo.</p></details>
-<details class="mas pasos"><summary>Solución completa</summary>
-<figure class="fig" data-svg="../assets/figs/t10/x3-planteamiento.svg">
-<div class="figph" role="img" aria-label="Planteamiento: cilindro que sube rodando por una rampa de 35° tirado por una fuerza, con su diagrama de cuerpo libre" style="aspect-ratio:360/500"></div>
-<figcaption>Planteamiento como en el examen: esquema con los datos y DCL del cilindro (sin resultados). F está en el centro: no hace giro; el giro lo produce f<sub>s</sub> en el punto de contacto. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
-</figure>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Traslación a lo largo de la rampa: $\sum F_x=m\,a_{cm}$; perpendicular: $n=mg\cos\theta$</li>
-      <li>Rotación respecto al cm: $\sum\tau_{cm}=I_{cm}\,\alpha$, con $I_{cm}=\tfrac12mR^2$ (cilindro macizo)</li>
-      <li>Rodar sin deslizar: $a_{cm}=R\,\alpha$</li>
-      <li>Fricción estática: $f\le\mu_s\,n$</li>
-      <li>MRUA desde el reposo: $L=\tfrac12a\,t^2$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Qué fuerza da torca.</b> $F$ va en el eje, paralela a la rampa; el peso actúa en el cm; la normal pasa por el cm.
-      <span class="por">Ninguna de las tres da torca respecto al cm. La única es la fricción: es ella la que hace girar al cilindro.</span></li>
-    <li><b>Sentido de la fricción.</b> Eje $x$ rampa arriba; $f$ apunta <b>rampa abajo</b>.
-      <span class="por">El cilindro tiene que aumentar su giro «rodando hacia arriba», y una fuerza en el contacto dirigida rampa abajo es la que produce ese giro. La fricción no se opone «al movimiento» sino al deslizamiento que habría sin ella.</span></li>
-    <li><b>Perpendicular a la rampa:</b>
-      $$n=mg\cos\theta$$</li>
-    <li><b>Traslación</b> (rampa arriba):
-      $$F-mg\sin\theta-f=m\,a_{cm}\qquad(1)$$</li>
-    <li><b>Rotación respecto al cm</b> con $\alpha=a_{cm}/R$:
-      $$f\,R=\tfrac12mR^2\,\frac{a_{cm}}{R}\ \Rightarrow\ f=\tfrac12m\,a_{cm}\qquad(2)$$</li>
-    <li><b>Resolver en función de $F$.</b> (2) en (1):
-      $$F-mg\sin\theta=\tfrac32m\,a_{cm}\ \Rightarrow\ a_{cm}=\frac{2(F-mg\sin\theta)}{3m},\qquad f=\frac{F-mg\sin\theta}{3}$$</li>
-    <li><b>(a) Condición de no deslizar:</b>
-      $$f\le\mu_s\,n\ \Rightarrow\ \frac{F-mg\sin\theta}{3}\le\mu_s\,mg\cos\theta\ \Rightarrow\ F_{m\acute ax}=mg\,(\sin\theta+3\mu_s\cos\theta)$$
-      $$F_{m\acute ax}=490(9{,}81)\,[\sin35^\circ+3(0{,}12)\cos35^\circ]=4806{,}9\,(0{,}5736+0{,}2949)\approx\mathbf{4{,}17\times10^{3}\ N}$$
-      <span class="por">Para que suba hace falta además $F>mg\sin\theta=2757$ N.</span></li>
-    <li><b>(b) Tiempo mínimo ⇒ aceleración máxima ⇒ $F=F_{m\acute ax}$ ⇒ $f=\mu_sn$:</b>
-      $$f_{m\acute ax}=\mu_s\,mg\cos\theta=0{,}12(4806{,}9)(0{,}8192)=472{,}5\ \text{N}$$
-      $$a_{m\acute ax}=\frac{2f_{m\acute ax}}{m}=2\mu_sg\cos\theta=2(0{,}12)(9{,}81)(0{,}8192)=1{,}93\ \text{m/s}^2$$
-      <span class="por">De (2): $a_{cm}=2f/m$. La masa se simplifica. ($f_{m\acute ax}\approx473$ N.)</span></li>
-    <li><b>Cinemática</b> (aceleración constante, parte del reposo):
-      $$L=\tfrac12a_{m\acute ax}\,t^2\ \Rightarrow\ t_{m\acute in}=\sqrt{\frac{2L}{a_{m\acute ax}}}=\sqrt{\frac{2(6{,}5)}{1{,}929}}=\sqrt{6{,}74}=\mathbf{2{,}60\ s}$$</li>
-    <li><b>Comprobación</b> al llegar arriba:
-      $$v=a_{m\acute ax}\,t=1{,}929(2{,}60)=5{,}01\ \text{m/s},\qquad\omega=\frac vR=\frac{5{,}01}{0{,}25}=20{,}0\ \text{rad/s}$$</li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t10/cilindro-que-sube-rodando-por-una-rampa-de-35-gr.svg">
-<div class="figph" role="img" aria-label="Cilindro que sube rodando por una rampa de 35 grados empujado por una fuerza paralela aplicada en su eje; la fricción apunta hacia abajo de la rampa" style="aspect-ratio:360/232"></div>
-<figcaption>Examen 2025: $F$ pasa por el eje (no da torca); la torca la da la fricción, que por eso apunta <i>hacia abajo</i> de la rampa. (Longitudes de $mg$, $n$ y $F$ a escala; $f$ no, porque es unas diez veces menor.) <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2025 (1ª semana) P-1">P</span></figcaption>
-</figure>
-  <p><b>Resultado:</b> (a) $F_{máx}=mg(\sin35^\circ+3\mu_s\cos35^\circ)\approx4{,}17$ kN; (b) $t_{mín}=\sqrt{L/(\mu_sg\cos35^\circ)}=2{,}60$ s.</p>
-  <div class="recipe"><b>Receta:</b> cuando la fuerza motriz no da torca, la <b>fricción es la que hace girar</b>: su sentido es el que produce la $\alpha$ necesaria. Escribe las dos ecuaciones (cm y rotación) + $a=R\alpha$, despeja $f$ en función de la fuerza aplicada y aplica $f\le\mu_sn$: eso da la fuerza máxima y, con ella, la aceleración y el tiempo mínimos.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Poner la fricción rampa arriba «porque se opone al movimiento de subida»; olvidar el término $mg\sin\theta$; calcular el tiempo mínimo con una $F$ cualquiera en lugar de $F_{máx}$.</p></div>
-
-  <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
-    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) fuerza máxima (1,5) · b) tiempo mínimo (1,5). Dentro de cada apartado suele valorarse en este orden:</p>
-    <ul><li><b>Planteamiento (≈30 %):</b> DCL con $F$ en el eje, la fricción rampa abajo y los ejes; qué fuerza hace girar el cilindro.</li><li><b>Ecuaciones (≈40 %):</b> $F-mg\sin\theta-f=ma$, $f=\tfrac12ma$ y $f\le\mu_smg\cos\theta$ ⇒ $F_{máx}$; después $t=\sqrt{2L/a}$ con $a=2\mu_sg\cos\theta$.</li><li><b>Resultado y unidades (≈30 %):</b> $F_{máx}\approx4{,}17\times10^3$ N y $t_{mín}=2{,}60$ s con unidades.</li></ul>
-    <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
+  <div class="recipe"><b>Receta:</b> rueda con eje fijo: torcas solo de las fuerzas que no pasan por el eje ⇒ $\alpha=\tau/I$, $a_{cuerda}=R\alpha$. La fuerza del eje sale de $\sum\vec F=0$ (el cm está quieto), no de las torcas.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Pensar que la fuerza del eje es solo el peso; usar $I=MR^2$; dar $a=P/M$ (eso valdría si la rueda se trasladara sin eje).</p></div>
 </details>
 </details>
 <details class="sol" id="x4"><summary>X4 — Cilindro empujado en su centro con una fuerza $F=t^2/2$ <span class="src" data-l="X" data-ref="Examen Febrero 2019 (1ª semana) P-2">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.11-10.13, pp. 311-314; §5.3, pp. 143-144">U p.311-314</span></summary>
@@ -795,89 +641,219 @@
     <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
-<details class="sol" id="e8"><summary>E8 — Problema 10.86: bloque en una mesa sin fricción cuya cuerda se acorta <span class="src" data-l="E" data-ref="Solucionario 10-36, Prob. 10.86">E</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §10.5-10.6, ecs. 10.25 y 10.29-10.30, pp. 317-322; §3.4, pp. 83-84; Problema 10.86, p. 336">U p.317-322, 336</span></summary>
-<p class="enun">Un bloque pequeño de 0,130 kg se ata a una cuerda que pasa por un orificio en una superficie horizontal sin fricción. El bloque gira en un círculo de 0,800 m de radio alrededor del orificio, con rapidez tangencial de 4,00 m/s. Se tira lentamente de la cuerda desde abajo, acortando el radio. La resistencia a la ruptura de la cuerda es de 30,0 N. ¿Qué radio tendrá el círculo cuando la cuerda se rompa?</p>
+<details class="sol" id="x3"><summary>X3 — Cilindro que sube rodando una rampa de 35° tirado por una fuerza <span class="src" data-l="X" data-ref="Examen Febrero 2025 (1ª semana) P-1">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.11-10.13, pp. 311-314; §5.3, ec. 5.4, p. 144; §2.4, p. 47">U p.311-314</span></summary>
+<p class="enun">Un cilindro macizo de distribución de masa uniforme de 490 kg y un radio de 0,25 m sube girando sin deslizar por una rampa inclinada 35° sobre la horizontal y de 6,5 m de largo. La fuerza que consigue que esto sea así se aplica de forma paralela a la superficie sin realizar ningún momento sobre el cilindro. El coeficiente de fricción estática entre la rampa y el cilindro es 0,12. Determine: (a) la magnitud máxima de la fuerza que permite que el cilindro ruede sin deslizar mientras sube; (b) si el cilindro comienza desde el reposo en la parte inferior, rodando sin deslizar, el tiempo mínimo que necesita para alcanzar la parte superior. Considere $g=9{,}81$ m/s².</p>
 <p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
-<details class="mas pista"><summary>Pista 1</summary><p>La tensión es radial: sin torca respecto al orificio, luego $L=mvr$ es constante.</p></details>
-<details class="mas pista"><summary>Pista 2</summary><p>$T=mv^2/r$ con $v=L/mr$ da $T=L^2/(mr^3)$: iguala a 30,0 N y despeja $r$.</p></details>
+<details class="mas pista"><summary>Pista 1</summary><p>$F$ pasa por el eje: no da torca; solo la fricción hace girar. Para acelerar rodando hacia arriba, la fricción apunta rampa <i>abajo</i>.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Fuerza máxima $\Leftrightarrow$ $f=\mu_sn$ $\Leftrightarrow$ aceleración máxima $\Leftrightarrow$ tiempo mínimo.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+<figure class="fig" data-svg="../assets/figs/t10/x3-planteamiento.svg">
+<div class="figph" role="img" aria-label="Planteamiento: cilindro que sube rodando por una rampa de 35° tirado por una fuerza, con su diagrama de cuerpo libre" style="aspect-ratio:360/500"></div>
+<figcaption>Planteamiento como en el examen: esquema con los datos y DCL del cilindro (sin resultados). F está en el centro: no hace giro; el giro lo produce f<sub>s</sub> en el punto de contacto. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
+</figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Momento angular de una partícula: $L=m\,v\,r$ (movimiento circular, $v\perp r$)</li>
-      <li>Conservación: $L$ constante si $\sum\vec\tau=0$ respecto al orificio</li>
-      <li>Segunda ley en la dirección radial: $T=\dfrac{m\,v^2}{r}$</li>
+      <li>Traslación a lo largo de la rampa: $\sum F_x=m\,a_{cm}$; perpendicular: $n=mg\cos\theta$</li>
+      <li>Rotación respecto al cm: $\sum\tau_{cm}=I_{cm}\,\alpha$, con $I_{cm}=\tfrac12mR^2$ (cilindro macizo)</li>
+      <li>Rodar sin deslizar: $a_{cm}=R\,\alpha$</li>
+      <li>Fricción estática: $f\le\mu_s\,n$</li>
+      <li>MRUA desde el reposo: $L=\tfrac12a\,t^2$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>¿Se conserva $L$ respecto al orificio?</b>
-      <span class="por">La tensión apunta siempre al orificio ($\vec r\times\vec T=0$); peso y normal son verticales y se anulan. Torca neta nula ⇒ $L=mvr$ constante.</span></li>
-    <li><b>$L$ inicial:</b>
-      $$L=m\,v_1\,r_1=(0{,}130)(4{,}00)(0{,}800)=0{,}416\ \text{kg}\cdot\text{m}^2/\text{s}$$</li>
-    <li><b>Tensión en función de $r$.</b> De $L=mvr$: $v=\dfrac{L}{mr}$. Entonces
-      $$T=\frac{m\,v^2}{r}=\frac{m}{r}\cdot\frac{L^2}{m^2r^2}=\frac{L^2}{m\,r^3}$$
-      <span class="por">Al acortar la cuerda, $T$ crece como $1/r^3$. Al principio era $T=mv_1^2/r_1=0{,}130(4{,}00)^2/0{,}800=2{,}6$ N.</span></li>
-    <li><b>Rotura</b> ($T=30{,}0$ N):
-      $$r^3=\frac{L^2}{m\,T_{m\acute ax}}=\frac{(0{,}416)^2}{(0{,}130)(30{,}0)}=\frac{0{,}1731}{3{,}90}=0{,}04437\ \Rightarrow\ r=\mathbf{0{,}354\ m}$$</li>
-    <li><b>Comprobación:</b>
-      $$v=\frac{L}{mr}=\frac{0{,}416}{(0{,}130)(0{,}354)}=9{,}04\ \text{m/s},\qquad T=\frac{m v^2}{r}=\frac{(0{,}130)(9{,}04)^2}{0{,}354}=30{,}0\ \text{N}\ \checkmark$$
-      <span class="por">$K$ pasa de 1,04 J a 5,31 J: no se conserva; el aumento es el trabajo de la mano que tira de la cuerda.</span></li>
+    <li><b>Qué fuerza da torca.</b> $F$ va en el eje, paralela a la rampa; el peso actúa en el cm; la normal pasa por el cm.
+      <span class="por">Ninguna de las tres da torca respecto al cm. La única es la fricción: es ella la que hace girar al cilindro.</span></li>
+    <li><b>Sentido de la fricción.</b> Eje $x$ rampa arriba; $f$ apunta <b>rampa abajo</b>.
+      <span class="por">El cilindro tiene que aumentar su giro «rodando hacia arriba», y una fuerza en el contacto dirigida rampa abajo es la que produce ese giro. La fricción no se opone «al movimiento» sino al deslizamiento que habría sin ella.</span></li>
+    <li><b>Perpendicular a la rampa:</b>
+      $$n=mg\cos\theta$$</li>
+    <li><b>Traslación</b> (rampa arriba):
+      $$F-mg\sin\theta-f=m\,a_{cm}\qquad(1)$$</li>
+    <li><b>Rotación respecto al cm</b> con $\alpha=a_{cm}/R$:
+      $$f\,R=\tfrac12mR^2\,\frac{a_{cm}}{R}\ \Rightarrow\ f=\tfrac12m\,a_{cm}\qquad(2)$$</li>
+    <li><b>Resolver en función de $F$.</b> (2) en (1):
+      $$F-mg\sin\theta=\tfrac32m\,a_{cm}\ \Rightarrow\ a_{cm}=\frac{2(F-mg\sin\theta)}{3m},\qquad f=\frac{F-mg\sin\theta}{3}$$</li>
+    <li><b>(a) Condición de no deslizar:</b>
+      $$f\le\mu_s\,n\ \Rightarrow\ \frac{F-mg\sin\theta}{3}\le\mu_s\,mg\cos\theta\ \Rightarrow\ F_{m\acute ax}=mg\,(\sin\theta+3\mu_s\cos\theta)$$
+      $$F_{m\acute ax}=490(9{,}81)\,[\sin35^\circ+3(0{,}12)\cos35^\circ]=4806{,}9\,(0{,}5736+0{,}2949)\approx\mathbf{4{,}17\times10^{3}\ N}$$
+      <span class="por">Para que suba hace falta además $F>mg\sin\theta=2757$ N.</span></li>
+    <li><b>(b) Tiempo mínimo ⇒ aceleración máxima ⇒ $F=F_{m\acute ax}$ ⇒ $f=\mu_sn$:</b>
+      $$f_{m\acute ax}=\mu_s\,mg\cos\theta=0{,}12(4806{,}9)(0{,}8192)=472{,}5\ \text{N}$$
+      $$a_{m\acute ax}=\frac{2f_{m\acute ax}}{m}=2\mu_sg\cos\theta=2(0{,}12)(9{,}81)(0{,}8192)=1{,}93\ \text{m/s}^2$$
+      <span class="por">De (2): $a_{cm}=2f/m$. La masa se simplifica. ($f_{m\acute ax}\approx473$ N.)</span></li>
+    <li><b>Cinemática</b> (aceleración constante, parte del reposo):
+      $$L=\tfrac12a_{m\acute ax}\,t^2\ \Rightarrow\ t_{m\acute in}=\sqrt{\frac{2L}{a_{m\acute ax}}}=\sqrt{\frac{2(6{,}5)}{1{,}929}}=\sqrt{6{,}74}=\mathbf{2{,}60\ s}$$</li>
+    <li><b>Comprobación</b> al llegar arriba:
+      $$v=a_{m\acute ax}\,t=1{,}929(2{,}60)=5{,}01\ \text{m/s},\qquad\omega=\frac vR=\frac{5{,}01}{0{,}25}=20{,}0\ \text{rad/s}$$</li>
   </ol>
-  <figure class="fig" data-svg="../assets/figs/t10/bloque-girando-alrededor-de-un-orificio-con-dos-.svg">
-<div class="figph" role="img" aria-label="Bloque girando alrededor de un orificio con dos radios, 0,8 metros y 0,354 metros, y sus velocidades" style="aspect-ratio:360/200"></div>
-<figcaption>Problema 10.86: al acortar la cuerda, $L=mvr$ se conserva y la rapidez crece como $1/r$; la tensión crece como $1/r^3$ hasta romper la cuerda a 30,0 N. <span class="src" data-l="P" data-ref="Diagrama propio del problema 10.86 (Solucionario 10-36)">P</span></figcaption>
+  <figure class="fig" data-svg="../assets/figs/t10/cilindro-que-sube-rodando-por-una-rampa-de-35-gr.svg">
+<div class="figph" role="img" aria-label="Cilindro que sube rodando por una rampa de 35 grados empujado por una fuerza paralela aplicada en su eje; la fricción apunta hacia abajo de la rampa" style="aspect-ratio:360/232"></div>
+<figcaption>Examen 2025: $F$ pasa por el eje (no da torca); la torca la da la fricción, que por eso apunta <i>hacia abajo</i> de la rampa. (Longitudes de $mg$, $n$ y $F$ a escala; $f$ no, porque es unas diez veces menor.) <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2025 (1ª semana) P-1">P</span></figcaption>
 </figure>
-  <div class="recipe"><b>Receta:</b> fuerza central (siempre hacia un punto) ⇒ $L=mvr$ constante respecto a ese punto. Combínalo con la segunda ley en la dirección radial ($T=mv^2/r$) y elimina $v$.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Conservar la energía cinética (o la rapidez) en lugar de $L$; usar $T=mv_1^2/r$ con la velocidad inicial.</p></div>
+  <p><b>Resultado:</b> (a) $F_{máx}=mg(\sin35^\circ+3\mu_s\cos35^\circ)\approx4{,}17$ kN; (b) $t_{mín}=\sqrt{L/(\mu_sg\cos35^\circ)}=2{,}60$ s.</p>
+  <div class="recipe"><b>Receta:</b> cuando la fuerza motriz no da torca, la <b>fricción es la que hace girar</b>: su sentido es el que produce la $\alpha$ necesaria. Escribe las dos ecuaciones (cm y rotación) + $a=R\alpha$, despeja $f$ en función de la fuerza aplicada y aplica $f\le\mu_sn$: eso da la fuerza máxima y, con ella, la aceleración y el tiempo mínimos.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Poner la fricción rampa arriba «porque se opone al movimiento de subida»; olvidar el término $mg\sin\theta$; calcular el tiempo mínimo con una $F$ cualquiera en lugar de $F_{máx}$.</p></div>
+
+  <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
+    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) fuerza máxima (1,5) · b) tiempo mínimo (1,5). Dentro de cada apartado suele valorarse en este orden:</p>
+    <ul><li><b>Planteamiento (≈30 %):</b> DCL con $F$ en el eje, la fricción rampa abajo y los ejes; qué fuerza hace girar el cilindro.</li><li><b>Ecuaciones (≈40 %):</b> $F-mg\sin\theta-f=ma$, $f=\tfrac12ma$ y $f\le\mu_smg\cos\theta$ ⇒ $F_{máx}$; después $t=\sqrt{2L/a}$ con $a=2\mu_sg\cos\theta$.</li><li><b>Resultado y unidades (≈30 %):</b> $F_{máx}\approx4{,}17\times10^3$ N y $t_{mín}=2{,}60$ s con unidades.</li></ul>
+    <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
+</details>
+</details>
+<details class="sol" id="x1"><summary>X1 — Cilindro macizo (y hueco) que baja rodando por una rampa de 50° <span class="src" data-l="X" data-ref="Examen Febrero 2023 (1ª semana) P-2">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.11-10.13 y ejemplo 10.7, pp. 311-314; Tabla 9.2, p. 286">U p.311-314</span></summary>
+<p class="enun">Se deja caer un cilindro sólido de masa $m$ y radio $r$ por una superficie inclinada que forma un ángulo de 50° con la horizontal. (a) Calcular el valor mínimo del coeficiente de fricción estática entre la superficie del cilindro y la de la rampa para que ruede sin deslizamiento. (b) Calcular la aceleración lineal del primer cilindro si cae rodando como en el apartado anterior, sabiendo que su masa es 1 kg y su radio 0,5 m. (c) ¿Qué pasaría si en lugar de un cilindro macizo fuera uno hueco con la misma masa concentrada en la superficie y el coeficiente de fricción calculado en (a)? ¿Rodaría también sin deslizamiento? Considere $g=9{,}81$ m/s², $I_{cilindro}=\tfrac12mr^2$, $I_{hueco}=mr^2$.</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>Dos ecuaciones: $mg\sin\theta-f=ma_{cm}$ y $fr=I_{cm}\alpha$, con $a_{cm}=r\alpha$; la fricción apunta rampa arriba.</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>No deslizar exige $f\le\mu_sn$ con $n=mg\cos\theta$; para el cilindro hueco solo cambia $I$.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t10/x1-planteamiento.svg">
+<div class="figph" role="img" aria-label="Planteamiento: cilindro que baja rodando por una rampa de 50°, con su diagrama de cuerpo libre" style="aspect-ratio:360/504"></div>
+<figcaption>Planteamiento como en el examen: esquema con los datos y DCL del cilindro (sin resultados). La fuerza de fricción se aplica en el punto de contacto y es la que produce el giro. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
+</figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Traslación del cm: $\sum F_x=m\,a_{cm}$</li>
+      <li>Rotación respecto al cm: $\sum\tau_{cm}=I_{cm}\,\alpha$</li>
+      <li>Rodar sin deslizar: $a_{cm}=r\,\alpha$</li>
+      <li>Momentos de inercia: cilindro macizo $I=\tfrac12mr^2$; cilindro hueco $I=mr^2$</li>
+      <li>Fricción estática: $f\le\mu_s\,n$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Dibujo y ejes.</b> Eje $x$ rampa abajo, eje $y$ perpendicular a la rampa. Fuerzas: peso $mg$, normal $n$ y fricción $f$ rampa arriba.
+      <span class="por">$f$ es la única fuerza con torca respecto al cm (peso y normal pasan por él). Rampa arriba, porque frena el punto de contacto y así hace girar al cilindro.</span></li>
+    <li><b>Perpendicular a la rampa</b> (no hay movimiento en $y$):
+      $$n-mg\cos\theta=0\ \Rightarrow\ n=mg\cos\theta$$
+      <span class="por">Necesitamos $n$ para el límite de la fricción, $f\le\mu_sn$.</span></li>
+    <li><b>Traslación a lo largo de la rampa:</b>
+      $$mg\sin\theta-f=m\,a_{cm}\qquad(1)$$</li>
+    <li><b>Rotación respecto al cm</b> (macizo, $I=\tfrac12mr^2$):
+      $$f\,r=\tfrac12mr^2\,\alpha\qquad(2)$$
+      <span class="por">El brazo de $f$ es $r$ (actúa en el borde, tangente).</span></li>
+    <li><b>Ligadura</b> $\alpha=a_{cm}/r$ en (2):
+      $$f\,r=\tfrac12mr^2\,\frac{a_{cm}}{r}\ \Rightarrow\ f=\tfrac12m\,a_{cm}\qquad(3)$$
+      <span class="por">Así $\alpha$ desaparece y quedan solo $f$ y $a_{cm}$ como incógnitas.</span></li>
+    <li><b>Sustituir (3) en (1):</b>
+      $$mg\sin\theta-\tfrac12m\,a_{cm}=m\,a_{cm}\ \Rightarrow\ mg\sin\theta=\tfrac32m\,a_{cm}\ \Rightarrow\ a_{cm}=\tfrac23\,g\sin\theta$$
+      $$f=\tfrac12m\left(\tfrac23g\sin\theta\right)=\tfrac13\,mg\sin\theta$$
+      <span class="por">La masa se simplifica: todos los cilindros macizos bajan igual.</span></li>
+    <li><b>(a) $\mu_s$ mínimo.</b> La fricción necesaria no puede superar el máximo:
+      $$f\le\mu_sn\ \Rightarrow\ \tfrac13mg\sin\theta\le\mu_s\,mg\cos\theta\ \Rightarrow\ \mu_s\ge\tfrac13\tan\theta=\tfrac13\tan50^\circ=\tfrac13(1{,}192)=\mathbf{0{,}397}$$
+      <span class="por">$\mu_sn$ es el <i>máximo</i> que puede dar la fricción estática; en rodadura vale solo lo necesario ($\tfrac13mg\sin\theta$), no $\mu_sn$.</span></li>
+    <li><b>(b) Aceleración</b> con $g=9{,}81$ m/s²:
+      $$a_{cm}=\tfrac23(9{,}81)\sin50^\circ=\tfrac23(9{,}81)(0{,}766)=\mathbf{5{,}01\ m/s^2}$$
+      <span class="por">$m=1$ kg y $r=0{,}5$ m no hacen falta para $a_{cm}$; solo darían $\alpha=a_{cm}/r=10{,}0$ rad/s², $f=\tfrac12(1)(5{,}01)=2{,}50$ N y $n=1(9{,}81)\cos50^\circ=6{,}31$ N.</span></li>
+    <li><b>(c) Cilindro hueco</b> ($I=mr^2$). Repetimos (2) y (3):
+      $$f\,r=mr^2\frac{a_{cm}}{r}\ \Rightarrow\ f=m\,a_{cm}$$
+      $$(1):\ mg\sin\theta-m\,a_{cm}=m\,a_{cm}\ \Rightarrow\ a_{cm}=\tfrac12g\sin\theta=3{,}76\ \text{m/s}^2,\qquad f=\tfrac12mg\sin\theta=3{,}76\ \text{N}$$
+      <span class="por">Más $I$ cuesta más girarlo, así que hace falta más torca, es decir, más fricción.</span></li>
+    <li><b>(c) ¿Rueda sin deslizar?</b> Comparamos la fricción necesaria con la máxima disponible, con $\mu_s=0{,}397$ del apartado (a):
+      $$\mu_s^{\,nec}=\tfrac12\tan50^\circ=0{,}596>0{,}397\qquad\Big(f=3{,}76\ \text{N}>\mu_sn=0{,}397\cdot6{,}31=2{,}50\ \text{N}\Big)$$
+      <span class="por">La fricción disponible no alcanza: <b>no rueda sin deslizar, resbala</b>. Si resbala, $f=\mu_kmg\cos\theta$ (con $\mu_k\approx0{,}397$) y $r\alpha=2{,}50\lt a_{cm}=5{,}01$ m/s²: el punto de contacto se desliza rampa abajo.</span></li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t10/cilindro-macizo-en-una-rampa-de-50-grados-con-el.svg">
+<div class="figph" role="img" aria-label="Cilindro macizo en una rampa de 50 grados con el peso, la normal y la fricción hacia arriba, y comparación con la fricción que necesitaría el cilindro hueco" style="aspect-ratio:360/232"></div>
+<figcaption>Examen 2023: el macizo rueda con justo $\mu_s=\tfrac13\tan50^\circ=0{,}397$ ($f=2{,}50$ N); el hueco necesita $f=3{,}76$ N, más que el máximo disponible: resbala. (Fuerzas con longitudes proporcionales a su valor.) <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2023 (1ª semana) P-2">P</span></figcaption>
+</figure>
+  <p><b>Resultado:</b> (a) $\mu_{s,min}=\tfrac13\tan50^\circ=0{,}397$; (b) $a_{cm}=\tfrac23g\sin50^\circ=5{,}01$ m/s²; (c) no: el hueco necesita $\mu_s\ge0{,}596$ y resbala.</p>
+  <div class="recipe"><b>Receta:</b> cuerpo que rueda por una rampa: DCL → $\sum F=ma_{cm}$ a lo largo de la rampa, $\sum\tau_{cm}=I_{cm}\alpha$ (solo la fricción da torca), $a_{cm}=R\alpha$. Con $I=cMR^2$: $a_{cm}=\dfrac{g\sin\theta}{1+c}$, $f=\dfrac{c}{1+c}Mg\sin\theta$, $\mu_{s,min}=\dfrac{c}{1+c}\tan\theta$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Poner $f=\mu_sn$ desde el principio (la fricción estática vale lo que haga falta; $\mu_sn$ es solo su <i>máximo</i>); dibujar la fricción rampa abajo; olvidar que el hueco, al tener más $I$, necesita <i>más</i> fricción.</p></div>
+
+  <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
+    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) $\mu_s$ mínimo (1) · b) aceleración (1) · c) cilindro hueco (1). Dentro de cada apartado suele valorarse en este orden:</p>
+    <ul><li><b>Planteamiento (≈30 %):</b> DCL con el peso en el cm, la normal y la fricción rampa arriba; ejes y ligadura $a_{cm}=r\alpha$.</li><li><b>Ecuaciones (≈40 %):</b> $mg\sin\theta-f=ma_{cm}$, $fr=\tfrac12mr^2\alpha$, $f\le\mu_smg\cos\theta$; repetir con $I=mr^2$ para el hueco.</li><li><b>Resultado y unidades (≈30 %):</b> $\mu_s\ge0{,}397$, $a_{cm}=5{,}01$ m/s² y conclusión razonada de que el hueco resbala ($\mu_s\ge0{,}596$).</li></ul>
+    <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
+</details>
+</details>
+<details class="sol" id="x2"><summary>X2 — Yoyó de dos discos con la cuerda fija <span class="src" data-l="X" data-ref="Examen Febrero 2018 (1ª semana) P-1">X</span> <span class="prio p1">🔴 examen real</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.12-10.13 y ejemplos 10.4 y 10.6, pp. 312-314; Tabla 9.2, p. 286">U p.312-314</span></summary>
+<p class="enun">Un cuerpo formado por dos discos macizos y homogéneos de radio 40 mm unidos por un cilindro de masa despreciable y radio 25 mm, similar a un yoyó, tiene una masa total de 100 g. Se enrolla una cuerda de longitud 1 m al cilindro interior. Si el extremo de la cuerda se mantiene fijo y el cuerpo parte del reposo, calcular: (a) la aceleración angular del cuerpo; (b) la aceleración lineal de su centro de masas; (c) la velocidad del centro de masas en el instante en que se ha desenrollado completamente el hilo.</p>
+<p class="pistas-intro">Inténtalo primero; abre una pista solo si te atascas.</p>
+<details class="mas pista"><summary>Pista 1</summary><p>$I_{cm}$ usa el radio de los discos ($R$), pero el brazo de la tensión es el del eje ($b$).</p></details>
+<details class="mas pista"><summary>Pista 2</summary><p>Ecuaciones: $Mg-T=Ma$, $Tb=I_{cm}\alpha$ y ligadura $a=b\alpha$; la velocidad tras bajar 1 m sale de $v^2=2a\,\Delta y$.</p></details>
+<details class="mas pasos"><summary>Solución completa</summary>
+<figure class="fig" data-svg="../assets/figs/t10/x2-planteamiento.svg">
+<div class="figph" role="img" aria-label="Planteamiento: yoyó de dos discos con la cuerda fija, con su diagrama de cuerpo libre" style="aspect-ratio:360/556"></div>
+<figcaption>Planteamiento como en el examen: esquema con los datos y DCL del yoyó (sin resultados). La tensión actúa en el borde del eje interior, a distancia r del centro. <span class="src" data-l="P" data-ref="Esquema de planteamiento propio, como se haría en el examen">P</span></figcaption>
+</figure>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Disco macizo: $I_d=\tfrac12m_dR^2$ (el yoyó tiene dos discos; el eje no pesa)</li>
+      <li>Traslación: $\sum F_y=M\,a_{cm}$</li>
+      <li>Rotación respecto al cm: $\sum\tau_{cm}=I_{cm}\,\alpha$</li>
+      <li>Ligadura (cuerda fija): $a_{cm}=b\,\alpha$</li>
+      <li>MRUA desde el reposo: $v^2=2\,a\,\Delta y$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Datos en SI</b> ($g=9{,}8$ m/s²):
+      $$M=0{,}100\ \text{kg}\ (m_d=0{,}050\ \text{kg\ cada\ disco}),\quad R=0{,}040\ \text{m},\quad b=0{,}025\ \text{m},\quad L=1\ \text{m}$$
+      <span class="por">$R$ es el radio de los discos (donde está la masa) y $b$ el del eje (donde sale la cuerda): no se confunden.</span></li>
+    <li><b>Momento de inercia</b> de los dos discos:
+      $$I_{cm}=2\cdot\tfrac12m_dR^2=(0{,}050)(0{,}040)^2=8{,}0\times10^{-5}\ \text{kg}\cdot\text{m}^2$$
+      <span class="por">En $I$ entra $R$.</span></li>
+    <li><b>Fuerzas</b> (eje $y$ hacia abajo): peso $Mg$ en el cm y tensión $T$ hacia arriba.
+      <span class="por">La cuerda está fija y sube vertical: $T$ actúa a distancia $b$ del eje, así que su brazo es $b$.</span></li>
+    <li><b>Traslación:</b>
+      $$Mg-T=M\,a_{cm}\qquad(1)$$</li>
+    <li><b>Rotación respecto al cm</b> (solo $T$ da torca):
+      $$T\,b=I_{cm}\,\alpha\qquad(2)$$</li>
+    <li><b>Ligadura:</b>
+      $$a_{cm}=b\,\alpha\ \Rightarrow\ \alpha=\frac{a_{cm}}{b}\qquad(3)$$
+      <span class="por">El punto de la cuerda en contacto con el eje está instantáneamente en reposo (cuerda fija), igual que el punto de contacto de una rueda.</span></li>
+    <li><b>Despejar $T$</b> de (2) con (3), y sustituir en (1):
+      $$T=\frac{I_{cm}\,a_{cm}}{b^2}\ \Rightarrow\ Mg-\frac{I_{cm}a_{cm}}{b^2}=M\,a_{cm}\ \Rightarrow\ a_{cm}=\frac{g}{1+\dfrac{I_{cm}}{Mb^2}}$$
+      $$\frac{I_{cm}}{Mb^2}=\frac{8{,}0\times10^{-5}}{0{,}100\,(0{,}025)^2}=\frac{8{,}0\times10^{-5}}{6{,}25\times10^{-5}}=1{,}28$$</li>
+    <li><b>(b) Aceleración del cm:</b>
+      $$a_{cm}=\frac{9{,}8}{1+1{,}28}=\frac{9{,}8}{2{,}28}=\mathbf{4{,}30\ m/s^2}\ \text{(hacia abajo)}$$
+      <span class="por">Menor que $g$: parte de la energía se invierte en girar.</span></li>
+    <li><b>(a) Aceleración angular</b> (de 3):
+      $$\alpha=\frac{a_{cm}}{b}=\frac{4{,}298}{0{,}025}=\mathbf{172\ rad/s^2}$$</li>
+    <li><b>(c) Velocidad al terminar de desenrollarse.</b> Todas las fuerzas son constantes ⇒ $a_{cm}$ constante ⇒ MRUA. El cm baja $\Delta y=L=1$ m:
+      $$v^2=2\,a_{cm}\,\Delta y=2(4{,}298)(1)\ \Rightarrow\ v=\sqrt{8{,}596}=\mathbf{2{,}93\ m/s}$$
+      <span class="por">Se desenrollan 1 m de cuerda: el yoyó baja 1 m.</span></li>
+    <li><b>Comprobación por energía</b> (la tensión no trabaja, su punto de aplicación está en reposo):
+      $$MgL=\tfrac12Mv^2+\tfrac12I_{cm}\frac{v^2}{b^2}\ \Rightarrow\ v=\sqrt{\frac{2gL}{1+I_{cm}/(Mb^2)}}=\sqrt{\frac{19{,}6}{2{,}28}}=2{,}93\ \text{m/s}\ \checkmark$$</li>
+    <li><b>Datos extra</b> (no pedidos):
+      $$T=M(g-a_{cm})=0{,}100(9{,}8-4{,}298)=0{,}550\ \text{N}$$
+      $$t=\sqrt{\frac{2L}{a_{cm}}}=\sqrt{\frac{2}{4{,}298}}=0{,}68\ \text{s}$$
+      $$\omega_f=\frac{v}{b}=\frac{2{,}93}{0{,}025}=117\ \text{rad/s}$$</li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t10/yoyo-de-dos-discos-de-40-milimetros-de-radio-con.svg">
+<div class="figph" role="img" aria-label="Yoyó de dos discos de 40 milímetros de radio con la cuerda sobre un eje de 25 milímetros, con la tensión y el peso" style="aspect-ratio:360/258"></div>
+<figcaption>Examen 2018: el yoyó baja con $a_{cm}=g/(1+I/Mb^2)=4{,}30$ m/s², bastante menos que $g$ porque parte de la energía se gasta en girar. (Fuerzas con longitudes proporcionales.) <span class="src" data-l="P" data-ref="Diagrama propio del examen Febrero 2018 (1ª semana) P-1">P</span></figcaption>
+</figure>
+  <p><b>Resultado:</b> (a) $\alpha=172$ rad/s²; (b) $a_{cm}=4{,}30$ m/s²; (c) $v_{cm}=2{,}93$ m/s (con $g=9{,}81$ salen los mismos valores a 3 cifras).</p>
+  <div class="recipe"><b>Receta:</b> yoyó o carrete con la cuerda fija: $\sum F=Ma$, $\sum\tau_{cm}=I\alpha$ con el brazo $b$ del punto donde sale la cuerda, y $a=b\alpha$ ⇒ $a=\dfrac{g}{1+I_{cm}/(Mb^2)}$. Para la velocidad tras bajar $h$: energía con $\omega=v/b$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar $R$ en la ligadura ($a=R\alpha$) o $b$ en el momento de inercia; contar mal la masa de cada disco (50 g, no 100 g); creer que el yoyó cae con $g$.</p></div>
+
+  <div class="box tip"><span class="h">Cómo se reparte la puntuación</span><span class="src" data-l="P" data-ref="Reparto orientativo propio; el examen solo indica 3 puntos por problema">P</span>
+    <p>Reparto orientativo (el enunciado solo fija 3 puntos): a) $\alpha$ (1) · b) $a_{cm}$ (1) · c) velocidad (1). Dentro de cada apartado suele valorarse en este orden:</p>
+    <ul><li><b>Planteamiento (≈30 %):</b> dibujo del yoyó con $R$, $b$, el peso, la tensión y la ligadura $a=b\alpha$.</li><li><b>Ecuaciones (≈40 %):</b> $I_{cm}=2\cdot\tfrac12m_dR^2$, $Mg-T=Ma$, $Tb=I\alpha$ y $v=\sqrt{2a\,\Delta y}$ (comprobación por energía).</li><li><b>Resultado y unidades (≈30 %):</b> $\alpha=172$ rad/s², $a_{cm}=4{,}30$ m/s² y $v=2{,}93$ m/s con unidades.</li></ul>
+    <p>Un resultado numérico sin planteamiento rara vez puntúa; un planteamiento correcto con un fallo de cuentas sí suele puntuar la mayor parte.</p></div>
 </details>
 </details>
 <div class="nivel"><b>🟡 Práctica: 6 ejercicios más</b><span>Repiten métodos del núcleo con otros cuerpos (aro, piedra de afilar, bola que sube, yoyó en símbolos, corredor en una plataforma, bola de billar). Antes de leer los pasos, dibuja el diagrama de cuerpo libre y marca dónde actúa cada fuerza.</span></div>
-<details class="sol" id="e2"><summary>E2 — Problema 10.17: aro que rueda sin resbalar <span class="src" data-l="E" data-ref="Solucionario 10-8, Prob. 10.17">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.8-10.11 y fig. 10.13, pp. 310-311; Ejercicio 10.17, p. 330">U p.310-311, 330</span></summary>
-<p class="enun">Un aro de 2,20 kg y 1,20 m de diámetro rueda hacia la derecha sin resbalar sobre un piso horizontal a 2,60 rad/s constantes. a) ¿Qué tan rápido se mueve su centro? b) ¿Cuál es su energía cinética total? c) Calcule el vector velocidad, visto desde el suelo, de i) el punto más alto del aro; ii) el punto más bajo; iii) un punto en el lado derecho, a la mitad de la distancia entre la parte superior y la inferior. d) Lo mismo visto por alguien que se mueve con la velocidad del aro.</p>
-  <ol class="steps">
-    <li><b>a)</b> Rodar sin resbalar (10.11): $v_{cm}=R\omega=(0{,}600)(2{,}60)=\mathbf{1{,}56}$ m/s.</li>
-    <li><b>b)</b> (10.8) con $I_{cm}=MR^2$ (aro) y $\omega=v_{cm}/R$: $K=\tfrac12Mv_{cm}^2+\tfrac12Mv_{cm}^2=Mv_{cm}^2=(2{,}20)(1{,}56)^2=\mathbf{5{,}35}$ J (mitad traslación, mitad rotación: propio del aro).</li>
-    <li><b>Idea para c).</b> Velocidad de un punto = velocidad del cm + velocidad de giro alrededor del cm (10.9). La de giro tiene módulo $R\omega=v_{cm}$ y es tangente; el aro rueda hacia la derecha, luego gira en sentido horario.</li>
-    <li><b>c-i)</b> Arriba, la de giro apunta a la derecha: $v=2v_{cm}=\mathbf{3{,}12}$ m/s hacia la derecha. <b>c-ii)</b> Abajo apunta a la izquierda: $v=v_{cm}-R\omega=\mathbf{0}$ (por eso «no resbala»). <b>c-iii)</b> Punto derecho: la de giro apunta hacia abajo y se suma a $v_{cm}$: $|v|=\sqrt2\,v_{cm}=\mathbf{2{,}21}$ m/s a 45° por debajo de la horizontal.</li>
-    <li><b>d)</b> Para quien se mueve con el centro, el aro solo gira alrededor de un eje fijo: todos los puntos del borde a 1,56 m/s, tangentes: i) a la derecha; ii) a la izquierda; iii) hacia abajo.</li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t10/aro-que-rueda-sin-resbalar-con-los-vectores-velo.svg">
-<div class="figph" role="img" aria-label="Aro que rueda sin resbalar con los vectores velocidad del punto más alto, el centro, el punto de la derecha y el punto de contacto" style="aspect-ratio:360/196"></div>
-<figcaption>Problema 10.17: velocidad de cada punto = $\vec v_{cm}$ + velocidad de giro ($R\omega=v_{cm}$, tangente): arriba $2v_{cm}$, contacto 0, lateral $\sqrt2\,v_{cm}$ a 45° hacia abajo. (Flechas a escala.) <span class="src" data-l="P" data-ref="Diagrama propio del problema 10.17 (Solucionario 10-8)">P</span></figcaption>
-</figure>
-  <div class="recipe"><b>Receta:</b> en rodadura, $\vec v_{punto}=\vec v_{cm}+\vec v_{giro}$ con $|\vec v_{giro}|=R\omega=v_{cm}$ y tangente: el punto de contacto está en reposo y el de arriba va a $2v_{cm}$.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Creer que todos los puntos del aro van a $v_{cm}$ respecto al suelo; usar $I=\tfrac12MR^2$ para un aro.</p></div>
-</details>
-<details class="sol" id="e6"><summary>E6 — Problema 10.54: piedra de afilar con fricción en el hacha y en el eje <span class="src" data-l="E" data-ref="Solucionario 10-21, Prob. 10.54">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §10.2, ec. 10.7, pp. 306-308; §9.2, ec. 9.7, pp. 278-279; §5.3, ec. 5.3, p. 143; Problema 10.54, p. 333">U p.306-308, 333</span></summary>
-<p class="enun">Una piedra de afilar de 50,0 kg es un disco sólido de 0,520 m de diámetro. Se empuja un hacha contra el borde con una fuerza normal de 160 N. El coeficiente de fricción cinética entre la piedra y el hacha es 0,60, y hay una torca de fricción constante de 6,50 N·m entre el eje de la piedra y sus cojinetes. a) ¿Qué fuerza debe aplicarse tangencialmente al extremo de una manivela de 0,500 m para llevar la piedra del reposo a 120 rev/min en 9,00 s? b) Una vez a 120 rev/min, ¿qué fuerza tangencial mantendría la rapidez angular constante? c) ¿Cuánto tarda la piedra en detenerse si solo actúa la fricción del eje y gira a 120 rev/min?</p>
+<details class="sol" id="e7"><summary>E7 — Problema 10.67: el yoyo <span class="src" data-l="E" data-ref="Solucionario 10-28, Prob. 10.67">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.12-10.13 y ejemplo 10.6, pp. 313-314; Problema 10.67, p. 334">U p.313-314, 334</span></summary>
+<p class="enun">Un yoyo consiste en dos discos uniformes, cada uno de masa $m$ y radio $R$, conectados por un eje ligero de radio $b$. Una cuerda delgada y ligera se enrolla varias veces en el eje y luego se mantiene fija mientras el yoyo se libera del reposo y cae al desenrollarse el hilo. Calcule las aceleraciones lineal y angular del yoyo y la tensión en la cuerda.</p>
   <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
     <ul>
-      <li>Disco macizo: $I=\tfrac12MR^2$</li>
-      <li>Rotación con eje fijo: $\sum\tau=I\,\alpha$ (torcas motrices $-$ resistentes)</li>
-      <li>Fricción cinética: $f=\mu_k\,n$; torca de una fuerza tangente: $\tau=F\,r$</li>
-      <li>Cinemática angular (α constante): $\omega=\omega_0+\alpha t$</li>
-      <li>Unidades: $1\ \text{rev/min}=2\pi/60\ \text{rad/s}$</li>
+      <li>Traslación: $2mg-T=2m\,a$ (masa total $2m$)</li>
+      <li>Rotación respecto al cm: $T\,b=I_{cm}\,\alpha$, con $I_{cm}=2\cdot\tfrac12mR^2=mR^2$</li>
+      <li>Ligadura (cuerda fija): $a=b\,\alpha$</li>
     </ul></div>
   <ol class="steps">
-    <li><b>Unidades</b> (radio $R=0{,}520/2=0{,}260$ m):
-      $$\omega=120\ \frac{\text{rev}}{\text{min}}\cdot\frac{2\pi\ \text{rad}}{1\ \text{rev}}\cdot\frac{1\ \text{min}}{60\ \text{s}}=4\pi=12{,}57\ \text{rad/s}$$</li>
-    <li><b>Momento de inercia:</b>
-      $$I=\tfrac12MR^2=\tfrac12(50{,}0)(0{,}260)^2=1{,}69\ \text{kg}\cdot\text{m}^2$$</li>
-    <li><b>Torca neta necesaria</b> para pasar de 0 a 12,57 rad/s en 9,00 s:
-      $$\alpha=\frac{\omega}{t}=\frac{12{,}57}{9{,}00}=1{,}396\ \text{rad/s}^2\ \Rightarrow\ \tau_{neta}=I\alpha=1{,}69(1{,}396)=2{,}36\ \text{N}\cdot\text{m}$$</li>
-    <li><b>Torcas resistentes.</b> Hacha: $f=\mu_kn=0{,}60(160)=96{,}0$ N, tangente al borde:
-      $$\tau_{hacha}=f\,R=96{,}0(0{,}260)=24{,}96\ \text{N}\cdot\text{m},\qquad\tau_{eje}=6{,}50\ \text{N}\cdot\text{m}$$</li>
-    <li><b>a) Fuerza en la manivela</b> (sentido positivo = el del giro):
-      $$F(0{,}500)-24{,}96-6{,}50=2{,}36\ \Rightarrow\ F=\frac{2{,}36+6{,}50+24{,}96}{0{,}500}=\mathbf{67{,}6\ N}$$</li>
-    <li><b>b) $\omega$ constante</b> ⇒ $\alpha=0$ ⇒ $\sum\tau=0$:
-      $$F'(0{,}500)-24{,}96-6{,}50=0\ \Rightarrow\ F'=\frac{31{,}46}{0{,}500}=\mathbf{62{,}9\ N}$$</li>
-    <li><b>c) Solo frena el eje</b> ($\tau=-6{,}50$ N·m):
-      $$\alpha=\frac{-6{,}50}{1{,}69}=-3{,}85\ \text{rad/s}^2\ \Rightarrow\ t=\frac{\omega_0}{|\alpha|}=\frac{12{,}57}{3{,}85}=\mathbf{3{,}27\ s}$$</li>
-    </ol>
-  <figure class="fig" data-svg="../assets/figs/t10/piedra-de-afilar-con-una-manivela-de-0-5-metros-.svg">
-<div class="figph" role="img" aria-label="Piedra de afilar con una manivela de 0,5 metros, el hacha apretando el borde con fricción y el rozamiento del eje" style="aspect-ratio:360/222"></div>
-<figcaption>Problema 10.54 a): sentido positivo = el del giro. La manivela da $+33{,}82$ N·m; el hacha ($\mu_kn=96$ N a 0,260 m) $-24{,}96$ y el eje $-6{,}50$: sobra $2{,}36$ N·m para acelerar. <span class="src" data-l="P" data-ref="Diagrama propio del problema 10.54 (Solucionario 10-21)">P</span></figcaption>
+    <li><b>Ecuaciones</b> (eje hacia abajo):
+      $$2mg-T=2m\,a\qquad(1)\qquad\qquad T\,b=mR^2\,\alpha=mR^2\frac{a}{b}\ \Rightarrow\ T=\frac{mR^2\,a}{b^2}\qquad(2)$$</li>
+    <li><b>Aceleración lineal</b> (2) en (1):
+      $$2mg=a\left(2m+\frac{mR^2}{b^2}\right)\ \Rightarrow\ a=\frac{2\,b^2\,g}{2b^2+R^2}$$</li>
+    <li><b>Aceleración angular y tensión:</b>
+      $$\alpha=\frac ab=\frac{2\,b\,g}{2b^2+R^2},\qquad T=2m(g-a)=\frac{2\,m\,g\,R^2}{2b^2+R^2}$$</li>
+    <li><b>Casos límite.</b>
+      <span class="por">$b\to0$: $a\to0$ y $T\to2mg$ (se queda girando). $b\to R$: $a\to\tfrac23g$, el cilindro macizo del ejemplo 10.6 ✓. Con los datos de X2 ($R=40$ mm, $b=25$ mm): $a=g/2{,}28=4{,}30$ m/s² ✓.</span></li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t10/grafica-de-la-aceleracion-del-yoyo-en-unidades-d.svg">
+<div class="figph" role="img" aria-label="Gráfica de la aceleración del yoyó en unidades de g frente al cociente entre el radio del eje y el de los discos" style="aspect-ratio:320/200"></div>
+<figcaption>Problema 10.67: $a/g=1/(1+R^2/2b^2)$. Con eje muy fino el yoyó casi no baja ($a\to0$); con $b\to R$ se comporta como un cilindro ($a\to\tfrac23g$). <span class="src" data-l="P" data-ref="Diagrama propio del problema 10.67 (Solucionario 10-28)">P</span></figcaption>
 </figure>
-  <div class="recipe"><b>Receta:</b> varias torcas en un eje fijo: $\sum\tau=(\text{motrices})-(\text{resistentes})=I\alpha$; convierte rpm a rad/s y despeja. Si piden «mantener $\omega$ constante», $\sum\tau=0$.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Usar el diámetro como radio; dejar $\omega$ en rev/min; olvidar alguna torca resistente; usar el brazo del borde (0,26 m) para la fuerza de la manivela (0,50 m).</p></div>
+  <div class="recipe"><b>Receta:</b> es X2 en símbolos; compara siempre con los casos límite.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Igual que en X2: confundir $R$ (donde está la masa) con $b$ (donde está la cuerda).</p></div>
 </details>
 <details class="sol" id="e5"><summary>E5 — Problema 10.26: bola de bolos que sube rodando por una rampa <span class="src" data-l="E" data-ref="Solucionario 10-12, Prob. 10.26">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.12-10.13 y ejemplo 10.7, pp. 313-314; §5.3, p. 144; Ejercicio 10.26, pp. 330-331">U p.313-314, 330</span></summary>
 <p class="enun">Una bola de bolos sube rodando sin resbalar por una rampa que forma un ángulo $\beta$ con la horizontal (véase el ejemplo 10.7). Trátela como una esfera sólida uniforme, sin tomar en cuenta los orificios. a) Dibuje el diagrama de cuerpo libre y explique por qué la fricción debe tener dirección cuesta arriba. b) ¿Qué aceleración tiene el centro de masa? c) ¿Qué coeficiente mínimo de fricción estática se necesita para que la bola no resbale?</p>
@@ -907,31 +883,6 @@
 </figure>
   <div class="recipe"><b>Receta:</b> el sentido de la fricción lo decide la $\alpha$ necesaria, no el sentido del movimiento. Para $I=cMR^2$: $a=\dfrac{g\sin\beta}{1+c}$ y $\mu_{s,min}=\dfrac{c}{1+c}\tan\beta$, tanto subiendo como bajando.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Dibujar la fricción cuesta abajo «porque se opone al movimiento de subida».</p></div>
-</details>
-<details class="sol" id="e7"><summary>E7 — Problema 10.67: el yoyo <span class="src" data-l="E" data-ref="Solucionario 10-28, Prob. 10.67">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.12-10.13 y ejemplo 10.6, pp. 313-314; Problema 10.67, p. 334">U p.313-314, 334</span></summary>
-<p class="enun">Un yoyo consiste en dos discos uniformes, cada uno de masa $m$ y radio $R$, conectados por un eje ligero de radio $b$. Una cuerda delgada y ligera se enrolla varias veces en el eje y luego se mantiene fija mientras el yoyo se libera del reposo y cae al desenrollarse el hilo. Calcule las aceleraciones lineal y angular del yoyo y la tensión en la cuerda.</p>
-  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
-    <ul>
-      <li>Traslación: $2mg-T=2m\,a$ (masa total $2m$)</li>
-      <li>Rotación respecto al cm: $T\,b=I_{cm}\,\alpha$, con $I_{cm}=2\cdot\tfrac12mR^2=mR^2$</li>
-      <li>Ligadura (cuerda fija): $a=b\,\alpha$</li>
-    </ul></div>
-  <ol class="steps">
-    <li><b>Ecuaciones</b> (eje hacia abajo):
-      $$2mg-T=2m\,a\qquad(1)\qquad\qquad T\,b=mR^2\,\alpha=mR^2\frac{a}{b}\ \Rightarrow\ T=\frac{mR^2\,a}{b^2}\qquad(2)$$</li>
-    <li><b>Aceleración lineal</b> (2) en (1):
-      $$2mg=a\left(2m+\frac{mR^2}{b^2}\right)\ \Rightarrow\ a=\frac{2\,b^2\,g}{2b^2+R^2}$$</li>
-    <li><b>Aceleración angular y tensión:</b>
-      $$\alpha=\frac ab=\frac{2\,b\,g}{2b^2+R^2},\qquad T=2m(g-a)=\frac{2\,m\,g\,R^2}{2b^2+R^2}$$</li>
-    <li><b>Casos límite.</b>
-      <span class="por">$b\to0$: $a\to0$ y $T\to2mg$ (se queda girando). $b\to R$: $a\to\tfrac23g$, el cilindro macizo del ejemplo 10.6 ✓. Con los datos de X2 ($R=40$ mm, $b=25$ mm): $a=g/2{,}28=4{,}30$ m/s² ✓.</span></li>
-  </ol>
-  <figure class="fig" data-svg="../assets/figs/t10/grafica-de-la-aceleracion-del-yoyo-en-unidades-d.svg">
-<div class="figph" role="img" aria-label="Gráfica de la aceleración del yoyó en unidades de g frente al cociente entre el radio del eje y el de los discos" style="aspect-ratio:320/200"></div>
-<figcaption>Problema 10.67: $a/g=1/(1+R^2/2b^2)$. Con eje muy fino el yoyó casi no baja ($a\to0$); con $b\to R$ se comporta como un cilindro ($a\to\tfrac23g$). <span class="src" data-l="P" data-ref="Diagrama propio del problema 10.67 (Solucionario 10-28)">P</span></figcaption>
-</figure>
-  <div class="recipe"><b>Receta:</b> es X2 en símbolos; compara siempre con los casos límite.</div>
-  <div class="box warn"><span class="h">Error típico</span><p>Igual que en X2: confundir $R$ (donde está la masa) con $b$ (donde está la cuerda).</p></div>
 </details>
 <details class="sol" id="e9"><summary>E9 — Problema 10.87: corredor sobre una tornamesa <span class="src" data-l="E" data-ref="Solucionario 10-36/10-37, Prob. 10.87">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §10.5-10.6, ecs. 10.25, 10.28 y 10.30, pp. 317-322; ejemplo 10.11; Problema 10.87, p. 336">U p.317-322, 336</span></summary>
 <p class="enun">Un hombre de 55 kg corre alrededor del borde de una tornamesa horizontal montada en un eje vertical sin fricción que pasa por su centro. La velocidad del corredor respecto a la Tierra tiene magnitud 2,8 m/s. La tornamesa gira en la dirección opuesta con velocidad angular de magnitud 0,20 rad/s respecto a la Tierra. Su radio es 3,0 m y su momento de inercia respecto al eje es 80 kg·m². Calcule la velocidad angular final del sistema si el corredor se detiene respecto a la tornamesa (puede considerarse una partícula).</p>
@@ -991,6 +942,55 @@
 <figcaption>Problema práctico de U: el golpe a $h=\tfrac25R$ por encima del centro da justo $v_0=R\omega_0$ y la bola rueda sin deslizar desde el principio. <span class="src" data-l="P" data-ref="Diagrama propio del problema práctico de U (p. 327)">P</span></figcaption>
 </figure>
   <div class="recipe"><b>Receta:</b> golpe horizontal a altura $h$: $v_0=J/m$ y $\omega_0=Jh/I$. Para rodar al instante, $v_0=R\omega_0$. Si desliza, usa $L$ respecto al punto de contacto (la fricción no da torca respecto a él) para saltarte la fuerza de fricción.</div>
+</details>
+<details class="sol" id="e6"><summary>E6 — Problema 10.54: piedra de afilar con fricción en el hacha y en el eje <span class="src" data-l="E" data-ref="Solucionario 10-21, Prob. 10.54">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §10.2, ec. 10.7, pp. 306-308; §9.2, ec. 9.7, pp. 278-279; §5.3, ec. 5.3, p. 143; Problema 10.54, p. 333">U p.306-308, 333</span></summary>
+<p class="enun">Una piedra de afilar de 50,0 kg es un disco sólido de 0,520 m de diámetro. Se empuja un hacha contra el borde con una fuerza normal de 160 N. El coeficiente de fricción cinética entre la piedra y el hacha es 0,60, y hay una torca de fricción constante de 6,50 N·m entre el eje de la piedra y sus cojinetes. a) ¿Qué fuerza debe aplicarse tangencialmente al extremo de una manivela de 0,500 m para llevar la piedra del reposo a 120 rev/min en 9,00 s? b) Una vez a 120 rev/min, ¿qué fuerza tangencial mantendría la rapidez angular constante? c) ¿Cuánto tarda la piedra en detenerse si solo actúa la fricción del eje y gira a 120 rev/min?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Disco macizo: $I=\tfrac12MR^2$</li>
+      <li>Rotación con eje fijo: $\sum\tau=I\,\alpha$ (torcas motrices $-$ resistentes)</li>
+      <li>Fricción cinética: $f=\mu_k\,n$; torca de una fuerza tangente: $\tau=F\,r$</li>
+      <li>Cinemática angular (α constante): $\omega=\omega_0+\alpha t$</li>
+      <li>Unidades: $1\ \text{rev/min}=2\pi/60\ \text{rad/s}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Unidades</b> (radio $R=0{,}520/2=0{,}260$ m):
+      $$\omega=120\ \frac{\text{rev}}{\text{min}}\cdot\frac{2\pi\ \text{rad}}{1\ \text{rev}}\cdot\frac{1\ \text{min}}{60\ \text{s}}=4\pi=12{,}57\ \text{rad/s}$$</li>
+    <li><b>Momento de inercia:</b>
+      $$I=\tfrac12MR^2=\tfrac12(50{,}0)(0{,}260)^2=1{,}69\ \text{kg}\cdot\text{m}^2$$</li>
+    <li><b>Torca neta necesaria</b> para pasar de 0 a 12,57 rad/s en 9,00 s:
+      $$\alpha=\frac{\omega}{t}=\frac{12{,}57}{9{,}00}=1{,}396\ \text{rad/s}^2\ \Rightarrow\ \tau_{neta}=I\alpha=1{,}69(1{,}396)=2{,}36\ \text{N}\cdot\text{m}$$</li>
+    <li><b>Torcas resistentes.</b> Hacha: $f=\mu_kn=0{,}60(160)=96{,}0$ N, tangente al borde:
+      $$\tau_{hacha}=f\,R=96{,}0(0{,}260)=24{,}96\ \text{N}\cdot\text{m},\qquad\tau_{eje}=6{,}50\ \text{N}\cdot\text{m}$$</li>
+    <li><b>a) Fuerza en la manivela</b> (sentido positivo = el del giro):
+      $$F(0{,}500)-24{,}96-6{,}50=2{,}36\ \Rightarrow\ F=\frac{2{,}36+6{,}50+24{,}96}{0{,}500}=\mathbf{67{,}6\ N}$$</li>
+    <li><b>b) $\omega$ constante</b> ⇒ $\alpha=0$ ⇒ $\sum\tau=0$:
+      $$F'(0{,}500)-24{,}96-6{,}50=0\ \Rightarrow\ F'=\frac{31{,}46}{0{,}500}=\mathbf{62{,}9\ N}$$</li>
+    <li><b>c) Solo frena el eje</b> ($\tau=-6{,}50$ N·m):
+      $$\alpha=\frac{-6{,}50}{1{,}69}=-3{,}85\ \text{rad/s}^2\ \Rightarrow\ t=\frac{\omega_0}{|\alpha|}=\frac{12{,}57}{3{,}85}=\mathbf{3{,}27\ s}$$</li>
+    </ol>
+  <figure class="fig" data-svg="../assets/figs/t10/piedra-de-afilar-con-una-manivela-de-0-5-metros-.svg">
+<div class="figph" role="img" aria-label="Piedra de afilar con una manivela de 0,5 metros, el hacha apretando el borde con fricción y el rozamiento del eje" style="aspect-ratio:360/222"></div>
+<figcaption>Problema 10.54 a): sentido positivo = el del giro. La manivela da $+33{,}82$ N·m; el hacha ($\mu_kn=96$ N a 0,260 m) $-24{,}96$ y el eje $-6{,}50$: sobra $2{,}36$ N·m para acelerar. <span class="src" data-l="P" data-ref="Diagrama propio del problema 10.54 (Solucionario 10-21)">P</span></figcaption>
+</figure>
+  <div class="recipe"><b>Receta:</b> varias torcas en un eje fijo: $\sum\tau=(\text{motrices})-(\text{resistentes})=I\alpha$; convierte rpm a rad/s y despeja. Si piden «mantener $\omega$ constante», $\sum\tau=0$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Usar el diámetro como radio; dejar $\omega$ en rev/min; olvidar alguna torca resistente; usar el brazo del borde (0,26 m) para la fuerza de la manivela (0,50 m).</p></div>
+</details>
+<details class="sol" id="e2"><summary>E2 — Problema 10.17: aro que rueda sin resbalar <span class="src" data-l="E" data-ref="Solucionario 10-8, Prob. 10.17">E</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U §10.3, ecs. 10.8-10.11 y fig. 10.13, pp. 310-311; Ejercicio 10.17, p. 330">U p.310-311, 330</span></summary>
+<p class="enun">Un aro de 2,20 kg y 1,20 m de diámetro rueda hacia la derecha sin resbalar sobre un piso horizontal a 2,60 rad/s constantes. a) ¿Qué tan rápido se mueve su centro? b) ¿Cuál es su energía cinética total? c) Calcule el vector velocidad, visto desde el suelo, de i) el punto más alto del aro; ii) el punto más bajo; iii) un punto en el lado derecho, a la mitad de la distancia entre la parte superior y la inferior. d) Lo mismo visto por alguien que se mueve con la velocidad del aro.</p>
+  <ol class="steps">
+    <li><b>a)</b> Rodar sin resbalar (10.11): $v_{cm}=R\omega=(0{,}600)(2{,}60)=\mathbf{1{,}56}$ m/s.</li>
+    <li><b>b)</b> (10.8) con $I_{cm}=MR^2$ (aro) y $\omega=v_{cm}/R$: $K=\tfrac12Mv_{cm}^2+\tfrac12Mv_{cm}^2=Mv_{cm}^2=(2{,}20)(1{,}56)^2=\mathbf{5{,}35}$ J (mitad traslación, mitad rotación: propio del aro).</li>
+    <li><b>Idea para c).</b> Velocidad de un punto = velocidad del cm + velocidad de giro alrededor del cm (10.9). La de giro tiene módulo $R\omega=v_{cm}$ y es tangente; el aro rueda hacia la derecha, luego gira en sentido horario.</li>
+    <li><b>c-i)</b> Arriba, la de giro apunta a la derecha: $v=2v_{cm}=\mathbf{3{,}12}$ m/s hacia la derecha. <b>c-ii)</b> Abajo apunta a la izquierda: $v=v_{cm}-R\omega=\mathbf{0}$ (por eso «no resbala»). <b>c-iii)</b> Punto derecho: la de giro apunta hacia abajo y se suma a $v_{cm}$: $|v|=\sqrt2\,v_{cm}=\mathbf{2{,}21}$ m/s a 45° por debajo de la horizontal.</li>
+    <li><b>d)</b> Para quien se mueve con el centro, el aro solo gira alrededor de un eje fijo: todos los puntos del borde a 1,56 m/s, tangentes: i) a la derecha; ii) a la izquierda; iii) hacia abajo.</li>
+  </ol>
+  <figure class="fig" data-svg="../assets/figs/t10/aro-que-rueda-sin-resbalar-con-los-vectores-velo.svg">
+<div class="figph" role="img" aria-label="Aro que rueda sin resbalar con los vectores velocidad del punto más alto, el centro, el punto de la derecha y el punto de contacto" style="aspect-ratio:360/196"></div>
+<figcaption>Problema 10.17: velocidad de cada punto = $\vec v_{cm}$ + velocidad de giro ($R\omega=v_{cm}$, tangente): arriba $2v_{cm}$, contacto 0, lateral $\sqrt2\,v_{cm}$ a 45° hacia abajo. (Flechas a escala.) <span class="src" data-l="P" data-ref="Diagrama propio del problema 10.17 (Solucionario 10-8)">P</span></figcaption>
+</figure>
+  <div class="recipe"><b>Receta:</b> en rodadura, $\vec v_{punto}=\vec v_{cm}+\vec v_{giro}$ con $|\vec v_{giro}|=R\omega=v_{cm}$ y tangente: el punto de contacto está en reposo y el de arriba va a $2v_{cm}$.</div>
+  <div class="box warn"><span class="h">Error típico</span><p>Creer que todos los puntos del aro van a $v_{cm}$ respecto al suelo; usar $I=\tfrac12MR^2$ para un aro.</p></div>
 </details>
 <div class="nivel"><b>🔎 Encuentra el error</b><span>Cuatro soluciones con un fallo típico. Localiza dónde se rompe antes de abrir la respuesta: es la mejor forma de que no te pase en el examen.</span></div>
 <details class="mas"><summary>1. Torca con el ángulo equivocado <span class="src" data-l="P" data-ref="Ejercicio propio para detectar errores">P</span></summary>
