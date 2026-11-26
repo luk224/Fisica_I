@@ -1,16 +1,34 @@
 <p class="enun">Una varilla de longitud $L$ y masa $M$ puede rotar libremente alrededor de un pivote situado en su extremo superior A. Una bala de masa $m$ y velocidad $v$ golpea la varilla a una distancia «$a$» de su extremo A y se incrusta en ella. a) Calcular el momento angular del sistema con respecto a A inmediatamente después de que la bala choque con la varilla. b) Determinar la cantidad de movimiento del sistema inmediatamente antes y después del choque explicando la respuesta. c) ¿Cuál es la cantidad de energía que se desprende de la colisión? (3 puntos.)</p>
 {{fig:x9-planteamiento}}
 {{fig:varilla-colgada-de-un-pivote-en-su-extremo-super}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Momento angular de una partícula: $L=m\,v\,l$; de un sólido: $L=I\,\omega$</li>
+      <li>Conservación de $L$ respecto al pivote A (la fuerza del pivote no da torca)</li>
+      <li>Inercia respecto a A: $I_A=\tfrac13ML^2+ma^2$</li>
+      <li>Cantidad de movimiento: $P=m\,v$; velocidad de un punto: $v=\omega\,r$</li>
+      <li>Energía: $K=\tfrac12mv^2$, $K=\tfrac12I\omega^2=\dfrac{L^2}{2I}$; $Q=K_1-K_2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Qué se conserva.</b> El sistema es {varilla + bala}. Durante el choque (muy breve) el pivote ejerce sobre la varilla una fuerza <b>impulsiva</b> desconocida: es una fuerza externa que no se puede despreciar. Pero esa fuerza actúa <i>en A</i>, así que su momento respecto a A es nulo (y el del peso, finito, es despreciable en ese instante): se conserva el <b>momento angular respecto a A</b>, no la cantidad de movimiento.</li>
-    <li><b>(a) Momento angular (tema 10).</b> Justo antes, solo la bala lleva momento angular respecto a A: $L_A=m\,v\,a$ (la velocidad es perpendicular al brazo $a$). Justo después vale lo mismo: $L_A=m\,v\,a$. Con $I_A=\tfrac13ML^2+ma^2$ (varilla respecto a un extremo más bala), la velocidad angular es $\omega=\dfrac{m\,v\,a}{I_A}$. El cálculo detallado del momento angular y de $I$ es del tema 10; aquí solo hace falta el resultado.</li>
-    <li><b>(b) Cantidad de movimiento.</b> Antes: $P_{antes}=m\,v$ (horizontal). Después, la varilla gira con $\omega$ y su centro de masa se mueve a $\omega L/2$, la bala a $\omega a$: $P_{desp}=\omega\left(\tfrac12ML+ma\right)=M_{tot}v_{cm}$ con $M_{tot}=M+m$. La diferencia es el impulso del pivote:
-    $$P_{desp}-P_{antes}=J_{pivote}=\frac{mvML\,(3a-2L)}{2\,(ML^2+3ma^2)}$$
-    Es distinta de cero salvo si $a=\tfrac23L$ (el llamado centro de percusión, donde el pivote no recibe impulso). Por tanto, <b>en general la cantidad de movimiento no se conserva</b>: cambia justo lo que impulsa el pivote. Si $a\lt\tfrac23L$ disminuye; si $a>\tfrac23L$ aumenta (el pivote «empuja» hacia delante).</li>
-    <li><b>(c) Energía que se desprende.</b> Antes solo hay la cinética de la bala, $K_1=\tfrac12mv^2$. Después, la rotación del conjunto: $K_2=\tfrac12I_A\omega^2=\dfrac{(mva)^2}{2I_A}$. La energía perdida (convertida en energía interna: deformación y calentamiento) es
-    $$Q=K_1-K_2=\tfrac12mv^2\left(1-\frac{ma^2}{I_A}\right)=\frac12\,mv^2\;\frac{ML^2}{ML^2+3ma^2}$$
-    Si la bala es muy ligera ($3ma^2\ll ML^2$), se pierde casi toda su energía cinética.</li>
-    <li><b>Comprobación numérica</b> (datos propios, el enunciado es simbólico): $M=2$ kg, $L=1$ m, $m=0{,}010$ kg, $a=0{,}80$ m, $v=300$ m/s. $I_A=0{,}6731$ kg·m², $\omega=3{,}57$ rad/s, $K_1=450$ J y $Q=445{,}7$ J (el 99 %). $P_{antes}=3{,}00$ y $P_{desp}=3{,}59$ kg·m/s: con $a>\tfrac23L$ aumenta, como indica (b).</li>
+    <li><b>Qué se conserva.</b> El pivote da una fuerza impulsiva desconocida durante el choque, pero aplicada <b>en A</b>.
+      <span class="por">Su torca respecto a A es nula (y el peso, finito, no cuenta en un choque instantáneo): se conserva $L_A$, no $P$.</span></li>
+    <li><b>(a) Momento angular</b> (antes solo la bala; $l=a$):
+      $$L_A=m\,v\,a\quad\text{(antes y justo después)}$$
+      $$\omega=\frac{L_A}{I_A}=\frac{m\,v\,a}{\tfrac13ML^2+ma^2}=\frac{3\,m\,v\,a}{ML^2+3\,m\,a^2}$$</li>
+    <li><b>(b) Cantidad de movimiento.</b> Antes:
+      $$P_{antes}=m\,v$$
+      Después (cm de la varilla a $\omega L/2$, bala a $\omega a$):
+      $$P_{desp}=M\,\omega\frac L2+m\,\omega\,a=\omega\Big(\tfrac12ML+ma\Big)$$
+      $$P_{desp}-P_{antes}=J_{pivote}=\frac{m\,v\,M\,L\,(3a-2L)}{2\,(ML^2+3ma^2)}$$
+      <span class="por">Distinta de cero salvo si $a=\tfrac23L$ (centro de percusión): en general $P$ no se conserva, el pivote da un impulso. Si $a<\tfrac23L$ disminuye; si $a>\tfrac23L$ aumenta.</span></li>
+    <li><b>(c) Energía desprendida:</b>
+      $$K_1=\tfrac12mv^2,\qquad K_2=\tfrac12I_A\omega^2=\frac{(mva)^2}{2I_A}$$
+      $$Q=K_1-K_2=\tfrac12mv^2\Big(1-\frac{ma^2}{I_A}\Big)=\frac{mv^2}{2}\cdot\frac{ML^2}{ML^2+3ma^2}$$
+      <span class="por">Si la bala es muy ligera, se pierde casi toda su energía cinética.</span></li>
+    <li><b>Comprobación numérica</b> (datos propios: $M=2$ kg, $L=1$ m, $m=0{,}010$ kg, $a=0{,}80$ m, $v=300$ m/s):
+      $$I_A=\tfrac13(2)(1)^2+0{,}010(0{,}80)^2=0{,}6731\ \text{kg·m}^2,\qquad\omega=\frac{2{,}40}{0{,}6731}=3{,}57\ \text{rad/s}$$
+      $$K_1=450\ \text{J},\quad Q=445{,}7\ \text{J}\ (99\ \%),\qquad P_{antes}=3{,}00,\quad P_{desp}=3{,}59\ \text{kg·m/s}$$
+      <span class="por">Con $a>\tfrac23L$ la cantidad de movimiento aumenta, como indica (b).</span></li>
   </ol>
   <p><b>Resultado:</b> a) $L_A=mva$; b) $P_{antes}=mv$ y $P_{desp}=\omega(ML/2+ma)\ne P_{antes}$ (el pivote ejerce un impulso); c) $Q=\dfrac{mv^2}{2}\dfrac{ML^2}{ML^2+3ma^2}$.</p>
   <div class="recipe"><b>Receta:</b> choque con un eje fijo: se conserva el momento angular respecto al eje (la fuerza del eje no hace momento), no la cantidad de movimiento. La energía cinética final es $L_A^2/(2I_A)$ y la diferencia con la inicial es la energía perdida.</div>

@@ -1,11 +1,20 @@
 <p class="enun">Una bala de rifle de 8,00 g golpea y se incrusta en un bloque de 0,992 kg que descansa sobre una superficie horizontal sin fricción, sujeto a un resorte. El impacto comprime el resorte 15,0 cm. La calibración del resorte indica que se requiere una fuerza de 0,750 N para comprimirlo 0,250 cm. a) Calcule la magnitud de la velocidad del bloque inmediatamente después del impacto. b) ¿Qué rapidez tenía inicialmente la bala?</p>
 {{fig:energia-cinetica-de-la-bala-y-energia-final-alma}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ley de Hooke: $k=F/x$</li>
+      <li>Energía tras el choque: $\tfrac12MV^2=\tfrac12kx^2$</li>
+      <li>Choque totalmente inelástico: $m\,v_1=M\,V$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Constante del resorte.</b> Ley de Hooke: $k=F/x=0{,}750/0{,}00250=300$ N/m.</li>
-    <li><b>Razona hacia atrás.</b> Conoces el final (la compresión), así que primero energía (después del choque) y luego cantidad de movimiento (el choque).</li>
-    <li><b>(a) Tras el choque.</b> Masa total $M=0{,}992+0{,}008=1{,}000$ kg. Solo trabaja el resorte: $\tfrac12MV^2=\tfrac12kx^2\Rightarrow V=x\sqrt{k/M}=0{,}150\sqrt{300}=\mathbf{2{,}60}$ m/s.</li>
-    <li><b>(b) Choque totalmente inelástico.</b> $mv_1=MV\Rightarrow v_1=\dfrac{1{,}000}{0{,}00800}(2{,}598)=\mathbf{325}$ m/s.</li>
-    <li><b>Balance.</b> $K$ de la bala $=422$ J; energía almacenada en el resorte $=3{,}38$ J. Más del 99 % se disipa en el choque: por eso no se puede igualar $\tfrac12mv_1^2$ a $\tfrac12kx^2$.</li>
+    <li><b>Constante del resorte:</b>
+      $$k=\frac{F}{x}=\frac{0{,}750}{0{,}00250}=300\ \text{N/m}$$</li>
+    <li><b>(a) Velocidad tras el choque</b> (razonamos hacia atrás: conocemos el final). Masa total $M=0{,}992+0{,}008=1{,}000$ kg:
+      $$V=x\sqrt{\frac kM}=0{,}150\sqrt{\frac{300}{1{,}000}}=0{,}150(17{,}32)=\mathbf{2{,}60\ m/s}$$</li>
+    <li><b>(b) Velocidad de la bala</b> (el choque conserva $P$):
+      $$v_1=\frac{M\,V}{m}=\frac{1{,}000(2{,}598)}{0{,}00800}=\mathbf{325\ m/s}$$</li>
+    <li><b>Balance:</b> $K$ de la bala $=\tfrac12(0{,}008)(325)^2=422$ J; energía en el resorte $=\tfrac12(300)(0{,}150)^2=3{,}38$ J.
+      <span class="por">Más del 99 % se disipa en el choque: por eso no se puede igualar $\tfrac12mv_1^2$ a $\tfrac12kx^2$.</span></li>
   </ol>
   <p><b>Resultado:</b> $V=2{,}60$ m/s; $v_1=325$ m/s.</p>
   <div class="recipe"><b>Receta:</b> péndulo o resorte balístico: del dato final se obtiene $V$ por energía, y de $V$ la velocidad del proyectil por cantidad de movimiento.</div>

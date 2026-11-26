@@ -1,13 +1,30 @@
 <p class="enun">Sea un cohete que se lanza verticalmente al espacio. Se supone que en el ascenso vertical la aceleración de la gravedad va variando siguiendo la ley $g=g_0-k_3t$, siendo $g_0$ la aceleración de la gravedad en la superficie y $t$ el tiempo. Durante los 10 primeros segundos, la fuerza impulsora del cohete viene dada por la expresión $F_1=k_1M$, donde $M$ es la masa del cohete, variable al ir consumiendo el combustible. Tras esos 10 primeros segundos, la fuerza impulsora pasa a regirse por la expresión $F_2=k_2M$. Calcular la altura alcanzada tras 60 segundos de ascenso sabiendo que $g_0=10$ m/s², $k_1=20$ m/s², $k_2=15$ m/s², $k_3=0{,}1$ m/s³. (3 puntos.)</p>
 {{fig:x4-planteamiento}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Ecuación del cohete con peso (+$y$ arriba): $M\dfrac{dv}{dt}=F-Mg$, con $F=kM$ ⇒ $\dfrac{dv}{dt}=k-g(t)$</li>
+      <li>Gravedad variable: $g=g_0-k_3t$</li>
+      <li>Integrales: $v=\int a\,dt$, $y=\int v\,dt$; empalme de $v$ e $y$ en $t=10$ s</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Qué es la «fuerza impulsora».</b> Es el empuje del cohete, $F=-v_{esc}\,dM/dt$ (8.38), que aquí te dan ya como función de $M$. No necesitas $v_{esc}$ ni $dM/dt$.</li>
-    <li><b>Ecuación de movimiento.</b> Con $+y$ hacia arriba, y añadiendo el peso (al despegar de un planeta hay que incluir la gravedad): $M\dfrac{dv}{dt}=F-Mg$.</li>
-    <li><b>La masa se cancela.</b> Como $F=kM$: $\dfrac{dv}{dt}=k-g(t)$. No importa que $M$ varíe ni cuánto valga: la aceleración solo depende del tiempo.</li>
-    <li><b>Fase 1 ($0\le t\le10$ s).</b> $a_1=k_1-g_0+k_3t=10+0{,}1\,t$ (m/s²). Partiendo del reposo en el suelo: $v=10t+0{,}05t^2$ e $y=5t^2+t^3/60$. En $t=10$ s: $v=105$ m/s e $y=516{,}7$ m.</li>
-    <li><b>Fase 2 ($10\le t\le60$ s).</b> $a_2=k_2-g_0+k_3t=5+0{,}1\,t$. Integrando desde las condiciones del final de la fase 1 ($v$ e $y$ son continuas: el empuje cambia, pero la posición y la velocidad no saltan): $v(t)=105+\int_{10}^{t}(5+0{,}1t')dt'=50+5t+0{,}05t^2$ e $y(t)=516{,}7+\int_{10}^{t}v\,dt'=\dfrac{t^3}{60}+2{,}5t^2+50t-250$.</li>
-    <li><b>Altura en $t=60$ s.</b> $y(60)=3600+9000+3000-250=\mathbf{15\,350}$ m ($\approx15{,}4$ km), con $v(60)=530$ m/s.</li>
-    <li><b>Coherencia.</b> $g(60)=10-6=4$ m/s² $>0$ y $a>0$ en todo el intervalo: el cohete sube acelerando sin cambiar de sentido; la fórmula vale en todo el tramo.</li>
+    <li><b>«Fuerza impulsora».</b> Es el empuje $F=-v_{esc}\,dM/dt$, que aquí ya es $kM$. No hace falta $v_{esc}$.</li>
+    <li><b>La masa se cancela:</b>
+      $$M\frac{dv}{dt}=kM-Mg\ \Rightarrow\ a=\frac{dv}{dt}=k-g(t)=k-g_0+k_3t$$
+      <span class="por">Aunque $M$ varíe, la aceleración solo depende del tiempo.</span></li>
+    <li><b>Fase 1</b> ($0\le t\le10$ s, $k_1=20$):
+      $$a_1=20-10+0{,}1\,t=10+0{,}1\,t$$
+      $$v=10\,t+0{,}05\,t^2,\qquad y=5\,t^2+\frac{t^3}{60}$$
+      $$t=10:\quad v=100+5=105\ \text{m/s},\qquad y=500+16{,}7=516{,}7\ \text{m}$$</li>
+    <li><b>Fase 2</b> ($10\le t\le60$ s, $k_2=15$):
+      $$a_2=15-10+0{,}1\,t=5+0{,}1\,t$$
+      $$v(t)=105+\int_{10}^{t}(5+0{,}1t')\,dt'=105+5(t-10)+0{,}05(t^2-100)=50+5\,t+0{,}05\,t^2$$
+      <span class="por">$v$ e $y$ son continuas: el empuje cambia, pero la velocidad y la posición no saltan.</span></li>
+    <li><b>Posición</b> (integrando $v$ desde $t=10$ con $y(10)=516{,}7$):
+      $$y(t)=516{,}7+\Big[50\,t+2{,}5\,t^2+\frac{t^3}{60}\Big]_{10}^{t}=\frac{t^3}{60}+2{,}5\,t^2+50\,t-250$$</li>
+    <li><b>Altura en $t=60$ s:</b>
+      $$y(60)=\frac{216\,000}{60}+2{,}5(3600)+50(60)-250=3600+9000+3000-250=\mathbf{15\,350\ m}$$
+      $$v(60)=50+300+180=530\ \text{m/s}$$
+      <span class="por">Coherente: $g(60)=10-6=4$ m/s² y $a>0$ en todo el intervalo; el cohete nunca invierte el sentido.</span></li>
   </ol>
 {{fig:rapidez-del-cohete-en-funcion-del-tiempo-con-el-}}
   <p><b>Resultado:</b> $y(60\ \text{s})=15\,350$ m (con $v=530$ m/s en ese instante).</p>

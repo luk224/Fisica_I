@@ -1,13 +1,28 @@
 <p class="enun">Un obús de 12,0 kg se dispara con un ángulo de 55,0° sobre la horizontal con rapidez inicial de 150 m/s. En el punto más alto de la trayectoria estalla en dos fragmentos, uno con tres veces más masa que el otro. Los dos fragmentos llegan al suelo al mismo tiempo. Despreciando la resistencia del aire: si el fragmento más pesado cae en el punto desde el que se lanzó el obús, ¿dónde cae el más ligero y cuánta energía se libera en la explosión?</p>
 {{fig:obus-que-estalla-en-su-punto-mas-alto-el-fragmen}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Proyectil: $v_x=v_0\cos\alpha$; tiempo de subida $t_s=\dfrac{v_0\sin\alpha}{g}$; alcance $R=\dfrac{v_0^2\sin2\alpha}{g}$</li>
+      <li>Conservación de $P_x$ en la explosión: $M\,v_x=m_Av_{Ax}+m_Bv_{Bx}$</li>
+      <li>Energía liberada: $\Delta K=K_{despu\acute es}-K_{antes}$; centro de masa: $\sum m_ix_i=M\,x_{cm}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Masas.</b> $m_A+m_B=12{,}0$ y $m_A=3m_B\Rightarrow m_A=9{,}00$ kg (pesado) y $m_B=3{,}00$ kg (ligero).</li>
-    <li><b>Estado en el punto más alto.</b> $v_y=0$ y $v_x=150\cos55{,}0^\circ=86{,}0$ m/s. Tiempo de subida $t_s=150\sin55{,}0^\circ/9{,}8=12{,}54$ s; distancia horizontal hasta ahí $v_xt_s=R/2=1079$ m, con $R=v_0^2\sin(2\cdot55^\circ)/g=2157$ m (alcance sin explosión).</li>
-    <li><b>Velocidades tras la explosión: horizontales.</b> Como en X2: llegan a la vez desde la misma altura, así que ninguno sale con componente vertical (el otro la tendría opuesta). Ambos tardan en caer lo mismo que tardó el obús en subir, $t_s=12{,}54$ s.</li>
-    <li><b>Fragmento pesado.</b> Debe volver al punto de lanzamiento, 1079 m hacia atrás, en 12,54 s $\Rightarrow$ $v_{Ax}=-86{,}0$ m/s (la velocidad del obús, invertida).</li>
-    <li><b>Conservación de $P_x$ en la explosión</b> (fuerzas internas; impulso del peso despreciable): $12{,}0(86{,}0)=9{,}00(-86{,}0)+3{,}00\,v_{Bx}\Rightarrow v_{Bx}=7\cdot86{,}0=602$ m/s.</li>
-    <li><b>Punto de caída del ligero.</b> Desde la explosión avanza $602\cdot12{,}54=7551$ m; desde el lanzamiento: $1079+7551=\mathbf{8{,}63}$ km. <b>Atajo con el centro de masa:</b> cae donde habría caído el obús entero, $R=2157$ m: $12{,}0\cdot2157=9{,}00\cdot0+3{,}00\,x_B\Rightarrow x_B=4R=8630$ m. Coincide.</li>
-    <li><b>Energía liberada</b> = aumento de energía cinética en la explosión: $\Delta K=\tfrac12(9{,}00)(86{,}0)^2+\tfrac12(3{,}00)(602)^2-\tfrac12(12{,}0)(86{,}0)^2=\mathbf{5{,}33\times10^5}$ J.</li>
+    <li><b>Masas:</b>
+      $$m_A+m_B=12{,}0,\quad m_A=3\,m_B\ \Rightarrow\ m_A=9{,}00\ \text{kg (pesado)},\quad m_B=3{,}00\ \text{kg (ligero)}$$</li>
+    <li><b>Punto más alto</b> ($v_y=0$):
+      $$v_x=150\cos55{,}0^\circ=86{,}0\ \text{m/s},\qquad t_s=\frac{150\sin55{,}0^\circ}{9{,}8}=12{,}54\ \text{s}$$
+      $$v_x\,t_s=1079\ \text{m}\ \ (=R/2),\qquad R=\frac{150^2\sin110^\circ}{9{,}8}=2157\ \text{m}$$</li>
+    <li><b>Velocidades tras la explosión: horizontales.</b>
+      <span class="por">Llegan a la vez desde la misma altura ⇒ ninguno sale con componente vertical. Ambos tardan $t_s=12{,}54$ s en caer.</span></li>
+    <li><b>Fragmento pesado</b> (vuelve al punto de lanzamiento, 1079 m hacia atrás en 12,54 s):
+      $$v_{Ax}=-86{,}0\ \text{m/s}$$</li>
+    <li><b>Conservación de $P_x$:</b>
+      $$12{,}0(86{,}0)=9{,}00(-86{,}0)+3{,}00\,v_{Bx}\ \Rightarrow\ v_{Bx}=7(86{,}0)=602\ \text{m/s}$$</li>
+    <li><b>Punto de caída del ligero</b> (desde el lanzamiento):
+      $$x=1079+602(12{,}54)=1079+7551=\mathbf{8{,}63\ km}$$
+      <span class="por">Atajo con el centro de masa (cae donde habría caído el obús entero, $R=2157$ m): $12{,}0(2157)=9{,}00(0)+3{,}00\,x_B\Rightarrow x_B=4R=8630$ m ✓.</span></li>
+    <li><b>Energía liberada:</b>
+      $$\Delta K=\tfrac12(9{,}00)(86{,}0)^2+\tfrac12(3{,}00)(602)^2-\tfrac12(12{,}0)(86{,}0)^2=\mathbf{5{,}33\times10^5\ J}$$</li>
   </ol>
   <p><b>Resultado:</b> el ligero cae a $8{,}63$ km del punto de lanzamiento; energía liberada $5{,}33\times10^5$ J. Se ve en el interactivo de la sección 5 (valores iniciales).</p>
   <div class="recipe"><b>Receta:</b> explosión en el vértice de una parábola: velocidades horizontales, conservación de $P_x$ y, para el punto de caída, el atajo del centro de masa: $\sum m_ix_i=MR$.</div>

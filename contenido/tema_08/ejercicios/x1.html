@@ -1,15 +1,30 @@
 <p class="enun">Un átomo de helio de masa $m_1=4$ u choca con una velocidad de 1200 m/s, en la dirección del eje $x$, con una molécula de oxígeno de masa $m_2=32$ u que se encuentra inicialmente en reposo. Como consecuencia del choque, el helio se mueve en la dirección del eje $y$, en sentido positivo, con una cuarta parte de la energía cinética que tenía antes del choque. Calcular: a) la velocidad que adquiere la molécula de oxígeno; b) la fracción de energía cinética total que se pierde en el choque. (3 puntos.)</p>
 {{fig:x1-planteamiento}}
 {{fig:triangulo-de-cantidad-de-movimiento-del-choque-h}}
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Conservación de la cantidad de movimiento (vectorial, por componentes): $\vec P_{antes}=\vec P_{despu\acute es}$</li>
+      <li>Energía cinética: $K=\tfrac12mv^2$</li>
+      <li>Fracción de energía perdida: $\dfrac{K_0-K_f}{K_0}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Sistema y ley.</b> El sistema es {He + O₂}. Durante el choque solo actúan fuerzas internas (acción-reacción), así que se conserva la cantidad de movimiento total <b>vectorial</b>, componente a componente. La energía cinética <i>no</i> tiene por qué conservarse: no dicen que el choque sea elástico (de hecho el apartado b pide cuánto se pierde).</li>
-    <li><b>Velocidad final del helio.</b> Si $K_1'=K_1/4$, entonces $v_1'^2=v_1^2/4$ y $v_1'=v_1/2=600$ m/s, dirigida según $+y$: $\vec v_1'=(0,\ 600)$ m/s. (Un cuarto de energía es la mitad de rapidez, no un cuarto.)</li>
-    <li><b>Unidades.</b> Solo intervienen cocientes de masas: puedes dejar las masas en u sin pasar a kg.</li>
-    <li><b>Componente $x$:</b> $m_1v_1=0+m_2v_{2x}'\Rightarrow v_{2x}'=\dfrac{4\cdot1200}{32}=150$ m/s.</li>
-    <li><b>Componente $y$:</b> antes no había cantidad de movimiento en $y$: $0=m_1(600)+m_2v_{2y}'\Rightarrow v_{2y}'=-\dfrac{4\cdot600}{32}=-75$ m/s.</li>
-    <li><b>Módulo y dirección:</b> $\vec v_2'=(150\,\hat\imath-75\,\hat\jmath)$ m/s, $|\vec v_2'|=\sqrt{150^2+75^2}=167{,}7\approx168$ m/s, formando $\arctan(75/150)=26{,}6^\circ$ <b>por debajo</b> del eje $+x$: el O₂ «compensa» la cantidad de movimiento del helio hacia $+y$ yéndose hacia $-y$.</li>
-    <li><b>Energías (en u·m²/s²):</b> $K_0=\tfrac12(4)(1200)^2=2{,}88\times10^6$; después, $K_1'=K_0/4=0{,}72\times10^6$ y $K_2'=\tfrac12(32)(150^2+75^2)=0{,}45\times10^6$; total final $1{,}17\times10^6$.</li>
-    <li><b>Fracción perdida:</b> $\dfrac{K_0-K_f}{K_0}=\dfrac{2{,}88-1{,}17}{2{,}88}=\dfrac{19}{32}=0{,}594$: se pierde el <b>59,4 %</b> (choque inelástico). En julios, con 1 u $=1{,}66\times10^{-27}$ kg: $K_0=4{,}78\times10^{-21}$ J y se pierden $2{,}84\times10^{-21}$ J.</li>
+    <li><b>Sistema y ley.</b> Sistema = {He + O₂}; solo actúan fuerzas internas ⇒ se conserva $\vec P$ componente a componente. La energía cinética no tiene por qué conservarse (no dicen «elástico»).
+      <span class="por">Las masas solo entran en cocientes: se pueden dejar en u.</span></li>
+    <li><b>Velocidad final del helio.</b> $K_1'=K_1/4$:
+      $$\tfrac12m_1v_1'^2=\tfrac14\cdot\tfrac12m_1v_1^2\ \Rightarrow\ v_1'=\frac{v_1}{2}=600\ \text{m/s},\qquad\vec v_1'=(0,\ 600)\ \text{m/s}$$
+      <span class="por">Un cuarto de energía es la mitad de rapidez, no un cuarto.</span></li>
+    <li><b>Componente $x$</b> (el O₂ parte del reposo):
+      $$m_1v_1=0+m_2v_{2x}'\ \Rightarrow\ v_{2x}'=\frac{4(1200)}{32}=150\ \text{m/s}$$</li>
+    <li><b>Componente $y$</b> (antes no había cantidad de movimiento en $y$):
+      $$0=m_1(600)+m_2v_{2y}'\ \Rightarrow\ v_{2y}'=-\frac{4(600)}{32}=-75\ \text{m/s}$$</li>
+    <li><b>(a) Velocidad del O₂:</b>
+      $$\vec v_2'=(150\,\hat\imath-75\,\hat\jmath)\ \text{m/s},\qquad|\vec v_2'|=\sqrt{150^2+75^2}=167{,}7\approx\mathbf{168\ m/s}$$
+      $$\theta=\arctan\frac{75}{150}=26{,}6^\circ\ \text{por debajo del eje }+x$$</li>
+    <li><b>(b) Energías</b> (en u·m²/s²):
+      $$K_0=\tfrac12(4)(1200)^2=2{,}88\times10^6,\qquad K_1'=\frac{K_0}{4}=0{,}72\times10^6$$
+      $$K_2'=\tfrac12(32)(150^2+75^2)=0{,}45\times10^6,\qquad K_f=1{,}17\times10^6$$
+      $$\frac{K_0-K_f}{K_0}=\frac{2{,}88-1{,}17}{2{,}88}=\frac{19}{32}=\mathbf{0{,}594}\ \to\ 59{,}4\ \%\ \text{perdido}$$
+      <span class="por">Choque inelástico. En julios (1 u $=1{,}66\times10^{-27}$ kg): $K_0=4{,}78\times10^{-21}$ J y se pierden $2{,}84\times10^{-21}$ J.</span></li>
   </ol>
   <p><b>Resultado:</b> a) $\vec v_2'=(150\,\hat\imath-75\,\hat\jmath)$ m/s (168 m/s a 26,6° bajo el eje $x$); b) $19/32\approx59\ \%$.</p>
   <div class="recipe"><b>Receta:</b> choque en 2D: dibuja antes/después con ejes, escribe una ecuación de conservación por componente y usa la energía solo si dicen «elástico»; si no, calcúlala después para ver cuánto se perdió.</div>
