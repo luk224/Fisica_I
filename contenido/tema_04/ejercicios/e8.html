@@ -1,11 +1,20 @@
 <p class="enun">Dos cajas, A y B, están en contacto sobre una superficie horizontal <b>sin fricción</b>, con masas $m_A$ y $m_B$. Se aplica una fuerza horizontal $F$ a la caja A, y ambas se mueven juntas hacia la derecha. a) Dibuja el diagrama de cuerpo libre de A y de B por separado, e identifica los pares acción-reacción. b) Si $F$ es menor que el peso total de las dos cajas, ¿se mueven de todos modos? Complemento numérico: con $m_A=20.0$ kg, $m_B=5.0$ kg y $F=250$ N, halla la fuerza de contacto entre las cajas.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Sistema completo (masa total): $a=\dfrac{F}{m_A+m_B}$</li>
+      <li>Caja B aislada: $F_{A\to B}=m_B\,a$; caja A: $F-F_{B\to A}=m_A\,a$ (tercera ley: $F_{A\to B}=F_{B\to A}$)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>DCL de A:</b> la fuerza aplicada $F$, su peso, la normal del suelo, y la fuerza que B ejerce sobre A (hacia la izquierda, "empujando de vuelta" porque A empuja a B hacia delante). <b>DCL de B:</b> su peso, su normal, y la fuerza que A ejerce sobre B (hacia la derecha, la que la empuja).</li>
-    <li>El <b>único</b> par acción-reacción de este problema es $\vec F_{A\text{ sobre }B}=-\vec F_{B\text{ sobre }A}$, entre las dos cajas. El peso y la normal de <i>una misma</i> caja no son un par acción-reacción entre sí (actúan sobre el mismo cuerpo y son de naturaleza distinta) — sus verdaderos pares son con la Tierra y con el suelo respectivamente, que no aparecen dibujados aquí.</li>
-    <li>b) <b>Sí</b>, se mueven para cualquier $F>0$: no hay fricción que se oponga horizontalmente, y el peso (vertical) no compite con $F$ (horizontal) — son ejes independientes, como siempre en dinámica.</li>
-    <li><b>Complemento numérico.</b> Primero el <b>sistema completo</b> (A+B como un solo bloque de masa total): $a=\dfrac{F}{m_A+m_B}=\dfrac{250}{25.0}=10.0\ \text{m/s}^2$.</li>
-    <li>Después se aísla el cuerpo más simple, B, para hallar la fuerza interna: $F_{A\text{ sobre }B}=m_Ba=5.0\times10.0=50$ N.</li>
-    <li>Comprobación aislando A: $F-F_{B\text{ sobre }A}=m_Aa \Rightarrow 250-F_{B\text{ sobre }A}=20.0\times10.0 \Rightarrow F_{B\text{ sobre }A}=50$ N — igual en magnitud a $F_{A\text{ sobre }B}$, exactamente como exige la 3ª ley.</li>
+    <li><b>DCL de A:</b> la fuerza aplicada $F$, su peso, la normal del suelo y la fuerza que B ejerce sobre A (hacia la izquierda). <b>DCL de B:</b> su peso, su normal y la fuerza que A ejerce sobre B (hacia la derecha).</li>
+    <li><b>Único par acción-reacción:</b> $\vec F_{A\to B}=-\vec F_{B\to A}$, entre las dos cajas. El peso y la normal de una misma caja no son par entre sí (actúan sobre el mismo cuerpo).</li>
+    <li><b>b) ¿Se mueven?</b> <b>Sí</b>, para cualquier $F>0$: no hay fricción horizontal y el peso (vertical) no compite con $F$ (horizontal).</li>
+    <li><b>Complemento numérico.</b> Aceleración del conjunto:
+      $$a=\frac{250}{20.0+5.0}=\mathbf{10.0\ m/s^2}$$</li>
+    <li><b>Fuerza de contacto</b> (aislando B):
+      $$F_{A\to B}=m_B\,a=5.0(10.0)=\mathbf{50\ N}$$</li>
+    <li><b>Comprobación aislando A:</b>
+      $$250-F_{B\to A}=20.0(10.0)\ \Rightarrow\ F_{B\to A}=50\ \text{N}\ \checkmark$$
+      <span class="por">Parte de $F$ se usa en acelerar a A: no se transmite entera a B.</span></li>
   </ol>
   {{fig:dos-cajas-en-contacto-y-sus-fuerzas-horizontales}}
 

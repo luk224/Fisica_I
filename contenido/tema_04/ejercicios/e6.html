@@ -1,9 +1,17 @@
 <p class="enun">Un anuncio afirma que cierto coche de 850 kg puede "detenerse en una moneda de diez centavos" (diámetro 1.8 cm) al frenar desde 45.0 km/h. ¿Qué fuerza media de frenado se necesitaría?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$v^2=v_0^2+2a\,d$ (con $v=0$): $a=-\dfrac{v_0^2}{2d}$; segunda ley: $F=m\,|a|$</li>
+      <li>$1\ \text{km/h}=1/3.6\ \text{m/s}$; $1\ \text{cm}=0.01$ m</li>
+    </ul></div>
   <ol class="steps">
-    <li>Convertir a SI: $v_0=45.0\ \text{km/h}=12.5\ \text{m/s}$; $d=1.8\ \text{cm}=0.018\ \text{m}$.</li>
-    <li>Deceleración con $v^2=v_0^2+2a d$ (llega a $v=0$): $a=-\dfrac{v_0^2}{2d}=-\dfrac{12.5^2}{2\times0.018}=-4340\ \text{m/s}^2$ (unas 443 veces $g$).</li>
-    <li>Fuerza: $F=m|a|=850\times4340=3.7\times10^6$ N — unas 440 veces el propio peso del coche ($w=850\times9.8=8330$ N).</li>
-    <li>Conclusión: es físicamente absurdo; ningún sistema de frenos real puede ejercer semejante fuerza. El "anuncio" es imposible según la propia segunda ley de Newton.</li>
+    <li><b>Datos en SI:</b>
+      $$v_0=\frac{45.0}{3.6}=12.5\ \text{m/s},\qquad d=0.018\ \text{m}$$</li>
+    <li><b>Deceleración:</b>
+      $$a=-\frac{12.5^2}{2(0.018)}=-4340\ \text{m/s}^2\ \ (\approx443\,g)$$</li>
+    <li><b>Fuerza media de frenado:</b>
+      $$F=m|a|=850(4340)=\mathbf{3.7\times10^6\ N}$$
+      <span class="por">Unas 440 veces el peso del coche ($w=850(9.8)=8330$ N): absurdo; ningún sistema de frenos real puede hacerlo.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> igual que E5 pero en sentido inverso, $F=mv_0^2/(2d)$; sirve para detectar afirmaciones numéricamente absurdas comparando con el peso del objeto.</div>
   <div class="recipe"><b>Error típico:</b> no convertir km/h a m/s, o usar 1.8 en vez de 0.018 m (factor de conversión al cuadrado que se acumula en el resultado).</div>

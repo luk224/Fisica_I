@@ -299,9 +299,15 @@ $$\vec F_{A\ \text{sobre}\ B}=-\vec F_{B\ \text{sobre}\ A}\ \ \text{(4.10)}$$
 <details class="mas pista"><summary>Pista 1</summary><p>Sin fricción, la única fuerza horizontal es la aplicada; el peso y la normal se cancelan en vertical.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$m=\sum F_x/a_x$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>Como no hay fricción, la única fuerza horizontal es la aplicada (el peso y la normal se cancelan en el eje vertical, $a_y=0$): $\sum F_x=F=48.0$ N.</li>
-    <li>Despejando de la segunda ley (ec. 4.6): $m=\dfrac{\sum F_x}{a_x}=\dfrac{48.0\ \text{N}}{2.20\ \text{m/s}^2}=21.8$ kg.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Segunda ley: $\sum F_x=m\,a_x$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Fuerza neta horizontal</b> (sin fricción; peso y normal se cancelan en vertical):
+      $$\sum F_x=F=48.0\ \text{N}$$</li>
+    <li><b>Masa:</b>
+      $$m=\frac{\sum F_x}{a_x}=\frac{48.0}{2.20}=\mathbf{21.8\ kg}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> $m=\sum F/a$, pero solo cuenta la fuerza neta en la dirección de la aceleración — no metas el peso en una suma horizontal, ni la fuerza horizontal en una suma vertical.</div>
 </details>
@@ -312,9 +318,16 @@ $$\vec F_{A\ \text{sobre}\ B}=-\vec F_{B\ \text{sobre}\ A}\ \ \text{(4.10)}$$
 <details class="mas pista"><summary>Pista 1</summary><p>Cinemática primero: $a=\Delta v/\Delta t$ (negativa, porque frena).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Segunda ley: $f_x=ma_x$; el signo de $a$ da el sentido de la fuerza.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>Cinemática primero (tema 2, $a=\Delta v/\Delta t$): $a_x=\dfrac{0-2.40}{3.52}=-0.682\ \text{m/s}^2$.</li>
-    <li>Segunda ley: $f_x=ma_x=68.5\times(-0.682)=-46.7$ N, es decir, 46.7 N opuesta al sentido del movimiento.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$a_x=\dfrac{v_x-v_{0x}}{t}$; segunda ley: $f_x=m\,a_x$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Aceleración</b> (cinemática):
+      $$a_x=\frac{0-2.40}{3.52}=-0.682\ \text{m/s}^2$$</li>
+    <li><b>Fuerza de fricción:</b>
+      $$f_x=m\,a_x=68.5(-0.682)=\mathbf{-46.7\ N}$$
+      <span class="por">46.7 N opuesta al sentido del movimiento.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t04/diagrama-de-cuerpo-libre-del-patinador.svg">
 <div class="figph" role="img" aria-label="Diagrama de cuerpo libre del patinador" style="aspect-ratio:330/200"></div>
@@ -331,11 +344,18 @@ $$\vec F_{A\ \text{sobre}\ B}=-\vec F_{B\ \text{sobre}\ A}\ \ \text{(4.10)}$$
 <details class="mas pista"><summary>Pista 1</summary><p>No hay tiempo: $v^2=v_0^2+2a\,\Delta x$ da la aceleración.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$F=ma$; compara con el peso de la pelota para justificar que se desprecie.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>a) No hay tiempo, así que se usa la ecuación de cinemática sin $t$ (tema 2): $v^2=v_0^2+2a\Delta x \Rightarrow a=\dfrac{v^2}{2\Delta x}=\dfrac{46^2}{2\times1.0}=1058\ \text{m/s}^2$.</li>
-    <li>Segunda ley: $F=ma=0.145\times1058=153$ N (tratando el movimiento como horizontal, despreciando el peso).</li>
-    <li>Comparación: el peso de la pelota es $w=0.145\times9.8=1.42$ N; $F/w\approx108$ — durante el lanzamiento, la fuerza del brazo es unas 108 veces mayor que el propio peso de la pelota, lo que justifica despreciar el peso frente a esa fuerza.</li>
-    <li>b) <b>Durante el lanzamiento:</b> actúan la fuerza de la mano (horizontal, 153 N) y el peso (1.42 N, hacia abajo, pequeño frente a la anterior). <b>Justo después de soltarla:</b> la mano deja de tocar la pelota, así que desaparece esa fuerza; solo queda el peso, hacia abajo. No hay ninguna "fuerza del lanzamiento" que siga acompañando a la pelota en el aire.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Sin tiempo: $v^2=v_0^2+2a\,\Delta x$ ⇒ $a=\dfrac{v^2}{2\Delta x}$</li>
+      <li>Segunda ley: $F=m\,a$; peso: $w=m\,g$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Aceleración y fuerza</b> ($m=0.145$ kg):
+      $$a=\frac{46^2}{2(1.0)}=1058\ \text{m/s}^2,\qquad F=m\,a=0.145(1058)=\mathbf{153\ N}$$</li>
+    <li><b>Comparación con el peso:</b>
+      $$w=0.145(9.8)=1.42\ \text{N},\qquad\frac Fw\approx108$$
+      <span class="por">La fuerza del brazo es unas 108 veces el peso: se puede despreciar el peso durante el lanzamiento.</span></li>
+    <li><b>b) Diagramas de cuerpo libre.</b> <b>Durante el lanzamiento:</b> fuerza de la mano (horizontal, 153 N) y peso (1.42 N). <b>Justo después de soltarla:</b> solo el peso, hacia abajo: no hay ninguna «fuerza del lanzamiento» que siga acompañando a la pelota.</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t04/diagramas-de-cuerpo-libre-de-la-pelota.svg">
 <div class="figph" role="img" aria-label="Diagramas de cuerpo libre de la pelota" style="aspect-ratio:330/195"></div>
@@ -352,10 +372,20 @@ $$\vec F_{A\ \text{sobre}\ B}=-\vec F_{B\ \text{sobre}\ A}\ \ \text{(4.10)}$$
 <details class="mas pista"><summary>Pista 1</summary><p>Con $+y$ hacia arriba, $n-w=ma$: la báscula marca la normal, no el peso.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Para el paquete, $T-mg=ma$: ambos aceleran con el ascensor.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>Masa de la persona: $m=w/g=625/9.80=63.8$ kg.</li>
-    <li>a) La báscula marca la fuerza <b>normal</b> $n$ que ejerce sobre la persona, no directamente su peso. Con $+y$ hacia arriba (la aceleración del ascensor): $n-w=ma \Rightarrow n=w+ma=625+63.8\times2.50=784$ N. Es mayor que el peso real (625 N) porque la fuerza neta debe apuntar hacia arriba para producir esa aceleración.</li>
-    <li>b) Para el paquete, colgado en equilibrio respecto al ascensor pero acelerando con él: $T-mg=ma \Rightarrow T=m(g+a)=3.85\times(9.80+2.50)=3.85\times12.30=47.4$ N (frente a $T=mg=37.7$ N si el ascensor estuviera en reposo o a velocidad constante).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$m=\dfrac{w}{g}$; ascensor que acelera hacia arriba ($+y$): $n-w=m\,a$ ⇒ $n=m(g+a)$</li>
+      <li>Paquete colgado: $T-m\,g=m\,a$ ⇒ $T=m(g+a)$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Masa de la persona:</b>
+      $$m=\frac{625}{9.80}=63.8\ \text{kg}$$</li>
+    <li><b>a) Lectura de la báscula</b> (la normal, no el peso):
+      $$n=w+m\,a=625+63.8(2.50)=\mathbf{784\ N}$$
+      <span class="por">Mayor que el peso real porque la fuerza neta debe apuntar hacia arriba.</span></li>
+    <li><b>b) Tensión de la cuerda:</b>
+      $$T=m(g+a)=3.85(9.80+2.50)=3.85(12.30)=\mathbf{47.4\ N}$$
+      <span class="por">Con el ascensor en reposo sería $mg=37.7$ N.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t04/diagramas-de-cuerpo-libre-en-un-ascensor-que-ace.svg">
 <div class="figph" role="img" aria-label="Diagramas de cuerpo libre en un ascensor que acelera hacia arriba" style="aspect-ratio:330/200"></div>
@@ -372,13 +402,22 @@ $$\vec F_{A\ \text{sobre}\ B}=-\vec F_{B\ \text{sobre}\ A}\ \ \text{(4.10)}$$
 <details class="mas pista"><summary>Pista 1</summary><p>Un DCL por caja. El único par acción-reacción es el de contacto entre A y B (el peso y la normal de una misma caja no son pareja).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Aceleración con el sistema completo, $a=F/(m_A+m_B)$; la fuerza interna aislando B.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>DCL de A:</b> la fuerza aplicada $F$, su peso, la normal del suelo, y la fuerza que B ejerce sobre A (hacia la izquierda, "empujando de vuelta" porque A empuja a B hacia delante). <b>DCL de B:</b> su peso, su normal, y la fuerza que A ejerce sobre B (hacia la derecha, la que la empuja).</li>
-    <li>El <b>único</b> par acción-reacción de este problema es $\vec F_{A\text{ sobre }B}=-\vec F_{B\text{ sobre }A}$, entre las dos cajas. El peso y la normal de <i>una misma</i> caja no son un par acción-reacción entre sí (actúan sobre el mismo cuerpo y son de naturaleza distinta) — sus verdaderos pares son con la Tierra y con el suelo respectivamente, que no aparecen dibujados aquí.</li>
-    <li>b) <b>Sí</b>, se mueven para cualquier $F>0$: no hay fricción que se oponga horizontalmente, y el peso (vertical) no compite con $F$ (horizontal) — son ejes independientes, como siempre en dinámica.</li>
-    <li><b>Complemento numérico.</b> Primero el <b>sistema completo</b> (A+B como un solo bloque de masa total): $a=\dfrac{F}{m_A+m_B}=\dfrac{250}{25.0}=10.0\ \text{m/s}^2$.</li>
-    <li>Después se aísla el cuerpo más simple, B, para hallar la fuerza interna: $F_{A\text{ sobre }B}=m_Ba=5.0\times10.0=50$ N.</li>
-    <li>Comprobación aislando A: $F-F_{B\text{ sobre }A}=m_Aa \Rightarrow 250-F_{B\text{ sobre }A}=20.0\times10.0 \Rightarrow F_{B\text{ sobre }A}=50$ N — igual en magnitud a $F_{A\text{ sobre }B}$, exactamente como exige la 3ª ley.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Sistema completo (masa total): $a=\dfrac{F}{m_A+m_B}$</li>
+      <li>Caja B aislada: $F_{A\to B}=m_B\,a$; caja A: $F-F_{B\to A}=m_A\,a$ (tercera ley: $F_{A\to B}=F_{B\to A}$)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>DCL de A:</b> la fuerza aplicada $F$, su peso, la normal del suelo y la fuerza que B ejerce sobre A (hacia la izquierda). <b>DCL de B:</b> su peso, su normal y la fuerza que A ejerce sobre B (hacia la derecha).</li>
+    <li><b>Único par acción-reacción:</b> $\vec F_{A\to B}=-\vec F_{B\to A}$, entre las dos cajas. El peso y la normal de una misma caja no son par entre sí (actúan sobre el mismo cuerpo).</li>
+    <li><b>b) ¿Se mueven?</b> <b>Sí</b>, para cualquier $F>0$: no hay fricción horizontal y el peso (vertical) no compite con $F$ (horizontal).</li>
+    <li><b>Complemento numérico.</b> Aceleración del conjunto:
+      $$a=\frac{250}{20.0+5.0}=\mathbf{10.0\ m/s^2}$$</li>
+    <li><b>Fuerza de contacto</b> (aislando B):
+      $$F_{A\to B}=m_B\,a=5.0(10.0)=\mathbf{50\ N}$$</li>
+    <li><b>Comprobación aislando A:</b>
+      $$250-F_{B\to A}=20.0(10.0)\ \Rightarrow\ F_{B\to A}=50\ \text{N}\ \checkmark$$
+      <span class="por">Parte de $F$ se usa en acelerar a A: no se transmite entera a B.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t04/dos-cajas-en-contacto-y-sus-fuerzas-horizontales.svg">
 <div class="figph" role="img" aria-label="Dos cajas en contacto y sus fuerzas horizontales" style="aspect-ratio:330/205"></div>
@@ -395,11 +434,18 @@ $$\vec F_{A\ \text{sobre}\ B}=-\vec F_{B\ \text{sobre}\ A}\ \ \text{(4.10)}$$
 <details class="mas pista"><summary>Pista 1</summary><p>La 3.ª ley da la <i>magnitud</i> de la fuerza que la estudiante ejerce sobre la Tierra (441 N).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Aplica $a=F/m$ con la masa del cuerpo sobre el que actúa esa fuerza: la de la Tierra.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li>La fuerza sobre la estudiante es su peso: $w=mg=45\times9.8=441$ N (esto ya es, en sí mismo, la 2ª ley aplicada a ella).</li>
-    <li>Por la 3ª ley, la estudiante ejerce sobre la Tierra una fuerza de <b>la misma magnitud</b>, 441 N, en sentido contrario — pero sobre un cuerpo <i>distinto</i> (la Tierra, no ella).</li>
-    <li>Aplicando la 2ª ley a la Tierra con <b>su propia masa</b>: $a_{\text{Tierra}}=F/m_{\text{Tierra}}=441/(6.0\times10^{24})=7.4\times10^{-23}\ \text{m/s}^2$.</li>
-    <li>Interpretación: las fuerzas son exactamente iguales, pero como $a=F/m$, las aceleraciones están en razón <b>inversa</b> a las masas — por eso, aunque la Tierra "sube" hacia la estudiante, ese movimiento es completamente imperceptible.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Peso: $w=m\,g$; tercera ley: $F_{T\to E}=F_{E\to T}$ (sobre cuerpos distintos)</li>
+      <li>Segunda ley para la Tierra: $a_T=\dfrac{F}{m_T}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Fuerza sobre la estudiante</b> (su peso):
+      $$w=45(9.8)=441\ \text{N}$$</li>
+    <li><b>Reacción sobre la Tierra:</b> la misma magnitud, 441 N, en sentido contrario.</li>
+    <li><b>Aceleración de la Tierra:</b>
+      $$a_T=\frac{441}{6.0\times10^{24}}=\mathbf{7.4\times10^{-23}\ m/s^2}$$
+      <span class="por">Las fuerzas son iguales; como $a=F/m$, las aceleraciones están en razón inversa a las masas: el movimiento de la Tierra es imperceptible.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> usa la 3ª ley solo para obtener la magnitud de la fuerza de reacción; después aplica $a=F/m$ con la masa del cuerpo sobre el que actúa <i>esa</i> fuerza, nunca con la masa del otro cuerpo.</div>
   <div class="recipe"><b>Error típico:</b> pensar que la Tierra "ejerce más fuerza" por ser más grande (ejerce la misma, por la 3ª ley), o usar la masa de la estudiante para calcular la aceleración de la Tierra.</div>
@@ -430,21 +476,36 @@ $$\vec F_{A\ \text{sobre}\ B}=-\vec F_{B\ \text{sobre}\ A}\ \ \text{(4.10)}$$
 <div class="nivel"><b>🟡 Práctica: 2 ejercicios más</b><span>Repiten métodos del núcleo con otros datos: pasar un peso a masa (como E1) y calcular una fuerza a partir de una distancia de frenado (como E5). Antes de leer los pasos, plantea tú el diagrama de cuerpo libre.</span></div>
 <details class="sol" id="e2"><summary>E2 — Problema 4.17: cuidado, un peso no es una masa <span class="prio p2">🟡</span> <span class="src" data-l="E" data-ref="Solucionario 4-6, Prob. 4.17">E</span></summary>
 <p class="enun">Supermán lanza un peñasco de 2400 N a un adversario. ¿Qué fuerza horizontal debe aplicar al peñasco para darle una aceleración horizontal de 12.0 m/s²?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Peso: $w=m\,g$ ⇒ $m=\dfrac{w}{g}$</li>
+      <li>Segunda ley: $F=m\,a$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>2400 N es un peso, no una masa.</b> Antes de aplicar $\sum F=ma$ hace falta convertir con $w=mg$ (sección 4.4): $m=w/g=2400/9.80=244.9$ kg.</li>
-    <li>Fuerza necesaria: $F=ma=244.9\times12.0=2940$ N.</li>
-    <li>Comprobación de sentido: $F/w=2940/2400=1.22>1$, coherente con pedir una aceleración (12.0 m/s²) mayor que $g$ (9.80 m/s²) — hace falta más fuerza que el propio peso.</li>
+    <li><b>2400 N es un peso, no una masa:</b>
+      $$m=\frac{w}{g}=\frac{2400}{9.80}=244.9\ \text{kg}$$</li>
+    <li><b>Fuerza necesaria:</b>
+      $$F=m\,a=244.9(12.0)=\mathbf{2940\ N}$$
+      <span class="por">Comprobación: $F/w=2940/2400=1.22>1$, coherente con una aceleración (12.0) mayor que $g$.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> si el dato viene en N y hay que usar $F=ma$, primero divide por $g$ para obtener la masa en kg.</div>
   <div class="recipe"><b>Error típico:</b> hacer directamente $F=2400\times12.0$ (mezclar N con kg: error de unidades, aunque el número "salga" de algún modo).</div>
 </details>
 <details class="sol" id="e6"><summary>E6 — Problema 4.36: "se detiene en una moneda" — comprobar un anuncio absurdo <span class="prio p3">⚪</span> <span class="src" data-l="E" data-ref="Solucionario 4-11/4-12, Prob. 4.36">E</span></summary>
 <p class="enun">Un anuncio afirma que cierto coche de 850 kg puede "detenerse en una moneda de diez centavos" (diámetro 1.8 cm) al frenar desde 45.0 km/h. ¿Qué fuerza media de frenado se necesitaría?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$v^2=v_0^2+2a\,d$ (con $v=0$): $a=-\dfrac{v_0^2}{2d}$; segunda ley: $F=m\,|a|$</li>
+      <li>$1\ \text{km/h}=1/3.6\ \text{m/s}$; $1\ \text{cm}=0.01$ m</li>
+    </ul></div>
   <ol class="steps">
-    <li>Convertir a SI: $v_0=45.0\ \text{km/h}=12.5\ \text{m/s}$; $d=1.8\ \text{cm}=0.018\ \text{m}$.</li>
-    <li>Deceleración con $v^2=v_0^2+2a d$ (llega a $v=0$): $a=-\dfrac{v_0^2}{2d}=-\dfrac{12.5^2}{2\times0.018}=-4340\ \text{m/s}^2$ (unas 443 veces $g$).</li>
-    <li>Fuerza: $F=m|a|=850\times4340=3.7\times10^6$ N — unas 440 veces el propio peso del coche ($w=850\times9.8=8330$ N).</li>
-    <li>Conclusión: es físicamente absurdo; ningún sistema de frenos real puede ejercer semejante fuerza. El "anuncio" es imposible según la propia segunda ley de Newton.</li>
+    <li><b>Datos en SI:</b>
+      $$v_0=\frac{45.0}{3.6}=12.5\ \text{m/s},\qquad d=0.018\ \text{m}$$</li>
+    <li><b>Deceleración:</b>
+      $$a=-\frac{12.5^2}{2(0.018)}=-4340\ \text{m/s}^2\ \ (\approx443\,g)$$</li>
+    <li><b>Fuerza media de frenado:</b>
+      $$F=m|a|=850(4340)=\mathbf{3.7\times10^6\ N}$$
+      <span class="por">Unas 440 veces el peso del coche ($w=850(9.8)=8330$ N): absurdo; ningún sistema de frenos real puede hacerlo.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> igual que E5 pero en sentido inverso, $F=mv_0^2/(2d)$; sirve para detectar afirmaciones numéricamente absurdas comparando con el peso del objeto.</div>
   <div class="recipe"><b>Error típico:</b> no convertir km/h a m/s, o usar 1.8 en vez de 0.018 m (factor de conversión al cuadrado que se acumula en el resultado).</div>
