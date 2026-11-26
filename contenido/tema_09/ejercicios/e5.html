@@ -1,11 +1,24 @@
 <p class="enun">Un volante de radio 0,300 m parte del reposo y acelera con aceleración angular constante de 0,600 rad/s². Calcule la magnitud de las aceleraciones tangencial y radial, así como de la aceleración resultante, de un punto de su borde a) al principio; b) después de girar 60,0°; c) después de girar 120,0°.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Aceleración tangencial: $a_{tan}=r\,\alpha$; radial: $a_{rad}=\omega^2\,r$</li>
+      <li>Resultante (componentes perpendiculares): $a=\sqrt{a_{tan}^2+a_{rad}^2}$</li>
+      <li>Sin tiempo: $\omega^2=\omega_0^2+2\,\alpha\,\Delta\theta$ ($\Delta\theta$ en rad)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Componentes.</b> $a_{tan}=r\alpha$ y $a_{rad}=\omega^2r$, perpendiculares: $a=\sqrt{a_{tan}^2+a_{rad}^2}$.</li>
-    <li><b>$a_{tan}$ es la misma en los tres casos</b> ($\alpha$ constante): $(0{,}300)(0{,}600)=0{,}180$ m/s².</li>
-    <li><b>$\omega$ en función del ángulo.</b> Nos dan ángulos, no tiempos: usa 9.12 (sin $t$), con $\Delta\theta$ <b>en radianes</b>: $\omega^2=2\alpha\,\Delta\theta$, luego $a_{rad}=2a_{tan}\Delta\theta$.</li>
-    <li><b>a)</b> $\omega=0$: $a_{rad}=0$, $a=0{,}180$ m/s².</li>
-    <li><b>b)</b> $\Delta\theta=\pi/3=1{,}047$ rad: $\omega=\sqrt{2(0{,}600)(1{,}047)}=1{,}121$ rad/s; $a_{rad}=(0{,}300)(1{,}121)^2=0{,}377$ m/s²; $a=\sqrt{0{,}180^2+0{,}377^2}=0{,}418$ m/s².</li>
-    <li><b>c)</b> $\Delta\theta=2\pi/3=2{,}094$ rad: $\omega=1{,}585$ rad/s; $a_{rad}=0{,}754$ m/s² (el doble que en b, porque $a_{rad}\propto\Delta\theta$); $a=\sqrt{0{,}180^2+0{,}754^2}=0{,}775$ m/s².</li>
+    <li><b>Aceleración tangencial</b> (igual en los tres casos, $\alpha$ constante):
+      $$a_{tan}=r\alpha=(0{,}300)(0{,}600)=0{,}180\ \text{m/s}^2$$</li>
+    <li><b>Radial en función del ángulo</b> ($\omega_0=0$):
+      $$\omega^2=2\alpha\,\Delta\theta\ \Rightarrow\ a_{rad}=\omega^2r=2\,a_{tan}\,\Delta\theta$$</li>
+    <li><b>a) Al principio:</b>
+      $$\omega=0\ \Rightarrow\ a_{rad}=0,\qquad a=0{,}180\ \text{m/s}^2$$</li>
+    <li><b>b) $60{,}0^\circ$</b> ($\Delta\theta=\pi/3=1{,}047$ rad):
+      $$\omega=\sqrt{2(0{,}600)(1{,}047)}=1{,}121\ \text{rad/s},\qquad a_{rad}=(0{,}300)(1{,}121)^2=0{,}377\ \text{m/s}^2$$
+      $$a=\sqrt{0{,}180^2+0{,}377^2}=\mathbf{0{,}418\ m/s^2}$$</li>
+    <li><b>c) $120{,}0^\circ$</b> ($\Delta\theta=2\pi/3=2{,}094$ rad):
+      $$\omega=\sqrt{2(0{,}600)(2{,}094)}=1{,}585\ \text{rad/s},\qquad a_{rad}=(0{,}300)(1{,}585)^2=0{,}754\ \text{m/s}^2$$
+      $$a=\sqrt{0{,}180^2+0{,}754^2}=\mathbf{0{,}775\ m/s^2}$$
+      <span class="por">$a_{rad}$ es el doble que en b) porque $a_{rad}\propto\Delta\theta$.</span></li>
   </ol>
   {{fig:tres-posiciones-de-un-punto-del-borde-con-sus-ac}}
 

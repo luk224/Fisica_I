@@ -1,10 +1,18 @@
 <p class="enun">Un anuncio asegura que un centrifugador solo ocupa 0,127 m de espacio en una mesa de trabajo, pero que puede producir una aceleración radial de $3000g$ a 5000 rpm. Calcule el radio que debe tener el centrifugador. ¿Es verosímil el anuncio?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Aceleración radial: $a_{rad}=\omega^2\,r$</li>
+      <li>rpm → rad/s: $\omega=\text{rpm}\cdot\dfrac{2\pi}{60}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Ley.</b> $a_{rad}=\omega^2r$ (ec. 9.15); la incógnita es $r$.</li>
-    <li><b>$\omega$ en rad/s</b> (obligatorio): $5000\ \tfrac{\text{rev}}{\text{min}}\cdot\tfrac{1\ \text{min}}{60\ \text{s}}\cdot\tfrac{2\pi\ \text{rad}}{1\ \text{rev}}=523{,}6$ rad/s.</li>
-    <li><b>Aceleración.</b> $a_{rad}=3000(9{,}8)=29\,400$ m/s².</li>
-    <li><b>Radio.</b> $r=a_{rad}/\omega^2=29\,400/523{,}6^2=0{,}107$ m.</li>
-    <li><b>Interpretación.</b> El aparato tendría diámetro $0{,}214$ m, mayor que los 0,127 m anunciados: <b>el anuncio no es verosímil</b>. Al revés: con $r=0{,}0635$ m a 5000 rpm se llega a $a_{rad}=(523{,}6)^2(0{,}0635)\approx1{,}74\times10^4$ m/s² $\approx1780\,g$, muy lejos de $3000\,g$.</li>
+    <li><b>$\omega$ en rad/s</b> (obligatorio):
+      $$\omega=5000\ \frac{\text{rev}}{\text{min}}\cdot\frac{1\ \text{min}}{60\ \text{s}}\cdot\frac{2\pi\ \text{rad}}{1\ \text{rev}}=523{,}6\ \text{rad/s}$$</li>
+    <li><b>Aceleración:</b>
+      $$a_{rad}=3000\,g=3000(9{,}8)=29\,400\ \text{m/s}^2$$</li>
+    <li><b>Radio:</b>
+      $$r=\frac{a_{rad}}{\omega^2}=\frac{29\,400}{(523{,}6)^2}=\frac{29\,400}{2{,}742\times10^5}=\mathbf{0{,}107\ m}$$</li>
+    <li><b>¿Es verosímil?</b> El diámetro sería $2r=0{,}214$ m, mayor que los 0,127 m anunciados: <b>no es verosímil</b>.
+      <span class="por">Al revés: con $r=0{,}0635$ m a 5000 rpm, $a_{rad}=(523{,}6)^2(0{,}0635)\approx1{,}74\times10^4$ m/s² $\approx1780\,g$, muy lejos de $3000\,g$.</span></li>
   </ol>
   {{fig:centrifugador-de-0-107-metros-de-radio-comparado}}
 

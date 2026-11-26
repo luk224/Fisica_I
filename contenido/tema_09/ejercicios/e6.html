@@ -1,20 +1,30 @@
 <p class="enun"><b>9.30.</b> Bloques pequeños de masa $m$ están sujetos en los extremos y en el centro de una varilla de longitud $L$ y masa despreciable. Calcule el momento de inercia respecto a un eje perpendicular a la varilla que pasa por a) el centro; b) un punto a un cuarto de su longitud desde un extremo.<br><b>9.31.</b> Dos esferas pequeñas de 0,300 kg (masas puntuales) están pegadas a los extremos de una barra uniforme de 2,00 m y 4,00 kg. Calcule $I$ respecto a: a) un eje perpendicular a la barra por su centro; b) un eje perpendicular a la barra que pasa por una de las esferas; c) un eje paralelo a la barra que pasa por ambas esferas; d) un eje paralelo a la barra a 0,500 m de ella.</p>
-  <p><b>9.30.</b></p>
+    <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Masas puntuales: $I=\sum m_i\,r_i^2$ ($r_i$ = distancia perpendicular al eje)</li>
+      <li>Barra uniforme: $I_{cm}=\tfrac1{12}ML^2$ (eje por el centro); $I=\tfrac13ML^2$ (eje por un extremo)</li>
+      <li>Ejes paralelos: $I=I_{cm}+M\,d^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Definición.</b> $I=\sum m_ir_i^2$ con $r_i$ la distancia perpendicular al eje; la varilla no cuenta (masa despreciable).</li>
-    <li><b>a)</b> Distancias $L/2$, 0 y $L/2$: $I=2m(L/2)^2=\tfrac12mL^2$.</li>
-    <li><b>b)</b> Distancias $L/4$ (extremo cercano), $L/4$ (centro) y $3L/4$ (extremo lejano): $I=m\tfrac{L^2}{16}+m\tfrac{L^2}{16}+m\tfrac{9L^2}{16}=\tfrac{11}{16}mL^2$.</li>
-    <li><b>Comprobación con ejes paralelos:</b> masa total $3m$, $d=L/4$ desde el eje de a): $\tfrac12mL^2+3m\tfrac{L^2}{16}=\tfrac{11}{16}mL^2$. ✓</li>
+    <li><b>9.30 a) Eje por el centro</b> (distancias $L/2$, 0, $L/2$; la varilla no pesa):
+      $$I=m\Big(\frac L2\Big)^2+m(0)^2+m\Big(\frac L2\Big)^2=\tfrac12mL^2$$</li>
+    <li><b>b) Eje a $L/4$ de un extremo</b> (distancias $L/4$, $L/4$, $3L/4$):
+      $$I=m\frac{L^2}{16}+m\frac{L^2}{16}+m\frac{9L^2}{16}=\tfrac{11}{16}mL^2$$
+      <span class="por">Comprobación con ejes paralelos ($3m$, $d=L/4$): $\tfrac12mL^2+3m\tfrac{L^2}{16}=\tfrac{11}{16}mL^2$ ✓.</span></li>
   </ol>
   {{fig:tres-masas-iguales-sobre-una-varilla-ligera-con-}}
 
-  <p><b>9.31</b> ($M=4{,}00$ kg, $L=2{,}00$ m, $m=0{,}300$ kg).</p>
+  <p><b>9.31</b> ($M=4{,}00$ kg, $L=2{,}00$ m, $m=0{,}300$ kg). $I$ es aditivo: $I=I_{barra}+I_{esferas}$ respecto al <i>mismo</i> eje.</p>
   <ol class="steps">
-    <li><b>Principio.</b> $I$ es aditivo: $I=I_{barra}+I_{esferas}$, ambos respecto al <i>mismo</i> eje.</li>
-    <li><b>a)</b> Barra por el centro $\tfrac1{12}ML^2=1{,}333$; esferas a $L/2$: $2m(L/2)^2=0{,}600$. $I=1{,}93$ kg·m².</li>
-    <li><b>b)</b> Barra por un extremo $\tfrac13ML^2=5{,}333$; la esfera del eje aporta 0 y la otra $mL^2=1{,}200$. $I=6{,}53$ kg·m². (Ejes paralelos: $1{,}933+(4{,}60)(1{,}00)^2=6{,}53$ ✓.)</li>
-    <li><b>c)</b> Eje a lo largo de la barra: todas las masas están sobre el eje ($r_i=0$): $I=0$.</li>
-    <li><b>d)</b> Eje paralelo a 0,500 m: todas las masas a la misma distancia: $I=(M+2m)d^2=(4{,}60)(0{,}500)^2=1{,}15$ kg·m².</li>
+    <li><b>a) Eje perpendicular por el centro:</b>
+      $$I=\tfrac1{12}ML^2+2m\Big(\frac L2\Big)^2=\tfrac1{12}(4{,}00)(2{,}00)^2+2(0{,}300)(1{,}00)^2=1{,}333+0{,}600=\mathbf{1{,}93\ \text{kg}\cdot\text{m}^2}$$</li>
+    <li><b>b) Eje perpendicular por una esfera:</b>
+      $$I=\tfrac13ML^2+m\,L^2+0=\tfrac13(4{,}00)(2{,}00)^2+0{,}300(2{,}00)^2=5{,}333+1{,}200=\mathbf{6{,}53\ \text{kg}\cdot\text{m}^2}$$
+      <span class="por">Comprobación con ejes paralelos: $1{,}933+(4{,}60)(1{,}00)^2=6{,}53$ ✓.</span></li>
+    <li><b>c) Eje a lo largo de la barra</b> (todas las masas sobre el eje, $r_i=0$):
+      $$I=\mathbf{0}$$</li>
+    <li><b>d) Eje paralelo a 0,500 m</b> (todas las masas a la misma distancia):
+      $$I=(M+2m)\,d^2=(4{,}60)(0{,}500)^2=\mathbf{1{,}15\ \text{kg}\cdot\text{m}^2}$$</li>
   </ol>
   {{fig:barra-uniforme-con-dos-esferas-en-los-extremos-y}}
 

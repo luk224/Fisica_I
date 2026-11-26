@@ -1,11 +1,23 @@
 <p class="enun">Un disco compuesto de 140,0 cm de diámetro exterior está formado por un disco sólido uniforme de 50,0 cm de radio y densidad de área 3,00 g/cm², rodeado por un anillo concéntrico de radio interior 50,0 cm y radio exterior 70,0 cm y densidad de área 2,00 g/cm². Calcule su momento de inercia respecto a un eje perpendicular a su plano que pasa por su centro.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Masa = densidad de área × área; área de un disco: $\pi R^2$</li>
+      <li>Disco macizo: $I=\tfrac12mR^2$; anillo: $I=\tfrac12m(R_1^2+R_2^2)$</li>
+      <li>Momento de inercia aditivo: $I=I_{disco}+I_{anillo}$</li>
+      <li>$1\ \text{g/cm}^2=10\ \text{kg/m}^2$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Piezas.</b> $I=I_{disco}+I_{anillo}$. Tabla 9.2: disco macizo $\tfrac12mR^2$ (f); anillo grueso $\tfrac12m(R_1^2+R_2^2)$ (e; la longitud axial no interviene, vale para una lámina).</li>
-    <li><b>Unidades SI.</b> 1 g/cm² $=10$ kg/m²: 3,00 g/cm² $=30{,}0$ kg/m² y 2,00 g/cm² $=20{,}0$ kg/m².</li>
-    <li><b>Masas = densidad × área.</b> $m_d=30{,}0\,\pi(0{,}500)^2=23{,}56$ kg; $m_a=20{,}0\,\pi(0{,}700^2-0{,}500^2)=15{,}08$ kg.</li>
-    <li><b>Momentos.</b> $I_d=\tfrac12(23{,}56)(0{,}500)^2=2{,}945$ kg·m²; $I_a=\tfrac12(15{,}08)(0{,}500^2+0{,}700^2)=5{,}579$ kg·m².</li>
-    <li><b>Total.</b> $I=2{,}945+5{,}579=8{,}52$ kg·m².</li>
-    <li><b>Interpretación.</b> El anillo tiene menos masa que el disco y, sin embargo, más $I$: su masa está más lejos del eje.</li>
+    <li><b>Unidades SI:</b>
+      $$3{,}00\ \text{g/cm}^2=30{,}0\ \text{kg/m}^2,\qquad2{,}00\ \text{g/cm}^2=20{,}0\ \text{kg/m}^2$$</li>
+    <li><b>Masas</b> (densidad × área):
+      $$m_d=30{,}0\,\pi(0{,}500)^2=23{,}56\ \text{kg}$$
+      $$m_a=20{,}0\,\pi\big(0{,}700^2-0{,}500^2\big)=20{,}0\,\pi(0{,}240)=15{,}08\ \text{kg}$$</li>
+    <li><b>Momentos de inercia:</b>
+      $$I_d=\tfrac12m_dR^2=\tfrac12(23{,}56)(0{,}500)^2=2{,}945\ \text{kg·m}^2$$
+      $$I_a=\tfrac12m_a(R_1^2+R_2^2)=\tfrac12(15{,}08)(0{,}500^2+0{,}700^2)=5{,}579\ \text{kg·m}^2$$</li>
+    <li><b>Total:</b>
+      $$I=2{,}945+5{,}579=\mathbf{8{,}52\ kg\cdot m^2}$$
+      <span class="por">El anillo tiene menos masa que el disco y más $I$: su masa está más lejos del eje.</span></li>
   </ol>
   {{fig:disco-compuesto-por-un-disco-macizo-y-un-anillo-}}
 

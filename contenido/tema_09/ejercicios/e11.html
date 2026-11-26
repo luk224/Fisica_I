@@ -1,11 +1,26 @@
 <p class="enun">Una varilla uniforme delgada de masa $M$ y longitud $L$ gira alrededor de un eje perpendicular que pasa por O, a una distancia $h$ de uno de sus extremos. a) Calcule por integración su momento de inercia respecto a ese eje. b) Parte del reposo y adquiere una aceleración angular constante $\alpha$: ¿qué trabajo se realiza sobre ella en un tiempo $t$? c) En ese instante, ¿cuál es la aceleración del punto más alejado del eje?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$I=\int x^2\,dm$, con $dm=\dfrac ML\,dx$ (varilla uniforme)</li>
+      <li>$\alpha$ constante desde el reposo: $\omega=\alpha\,t$</li>
+      <li>Teorema trabajo-energía: $W=\Delta K=\tfrac12I\omega^2$</li>
+      <li>Aceleración de un punto: $a_{tan}=r\alpha$, $a_{rad}=\omega^2r$, $a=\sqrt{a_{tan}^2+a_{rad}^2}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Elemento de masa.</b> Eje $x$ a lo largo de la varilla con origen en O: ocupa de $x=-h$ a $x=L-h$. La masa por unidad de longitud es $M/L$ (uniforme), así que $dm=\tfrac ML\,dx$ y todos los puntos del elemento están a distancia $|x|$ del eje.</li>
-    <li><b>a) Integral.</b> $I=\int x^2dm=\dfrac ML\int_{-h}^{L-h}x^2dx=\dfrac{M}{3L}\left[(L-h)^3+h^3\right]=M\left(\dfrac{L^2}{3}-Lh+h^2\right)$.</li>
-    <li><b>Comprobación.</b> Con $h=0$ sale $\tfrac13ML^2$ y con $h=L/2$ sale $\tfrac1{12}ML^2$ (tabla 9.2); y por ejes paralelos, $I=\tfrac1{12}ML^2+M\left(\tfrac L2-h\right)^2$, que es lo mismo.</li>
-    <li><b>b) Trabajo.</b> Con $\alpha$ constante desde el reposo, $\omega=\alpha t$. El teorema trabajo-energía da $W=\Delta K=\tfrac12I\omega^2=\tfrac12M\left(\tfrac{L^2}{3}-Lh+h^2\right)\alpha^2t^2$.</li>
-    <li><b>c) Aceleración del punto más lejano.</b> Está a $r=\max(h,\,L-h)$ del eje. $a_{tan}=r\alpha$ y $a_{rad}=\omega^2r=r\alpha^2t^2$ son perpendiculares: $a=\sqrt{a_{tan}^2+a_{rad}^2}=r\alpha\sqrt{1+\alpha^2t^4}$. No es constante: $a_{tan}$ sí lo es, pero $a_{rad}$ crece con $t^2$.</li>
-    <li><b>Con números</b> ($M=2{,}0$ kg, $L=1{,}2$ m, $h=0{,}30$ m, $\alpha=2{,}0$ rad/s², $t=1{,}5$ s): $I=2{,}0(0{,}48-0{,}36+0{,}09)=0{,}42$ kg·m²; $\omega=3{,}0$ rad/s y $W=\tfrac12(0{,}42)(3{,}0)^2=1{,}9$ J; $r=0{,}90$ m, $a_{tan}=1{,}8$ m/s², $a_{rad}=8{,}1$ m/s² y $a=8{,}3$ m/s².</li>
+    <li><b>Elemento de masa.</b> Eje $x$ a lo largo de la varilla con origen en O: va de $x=-h$ a $x=L-h$; todos los puntos del elemento están a distancia $|x|$ del eje.
+      $$dm=\frac ML\,dx$$</li>
+    <li><b>a) Integral:</b>
+      $$I=\frac ML\int_{-h}^{L-h}x^2\,dx=\frac{M}{3L}\Big[(L-h)^3+h^3\Big]=M\Big(\frac{L^2}{3}-Lh+h^2\Big)$$
+      <span class="por">Comprobación: $h=0$ da $\tfrac13ML^2$; $h=L/2$ da $\tfrac1{12}ML^2$ (tabla 9.2); y por ejes paralelos $I=\tfrac1{12}ML^2+M(\tfrac L2-h)^2$, que es lo mismo.</span></li>
+    <li><b>b) Trabajo</b> (con $\omega=\alpha t$):
+      $$W=\Delta K=\tfrac12I\omega^2=\tfrac12\,M\Big(\frac{L^2}{3}-Lh+h^2\Big)\alpha^2t^2$$</li>
+    <li><b>c) Punto más lejano</b> ($r=\max(h,\,L-h)$):
+      $$a_{tan}=r\alpha,\qquad a_{rad}=\omega^2r=r\alpha^2t^2$$
+      $$a=\sqrt{a_{tan}^2+a_{rad}^2}=r\alpha\sqrt{1+\alpha^2t^4}$$
+      <span class="por">No es constante: $a_{tan}$ sí, pero $a_{rad}$ crece con $t^2$.</span></li>
+    <li><b>Con números</b> ($M=2{,}0$ kg, $L=1{,}2$ m, $h=0{,}30$ m, $\alpha=2{,}0$ rad/s², $t=1{,}5$ s):
+      $$I=2{,}0(0{,}48-0{,}36+0{,}09)=0{,}42\ \text{kg·m}^2,\qquad\omega=3{,}0\ \text{rad/s},\qquad W=\tfrac12(0{,}42)(3{,}0)^2=1{,}9\ \text{J}$$
+      $$r=0{,}90\ \text{m},\quad a_{tan}=1{,}8\ \text{m/s}^2,\quad a_{rad}=8{,}1\ \text{m/s}^2,\quad a=8{,}3\ \text{m/s}^2$$</li>
   </ol>
   {{fig:varilla-uniforme-de-longitud-l-con-un-eje-perpen}}
 
