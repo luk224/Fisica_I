@@ -35,6 +35,7 @@ class Navegador(unittest.TestCase):
                 with self.subTest(pagina=p.name):
                     self.assertGreater(dom.count('class="katex"'), 50, 'KaTeX no ha renderizado')
                     self.assertEqual(dom.count('katex-error'), 0, 'fórmulas con error')
+                    self.assertEqual(dom.count('cc0000'), 0, 'fórmulas con símbolos no reconocidos (en rojo), p. ej. «·» dentro de \\text{}')
                     texto = re.sub(r'<(script|style|svg)\b.*?</\1>', '', dom, flags=re.S)
                     texto = re.sub(r'<span class="katex-mathml">.*?</span>', '', texto, flags=re.S)
                     texto = re.sub(r'<[^>]+>', '', texto)
