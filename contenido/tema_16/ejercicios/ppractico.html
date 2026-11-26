@@ -1,11 +1,24 @@
 <p class="enun">Dos altavoces A y B, separados 7,00 m, vibran en fase a 172 Hz y radian sonido uniformemente en todas direcciones. Sus potencias acústicas son $8{,}00\times10^{-4}$ W y $6{,}00\times10^{-5}$ W. El aire está a 20 °C. a) Determina la diferencia de fase de las dos señales en un punto C de la línea que une A y B, a 3,00 m de B y 4,00 m de A. b) Determina la intensidad y el nivel de intensidad en C debidos solo a A (B apagado) y solo a B (A apagado). c) Con ambos encendidos, determina la intensidad y el nivel en C.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\lambda=\dfrac vf$; fase: $\Delta\phi=\dfrac{2\pi\,\Delta}{\lambda}$ ($\Delta$ = diferencia de caminos)</li>
+      <li>Fuente puntual: $I=\dfrac{P}{4\pi r^2}$; $\beta=(10\ \text{dB})\log\dfrac{I}{I_0}$, $I_0=10^{-12}$ W/m²</li>
+      <li>Amplitud de presión: $p_{m\acute ax}=\sqrt{2\rho v I}$; fuentes coherentes: se suman las amplitudes de presión</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Plan</b> (guía de U): potencia ⇒ intensidad (inverso del cuadrado) ⇒ amplitud de presión de cada onda ⇒ sumar <b>amplitudes de presión</b> con la fase correcta ⇒ intensidad total ⇒ dB.</li>
-    <li><b>a)</b> $\lambda=\dfrac vf=\dfrac{344}{172}=2{,}00$ m. Diferencia de caminos $\Delta=4{,}00-3{,}00=1{,}00$ m $=\lambda/2$. Cada longitud de onda de camino añade $2\pi$ de fase ⇒ $\Delta\phi=\dfrac{2\pi\Delta}\lambda=\mathbf{\pi\ rad\ (180^\circ)}$: las ondas llegan en <b>oposición</b> (interferencia destructiva).</li>
-    <li><b>b) Solo A.</b> Fuente puntual: $I_A=\dfrac{P_A}{4\pi r_A^2}=\dfrac{8{,}00\times10^{-4}}{4\pi(4{,}00)^2}=\mathbf{3{,}98\times10^{-6}\ W/m^2}$ ⇒ $\beta_A=10\log(3{,}98\times10^{6})=\mathbf{66{,}0\ dB}$. <b>Solo B.</b> $I_B=\dfrac{6{,}00\times10^{-5}}{4\pi(3{,}00)^2}=\mathbf{5{,}31\times10^{-7}\ W/m^2}$ ⇒ $\beta_B=\mathbf{57{,}2\ dB}$.</li>
-    <li><b>Amplitudes de presión</b> de (16.14), $p_\text{máx}=\sqrt{2\rho vI}$ con $\rho=1{,}20$ kg/m³: $p_A=0{,}0573$ Pa, $p_B=0{,}0209$ Pa.</li>
-    <li><b>c) Superposición.</b> Las fluctuaciones de presión se suman (principio de superposición). Misma frecuencia y desfase $\pi$ ⇒ $p_A\cos\omega t+p_B\cos(\omega t+\pi)=(p_A-p_B)\cos\omega t$: amplitud resultante $p=p_A-p_B=0{,}0364$ Pa. Entonces $$I=\frac{p^2}{2\rho v}=\big(\sqrt{I_A}-\sqrt{I_B}\big)^2=\mathbf{1{,}60\times10^{-6}\ W/m^2},\qquad\beta=\mathbf{62{,}1\ dB}.$$</li>
-    <li><b>Evaluación.</b> La intensidad combinada es <b>menor</b> que la de A sola (interferencia destructiva), pero no nula porque las amplitudes son distintas ✓. Si se sumaran (mal) las intensidades: $4{,}51\times10^{-6}$ W/m² y 66,5 dB, mayor que A sola: absurdo para una destructiva. Las intensidades solo se suman para fuentes <b>independientes</b> (no coherentes), como en el problema 16.20.</li>
+    <li><b>a) Diferencia de fase:</b>
+      $$\lambda=\frac{344}{172}=2{,}00\ \text{m},\qquad\Delta=4{,}00-3{,}00=1{,}00\ \text{m}=\frac\lambda2\ \Rightarrow\ \Delta\phi=\frac{2\pi(1{,}00)}{2{,}00}=\mathbf{\pi\ rad}\ (180^\circ)$$
+      <span class="por">Llegan en oposición (interferencia destructiva).</span></li>
+    <li><b>b) Solo A</b> ($r_A=4{,}00$ m):
+      $$I_A=\frac{8{,}00\times10^{-4}}{4\pi(4{,}00)^2}=\mathbf{3{,}98\times10^{-6}\ W/m^2},\qquad\beta_A=10\log\frac{3{,}98\times10^{-6}}{10^{-12}}=\mathbf{66{,}0\ dB}$$
+      <b>Solo B</b> ($r_B=3{,}00$ m):
+      $$I_B=\frac{6{,}00\times10^{-5}}{4\pi(3{,}00)^2}=\mathbf{5{,}31\times10^{-7}\ W/m^2},\qquad\beta_B=\mathbf{57{,}2\ dB}$$</li>
+    <li><b>Amplitudes de presión</b> ($\rho=1{,}20$ kg/m³):
+      $$p_A=\sqrt{2(1{,}20)(344)(3{,}98\times10^{-6})}=0{,}0573\ \text{Pa},\qquad p_B=0{,}0209\ \text{Pa}$$</li>
+    <li><b>c) Superposición</b> (misma $f$, desfase $\pi$):
+      $$p_A\cos\omega t+p_B\cos(\omega t+\pi)=(p_A-p_B)\cos\omega t,\qquad p=0{,}0573-0{,}0209=0{,}0364\ \text{Pa}$$
+      $$I=\frac{p^2}{2\rho v}=\big(\sqrt{I_A}-\sqrt{I_B}\big)^2=\mathbf{1{,}60\times10^{-6}\ W/m^2},\qquad\beta=\mathbf{62{,}1\ dB}$$
+      <span class="por">Menor que la de A sola (destructiva), pero no nula porque las amplitudes son distintas. Si se sumaran mal las intensidades: $4{,}51\times10^{-6}$ W/m² y 66,5 dB, mayor que A sola: absurdo. Las intensidades solo se suman para fuentes independientes.</span></li>
   </ol>
   {{fig:altavoces-a-y-b-separados-7-metros-con-el-punto-}}
   <div class="recipe"><b>Receta:</b> fuentes coherentes (misma $f$, fase fija): suma amplitudes de presión con su desfase $\Delta\phi=2\pi\Delta/\lambda$ y después pasa a intensidad; fuentes independientes: suma intensidades.</div>

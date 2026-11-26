@@ -362,12 +362,20 @@
 <details class="mas pista"><summary>Pista 1</summary><p>$p_{máx}=BkA$ con $k=2\pi/\lambda=2\pi f/v$: a igual frecuencia y medio, $p_{máx}\propto A$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Con $A$ fija, $p_{máx}\lambda$ es constante: razona por proporciones con lo que se mantiene.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> La onda se describe por el desplazamiento ($A$) o por la presión ($p_\text{máx}$), ligados por $p_\text{máx}=BkA$ (16.5) con $k=2\pi/\lambda$.</li>
-    <li><b>a)</b> $\lambda=v/f=344/1000=\mathbf{0{,}344\ m}$.</li>
-    <li><b>b)</b> Misma frecuencia y mismo medio ⇒ $B$ y $k$ iguales ⇒ $p_\text{máx}\propto A$: $A_2=A_1\dfrac{p_2}{p_1}=(1{,}2\times10^{-8})\dfrac{30}{3{,}0\times10^{-2}}=\mathbf{1{,}2\times10^{-5}\ m}$. Aun en el umbral de dolor, las moléculas se desplazan solo ~0,01 mm.</li>
-    <li><b>c)</b> Ahora $A$ fija: $p_\text{máx}=B(2\pi/\lambda)A$ ⇒ $p_\text{máx}\lambda$ constante ⇒ $\lambda_2=\lambda_1\dfrac{p_1}{p_2}=0{,}344\cdot\dfrac{3{,}0\times10^{-2}}{1{,}5\times10^{-3}}=\mathbf{6{,}9\ m}$ y $f_2=\dfrac v{\lambda_2}=\dfrac{344}{6{,}88}=\mathbf{50\ Hz}$.</li>
-    <li><b>Comprobación.</b> Presión 20 veces menor con la misma $A$ ⇒ $k$ 20 veces menor ⇒ $f$ 20 veces menor: $1000/20=50$ Hz ✓.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\lambda=\dfrac vf$; $k=\dfrac{2\pi}{\lambda}$</li>
+      <li>Amplitud de presión: $p_{m\acute ax}=B\,k\,A$ (mismo medio y $f$: $p_{m\acute ax}\propto A$; mismo $A$: $p_{m\acute ax}\lambda=\text{cte}$)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Longitud de onda:</b>
+      $$\lambda=\frac vf=\frac{344}{1000}=\mathbf{0{,}344\ m}$$</li>
+    <li><b>b) Umbral de dolor</b> (misma $f$ y medio ⇒ $B$ y $k$ iguales):
+      $$A_2=A_1\frac{p_2}{p_1}=(1{,}2\times10^{-8})\frac{30}{3{,}0\times10^{-2}}=\mathbf{1{,}2\times10^{-5}\ m}$$
+      <span class="por">Aun en el umbral de dolor, las moléculas se desplazan solo ~0,01 mm.</span></li>
+    <li><b>c) $A$ fija, presión 20 veces menor:</b> $p_{m\acute ax}\propto k\propto1/\lambda$:
+      $$\lambda_2=\lambda_1\frac{p_1}{p_2}=0{,}344\cdot\frac{3{,}0\times10^{-2}}{1{,}5\times10^{-3}}=\mathbf{6{,}9\ m},\qquad f_2=\frac{v}{\lambda_2}=\frac{344}{6{,}88}=\mathbf{50\ Hz}$$
+      <span class="por">Comprobación: $k$ 20 veces menor ⇒ $f$ 20 veces menor: $1000/20=50$ Hz ✓.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> relaciona $p_\text{máx}$ y $A$ con $p_\text{máx}=BkA=2\pi fBA/v$ y razona por proporciones con lo que se mantiene constante.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Pensar que la misma amplitud de desplazamiento da la misma presión a cualquier frecuencia.</p></div>
@@ -379,13 +387,20 @@
 <details class="mas pista"><summary>Pista 1</summary><p>En un gas ideal $v=\sqrt{\gamma RT/M}$ con $T$ en kelvin y $M$ en kg/mol.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Para comparar gases a igual $T$: $v\propto\sqrt{\gamma/M}$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> En un gas ideal $v=\sqrt{\gamma RT/M}$ (16.10): crece con $T$ (moléculas más rápidas) y disminuye con la masa molar (más inercia). <b>$T$ en kelvin, $M$ en kg/mol.</b></li>
-    <li><b>Datos.</b> $T=27+273{,}15=300{,}15$ K; $R=8{,}3145$ J/(mol·K). $\gamma$: H₂ 1,41; He y Ar (monoatómicos) 1,67; aire 1,40 con $M=28{,}8\times10^{-3}$ kg/mol.</li>
-    <li><b>a)</b> $v_{\text{H}_2}=\sqrt{\dfrac{(1{,}41)(8{,}3145)(300{,}15)}{2{,}02\times10^{-3}}}=\mathbf{1{,}32\times10^3\ m/s}$.</li>
-    <li><b>b)</b> $v_\text{He}=\sqrt{\dfrac{(1{,}67)(8{,}3145)(300{,}15)}{4{,}00\times10^{-3}}}=\mathbf{1{,}02\times10^3\ m/s}$.</li>
-    <li><b>c)</b> $v_\text{Ar}=\sqrt{\dfrac{(1{,}67)(8{,}3145)(300{,}15)}{39{,}9\times10^{-3}}}=\mathbf{323\ m/s}$.</li>
-    <li><b>d)</b> Aire a 300,15 K: $v=348$ m/s. Cocientes: $v_{\text{H}_2}=3{,}79\,v_\text{aire}$, $v_\text{He}=2{,}93\,v_\text{aire}$, $v_\text{Ar}=0{,}928\,v_\text{aire}$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Gas ideal: $v=\sqrt{\dfrac{\gamma R\,T}{M}}$ ($T$ en K, $M$ en kg/mol)</li>
+      <li>$R=8{,}3145$ J/(mol·K); $T=300{,}15$ K; $\gamma$: H₂ 1,41; He y Ar 1,67; aire 1,40 ($M=28{,}8\times10^{-3}$ kg/mol)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Hidrógeno:</b>
+      $$v=\sqrt{\frac{(1{,}41)(8{,}3145)(300{,}15)}{2{,}02\times10^{-3}}}=\mathbf{1{,}32\times10^3\ m/s}$$</li>
+    <li><b>b) Helio:</b>
+      $$v=\sqrt{\frac{(1{,}67)(8{,}3145)(300{,}15)}{4{,}00\times10^{-3}}}=\mathbf{1{,}02\times10^3\ m/s}$$</li>
+    <li><b>c) Argón:</b>
+      $$v=\sqrt{\frac{(1{,}67)(8{,}3145)(300{,}15)}{39{,}9\times10^{-3}}}=\mathbf{323\ m/s}$$</li>
+    <li><b>d) Aire</b> ($v=348$ m/s a esa temperatura):
+      $$\frac{v_{\text{H}_2}}{v_{aire}}=3{,}79,\qquad\frac{v_{\text{He}}}{v_{aire}}=2{,}93,\qquad\frac{v_{\text{Ar}}}{v_{aire}}=0{,}928$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> $v=\sqrt{\gamma RT/M}$ con $T$ en K y $M$ en kg/mol; para comparar gases a igual $T$, $v\propto\sqrt{\gamma/M}$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Poner $T$ en °C o $M$ en g/mol (error de factor $\sqrt{1000}\approx32$).</p></div>
@@ -397,12 +412,19 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Los dos oyen a la vez: el tiempo de viaje es el mismo, $t=\sum d_i/v_i$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>El camino hasta el buzo tiene un tramo en el aire (1,2 m) y otro en el agua ($h$), con velocidades distintas.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> Ambos oyen a la vez: los <b>tiempos de viaje son iguales</b>. A rapidez constante, $t=d/v$.</li>
-    <li><b>Datos.</b> Aire: 344 m/s; agua a 20 °C: 1482 m/s (tabla 16.1). Se toma 22,0 m como camino en el aire hasta el amigo ($\sqrt{22{,}0^2+1{,}2^2}=22{,}03$ m: diferencia despreciable). Tiempo hasta el amigo: $t=22{,}0/344=0{,}0640$ s.</li>
-    <li><b>Hasta el buzo:</b> 1,2 m en aire y la profundidad $h$ en agua: $\dfrac{1{,}2}{344}+\dfrac h{1482}=\dfrac{22{,}0}{344}$ ⇒ $h=(22{,}0-1{,}2)\dfrac{1482}{344}=\mathbf{89{,}6\ m}$.</li>
-    <li><b>Distancia sirena–buzo</b> $=1{,}2+89{,}6=\mathbf{90{,}8\ m}$.</li>
-    <li><b>Comprobación.</b> $1{,}2/344+89{,}6/1482=0{,}0035+0{,}0605=0{,}0640$ s ✓. En el mismo tiempo el sonido recorre en el agua unas 4,3 veces más distancia.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Tiempo de viaje: $t=\dfrac dv$; «llegan a la vez» ⇒ $\sum\dfrac{d_i}{v_i}$ igual en ambos caminos</li>
+      <li>Aire: 344 m/s; agua a 20 °C: 1482 m/s</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Tiempo hasta el amigo</b> (camino real $\sqrt{22{,}0^2+1{,}2^2}=22{,}03$ m, prácticamente 22,0 m en aire):
+      $$t=\frac{22{,}0}{344}=0{,}0640\ \text{s}$$</li>
+    <li><b>Camino hasta el buzo</b> (1,2 m en aire y $h$ en agua):
+      $$\frac{1{,}2}{344}+\frac{h}{1482}=\frac{22{,}0}{344}\ \Rightarrow\ h=(22{,}0-1{,}2)\frac{1482}{344}=\mathbf{89{,}6\ m}$$</li>
+    <li><b>Distancia sirena–buzo:</b>
+      $$1{,}2+89{,}6=\mathbf{90{,}8\ m}$$
+      <span class="por">En el mismo tiempo el sonido recorre en el agua unas 4,3 veces más distancia ($1482/344$). Comprobación: $1{,}2/344+89{,}6/1482=0{,}0035+0{,}0605=0{,}0640$ s ✓.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t16/una-sirena-en-un-bote-a-1-2-metros-sobre-el-agua.svg">
 <div class="figph" role="img" aria-label="Una sirena en un bote a 1,2 metros sobre el agua; el amigo en tierra a 22 metros por el aire y el buzo directamente debajo del bote reciben el sonido a la vez; el buzo está a 89,6 metros de profundidad" style="aspect-ratio:340/244"></div>
@@ -418,11 +440,17 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Fuente puntual: $I\propto1/r^2$. Pasa los decibelios a cociente de intensidades: $\Delta\beta=10\log(I_2/I_1)$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Los dB <i>no</i> cumplen el inverso del cuadrado; la intensidad sí. Cada factor 10 en la distancia son 20 dB.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Modelo.</b> Los que hablan son una fuente puntual que emite igual en todas direcciones ⇒ ley del cuadrado inverso: $I_2/I_1=r_1^2/r_2^2$ (15.26).</li>
-    <li><b>De dB a cociente de intensidades:</b> $\Delta\beta=+40{,}0$ dB ⇒ $I_2/I_1=10^{4{,}00}$.</li>
-    <li><b>De intensidades a distancias:</b> $r_2=r_1\sqrt{I_1/I_2}=15{,}0\cdot10^{-2}=\mathbf{0{,}150\ m=15{,}0\ cm}$.</li>
-    <li><b>Atajo.</b> Combinando: $\Delta\beta=(20\ \text{dB})\log(r_1/r_2)$: 40 dB ⇒ $r_1/r_2=100$ ✓.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\dfrac{I_2}{I_1}=10^{\Delta\beta/10}$</li>
+      <li>Fuente puntual: $\dfrac{I_2}{I_1}=\dfrac{r_1^2}{r_2^2}$ (la $I$ cumple el inverso del cuadrado, no los dB)</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>De dB a cociente de intensidades:</b>
+      $$\Delta\beta=60{,}0-20{,}0=40{,}0\ \text{dB}\ \Rightarrow\ \frac{I_2}{I_1}=10^{4{,}00}$$</li>
+    <li><b>De intensidades a distancias:</b>
+      $$r_2=r_1\sqrt{\frac{I_1}{I_2}}=15{,}0\cdot10^{-2}=\mathbf{0{,}150\ m}=15{,}0\ \text{cm}$$
+      <span class="por">Atajo: $\Delta\beta=(20\ \text{dB})\log(r_1/r_2)$; 40 dB ⇒ $r_1/r_2=100$ ✓.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> dB ⇒ cociente de $I$ ⇒ inverso del cuadrado ⇒ cociente de $r$. Cada factor 10 en la distancia son 20 dB.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Suponer $\beta\propto1/r^2$: el nivel en dB <b>no</b> cumple el inverso del cuadrado; la intensidad sí.</p></div>
@@ -434,9 +462,16 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Fuentes independientes: las intensidades se suman, $I=NI_1$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>$\Delta\beta=10\log N$; otros +6 dB exigen multiplicar de nuevo por 4 la intensidad.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a)</b> Cuatro fuentes iguales e independientes ⇒ $I_2=4I_1$ ⇒ $\Delta\beta=10\log4=\mathbf{6{,}0\ dB}$.</li>
-    <li><b>b)</b> Otros +6,0 dB exigen multiplicar de nuevo la intensidad por 4: hacen falta $4\times4=16$ bebés, es decir <b>12 bebés más</b>.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fuentes iguales e independientes: $I=N\,I_1$; $\Delta\beta=10\log N$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Cuatrillizos:</b>
+      $$I_2=4I_1\ \Rightarrow\ \Delta\beta=10\log4=\mathbf{6{,}0\ dB}$$</li>
+    <li><b>b) Otros +6,0 dB:</b> hay que multiplicar de nuevo la intensidad por 4:
+      $$4\times4=16\ \text{bebés}\ \Rightarrow\ \mathbf{12\ bebés\ más}$$
+      <span class="por">No son 4 más: la intensidad se multiplica, no se suma.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> $N$ fuentes iguales e independientes: $\Delta\beta=10\log N$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Contestar «4 bebés más» (sumar en lugar de multiplicar la intensidad).</p></div>
@@ -448,11 +483,20 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Extremo abierto: nodo de presión (antinodo de desplazamiento); cerrado: nodo de desplazamiento. Cuenta cuartos de onda.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Abierto-abierto $L=\lambda/2$; cerrado-abierto $L=\lambda/4$ y $f_1=v/4L$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Condiciones en los extremos.</b> Extremo <b>abierto</b>: nodo de presión = <b>antinodo de desplazamiento</b>. Extremo <b>cerrado</b>: <b>nodo de desplazamiento</b>.</li>
-    <li><b>a)</b> Abierto-abierto: entre dos antinodos contiguos hay $\lambda/2$ ⇒ $L=\lambda_1/2$, $f_1=v/2L$ (16.16) ⇒ $L=\dfrac v{2f_1}=\dfrac{344}{1048}=\mathbf{0{,}328\ m}$.</li>
-    <li><b>b)</b> Cerrado-abierto: de nodo a antinodo hay $\lambda/4$ ⇒ $L=\lambda_1/4$ ⇒ $\lambda_1=4L=\mathbf{1{,}31\ m}$.</li>
-    <li><b>c)</b> $f_1=\dfrac v{\lambda_1}=\dfrac v{4L}=\tfrac12(524)=\mathbf{262\ Hz}$ (16.20): una octava más grave.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Abierto-abierto: $L=\dfrac{\lambda_1}{2}$, $f_1=\dfrac{v}{2L}$</li>
+      <li>Abierto-cerrado: $L=\dfrac{\lambda_1}{4}$, $f_1=\dfrac{v}{4L}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Extremos:</b> abierto = antinodo de desplazamiento (nodo de presión); cerrado = nodo de desplazamiento.</li>
+    <li><b>a) Longitud</b> (abierto-abierto; $2f_1=1048$ Hz):
+      $$L=\frac{v}{2f_1}=\frac{344}{2(524)}=\mathbf{0{,}328\ m}$$</li>
+    <li><b>b) Longitud de onda con un extremo tapado</b> ($L=\lambda_1/4$):
+      $$\lambda_1=4L=4(0{,}328)=\mathbf{1{,}31\ m}$$</li>
+    <li><b>c) Nueva fundamental:</b>
+      $$f_1=\frac{v}{4L}=\frac{344}{4(0{,}328)}=\tfrac12(524)=\mathbf{262\ Hz}$$
+      <span class="por">Una octava más grave.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t16/tubo-abierto-en-los-dos-extremos-con-antinodos-e.svg">
 <div class="figph" role="img" aria-label="Tubo abierto en los dos extremos con antinodos en los extremos y nodo en el centro, longitud igual a media longitud de onda, y el mismo tubo con un extremo tapado con longitud igual a un cuarto de onda" style="aspect-ratio:340/188"></div>
@@ -468,11 +512,19 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Abierto: $f_n=nf_1$ (dos sucesivos difieren en $f_1$); cerrado: solo impares (difieren en $2f_1$).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Prueba una hipótesis: es la correcta la que da $n$ entero (e impar en el cerrado).</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> Abierto: existen todos los armónicos $nf_1$ ⇒ dos sucesivos difieren en $f_1$. Cerrado: solo impares ⇒ dos sucesivos difieren en $2f_1$.</li>
-    <li><b>Hipótesis «abierto».</b> $f_1=1764-1372=392$ Hz ⇒ $n=1372/392=3{,}5$, no entero ⇒ <b>imposible</b>.</li>
-    <li><b>Hipótesis «cerrado».</b> $2f_1=392$ ⇒ $f_1=196$ Hz ⇒ $1372=7f_1$ y $1764=9f_1$, impares consecutivos ✓. <b>a)</b> Está <b>cerrado</b>. <b>b)</b> Son el <b>7.º y el 9.º armónicos</b>.</li>
-    <li><b>c)</b> $L=\dfrac v{4f_1}=\dfrac{344}{4(196)}=\mathbf{0{,}439\ m}$ (16.20).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Tubo abierto: $f_n=n\,f_1$ (todos); armónicos sucesivos difieren en $f_1$</li>
+      <li>Tubo cerrado: $f_n=n\,f_1$ con $n$ impar; sucesivos difieren en $2f_1$; $L=\dfrac{v}{4f_1}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Hipótesis «abierto».</b>
+      $$f_1=1764-1372=392\ \text{Hz}\ \Rightarrow\ n=\frac{1372}{392}=3{,}5\ \text{(no entero)}\ \Rightarrow\ \text{imposible}$$</li>
+    <li><b>Hipótesis «cerrado».</b>
+      $$2f_1=392\ \Rightarrow\ f_1=196\ \text{Hz},\qquad1372=7f_1,\quad1764=9f_1$$
+      <b>a)</b> Está <b>cerrado</b>. <b>b)</b> Son el <b>7.º y el 9.º armónicos</b>.</li>
+    <li><b>c) Longitud:</b>
+      $$L=\frac{v}{4f_1}=\frac{344}{4(196)}=\mathbf{0{,}439\ m}$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t16/frecuencias-de-modo-normal-de-un-tubo-cerrado-co.svg">
 <div class="figph" role="img" aria-label="Frecuencias de modo normal de un tubo cerrado con fundamental 196 hertz: 196, 588, 980, 1372 y 1764 hertz, que son los armónicos impares 1, 3, 5, 7 y 9; los dados, 1372 y 1764, son el 7 y el 9" style="aspect-ratio:340/192"></div>
@@ -488,11 +540,19 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Segundo sobretono = tercer armónico ($n=3$).</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Al pasar al aire se conserva la frecuencia y cambia la longitud de onda: $\lambda=v_{aire}/f$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Segundo sobretono = tercer armónico</b> ($n=3$): el fundamental es el 1.er armónico y el 1.er sobretono es el 2.º armónico.</li>
-    <li><b>Onda en el alambre:</b> $\mu=m/L=\dfrac{5{,}625\times10^{-3}}{0{,}750}=7{,}50\times10^{-3}$ kg/m; $v=\sqrt{F/\mu}=\sqrt{35{,}0/7{,}50\times10^{-3}}=68{,}3$ m/s (15.14).</li>
-    <li><b>a)</b> $\lambda_3=\dfrac{2L}3=\mathbf{0{,}500\ m}$; $f_3=\dfrac{3v}{2L}=\dfrac{3(68{,}3)}{1{,}50}=\mathbf{137\ Hz}$ (15.31, 15.33).</li>
-    <li><b>b)</b> El alambre empuja el aire con su misma frecuencia: $f=\mathbf{137\ Hz}$. Pero en el aire la rapidez es 344 m/s: $\lambda_\text{aire}=\dfrac{344}{136{,}6}=\mathbf{2{,}52\ m}$.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\mu=\dfrac mL$; $v=\sqrt{F/\mu}$</li>
+      <li>Segundo sobretono = tercer armónico: $\lambda_3=\dfrac{2L}{3}$, $f_3=\dfrac{3v}{2L}$</li>
+      <li>Sonido: misma $f$; $\lambda_{aire}=\dfrac{v_{aire}}{f}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Onda en el alambre:</b>
+      $$\mu=\frac{5{,}625\times10^{-3}}{0{,}750}=7{,}50\times10^{-3}\ \text{kg/m},\qquad v=\sqrt{\frac{35{,}0}{7{,}50\times10^{-3}}}=68{,}3\ \text{m/s}$$</li>
+    <li><b>a) Alambre</b> ($n=3$):
+      $$\lambda_3=\frac{2L}{3}=\frac{2(0{,}750)}{3}=\mathbf{0{,}500\ m},\qquad f_3=\frac{3v}{2L}=\frac{3(68{,}3)}{1{,}50}=\mathbf{137\ Hz}$$</li>
+    <li><b>b) Sonido en el aire</b> (la frecuencia la impone la fuente):
+      $$f=\mathbf{137\ Hz},\qquad\lambda_{aire}=\frac{344}{136{,}6}=\mathbf{2{,}52\ m}$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> al pasar de un medio a otro se conserva la <b>frecuencia</b> (la impone la fuente) y cambia $\lambda=v/f$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Tomar el «segundo sobretono» como $n=2$, o dar al sonido la $\lambda$ del alambre.</p></div>
@@ -504,10 +564,17 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Longitud fija $\Rightarrow$ $\lambda_1=4L$ fija $\Rightarrow$ $f\propto v\propto\sqrt T$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>La proporción se hace con temperaturas en kelvin.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>a)</b> Cerrado: $L=\dfrac v{4f_1}=\dfrac{344}{4(349)}=\mathbf{0{,}246\ m}$ (16.20).</li>
-    <li><b>b) Qué cambia.</b> $L$ fija ⇒ $\lambda_1=4L$ fija ⇒ $f_1=v/4L\propto v$. Y $v=\sqrt{\gamma RT/M}\propto\sqrt T$ (16.10, mismo gas). Por tanto $f\propto\sqrt T$: $$T_2=T_1\Big(\frac{f_2}{f_1}\Big)^2=(293{,}15\ \text{K})\Big(\frac{370}{349}\Big)^2=329{,}5\ \text{K}=\mathbf{56{,}3\ °C}.$$</li>
-    <li><b>Evaluación.</b> Hace falta subir 36 °C para un semitono: en la práctica no se llega a tanto, pero unos pocos grados ya desafinan apreciablemente.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Tubo cerrado: $L=\dfrac{v}{4f_1}$</li>
+      <li>$L$ fija ⇒ $f\propto v\propto\sqrt{T}$ ($T$ en kelvin): $T_2=T_1\Big(\dfrac{f_2}{f_1}\Big)^2$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Longitud:</b>
+      $$L=\frac{344}{4(349)}=\mathbf{0{,}246\ m}$$</li>
+    <li><b>b) Temperatura</b> ($T_1=293{,}15$ K):
+      $$T_2=(293{,}15)\Big(\frac{370}{349}\Big)^2=329{,}5\ \text{K}=\mathbf{56{,}3\ °C}$$
+      <span class="por">Hace falta subir 36 °C para un semitono; unos pocos grados ya desafinan. La proporción va con kelvin, no con °C.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> si solo cambia $T$: $f\propto v\propto\sqrt T$ (en kelvin).</div>
   <div class="box warn"><span class="h">Error típico</span><p>Hacer la proporción con temperaturas en °C ($20\cdot(370/349)^2$).</p></div>
@@ -519,11 +586,19 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Emisión en fase: solo importa la diferencia de caminos $\Delta=|r_A-r_B|$ en el punto Q.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Constructiva $\Delta=n\lambda$; destructiva $\Delta=(n+\tfrac12)\lambda$. La frecuencia más baja es la de mayor $\lambda$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> Emisión en fase ⇒ la diferencia de fase en Q se debe solo a la <b>diferencia de caminos</b> $\Delta=|r_A-r_B|$. Constructiva si $\Delta=n\lambda$; destructiva si $\Delta=(n+\tfrac12)\lambda$.</li>
-    <li><b>Caminos:</b> $r_A=3{,}00$ m, $r_B=1{,}00$ m ⇒ $\Delta=2{,}00$ m (fija, no depende de $f$).</li>
-    <li><b>a)</b> $2{,}00=n\lambda$ ⇒ $f=\dfrac v\lambda=n\dfrac{344}{2{,}00}=n\cdot172$ Hz. La más baja ($n=1$, la mayor $\lambda$): $\mathbf{172\ Hz}$ ($n=0$ exigiría $\Delta=0$).</li>
-    <li><b>b)</b> $2{,}00=(n+\tfrac12)\lambda$ ⇒ $f=(2n+1)\cdot86$ Hz. La más baja: $\mathbf{86\ Hz}$ ($\lambda=4{,}00$ m, $\Delta=\lambda/2$).</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Diferencia de caminos: $\Delta=|r_A-r_B|$</li>
+      <li>Constructiva: $\Delta=n\lambda$; destructiva: $\Delta=(n+\tfrac12)\lambda$; $f=\dfrac{v}{\lambda}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Caminos hasta Q:</b>
+      $$r_A=2{,}00+1{,}00=3{,}00\ \text{m},\qquad r_B=1{,}00\ \text{m}\ \Rightarrow\ \Delta=2{,}00\ \text{m}$$</li>
+    <li><b>a) Constructiva:</b>
+      $$2{,}00=n\lambda\ \Rightarrow\ f=n\frac{344}{2{,}00}=n(172\ \text{Hz})\ \Rightarrow\ \mathbf{172\ Hz}\ (n=1)$$
+      <span class="por">$n=0$ exigiría $\Delta=0$.</span></li>
+    <li><b>b) Destructiva:</b>
+      $$2{,}00=(n+\tfrac12)\lambda\ \Rightarrow\ f=(2n+1)(86\ \text{Hz})\ \Rightarrow\ \mathbf{86\ Hz}\ (\lambda=4{,}00\ \text{m},\ \Delta=\lambda/2)$$</li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t16/altavoces-a-en-0-y-b-a-2-metros-de-a-y-el-punto-.svg">
 <div class="figph" role="img" aria-label="Altavoces A en 0 y B a 2 metros de A, y el punto Q a 1 metro a la derecha de B; las distancias a Q son 3,00 y 1,00 metros, diferencia de 2,00 metros" style="aspect-ratio:340/176"></div>
@@ -539,13 +614,26 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Potencia $\to$ intensidad (inverso del cuadrado) $\to$ amplitud de presión de cada onda con $p_{máx}=\sqrt{2\rho vI}$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Fuentes <i>coherentes</i>: suma las amplitudes de presión con su desfase $2\pi\Delta/\lambda$ y después pasa a intensidad y a dB.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Plan</b> (guía de U): potencia ⇒ intensidad (inverso del cuadrado) ⇒ amplitud de presión de cada onda ⇒ sumar <b>amplitudes de presión</b> con la fase correcta ⇒ intensidad total ⇒ dB.</li>
-    <li><b>a)</b> $\lambda=\dfrac vf=\dfrac{344}{172}=2{,}00$ m. Diferencia de caminos $\Delta=4{,}00-3{,}00=1{,}00$ m $=\lambda/2$. Cada longitud de onda de camino añade $2\pi$ de fase ⇒ $\Delta\phi=\dfrac{2\pi\Delta}\lambda=\mathbf{\pi\ rad\ (180^\circ)}$: las ondas llegan en <b>oposición</b> (interferencia destructiva).</li>
-    <li><b>b) Solo A.</b> Fuente puntual: $I_A=\dfrac{P_A}{4\pi r_A^2}=\dfrac{8{,}00\times10^{-4}}{4\pi(4{,}00)^2}=\mathbf{3{,}98\times10^{-6}\ W/m^2}$ ⇒ $\beta_A=10\log(3{,}98\times10^{6})=\mathbf{66{,}0\ dB}$. <b>Solo B.</b> $I_B=\dfrac{6{,}00\times10^{-5}}{4\pi(3{,}00)^2}=\mathbf{5{,}31\times10^{-7}\ W/m^2}$ ⇒ $\beta_B=\mathbf{57{,}2\ dB}$.</li>
-    <li><b>Amplitudes de presión</b> de (16.14), $p_\text{máx}=\sqrt{2\rho vI}$ con $\rho=1{,}20$ kg/m³: $p_A=0{,}0573$ Pa, $p_B=0{,}0209$ Pa.</li>
-    <li><b>c) Superposición.</b> Las fluctuaciones de presión se suman (principio de superposición). Misma frecuencia y desfase $\pi$ ⇒ $p_A\cos\omega t+p_B\cos(\omega t+\pi)=(p_A-p_B)\cos\omega t$: amplitud resultante $p=p_A-p_B=0{,}0364$ Pa. Entonces $$I=\frac{p^2}{2\rho v}=\big(\sqrt{I_A}-\sqrt{I_B}\big)^2=\mathbf{1{,}60\times10^{-6}\ W/m^2},\qquad\beta=\mathbf{62{,}1\ dB}.$$</li>
-    <li><b>Evaluación.</b> La intensidad combinada es <b>menor</b> que la de A sola (interferencia destructiva), pero no nula porque las amplitudes son distintas ✓. Si se sumaran (mal) las intensidades: $4{,}51\times10^{-6}$ W/m² y 66,5 dB, mayor que A sola: absurdo para una destructiva. Las intensidades solo se suman para fuentes <b>independientes</b> (no coherentes), como en el problema 16.20.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\lambda=\dfrac vf$; fase: $\Delta\phi=\dfrac{2\pi\,\Delta}{\lambda}$ ($\Delta$ = diferencia de caminos)</li>
+      <li>Fuente puntual: $I=\dfrac{P}{4\pi r^2}$; $\beta=(10\ \text{dB})\log\dfrac{I}{I_0}$, $I_0=10^{-12}$ W/m²</li>
+      <li>Amplitud de presión: $p_{m\acute ax}=\sqrt{2\rho v I}$; fuentes coherentes: se suman las amplitudes de presión</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Diferencia de fase:</b>
+      $$\lambda=\frac{344}{172}=2{,}00\ \text{m},\qquad\Delta=4{,}00-3{,}00=1{,}00\ \text{m}=\frac\lambda2\ \Rightarrow\ \Delta\phi=\frac{2\pi(1{,}00)}{2{,}00}=\mathbf{\pi\ rad}\ (180^\circ)$$
+      <span class="por">Llegan en oposición (interferencia destructiva).</span></li>
+    <li><b>b) Solo A</b> ($r_A=4{,}00$ m):
+      $$I_A=\frac{8{,}00\times10^{-4}}{4\pi(4{,}00)^2}=\mathbf{3{,}98\times10^{-6}\ W/m^2},\qquad\beta_A=10\log\frac{3{,}98\times10^{-6}}{10^{-12}}=\mathbf{66{,}0\ dB}$$
+      <b>Solo B</b> ($r_B=3{,}00$ m):
+      $$I_B=\frac{6{,}00\times10^{-5}}{4\pi(3{,}00)^2}=\mathbf{5{,}31\times10^{-7}\ W/m^2},\qquad\beta_B=\mathbf{57{,}2\ dB}$$</li>
+    <li><b>Amplitudes de presión</b> ($\rho=1{,}20$ kg/m³):
+      $$p_A=\sqrt{2(1{,}20)(344)(3{,}98\times10^{-6})}=0{,}0573\ \text{Pa},\qquad p_B=0{,}0209\ \text{Pa}$$</li>
+    <li><b>c) Superposición</b> (misma $f$, desfase $\pi$):
+      $$p_A\cos\omega t+p_B\cos(\omega t+\pi)=(p_A-p_B)\cos\omega t,\qquad p=0{,}0573-0{,}0209=0{,}0364\ \text{Pa}$$
+      $$I=\frac{p^2}{2\rho v}=\big(\sqrt{I_A}-\sqrt{I_B}\big)^2=\mathbf{1{,}60\times10^{-6}\ W/m^2},\qquad\beta=\mathbf{62{,}1\ dB}$$
+      <span class="por">Menor que la de A sola (destructiva), pero no nula porque las amplitudes son distintas. Si se sumaran mal las intensidades: $4{,}51\times10^{-6}$ W/m² y 66,5 dB, mayor que A sola: absurdo. Las intensidades solo se suman para fuentes independientes.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t16/altavoces-a-y-b-separados-7-metros-con-el-punto-.svg">
 <div class="figph" role="img" aria-label="Altavoces A y B separados 7 metros con el punto C a 4 metros de A y 3 de B, y tres flechas de amplitud de presión en C: la de A, la de B de sentido opuesto y la resultante que es la diferencia" style="aspect-ratio:340/224"></div>
@@ -561,11 +649,17 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Pulsos: $f_{pulso}=|f_a-f_b|$; con longitudes de onda, $v(\lambda_b-\lambda_a)/(\lambda_a\lambda_b)$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>No redondees las frecuencias antes de restar; 0,4 cm son 0,004 m.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> Dos sonidos de frecuencias próximas se refuerzan y se cancelan alternativamente; la sonoridad sube y baja con $f_\text{pulso}=f_a-f_b$ (16.24).</li>
-    <li><b>Frecuencias</b> (en el aire): $f_a=344/0{,}648=530{,}9$ Hz; $f_b=344/0{,}652=527{,}6$ Hz.</li>
-    <li><b>Restando sin perder cifras:</b> $$f_\text{pulso}=v\Big(\frac1{\lambda_a}-\frac1{\lambda_b}\Big)=\frac{v(\lambda_b-\lambda_a)}{\lambda_a\lambda_b}=\frac{(344)(0{,}004\ \text{m})}{(0{,}648)(0{,}652)}=\mathbf{3{,}3\ Hz}\ (3{,}26).$$</li>
-    <li><b>Evaluación.</b> Unas tres oscilaciones de volumen por segundo, fácil de oír. Ojo: $65{,}2-64{,}8=0{,}4$ cm $=0{,}004$ m.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Pulsos: $f_{pulso}=|f_a-f_b|$</li>
+      <li>Con longitudes de onda: $f_{pulso}=\dfrac{v\,(\lambda_b-\lambda_a)}{\lambda_a\lambda_b}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Frecuencias</b> (en el aire, $v=344$ m/s):
+      $$f_a=\frac{344}{0{,}648}=530{,}9\ \text{Hz},\qquad f_b=\frac{344}{0{,}652}=527{,}6\ \text{Hz}$$</li>
+    <li><b>Frecuencia de pulsos</b> (sin perder cifras; $65{,}2-64{,}8=0{,}4\ \text{cm}=0{,}004\ \text{m}$):
+      $$f_{pulso}=\frac{(344)(0{,}004)}{(0{,}648)(0{,}652)}=\frac{1{,}376}{0{,}4225}=\mathbf{3{,}3\ Hz}\ (3{,}26)$$
+      <span class="por">Unas tres oscilaciones de volumen por segundo, fácil de oír.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> pulsos: $f_\text{pulso}=|f_a-f_b|$; si te dan $\lambda$, usa $v(\lambda_b-\lambda_a)/(\lambda_a\lambda_b)$ para no perder precisión al restar.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Restar frecuencias redondeadas (530 − 528) o equivocarse al pasar 0,4 cm a metros.</p></div>
@@ -577,11 +671,16 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Dibuja receptor y fuente y una flecha «$+$» del receptor a la fuente: a cada velocidad, signo según vaya a favor o en contra de la flecha.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Al acercarse $f_L\gt f_S$; al alejarse $f_L\lt f_S$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Identificar.</b> Fuente = silbato (30,0 m/s); receptor = pasajero (18,0 m/s). Positivo de $L$ a $S$.</li>
-    <li><b>a) Se acercan.</b> El pasajero va hacia la fuente ⇒ $v_L=+18{,}0$; la fuente va hacia el pasajero ⇒ $v_S=-30{,}0$: $$f_L=\frac{344+18{,}0}{344-30{,}0}(352)=\mathbf{406\ Hz}.$$</li>
-    <li><b>b) Se alejan.</b> Ambos sentidos se invierten: $v_L=-18{,}0$, $v_S=+30{,}0$: $$f_L=\frac{344-18{,}0}{344+30{,}0}(352)=\mathbf{307\ Hz}.$$</li>
-    <li><b>Evaluación.</b> Al acercarse $f_L>f_S$; al alejarse $f_L&lt;f_S$ ✓. Al cruzarse, el tono cae unos 100 Hz.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Doppler (sentido $+$ de $L$ a $S$): $f_L=\dfrac{v+v_L}{v+v_S}\,f_S$, $v=344$ m/s</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Se acercan</b> (el pasajero va hacia la fuente: $v_L=+18{,}0$; la fuente va hacia él: $v_S=-30{,}0$):
+      $$f_L=\frac{344+18{,}0}{344-30{,}0}(352)=\mathbf{406\ Hz}$$</li>
+    <li><b>b) Se alejan</b> ($v_L=-18{,}0$, $v_S=+30{,}0$):
+      $$f_L=\frac{344-18{,}0}{344+30{,}0}(352)=\mathbf{307\ Hz}$$
+      <span class="por">Al acercarse $f_L>f_S$; al alejarse $f_L\lt f_S$ ✓. Al cruzarse, el tono cae unos 100 Hz.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t16/dos-trenes-en-el-caso-de-acercarse-la-fuente-tie.svg">
 <div class="figph" role="img" aria-label="Dos trenes: en el caso de acercarse la fuente tiene velocidad menos 30 y el pasajero más 18 con sentido positivo del receptor a la fuente; al alejarse los signos se invierten" style="aspect-ratio:340/204"></div>
@@ -597,13 +696,24 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Es un eco: dos aplicaciones de Doppler, primero el auto como receptor y luego como fuente.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>Si el eco vuelve más agudo, el auto se acerca; despeja $v_c$ de $f=\dfrac{v+v_c}{v-v_c}f_S$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Signo físico.</b> La frecuencia vuelve más alta ⇒ el auto <b>se acerca</b>. Llamamos $v_c$ a su rapidez.</li>
-    <li><b>Paso 1 (auto = receptor; patrulla quieta = fuente).</b> Positivo de auto a patrulla; el auto va hacia la patrulla ⇒ $v_L=+v_c$, $v_S=0$: $f'=\dfrac{v+v_c}{v}(1200)$.</li>
-    <li><b>Paso 2 (auto = fuente de $f'$; patrulla = receptor).</b> Positivo de patrulla a auto; el auto va hacia la patrulla, en contra ⇒ $v_S=-v_c$, $v_L=0$: $f=\dfrac{v}{v-v_c}f'$.</li>
-    <li><b>Combinando:</b> $1250=\dfrac{v+v_c}{v-v_c}(1200)$ ⇒ $1250(v-v_c)=1200(v+v_c)$ ⇒ $v_c=\dfrac{50}{2450}v=\dfrac{344}{49}=\mathbf{7{,}02\ m/s}$.</li>
-    <li><b>b)</b> La patrulla va a 20,0 m/s hacia el auto. Paso 1: positivo de auto a patrulla; auto $v_L=+7{,}02$; la patrulla va hacia el auto, en contra ⇒ $v_S=-20{,}0$: $f'=\dfrac{344+7{,}02}{344-20{,}0}(1200)=1300$ Hz. Paso 2: positivo de patrulla a auto; patrulla $v_L=+20{,}0$; auto $v_S=-7{,}02$: $f=\dfrac{344+20{,}0}{344-7{,}02}(1300)=\mathbf{1404\ Hz}$ ($\approx1{,}40$ kHz).</li>
-    <li><b>Evaluación.</b> Mayor rapidez de acercamiento ⇒ desplazamiento mayor (204 Hz frente a 50 Hz) ✓.</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Doppler: $f_L=\dfrac{v+v_L}{v+v_S}\,f_S$ (sentido $+$ de $L$ a $S$); eco = dos pasos</li>
+      <li>Auto que se acerca a una patrulla quieta: $f=\dfrac{v+v_c}{v-v_c}\,f_S$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>Signo.</b> La frecuencia vuelve más alta ⇒ el auto se acerca. $v_c$ = su rapidez.</li>
+    <li><b>Paso 1</b> (auto = receptor, $v_L=+v_c$; patrulla quieta):
+      $$f'=\frac{v+v_c}{v}(1200)$$
+      <b>Paso 2</b> (auto = fuente de $f'$ que va hacia la patrulla: $v_S=-v_c$; patrulla receptora quieta):
+      $$f=\frac{v}{v-v_c}f'$$</li>
+    <li><b>a) Combinando:</b>
+      $$1250=\frac{v+v_c}{v-v_c}(1200)\ \Rightarrow\ 1250(v-v_c)=1200(v+v_c)\ \Rightarrow\ v_c=\frac{50}{2450}v=\frac{344}{49}=\mathbf{7{,}02\ m/s}$$</li>
+    <li><b>b) Patrulla avanzando a 20,0 m/s hacia el auto.</b> Paso 1 (receptor auto $v_L=+7{,}02$; la patrulla va hacia él: $v_S=-20{,}0$):
+      $$f'=\frac{344+7{,}02}{344-20{,}0}(1200)=1300\ \text{Hz}$$
+      Paso 2 (receptor patrulla $v_L=+20{,}0$; auto fuente $v_S=-7{,}02$):
+      $$f=\frac{344+20{,}0}{344-7{,}02}(1300)=\mathbf{1404\ Hz}\ (\approx1{,}40\ \text{kHz})$$
+      <span class="por">Mayor rapidez de acercamiento ⇒ desplazamiento mayor (204 Hz frente a 50 Hz) ✓. Con una sola aplicación de la fórmula saldría el doble, 14 m/s.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t16/patrulla-quieta-que-emite-1200-hertz-y-un-auto-q.svg">
 <div class="figph" role="img" aria-label="Patrulla quieta que emite 1200 hertz y un auto que se acerca a 7,02 metros por segundo: el auto recibe 1224,5 hertz y, como fuente de esa frecuencia, la patrulla recibe 1250 hertz" style="aspect-ratio:340/250"></div>
@@ -619,10 +729,17 @@
 <details class="mas pista"><summary>Pista 1</summary><p>Cono de Mach: $\sin\alpha=v/v_S=1/\text{Mach}$.</p></details>
 <details class="mas pista"><summary>Pista 2</summary><p>El estruendo llega cuando el cono alcanza al observador: $\tan\alpha=h/(v_St)$.</p></details>
 <details class="mas pasos"><summary>Solución completa</summary>
-<ol class="steps">
-    <li><b>Idea.</b> Una fuente supersónica deja atrás sus crestas, que se superponen en un cono de semiángulo $\sin\alpha=v/v_S$ (16.31). El estruendo se oye cuando el <b>cono</b> llega al observador, no cuando el avión pasa por encima.</li>
-    <li><b>a)</b> $\sin\alpha=1/1{,}70=0{,}588$ ⇒ $\alpha=\mathbf{36{,}0^\circ}$.</li>
-    <li><b>b)</b> Geometría del ejemplo 16.19: cuando el cono nos alcanza, el avión ha recorrido $v_St$ desde la vertical y la generatriz del cono pasa por nosotros ⇒ $\tan\alpha=h/(v_St)$: $$t=\frac h{v_S\tan\alpha}=\frac{1250}{(1{,}70)(344)\tan36{,}0^\circ}=\mathbf{2{,}94\ s}.$$ (Equivalente: $\tan\alpha=1/\sqrt{M^2-1}$ ⇒ $t=h\sqrt{M^2-1}/(Mv)$, mismo valor.)</li>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Cono de choque: $\sin\alpha=\dfrac{v}{v_S}=\dfrac{1}{\text{Mach}}$</li>
+      <li>Tiempo hasta el estruendo: $\tan\alpha=\dfrac{h}{v_S\,t}$</li>
+    </ul></div>
+  <ol class="steps">
+    <li><b>a) Ángulo del cono:</b>
+      $$\sin\alpha=\frac{1}{1{,}70}=0{,}588\ \Rightarrow\ \alpha=\mathbf{36{,}0^\circ}$$</li>
+    <li><b>b) Tiempo.</b> El estruendo se oye cuando el cono nos alcanza: el avión ya ha recorrido $v_St$ desde la vertical:
+      $$t=\frac{h}{v_S\tan\alpha}=\frac{1250}{(1{,}70)(344)\tan36{,}0^\circ}=\frac{1250}{(584{,}8)(0{,}7265)}=\mathbf{2{,}94\ s}$$
+      <span class="por">Equivalente: $t=h\sqrt{M^2-1}/(M\,v)$, mismo valor. No es $t=h/v$.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t16/avion-a-mach-1-70-a-1250-metros-de-altura-el-con.svg">
 <div class="figph" role="img" aria-label="Avión a Mach 1,70 a 1250 metros de altura; el cono de choque llega al observador cuando el avión ha avanzado 1718 metros; el ángulo es 36,0 grados" style="aspect-ratio:340/208"></div>
@@ -635,52 +752,82 @@
 <div class="nivel"><b>🟡 Práctica: 9 ejercicios más</b><span>Repiten métodos del Núcleo en otras situaciones: presión a tres frecuencias, módulos elásticos a partir de la rapidez, el factor de +13 dB, el tubo más grande de un órgano, el tubo de ensayo medio lleno de agua, las longitudes de onda delante y detrás de un tren, la asimetría fuente-receptor, pulsos más Doppler y un eco con los dos vehículos en marcha. Antes de leer los pasos, decide: ¿medio, decibelios, tubo, interferencia o Doppler?</span></div>
 <details class="sol" id="p163"><summary>Problema 16.3 — ¿Cuándo duele un sonido? <span class="src" data-l="E" data-ref="Solucionario 16-1, Prob. 16.3">E 16-1</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 16.3, p. 538; §16.1, ec. 16.5, p. 507">U p.538, 507</span></summary>
 <p class="enun">Una onda sonora en el aire tiene una amplitud de desplazamiento de 0,0200 mm. Calcula la amplitud de presión para frecuencias de a) 150 Hz; b) 1500 Hz; c) 15 000 Hz. En cada caso, compárala con el umbral de dolor, 30 Pa.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$p_{m\acute ax}=B\,k\,A$, con $k=\dfrac{2\pi f}{v}$</li>
+      <li>Aire: $B=1{,}42\times10^5$ Pa, $v=344$ m/s; $A=0{,}0200\ \text{mm}=2{,}00\times10^{-5}$ m</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Datos del medio.</b> Aire: $B=1{,}42\times10^5$ Pa, $v=344$ m/s. $A=2{,}00\times10^{-5}$ m.</li>
-    <li><b>a)</b> $k=\dfrac{2\pi f}v=\dfrac{2\pi(150)}{344}=2{,}74$ rad/m ⇒ $p_\text{máx}=BkA=(1{,}42\times10^5)(2{,}74)(2{,}00\times10^{-5})=\mathbf{7{,}78\ Pa}$, por debajo de 30 Pa.</li>
-    <li><b>b)</b> $f\times10\Rightarrow k\times10\Rightarrow p_\text{máx}\times10$: $\mathbf{77{,}8\ Pa}$, por encima del umbral de dolor.</li>
-    <li><b>c)</b> Otra vez ×10: $\mathbf{778\ Pa}$, muy por encima (es un ultrasonido apenas audible, pero la presión sería enorme).</li>
+    <li><b>a) 150 Hz:</b>
+      $$k=\frac{2\pi(150)}{344}=2{,}74\ \text{rad/m},\qquad p_{m\acute ax}=(1{,}42\times10^5)(2{,}74)(2{,}00\times10^{-5})=\mathbf{7{,}78\ Pa}\ <30\ \text{Pa}$$</li>
+    <li><b>b) 1500 Hz</b> ($f\times10\Rightarrow k\times10\Rightarrow p\times10$):
+      $$p_{m\acute ax}=\mathbf{77{,}8\ Pa}\ >30\ \text{Pa}\ \ (\text{por encima del umbral de dolor})$$</li>
+    <li><b>c) 15 000 Hz:</b>
+      $$p_{m\acute ax}=\mathbf{778\ Pa}\ \ (\text{muy por encima})$$</li>
   </ol>
   <div class="recipe"><b>Receta:</b> con $A$ fija, $p_\text{máx}\propto f$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Usar $k=f/v$ (falta el $2\pi$) o dejar $A$ en mm sin pasar a metros.</p></div>
 </details>
 <details class="sol" id="p166"><summary>Problema 16.6 — Módulo volumétrico y módulo de Young a partir de la rapidez <span class="src" data-l="E" data-ref="Solucionario 16-2, Prob. 16.6">E 16-2</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 16.6, p. 538; §16.2, ec. 16.7-16.8, p. 511">U p.538, 511</span></summary>
 <p class="enun">a) En un líquido de densidad 1300 kg/m³, ondas longitudinales de 400 Hz tienen una longitud de onda de 8,00 m. Calcula el módulo volumétrico del líquido. b) Una barra metálica de 1,50 m tiene una densidad de 6400 kg/m³. Las ondas sonoras longitudinales tardan $3{,}90\times10^{-4}$ s en ir de un extremo al otro. Calcula el módulo de Young del metal.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fluido: $v=\sqrt{B/\rho}$; varilla: $v=\sqrt{Y/\rho}$ ⇒ módulo $=\rho\,v^2$</li>
+      <li>$v=\lambda f$ o $v=\dfrac Lt$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> La rapidez de una onda mecánica es $\sqrt{\text{(propiedad elástica)}/\text{(propiedad inercial)}}$: en un fluido, $v=\sqrt{B/\rho}$ (16.7); en una varilla delgada, $v=\sqrt{Y/\rho}$ (16.8). Medida $v$, se despeja el módulo.</li>
-    <li><b>a)</b> $v=\lambda f=(8{,}00)(400)=3200$ m/s ⇒ $B=\rho v^2=(1300)(3200)^2=\mathbf{1{,}33\times10^{10}\ Pa}$.</li>
-    <li><b>b)</b> $v=L/t=\dfrac{1{,}50}{3{,}90\times10^{-4}}=3846$ m/s ⇒ $Y=\rho v^2=(6400)(3846)^2=\mathbf{9{,}47\times10^{10}\ Pa}$.</li>
-    <li><b>Evaluación.</b> Ambas rapideces son unas 10 veces la del aire; los órdenes de magnitud ($10^{10}$-$10^{11}$ Pa) son los de los módulos de sólidos del tema 11.</li>
+    <li><b>a) Módulo volumétrico:</b>
+      $$v=\lambda f=(8{,}00)(400)=3200\ \text{m/s},\qquad B=\rho v^2=(1300)(3200)^2=\mathbf{1{,}33\times10^{10}\ Pa}$$</li>
+    <li><b>b) Módulo de Young</b> (en una varilla manda $Y$, no $B$):
+      $$v=\frac Lt=\frac{1{,}50}{3{,}90\times10^{-4}}=3846\ \text{m/s},\qquad Y=\rho v^2=(6400)(3846)^2=\mathbf{9{,}47\times10^{10}\ Pa}$$
+      <span class="por">Órdenes de magnitud ($10^{10}$-$10^{11}$ Pa) como los de los sólidos del tema 11.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> $v$ (de $\lambda f$ o de $L/t$) ⇒ módulo $=\rho v^2$.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Usar (16.7) en la barra: en una varilla manda $Y$, no $B$.</p></div>
 </details>
 <details class="sol" id="p1614"><summary>Problema 16.14 — ¿Cuánto es «+13 dB»? <span class="src" data-l="E" data-ref="Solucionario 16-4, Prob. 16.14">E 16-4</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 16.14, p. 539; §16.3, ec. 16.15, pp. 516-517; ejemplo 16.9, p. 517">U p.539, 516</span></summary>
 <p class="enun">a) ¿En qué factor debe incrementarse la intensidad del sonido para elevar el nivel de intensidad en 13,0 dB? b) Explica por qué no necesitas conocer la intensidad original.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\beta_2-\beta_1=(10\ \text{dB})\log\dfrac{I_2}{I_1}$ ⇒ $\dfrac{I_2}{I_1}=10^{\Delta\beta/10}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> El oído responde de forma aproximadamente logarítmica; por eso $\beta=(10\ \text{dB})\log(I/I_0)$ (16.15).</li>
-    <li>Restando dos niveles (ejemplo 16.9): $\beta_2-\beta_1=(10\ \text{dB})\log(I_2/I_1)$.</li>
-    <li><b>a)</b> $13{,}0=10\log(I_2/I_1)$ ⇒ $I_2/I_1=10^{1{,}30}=\mathbf{20{,}0}$.</li>
-    <li><b>b)</b> La diferencia de niveles depende solo del <b>cociente</b> de intensidades ($I_0$ se cancela), no de su valor.</li>
+    <li><b>a) Factor de intensidad:</b>
+      $$13{,}0=10\log\frac{I_2}{I_1}\ \Rightarrow\ \frac{I_2}{I_1}=10^{1{,}30}=\mathbf{20{,}0}$$</li>
+    <li><b>b) ¿Por qué no hace falta la intensidad original?</b>
+      <span class="por">La diferencia de niveles depende solo del cociente de intensidades ($I_0$ se cancela).</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> $\Delta\beta\ (\text{dB})=10\log(I_2/I_1)\Leftrightarrow I_2/I_1=10^{\Delta\beta/10}$. De memoria: $\times2\leftrightarrow+3$ dB; $\times10\leftrightarrow+10$ dB.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Pensar que +13 dB es multiplicar por 13 o por 1,3.</p></div>
 </details>
 <details class="sol" id="p1629"><summary>Problema 16.29 — El tubo más grande del órgano <span class="src" data-l="E" data-ref="Solucionario 16-8, Prob. 16.29">E 16-8</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 16.29, p. 540; §16.4, ec. 16.16 y 16.20, pp. 520-521">U p.540, 520</span></summary>
 <p class="enun">En órganos de tubo de tamaño mediano, el tubo más grande mide 4,88 m (16 ft). ¿Cuál es la frecuencia de la nota fundamental si el tubo está a) abierto en ambos extremos, b) abierto en un extremo y cerrado en el otro?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Abierto-abierto: $f_1=\dfrac{v}{2L}$; abierto-cerrado: $f_1=\dfrac{v}{4L}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>a)</b> $f_1=\dfrac v{2L}=\dfrac{344}{2(4{,}88)}=\mathbf{35{,}2\ Hz}$ (16.16).</li>
-    <li><b>b)</b> $f_1=\dfrac v{4L}=\mathbf{17{,}6\ Hz}$ (16.20), por debajo del umbral audible (~20 Hz): se percibe más como vibración que como nota.</li>
+    <li><b>a) Abierto en ambos extremos:</b>
+      $$f_1=\frac{344}{2(4{,}88)}=\mathbf{35{,}2\ Hz}$$</li>
+    <li><b>b) Abierto-cerrado:</b>
+      $$f_1=\frac{344}{4(4{,}88)}=\mathbf{17{,}6\ Hz}$$
+      <span class="por">Por debajo del umbral audible (~20 Hz): se percibe más como vibración que como nota.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> misma longitud: el cerrado suena a la mitad de frecuencia que el abierto.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Intercambiar $2L$ y $4L$.</p></div>
 </details>
 <details class="sol" id="p1631"><summary>Problema 16.31 — Soplar en un tubo de ensayo <span class="src" data-l="E" data-ref="Solucionario 16-8 y 16-9, Prob. 16.31">E 16-8</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 16.31, p. 540; §16.4, ec. 16.20, p. 521; §16.5, p. 522">U p.540, 521</span></summary>
 <p class="enun">Soplas a través de la boca de un tubo de ensayo vacío y produces la onda estacionaria fundamental de la columna de aire. La rapidez del sonido es 344 m/s y el tubo actúa como un tubo cerrado. a) Si la columna de aire mide 14,0 cm, ¿qué frecuencia tiene la onda? b) ¿Y si el tubo se llena hasta la mitad con agua?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Tubo cerrado: $L=\dfrac{\lambda}{4}$; $f=\dfrac{v}{\lambda}=\dfrac{v}{4L}$ ($L$ = longitud de la columna de aire)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Por qué suena.</b> El soplo contiene muchas frecuencias; la columna <b>resuena</b> con la de su modo normal y la amplifica (§16.5).</li>
-    <li><b>a)</b> Fondo cerrado (nodo) y boca abierta (antinodo) ⇒ $L=\lambda/4$ ⇒ $\lambda=0{,}560$ m ⇒ $f=v/\lambda=\mathbf{614\ Hz}$ (16.20).</li>
-    <li><b>b)</b> El agua actúa como nuevo fondo cerrado: $L=0{,}070$ m ⇒ $\lambda=0{,}280$ m ⇒ $f=\mathbf{1{,}23\ kHz}$ (el doble).</li>
+    <li><b>a) Tubo vacío</b> ($L=0{,}140$ m; fondo cerrado = nodo, boca = antinodo):
+      $$\lambda=4L=0{,}560\ \text{m},\qquad f=\frac{v}{\lambda}=\frac{344}{0{,}560}=\mathbf{614\ Hz}$$</li>
+    <li><b>b) Lleno hasta la mitad</b> (el agua es el nuevo fondo; $L=0{,}070$ m):
+      $$\lambda=0{,}280\ \text{m},\qquad f=\frac{344}{0{,}280}=\mathbf{1{,}23\ kHz}\ \ (\text{el doble})$$
+      <span class="por">Cuenta la longitud de la columna de aire, no la del recipiente.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t16/tubo-de-ensayo-vacio-con-una-columna-de-aire-de-.svg">
 <div class="figph" role="img" aria-label="Tubo de ensayo vacío con una columna de aire de 14,0 centímetros con antinodo en la boca y nodo en el fondo, y el mismo tubo lleno hasta la mitad de agua con una columna de aire de 7 centímetros" style="aspect-ratio:340/200"></div>
@@ -691,13 +838,21 @@
 </details>
 <details class="sol" id="p1646"><summary>Problema 16.46 — Longitudes de onda delante y detrás de un tren <span class="src" data-l="E" data-ref="Solucionario 16-12, Prob. 16.46">E 16-12</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 16.46, p. 541; §16.8, ec. 16.27-16.29, pp. 529-530; ejemplo 16.14, p. 530">U p.541, 529</span></summary>
 <p class="enun">Un tren viaja a 25,0 m/s en aire tranquilo. La frecuencia de la nota del silbato es de 400 Hz. Calcula la longitud de las ondas sonoras a) delante de la locomotora; b) detrás de la locomotora. Calcula la frecuencia que oye un receptor estacionario c) delante y d) detrás de la locomotora.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Fuente móvil: $\lambda_{delante}=\dfrac{v-v_S}{f_S}$; $\lambda_{detr\acute as}=\dfrac{v+v_S}{f_S}$</li>
+      <li>Receptor quieto: $f_L=\dfrac{v}{\lambda}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> La fuente persigue a las crestas que emite por delante y se aleja de las que deja detrás. En reposo sería $\lambda=344/400=0{,}860$ m.</li>
-    <li><b>a)</b> $\lambda_\text{enfrente}=\dfrac{v-v_S}{f_S}=\dfrac{344-25{,}0}{400}=\mathbf{0{,}798\ m}$ (16.27).</li>
-    <li><b>b)</b> $\lambda_\text{atrás}=\dfrac{344+25{,}0}{400}=\mathbf{0{,}922\ m}$ (16.28).</li>
-    <li><b>c)</b> Receptor quieto: las crestas pasan con rapidez $v$ ⇒ $f_L=v/\lambda=344/0{,}7975=\mathbf{431\ Hz}$.</li>
-    <li><b>d)</b> $f_L=344/0{,}9225=\mathbf{373\ Hz}$.</li>
-    <li><b>Comprobación con (16.29).</b> c) Positivo de $L$ a $S$: la fuente va hacia $L$ ⇒ $v_S=-25$: $f_L=\frac{344}{344-25}400=431$ Hz ✓. d) $v_S=+25$: $\frac{344}{369}400=373$ Hz ✓.</li>
+    <li><b>a) Delante</b> (en reposo sería $\lambda=344/400=0{,}860$ m):
+      $$\lambda=\frac{344-25{,}0}{400}=\mathbf{0{,}798\ m}$$</li>
+    <li><b>b) Detrás:</b>
+      $$\lambda=\frac{344+25{,}0}{400}=\mathbf{0{,}922\ m}$$</li>
+    <li><b>c) Receptor delante</b> (las crestas pasan con rapidez $v$):
+      $$f_L=\frac{344}{0{,}7975}=\mathbf{431\ Hz}$$</li>
+    <li><b>d) Receptor detrás:</b>
+      $$f_L=\frac{344}{0{,}9225}=\mathbf{373\ Hz}$$
+      <span class="por">Comprobación: $\frac{344}{344-25}400=431$ Hz y $\frac{344}{344+25}400=373$ Hz ✓.</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t16/tren-que-avanza-a-25-metros-por-segundo-hacia-la.svg">
 <div class="figph" role="img" aria-label="Tren que avanza a 25 metros por segundo hacia la derecha emitiendo 400 hertz: delante las crestas están a 0,798 metros y el receptor oye 431 hertz; detrás están a 0,922 metros y se oyen 373 hertz" style="aspect-ratio:340/226"></div>
@@ -708,33 +863,54 @@
 </details>
 <details class="sol" id="p1648"><summary>Problema 16.48 — Fuente móvil frente a receptor móvil <span class="src" data-l="E" data-ref="Solucionario 16-13, Prob. 16.48">E 16-13</span> <span class="prio p2">🟡</span> <span class="src" data-l="U" data-ref="U Ejercicio 16.48, p. 541; §16.8, ec. 16.29, pp. 528-530">U p.541, 529</span></summary>
 <p class="enun">a) Una fuente sonora de 1,00 kHz se mueve hacia un receptor estacionario a la mitad de la rapidez del sonido. ¿Qué frecuencia oye el receptor? b) Ahora la fuente está estacionaria y el receptor se mueve hacia ella a la mitad de la rapidez del sonido. ¿Qué frecuencia oye? Compara con a) y explica la diferencia con principios de física.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Doppler (sentido $+$ de $L$ a $S$, velocidades respecto al aire): $f_L=\dfrac{v+v_L}{v+v_S}\,f_S$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Convenio:</b> positivo de $L$ a $S$; usamos (16.29) $f_L=\dfrac{v+v_L}{v+v_S}f_S$.</li>
-    <li><b>a)</b> La fuente va hacia el receptor, en contra del sentido $L\to S$ ⇒ $v_S=-v/2$, $v_L=0$: $f_L=\dfrac{v}{v/2}f_S=\mathbf{2000\ Hz}$.</li>
-    <li><b>b)</b> El receptor va hacia la fuente, en el sentido $L\to S$ ⇒ $v_L=+v/2$, $v_S=0$: $f_L=\dfrac{3v/2}{v}f_S=\mathbf{1500\ Hz}$.</li>
-    <li><b>Por qué difieren.</b> En a) la fuente <b>comprime $\lambda$</b> a la mitad ($\lambda_\text{enfrente}=(v-v/2)/f_S$) y las crestas siguen llegando a $v$ ⇒ $f$ se duplica. En b) $\lambda$ no cambia; solo aumenta la rapidez relativa de las crestas respecto al receptor, de $v$ a $1{,}5v$. El aire es un sistema de referencia físico: no basta la velocidad relativa fuente-receptor.</li>
+    <li><b>a) Fuente hacia el receptor a $v/2$</b> (en contra del sentido $L\to S$: $v_S=-v/2$, $v_L=0$):
+      $$f_L=\frac{v}{v-v/2}(1000)=\mathbf{2000\ Hz}$$</li>
+    <li><b>b) Receptor hacia la fuente a $v/2$</b> ($v_L=+v/2$, $v_S=0$):
+      $$f_L=\frac{v+v/2}{v}(1000)=\mathbf{1500\ Hz}$$</li>
+    <li><b>Por qué difieren.</b>
+      <span class="por">En a) la fuente comprime $\lambda$ a la mitad y las crestas llegan a $v$ ⇒ $f$ se duplica. En b) $\lambda$ no cambia; solo aumenta la rapidez relativa de las crestas respecto al receptor, de $v$ a $1{,}5v$. El aire es una referencia física: no basta la velocidad relativa fuente-receptor.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> sonido: cada velocidad, respecto al aire, con su signo; fuente y receptor no son intercambiables.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Responder 1500 Hz en ambos casos «porque la velocidad relativa es la misma».</p></div>
 </details>
 <details class="sol" id="p1652"><summary>Problema 16.52 — Pulsos entre dos cláxones <span class="src" data-l="E" data-ref="Solucionario 16-14, Prob. 16.52">E 16-14</span> <span class="prio p3">⚪</span> <span class="src" data-l="U" data-ref="U Ejercicio 16.52, p. 541; §16.7, ec. 16.24, p. 527; §16.8, ec. 16.29, p. 529">U p.541, 527</span></summary>
 <p class="enun">Estás estacionado en tu auto al lado de un camino; un amigo se acerca en un automóvil idéntico. Haces sonar tu claxon, de 260 Hz, y a la vez tu amigo hace sonar el suyo, idéntico, y oyes una frecuencia de pulso de 6,0 Hz. ¿Qué tan rápido se acerca tu amigo?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Pulsos: $f_{pulso}=|f_1-f_2|$</li>
+      <li>Doppler (receptor quieto): $f_L=\dfrac{v}{v+v_S}\,f_S$; la fuente que se acerca tiene $v_S<0$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Oyes dos sonidos: tu claxon (260 Hz, sin Doppler) y el de tu amigo, desplazado por Doppler. Sus frecuencias difieren en la de pulso (16.24).</li>
-    <li><b>¿Más alta o más baja?</b> El amigo se acerca ⇒ $f_L>f_S$ ⇒ $f_L=260+6{,}0=266$ Hz (254 Hz correspondería a alejarse).</li>
-    <li><b>Doppler</b> (16.29), tú (receptor) quieto, $v_L=0$; la fuente va hacia ti ⇒ $v_S<0$: $$266=\frac{344}{344+v_S}(260)\ \Rightarrow\ v_S=344\Big(\frac{260}{266}-1\Big)=-7{,}76\ \text{m/s}.$$</li>
-    <li>Tu amigo se acerca a <b>7,8 m/s</b> (unos 28 km/h).</li>
+    <li><b>Frecuencia del claxon del amigo.</b> Se acerca ⇒ $f_L>260$ Hz:
+      $$f_L=260+6{,}0=266\ \text{Hz}$$
+      <span class="por">254 Hz correspondería a alejarse.</span></li>
+    <li><b>Doppler</b> ($v_L=0$):
+      $$266=\frac{344}{344+v_S}(260)\ \Rightarrow\ v_S=344\Big(\frac{260}{266}-1\Big)=-7{,}76\ \text{m/s}$$</li>
+    <li><b>Resultado:</b> tu amigo se acerca a <b>7,8 m/s</b> (unos 28 km/h).</li>
   </ol>
   <div class="recipe"><b>Receta:</b> pulsos + Doppler: $f_\text{pulso}$ da $f_L$ (elige el signo según se acerque o aleje) y (16.29) da la velocidad.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Igualar 6,0 Hz a $f_L$ o tomar $f_L=254$ Hz.</p></div>
 </details>
 <details class="sol" id="p1654"><summary>Problema 16.54 — El eco de la sirena en un camión <span class="src" data-l="E" data-ref="Solucionario 16-15 y 16-16, Prob. 16.54">E 16-15</span> <span class="prio p3">⚪</span> <span class="src" data-l="U" data-ref="U Ejercicio 16.54, p. 541; §16.8, ec. 16.28-16.29 y Estrategia 16.2, pp. 529-532; ejemplo 16.18, p. 532">U p.541, 529-532</span></summary>
 <p class="enun">La sirena de un camión de bomberos que viaja al norte a 30,0 m/s emite 2000 Hz. Un camión delante del de bomberos se desplaza al norte a 20 m/s. a) ¿Qué frecuencia de la sirena oye el conductor del camión de bomberos reflejada en la parte trasera del camión? b) ¿Qué longitud de onda mide el conductor de bomberos para estas ondas reflejadas?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Doppler: $f_L=\dfrac{v+v_L}{v+v_S}\,f_S$ (sentido $+$ de $L$ a $S$); reflexión en dos pasos</li>
+      <li>Longitud de onda detrás de una fuente móvil: $\lambda=\dfrac{v+v_S}{f}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Reflexión ⇒ dos pasos</b> (Estrategia 16.2; como el ejemplo 16.18).</li>
-    <li><b>Paso 1: el camión es el receptor.</b> Positivo de $L$ (camión) a $S$ (bomberos) = <b>sur</b>. Ambos van al norte ⇒ $v_L=-20{,}0$, $v_S=-30{,}0$: $$f'=\frac{344-20{,}0}{344-30{,}0}(2000)=2064\ \text{Hz}.$$ (Se acercan porque los bomberos son más rápidos ⇒ $f'>2000$ ✓.)</li>
-    <li><b>Paso 2: el camión es la fuente</b> que emite $f'$; el conductor de bomberos es el receptor. Positivo de $L$ (bomberos) a $S$ (camión) = <b>norte</b> ⇒ $v_L=+30{,}0$, $v_S=+20{,}0$: $$f=\frac{344+30{,}0}{344+20{,}0}(2064)=\mathbf{2120\ Hz}.$$</li>
-    <li><b>b)</b> La longitud de onda es la separación entre crestas en el aire. El camión (fuente) se aleja del lado sur, hacia donde viajan las ondas reflejadas ⇒ $\lambda_\text{atrás}=\dfrac{v+v_S}{f'}=\dfrac{344+20{,}0}{2064}=\mathbf{0{,}176\ m}$ (16.28). Comprobación: el conductor, que va hacia las crestas, las recibe con rapidez relativa $v+30$: $\lambda=(344+30)/2120=0{,}176$ m ✓. (En reposo sería $344/2000=0{,}172$ m.)</li>
+    <li><b>Paso 1: el camión es el receptor</b> (sentido $+$ de camión a bomberos = sur; ambos van al norte: $v_L=-20{,}0$, $v_S=-30{,}0$):
+      $$f'=\frac{344-20{,}0}{344-30{,}0}(2000)=2064\ \text{Hz}$$</li>
+    <li><b>Paso 2: el camión es la fuente de $f'$</b> (sentido $+$ de bomberos a camión = norte: $v_L=+30{,}0$, $v_S=+20{,}0$):
+      $$f=\frac{344+30{,}0}{344+20{,}0}(2064)=\mathbf{2120\ Hz}$$</li>
+    <li><b>b) Longitud de onda</b> (el camión, fuente, se aleja del lado hacia el que viajan las ondas reflejadas):
+      $$\lambda=\frac{v+v_S}{f'}=\frac{344+20{,}0}{2064}=\mathbf{0{,}176\ m}$$
+      <span class="por">Comprobación: $(344+30)/2120=0{,}176$ m ✓ (en reposo sería $344/2000=0{,}172$ m).</span></li>
   </ol>
   <figure class="fig" data-svg="../assets/figs/t16/camion-de-bomberos-y-camion-delante-ambos-hacia-.svg">
 <div class="figph" role="img" aria-label="Camión de bomberos y camión delante, ambos hacia el norte; en el primer paso el sentido positivo es hacia el sur y las velocidades son menos 20 y menos 30; en el segundo paso el positivo es hacia el norte y las velocidades son más 30 y más 20" style="aspect-ratio:340/282"></div>
@@ -763,6 +939,12 @@
 <div class="nivel" id="teoria-t16"><b>📝 Preguntas de teoría (4 puntos)</b><span>De este tema no ha caído ninguna pregunta de teoría en las convocatorias disponibles. Para entrenar el formato (una pregunta a elegir entre dos, con dos cuestiones cortas relacionadas) te dejamos una pregunta <b>propia</b> con su desarrollo modelo, «Efecto Doppler para el sonido» (T1), dos cuestiones cortas <b>propias</b> (C1, C2) y un guion por si te toca otro apartado del capítulo. Ninguna es de examen.</span></div>
 <details class="sol" id="t1"><summary>T1 — Teoría (propia, estilo examen): «Efecto Doppler para el sonido» <span class="src" data-l="P" data-ref="Pregunta de teoría propia, estilo examen; NO es de examen. Teoría: U §16.8-16.9, ec. 16.25-16.31, pp. 528-535">P</span> <span class="prio p1">🔴</span> <span class="src" data-l="U" data-ref="U §16.8-16.9, ec. 16.25-16.31, pp. 528-535">U p.528-535</span></summary>
 <p class="enun">Pregunta de teoría (propia, <b>no de examen</b>): <b>«Efecto Doppler para el sonido»</b>. Esquema de respuesta modelo de una cara aproximadamente; lo que <b>no puede faltar</b> va en negrita. Las figuras son las de §8 y §9.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Doppler general (sentido $+$ de $L$ a $S$): $f_L=\dfrac{v+v_L}{v+v_S}\,f_S$</li>
+      <li>Fuente móvil: $\lambda_{delante}=\dfrac{v-v_S}{f_S}$, $\lambda_{detr\acute as}=\dfrac{v+v_S}{f_S}$</li>
+      <li>Cono de choque: $\sin\alpha=\dfrac{v}{v_S}$ (Mach $=v_S/v$); luz: $f_R=\sqrt{\dfrac{c-v}{c+v}}\,f_S$</li>
+    </ul></div>
   <ol class="steps">
     <li><b>Fenómeno.</b> Cuando la fuente y/o el receptor se mueven <b>respecto al medio</b> (el aire), la frecuencia que oye el receptor, $f_L$, <b>es distinta</b> de la que emite la fuente, $f_S$: más aguda al acercarse, más grave al alejarse (la sirena que pasa).</li>
     <li><b>Convenio.</b> Movimientos a lo largo de la recta fuente–receptor. <b>Sentido positivo: de $L$ a $S$</b>, para $v_L$ y $v_S$. $v$ = rapidez del sonido respecto al aire, siempre positiva. Las velocidades se miden respecto al aire.</li>
@@ -780,6 +962,11 @@
 </details>
 <details class="sol" id="c1"><summary>Cuestión corta C1 (propia): el tubo de órgano y el helio <span class="prio p1">🔴</span> <span class="src" data-l="P" data-ref="Cuestión corta propia, estilo examen; NO es de examen. Teoría: U §16.4, ec. 16.16 y 16.20, pp. 520-521; tabla 16.1, p. 511">P</span></summary>
 <p class="enun">Un tubo de órgano de 0,500 m contiene aire a 20 °C ($v=344$ m/s). a) ¿Cuál es su frecuencia fundamental si está abierto en ambos extremos? ¿Y si se tapa un extremo? b) Si el tubo abierto se llena de helio a 20 °C (rapidez 999 m/s, tabla 16.1), ¿qué pasa con la longitud de onda y con la frecuencia del modo fundamental?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Tubo abierto-abierto: $L=\dfrac{n\lambda_n}{2}$, $f_n=\dfrac{n\,v}{2L}$; abierto-cerrado: $L=\dfrac{(2n-1)\lambda}{4}$, $f_1=\dfrac{v}{4L}$</li>
+      <li>$\lambda_n$ depende solo de la geometría; $f=v/\lambda$ depende del gas</li>
+    </ul></div>
   <ol class="steps">
     <li><b>a)</b> Abierto: antinodo de desplazamiento en cada extremo ⇒ $L=\lambda_1/2$, $f_1=\dfrac v{2L}=\dfrac{344}{1{,}00}=\mathbf{344\ Hz}$ (16.16). Cerrado: nodo en el extremo tapado y antinodo en el abierto ⇒ $L=\lambda_1/4$, $f_1=\dfrac v{4L}=\mathbf{172\ Hz}$ (16.20): una octava más grave.</li>
     <li><b>b)</b> $\lambda_1=2L=1{,}00$ m <b>no cambia</b> (solo depende de la geometría y de las condiciones en los extremos); $v$ pasa de 344 a 999 m/s, así que $f_1=v/\lambda_1$ sube a <b>999 Hz</b> (factor 2,90). Por eso la voz con helio suena aguda.</li>
@@ -788,6 +975,11 @@
 </details>
 <details class="sol" id="c2"><summary>Cuestión corta C2 (propia): dos máquinas de 60 dB <span class="prio p1">🔴</span> <span class="src" data-l="P" data-ref="Cuestión corta propia, estilo examen; NO es de examen. Teoría: U §16.3, ec. 16.15 y ejemplo 16.9, pp. 516-518">P</span></summary>
 <p class="enun">En un punto llega el sonido de una máquina con un nivel de 60 dB. Se pone en marcha una segunda máquina idéntica, independiente, que produce allí también 60 dB. ¿Cuál es el nivel total? ¿Por qué no 120 dB?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Nivel de intensidad: $\beta=(10\ \text{dB})\log\dfrac{I}{I_0}$, $I_0=10^{-12}$ W/m²</li>
+      <li>Fuentes independientes: se suman las intensidades, no los dB</li>
+    </ul></div>
   <ol class="steps">
     <li>Para fuentes independientes (no coherentes) se <b>suman intensidades</b>, no decibelios. Cada una: $I=I_0\,10^{6}=10^{-6}$ W/m² (16.15).</li>
     <li>Total $2\times10^{-6}$ W/m² ⇒ $\beta=(10\ \text{dB})\log(2\times10^{6})=\mathbf{63{,}0\ dB}$. Equivalentemente, duplicar $I$ suma $(10\ \text{dB})\log2=3{,}0$ dB. 120 dB correspondería a multiplicar la intensidad por $10^6$.</li>

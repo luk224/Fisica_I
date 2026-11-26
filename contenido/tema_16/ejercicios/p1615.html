@@ -1,9 +1,15 @@
 <p class="enun">Intentas oír una conversación interesante, pero estás a 15,0 m y la escuchas como un murmullo de 20,0 dB. ¿Qué tan cerca de los parlantes debes colocarte para que el nivel sea de 60,0 dB?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>$\dfrac{I_2}{I_1}=10^{\Delta\beta/10}$</li>
+      <li>Fuente puntual: $\dfrac{I_2}{I_1}=\dfrac{r_1^2}{r_2^2}$ (la $I$ cumple el inverso del cuadrado, no los dB)</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Modelo.</b> Los que hablan son una fuente puntual que emite igual en todas direcciones ⇒ ley del cuadrado inverso: $I_2/I_1=r_1^2/r_2^2$ (15.26).</li>
-    <li><b>De dB a cociente de intensidades:</b> $\Delta\beta=+40{,}0$ dB ⇒ $I_2/I_1=10^{4{,}00}$.</li>
-    <li><b>De intensidades a distancias:</b> $r_2=r_1\sqrt{I_1/I_2}=15{,}0\cdot10^{-2}=\mathbf{0{,}150\ m=15{,}0\ cm}$.</li>
-    <li><b>Atajo.</b> Combinando: $\Delta\beta=(20\ \text{dB})\log(r_1/r_2)$: 40 dB ⇒ $r_1/r_2=100$ ✓.</li>
+    <li><b>De dB a cociente de intensidades:</b>
+      $$\Delta\beta=60{,}0-20{,}0=40{,}0\ \text{dB}\ \Rightarrow\ \frac{I_2}{I_1}=10^{4{,}00}$$</li>
+    <li><b>De intensidades a distancias:</b>
+      $$r_2=r_1\sqrt{\frac{I_1}{I_2}}=15{,}0\cdot10^{-2}=\mathbf{0{,}150\ m}=15{,}0\ \text{cm}$$
+      <span class="por">Atajo: $\Delta\beta=(20\ \text{dB})\log(r_1/r_2)$; 40 dB ⇒ $r_1/r_2=100$ ✓.</span></li>
   </ol>
   <div class="recipe"><b>Receta:</b> dB ⇒ cociente de $I$ ⇒ inverso del cuadrado ⇒ cociente de $r$. Cada factor 10 en la distancia son 20 dB.</div>
   <div class="box warn"><span class="h">Error típico</span><p>Suponer $\beta\propto1/r^2$: el nivel en dB <b>no</b> cumple el inverso del cuadrado; la intensidad sí.</p></div>

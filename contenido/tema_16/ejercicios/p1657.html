@@ -1,8 +1,15 @@
 <p class="enun">Un avión a reacción vuela a Mach 1,70 a altitud constante de 1250 m. a) ¿Qué ángulo $\alpha$ tiene el cono de la onda de choque? b) ¿Cuánto tiempo después de pasar el avión directamente sobre nosotros oímos el estruendo sónico? Desprecia la variación de la rapidez del sonido con la altitud.</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Cono de choque: $\sin\alpha=\dfrac{v}{v_S}=\dfrac{1}{\text{Mach}}$</li>
+      <li>Tiempo hasta el estruendo: $\tan\alpha=\dfrac{h}{v_S\,t}$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Idea.</b> Una fuente supersónica deja atrás sus crestas, que se superponen en un cono de semiángulo $\sin\alpha=v/v_S$ (16.31). El estruendo se oye cuando el <b>cono</b> llega al observador, no cuando el avión pasa por encima.</li>
-    <li><b>a)</b> $\sin\alpha=1/1{,}70=0{,}588$ ⇒ $\alpha=\mathbf{36{,}0^\circ}$.</li>
-    <li><b>b)</b> Geometría del ejemplo 16.19: cuando el cono nos alcanza, el avión ha recorrido $v_St$ desde la vertical y la generatriz del cono pasa por nosotros ⇒ $\tan\alpha=h/(v_St)$: $$t=\frac h{v_S\tan\alpha}=\frac{1250}{(1{,}70)(344)\tan36{,}0^\circ}=\mathbf{2{,}94\ s}.$$ (Equivalente: $\tan\alpha=1/\sqrt{M^2-1}$ ⇒ $t=h\sqrt{M^2-1}/(Mv)$, mismo valor.)</li>
+    <li><b>a) Ángulo del cono:</b>
+      $$\sin\alpha=\frac{1}{1{,}70}=0{,}588\ \Rightarrow\ \alpha=\mathbf{36{,}0^\circ}$$</li>
+    <li><b>b) Tiempo.</b> El estruendo se oye cuando el cono nos alcanza: el avión ya ha recorrido $v_St$ desde la vertical:
+      $$t=\frac{h}{v_S\tan\alpha}=\frac{1250}{(1{,}70)(344)\tan36{,}0^\circ}=\frac{1250}{(584{,}8)(0{,}7265)}=\mathbf{2{,}94\ s}$$
+      <span class="por">Equivalente: $t=h\sqrt{M^2-1}/(M\,v)$, mismo valor. No es $t=h/v$.</span></li>
   </ol>
   {{fig:avion-a-mach-1-70-a-1250-metros-de-altura-el-con}}
   <div class="recipe"><b>Receta:</b> $\sin\alpha=1/\text{Mach}$; tiempo hasta el estruendo: $\tan\alpha=h/(v_St)$.</div>

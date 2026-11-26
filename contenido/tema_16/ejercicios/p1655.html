@@ -1,11 +1,22 @@
 <p class="enun">Una patrulla estacionada junto a una autopista emite un sonido de 1200 Hz que rebota en un automóvil de la autopista y regresa con 1250 Hz. El automóvil se acerca directamente a la patrulla o se aleja de ella. a) ¿Qué tan rápido viajaba el automóvil? b) ¿Qué frecuencia habría recibido la patrulla si hubiera avanzado hacia el otro vehículo a 20,0 m/s?</p>
+  <div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span>
+    <ul>
+      <li>Doppler: $f_L=\dfrac{v+v_L}{v+v_S}\,f_S$ (sentido $+$ de $L$ a $S$); eco = dos pasos</li>
+      <li>Auto que se acerca a una patrulla quieta: $f=\dfrac{v+v_c}{v-v_c}\,f_S$</li>
+    </ul></div>
   <ol class="steps">
-    <li><b>Signo físico.</b> La frecuencia vuelve más alta ⇒ el auto <b>se acerca</b>. Llamamos $v_c$ a su rapidez.</li>
-    <li><b>Paso 1 (auto = receptor; patrulla quieta = fuente).</b> Positivo de auto a patrulla; el auto va hacia la patrulla ⇒ $v_L=+v_c$, $v_S=0$: $f'=\dfrac{v+v_c}{v}(1200)$.</li>
-    <li><b>Paso 2 (auto = fuente de $f'$; patrulla = receptor).</b> Positivo de patrulla a auto; el auto va hacia la patrulla, en contra ⇒ $v_S=-v_c$, $v_L=0$: $f=\dfrac{v}{v-v_c}f'$.</li>
-    <li><b>Combinando:</b> $1250=\dfrac{v+v_c}{v-v_c}(1200)$ ⇒ $1250(v-v_c)=1200(v+v_c)$ ⇒ $v_c=\dfrac{50}{2450}v=\dfrac{344}{49}=\mathbf{7{,}02\ m/s}$.</li>
-    <li><b>b)</b> La patrulla va a 20,0 m/s hacia el auto. Paso 1: positivo de auto a patrulla; auto $v_L=+7{,}02$; la patrulla va hacia el auto, en contra ⇒ $v_S=-20{,}0$: $f'=\dfrac{344+7{,}02}{344-20{,}0}(1200)=1300$ Hz. Paso 2: positivo de patrulla a auto; patrulla $v_L=+20{,}0$; auto $v_S=-7{,}02$: $f=\dfrac{344+20{,}0}{344-7{,}02}(1300)=\mathbf{1404\ Hz}$ ($\approx1{,}40$ kHz).</li>
-    <li><b>Evaluación.</b> Mayor rapidez de acercamiento ⇒ desplazamiento mayor (204 Hz frente a 50 Hz) ✓.</li>
+    <li><b>Signo.</b> La frecuencia vuelve más alta ⇒ el auto se acerca. $v_c$ = su rapidez.</li>
+    <li><b>Paso 1</b> (auto = receptor, $v_L=+v_c$; patrulla quieta):
+      $$f'=\frac{v+v_c}{v}(1200)$$
+      <b>Paso 2</b> (auto = fuente de $f'$ que va hacia la patrulla: $v_S=-v_c$; patrulla receptora quieta):
+      $$f=\frac{v}{v-v_c}f'$$</li>
+    <li><b>a) Combinando:</b>
+      $$1250=\frac{v+v_c}{v-v_c}(1200)\ \Rightarrow\ 1250(v-v_c)=1200(v+v_c)\ \Rightarrow\ v_c=\frac{50}{2450}v=\frac{344}{49}=\mathbf{7{,}02\ m/s}$$</li>
+    <li><b>b) Patrulla avanzando a 20,0 m/s hacia el auto.</b> Paso 1 (receptor auto $v_L=+7{,}02$; la patrulla va hacia él: $v_S=-20{,}0$):
+      $$f'=\frac{344+7{,}02}{344-20{,}0}(1200)=1300\ \text{Hz}$$
+      Paso 2 (receptor patrulla $v_L=+20{,}0$; auto fuente $v_S=-7{,}02$):
+      $$f=\frac{344+20{,}0}{344-7{,}02}(1300)=\mathbf{1404\ Hz}\ (\approx1{,}40\ \text{kHz})$$
+      <span class="por">Mayor rapidez de acercamiento ⇒ desplazamiento mayor (204 Hz frente a 50 Hz) ✓. Con una sola aplicación de la fórmula saldría el doble, 14 m/s.</span></li>
   </ol>
   {{fig:patrulla-quieta-que-emite-1200-hertz-y-un-auto-q}}
   <div class="recipe"><b>Receta:</b> eco: $f=\dfrac{v+v_\text{obj}}{v-v_\text{obj}}f_S$ para un objeto que se acerca a una fuente-receptor quieta; si ésta se mueve, dos pasos con su velocidad en cada uno.</div>
