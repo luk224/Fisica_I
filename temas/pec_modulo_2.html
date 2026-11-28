@@ -23,7 +23,7 @@
 </div></div>
 <div class="layout"><nav class="side-toc" aria-label="Índice"><b>En esta página</b></nav><main>
 <h1>PEC 2 (módulo 2, temas 6-11) resuelta</h1>
-<p>Seis preguntas tipo test, resueltas como en el examen: datos, fórmulas, cuenta paso a paso y comprobación de las otras opciones.</p>
+<p>Nueve preguntas tipo test, resueltas como en el examen: datos, fórmulas, cuenta paso a paso y comprobación de las otras opciones.</p>
 
 <h2 id="p1">Pregunta 1</h2>
 <p>Varilla homogénea de 3 kg y 2 m que gira alrededor de un eje perpendicular que pasa por un extremo. ¿Momento de inercia?</p>
@@ -97,6 +97,42 @@
 <div class="box ex"><b>Respuesta: a) 4 rad/s</b></div>
 <p>Las otras: 2 rad/s sería no cambiar ω (como si no se conservara L); 8 rad/s es $I_1\omega_1$ sin dividir por $I_2$; 1 rad/s sale de $\omega_1 I_2/I_1$ (al revés).</p>
 
+<h2 id="p7">Pregunta 7</h2>
+<p>Una pelota de 0,15 kg se mueve horizontalmente hacia una pared con una velocidad de 20 m/s. Después de chocar con ella, rebota en sentido contrario con una velocidad de 10 m/s. ¿Cuál es el impulso que ejerce la pared sobre la pelota? Tome como positivo el sentido inicial del movimiento.</p>
+<div class="box thm formulas"><span class="h">Datos</span><ul><li>$m=0{,}15\ \text{kg}$</li><li>Antes: $v_1=+20\ \text{m/s}$ (positivo = sentido inicial)</li><li>Después: $v_2=-10\ \text{m/s}$ (rebota, sentido contrario)</li></ul></div>
+<figure class="interactivo" data-escena="pelota-pec" data-params='{}' aria-label="Pelota que choca contra una pared con v1 = +20 m/s y rebota con v2 = −10 m/s">
+  <img class="int-static" src="../assets/img/int_pelota-pec.png" alt="Pelota que choca contra una pared con v1 = +20 m/s y rebota con v2 = −10 m/s">
+  <figcaption><b>Gira la vista con el ratón.</b> El impulso de la pared (morado) apunta hacia atrás, en sentido contrario al +x. La ida dura la mitad que el rebote porque la rapidez es el doble. No está a escala. <span class="src" data-l="P" data-ref="Dibujo propio de planteamiento">P</span></figcaption>
+</figure>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span><ul><li>Teorema del impulso y la cantidad de movimiento: $\vec J=\Delta\vec p=\vec p_2-\vec p_1$</li><li>En una dimensión: $J=m\,v_2-m\,v_1=m\,(v_2-v_1)$</li></ul></div>
+<ol class="steps"><li>Cantidad de movimiento antes:$$p_1=m\,v_1=0{,}15\cdot(+20)=+3{,}0\ \text{N}\cdot\text{s}$$<span class="por">El signo importa: +20 porque es el sentido que tomamos como positivo.</span></li><li>Cantidad de movimiento después:$$p_2=m\,v_2=0{,}15\cdot(-10)=-1{,}5\ \text{N}\cdot\text{s}$$<span class="por">Rebota hacia atrás, así que $v_2$ es negativa.</span></li><li>Impulso:$$J=p_2-p_1=-1{,}5-(+3{,}0)$$</li><li>Resultado:$$J=\mathbf{-4{,}5\ \text{N}\cdot\text{s}}$$</li><li>Comprobación con la otra forma:$$J=m\,(v_2-v_1)=0{,}15\cdot(-10-20)=0{,}15\cdot(-30)=-4{,}5\ \text{N}\cdot\text{s}$$</li></ol>
+<div class="box ex"><b>Respuesta: a) −4,5 N·s</b></div>
+<p>Las otras: +3,0 es solo $p_1$; +4,5 tiene el signo al revés (la pared empuja hacia atrás, no hacia delante); −1,5 es solo $p_2$ (falta restar $p_1$).</p>
+
+<h2 id="p8">Pregunta 8</h2>
+<p>Sobre un disco que puede girar libremente alrededor de un eje fijo actúa una fuerza tangencial de 10 N aplicada a una distancia de 0,4 m del eje de rotación. El momento de inercia del disco respecto al eje es de 2 kg·m². ¿Cuál es la aceleración angular del disco?</p>
+<div class="box thm formulas"><span class="h">Datos</span><ul><li>$F=10\ \text{N}$ (tangencial, $\perp$ al radio)</li><li>$r=0{,}4\ \text{m}$</li><li>$I=2\ \text{kg}\cdot\text{m}^2$</li></ul></div>
+<figure class="interactivo" data-escena="disco-torque-pec" data-params='{}' aria-label="Disco que gira alrededor de un eje fijo con una fuerza tangencial F = 10 N a r = 0,4 m">
+  <img class="int-static" src="../assets/img/int_disco-torque-pec.png" alt="Disco que gira alrededor de un eje fijo con una fuerza tangencial F = 10 N a r = 0,4 m">
+  <figcaption><b>Gira la vista con el ratón.</b> Mueve la fuerza con el deslizador: τ = F·r y α = τ/I. La fuerza (rojo) es tangente y forma ángulo recto con el radio (morado); τ (verde) va por el eje. <span class="src" data-l="P" data-ref="Dibujo propio de planteamiento">P</span></figcaption>
+</figure>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span><ul><li>Momento de una fuerza ($\vec F\perp\vec r$): $\tau=r\,F\sin90^\circ=r\,F$</li><li>Segunda ley para la rotación: $\sum\tau=I\,\alpha$</li></ul></div>
+<ol class="steps"><li>Momento de la fuerza:$$\tau=r\,F=0{,}4\cdot10=4\ \text{N}\cdot\text{m}$$<span class="por">La fuerza es tangencial: forma 90° con el radio y $\sin90^\circ=1$.</span></li><li>Segunda ley de Newton para la rotación:$$\tau=I\,\alpha\ \Rightarrow\ \alpha=\frac{\tau}{I}$$</li><li>Sustituimos:$$\alpha=\frac{4}{2}$$</li><li>Resultado:$$\alpha=\mathbf{2\ \text{rad/s}^2}$$</li><li>Comprobación de unidades:$$\frac{\text{N}\cdot\text{m}}{\text{kg}\cdot\text{m}^2}=\frac{\text{kg}\cdot\text{m}^2/\text{s}^2}{\text{kg}\cdot\text{m}^2}=\text{s}^{-2}$$</li></ol>
+<div class="box ex"><b>Respuesta: d) 2 rad/s²</b></div>
+<p>Las otras: 4 rad/s² es $\tau$ sin dividir por $I$; 8 rad/s² es $\tau\cdot I$ (multiplicar en vez de dividir); 0,5 rad/s² es $I/\tau$ (al revés).</p>
+
+<h2 id="p9">Pregunta 9</h2>
+<p>Un muelle de constante elástica $k=200$ N/m se comprime 10 cm respecto a su posición de equilibrio. ¿Cuál es la energía potencial elástica almacenada en el muelle?</p>
+<div class="box thm formulas"><span class="h">Datos</span><ul><li>$k=200\ \text{N/m}$</li><li>$x=10\ \text{cm}=0{,}10\ \text{m}$ (¡pasar a metros!)</li></ul></div>
+<figure class="interactivo" data-escena="muelle-pec" data-params='{}' aria-label="Muelle de constante k = 200 N/m comprimido 10 cm respecto a su posición de equilibrio">
+  <img class="int-static" src="../assets/img/int_muelle-pec.png" alt="Muelle de constante k = 200 N/m comprimido 10 cm respecto a su posición de equilibrio">
+  <figcaption><b>Gira la vista con el ratón.</b> Con el deslizador cambias la compresión x y ves U = ½·k·x². La fuerza del muelle (verde) empuja al bloque hacia la posición de equilibrio. <span class="src" data-l="P" data-ref="Dibujo propio de planteamiento">P</span></figcaption>
+</figure>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span><ul><li>Energía potencial elástica: $U=\tfrac12\,k\,x^2$</li><li>Conversión: $1\ \text{cm}=10^{-2}\ \text{m}$</li></ul></div>
+<ol class="steps"><li>Pasamos la compresión a metros:$$x=10\ \text{cm}=10\cdot10^{-2}\ \text{m}=0{,}10\ \text{m}$$<span class="por">Con $k$ en N/m, $x$ tiene que ir en metros.</span></li><li>Fórmula:$$U=\frac12\,k\,x^2$$</li><li>Sustituimos:$$U=\frac12\cdot200\cdot(0{,}10)^2=\frac12\cdot200\cdot0{,}01$$</li><li>Calculamos:$$U=100\cdot0{,}01=\mathbf{1\ \text{J}}$$</li><li>Comprobación de unidades:$$\frac{\text{N}}{\text{m}}\cdot\text{m}^2=\text{N}\cdot\text{m}=\text{J}$$</li></ol>
+<div class="box ex"><b>Respuesta: d) 1 J</b></div>
+<p>Las otras: 2 J es $k\,x^2$ (falta el ½); 10 J es $\tfrac12\,k\,x$ (olvidar elevar $x$ al cuadrado: $\tfrac12\cdot200\cdot0{,}1=10$); 0,1 J no sale de una fórmula directa (coincide con $x$ en metros).</p>
+
 <h2>Resumen</h2>
 <table><tr><th>Pregunta</th><th>Resultado</th><th>Opción</th></tr>
 <tr><td>1</td><td>$I=\tfrac13ML^2=4\ \text{kg}\cdot\text{m}^2$</td><td>c</td></tr>
@@ -104,7 +140,10 @@
 <tr><td>3</td><td>Peso gravitatorio; normal y rozamiento electromagnéticos</td><td>c</td></tr>
 <tr><td>4</td><td>$P=mgv=294$ W</td><td>d</td></tr>
 <tr><td>5</td><td>$\Omega=mgr/(I\omega)=4{,}9$ rad/s</td><td>c</td></tr>
-<tr><td>6</td><td>$I_1\omega_1=I_2\omega_2\Rightarrow\omega_2=4$ rad/s</td><td>a</td></tr></table>
+<tr><td>6</td><td>$I_1\omega_1=I_2\omega_2\Rightarrow\omega_2=4$ rad/s</td><td>a</td></tr>
+<tr><td>7</td><td>$J=m(v_2-v_1)=-4{,}5$ N·s</td><td>a</td></tr>
+<tr><td>8</td><td>$\alpha=rF/I=2$ rad/s²</td><td>d</td></tr>
+<tr><td>9</td><td>$U=\tfrac12kx^2=1$ J</td><td>d</td></tr></table>
 </main></div>
 </body>
 </html>
