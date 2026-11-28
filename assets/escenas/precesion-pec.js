@@ -5,9 +5,21 @@
 Interactivos.registrar('precesion-pec', function (c) {
   var T = c.THREE, H = c.H, P = c.colores(), g = 9.8, rad = Math.PI / 180, m = 0.5, I = 0.002, rm = 0.20;
   var om = 100, rcm = 2.0, Rcm = 0.9, psi = 0, listo = false, esp = 0.3, fino = 0.025, dz = -2.4;
-  var eje, rueda, marcas = [], gSpin, pivote, columna, base, suelo, trayec, fL, fW, fT, fO, grupoRueda, cuadro;
+  var tL, tW, tT, tO, tR, tA, tC, tP, eje, rueda, marcas = [], gSpin, pivote, columna, base, suelo, trayec, fL, fW, fT, fO, grupoRueda, cuadro;
   var lO = c.lectura('Ω = m g r / (I ω)'), lT = c.lectura('Una vuelta de precesión cada'), lR = c.lectura('Velocidad de giro ω');
   var fm = function (t, d) { var k = Math.pow(10, d == null ? 2 : d); return (Math.round(t * k) / k).toString().replace('-', '−').replace('.', ','); };
+  var rotulos = [];
+  function rotulo(texto, clave, alto) {   /* texto 3D (sprite) que siempre mira a la cámara; clave = color de la paleta */
+    var cv = document.createElement('canvas'); cv.width = 384; cv.height = 96;
+    var tex = new T.CanvasTexture(cv), sp = new T.Sprite(new T.SpriteMaterial({ map: tex, depthTest: false, transparent: true }));
+    sp.renderOrder = 10; sp.scale.set(alto * 4, alto, 1);
+    var o = { sp: sp, clave: clave, texto: texto };
+    o.pintar = function () {
+      var x = cv.getContext('2d'); x.clearRect(0, 0, 384, 96); x.font = 'bold 52px "Segoe UI", Arial, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle';
+      x.lineJoin = 'round'; x.lineWidth = 9; x.strokeStyle = P.bg; x.strokeText(texto, 192, 50); x.fillStyle = P[clave]; x.fillText(texto, 192, 50); tex.needsUpdate = true;
+    };
+    o.pintar(); rotulos.push(o); c.scene.add(sp); return o;
+  }
   function Om() { return m * g * rm / (I * om); }
   function nuevo() {
     suelo = new T.GridHelper(10, 10, P.mut, P.bd); suelo.rotation.x = Math.PI / 2; suelo.position.z = dz; c.scene.add(suelo);
@@ -23,7 +35,9 @@ Interactivos.registrar('precesion-pec', function (c) {
     trayec = H.tubo(T, [], 0.025, P.mut); c.scene.add(trayec);
     cuadro = H.tubo(T, [], 0.02, P.fg); c.scene.add(cuadro);
     fL = H.flecha(T, P.L, fino); fW = H.flecha(T, P.W, fino); fT = H.flecha(T, P.E, fino); fO = H.flecha(T, P.A, fino); c.scene.add(fL, fW, fT, fO);
-    c.camera.position.set(6.5, -7.5, 4.2); c.controls.target.set(0, 0, -0.4); c.controls.update();
+    tL = rotulo('L = I·ω', 'L', 0.52); tW = rotulo('P = m·g', 'W', 0.52); tT = rotulo('τ = r × P', 'E', 0.52); tO = rotulo('Ω (precesión)', 'A', 0.52);
+    tR = rotulo('r = 0,20 m', 'fg', 0.45); tA = rotulo('90°', 'fg', 0.4); tC = rotulo('CM', 'fg', 0.45); tP = rotulo('pivote', 'mut', 0.45);
+    c.camera.position.set(7.5, -8.5, 5); c.controls.target.set(0.3, 0, 0.3); c.controls.update();
   }
   function calc() {
     if (!listo) return;
@@ -41,7 +55,15 @@ Interactivos.registrar('precesion-pec', function (c) {
     fL.poner([cx, cy, 0], [cx + 2.2 * d[0], cy + 2.2 * d[1], 0]);
     fW.poner([cx, cy, 0], [cx, cy, -2.0]);
     fT.poner([cx, cy, 0], [cx + 2.2 * tg[0], cy + 2.2 * tg[1], 0]);
-    fO.poner([0, 0, 0], [0, 0, 3.4]);
+    fO.poner([0, 0, 0], [0, 0, 3.0]);
+    tL.sp.position.set(cx + 2.2 * d[0] + 0.75 * d[0], cy + 2.2 * d[1] + 0.75 * d[1], 0.3);
+    tW.sp.position.set(cx, cy, -2.4);
+    tT.sp.position.set(cx + 2.2 * tg[0] + 0.7 * tg[0], cy + 2.2 * tg[1] + 0.7 * tg[1], 0.3);
+    tO.sp.position.set(0, 0, 3.55);
+    tR.sp.position.set(0.5 * r * d[0], 0.5 * r * d[1], 0.45);
+    tA.sp.position.set(cx - 0.55 * d[0], cy - 0.55 * d[1], -0.55);
+    tC.sp.position.set(cx + 0.0, cy + 0.0, 1.15);
+    tP.sp.position.set(-0.2, 0, -0.65);
     var o = Om();
     lO(fm(o, 2) + ' rad/s');
     lT(fm(2 * Math.PI / o, 2) + ' s');
@@ -49,7 +71,6 @@ Interactivos.registrar('precesion-pec', function (c) {
   }
   c.slider('Velocidad de giro ω (rad/s)', 50, 300, 1, om, function (v) { om = v; calc(); }, function (v) { return fm(v, 0) + ' rad/s'; });
   c.reproductor({ max: 360, valor: 0, paso: 1, vel: function () { return Om() / rad; }, ciclico: true, etiqueta: 'Ángulo de precesión φ', fmt: function (v) { return Math.round(v) + '°'; }, cb: function (v) { psi = v; calc(); } });
-  c.leyenda([['var(--X)', 'momento angular L = I ω (a lo largo del eje)', 'linea'], ['var(--warn-b)', 'peso P = m g (en el centro de masas, r = 0,20 m)', 'linea'], ['var(--E)', 'momento del peso τ = r × P (horizontal, ⟂ L y ⟂ P)', 'linea'], ['var(--A)', 'velocidad de precesión Ω (vertical)', 'linea']]);
   nuevo(); listo = true;
   c.alCambiarTema(function (qq) {
     P = qq; c.renderer.setClearColor(qq.bg);
@@ -57,6 +78,7 @@ Interactivos.registrar('precesion-pec', function (c) {
     c.scene.remove(suelo); suelo.geometry.dispose(); suelo = new T.GridHelper(10, 10, qq.mut, qq.bd); suelo.rotation.x = Math.PI / 2; suelo.position.z = dz; c.scene.add(suelo);
     columna.material.color.set(qq.mut); base.material.color.set(qq.mut); pivote.material.color.set(qq.fg); eje.material.color.set(qq.fg); rueda.material.color.set(qq.acc); trayec.material.color.set(qq.mut); cuadro.material.color.set(qq.fg);
     marcas.forEach(function (mk) { mk.material.color.set(qq.A); });
+    rotulos.forEach(function (q) { q.pintar(); });
     [[fL, qq.L], [fW, qq.W], [fT, qq.E], [fO, qq.A]].forEach(function (e) { e[0].userData.eje.material.color.set(e[1]); e[0].userData.cono.material.color.set(e[1]); });
   });
   calc();
