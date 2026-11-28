@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%232f5bd8%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2246%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2240%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23fff%22%3EF%3C/text%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('tema');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PEC 2 resuelta</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../assets/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/resumen.css">
+<script defer src="../assets/katex/katex.min.js"></script>
+<script defer src="../assets/katex/auto-render.min.js"></script>
+<script defer src="../assets/resumen.js"></script>
+<link rel="stylesheet" href="../assets/estudio.css">
+</head>
+<body>
+<div class="topbar"><div class="in">
+  <a href="../index.html">← Índice de temas</a>
+  <span><button id="btn-tema" type="button">Claro / oscuro</button></span>
+</div></div>
+<div class="layout"><nav class="side-toc" aria-label="Índice"><b>En esta página</b></nav><main>
+<h1>PEC 2 (módulo 2, temas 6-11) resuelta</h1>
+<p>Cinco preguntas tipo test, resueltas como en el examen: datos, fórmulas, cuenta paso a paso y comprobación de las otras opciones.</p>
+
+<h2 id="p1">Pregunta 1</h2>
+<p>Varilla homogénea de 3 kg y 2 m que gira alrededor de un eje perpendicular que pasa por un extremo. ¿Momento de inercia?</p>
+<div class="box thm formulas"><span class="h">Datos</span><ul><li>$M=3\ \text{kg}$, $L=2\ \text{m}$</li><li>Eje perpendicular a la varilla por un extremo</li></ul></div>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span><ul><li>Varilla, eje por el extremo: $I=\tfrac13 ML^2$</li><li>(Por el centro sería $\tfrac1{12}ML^2$; se pasa de uno a otro con Steiner: $I=I_{cm}+Md^2$)</li></ul></div>
+<ol class="steps"><li>Fórmula para un extremo:$$I=\frac13 ML^2$$<span class="por">El eje pasa por un extremo, no por el centro.</span></li><li>Sustituimos:$$I=\frac13\cdot 3\cdot 2^2$$</li><li>Calculamos:$$I=\frac13\cdot 3\cdot 4=\frac{12}{3}=\mathbf{4\ \text{kg}\cdot\text{m}^2}$$</li><li>Comprobación con Steiner ($d=L/2=1$ m):$$I=\frac1{12}\cdot3\cdot4+3\cdot1^2=1+3=4\ \text{kg}\cdot\text{m}^2$$</li></ol>
+<div class="box ex"><b>Respuesta: c) 4 kg·m²</b></div>
+<p>Las otras: a) 3 sería $ML^2/4$ (mal); b) 6 sería $ML^2/2$; d) 1 es solo el valor respecto al centro, $ML^2/12$.</p>
+
+<h2 id="p2">Pregunta 2</h2>
+<p>Disco macizo homogéneo de 4 kg y 0,5 m de radio que gira alrededor de un eje por su centro, perpendicular a su superficie, con ω = 6 rad/s. ¿Energía cinética de rotación?</p>
+<div class="box thm formulas"><span class="h">Datos</span><ul><li>$M=4\ \text{kg}$, $R=0{,}5\ \text{m}$, $\omega=6\ \text{rad/s}$</li></ul></div>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span><ul><li>Disco macizo, eje por el centro: $I=\tfrac12 MR^2$</li><li>Energía de rotación: $K=\tfrac12 I\omega^2$</li></ul></div>
+<ol class="steps"><li>Momento de inercia:$$I=\frac12 MR^2=\frac12\cdot4\cdot0{,}5^2=\frac12\cdot4\cdot0{,}25=0{,}5\ \text{kg}\cdot\text{m}^2$$<span class="por">Primero I, porque K lo necesita.</span></li><li>Energía:$$K=\frac12 I\omega^2=\frac12\cdot0{,}5\cdot6^2=\frac12\cdot0{,}5\cdot36$$</li><li>Resultado:$$K=0{,}25\cdot36=\mathbf{9\ \text{J}}$$</li></ol>
+<div class="box ex"><b>Respuesta: b) 9 J</b></div>
+<p>Las otras: 4,5 J sale de $\tfrac14I\omega^2$ (un ½ de más); 18 J es $\tfrac12MR^2\omega^2$ con $I=MR^2$ (fórmula del aro); 36 J es $MR^2\omega^2$ (aro y sin el ½).</p>
+
+<h2 id="p3">Pregunta 3</h2>
+<p>Un bloque se desliza sobre una superficie horizontal. Peso, normal y rozamiento: ¿cuál es el origen de estas interacciones?</p>
+<div class="box thm formulas"><span class="h">Datos</span><ul><li>Fuerzas: peso $\vec P$, normal $\vec N$, rozamiento $\vec f$</li></ul></div>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span><ul><li>Interacciones fundamentales: gravitatoria, electromagnética, nuclear fuerte y débil</li></ul></div>
+<ol class="steps"><li>Peso: es la atracción de la Tierra sobre el bloque, $P=mg$ → <b>gravitatoria</b>.</li><li>Normal: la superficie se deforma ligeramente y sus átomos repelen a los del bloque (contacto) → <b>electromagnética</b>.<span class="por">Toda fuerza de contacto es, a nivel microscópico, repulsión eléctrica entre átomos.</span></li><li>Rozamiento: también es contacto entre las superficies (enlaces y repulsión entre átomos) → <b>electromagnética</b>.</li><li>La nuclear fuerte actúa solo dentro del núcleo (~$10^{-15}$ m), no entre cuerpos macroscópicos.</li></ol>
+<div class="box ex"><b>Respuesta: c) El peso es gravitatorio; la normal y el rozamiento son electromagnéticos</b></div>
+<p>Descartadas: a) y b) atribuyen a la gravedad el contacto; d) la fuerza nuclear fuerte no interviene.</p>
+
+<h2 id="p4">Pregunta 4</h2>
+<p>Un motor eleva una carga de 20 kg con velocidad constante de 1,5 m/s. ¿Potencia mecánica del motor? ($g=9{,}8\ \text{m/s}^2$)</p>
+<div class="box thm formulas"><span class="h">Datos</span><ul><li>$m=20\ \text{kg}$, $v=1{,}5\ \text{m/s}$ (constante), $g=9{,}8\ \text{m/s}^2$</li></ul></div>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span><ul><li>Velocidad constante ⇒ $a=0$ ⇒ $\sum F=0$: $F=mg$</li><li>Potencia: $P=\vec F\cdot\vec v=Fv$ (fuerza y velocidad en el mismo sentido)</li></ul></div>
+<ol class="steps"><li>Segunda ley con $a=0$:$$F-mg=0\ \Rightarrow\ F=mg$$<span class="por">Sin aceleración, el motor solo equilibra el peso.</span></li><li>Fuerza:$$F=20\cdot9{,}8=196\ \text{N}$$</li><li>Potencia:$$P=Fv=196\cdot1{,}5$$</li><li>Resultado:$$P=\mathbf{294\ \text{W}}$$</li></ol>
+<div class="box ex"><b>Respuesta: d) 294 W</b></div>
+<p>Las otras: 196 W es $mg$ numéricamente, sin multiplicar por $v$ (y en W no tiene sentido); 392 W es $2mg$; 147 W es $\tfrac12mgv$ (un ½ que sobra: no hay energía cinética que cambie).</p>
+
+<h2 id="p5">Pregunta 5</h2>
+<p>Giróscopo con $I=0{,}002\ \text{kg}\cdot\text{m}^2$ respecto a su eje, $\omega=100\ \text{rad/s}$, centro de masas a 0,20 m del apoyo, $m=0{,}5$ kg, eje horizontal, precesión estacionaria. ¿Velocidad angular de precesión? ($g=9{,}8$)</p>
+<div class="box thm formulas"><span class="h">Datos</span><ul><li>$I=0{,}002\ \text{kg}\cdot\text{m}^2$, $\omega=100\ \text{rad/s}$</li><li>$r=0{,}20\ \text{m}$, $m=0{,}5\ \text{kg}$, $g=9{,}8\ \text{m/s}^2$</li></ul></div>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span><ul><li>Momento del peso respecto al apoyo: $\tau=mgr$</li><li>Momento angular de espín: $L=I\omega$</li><li>Precesión estacionaria: $\tau=\Omega L\ \Rightarrow\ \Omega=\dfrac{mgr}{I\omega}$</li></ul></div>
+<ol class="steps"><li>Torque del peso:$$\tau=mgr=0{,}5\cdot9{,}8\cdot0{,}20=0{,}98\ \text{N}\cdot\text{m}$$<span class="por">El peso actúa en el centro de masas, a distancia $r$ del apoyo.</span></li><li>Momento angular:$$L=I\omega=0{,}002\cdot100=0{,}2\ \text{kg}\cdot\text{m}^2/\text{s}$$</li><li>Condición de precesión $\tau=\Omega L$:$$\Omega=\frac{\tau}{L}=\frac{0{,}98}{0{,}2}$$</li><li>Resultado:$$\Omega=\mathbf{4{,}9\ \text{rad/s}}$$</li></ol>
+<div class="box ex"><b>Respuesta: c) 4,90 rad/s</b></div>
+<p>Las otras: 9,80 es el doble (factor 2 de más); 2,45 es la mitad (factor ½); 0,98 es el torque $\tau$ sin dividir por $L=I\omega$.</p>
+
+<h2>Resumen</h2>
+<table><tr><th>Pregunta</th><th>Resultado</th><th>Opción</th></tr>
+<tr><td>1</td><td>$I=\tfrac13ML^2=4\ \text{kg}\cdot\text{m}^2$</td><td>c</td></tr>
+<tr><td>2</td><td>$K=\tfrac12I\omega^2=9$ J</td><td>b</td></tr>
+<tr><td>3</td><td>Peso gravitatorio; normal y rozamiento electromagnéticos</td><td>c</td></tr>
+<tr><td>4</td><td>$P=mgv=294$ W</td><td>d</td></tr>
+<tr><td>5</td><td>$\Omega=mgr/(I\omega)=4{,}9$ rad/s</td><td>c</td></tr></table>
+</main></div>
+</body>
+</html>
