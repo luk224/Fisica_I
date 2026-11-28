@@ -23,7 +23,7 @@
 </div></div>
 <div class="layout"><nav class="side-toc" aria-label="Índice"><b>En esta página</b></nav><main>
 <h1>PEC 2 (módulo 2, temas 6-11) resuelta</h1>
-<p>Cinco preguntas tipo test, resueltas como en el examen: datos, fórmulas, cuenta paso a paso y comprobación de las otras opciones.</p>
+<p>Seis preguntas tipo test, resueltas como en el examen: datos, fórmulas, cuenta paso a paso y comprobación de las otras opciones.</p>
 
 <h2 id="p1">Pregunta 1</h2>
 <p>Varilla homogénea de 3 kg y 2 m que gira alrededor de un eje perpendicular que pasa por un extremo. ¿Momento de inercia?</p>
@@ -85,13 +85,26 @@
 <div class="box ex"><b>Respuesta: c) 4,90 rad/s</b></div>
 <p>Las otras: 9,80 es el doble (factor 2 de más); 2,45 es la mitad (factor ½); 0,98 es el torque $\tau$ sin dividir por $L=I\omega$.</p>
 
+<h2 id="p6">Pregunta 6</h2>
+<p>Una patinadora gira sobre sí misma con un momento de inercia de 4 kg·m² y una velocidad angular de 2 rad/s. Al aproximar los brazos al cuerpo, su momento de inercia disminuye hasta 2 kg·m². Suponiendo que el momento angular se conserva, ¿cuál será su nueva velocidad angular?</p>
+<div class="box thm formulas"><span class="h">Datos</span><ul><li>Antes: $I_1=4\ \text{kg}\cdot\text{m}^2$, $\omega_1=2\ \text{rad/s}$</li><li>Después: $I_2=2\ \text{kg}\cdot\text{m}^2$, $\omega_2=\,?$</li></ul></div>
+<figure class="interactivo" data-escena="patinadora-pec" data-params='{}' aria-label="Patinadora girando sobre sí misma con los brazos extendidos o pegados al cuerpo, con L constante">
+  <img class="int-static" src="../assets/img/int_patinadora-pec.png" alt="Patinadora girando sobre sí misma con los brazos extendidos o pegados al cuerpo, con L constante">
+  <figcaption><b>Gira la vista con el ratón.</b> Mueve el deslizador de los brazos: I baja de 4 a 2 kg·m² y ω sube de 2 a 4 rad/s, mientras L = I·ω = 8 kg·m²/s no cambia (flecha verde). <span class="src" data-l="P" data-ref="Dibujo propio de planteamiento">P</span></figcaption>
+</figure>
+<div class="box thm formulas"><span class="h">Fórmulas que vamos a usar</span><ul><li>Momento angular de un cuerpo rígido: $L=I\omega$</li><li>Sin momento externo ($\tau_{ext}=0$): $L_1=L_2$, es decir, $I_1\omega_1=I_2\omega_2$</li></ul></div>
+<ol class="steps"><li>Momento angular inicial:$$L_1=I_1\omega_1=4\cdot2=8\ \text{kg}\cdot\text{m}^2/\text{s}$$<span class="por">Al encoger los brazos solo actúan fuerzas internas, así que el momento angular se conserva.</span></li><li>Conservación:$$L_2=L_1\ \Rightarrow\ I_2\,\omega_2=I_1\,\omega_1$$</li><li>Despejamos:$$\omega_2=\frac{I_1\,\omega_1}{I_2}=\frac{8}{2}$$</li><li>Resultado:$$\omega_2=\mathbf{4\ \text{rad/s}}$$</li><li>Comprobación: $I$ se reduce a la mitad ($4\to2$) y por eso $\omega$ se duplica ($2\to4$ rad/s).</li></ol>
+<div class="box ex"><b>Respuesta: a) 4 rad/s</b></div>
+<p>Las otras: 2 rad/s sería no cambiar ω (como si no se conservara L); 8 rad/s es $I_1\omega_1$ sin dividir por $I_2$; 1 rad/s sale de $\omega_1 I_2/I_1$ (al revés).</p>
+
 <h2>Resumen</h2>
 <table><tr><th>Pregunta</th><th>Resultado</th><th>Opción</th></tr>
 <tr><td>1</td><td>$I=\tfrac13ML^2=4\ \text{kg}\cdot\text{m}^2$</td><td>c</td></tr>
 <tr><td>2</td><td>$K=\tfrac12I\omega^2=9$ J</td><td>b</td></tr>
 <tr><td>3</td><td>Peso gravitatorio; normal y rozamiento electromagnéticos</td><td>c</td></tr>
 <tr><td>4</td><td>$P=mgv=294$ W</td><td>d</td></tr>
-<tr><td>5</td><td>$\Omega=mgr/(I\omega)=4{,}9$ rad/s</td><td>c</td></tr></table>
+<tr><td>5</td><td>$\Omega=mgr/(I\omega)=4{,}9$ rad/s</td><td>c</td></tr>
+<tr><td>6</td><td>$I_1\omega_1=I_2\omega_2\Rightarrow\omega_2=4$ rad/s</td><td>a</td></tr></table>
 </main></div>
 </body>
 </html>
